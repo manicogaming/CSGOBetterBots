@@ -203,7 +203,7 @@ char g_BotName[][] = {
 	"Winstrike bondik",
 	"OpTic k0nfig",
 	"OpTic JUGi",
-	"OpTic cajunb",
+	"OpTic niko",
 	"OpTic Snappi",
 	"OpTic refrezh",
 	"Sprout denis",
