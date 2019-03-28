@@ -275,7 +275,12 @@ char g_BotName[][] = {
 	"CeX resu",
 	"CeX Nukeddog",
 	"CeX JamesBT",
-	"CeX znx-"
+	"CeX znx-",
+	"LDLC devoduvek",
+	"LDLC to1nou",
+	"LDLC matHEND",
+	"LDLC xms",
+	"LDLC SIXER"
 };
  
 public Plugin myinfo =

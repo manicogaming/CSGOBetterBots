@@ -1342,6 +1342,26 @@ ProP+Rifle+RifleT "CeX znx-"
 	VoicePitch = 110
 End
 
+ProP+Rifle+RifleT "LDLC devoduvek"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "LDLC to1nou"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "LDLC matHEND"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "LDLC xms"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "LDLC SIXER"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro+SniperProT "XD | ryu"
         VoicePitch = 95
 End
