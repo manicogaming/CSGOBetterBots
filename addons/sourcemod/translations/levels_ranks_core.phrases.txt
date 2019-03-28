@@ -1,0 +1,315 @@
+"Phrases"
+{
+	// All Colors :
+	// 1) {WHITE}
+	// 2) {TEAM}
+	// 3) {RED}
+	// 4) {GREEN}
+	// 5) {LIME}
+	// 6) {LIGHTGREEN}
+	// 7) {LIGHTRED}
+	// 8) {GRAY}
+	// 9) {LIGHTOLIVE}
+	// 10) {OLIVE}
+	// 11) {LIGHTBLUE}
+	// 12) {BLUE}
+	// 13) {PURPLE}
+
+	"MainMenu_Exp"
+	{
+		"#format"	"{1:s},{2:s},{3:i},{4:i}"
+		"en"		"{1}\nExp: {2}\nPlace: {3} of {4}"
+		"ru"		"{1}\nОпыт: {2}\nМесто: {3} из {4}"
+	}
+	"MainMenu_None"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"{1}\nExp: {2}"
+		"ru"		"{1}\nОпыт: {2}"
+	}
+	"MainMenu_Rank"
+	{
+		"#format"	"{1:s}"
+		"en"		"Rank: {1}"
+		"ru"		"Звание: {1}"
+	}
+	"MainMenu_VIP"
+	{
+		"en"		"You have a VIP-status"
+		"ru"		"Вы имеете VIP-статус"
+	}
+	"AllRanks"
+	{
+		"en"		"All Ranks"
+		"ru"		"Все звания"
+	}
+	"TOP"
+	{
+		"en"		"TOP players"
+		"ru"		"TOP игроков"
+	}
+	"Capabilities"
+	{
+		"en"		"Capabilities"
+		"ru"		"Возможности"
+	}
+	"FullMyStats"
+	{
+		"en"		"Statistic"
+		"ru"		"Статистика"
+	}
+	"MainAdminMenu"
+	{
+		"en"		"Admin's panel"
+		"ru"		"Панель администратора"
+	}
+	"TOPCount"
+	{
+		"#format"	"{1:i},{2:i},{3:i}"
+		"en"		"Back to top {1} - {2} (total: {3})"
+		"ru"		"В начало {1} - {2} (всего: {3})"
+	}
+	"RankPlayer"
+	{
+		"#format"	"{1:N},{2:i},{3:i},{4:i},{5:i},{6:i},{7:.2f}"
+		"en"		"{RED}[LR] {WHITE}Player {GREEN}{1} {WHITE}is ranked at {GREEN}{2} / {3} {WHITE}with {OLIVE}{4} {WHITE}exp, {OLIVE}{5} {WHITE}kills, {OLIVE}{6} {WHITE}deaths и KDR {OLIVE}{7}"
+		"ru"		"{RED}[LR] {WHITE}Игрок {GREEN}{1} {WHITE}на {GREEN}{2} / {3} {WHITE}месте, с {OLIVE}{4} {WHITE}очками, {OLIVE}{5} {WHITE}убийствами, {OLIVE}{6} {WHITE}смертями и KDR {OLIVE}{7}"
+	}
+	"Back"
+	{
+		"en"		"Back"
+		"ru"		"Назад"
+	}
+	"Next"
+	{
+		"en"		"Next"
+		"ru"		"Вперед"
+	}
+	"FullStats"
+	{
+		"#format"	"{1:i},{2:i},{3:i},{4:i},{5:i},{6:.2f},{7:i},{8:i},{9:i}"
+		"en"		"My Stats\n \nKills: {1} \nDeaths: {2} \nAssists: {3} \nHeadshots: {4} [{5} %%] \nKDR: {6} \n \nShoots: {7} \nHits: {8} [{9} %%]"
+		"ru"		"Моя статистика\n \nУбийств: {1} \nСмертей: {2} \nАссистов: {3} \nХедшотов: {4} [{5} %%] \nKDR: {6} \n \nВыстрелов: {7} \nПопаданий: {8} [{9} %%]"
+	}
+	"GiveTakeMenuExp"
+	{
+		"en"		"Give/Take exp. points"
+		"ru"		"Выдать/Забрать очки опыта"
+	}
+	"RoundStartCheckCount"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}There are only {RED}{1} {WHITE}players from {RED}{2}"
+		"ru"		"{RED}[LR] {WHITE}Присутствует только {RED}{1} {WHITE}игрока из {RED}{2}"
+	}
+	"RoundStartMessageRanks"
+	{
+		"#format"	"{1:s}"
+		"en"		"{RED}[LR] {WHITE}Enter: {PURPLE}!{1} {WHITE}- main menu"
+		"ru"		"{RED}[LR] {WHITE}Введи: {PURPLE}!{1} {WHITE}- главное меню"
+	}
+	"LevelUp"
+	{
+		"#format"	"{1:s}"
+		"en"		"{RED}[LR] {WHITE}Your rank has been promoted to {LIME}{1}"
+		"ru"		"{RED}[LR] {WHITE}Вы повышены в звании до {LIME}{1}"
+	}
+	"LevelDown"
+	{
+		"#format"	"{1:s}"
+		"en"		"{RED}[LR] {WHITE}Your rank has been lowered to {RED}{1}"
+		"ru"		"{RED}[LR] {WHITE}Вы понижены в звании до {RED}{1}"
+	}
+	"Suicide"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} for suicide]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} за самоубийство]"
+	}
+	"Kill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GREEN}{1} [+{2} for a kill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GREEN}{1} [+{2} за убийство]"
+	}
+	"MyDeath"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} for dying]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} за вашу смерть]"
+	}
+	"TeamKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} for teamkill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} за убийство товарища]"
+	}
+	"HeadShotKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {OLIVE}{1} [+{2} for a headshot]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {OLIVE}{1} [+{2} за убийство в голову]"
+	}
+	"AssisterKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {BLUE}{1} [+{2} for an assist]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {BLUE}{1} [+{2} за помощь в убийстве]"
+	}
+	"RoundWin"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GREEN}{1} [+{2} your team won]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GREEN}{1} [+{2} ваша команда выиграла]"
+	}
+	"RoundLose"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} your team lost]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} ваша команда проиграла]"
+	}
+	"RoundMVP"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {BLUE}{1} [+{2} MVP]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {BLUE}{1} [+{2} самый результативный игрок]"
+	}
+	"BombPlanted"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {LIME}{1} [+{2} for planting the bomb]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {LIME}{1} [+{2} установка бомбы]"
+	}
+	"BombDefused"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {LIME}{1} [+{2} for defusing the bomb]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {LIME}{1} [+{2} разминирование бомбы]"
+	}
+	"BombPickup"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GREEN}{1} [+{2} for bomb pickup]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GREEN}{1} [+{2} подобрали бомбу]"
+	}
+	"BombDropped"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} for dropping the bomb]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} потеряли бомбу]"
+	}
+	"HostageRescued"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {LIGHTBLUE}{1} [+{2} you rescued the hostage]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {LIGHTBLUE}{1} [+{2} вы спасли заложника]"
+	}
+	"HostageKilled"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} you killed the hostage]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} вы убили заложника]"
+	}
+	"DoubleKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for DoubleKill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за DoubleKill]"
+	}
+	"TripleKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for TripleKill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за TripleKill]"
+	}
+	"Domination"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for Domination]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за Domination]"
+	}
+	"Rampage"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for Rampage]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за Rampage]"
+	}
+	"MegaKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for MegaKill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за MegaKill]"
+	}
+	"Ownage"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for Ownage]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за Ownage]"
+	}
+	"UltraKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for UltraKill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за UltraKill]"
+	}
+	"KillingSpree"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for Killing Spree]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за Killing Spree]"
+	}
+	"MonsterKill"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for MonsterKill]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за MonsterKill]"
+	}
+	"Unstoppable"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for Unstoppable]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за Unstoppable]"
+	}
+	"GodLike"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for God Like]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за God Like]"
+	}
+	"WickedSick"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for WickedSick]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за WickedSick]"
+	}
+	"HolyShit"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {PURPLE}{1} [+{2} for HolyShit]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {PURPLE}{1} [+{2} за HolyShit]"
+	}
+	"CalibrationPlus"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GREEN}{1} [+{2} for passing Calibration]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GREEN}{1} [+{2} за прохождение Калибровки]"
+	}
+	"CalibrationMinus"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {RED}{1} [-{2} for passing Calibration]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {RED}{1} [-{2} за прохождение Калибровки]"
+	}
+	"AdminGive"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GRAY}{1} [+{2} from the admin]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GRAY}{1} [+{2} от Админа]"
+	}
+	"AdminTake"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"{RED}[LR] {WHITE}Your exp: {GRAY}{1} [{2} from the admin]"
+		"ru"		"{RED}[LR] {WHITE}Ваш опыт: {GRAY}{1} [{2} от Админа]"
+	}
+}
