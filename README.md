@@ -48,4 +48,4 @@ I edited the following plugins.
 
 There's an improved BotProfile.db I've edited that was also originally made by [tNzxX](https://www.youtube.com/channel/UCF6sK9PaONILzTd42baWxkA) and the BotProfile.db he made can be found [here](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497).
 
-In the future I might add every Nav Mesh file that I've edited for CS:GO.
+I also added all the NavMeshes of my maps and all the team logos I currently have.
