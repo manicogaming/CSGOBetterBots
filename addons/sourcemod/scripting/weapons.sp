@@ -577,7 +577,7 @@ void SetWeaponProps(int client, int entity)
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 1.00));
 				}
 			}
-			SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(1,38));
+			SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(1,39));
 		}
 		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
