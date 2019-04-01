@@ -1,0 +1,194 @@
+"Phrases"
+{	
+	"Unranked"
+	{
+		"en"	"Unranked"
+		"pt"	"Sem Rank"
+	}
+	
+	"Silver I"
+	{
+		"en"	"Silver I"
+		"pt"	"Silver I"
+	}
+
+	"Silver II"
+	{
+		"en"	"Silver II"
+		"pt"	"Silver II"
+	}
+
+	"Silver III"
+	{
+		"en"	"Silver III"
+		"pt"	"Silver III"
+	}
+
+	"Silver IV"
+	{
+		"en"	"Silver IV"
+		"pt"	"Silver IV"
+	}
+
+	"Silver Elite"
+	{
+		"en"	"Silver Elite"
+		"pt"	"Silver Elite"
+	}
+
+	"Silver Elite Master"
+	{
+		"en"	"Silver Elite Master"
+		"pt"	"Silver Elite Master"
+	}
+
+	"Gold Nova I"
+	{
+		"en"	"Gold Nova I"
+		"pt"	"Gold Nova I"
+	}
+
+	"Gold Nova II"
+	{
+		"en"	"Gold Nova II"
+		"pt"	"Gold Nova II"
+	}
+
+	"Gold Nova III"
+	{
+		"en"	"Gold Nova III"
+		"pt"	"Gold Nova III"
+	}
+
+	"Gold Nova Master"
+	{
+		"en"	"Gold Nova IV"
+		"pt"	"Gold Nova IV"
+	}
+
+	"Master Guardian I"
+	{
+		"en"	"Master Guardian I"
+		"pt"	"Master Guardian I"
+	}
+
+	"Master Guardian II"
+	{
+		"en"	"Master Guardian II"
+		"pt"	"Master Guardian II"
+	}
+
+	"Master Guardian Elite"
+	{
+		"en"	"Master Guardian Elite"
+		"pt"	"Master Guardian Elite"
+	}
+
+	"Distinguished Master Guardian"
+	{
+		"en"	"Distinguished Master Guardian"
+		"pt"	"Distinguished Master Guardian"
+	}
+
+	"Legendary Eagle"
+	{
+		"en"	"Legendary Eagle"
+		"pt"	"Legendary Eagle"
+	}
+
+	"Legendary Eagle Master"
+	{
+		"en"	"Legendary Eagle Master"
+		"pt"	"Legendary Eagle Master"
+	}
+
+	"Supreme First Master Class"
+	{
+		"en"	"Supreme First Master Class"
+		"pt"	"Supreme First Master Class"
+	}
+
+	"Global Elite"
+	{
+		"en"	"Global Elite"
+		"pt"	"Global Elite"
+	}
+	
+	"Rank Up"
+	{
+		"#format"	"{1:s}"
+		"en"		"Congratulations, you ranked up to: {1}!"
+		"pt"		"Parabéns, subiste para: {1}!"
+	}
+	
+	"Rank Down"
+	{
+		"#format"	"{1:s}"
+		"en"		"Unfornately, you ranked down to: {1}"
+		"pt"		"Infelizmente, desceste para: {1}"
+	}
+	
+	"Rank Menu Title"
+	{
+		"en"		"Ranks Menu"
+		"pt"		"Menu dos Ranks"
+	}
+	
+	"Change Rank Icon"
+	{
+		"en"		"Change My Rank Icon"
+		"pt"		"Mudar o Meu Icon do Rank"
+	}
+	
+	"Check Rank Points"
+	{
+		"en"		"Check Points for Every Rank"
+		"pt"		"Ver os Pontos para cada Rank"
+	}
+	
+	"Select Rank Icon"
+	{
+		"en"		"Select the Rank Icon you want to use:"
+		"pt"		"Escolhe o Icon do Rank que queres usar:"
+	}
+	
+	"Matchmaking Rank"
+	{
+		"en"		"Normal Rank (Matchmaking)"
+		"pt"		"Rank Normal (Matchmaking)"
+	}
+	
+	"WingMan Rank"
+	{
+		"en"		"WingMan Rank"
+		"pt"		"Rank Braço-Direito"
+	}
+	
+	"Less Than X Points"
+	{
+		"#format"	"{1:s},{2:d}"
+		"en"		"{1} - Less than {2} points"
+		"pt"		"{1} - Menos do que {2} pontos"
+	}
+	
+	"Between X and Y"
+	{
+		"#format"	"{1:s},{2:d},{3:d}"
+		"en"		"{1} - Between {2} and {3} points"
+		"pt"		"{1} - Entre {2} a {3} pontos"
+	}
+	
+	"No Access"
+	{
+		"en"		"Currently, you don't have access to the Rank Icons!"
+		"pt"		"Neste momento, não tens acesso aos Icons dos Ranks!"
+	}
+	
+	"Changed Rank"
+	{
+		"#format"	"{1:s}"
+		"en"		"You have changed your Rank Icon to: {1}"
+		"pt"		"Mudaste o teu Icon do Rank para: {1}"
+	}
+
+}
