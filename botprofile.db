@@ -1362,6 +1362,146 @@ ProP+Rifle+RifleT "LDLC SIXER"
 	VoicePitch = 110
 End
 
+ProP+Rifle+RifleT "Defusekids v1N"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Defusekids G1DO"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Defusekids FASHR"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Defusekids Monu"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Defusekids rilax"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Epsilon Surreal"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Epsilon CRUC1AL"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Epsilon k1to"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Epsilon SPELLAN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Epsilon broky"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Maxi matHEND"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Maxi MAIDHEN"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Maxi RobiNasTy"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Maxi SmyLi"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Maxi krL"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "EP MiGHTYMAX"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "EP Impulse"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "EP Puls3"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "EP Thomas"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "EP aVN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "GLegion Ex6TenZ"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "GLegion nawwk"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "GLegion ScreaM"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "GLegion HS"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "GLegion hampus"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Berzerk SolEk"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Berzerk MALI"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Berzerk tahsiN"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Berzerk cello"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Berzerk syNx"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "DIVIZON dominikkk"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "DIVIZON ChrisWa"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "DIVIZON croic"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "DIVIZON n1kista"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "DIVIZON TR1P"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro+SniperProT "XD | ryu"
         VoicePitch = 95
 End
