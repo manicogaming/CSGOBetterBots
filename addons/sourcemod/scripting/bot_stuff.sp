@@ -315,7 +315,32 @@ char g_BotName[][] = {
 	"DIVIZON ChrisWa",
 	"DIVIZON croic",
 	"DIVIZON n1kista",
-	"DIVIZON TR1P"
+	"DIVIZON TR1P",
+	"EURONICS arno",
+	"EURONICS LyGHT",
+	"EURONICS PerX",
+	"EURONICS Seeeya",
+	"EURONICS OKOLICIOUZ",
+	"expert ScrunK",
+	"expert Andyy",
+	"expert syken",
+	"expert JDC",
+	"expert kRYSTAL",
+	"PANTHERS zonixx",
+	"PANTHERS Ultimate",
+	"PANTHERS .P4TriCK",
+	"PANTHERS pdy",
+	"PANTHERS red",
+	"Planetkey ecfN",
+	"Planetkey impulsG",
+	"Planetkey Cedii",
+	"Planetkey Krimbo",
+	"Planetkey Lemon",
+	"PDucks Aika",
+	"PDucks syncD",
+	"PDucks BMLN",
+	"PDucks HighKitty",
+	"PDucks VENIQ"
 };
  
 public Plugin myinfo =

@@ -1502,6 +1502,106 @@ ProP+Rifle+RifleT "DIVIZON TR1P"
 	VoicePitch = 110
 End
 
+ProP+Rifle+RifleT "EURONICS arno"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "EURONICS LyGHT"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "EURONICS PerX"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "EURONICS Seeeya"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "EURONICS OKOLICIOUZ"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "expert ScrunK"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "expert Andyy"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "expert syken"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "expert JDC"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "expert kRYSTAL"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "PANTHERS zonixx"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "PANTHERS Ultimate"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "PANTHERS .P4TriCK"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "PANTHERS pdy"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "PANTHERS red"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Planetkey ecfN"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Planetkey impulsG"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Planetkey Cedii"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Planetkey Krimbo"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Planetkey Lemon"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "PDucks Aika"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "PDucks syncD"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "PDucks BMLN"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "PDucks HighKitty"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "PDucks VENIQ"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro+SniperProT "XD | ryu"
         VoicePitch = 95
 End
