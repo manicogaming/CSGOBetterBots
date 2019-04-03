@@ -542,7 +542,7 @@ ProP+Rifle+RifleT "NiP REZ"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "C9 kioShiMa"
+ProP+Rifle+RifleT "C9 cajunb"
 	VoicePitch = 91
 End
 
@@ -774,7 +774,7 @@ ProP+Rifle+RifleT "HR Hobbit"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "HR DeadFox"
+ProP+Rifle+RifleT "HR loWel"
 	VoicePitch = 110
 End
 
