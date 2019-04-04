@@ -462,663 +462,730 @@ End
 // Default and then the specified Template(s), in order
 //
 
-ProP+Rifle+RifleT "MIBR coldzera"
+
+//MIBR Players
+
+ProP+Rifle+RifleT "coldzera"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "MIBR FalleN"
+EliteAwp+SniperPro+SniperProT "FalleN"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "MIBR fer"
+ProP+Rifle+RifleT "fer"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "MIBR TACO"
+ProP+Rifle+RifleT "TACO"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "MIBR felps"
+ProP+Rifle+RifleT "felps"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "FaZe olofmeister"
+//FaZe Players
+
+ProP+Rifle+RifleT "olofmeister"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "FaZe GuardiaN"
+EliteAwp+SniperPro+SniperProT "GuardiaN"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "FaZe NiKo"
+ProP+Rifle+RifleT "NiKo"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "FaZe rain"
+ProP+Rifle+RifleT "rain"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "FaZe AdreN"
+ProP+Rifle+RifleT "AdreN"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "Astralis Xyp9x"
+//Astralis Players
+
+ProP+Rifle+RifleT "Xyp9x"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Astralis device"
+EliteAwp+SniperPro+SniperProT "device"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Astralis gla1ve"
+ProP+Rifle+RifleT "gla1ve"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Astralis Magisk"
+ProP+Rifle+RifleT "Magisk"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Astralis dupreeh"
+ProP+Rifle+RifleT "dupreeh"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "NiP GeT_RiGhT"
+//NiP Players
+
+ProP+Rifle+RifleT "GeT_RiGhT"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "NiP draken"
+EliteAwp+SniperPro+SniperProT "draken"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "NiP f0rest"
+ProP+Rifle+RifleT "f0rest"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "NiP Lekr0"
+ProP+Rifle+RifleT "Lekr0"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "NiP REZ"
+ProP+Rifle+RifleT "REZ"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "C9 cajunb"
+//C9 Players
+
+ProP+Rifle+RifleT "cajunb"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "C9 autimatic"
+EliteAwp+SniperPro+SniperProT "autimatic"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "C9 vice"
+ProP+Rifle+RifleT "vice"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "C9 Golden"
+ProP+Rifle+RifleT "Golden"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "C9 RUSH"
+ProP+Rifle+RifleT "RUSH"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "G2 shox"
+//G2 Players
+
+ProP+Rifle+RifleT "shox"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "G2 kennyS"
+EliteAwp+SniperPro+SniperProT "kennyS"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "G2 Lucky"
+ProP+Rifle+RifleT "Lucky"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "G2 JaCkz"
+ProP+Rifle+RifleT "JaCkz"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "G2 AMANEK"
+ProP+Rifle+RifleT "AMANEK"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "fnatic twist"
+//fnatic Players
+
+ProP+Rifle+RifleT "twist"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "fnatic JW"
+EliteAwp+SniperPro+SniperProT "JW"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "fnatic KRiMZ"
+ProP+Rifle+RifleT "KRiMZ"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "fnatic Brollan"
+ProP+Rifle+RifleT "Brollan"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "fnatic Xizt"
+ProP+Rifle+RifleT "Xizt"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "North cadiaN"
+//North Players
+
+ProP+Rifle+RifleT "cadiaN"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RifleT "North Kjaerbye"
+ProP+Rifle+RifleT "Kjaerbye"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "North aizy"
+ProP+Rifle+RifleT "aizy"
 	VoicePitch = 95
 End
 
-EliteAwp+SniperPro+SniperProT "North valde"
+EliteAwp+SniperPro+SniperProT "valde"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "North gade"
+ProP+Rifle+RifleT "gade"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "mouz karrigan"
+//mouz Players
+
+ProP+Rifle+RifleT "karrigan"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "mouz chrisJ"
+EliteAwp+SniperPro+SniperProT "chrisJ"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "mouz woxic"
+ProP+Rifle+RifleT "woxic"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "mouz frozen"
+ProP+Rifle+RifleT "frozen"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "mouz ropz"
+ProP+Rifle+RifleT "ropz"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "TyLoo Summer"
+//TyLoo Players
+
+ProP+Rifle+RifleT "Summer"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "TyLoo Attacker"
+EliteAwp+SniperPro+SniperProT "Attacker"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "TyLoo BnTneT"
+ProP+Rifle+RifleT "BnTneT"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "TyLoo somebody"
+ProP+Rifle+RifleT "somebody"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "TyLoo xccurate"
+ProP+Rifle+RifleT "xccurate"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "Gambit Ax1Le"
+//Gambit Players
+
+ProP+Rifle+RifleT "Ax1Le"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Gambit mou"
+EliteAwp+SniperPro+SniperProT "mou"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Gambit Dosia"
+ProP+Rifle+RifleT "Dosia"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Gambit dimasick"
+ProP+Rifle+RifleT "dimasick"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Gambit mir"
+ProP+Rifle+RifleT "mir"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "NRG daps"
+//NRG Players
+
+ProP+Rifle+RifleT "daps"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "NRG tarik"
+EliteAwp+SniperPro+SniperProT "tarik"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "NRG Brehze"
+ProP+Rifle+RifleT "Brehze"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "NRG nahtE"
+ProP+Rifle+RifleT "nahtE"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "NRG CeRq"
+ProP+Rifle+RifleT "CeRq"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "RNG AZR"
+//RNG Players
+
+ProP+Rifle+RifleT "AZR"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "RNG jks"
+EliteAwp+SniperPro+SniperProT "jks"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "RNG jkaem"
+ProP+Rifle+RifleT "jkaem"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "RNG Gratisfaction"
+ProP+Rifle+RifleT "Gratisfaction"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "RNG Liazz"
+ProP+Rifle+RifleT "Liazz"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "Na´Vi electronic"
+//Na´Vi Players
+
+ProP+Rifle+RifleT "electronic"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Na´Vi s1mple"
+EliteAwp+SniperPro+SniperProT "s1mple"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Na´Vi flamie"
+ProP+Rifle+RifleT "flamie"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Na´Vi Edward"
+ProP+Rifle+RifleT "Edward"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Na´Vi Zeus"
+ProP+Rifle+RifleT "Zeus"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "Liquid Stewie2K"
+//Liquid Players
+
+ProP+Rifle+RifleT "Stewie2K"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Liquid NAF"
+EliteAwp+SniperPro+SniperProT "NAF"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Liquid nitr0"
+ProP+Rifle+RifleT "nitr0"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Liquid ELiGE"
+ProP+Rifle+RifleT "ELiGE"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Liquid Twistzz"
+ProP+Rifle+RifleT "Twistzz"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "HR ANGE1"
+//HR Players
+
+ProP+Rifle+RifleT "ANGE1"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "HR oskar"
+EliteAwp+SniperPro+SniperProT "oskar"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "HR Hobbit"
+ProP+Rifle+RifleT "Hobbit"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "HR loWel"
+ProP+Rifle+RifleT "loWel"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "HR ISSAA"
+ProP+Rifle+RifleT "ISSAA"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RifleT "AGO Furlan"
+//AGO Players
+
+ProP+Rifle+RifleT "Furlan"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "AGO GruBy"
+EliteAwp+SniperPro+SniperProT "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "AGO kap3r"
+ProP+Rifle+RifleT "kap3r"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "AGO phr"
+ProP+Rifle+RifleT "phr"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "AGO SZPERO"
+ProP+Rifle+RifleT "SZPERO"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "ENCE Aleksib"
+//ENCE Players
+
+ProP+Rifle+RifleT "Aleksib"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "ENCE allu"
+EliteAwp+SniperPro+SniperProT "allu"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "ENCE sergej"
+ProP+Rifle+RifleT "sergej"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "ENCE Aerial"
+ProP+Rifle+RifleT "Aerial"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "ENCE xseveN"
+ProP+Rifle+RifleT "xseveN"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Vitality NBK-"
+//Vitality Players
+
+ProP+Rifle+RifleT "NBK-"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Vitality ZywOo"
+EliteAwp+SniperPro+SniperProT "ZywOo"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Vitality apEX"
+ProP+Rifle+RifleT "apEX"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Vitality RpK"
+ProP+Rifle+RifleT "RpK"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Vitality ALEX"
+ProP+Rifle+RifleT "ALEX"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "BIG tiziaN"
+//BIG Players
+
+ProP+Rifle+RifleT "tiziaN"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "BIG nex"
+EliteAwp+SniperPro+SniperProT "nex"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "BIG XANTARES"
+ProP+Rifle+RifleT "XANTARES"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "BIG tabseN"
+ProP+Rifle+RifleT "tabseN"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "BIG gob b"
+ProP+Rifle+RifleT "gob b"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "AVANGAR buster"
+//AVANGAR Players
+
+ProP+Rifle+RifleT "buster"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "AVANGAR Jame"
+EliteAwp+SniperPro+SniperProT "Jame"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "AVANGAR qikert"
+ProP+Rifle+RifleT "qikert"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "AVANGAR fitch"
+ProP+Rifle+RifleT "fitch"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "AVANGAR KrizzeN"
+ProP+Rifle+RifleT "KrizzeN"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Windigo SHiPZ"
+//Windigo Players
+
+ProP+Rifle+RifleT "SHiPZ"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Windigo bubble"
+EliteAwp+SniperPro+SniperProT "bubble"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Windigo v1c7oR"
+ProP+Rifle+RifleT "v1c7oR"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Windigo blocker"
+ProP+Rifle+RifleT "blocker"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Windigo poizon"
+ProP+Rifle+RifleT "poizon"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Ghost Wardell"
+//Ghost Players
+
+ProP+Rifle+RifleT "Wardell"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Ghost koosta"
+EliteAwp+SniperPro+SniperProT "koosta"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Ghost steel"
+ProP+Rifle+RifleT "steel"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Ghost neptune"
+ProP+Rifle+RifleT "neptune"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Ghost freakazoid"
+ProP+Rifle+RifleT "freakazoid"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "FURIA yuurih"
+//FURIA Players
+
+ProP+Rifle+RifleT "yuurih"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "FURIA arT"
+EliteAwp+SniperPro+SniperProT "arT"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "FURIA VINI"
+ProP+Rifle+RifleT "VINI"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "FURIA kscerato"
+ProP+Rifle+RifleT "kscerato"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "FURIA ableJ"
+ProP+Rifle+RifleT "ableJ"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Valience LETN1"
+//Valience Players
+
+ProP+Rifle+RifleT "LETN1"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Valience ottoNd"
+EliteAwp+SniperPro+SniperProT "ottoNd"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Valience huNter"
+ProP+Rifle+RifleT "huNter"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Valience nexa"
+ProP+Rifle+RifleT "nexa"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Valience EspiranTo"
+ProP+Rifle+RifleT "EspiranTo"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "coL dephh"
+//coL Players
+
+ProP+Rifle+RifleT "dephh"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "coL ShahZaM"
+EliteAwp+SniperPro+SniperProT "ShahZaM"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "coL stanislaw"
+ProP+Rifle+RifleT "stanislaw"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "coL Rickeh"
+ProP+Rifle+RifleT "Rickeh"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "coL SicK"
+ProP+Rifle+RifleT "SicK"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "ViCi zhokiNg"
+//ViCi Players
+
+ProP+Rifle+RifleT "zhokiNg"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "ViCi kaze"
+EliteAwp+SniperPro+SniperProT "kaze"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "ViCi aumaN"
+ProP+Rifle+RifleT "aumaN"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "ViCi Freeman"
+ProP+Rifle+RifleT "Freeman"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "ViCi advent"
+ProP+Rifle+RifleT "advent"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "forZe facecrack"
+//forZe Players
+
+ProP+Rifle+RifleT "facecrack"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "forZe xsepower"
+EliteAwp+SniperPro+SniperProT "xsepower"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "forZe FL1T"
+ProP+Rifle+RifleT "FL1T"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "forZe almazer"
+ProP+Rifle+RifleT "almazer"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "forZe Jerry"
+ProP+Rifle+RifleT "Jerry"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Winstrike Boombl4"
+//Winstrike Players
+
+ProP+Rifle+RifleT "Boombl4"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Winstrike Kvik"
+EliteAwp+SniperPro+SniperProT "Kvik"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Winstrike n0rb3r7"
+ProP+Rifle+RifleT "n0rb3r7"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Winstrike WorldEdit"
+ProP+Rifle+RifleT "WorldEdit"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Winstrike bondik"
+ProP+Rifle+RifleT "bondik"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "OpTic k0nfig"
+//OpTic Players
+
+ProP+Rifle+RifleT "k0nfig"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "OpTic JUGi"
+EliteAwp+SniperPro+SniperProT "JUGi"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "OpTic niko"
+ProP+Rifle+RifleT "niko"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "OpTic Snappi"
+ProP+Rifle+RifleT "Snappi"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "OpTic refrezh"
+ProP+Rifle+RifleT "refrezh"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Sprout denis"
+//Sprout Players
+
+ProP+Rifle+RifleT "denis"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Sprout syrsoN"
+EliteAwp+SniperPro+SniperProT "syrsoN"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Sprout Spiidi"
+ProP+Rifle+RifleT "Spiidi"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Sprout faveN"
+ProP+Rifle+RifleT "faveN"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Sprout mirbit"
+ProP+Rifle+RifleT "mirbit"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Heroic es3tag"
+//Heroic Players
+
+ProP+Rifle+RifleT "es3tag"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Heroic mertz"
+EliteAwp+SniperPro+SniperProT "mertz"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Heroic friberg"
+ProP+Rifle+RifleT "friberg"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Heroic blameF"
+ProP+Rifle+RifleT "blameF"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Heroic stavn"
+ProP+Rifle+RifleT "stavn"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "INTZ chelo"
+//INTZ Players
+
+ProP+Rifle+RifleT "chelo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "INTZ kNgV-"
+EliteAwp+SniperPro+SniperProT "kNgV-"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "INTZ xand"
+ProP+Rifle+RifleT "xand"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "INTZ destinyy"
+ProP+Rifle+RifleT "destinyy"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "INTZ yeL"
+ProP+Rifle+RifleT "yeL"
 	VoicePitch = 110
 End
 

@@ -56,171 +56,204 @@ char g_BotName[][] = {
 	"[SPI]Zed-Len",
 	"[[MxD]]xb9manina",
 	"[[tiMaH!]]Furious_DC",
-	"MIBR coldzera",
-	"MIBR FalleN",
-	"MIBR fer",
-	"MIBR TACO",
-	"MIBR felps",
-	"FaZe olofmeister",
-	"FaZe GuardiaN",
-	"FaZe NiKo",
-	"FaZe rain",
-	"FaZe AdreN",
-	"Astralis Xyp9x",
-	"Astralis device",
-	"Astralis gla1ve",
-	"Astralis Magisk",
-	"Astralis dupreeh",
-	"NiP GeT_RiGhT",
-	"NiP draken",
-	"NiP f0rest",
-	"NiP Lekr0",
-	"NiP REZ",
-	"C9 cajunb",
-	"C9 autimatic",
-	"C9 vice",
-	"C9 Golden",
-	"C9 RUSH",
-	"G2 shox",
-	"G2 kennyS",
-	"G2 Lucky",
-	"G2 JaCkz",
-	"G2 AMANEK",
-	"fnatic twist",
-	"fnatic JW",
-	"fnatic KRiMZ",
-	"fnatic Brollan",
-	"fnatic Xizt",
-	"North cadiaN",
-	"North Kjaerbye",
-	"North aizy",
-	"North valde",
-	"North gade",
-	"mouz karrigan",
-	"mouz chrisJ",
-	"mouz woxic",
-	"mouz frozen",
-	"mouz ropz",
-	"TyLoo Summer",
-	"TyLoo Attacker",
-	"TyLoo BnTneT",
-	"TyLoo somebody",
-	"TyLoo xccurate",
-	"Gambit Ax1Le",
-	"Gambit mou",
-	"Gambit Dosia",
-	"Gambit dimasick",
-	"Gambit mir",
-	"NRG daps",
-	"NRG tarik",
-	"NRG Brehze",
-	"NRG nahtE",
-	"NRG CeRq",
-	"RNG AZR",
-	"RNG jks",
-	"RNG jkaem",
-	"RNG Gratisfaction",
-	"RNG Liazz",
-	"Na´Vi electronic",
-	"Na´Vi s1mple",
-	"Na´Vi flamie",
-	"Na´Vi Edward",
-	"Na´Vi Zeus",
-	"Liquid Stewie2K",
-	"Liquid NAF",
-	"Liquid nitr0",
-	"Liquid ELiGE",
-	"Liquid Twistzz",
-	"HR ANGE1",
-	"HR oskar",
-	"HR Hobbit",
-	"HR loWel",
-	"HR ISSAA",
-	"AGO Furlan",
-	"AGO GruBy",
-	"AGO kap3r",
-	"AGO phr",
-	"AGO SZPERO",
-	"ENCE Aleksib",
-	"ENCE allu",
-	"ENCE sergej",
-	"ENCE Aerial",
-	"ENCE xseveN",
-	"Vitality NBK-",
-	"Vitality ZywOo",
-	"Vitality apEX",
-	"Vitality RpK",
-	"Vitality ALEX",
-	"BIG tiziaN",
-	"BIG nex",
-	"BIG XANTARES",
-	"BIG tabseN",
-	"BIG gob b",
-	"AVANGAR buster",
-	"AVANGAR Jame",
-	"AVANGAR qikert",
-	"AVANGAR fitch",
-	"AVANGAR KrizzeN",
-	"Windigo SHiPZ",
-	"Windigo bubble",
-	"Windigo v1c7oR",
-	"Windigo blocker",
-	"Windigo poizon",
-	"Ghost Wardell",
-	"Ghost koosta",
-	"Ghost steel",
-	"Ghost neptune",
-	"Ghost freakazoid",
-	"FURIA yuurih",
-	"FURIA arT",
-	"FURIA VINI",
-	"FURIA kscerato",
-	"FURIA ableJ",
-	"Valience LETN1",
-	"Valience ottoNd",
-	"Valience huNter",
-	"Valience nexa",
-	"Valience EspiranTo",
-	"coL dephh",
-	"coL ShahZaM",
-	"coL stanislaw",
-	"coL Rickeh",
-	"coL SicK",
-	"ViCi zhokiNg",
-	"ViCi kaze",
-	"ViCi aumaN",
-	"ViCi Freeman",
-	"ViCi advent",
-	"forZe facecrack",
-	"forZe xsepower",
-	"forZe FL1T",
-	"forZe almazer",
-	"forZe Jerry",
-	"Winstrike Boombl4",
-	"Winstrike Kvik",
-	"Winstrike n0rb3r7",
-	"Winstrike WorldEdit",
-	"Winstrike bondik",
-	"OpTic k0nfig",
-	"OpTic JUGi",
-	"OpTic niko",
-	"OpTic Snappi",
-	"OpTic refrezh",
-	"Sprout denis",
-	"Sprout syrsoN",
-	"Sprout Spiidi",
-	"Sprout faveN",
-	"Sprout mirbit",
-	"Heroic es3tag",
-	"Heroic mertz",
-	"Heroic friberg",
-	"Heroic blameF",
-	"Heroic stavn",
-	"INTZ chelo",
-	"INTZ kNgV-",
-	"INTZ xand",
-	"INTZ destinyy",
-	"INTZ yeL",
+	//MIBR Players
+	"coldzera",
+	"FalleN",
+	"fer",
+	"TACO",
+	"felps",
+	//FaZe Players
+	"olofmeister",
+	"GuardiaN",
+	"NiKo",
+	"rain",
+	"AdreN",
+	//Astralis Players
+	"Xyp9x",
+	"device",
+	"gla1ve",
+	"Magisk",
+	"dupreeh",
+	//NiP Players
+	"GeT_RiGhT",
+	"draken",
+	"f0rest",
+	"Lekr0",
+	"REZ",
+	//C9 Players
+	"cajunb",
+	"autimatic",
+	"vice",
+	"Golden",
+	"RUSH",
+	//G2 Players
+	"shox",
+	"kennyS",
+	"Lucky",
+	"JaCkz",
+	"AMANEK",
+	//fnatic Players
+	"twist",
+	"JW",
+	"KRiMZ",
+	"Brollan",
+	"Xizt",
+	//North Players
+	"cadiaN",
+	"Kjaerbye",
+	"aizy",
+	"valde",
+	"gade",
+	//mouz Players
+	"karrigan",
+	"chrisJ",
+	"woxic",
+	"frozen",
+	"ropz",
+	//TyLoo Players
+	"Summer",
+	"Attacker",
+	"BnTneT",
+	"somebody",
+	"xccurate",
+	//Gambit Players
+	"Ax1Le",
+	"mou",
+	"Dosia",
+	"dimasick",
+	"mir",
+	//NRG Players
+	"daps",
+	"tarik",
+	"Brehze",
+	"nahtE",
+	"CeRq",
+	//RNG Players
+	"AZR",
+	"jks",
+	"jkaem",
+	"Gratisfaction",
+	"Liazz",
+	//Na´Vi Players
+	"electronic",
+	"s1mple",
+	"flamie",
+	"Edward",
+	"Zeus",
+	//Liquid Players
+	"Stewie2K",
+	"NAF",
+	"nitr0",
+	"ELiGE",
+	"Twistzz",
+	//HR Players
+	"ANGE1",
+	"oskar",
+	"Hobbit",
+	"loWel",
+	"ISSAA",
+	//AGO Players
+	"Furlan",
+	"GruBy",
+	"kap3r",
+	"phr",
+	"SZPERO",
+	//ENCE Players
+	"Aleksib",
+	"allu",
+	"sergej",
+	"Aerial",
+	"xseveN",
+	//Vitality Players
+	"NBK-",
+	"ZywOo",
+	"apEX",
+	"RpK",
+	"ALEX",
+	//BIG Players
+	"tiziaN",
+	"nex",
+	"XANTARES",
+	"tabseN",
+	"gob b",
+	//AVANGAR Players
+	"buster",
+	"Jame",
+	"qikert",
+	"fitch",
+	"KrizzeN",
+	//Windigo Players
+	"SHiPZ",
+	"bubble",
+	"v1c7oR",
+	"blocker",
+	"poizon",
+	//Ghost Players
+	"Wardell",
+	"koosta",
+	"steel",
+	"neptune",
+	"freakazoid",
+	//FURIA Players
+	"yuurih",
+	"arT",
+	"VINI",
+	"kscerato",
+	"ableJ",
+	//Valience Players
+	"LETN1",
+	"ottoNd",
+	"huNter",
+	"nexa",
+	"EspiranTo",
+	//coL Players
+	"dephh",
+	"ShahZaM",
+	"stanislaw",
+	"Rickeh",
+	"SicK",
+	//ViCi Players
+	"zhokiNg",
+	"kaze",
+	"aumaN",
+	"Freeman",
+	"advent",
+	//forZe Players
+	"facecrack",
+	"xsepower",
+	"FL1T",
+	"almazer",
+	"Jerry",
+	//Winstrike Players
+	"Boombl4",
+	"Kvik",
+	"n0rb3r7",
+	"WorldEdit",
+	"bondik",
+	//OpTic Players
+	"k0nfig",
+	"JUGi",
+	"niko",
+	"Snappi",
+	"refrezh",
+	//Sprout Players
+	"denis",
+	"syrsoN",
+	"Spiidi",
+	"faveN",
+	"mirbit",
+	//Heroic Players
+	"es3tag",
+	"mertz",
+	"friberg",
+	"blameF",
+	"stavn",
+	//INTZ Players
+	"chelo",
+	"kNgV-",
+	"xand",
+	"destinyy",
+	"yeL",
 	"VP MICHU",
 	"VP snatchie",
 	"VP byali",
@@ -392,7 +425,306 @@ public void OnClientPostAdminCheck(int client)
 		}
 	}
 	
+	MIBR_Players(botname, client);
+	FaZe_Players(botname, client);
+	Astralis_Players(botname, client);
+	NiP_Players(botname, client);
+	C9_Players(botname, client);
+	G2_Players(botname, client);
+	fnatic_Players(botname, client);
+	North_Players(botname, client);
+	mouz_Players(botname, client);
+	TyLoo_Players(botname, client);
+	Gambit_Players(botname, client);
+	NRG_Players(botname, client);
+	RNG_Players(botname, client);
+	NaVi_Players(botname, client);
+	Liquid_Players(botname, client);
+	HR_Players(botname, client);
+	AGO_Players(botname, client);
+	ENCE_Players(botname, client);
+	Vitality_Players(botname, client);
+	BIG_Players(botname, client);
+	AVANGAR_Players(botname, client);
+	Windigo_Players(botname, client);
+	Ghost_Players(botname, client);
+	FURIA_Players(botname, client);
+	Valience_Players(botname, client);
+	coL_Players(botname, client);
+	ViCi_Players(botname, client);
+	forZe_Players(botname, client);
+	Winstrike_Players(botname, client);
+	OpTic_Players(botname, client);
+	Sprout_Players(botname, client);
+	Heroic_Players(botname, client);
+	INTZ_Players(botname, client);
+	
 	g_iProfileRank[client] = GetRandomInt(1,40);
+}
+
+
+public void MIBR_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "coldzera", false) != -1) || (StrContains(botname, "FalleN", false) != -1) || (StrContains(botname, "fer", false) != -1) || (StrContains(botname, "TACO", false) != -1) || (StrContains(botname, "felps", false) != -1))
+	{
+		CS_SetClientClanTag(client, "MIBR");
+	}
+}
+
+public void FaZe_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "olofmeister", false) != -1) || (StrContains(botname, "GuardiaN", false) != -1) || (StrContains(botname, "NiKo", false) != -1) || (StrContains(botname, "rain", false) != -1) || (StrContains(botname, "AdreN", false) != -1))
+	{
+		CS_SetClientClanTag(client, "FaZe");
+	}
+}
+
+public void Astralis_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Xyp9x", false) != -1) || (StrContains(botname, "device", false) != -1) || (StrContains(botname, "gla1ve", false) != -1) || (StrContains(botname, "Magisk", false) != -1) || (StrContains(botname, "dupreeh", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Astralis");
+	}
+}
+
+public void NiP_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "GeT_RiGhT", false) != -1) || (StrContains(botname, "draken", false) != -1) || (StrContains(botname, "f0rest", false) != -1) || (StrContains(botname, "Lekr0", false) != -1) || (StrContains(botname, "REZ", false) != -1))
+	{
+		CS_SetClientClanTag(client, "NiP");
+	}
+}
+
+public void C9_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "cajunb", false) != -1) || (StrContains(botname, "autimatic", false) != -1) || (StrContains(botname, "vice", false) != -1) || (StrContains(botname, "Golden", false) != -1) || (StrContains(botname, "RUSH", false) != -1))
+	{
+		CS_SetClientClanTag(client, "C9");
+	}
+}
+
+public void G2_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "shox", false) != -1) || (StrContains(botname, "kennyS", false) != -1) || (StrContains(botname, "Lucky", false) != -1) || (StrContains(botname, "JaCkz", false) != -1) || (StrContains(botname, "AMANEK", false) != -1))
+	{
+		CS_SetClientClanTag(client, "G2");
+	}
+}
+
+public void fnatic_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "twist", false) != -1) || (StrContains(botname, "JW", false) != -1) || (StrContains(botname, "KRiMZ", false) != -1) || (StrContains(botname, "Brollan", false) != -1) || (StrContains(botname, "Xizt", false) != -1))
+	{
+		CS_SetClientClanTag(client, "fnatic");
+	}
+}
+
+public void North_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "cadiaN", false) != -1) || (StrContains(botname, "Kjaerbye", false) != -1) || (StrContains(botname, "aizy", false) != -1) || (StrContains(botname, "valde", false) != -1) || (StrContains(botname, "gade", false) != -1))
+	{
+		CS_SetClientClanTag(client, "North");
+	}
+}
+
+public void mouz_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "karrigan", false) != -1) || (StrContains(botname, "chrisJ", false) != -1) || (StrContains(botname, "woxic", false) != -1) || (StrContains(botname, "frozen", false) != -1) || (StrContains(botname, "ropz", false) != -1))
+	{
+		CS_SetClientClanTag(client, "mouz");
+	}
+}
+
+public void TyLoo_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Summer", false) != -1) || (StrContains(botname, "Attacker", false) != -1) || (StrContains(botname, "BnTneT", false) != -1) || (StrContains(botname, "somebody", false) != -1) || (StrContains(botname, "xccurate", false) != -1))
+	{
+		CS_SetClientClanTag(client, "TyLoo");
+	}
+}
+
+public void Gambit_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Ax1Le", false) != -1) || (StrContains(botname, "mou", false) != -1) || (StrContains(botname, "Dosia", false) != -1) || (StrContains(botname, "dimasick", false) != -1) || (StrContains(botname, "mir", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Gambit");
+	}
+}
+
+public void NRG_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "daps", false) != -1) || (StrContains(botname, "tarik", false) != -1) || (StrContains(botname, "Brehze", false) != -1) || (StrContains(botname, "nahtE", false) != -1) || (StrContains(botname, "CeRq", false) != -1))
+	{
+		CS_SetClientClanTag(client, "NRG");
+	}
+}
+
+public void RNG_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "AZR", false) != -1) || (StrContains(botname, "jks", false) != -1) || (StrContains(botname, "jkaem", false) != -1) || (StrContains(botname, "Gratisfaction", false) != -1) || (StrContains(botname, "Liazz", false) != -1))
+	{
+		CS_SetClientClanTag(client, "RNG");
+	}
+}
+
+public void NaVi_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "electronic", false) != -1) || (StrContains(botname, "s1mple", false) != -1) || (StrContains(botname, "flamie", false) != -1) || (StrContains(botname, "Edward", false) != -1) || (StrContains(botname, "Zeus", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Na´Vi");
+	}
+}
+
+public void Liquid_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Stewie2K", false) != -1) || (StrContains(botname, "NAF", false) != -1) || (StrContains(botname, "nitr0", false) != -1) || (StrContains(botname, "ELiGE", false) != -1) || (StrContains(botname, "Twistzz", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Liquid");
+	}
+}
+
+public void HR_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "ANGE1", false) != -1) || (StrContains(botname, "oskar", false) != -1) || (StrContains(botname, "Hobbit", false) != -1) || (StrContains(botname, "loWel", false) != -1) || (StrContains(botname, "ISSAA", false) != -1))
+	{
+		CS_SetClientClanTag(client, "HR");
+	}
+}
+
+public void AGO_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Furlan", false) != -1) || (StrContains(botname, "GruBy", false) != -1) || (StrContains(botname, "kap3r", false) != -1) || (StrContains(botname, "phr", false) != -1) || (StrContains(botname, "SZPERO", false) != -1))
+	{
+		CS_SetClientClanTag(client, "AGO");
+	}
+}
+
+public void ENCE_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Aleksib", false) != -1) || (StrContains(botname, "Aerial", false) != -1) || (StrContains(botname, "allu", false) != -1) || (StrContains(botname, "sergej", false) != -1) || (StrContains(botname, "xseveN", false) != -1))
+	{
+		CS_SetClientClanTag(client, "ENCE");
+	}
+}
+
+public void Vitality_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "NBK-", false) != -1) || (StrContains(botname, "ZywOo", false) != -1) || (StrContains(botname, "apEX", false) != -1) || (StrContains(botname, "RpK", false) != -1) || (StrContains(botname, "ALEX", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Vitality");
+	}
+}
+
+public void BIG_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "tiziaN", false) != -1) || (StrContains(botname, "nex", false) != -1) || (StrContains(botname, "XANTARES", false) != -1) || (StrContains(botname, "tabseN", false) != -1) || (StrContains(botname, "gob b", false) != -1))
+	{
+		CS_SetClientClanTag(client, "BIG");
+	}
+}
+
+public void AVANGAR_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "buster", false) != -1) || (StrContains(botname, "Jame", false) != -1) || (StrContains(botname, "qikert", false) != -1) || (StrContains(botname, "fitch", false) != -1) || (StrContains(botname, "KrizzeN", false) != -1))
+	{
+		CS_SetClientClanTag(client, "AVANGAR");
+	}
+}
+
+public void Windigo_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "SHiPZ", false) != -1) || (StrContains(botname, "bubble", false) != -1) || (StrContains(botname, "v1c7oR", false) != -1) || (StrContains(botname, "blocker", false) != -1) || (StrContains(botname, "poizon", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Windigo");
+	}
+}
+
+public void Ghost_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Wardell", false) != -1) || (StrContains(botname, "koosta", false) != -1) || (StrContains(botname, "steel", false) != -1) || (StrContains(botname, "neptune", false) != -1) || (StrContains(botname, "freakazoid", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Ghost");
+	}
+}
+
+public void FURIA_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "yuurih", false) != -1) || (StrContains(botname, "arT", false) != -1) || (StrContains(botname, "VINI", false) != -1) || (StrContains(botname, "kscerato", false) != -1) || (StrContains(botname, "ableJ", false) != -1))
+	{
+		CS_SetClientClanTag(client, "FURIA");
+	}
+}
+
+public void Valience_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "LETN1", false) != -1) || (StrContains(botname, "ottoNd", false) != -1) || (StrContains(botname, "huNter", false) != -1) || (StrContains(botname, "nexa", false) != -1) || (StrContains(botname, "EspiranTo", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Valience");
+	}
+}
+
+public void coL_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "dephh", false) != -1) || (StrContains(botname, "ShahZaM", false) != -1) || (StrContains(botname, "stanislaw", false) != -1) || (StrContains(botname, "Rickeh", false) != -1) || (StrContains(botname, "SicK", false) != -1))
+	{
+		CS_SetClientClanTag(client, "coL");
+	}
+}
+
+public void ViCi_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "zhokiNg", false) != -1) || (StrContains(botname, "kaze", false) != -1) || (StrContains(botname, "aumaN", false) != -1) || (StrContains(botname, "Freeman", false) != -1) || (StrContains(botname, "advent", false) != -1))
+	{
+		CS_SetClientClanTag(client, "ViCi");
+	}
+}
+
+public void forZe_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "facecrack", false) != -1) || (StrContains(botname, "xsepower", false) != -1) || (StrContains(botname, "FL1T", false) != -1) || (StrContains(botname, "almazer", false) != -1) || (StrContains(botname, "Jerry", false) != -1))
+	{
+		CS_SetClientClanTag(client, "forZe");
+	}
+}
+
+public void Winstrike_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "Boombl4", false) != -1) || (StrContains(botname, "Kvik", false) != -1) || (StrContains(botname, "n0rb3r7", false) != -1) || (StrContains(botname, "WorldEdit", false) != -1) || (StrContains(botname, "bondik", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Winstrike");
+	}
+}
+
+public void OpTic_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "k0nfig", false) != -1) || (StrContains(botname, "JUGi", false) != -1) || (StrContains(botname, "niko", false) != -1) || (StrContains(botname, "Snappi", false) != -1) || (StrContains(botname, "refrezh", false) != -1))
+	{
+		CS_SetClientClanTag(client, "OpTic");
+	}
+}
+
+public void Sprout_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "denis", false) != -1) || (StrContains(botname, "syrsoN", false) != -1) || (StrContains(botname, "Spiidi", false) != -1) || (StrContains(botname, "faveN", false) != -1) || (StrContains(botname, "mirbit", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Sprout");
+	}
+}
+
+public void Heroic_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "es3tag", false) != -1) || (StrContains(botname, "mertz", false) != -1) || (StrContains(botname, "friberg", false) != -1) || (StrContains(botname, "blameF", false) != -1) || (StrContains(botname, "stavn", false) != -1))
+	{
+		CS_SetClientClanTag(client, "Heroic");
+	}
+}
+
+public void INTZ_Players(char[] botname, int client)
+{
+	if((StrContains(botname, "chelo", false) != -1) || (StrContains(botname, "kNgV-", false) != -1) || (StrContains(botname, "xand", false) != -1) || (StrContains(botname, "destinyy", false) != -1) || (StrContains(botname, "yeL", false) != -1))
+	{
+		CS_SetClientClanTag(client, "INTZ");
+	}
 }
 
 public void OnRoundStart(Handle event, char[] name, bool dbc)
