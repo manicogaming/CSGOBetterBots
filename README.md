@@ -11,18 +11,6 @@ I edited the following plugins.
 - Made it so that it doesn't skip BOTs
 - Database now saves the selected Gloves by Player name and not SteamID because all bots have the same SteamID
 
-# [[Levels Ranks] Core v2.3.6](https://forums.alliedmods.net/showthread.php?t=299311)
-- Made it so that it doesn't skip BOTs
-- Player score is saved by name and not SteamID because of BOTs
-
-**BUG:** Database saves player score twice. I'm not going to fix because I'm using a Module that Synchs with RankMe
-
-# [[Levels Ranks] Module - FakeRank 2.3.2](https://forums.alliedmods.net/showthread.php?t=304501)
-- Made it so that it doesn't skip BOTs
-
-# [[Levels Ranks] Module - Synchronization RankMe 2.3.2](https://forums.alliedmods.net/showthread.php?t=299313)
-- Made it so that it doesn't skip BOTs
-
 # [SQL Matches](https://forums.alliedmods.net/showthread.php?t=312488)
 - The following is now added to the database
   - Team names from mp_teamname_1 and mp_teamname_2
