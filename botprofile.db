@@ -1383,7 +1383,7 @@ ProP+Rifle+RifleT "scoobyxie"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Fierce"
+ProP+Rifle+RifleT "Dima"
 	VoicePitch = 110
 End
 
@@ -1647,7 +1647,7 @@ ProP+Rifle+RifleT "JDC"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "kRYSTAL"
+ProP+Rifle+RifleT "dav1dK"
 	VoicePitch = 110
 End
 
@@ -1714,6 +1714,270 @@ ProP+Rifle+RifleT "HighKitty"
 End
 
 ProP+Rifle+RifleT "VENIQ"
+	VoicePitch = 110
+End
+
+//Chaos Players
+
+ProP+Rifle+RifleT "FREDDyFROG"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Relaxa"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "PlesseN"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Bååten"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "djL"
+	VoicePitch = 110
+End
+
+//HAVU Players
+
+ProP+Rifle+RifleT "ZOREE"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "sLowi"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Twixie"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Hoody"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "sAw"
+	VoicePitch = 110
+End
+
+//Lyngby Players
+
+ProP+Rifle+RifleT "birdfromsky"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Twinx"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Daffu"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "zyp"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Cabbi"
+	VoicePitch = 110
+End
+
+//NoChance Players
+
+ProP+Rifle+RifleT "nukkye"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Maikelele"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "kRYSTAL"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "zehN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "STYKO"
+	VoicePitch = 110
+End
+
+//Nordavind Players
+
+ProP+Rifle+RifleT "tenzki"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "hallzerk"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "RUBINO"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Radifaction"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "cromen"
+	VoicePitch = 110
+End
+
+//SJ Players
+
+ProP+Rifle+RifleT "arvid"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Jamppi"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "SADDYX"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "KHRN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "xartE"
+	VoicePitch = 110
+End
+
+//SkitLite Players
+
+ProP+Rifle+RifleT "emilz"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Derkeps"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "OSKU"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "zks"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Vladimus"
+	VoicePitch = 110
+End
+
+//Tricked Players
+
+ProP+Rifle+RifleT "b0RUP"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "acoR"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "HUNDEN"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Sjuush"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Lukki"
+	VoicePitch = 110
+End
+
+//Vexed Players
+
+ProP+Rifle+RifleT "quix"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "vanity"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "pyth"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "hns"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "ozzy"
+	VoicePitch = 110
+End
+
+//Baskonia Players
+
+ProP+Rifle+RifleT "tatin"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "PabLo"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "LittlesataN1"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "dixon"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "jJavi"
+	VoicePitch = 110
+End
+
+//Dragons Players
+
+ProP+Rifle+RifleT "Enanoks"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "EasTor"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "DonQ"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "meisoN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "xikii"
+	VoicePitch = 110
+End
+
+//Giants Players
+
+ProP+Rifle+RifleT "rmn"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "fox"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "KILLDREAM"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "MUTiRiS"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "ZELIN"
 	VoicePitch = 110
 End
 
