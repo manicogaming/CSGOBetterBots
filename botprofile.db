@@ -1433,11 +1433,11 @@ End
 
 //LDLC Players
 
-ProP+Rifle+RifleT "devoduvek"
+ProP+Rifle+RifleT "rodeN"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "to1nou"
+EliteAwp+SniperPro+SniperProT "Happy"
 	VoicePitch = 106
 End
 

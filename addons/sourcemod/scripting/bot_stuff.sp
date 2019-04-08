@@ -321,8 +321,8 @@ char g_BotName[][] = {
 	"JamesBT",
 	"znx-",
 	//LDLC Players
-	"devoduvek",
-	"to1nou",
+	"rodeN",
+	"Happy",
 	"MAJ3R",
 	"xms",
 	"SIXER",
@@ -1180,7 +1180,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LDLC Players
-	if((StrEqual(botname, "devoduvek")) || (StrEqual(botname, "to1nou")) || (StrEqual(botname, "MAJ3R")) || (StrEqual(botname, "xms")) || (StrEqual(botname, "SIXER")))
+	if((StrEqual(botname, "rodeN")) || (StrEqual(botname, "Happy")) || (StrEqual(botname, "MAJ3R")) || (StrEqual(botname, "xms")) || (StrEqual(botname, "SIXER")))
 	{
 		CS_SetClientClanTag(client, "LDLC");
 	}
