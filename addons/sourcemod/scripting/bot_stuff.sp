@@ -76,7 +76,7 @@ char g_BotName[][] = {
 	"dupreeh",
 	//NiP Players
 	"GeT_RiGhT",
-	"draken",
+	"dennis",
 	"f0rest",
 	"Lekr0",
 	"REZ",
@@ -149,7 +149,7 @@ char g_BotName[][] = {
 	//HR Players
 	"ANGE1",
 	"oskar",
-	"Hobbit",
+	"nukkye",
 	"loWel",
 	"ISSAA",
 	//AGO Players
@@ -181,7 +181,7 @@ char g_BotName[][] = {
 	"Jame",
 	"qikert",
 	"fitch",
-	"KrizzeN",
+	"SANJI",
 	//Windigo Players
 	"SHiPZ",
 	"bubble",
@@ -417,7 +417,7 @@ char g_BotName[][] = {
 	"zyp",
 	"Cabbi",
 	//NoChance Players
-	"nukkye",
+	"Hobbit",
 	"Maikelele",
 	"kRYSTAL",
 	"zehN",
@@ -608,7 +608,7 @@ char g_BotName[][] = {
 	"v$m",
 	"hardzao",
 	"Tuurtle",
-	//FULLSEND Players
+	//Infinity Players
 	"cruzN",
 	"malbsMd",
 	"spamzzy",
@@ -667,7 +667,19 @@ char g_BotName[][] = {
 	"BL1TZ",
 	"Texta",
 	"ofnu",
-	"zewsy"
+	"zewsy",
+	//LEISURE Players
+	"rome",
+	"neyzin",
+	"get",
+	"gimpen",
+	"remixdb",
+	//BDragons Players
+	"deM0",
+	"cqntrl",
+	"dukka",
+	"SpyDaemoN",
+	"psy"
 };
  
 public Plugin myinfo =
@@ -1132,7 +1144,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//NiP Players
-	if((StrEqual(botname, "GeT_RiGhT")) || (StrEqual(botname, "draken")) || (StrEqual(botname, "f0rest")) || (StrEqual(botname, "Lekr0")) || (StrEqual(botname, "REZ")))
+	if((StrEqual(botname, "GeT_RiGhT")) || (StrEqual(botname, "dennis")) || (StrEqual(botname, "f0rest")) || (StrEqual(botname, "Lekr0")) || (StrEqual(botname, "REZ")))
 	{
 		CS_SetClientClanTag(client, "NiP");
 	}
@@ -1204,7 +1216,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//HR Players
-	if((StrEqual(botname, "ANGE1")) || (StrEqual(botname, "oskar")) || (StrEqual(botname, "Hobbit")) || (StrEqual(botname, "loWel")) || (StrEqual(botname, "ISSAA")))
+	if((StrEqual(botname, "ANGE1")) || (StrEqual(botname, "oskar")) || (StrEqual(botname, "nukkye")) || (StrEqual(botname, "loWel")) || (StrEqual(botname, "ISSAA")))
 	{
 		CS_SetClientClanTag(client, "HR");
 	}
@@ -1234,7 +1246,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//AVANGAR Players
-	if((StrEqual(botname, "buster")) || (StrEqual(botname, "Jame")) || (StrEqual(botname, "qikert")) || (StrEqual(botname, "fitch")) || (StrEqual(botname, "KrizzeN")))
+	if((StrEqual(botname, "buster")) || (StrEqual(botname, "Jame")) || (StrEqual(botname, "qikert")) || (StrEqual(botname, "fitch")) || (StrEqual(botname, "SANJI")))
 	{
 		CS_SetClientClanTag(client, "AVANGAR");
 	}
@@ -1474,7 +1486,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//NoChance Players
-	if((StrEqual(botname, "nukkye")) || (StrEqual(botname, "Maikelele")) || (StrEqual(botname, "kRYSTAL")) || (StrEqual(botname, "zehN")) || (StrEqual(botname, "STYKO")))
+	if((StrEqual(botname, "Hobbit")) || (StrEqual(botname, "Maikelele")) || (StrEqual(botname, "kRYSTAL")) || (StrEqual(botname, "zehN")) || (StrEqual(botname, "STYKO")))
 	{
 		CS_SetClientClanTag(client, "NoChance");
 	}
@@ -1665,10 +1677,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "DETONA");
 	}
 	
-	//FULLSEND Players
+	//Infinity Players
 	if((StrEqual(botname, "cruzN")) || (StrEqual(botname, "malbsMd")) || (StrEqual(botname, "spamzzy")) || (StrEqual(botname, "points")) || (StrEqual(botname, "Daveys")))
 	{
-		CS_SetClientClanTag(client, "FULLSEND");
+		CS_SetClientClanTag(client, "Infinity");
 	}
 	
 	//Isurus Players
@@ -1723,5 +1735,17 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "tucks")) || (StrEqual(botname, "BL1TZ")) || (StrEqual(botname, "Texta")) || (StrEqual(botname, "ofnu")) || (StrEqual(botname, "zewsy")))
 	{
 		CS_SetClientClanTag(client, "Chiefs");
+	}
+	
+	//LEISURE Players
+	if((StrEqual(botname, "rome")) || (StrEqual(botname, "remixdb")) || (StrEqual(botname, "neyzin")) || (StrEqual(botname, "get")) || (StrEqual(botname, "gimpen")))
+	{
+		CS_SetClientClanTag(client, "LEISURE");
+	}
+	
+	//BDragons Players
+	if((StrEqual(botname, "deM0")) || (StrEqual(botname, "cqntrl")) || (StrEqual(botname, "dukka")) || (StrEqual(botname, "SpyDaemoN")) || (StrEqual(botname, "psy")))
+	{
+		CS_SetClientClanTag(client, "BDragons");
 	}
 }

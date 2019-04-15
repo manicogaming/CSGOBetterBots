@@ -535,7 +535,7 @@ ProP+Rifle+RifleT "GeT_RiGhT"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "draken"
+EliteAwp+SniperPro+SniperProT "Lekr0"
 	VoicePitch = 106
 End
 
@@ -543,7 +543,7 @@ ProP+Rifle+RifleT "f0rest"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "Lekr0"
+ProP+Rifle+RifleT "dennis"
 	VoicePitch = 110
 End
 
@@ -803,7 +803,7 @@ EliteAwp+SniperPro+SniperProT "oskar"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Hobbit"
+ProP+Rifle+RifleT "nukkye"
 	VoicePitch = 95
 End
 
@@ -921,7 +921,7 @@ ProP+Rifle+RifleT "fitch"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "KrizzeN"
+ProP+Rifle+RifleT "SANJI"
 	VoicePitch = 110
 End
 
@@ -1785,7 +1785,7 @@ End
 
 //NoChance Players
 
-ProP+Rifle+RifleT "nukkye"
+ProP+Rifle+RifleT "Hobbit"
 	VoicePitch = 91
 End
 
@@ -2487,7 +2487,7 @@ ProP+Rifle+RifleT "Tuurtle"
 	VoicePitch = 110
 End
 
-//FULLSEND Players
+//Infinity Players
 
 ProP+Rifle+RifleT "cruzN"
 	VoicePitch = 91
@@ -2704,6 +2704,50 @@ ProP+Rifle+RifleT "ofnu"
 End
 
 ProP+Rifle+RifleT "zewsy"
+	VoicePitch = 110
+End
+
+//LEISURE Players
+
+ProP+Rifle+RifleT "rome"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "neyzin"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "get"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "gimpen"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "remixdb"
+	VoicePitch = 110
+End
+
+//BDragons Players
+
+ProP+Rifle+RifleT "deM0"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "cqntrl"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "dukka"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "SpyDaemoN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "psy"
 	VoicePitch = 110
 End
 
