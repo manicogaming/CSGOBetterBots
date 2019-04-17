@@ -679,7 +679,19 @@ char g_BotName[][] = {
 	"cqntrl",
 	"dukka",
 	"SpyDaemoN",
-	"psy"
+	"psy",
+	//ORDER Players
+	"emagine",
+	"aliStair",
+	"hatz",
+	"INS",
+	"zeph",
+	//Paradox Players
+	"Chub",
+	"keeyto",
+	"Valiance",
+	"Noobster",
+	"Kingfisher"
 };
  
 public Plugin myinfo =
@@ -1747,5 +1759,17 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "deM0")) || (StrEqual(botname, "cqntrl")) || (StrEqual(botname, "dukka")) || (StrEqual(botname, "SpyDaemoN")) || (StrEqual(botname, "psy")))
 	{
 		CS_SetClientClanTag(client, "BDragons");
+	}
+	
+	//ORDER Players
+	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "INS")) || (StrEqual(botname, "zeph")))
+	{
+		CS_SetClientClanTag(client, "ORDER");
+	}
+	
+	//Paradox Players
+	if((StrEqual(botname, "Chub")) || (StrEqual(botname, "keeyto")) || (StrEqual(botname, "Valiance")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "Kingfisher")))
+	{
+		CS_SetClientClanTag(client, "Paradox");
 	}
 }

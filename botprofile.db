@@ -2751,6 +2751,50 @@ ProP+Rifle+RifleT "psy"
 	VoicePitch = 110
 End
 
+//ORDER Players
+
+ProP+Rifle+RifleT "emagine"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "aliStair"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "hatz"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "INS"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "zeph"
+	VoicePitch = 110
+End
+
+//Paradox Players
+
+ProP+Rifle+RifleT "Chub"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "keeyto"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Valiance"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Noobster"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Kingfisher"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro+SniperProT "XD | ryu"
         VoicePitch = 95
 End
@@ -3716,7 +3760,7 @@ Fair+Rifle+RifleT Billy
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Bran
+Fair+Power Bran
         VoicePitch = 94
 End
 
@@ -3724,31 +3768,31 @@ Fair+Spray Kal
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Deano
+Fair+Spray Deano
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Dusty
+FairSNIPER+Sniper Dusty
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Eeteeweetee
+Fair+Punch+PunchT Eeteeweetee
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT har
+FairSNIPER+Sniper har
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Hen
+Fair+Punch+PunchT Hen
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT irving
+Fair+Punch+PunchT irving
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Jay
+FairSNIPER+AutoSniper+AutoSniperT Jay
         VoicePitch = 94
 End
 
@@ -3760,43 +3804,43 @@ Fair+Rifle+RifleT Jellybean
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Nik
+FairSNIPER+AutoSniper+AutoSniperT Nik
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Norm
+Fair+Spray Norm
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT "Orión 011117"
+Fair+Power "Orión 011117"
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Patrick
+Fair+Punch+PunchT Patrick
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Doche
+Fair+Power Doche
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Ronald
+Fair+Shotgun Ronald
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Shawnie
+Fair+Power Shawnie
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Timmy
+Fair+Power Timmy
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT Wilson
+FairSNIPER+AutoSniper+AutoSniperT Wilson
         VoicePitch = 94
 End
 
-Fair+Rifle+RifleT "Y@"
+FairSNIPER+AutoSniper+AutoSniperT "Y@"
         VoicePitch = 94
 End
 
@@ -3974,19 +4018,19 @@ Fair+Rifle+RifleT Bert
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT allen
+Fair+Power allen
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Alberto
+Fair+Punch+PunchT Alberto
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT bobby
+Fair+Spray bobby
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Cecilia
+Fair+Punch+PunchT Cecilia
         VoicePitch = 110
 End
 
@@ -3994,43 +4038,43 @@ Fair+Rifle+RifleT Klarenz
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Eliott
+FairSNIPER+Sniper Eliott
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Elmerpro
+Fair+Spray Elmerpro
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Ernie
+Fair+Shotgun Ernie
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Euge
+FairSNIPER+Sniper Euge
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Fergus
+Fair+Spray Fergus
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Ferris
+FairSNIPER+Sniper Ferris
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Franky
+FairSNIPER+AutoSniper+AutoSniperT Franky
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Frasier
+FairSNIPER+AutoSniper+AutoSniperT Frasier
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Fredo
+Fair+Spray Fredo
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Jorge
+Fair+Shotgun Jorge
         VoicePitch = 110
 End
 
@@ -4038,47 +4082,47 @@ Fair+Rifle+RifleT Graeme
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Harv
+FairSNIPER+Sniper Harv
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Erwin
+Fair+Power Erwin
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Laramy
+Fair+Spray Laramy
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT lester
+Fair+Power lester
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Niles
+Fair+Shotgun Niles
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Ollie
+Fair+Spray Ollie
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Opie
+Fair+Spray Opie
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Ry
+Fair+Punch+PunchT Ry
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Tobes
+Fair+AutoSniper+AutoSniperT Tobes
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Ulric
+Fair+Power Ulric
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Uli
+Fair+Power Uli
         VoicePitch = 110
 End
 
@@ -4086,26 +4130,26 @@ Fair+Rifle+RifleT Uriel
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Waldo
+Fair+Punch+PunchT Waldo
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Wallace
+Fair+Spray Wallace
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Walt
+Fair+Power Walt
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT Wes
+Fair+Power Wes
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT "Gift of god"
+Fair+Shotgun "Gift of god"
         VoicePitch = 110
 End
 
-Fair+Rifle+RifleT YOGI
+Fair+Power YOGI
         VoicePitch = 110
 End
