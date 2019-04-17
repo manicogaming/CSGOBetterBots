@@ -1207,7 +1207,7 @@ ProP+Rifle+RifleT "Snax"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "TOAO"
+ProP+Rifle+RifleT "Vegi"
 	VoicePitch = 110
 End
 
@@ -2211,7 +2211,7 @@ EliteAwp+SniperPro+SniperProT "lunAtic"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Vegi"
+ProP+Rifle+RifleT "MOLSI"
 	VoicePitch = 95
 End
 

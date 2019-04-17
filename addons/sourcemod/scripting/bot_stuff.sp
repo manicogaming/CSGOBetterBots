@@ -259,7 +259,7 @@ char g_BotName[][] = {
 	"snatchie",
 	"byali",
 	"Snax",
-	"TOAO",
+	"Vegi",
 	//Apeks Players
 	"aNdz",
 	"Marcelious",
@@ -533,7 +533,7 @@ char g_BotName[][] = {
 	//PACT Players
 	"darko",
 	"lunAtic",
-	"Vegi",
+	"MOLSI",
 	"Sidney",
 	"Sobol",
 	//x-kom Players
@@ -1336,7 +1336,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//VP Players
-	if((StrEqual(botname, "MICHU")) || (StrEqual(botname, "snatchie")) || (StrEqual(botname, "byali")) || (StrEqual(botname, "Snax")) || (StrEqual(botname, "TOAO")))
+	if((StrEqual(botname, "MICHU")) || (StrEqual(botname, "snatchie")) || (StrEqual(botname, "byali")) || (StrEqual(botname, "Snax")) || (StrEqual(botname, "Vegi")))
 	{
 		CS_SetClientClanTag(client, "VP");
 	}
@@ -1612,7 +1612,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//PACT Players
-	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "Vegi")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
+	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "MOLSI")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
 	{
 		CS_SetClientClanTag(client, "PACT");
 	}
