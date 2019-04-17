@@ -3085,6 +3085,86 @@ Expert+Rifle+RifleT "Ball-Zach"
         VoicePitch = 99
 End
 
+Expert+Rifle+RifleT Delta
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Canary
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Vi
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT "Alpha Return"
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Felix
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Husky
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Salmon
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Sheep
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Emanuel
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Maple
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Sonar
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Bansari
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Heron
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Beta
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Nautilus
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Dime
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Albatross
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Anchor
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Eggy
+        VoicePitch = 99
+End
+
+Expert+Rifle+RifleT Lils
+        VoicePitch = 99
+End
+
 //----------------------------------------
 
 VeryHard+Power deathviper168
@@ -3132,6 +3212,22 @@ VeryHard+Rifle+RifleT sethescope
 End
 
 VeryHard+Rifle+RifleT Vinny
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Dee-Dee
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Wagon
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Vulture
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Banjo
         VoicePitch = 86
 End
 
@@ -3267,6 +3363,62 @@ Hard+Spray zany
 End
 
 Hard+Rifle+RifleT Zim
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Lamborghini
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Termidartor
+        VoicePitch = 110
+End
+
+Hard+Spray Pelican
+        VoicePitch = 110
+End
+
+Hard+Shotgun Zigzag
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT "frog kid"
+        VoicePitch = 110
+End
+
+Hard+Punch+PunchT Whale
+        VoicePitch = 110
+End
+
+Hard+Punch+PunchT Pinki
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Iguana
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Woodpecker
+        VoicePitch = 110
+End
+
+Hard+Punch+PunchT Pyramid
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Seal
+        VoicePitch = 110
+End
+
+Hard+Sniper "Ocean potato"
+        VoicePitch = 110
+End
+
+Hard+Spray Sparky
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Bulldog
         VoicePitch = 110
 End
 
@@ -3441,6 +3593,86 @@ Tough+Rifle+RifleT XanderZone
 End
 
 Tough+Rifle+RifleT Zay
+        VoicePitch = 95
+End
+
+ToughSNIPER+Sniper Eclipse
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Cyclone
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT ROBIN
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Hatchet
+        VoicePitch = 95
+End
+
+Tough+Shotgun "vrx nickname"
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Zoe
+        VoicePitch = 95
+End
+
+Tough+Shotgun Donkey
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Reares
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Macaw
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Torus
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT SNAKE
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Goose
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Blackbird
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT ROSE
+        VoicePitch = 95
+End
+
+ToughSNIPER+AutoSniper+AutoSniperT Hurricane
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Dalmatian
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Wade
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Rattle
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Octi
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Belinda
         VoicePitch = 95
 End
 
@@ -3631,6 +3863,10 @@ Normal+Rifle+RifleT tommy
 End
 
 Normal+Rifle+RifleT Yahn
+        VoicePitch = 92
+End
+
+Normal+Spray Andy
         VoicePitch = 92
 End
 
