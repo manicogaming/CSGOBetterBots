@@ -110,7 +110,7 @@ char g_BotName[][] = {
 	"woxic",
 	"frozen",
 	"ropz",
-	//TYLOO™ Players
+	//TYLOO Players
 	"Summer",
 	"Attacker",
 	"BnTneT",
@@ -212,7 +212,7 @@ char g_BotName[][] = {
 	"stanislaw",
 	"Rickeh",
 	"SicK",
-	//ViCi^^ Players
+	//ViCi Players
 	"zhokiNg",
 	"kaze",
 	"aumaN",
@@ -1335,10 +1335,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "mouz");
 	}
 	
-	//TYLOO™ Players
+	//TYLOO Players
 	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "Attacker")) || (StrEqual(botname, "BnTneT")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "xccurate")))
 	{
-		CS_SetClientClanTag(client, "TYLOO™");
+		CS_SetClientClanTag(client, "TYLOO");
 	}
 	
 	//Gambit Players
@@ -1437,10 +1437,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "coL");
 	}
 	
-	//ViCi^^ Players
+	//ViCi Players
 	if((StrEqual(botname, "zhokiNg")) || (StrEqual(botname, "kaze")) || (StrEqual(botname, "aumaN")) || (StrEqual(botname, "Freeman")) || (StrEqual(botname, "advent")))
 	{
-		CS_SetClientClanTag(client, "ViCi^^");
+		CS_SetClientClanTag(client, "ViCi");
 	}
 	
 	//forZe Players
