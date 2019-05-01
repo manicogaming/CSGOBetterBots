@@ -1639,7 +1639,7 @@ EliteAwp+SniperPro+SniperProT "Andyy"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "syken"
+ProP+Rifle+RifleT "PREET"
 	VoicePitch = 95
 End
 
@@ -1647,7 +1647,7 @@ ProP+Rifle+RifleT "JDC"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "dav1dK"
+ProP+Rifle+RifleT "chrissK"
 	VoicePitch = 110
 End
 
@@ -2123,7 +2123,7 @@ EliteAwp+SniperPro+SniperProT "Crityourface"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Falon"
+ProP+Rifle+RifleT "MdN"
 	VoicePitch = 95
 End
 
@@ -2131,29 +2131,7 @@ ProP+Rifle+RifleT "leman"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Luz"
-	VoicePitch = 110
-End
-
-//devils Players
-
-ProP+Rifle+RifleT "mouz"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "rallen"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "TaZ"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "MINISE"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "dycha"
+ProP+Rifle+RifleT "pitrek"
 	VoicePitch = 110
 End
 
@@ -2373,7 +2351,7 @@ ProP+Rifle+RifleT "hazed"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Laski"
+ProP+Rifle+RifleT "LeX"
 	VoicePitch = 110
 End
 
@@ -2643,11 +2621,11 @@ End
 
 //Avant Players
 
-ProP+Rifle+RifleT "pan1k"
+ProP+Rifle+RifleT "soju_j"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "ju1ces"
+EliteAwp+SniperPro+SniperProT "RaZ"
 	VoicePitch = 106
 End
 
@@ -2819,23 +2797,23 @@ End
 
 //SYF Players
 
-ProP+Rifle+RifleT "PeetyG"
+ProP+Rifle+RifleT "ino"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "exe"
+EliteAwp+SniperPro+SniperProT "cookie"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "Mega2F"
+ProP+Rifle+RifleT "ekul"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "CyanideJR"
+ProP+Rifle+RifleT "bedonka"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "Papadoxie"
+ProP+Rifle+RifleT "urbz"
 	VoicePitch = 110
 End
 
@@ -2863,11 +2841,11 @@ End
 
 //5Power Players
 
-ProP+Rifle+RifleT "dobu"
+ProP+Rifle+RifleT "bottle"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "kabal"
+EliteAwp+SniperPro+SniperProT "Savage"
 	VoicePitch = 106
 End
 
@@ -2924,28 +2902,6 @@ ProP+Rifle+RifleT "TANK"
 End
 
 ProP+Rifle+RifleT "Franke19"
-	VoicePitch = 110
-End
-
-//Panda Players
-
-ProP+Rifle+RifleT "tb"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "Savage"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "HZ"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "bottle"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "span"
 	VoicePitch = 110
 End
 
@@ -3320,6 +3276,28 @@ ProP+Rifle+RifleT "adM"
 End
 
 ProP+Rifle+RifleT "bLazE"
+	VoicePitch = 110
+End
+
+//Furious Players
+
+ProP+Rifle+RifleT "laser"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "iKrystal"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "PREDI"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "TISAN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "GATICA"
 	VoicePitch = 110
 End
 

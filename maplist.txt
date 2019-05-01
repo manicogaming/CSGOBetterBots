@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Tue Apr 23 02:09:42 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Tue Apr 30 11:49:35 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -169,16 +169,15 @@ cs_siege_2010
 cs_siege_sp
 cs_twilight
 cs_winternights
+cs_workout
 cs_yemen_source
 css_galleria
 dancingdust
 de_abbaye_premium
-de_abbey
 de_alexandra2
 de_alivemetal
 de_arabic
 de_bank
-de_biome
 de_boohouse
 de_cache
 de_cache_ve
@@ -227,6 +226,7 @@ de_rats_ol_bbq_b2
 de_rats_ol_rev3_b1
 de_rats_ol_shack_r1
 de_rats_workshop
+de_ruby
 de_safehouse
 de_sanguinis
 de_season_go
