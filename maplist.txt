@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Tue Apr 30 11:49:35 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Thu May 02 20:02:53 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -240,6 +240,7 @@ de_vertigo
 de_westwood_r2
 de_zoo
 dz_blacksite
+dz_sirocco
 fy_deagle5
 fy_iceworld_beta
 fy_iceworld_go

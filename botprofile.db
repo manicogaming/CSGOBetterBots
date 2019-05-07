@@ -619,7 +619,7 @@ End
 
 //North Players
 
-ProP+Rifle+RifleT "cadiaN"
+ProP+Rifle+RifleT "JUGi"
 	VoicePitch = 91
 End
 
@@ -1107,7 +1107,7 @@ ProP+Rifle+RifleT "k0nfig"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "JUGi"
+EliteAwp+SniperPro+SniperProT "MSL"
 	VoicePitch = 106
 End
 
@@ -1199,7 +1199,7 @@ EliteAwp+SniperPro+SniperProT "snatchie"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "byali"
+ProP+Rifle+RifleT "OKOLICIOUZ"
 	VoicePitch = 95
 End
 
@@ -1625,7 +1625,7 @@ ProP+Rifle+RifleT "Seeeya"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "OKOLICIOUZ"
+ProP+Rifle+RifleT "devraNN"
 	VoicePitch = 110
 End
 
@@ -1785,7 +1785,7 @@ End
 
 //NoChance Players
 
-ProP+Rifle+RifleT "Hobbit"
+ProP+Rifle+RifleT "Thomas"
 	VoicePitch = 91
 End
 
@@ -3213,28 +3213,6 @@ ProP+Rifle+RifleT "smoof"
 	VoicePitch = 110
 End
 
-//Aperture Players
-
-ProP+Rifle+RifleT "Kaspar0v"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "SchizzY"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "Backstabber"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "FreakY"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "zdrAg"
-	VoicePitch = 110
-End
-
 //ATK Players
 
 ProP+Rifle+RifleT "Sonic"
@@ -3298,6 +3276,50 @@ ProP+Rifle+RifleT "TISAN"
 End
 
 ProP+Rifle+RifleT "GATICA"
+	VoicePitch = 110
+End
+
+//MongolZ Players
+
+ProP+Rifle+RifleT "Machinegun"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "neuz"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "maaRaa"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "temk4wow"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Annihilation"
+	VoicePitch = 110
+End
+
+//BLUEJAYS Players
+
+ProP+Rifle+RifleT "dEE"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "sarenii"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Maden"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "DiMKE"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "HOLMES"
 	VoicePitch = 110
 End
 
