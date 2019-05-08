@@ -446,12 +446,6 @@ char g_BotName[][] = {
 	"HUNDEN",
 	"Sjuush",
 	"Lukki",
-	//Vexed Players
-	"quix",
-	"vanity",
-	"pyth",
-	"hns",
-	"ozzy",
 	//Baskonia Players
 	"tatin",
 	"PabLo",
@@ -1675,12 +1669,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "b0RUP")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Lukki")))
 	{
 		CS_SetClientClanTag(client, "SkitLite");
-	}
-	
-	//Vexed Players
-	if((StrEqual(botname, "quix")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "pyth")) || (StrEqual(botname, "hns")) || (StrEqual(botname, "ozzy")))
-	{
-		CS_SetClientClanTag(client, "Vexed");
 	}
 	
 	//Baskonia Players

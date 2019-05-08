@@ -1893,28 +1893,6 @@ ProP+Rifle+RifleT "Lukki"
 	VoicePitch = 110
 End
 
-//Vexed Players
-
-ProP+Rifle+RifleT "quix"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "vanity"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "pyth"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "hns"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "ozzy"
-	VoicePitch = 110
-End
-
 //Baskonia Players
 
 ProP+Rifle+RifleT "tatin"
