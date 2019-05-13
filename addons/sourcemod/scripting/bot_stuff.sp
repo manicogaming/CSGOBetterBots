@@ -67,7 +67,7 @@ char g_BotName[][] = {
 	"GuardiaN",
 	"NiKo",
 	"rain",
-	"AdreN",
+	"NEO",
 	//Astralis Players
 	"Xyp9x",
 	"device",
@@ -244,7 +244,7 @@ char g_BotName[][] = {
 	"mirbit",
 	//Heroic Players
 	"es3tag",
-	"mertz",
+	"NaToSaphiX",
 	"friberg",
 	"blameF",
 	"stavn",
@@ -521,7 +521,7 @@ char g_BotName[][] = {
 	//PACT Players
 	"darko",
 	"lunAtic",
-	"MOLSI",
+	"morelz",
 	"Sidney",
 	"Sobol",
 	//x-kom Players
@@ -1288,7 +1288,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//FaZe Players
-	if((StrEqual(botname, "olofmeister")) || (StrEqual(botname, "GuardiaN")) || (StrEqual(botname, "NiKo")) || (StrEqual(botname, "rain")) || (StrEqual(botname, "AdreN")))
+	if((StrEqual(botname, "olofmeister")) || (StrEqual(botname, "GuardiaN")) || (StrEqual(botname, "NiKo")) || (StrEqual(botname, "rain")) || (StrEqual(botname, "NEO")))
 	{
 		CS_SetClientClanTag(client, "FaZe");
 	}
@@ -1468,7 +1468,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Heroic Players
-	if((StrEqual(botname, "es3tag")) || (StrEqual(botname, "mertz")) || (StrEqual(botname, "friberg")) || (StrEqual(botname, "blameF")) || (StrEqual(botname, "stavn")))
+	if((StrEqual(botname, "es3tag")) || (StrEqual(botname, "NaToSaphiX")) || (StrEqual(botname, "friberg")) || (StrEqual(botname, "blameF")) || (StrEqual(botname, "stavn")))
 	{
 		CS_SetClientClanTag(client, "Heroic");
 	}
@@ -1744,7 +1744,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//PACT Players
-	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "MOLSI")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
+	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "morelz")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
 	{
 		CS_SetClientClanTag(client, "PACT");
 	}

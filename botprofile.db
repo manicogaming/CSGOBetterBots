@@ -503,7 +503,7 @@ ProP+Rifle+RifleT "rain"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "AdreN"
+ProP+Rifle+RifleT "NEO"
 	VoicePitch = 90
 End
 
@@ -1151,7 +1151,7 @@ ProP+Rifle+RifleT "es3tag"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "mertz"
+EliteAwp+SniperPro+SniperProT "NaToSaphiX"
 	VoicePitch = 106
 End
 
@@ -2167,7 +2167,7 @@ EliteAwp+SniperPro+SniperProT "lunAtic"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "MOLSI"
+ProP+Rifle+RifleT "morelz"
 	VoicePitch = 95
 End
 
