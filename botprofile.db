@@ -2619,28 +2619,6 @@ ProP+Rifle+RifleT "mizu"
 	VoicePitch = 110
 End
 
-//Breakaway Players
-
-ProP+Rifle+RifleT "Noisia"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "YDNA"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "Llamas"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "HaZR"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "J1rah"
-	VoicePitch = 110
-End
-
 //Chiefs Players
 
 ProP+Rifle+RifleT "tucks"

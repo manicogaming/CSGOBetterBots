@@ -644,12 +644,6 @@ char g_BotName[][] = {
 	"badge",
 	"eLUSIVE",
 	"mizu",
-	//Breakaway Players
-	"Noisia",
-	"YDNA",
-	"Llamas",
-	"HaZR",
-	"J1rah",
 	//Chiefs Players
 	"tucks",
 	"BL1TZ",
@@ -1867,12 +1861,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "soju_j")) || (StrEqual(botname, "RaZ")) || (StrEqual(botname, "badge")) || (StrEqual(botname, "eLUSIVE")) || (StrEqual(botname, "mizu")))
 	{
 		CS_SetClientClanTag(client, "Avant");
-	}
-	
-	//Breakaway Players
-	if((StrEqual(botname, "Noisia")) || (StrEqual(botname, "YDNA")) || (StrEqual(botname, "Llamas")) || (StrEqual(botname, "HaZR")) || (StrEqual(botname, "J1rah")))
-	{
-		CS_SetClientClanTag(client, "Breakaway");
 	}
 	
 	//Chiefs Players
