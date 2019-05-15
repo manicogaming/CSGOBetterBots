@@ -887,7 +887,7 @@ ProP+Rifle+RifleT "tiziaN"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "nex"
+EliteAwp+SniperPro+SniperProT "denis"
 	VoicePitch = 106
 End
 
@@ -1125,7 +1125,7 @@ End
 
 //Sprout Players
 
-ProP+Rifle+RifleT "denis"
+ProP+Rifle+RifleT "nex"
 	VoicePitch = 91
 End
 
@@ -3276,6 +3276,28 @@ ProP+Rifle+RifleT "DiMKE"
 End
 
 ProP+Rifle+RifleT "HOLMES"
+	VoicePitch = 110
+End
+
+//MK Players
+
+ProP+Rifle+RifleT "spyleadeR"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "nk4y"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "niki1"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "SAIKY"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "Oxygen"
 	VoicePitch = 110
 End
 

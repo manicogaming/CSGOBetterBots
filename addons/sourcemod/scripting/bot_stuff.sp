@@ -172,7 +172,7 @@ char g_BotName[][] = {
 	"ALEX",
 	//BIG Players
 	"tiziaN",
-	"nex",
+	"denis",
 	"XANTARES",
 	"tabseN",
 	"gob b",
@@ -237,7 +237,7 @@ char g_BotName[][] = {
 	"Snappi",
 	"refrezh",
 	//Sprout Players
-	"denis",
+	"nex",
 	"syrsoN",
 	"Spiidi",
 	"faveN",
@@ -829,7 +829,13 @@ char g_BotName[][] = {
 	"sarenii",
 	"Maden",
 	"DiMKE",
-	"HOLMES"
+	"HOLMES",
+	//MK Players
+	"spyleadeR",
+	"nk4y",
+	"niki1",
+	"SAIKY",
+	"Oxygen"
 };
  
 public Plugin myinfo =
@@ -1390,7 +1396,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BIG Players
-	if((StrEqual(botname, "tiziaN")) || (StrEqual(botname, "nex")) || (StrEqual(botname, "XANTARES")) || (StrEqual(botname, "tabseN")) || (StrEqual(botname, "gob b")))
+	if((StrEqual(botname, "tiziaN")) || (StrEqual(botname, "denis")) || (StrEqual(botname, "XANTARES")) || (StrEqual(botname, "tabseN")) || (StrEqual(botname, "gob b")))
 	{
 		CS_SetClientClanTag(client, "BIG");
 	}
@@ -1456,7 +1462,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sprout Players
-	if((StrEqual(botname, "denis")) || (StrEqual(botname, "syrsoN")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "mirbit")))
+	if((StrEqual(botname, "nex")) || (StrEqual(botname, "syrsoN")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "mirbit")))
 	{
 		CS_SetClientClanTag(client, "Sprout");
 	}
@@ -2041,5 +2047,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "dEE")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "Maden")) || (StrEqual(botname, "DiMKE")) || (StrEqual(botname, "HOLMES")))
 	{
 		CS_SetClientClanTag(client, "BLUEJAYS");
+	}
+	
+	//MK Players
+	if((StrEqual(botname, "spyleadeR")) || (StrEqual(botname, "nk4y")) || (StrEqual(botname, "niki1")) || (StrEqual(botname, "SAIKY")) || (StrEqual(botname, "Oxygen")))
+	{
+		CS_SetClientClanTag(client, "MK");
 	}
 }
