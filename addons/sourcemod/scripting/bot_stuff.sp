@@ -525,11 +525,11 @@ char g_BotName[][] = {
 	"Sidney",
 	"Sobol",
 	//x-kom Players
-	"Goofy",
+	"innocent",
 	"STOMP",
 	"oskarish",
 	"mono",
-	"jedqr",
+	"reatz",
 	//DreamEaters Players
 	"kinqie",
 	"speed4k",
@@ -835,7 +835,13 @@ char g_BotName[][] = {
 	"nk4y",
 	"niki1",
 	"SAIKY",
-	"Oxygen"
+	"Oxygen",
+	//EXECUTIONERS Players
+	"ZesBeeW",
+	"FamouZ",
+	"maestro",
+	"Snyder",
+	"bali"
 };
  
 public Plugin myinfo =
@@ -1750,7 +1756,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//x-kom Players
-	if((StrEqual(botname, "Goofy")) || (StrEqual(botname, "STOMP")) || (StrEqual(botname, "oskarish")) || (StrEqual(botname, "mono")) || (StrEqual(botname, "jedqr")))
+	if((StrEqual(botname, "innocent")) || (StrEqual(botname, "STOMP")) || (StrEqual(botname, "oskarish")) || (StrEqual(botname, "mono")) || (StrEqual(botname, "reatz")))
 	{
 		CS_SetClientClanTag(client, "x-kom");
 	}
@@ -2053,5 +2059,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "spyleadeR")) || (StrEqual(botname, "nk4y")) || (StrEqual(botname, "niki1")) || (StrEqual(botname, "SAIKY")) || (StrEqual(botname, "Oxygen")))
 	{
 		CS_SetClientClanTag(client, "MK");
+	}
+	
+	//EXECUTIONERS Players
+	if((StrEqual(botname, "ZesBeeW")) || (StrEqual(botname, "FamouZ")) || (StrEqual(botname, "maestro")) || (StrEqual(botname, "Snyder")) || (StrEqual(botname, "bali")))
+	{
+		CS_SetClientClanTag(client, "EXECUTIONERS");
 	}
 }

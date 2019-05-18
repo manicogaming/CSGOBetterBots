@@ -2181,7 +2181,7 @@ End
 
 //x-kom Players
 
-ProP+Rifle+RifleT "Goofy"
+ProP+Rifle+RifleT "innocent"
 	VoicePitch = 91
 End
 
@@ -2197,7 +2197,7 @@ ProP+Rifle+RifleT "mono"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "jedqr"
+ProP+Rifle+RifleT "reatz"
 	VoicePitch = 110
 End
 
@@ -3298,6 +3298,28 @@ ProP+Rifle+RifleT "SAIKY"
 End
 
 ProP+Rifle+RifleT "Oxygen"
+	VoicePitch = 110
+End
+
+//EXECUTIONERS Players
+
+ProP+Rifle+RifleT "ZesBeeW"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "FamouZ"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "maestro"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "Snyder"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "bali"
 	VoicePitch = 110
 End
 
