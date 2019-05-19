@@ -539,7 +539,7 @@ char g_BotName[][] = {
 	//FCDB Players
 	"razOk",
 	"matusik",
-	"pnq",
+	"Ao-",
 	"Cludi",
 	"vrs",
 	//Nemiga Players
@@ -1768,7 +1768,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//FCDB Players
-	if((StrEqual(botname, "razOk")) || (StrEqual(botname, "matusik")) || (StrEqual(botname, "pnq")) || (StrEqual(botname, "Cludi")) || (StrEqual(botname, "vrs")))
+	if((StrEqual(botname, "razOk")) || (StrEqual(botname, "matusik")) || (StrEqual(botname, "Ao-")) || (StrEqual(botname, "Cludi")) || (StrEqual(botname, "vrs")))
 	{
 		CS_SetClientClanTag(client, "FCDB");
 	}
