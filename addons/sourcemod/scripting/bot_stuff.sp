@@ -237,7 +237,7 @@ char g_BotName[][] = {
 	"Snappi",
 	"refrezh",
 	//Sprout Players
-	"nex",
+	"k1to",
 	"syrsoN",
 	"Spiidi",
 	"faveN",
@@ -335,7 +335,7 @@ char g_BotName[][] = {
 	//Epsilon Players
 	"Surreal",
 	"CRUC1AL",
-	"k1to",
+	"DroW",
 	"SPELLAN",
 	"broky",
 	//Maxi Players
@@ -1468,7 +1468,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sprout Players
-	if((StrEqual(botname, "nex")) || (StrEqual(botname, "syrsoN")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "mirbit")))
+	if((StrEqual(botname, "k1to")) || (StrEqual(botname, "syrsoN")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "mirbit")))
 	{
 		CS_SetClientClanTag(client, "Sprout");
 	}
@@ -1564,7 +1564,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Epsilon Players
-	if((StrEqual(botname, "Surreal")) || (StrEqual(botname, "CRUC1AL")) || (StrEqual(botname, "k1to")) || (StrEqual(botname, "SPELLAN")) || (StrEqual(botname, "broky")))
+	if((StrEqual(botname, "Surreal")) || (StrEqual(botname, "CRUC1AL")) || (StrEqual(botname, "DroW")) || (StrEqual(botname, "SPELLAN")) || (StrEqual(botname, "broky")))
 	{
 		CS_SetClientClanTag(client, "Epsilon");
 	}

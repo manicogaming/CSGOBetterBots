@@ -1125,7 +1125,7 @@ End
 
 //Sprout Players
 
-ProP+Rifle+RifleT "nex"
+ProP+Rifle+RifleT "k1to"
 	VoicePitch = 91
 End
 
@@ -1485,7 +1485,7 @@ EliteAwp+SniperPro+SniperProT "CRUC1AL"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RifleT "k1to"
+ProP+Rifle+RifleT "DroW"
 	VoicePitch = 95
 End
 
