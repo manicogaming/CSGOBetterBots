@@ -3435,6 +3435,46 @@ ElitePassive+Rifle+RifleT "BLuE RoMeN DeLUXe"
         VoicePitch = 110
 End
 
+Elite+Rifle+RifleT Maverick
+        VoicePitch = 110
+End
+
+Elite+Sniper "Eagle ron"
+        VoicePitch = 110
+End
+
+Elite+Spray Sandman
+        VoicePitch = 110
+End
+
+Elite+Rifle+RifleT Barney
+        VoicePitch = 110
+End
+
+Elite+Punch+PunchT Duke
+        VoicePitch = 110
+End
+
+Elite+Power Bear
+        VoicePitch = 110
+End
+
+Elite+Spray jackal
+        VoicePitch = 110
+End
+
+Elite+Sniper Hawk
+        VoicePitch = 110
+End
+
+Elite+Rifle+RifleT SPIDER
+        VoicePitch = 110
+End
+
+Elite+Rifle+RifleT SNAKE
+        VoicePitch = 110
+End
+
 //----------------------------------------
 
 ExpertPassive+Rifle+RifleT [RAM]Tuna_Taco_2
@@ -3693,6 +3733,50 @@ Expert+Rifle+RifleT Lils
         VoicePitch = 99
 End
 
+Expert+Sniper ALEXITO
+        VoicePitch = 110
+End
+
+Expert+Power brent
+        VoicePitch = 110
+End
+
+Expert+Punch Jakey
+        VoicePitch = 110
+End
+
+Expert+Rifle+RifleT Tex
+        VoicePitch = 110
+End
+
+Expert+Power Louloute
+        VoicePitch = 110
+End
+
+Expert+Rifle+RifleT Ace
+        VoicePitch = 110
+End
+
+Expert+Spray Rooster
+        VoicePitch = 110
+End
+
+Expert+Spray Hyena
+        VoicePitch = 110
+End
+
+Expert+Power Wolfhound
+        VoicePitch = 110
+End
+
+Expert+Rifle+RifleT "Black panther"
+        VoicePitch = 110
+End
+
+Expert+Sniper Omen
+        VoicePitch = 110
+End
+
 //----------------------------------------
 
 VeryHard+Power deathviper168
@@ -3756,6 +3840,26 @@ VeryHard+Rifle+RifleT Vulture
 End
 
 VeryHard+Rifle+RifleT Banjo
+        VoicePitch = 86
+End
+
+VeryHard+Sniper Nails
+        VoicePitch = 86
+End
+
+VeryHard+Power Hammer
+        VoicePitch = 86
+End
+
+VeryHard+Power Crank
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Cutter
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT Fanatic
         VoicePitch = 86
 End
 
@@ -3947,6 +4051,46 @@ Hard+Spray Sparky
 End
 
 Hard+Rifle+RifleT Bulldog
+        VoicePitch = 110
+End
+
+Hard+Power coleslaw
+        VoicePitch = 110
+End
+
+Hard+Spray Igor
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT "Stream two of us"
+        VoicePitch = 110
+End
+
+Hard+Shotgun Rayden
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Sammy
+        VoicePitch = 110
+End
+
+Hard+Spray Trav
+        VoicePitch = 110
+End
+
+Hard+Sniper "Noah was here"
+        VoicePitch = 110
+End
+
+Hard+Spray Bandit
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Raider
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Blade
         VoicePitch = 110
 End
 
@@ -4204,6 +4348,38 @@ Tough+Rifle+RifleT Belinda
         VoicePitch = 95
 End
 
+ToughSNIPER+Sniper "Benny boy"
+        VoicePitch = 95
+End
+
+Tough+Power Eduardo
+        VoicePitch = 95
+End
+
+Tough+PunchT+Punch Kent
+        VoicePitch = 95
+End
+
+Tough+PunchT+Punch Ozzy
+        VoicePitch = 95
+End
+
+Tough+Spray Philly
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Rabal
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Fiend
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT Vandal
+        VoicePitch = 95
+End
+
 //----------------------------------------
 
 Normal+Rifle+RifleT "Crouching Camper Hidden Noob"    
@@ -4396,6 +4572,34 @@ End
 
 Normal+Spray Andy
         VoicePitch = 92
+End
+
+Normal+Spray Senpai
+        VoicePitch = 92
+End
+
+NormalSNIPER+AutoSniperT+AutoSniper Pete
+        VoicePitch = 92
+End
+
+NormalSNIPER+Sniper Roddy
+        VoicePitch = 92
+End
+
+NormalSNIPER+Sniper Kyrk
+        VoicePitch = 110
+End
+
+Normal+Rifle+RifleT freak
+        VoicePitch = 110
+End
+
+Normal+Spray MEC
+        VoicePitch = 110
+End
+
+NormalSNIPER+Sniper Psycho
+        VoicePitch = 110
 End
 
 //----------------------------------------
@@ -4915,5 +5119,73 @@ Fair+Shotgun "Gift of god"
 End
 
 Fair+Power YOGI
+        VoicePitch = 110
+End
+
+Fair+Power Coop
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT Floyd
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT Handsome
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT "Steezy mo"
+        VoicePitch = 110
+End
+
+Fair+Rifle+RifleT Stan
+        VoicePitch = 110
+End
+
+FairSNIPER+Sniper Vern
+        VoicePitch = 110
+End
+
+Fair+Shotgun Quince
+        VoicePitch = 110
+End
+
+Fair+Power Gus
+        VoicePitch = 110
+End
+
+Fair+Rifle+RifleT Weasel
+        VoicePitch = 110
+End
+
+Fair+Punch+PunchT "Certified lunatic"
+        VoicePitch = 110
+End
+
+Fair+Punch+PunchT Crackpot
+        VoicePitch = 110
+End
+
+Fair+Rifle+RifleT Outcast
+        VoicePitch = 110
+End
+
+FairSNIPER+Sniper MADMAN
+        VoicePitch = 110
+End
+
+Fair+Spray Rat
+        VoicePitch = 110
+End
+
+FairSNIPER+Sniper Screech
+        VoicePitch = 110
+End
+
+Fair+Punch+PunchT Worm
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT Splinter
         VoicePitch = 110
 End
