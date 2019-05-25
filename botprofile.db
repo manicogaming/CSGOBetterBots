@@ -3475,6 +3475,10 @@ Elite+Rifle+RifleT SNAKE
         VoicePitch = 110
 End
 
+ElitePassive+Rifle+RifleT TenaciousOffesten
+        VoicePitch = 110
+End
+
 //----------------------------------------
 
 ExpertPassive+Rifle+RifleT [RAM]Tuna_Taco_2
@@ -3773,7 +3777,31 @@ Expert+Rifle+RifleT "Black panther"
         VoicePitch = 110
 End
 
-Expert+Sniper Omen
+ExpertAwp+Sniper Omen
+        VoicePitch = 110
+End
+
+ExpertAwp+Sniper BalancedObach
+        VoicePitch = 110
+End
+
+Expert+Rifle+RifleT VereatAerocar
+        VoicePitch = 110
+End
+
+ExpertPassive+Shotgun Nomeationon
+        VoicePitch = 110
+End
+
+Expert+Power Nomeationon
+        VoicePitch = 110
+End
+
+ExpertPassive+Rifle+RifleT ChivalrousYessivan
+        VoicePitch = 110
+End
+
+Expert+Power Whedielys
         VoicePitch = 110
 End
 
@@ -3860,6 +3888,62 @@ VeryHard+Rifle+RifleT Cutter
 End
 
 VeryHard+Rifle+RifleT Fanatic
+        VoicePitch = 86
+End
+
+VeryHard+Power ObjectiveObe
+        VoicePitch = 86
+End
+
+VeryHard+Punch+PunchT Dondistro
+        VoicePitch = 86
+End
+
+VeryHard+Spray ModernInsideu
+        VoicePitch = 86
+End
+
+VeryHard+Spray PasersiHyper
+        VoicePitch = 86
+End
+
+VeryHard+Spray Portathdi
+        VoicePitch = 86
+End
+
+VeryHard+AutoSniper+AutoSniperT Tonfewhib
+        VoicePitch = 86
+End
+
+VeryHard+AutoSniper+AutoSniperT SassyLassyLeass
+        VoicePitch = 86
+End
+
+VeryHard+AutoSniper+AutoSniperT CleverEven
+        VoicePitch = 86
+End
+
+VeryHard+Sniper Hostreent
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT PreariBeretta
+        VoicePitch = 86
+End
+
+VeryHard+Rifle+RifleT UnabotCabrona
+        VoicePitch = 86
+End
+
+VeryHard+Punch+PunchT TheLithium
+        VoicePitch = 86
+End
+
+VeryHard+Spray OfficeboyOftesit
+        VoicePitch = 86
+End
+
+VeryHard+Shotgun Waysiverou
         VoicePitch = 86
 End
 
@@ -4091,6 +4175,10 @@ Hard+Rifle+RifleT Raider
 End
 
 Hard+Rifle+RifleT Blade
+        VoicePitch = 110
+End
+
+Hard+Rifle+RifleT Kitushinc
         VoicePitch = 110
 End
 
@@ -4377,6 +4465,18 @@ Tough+Rifle+RifleT Fiend
 End
 
 Tough+Rifle+RifleT Vandal
+        VoicePitch = 95
+End
+
+Tough+Spray ExageExorcist
+        VoicePitch = 95
+End
+
+Tough+Rifle+RifleT OnstrLastLegs
+        VoicePitch = 95
+End
+
+ToughSNIPER+Sniper MateyMatzatm
         VoicePitch = 95
 End
 
@@ -5187,5 +5287,21 @@ Fair+Punch+PunchT Worm
 End
 
 FairSNIPER+AutoSniper+AutoSniperT Splinter
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT ToludiLumpy
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT MookyMona
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT AnstogFiredog
+        VoicePitch = 110
+End
+
+FairSNIPER+AutoSniper+AutoSniperT Nueralson
         VoicePitch = 110
 End
