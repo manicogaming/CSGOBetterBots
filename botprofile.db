@@ -991,7 +991,7 @@ ProP+Rifle+RifleT "ableJ"
 	VoicePitch = 110
 End
 
-//Valience Players
+//Valiance Players
 
 ProP+Rifle+RifleT "LETN1"
 	VoicePitch = 91
@@ -1563,7 +1563,7 @@ ProP+Rifle+RifleT "hampus"
 	VoicePitch = 110
 End
 
-//Berzerk Players
+//epikk Players
 
 ProP+Rifle+RifleT "SolEk"
 	VoicePitch = 91
@@ -2044,28 +2044,6 @@ ProP+Rifle+RifleT "stadodo"
 End
 
 ProP+Rifle+RifleT "pr"
-	VoicePitch = 110
-End
-
-//Queso Players
-
-ProP+Rifle+RifleT "Emenk"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "Shhhack"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "arki"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "sc4rx"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "sausol"
 	VoicePitch = 110
 End
 
@@ -3034,28 +3012,6 @@ ProP+Rifle+RifleT "havoK"
 End
 
 ProP+Rifle+RifleT "kAzoo"
-	VoicePitch = 110
-End
-
-//Orange Players
-
-ProP+Rifle+RifleT "box"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "Squ1rrel"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "Wrath"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "EmiRR"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "AMR"
 	VoicePitch = 110
 End
 
