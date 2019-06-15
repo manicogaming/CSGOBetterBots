@@ -663,7 +663,7 @@ End
 
 //TyLoo Players
 
-ProP+Rifle+RifleT "Freeman"
+ProP+Rifle+RifleT "Summer"
 	VoicePitch = 91
 End
 
@@ -679,7 +679,7 @@ ProP+Rifle+RifleT "somebody"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "xccurate"
+ProP+Rifle+RifleT "Attacker"
 	VoicePitch = 90
 End
 
@@ -922,28 +922,6 @@ ProP+Rifle+RifleT "blocker"
 End
 
 ProP+Rifle+RifleT "poizon"
-	VoicePitch = 110
-End
-
-//Ghost Players
-
-ProP+Rifle+RifleT "Wardell"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "koosta"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "steel"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "neptune"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "freakazoid"
 	VoicePitch = 110
 End
 
@@ -1195,7 +1173,7 @@ ProP+Rifle+RifleT "aNdz"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro+SniperProT "Marcelious"
+EliteAwp+SniperPro+SniperProT "truth"
 	VoicePitch = 106
 End
 
@@ -2025,28 +2003,6 @@ ProP+Rifle+RifleT "Vares"
 	VoicePitch = 110
 End
 
-//Codewise Players
-
-ProP+Rifle+RifleT "azizz"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "Crityourface"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "MdN"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "leman"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "pitrek"
-	VoicePitch = 110
-End
-
 //eSuba Players
 
 ProP+Rifle+RifleT "HenkkyG"
@@ -2308,28 +2264,6 @@ ProP+Rifle+RifleT "akz"
 End
 
 ProP+Rifle+RifleT "elemeNt"
-	VoicePitch = 110
-End
-
-//Denial Players
-
-ProP+Rifle+RifleT "sickLy"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "VAATI"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "sam_A"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "Link"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "Blue"
 	VoicePitch = 110
 End
 
@@ -3210,6 +3144,50 @@ ProP+Rifle+RifleT "MoeycQ"
 End
 
 ProP+Rifle+RifleT "pan1K"
+	VoicePitch = 110
+End
+
+//Aristocracy Players
+
+ProP+Rifle+RifleT "mouz"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "rallen"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "TaZ"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "MINISE"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "dycha"
+	VoicePitch = 110
+End
+
+//BTRO Players
+
+ProP+Rifle+RifleT "fejtZ"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "Drea3er"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "Cate"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "ImpressioN"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "adrnkiNg"
 	VoicePitch = 110
 End
 
