@@ -543,7 +543,7 @@ ProP+Rifle+RifleT "f0rest"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "dennis"
+ProP+Rifle+RifleT "Plopski"
 	VoicePitch = 110
 End
 
@@ -3188,6 +3188,28 @@ ProP+Rifle+RifleT "ImpressioN"
 End
 
 ProP+Rifle+RifleT "adrnkiNg"
+	VoicePitch = 110
+End
+
+//Ancient Players
+
+ProP+Rifle+RifleT "disco doplan"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "draken"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "freddieb"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "RuStY"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "grux"
 	VoicePitch = 110
 End
 

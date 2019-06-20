@@ -76,7 +76,7 @@ char g_BotName[][] = {
 	"dupreeh",
 	//NiP Players
 	"GeT_RiGhT",
-	"dennis",
+	"Plopski",
 	"f0rest",
 	"Lekr0",
 	"REZ",
@@ -805,7 +805,13 @@ char g_BotName[][] = {
 	"Drea3er",
 	"Cate",
 	"ImpressioN",
-	"adrnkiNg"
+	"adrnkiNg",
+	//Ancient Players
+	"disco doplan",
+	"draken",
+	"freddieb",
+	"RuStY",
+	"grux"
 };
  
 public Plugin myinfo =
@@ -1270,7 +1276,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//NiP Players
-	if((StrEqual(botname, "GeT_RiGhT")) || (StrEqual(botname, "dennis")) || (StrEqual(botname, "f0rest")) || (StrEqual(botname, "Lekr0")) || (StrEqual(botname, "REZ")))
+	if((StrEqual(botname, "GeT_RiGhT")) || (StrEqual(botname, "Plopski")) || (StrEqual(botname, "f0rest")) || (StrEqual(botname, "Lekr0")) || (StrEqual(botname, "REZ")))
 	{
 		CS_SetClientClanTag(client, "NiP");
 	}
@@ -1993,5 +1999,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "fejtZ")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "Cate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "adrnkiNg")))
 	{
 		CS_SetClientClanTag(client, "BTRO");
+	}
+	
+	//Ancient Players
+	if((StrEqual(botname, "disco doplan")) || (StrEqual(botname, "draken")) || (StrEqual(botname, "freddieb")) || (StrEqual(botname, "RuStY")) || (StrEqual(botname, "grux")))
+	{
+		CS_SetClientClanTag(client, "Ancient");
 	}
 }
