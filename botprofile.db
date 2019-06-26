@@ -481,7 +481,7 @@ ProP+Rifle+RifleT "TACO"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RifleT "felps"
+ProP+Rifle+RifleT "LUCAS1"
 	VoicePitch = 90
 End
 
@@ -895,7 +895,7 @@ ProP+Rifle+RifleT "qikert"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "fitch"
+ProP+Rifle+RifleT "AdreN"
 	VoicePitch = 110
 End
 
@@ -1247,7 +1247,7 @@ ProP+Rifle+RifleT "steelega"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RifleT "LUCAS1"
+ProP+Rifle+RifleT "felps"
 	VoicePitch = 110
 End
 
@@ -1472,28 +1472,6 @@ ProP+Rifle+RifleT "SmyLi"
 End
 
 ProP+Rifle+RifleT "krL"
-	VoicePitch = 110
-End
-
-//EP Players
-
-ProP+Rifle+RifleT "MiGHTYMAX"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro+SniperProT "Impulse"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RifleT "Puls3"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RifleT "Shaney"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RifleT "aVN"
 	VoicePitch = 110
 End
 
@@ -1873,7 +1851,7 @@ End
 
 //Giants Players
 
-ProP+Rifle+RifleT "rmn"
+ProP+Rifle+RifleT "romeM"
 	VoicePitch = 91
 End
 
@@ -3210,6 +3188,28 @@ ProP+Rifle+RifleT "RuStY"
 End
 
 ProP+Rifle+RifleT "grux"
+	VoicePitch = 110
+End
+
+//Keyd Players
+
+ProP+Rifle+RifleT "SHOOWTiME"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro+SniperProT "zqk"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RifleT "shz"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RifleT "dzt"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RifleT "RMN"
 	VoicePitch = 110
 End
 
