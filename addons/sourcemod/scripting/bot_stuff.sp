@@ -2006,4 +2006,10 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "Keyd");
 	}
+	
+	//Furious Players
+	if((StrEqual(botname, "laser")) || (StrEqual(botname, "iKrystal")) || (StrEqual(botname, "PREDI")) || (StrEqual(botname, "TISAN")) || (StrEqual(botname, "GATICA")))
+	{
+		CS_SetClientClanTag(client, "Furious");
+	}
 }
