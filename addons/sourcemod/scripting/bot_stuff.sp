@@ -147,11 +147,11 @@ char g_BotName[][] = {
 	"loWel",
 	"ISSAA",
 	//AGO Players
-	"Furlan",
-	"GruBy",
-	"kap3r",
-	"phr",
-	"SZPERO",
+	"innocent",
+	"STOMP",
+	"reatz",
+	"oskarish",
+	"mono",
 	//ENCE Players
 	"Aleksib",
 	"allu",
@@ -221,7 +221,7 @@ char g_BotName[][] = {
 	//OpTic Players
 	"k0nfig",
 	"MSL",
-	"niko",
+	"nikozan",
 	"Snappi",
 	"refrezh",
 	//Sprout Players
@@ -488,12 +488,6 @@ char g_BotName[][] = {
 	"morelz",
 	"Sidney",
 	"Sobol",
-	//x-kom Players
-	"innocent",
-	"STOMP",
-	"oskarish",
-	"mono",
-	"reatz",
 	//DreamEaters Players
 	"kinqie",
 	"speed4k",
@@ -1348,7 +1342,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//AGO Players
-	if((StrEqual(botname, "Furlan")) || (StrEqual(botname, "GruBy")) || (StrEqual(botname, "kap3r")) || (StrEqual(botname, "phr")) || (StrEqual(botname, "SZPERO")))
+	if((StrEqual(botname, "innocent")) || (StrEqual(botname, "STOMP")) || (StrEqual(botname, "reatz")) || (StrEqual(botname, "oskarish")) || (StrEqual(botname, "mono")))
 	{
 		CS_SetClientClanTag(client, "AGO");
 	}
@@ -1420,7 +1414,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//OpTic Players
-	if((StrEqual(botname, "k0nfig")) || (StrEqual(botname, "MSL")) || (StrEqual(botname, "niko")) || (StrEqual(botname, "Snappi")) || (StrEqual(botname, "refrezh")))
+	if((StrEqual(botname, "k0nfig")) || (StrEqual(botname, "MSL")) || (StrEqual(botname, "nikozan")) || (StrEqual(botname, "Snappi")) || (StrEqual(botname, "refrezh")))
 	{
 		CS_SetClientClanTag(client, "OpTic");
 	}
@@ -1687,12 +1681,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "morelz")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
 	{
 		CS_SetClientClanTag(client, "PACT");
-	}
-	
-	//x-kom Players
-	if((StrEqual(botname, "innocent")) || (StrEqual(botname, "STOMP")) || (StrEqual(botname, "oskarish")) || (StrEqual(botname, "mono")) || (StrEqual(botname, "reatz")))
-	{
-		CS_SetClientClanTag(client, "x-kom");
 	}
 	
 	//DreamEaters Players

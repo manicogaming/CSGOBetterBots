@@ -755,23 +755,23 @@ End
 
 //AGO Players
 
-ProP+Rifle "Furlan"
+ProP+Rifle "innocent"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "GruBy"
+EliteAwp+SniperPro "STOMP"
 	VoicePitch = 106
 End
 
-ProP+Rifle "kap3r"
+ProP+Rifle "reatz"
 	VoicePitch = 95
 End
 
-ProP+Rifle "phr"
+ProP+Rifle "oskarish"
 	VoicePitch = 110
 End
 
-ProP+Rifle "SZPERO"
+ProP+Rifle "mono"
 	VoicePitch = 110
 End
 
@@ -1027,7 +1027,7 @@ EliteAwp+SniperPro "MSL"
 	VoicePitch = 106
 End
 
-ProP+Rifle "niko"
+ProP+Rifle "nikozan"
 	VoicePitch = 95
 End
 
@@ -2004,28 +2004,6 @@ ProP+Rifle "Sidney"
 End
 
 ProP+Rifle "Sobol"
-	VoicePitch = 110
-End
-
-//x-kom Players
-
-ProP+Rifle "innocent"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "STOMP"
-	VoicePitch = 106
-End
-
-ProP+Rifle "oskarish"
-	VoicePitch = 95
-End
-
-ProP+Rifle "mono"
-	VoicePitch = 110
-End
-
-ProP+Rifle "reatz"
 	VoicePitch = 110
 End
 
