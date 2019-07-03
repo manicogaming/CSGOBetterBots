@@ -2491,28 +2491,6 @@ ProP+Rifle "urbz"
 	VoicePitch = 110
 End
 
-//Trident Players
-
-ProP+Rifle "DannyG"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "s1ck"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Jim^"
-	VoicePitch = 95
-End
-
-ProP+Rifle "kstyles"
-	VoicePitch = 110
-End
-
-ProP+Rifle "BoLTz"
-	VoicePitch = 110
-End
-
 //5Power Players
 
 ProP+Rifle "bottle"
@@ -3126,6 +3104,116 @@ ProP+Rifle "dzt"
 End
 
 ProP+Rifle "RMN"
+	VoicePitch = 110
+End
+
+//GTZ Players
+
+ProP+Rifle "emp"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "abr"
+	VoicePitch = 106
+End
+
+ProP+Rifle "CarboN"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Kustom"
+	VoicePitch = 110
+End
+
+ProP+Rifle "shellzy"
+	VoicePitch = 110
+End
+
+//Flames Players
+
+ProP+Rifle "Basso"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "farlig"
+	VoicePitch = 106
+End
+
+ProP+Rifle "HooXi"
+	VoicePitch = 95
+End
+
+ProP+Rifle "roeJ"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Console"
+	VoicePitch = 110
+End
+
+//GameAgents Players
+
+ProP+Rifle "FliP1"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "shadow"
+	VoicePitch = 106
+End
+
+ProP+Rifle "pounh"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Butters"
+	VoicePitch = 110
+End
+
+ProP+Rifle "jayzaR"
+	VoicePitch = 110
+End
+
+//eu4ia Players
+
+ProP+Rifle "mik"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "rai"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Ar4gorN"
+	VoicePitch = 95
+End
+
+ProP+Rifle "drogo"
+	VoicePitch = 110
+End
+
+ProP+Rifle "sh0wz"
+	VoicePitch = 110
+End
+
+//Maple Players
+
+ProP+Rifle "NIFFY"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Leaf"
+	VoicePitch = 106
+End
+
+ProP+Rifle "JUSTCAUSE"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Reality"
+	VoicePitch = 110
+End
+
+ProP+Rifle "PPOverdose"
 	VoicePitch = 110
 End
 

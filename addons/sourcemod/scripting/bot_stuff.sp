@@ -620,12 +620,6 @@ char g_BotName[][] = {
 	"ekul",
 	"bedonka",
 	"urbz",
-	//Trident Players
-	"DannyG",
-	"s1ck",
-	"Jim^",
-	"kstyles",
-	"BoLTz",
 	//5Power Players
 	"dobu",
 	"kabal",
@@ -799,7 +793,37 @@ char g_BotName[][] = {
 	"zqk",
 	"shz",
 	"dzt",
-	"RMN"
+	"RMN",
+	//GTZ Players
+	"emp",
+	"abr",
+	"CarboN",
+	"Kustom",
+	"shellzy",
+	//Flames Players
+	"Basso",
+	"farlig",
+	"HooXi",
+	"roeJ",
+	"Console",
+	//GameAgents Players
+	"FliP1",
+	"shadow",
+	"pounh",
+	"Butters",
+	"jayzaR",
+	//eu4ia Players
+	"mik",
+	"rai",
+	"Ar4gorN",
+	"drogo",
+	"sh0wz",
+	//Maple Players
+	"NIFFY",
+	"Leaf",
+	"JUSTCAUSE",
+	"Reality",
+	"PPOverdose"
 };
  
 public Plugin myinfo =
@@ -1809,12 +1833,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "SYF");
 	}
 	
-	//Trident Players
-	if((StrEqual(botname, "DannyG")) || (StrEqual(botname, "s1ck")) || (StrEqual(botname, "Jim^")) || (StrEqual(botname, "kstyles")) || (StrEqual(botname, "BoLTz")))
-	{
-		CS_SetClientClanTag(client, "Trident");
-	}
-	
 	//5Power Players
 	if((StrEqual(botname, "bottle")) || (StrEqual(botname, "Savage")) || (StrEqual(botname, "xiaosaGe")) || (StrEqual(botname, "shuadapai")) || (StrEqual(botname, "Viva")))
 	{
@@ -1987,5 +2005,35 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "laser")) || (StrEqual(botname, "iKrystal")) || (StrEqual(botname, "PREDI")) || (StrEqual(botname, "TISAN")) || (StrEqual(botname, "GATICA")))
 	{
 		CS_SetClientClanTag(client, "Furious");
+	}
+	
+	//GTZ Players
+	if((StrEqual(botname, "emp")) || (StrEqual(botname, "abr")) || (StrEqual(botname, "CarboN")) || (StrEqual(botname, "Kustom")) || (StrEqual(botname, "shellzy")))
+	{
+		CS_SetClientClanTag(client, "GTZ");
+	}
+	
+	//Flames Players
+	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "roeJ")) || (StrEqual(botname, "Console")))
+	{
+		CS_SetClientClanTag(client, "Flames");
+	}
+	
+	//GameAgents Players
+	if((StrEqual(botname, "FliP1")) || (StrEqual(botname, "shadow")) || (StrEqual(botname, "pounh")) || (StrEqual(botname, "Butters")) || (StrEqual(botname, "jayzaR")))
+	{
+		CS_SetClientClanTag(client, "GameAgents");
+	}
+	
+	//eu4ia Players
+	if((StrEqual(botname, "mik")) || (StrEqual(botname, "rai")) || (StrEqual(botname, "Ar4gorN")) || (StrEqual(botname, "drogo")) || (StrEqual(botname, "sh0wz")))
+	{
+		CS_SetClientClanTag(client, "eu4ia");
+	}
+	
+	//Maple Players
+	if((StrEqual(botname, "NIFFY")) || (StrEqual(botname, "Leaf")) || (StrEqual(botname, "JUSTCAUSE")) || (StrEqual(botname, "Reality")) || (StrEqual(botname, "PPOverdose")))
+	{
+		CS_SetClientClanTag(client, "Maple");
 	}
 }
