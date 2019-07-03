@@ -513,23 +513,23 @@ End
 
 //C9 Players
 
-ProP+Rifle "cajunb"
+ProP+Rifle "autimatic"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "autimatic"
+EliteAwp+SniperPro "mixwell"
 	VoicePitch = 106
 End
 
-ProP+Rifle "vice"
+ProP+Rifle "daps"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Golden"
+ProP+Rifle "koosta"
 	VoicePitch = 110
 End
 
-ProP+Rifle "RUSH"
+ProP+Rifle "TenZ"
 	VoicePitch = 90
 End
 
@@ -1115,7 +1115,7 @@ EliteAwp+SniperPro "snatchie"
 	VoicePitch = 106
 End
 
-ProP+Rifle "OKOLICIOUZ"
+ProP+Rifle "phr"
 	VoicePitch = 95
 End
 
@@ -1410,28 +1410,6 @@ ProP+Rifle "SPELLAN"
 End
 
 ProP+Rifle "broky"
-	VoicePitch = 110
-End
-
-//Maxi Players
-
-ProP+Rifle "matHEND"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "MAIDHEN"
-	VoicePitch = 106
-End
-
-ProP+Rifle "RobiNasTy"
-	VoicePitch = 95
-End
-
-ProP+Rifle "SmyLi"
-	VoicePitch = 110
-End
-
-ProP+Rifle "krL"
 	VoicePitch = 110
 End
 
@@ -1793,7 +1771,7 @@ ProP+Rifle "Enanoks"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "EasTor"
+EliteAwp+SniperPro "Cr0n0s"
 	VoicePitch = 106
 End
 
@@ -1881,7 +1859,7 @@ ProP+Rifle "mopoz"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "mixwell"
+EliteAwp+SniperPro "EasTor"
 	VoicePitch = 106
 End
 
