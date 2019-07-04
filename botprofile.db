@@ -3217,6 +3217,28 @@ ProP+Rifle "PPOverdose"
 	VoicePitch = 110
 End
 
+//Fierce Players
+
+ProP+Rifle "Astroo"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "ec1s"
+	VoicePitch = 106
+End
+
+ProP+Rifle "frei"
+	VoicePitch = 95
+End
+
+ProP+Rifle "stan1ey"
+	VoicePitch = 110
+End
+
+ProP+Rifle "AlekS"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 95
 End
@@ -3412,6 +3434,11 @@ End
 Elite+Shotgun LatuAthlete
         VoicePitch = 110
 End
+
+Elite+Rifle "꧁༺₦Ї₦ℑ₳༻꧂"
+        VoicePitch = 110
+End
+
 
 //----------------------------------------
 

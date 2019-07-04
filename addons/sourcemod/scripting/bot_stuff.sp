@@ -823,7 +823,13 @@ char g_BotName[][] = {
 	"Leaf",
 	"JUSTCAUSE",
 	"Reality",
-	"PPOverdose"
+	"PPOverdose",
+	//Maple Players
+	"Astroo",
+	"ec1s",
+	"frei",
+	"stan1ey",
+	"AlekS"
 };
  
 public Plugin myinfo =
@@ -2035,5 +2041,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "NIFFY")) || (StrEqual(botname, "Leaf")) || (StrEqual(botname, "JUSTCAUSE")) || (StrEqual(botname, "Reality")) || (StrEqual(botname, "PPOverdose")))
 	{
 		CS_SetClientClanTag(client, "Maple");
+	}
+	
+	//Fierce Players
+	if((StrEqual(botname, "Astroo")) || (StrEqual(botname, "ec1s")) || (StrEqual(botname, "frei")) || (StrEqual(botname, "stan1ey")) || (StrEqual(botname, "AlekS")))
+	{
+		CS_SetClientClanTag(client, "Fierce");
 	}
 }
