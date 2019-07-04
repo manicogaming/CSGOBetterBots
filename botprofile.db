@@ -3435,7 +3435,23 @@ Elite+Shotgun LatuAthlete
         VoicePitch = 110
 End
 
-Elite+Rifle "꧁༺₦Ї₦ℑ₳༻꧂"
+Elite+Rifle Suga
+        VoicePitch = 110
+End
+
+Elite+Rifle Lix
+        VoicePitch = 110
+End
+
+Elite+Rifle Gaming
+        VoicePitch = 110
+End
+
+Elite+Rifle "HYDRA | DYNAMO"
+        VoicePitch = 110
+End
+
+Elite+Rifle "SOUL MORTAL"
         VoicePitch = 110
 End
 
@@ -3803,6 +3819,98 @@ Expert+Shotgun Nevencith
 End
 
 ExpertAwp+AutoSniper Liseactradele
+        VoicePitch = 110
+End
+
+Expert+Rifle "Mi sister"
+        VoicePitch = 110
+End
+
+ExpertAwp+AutoSniper Dani
+        VoicePitch = 110
+End
+
+Expert+Shotgun "La ley"
+        VoicePitch = 110
+End
+
+ExpertAwp+AutoSniper Mia
+        VoicePitch = 110
+End
+
+ExpertAwp+Rifle Ash
+        VoicePitch = 110
+End
+
+ExpertAwp+AutoSniper Piyu
+        VoicePitch = 110
+End
+
+Expert+Power Sofi
+        VoicePitch = 110
+End
+
+Expert+Punch Ale
+        VoicePitch = 110
+End
+
+Expert+Power Carlitos
+        VoicePitch = 110
+End
+
+Expert+Punch Josh
+        VoicePitch = 110
+End
+
+Expert+Power Lia
+        VoicePitch = 110
+End
+
+Expert+Rifle Nehu
+        VoicePitch = 110
+End
+
+Expert+Rifle Michi
+        VoicePitch = 110
+End
+
+Expert+Power Cami
+        VoicePitch = 110
+End
+
+ExpertAwp+Sniper Nikki
+        VoicePitch = 110
+End
+
+Expert+Shotgun Tori
+        VoicePitch = 110
+End
+
+Expert+Rifle Lau
+        VoicePitch = 110
+End
+
+Expert+Rifle Zahori
+        VoicePitch = 110
+End
+
+Expert+Spray Saku
+        VoicePitch = 110
+End
+
+Expert+Rifle Adi
+        VoicePitch = 110
+End
+
+ExpertAwp+Sniper Jess
+        VoicePitch = 110
+End
+
+Expert+Power Ayu
+        VoicePitch = 110
+End
+
+Expert+Spray Shinu
         VoicePitch = 110
 End
 

@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Thu Jul 04 19:51:09 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Thu Jul 04 20:41:46 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -192,7 +192,6 @@ de_contra
 de_core
 de_couloirs
 de_courthouse
-de_courthouse_final
 de_courtyard_source
 de_cpl_strike
 de_cyberwar
