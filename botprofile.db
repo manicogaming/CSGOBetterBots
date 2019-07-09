@@ -1343,7 +1343,7 @@ ProP+Rifle "JamesBT"
 	VoicePitch = 110
 End
 
-ProP+Rifle "znx-"
+ProP+Rifle "Murky"
 	VoicePitch = 110
 End
 
@@ -1401,7 +1401,7 @@ EliteAwp+SniperPro "CRUC1AL"
 	VoicePitch = 106
 End
 
-ProP+Rifle "DroW"
+ProP+Rifle "kreaz"
 	VoicePitch = 95
 End
 
@@ -1625,7 +1625,7 @@ ProP+Rifle "Daffu"
 	VoicePitch = 95
 End
 
-ProP+Rifle "zyp"
+ProP+Rifle "thamlike"
 	VoicePitch = 110
 End
 
@@ -1739,7 +1739,7 @@ ProP+Rifle "Sjuush"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Lukki"
+ProP+Rifle "Bubzkji"
 	VoicePitch = 110
 End
 
@@ -1833,7 +1833,7 @@ End
 
 //Lions Players
 
-ProP+Rifle "TorPe"
+ProP+Rifle "YuRk0"
 	VoicePitch = 91
 End
 
@@ -1849,7 +1849,7 @@ ProP+Rifle "HUMANZ"
 	VoicePitch = 110
 End
 
-ProP+Rifle "oW"
+ProP+Rifle "MusambaN1"
 	VoicePitch = 110
 End
 
@@ -1925,11 +1925,11 @@ ProP+Rifle "HenkkyG"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "CaNNiE"
+EliteAwp+SniperPro "ZEDKO"
 	VoicePitch = 106
 End
 
-ProP+Rifle "daxen"
+ProP+Rifle "SYSTEM"
 	VoicePitch = 95
 End
 
@@ -2321,19 +2321,19 @@ ProP+Rifle "soju_j"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "RaZ"
+EliteAwp+SniperPro "sterling"
 	VoicePitch = 106
 End
 
-ProP+Rifle "badge"
+ProP+Rifle "apoc"
 	VoicePitch = 95
 End
 
-ProP+Rifle "eLUSIVE"
+ProP+Rifle "J1rah"
 	VoicePitch = 110
 End
 
-ProP+Rifle "mizu"
+ProP+Rifle "HaZR"
 	VoicePitch = 110
 End
 
@@ -2361,23 +2361,23 @@ End
 
 //LEISURE Players
 
-ProP+Rifle "rome"
+ProP+Rifle "stowny"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "neyzin"
+EliteAwp+SniperPro "expo"
 	VoicePitch = 106
 End
 
-ProP+Rifle "get"
+ProP+Rifle "stefan"
 	VoicePitch = 95
 End
 
-ProP+Rifle "gimpen"
+ProP+Rifle "3D2YSilveR"
 	VoicePitch = 110
 End
 
-ProP+Rifle "remixdb"
+ProP+Rifle "LapeX"
 	VoicePitch = 110
 End
 
@@ -2387,11 +2387,11 @@ ProP+Rifle "deM0"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "cqntrl"
+EliteAwp+SniperPro "paaiNK1ng"
 	VoicePitch = 106
 End
 
-ProP+Rifle "dukka"
+ProP+Rifle "cadelao"
 	VoicePitch = 95
 End
 
@@ -2399,7 +2399,7 @@ ProP+Rifle "SpyDaemoN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "psy"
+ProP+Rifle "frostezoR"
 	VoicePitch = 110
 End
 
@@ -2717,11 +2717,11 @@ ProP+Rifle "traNz"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "soulm8"
+EliteAwp+SniperPro "Ttyke"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Shooter"
+ProP+Rifle "DVDOV"
 	VoicePitch = 95
 End
 
@@ -2729,7 +2729,7 @@ ProP+Rifle "PokemoN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "HARMZ"
+ProP+Rifle "Ebeee"
 	VoicePitch = 110
 End
 
@@ -2823,7 +2823,7 @@ End
 
 //ATK Players
 
-ProP+Rifle "TenZ"
+ProP+Rifle "T.c"
 	VoicePitch = 91
 End
 
@@ -2911,45 +2911,23 @@ End
 
 //BLUEJAYS Players
 
-ProP+Rifle "dEE"
+ProP+Rifle "maxz"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "sarenii"
+EliteAwp+SniperPro "Tsubasa"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Maden"
+ProP+Rifle "jansen"
 	VoicePitch = 95
 End
 
-ProP+Rifle "DiMKE"
+ProP+Rifle "RykuN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "HOLMES"
-	VoicePitch = 110
-End
-
-//MK Players
-
-ProP+Rifle "spyleadeR"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "nk4y"
-	VoicePitch = 106
-End
-
-ProP+Rifle "niki1"
-	VoicePitch = 95
-End
-
-ProP+Rifle "SAIKY"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Oxygen"
+ProP+Rifle "skillmaschine JJ_-"
 	VoicePitch = 110
 End
 
@@ -3041,7 +3019,7 @@ ProP+Rifle "dycha"
 	VoicePitch = 110
 End
 
-//BTRO Players
+//BTRG Players
 
 ProP+Rifle "fejtZ"
 	VoicePitch = 91
@@ -3258,6 +3236,72 @@ ProP+Rifle "jhd"
 End
 
 ProP+Rifle "jtr"
+	VoicePitch = 110
+End
+
+//BPro Players
+
+ProP+Rifle "Zix"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "dennyslaw"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Rock1nG"
+	VoicePitch = 95
+End
+
+ProP+Rifle "rafftu"
+	VoicePitch = 110
+End
+
+ProP+Rifle "viltrex"
+	VoicePitch = 110
+End
+
+//Syman Players
+
+ProP+Rifle "neaLaN"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Ramz1k"
+	VoicePitch = 106
+End
+
+ProP+Rifle "t0rick"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Perfecto"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Keoz"
+	VoicePitch = 110
+End
+
+//wNv Players
+
+ProP+Rifle "k4Mi"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "zWin"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Pure"
+	VoicePitch = 95
+End
+
+ProP+Rifle "FairyRae"
+	VoicePitch = 110
+End
+
+ProP+Rifle "kZy"
 	VoicePitch = 110
 End
 
