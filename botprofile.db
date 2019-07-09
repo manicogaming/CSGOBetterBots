@@ -1413,9 +1413,9 @@ ProP+Rifle "broky"
 	VoicePitch = 110
 End
 
-//GLegion Players
+//GamerLegion Players
 
-ProP+Rifle "Ex6TenZ"
+ProP+Rifle "dennis"
 	VoicePitch = 91
 End
 
@@ -1793,7 +1793,7 @@ ProP+Rifle "romeM"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "fox"
+EliteAwp+SniperPro "foxj"
 	VoicePitch = 106
 End
 
@@ -2421,7 +2421,7 @@ ProP+Rifle "INS"
 	VoicePitch = 110
 End
 
-ProP+Rifle "zeph"
+ProP+Rifle "Valiance"
 	VoicePitch = 110
 End
 
@@ -2431,11 +2431,11 @@ ProP+Rifle "Chub"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "keeyto"
+EliteAwp+SniperPro "Vexite"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Valiance"
+ProP+Rifle "Laes"
 	VoicePitch = 95
 End
 
@@ -3236,6 +3236,28 @@ ProP+Rifle "stan1ey"
 End
 
 ProP+Rifle "AlekS"
+	VoicePitch = 110
+End
+
+//Trident Players
+
+ProP+Rifle "TEX"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "zorboT"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Rackem"
+	VoicePitch = 95
+End
+
+ProP+Rifle "jhd"
+	VoicePitch = 110
+End
+
+ProP+Rifle "jtr"
 	VoicePitch = 110
 End
 

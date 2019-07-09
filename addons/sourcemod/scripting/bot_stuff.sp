@@ -28,34 +28,6 @@ char g_sCTRngGrenadesList[][] = {
 };
 
 char g_BotName[][] = {
-	"XD | ryu",
-	"dDeath of the ART",
-	"[[MxD]]X the Driplet",
-	"-FaK- Phakkle of War",
-	"monday",
-	"[[MxD]] ChampLamp",
-	"-FaK- My Sunset",
-	"[[MxD]]Azimuth",
-	"-FaK- The Slow Red_Fox",
-	"[SPI]KoriKen Design",
-	"[[tiMmaH!]]RamboGunther1337",
-	"[[tiMaH!]]wolf-fang",
-	"[[MxD]]DaZZerMAXX",
-	"-FaK- Onslaught",
-	"[[tiMaH!]]hula",
-	"[[MxD]]Ne0nfaktory",
-	"-FaK- ThE worlD th*t eNded yEsterdayoF lAStw33k",
-	"BLuE RoMeN DeLUXe",
-	"[[MxD]]ConTour",
-	"[SPI]itchetrigr",
-	"-FaK- JuZak",
-	"[[tiMaH!]]Gen.TsoVicious",
-	"-FaK- TuB",
-	"[SPI]FrunkenmeisteR",
-	"-FaK- .T3ch_N0ne.*",
-	"[SPI]Zed-Len",
-	"[[MxD]]xb9manina",
-	"[[tiMaH!]]Furious_DC",
 	//MIBR Players
 	"coldzera",
 	"FalleN",
@@ -326,8 +298,8 @@ char g_BotName[][] = {
 	"DroW",
 	"SPELLAN",
 	"broky",
-	//GLegion Players
-	"Ex6TenZ",
+	//GamerLegion Players
+	"dennis",
 	"nawwk",
 	"ScreaM",
 	"HS",
@@ -601,11 +573,11 @@ char g_BotName[][] = {
 	"aliStair",
 	"hatz",
 	"INS",
-	"zeph",
+	"Valiance",
 	//Paradox Players
 	"Chub",
-	"keeyto",
-	"Valiance",
+	"Vexite",
+	"Laes",
 	"Noobster",
 	"Kingfisher",
 	//eXtatus Players
@@ -824,12 +796,18 @@ char g_BotName[][] = {
 	"JUSTCAUSE",
 	"Reality",
 	"PPOverdose",
-	//Maple Players
+	//Fierce Players
 	"Astroo",
 	"ec1s",
 	"frei",
 	"stan1ey",
-	"AlekS"
+	"AlekS",
+	//Trident Players
+	"TEX",
+	"zorboT",
+	"Rackem",
+	"jhd",
+	"jtr"
 };
  
 public Plugin myinfo =
@@ -1545,10 +1523,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Epsilon");
 	}
 	
-	//GLegion Players
-	if((StrEqual(botname, "Ex6TenZ")) || (StrEqual(botname, "nawwk")) || (StrEqual(botname, "ScreaM")) || (StrEqual(botname, "HS")) || (StrEqual(botname, "hampus")))
+	//GamerLegion Players
+	if((StrEqual(botname, "dennis")) || (StrEqual(botname, "nawwk")) || (StrEqual(botname, "ScreaM")) || (StrEqual(botname, "HS")) || (StrEqual(botname, "hampus")))
 	{
-		CS_SetClientClanTag(client, "GLegion");
+		CS_SetClientClanTag(client, "GamerLegion");
 	}
 	
 	//DIVIZON Players
@@ -1816,13 +1794,13 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ORDER Players
-	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "INS")) || (StrEqual(botname, "zeph")))
+	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "INS")) || (StrEqual(botname, "Valiance")))
 	{
 		CS_SetClientClanTag(client, "ORDER");
 	}
 	
 	//Paradox Players
-	if((StrEqual(botname, "Chub")) || (StrEqual(botname, "keeyto")) || (StrEqual(botname, "Valiance")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "Kingfisher")))
+	if((StrEqual(botname, "Chub")) || (StrEqual(botname, "Vexite")) || (StrEqual(botname, "Laes")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "Kingfisher")))
 	{
 		CS_SetClientClanTag(client, "Paradox");
 	}
@@ -2047,5 +2025,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "Astroo")) || (StrEqual(botname, "ec1s")) || (StrEqual(botname, "frei")) || (StrEqual(botname, "stan1ey")) || (StrEqual(botname, "AlekS")))
 	{
 		CS_SetClientClanTag(client, "Fierce");
+	}
+	
+	//Trident Players
+	if((StrEqual(botname, "TEX")) || (StrEqual(botname, "zorboT")) || (StrEqual(botname, "Rackem")) || (StrEqual(botname, "jhd")) || (StrEqual(botname, "jtr")))
+	{
+		CS_SetClientClanTag(client, "Trident");
 	}
 }
