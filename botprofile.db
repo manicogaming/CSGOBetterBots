@@ -134,7 +134,7 @@ Template ProP
 		Rank = 500
 		Teamwork = 100
 		Aggression = 55
-		ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
+		ReactionTime = 0.25
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 110
@@ -873,11 +873,11 @@ EliteAwp+SniperPro "bubble"
 	VoicePitch = 106
 End
 
-ProP+Rifle "v1c7oR"
+ProP+Rifle "hAdji"
 	VoicePitch = 95
 End
 
-ProP+Rifle "blocker"
+ProP+Rifle "Calyx"
 	VoicePitch = 110
 End
 
@@ -2057,7 +2057,7 @@ ProP+Rifle "Flarich"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "AiyvaN"
+EliteAwp+SniperPro "WorldEdit"
 	VoicePitch = 106
 End
 
@@ -2065,7 +2065,7 @@ ProP+Rifle "YEKINDAR"
 	VoicePitch = 95
 End
 
-ProP+Rifle "kenzor"
+ProP+Rifle "wayLander"
 	VoicePitch = 110
 End
 
@@ -2139,28 +2139,6 @@ ProP+Rifle "Shakezullah"
 	VoicePitch = 110
 End
 
-//Rejected Players
-
-ProP+Rifle "vickt0r"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Tio"
-	VoicePitch = 106
-End
-
-ProP+Rifle "rochet"
-	VoicePitch = 95
-End
-
-ProP+Rifle "akz"
-	VoicePitch = 110
-End
-
-ProP+Rifle "elemeNt"
-	VoicePitch = 110
-End
-
 //DETONA Players
 
 ProP+Rifle "prt"
@@ -2197,7 +2175,7 @@ ProP+Rifle "spamzzy"
 	VoicePitch = 95
 End
 
-ProP+Rifle "points"
+ProP+Rifle "sam_A"
 	VoicePitch = 110
 End
 
@@ -2378,28 +2356,6 @@ ProP+Rifle "3D2YSilveR"
 End
 
 ProP+Rifle "LapeX"
-	VoicePitch = 110
-End
-
-//BDragons Players
-
-ProP+Rifle "deM0"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "paaiNK1ng"
-	VoicePitch = 106
-End
-
-ProP+Rifle "cadelao"
-	VoicePitch = 95
-End
-
-ProP+Rifle "SpyDaemoN"
-	VoicePitch = 110
-End
-
-ProP+Rifle "frostezoR"
 	VoicePitch = 110
 End
 

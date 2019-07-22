@@ -151,8 +151,8 @@ char g_BotName[][] = {
 	//Windigo Players
 	"SHiPZ",
 	"bubble",
-	"v1c7oR",
-	"blocker",
+	"hAdji",
+	"Calyx",
 	"poizon",
 	//FURIA Players
 	"yuurih",
@@ -474,9 +474,9 @@ char g_BotName[][] = {
 	"boX",
 	//pro100 Players
 	"Flarich",
-	"AiyvaN",
+	"WorldEdit",
 	"YEKINDAR",
-	"kenzor",
+	"wayLander",
 	"NickelBack",
 	//eUnited Players
 	"moose",
@@ -496,12 +496,6 @@ char g_BotName[][] = {
 	"Hydrex",
 	"ryann",
 	"Shakezullah",
-	//Rejected Players
-	"vickt0r",
-	"Tio",
-	"rochet",
-	"akz",
-	"elemeNt",
 	//DETONA Players
 	"prt",
 	"tiburci0",
@@ -512,7 +506,7 @@ char g_BotName[][] = {
 	"cruzN",
 	"malbsMd",
 	"spamzzy",
-	"points",
+	"sam_A",
 	"Daveys",
 	//Isurus Players
 	"1962",
@@ -562,12 +556,6 @@ char g_BotName[][] = {
 	"stefan",
 	"3D2YSilveR",
 	"LapeX",
-	//BDragons Players
-	"deM0",
-	"paaiNK1ng",
-	"cadelao",
-	"SpyDaemoN",
-	"frostezoR",
 	//ORDER Players
 	"emagine",
 	"aliStair",
@@ -1386,7 +1374,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Windigo Players
-	if((StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "bubble")) || (StrEqual(botname, "v1c7oR")) || (StrEqual(botname, "blocker")) || (StrEqual(botname, "poizon")))
+	if((StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "bubble")) || (StrEqual(botname, "hAdji")) || (StrEqual(botname, "Calyx")) || (StrEqual(botname, "poizon")))
 	{
 		CS_SetClientClanTag(client, "Windigo");
 	}
@@ -1710,7 +1698,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//pro100 Players
-	if((StrEqual(botname, "Flarich")) || (StrEqual(botname, "AiyvaN")) || (StrEqual(botname, "YEKINDAR")) || (StrEqual(botname, "kenzor")) || (StrEqual(botname, "NickelBack")))
+	if((StrEqual(botname, "Flarich")) || (StrEqual(botname, "WorldEdit")) || (StrEqual(botname, "YEKINDAR")) || (StrEqual(botname, "wayLander")) || (StrEqual(botname, "NickelBack")))
 	{
 		CS_SetClientClanTag(client, "pro100");
 	}
@@ -1733,12 +1721,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Singularity");
 	}
 	
-	//Rejected Players
-	if((StrEqual(botname, "vickt0r")) || (StrEqual(botname, "Tio")) || (StrEqual(botname, "rochet")) || (StrEqual(botname, "akz")) || (StrEqual(botname, "elemeNt")))
-	{
-		CS_SetClientClanTag(client, "Rejected");
-	}
-	
 	//DETONA Players
 	if((StrEqual(botname, "prt")) || (StrEqual(botname, "tiburci0")) || (StrEqual(botname, "v$m")) || (StrEqual(botname, "hardzao")) || (StrEqual(botname, "Tuurtle")))
 	{
@@ -1746,7 +1728,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Infinity Players
-	if((StrEqual(botname, "cruzN")) || (StrEqual(botname, "malbsMd")) || (StrEqual(botname, "spamzzy")) || (StrEqual(botname, "points")) || (StrEqual(botname, "Daveys")))
+	if((StrEqual(botname, "cruzN")) || (StrEqual(botname, "malbsMd")) || (StrEqual(botname, "spamzzy")) || (StrEqual(botname, "sam_A")) || (StrEqual(botname, "Daveys")))
 	{
 		CS_SetClientClanTag(client, "Infinity");
 	}
@@ -1797,12 +1779,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "stowny")) || (StrEqual(botname, "expo")) || (StrEqual(botname, "stefan")) || (StrEqual(botname, "3D2YSilveR")) || (StrEqual(botname, "LapeX")))
 	{
 		CS_SetClientClanTag(client, "LEISURE");
-	}
-	
-	//BDragons Players
-	if((StrEqual(botname, "deM0")) || (StrEqual(botname, "paaiNK1ng")) || (StrEqual(botname, "cadelao")) || (StrEqual(botname, "SpyDaemoN")) || (StrEqual(botname, "frostezoR")))
-	{
-		CS_SetClientClanTag(client, "BDragons");
 	}
 	
 	//ORDER Players

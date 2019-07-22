@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Tue Jul 09 05:16:42 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Thu Jul 11 00:49:32 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -25,7 +25,6 @@ $2000$_pro_b2
 [2stoned]xxl_cs
 aim_100hp
 aim_47th
-aim_9h_ak_kb
 aim_advance
 aim_ak-47_go_ptfun
 aim_ak-colt
@@ -33,15 +32,11 @@ aim_ak-colt_csgo
 aim_ak-colt_v2
 aim_ak-colt_v4
 aim_ak47_colt
-aim_ak47_kb
-aim_ak47aim_kb
 aim_ak_clean
 aim_ak_colt_subway
-aim_ak_day_kb
 aim_akm4ruins2
 aim_arena
 aim_awp
-aim_awp_dust2_kb
 aim_aztec2_css
 aim_badneighbors
 aim_badsiblings
@@ -50,12 +45,8 @@ aim_container_autosniper
 aim_crazyjump_go
 aim_crazyjump_simpsons07
 aim_deagle7k_real
-aim_deagle_kb
 aim_deagle_ultra
 aim_depot_beta01
-aim_elite_kb
-aim_glockon_kb
-aim_go_kb
 aim_headshot2_csgo
 aim_junkyard
 aim_map
@@ -67,9 +58,7 @@ aim_multi_v4
 aim_neon_handel
 aim_notsocrazyjump
 aim_perfect2
-aim_prison_kb
 aim_redline
-aim_redline_kb
 aim_redline_rizegamers
 aim_scopearena
 aim_scoutz
@@ -80,7 +69,6 @@ aim_stashhouse
 aim_tmp
 aim_tmp-fun
 aim_treearena
-aim_usp_kb
 aim_usp_v2
 aim_warehouse
 aim_warmup_d
@@ -173,13 +161,13 @@ de_dust2_winter
 de_gold_dust
 de_gold_dust2
 de_inferno
-de_inferno2
 de_inferno_dawn
 de_inferno_pondsite
 de_infernoold
 de_lake
 de_maihouse
 de_mill_ce
+de_minimetzel_hslan
 de_mirage
 de_nuke
 de_overpass
