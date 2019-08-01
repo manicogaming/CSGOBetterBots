@@ -425,7 +425,7 @@ End
 
 //MIBR Players
 
-ProP+Rifle "coldzera"
+ProP+Rifle "zews"
 	VoicePitch = 91
 End
 
@@ -755,23 +755,23 @@ End
 
 //AGO Players
 
-ProP+Rifle "innocent"
+ProP+Rifle "Furlan"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "STOMP"
+EliteAwp+SniperPro "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "reatz"
+ProP+Rifle "leman"
 	VoicePitch = 95
 End
 
-ProP+Rifle "oskarish"
+ProP+Rifle "mhL"
 	VoicePitch = 110
 End
 
-ProP+Rifle "mono"
+ProP+Rifle "hades"
 	VoicePitch = 110
 End
 
@@ -1145,7 +1145,7 @@ ProP+Rifle "akEz"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Polly"
+ProP+Rifle "Radifaction"
 	VoicePitch = 110
 End
 
@@ -1388,28 +1388,6 @@ ProP+Rifle "Monu"
 End
 
 ProP+Rifle "rilax"
-	VoicePitch = 110
-End
-
-//Epsilon Players
-
-ProP+Rifle "Surreal"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "CRUC1AL"
-	VoicePitch = 106
-End
-
-ProP+Rifle "kreaz"
-	VoicePitch = 95
-End
-
-ProP+Rifle "SPELLAN"
-	VoicePitch = 110
-End
-
-ProP+Rifle "broky"
 	VoicePitch = 110
 End
 
@@ -2273,7 +2251,7 @@ End
 
 //W7M Players
 
-ProP+Rifle "YJ"
+ProP+Rifle "skullz"
 	VoicePitch = 91
 End
 
@@ -2945,7 +2923,7 @@ ProP+Rifle "zemp"
 	VoicePitch = 95
 End
 
-ProP+Rifle "MoeycQ"
+ProP+Rifle "burk"
 	VoicePitch = 110
 End
 
@@ -2985,7 +2963,7 @@ EliteAwp+SniperPro "Drea3er"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Cate"
+ProP+Rifle "xccurate"
 	VoicePitch = 95
 End
 
@@ -3258,6 +3236,50 @@ ProP+Rifle "FairyRae"
 End
 
 ProP+Rifle "kZy"
+	VoicePitch = 110
+End
+
+//Goliath Players
+
+ProP+Rifle "massacRe"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Detrony"
+	VoicePitch = 106
+End
+
+ProP+Rifle "deviaNt"
+	VoicePitch = 95
+End
+
+ProP+Rifle "adaro"
+	VoicePitch = 110
+End
+
+ProP+Rifle "ZipZip"
+	VoicePitch = 110
+End
+
+//Endpoint Players
+
+ProP+Rifle "jenko"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Russ"
+	VoicePitch = 106
+End
+
+ProP+Rifle "robiin"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Puls3"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Kryptix"
 	VoicePitch = 110
 End
 
