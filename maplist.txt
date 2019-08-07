@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Thu Aug 01 04:16:54 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Wed Aug 07 16:03:29 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -131,7 +131,6 @@ cs_bloodstrike_old
 cs_brickhouse
 cs_cock
 cs_farmhouse
-cs_frozen
 cs_hideout
 cs_italy
 cs_italy_reloaded_final
@@ -140,11 +139,9 @@ cs_militia
 cs_militia_x_beta
 cs_office
 cs_office_night_final
-cs_office_xmasparty
 cs_twilight
-cs_workout
-de_alexandra2
 de_bank
+de_breach
 de_cache
 de_canals
 de_cbble
@@ -153,9 +150,6 @@ de_contra
 de_courtyard_source
 de_desert
 de_dust2
-de_dust2_b_only
-de_dust2_confused
-de_dust2_long_v2
 de_dust2_night
 de_dust2_winter
 de_gold_dust
@@ -175,6 +169,7 @@ de_piranesi
 de_port_b2
 de_ruby
 de_safehouse
+de_seaside
 de_season_go
 de_shortdust
 de_shortnuke

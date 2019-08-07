@@ -1819,7 +1819,7 @@ EliteAwp+SniperPro "dragunov"
 	VoicePitch = 106
 End
 
-ProP+Rifle "NaOw"
+ProP+Rifle "Kairi"
 	VoicePitch = 95
 End
 
@@ -2757,7 +2757,7 @@ End
 
 //ATK Players
 
-ProP+Rifle "T.c"
+ProP+Rifle "motm"
 	VoicePitch = 91
 End
 
@@ -3143,7 +3143,7 @@ ProP+Rifle "frei"
 	VoicePitch = 95
 End
 
-ProP+Rifle "stan1ey"
+ProP+Rifle "nEiLZiNHo"
 	VoicePitch = 110
 End
 
@@ -3280,6 +3280,28 @@ ProP+Rifle "Puls3"
 End
 
 ProP+Rifle "Kryptix"
+	VoicePitch = 110
+End
+
+//Genuine Players
+
+ProP+Rifle "stat"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Jinxx"
+	VoicePitch = 106
+End
+
+ProP+Rifle "apocdud"
+	VoicePitch = 95
+End
+
+ProP+Rifle "SkulL"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Mayker"
 	VoicePitch = 110
 End
 
