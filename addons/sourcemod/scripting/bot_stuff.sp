@@ -515,7 +515,7 @@ char g_BotName[][] = {
 	"biguzera",
 	"f4stzin",
 	//Sharks Players
-	"nak",
+	"meyern",
 	"jnt",
 	"leo_drunky",
 	"exit",
@@ -3259,7 +3259,7 @@ public Action Team_Sharks(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "nak");
+		ServerCommand("bot_add_ct %s", "meyern");
 		ServerCommand("bot_add_ct %s", "jnt");
 		ServerCommand("bot_add_ct %s", "leo_drunky");
 		ServerCommand("bot_add_ct %s", "exit");
@@ -3269,7 +3269,7 @@ public Action Team_Sharks(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "nak");
+		ServerCommand("bot_add_t %s", "meyern");
 		ServerCommand("bot_add_t %s", "jnt");
 		ServerCommand("bot_add_t %s", "leo_drunky");
 		ServerCommand("bot_add_t %s", "exit");
@@ -5559,7 +5559,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sharks Players
-	if((StrEqual(botname, "nak")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "RCF")))
+	if((StrEqual(botname, "meyern")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "RCF")))
 	{
 		CS_SetClientClanTag(client, "Sharks");
 	}
