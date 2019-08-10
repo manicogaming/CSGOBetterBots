@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Wed Aug 07 16:03:29 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Sat Aug 10 01:21:45 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -66,8 +66,6 @@ aim_shotgun3
 aim_shyam
 aim_speedgaming
 aim_stashhouse
-aim_tmp
-aim_tmp-fun
 aim_treearena
 aim_usp_v2
 aim_warehouse
@@ -108,7 +106,6 @@ awp_newmap_beta
 awp_paradise
 awp_pro
 awp_rainbow
-awp_rats_casino
 awp_simpsons_css
 awp_source
 awp_subzero
@@ -155,7 +152,6 @@ de_dust2_winter
 de_gold_dust
 de_gold_dust2
 de_inferno
-de_inferno_dawn
 de_inferno_pondsite
 de_infernoold
 de_lake
@@ -163,7 +159,9 @@ de_maihouse
 de_mill_ce
 de_minimetzel_hslan
 de_mirage
+de_nightforest
 de_nuke
+de_nuke_ramps
 de_overpass
 de_piranesi
 de_port_b2
@@ -173,10 +171,11 @@ de_seaside
 de_season_go
 de_shortdust
 de_shortnuke
+de_skyscraper
+de_spain
 de_stmarc
 de_sugarcane
 de_train
-de_train_2013
 de_vertigo
 de_zoo
 dz_blacksite

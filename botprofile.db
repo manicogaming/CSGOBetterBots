@@ -2175,7 +2175,7 @@ ProP+Rifle "Reversive"
 	VoicePitch = 95
 End
 
-ProP+Rifle "meyern"
+ProP+Rifle "pino"
 	VoicePitch = 110
 End
 
@@ -2531,7 +2531,7 @@ ProP+Rifle "veta"
 	VoicePitch = 110
 End
 
-ProP+Rifle "JohnOlsen"
+ProP+Rifle "Geniuss"
 	VoicePitch = 110
 End
 
@@ -2593,7 +2593,7 @@ ProP+Rifle "cbbk"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Geniuss"
+ProP+Rifle "JohnOlsen"
 	VoicePitch = 110
 End
 

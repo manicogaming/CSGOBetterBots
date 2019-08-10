@@ -506,7 +506,7 @@ char g_BotName[][] = {
 	"1962",
 	"Noktse",
 	"Reversive",
-	"meyern",
+	"pino",
 	"maxujas",
 	//paiN Players
 	"PKL",
@@ -603,7 +603,7 @@ char g_BotName[][] = {
 	"bnwGiggs",
 	"RoLEX",
 	"veta",
-	"JohnOlsen",
+	"Geniuss",
 	//ETG Players
 	"Amaterasu",
 	"Psy",
@@ -620,7 +620,7 @@ char g_BotName[][] = {
 	"wannafly",
 	"PTC",
 	"cbbk",
-	"Geniuss",
+	"JohnOlsen",
 	"qqGod",
 	//MiTH Players
 	"CigaretteS",
@@ -3206,7 +3206,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_ct %s", "1962");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
-		ServerCommand("bot_add_ct %s", "meyern");
+		ServerCommand("bot_add_ct %s", "pino");
 		ServerCommand("bot_add_ct %s", "maxujas");
 		ServerCommand("mp_teamlogo_1 isu");
 	}
@@ -3216,7 +3216,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_t %s", "1962");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
-		ServerCommand("bot_add_t %s", "meyern");
+		ServerCommand("bot_add_t %s", "pino");
 		ServerCommand("bot_add_t %s", "maxujas");
 		ServerCommand("mp_teamlogo_2 isu");
 	}
@@ -3655,7 +3655,7 @@ public Action Team_Beyond(int client, int args)
 		ServerCommand("bot_add_ct %s", "bnwGiggs");
 		ServerCommand("bot_add_ct %s", "RoLEX");
 		ServerCommand("bot_add_ct %s", "veta");
-		ServerCommand("bot_add_ct %s", "JohnOlsen");
+		ServerCommand("bot_add_ct %s", "Geniuss");
 		ServerCommand("mp_teamlogo_1 bey");
 	}
 	
@@ -3665,7 +3665,7 @@ public Action Team_Beyond(int client, int args)
 		ServerCommand("bot_add_t %s", "bnwGiggs");
 		ServerCommand("bot_add_t %s", "RoLEX");
 		ServerCommand("bot_add_t %s", "veta");
-		ServerCommand("bot_add_t %s", "JohnOlsen");
+		ServerCommand("bot_add_t %s", "Geniuss");
 		ServerCommand("mp_teamlogo_2 bey");
 	}
 	
@@ -3738,7 +3738,7 @@ public Action Team_Lucid(int client, int args)
 		ServerCommand("bot_add_ct %s", "wannafly");
 		ServerCommand("bot_add_ct %s", "PTC");
 		ServerCommand("bot_add_ct %s", "cbbk");
-		ServerCommand("bot_add_ct %s", "Geniuss");
+		ServerCommand("bot_add_ct %s", "JohnOlsen");
 		ServerCommand("bot_add_ct %s", "qqGod");
 		ServerCommand("mp_teamlogo_1 lucid");
 	}
@@ -3748,7 +3748,7 @@ public Action Team_Lucid(int client, int args)
 		ServerCommand("bot_add_t %s", "wannafly");
 		ServerCommand("bot_add_t %s", "PTC");
 		ServerCommand("bot_add_t %s", "cbbk");
-		ServerCommand("bot_add_t %s", "Geniuss");
+		ServerCommand("bot_add_t %s", "JohnOlsen");
 		ServerCommand("bot_add_t %s", "qqGod");
 		ServerCommand("mp_teamlogo_2 lucid");
 	}
@@ -5547,7 +5547,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Isurus Players
-	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "meyern")) || (StrEqual(botname, "maxujas")))
+	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "pino")) || (StrEqual(botname, "maxujas")))
 	{
 		CS_SetClientClanTag(client, "Isurus");
 	}
@@ -5643,7 +5643,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Beyond Players
-	if((StrEqual(botname, "TOR")) || (StrEqual(botname, "bnwGiggs")) || (StrEqual(botname, "RoLEX")) || (StrEqual(botname, "veta")) || (StrEqual(botname, "JohnOlsen")))
+	if((StrEqual(botname, "TOR")) || (StrEqual(botname, "bnwGiggs")) || (StrEqual(botname, "RoLEX")) || (StrEqual(botname, "veta")) || (StrEqual(botname, "Geniuss")))
 	{
 		CS_SetClientClanTag(client, "Beyond");
 	}
@@ -5661,7 +5661,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LucidDream Players
-	if((StrEqual(botname, "wannafly")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "Geniuss")) || (StrEqual(botname, "qqGod")))
+	if((StrEqual(botname, "wannafly")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "qqGod")))
 	{
 		CS_SetClientClanTag(client, "LucidDream");
 	}
