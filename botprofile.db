@@ -1951,11 +1951,11 @@ EliteAwp+SniperPro "lunAtic"
 	VoicePitch = 106
 End
 
-ProP+Rifle "morelz"
+ProP+Rifle "Goofy"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Sidney"
+ProP+Rifle "Crityourface"
 	VoicePitch = 110
 End
 
@@ -3104,28 +3104,6 @@ ProP+Rifle "drogo"
 End
 
 ProP+Rifle "sh0wz"
-	VoicePitch = 110
-End
-
-//Maple Players
-
-ProP+Rifle "NIFFY"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Leaf"
-	VoicePitch = 106
-End
-
-ProP+Rifle "JUSTCAUSE"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Reality"
-	VoicePitch = 110
-End
-
-ProP+Rifle "PPOverdose"
 	VoicePitch = 110
 End
 

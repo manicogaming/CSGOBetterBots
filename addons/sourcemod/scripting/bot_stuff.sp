@@ -445,8 +445,8 @@ char g_BotName[][] = {
 	//PACT Players
 	"darko",
 	"lunAtic",
-	"morelz",
-	"Sidney",
+	"Goofy",
+	"Crityourface",
 	"Sobol",
 	//DreamEaters Players
 	"kinqie",
@@ -766,12 +766,6 @@ char g_BotName[][] = {
 	"Ar4gorN",
 	"drogo",
 	"sh0wz",
-	//Maple Players
-	"NIFFY",
-	"Leaf",
-	"JUSTCAUSE",
-	"Reality",
-	"PPOverdose",
 	//Fierce Players
 	"Astroo",
 	"ec1s",
@@ -966,7 +960,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_eu4ia", Team_eu4ia);
-	RegConsoleCmd("team_maple", Team_Maple);
 	RegConsoleCmd("team_fierce", Team_Fierce);
 	RegConsoleCmd("team_trident", Team_Trident);
 	RegConsoleCmd("team_bpro", Team_BPro);
@@ -2925,8 +2918,8 @@ public Action Team_PACT(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "darko");
 		ServerCommand("bot_add_ct %s", "lunAtic");
-		ServerCommand("bot_add_ct %s", "morelz");
-		ServerCommand("bot_add_ct %s", "Sidney");
+		ServerCommand("bot_add_ct %s", "Goofy");
+		ServerCommand("bot_add_ct %s", "Crityourface");
 		ServerCommand("bot_add_ct %s", "Sobol");
 		ServerCommand("mp_teamlogo_1 pact");
 	}
@@ -2935,8 +2928,8 @@ public Action Team_PACT(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "darko");
 		ServerCommand("bot_add_t %s", "lunAtic");
-		ServerCommand("bot_add_t %s", "morelz");
-		ServerCommand("bot_add_t %s", "Sidney");
+		ServerCommand("bot_add_t %s", "Goofy");
+		ServerCommand("bot_add_t %s", "Crityourface");
 		ServerCommand("bot_add_t %s", "Sobol");
 		ServerCommand("mp_teamlogo_2 pact");
 	}
@@ -4400,34 +4393,6 @@ public Action Team_eu4ia(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Maple(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "NIFFY");
-		ServerCommand("bot_add_ct %s", "Leaf");
-		ServerCommand("bot_add_ct %s", "JUSTCAUSE");
-		ServerCommand("bot_add_ct %s", "Reality");
-		ServerCommand("bot_add_ct %s", "PPOverdose");
-		ServerCommand("mp_teamlogo_1 maple");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "NIFFY");
-		ServerCommand("bot_add_t %s", "Leaf");
-		ServerCommand("bot_add_t %s", "JUSTCAUSE");
-		ServerCommand("bot_add_t %s", "Reality");
-		ServerCommand("bot_add_t %s", "PPOverdose");
-		ServerCommand("mp_teamlogo_2 maple");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Fierce(int client, int args)
 {
 	char arg[12];
@@ -5487,7 +5452,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//PACT Players
-	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "morelz")) || (StrEqual(botname, "Sidney")) || (StrEqual(botname, "Sobol")))
+	if((StrEqual(botname, "darko")) || (StrEqual(botname, "lunAtic")) || (StrEqual(botname, "Goofy")) || (StrEqual(botname, "Crityourface")) || (StrEqual(botname, "Sobol")))
 	{
 		CS_SetClientClanTag(client, "PACT");
 	}
@@ -5808,12 +5773,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "mik")) || (StrEqual(botname, "rai")) || (StrEqual(botname, "Ar4gorN")) || (StrEqual(botname, "drogo")) || (StrEqual(botname, "sh0wz")))
 	{
 		CS_SetClientClanTag(client, "eu4ia");
-	}
-	
-	//Maple Players
-	if((StrEqual(botname, "NIFFY")) || (StrEqual(botname, "Leaf")) || (StrEqual(botname, "JUSTCAUSE")) || (StrEqual(botname, "Reality")) || (StrEqual(botname, "PPOverdose")))
-	{
-		CS_SetClientClanTag(client, "Maple");
 	}
 	
 	//Fierce Players
