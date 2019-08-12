@@ -813,7 +813,13 @@ char g_BotName[][] = {
 	"Jinxx",
 	"apocdud",
 	"SkulL",
-	"Mayker"
+	"Mayker",
+	//Maple Players
+	"NIFFY",
+	"Leaf",
+	"JUSTCAUSE",
+	"Reality",
+	"PPOverdose"
 };
  
 public Plugin myinfo =
@@ -968,6 +974,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
 	RegConsoleCmd("team_genuine", Team_Genuine);
+	RegConsoleCmd("team_maple", Team_Maple);
 }
 
 public Action KickBots(int client, int args)
@@ -4617,6 +4624,34 @@ public Action Team_Genuine(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Maple(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "NIFFY");
+		ServerCommand("bot_add_ct %s", "Leaf");
+		ServerCommand("bot_add_ct %s", "JUSTCAUSE");
+		ServerCommand("bot_add_ct %s", "Reality");
+		ServerCommand("bot_add_ct %s", "PPOverdose");
+		ServerCommand("mp_teamlogo_1 maple");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "NIFFY");
+		ServerCommand("bot_add_t %s", "Leaf");
+		ServerCommand("bot_add_t %s", "JUSTCAUSE");
+		ServerCommand("bot_add_t %s", "Reality");
+		ServerCommand("bot_add_t %s", "PPOverdose");
+		ServerCommand("mp_teamlogo_2 maple");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5821,5 +5856,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "stat")) || (StrEqual(botname, "Jinxx")) || (StrEqual(botname, "apocdud")) || (StrEqual(botname, "SkulL")) || (StrEqual(botname, "Mayker")))
 	{
 		CS_SetClientClanTag(client, "Genuine");
+	}
+	
+	//Maple Players
+	if((StrEqual(botname, "NIFFY")) || (StrEqual(botname, "Leaf")) || (StrEqual(botname, "JUSTCAUSE")) || (StrEqual(botname, "Reality")) || (StrEqual(botname, "PPOverdose")))
+	{
+		CS_SetClientClanTag(client, "Maple");
 	}
 }

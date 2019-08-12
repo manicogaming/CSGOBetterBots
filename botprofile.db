@@ -3283,6 +3283,28 @@ ProP+Rifle "Mayker"
 	VoicePitch = 110
 End
 
+//Maple Players
+
+ProP+Rifle "NIFFY"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Leaf"
+	VoicePitch = 106
+End
+
+ProP+Rifle "JUSTCAUSE"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Reality"
+	VoicePitch = 110
+End
+
+ProP+Rifle "PPOverdose"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 95
 End

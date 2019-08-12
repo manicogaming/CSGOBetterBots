@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Sat Aug 10 23:49:51 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Mon Aug 12 19:35:07 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -11,9 +11,7 @@ $2000$_pro_b2
 35hp_iceworld
 35hp_lego_go
 35hp_minecraft_go
-35hp_orange_box_handel
 35hp_peace
-35hp_riptosarena
 35hp_rush_hour
 35hp_white_palm
 3mc_training
