@@ -262,12 +262,6 @@ char g_BotName[][] = {
 	"somedieyoung",
 	"chopper",
 	"S0tF1k",
-	//Vega Players
-	"seized",
-	"jR",
-	"crush",
-	"scoobyxie",
-	"Dima",
 	//Lazarus Players
 	"Zellsis",
 	"swag",
@@ -506,7 +500,7 @@ char g_BotName[][] = {
 	"1962",
 	"Noktse",
 	"Reversive",
-	"pino",
+	"nbl",
 	"maxujas",
 	//paiN Players
 	"PKL",
@@ -883,7 +877,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_mvppk", Team_MVPPK);
 	RegConsoleCmd("team_envy", Team_Envy);
 	RegConsoleCmd("team_spirit", Team_Spirit);
-	RegConsoleCmd("team_vega", Team_Vega);
 	RegConsoleCmd("team_lazarus", Team_Lazarus);
 	RegConsoleCmd("team_cex", Team_CeX);
 	RegConsoleCmd("team_ldlc", Team_LDLC);
@@ -2076,34 +2069,6 @@ public Action Team_Spirit(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Vega(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "seized");
-		ServerCommand("bot_add_ct %s", "jR");
-		ServerCommand("bot_add_ct %s", "crush");
-		ServerCommand("bot_add_ct %s", "scoobyxie");
-		ServerCommand("bot_add_ct %s", "Dima");
-		ServerCommand("mp_teamlogo_1 vega");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "seized");
-		ServerCommand("bot_add_t %s", "jR");
-		ServerCommand("bot_add_t %s", "crush");
-		ServerCommand("bot_add_t %s", "scoobyxie");
-		ServerCommand("bot_add_t %s", "Dima");
-		ServerCommand("mp_teamlogo_2 vega");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Lazarus(int client, int args)
 {
 	char arg[12];
@@ -3206,7 +3171,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_ct %s", "1962");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
-		ServerCommand("bot_add_ct %s", "pino");
+		ServerCommand("bot_add_ct %s", "nbl");
 		ServerCommand("bot_add_ct %s", "maxujas");
 		ServerCommand("mp_teamlogo_1 isu");
 	}
@@ -3216,7 +3181,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_t %s", "1962");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
-		ServerCommand("bot_add_t %s", "pino");
+		ServerCommand("bot_add_t %s", "nbl");
 		ServerCommand("bot_add_t %s", "maxujas");
 		ServerCommand("mp_teamlogo_2 isu");
 	}
@@ -5547,7 +5512,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Isurus Players
-	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "pino")) || (StrEqual(botname, "maxujas")))
+	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "nbl")) || (StrEqual(botname, "maxujas")))
 	{
 		CS_SetClientClanTag(client, "Isurus");
 	}

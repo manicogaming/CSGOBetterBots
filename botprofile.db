@@ -1281,28 +1281,6 @@ ProP+Rifle "S0tF1k"
 	VoicePitch = 110
 End
 
-//Vega Players
-
-ProP+Rifle "seized"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "jR"
-	VoicePitch = 106
-End
-
-ProP+Rifle "crush"
-	VoicePitch = 95
-End
-
-ProP+Rifle "scoobyxie"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Dima"
-	VoicePitch = 110
-End
-
 //Lazarus Players
 
 ProP+Rifle "Zellsis"
@@ -2175,7 +2153,7 @@ ProP+Rifle "Reversive"
 	VoicePitch = 95
 End
 
-ProP+Rifle "pino"
+ProP+Rifle "nbl"
 	VoicePitch = 110
 End
 
