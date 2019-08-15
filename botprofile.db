@@ -2883,7 +2883,7 @@ ProP+Rifle "L1NK"
 	VoicePitch = 110
 End
 
-ProP+Rifle "frazehh"
+ProP+Rifle "ec1s"
 	VoicePitch = 110
 End
 
@@ -3091,7 +3091,7 @@ ProP+Rifle "Astroo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "ec1s"
+EliteAwp+SniperPro "Impulse"
 	VoicePitch = 106
 End
 
@@ -3099,11 +3099,11 @@ ProP+Rifle "frei"
 	VoicePitch = 95
 End
 
-ProP+Rifle "nEiLZiNHo"
+ProP+Rifle "k1Ng0r"
 	VoicePitch = 110
 End
 
-ProP+Rifle "AlekS"
+ProP+Rifle "ardiis"
 	VoicePitch = 110
 End
 

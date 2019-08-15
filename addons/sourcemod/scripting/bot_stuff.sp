@@ -705,7 +705,7 @@ char g_BotName[][] = {
 	"Kray",
 	"Adam9130",
 	"L1NK",
-	"frazehh",
+	"ec1s",
 	//GroundZero Players
 	"BURNRUOk",
 	"void",
@@ -762,10 +762,10 @@ char g_BotName[][] = {
 	"sh0wz",
 	//Fierce Players
 	"Astroo",
-	"ec1s",
+	"Impulse",
 	"frei",
-	"nEiLZiNHo",
-	"AlekS",
+	"k1Ng0r",
+	"ardiis",
 	//Trident Players
 	"TEX",
 	"zorboT",
@@ -4096,7 +4096,7 @@ public Action Team_Vexed(int client, int args)
 		ServerCommand("bot_add_ct %s", "Kray");
 		ServerCommand("bot_add_ct %s", "Adam9130");
 		ServerCommand("bot_add_ct %s", "L1NK");
-		ServerCommand("bot_add_ct %s", "frazehh");
+		ServerCommand("bot_add_ct %s", "ec1s");
 		ServerCommand("mp_teamlogo_1 vex");
 	}
 	
@@ -4106,7 +4106,7 @@ public Action Team_Vexed(int client, int args)
 		ServerCommand("bot_add_t %s", "Kray");
 		ServerCommand("bot_add_t %s", "Adam9130");
 		ServerCommand("bot_add_t %s", "L1NK");
-		ServerCommand("bot_add_t %s", "frazehh");
+		ServerCommand("bot_add_t %s", "ec1s");
 		ServerCommand("mp_teamlogo_2 vex");
 	}
 	
@@ -4373,20 +4373,20 @@ public Action Team_Fierce(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "Astroo");
-		ServerCommand("bot_add_ct %s", "ec1s");
+		ServerCommand("bot_add_ct %s", "Impulse");
 		ServerCommand("bot_add_ct %s", "frei");
-		ServerCommand("bot_add_ct %s", "nEiLZiNHo");
-		ServerCommand("bot_add_ct %s", "AlekS");
+		ServerCommand("bot_add_ct %s", "k1Ng0r");
+		ServerCommand("bot_add_ct %s", "ardiis");
 		ServerCommand("mp_teamlogo_1 fierce");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "Astroo");
-		ServerCommand("bot_add_t %s", "ec1s");
+		ServerCommand("bot_add_t %s", "Impulse");
 		ServerCommand("bot_add_t %s", "frei");
-		ServerCommand("bot_add_t %s", "nEiLZiNHo");
-		ServerCommand("bot_add_t %s", "AlekS");
+		ServerCommand("bot_add_t %s", "k1Ng0r");
+		ServerCommand("bot_add_t %s", "ardiis");
 		ServerCommand("mp_teamlogo_2 fierce");
 	}
 	
@@ -5710,7 +5710,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Vexed Players
-	if((StrEqual(botname, "mezii")) || (StrEqual(botname, "Kray")) || (StrEqual(botname, "Adam9130")) || (StrEqual(botname, "L1NK")) || (StrEqual(botname, "frazehh")))
+	if((StrEqual(botname, "mezii")) || (StrEqual(botname, "Kray")) || (StrEqual(botname, "Adam9130")) || (StrEqual(botname, "L1NK")) || (StrEqual(botname, "ec1s")))
 	{
 		CS_SetClientClanTag(client, "Vexed");
 	}
@@ -5776,7 +5776,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Fierce Players
-	if((StrEqual(botname, "Astroo")) || (StrEqual(botname, "ec1s")) || (StrEqual(botname, "frei")) || (StrEqual(botname, "nEiLZiNHo")) || (StrEqual(botname, "AlekS")))
+	if((StrEqual(botname, "Astroo")) || (StrEqual(botname, "Impulse")) || (StrEqual(botname, "frei")) || (StrEqual(botname, "k1Ng0r")) || (StrEqual(botname, "ardiis")))
 	{
 		CS_SetClientClanTag(client, "Fierce");
 	}
