@@ -382,12 +382,6 @@ char g_BotName[][] = {
 	"LittlesataN1",
 	"dixon",
 	"jJavi",
-	//Dragons Players
-	"Enanoks",
-	"Cr0n0s",
-	"DonQ",
-	"meisoN",
-	"xikii",
 	//Giants Players
 	"romeM",
 	"foxj",
@@ -488,7 +482,7 @@ char g_BotName[][] = {
 	"prt",
 	"tiburci0",
 	"v$m",
-	"hardzao",
+	"Lucaozy",
 	"Tuurtle",
 	//Infinity Players
 	"cruzN",
@@ -671,9 +665,9 @@ char g_BotName[][] = {
 	"Fadey",
 	"Domsterr",
 	//Energy Players
-	"MisteM",
+	"TheM4N",
 	"Dweezil",
-	"SandpitTurtle",
+	"kaNibalistic",
 	"adM",
 	"bLazE",
 	//Furious Players
@@ -682,12 +676,6 @@ char g_BotName[][] = {
 	"PREDI",
 	"TISAN",
 	"GATICA",
-	//MongolZ Players
-	"Machinegun",
-	"neuz",
-	"maaRaa",
-	"temk4wow",
-	"Annihilation",
 	//BLUEJAYS Players
 	"maxz",
 	"Tsubasa",
@@ -747,7 +735,7 @@ char g_BotName[][] = {
 	"farlig",
 	"HooXi",
 	"roeJ",
-	"Console",
+	"Nodios",
 	//GameAgents Players
 	"FliP1",
 	"shadow",
@@ -813,7 +801,31 @@ char g_BotName[][] = {
 	"Leaf",
 	"JUSTCAUSE",
 	"Reality",
-	"PPOverdose"
+	"PPOverdose",
+	//dizLown Players
+	"Stev0se",
+	"simix",
+	"yNc",
+	"ritchiEE",
+	"dreez",
+	//UOL Players
+	"crisby",
+	"kzy",
+	"DeniMM",
+	"Kirby",
+	"maRky",
+	//9INE Players
+	"PALM1",
+	"phzy",
+	"Djury",
+	"aybeN",
+	"MistFire",
+	//Baecon Players
+	"brA",
+	"Demonos",
+	"SHOUW",
+	"sark",
+	"axoN"
 };
  
 public Plugin myinfo =
@@ -897,7 +909,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_skitlite", Team_SkitLite);
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_baskonia", Team_Baskonia);
-	RegConsoleCmd("team_dragons", Team_Dragons);
 	RegConsoleCmd("team_giants", Team_Giants);
 	RegConsoleCmd("team_k1ck", Team_K1CK);
 	RegConsoleCmd("team_lions", Team_Lions);
@@ -946,7 +957,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_atk", Team_ATK);
 	RegConsoleCmd("team_energy", Team_energy);
 	RegConsoleCmd("team_furious", Team_Furious);
-	RegConsoleCmd("team_mongolz", Team_MongolZ);
 	RegConsoleCmd("team_bluejays", Team_BLUEJAYS);
 	RegConsoleCmd("team_executioners", Team_EXECUTIONERS);
 	RegConsoleCmd("team_vexed", Team_Vexed);
@@ -968,6 +978,10 @@ public void OnPluginStart()
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
 	RegConsoleCmd("team_genuine", Team_Genuine);
 	RegConsoleCmd("team_maple", Team_Maple);
+	RegConsoleCmd("team_dizlown", Team_dizLown);
+	RegConsoleCmd("team_uol", Team_UOL);
+	RegConsoleCmd("team_9ine", Team_9INE);
+	RegConsoleCmd("team_baecon", Team_Baecon);
 }
 
 public Action KickBots(int client, int args)
@@ -1605,7 +1619,7 @@ public Action Team_CR4ZY(int client, int args)
 		ServerCommand("bot_add_ct %s", "huNter");
 		ServerCommand("bot_add_ct %s", "nexa");
 		ServerCommand("bot_add_ct %s", "EspiranTo");
-		ServerCommand("mp_teamlogo_1 cr4zy");
+		ServerCommand("mp_teamlogo_1 cr4z");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -1615,7 +1629,7 @@ public Action Team_CR4ZY(int client, int args)
 		ServerCommand("bot_add_t %s", "huNter");
 		ServerCommand("bot_add_t %s", "nexa");
 		ServerCommand("bot_add_t %s", "EspiranTo");
-		ServerCommand("mp_teamlogo_2 cr4zy");
+		ServerCommand("mp_teamlogo_2 cr4z");
 	}
 	
 	return Plugin_Handled;
@@ -2629,34 +2643,6 @@ public Action Team_Baskonia(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Dragons(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "Enanoks");
-		ServerCommand("bot_add_ct %s", "Cr0n0s");
-		ServerCommand("bot_add_ct %s", "DonQ");
-		ServerCommand("bot_add_ct %s", "meisoN");
-		ServerCommand("bot_add_ct %s", "xikii");
-		ServerCommand("mp_teamlogo_1 drag");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "Enanoks");
-		ServerCommand("bot_add_t %s", "Cr0n0s");
-		ServerCommand("bot_add_t %s", "DonQ");
-		ServerCommand("bot_add_t %s", "meisoN");
-		ServerCommand("bot_add_t %s", "xikii");
-		ServerCommand("mp_teamlogo_2 drag");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Giants(int client, int args)
 {
 	char arg[12];
@@ -2921,7 +2907,7 @@ public Action Team_DreamEaters(int client, int args)
 		ServerCommand("bot_add_ct %s", "Krad");
 		ServerCommand("bot_add_ct %s", "Forester");
 		ServerCommand("bot_add_ct %s", "svyat");
-		ServerCommand("mp_teamlogo_1 dream");
+		ServerCommand("mp_teamlogo_1 drea");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -2931,7 +2917,7 @@ public Action Team_DreamEaters(int client, int args)
 		ServerCommand("bot_add_t %s", "Krad");
 		ServerCommand("bot_add_t %s", "Forester");
 		ServerCommand("bot_add_t %s", "svyat");
-		ServerCommand("mp_teamlogo_2 dream");
+		ServerCommand("mp_teamlogo_2 drea");
 	}
 	
 	return Plugin_Handled;
@@ -3115,7 +3101,7 @@ public Action Team_DETONA(int client, int args)
 		ServerCommand("bot_add_ct %s", "prt");
 		ServerCommand("bot_add_ct %s", "tiburci0");
 		ServerCommand("bot_add_ct %s", "v$m");
-		ServerCommand("bot_add_ct %s", "hardzao");
+		ServerCommand("bot_add_ct %s", "Lucaozy");
 		ServerCommand("bot_add_ct %s", "Tuurtle");
 		ServerCommand("mp_teamlogo_1 deto");
 	}
@@ -3125,7 +3111,7 @@ public Action Team_DETONA(int client, int args)
 		ServerCommand("bot_add_t %s", "prt");
 		ServerCommand("bot_add_t %s", "tiburci0");
 		ServerCommand("bot_add_t %s", "v$m");
-		ServerCommand("bot_add_t %s", "hardzao");
+		ServerCommand("bot_add_t %s", "Lucaozy");
 		ServerCommand("bot_add_t %s", "Tuurtle");
 		ServerCommand("mp_teamlogo_2 deto");
 	}
@@ -3952,9 +3938,9 @@ public Action Team_energy(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "MisteM");
+		ServerCommand("bot_add_ct %s", "TheM4N");
 		ServerCommand("bot_add_ct %s", "Dweezil");
-		ServerCommand("bot_add_ct %s", "SandpitTurtle");
+		ServerCommand("bot_add_ct %s", "kaNibalistic");
 		ServerCommand("bot_add_ct %s", "adM");
 		ServerCommand("bot_add_ct %s", "bLazE");
 		ServerCommand("mp_teamlogo_1 ener");
@@ -3962,9 +3948,9 @@ public Action Team_energy(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "MisteM");
+		ServerCommand("bot_add_t %s", "TheM4N");
 		ServerCommand("bot_add_t %s", "Dweezil");
-		ServerCommand("bot_add_t %s", "SandpitTurtle");
+		ServerCommand("bot_add_t %s", "kaNibalistic");
 		ServerCommand("bot_add_t %s", "adM");
 		ServerCommand("bot_add_t %s", "bLazE");
 		ServerCommand("mp_teamlogo_2 ener");
@@ -3996,34 +3982,6 @@ public Action Team_Furious(int client, int args)
 		ServerCommand("bot_add_t %s", "TISAN");
 		ServerCommand("bot_add_t %s", "GATICA");
 		ServerCommand("mp_teamlogo_2 furio");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_MongolZ(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "Machinegun");
-		ServerCommand("bot_add_ct %s", "neuz");
-		ServerCommand("bot_add_ct %s", "maaRaa");
-		ServerCommand("bot_add_ct %s", "temk4wow");
-		ServerCommand("bot_add_ct %s", "Annihilation");
-		ServerCommand("mp_teamlogo_1 mongo");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "Machinegun");
-		ServerCommand("bot_add_t %s", "neuz");
-		ServerCommand("bot_add_t %s", "maaRaa");
-		ServerCommand("bot_add_t %s", "temk4wow");
-		ServerCommand("bot_add_t %s", "Annihilation");
-		ServerCommand("mp_teamlogo_2 mongo");
 	}
 	
 	return Plugin_Handled;
@@ -4292,7 +4250,7 @@ public Action Team_Flames(int client, int args)
 		ServerCommand("bot_add_ct %s", "farlig");
 		ServerCommand("bot_add_ct %s", "HooXi");
 		ServerCommand("bot_add_ct %s", "roeJ");
-		ServerCommand("bot_add_ct %s", "Console");
+		ServerCommand("bot_add_ct %s", "Nodios");
 		ServerCommand("mp_teamlogo_1 copen");
 	}
 	
@@ -4302,7 +4260,7 @@ public Action Team_Flames(int client, int args)
 		ServerCommand("bot_add_t %s", "farlig");
 		ServerCommand("bot_add_t %s", "HooXi");
 		ServerCommand("bot_add_t %s", "roeJ");
-		ServerCommand("bot_add_t %s", "Console");
+		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 copen");
 	}
 	
@@ -4461,7 +4419,7 @@ public Action Team_Syman(int client, int args)
 		ServerCommand("bot_add_ct %s", "t0rick");
 		ServerCommand("bot_add_ct %s", "Perfecto");
 		ServerCommand("bot_add_ct %s", "Keoz");
-		ServerCommand("mp_teamlogo_1 sym");
+		ServerCommand("mp_teamlogo_1 syma");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -4471,7 +4429,7 @@ public Action Team_Syman(int client, int args)
 		ServerCommand("bot_add_t %s", "t0rick");
 		ServerCommand("bot_add_t %s", "Perfecto");
 		ServerCommand("bot_add_t %s", "Keoz");
-		ServerCommand("mp_teamlogo_2 sym");
+		ServerCommand("mp_teamlogo_2 syma");
 	}
 	
 	return Plugin_Handled;
@@ -4612,6 +4570,118 @@ public Action Team_Maple(int client, int args)
 		ServerCommand("bot_add_t %s", "Reality");
 		ServerCommand("bot_add_t %s", "PPOverdose");
 		ServerCommand("mp_teamlogo_2 maple");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_dizLown(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "Stev0se");
+		ServerCommand("bot_add_ct %s", "simix");
+		ServerCommand("bot_add_ct %s", "yNc");
+		ServerCommand("bot_add_ct %s", "ritchiEE");
+		ServerCommand("bot_add_ct %s", "dreez");
+		ServerCommand("mp_teamlogo_1 diz");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "Stev0se");
+		ServerCommand("bot_add_t %s", "simix");
+		ServerCommand("bot_add_t %s", "yNc");
+		ServerCommand("bot_add_t %s", "ritchiEE");
+		ServerCommand("bot_add_t %s", "dreez");
+		ServerCommand("mp_teamlogo_2 diz");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_UOL(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "crisby");
+		ServerCommand("bot_add_ct %s", "kzy");
+		ServerCommand("bot_add_ct %s", "DeniMM");
+		ServerCommand("bot_add_ct %s", "Kirby");
+		ServerCommand("bot_add_ct %s", "maRky");
+		ServerCommand("mp_teamlogo_1 uni");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "crisby");
+		ServerCommand("bot_add_t %s", "kzy");
+		ServerCommand("bot_add_t %s", "DeniMM");
+		ServerCommand("bot_add_t %s", "Kirby");
+		ServerCommand("bot_add_t %s", "maRky");
+		ServerCommand("mp_teamlogo_2 uni");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_9INE(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "PALM1");
+		ServerCommand("bot_add_ct %s", "phzy");
+		ServerCommand("bot_add_ct %s", "Djury");
+		ServerCommand("bot_add_ct %s", "aybeN");
+		ServerCommand("bot_add_ct %s", "MistFire");
+		ServerCommand("mp_teamlogo_1 9ine");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "PALM1");
+		ServerCommand("bot_add_t %s", "phzy");
+		ServerCommand("bot_add_t %s", "Djury");
+		ServerCommand("bot_add_t %s", "aybeN");
+		ServerCommand("bot_add_t %s", "MistFire");
+		ServerCommand("mp_teamlogo_2 9ine");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Baecon(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "brA");
+		ServerCommand("bot_add_ct %s", "Demonos");
+		ServerCommand("bot_add_ct %s", "SHOUW");
+		ServerCommand("bot_add_ct %s", "sark");
+		ServerCommand("bot_add_ct %s", "axoN");
+		ServerCommand("mp_teamlogo_1 baec");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "brA");
+		ServerCommand("bot_add_t %s", "Demonos");
+		ServerCommand("bot_add_t %s", "SHOUW");
+		ServerCommand("bot_add_t %s", "sark");
+		ServerCommand("bot_add_t %s", "axoN");
+		ServerCommand("mp_teamlogo_2 9ine");
 	}
 
 	return Plugin_Handled;
@@ -5397,12 +5467,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Baskonia");
 	}
 	
-	//Dragons Players
-	if((StrEqual(botname, "Enanoks")) || (StrEqual(botname, "Cr0n0s")) || (StrEqual(botname, "DonQ")) || (StrEqual(botname, "meisoN")) || (StrEqual(botname, "xikii")))
-	{
-		CS_SetClientClanTag(client, "Dragons");
-	}
-	
 	//Giants Players
 	if((StrEqual(botname, "romeM")) || (StrEqual(botname, "foxj")) || (StrEqual(botname, "KILLDREAM")) || (StrEqual(botname, "MUTiRiS")) || (StrEqual(botname, "ZELIN")))
 	{
@@ -5500,7 +5564,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//DETONA Players
-	if((StrEqual(botname, "prt")) || (StrEqual(botname, "tiburci0")) || (StrEqual(botname, "v$m")) || (StrEqual(botname, "hardzao")) || (StrEqual(botname, "Tuurtle")))
+	if((StrEqual(botname, "prt")) || (StrEqual(botname, "tiburci0")) || (StrEqual(botname, "v$m")) || (StrEqual(botname, "Lucaozy")) || (StrEqual(botname, "Tuurtle")))
 	{
 		CS_SetClientClanTag(client, "DETONA");
 	}
@@ -5686,15 +5750,9 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Energy Players
-	if((StrEqual(botname, "MisteM")) || (StrEqual(botname, "Dweezil")) || (StrEqual(botname, "SandpitTurtle")) || (StrEqual(botname, "adM")) || (StrEqual(botname, "bLazE")))
+	if((StrEqual(botname, "TheM4N")) || (StrEqual(botname, "Dweezil")) || (StrEqual(botname, "kaNibalistic")) || (StrEqual(botname, "adM")) || (StrEqual(botname, "bLazE")))
 	{
 		CS_SetClientClanTag(client, "Energy");
-	}
-	
-	//MongolZ Players
-	if((StrEqual(botname, "Machinegun")) || (StrEqual(botname, "neuz")) || (StrEqual(botname, "maaRaa")) || (StrEqual(botname, "temk4wow")) || (StrEqual(botname, "Annihilation")))
-	{
-		CS_SetClientClanTag(client, "MongolZ");
 	}
 	
 	//BLUEJAYS Players
@@ -5758,7 +5816,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Flames Players
-	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "roeJ")) || (StrEqual(botname, "Console")))
+	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "roeJ")) || (StrEqual(botname, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}
@@ -5827,5 +5885,29 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "NIFFY")) || (StrEqual(botname, "Leaf")) || (StrEqual(botname, "JUSTCAUSE")) || (StrEqual(botname, "Reality")) || (StrEqual(botname, "PPOverdose")))
 	{
 		CS_SetClientClanTag(client, "Maple");
+	}
+	
+	//dizLown Players
+	if((StrEqual(botname, "Stev0se")) || (StrEqual(botname, "simix")) || (StrEqual(botname, "yNc")) || (StrEqual(botname, "ritchiEE")) || (StrEqual(botname, "dreez")))
+	{
+		CS_SetClientClanTag(client, "dizLown");
+	}
+	
+	//UOL Players
+	if((StrEqual(botname, "crisby")) || (StrEqual(botname, "kzy")) || (StrEqual(botname, "DeniMM")) || (StrEqual(botname, "Kirby")) || (StrEqual(botname, "maRky")))
+	{
+		CS_SetClientClanTag(client, "UOL");
+	}
+	
+	//9INE Players
+	if((StrEqual(botname, "PALM1")) || (StrEqual(botname, "phzy")) || (StrEqual(botname, "Djury")) || (StrEqual(botname, "aybeN")) || (StrEqual(botname, "MistFire")))
+	{
+		CS_SetClientClanTag(client, "9INE");
+	}
+	
+	//Baecon Players
+	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "SHOUW")) || (StrEqual(botname, "sark")) || (StrEqual(botname, "axoN")))
+	{
+		CS_SetClientClanTag(client, "Baecon");
 	}
 }

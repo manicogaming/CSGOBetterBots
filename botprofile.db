@@ -1721,28 +1721,6 @@ ProP+Rifle "jJavi"
 	VoicePitch = 110
 End
 
-//Dragons Players
-
-ProP+Rifle "Enanoks"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Cr0n0s"
-	VoicePitch = 106
-End
-
-ProP+Rifle "DonQ"
-	VoicePitch = 95
-End
-
-ProP+Rifle "meisoN"
-	VoicePitch = 110
-End
-
-ProP+Rifle "xikii"
-	VoicePitch = 110
-End
-
 //Giants Players
 
 ProP+Rifle "romeM"
@@ -2109,7 +2087,7 @@ ProP+Rifle "v$m"
 	VoicePitch = 95
 End
 
-ProP+Rifle "hardzao"
+ProP+Rifle "Lucaozy"
 	VoicePitch = 110
 End
 
@@ -2757,7 +2735,7 @@ End
 
 //energy Players
 
-ProP+Rifle "MisteM"
+ProP+Rifle "TheM4N"
 	VoicePitch = 91
 End
 
@@ -2765,7 +2743,7 @@ EliteAwp+SniperPro "Dweezil"
 	VoicePitch = 106
 End
 
-ProP+Rifle "SandpitTurtle"
+ProP+Rifle "kaNibalistic"
 	VoicePitch = 95
 End
 
@@ -2796,28 +2774,6 @@ ProP+Rifle "TISAN"
 End
 
 ProP+Rifle "GATICA"
-	VoicePitch = 110
-End
-
-//MongolZ Players
-
-ProP+Rifle "Machinegun"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "neuz"
-	VoicePitch = 106
-End
-
-ProP+Rifle "maaRaa"
-	VoicePitch = 95
-End
-
-ProP+Rifle "temk4wow"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Annihilation"
 	VoicePitch = 110
 End
 
@@ -3037,7 +2993,7 @@ ProP+Rifle "roeJ"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Console"
+ProP+Rifle "Nodios"
 	VoicePitch = 110
 End
 
@@ -3280,6 +3236,94 @@ ProP+Rifle "Reality"
 End
 
 ProP+Rifle "PPOverdose"
+	VoicePitch = 110
+End
+
+//dizLown Players
+
+ProP+Rifle "Stev0se"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "simix"
+	VoicePitch = 106
+End
+
+ProP+Rifle "yNc"
+	VoicePitch = 95
+End
+
+ProP+Rifle "ritchiEE"
+	VoicePitch = 110
+End
+
+ProP+Rifle "dreez"
+	VoicePitch = 110
+End
+
+//UOL Players
+
+ProP+Rifle "crisby"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "kzy"
+	VoicePitch = 106
+End
+
+ProP+Rifle "DeniMM"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Kirby"
+	VoicePitch = 110
+End
+
+ProP+Rifle "maRky"
+	VoicePitch = 110
+End
+
+//9INE Players
+
+ProP+Rifle "PALM1"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "phzy"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Djury"
+	VoicePitch = 95
+End
+
+ProP+Rifle "aybeN"
+	VoicePitch = 110
+End
+
+ProP+Rifle "MistFire"
+	VoicePitch = 110
+End
+
+//Baecon Players
+
+ProP+Rifle "brA"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Demonos"
+	VoicePitch = 106
+End
+
+ProP+Rifle "SHOUW"
+	VoicePitch = 95
+End
+
+ProP+Rifle "sark"
+	VoicePitch = 110
+End
+
+ProP+Rifle "axoN"
 	VoicePitch = 110
 End
 
