@@ -121,9 +121,9 @@ char g_BotName[][] = {
 	//AGO Players
 	"Furlan",
 	"GruBy",
-	"leman",
-	"mhL",
-	"hades",
+	"SAYN",
+	"pashaBiceps",
+	"Sidney",
 	//ENCE Players
 	"Aleksib",
 	"allu",
@@ -717,7 +717,7 @@ char g_BotName[][] = {
 	"draken",
 	"freddieb",
 	"RuStY",
-	"grux",
+	"MODDII",
 	//Keyd Players
 	"SHOOWTiME",
 	"zqk",
@@ -736,12 +736,6 @@ char g_BotName[][] = {
 	"HooXi",
 	"roeJ",
 	"Nodios",
-	//GameAgents Players
-	"FliP1",
-	"shadow",
-	"pounh",
-	"Butters",
-	"jayzaR",
 	//eu4ia Players
 	"mik",
 	"rai",
@@ -967,7 +961,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_keyd", Team_Keyd);
 	RegConsoleCmd("team_gtz", Team_GTZ);
 	RegConsoleCmd("team_flames", Team_Flames);
-	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_eu4ia", Team_eu4ia);
 	RegConsoleCmd("team_fierce", Team_Fierce);
 	RegConsoleCmd("team_trident", Team_Trident);
@@ -1420,9 +1413,9 @@ public Action Team_AGO(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "Furlan");
 		ServerCommand("bot_add_ct %s", "GruBy");
-		ServerCommand("bot_add_ct %s", "leman");
-		ServerCommand("bot_add_ct %s", "mhL");
-		ServerCommand("bot_add_ct %s", "hades");
+		ServerCommand("bot_add_ct %s", "SAYN");
+		ServerCommand("bot_add_ct %s", "pashaBiceps");
+		ServerCommand("bot_add_ct %s", "Sidney");
 		ServerCommand("mp_teamlogo_1 ago");
 	}
 	
@@ -1430,9 +1423,9 @@ public Action Team_AGO(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "Furlan");
 		ServerCommand("bot_add_t %s", "GruBy");
-		ServerCommand("bot_add_t %s", "leman");
-		ServerCommand("bot_add_t %s", "mhL");
-		ServerCommand("bot_add_t %s", "hades");
+		ServerCommand("bot_add_t %s", "SAYN");
+		ServerCommand("bot_add_t %s", "pashaBiceps");
+		ServerCommand("bot_add_t %s", "Sidney");
 		ServerCommand("mp_teamlogo_2 ago");
 	}
 	
@@ -4166,7 +4159,7 @@ public Action Team_Ancient(int client, int args)
 		ServerCommand("bot_add_ct %s", "draken");
 		ServerCommand("bot_add_ct %s", "freddieb");
 		ServerCommand("bot_add_ct %s", "RuStY");
-		ServerCommand("bot_add_ct %s", "grux");
+		ServerCommand("bot_add_ct %s", "MODDII");
 		ServerCommand("mp_teamlogo_1 anci");
 	}
 	
@@ -4176,7 +4169,7 @@ public Action Team_Ancient(int client, int args)
 		ServerCommand("bot_add_t %s", "draken");
 		ServerCommand("bot_add_t %s", "freddieb");
 		ServerCommand("bot_add_t %s", "RuStY");
-		ServerCommand("bot_add_t %s", "grux");
+		ServerCommand("bot_add_t %s", "MODDII");
 		ServerCommand("mp_teamlogo_2 anci");
 	}
 	
@@ -4262,34 +4255,6 @@ public Action Team_Flames(int client, int args)
 		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 copen");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_GameAgents(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "FliP1");
-		ServerCommand("bot_add_ct %s", "shadow");
-		ServerCommand("bot_add_ct %s", "pounh");
-		ServerCommand("bot_add_ct %s", "Butters");
-		ServerCommand("bot_add_ct %s", "jayzaR");
-		ServerCommand("mp_teamlogo_1 agents");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "FliP1");
-		ServerCommand("bot_add_t %s", "shadow");
-		ServerCommand("bot_add_t %s", "pounh");
-		ServerCommand("bot_add_t %s", "Butters");
-		ServerCommand("bot_add_t %s", "jayzaR");
-		ServerCommand("mp_teamlogo_2 agents");
 	}
 	
 	return Plugin_Handled;
@@ -5198,7 +5163,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//AGO Players
-	if((StrEqual(botname, "Furlan")) || (StrEqual(botname, "GruBy")) || (StrEqual(botname, "leman")) || (StrEqual(botname, "mhL")) || (StrEqual(botname, "hades")))
+	if((StrEqual(botname, "Furlan")) || (StrEqual(botname, "GruBy")) || (StrEqual(botname, "SAYN")) || (StrEqual(botname, "pashaBiceps")) || (StrEqual(botname, "Sidney")))
 	{
 		CS_SetClientClanTag(client, "AGO");
 	}
@@ -5792,7 +5757,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Ancient Players
-	if((StrEqual(botname, "disco doplan")) || (StrEqual(botname, "draken")) || (StrEqual(botname, "freddieb")) || (StrEqual(botname, "RuStY")) || (StrEqual(botname, "grux")))
+	if((StrEqual(botname, "disco doplan")) || (StrEqual(botname, "draken")) || (StrEqual(botname, "freddieb")) || (StrEqual(botname, "RuStY")) || (StrEqual(botname, "MODDII")))
 	{
 		CS_SetClientClanTag(client, "Ancient");
 	}
@@ -5819,12 +5784,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "roeJ")) || (StrEqual(botname, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "Flames");
-	}
-	
-	//GameAgents Players
-	if((StrEqual(botname, "FliP1")) || (StrEqual(botname, "shadow")) || (StrEqual(botname, "pounh")) || (StrEqual(botname, "Butters")) || (StrEqual(botname, "jayzaR")))
-	{
-		CS_SetClientClanTag(client, "GameAgents");
 	}
 	
 	//eu4ia Players

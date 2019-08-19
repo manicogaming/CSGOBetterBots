@@ -763,15 +763,15 @@ EliteAwp+SniperPro "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "leman"
+ProP+Rifle "SAYN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "mhL"
+ProP+Rifle "pashaBiceps"
 	VoicePitch = 110
 End
 
-ProP+Rifle "hades"
+ProP+Rifle "Sidney"
 	VoicePitch = 110
 End
 
@@ -2927,7 +2927,7 @@ ProP+Rifle "RuStY"
 	VoicePitch = 110
 End
 
-ProP+Rifle "grux"
+ProP+Rifle "MODDII"
 	VoicePitch = 110
 End
 
@@ -2994,28 +2994,6 @@ ProP+Rifle "roeJ"
 End
 
 ProP+Rifle "Nodios"
-	VoicePitch = 110
-End
-
-//GameAgents Players
-
-ProP+Rifle "FliP1"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "shadow"
-	VoicePitch = 106
-End
-
-ProP+Rifle "pounh"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Butters"
-	VoicePitch = 110
-End
-
-ProP+Rifle "jayzaR"
 	VoicePitch = 110
 End
 
