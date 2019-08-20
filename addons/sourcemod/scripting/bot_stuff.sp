@@ -4845,7 +4845,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 		}
 		case 5:
 		{
-			g_iCoin[client] = GetRandomInt(1028,1055);
+			g_iCoin[client] = GetRandomInt(1028,1057);
 		}
 		case 6:
 		{

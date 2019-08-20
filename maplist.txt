@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Mon Aug 12 19:35:07 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Tue Aug 20 17:19:50 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -32,7 +32,6 @@ aim_ak-colt_v4
 aim_ak47_colt
 aim_ak_colt_subway
 aim_akm4ruins2
-aim_arena
 aim_awp
 aim_aztec2_css
 aim_badneighbors
@@ -61,7 +60,6 @@ aim_scopearena
 aim_scoutz
 aim_shotgun3
 aim_shyam
-aim_speedgaming
 aim_stashhouse
 aim_treearena
 aim_usp_v2
