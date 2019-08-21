@@ -204,7 +204,7 @@ char g_BotName[][] = {
 	"mirbit",
 	//Heroic Players
 	"es3tag",
-	"NaToSaphiX",
+	"b0RUP",
 	"friberg",
 	"blameF",
 	"stavn",
@@ -371,7 +371,7 @@ char g_BotName[][] = {
 	"zks",
 	"Vladimus",
 	//Tricked Players
-	"b0RUP",
+	"Winspai",
 	"acoR",
 	"HUNDEN",
 	"Sjuush",
@@ -501,7 +501,7 @@ char g_BotName[][] = {
 	"land1n",
 	"tatazin",
 	"biguzera",
-	"f4stzin",
+	"hardzao",
 	//Sharks Players
 	"meyern",
 	"jnt",
@@ -1804,7 +1804,7 @@ public Action Team_Heroic(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "es3tag");
-		ServerCommand("bot_add_ct %s", "NaToSaphiX");
+		ServerCommand("bot_add_ct %s", "b0RUP");
 		ServerCommand("bot_add_ct %s", "friberg");
 		ServerCommand("bot_add_ct %s", "blameF");
 		ServerCommand("bot_add_ct %s", "stavn");
@@ -1814,7 +1814,7 @@ public Action Team_Heroic(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "es3tag");
-		ServerCommand("bot_add_t %s", "NaToSaphiX");
+		ServerCommand("bot_add_t %s", "b0RUP");
 		ServerCommand("bot_add_t %s", "friberg");
 		ServerCommand("bot_add_t %s", "blameF");
 		ServerCommand("bot_add_t %s", "stavn");
@@ -2587,7 +2587,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "b0RUP");
+		ServerCommand("bot_add_ct %s", "Winspai");
 		ServerCommand("bot_add_ct %s", "acoR");
 		ServerCommand("bot_add_ct %s", "HUNDEN");
 		ServerCommand("bot_add_ct %s", "Sjuush");
@@ -2597,7 +2597,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "b0RUP");
+		ServerCommand("bot_add_t %s", "Winspai");
 		ServerCommand("bot_add_t %s", "acoR");
 		ServerCommand("bot_add_t %s", "HUNDEN");
 		ServerCommand("bot_add_t %s", "Sjuush");
@@ -3179,7 +3179,7 @@ public Action Team_paiN(int client, int args)
 		ServerCommand("bot_add_ct %s", "land1n");
 		ServerCommand("bot_add_ct %s", "tatazin");
 		ServerCommand("bot_add_ct %s", "biguzera");
-		ServerCommand("bot_add_ct %s", "f4stzin");
+		ServerCommand("bot_add_ct %s", "hardzao");
 		ServerCommand("mp_teamlogo_1 pain");
 	}
 	
@@ -3189,7 +3189,7 @@ public Action Team_paiN(int client, int args)
 		ServerCommand("bot_add_t %s", "land1n");
 		ServerCommand("bot_add_t %s", "tatazin");
 		ServerCommand("bot_add_t %s", "biguzera");
-		ServerCommand("bot_add_t %s", "f4stzin");
+		ServerCommand("bot_add_t %s", "hardzao");
 		ServerCommand("mp_teamlogo_2 pain");
 	}
 	
@@ -5247,7 +5247,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Heroic Players
-	if((StrEqual(botname, "es3tag")) || (StrEqual(botname, "NaToSaphiX")) || (StrEqual(botname, "friberg")) || (StrEqual(botname, "blameF")) || (StrEqual(botname, "stavn")))
+	if((StrEqual(botname, "es3tag")) || (StrEqual(botname, "b0RUP")) || (StrEqual(botname, "friberg")) || (StrEqual(botname, "blameF")) || (StrEqual(botname, "stavn")))
 	{
 		CS_SetClientClanTag(client, "Heroic");
 	}
@@ -5421,7 +5421,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Tricked Players
-	if((StrEqual(botname, "b0RUP")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Bubzkji")))
+	if((StrEqual(botname, "Winspai")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Bubzkji")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
 	}
@@ -5547,7 +5547,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//paiN Players
-	if((StrEqual(botname, "PKL")) || (StrEqual(botname, "land1n")) || (StrEqual(botname, "tatazin")) || (StrEqual(botname, "biguzera")) || (StrEqual(botname, "f4stzin")))
+	if((StrEqual(botname, "PKL")) || (StrEqual(botname, "land1n")) || (StrEqual(botname, "tatazin")) || (StrEqual(botname, "biguzera")) || (StrEqual(botname, "hardzao")))
 	{
 		CS_SetClientClanTag(client, "paiN");
 	}

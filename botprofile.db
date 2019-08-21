@@ -1067,7 +1067,7 @@ ProP+Rifle "es3tag"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "NaToSaphiX"
+EliteAwp+SniperPro "b0RUP"
 	VoicePitch = 106
 End
 
@@ -1679,7 +1679,7 @@ End
 
 //Tricked Players
 
-ProP+Rifle "b0RUP"
+ProP+Rifle "Winspai"
 	VoicePitch = 91
 End
 
@@ -2157,7 +2157,7 @@ ProP+Rifle "biguzera"
 	VoicePitch = 110
 End
 
-ProP+Rifle "f4stzin"
+ProP+Rifle "hardzao"
 	VoicePitch = 110
 End
 
