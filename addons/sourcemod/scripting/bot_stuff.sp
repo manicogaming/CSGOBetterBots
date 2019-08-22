@@ -819,7 +819,19 @@ char g_BotName[][] = {
 	"Demonos",
 	"SHOUW",
 	"sark",
-	"axoN"
+	"axoN",
+	//Corvidae Players
+	"DANZ",
+	"dash",
+	"m1tch",
+	"nibke",
+	"Dirty",
+	//Wizards Players
+	"KALAS",
+	"v1NCHENSO7",
+	"Kiles",
+	"Fit1nho",
+	"Ryd3r-"
 };
  
 public Plugin myinfo =
@@ -975,6 +987,8 @@ public void OnPluginStart()
 	RegConsoleCmd("team_uol", Team_UOL);
 	RegConsoleCmd("team_9ine", Team_9INE);
 	RegConsoleCmd("team_baecon", Team_Baecon);
+	RegConsoleCmd("team_corvidae", Team_Corvidae);
+	RegConsoleCmd("team_wizards", Team_Wizards);
 }
 
 public Action KickBots(int client, int args)
@@ -4652,6 +4666,62 @@ public Action Team_Baecon(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Corvidae(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "DANZ");
+		ServerCommand("bot_add_ct %s", "dash");
+		ServerCommand("bot_add_ct %s", "m1tch");
+		ServerCommand("bot_add_ct %s", "nibke");
+		ServerCommand("bot_add_ct %s", "Dirty");
+		ServerCommand("mp_teamlogo_1 corv");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "DANZ");
+		ServerCommand("bot_add_t %s", "dash");
+		ServerCommand("bot_add_t %s", "m1tch");
+		ServerCommand("bot_add_t %s", "nibke");
+		ServerCommand("bot_add_t %s", "Dirty");
+		ServerCommand("mp_teamlogo_2 corv");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Wizards(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "KALAS");
+		ServerCommand("bot_add_ct %s", "v1NCHENSO7");
+		ServerCommand("bot_add_ct %s", "Kiles");
+		ServerCommand("bot_add_ct %s", "Fit1nho");
+		ServerCommand("bot_add_ct %s", "Ryd3r-");
+		ServerCommand("mp_teamlogo_1 wiz");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "KALAS");
+		ServerCommand("bot_add_t %s", "v1NCHENSO7");
+		ServerCommand("bot_add_t %s", "Kiles");
+		ServerCommand("bot_add_t %s", "Fit1nho");
+		ServerCommand("bot_add_t %s", "Ryd3r-");
+		ServerCommand("mp_teamlogo_2 wiz");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5868,5 +5938,17 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "SHOUW")) || (StrEqual(botname, "sark")) || (StrEqual(botname, "axoN")))
 	{
 		CS_SetClientClanTag(client, "Baecon");
+	}
+	
+	//Corvidae Players
+	if((StrEqual(botname, "DANZ")) || (StrEqual(botname, "dash")) || (StrEqual(botname, "m1tch")) || (StrEqual(botname, "nibke")) || (StrEqual(botname, "Dirty")))
+	{
+		CS_SetClientClanTag(client, "Corvidae");
+	}
+	
+	//Wizards Players
+	if((StrEqual(botname, "KALAS")) || (StrEqual(botname, "v1NCHENSO7")) || (StrEqual(botname, "Kiles")) || (StrEqual(botname, "Fit1nho")) || (StrEqual(botname, "Ryd3r-")))
+	{
+		CS_SetClientClanTag(client, "Wizards");
 	}
 }

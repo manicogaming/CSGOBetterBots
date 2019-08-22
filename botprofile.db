@@ -3305,6 +3305,50 @@ ProP+Rifle "axoN"
 	VoicePitch = 110
 End
 
+//Corvidae Players
+
+ProP+Rifle "DANZ"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "dash"
+	VoicePitch = 106
+End
+
+ProP+Rifle "m1tch"
+	VoicePitch = 95
+End
+
+ProP+Rifle "nibke"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Dirty"
+	VoicePitch = 110
+End
+
+//Wizards Players
+
+ProP+Rifle "KALAS"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "v1NCHENSO7"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Kiles"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Fit1nho"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Ryd3r-"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 95
 End
