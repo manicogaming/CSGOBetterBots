@@ -356,12 +356,24 @@ public Action Event_WeaponFire(Event hEvent, const char[] chName, bool bDontBroa
 	{
 		return Plugin_Continue;
 	}
-
-	int iTarget = GetClosestClient(iClient);
 	
-	if (iTarget > 0)
+	char awp[32];
+	
+	GetClientWeapon(iClient, awp, sizeof(awp));
+	
+	if(StrEqual(awp, "weapon_awp"))
 	{
-		LookAtClient(iClient, iTarget);
+		return Plugin_Continue;
+	}
+
+	if(GetRandomInt(1,10) == 1)
+	{
+		int iTarget = GetClosestClient(iClient);
+		
+		if (iTarget > 0)
+		{
+			LookAtClient(iClient, iTarget);
+		}
 	}
 	
 	return Plugin_Continue;
@@ -416,14 +428,27 @@ public Action OnPlayerRunCmd(int iClient, int &iButtons, int &iImpulse, float fV
 		return Plugin_Continue;
 	}
 	
-	if ((iButtons & IN_ATTACK) == IN_ATTACK || g_cvAimbotAutoAim.BoolValue)
+	char awp[32];
+	
+	GetClientWeapon(iClient, awp, sizeof(awp));
+	
+	if(StrEqual(awp, "weapon_awp"))
 	{
-		int iTarget = GetClosestClient(iClient);
-		int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
-		
-		if (iClipAmmo > 0 && iTarget > 0)
+		return Plugin_Continue;
+	}
+	
+	if(GetRandomInt(1,10) == 1)
+	{	
+		if ((iButtons & IN_ATTACK) == IN_ATTACK || g_cvAimbotAutoAim.BoolValue)
 		{
-			LookAtClient(iClient, iTarget);
+		
+			int iTarget = GetClosestClient(iClient);
+			int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
+			
+			if (iClipAmmo > 0 && iTarget > 0)
+			{
+				LookAtClient(iClient, iTarget);
+			}
 		}
 	}
 	

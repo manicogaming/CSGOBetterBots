@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Tue Aug 20 23:16:59 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Thu Aug 22 00:06:48 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -39,7 +39,6 @@ aim_badsiblings
 aim_cbble
 aim_container_autosniper
 aim_crazyjump_go
-aim_crazyjump_simpsons07
 aim_deagle7k_real
 aim_deagle_ultra
 aim_depot_beta01
@@ -47,15 +46,12 @@ aim_headshot2_csgo
 aim_junkyard
 aim_map
 aim_map2
-aim_map_dd2
 aim_map_duelies
 aim_map_gamma
-aim_multi_v4
 aim_neon_handel
 aim_notsocrazyjump
 aim_perfect2
 aim_redline
-aim_redline_rizegamers
 aim_scopearena
 aim_scoutz
 aim_shotgun3
@@ -64,7 +60,7 @@ aim_stashhouse
 aim_treearena
 aim_usp_v2
 aim_warehouse
-aim_warmup_d
+aim_warmup
 ar_baggage
 ar_baggage_flooded
 ar_dizzy
@@ -125,12 +121,9 @@ cs_cock
 cs_farmhouse
 cs_hideout
 cs_italy
-cs_italy_reloaded_final
 cs_lanpartymayhem
 cs_militia
-cs_militia_x_beta
 cs_office
-cs_office_night_final
 cs_twilight
 de_bank
 de_breach
@@ -158,8 +151,6 @@ de_nightforest
 de_nuke
 de_nuke_ramps
 de_overpass
-de_piranesi
-de_port_b2
 de_ruby
 de_safehouse
 de_seaside

@@ -6,7 +6,7 @@
 #include <sdktools>
 #include <cstrike>
 
-#pragma newdecls required
+//#pragma newdecls required
 
 bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
@@ -371,7 +371,7 @@ char g_BotName[][] = {
 	"zks",
 	"Vladimus",
 	//Tricked Players
-	"Winspai",
+	"roeJ",
 	"acoR",
 	"HUNDEN",
 	"Sjuush",
@@ -515,7 +515,7 @@ char g_BotName[][] = {
 	"bit",
 	"b4rtiN",
 	//W7M Players
-	"skullz",
+	"rood",
 	"raafa",
 	"ryotzz",
 	"pancc",
@@ -722,8 +722,8 @@ char g_BotName[][] = {
 	"SHOOWTiME",
 	"zqk",
 	"shz",
-	"dzt",
-	"RMN",
+	"SuupLexx",
+	"KILLDREAM",
 	//GTZ Players
 	"emp",
 	"abr",
@@ -733,8 +733,8 @@ char g_BotName[][] = {
 	//Flames Players
 	"Basso",
 	"farlig",
-	"HooXi",
-	"roeJ",
+	"AcilioN",
+	"Sycrone",
 	"Nodios",
 	//eu4ia Players
 	"mik",
@@ -2587,7 +2587,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Winspai");
+		ServerCommand("bot_add_ct %s", "roeJ");
 		ServerCommand("bot_add_ct %s", "acoR");
 		ServerCommand("bot_add_ct %s", "HUNDEN");
 		ServerCommand("bot_add_ct %s", "Sjuush");
@@ -2597,7 +2597,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Winspai");
+		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("bot_add_t %s", "acoR");
 		ServerCommand("bot_add_t %s", "HUNDEN");
 		ServerCommand("bot_add_t %s", "Sjuush");
@@ -3259,7 +3259,7 @@ public Action Team_W7M(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "skullz");
+		ServerCommand("bot_add_ct %s", "rood");
 		ServerCommand("bot_add_ct %s", "raafa");
 		ServerCommand("bot_add_ct %s", "ryotzz");
 		ServerCommand("bot_add_ct %s", "pancc");
@@ -3269,7 +3269,7 @@ public Action Team_W7M(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "skullz");
+		ServerCommand("bot_add_t %s", "rood");
 		ServerCommand("bot_add_t %s", "raafa");
 		ServerCommand("bot_add_t %s", "ryotzz");
 		ServerCommand("bot_add_t %s", "pancc");
@@ -4186,8 +4186,8 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_ct %s", "SHOOWTiME");
 		ServerCommand("bot_add_ct %s", "zqk");
 		ServerCommand("bot_add_ct %s", "shz");
-		ServerCommand("bot_add_ct %s", "dzt");
-		ServerCommand("bot_add_ct %s", "RMN");
+		ServerCommand("bot_add_ct %s", "SuupLexx");
+		ServerCommand("bot_add_ct %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_1 keyd");
 	}
 	
@@ -4196,8 +4196,8 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_t %s", "SHOOWTiME");
 		ServerCommand("bot_add_t %s", "zqk");
 		ServerCommand("bot_add_t %s", "shz");
-		ServerCommand("bot_add_t %s", "dzt");
-		ServerCommand("bot_add_t %s", "RMN");
+		ServerCommand("bot_add_t %s", "SuupLexx");
+		ServerCommand("bot_add_t %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_2 keyd");
 	}
 	
@@ -4241,8 +4241,8 @@ public Action Team_Flames(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "Basso");
 		ServerCommand("bot_add_ct %s", "farlig");
-		ServerCommand("bot_add_ct %s", "HooXi");
-		ServerCommand("bot_add_ct %s", "roeJ");
+		ServerCommand("bot_add_ct %s", "AcilioN");
+		ServerCommand("bot_add_ct %s", "Sycrone");
 		ServerCommand("bot_add_ct %s", "Nodios");
 		ServerCommand("mp_teamlogo_1 copen");
 	}
@@ -4251,8 +4251,8 @@ public Action Team_Flames(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "Basso");
 		ServerCommand("bot_add_t %s", "farlig");
-		ServerCommand("bot_add_t %s", "HooXi");
-		ServerCommand("bot_add_t %s", "roeJ");
+		ServerCommand("bot_add_t %s", "AcilioN");
+		ServerCommand("bot_add_t %s", "Sycrone");
 		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 copen");
 	}
@@ -5421,7 +5421,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Tricked Players
-	if((StrEqual(botname, "Winspai")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Bubzkji")))
+	if((StrEqual(botname, "roeJ")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Bubzkji")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
 	}
@@ -5565,7 +5565,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//W7M Players
-	if((StrEqual(botname, "skullz")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "ryotzz")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
+	if((StrEqual(botname, "rood")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "ryotzz")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
 	{
 		CS_SetClientClanTag(client, "W7M");
 	}
@@ -5763,7 +5763,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Keyd Players
-	if((StrEqual(botname, "SHOOWTiME")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "shz")) || (StrEqual(botname, "dzt")) || (StrEqual(botname, "RMN")))
+	if((StrEqual(botname, "SHOOWTiME")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "shz")) || (StrEqual(botname, "SuupLexx")) || (StrEqual(botname, "KILLDREAM")))
 	{
 		CS_SetClientClanTag(client, "Keyd");
 	}
@@ -5781,7 +5781,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Flames Players
-	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "roeJ")) || (StrEqual(botname, "Nodios")))
+	if((StrEqual(botname, "Basso")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "AcilioN")) || (StrEqual(botname, "Sycrone")) || (StrEqual(botname, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}

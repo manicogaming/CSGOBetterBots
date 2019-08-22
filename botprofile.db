@@ -134,7 +134,7 @@ Template ProP
 		Rank = 500
 		Teamwork = 100
 		Aggression = 55
-		ReactionTime = 0.25
+		ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 110
@@ -1679,7 +1679,7 @@ End
 
 //Tricked Players
 
-ProP+Rifle "Winspai"
+ProP+Rifle "roeJ"
 	VoicePitch = 91
 End
 
@@ -2207,7 +2207,7 @@ End
 
 //W7M Players
 
-ProP+Rifle "skullz"
+ProP+Rifle "rood"
 	VoicePitch = 91
 End
 
@@ -2945,11 +2945,11 @@ ProP+Rifle "shz"
 	VoicePitch = 95
 End
 
-ProP+Rifle "dzt"
+ProP+Rifle "SuupLexx"
 	VoicePitch = 110
 End
 
-ProP+Rifle "RMN"
+ProP+Rifle "KILLDREAM"
 	VoicePitch = 110
 End
 
@@ -2985,11 +2985,11 @@ EliteAwp+SniperPro "farlig"
 	VoicePitch = 106
 End
 
-ProP+Rifle "HooXi"
+ProP+Rifle "AcilioN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "roeJ"
+ProP+Rifle "Sycrone"
 	VoicePitch = 110
 End
 
