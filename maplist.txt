@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Thu Aug 22 00:06:48 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Sat Aug 24 00:48:41 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -62,7 +62,6 @@ aim_usp_v2
 aim_warehouse
 aim_warmup
 ar_baggage
-ar_baggage_flooded
 ar_dizzy
 ar_monastery
 ar_shoots
@@ -164,9 +163,14 @@ de_sugarcane
 de_train
 de_vertigo
 de_zoo
+deathzone
+dm_bloodsport
 dz_blacksite
 dz_sirocco
+fy_concrete
+fy_conflict
 fy_deagle5
+fy_december_v2
 fy_iceworld_beta
 fy_iceworld_go
 fy_iceworld_origins

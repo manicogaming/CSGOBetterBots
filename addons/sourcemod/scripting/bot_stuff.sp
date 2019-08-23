@@ -385,11 +385,11 @@ char g_BotName[][] = {
 	//Giants Players
 	"romeM",
 	"foxj",
-	"KILLDREAM",
-	"MUTiRiS",
-	"ZELIN",
-	//K1CK Players
 	"Cunha",
+	"MUTiRiS",
+	"arki",
+	//K1CK Players
+	"Bhx",
 	"MISK",
 	"plat",
 	"psh",
@@ -831,7 +831,13 @@ char g_BotName[][] = {
 	"v1NCHENSO7",
 	"Kiles",
 	"Fit1nho",
-	"Ryd3r-"
+	"Ryd3r-",
+	//Illuminar Players
+	"oskarish",
+	"STOMP",
+	"mono",
+	"innocent",
+	"reatz"
 };
  
 public Plugin myinfo =
@@ -989,6 +995,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_baecon", Team_Baecon);
 	RegConsoleCmd("team_corvidae", Team_Corvidae);
 	RegConsoleCmd("team_wizards", Team_Wizards);
+	RegConsoleCmd("team_illuminar", Team_Illuminar);
 }
 
 public Action KickBots(int client, int args)
@@ -2659,9 +2666,9 @@ public Action Team_Giants(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "romeM");
 		ServerCommand("bot_add_ct %s", "foxj");
-		ServerCommand("bot_add_ct %s", "KILLDREAM");
+		ServerCommand("bot_add_ct %s", "Cunha");
 		ServerCommand("bot_add_ct %s", "MUTiRiS");
-		ServerCommand("bot_add_ct %s", "ZELIN");
+		ServerCommand("bot_add_ct %s", "arki");
 		ServerCommand("mp_teamlogo_1 giant");
 	}
 	
@@ -2669,9 +2676,9 @@ public Action Team_Giants(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "romeM");
 		ServerCommand("bot_add_t %s", "foxj");
-		ServerCommand("bot_add_t %s", "KILLDREAM");
+		ServerCommand("bot_add_t %s", "Cunha");
 		ServerCommand("bot_add_t %s", "MUTiRiS");
-		ServerCommand("bot_add_t %s", "ZELIN");
+		ServerCommand("bot_add_t %s", "arki");
 		ServerCommand("mp_teamlogo_2 giant");
 	}
 	
@@ -2685,7 +2692,7 @@ public Action Team_K1CK(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Cunha");
+		ServerCommand("bot_add_ct %s", "Bhx");
 		ServerCommand("bot_add_ct %s", "MISK");
 		ServerCommand("bot_add_ct %s", "plat");
 		ServerCommand("bot_add_ct %s", "psh");
@@ -2695,7 +2702,7 @@ public Action Team_K1CK(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Cunha");
+		ServerCommand("bot_add_t %s", "Bhx");
 		ServerCommand("bot_add_t %s", "MISK");
 		ServerCommand("bot_add_t %s", "plat");
 		ServerCommand("bot_add_t %s", "psh");
@@ -4722,6 +4729,34 @@ public Action Team_Wizards(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Illuminar(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "oskarish");
+		ServerCommand("bot_add_ct %s", "STOMP");
+		ServerCommand("bot_add_ct %s", "mono");
+		ServerCommand("bot_add_ct %s", "innocent");
+		ServerCommand("bot_add_ct %s", "reatz");
+		ServerCommand("mp_teamlogo_1 illu");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "oskarish");
+		ServerCommand("bot_add_t %s", "STOMP");
+		ServerCommand("bot_add_t %s", "mono");
+		ServerCommand("bot_add_t %s", "innocent");
+		ServerCommand("bot_add_t %s", "reatz");
+		ServerCommand("mp_teamlogo_2 illu");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5503,13 +5538,13 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Giants Players
-	if((StrEqual(botname, "romeM")) || (StrEqual(botname, "foxj")) || (StrEqual(botname, "KILLDREAM")) || (StrEqual(botname, "MUTiRiS")) || (StrEqual(botname, "ZELIN")))
+	if((StrEqual(botname, "romeM")) || (StrEqual(botname, "foxj")) || (StrEqual(botname, "Cunha")) || (StrEqual(botname, "MUTiRiS")) || (StrEqual(botname, "arki")))
 	{
 		CS_SetClientClanTag(client, "Giants");
 	}
 	
 	//K1CK Players
-	if((StrEqual(botname, "Cunha")) || (StrEqual(botname, "MISK")) || (StrEqual(botname, "plat")) || (StrEqual(botname, "psh")) || (StrEqual(botname, "fakes2")))
+	if((StrEqual(botname, "Bhx")) || (StrEqual(botname, "MISK")) || (StrEqual(botname, "plat")) || (StrEqual(botname, "psh")) || (StrEqual(botname, "fakes2")))
 	{
 		CS_SetClientClanTag(client, "K1CK");
 	}
@@ -5950,5 +5985,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "KALAS")) || (StrEqual(botname, "v1NCHENSO7")) || (StrEqual(botname, "Kiles")) || (StrEqual(botname, "Fit1nho")) || (StrEqual(botname, "Ryd3r-")))
 	{
 		CS_SetClientClanTag(client, "Wizards");
+	}
+	
+	//Illuminar Players
+	if((StrEqual(botname, "oskarish")) || (StrEqual(botname, "STOMP")) || (StrEqual(botname, "mono")) || (StrEqual(botname, "innocent")) || (StrEqual(botname, "reatz")))
+	{
+		CS_SetClientClanTag(client, "Illuminar");
 	}
 }

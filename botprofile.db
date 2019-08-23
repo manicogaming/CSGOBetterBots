@@ -54,10 +54,10 @@ End
 
 Template SniperPro
 		WeaponPreference = awp
-		WeaponPreference = ump45
 		WeaponPreference = sg008
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
+		WeaponPreference = ump45
 		WeaponPreference = mp7
 		WeaponPreference = mac10
 		WeaponPreference = mp9
@@ -1731,7 +1731,7 @@ EliteAwp+SniperPro "foxj"
 	VoicePitch = 106
 End
 
-ProP+Rifle "KILLDREAM"
+ProP+Rifle "Cunha"
 	VoicePitch = 95
 End
 
@@ -1739,13 +1739,13 @@ ProP+Rifle "MUTiRiS"
 	VoicePitch = 110
 End
 
-ProP+Rifle "ZELIN"
+ProP+Rifle "arki"
 	VoicePitch = 110
 End
 
 //K1CK Players
 
-ProP+Rifle "Cunha"
+ProP+Rifle "Bhx"
 	VoicePitch = 91
 End
 
@@ -3346,6 +3346,28 @@ ProP+Rifle "Fit1nho"
 End
 
 ProP+Rifle "Ryd3r-"
+	VoicePitch = 110
+End
+
+//Illuminar Players
+
+ProP+Rifle "oskarish"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "STOMP"
+	VoicePitch = 106
+End
+
+ProP+Rifle "mono"
+	VoicePitch = 95
+End
+
+ProP+Rifle "innocent"
+	VoicePitch = 110
+End
+
+ProP+Rifle "reatz"
 	VoicePitch = 110
 End
 

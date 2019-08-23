@@ -366,7 +366,7 @@ public Action Event_WeaponFire(Event hEvent, const char[] chName, bool bDontBroa
 		return Plugin_Continue;
 	}
 
-	if(GetRandomInt(1,10) == 1)
+	if(GetRandomInt(1,5) == 1)
 	{
 		int iTarget = GetClosestClient(iClient);
 		
@@ -437,7 +437,7 @@ public Action OnPlayerRunCmd(int iClient, int &iButtons, int &iImpulse, float fV
 		return Plugin_Continue;
 	}
 	
-	if(GetRandomInt(1,10) == 1)
+	if(GetRandomInt(1,5) == 1)
 	{	
 		if ((iButtons & IN_ATTACK) == IN_ATTACK || g_cvAimbotAutoAim.BoolValue)
 		{
