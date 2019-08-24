@@ -67,9 +67,10 @@ public void OnClientPutInServer(int client)
 
 public void OnClientPostAdminCheck(int client)
 {
-    g_iSteam32[client] = GetSteamAccountID(client); 
-    GetPlayerData(client); 
-    QueryClientConVar(client, "cl_language", ConVarCallBack);
+	char name[128];
+	GetClientName(client, name, sizeof(name));
+	GetPlayerData(client);
+	QueryClientConVar(client, "cl_language", ConVarCallBack);
 }
 
 public void ConVarCallBack(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)

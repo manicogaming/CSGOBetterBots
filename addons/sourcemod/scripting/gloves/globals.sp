@@ -47,7 +47,6 @@ float g_fFloatValue[MAXPLAYERS+1][4];
 char g_CustomArms[MAXPLAYERS+1][4][256];
 int g_iTeam[MAXPLAYERS+1] = { 0, ... };
 Handle g_FloatTimer[MAXPLAYERS+1] = { INVALID_HANDLE, ... };
-int g_iSteam32[MAXPLAYERS+1] = { 0, ... };
 
 char g_Language[MAX_LANG][32];
 int g_iClientLanguage[MAXPLAYERS+1];

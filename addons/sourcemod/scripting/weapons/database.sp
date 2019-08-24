@@ -18,7 +18,7 @@
 void GetPlayerData(int client)
 {
 	char name[128];
-	GetClientName(client, name, 128);
+	GetClientName(client, name, sizeof(name));
 	char query[255];
 	FormatEx(query, sizeof(query), "SELECT * FROM %sweapons WHERE name = '%s'", g_TablePrefix, name);
 	db.Query(T_GetPlayerDataCallback, query, GetClientUserId(client));
@@ -36,7 +36,7 @@ public void T_GetPlayerDataCallback(Database database, DBResultSet results, cons
 		else if (results.RowCount == 0)
 		{
 			char name[128];
-			GetClientName(clientIndex, name, 128);
+			GetClientName(clientIndex, name, sizeof(name));
 			char query[255];
 			FormatEx(query, sizeof(query), "INSERT INTO %sweapons (name) VALUES ('%s')", g_TablePrefix, name);
 			DataPack pack = new DataPack();
@@ -115,7 +115,7 @@ public void T_TimestampCallback(Database database, DBResultSet results, const ch
 void UpdatePlayerData(int client, char[] updateFields)
 {
 	char name[128];
-	GetClientName(client, name, 128);
+	GetClientName(client, name, sizeof(name));
 	char query[1024];
 	FormatEx(query, sizeof(query), "UPDATE %sweapons SET %s WHERE name = '%s'", g_TablePrefix, updateFields, name);
 	DataPack pack = new DataPack();
