@@ -413,11 +413,11 @@ char g_BotName[][] = {
 	"stadodo",
 	"pr",
 	//x6tence Players
-	"FlipiN",
+	"NikoM",
 	"JonY BoY",
-	"TheClaran",
-	"Meco",
-	"Vares",
+	"tomi",
+	"OMG",
+	"tutehen",
 	//eSuba Players
 	"HenkkyG",
 	"ZEDKO",
@@ -2797,21 +2797,21 @@ public Action Team_x6tence(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "FlipiN");
+		ServerCommand("bot_add_ct %s", "NikoM");
 		ServerCommand("bot_add_ct %s", "JonY BoY");
-		ServerCommand("bot_add_ct %s", "TheClaran");
-		ServerCommand("bot_add_ct %s", "Meco");
-		ServerCommand("bot_add_ct %s", "Vares");
+		ServerCommand("bot_add_ct %s", "tomi");
+		ServerCommand("bot_add_ct %s", "OMG");
+		ServerCommand("bot_add_ct %s", "tutehen");
 		ServerCommand("mp_teamlogo_1 x6t");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "FlipiN");
+		ServerCommand("bot_add_t %s", "NikoM");
 		ServerCommand("bot_add_t %s", "JonY BoY");
-		ServerCommand("bot_add_t %s", "TheClaran");
-		ServerCommand("bot_add_t %s", "Meco");
-		ServerCommand("bot_add_t %s", "Vares");
+		ServerCommand("bot_add_t %s", "tomi");
+		ServerCommand("bot_add_t %s", "OMG");
+		ServerCommand("bot_add_t %s", "tutehen");
 		ServerCommand("mp_teamlogo_2 x6t");
 	}
 	
@@ -5533,7 +5533,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//x6tence Players
-	if((StrEqual(botname, "FlipiN")) || (StrEqual(botname, "JonY BoY")) || (StrEqual(botname, "TheClaran")) || (StrEqual(botname, "Meco")) || (StrEqual(botname, "Vares")))
+	if((StrEqual(botname, "NikoM")) || (StrEqual(botname, "JonY BoY")) || (StrEqual(botname, "tomi")) || (StrEqual(botname, "OMG")) || (StrEqual(botname, "tutehen")))
 	{
 		CS_SetClientClanTag(client, "x6tence");
 	}
