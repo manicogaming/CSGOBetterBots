@@ -600,7 +600,7 @@ char g_BotName[][] = {
 	"DJOXiC",
 	//FrostFire Players
 	"aimaNNN",
-	"Nutr1x",
+	"hiqa1",
 	"acAp",
 	"Subbey",
 	"Avirity",
@@ -712,12 +712,6 @@ char g_BotName[][] = {
 	"xccurate",
 	"ImpressioN",
 	"adrnkiNg",
-	//Ancient Players
-	"disco doplan",
-	"draken",
-	"freddieb",
-	"RuStY",
-	"MODDII",
 	//Keyd Players
 	"SHOOWTiME",
 	"zqk",
@@ -975,7 +969,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_groundzero", Team_GroundZero);
 	RegConsoleCmd("team_aristocracy", Team_Aristocracy);
 	RegConsoleCmd("team_btrg", Team_BTRG);
-	RegConsoleCmd("team_ancient", Team_Ancient);
 	RegConsoleCmd("team_keyd", Team_Keyd);
 	RegConsoleCmd("team_gtz", Team_GTZ);
 	RegConsoleCmd("team_flames", Team_Flames);
@@ -3673,7 +3666,7 @@ public Action Team_FrostFire(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "aimaNNN");
-		ServerCommand("bot_add_ct %s", "Nutr1x");
+		ServerCommand("bot_add_ct %s", "hiqa1");
 		ServerCommand("bot_add_ct %s", "acAp");
 		ServerCommand("bot_add_ct %s", "Subbey");
 		ServerCommand("bot_add_ct %s", "Avirity");
@@ -3683,7 +3676,7 @@ public Action Team_FrostFire(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "aimaNNN");
-		ServerCommand("bot_add_t %s", "Nutr1x");
+		ServerCommand("bot_add_t %s", "hiqa1");
 		ServerCommand("bot_add_t %s", "acAp");
 		ServerCommand("bot_add_t %s", "Subbey");
 		ServerCommand("bot_add_t %s", "Avirity");
@@ -4164,34 +4157,6 @@ public Action Team_BTRG(int client, int args)
 		ServerCommand("bot_add_t %s", "ImpressioN");
 		ServerCommand("bot_add_t %s", "adrnkiNg");
 		ServerCommand("mp_teamlogo_2 btrg");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Ancient(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "\"disco doplan\"");
-		ServerCommand("bot_add_ct %s", "draken");
-		ServerCommand("bot_add_ct %s", "freddieb");
-		ServerCommand("bot_add_ct %s", "RuStY");
-		ServerCommand("bot_add_ct %s", "MODDII");
-		ServerCommand("mp_teamlogo_1 anci");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "\"disco doplan\"");
-		ServerCommand("bot_add_t %s", "draken");
-		ServerCommand("bot_add_t %s", "freddieb");
-		ServerCommand("bot_add_t %s", "RuStY");
-		ServerCommand("bot_add_t %s", "MODDII");
-		ServerCommand("mp_teamlogo_2 anci");
 	}
 	
 	return Plugin_Handled;
@@ -5754,7 +5719,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//FrostFire Players
-	if((StrEqual(botname, "aimaNNN")) || (StrEqual(botname, "Nutr1x")) || (StrEqual(botname, "acAp")) || (StrEqual(botname, "Subbey")) || (StrEqual(botname, "Avirity")))
+	if((StrEqual(botname, "aimaNNN")) || (StrEqual(botname, "hiqa1")) || (StrEqual(botname, "acAp")) || (StrEqual(botname, "Subbey")) || (StrEqual(botname, "Avirity")))
 	{
 		CS_SetClientClanTag(client, "FrostFire");
 	}
@@ -5859,12 +5824,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "fejtZ")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "xccurate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "adrnkiNg")))
 	{
 		CS_SetClientClanTag(client, "BTRG");
-	}
-	
-	//Ancient Players
-	if((StrEqual(botname, "disco doplan")) || (StrEqual(botname, "draken")) || (StrEqual(botname, "freddieb")) || (StrEqual(botname, "RuStY")) || (StrEqual(botname, "MODDII")))
-	{
-		CS_SetClientClanTag(client, "Ancient");
 	}
 	
 	//Keyd Players

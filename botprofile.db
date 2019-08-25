@@ -2519,7 +2519,7 @@ ProP+Rifle "aimaNNN"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Nutr1x"
+EliteAwp+SniperPro "hiqa1"
 	VoicePitch = 106
 End
 
@@ -2906,28 +2906,6 @@ ProP+Rifle "ImpressioN"
 End
 
 ProP+Rifle "adrnkiNg"
-	VoicePitch = 110
-End
-
-//Ancient Players
-
-ProP+Rifle "disco doplan"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "draken"
-	VoicePitch = 106
-End
-
-ProP+Rifle "freddieb"
-	VoicePitch = 95
-End
-
-ProP+Rifle "RuStY"
-	VoicePitch = 110
-End
-
-ProP+Rifle "MODDII"
 	VoicePitch = 110
 End
 
