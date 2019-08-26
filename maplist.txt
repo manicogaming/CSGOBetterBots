@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Sun Aug 25 18:30:42 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Mon Aug 26 17:53:55 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -84,10 +84,7 @@ awp_lego_2_crash_go
 awp_lego_2_p1n0_vl
 awp_lego_2_shootout
 awp_lego_8
-awp_lego_8_diff
 awp_lego_9
-awp_lego_csgo
-awp_lego_wizardgaming
 awp_map_source_b1
 awp_metro
 awp_minecraft
@@ -104,7 +101,6 @@ awpmap
 ba_winterforest_b1
 blood_gulch
 breakfloor_2
-c19_tilante
 carparkm1
 cs_agency
 cs_area35
