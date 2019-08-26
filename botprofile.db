@@ -2031,7 +2031,7 @@ End
 
 //Mythic Players
 
-ProP+Rifle "Polen"
+ProP+Rifle "C0M"
 	VoicePitch = 91
 End
 
@@ -2039,7 +2039,7 @@ EliteAwp+SniperPro "fl0m"
 	VoicePitch = 106
 End
 
-ProP+Rifle "anger"
+ProP+Rifle "Katie"
 	VoicePitch = 95
 End
 
@@ -2047,7 +2047,7 @@ ProP+Rifle "hazed"
 	VoicePitch = 110
 End
 
-ProP+Rifle "zNf"
+ProP+Rifle "SileNt"
 	VoicePitch = 110
 End
 
@@ -2307,7 +2307,7 @@ ProP+Rifle "hatz"
 	VoicePitch = 95
 End
 
-ProP+Rifle "INS"
+ProP+Rifle "USTILO"
 	VoicePitch = 110
 End
 

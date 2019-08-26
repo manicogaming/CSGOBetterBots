@@ -467,11 +467,11 @@ char g_BotName[][] = {
 	"food",
 	"vanity",
 	//Mythic Players
-	"Polen",
+	"C0M",
 	"fl0m",
-	"anger",
+	"Katie",
 	"hazed",
-	"zNf",
+	"SileNt",
 	//Singularity Players
 	"oSee",
 	"floppy",
@@ -542,7 +542,7 @@ char g_BotName[][] = {
 	"emagine",
 	"aliStair",
 	"hatz",
-	"INS",
+	"USTILO",
 	"Valiance",
 	//Paradox Players
 	"Chub",
@@ -3049,21 +3049,21 @@ public Action Team_Mythic(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Polen");
+		ServerCommand("bot_add_ct %s", "C0M");
 		ServerCommand("bot_add_ct %s", "fl0m");
-		ServerCommand("bot_add_ct %s", "anger");
+		ServerCommand("bot_add_ct %s", "Katie");
 		ServerCommand("bot_add_ct %s", "hazed");
-		ServerCommand("bot_add_ct %s", "zNf");
+		ServerCommand("bot_add_ct %s", "SileNt");
 		ServerCommand("mp_teamlogo_1 myth");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Polen");
+		ServerCommand("bot_add_t %s", "C0M");
 		ServerCommand("bot_add_t %s", "fl0m");
-		ServerCommand("bot_add_t %s", "anger");
+		ServerCommand("bot_add_t %s", "Katie");
 		ServerCommand("bot_add_t %s", "hazed");
-		ServerCommand("bot_add_t %s", "zNf");
+		ServerCommand("bot_add_t %s", "SileNt");
 		ServerCommand("mp_teamlogo_2 myth");
 	}
 	
@@ -3388,7 +3388,7 @@ public Action Team_ORDER(int client, int args)
 		ServerCommand("bot_add_ct %s", "emagine");
 		ServerCommand("bot_add_ct %s", "aliStair");
 		ServerCommand("bot_add_ct %s", "hatz");
-		ServerCommand("bot_add_ct %s", "INS");
+		ServerCommand("bot_add_ct %s", "USTILO");
 		ServerCommand("bot_add_ct %s", "Valiance");
 		ServerCommand("mp_teamlogo_1 order");
 	}
@@ -3398,7 +3398,7 @@ public Action Team_ORDER(int client, int args)
 		ServerCommand("bot_add_t %s", "emagine");
 		ServerCommand("bot_add_t %s", "aliStair");
 		ServerCommand("bot_add_t %s", "hatz");
-		ServerCommand("bot_add_t %s", "INS");
+		ServerCommand("bot_add_t %s", "USTILO");
 		ServerCommand("bot_add_t %s", "Valiance");
 		ServerCommand("mp_teamlogo_2 order");
 	}
@@ -5587,7 +5587,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Mythic Players
-	if((StrEqual(botname, "Polen")) || (StrEqual(botname, "fl0m")) || (StrEqual(botname, "anger")) || (StrEqual(botname, "hazed")) || (StrEqual(botname, "zNf")))
+	if((StrEqual(botname, "C0M")) || (StrEqual(botname, "fl0m")) || (StrEqual(botname, "Katie")) || (StrEqual(botname, "hazed")) || (StrEqual(botname, "SileNt")))
 	{
 		CS_SetClientClanTag(client, "Mythic");
 	}
@@ -5659,7 +5659,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ORDER Players
-	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "INS")) || (StrEqual(botname, "Valiance")))
+	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "USTILO")) || (StrEqual(botname, "Valiance")))
 	{
 		CS_SetClientClanTag(client, "ORDER");
 	}
