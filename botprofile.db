@@ -54,7 +54,7 @@ End
 
 Template SniperPro
 		WeaponPreference = awp
-		WeaponPreference = sg008
+		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
 		WeaponPreference = ump45
@@ -763,7 +763,7 @@ EliteAwp+SniperPro "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "SAYN"
+ProP+Rifle "F1KU"
 	VoicePitch = 95
 End
 
@@ -771,7 +771,7 @@ ProP+Rifle "pashaBiceps"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Sidney"
+ProP+Rifle "jedqr"
 	VoicePitch = 110
 End
 
@@ -1071,7 +1071,7 @@ EliteAwp+SniperPro "b0RUP"
 	VoicePitch = 106
 End
 
-ProP+Rifle "friberg"
+ProP+Rifle "mertz"
 	VoicePitch = 95
 End
 
@@ -1129,7 +1129,7 @@ End
 
 //Apeks Players
 
-ProP+Rifle "aNdz"
+ProP+Rifle "Marcelious"
 	VoicePitch = 91
 End
 
@@ -1743,35 +1743,13 @@ ProP+Rifle "arki"
 	VoicePitch = 110
 End
 
-//K1CK Players
-
-ProP+Rifle "Bhx"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "MISK"
-	VoicePitch = 106
-End
-
-ProP+Rifle "plat"
-	VoicePitch = 95
-End
-
-ProP+Rifle "psh"
-	VoicePitch = 110
-End
-
-ProP+Rifle "fakes2"
-	VoicePitch = 110
-End
-
 //Lions Players
 
 ProP+Rifle "YuRk0"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "dragunov"
+EliteAwp+SniperPro "Jibrix"
 	VoicePitch = 106
 End
 
@@ -2179,7 +2157,7 @@ ProP+Rifle "exit"
 	VoicePitch = 110
 End
 
-ProP+Rifle "RCF"
+ProP+Rifle "Luken"
 	VoicePitch = 110
 End
 
@@ -3346,6 +3324,50 @@ ProP+Rifle "innocent"
 End
 
 ProP+Rifle "reatz"
+	VoicePitch = 110
+End
+
+//Queso Players
+
+ProP+Rifle "TheClaran"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "rAmbi"
+	VoicePitch = 106
+End
+
+ProP+Rifle "VARES"
+	VoicePitch = 95
+End
+
+ProP+Rifle "mik"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Yaba"
+	VoicePitch = 110
+End
+
+//Skyfire Players
+
+ProP+Rifle "Damy0"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "STVN"
+	VoicePitch = 106
+End
+
+ProP+Rifle "synical"
+	VoicePitch = 95
+End
+
+ProP+Rifle "ApeXz"
+	VoicePitch = 110
+End
+
+ProP+Rifle "vertije"
 	VoicePitch = 110
 End
 

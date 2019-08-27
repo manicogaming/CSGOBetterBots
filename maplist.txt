@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Mon Aug 26 21:02:11 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Tue Aug 27 18:31:45 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -24,9 +24,8 @@ $2000$_pro_b2
 aim_100hp
 aim_47th
 aim_advance
-aim_ak-47_go_ptfun
+aim_ak-47_go
 aim_ak-colt
-aim_ak-colt_csgo
 aim_ak-colt_v2
 aim_ak-colt_v4
 aim_ak47_colt
@@ -101,6 +100,7 @@ awpmap
 ba_winterforest_b1
 blood_gulch
 breakfloor_2
+c19_tilante
 carparkm1
 cs_agency
 cs_area35
