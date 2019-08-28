@@ -725,10 +725,10 @@ char g_BotName[][] = {
 	"Sycrone",
 	"Nodios",
 	//eu4ia Players
-	"mik",
-	"rai",
-	"Ar4gorN",
-	"drogo",
+	"kek0",
+	"MasterdaN",
+	"diNk",
+	"Vinice",
 	"sh0wz",
 	//Fierce Players
 	"Astroo",
@@ -4232,20 +4232,20 @@ public Action Team_eu4ia(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "mik");
-		ServerCommand("bot_add_ct %s", "rai");
-		ServerCommand("bot_add_ct %s", "Ar4gorN");
-		ServerCommand("bot_add_ct %s", "drogo");
+		ServerCommand("bot_add_ct %s", "kek0");
+		ServerCommand("bot_add_ct %s", "MasterdaN");
+		ServerCommand("bot_add_ct %s", "diNk");
+		ServerCommand("bot_add_ct %s", "Vinice");
 		ServerCommand("bot_add_ct %s", "sh0wz");
 		ServerCommand("mp_teamlogo_1 eu4ia");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "mik");
-		ServerCommand("bot_add_t %s", "rai");
-		ServerCommand("bot_add_t %s", "Ar4gorN");
-		ServerCommand("bot_add_t %s", "drogo");
+		ServerCommand("bot_add_t %s", "kek0");
+		ServerCommand("bot_add_t %s", "MasterdaN");
+		ServerCommand("bot_add_t %s", "diNk");
+		ServerCommand("bot_add_t %s", "Vinice");
 		ServerCommand("bot_add_t %s", "sh0wz");
 		ServerCommand("mp_teamlogo_2 eu4ia");
 	}
@@ -5880,7 +5880,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//eu4ia Players
-	if((StrEqual(botname, "mik")) || (StrEqual(botname, "rai")) || (StrEqual(botname, "Ar4gorN")) || (StrEqual(botname, "drogo")) || (StrEqual(botname, "sh0wz")))
+	if((StrEqual(botname, "kek0")) || (StrEqual(botname, "MasterdaN")) || (StrEqual(botname, "diNk")) || (StrEqual(botname, "Vinice")) || (StrEqual(botname, "sh0wz")))
 	{
 		CS_SetClientClanTag(client, "eu4ia");
 	}
