@@ -1057,7 +1057,7 @@ ProP+Rifle "faveN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "mirbit"
+ProP+Rifle "denis"
 	VoicePitch = 110
 End
 
@@ -1071,7 +1071,7 @@ EliteAwp+SniperPro "b0RUP"
 	VoicePitch = 106
 End
 
-ProP+Rifle "mertz"
+ProP+Rifle "Snappi"
 	VoicePitch = 95
 End
 
@@ -1281,7 +1281,7 @@ ProP+Rifle "S0tF1k"
 	VoicePitch = 110
 End
 
-//Lazarus Players
+//Swole Players
 
 ProP+Rifle "Zellsis"
 	VoicePitch = 91
@@ -2945,7 +2945,7 @@ ProP+Rifle "AcilioN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Sycrone"
+ProP+Rifle "TMB"
 	VoicePitch = 110
 End
 
