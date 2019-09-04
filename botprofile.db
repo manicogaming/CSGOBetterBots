@@ -1523,28 +1523,6 @@ ProP+Rifle "VENIQ"
 	VoicePitch = 110
 End
 
-//Chaos Players
-
-ProP+Rifle "FREDDyFROG"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Relaxa"
-	VoicePitch = 106
-End
-
-ProP+Rifle "PlesseN"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Bååten"
-	VoicePitch = 110
-End
-
-ProP+Rifle "djL"
-	VoicePitch = 110
-End
-
 //HAVU Players
 
 ProP+Rifle "ZOREE"
@@ -3368,6 +3346,28 @@ ProP+Rifle "ApeXz"
 End
 
 ProP+Rifle "vertije"
+	VoicePitch = 110
+End
+
+//W&R Players
+
+ProP+Rifle "Swaggy"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "TotunG"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Ping"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Br0die"
+	VoicePitch = 110
+End
+
+ProP+Rifle "angry"
 	VoicePitch = 110
 End
 

@@ -328,12 +328,6 @@ char g_BotName[][] = {
 	"BMLN",
 	"HighKitty",
 	"VENIQ",
-	//Chaos Players
-	"FREDDyFROG",
-	"Relaxa",
-	"PlesseN",
-	"Bååten",
-	"djL",
 	//HAVU Players
 	"ZOREE",
 	"sLowi",
@@ -837,7 +831,13 @@ char g_BotName[][] = {
 	"STVN",
 	"synical",
 	"ApeXz",
-	"vertije"
+	"vertije",
+	//W&R Players
+	"Swaggy",
+	"TotunG",
+	"Ping",
+	"Br0die",
+	"angry"
 };
  
 public Plugin myinfo =
@@ -912,7 +912,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_panthers", Team_PANTHERS);
 	RegConsoleCmd("team_planetkey", Team_Planetkey);
 	RegConsoleCmd("team_pducks", Team_PDucks);
-	RegConsoleCmd("team_chaos", Team_Chaos);
 	RegConsoleCmd("team_havu", Team_HAVU);
 	RegConsoleCmd("team_lyngby", Team_Lyngby);
 	RegConsoleCmd("team_nochance", Team_NoChance);
@@ -996,6 +995,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_queso", Team_Queso);
 	RegConsoleCmd("team_skyfire", Team_Skyfire);
+	RegConsoleCmd("team_windrain", Team_WindRain);
 }
 
 public Action KickBots(int client, int args)
@@ -2400,34 +2400,6 @@ public Action Team_PDucks(int client, int args)
 		ServerCommand("bot_add_t %s", "HighKitty");
 		ServerCommand("bot_add_t %s", "VENIQ");
 		ServerCommand("mp_teamlogo_2 playin");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Chaos(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "FREDDyFROG");
-		ServerCommand("bot_add_ct %s", "Relaxa");
-		ServerCommand("bot_add_ct %s", "PlesseN");
-		ServerCommand("bot_add_ct %s", "Bååten");
-		ServerCommand("bot_add_ct %s", "djL");
-		ServerCommand("mp_teamlogo_1 chaos");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "FREDDyFROG");
-		ServerCommand("bot_add_t %s", "Relaxa");
-		ServerCommand("bot_add_t %s", "PlesseN");
-		ServerCommand("bot_add_t %s", "Bååten");
-		ServerCommand("bot_add_t %s", "djL");
-		ServerCommand("mp_teamlogo_2 chaos");
 	}
 	
 	return Plugin_Handled;
@@ -4757,6 +4729,34 @@ public Action Team_Skyfire(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_WindRain(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "Swaggy");
+		ServerCommand("bot_add_ct %s", "TotunG");
+		ServerCommand("bot_add_ct %s", "Ping");
+		ServerCommand("bot_add_ct %s", "Br0die");
+		ServerCommand("bot_add_ct %s", "angry");
+		ServerCommand("mp_teamlogo_1 wr");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "Swaggy");
+		ServerCommand("bot_add_t %s", "TotunG");
+		ServerCommand("bot_add_t %s", "Ping");
+		ServerCommand("bot_add_t %s", "Br0die");
+		ServerCommand("bot_add_t %s", "angry");
+		ServerCommand("mp_teamlogo_2 wr");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5483,12 +5483,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "PDucks");
 	}
 	
-	//Chaos Players
-	if((StrEqual(botname, "FREDDyFROG")) || (StrEqual(botname, "Relaxa")) || (StrEqual(botname, "PlesseN")) || (StrEqual(botname, "Bååten")) || (StrEqual(botname, "djL")))
-	{
-		CS_SetClientClanTag(client, "Chaos");
-	}
-	
 	//HAVU Players
 	if((StrEqual(botname, "ZOREE")) || (StrEqual(botname, "sLowi")) || (StrEqual(botname, "Twixie")) || (StrEqual(botname, "Hoody")) || (StrEqual(botname, "sAw")))
 	{
@@ -5991,5 +5985,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "Damy0")) || (StrEqual(botname, "STVN")) || (StrEqual(botname, "synical")) || (StrEqual(botname, "ApeXz")) || (StrEqual(botname, "vertije")))
 	{
 		CS_SetClientClanTag(client, "Skyfire");
+	}
+	
+	//W&R Players
+	if((StrEqual(botname, "Swaggy")) || (StrEqual(botname, "TotunG")) || (StrEqual(botname, "Ping")) || (StrEqual(botname, "Br0die")) || (StrEqual(botname, "angry")))
+	{
+		CS_SetClientClanTag(client, "W&R");
 	}
 }
