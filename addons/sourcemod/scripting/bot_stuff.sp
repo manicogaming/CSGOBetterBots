@@ -87,7 +87,7 @@ char g_BotName[][] = {
 	"DANK1NG",
 	"BnTneT",
 	"somebody",
-	"Attacker",
+	"Freeman",
 	//NRG Players
 	"stanislaw",
 	"tarik",
@@ -123,7 +123,7 @@ char g_BotName[][] = {
 	"GruBy",
 	"F1KU",
 	"pashaBiceps",
-	"jedqr",
+	"leman",
 	//ENCE Players
 	"Aleksib",
 	"allu",
@@ -176,7 +176,7 @@ char g_BotName[][] = {
 	"zhokiNg",
 	"kaze",
 	"aumaN",
-	"Freeman",
+	"Franke19",
 	"advent",
 	//forZe Players
 	"facecrack",
@@ -186,7 +186,7 @@ char g_BotName[][] = {
 	"Jerry",
 	//Winstrike Players
 	"Edward",
-	"Kvik",
+	"Johnta",
 	"n0rb3r7",
 	"El1an",
 	"bondik",
@@ -341,7 +341,7 @@ char g_BotName[][] = {
 	"thamlike",
 	"Cabbi",
 	//NoChance Players
-	"Thomas",
+	"Devilwalk",
 	"Maikelele",
 	"kRYSTAL",
 	"zehN",
@@ -416,8 +416,8 @@ char g_BotName[][] = {
 	"BTN",
 	"XELLOW",
 	"SEMINTE",
-	"sXe",
-	"COSMEEEN",
+	"iM",
+	"starkiller",
 	//PACT Players
 	"darko",
 	"lunAtic",
@@ -580,12 +580,12 @@ char g_BotName[][] = {
 	"RoLEX",
 	"veta",
 	"Geniuss",
-	//ETG Players
+	//Entity Players
 	"Amaterasu",
 	"Psy",
 	"Excali",
-	"Dav",
-	"DJOXiC",
+	"skillZ",
+	"SnrLx",
 	//FrostFire Players
 	"aimaNNN",
 	"hiqa1",
@@ -1268,7 +1268,7 @@ public Action Team_TyLoo(int client, int args)
 		ServerCommand("bot_add_ct %s", "DANK1NG");
 		ServerCommand("bot_add_ct %s", "BnTneT");
 		ServerCommand("bot_add_ct %s", "somebody");
-		ServerCommand("bot_add_ct %s", "Attacker");
+		ServerCommand("bot_add_ct %s", "Freeman");
 		ServerCommand("mp_teamlogo_1 tyl");
 	}
 	
@@ -1278,7 +1278,7 @@ public Action Team_TyLoo(int client, int args)
 		ServerCommand("bot_add_t %s", "DANK1NG");
 		ServerCommand("bot_add_t %s", "BnTneT");
 		ServerCommand("bot_add_t %s", "somebody");
-		ServerCommand("bot_add_t %s", "Attacker");
+		ServerCommand("bot_add_t %s", "Freeman");
 		ServerCommand("mp_teamlogo_2 tyl");
 	}
 	
@@ -1436,7 +1436,7 @@ public Action Team_AGO(int client, int args)
 		ServerCommand("bot_add_ct %s", "GruBy");
 		ServerCommand("bot_add_ct %s", "F1KU");
 		ServerCommand("bot_add_ct %s", "pashaBiceps");
-		ServerCommand("bot_add_ct %s", "jedqr");
+		ServerCommand("bot_add_ct %s", "leman");
 		ServerCommand("mp_teamlogo_1 ago");
 	}
 	
@@ -1446,7 +1446,7 @@ public Action Team_AGO(int client, int args)
 		ServerCommand("bot_add_t %s", "GruBy");
 		ServerCommand("bot_add_t %s", "F1KU");
 		ServerCommand("bot_add_t %s", "pashaBiceps");
-		ServerCommand("bot_add_t %s", "jedqr");
+		ServerCommand("bot_add_t %s", "leman");
 		ServerCommand("mp_teamlogo_2 ago");
 	}
 	
@@ -1687,7 +1687,7 @@ public Action Team_ViCi(int client, int args)
 		ServerCommand("bot_add_ct %s", "zhokiNg");
 		ServerCommand("bot_add_ct %s", "kaze");
 		ServerCommand("bot_add_ct %s", "aumaN");
-		ServerCommand("bot_add_ct %s", "Freeman");
+		ServerCommand("bot_add_ct %s", "Franke19");
 		ServerCommand("bot_add_ct %s", "advent");
 		ServerCommand("mp_teamlogo_1 vici");
 	}
@@ -1697,7 +1697,7 @@ public Action Team_ViCi(int client, int args)
 		ServerCommand("bot_add_t %s", "zhokiNg");
 		ServerCommand("bot_add_t %s", "kaze");
 		ServerCommand("bot_add_t %s", "aumaN");
-		ServerCommand("bot_add_t %s", "Freeman");
+		ServerCommand("bot_add_t %s", "Franke19");
 		ServerCommand("bot_add_t %s", "advent");
 		ServerCommand("mp_teamlogo_2 vici");
 	}
@@ -1741,7 +1741,7 @@ public Action Team_Winstrike(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "Edward");
-		ServerCommand("bot_add_ct %s", "Kvik");
+		ServerCommand("bot_add_ct %s", "Johnta");
 		ServerCommand("bot_add_ct %s", "n0rb3r7");
 		ServerCommand("bot_add_ct %s", "El1an");
 		ServerCommand("bot_add_ct %s", "bondik");
@@ -1751,7 +1751,7 @@ public Action Team_Winstrike(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "Edward");
-		ServerCommand("bot_add_t %s", "Kvik");
+		ServerCommand("bot_add_t %s", "Johnta");
 		ServerCommand("bot_add_t %s", "n0rb3r7");
 		ServerCommand("bot_add_t %s", "El1an");
 		ServerCommand("bot_add_t %s", "bondik");
@@ -2468,7 +2468,7 @@ public Action Team_NoChance(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Thomas");
+		ServerCommand("bot_add_ct %s", "Devilwalk");
 		ServerCommand("bot_add_ct %s", "Maikelele");
 		ServerCommand("bot_add_ct %s", "kRYSTAL");
 		ServerCommand("bot_add_ct %s", "zehN");
@@ -2478,7 +2478,7 @@ public Action Team_NoChance(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Thomas");
+		ServerCommand("bot_add_t %s", "Devilwalk");
 		ServerCommand("bot_add_t %s", "Maikelele");
 		ServerCommand("bot_add_t %s", "kRYSTAL");
 		ServerCommand("bot_add_t %s", "zehN");
@@ -2807,8 +2807,8 @@ public Action Team_Nexus(int client, int args)
 		ServerCommand("bot_add_ct %s", "BTN");
 		ServerCommand("bot_add_ct %s", "XELLOW");
 		ServerCommand("bot_add_ct %s", "SEMINTE");
-		ServerCommand("bot_add_ct %s", "sXe");
-		ServerCommand("bot_add_ct %s", "COSMEEEN");
+		ServerCommand("bot_add_ct %s", "iM");
+		ServerCommand("bot_add_ct %s", "starkiller");
 		ServerCommand("mp_teamlogo_1 nex");
 	}
 	
@@ -2817,8 +2817,8 @@ public Action Team_Nexus(int client, int args)
 		ServerCommand("bot_add_t %s", "BTN");
 		ServerCommand("bot_add_t %s", "XELLOW");
 		ServerCommand("bot_add_t %s", "SEMINTE");
-		ServerCommand("bot_add_t %s", "sXe");
-		ServerCommand("bot_add_t %s", "COSMEEEN");
+		ServerCommand("bot_add_t %s", "iM");
+		ServerCommand("bot_add_t %s", "starkiller");
 		ServerCommand("mp_teamlogo_2 nex");
 	}
 	
@@ -3591,8 +3591,8 @@ public Action Team_Entity(int client, int args)
 		ServerCommand("bot_add_ct %s", "Amaterasu");
 		ServerCommand("bot_add_ct %s", "Psy");
 		ServerCommand("bot_add_ct %s", "Excali");
-		ServerCommand("bot_add_ct %s", "Dav");
-		ServerCommand("bot_add_ct %s", "DJOXiC");
+		ServerCommand("bot_add_ct %s", "skillZ");
+		ServerCommand("bot_add_ct %s", "SnrLx");
 		ServerCommand("mp_teamlogo_1 enti");
 	}
 	
@@ -3601,8 +3601,8 @@ public Action Team_Entity(int client, int args)
 		ServerCommand("bot_add_t %s", "Amaterasu");
 		ServerCommand("bot_add_t %s", "Psy");
 		ServerCommand("bot_add_t %s", "Excali");
-		ServerCommand("bot_add_t %s", "Dav");
-		ServerCommand("bot_add_t %s", "DJOXiC");
+		ServerCommand("bot_add_t %s", "skillZ");
+		ServerCommand("bot_add_t %s", "SnrLx");
 		ServerCommand("mp_teamlogo_2 enti");
 	}
 	
@@ -5232,7 +5232,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//TYLOO Players
-	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "DANK1NG")) || (StrEqual(botname, "BnTneT")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "Attacker")))
+	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "DANK1NG")) || (StrEqual(botname, "BnTneT")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "Freeman")))
 	{
 		CS_SetClientClanTag(client, "TYLOO");
 	}
@@ -5268,7 +5268,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//AGO Players
-	if((StrEqual(botname, "Furlan")) || (StrEqual(botname, "GruBy")) || (StrEqual(botname, "F1KU")) || (StrEqual(botname, "pashaBiceps")) || (StrEqual(botname, "jedqr")))
+	if((StrEqual(botname, "Furlan")) || (StrEqual(botname, "GruBy")) || (StrEqual(botname, "F1KU")) || (StrEqual(botname, "pashaBiceps")) || (StrEqual(botname, "leman")))
 	{
 		CS_SetClientClanTag(client, "AGO");
 	}
@@ -5322,7 +5322,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ViCi Players
-	if((StrEqual(botname, "zhokiNg")) || (StrEqual(botname, "kaze")) || (StrEqual(botname, "aumaN")) || (StrEqual(botname, "Freeman")) || (StrEqual(botname, "advent")))
+	if((StrEqual(botname, "zhokiNg")) || (StrEqual(botname, "kaze")) || (StrEqual(botname, "aumaN")) || (StrEqual(botname, "Franke19")) || (StrEqual(botname, "advent")))
 	{
 		CS_SetClientClanTag(client, "ViCi");
 	}
@@ -5334,7 +5334,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Winstrike Players
-	if((StrEqual(botname, "Edward")) || (StrEqual(botname, "Kvik")) || (StrEqual(botname, "n0rb3r7")) || (StrEqual(botname, "El1an")) || (StrEqual(botname, "bondik")))
+	if((StrEqual(botname, "Edward")) || (StrEqual(botname, "Johnta")) || (StrEqual(botname, "n0rb3r7")) || (StrEqual(botname, "El1an")) || (StrEqual(botname, "bondik")))
 	{
 		CS_SetClientClanTag(client, "Winstrike");
 	}
@@ -5496,7 +5496,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//NoChance Players
-	if((StrEqual(botname, "Thomas")) || (StrEqual(botname, "Maikelele")) || (StrEqual(botname, "kRYSTAL")) || (StrEqual(botname, "zehN")) || (StrEqual(botname, "STYKO")))
+	if((StrEqual(botname, "Devilwalk")) || (StrEqual(botname, "Maikelele")) || (StrEqual(botname, "kRYSTAL")) || (StrEqual(botname, "zehN")) || (StrEqual(botname, "STYKO")))
 	{
 		CS_SetClientClanTag(client, "NoChance");
 	}
@@ -5568,7 +5568,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Nexus Players
-	if((StrEqual(botname, "BTN")) || (StrEqual(botname, "XELLOW")) || (StrEqual(botname, "SEMINTE")) || (StrEqual(botname, "sXe")) || (StrEqual(botname, "COSMEEEN")))
+	if((StrEqual(botname, "BTN")) || (StrEqual(botname, "XELLOW")) || (StrEqual(botname, "SEMINTE")) || (StrEqual(botname, "iM")) || (StrEqual(botname, "starkiller")))
 	{
 		CS_SetClientClanTag(client, "Nexus");
 	}
@@ -5735,10 +5735,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Beyond");
 	}
 	
-	//ETG Players
-	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "Dav")) || (StrEqual(botname, "DJOXiC")))
+	//Entity Players
+	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "skillZ")) || (StrEqual(botname, "SnrLx")))
 	{
-		CS_SetClientClanTag(client, "ETG");
+		CS_SetClientClanTag(client, "Entity");
 	}
 	
 	//FrostFire Players

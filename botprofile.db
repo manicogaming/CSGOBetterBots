@@ -639,7 +639,7 @@ ProP+Rifle "somebody"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Attacker"
+ProP+Rifle "Freeman"
 	VoicePitch = 90
 End
 
@@ -771,7 +771,7 @@ ProP+Rifle "pashaBiceps"
 	VoicePitch = 110
 End
 
-ProP+Rifle "jedqr"
+ProP+Rifle "leman"
 	VoicePitch = 110
 End
 
@@ -965,7 +965,7 @@ ProP+Rifle "aumaN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Freeman"
+ProP+Rifle "Franke19"
 	VoicePitch = 110
 End
 
@@ -1001,7 +1001,7 @@ ProP+Rifle "Edward"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Kvik"
+EliteAwp+SniperPro "Johnta"
 	VoicePitch = 106
 End
 
@@ -1569,7 +1569,7 @@ End
 
 //NoChance Players
 
-ProP+Rifle "Thomas"
+ProP+Rifle "Devilwalk"
 	VoicePitch = 91
 End
 
@@ -1845,11 +1845,11 @@ ProP+Rifle "SEMINTE"
 	VoicePitch = 95
 End
 
-ProP+Rifle "sXe"
+ProP+Rifle "iM"
 	VoicePitch = 110
 End
 
-ProP+Rifle "COSMEEEN"
+ProP+Rifle "starkiller"
 	VoicePitch = 110
 End
 
@@ -2461,11 +2461,11 @@ ProP+Rifle "Excali"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Dav"
+ProP+Rifle "skillZ"
 	VoicePitch = 110
 End
 
-ProP+Rifle "DJOXiC"
+ProP+Rifle "SnrLx"
 	VoicePitch = 110
 End
 
