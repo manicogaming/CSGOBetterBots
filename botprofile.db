@@ -1633,28 +1633,6 @@ ProP+Rifle "xartE"
 	VoicePitch = 110
 End
 
-//SkitLite Players
-
-ProP+Rifle "emilz"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Derkeps"
-	VoicePitch = 106
-End
-
-ProP+Rifle "OSKU"
-	VoicePitch = 95
-End
-
-ProP+Rifle "zks"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Vladimus"
-	VoicePitch = 110
-End
-
 //Tricked Players
 
 ProP+Rifle "roeJ"

@@ -358,12 +358,6 @@ char g_BotName[][] = {
 	"SADDYX",
 	"KHRN",
 	"xartE",
-	//SkitLite Players
-	"emilz",
-	"Derkeps",
-	"OSKU",
-	"zks",
-	"Vladimus",
 	//Tricked Players
 	"roeJ",
 	"acoR",
@@ -923,7 +917,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_smash", Team_SMASH);
 	RegConsoleCmd("team_nordavind", Team_Nordavind);
 	RegConsoleCmd("team_sj", Team_SJ);
-	RegConsoleCmd("team_skitlite", Team_SkitLite);
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_baskonia", Team_Baskonia);
 	RegConsoleCmd("team_giants", Team_Giants);
@@ -2546,34 +2539,6 @@ public Action Team_SJ(int client, int args)
 		ServerCommand("bot_add_t %s", "KHRN");
 		ServerCommand("bot_add_t %s", "xartE");
 		ServerCommand("mp_teamlogo_2 sjg");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_SkitLite(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "emilz");
-		ServerCommand("bot_add_ct %s", "Derkeps");
-		ServerCommand("bot_add_ct %s", "OSKU");
-		ServerCommand("bot_add_ct %s", "zks");
-		ServerCommand("bot_add_ct %s", "Vladimus");
-		ServerCommand("mp_teamlogo_1 skit");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "emilz");
-		ServerCommand("bot_add_t %s", "Derkeps");
-		ServerCommand("bot_add_t %s", "OSKU");
-		ServerCommand("bot_add_t %s", "zks");
-		ServerCommand("bot_add_t %s", "Vladimus");
-		ServerCommand("mp_teamlogo_2 skit");
 	}
 	
 	return Plugin_Handled;
@@ -5517,12 +5482,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "arvid")) || (StrEqual(botname, "Jamppi")) || (StrEqual(botname, "SADDYX")) || (StrEqual(botname, "KHRN")) || (StrEqual(botname, "xartE")))
 	{
 		CS_SetClientClanTag(client, "SJ");
-	}
-	
-	//SkitLite Players
-	if((StrEqual(botname, "emilz")) || (StrEqual(botname, "Derkeps")) || (StrEqual(botname, "OSKU")) || (StrEqual(botname, "zks")) || (StrEqual(botname, "Vladimus")))
-	{
-		CS_SetClientClanTag(client, "SkitLite");
 	}
 	
 	//Tricked Players
