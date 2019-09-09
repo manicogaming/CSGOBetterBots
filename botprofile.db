@@ -731,25 +731,25 @@ ProP+Rifle "Twistzz"
 	VoicePitch = 90
 End
 
-//HR Players
+//AVEZ Players
 
-ProP+Rifle "ANGE1"
+ProP+Rifle "sany"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "oskar"
+EliteAwp+SniperPro "crank"
 	VoicePitch = 106
 End
 
-ProP+Rifle "nukkye"
+ProP+Rifle "ponczek"
 	VoicePitch = 95
 End
 
-ProP+Rifle "loWel"
+ProP+Rifle "MOLSI"
 	VoicePitch = 110
 End
 
-ProP+Rifle "ISSAA"
+ProP+Rifle "mynio"
 	VoicePitch = 90
 End
 
@@ -1567,9 +1567,9 @@ ProP+Rifle "Cabbi"
 	VoicePitch = 110
 End
 
-//NoChance Players
+//SMASH Players
 
-ProP+Rifle "Devilwalk"
+ProP+Rifle "maden"
 	VoicePitch = 91
 End
 
@@ -1705,7 +1705,7 @@ ProP+Rifle "romeM"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "foxj"
+EliteAwp+SniperPro "fox"
 	VoicePitch = 106
 End
 
@@ -2619,7 +2619,7 @@ ProP+Rifle "astaRR"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Fox"
+ProP+Rifle "spy"
 	VoicePitch = 110
 End
 
