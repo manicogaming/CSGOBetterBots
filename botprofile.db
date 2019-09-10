@@ -2557,28 +2557,6 @@ ProP+Rifle "Ebeee"
 	VoicePitch = 110
 End
 
-//Recca Players
-
-ProP+Rifle "roseau"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Eeyore"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Sys"
-	VoicePitch = 95
-End
-
-ProP+Rifle "asteriskk"
-	VoicePitch = 110
-End
-
-ProP+Rifle "kr0"
-	VoicePitch = 110
-End
-
 //Brutality Players
 
 ProP+Rifle "V3nom"
@@ -2751,7 +2729,7 @@ ProP+Rifle "Snyder"
 	VoicePitch = 110
 End
 
-ProP+Rifle "bali"
+ProP+Rifle "Sys"
 	VoicePitch = 110
 End
 

@@ -610,12 +610,6 @@ char g_BotName[][] = {
 	"DVDOV",
 	"PokemoN",
 	"Ebeee",
-	//Recca Players
-	"roseau",
-	"Eeyore",
-	"Sys",
-	"asteriskk",
-	"kr0",
 	//Brutals Players
 	"V3nom",
 	"RiX",
@@ -669,7 +663,7 @@ char g_BotName[][] = {
 	"FamouZ",
 	"maestro",
 	"Snyder",
-	"bali",
+	"Sys",
 	//Vexed Players
 	"mezii",
 	"Kray",
@@ -3720,34 +3714,6 @@ public Action Team_Portal(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Recca(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_add_ct %s", "roseau");
-		ServerCommand("bot_add_ct %s", "Eeyore");
-		ServerCommand("bot_add_ct %s", "Sys");
-		ServerCommand("bot_add_ct %s", "asteriskk");
-		ServerCommand("bot_add_ct %s", "kr0");
-		ServerCommand("mp_teamlogo_1 recca");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_add_t %s", "roseau");
-		ServerCommand("bot_add_t %s", "Eeyore");
-		ServerCommand("bot_add_t %s", "Sys");
-		ServerCommand("bot_add_t %s", "asteriskk");
-		ServerCommand("bot_add_t %s", "kr0");
-		ServerCommand("mp_teamlogo_2 recca");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Brutality(int client, int args)
 {
 	char arg[12];
@@ -3955,7 +3921,7 @@ public Action Team_EXECUTIONERS(int client, int args)
 		ServerCommand("bot_add_ct %s", "FamouZ");
 		ServerCommand("bot_add_ct %s", "maestro");
 		ServerCommand("bot_add_ct %s", "Snyder");
-		ServerCommand("bot_add_ct %s", "bali");
+		ServerCommand("bot_add_ct %s", "Sys");
 		ServerCommand("mp_teamlogo_1 exec");
 	}
 	
@@ -3965,7 +3931,7 @@ public Action Team_EXECUTIONERS(int client, int args)
 		ServerCommand("bot_add_t %s", "FamouZ");
 		ServerCommand("bot_add_t %s", "maestro");
 		ServerCommand("bot_add_t %s", "Snyder");
-		ServerCommand("bot_add_t %s", "bali");
+		ServerCommand("bot_add_t %s", "Sys");
 		ServerCommand("mp_teamlogo_2 exec");
 	}
 	
@@ -5736,12 +5702,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Portal");
 	}
 	
-	//Recca Players
-	if((StrEqual(botname, "roseau")) || (StrEqual(botname, "Eeyore")) || (StrEqual(botname, "Sys")) || (StrEqual(botname, "asteriskk")) || (StrEqual(botname, "kr0")))
-	{
-		CS_SetClientClanTag(client, "Recca");
-	}
-	
 	//Brutals Players
 	if((StrEqual(botname, "V3nom")) || (StrEqual(botname, "RiX")) || (StrEqual(botname, "Juventa")) || (StrEqual(botname, "astaRR")) || (StrEqual(botname, "Fox")))
 	{
@@ -5785,7 +5745,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//EXECUTIONERS Players
-	if((StrEqual(botname, "ZesBeeW")) || (StrEqual(botname, "FamouZ")) || (StrEqual(botname, "maestro")) || (StrEqual(botname, "Snyder")) || (StrEqual(botname, "bali")))
+	if((StrEqual(botname, "ZesBeeW")) || (StrEqual(botname, "FamouZ")) || (StrEqual(botname, "maestro")) || (StrEqual(botname, "Snyder")) || (StrEqual(botname, "Sys")))
 	{
 		CS_SetClientClanTag(client, "EXECUTIONERS");
 	}
