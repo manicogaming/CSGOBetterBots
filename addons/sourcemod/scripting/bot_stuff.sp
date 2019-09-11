@@ -125,7 +125,7 @@ char g_BotName[][] = {
 	"pashaBiceps",
 	"leman",
 	//ENCE Players
-	"Aleksib",
+	"suNny",
 	"allu",
 	"sergej",
 	"Aerial",
@@ -233,7 +233,7 @@ char g_BotName[][] = {
 	"kressy",
 	"mantuu",
 	//Grayhound Players
-	"erkaSt",
+	"INS",
 	"sico",
 	"dexter",
 	"DickStacy",
@@ -953,7 +953,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_mith", Team_MITH);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_portal", Team_Portal);
-	RegConsoleCmd("team_recca", Team_Recca);
 	RegConsoleCmd("team_brutality", Team_Brutality);
 	RegConsoleCmd("team_invictus", Team_iNvictus);
 	RegConsoleCmd("team_nxl", Team_nxl);
@@ -1453,7 +1452,7 @@ public Action Team_ENCE(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Aleksib");
+		ServerCommand("bot_add_ct %s", "suNny");
 		ServerCommand("bot_add_ct %s", "allu");
 		ServerCommand("bot_add_ct %s", "sergej");
 		ServerCommand("bot_add_ct %s", "Aerial");
@@ -1463,7 +1462,7 @@ public Action Team_ENCE(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Aleksib");
+		ServerCommand("bot_add_t %s", "suNny");
 		ServerCommand("bot_add_t %s", "allu");
 		ServerCommand("bot_add_t %s", "sergej");
 		ServerCommand("bot_add_t %s", "Aerial");
@@ -1957,7 +1956,7 @@ public Action Team_Grayhound(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "erkaSt");
+		ServerCommand("bot_add_ct %s", "INS");
 		ServerCommand("bot_add_ct %s", "sico");
 		ServerCommand("bot_add_ct %s", "dexter");
 		ServerCommand("bot_add_ct %s", "DickStacy");
@@ -1967,7 +1966,7 @@ public Action Team_Grayhound(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "erkaSt");
+		ServerCommand("bot_add_t %s", "INS");
 		ServerCommand("bot_add_t %s", "sico");
 		ServerCommand("bot_add_t %s", "dexter");
 		ServerCommand("bot_add_t %s", "DickStacy");
@@ -5211,7 +5210,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ENCE Players
-	if((StrEqual(botname, "Aleksib")) || (StrEqual(botname, "Aerial")) || (StrEqual(botname, "allu")) || (StrEqual(botname, "sergej")) || (StrEqual(botname, "xseveN")))
+	if((StrEqual(botname, "suNny")) || (StrEqual(botname, "Aerial")) || (StrEqual(botname, "allu")) || (StrEqual(botname, "sergej")) || (StrEqual(botname, "xseveN")))
 	{
 		CS_SetClientClanTag(client, "ENCE");
 	}
@@ -5319,7 +5318,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Grayhound Players
-	if((StrEqual(botname, "erkaSt")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "DickStacy")) || (StrEqual(botname, "malta")))
+	if((StrEqual(botname, "INS")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "DickStacy")) || (StrEqual(botname, "malta")))
 	{
 		CS_SetClientClanTag(client, "Grayhound");
 	}
