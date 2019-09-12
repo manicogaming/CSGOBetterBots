@@ -653,11 +653,11 @@ char g_BotName[][] = {
 	"TISAN",
 	"GATICA",
 	//BLUEJAYS Players
-	"maxz",
-	"Tsubasa",
-	"jansen",
-	"RykuN",
-	"skillmaschine JJ_-",
+	"dEE",
+	"DiMKE",
+	"aVN",
+	"sarenii",
+	"c0llins",
 	//EXECUTIONERS Players
 	"ZesBeeW",
 	"FamouZ",
@@ -3888,21 +3888,21 @@ public Action Team_BLUEJAYS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "maxz");
-		ServerCommand("bot_add_ct %s", "Tsubasa");
-		ServerCommand("bot_add_ct %s", "jansen");
-		ServerCommand("bot_add_ct %s", "RykuN");
-		ServerCommand("bot_add_ct %s", "skillmaschine JJ_-");
+		ServerCommand("bot_add_ct %s", "dEE");
+		ServerCommand("bot_add_ct %s", "DiMKE");
+		ServerCommand("bot_add_ct %s", "aVN");
+		ServerCommand("bot_add_ct %s", "sarenii");
+		ServerCommand("bot_add_ct %s", "c0llins");
 		ServerCommand("mp_teamlogo_1 blueja");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "maxz");
-		ServerCommand("bot_add_t %s", "Tsubasa");
-		ServerCommand("bot_add_t %s", "jansen");
-		ServerCommand("bot_add_t %s", "RykuN");
-		ServerCommand("bot_add_t %s", "skillmaschine JJ_-");
+		ServerCommand("bot_add_t %s", "dEE");
+		ServerCommand("bot_add_t %s", "DiMKE");
+		ServerCommand("bot_add_t %s", "aVN");
+		ServerCommand("bot_add_t %s", "sarenii");
+		ServerCommand("bot_add_t %s", "c0llins");
 		ServerCommand("mp_teamlogo_2 blueja");
 	}
 	
@@ -5738,7 +5738,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BLUEJAYS Players
-	if((StrEqual(botname, "maxz")) || (StrEqual(botname, "Tsubasa")) || (StrEqual(botname, "jansen")) || (StrEqual(botname, "RykuN")) || (StrEqual(botname, "skillmaschine JJ_-")))
+	if((StrEqual(botname, "dEE")) || (StrEqual(botname, "DiMKE")) || (StrEqual(botname, "aVN")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "c0llins")))
 	{
 		CS_SetClientClanTag(client, "BLUEJAYS");
 	}

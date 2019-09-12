@@ -2691,23 +2691,23 @@ End
 
 //BLUEJAYS Players
 
-ProP+Rifle "maxz"
+ProP+Rifle "dEE"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Tsubasa"
+EliteAwp+SniperPro "DiMKE"
 	VoicePitch = 106
 End
 
-ProP+Rifle "jansen"
+ProP+Rifle "aVN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "RykuN"
+ProP+Rifle "sarenii"
 	VoicePitch = 110
 End
 
-ProP+Rifle "skillmaschine JJ_-"
+ProP+Rifle "c0llins"
 	VoicePitch = 110
 End
 
