@@ -425,7 +425,7 @@ End
 
 //MIBR Players
 
-ProP+Rifle "zews"
+ProP+Rifle "kNgV-"
 	VoicePitch = 91
 End
 
@@ -1035,7 +1035,7 @@ ProP+Rifle "Snappi"
 	VoicePitch = 110
 End
 
-ProP+Rifle "refrezh"
+ProP+Rifle "cajunb"
 	VoicePitch = 110
 End
 
@@ -1089,7 +1089,7 @@ ProP+Rifle "chelo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "kNgV-"
+EliteAwp+SniperPro "Apoka"
 	VoicePitch = 106
 End
 
@@ -1190,28 +1190,6 @@ ProP+Rifle "DickStacy"
 End
 
 ProP+Rifle "malta"
-	VoicePitch = 110
-End
-
-//LG Players
-
-ProP+Rifle "NEKIZ"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "HEN1"
-	VoicePitch = 106
-End
-
-ProP+Rifle "steelega"
-	VoicePitch = 95
-End
-
-ProP+Rifle "felps"
-	VoicePitch = 110
-End
-
-ProP+Rifle "boltz"
 	VoicePitch = 110
 End
 
@@ -1533,7 +1511,7 @@ EliteAwp+SniperPro "sLowi"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Twixie"
+ProP+Rifle "doto"
 	VoicePitch = 95
 End
 
@@ -2119,7 +2097,7 @@ End
 
 //One Players
 
-ProP+Rifle "iDk"
+ProP+Rifle "caike"
 	VoicePitch = 91
 End
 
