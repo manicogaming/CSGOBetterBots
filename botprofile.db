@@ -763,11 +763,11 @@ EliteAwp+SniperPro "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "F1KU"
+ProP+Rifle "mhL"
 	VoicePitch = 95
 End
 
-ProP+Rifle "pashaBiceps"
+ProP+Rifle "Sidney"
 	VoicePitch = 110
 End
 
@@ -1221,7 +1221,7 @@ ProP+Rifle "Nifty"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Sonic"
+EliteAwp+SniperPro "Eley"
 	VoicePitch = 106
 End
 
@@ -1415,23 +1415,23 @@ End
 
 //expert Players
 
-ProP+Rifle "ScrunK"
+ProP+Rifle "Aika"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Andyy"
+EliteAwp+SniperPro "syncD"
 	VoicePitch = 106
 End
 
-ProP+Rifle "PREET"
+ProP+Rifle "BMLN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "JDC"
+ProP+Rifle "HighKitty"
 	VoicePitch = 110
 End
 
-ProP+Rifle "chrissK"
+ProP+Rifle "VENIQ"
 	VoicePitch = 110
 End
 
@@ -1457,47 +1457,25 @@ ProP+Rifle "red"
 	VoicePitch = 110
 End
 
-//Planetkey Players
-
-ProP+Rifle "xenn"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "delkore"
-	VoicePitch = 106
-End
-
-ProP+Rifle "neviZ"
-	VoicePitch = 95
-End
-
-ProP+Rifle "s1n"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Krabbe"
-	VoicePitch = 110
-End
-
 //PDucks Players
 
-ProP+Rifle "Aika"
+ProP+Rifle "neviZ"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "syncD"
+EliteAwp+SniperPro "synx"
 	VoicePitch = 106
 End
 
-ProP+Rifle "BMLN"
+ProP+Rifle "delkore"
 	VoicePitch = 95
 End
 
-ProP+Rifle "HighKitty"
+ProP+Rifle "nky"
 	VoicePitch = 110
 End
 
-ProP+Rifle "VENIQ"
+ProP+Rifle "Cargo"
 	VoicePitch = 110
 End
 
@@ -1723,7 +1701,7 @@ End
 
 //OFFSET Players
 
-ProP+Rifle "zlynx"
+ProP+Rifle "RIZZ"
 	VoicePitch = 91
 End
 
@@ -1965,11 +1943,11 @@ End
 
 //Singularity Players
 
-ProP+Rifle "oSee"
+ProP+Rifle "ben1337"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "floppy"
+EliteAwp+SniperPro "PwnAlone"
 	VoicePitch = 106
 End
 
@@ -2607,7 +2585,7 @@ ProP+Rifle "motm"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "blackpoisoN"
+EliteAwp+SniperPro "oSee"
 	VoicePitch = 106
 End
 
@@ -2615,11 +2593,11 @@ ProP+Rifle "JT"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Fadey"
+ProP+Rifle "floppy"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Domsterr"
+ProP+Rifle "Sonic"
 	VoicePitch = 110
 End
 
@@ -3117,15 +3095,15 @@ EliteAwp+SniperPro "kzy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "DeniMM"
+ProP+Rifle "Andyy"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Kirby"
+ProP+Rifle "JDC"
 	VoicePitch = 110
 End
 
-ProP+Rifle "maRky"
+ProP+Rifle "OKOLICIOUZ"
 	VoicePitch = 110
 End
 
