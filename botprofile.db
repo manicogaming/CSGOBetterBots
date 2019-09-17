@@ -1635,7 +1635,7 @@ End
 
 //Giants Players
 
-ProP+Rifle "romeM"
+ProP+Rifle "rmn"
 	VoicePitch = 91
 End
 
@@ -1673,7 +1673,7 @@ ProP+Rifle "HUMANZ"
 	VoicePitch = 110
 End
 
-ProP+Rifle "MusambaN1"
+ProP+Rifle "NaOw"
 	VoicePitch = 110
 End
 
@@ -1753,11 +1753,11 @@ EliteAwp+SniperPro "ZEDKO"
 	VoicePitch = 106
 End
 
-ProP+Rifle "SYSTEM"
+ProP+Rifle "leckr"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Fraged"
+ProP+Rifle "Blogg1s"
 	VoicePitch = 110
 End
 
@@ -2211,11 +2211,11 @@ ProP+Rifle "Chub"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Vexite"
+EliteAwp+SniperPro "Llamas"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Laes"
+ProP+Rifle "keeyto"
 	VoicePitch = 95
 End
 
@@ -2233,7 +2233,7 @@ ProP+Rifle "luko"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Blogg1s"
+EliteAwp+SniperPro "wEAMO"
 	VoicePitch = 106
 End
 
@@ -2241,7 +2241,7 @@ ProP+Rifle "desty"
 	VoicePitch = 95
 End
 
-ProP+Rifle "hones"
+ProP+Rifle "Fraged"
 	VoicePitch = 110
 End
 
@@ -2255,7 +2255,7 @@ ProP+Rifle "ino"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "cookie"
+EliteAwp+SniperPro "Teal"
 	VoicePitch = 106
 End
 
@@ -2311,7 +2311,7 @@ ProP+Rifle "SLOWLY"
 	VoicePitch = 110
 End
 
-ProP+Rifle "lamplight"
+ProP+Rifle "4king"
 	VoicePitch = 110
 End
 
@@ -2329,7 +2329,7 @@ ProP+Rifle "Kntz"
 	VoicePitch = 95
 End
 
-ProP+Rifle "stk"
+ProP+Rifle "SeveN89"
 	VoicePitch = 110
 End
 
@@ -2641,7 +2641,7 @@ ProP+Rifle "TISAN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "GATICA"
+ProP+Rifle "dinamo"
 	VoicePitch = 110
 End
 
@@ -2725,7 +2725,7 @@ ProP+Rifle "zemp"
 	VoicePitch = 95
 End
 
-ProP+Rifle "burk"
+ProP+Rifle "zeph"
 	VoicePitch = 110
 End
 
@@ -2805,7 +2805,7 @@ ProP+Rifle "emp"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "abr"
+EliteAwp+SniperPro "MISK"
 	VoicePitch = 106
 End
 
@@ -3073,7 +3073,7 @@ EliteAwp+SniperPro "simix"
 	VoicePitch = 106
 End
 
-ProP+Rifle "yNc"
+ProP+Rifle "Brook"
 	VoicePitch = 95
 End
 
@@ -3280,6 +3280,28 @@ ProP+Rifle "Br0die"
 End
 
 ProP+Rifle "angry"
+	VoicePitch = 110
+End
+
+//GameAgents Players
+
+ProP+Rifle "pounh"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "FliP1"
+	VoicePitch = 106
+End
+
+ProP+Rifle "NENO"
+	VoicePitch = 95
+End
+
+ProP+Rifle "jayzaR"
+	VoicePitch = 110
+End
+
+ProP+Rifle "shadow"
 	VoicePitch = 110
 End
 
