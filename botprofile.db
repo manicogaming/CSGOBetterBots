@@ -557,7 +557,7 @@ End
 
 //fnatic Players
 
-ProP+Rifle "twist"
+ProP+Rifle "flusha"
 	VoicePitch = 91
 End
 
@@ -573,7 +573,7 @@ ProP+Rifle "Brollan"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Xizt"
+ProP+Rifle "Golden"
 	VoicePitch = 90
 End
 
@@ -865,7 +865,7 @@ End
 
 //Windigo Players
 
-ProP+Rifle "SHiPZ"
+ProP+Rifle "mirbit"
 	VoicePitch = 91
 End
 
@@ -1089,7 +1089,7 @@ ProP+Rifle "chelo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Apoka"
+EliteAwp+SniperPro "shz"
 	VoicePitch = 106
 End
 
@@ -1713,7 +1713,7 @@ ProP+Rifle "SOKER"
 	VoicePitch = 95
 End
 
-ProP+Rifle "alëx"
+ProP+Rifle "alex*"
 	VoicePitch = 110
 End
 
@@ -2809,7 +2809,7 @@ EliteAwp+SniperPro "zqk"
 	VoicePitch = 106
 End
 
-ProP+Rifle "shz"
+ProP+Rifle "dzt"
 	VoicePitch = 95
 End
 
