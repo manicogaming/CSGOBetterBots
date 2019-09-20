@@ -1859,7 +1859,7 @@ ProP+Rifle "ROBO"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "mds"
+EliteAwp+SniperPro "hutji"
 	VoicePitch = 106
 End
 
@@ -1877,7 +1877,7 @@ End
 
 //pro100 Players
 
-ProP+Rifle "Flarich"
+ProP+Rifle "pipsoN"
 	VoicePitch = 91
 End
 
@@ -2163,23 +2163,23 @@ End
 
 //LEISURE Players
 
-ProP+Rifle "stowny"
+ProP+Rifle "padow"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "expo"
+EliteAwp+SniperPro "amigo"
 	VoicePitch = 106
 End
 
-ProP+Rifle "stefan"
+ProP+Rifle "fly"
 	VoicePitch = 95
 End
 
-ProP+Rifle "3D2YSilveR"
+ProP+Rifle "cHap"
 	VoicePitch = 110
 End
 
-ProP+Rifle "LapeX"
+ProP+Rifle "Rand"
 	VoicePitch = 110
 End
 
@@ -3239,28 +3239,6 @@ ProP+Rifle "Yaba"
 	VoicePitch = 110
 End
 
-//Skyfire Players
-
-ProP+Rifle "Damy0"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "STVN"
-	VoicePitch = 106
-End
-
-ProP+Rifle "synical"
-	VoicePitch = 95
-End
-
-ProP+Rifle "ApeXz"
-	VoicePitch = 110
-End
-
-ProP+Rifle "vertije"
-	VoicePitch = 110
-End
-
 //W&R Players
 
 ProP+Rifle "Swaggy"
@@ -3302,6 +3280,72 @@ ProP+Rifle "jayzaR"
 End
 
 ProP+Rifle "shadow"
+	VoicePitch = 110
+End
+
+//Orange Players
+
+ProP+Rifle "Max"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "cara"
+	VoicePitch = 106
+End
+
+ProP+Rifle "formlesS"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Raph"
+	VoicePitch = 110
+End
+
+ProP+Rifle "risk"
+	VoicePitch = 110
+End
+
+//IG Players
+
+ProP+Rifle "EXPRO"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "V4D1M"
+	VoicePitch = 106
+End
+
+ProP+Rifle "flying"
+	VoicePitch = 95
+End
+
+ProP+Rifle "equal"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Koshak"
+	VoicePitch = 110
+End
+
+//HR Players
+
+ProP+Rifle "ANGE1"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "nukkye"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Flarich"
+	VoicePitch = 95
+End
+
+ProP+Rifle "crush"
+	VoicePitch = 110
+End
+
+ProP+Rifle "scoobyxie"
 	VoicePitch = 110
 End
 
