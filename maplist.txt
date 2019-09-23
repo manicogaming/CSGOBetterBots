@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Fri Sep 20 15:59:14 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.6.8 config 1 at Sun Sep 22 00:53:50 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -132,7 +132,6 @@ de_gold_dust
 de_gold_dust2
 de_inferno
 de_inferno_pondsite
-de_infernoold
 de_lake
 de_maihouse
 de_mill_ce

@@ -627,7 +627,7 @@ ProP+Rifle "Summer"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "DANK1NG"
+EliteAwp+SniperPro "Attacker"
 	VoicePitch = 106
 End
 
@@ -903,7 +903,7 @@ ProP+Rifle "kscerato"
 	VoicePitch = 110
 End
 
-ProP+Rifle "ableJ"
+ProP+Rifle "HEN1"
 	VoicePitch = 110
 End
 
@@ -1393,11 +1393,11 @@ End
 
 //EURONICS Players
 
-ProP+Rifle "arno"
+ProP+Rifle "red"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Krimbo"
+EliteAwp+SniperPro "PREET"
 	VoicePitch = 106
 End
 
@@ -1409,7 +1409,7 @@ ProP+Rifle "Seeeya"
 	VoicePitch = 110
 End
 
-ProP+Rifle "boostey"
+ProP+Rifle "pdy"
 	VoicePitch = 110
 End
 
@@ -1437,23 +1437,23 @@ End
 
 //PANTHERS Players
 
-ProP+Rifle "zonixx"
+ProP+Rifle "rUFY"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "LyGHT"
+EliteAwp+SniperPro "darkz"
 	VoicePitch = 106
 End
 
-ProP+Rifle "ecfN"
+ProP+Rifle "denzel"
 	VoicePitch = 95
 End
 
-ProP+Rifle "pdy"
+ProP+Rifle "expo"
 	VoicePitch = 110
 End
 
-ProP+Rifle "red"
+ProP+Rifle "stowny"
 	VoicePitch = 110
 End
 
@@ -1877,7 +1877,7 @@ End
 
 //pro100 Players
 
-ProP+Rifle "pipsoN"
+ProP+Rifle "Kvik"
 	VoicePitch = 91
 End
 
@@ -1899,7 +1899,7 @@ End
 
 //eUnited Players
 
-ProP+Rifle "moose"
+ProP+Rifle "freakazoid"
 	VoicePitch = 91
 End
 
@@ -3063,7 +3063,7 @@ ProP+Rifle "PPOverdose"
 	VoicePitch = 110
 End
 
-//dizLown Players
+//Epsilon Players
 
 ProP+Rifle "Stev0se"
 	VoicePitch = 91
