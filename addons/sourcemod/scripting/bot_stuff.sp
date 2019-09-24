@@ -837,7 +837,13 @@ char g_BotName[][] = {
 	"nukkye",
 	"Flarich",
 	"crush",
-	"scoobyxie"
+	"scoobyxie",
+	//Dice Players
+	"XpG",
+	"nonick",
+	"Kan4",
+	"Polox",
+	"DEVIL"
 };
  
 public Plugin myinfo =
@@ -992,9 +998,10 @@ public void OnPluginStart()
 	RegConsoleCmd("team_queso", Team_Queso);
 	RegConsoleCmd("team_windrain", Team_WindRain);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
-	RegConsoleCmd("Team_orange", Team_Orange);
-	RegConsoleCmd("Team_ig", Team_IG);
-	RegConsoleCmd("Team_hr", Team_HR);
+	RegConsoleCmd("team_orange", Team_Orange);
+	RegConsoleCmd("team_ig", Team_IG);
+	RegConsoleCmd("team_hr", Team_HR);
+	RegConsoleCmd("team_dice", Team_Dice);
 }
 
 public Action KickBots(int client, int args)
@@ -4728,6 +4735,34 @@ public Action Team_HR(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Dice(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "XpG");
+		ServerCommand("bot_add_ct %s", "nonick");
+		ServerCommand("bot_add_ct %s", "Kan4");
+		ServerCommand("bot_add_ct %s", "Polox");
+		ServerCommand("bot_add_ct %s", "DEVIL");
+		ServerCommand("mp_teamlogo_1 dice");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "XpG");
+		ServerCommand("bot_add_t %s", "nonick");
+		ServerCommand("bot_add_t %s", "Kan4");
+		ServerCommand("bot_add_t %s", "Polox");
+		ServerCommand("bot_add_t %s", "DEVIL");
+		ServerCommand("mp_teamlogo_2 dice");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5956,5 +5991,11 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "ANGE1")) || (StrEqual(botname, "nukkye")) || (StrEqual(botname, "Flarich")) || (StrEqual(botname, "crush")) || (StrEqual(botname, "scoobyxie")))
 	{
 		CS_SetClientClanTag(client, "HR");
+	}
+	
+	//Dice Players
+	if((StrEqual(botname, "XpG")) || (StrEqual(botname, "nonick")) || (StrEqual(botname, "Kan4")) || (StrEqual(botname, "Polox")) || (StrEqual(botname, "DEVIL")))
+	{
+		CS_SetClientClanTag(client, "Dice");
 	}
 }

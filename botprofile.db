@@ -3349,6 +3349,28 @@ ProP+Rifle "scoobyxie"
 	VoicePitch = 110
 End
 
+//Dice Players
+
+ProP+Rifle "XpG"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "nonick"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Kan4"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Polox"
+	VoicePitch = 110
+End
+
+ProP+Rifle "DEVIL"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 95
 End
