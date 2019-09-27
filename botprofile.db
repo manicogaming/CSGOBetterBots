@@ -451,7 +451,7 @@ ProP+Rifle "olofmeister"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "GuardiaN"
+EliteAwp+SniperPro "broky"
 	VoicePitch = 106
 End
 
@@ -463,7 +463,7 @@ ProP+Rifle "rain"
 	VoicePitch = 110
 End
 
-ProP+Rifle "NEO"
+ProP+Rifle "coldzera"
 	VoicePitch = 90
 End
 
@@ -491,7 +491,7 @@ End
 
 //NiP Players
 
-ProP+Rifle "GeT_RiGhT"
+ProP+Rifle "twist"
 	VoicePitch = 91
 End
 
@@ -535,7 +535,7 @@ End
 
 //G2 Players
 
-ProP+Rifle "shox"
+ProP+Rifle "kioShiMa"
 	VoicePitch = 91
 End
 
@@ -643,7 +643,7 @@ ProP+Rifle "Freeman"
 	VoicePitch = 90
 End
 
-//NRG Players
+//EG Players
 
 ProP+Rifle "stanislaw"
 	VoicePitch = 91
@@ -693,7 +693,7 @@ ProP+Rifle "electronic"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "s1mple"
+EliteAwp+SniperPro "GuardiaN"
 	VoicePitch = 106
 End
 
@@ -705,7 +705,7 @@ ProP+Rifle "Boombl4"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Zeus"
+ProP+Rifle "s1mple"
 	VoicePitch = 90
 End
 
@@ -943,7 +943,7 @@ ProP+Rifle "oBo"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Rickeh"
+ProP+Rifle "RUSH"
 	VoicePitch = 110
 End
 
@@ -1239,7 +1239,7 @@ End
 
 //Spirit Players
 
-ProP+Rifle "COLDYY1"
+ProP+Rifle "mir"
 	VoicePitch = 91
 End
 
@@ -1255,7 +1255,7 @@ ProP+Rifle "chopper"
 	VoicePitch = 110
 End
 
-ProP+Rifle "S0tF1k"
+ProP+Rifle "magixx"
 	VoicePitch = 110
 End
 
@@ -2906,28 +2906,6 @@ ProP+Rifle "jhd"
 End
 
 ProP+Rifle "jtr"
-	VoicePitch = 110
-End
-
-//BPro Players
-
-ProP+Rifle "Zix"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "dennyslaw"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Rock1nG"
-	VoicePitch = 95
-End
-
-ProP+Rifle "rafftu"
-	VoicePitch = 110
-End
-
-ProP+Rifle "viltrex"
 	VoicePitch = 110
 End
 
