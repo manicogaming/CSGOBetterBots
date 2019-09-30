@@ -799,7 +799,7 @@ End
 
 //Vitality Players
 
-ProP+Rifle "NBK-"
+ProP+Rifle "shox"
 	VoicePitch = 91
 End
 
@@ -1195,7 +1195,7 @@ End
 
 //MVP.PK Players
 
-ProP+Rifle "zeff"
+ProP+Rifle "glow"
 	VoicePitch = 91
 End
 
@@ -1203,11 +1203,11 @@ EliteAwp+SniperPro "xeta"
 	VoicePitch = 106
 End
 
-ProP+Rifle "XigN"
+ProP+Rifle "Rb"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Jinx"
+ProP+Rifle "k1Ng"
 	VoicePitch = 110
 End
 
@@ -2075,7 +2075,7 @@ End
 
 //One Players
 
-ProP+Rifle "caike"
+ProP+Rifle "bld V"
 	VoicePitch = 91
 End
 
@@ -3346,6 +3346,28 @@ ProP+Rifle "Polox"
 End
 
 ProP+Rifle "DEVIL"
+	VoicePitch = 110
+End
+
+//Absolute Players
+
+ProP+Rifle "crow"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Laz"
+	VoicePitch = 106
+End
+
+ProP+Rifle "barce"
+	VoicePitch = 95
+End
+
+ProP+Rifle "takej"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Reita"
 	VoicePitch = 110
 End
 
