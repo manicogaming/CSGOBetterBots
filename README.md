@@ -6,6 +6,8 @@ I edited the following plugins.
 
 # [[ANY] Aimbot (Auto Aimer)](https://forums.alliedmods.net/showthread.php?t=283342)
 - Removed the Admin Only Option for the !aimbot command to use with another plugin that I created.
+- Aimbot is not active when the player is holding an AWP
+- Every shot has a chance to activate the aimbot
 
 # [[CSGO] Gloves](https://forums.alliedmods.net/showthread.php?t=299977)
 - Made it so that it doesn't skip BOTs
