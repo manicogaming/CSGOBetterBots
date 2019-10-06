@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "lvl_overlays/overlay_hd_10"
+	"$translucent" 1
+}

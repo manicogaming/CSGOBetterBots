@@ -59,9 +59,9 @@ char g_BotName[][] = {
 	"koosta",
 	"TenZ",
 	//G2 Players
-	"kioShiMa",
+	"huNter-",
 	"kennyS",
-	"Lucky",
+	"nexa",
 	"JaCkz",
 	"AMANEK",
 	//fnatic Players
@@ -163,8 +163,8 @@ char g_BotName[][] = {
 	//CR4ZY Players
 	"LETN1",
 	"ottoNd",
-	"huNter",
-	"nexa",
+	"SHiPZ",
+	"emi",
 	"EspiranTo",
 	//coL Players
 	"dephh",
@@ -1158,9 +1158,9 @@ public Action Team_G2(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "kioShiMa");
+		ServerCommand("bot_add_ct %s", "huNter-");
 		ServerCommand("bot_add_ct %s", "kennyS");
-		ServerCommand("bot_add_ct %s", "Lucky");
+		ServerCommand("bot_add_ct %s", "nexa");
 		ServerCommand("bot_add_ct %s", "JaCkz");
 		ServerCommand("bot_add_ct %s", "AMANEK");
 		ServerCommand("mp_teamlogo_1 g2");
@@ -1168,9 +1168,9 @@ public Action Team_G2(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "kioShiMa");
+		ServerCommand("bot_add_t %s", "huNter-");
 		ServerCommand("bot_add_t %s", "kennyS");
-		ServerCommand("bot_add_t %s", "Lucky");
+		ServerCommand("bot_add_t %s", "nexa");
 		ServerCommand("bot_add_t %s", "JaCkz");
 		ServerCommand("bot_add_t %s", "AMANEK");
 		ServerCommand("mp_teamlogo_2 g2");
@@ -1636,8 +1636,8 @@ public Action Team_CR4ZY(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "LETN1");
 		ServerCommand("bot_add_ct %s", "ottoNd");
-		ServerCommand("bot_add_ct %s", "huNter");
-		ServerCommand("bot_add_ct %s", "nexa");
+		ServerCommand("bot_add_ct %s", "SHiPZ");
+		ServerCommand("bot_add_ct %s", "emi");
 		ServerCommand("bot_add_ct %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_1 cr4z");
 	}
@@ -1646,8 +1646,8 @@ public Action Team_CR4ZY(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "LETN1");
 		ServerCommand("bot_add_t %s", "ottoNd");
-		ServerCommand("bot_add_t %s", "huNter");
-		ServerCommand("bot_add_t %s", "nexa");
+		ServerCommand("bot_add_t %s", "SHiPZ");
+		ServerCommand("bot_add_t %s", "emi");
 		ServerCommand("bot_add_t %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_2 cr4z");
 	}
@@ -5214,7 +5214,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//G2 Players
-	if((StrEqual(botname, "kioShiMa")) || (StrEqual(botname, "kennyS")) || (StrEqual(botname, "Lucky")) || (StrEqual(botname, "JaCkz")) || (StrEqual(botname, "AMANEK")))
+	if((StrEqual(botname, "huNter-")) || (StrEqual(botname, "kennyS")) || (StrEqual(botname, "nexa")) || (StrEqual(botname, "JaCkz")) || (StrEqual(botname, "AMANEK")))
 	{
 		CS_SetClientClanTag(client, "G2");
 	}
@@ -5316,7 +5316,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//CR4ZY Players
-	if((StrEqual(botname, "LETN1")) || (StrEqual(botname, "ottoNd")) || (StrEqual(botname, "huNter")) || (StrEqual(botname, "nexa")) || (StrEqual(botname, "EspiranTo")))
+	if((StrEqual(botname, "LETN1")) || (StrEqual(botname, "ottoNd")) || (StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "emi")) || (StrEqual(botname, "EspiranTo")))
 	{
 		CS_SetClientClanTag(client, "CR4ZY");
 	}

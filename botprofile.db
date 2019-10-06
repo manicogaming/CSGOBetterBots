@@ -57,10 +57,10 @@ Template SniperPro
 		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
-		WeaponPreference = ump45
-		WeaponPreference = mp7
 		WeaponPreference = mac10
 		WeaponPreference = mp9
+		WeaponPreference = ump45
+		WeaponPreference = mp7
 		WeaponPreference = famas
 		WeaponPreference = galilar
 End
@@ -68,9 +68,9 @@ End
 Template Rifle
         WeaponPreference = ak47
 		WeaponPreference = m4a1
-		WeaponPreference = ump45
 		WeaponPreference = mac10
 		WeaponPreference = mp9
+		WeaponPreference = ump45
 		WeaponPreference = mp7
 		WeaponPreference = galilar
 		WeaponPreference = famas
@@ -79,9 +79,9 @@ End
 Template Punch
         WeaponPreference = sg556
 		WeaponPreference = aug
-		WeaponPreference = ump45
 		WeaponPreference = mac10
 		WeaponPreference = mp9
+		WeaponPreference = ump45
 		WeaponPreference = galilar
 		WeaponPreference = famas
 End
@@ -115,9 +115,9 @@ End
 Template Spray
         WeaponPreference = p90
 		WeaponPreference = bizon
-		WeaponPreference = ump45
 		WeaponPreference = mac10
 		WeaponPreference = mp9
+		WeaponPreference = ump45
 		WeaponPreference = mp7
 End
 
@@ -125,6 +125,14 @@ Template AutoSniper
 		WeaponPreference = scar20
 		WeaponPreference = g3sg1
 		WeaponPreference = sg008
+End
+
+Template SG556
+		WeaponPreference = sg556
+End
+
+Template AUG
+		WeaponPreference = aug
 End
 
 // skill templates
@@ -469,7 +477,7 @@ End
 
 //Astralis Players
 
-ProP+Rifle "Xyp9x"
+ProP+Rifle+SG556 "Xyp9x"
 	VoicePitch = 91
 End
 
@@ -481,7 +489,7 @@ ProP+Rifle "gla1ve"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Magisk"
+ProP+Rifle+SG556 "Magisk"
 	VoicePitch = 110
 End
 
@@ -503,7 +511,7 @@ ProP+Rifle "f0rest"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Plopski"
+ProP+Rifle+SG556 "Plopski"
 	VoicePitch = 110
 End
 
@@ -535,7 +543,7 @@ End
 
 //G2 Players
 
-ProP+Rifle "kioShiMa"
+ProP+Rifle "huNter-"
 	VoicePitch = 91
 End
 
@@ -543,7 +551,7 @@ EliteAwp+SniperPro "kennyS"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Lucky"
+ProP+Rifle "nexa"
 	VoicePitch = 95
 End
 
@@ -551,13 +559,13 @@ ProP+Rifle "JaCkz"
 	VoicePitch = 110
 End
 
-ProP+Rifle "AMANEK"
+ProP+Rifle+SG556 "AMANEK"
 	VoicePitch = 90
 End
 
 //fnatic Players
 
-ProP+Rifle "flusha"
+ProP+Rifle+SG556 "flusha"
 	VoicePitch = 91
 End
 
@@ -569,7 +577,7 @@ ProP+Rifle "KRiMZ"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Brollan"
+ProP+Rifle+SG556 "Brollan"
 	VoicePitch = 110
 End
 
@@ -587,7 +595,7 @@ ProP+Rifle "Kjaerbye"
 	VoicePitch = 106
 End
 
-ProP+Rifle "aizy"
+ProP+Rifle+SG556 "aizy"
 	VoicePitch = 95
 End
 
@@ -595,7 +603,7 @@ EliteAwp+SniperPro "valde"
 	VoicePitch = 110
 End
 
-ProP+Rifle "gade"
+ProP+Rifle+SG556 "gade"
 	VoicePitch = 90
 End
 
@@ -605,11 +613,11 @@ ProP+Rifle "karrigan"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "chrisJ"
+EliteAwp+SniperPro "woxic"
 	VoicePitch = 106
 End
 
-ProP+Rifle "woxic"
+ProP+Rifle+SG556 "chrisJ"
 	VoicePitch = 95
 End
 
@@ -617,7 +625,7 @@ ProP+Rifle "frozen"
 	VoicePitch = 110
 End
 
-ProP+Rifle "ropz"
+ProP+Rifle+SG556 "ropz"
 	VoicePitch = 90
 End
 
@@ -635,7 +643,7 @@ ProP+Rifle "BnTneT"
 	VoicePitch = 95
 End
 
-ProP+Rifle "somebody"
+ProP+Rifle+SG556 "somebody"
 	VoicePitch = 110
 End
 
@@ -645,7 +653,7 @@ End
 
 //EG Players
 
-ProP+Rifle "stanislaw"
+ProP+Rifle+SG556 "stanislaw"
 	VoicePitch = 91
 End
 
@@ -653,11 +661,11 @@ EliteAwp+SniperPro "tarik"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Brehze"
+ProP+Rifle+SG556 "Brehze"
 	VoicePitch = 95
 End
 
-ProP+Rifle "nahtE"
+ProP+Rifle+SG556 "nahtE"
 	VoicePitch = 110
 End
 
@@ -705,13 +713,13 @@ ProP+Rifle "Boombl4"
 	VoicePitch = 110
 End
 
-ProP+Rifle "s1mple"
+ProP+Rifle+SG556 "s1mple"
 	VoicePitch = 90
 End
 
 //Liquid Players
 
-ProP+Rifle "Stewie2K"
+ProP+Rifle+SG556 "Stewie2K"
 	VoicePitch = 91
 End
 
@@ -719,7 +727,7 @@ EliteAwp+SniperPro "NAF"
 	VoicePitch = 106
 End
 
-ProP+Rifle "nitr0"
+ProP+Rifle+SG556 "nitr0"
 	VoicePitch = 95
 End
 
@@ -807,7 +815,7 @@ EliteAwp+SniperPro "ZywOo"
 	VoicePitch = 106
 End
 
-ProP+Rifle "apEX"
+ProP+Rifle+SG556 "apEX"
 	VoicePitch = 95
 End
 
@@ -887,23 +895,23 @@ End
 
 //FURIA Players
 
-ProP+Rifle "yuurih"
+ProP+Rifle+SG556 "yuurih"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "arT"
+EliteAwp+SniperPro "HEN1"
 	VoicePitch = 106
 End
 
-ProP+Rifle "VINI"
+ProP+Rifle+SG556 "VINI"
 	VoicePitch = 95
 End
 
-ProP+Rifle "kscerato"
+ProP+Rifle+SG556 "kscerato"
 	VoicePitch = 110
 End
 
-ProP+Rifle "HEN1"
+ProP+Rifle+SG556 "arT"
 	VoicePitch = 110
 End
 
@@ -917,11 +925,11 @@ EliteAwp+SniperPro "ottoNd"
 	VoicePitch = 106
 End
 
-ProP+Rifle "huNter"
+ProP+Rifle "SHiPZ"
 	VoicePitch = 95
 End
 
-ProP+Rifle "nexa"
+ProP+Rifle "emi"
 	VoicePitch = 110
 End
 
@@ -1173,7 +1181,7 @@ End
 
 //Grayhound Players
 
-ProP+Rifle "INS"
+ProP+Rifle+SG556 "INS"
 	VoicePitch = 91
 End
 
@@ -1181,7 +1189,7 @@ EliteAwp+SniperPro "sico"
 	VoicePitch = 106
 End
 
-ProP+Rifle "dexter"
+ProP+Rifle+SG556 "dexter"
 	VoicePitch = 95
 End
 
@@ -1225,7 +1233,7 @@ EliteAwp+SniperPro "Eley"
 	VoicePitch = 106
 End
 
-ProP+Rifle "s0m"
+ProP+Rifle+SG556 "s0m"
 	VoicePitch = 95
 End
 
@@ -1233,7 +1241,7 @@ ProP+Rifle "ANDROID"
 	VoicePitch = 110
 End
 
-ProP+Rifle "FugLy"
+ProP+Rifle+SG556 "FugLy"
 	VoicePitch = 110
 End
 
@@ -1955,7 +1963,7 @@ ProP+Rifle "Hydrex"
 	VoicePitch = 95
 End
 
-ProP+Rifle "ryann"
+ProP+Rifle+SG556 "ryann"
 	VoicePitch = 110
 End
 

@@ -513,7 +513,7 @@ public Action Event_AnnouncePhaseEnd(Handle event, const char[] name, bool dontB
 
 stock bool IsValidClient(int client)
 {
-	if(client >= 1 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsFakeClient(client))
+	if(client >= 1 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client))
 		return true;
 	
 	return false;
