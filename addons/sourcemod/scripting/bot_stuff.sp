@@ -5001,6 +5001,12 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	if((m_iAccount > 1500) && (m_iAccount < 3000))
 	{
 		int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
+		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+		
+		if (iPrimary == -1)
+		{
+			return Plugin_Stop;
+		}
 		
 		if (iWeapon != -1)
 		{
