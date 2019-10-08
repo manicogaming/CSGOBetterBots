@@ -278,7 +278,7 @@ char g_BotName[][] = {
 	"dennis",
 	"nawwk",
 	"ScreaM",
-	"HS",
+	"RuStY",
 	"hampus",
 	//DIVIZON Players
 	"TR1P",
@@ -2155,7 +2155,7 @@ public Action Team_GamerLegion(int client, int args)
 		ServerCommand("bot_add_ct %s", "dennis");
 		ServerCommand("bot_add_ct %s", "nawwk");
 		ServerCommand("bot_add_ct %s", "ScreaM");
-		ServerCommand("bot_add_ct %s", "HS");
+		ServerCommand("bot_add_ct %s", "RuStY");
 		ServerCommand("bot_add_ct %s", "hampus");
 		ServerCommand("mp_teamlogo_1 glegion");
 	}
@@ -2165,7 +2165,7 @@ public Action Team_GamerLegion(int client, int args)
 		ServerCommand("bot_add_t %s", "dennis");
 		ServerCommand("bot_add_t %s", "nawwk");
 		ServerCommand("bot_add_t %s", "ScreaM");
-		ServerCommand("bot_add_t %s", "HS");
+		ServerCommand("bot_add_t %s", "RuStY");
 		ServerCommand("bot_add_t %s", "hampus");
 		ServerCommand("mp_teamlogo_2 glegion");
 	}
@@ -5389,7 +5389,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//GamerLegion Players
-	if((StrEqual(botname, "dennis")) || (StrEqual(botname, "nawwk")) || (StrEqual(botname, "ScreaM")) || (StrEqual(botname, "HS")) || (StrEqual(botname, "hampus")))
+	if((StrEqual(botname, "dennis")) || (StrEqual(botname, "nawwk")) || (StrEqual(botname, "ScreaM")) || (StrEqual(botname, "RuStY")) || (StrEqual(botname, "hampus")))
 	{
 		CS_SetClientClanTag(client, "GamerLegion");
 	}

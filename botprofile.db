@@ -151,13 +151,13 @@ Template EliteAwp
 End
 
 Template ElitePassive
-        Skill = 35
+        Skill = 25
 		Rank = 850
 		Aggression = 25
 		Teamwork = 90
 		ReactionTime = 0.000000000000000000000001
 		AttackDelay = 0
-		Difficulty = EASY+NORMAL+HARD+EXPERT
+		Difficulty = EXPERT+HARD+NORMAL+EASY
 		VoicePitch = 105
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.00001
@@ -166,13 +166,13 @@ Template ElitePassive
 End
 
 Template Elite
-        Skill = 34
+        Skill = 24
 		Rank = 850
 		Aggression = 25
 		Teamwork = 90
 		ReactionTime = 0.000000000000000000000001
 		AttackDelay = 0
-		Difficulty = EASY+NORMAL+HARD+EXPERT
+		Difficulty = EXPERT+HARD+NORMAL+EASY
 		VoicePitch = 105
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.00001
@@ -181,7 +181,7 @@ Template Elite
 End
 
 Template ExpertAwp
-        Skill = 45	
+        Skill = 45
 		Rank = 1000
 		Aggression = 15
 		Teamwork = 85
@@ -360,7 +360,7 @@ Template NormalARG
 End
 
 Template NormalSNIPER
-        Skill = 47
+        Skill = 50
 		Rank = 1700
 		Cost = 2200
 		Aggression = 15
@@ -375,35 +375,35 @@ Template NormalSNIPER
 End
 
 Template Fair
-        Skill = 48
+        Skill = 90
 		Rank = 2000
 		Cost = 3000
-		Aggression = 14
+		Aggression = 80
 		Teamwork = 72
 		AttackDelay = 0
-		ReactionTime = 0.0001
+		ReactionTime = 0.2-
 		Difficulty = EXPERT+HARD+NORMAL+EASY
 		VoicePitch = 85
-		AimFocusInitial = 0.30
-		AimFocusDecay = 0.30
-		AimFocusOffsetScale = 0.30
-		AimfocusInterval = 0.30
+		AimFocusInitial = 2
+		AimFocusDecay = 0.2
+		AimFocusOffsetScale = 0.15
+		AimfocusInterval = 0.20
 End
 
 Template FairSNIPER
-        Skill = 49
+		Skill = 100
 		Rank = 2000
 		Cost = 3000
-		Aggression = 10
+		Aggression = 95
 		AttackDelay = 0
-		Teamwork = 71 
+		Teamwork = 71
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		ReactionTime = 0.0001
+		ReactionTime = 0.05
 		VoicePitch = 95
-		AimFocusInitial = 0.32
-		AimFocusDecay = 0.32
-		AimFocusOffsetScale = 0.32
-		AimfocusInterval = 0.32
+		AimFocusInitial = 0.5
+		AimFocusDecay = 0.1
+		AimFocusOffsetScale = 0.05
+		AimfocusInterval = 0.05
 End
 
 //----------------------------------------------------------------------------
@@ -1329,7 +1329,7 @@ ProP+Rifle "ScreaM"
 	VoicePitch = 95
 End
 
-ProP+Rifle "HS"
+ProP+Rifle "RuStY"
 	VoicePitch = 110
 End
 
