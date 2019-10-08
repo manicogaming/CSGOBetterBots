@@ -1189,7 +1189,7 @@ ProP+Rifle "Nifty"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Eley"
+EliteAwp+SniperPro "ryann"
 	VoicePitch = 106
 End
 
@@ -1325,7 +1325,7 @@ EliteAwp+SniperPro "nawwk"
 	VoicePitch = 106
 End
 
-ProP+Rifle "ScreaM"
+ProP+Rifle "PlesseN"
 	VoicePitch = 95
 End
 
@@ -1777,25 +1777,25 @@ ProP+Rifle "Sobol"
 	VoicePitch = 110
 End
 
-//DreamEaters Players
+//Heretics Players
 
-ProP+Rifle "kinqie"
+ProP+Rifle "davidp"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "speed4k"
+EliteAwp+SniperPro "Maka"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Krad"
+ProP+Rifle "LOGAN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Forester"
+ProP+Rifle "kioShiMa"
 	VoicePitch = 110
 End
 
-ProP+Rifle "svyat"
+ProP+Rifle "Lucky"
 	VoicePitch = 110
 End
 
@@ -1911,23 +1911,23 @@ End
 
 //Singularity Players
 
-ProP+Rifle "ben1337"
+ProP+Rifle "wrath"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "PwnAlone"
+EliteAwp+SniperPro "Relyks"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Hydrex"
+ProP+Rifle "seb"
 	VoicePitch = 95
 End
 
-ProP+Rifle "ryann"
+ProP+Rifle "dazzLe"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Shakezullah"
+ProP+Rifle "dapr"
 	VoicePitch = 110
 End
 
