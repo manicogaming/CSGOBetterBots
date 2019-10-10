@@ -254,7 +254,7 @@ char g_BotName[][] = {
 	"Zellsis",
 	"swag",
 	"yay",
-	"Infinite",
+	"neptune",
 	"Subroza",
 	//CeX Players
 	"LiamjS",
@@ -703,7 +703,7 @@ char g_BotName[][] = {
 	//Syman Players
 	"neaLaN",
 	"Ramz1k",
-	"t0rick",
+	"n0rb3r7",
 	"Perfecto",
 	"Keoz",
 	//wNv Players
@@ -2043,7 +2043,7 @@ public Action Team_Swole(int client, int args)
 		ServerCommand("bot_add_ct %s", "Zellsis");
 		ServerCommand("bot_add_ct %s", "swag");
 		ServerCommand("bot_add_ct %s", "yay");
-		ServerCommand("bot_add_ct %s", "Infinite");
+		ServerCommand("bot_add_ct %s", "neptune");
 		ServerCommand("bot_add_ct %s", "Subroza");
 		ServerCommand("mp_teamlogo_1 swo");
 	}
@@ -2053,7 +2053,7 @@ public Action Team_Swole(int client, int args)
 		ServerCommand("bot_add_t %s", "Zellsis");
 		ServerCommand("bot_add_t %s", "swag");
 		ServerCommand("bot_add_t %s", "yay");
-		ServerCommand("bot_add_t %s", "Infinite");
+		ServerCommand("bot_add_t %s", "neptune");
 		ServerCommand("bot_add_t %s", "Subroza");
 		ServerCommand("mp_teamlogo_2 swo");
 	}
@@ -4114,7 +4114,7 @@ public Action Team_Syman(int client, int args)
 	{
 		ServerCommand("bot_add_ct %s", "neaLaN");
 		ServerCommand("bot_add_ct %s", "Ramz1k");
-		ServerCommand("bot_add_ct %s", "t0rick");
+		ServerCommand("bot_add_ct %s", "n0rb3r7");
 		ServerCommand("bot_add_ct %s", "Perfecto");
 		ServerCommand("bot_add_ct %s", "Keoz");
 		ServerCommand("mp_teamlogo_1 syma");
@@ -4124,7 +4124,7 @@ public Action Team_Syman(int client, int args)
 	{
 		ServerCommand("bot_add_t %s", "neaLaN");
 		ServerCommand("bot_add_t %s", "Ramz1k");
-		ServerCommand("bot_add_t %s", "t0rick");
+		ServerCommand("bot_add_t %s", "n0rb3r7");
 		ServerCommand("bot_add_t %s", "Perfecto");
 		ServerCommand("bot_add_t %s", "Keoz");
 		ServerCommand("mp_teamlogo_2 syma");
@@ -5003,7 +5003,7 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 		int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 		
-		if (iPrimary == -1)
+		if (iPrimary != -1)
 		{
 			return Plugin_Stop;
 		}
@@ -5365,7 +5365,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Swole Players
-	if((StrEqual(botname, "Zellsis")) || (StrEqual(botname, "swag")) || (StrEqual(botname, "yay")) || (StrEqual(botname, "Infinite")) || (StrEqual(botname, "Subroza")))
+	if((StrEqual(botname, "Zellsis")) || (StrEqual(botname, "swag")) || (StrEqual(botname, "yay")) || (StrEqual(botname, "neptune")) || (StrEqual(botname, "Subroza")))
 	{
 		CS_SetClientClanTag(client, "Swole");
 	}
@@ -5815,7 +5815,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Syman Players
-	if((StrEqual(botname, "neaLaN")) || (StrEqual(botname, "Ramz1k")) || (StrEqual(botname, "t0rick")) || (StrEqual(botname, "Perfecto")) || (StrEqual(botname, "Keoz")))
+	if((StrEqual(botname, "neaLaN")) || (StrEqual(botname, "Ramz1k")) || (StrEqual(botname, "n0rb3r7")) || (StrEqual(botname, "Perfecto")) || (StrEqual(botname, "Keoz")))
 	{
 		CS_SetClientClanTag(client, "Syman");
 	}

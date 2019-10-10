@@ -1241,7 +1241,7 @@ ProP+Rifle "yay"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Infinite"
+ProP+Rifle "neptune"
 	VoicePitch = 110
 End
 
@@ -2865,7 +2865,7 @@ EliteAwp+SniperPro "Ramz1k"
 	VoicePitch = 106
 End
 
-ProP+Rifle "t0rick"
+ProP+Rifle "n0rb3r7"
 	VoicePitch = 95
 End
 
