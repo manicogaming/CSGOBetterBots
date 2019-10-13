@@ -569,11 +569,11 @@ End
 
 //North Players
 
-ProP+Rifle "JUGi"
+ProP+Rifle "Kjaerbye"
 	VoicePitch = 91
 End
 
-ProP+Rifle "Kjaerbye"
+EliteAwp+SniperPro "JUGi"
 	VoicePitch = 106
 End
 
@@ -581,7 +581,7 @@ ProP+Rifle "aizy"
 	VoicePitch = 95
 End
 
-EliteAwp+SniperPro "valde"
+ProP+Rifle "cajunb"
 	VoicePitch = 110
 End
 
@@ -915,7 +915,7 @@ ProP+Rifle "RUSH"
 	VoicePitch = 110
 End
 
-ProP+Rifle "SicK"
+ProP+Rifle "blameF"
 	VoicePitch = 110
 End
 
@@ -985,28 +985,6 @@ ProP+Rifle "bondik"
 	VoicePitch = 110
 End
 
-//OpTic Players
-
-ProP+Rifle "k0nfig"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "MSL"
-	VoicePitch = 106
-End
-
-ProP+Rifle "nikozan"
-	VoicePitch = 95
-End
-
-ProP+Rifle "TeSeS"
-	VoicePitch = 110
-End
-
-ProP+Rifle "cajunb"
-	VoicePitch = 110
-End
-
 //Sprout Players
 
 ProP+Rifle "k1to"
@@ -1043,7 +1021,7 @@ ProP+Rifle "Snappi"
 	VoicePitch = 95
 End
 
-ProP+Rifle "blameF"
+ProP+Rifle "cadiaN"
 	VoicePitch = 110
 End
 
@@ -1224,28 +1202,6 @@ ProP+Rifle "chopper"
 End
 
 ProP+Rifle "magixx"
-	VoicePitch = 110
-End
-
-//Swole Players
-
-ProP+Rifle "Zellsis"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "swag"
-	VoicePitch = 106
-End
-
-ProP+Rifle "yay"
-	VoicePitch = 95
-End
-
-ProP+Rifle "neptune"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Subroza"
 	VoicePitch = 110
 End
 
