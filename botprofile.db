@@ -1617,7 +1617,7 @@ EliteAwp+SniperPro "EasTor"
 	VoicePitch = 106
 End
 
-ProP+Rifle "SOKER"
+ProP+Rifle "steel"
 	VoicePitch = 95
 End
 
@@ -1625,7 +1625,7 @@ ProP+Rifle "alex*"
 	VoicePitch = 110
 End
 
-ProP+Rifle "DeathZz"
+ProP+Rifle "loWel"
 	VoicePitch = 110
 End
 
@@ -2699,7 +2699,7 @@ ProP+Rifle "dzt"
 	VoicePitch = 95
 End
 
-ProP+Rifle "SuupLexx"
+ProP+Rifle "f4stzin"
 	VoicePitch = 110
 End
 
@@ -2949,28 +2949,6 @@ ProP+Rifle "PPOverdose"
 	VoicePitch = 110
 End
 
-//Epsilon Players
-
-ProP+Rifle "Stev0se"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "simix"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Brook"
-	VoicePitch = 95
-End
-
-ProP+Rifle "ritchiEE"
-	VoicePitch = 110
-End
-
-ProP+Rifle "dreez"
-	VoicePitch = 110
-End
-
 //UOL Players
 
 ProP+Rifle "crisby"
@@ -3157,11 +3135,11 @@ EliteAwp+SniperPro "FliP1"
 	VoicePitch = 106
 End
 
-ProP+Rifle "NENO"
+ProP+Rifle "COSMEEEN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "jayzaR"
+ProP+Rifle "kalle"
 	VoicePitch = 110
 End
 

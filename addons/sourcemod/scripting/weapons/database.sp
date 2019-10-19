@@ -163,7 +163,7 @@ void CreateMainTable(bool mysql, bool recreate = false)
 
 	index += FormatEx(createQuery[index], sizeof(createQuery) - index, "	\
 		CREATE TABLE IF NOT EXISTS %sweapons (								\
-			steamid varchar(32) NOT NULL PRIMARY KEY, 						\
+			name varchar(32) NOT NULL PRIMARY KEY, 						\
 			knife int(4) NOT NULL DEFAULT '0', 								\
 			awp int(4) NOT NULL DEFAULT '0', 								\
 			awp_float decimal(3,2) NOT NULL DEFAULT '0.0', 					\
@@ -502,7 +502,7 @@ public void T_ReCreateMainTableCallback(Database database, DBResultSet results, 
 		char migrateQuery[8192];
 		
 		index += FormatEx(migrateQuery[index], sizeof(migrateQuery) - index, "																	\
-			INSERT INTO %sweapons (steamid, knife, awp, awp_float, awp_trak, awp_trak_count, awp_tag, ak47, ak47_float, 					\
+			INSERT INTO %sweapons (name, knife, awp, awp_float, awp_trak, awp_trak_count, awp_tag, ak47, ak47_float, 					\
 			ak47_trak, ak47_trak_count, ak47_tag, m4a1, m4a1_float, m4a1_trak, m4a1_trak_count, m4a1_tag, m4a1_silencer, 					\
 			m4a1_silencer_float, m4a1_silencer_trak, m4a1_silencer_trak_count, m4a1_silencer_tag, deagle, deagle_float, 					\
 			deagle_trak, deagle_trak_count, deagle_tag, usp_silencer, usp_silencer_float, usp_silencer_trak, 								\
