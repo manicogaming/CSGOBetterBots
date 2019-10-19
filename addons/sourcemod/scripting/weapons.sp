@@ -37,7 +37,7 @@ public Plugin myinfo =
 	name = "Weapons & Knives",
 	author = "kgns | oyunhost.net",
 	description = "All in one custom weapon management",
-	version = "1.3.2",
+	version = "1.4.2",
 	url = "https://www.oyunhost.net"
 };
 
@@ -52,6 +52,7 @@ public void OnPluginStart()
 	g_Cvar_EnableFloat 				= CreateConVar("sm_weapons_enable_float", 			"1", 				"Enable/Disable weapon float options");
 	g_Cvar_EnableNameTag 			= CreateConVar("sm_weapons_enable_nametag", 		"1", 				"Enable/Disable name tag options");
 	g_Cvar_EnableStatTrak 			= CreateConVar("sm_weapons_enable_stattrak", 		"1", 				"Enable/Disable StatTrak options");
+	g_Cvar_EnableSeed				= CreateConVar("sm_weapons_enable_seed",			"1",				"Enable/Disable Seed options");
 	g_Cvar_FloatIncrementSize 		= CreateConVar("sm_weapons_float_increment_size", 	"0.05", 			"Increase/Decrease by value for weapon float");
 	g_Cvar_EnableWeaponOverwrite 	= CreateConVar("sm_weapons_enable_overwrite", 		"1", 				"Enable/Disable players overwriting other players' weapons (picked up from the ground) by using !ws command");
 	g_Cvar_GracePeriod 				= CreateConVar("sm_weapons_grace_period", 			"0", 				"Grace period in terms of seconds counted after round start for allowing the use of !ws command. 0 means no restrictions");
@@ -65,6 +66,7 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_knife", CommandKnife);
 	RegConsoleCmd("sm_nametag", CommandNameTag);
 	RegConsoleCmd("sm_wslang", CommandWSLang);
+	RegConsoleCmd("sm_seed", CommandSeedMenu);
 	
 	PTaH(PTaH_GiveNamedItemPre, Hook, GiveNamedItemPre);
 	PTaH(PTaH_GiveNamedItem, Hook, GiveNamedItem);
@@ -96,6 +98,17 @@ public Action CommandWeaponSkins(int client, int args)
 			PrintToChat(client, " %s \x02%t", g_ChatPrefix, "GracePeriod", g_iGracePeriod);
 		}
 	}
+	return Plugin_Handled;
+}
+
+public Action CommandSeedMenu(int client, int args)
+{
+	if(!g_bEnableSeed)
+	{
+		ReplyToCommand(client, " %s \x02%T", g_ChatPrefix, "SeedDisabled", client);
+		return Plugin_Handled;
+	}
+	ReplyToCommand(client, " %s \x04%T", g_ChatPrefix, "SeedExplanation", client);
 	return Plugin_Handled;
 }
 
@@ -154,7 +167,16 @@ void SetWeaponProps(int client, int entity)
 		SetEntProp(entity, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", g_iSkins[client][index] == -1 ? GetRandomSkin(client, index) : g_iSkins[client][index]);
 		SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", !g_bEnableFloat || g_fFloatValue[client][index] == 0.0 ? 0.000001 : g_fFloatValue[client][index] == 1.0 ? 0.999999 : g_fFloatValue[client][index]);
-		SetEntProp(entity, Prop_Send, "m_nFallbackSeed", GetRandomInt(0, 8192));
+		if (g_bEnableSeed && g_iWeaponSeed[client][index] != -1)
+		{
+			SetEntProp(entity, Prop_Send, "m_nFallbackSeed", g_iWeaponSeed[client][index]);
+		}
+		else
+		{
+			g_iSeedRandom[client][index] = GetRandomInt(0, 8192);
+			SetEntProp(entity, Prop_Send, "m_nFallbackSeed", g_iSeedRandom[client][index]);
+		}
+		
 		if(!IsKnife(entity))
 		{
 			if(g_bEnableStatTrak)
