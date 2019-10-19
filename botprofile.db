@@ -57,6 +57,7 @@ Template SniperPro
 		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
+		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
 		WeaponPreference = ump45
@@ -68,6 +69,7 @@ End
 Template Rifle
         WeaponPreference = ak47
 		WeaponPreference = m4a1
+		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
 		WeaponPreference = ump45
@@ -77,13 +79,17 @@ Template Rifle
 End
 
 Template Sniper
-        WeaponPreference = awp
-		WeaponPreference = scout
-		WeaponPreference = mac10
-		WeaponPreference = mp9
-		WeaponPreference = mp7
+		WeaponPreference = awp
+		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
+		WeaponPreference = sg556
+		WeaponPreference = mac10
+		WeaponPreference = mp9
+		WeaponPreference = ump45
+		WeaponPreference = mp7
+		WeaponPreference = famas
+		WeaponPreference = galilar
 End
 
 Template Power
@@ -933,7 +939,7 @@ ProP+Rifle "aumaN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Franke19"
+ProP+Rifle "JamYoung"
 	VoicePitch = 110
 End
 
@@ -1743,7 +1749,7 @@ EliteAwp+SniperPro "Maka"
 	VoicePitch = 106
 End
 
-ProP+Rifle "LOGAN"
+ProP+Rifle "devoduvek"
 	VoicePitch = 95
 End
 
@@ -2021,7 +2027,7 @@ End
 
 //W7M Players
 
-ProP+Rifle "rood"
+ProP+Rifle "skullz"
 	VoicePitch = 91
 End
 
@@ -2725,7 +2731,7 @@ End
 
 //Flames Players
 
-ProP+Rifle "Basso"
+ProP+Rifle "TeSeS"
 	VoicePitch = 91
 End
 
@@ -3270,6 +3276,28 @@ ProP+Rifle "takej"
 End
 
 ProP+Rifle "Reita"
+	VoicePitch = 110
+End
+
+//KPI Players
+
+ProP+Rifle "xikii"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "SunPayus"
+	VoicePitch = 106
+End
+
+ProP+Rifle "meisoN"
+	VoicePitch = 95
+End
+
+ProP+Rifle "donQ"
+	VoicePitch = 110
+End
+
+ProP+Rifle "MackDaddy"
 	VoicePitch = 110
 End
 
