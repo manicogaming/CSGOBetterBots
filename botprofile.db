@@ -525,7 +525,7 @@ ProP+Rifle "koosta"
 	VoicePitch = 110
 End
 
-ProP+Rifle "TenZ"
+ProP+Rifle "Subroza"
 	VoicePitch = 90
 End
 
@@ -2665,7 +2665,7 @@ End
 
 //BTRG Players
 
-ProP+Rifle "fejtZ"
+ProP+Rifle "Eeyore"
 	VoicePitch = 91
 End
 

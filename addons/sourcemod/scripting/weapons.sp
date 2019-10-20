@@ -218,7 +218,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.48));
 				}
-				case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782, 781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305, 280, 263, 257, 238, 237, 228, 224, 223:
+				case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782, 781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305, 280, 263, 257, 238, 237, 228, 224, 223, 919:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.50));
 				}
@@ -234,7 +234,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.01, 0.26));
 				}
-				case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218:
+				case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.40));
 				}
@@ -242,11 +242,11 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.14, 0.65));
 				}
-				case 849, 842, 836, 809, 804, 642, 636, 627, 557, 470, 469, 468, 400, 394, 388:
+				case 849, 842, 836, 809, 804, 642, 636, 627, 557, 470, 469, 468, 400, 394, 388, 902:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.75));
 				}
-				case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266:
+				case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.70));
 				}
@@ -258,7 +258,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 1.00));
 				}
-				case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 378, 273:
+				case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 378, 273, 916, 910:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.80));
 				}
@@ -270,7 +270,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.90));
 				}
-				case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375:
+				case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.55));
 				}
@@ -334,7 +334,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.56));
 				}
-				case 634, 448, 356, 351, 298, 294, 286, 265, 262, 219, 217, 215, 184, 181, 3:
+				case 634, 448, 356, 351, 298, 294, 286, 265, 262, 219, 217, 215, 184, 181, 3, 125:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.30));
 				}
@@ -402,7 +402,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.67));
 				}
-				case 500:
+				case 500, 914:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.62));
 				}
@@ -462,7 +462,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.49));
 				}
-				case 383:
+				case 383, 907:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.68));
 				}
@@ -478,7 +478,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.22));
 				}
-				case 328:
+				case 328, 917:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.01, 0.70));
 				}
@@ -593,6 +593,10 @@ void SetWeaponProps(int client, int entity)
 				case 10:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.12, 0.38));
+				}
+				case 911:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.57));
 				}
 				default:
 				{

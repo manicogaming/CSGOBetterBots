@@ -57,7 +57,7 @@ char g_BotName[][] = {
 	"mixwell",
 	"daps",
 	"koosta",
-	"TenZ",
+	"Subroza",
 	//G2 Players
 	"huNter-",
 	"kennyS",
@@ -647,7 +647,7 @@ char g_BotName[][] = {
 	"MINISE",
 	"dycha",
 	//BTRG Players
-	"fejtZ",
+	"Eeyore",
 	"Drea3er",
 	"xccurate",
 	"ImpressioN",
@@ -1106,7 +1106,7 @@ public Action Team_C9(int client, int args)
 		ServerCommand("bot_add_ct %s", "mixwell");
 		ServerCommand("bot_add_ct %s", "daps");
 		ServerCommand("bot_add_ct %s", "koosta");
-		ServerCommand("bot_add_ct %s", "TenZ");
+		ServerCommand("bot_add_ct %s", "Subroza");
 		ServerCommand("mp_teamlogo_1 c9");
 	}
 	
@@ -1116,7 +1116,7 @@ public Action Team_C9(int client, int args)
 		ServerCommand("bot_add_t %s", "mixwell");
 		ServerCommand("bot_add_t %s", "daps");
 		ServerCommand("bot_add_t %s", "koosta");
-		ServerCommand("bot_add_t %s", "TenZ");
+		ServerCommand("bot_add_t %s", "Subroza");
 		ServerCommand("mp_teamlogo_2 c9");
 	}
 	
@@ -3846,7 +3846,7 @@ public Action Team_BTRG(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "fejtZ");
+		ServerCommand("bot_add_ct %s", "Eeyore");
 		ServerCommand("bot_add_ct %s", "Drea3er");
 		ServerCommand("bot_add_ct %s", "xccurate");
 		ServerCommand("bot_add_ct %s", "ImpressioN");
@@ -3856,7 +3856,7 @@ public Action Team_BTRG(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "fejtZ");
+		ServerCommand("bot_add_t %s", "Eeyore");
 		ServerCommand("bot_add_t %s", "Drea3er");
 		ServerCommand("bot_add_t %s", "xccurate");
 		ServerCommand("bot_add_t %s", "ImpressioN");
@@ -5097,7 +5097,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//C9 Players
-	if((StrEqual(botname, "autimatic")) || (StrEqual(botname, "mixwell")) || (StrEqual(botname, "daps")) || (StrEqual(botname, "koosta")) || (StrEqual(botname, "TenZ")))
+	if((StrEqual(botname, "autimatic")) || (StrEqual(botname, "mixwell")) || (StrEqual(botname, "daps")) || (StrEqual(botname, "koosta")) || (StrEqual(botname, "Subroza")))
 	{
 		CS_SetClientClanTag(client, "C9");
 	}
@@ -5685,7 +5685,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BTRG Players
-	if((StrEqual(botname, "fejtZ")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "xccurate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "adrnkiNg")))
+	if((StrEqual(botname, "Eeyore")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "xccurate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "adrnkiNg")))
 	{
 		CS_SetClientClanTag(client, "BTRG");
 	}
