@@ -4653,21 +4653,29 @@ public void OnClientPostAdminCheck(int client)
 	Pro_Players(botname, client);
 	
 	g_iProfileRank[client] = GetRandomInt(1,40);
+	
+	char sClan[64];
+	
+	CS_GetClientClanTag(client, sClan, sizeof(sClan));
+	if (StrEqual(sClan, "NiP"))
+	{
+		g_iProfileRank[client] = 41;
+	}
 }
 
 public void OnRoundStart(Handle event, char[] name, bool dbc)
 {
 	for(int i = 1; i <= MaxClients; i++)
-    {
-        if(IsClientInGame(i))
-        {
-            if(g_hShouldAttackTimer[i] != INVALID_HANDLE)
+	{
+		if(IsClientInGame(i))
+		{
+			if(g_hShouldAttackTimer[i] != INVALID_HANDLE)
 			{
 				KillTimer(g_hShouldAttackTimer[i]);
 				g_hShouldAttackTimer[i] = INVALID_HANDLE;
 			}
-        }
-    }
+		}
+	}
 }
 
 public void Hook_OnThinkPost(int iEnt)

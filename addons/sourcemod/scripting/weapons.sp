@@ -199,7 +199,6 @@ void SetWeaponProps(int client, int entity)
 		}
 		if(IsFakeClient(client))
 		{
-			SetEntProp(entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client));
 			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
 			{
 				case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462:
@@ -603,9 +602,20 @@ void SetWeaponProps(int client, int entity)
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 1.00));
 				}
 			}
-			SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(1,39));
+			int rnd = GetRandomInt(1,2);
+			switch(rnd)
+			{
+				case 1:
+				{
+					SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(3,31));
+				}
+				case 2:
+				{
+					SetEntProp(client, Prop_Send, "m_unMusicID", 39);
+				}
+			}
 		}
-		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
+		SetEntProp(entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client));
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
 	}
