@@ -82,7 +82,7 @@ char g_BotName[][] = {
 	"woxic",
 	"frozen",
 	"ropz",
-	//TYLOO Players
+	//TyLoo Players
 	"Summer",
 	"Attacker",
 	"BnTneT",
@@ -407,7 +407,7 @@ char g_BotName[][] = {
 	"Jyo",
 	"boX",
 	//pro100 Players
-	"Kvik",
+	"dimasick",
 	"WorldEdit",
 	"YEKINDAR",
 	"wayLander",
@@ -592,12 +592,6 @@ char g_BotName[][] = {
 	"Qbo",
 	"Vask0",
 	"smoof",
-	//APG Players
-	"Kaspar0v",
-	"SchizzY",
-	"Backstabber",
-	"FreakY",
-	"zdrAg",
 	//ATK Players
 	"motm",
 	"oSee",
@@ -772,12 +766,6 @@ char g_BotName[][] = {
 	"Ping",
 	"Br0die",
 	"angry",
-	//Brutality Players
-	"V3nom",
-	"RiX",
-	"Juventa",
-	"astaRR",
-	"spy",
 	//GameAgents Players
 	"pounh",
 	"FliP1",
@@ -935,7 +923,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_portal", Team_Portal);
-	RegConsoleCmd("team_brutality", Team_Brutality);
+	RegConsoleCmd("team_brutals", Team_Brutals);
 	RegConsoleCmd("team_invictus", Team_iNvictus);
 	RegConsoleCmd("team_nxl", Team_nxl);
 	RegConsoleCmd("team_atk", Team_ATK);
@@ -2754,7 +2742,7 @@ public Action Team_pro100(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Kvik");
+		ServerCommand("bot_add_ct %s", "dimasick");
 		ServerCommand("bot_add_ct %s", "WorldEdit");
 		ServerCommand("bot_add_ct %s", "YEKINDAR");
 		ServerCommand("bot_add_ct %s", "wayLander");
@@ -2764,7 +2752,7 @@ public Action Team_pro100(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Kvik");
+		ServerCommand("bot_add_t %s", "dimasick");
 		ServerCommand("bot_add_t %s", "WorldEdit");
 		ServerCommand("bot_add_t %s", "YEKINDAR");
 		ServerCommand("bot_add_t %s", "wayLander");
@@ -3531,7 +3519,7 @@ public Action Team_Portal(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Brutality(int client, int args)
+public Action Team_Brutals(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -4654,13 +4642,7 @@ public void OnClientPostAdminCheck(int client)
 	
 	g_iProfileRank[client] = GetRandomInt(1,40);
 	
-	char sClan[64];
-	
-	CS_GetClientClanTag(client, sClan, sizeof(sClan));
-	if (StrEqual(sClan, "NiP"))
-	{
-		g_iProfileRank[client] = 41;
-	}
+	SetCustomPrivateRank(client);
 }
 
 public void OnRoundStart(Handle event, char[] name, bool dbc)
@@ -5134,10 +5116,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "mouz");
 	}
 	
-	//TYLOO Players
+	//TyLoo Players
 	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "Attacker")) || (StrEqual(botname, "BnTneT")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "Freeman")))
 	{
-		CS_SetClientClanTag(client, "TYLOO");
+		CS_SetClientClanTag(client, "TyLoo");
 	}
 	
 	//EG Players
@@ -5459,7 +5441,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//pro100 Players
-	if((StrEqual(botname, "Kvik")) || (StrEqual(botname, "WorldEdit")) || (StrEqual(botname, "YEKINDAR")) || (StrEqual(botname, "wayLander")) || (StrEqual(botname, "NickelBack")))
+	if((StrEqual(botname, "dimasick")) || (StrEqual(botname, "WorldEdit")) || (StrEqual(botname, "YEKINDAR")) || (StrEqual(botname, "wayLander")) || (StrEqual(botname, "NickelBack")))
 	{
 		CS_SetClientClanTag(client, "pro100");
 	}
@@ -5644,12 +5626,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "nxl");
 	}
 	
-	//APG Players
-	if((StrEqual(botname, "Kaspar0v")) || (StrEqual(botname, "SchizzY")) || (StrEqual(botname, "Backstabber")) || (StrEqual(botname, "FreakY")) || (StrEqual(botname, "zdrAg")))
-	{
-		CS_SetClientClanTag(client, "APG");
-	}
-	
 	//ATK Players
 	if((StrEqual(botname, "motm")) || (StrEqual(botname, "oSee")) || (StrEqual(botname, "JT")) || (StrEqual(botname, "floppy")) || (StrEqual(botname, "Sonic")))
 	{
@@ -5824,12 +5800,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "W&R");
 	}
 	
-	//Brutality Players
-	if((StrEqual(botname, "V3nom")) || (StrEqual(botname, "RiX")) || (StrEqual(botname, "Juventa")) || (StrEqual(botname, "astaRR")) || (StrEqual(botname, "spy")))
-	{
-		CS_SetClientClanTag(client, "Brutality");
-	}
-	
 	//GameAgents Players
 	if((StrEqual(botname, "pounh")) || (StrEqual(botname, "FliP1")) || (StrEqual(botname, "COSMEEEN")) || (StrEqual(botname, "kalle")) || (StrEqual(botname, "shadow")))
 	{
@@ -5870,5 +5840,662 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "xikii")) || (StrEqual(botname, "SunPayus")) || (StrEqual(botname, "meisoN")) || (StrEqual(botname, "donQ")) || (StrEqual(botname, "MackDaddy")))
 	{
 		CS_SetClientClanTag(client, "KPI");
+	}
+}
+
+public void SetCustomPrivateRank(int client)
+{
+	char sClan[64];
+	
+	CS_GetClientClanTag(client, sClan, sizeof(sClan));
+	
+	if (StrEqual(sClan, "NiP"))
+	{
+		g_iProfileRank[client] = 41;
+	}
+	
+	if (StrEqual(sClan, "MIBR"))
+	{
+		g_iProfileRank[client] = 42;
+	}
+	
+	if (StrEqual(sClan, "FaZe"))
+	{
+		g_iProfileRank[client] = 43;
+	}
+	
+	if (StrEqual(sClan, "Astralis"))
+	{
+		g_iProfileRank[client] = 44;
+	}
+	
+	if (StrEqual(sClan, "C9"))
+	{
+		g_iProfileRank[client] = 45;
+	}
+	
+	if (StrEqual(sClan, "G2"))
+	{
+		g_iProfileRank[client] = 46;
+	}
+	
+	if (StrEqual(sClan, "fnatic"))
+	{
+		g_iProfileRank[client] = 47;
+	}
+	
+	if (StrEqual(sClan, "North"))
+	{
+		g_iProfileRank[client] = 48;
+	}
+	
+	if (StrEqual(sClan, "mouz"))
+	{
+		g_iProfileRank[client] = 49;
+	}
+	
+	if (StrEqual(sClan, "TyLoo"))
+	{
+		g_iProfileRank[client] = 50;
+	}
+	
+	if (StrEqual(sClan, "EG"))
+	{
+		g_iProfileRank[client] = 51;
+	}
+	
+	if (StrEqual(sClan, "RNG"))
+	{
+		g_iProfileRank[client] = 52;
+	}
+	
+	if (StrEqual(sClan, "Na´Vi"))
+	{
+		g_iProfileRank[client] = 53;
+	}
+	
+	if (StrEqual(sClan, "Liquid"))
+	{
+		g_iProfileRank[client] = 54;
+	}
+	
+	if (StrEqual(sClan, "AGO"))
+	{
+		g_iProfileRank[client] = 55;
+	}
+	
+	if (StrEqual(sClan, "ENCE"))
+	{
+		g_iProfileRank[client] = 56;
+	}
+	
+	if (StrEqual(sClan, "Vitality"))
+	{
+		g_iProfileRank[client] = 57;
+	}
+	
+	if (StrEqual(sClan, "BIG"))
+	{
+		g_iProfileRank[client] = 58;
+	}
+	
+	if (StrEqual(sClan, "AVANGAR"))
+	{
+		g_iProfileRank[client] = 59;
+	}
+	
+	if (StrEqual(sClan, "Windigo"))
+	{
+		g_iProfileRank[client] = 60;
+	}
+	
+	if (StrEqual(sClan, "FURIA"))
+	{
+		g_iProfileRank[client] = 61;
+	}
+	
+	if (StrEqual(sClan, "CR4ZY"))
+	{
+		g_iProfileRank[client] = 62;
+	}
+	
+	if (StrEqual(sClan, "coL"))
+	{
+		g_iProfileRank[client] = 63;
+	}
+	
+	if (StrEqual(sClan, "ViCi"))
+	{
+		g_iProfileRank[client] = 64;
+	}
+	
+	if (StrEqual(sClan, "forZe"))
+	{
+		g_iProfileRank[client] = 65;
+	}
+	
+	if (StrEqual(sClan, "Winstrike"))
+	{
+		g_iProfileRank[client] = 66;
+	}
+	
+	if (StrEqual(sClan, "Sprout"))
+	{
+		g_iProfileRank[client] = 67;
+	}
+	
+	if (StrEqual(sClan, "Heroic"))
+	{
+		g_iProfileRank[client] = 68;
+	}
+	
+	if (StrEqual(sClan, "INTZ"))
+	{
+		g_iProfileRank[client] = 69;
+	}
+	
+	if (StrEqual(sClan, "VP"))
+	{
+		g_iProfileRank[client] = 70;
+	}
+	
+	if (StrEqual(sClan, "Apeks"))
+	{
+		g_iProfileRank[client] = 71;
+	}
+	
+	if (StrEqual(sClan, "aTTaX"))
+	{
+		g_iProfileRank[client] = 72;
+	}
+	
+	if (StrEqual(sClan, "Grayhound"))
+	{
+		g_iProfileRank[client] = 73;
+	}
+	
+	if (StrEqual(sClan, "MVP.PK"))
+	{
+		g_iProfileRank[client] = 74;
+	}
+	
+	if (StrEqual(sClan, "Envy"))
+	{
+		g_iProfileRank[client] = 75;
+	}
+	
+	if (StrEqual(sClan, "Spirit"))
+	{
+		g_iProfileRank[client] = 76;
+	}
+	
+	if (StrEqual(sClan, "CeX"))
+	{
+		g_iProfileRank[client] = 77;
+	}
+	
+	if (StrEqual(sClan, "LDLC"))
+	{
+		g_iProfileRank[client] = 78;
+	}
+	
+	if (StrEqual(sClan, "Defusekids"))
+	{
+		g_iProfileRank[client] = 79;
+	}
+	
+	if (StrEqual(sClan, "GamerLegion"))
+	{
+		g_iProfileRank[client] = 80;
+	}
+	
+	if (StrEqual(sClan, "DIVIZON"))
+	{
+		g_iProfileRank[client] = 81;
+	}
+	
+	if (StrEqual(sClan, "EURONICS"))
+	{
+		g_iProfileRank[client] = 82;
+	}
+	
+	if (StrEqual(sClan, "expert"))
+	{
+		g_iProfileRank[client] = 83;
+	}
+	
+	if (StrEqual(sClan, "PANTHERS"))
+	{
+		g_iProfileRank[client] = 84;
+	}
+	
+	if (StrEqual(sClan, "PDucks"))
+	{
+		g_iProfileRank[client] = 85;
+	}
+	
+	if (StrEqual(sClan, "HAVU"))
+	{
+		g_iProfileRank[client] = 86;
+	}
+	
+	if (StrEqual(sClan, "Lyngby"))
+	{
+		g_iProfileRank[client] = 87;
+	}
+	
+	if (StrEqual(sClan, "SMASH"))
+	{
+		g_iProfileRank[client] = 88;
+	}
+	
+	if (StrEqual(sClan, "Nordavind"))
+	{
+		g_iProfileRank[client] = 89;
+	}
+	
+	if (StrEqual(sClan, "SJ"))
+	{
+		g_iProfileRank[client] = 90;
+	}
+	
+	if (StrEqual(sClan, "Tricked"))
+	{
+		g_iProfileRank[client] = 91;
+	}
+	
+	if (StrEqual(sClan, "Baskonia"))
+	{
+		g_iProfileRank[client] = 92;
+	}
+	
+	if (StrEqual(sClan, "Giants"))
+	{
+		g_iProfileRank[client] = 93;
+	}
+	
+	if (StrEqual(sClan, "Lions"))
+	{
+		g_iProfileRank[client] = 94;
+	}
+	
+	if (StrEqual(sClan, "Riders"))
+	{
+		g_iProfileRank[client] = 95;
+	}
+	
+	if (StrEqual(sClan, "OFFSET"))
+	{
+		g_iProfileRank[client] = 96;
+	}
+	
+	if (StrEqual(sClan, "x6tence"))
+	{
+		g_iProfileRank[client] = 97;
+	}
+	
+	if (StrEqual(sClan, "eSuba"))
+	{
+		g_iProfileRank[client] = 98;
+	}
+	
+	if (StrEqual(sClan, "Nexus"))
+	{
+		g_iProfileRank[client] = 99;
+	}
+	
+	if (StrEqual(sClan, "PACT"))
+	{
+		g_iProfileRank[client] = 100;
+	}
+	
+	if (StrEqual(sClan, "Heretics"))
+	{
+		g_iProfileRank[client] = 101;
+	}
+	
+	if (StrEqual(sClan, "FCDB"))
+	{
+		g_iProfileRank[client] = 102;
+	}
+	
+	if (StrEqual(sClan, "Nemiga"))
+	{
+		g_iProfileRank[client] = 103;
+	}
+	
+	if (StrEqual(sClan, "pro100"))
+	{
+		g_iProfileRank[client] = 104;
+	}
+	
+	if (StrEqual(sClan, "eUnited"))
+	{
+		g_iProfileRank[client] = 105;
+	}
+	
+	if (StrEqual(sClan, "Mythic"))
+	{
+		g_iProfileRank[client] = 106;
+	}
+	
+	if (StrEqual(sClan, "Singularity"))
+	{
+		g_iProfileRank[client] = 107;
+	}
+	
+	if (StrEqual(sClan, "DETONA"))
+	{
+		g_iProfileRank[client] = 108;
+	}
+	
+	if (StrEqual(sClan, "Infinity"))
+	{
+		g_iProfileRank[client] = 109;
+	}
+	
+	if (StrEqual(sClan, "Isurus"))
+	{
+		g_iProfileRank[client] = 110;
+	}
+	
+	if (StrEqual(sClan, "paiN"))
+	{
+		g_iProfileRank[client] = 111;
+	}
+	
+	if (StrEqual(sClan, "Sharks"))
+	{
+		g_iProfileRank[client] = 112;
+	}
+	
+	if (StrEqual(sClan, "One"))
+	{
+		g_iProfileRank[client] = 113;
+	}
+	
+	if (StrEqual(sClan, "W7M"))
+	{
+		g_iProfileRank[client] = 114;
+	}
+	
+	if (StrEqual(sClan, "Avant"))
+	{
+		g_iProfileRank[client] = 115;
+	}
+	
+	if (StrEqual(sClan, "Chiefs"))
+	{
+		g_iProfileRank[client] = 116;
+	}
+	
+	if (StrEqual(sClan, "LEISURE"))
+	{
+		g_iProfileRank[client] = 117;
+	}
+	
+	if (StrEqual(sClan, "ORDER"))
+	{
+		g_iProfileRank[client] = 118;
+	}
+	
+	if (StrEqual(sClan, "Paradox"))
+	{
+		g_iProfileRank[client] = 119;
+	}
+	
+	if (StrEqual(sClan, "eXtatus"))
+	{
+		g_iProfileRank[client] = 120;
+	}
+	
+	if (StrEqual(sClan, "SYF"))
+	{
+		g_iProfileRank[client] = 121;
+	}
+	
+	if (StrEqual(sClan, "5Power"))
+	{
+		g_iProfileRank[client] = 122;
+	}
+	
+	if (StrEqual(sClan, "EHOME"))
+	{
+		g_iProfileRank[client] = 123;
+	}
+	
+	if (StrEqual(sClan, "ALPHA Red"))
+	{
+		g_iProfileRank[client] = 124;
+	}
+	
+	if (StrEqual(sClan, "dream[S]cape"))
+	{
+		g_iProfileRank[client] = 125;
+	}
+	
+	if (StrEqual(sClan, "Beyond"))
+	{
+		g_iProfileRank[client] = 126;
+	}
+	
+	if (StrEqual(sClan, "Entity"))
+	{
+		g_iProfileRank[client] = 127;
+	}
+	
+	if (StrEqual(sClan, "FrostFire"))
+	{
+		g_iProfileRank[client] = 128;
+	}
+	
+	if (StrEqual(sClan, "LucidDream"))
+	{
+		g_iProfileRank[client] = 129;
+	}
+	
+	if (StrEqual(sClan, "NASR"))
+	{
+		g_iProfileRank[client] = 130;
+	}
+	
+	if (StrEqual(sClan, "Portal"))
+	{
+		g_iProfileRank[client] = 131;
+	}
+	
+	if (StrEqual(sClan, "Brutals"))
+	{
+		g_iProfileRank[client] = 132;
+	}
+	
+	if (StrEqual(sClan, "iNvictus"))
+	{
+		g_iProfileRank[client] = 133;
+	}
+	
+	if (StrEqual(sClan, "nxl"))
+	{
+		g_iProfileRank[client] = 134;
+	}
+	
+	if (StrEqual(sClan, "ATK"))
+	{
+		g_iProfileRank[client] = 135;
+	}
+	
+	if (StrEqual(sClan, "Energy"))
+	{
+		g_iProfileRank[client] = 136;
+	}
+	
+	if (StrEqual(sClan, "BLUEJAYS"))
+	{
+		g_iProfileRank[client] = 137;
+	}
+	
+	if (StrEqual(sClan, "EXECUTIONERS"))
+	{
+		g_iProfileRank[client] = 138;
+	}
+	
+	if (StrEqual(sClan, "Vexed"))
+	{
+		g_iProfileRank[client] = 139;
+	}
+	
+	if (StrEqual(sClan, "GroundZero"))
+	{
+		g_iProfileRank[client] = 140;
+	}
+	
+	if (StrEqual(sClan, "Aristocracy"))
+	{
+		g_iProfileRank[client] = 141;
+	}
+	
+	if (StrEqual(sClan, "BTRG"))
+	{
+		g_iProfileRank[client] = 142;
+	}
+	
+	if (StrEqual(sClan, "Keyd"))
+	{
+		g_iProfileRank[client] = 143;
+	}
+	
+	if (StrEqual(sClan, "Furious"))
+	{
+		g_iProfileRank[client] = 144;
+	}
+	
+	if (StrEqual(sClan, "GTZ"))
+	{
+		g_iProfileRank[client] = 145;
+	}
+	
+	if (StrEqual(sClan, "Flames"))
+	{
+		g_iProfileRank[client] = 146;
+	}
+	
+	if (StrEqual(sClan, "eu4ia"))
+	{
+		g_iProfileRank[client] = 147;
+	}
+	
+	if (StrEqual(sClan, "Fierce"))
+	{
+		g_iProfileRank[client] = 148;
+	}
+	
+	if (StrEqual(sClan, "Trident"))
+	{
+		g_iProfileRank[client] = 149;
+	}
+	
+	if (StrEqual(sClan, "Syman"))
+	{
+		g_iProfileRank[client] = 150;
+	}
+	
+	if (StrEqual(sClan, "wNv"))
+	{
+		g_iProfileRank[client] = 151;
+	}
+	
+	if (StrEqual(sClan, "Goliath"))
+	{
+		g_iProfileRank[client] = 152;
+	}
+	
+	if (StrEqual(sClan, "Endpoint"))
+	{
+		g_iProfileRank[client] = 153;
+	}
+	
+	if (StrEqual(sClan, "Genuine"))
+	{
+		g_iProfileRank[client] = 154;
+	}
+	
+	if (StrEqual(sClan, "MiTH"))
+	{
+		g_iProfileRank[client] = 155;
+	}
+	
+	if (StrEqual(sClan, "UOL"))
+	{
+		g_iProfileRank[client] = 156;
+	}
+	
+	if (StrEqual(sClan, "9INE"))
+	{
+		g_iProfileRank[client] = 157;
+	}
+	
+	if (StrEqual(sClan, "Baecon"))
+	{
+		g_iProfileRank[client] = 158;
+	}
+	
+	if (StrEqual(sClan, "Corvidae"))
+	{
+		g_iProfileRank[client] = 159;
+	}
+	
+	if (StrEqual(sClan, "Wizards"))
+	{
+		g_iProfileRank[client] = 160;
+	}
+	
+	if (StrEqual(sClan, "Illuminar"))
+	{
+		g_iProfileRank[client] = 161;
+	}
+	
+	if (StrEqual(sClan, "Queso"))
+	{
+		g_iProfileRank[client] = 162;
+	}
+	
+	if (StrEqual(sClan, "W&R"))
+	{
+		g_iProfileRank[client] = 163;
+	}
+	
+	if (StrEqual(sClan, "GameAgents"))
+	{
+		g_iProfileRank[client] = 164;
+	}
+	
+	if (StrEqual(sClan, "Orange"))
+	{
+		g_iProfileRank[client] = 165;
+	}
+	
+	if (StrEqual(sClan, "IG"))
+	{
+		g_iProfileRank[client] = 166;
+	}
+	
+	if (StrEqual(sClan, "HR"))
+	{
+		g_iProfileRank[client] = 167;
+	}
+	
+	if (StrEqual(sClan, "Dice"))
+	{
+		g_iProfileRank[client] = 168;
+	}
+	
+	if (StrEqual(sClan, "Absolute"))
+	{
+		g_iProfileRank[client] = 169;
+	}
+	
+	if (StrEqual(sClan, "KPI"))
+	{
+		g_iProfileRank[client] = 170;
 	}
 }
