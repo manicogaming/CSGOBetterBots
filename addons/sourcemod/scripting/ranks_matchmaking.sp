@@ -19,7 +19,7 @@ int rank[MAXPLAYERS+1] = {0, ...};
 int oldrank[MAXPLAYERS+1] = {0, ...};
 
 // ConVar Variables
-ConVar g_CVAR_RanksPoints[18];
+ConVar g_CVAR_RanksPoints[61];
 ConVar g_CVAR_RankPoints_Type;
 ConVar g_CVAR_RankPoints_Flag;
 ConVar g_CVAR_RankPoints_Prefix;
@@ -38,15 +38,15 @@ float g_RankPoints_OverlayTime;
 char g_RankPoints_SoundRankUp[PLATFORM_MAX_PATH];
 char g_RankPoints_SoundRankDown[PLATFORM_MAX_PATH];
 char g_RankPoints_Prefix[40];
-int RankPoints[18];
+int RankPoints[61];
 
 bool g_zrank;
 bool g_kentorankme;
 bool g_gameme;
 bool g_hlstatsx;
 
-char RankStrings[19][256];
-char RankOverlays[18][PLATFORM_MAX_PATH];
+char RankStrings[62][256];
+char RankOverlays[61][PLATFORM_MAX_PATH];
 
 public Plugin myinfo = 
 {
@@ -78,21 +78,64 @@ public void OnPluginStart()
 	g_CVAR_RanksPoints[0] = CreateConVar("ranks_matchmaking_point_s1", "100", "Number of Points to reach Silver I", _, true, 0.0, false);
 	g_CVAR_RanksPoints[1] = CreateConVar("ranks_matchmaking_point_s2", "150", "Number of Points to reach Silver II", _, true, 0.0, false);
 	g_CVAR_RanksPoints[2] = CreateConVar("ranks_matchmaking_point_s3", "200", "Number of Points to reach Silver III", _, true, 0.0, false);
-	g_CVAR_RanksPoints[3] = CreateConVar("ranks_matchmaking_point_s4", "300", "Number of Points to reach Silver IV", _, true, 0.0, false);
-	g_CVAR_RanksPoints[4] = CreateConVar("ranks_matchmaking_point_se", "400", "Number of Points to reach Silver Elite", _, true, 0.0, false);
-	g_CVAR_RanksPoints[5] = CreateConVar("ranks_matchmaking_point_sem", "500", "Number of Points to reach Silver Elite Master", _, true, 0.0, false);
-	g_CVAR_RanksPoints[6] = CreateConVar("ranks_matchmaking_point_g1", "600", "Number of Points to reach Gold Nova I", _, true, 0.0, false);
-	g_CVAR_RanksPoints[7] = CreateConVar("ranks_matchmaking_point_g2", "750", "Number of Points to reach Gold Nova II", _, true, 0.0, false);
-	g_CVAR_RanksPoints[8] = CreateConVar("ranks_matchmaking_point_g3", "900", "Number of Points to reach Gold Nova III", _, true, 0.0, false);
-	g_CVAR_RanksPoints[9] = CreateConVar("ranks_matchmaking_point_g4", "1050", "Number of Points to reach Gold Nova IV", _, true, 0.0, false);
-	g_CVAR_RanksPoints[10] = CreateConVar("ranks_matchmaking_point_mg1", "1200", "Number of Points to reach Master Guardian I", _, true, 0.0, false);
-	g_CVAR_RanksPoints[11] = CreateConVar("ranks_matchmaking_point_mg2", "1400", "Number of Points to reach Master Guardian II", _, true, 0.0, false);
-	g_CVAR_RanksPoints[12] = CreateConVar("ranks_matchmaking_point_mge", "1600", "Number of Points to reach Master Guardian Elite", _, true, 0.0, false);
-	g_CVAR_RanksPoints[13] = CreateConVar("ranks_matchmaking_point_dmg", "1800", "Number of Points to reach Distinguished Master Guardian", _, true, 0.0, false);
-	g_CVAR_RanksPoints[14] = CreateConVar("ranks_matchmaking_point_le", "2000", "Number of Points to reach Legendary Eagle", _, true, 0.0, false);
-	g_CVAR_RanksPoints[15] = CreateConVar("ranks_matchmaking_point_lem", "2200", "Number of Points to reach Legendary Eagle Master", _, true, 0.0, false);
-	g_CVAR_RanksPoints[16] = CreateConVar("ranks_matchmaking_point_smfc", "2400", "Number of Points to reach Supreme Master First Class", _, true, 0.0, false);
-	g_CVAR_RanksPoints[17] = CreateConVar("ranks_matchmaking_point_ge", "2700", "Number of Points to reach Global Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[3] = CreateConVar("ranks_matchmaking_point_s4", "250", "Number of Points to reach Silver IV", _, true, 0.0, false);
+	g_CVAR_RanksPoints[4] = CreateConVar("ranks_matchmaking_point_se", "300", "Number of Points to reach Silver Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[5] = CreateConVar("ranks_matchmaking_point_sem", "350", "Number of Points to reach Silver Elite Master", _, true, 0.0, false);
+	g_CVAR_RanksPoints[6] = CreateConVar("ranks_matchmaking_point_g1", "400", "Number of Points to reach Gold Nova I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[7] = CreateConVar("ranks_matchmaking_point_g2", "450", "Number of Points to reach Gold Nova II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[8] = CreateConVar("ranks_matchmaking_point_g3", "500", "Number of Points to reach Gold Nova III", _, true, 0.0, false);
+	g_CVAR_RanksPoints[9] = CreateConVar("ranks_matchmaking_point_g4", "600", "Number of Points to reach Gold Nova IV", _, true, 0.0, false);
+	g_CVAR_RanksPoints[10] = CreateConVar("ranks_matchmaking_point_mg1", "700", "Number of Points to reach Master Guardian I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[11] = CreateConVar("ranks_matchmaking_point_mg2", "800", "Number of Points to reach Master Guardian II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[12] = CreateConVar("ranks_matchmaking_point_mge", "900", "Number of Points to reach Master Guardian Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[13] = CreateConVar("ranks_matchmaking_point_dmg", "1000", "Number of Points to reach Distinguished Master Guardian", _, true, 0.0, false);
+	g_CVAR_RanksPoints[14] = CreateConVar("ranks_matchmaking_point_le", "1100", "Number of Points to reach Legendary Eagle", _, true, 0.0, false);
+	g_CVAR_RanksPoints[15] = CreateConVar("ranks_matchmaking_point_lem", "1200", "Number of Points to reach Legendary Eagle Master", _, true, 0.0, false);
+	g_CVAR_RanksPoints[16] = CreateConVar("ranks_matchmaking_point_smfc", "1300", "Number of Points to reach Supreme Master First Class", _, true, 0.0, false);
+	g_CVAR_RanksPoints[17] = CreateConVar("ranks_matchmaking_point_ge", "1400", "Number of Points to reach Global Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[18] = CreateConVar("ranks_matchmaking_point_ws1", "1500", "Number of Points to reach Wingman Silver I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[19] = CreateConVar("ranks_matchmaking_point_ws2", "1600", "Number of Points to reach Wingman Silver II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[20] = CreateConVar("ranks_matchmaking_point_ws3", "1700", "Number of Points to reach Wingman Silver III", _, true, 0.0, false);
+	g_CVAR_RanksPoints[21] = CreateConVar("ranks_matchmaking_point_ws4", "1800", "Number of Points to reach Wingman Silver IV", _, true, 0.0, false);
+	g_CVAR_RanksPoints[22] = CreateConVar("ranks_matchmaking_point_wse", "1900", "Number of Points to reach Wingman Silver Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[23] = CreateConVar("ranks_matchmaking_point_wsem", "2050", "Number of Points to reach Wingman Silver Elite Master", _, true, 0.0, false);
+	g_CVAR_RanksPoints[24] = CreateConVar("ranks_matchmaking_point_wg1", "2200", "Number of Points to reach Wingman Gold Nova I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[25] = CreateConVar("ranks_matchmaking_point_wg2", "2350", "Number of Points to reach Wingman Gold Nova II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[26] = CreateConVar("ranks_matchmaking_point_wg3", "2500", "Number of Points to reach Wingman Gold Nova III", _, true, 0.0, false);
+	g_CVAR_RanksPoints[27] = CreateConVar("ranks_matchmaking_point_wg4", "2650", "Number of Points to reach Wingman Gold Nova IV", _, true, 0.0, false);
+	g_CVAR_RanksPoints[28] = CreateConVar("ranks_matchmaking_point_wmg1", "2800", "Number of Points to reach Wingman Master Guardian I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[29] = CreateConVar("ranks_matchmaking_point_wmg2", "2950", "Number of Points to reach Wingman Master Guardian II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[30] = CreateConVar("ranks_matchmaking_point_wmge", "3100", "Number of Points to reach Wingman Master Guardian Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[31] = CreateConVar("ranks_matchmaking_point_wdmg", "3250", "Number of Points to reach Wingman Distinguished Master Guardian", _, true, 0.0, false);
+	g_CVAR_RanksPoints[32] = CreateConVar("ranks_matchmaking_point_wle", "3400", "Number of Points to reach Wingman Legendary Eagle", _, true, 0.0, false);
+	g_CVAR_RanksPoints[33] = CreateConVar("ranks_matchmaking_point_wlem", "3600", "Number of Points to reach Wingman Legendary Eagle Master", _, true, 0.0, false);
+	g_CVAR_RanksPoints[34] = CreateConVar("ranks_matchmaking_point_wsmfc", "3800", "Number of Points to reach Wingman Supreme Master First Class", _, true, 0.0, false);
+	g_CVAR_RanksPoints[35] = CreateConVar("ranks_matchmaking_point_wge", "4000", "Number of Points to reach Wingman Global Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[36] = CreateConVar("ranks_matchmaking_point_rat1", "4200", "Number of Points to reach Lab Rat I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[37] = CreateConVar("ranks_matchmaking_point_rat2", "4400", "Number of Points to reach Lab Rat II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[38] = CreateConVar("ranks_matchmaking_point_hare1", "4600", "Number of Points to reach Sprinting Hare I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[39] = CreateConVar("ranks_matchmaking_point_hare2", "4800", "Number of Points to reach Sprinting Hare II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[40] = CreateConVar("ranks_matchmaking_point_scout1", "5000", "Number of Points to reach Wild Scout I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[41] = CreateConVar("ranks_matchmaking_point_scout2", "5200", "Number of Points to reach Wild Scout II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[42] = CreateConVar("ranks_matchmaking_point_scoute", "5400", "Number of Points to reach Wild Scout Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[43] = CreateConVar("ranks_matchmaking_point_fox1", "5600", "Number of Points to reach Hunter Fox I", _, true, 0.0, false);
+	g_CVAR_RanksPoints[44] = CreateConVar("ranks_matchmaking_point_fox2", "5800", "Number of Points to reach Hunter Fox II", _, true, 0.0, false);
+	g_CVAR_RanksPoints[45] = CreateConVar("ranks_matchmaking_point_fox3", "6000", "Number of Points to reach Hunter Fox III", _, true, 0.0, false);
+	g_CVAR_RanksPoints[46] = CreateConVar("ranks_matchmaking_point_foxe", "6200", "Number of Points to reach Hunter Fox Elite", _, true, 0.0, false);
+	g_CVAR_RanksPoints[47] = CreateConVar("ranks_matchmaking_point_tw", "6400", "Number of Points to reach Timber Wolf", _, true, 0.0, false);
+	g_CVAR_RanksPoints[48] = CreateConVar("ranks_matchmaking_point_ew", "6600", "Number of Points to reach Ember Wolf", _, true, 0.0, false);
+	g_CVAR_RanksPoints[49] = CreateConVar("ranks_matchmaking_point_ww", "6800", "Number of Points to reach Wildfire Wolf", _, true, 0.0, false);
+	g_CVAR_RanksPoints[50] = CreateConVar("ranks_matchmaking_point_tha", "7000", "Number of Points to reach The Howling Alpha", _, true, 0.0, false);
+	g_CVAR_RanksPoints[51] = CreateConVar("ranks_matchmaking_point_f1", "7200", "Number of Points to reach FaceIT Level 1", _, true, 0.0, false);
+	g_CVAR_RanksPoints[52] = CreateConVar("ranks_matchmaking_point_f2", "7400", "Number of Points to reach FaceIT Level 2", _, true, 0.0, false);
+	g_CVAR_RanksPoints[53] = CreateConVar("ranks_matchmaking_point_f3", "7600", "Number of Points to reach FaceIT Level 3", _, true, 0.0, false);
+	g_CVAR_RanksPoints[54] = CreateConVar("ranks_matchmaking_point_f4", "7800", "Number of Points to reach FaceIT Level 4", _, true, 0.0, false);
+	g_CVAR_RanksPoints[55] = CreateConVar("ranks_matchmaking_point_f5", "8000", "Number of Points to reach FaceIT Level 5", _, true, 0.0, false);
+	g_CVAR_RanksPoints[56] = CreateConVar("ranks_matchmaking_point_f6", "8200", "Number of Points to reach FaceIT Level 6", _, true, 0.0, false);
+	g_CVAR_RanksPoints[57] = CreateConVar("ranks_matchmaking_point_f7", "8400", "Number of Points to reach FaceIT Level 7", _, true, 0.0, false);
+	g_CVAR_RanksPoints[58] = CreateConVar("ranks_matchmaking_point_f8", "8700", "Number of Points to reach FaceIT Level 8", _, true, 0.0, false);
+	g_CVAR_RanksPoints[59] = CreateConVar("ranks_matchmaking_point_f9", "9000", "Number of Points to reach FaceIT Level 9", _, true, 0.0, false);
+	g_CVAR_RanksPoints[60] = CreateConVar("ranks_matchmaking_point_f10", "9300", "Number of Points to reach FaceIT Level 10", _, true, 0.0, false);
 	
 	LoadTranslations("ranks_matchmaking.phrases");
 	AutoExecConfig(true, "ranks_matchmaking");
@@ -135,7 +178,7 @@ public void OnLibraryRemoved(const char[] name)
 
 public void OnMapStart()
 {
-	for (int i = 0; i < 18; i++)
+	for (int i = 0; i < 61; i++)
 		RankPoints[i] = g_CVAR_RanksPoints[i].IntValue;
 		
 	g_RankPoints_HudOverlay = g_CVAR_RankPoints_HudOverlay.IntValue;
@@ -217,6 +260,49 @@ public void GetRanksNames()
 	FormatEx(RankStrings[16], sizeof(RankStrings[]), "%t", "Legendary Eagle Master");
 	FormatEx(RankStrings[17], sizeof(RankStrings[]), "%t", "Supreme First Master Class");
 	FormatEx(RankStrings[18], sizeof(RankStrings[]), "%t", "Global Elite");
+	FormatEx(RankStrings[19], sizeof(RankStrings[]), "%t", "Wingman Silver I");
+	FormatEx(RankStrings[20], sizeof(RankStrings[]), "%t", "Wingman Silver II");
+	FormatEx(RankStrings[21], sizeof(RankStrings[]), "%t", "Wingman Silver III");
+	FormatEx(RankStrings[22], sizeof(RankStrings[]), "%t", "Wingman Silver IV");
+	FormatEx(RankStrings[23], sizeof(RankStrings[]), "%t", "Wingman Silver Elite");
+	FormatEx(RankStrings[24], sizeof(RankStrings[]), "%t", "Wingman Silver Elite Master");
+	FormatEx(RankStrings[25], sizeof(RankStrings[]), "%t", "Wingman Gold Nova I");
+	FormatEx(RankStrings[26], sizeof(RankStrings[]), "%t", "Wingman Gold Nova II");
+	FormatEx(RankStrings[27], sizeof(RankStrings[]), "%t", "Wingman Gold Nova III");
+	FormatEx(RankStrings[28], sizeof(RankStrings[]), "%t", "Wingman Gold Nova Master");
+	FormatEx(RankStrings[29], sizeof(RankStrings[]), "%t", "Wingman Master Guardian I");
+	FormatEx(RankStrings[30], sizeof(RankStrings[]), "%t", "Wingman Master Guardian II");
+	FormatEx(RankStrings[31], sizeof(RankStrings[]), "%t", "Wingman Master Guardian Elite");
+	FormatEx(RankStrings[32], sizeof(RankStrings[]), "%t", "Wingman Distinguished Master Guardian");
+	FormatEx(RankStrings[33], sizeof(RankStrings[]), "%t", "Wingman Legendary Eagle");
+	FormatEx(RankStrings[34], sizeof(RankStrings[]), "%t", "Wingman Legendary Eagle Master");
+	FormatEx(RankStrings[35], sizeof(RankStrings[]), "%t", "Wingman Supreme First Master Class");
+	FormatEx(RankStrings[36], sizeof(RankStrings[]), "%t", "Wingman Global Elite");
+	FormatEx(RankStrings[37], sizeof(RankStrings[]), "%t", "Lab Rat I");
+	FormatEx(RankStrings[38], sizeof(RankStrings[]), "%t", "Lab Rat II");
+	FormatEx(RankStrings[39], sizeof(RankStrings[]), "%t", "Sprinting Hare I");
+	FormatEx(RankStrings[40], sizeof(RankStrings[]), "%t", "Sprinting Hare II");
+	FormatEx(RankStrings[41], sizeof(RankStrings[]), "%t", "Wild Scout I");
+	FormatEx(RankStrings[42], sizeof(RankStrings[]), "%t", "Wild Scout II");
+	FormatEx(RankStrings[43], sizeof(RankStrings[]), "%t", "Wild Scout Elite");
+	FormatEx(RankStrings[44], sizeof(RankStrings[]), "%t", "Hunter Fox I");
+	FormatEx(RankStrings[45], sizeof(RankStrings[]), "%t", "Hunter Fox II");
+	FormatEx(RankStrings[46], sizeof(RankStrings[]), "%t", "Hunter Fox III");
+	FormatEx(RankStrings[47], sizeof(RankStrings[]), "%t", "Hunter Fox Elite");
+	FormatEx(RankStrings[48], sizeof(RankStrings[]), "%t", "Timber Wolf");
+	FormatEx(RankStrings[49], sizeof(RankStrings[]), "%t", "Ember Wolf");
+	FormatEx(RankStrings[50], sizeof(RankStrings[]), "%t", "Wildfire Wolf");
+	FormatEx(RankStrings[51], sizeof(RankStrings[]), "%t", "The Howling Alpha");
+	FormatEx(RankStrings[52], sizeof(RankStrings[]), "%t", "FaceIT Level 1");
+	FormatEx(RankStrings[53], sizeof(RankStrings[]), "%t", "FaceIT Level 2");
+	FormatEx(RankStrings[54], sizeof(RankStrings[]), "%t", "FaceIT Level 3");
+	FormatEx(RankStrings[55], sizeof(RankStrings[]), "%t", "FaceIT Level 4");
+	FormatEx(RankStrings[56], sizeof(RankStrings[]), "%t", "FaceIT Level 5");
+	FormatEx(RankStrings[57], sizeof(RankStrings[]), "%t", "FaceIT Level 6");
+	FormatEx(RankStrings[58], sizeof(RankStrings[]), "%t", "FaceIT Level 7");
+	FormatEx(RankStrings[59], sizeof(RankStrings[]), "%t", "FaceIT Level 8");
+	FormatEx(RankStrings[60], sizeof(RankStrings[]), "%t", "FaceIT Level 9");
+	FormatEx(RankStrings[61], sizeof(RankStrings[]), "%t", "FaceIT Level 10");
 }
 
 public Action RankMe_OnPlayerLoaded(int client)
@@ -380,8 +466,94 @@ public void CheckRanks(int client, int points)
 		rank[client] = 16;
 	else if(points >= RankPoints[16] && points < RankPoints[17]) // Supreme Master First Class
 		rank[client] = 17;
-	else if(points >= RankPoints[17]) // Global Elite
+	else if(points >= RankPoints[17] && points < RankPoints[18]) // Global Elite
 		rank[client] = 18;
+	else if(points >= RankPoints[18] && points < RankPoints[19]) // Wingman Silver I
+		rank[client] = 19;
+	else if(points >= RankPoints[19] && points < RankPoints[20]) // Wingman Silver II
+		rank[client] = 20;
+	else if(points >= RankPoints[20] && points < RankPoints[21]) // Wingman Silver III
+		rank[client] = 21;
+	else if(points >= RankPoints[21] && points < RankPoints[22]) // Wingman Silver IV
+		rank[client] = 22;
+	else if(points >= RankPoints[22] && points < RankPoints[23]) // Wingman Silver Elite
+		rank[client] = 23;
+	else if(points >= RankPoints[23] && points < RankPoints[24]) // Wingman Silver Elite Master
+		rank[client] = 24;
+	else if(points >= RankPoints[24] && points < RankPoints[25]) // Wingman Gold Nova I
+		rank[client] = 25;
+	else if(points >= RankPoints[25] && points < RankPoints[26]) // Wingman Gold Nova II
+		rank[client] = 26;
+	else if(points >= RankPoints[26] && points < RankPoints[27]) // Wingman Gold Nova III
+		rank[client] = 27;
+	else if(points >= RankPoints[27] && points < RankPoints[28]) // Wingman Gold Nova Master
+		rank[client] = 28;
+	else if(points >= RankPoints[28] && points < RankPoints[29]) // Wingman Master Guardian I
+		rank[client] = 29;
+	else if(points >= RankPoints[29] && points < RankPoints[30]) // Wingman Master Guardian II
+		rank[client] = 30;
+	else if(points >= RankPoints[30] && points < RankPoints[31]) // Wingman Master Guardian Elite
+		rank[client] = 31;
+	else if(points >= RankPoints[31] && points < RankPoints[32]) // Wingman Distinguished Master Guardian
+		rank[client] = 32;
+	else if(points >= RankPoints[32] && points < RankPoints[33]) // Wingman Legendary Eagle
+		rank[client] = 33;
+	else if(points >= RankPoints[33] && points < RankPoints[34]) // Wingman Legendary Eagle Master
+		rank[client] = 34;
+	else if(points >= RankPoints[34] && points < RankPoints[35]) // Wingman Supreme Master First Class
+		rank[client] = 35;
+	else if(points >= RankPoints[35] && points < RankPoints[36]) // Wingman Global Elite
+		rank[client] = 36;
+	else if(points >= RankPoints[36] && points < RankPoints[37]) // Lab Rat I
+		rank[client] = 37;
+	else if(points >= RankPoints[37] && points < RankPoints[38]) // Lab Rat II
+		rank[client] = 38;
+	else if(points >= RankPoints[38] && points < RankPoints[39]) // Sprinting Hare I
+		rank[client] = 39;
+	else if(points >= RankPoints[39] && points < RankPoints[40]) // Sprinting Hare II
+		rank[client] = 40;
+	else if(points >= RankPoints[40] && points < RankPoints[41]) // Wild Scout I
+		rank[client] = 41;
+	else if(points >= RankPoints[41] && points < RankPoints[42]) // Wild Scout II
+		rank[client] = 42;
+	else if(points >= RankPoints[42] && points < RankPoints[43]) // Wild Scout Elite
+		rank[client] = 43;
+	else if(points >= RankPoints[43] && points < RankPoints[44]) // Hunter Fox I
+		rank[client] = 44;
+	else if(points >= RankPoints[44] && points < RankPoints[45]) // Hunter Fox II
+		rank[client] = 45;
+	else if(points >= RankPoints[45] && points < RankPoints[46]) // Hunter Fox II
+		rank[client] = 46;
+	else if(points >= RankPoints[46] && points < RankPoints[47]) // Hunter Fox Elite
+		rank[client] = 47;
+	else if(points >= RankPoints[47] && points < RankPoints[48]) // Timber Wolf
+		rank[client] = 48;
+	else if(points >= RankPoints[48] && points < RankPoints[49]) // Ember Wolf
+		rank[client] = 49;
+	else if(points >= RankPoints[49] && points < RankPoints[50]) // Wildfire Wolf
+		rank[client] = 50;
+	else if(points >= RankPoints[50] && points < RankPoints[51]) // The Howling Alpha
+		rank[client] = 51;
+	else if(points >= RankPoints[51] && points < RankPoints[52]) // FaceIT Level 1
+		rank[client] = 52;
+	else if(points >= RankPoints[52] && points < RankPoints[53]) // FaceIT Level 2
+		rank[client] = 53;
+	else if(points >= RankPoints[53] && points < RankPoints[54]) // FaceIT Level 3
+		rank[client] = 54;
+	else if(points >= RankPoints[54] && points < RankPoints[55]) // FaceIT Level 4
+		rank[client] = 55;
+	else if(points >= RankPoints[55] && points < RankPoints[56]) // FaceIT Level 5
+		rank[client] = 56;
+	else if(points >= RankPoints[56] && points < RankPoints[57]) // FaceIT Level 6
+		rank[client] = 57;
+	else if(points >= RankPoints[57] && points < RankPoints[58]) // FaceIT Level 7
+		rank[client] = 58;
+	else if(points >= RankPoints[58] && points < RankPoints[59]) // FaceIT Level 8
+		rank[client] = 59;
+	else if(points >= RankPoints[59] && points < RankPoints[60]) // FaceIT Level 9
+		rank[client] = 60;
+	else if(points >= RankPoints[60]) // FaceIT Level 10
+		rank[client] = 61;
 	
 	if(rank[client] > oldrank[client] && rank[client] > 0)
 	{

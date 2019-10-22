@@ -496,12 +496,12 @@ char g_BotName[][] = {
 	"hatz",
 	"USTILO",
 	"Valiance",
-	//Paradox Players
-	"Chub",
-	"Llamas",
-	"keeyto",
-	"Noobster",
-	"Kingfisher",
+	//BlackS Players
+	"hue9ze",
+	"addict",
+	"cookie",
+	"jeepy",
+	"Wolfah",
 	//eXtatus Players
 	"luko",
 	"wEAMO",
@@ -910,7 +910,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_chiefs", Team_Chiefs);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_order", Team_ORDER);
-	RegConsoleCmd("team_paradox", Team_Paradox);
+	RegConsoleCmd("team_blacks", Team_BlackS);
 	RegConsoleCmd("team_extatus", Team_eXtatus);
 	RegConsoleCmd("team_syf", Team_SYF);
 	RegConsoleCmd("team_5power", Team_5Power);
@@ -3155,29 +3155,29 @@ public Action Team_ORDER(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Paradox(int client, int args)
+public Action Team_BlackS(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "Chub");
-		ServerCommand("bot_add_ct %s", "Llamas");
-		ServerCommand("bot_add_ct %s", "keeyto");
-		ServerCommand("bot_add_ct %s", "Noobster");
-		ServerCommand("bot_add_ct %s", "Kingfisher");
-		ServerCommand("mp_teamlogo_1 para");
+		ServerCommand("bot_add_ct %s", "hue9ze");
+		ServerCommand("bot_add_ct %s", "addict");
+		ServerCommand("bot_add_ct %s", "cookie");
+		ServerCommand("bot_add_ct %s", "jeepy");
+		ServerCommand("bot_add_ct %s", "Wolfah");
+		ServerCommand("mp_teamlogo_1 black");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "Chub");
-		ServerCommand("bot_add_t %s", "Llamas");
-		ServerCommand("bot_add_t %s", "keeyto");
-		ServerCommand("bot_add_t %s", "Noobster");
-		ServerCommand("bot_add_t %s", "Kingfisher");
-		ServerCommand("mp_teamlogo_2 para");
+		ServerCommand("bot_add_t %s", "hue9ze");
+		ServerCommand("bot_add_t %s", "addict");
+		ServerCommand("bot_add_t %s", "cookie");
+		ServerCommand("bot_add_t %s", "jeepy");
+		ServerCommand("bot_add_t %s", "Wolfah");
+		ServerCommand("mp_teamlogo_2 black");
 	}
 	
 	return Plugin_Handled;
@@ -5530,10 +5530,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "ORDER");
 	}
 	
-	//Paradox Players
-	if((StrEqual(botname, "Chub")) || (StrEqual(botname, "Llamas")) || (StrEqual(botname, "keeyto")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "Kingfisher")))
+	//BlackS Players
+	if((StrEqual(botname, "hue9ze")) || (StrEqual(botname, "addict")) || (StrEqual(botname, "cookie")) || (StrEqual(botname, "jeepy")) || (StrEqual(botname, "Wolfah")))
 	{
-		CS_SetClientClanTag(client, "Paradox");
+		CS_SetClientClanTag(client, "BlackS");
 	}
 	
 	//eXtatus Players
@@ -6239,7 +6239,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 118;
 	}
 	
-	if (StrEqual(sClan, "Paradox"))
+	if (StrEqual(sClan, "BlackS"))
 	{
 		g_iProfileRank[client] = 119;
 	}
