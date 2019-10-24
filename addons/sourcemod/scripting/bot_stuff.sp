@@ -4923,68 +4923,66 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 		int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 		
-		if (iPrimary != -1)
+		if (iPrimary == -1)
 		{
-			return Plugin_Stop;
-		}
-		
-		if (iWeapon != -1)
-		{
-			RemovePlayerItem(client, iWeapon);
-		}
-		
-		int rndpistol = GetRandomInt(1,3);
-		
-		switch(rndpistol)
-		{
-			case 1:
+			if (iWeapon != -1)
 			{
-				GivePlayerItem(client, "weapon_p250");
-				SetClientMoney(client, m_iAccount - 300);
+				RemovePlayerItem(client, iWeapon);
 			}
-			case 2:
+			
+			int rndpistol = GetRandomInt(1,3);
+			
+			switch(rndpistol)
 			{
-				if(team == 3)
+				case 1:
 				{
-					int ctcz = GetRandomInt(1,2);
-					
-					switch(ctcz)
+					GivePlayerItem(client, "weapon_p250");
+					SetClientMoney(client, m_iAccount - 300);
+				}
+				case 2:
+				{
+					if(team == 3)
 					{
-						case 1:
+						int ctcz = GetRandomInt(1,2);
+						
+						switch(ctcz)
 						{
-							GivePlayerItem(client, "weapon_fiveseven");
-							SetClientMoney(client, m_iAccount - 500);
+							case 1:
+							{
+								GivePlayerItem(client, "weapon_fiveseven");
+								SetClientMoney(client, m_iAccount - 500);
+							}
+							case 2:
+							{
+								GivePlayerItem(client, "weapon_cz75a");
+								SetClientMoney(client, m_iAccount - 500);
+							}
 						}
-						case 2:
+					}
+					else if(team == 2)
+					{
+						int tcz = GetRandomInt(1,2);
+						
+						switch(tcz)
 						{
-							GivePlayerItem(client, "weapon_cz75a");
-							SetClientMoney(client, m_iAccount - 500);
+							case 1:
+							{
+								GivePlayerItem(client, "weapon_tec9");
+								SetClientMoney(client, m_iAccount - 500);
+							}
+							case 2:
+							{
+								GivePlayerItem(client, "weapon_cz75a");
+								SetClientMoney(client, m_iAccount - 500);
+							}
 						}
 					}
 				}
-				else if(team == 2)
+				case 3:
 				{
-					int tcz = GetRandomInt(1,2);
-					
-					switch(tcz)
-					{
-						case 1:
-						{
-							GivePlayerItem(client, "weapon_tec9");
-							SetClientMoney(client, m_iAccount - 500);
-						}
-						case 2:
-						{
-							GivePlayerItem(client, "weapon_cz75a");
-							SetClientMoney(client, m_iAccount - 500);
-						}
-					}
+					GivePlayerItem(client, "weapon_deagle");
+					SetClientMoney(client, m_iAccount - 700);
 				}
-			}
-			case 3:
-			{
-				GivePlayerItem(client, "weapon_deagle");
-				SetClientMoney(client, m_iAccount - 700);
 			}
 		}
 	}
