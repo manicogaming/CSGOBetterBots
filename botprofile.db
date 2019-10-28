@@ -3433,6 +3433,28 @@ ProP+Rifle "iDk"
 	VoicePitch = 110
 End
 
+//Big5 Players
+
+ProP+Rifle "kustoM_"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Spartan"
+	VoicePitch = 106
+End
+
+ProP+Rifle "SloWye-"
+	VoicePitch = 95
+End
+
+ProP+Rifle "takbok"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Tiaantjie"
+	VoicePitch = 110
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 95
 End

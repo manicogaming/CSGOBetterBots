@@ -849,7 +849,13 @@ char g_BotName[][] = {
 	"dumau",
 	"tge",
 	"delboNi",
-	"iDk"
+	"iDk",
+	//Big5 Players
+	"kustoM_",
+	"Spartan",
+	"SloWye-",
+	"takbok",
+	"Tiaantjie"
 };
  
 public Plugin myinfo =
@@ -1011,6 +1017,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_gambit", Team_Gambit);
 	RegConsoleCmd("team_wisla", Team_Wisla);
 	RegConsoleCmd("team_imperial", Team_Imperial);
+	RegConsoleCmd("team_big5", Team_Big5);
 }
 
 public Action KickBots(int client, int args)
@@ -4856,6 +4863,34 @@ public Action Team_Imperial(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Big5(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_add_ct %s", "kustoM_");
+		ServerCommand("bot_add_ct %s", "Spartan");
+		ServerCommand("bot_add_ct %s", "SloWye-");
+		ServerCommand("bot_add_ct %s", "takbok");
+		ServerCommand("bot_add_ct %s", "Tiaantjie");
+		ServerCommand("mp_teamlogo_1 big5");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_add_t %s", "kustoM_");
+		ServerCommand("bot_add_t %s", "Spartan");
+		ServerCommand("bot_add_t %s", "SloWye-");
+		ServerCommand("bot_add_t %s", "takbok");
+		ServerCommand("bot_add_t %s", "Tiaantjie");
+		ServerCommand("mp_teamlogo_2 big5");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6126,6 +6161,12 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
+	
+	//Big5 Players
+	if((StrEqual(botname, "kustoM_")) || (StrEqual(botname, "Spartan")) || (StrEqual(botname, "SloWye-")) || (StrEqual(botname, "takbok")) || (StrEqual(botname, "Tiaantjie")))
+	{
+		CS_SetClientClanTag(client, "Big5");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -6817,5 +6858,10 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Imperial"))
 	{
 		g_iProfileRank[client] = 177;
+	}
+	
+	if (StrEqual(sClan, "Big5"))
+	{
+		g_iProfileRank[client] = 178;
 	}
 }
