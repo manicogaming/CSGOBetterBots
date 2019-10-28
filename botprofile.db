@@ -851,7 +851,7 @@ ProP+Rifle "hAdji"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Calyx"
+ProP+Rifle "blocker"
 	VoicePitch = 110
 End
 
@@ -3320,6 +3320,116 @@ ProP+Rifle "xilo"
 End
 
 ProP+Rifle "SLisKDAKJE"
+	VoicePitch = 110
+End
+
+//DreamEaters Players
+
+ProP+Rifle "CHEHOL"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Quantium"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Kas9k"
+	VoicePitch = 95
+End
+
+ProP+Rifle "minse"
+	VoicePitch = 110
+End
+
+ProP+Rifle "JACKPOT"
+	VoicePitch = 110
+End
+
+//HLE Players
+
+ProP+Rifle "kinqie"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "speed4k"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Krad"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Forester"
+	VoicePitch = 110
+End
+
+ProP+Rifle "svyat"
+	VoicePitch = 110
+End
+
+//Gambit Players
+
+ProP+Rifle "nafany"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "sh1ro"
+	VoicePitch = 106
+End
+
+ProP+Rifle "interz"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Ax1Le"
+	VoicePitch = 110
+End
+
+ProP+Rifle "supra"
+	VoicePitch = 110
+End
+
+//Wisla Players
+
+ProP+Rifle "Kap3r"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "SZPERO"
+	VoicePitch = 106
+End
+
+ProP+Rifle "mynio"
+	VoicePitch = 95
+End
+
+ProP+Rifle "morelz"
+	VoicePitch = 110
+End
+
+ProP+Rifle "jedqr"
+	VoicePitch = 110
+End
+
+//Imperial Players
+
+ProP+Rifle "KHTEX"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "dumau"
+	VoicePitch = 106
+End
+
+ProP+Rifle "tge"
+	VoicePitch = 95
+End
+
+ProP+Rifle "delboNi"
+	VoicePitch = 110
+End
+
+ProP+Rifle "iDk"
 	VoicePitch = 110
 End
 
