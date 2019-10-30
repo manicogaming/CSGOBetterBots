@@ -402,7 +402,7 @@ char g_BotName[][] = {
 	"vrs",
 	//Nemiga Players
 	"ROBO",
-	"hutji",
+	"mds",
 	"lollipop21k",
 	"Jyo",
 	"boX",
@@ -2799,7 +2799,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "ROBO");
-		ServerCommand("bot_add_ct %s", "hutji");
+		ServerCommand("bot_add_ct %s", "mds");
 		ServerCommand("bot_add_ct %s", "lollipop21k");
 		ServerCommand("bot_add_ct %s", "Jyo");
 		ServerCommand("bot_add_ct %s", "boX");
@@ -2809,7 +2809,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "ROBO");
-		ServerCommand("bot_add_t %s", "hutji");
+		ServerCommand("bot_add_t %s", "mds");
 		ServerCommand("bot_add_t %s", "lollipop21k");
 		ServerCommand("bot_add_t %s", "Jyo");
 		ServerCommand("bot_add_t %s", "boX");
@@ -5852,7 +5852,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Nemiga Players
-	if((StrEqual(botname, "ROBO")) || (StrEqual(botname, "hutji")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
+	if((StrEqual(botname, "ROBO")) || (StrEqual(botname, "mds")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
 	{
 		CS_SetClientClanTag(client, "Nemiga");
 	}

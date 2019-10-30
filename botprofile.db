@@ -1789,7 +1789,7 @@ ProP+Rifle "ROBO"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "hutji"
+EliteAwp+SniperPro "mds"
 	VoicePitch = 106
 End
 
