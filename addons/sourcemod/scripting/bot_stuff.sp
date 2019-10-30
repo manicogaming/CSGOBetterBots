@@ -720,7 +720,7 @@ char g_BotName[][] = {
 	"PPOverdose",
 	//UOL Players
 	"crisby",
-	"kzy",
+	"kZyJL",
 	"Andyy",
 	"JDC",
 	"OKOLICIOUZ",
@@ -4283,7 +4283,7 @@ public Action Team_UOL(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_add_ct %s", "crisby");
-		ServerCommand("bot_add_ct %s", "kzy");
+		ServerCommand("bot_add_ct %s", "kZyJL");
 		ServerCommand("bot_add_ct %s", "Andyy");
 		ServerCommand("bot_add_ct %s", "JDC");
 		ServerCommand("bot_add_ct %s", "OKOLICIOUZ");
@@ -4293,7 +4293,7 @@ public Action Team_UOL(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_add_t %s", "crisby");
-		ServerCommand("bot_add_t %s", "kzy");
+		ServerCommand("bot_add_t %s", "kZyJL");
 		ServerCommand("bot_add_t %s", "Andyy");
 		ServerCommand("bot_add_t %s", "JDC");
 		ServerCommand("bot_add_t %s", "OKOLICIOUZ");
@@ -4353,7 +4353,7 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_add_t %s", "SHOUW");
 		ServerCommand("bot_add_t %s", "sark");
 		ServerCommand("bot_add_t %s", "axoN");
-		ServerCommand("mp_teamlogo_2 9ine");
+		ServerCommand("mp_teamlogo_2 baec");
 	}
 
 	return Plugin_Handled;
@@ -5035,7 +5035,7 @@ public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
 	g_iCoinOffset = FindSendPropInfo("CCSPlayerResource", "m_nActiveCoinRank");
-	
+
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, Hook_OnThinkPost);
 }
@@ -5168,7 +5168,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
             buttons |= IN_ATTACK; 
 
             if (g_hShouldAttackTimer[client] == null) {
-                CreateTimer(2.0, Timer_ShouldAttack, GetClientSerial(client));
+                CreateTimer(5.0, Timer_ShouldAttack, GetClientSerial(client));
             }
         }
 
@@ -5190,7 +5190,6 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 		if (IsClientInGame(i) && IsFakeClient(i))
 		{
 			int m_iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
-			
 			
 			if(GetRandomInt(1,10) == 1)
 			{
@@ -5411,12 +5410,12 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 		RemoveNades(client);
 
 		if (team == 2) { 
-            GivePlayerItem(client, g_sTRngGrenadesList[GetRandomInt(0, sizeof(g_sTRngGrenadesList) - 1)]); 
-        }
+			GivePlayerItem(client, g_sTRngGrenadesList[GetRandomInt(0, sizeof(g_sTRngGrenadesList) - 1)]);
+		}
 		else { 
-            GivePlayerItem(client, g_sCTRngGrenadesList[GetRandomInt(0, sizeof(g_sTRngGrenadesList) - 1)]); 
-            SetEntProp(client, Prop_Send, "m_bHasDefuser", 1); 
-        } 
+			GivePlayerItem(client, g_sCTRngGrenadesList[GetRandomInt(0, sizeof(g_sTRngGrenadesList) - 1)]);
+			SetEntProp(client, Prop_Send, "m_bHasDefuser", 1); 
+		}
 		
 	}
 	return Plugin_Stop;
@@ -6171,7 +6170,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//UOL Players
-	if((StrEqual(botname, "crisby")) || (StrEqual(botname, "kzy")) || (StrEqual(botname, "Andyy")) || (StrEqual(botname, "JDC")) || (StrEqual(botname, "OKOLICIOUZ")))
+	if((StrEqual(botname, "crisby")) || (StrEqual(botname, "kZyJL")) || (StrEqual(botname, "Andyy")) || (StrEqual(botname, "JDC")) || (StrEqual(botname, "OKOLICIOUZ")))
 	{
 		CS_SetClientClanTag(client, "UOL");
 	}
