@@ -2549,7 +2549,7 @@ ProP+Rifle "TISAN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "dinamo"
+ProP+Rifle "Tio"
 	VoicePitch = 110
 End
 
@@ -3452,6 +3452,94 @@ ProP+Rifle "takbok"
 End
 
 ProP+Rifle "Tiaantjie"
+	VoicePitch = 110
+End
+
+//Unique Players
+
+ProP+Rifle "R0b3n"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "zorte"
+	VoicePitch = 106
+End
+
+ProP+Rifle "PASHANOJ"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Polt"
+	VoicePitch = 110
+End
+
+ProP+Rifle "fenvicious"
+	VoicePitch = 110
+End
+
+//Asterion Players
+
+ProP+Rifle "blackie"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "NexFox"
+	VoicePitch = 106
+End
+
+ProP+Rifle "NiNo"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Bernard"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Clash"
+	VoicePitch = 110
+End
+
+//Izako Players
+
+ProP+Rifle "Patitek"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "NEEX"
+	VoicePitch = 106
+End
+
+ProP+Rifle "EXUS"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Luz"
+	VoicePitch = 110
+End
+
+ProP+Rifle "TOAO"
+	VoicePitch = 110
+End
+
+//Riot Players
+
+ProP+Rifle "mitch"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "ptr"
+	VoicePitch = 106
+End
+
+ProP+Rifle "crashies"
+	VoicePitch = 95
+End
+
+ProP+Rifle "FNS"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Jonji"
 	VoicePitch = 110
 End
 
