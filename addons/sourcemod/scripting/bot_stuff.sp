@@ -94,7 +94,7 @@ char g_BotName[][] = {
 	"Brehze",
 	"nahtE",
 	"CeRq",
-	//RNG Players
+	//Thieves Players
 	"AZR",
 	"jks",
 	"jkaem",
@@ -915,7 +915,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_mouz", Team_mouz);
 	RegConsoleCmd("team_tyloo", Team_TyLoo);
 	RegConsoleCmd("team_eg", Team_EG);
-	RegConsoleCmd("team_rng", Team_RNG);
+	RegConsoleCmd("team_thieves", Team_Thieves);
 	RegConsoleCmd("team_navi", Team_NaVi);
 	RegConsoleCmd("team_liquid", Team_Liquid);
 	RegConsoleCmd("team_ago", Team_AGO);
@@ -1363,7 +1363,7 @@ public Action Team_EG(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_RNG(int client, int args)
+public Action Team_Thieves(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -1375,7 +1375,7 @@ public Action Team_RNG(int client, int args)
 		ServerCommand("bot_add_ct %s", "jkaem");
 		ServerCommand("bot_add_ct %s", "Gratisfaction");
 		ServerCommand("bot_add_ct %s", "Liazz");
-		ServerCommand("mp_teamlogo_1 ren");
+		ServerCommand("mp_teamlogo_1 thv");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -1385,7 +1385,7 @@ public Action Team_RNG(int client, int args)
 		ServerCommand("bot_add_t %s", "jkaem");
 		ServerCommand("bot_add_t %s", "Gratisfaction");
 		ServerCommand("bot_add_t %s", "Liazz");
-		ServerCommand("mp_teamlogo_2 ren");
+		ServerCommand("mp_teamlogo_2 thv");
 	}
 	
 	return Plugin_Handled;
@@ -3078,7 +3078,7 @@ public Action Team_One(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
-		ServerCommand("bot_add_ct %s", "bld V");
+		ServerCommand("bot_add_ct %s", "\"bld V\"");
 		ServerCommand("bot_add_ct %s", "Maluk3");
 		ServerCommand("bot_add_ct %s", "trk");
 		ServerCommand("bot_add_ct %s", "bit");
@@ -3088,7 +3088,7 @@ public Action Team_One(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
-		ServerCommand("bot_add_t %s", "bld V");
+		ServerCommand("bot_add_t %s", "\"bld V\"");
 		ServerCommand("bot_add_t %s", "Maluk3");
 		ServerCommand("bot_add_t %s", "trk");
 		ServerCommand("bot_add_t %s", "bit");
@@ -5150,42 +5150,42 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 
 public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3], float angles[3], int& weapon, int& subtype, int& cmdnum, int& tickcount, int& seed, int mouse[2])
 {  
-    if (!IsFakeClient(client)) return Plugin_Continue;
+	if (!IsFakeClient(client)) return Plugin_Continue;
+	
+	int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+	if (ActiveWeapon == -1)  return Plugin_Continue;
+	
+	int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	
+	if (index == 43 || index == 44 || index == 45 || index == 46 || index == 48)
+	{
+		if (buttons & IN_ATTACK && g_bShouldAttack[client]) {
+			// release attack
+			buttons &= ~IN_ATTACK; 
+			g_bShouldAttack[client] = false;
+		}
+		else {
+			buttons |= IN_ATTACK; 
 
-    int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-    if (ActiveWeapon == -1)  return Plugin_Continue;
+			if (g_hShouldAttackTimer[client] == null) {
+				CreateTimer(5.0, Timer_ShouldAttack, GetClientSerial(client));
+			}
+		}
 
-    int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");  
-    
-    if (index == 43 || index == 44 || index == 45 || index == 46 || index == 48)
-    {
-        if (buttons & IN_ATTACK && g_bShouldAttack[client]) {
-            // release attack
-            buttons &= ~IN_ATTACK; 
-            g_bShouldAttack[client] = false;
-        }
-        else {
-            buttons |= IN_ATTACK; 
+		return Plugin_Changed;
+	} else if (g_hShouldAttackTimer[client] != null) {
+		// kill timer since the client has switch weapon and it's pointless to continue
+		KillTimer(g_hShouldAttackTimer[client]);
+		g_hShouldAttackTimer[client] = null;
+		return Plugin_Continue;
+	}
 
-            if (g_hShouldAttackTimer[client] == null) {
-                CreateTimer(5.0, Timer_ShouldAttack, GetClientSerial(client));
-            }
-        }
-
-        return Plugin_Changed;
-    } else if (g_hShouldAttackTimer[client] != null) {
-        // kill timer since the client has switch weapon and it's pointless to continue
-        KillTimer(g_hShouldAttackTimer[client]);
-        g_hShouldAttackTimer[client] = null;
-        return Plugin_Continue;
-    }
-
-    return Plugin_Continue;
+	return Plugin_Continue;
 }
 
 public Action Timer_CheckPlayer(Handle Timer, any data)
 {
-	for (int i = 1; i <= GetMaxClients(); i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && IsFakeClient(i))
 		{
@@ -5207,7 +5207,7 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 			}
 		}
 	}	
-}  
+}
 
 public Action Timer_ShouldAttack(Handle timer, int serial) {
     int client = GetClientFromSerial(serial);
@@ -5545,10 +5545,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "EG");
 	}
 	
-	//RNG Players
+	//Thieves Players
 	if((StrEqual(botname, "AZR")) || (StrEqual(botname, "jks")) || (StrEqual(botname, "jkaem")) || (StrEqual(botname, "Gratisfaction")) || (StrEqual(botname, "Liazz")))
 	{
-		CS_SetClientClanTag(client, "RNG");
+		CS_SetClientClanTag(client, "Thieves");
 	}
 	
 	//Na´Vi Players
@@ -6393,7 +6393,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 51;
 	}
 	
-	if (StrEqual(sClan, "RNG"))
+	if (StrEqual(sClan, "Thieves"))
 	{
 		g_iProfileRank[client] = 52;
 	}
