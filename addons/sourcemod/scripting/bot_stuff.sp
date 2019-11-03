@@ -3251,7 +3251,7 @@ public Action Team_BlackS(int client, int args)
 		ServerCommand("bot_add_ct %s", "cookie");
 		ServerCommand("bot_add_ct %s", "jeepy");
 		ServerCommand("bot_add_ct %s", "Wolfah");
-		ServerCommand("mp_teamlogo_1 black");
+		ServerCommand("mp_teamlogo_1 blacks");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -3261,7 +3261,7 @@ public Action Team_BlackS(int client, int args)
 		ServerCommand("bot_add_t %s", "cookie");
 		ServerCommand("bot_add_t %s", "jeepy");
 		ServerCommand("bot_add_t %s", "Wolfah");
-		ServerCommand("mp_teamlogo_2 black");
+		ServerCommand("mp_teamlogo_2 blacks");
 	}
 	
 	return Plugin_Handled;
@@ -5220,7 +5220,7 @@ public Action Timer_ShouldAttack(Handle timer, int serial) {
 
     g_hShouldAttackTimer[client] = null;
     return Plugin_Handled;
-}  
+}
 
 public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	int userid = event.GetInt("userid");
