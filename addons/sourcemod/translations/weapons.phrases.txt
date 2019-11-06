@@ -296,6 +296,10 @@
 	{
 		"en"	"★ Talon"
 	}
+	"weapon_knife_css"
+	{
+		"en"	"★ Classic Knife"
+	}
 	"weapon_knife_t"
 	{
 		"en"	"Knife"
@@ -335,5 +339,65 @@
 	"NameTagSuccess"
 	{
 		"en"	"Name tag successfully applied"
+	}
+	"Seed"
+	{
+		"en"	"Seed"
+	}
+	"SeedTitle"
+	{
+		"en"	"Seed: %i"
+	}
+	"SeedTitleNoSeed"
+	{
+		"en"	"Seed: ∞"
+	}
+	"SeedRandom"
+	{
+		"en"	"Random Seed"
+	}
+	"SeedManual"
+	{
+		"en"	"Manual Seed"
+	}
+	"SeedSave"
+	{
+		"en"	"Save Current Seed"
+	}
+	"SeedInstruction"
+	{
+		"en"	"Write your desired seed into chat. To abort, type !cancel."
+	}
+	"SeedSuccess"
+	{
+		"en"	"Seed successfully applied."
+	}
+	"SeedCancelled"
+	{
+		"en"	"Seed operation aborted."
+	}
+	"SeedFailed"
+	{
+		"en"	"Invalid seed (0 - 8192)"
+	}
+	"SeedSaved"
+	{
+		"en"	"Seed saved."
+	}
+	"SeedDisabled"
+	{
+		"en"	"Seed menu is disabled at the moment."
+	}
+	"SeedExplanation"
+	{
+		"en"	"You should use !ws menu to set seed for skins."
+	}
+	"SeedReset"
+	{
+		"en"	"Seed reset."
+	}
+	"ResetSeed"
+	{
+		"en"	"Reset Seed"
 	}
 }

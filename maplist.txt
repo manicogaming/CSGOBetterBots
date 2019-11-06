@@ -1,4 +1,4 @@
-// csgosl 2.6.8 config 1 at Tue Oct 01 15:29:10 BST 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.6 config 1 at Wed Nov 06 01:12:07 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -49,7 +49,6 @@ aim_map_duelies
 aim_map_gamma
 aim_neon_handel
 aim_notsocrazyjump
-aim_perfect2
 aim_redline
 aim_scopearena
 aim_scoutz
@@ -141,7 +140,6 @@ de_nightforest
 de_nuke
 de_nuke_ramps
 de_overpass
-de_ruby
 de_safehouse
 de_seaside
 de_shortdust
@@ -157,14 +155,24 @@ deathzone
 dm_bloodsport
 dz_blacksite
 dz_sirocco
+fun_pacman_v1
 fy_concrete
 fy_conflict
 fy_deagle5
 fy_december_v2
+fy_dust_css
+fy_faceover_wb
+fy_highway_s
 fy_iceworld_beta
 fy_iceworld_go
 fy_iceworld_origins
+fy_jungleworldx_b2
+fy_killzone
+fy_matrix2
 fy_pool_day_classic
+fy_poolday_reunion
+fy_poolparty_v3
+fy_pools
 fy_rainbow
 fy_sandstone_t0
 gd_rialto
