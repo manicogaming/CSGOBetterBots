@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"5th_mythic_redsun_v1"
+{
+	"CTSpawn_x" "0.570000"
+	"CTSpawn_y" "0.510000"
+	"TSpawn_x" "-0.070000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/5th_mythic_redsun_v1"
+	"pos_x" "-512.000000"
+	"pos_y" "448.000000"
+	"scale" "1.310000"
+}

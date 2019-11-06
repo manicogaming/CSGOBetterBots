@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"2000_classic_b2"
+{
+	"CTSpawn_x" "1.270000"
+	"CTSpawn_y" "0.820000"
+	"TSpawn_x" "1.270000"
+	"TSpawn_y" "0.190000"
+	"material" "overviews/2000_classic_b2"
+	"pos_x" "-1769.500000"
+	"pos_y" "1760.000000"
+	"scale" "1.950000"
+}

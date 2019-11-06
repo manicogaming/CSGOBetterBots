@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"3rd_mythic_metal_v1"
+{
+	"CTSpawn_x" "0.690000"
+	"CTSpawn_y" "0.870000"
+	"TSpawn_x" "0.560000"
+	"TSpawn_y" "0.120000"
+	"material" "overviews/3rd_mythic_metal_v1"
+	"pos_x" "-1152.000000"
+	"pos_y" "832.000000"
+	"scale" "2.000000"
+}

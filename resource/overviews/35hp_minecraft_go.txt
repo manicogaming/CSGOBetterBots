@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"35hp_minecraft_go"
+{
+	"CTSpawn_x" "0.560000"
+	"CTSpawn_y" "0.910000"
+	"TSpawn_x" "0.530000"
+	"TSpawn_y" "0.090000"
+	"material" "overviews/35hp_minecraft_go"
+	"pos_x" "-1152.000000"
+	"pos_y" "1152.000000"
+	"scale" "2.250000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-209.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-209.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}

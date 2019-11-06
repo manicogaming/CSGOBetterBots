@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"4th_mythic_ktaschool_v4"
+{
+	"CTSpawn_x" "0.380000"
+	"CTSpawn_y" "0.790000"
+	"TSpawn_x" "0.280000"
+	"TSpawn_y" "0.220000"
+	"material" "overviews/4th_mythic_ktaschool_v4"
+	"pos_x" "-992.000000"
+	"pos_y" "944.000000"
+	"scale" "2.090000"
+}

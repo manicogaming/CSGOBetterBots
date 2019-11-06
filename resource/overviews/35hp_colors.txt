@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"35hp_colors"
+{
+	"CTSpawn_x" "0.890000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.110000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/35hp_colors"
+	"pos_x" "-1440.000000"
+	"pos_y" "1440.000000"
+	"scale" "2.810000"
+}
