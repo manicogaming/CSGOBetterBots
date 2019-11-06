@@ -903,7 +903,6 @@ public void OnPluginStart()
 		}
 	}
 	
-	RegConsoleCmd("kickbots", KickBots);
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
 	RegConsoleCmd("team_faze", Team_FaZe);
@@ -1048,13 +1047,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_riot", Team_Riot);
 }
 
-public Action KickBots(int client, int args)
-{
-	ServerCommand("bot_kick");
-	
-	return Plugin_Handled;
-}
-
 public Action Team_NiP(int client, int args)
 {
 	char arg[12];
@@ -1062,6 +1054,7 @@ public Action Team_NiP(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "twist");
 		ServerCommand("bot_add_ct %s", "Lekr0");
 		ServerCommand("bot_add_ct %s", "f0rest");
@@ -1072,6 +1065,7 @@ public Action Team_NiP(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "twist");
 		ServerCommand("bot_add_t %s", "Lekr0");
 		ServerCommand("bot_add_t %s", "f0rest");
@@ -1090,6 +1084,7 @@ public Action Team_MIBR(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kNgV-");
 		ServerCommand("bot_add_ct %s", "FalleN");
 		ServerCommand("bot_add_ct %s", "fer");
@@ -1100,6 +1095,7 @@ public Action Team_MIBR(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kNgV-");
 		ServerCommand("bot_add_t %s", "FalleN");
 		ServerCommand("bot_add_t %s", "fer");
@@ -1118,6 +1114,7 @@ public Action Team_FaZe(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "olofmeister");
 		ServerCommand("bot_add_ct %s", "broky");
 		ServerCommand("bot_add_ct %s", "NiKo");
@@ -1128,6 +1125,7 @@ public Action Team_FaZe(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "olofmeister");
 		ServerCommand("bot_add_t %s", "broky");
 		ServerCommand("bot_add_t %s", "NiKo");
@@ -1146,6 +1144,7 @@ public Action Team_Astralis(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Xyp9x");
 		ServerCommand("bot_add_ct %s", "device");
 		ServerCommand("bot_add_ct %s", "gla1ve");
@@ -1156,6 +1155,7 @@ public Action Team_Astralis(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Xyp9x");
 		ServerCommand("bot_add_t %s", "device");
 		ServerCommand("bot_add_t %s", "gla1ve");
@@ -1174,6 +1174,7 @@ public Action Team_C9(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "autimatic");
 		ServerCommand("bot_add_ct %s", "mixwell");
 		ServerCommand("bot_add_ct %s", "daps");
@@ -1184,6 +1185,7 @@ public Action Team_C9(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "autimatic");
 		ServerCommand("bot_add_t %s", "mixwell");
 		ServerCommand("bot_add_t %s", "daps");
@@ -1202,6 +1204,7 @@ public Action Team_G2(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "huNter-");
 		ServerCommand("bot_add_ct %s", "kennyS");
 		ServerCommand("bot_add_ct %s", "nexa");
@@ -1212,6 +1215,7 @@ public Action Team_G2(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "huNter-");
 		ServerCommand("bot_add_t %s", "kennyS");
 		ServerCommand("bot_add_t %s", "nexa");
@@ -1230,6 +1234,7 @@ public Action Team_fnatic(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "flusha");
 		ServerCommand("bot_add_ct %s", "JW");
 		ServerCommand("bot_add_ct %s", "KRiMZ");
@@ -1240,6 +1245,7 @@ public Action Team_fnatic(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "flusha");
 		ServerCommand("bot_add_t %s", "JW");
 		ServerCommand("bot_add_t %s", "KRiMZ");
@@ -1258,6 +1264,7 @@ public Action Team_North(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "JUGi");
 		ServerCommand("bot_add_ct %s", "Kjaerbye");
 		ServerCommand("bot_add_ct %s", "aizy");
@@ -1268,6 +1275,7 @@ public Action Team_North(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "JUGi");
 		ServerCommand("bot_add_t %s", "Kjaerbye");
 		ServerCommand("bot_add_t %s", "aizy");
@@ -1286,6 +1294,7 @@ public Action Team_mouz(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "karrigan");
 		ServerCommand("bot_add_ct %s", "chrisJ");
 		ServerCommand("bot_add_ct %s", "woxic");
@@ -1296,6 +1305,7 @@ public Action Team_mouz(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "karrigan");
 		ServerCommand("bot_add_t %s", "chrisJ");
 		ServerCommand("bot_add_t %s", "woxic");
@@ -1314,6 +1324,7 @@ public Action Team_TyLoo(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Summer");
 		ServerCommand("bot_add_ct %s", "Attacker");
 		ServerCommand("bot_add_ct %s", "BnTneT");
@@ -1324,6 +1335,7 @@ public Action Team_TyLoo(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Summer");
 		ServerCommand("bot_add_t %s", "Attacker");
 		ServerCommand("bot_add_t %s", "BnTneT");
@@ -1342,6 +1354,7 @@ public Action Team_EG(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "stanislaw");
 		ServerCommand("bot_add_ct %s", "tarik");
 		ServerCommand("bot_add_ct %s", "Brehze");
@@ -1352,6 +1365,7 @@ public Action Team_EG(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "stanislaw");
 		ServerCommand("bot_add_t %s", "tarik");
 		ServerCommand("bot_add_t %s", "Brehze");
@@ -1370,6 +1384,7 @@ public Action Team_Thieves(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "AZR");
 		ServerCommand("bot_add_ct %s", "jks");
 		ServerCommand("bot_add_ct %s", "jkaem");
@@ -1380,6 +1395,7 @@ public Action Team_Thieves(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "AZR");
 		ServerCommand("bot_add_t %s", "jks");
 		ServerCommand("bot_add_t %s", "jkaem");
@@ -1398,6 +1414,7 @@ public Action Team_NaVi(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "electronic");
 		ServerCommand("bot_add_ct %s", "s1mple");
 		ServerCommand("bot_add_ct %s", "flamie");
@@ -1408,6 +1425,7 @@ public Action Team_NaVi(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "electronic");
 		ServerCommand("bot_add_t %s", "s1mple");
 		ServerCommand("bot_add_t %s", "flamie");
@@ -1426,6 +1444,7 @@ public Action Team_Liquid(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Stewie2K");
 		ServerCommand("bot_add_ct %s", "NAF");
 		ServerCommand("bot_add_ct %s", "nitr0");
@@ -1436,6 +1455,7 @@ public Action Team_Liquid(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Stewie2K");
 		ServerCommand("bot_add_t %s", "NAF");
 		ServerCommand("bot_add_t %s", "nitr0");
@@ -1454,6 +1474,7 @@ public Action Team_AGO(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Furlan");
 		ServerCommand("bot_add_ct %s", "GruBy");
 		ServerCommand("bot_add_ct %s", "mhL");
@@ -1464,6 +1485,7 @@ public Action Team_AGO(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Furlan");
 		ServerCommand("bot_add_t %s", "GruBy");
 		ServerCommand("bot_add_t %s", "mhL");
@@ -1482,6 +1504,7 @@ public Action Team_ENCE(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "suNny");
 		ServerCommand("bot_add_ct %s", "allu");
 		ServerCommand("bot_add_ct %s", "sergej");
@@ -1492,6 +1515,7 @@ public Action Team_ENCE(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "suNny");
 		ServerCommand("bot_add_t %s", "allu");
 		ServerCommand("bot_add_t %s", "sergej");
@@ -1510,6 +1534,7 @@ public Action Team_Vitality(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "shox");
 		ServerCommand("bot_add_ct %s", "ZywOo");
 		ServerCommand("bot_add_ct %s", "apEX");
@@ -1520,6 +1545,7 @@ public Action Team_Vitality(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "shox");
 		ServerCommand("bot_add_t %s", "ZywOo");
 		ServerCommand("bot_add_t %s", "apEX");
@@ -1538,6 +1564,7 @@ public Action Team_BIG(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "tiziaN");
 		ServerCommand("bot_add_ct %s", "smooya");
 		ServerCommand("bot_add_ct %s", "XANTARES");
@@ -1548,6 +1575,7 @@ public Action Team_BIG(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "tiziaN");
 		ServerCommand("bot_add_t %s", "smooya");
 		ServerCommand("bot_add_t %s", "XANTARES");
@@ -1566,6 +1594,7 @@ public Action Team_AVANGAR(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "buster");
 		ServerCommand("bot_add_ct %s", "Jame");
 		ServerCommand("bot_add_ct %s", "qikert");
@@ -1576,6 +1605,7 @@ public Action Team_AVANGAR(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "buster");
 		ServerCommand("bot_add_t %s", "Jame");
 		ServerCommand("bot_add_t %s", "qikert");
@@ -1594,6 +1624,7 @@ public Action Team_Windigo(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mirbit");
 		ServerCommand("bot_add_ct %s", "bubble");
 		ServerCommand("bot_add_ct %s", "hAdji");
@@ -1604,6 +1635,7 @@ public Action Team_Windigo(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mirbit");
 		ServerCommand("bot_add_t %s", "bubble");
 		ServerCommand("bot_add_t %s", "hAdji");
@@ -1622,6 +1654,7 @@ public Action Team_FURIA(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "yuurih");
 		ServerCommand("bot_add_ct %s", "arT");
 		ServerCommand("bot_add_ct %s", "VINI");
@@ -1632,6 +1665,7 @@ public Action Team_FURIA(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "yuurih");
 		ServerCommand("bot_add_t %s", "arT");
 		ServerCommand("bot_add_t %s", "VINI");
@@ -1650,6 +1684,7 @@ public Action Team_CR4ZY(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "LETN1");
 		ServerCommand("bot_add_ct %s", "ottoNd");
 		ServerCommand("bot_add_ct %s", "SHiPZ");
@@ -1660,6 +1695,7 @@ public Action Team_CR4ZY(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "LETN1");
 		ServerCommand("bot_add_t %s", "ottoNd");
 		ServerCommand("bot_add_t %s", "SHiPZ");
@@ -1678,6 +1714,7 @@ public Action Team_coL(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "dephh");
 		ServerCommand("bot_add_ct %s", "ShahZaM");
 		ServerCommand("bot_add_ct %s", "oBo");
@@ -1688,6 +1725,7 @@ public Action Team_coL(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "dephh");
 		ServerCommand("bot_add_t %s", "ShahZaM");
 		ServerCommand("bot_add_t %s", "oBo");
@@ -1706,6 +1744,7 @@ public Action Team_ViCi(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "zhokiNg");
 		ServerCommand("bot_add_ct %s", "kaze");
 		ServerCommand("bot_add_ct %s", "aumaN");
@@ -1716,6 +1755,7 @@ public Action Team_ViCi(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "zhokiNg");
 		ServerCommand("bot_add_t %s", "kaze");
 		ServerCommand("bot_add_t %s", "aumaN");
@@ -1734,6 +1774,7 @@ public Action Team_forZe(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "facecrack");
 		ServerCommand("bot_add_ct %s", "xsepower");
 		ServerCommand("bot_add_ct %s", "FL1T");
@@ -1744,6 +1785,7 @@ public Action Team_forZe(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "facecrack");
 		ServerCommand("bot_add_t %s", "xsepower");
 		ServerCommand("bot_add_t %s", "FL1T");
@@ -1762,6 +1804,7 @@ public Action Team_Winstrike(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Lack1");
 		ServerCommand("bot_add_ct %s", "KrizzeN");
 		ServerCommand("bot_add_ct %s", "Hobbit");
@@ -1772,6 +1815,7 @@ public Action Team_Winstrike(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Lack1");
 		ServerCommand("bot_add_t %s", "KrizzeN");
 		ServerCommand("bot_add_t %s", "Hobbit");
@@ -1790,6 +1834,7 @@ public Action Team_Sprout(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "k1to");
 		ServerCommand("bot_add_ct %s", "syrsoN");
 		ServerCommand("bot_add_ct %s", "Spiidi");
@@ -1800,6 +1845,7 @@ public Action Team_Sprout(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "k1to");
 		ServerCommand("bot_add_t %s", "syrsoN");
 		ServerCommand("bot_add_t %s", "Spiidi");
@@ -1818,6 +1864,7 @@ public Action Team_Heroic(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "es3tag");
 		ServerCommand("bot_add_ct %s", "b0RUP");
 		ServerCommand("bot_add_ct %s", "Snappi");
@@ -1828,6 +1875,7 @@ public Action Team_Heroic(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "es3tag");
 		ServerCommand("bot_add_t %s", "b0RUP");
 		ServerCommand("bot_add_t %s", "Snappi");
@@ -1846,6 +1894,7 @@ public Action Team_INTZ(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "chelo");
 		ServerCommand("bot_add_ct %s", "shz");
 		ServerCommand("bot_add_ct %s", "xand");
@@ -1856,6 +1905,7 @@ public Action Team_INTZ(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "chelo");
 		ServerCommand("bot_add_t %s", "shz");
 		ServerCommand("bot_add_t %s", "xand");
@@ -1874,6 +1924,7 @@ public Action Team_VP(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "MICHU");
 		ServerCommand("bot_add_ct %s", "snatchie");
 		ServerCommand("bot_add_ct %s", "phr");
@@ -1884,6 +1935,7 @@ public Action Team_VP(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "MICHU");
 		ServerCommand("bot_add_t %s", "snatchie");
 		ServerCommand("bot_add_t %s", "phr");
@@ -1902,6 +1954,7 @@ public Action Team_Apeks(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Marcelious");
 		ServerCommand("bot_add_ct %s", "truth");
 		ServerCommand("bot_add_ct %s", "Grusarn");
@@ -1912,6 +1965,7 @@ public Action Team_Apeks(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Marcelious");
 		ServerCommand("bot_add_t %s", "truth");
 		ServerCommand("bot_add_t %s", "Grusarn");
@@ -1930,6 +1984,7 @@ public Action Team_aTTaX(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "stfN");
 		ServerCommand("bot_add_ct %s", "slaxz");
 		ServerCommand("bot_add_ct %s", "DuDe");
@@ -1940,6 +1995,7 @@ public Action Team_aTTaX(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "stfN");
 		ServerCommand("bot_add_t %s", "slaxz");
 		ServerCommand("bot_add_t %s", "DuDe");
@@ -1958,6 +2014,7 @@ public Action Team_Grayhound(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "INS");
 		ServerCommand("bot_add_ct %s", "sico");
 		ServerCommand("bot_add_ct %s", "dexter");
@@ -1968,6 +2025,7 @@ public Action Team_Grayhound(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "INS");
 		ServerCommand("bot_add_t %s", "sico");
 		ServerCommand("bot_add_t %s", "dexter");
@@ -1986,6 +2044,7 @@ public Action Team_MVPPK(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "glow");
 		ServerCommand("bot_add_ct %s", "xeta");
 		ServerCommand("bot_add_ct %s", "Rb");
@@ -1996,6 +2055,7 @@ public Action Team_MVPPK(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "glow");
 		ServerCommand("bot_add_t %s", "xeta");
 		ServerCommand("bot_add_t %s", "Rb");
@@ -2014,6 +2074,7 @@ public Action Team_Envy(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Nifty");
 		ServerCommand("bot_add_ct %s", "ryann");
 		ServerCommand("bot_add_ct %s", "s0m");
@@ -2024,6 +2085,7 @@ public Action Team_Envy(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Nifty");
 		ServerCommand("bot_add_t %s", "ryann");
 		ServerCommand("bot_add_t %s", "s0m");
@@ -2042,6 +2104,7 @@ public Action Team_Spirit(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mir");
 		ServerCommand("bot_add_ct %s", "iDISBALANCE");
 		ServerCommand("bot_add_ct %s", "somedieyoung");
@@ -2052,6 +2115,7 @@ public Action Team_Spirit(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mir");
 		ServerCommand("bot_add_t %s", "iDISBALANCE");
 		ServerCommand("bot_add_t %s", "somedieyoung");
@@ -2070,6 +2134,7 @@ public Action Team_CeX(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "LiamjS");
 		ServerCommand("bot_add_ct %s", "resu");
 		ServerCommand("bot_add_ct %s", "Nukeddog");
@@ -2080,6 +2145,7 @@ public Action Team_CeX(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "LiamjS");
 		ServerCommand("bot_add_t %s", "resu");
 		ServerCommand("bot_add_t %s", "Nukeddog");
@@ -2098,6 +2164,7 @@ public Action Team_LDLC(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "rodeN");
 		ServerCommand("bot_add_ct %s", "Happy");
 		ServerCommand("bot_add_ct %s", "MAJ3R");
@@ -2108,6 +2175,7 @@ public Action Team_LDLC(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "rodeN");
 		ServerCommand("bot_add_t %s", "Happy");
 		ServerCommand("bot_add_t %s", "MAJ3R");
@@ -2126,6 +2194,7 @@ public Action Team_Defusekids(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "v1N");
 		ServerCommand("bot_add_ct %s", "G1DO");
 		ServerCommand("bot_add_ct %s", "FASHR");
@@ -2136,6 +2205,7 @@ public Action Team_Defusekids(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "v1N");
 		ServerCommand("bot_add_t %s", "G1DO");
 		ServerCommand("bot_add_t %s", "FASHR");
@@ -2154,6 +2224,7 @@ public Action Team_GamerLegion(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "dennis");
 		ServerCommand("bot_add_ct %s", "nawwk");
 		ServerCommand("bot_add_ct %s", "PlesseN");
@@ -2164,6 +2235,7 @@ public Action Team_GamerLegion(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "dennis");
 		ServerCommand("bot_add_t %s", "nawwk");
 		ServerCommand("bot_add_t %s", "PlesseN");
@@ -2182,6 +2254,7 @@ public Action Team_DIVIZON(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TR1P");
 		ServerCommand("bot_add_ct %s", "glaVed");
 		ServerCommand("bot_add_ct %s", "hyped");
@@ -2192,6 +2265,7 @@ public Action Team_DIVIZON(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TR1P");
 		ServerCommand("bot_add_t %s", "glaVed");
 		ServerCommand("bot_add_t %s", "hyped");
@@ -2210,6 +2284,7 @@ public Action Team_EURONICS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "red");
 		ServerCommand("bot_add_ct %s", "maRky");
 		ServerCommand("bot_add_ct %s", "PerX");
@@ -2220,6 +2295,7 @@ public Action Team_EURONICS(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "red");
 		ServerCommand("bot_add_t %s", "maRky");
 		ServerCommand("bot_add_t %s", "PerX");
@@ -2238,6 +2314,7 @@ public Action Team_expert(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Aika");
 		ServerCommand("bot_add_ct %s", "syncD");
 		ServerCommand("bot_add_ct %s", "BMLN");
@@ -2248,6 +2325,7 @@ public Action Team_expert(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Aika");
 		ServerCommand("bot_add_t %s", "syncD");
 		ServerCommand("bot_add_t %s", "BMLN");
@@ -2266,6 +2344,7 @@ public Action Team_PANTHERS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "rUFY");
 		ServerCommand("bot_add_ct %s", "darkz");
 		ServerCommand("bot_add_ct %s", "denzel");
@@ -2276,6 +2355,7 @@ public Action Team_PANTHERS(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "rUFY");
 		ServerCommand("bot_add_t %s", "darkz");
 		ServerCommand("bot_add_t %s", "denzel");
@@ -2294,6 +2374,7 @@ public Action Team_PDucks(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "neviZ");
 		ServerCommand("bot_add_ct %s", "synx");
 		ServerCommand("bot_add_ct %s", "delkore");
@@ -2304,6 +2385,7 @@ public Action Team_PDucks(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "neviZ");
 		ServerCommand("bot_add_t %s", "synx");
 		ServerCommand("bot_add_t %s", "delkore");
@@ -2322,6 +2404,7 @@ public Action Team_HAVU(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ZOREE");
 		ServerCommand("bot_add_ct %s", "sLowi");
 		ServerCommand("bot_add_ct %s", "doto");
@@ -2332,6 +2415,7 @@ public Action Team_HAVU(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ZOREE");
 		ServerCommand("bot_add_t %s", "sLowi");
 		ServerCommand("bot_add_t %s", "doto");
@@ -2350,6 +2434,7 @@ public Action Team_Lyngby(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "birdfromsky");
 		ServerCommand("bot_add_ct %s", "Twinx");
 		ServerCommand("bot_add_ct %s", "Daffu");
@@ -2360,6 +2445,7 @@ public Action Team_Lyngby(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "birdfromsky");
 		ServerCommand("bot_add_t %s", "Twinx");
 		ServerCommand("bot_add_t %s", "Daffu");
@@ -2378,6 +2464,7 @@ public Action Team_SMASH(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "maden");
 		ServerCommand("bot_add_ct %s", "Maikelele");
 		ServerCommand("bot_add_ct %s", "kRYSTAL");
@@ -2388,6 +2475,7 @@ public Action Team_SMASH(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "maden");
 		ServerCommand("bot_add_t %s", "Maikelele");
 		ServerCommand("bot_add_t %s", "kRYSTAL");
@@ -2406,6 +2494,7 @@ public Action Team_Nordavind(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "tenzki");
 		ServerCommand("bot_add_ct %s", "hallzerk");
 		ServerCommand("bot_add_ct %s", "RUBINO");
@@ -2416,6 +2505,7 @@ public Action Team_Nordavind(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "tenzki");
 		ServerCommand("bot_add_t %s", "hallzerk");
 		ServerCommand("bot_add_t %s", "RUBINO");
@@ -2434,6 +2524,7 @@ public Action Team_SJ(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "arvid");
 		ServerCommand("bot_add_ct %s", "Jamppi");
 		ServerCommand("bot_add_ct %s", "SADDYX");
@@ -2444,6 +2535,7 @@ public Action Team_SJ(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "arvid");
 		ServerCommand("bot_add_t %s", "Jamppi");
 		ServerCommand("bot_add_t %s", "SADDYX");
@@ -2462,6 +2554,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "roeJ");
 		ServerCommand("bot_add_ct %s", "acoR");
 		ServerCommand("bot_add_ct %s", "HUNDEN");
@@ -2472,6 +2565,7 @@ public Action Team_Tricked(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("bot_add_t %s", "acoR");
 		ServerCommand("bot_add_t %s", "HUNDEN");
@@ -2490,6 +2584,7 @@ public Action Team_Baskonia(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "tatin");
 		ServerCommand("bot_add_ct %s", "PabLo");
 		ServerCommand("bot_add_ct %s", "LittlesataN1");
@@ -2500,6 +2595,7 @@ public Action Team_Baskonia(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "tatin");
 		ServerCommand("bot_add_t %s", "PabLo");
 		ServerCommand("bot_add_t %s", "LittlesataN1");
@@ -2518,6 +2614,7 @@ public Action Team_Giants(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "rmn");
 		ServerCommand("bot_add_ct %s", "fox");
 		ServerCommand("bot_add_ct %s", "Cunha");
@@ -2528,6 +2625,7 @@ public Action Team_Giants(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "rmn");
 		ServerCommand("bot_add_t %s", "fox");
 		ServerCommand("bot_add_t %s", "Cunha");
@@ -2546,6 +2644,7 @@ public Action Team_Lions(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "YuRk0");
 		ServerCommand("bot_add_ct %s", "Jibrix");
 		ServerCommand("bot_add_ct %s", "Kairi");
@@ -2556,6 +2655,7 @@ public Action Team_Lions(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "YuRk0");
 		ServerCommand("bot_add_t %s", "Jibrix");
 		ServerCommand("bot_add_t %s", "Kairi");
@@ -2574,6 +2674,7 @@ public Action Team_Riders(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mopoz");
 		ServerCommand("bot_add_ct %s", "EasTor");
 		ServerCommand("bot_add_ct %s", "steel");
@@ -2584,6 +2685,7 @@ public Action Team_Riders(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mopoz");
 		ServerCommand("bot_add_t %s", "EasTor");
 		ServerCommand("bot_add_t %s", "steel");
@@ -2602,6 +2704,7 @@ public Action Team_OFFSET(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "RIZZ");
 		ServerCommand("bot_add_ct %s", "obj");
 		ServerCommand("bot_add_ct %s", "JUST");
@@ -2612,6 +2715,7 @@ public Action Team_OFFSET(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "RIZZ");
 		ServerCommand("bot_add_t %s", "obj");
 		ServerCommand("bot_add_t %s", "JUST");
@@ -2630,6 +2734,7 @@ public Action Team_x6tence(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "NikoM");
 		ServerCommand("bot_add_ct %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_ct %s", "tomi");
@@ -2640,6 +2745,7 @@ public Action Team_x6tence(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "NikoM");
 		ServerCommand("bot_add_t %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_t %s", "tomi");
@@ -2658,6 +2764,7 @@ public Action Team_eSuba(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "HenkkyG");
 		ServerCommand("bot_add_ct %s", "ZEDKO");
 		ServerCommand("bot_add_ct %s", "leckr");
@@ -2668,6 +2775,7 @@ public Action Team_eSuba(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "HenkkyG");
 		ServerCommand("bot_add_t %s", "ZEDKO");
 		ServerCommand("bot_add_t %s", "leckr");
@@ -2686,6 +2794,7 @@ public Action Team_Nexus(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "BTN");
 		ServerCommand("bot_add_ct %s", "XELLOW");
 		ServerCommand("bot_add_ct %s", "SEMINTE");
@@ -2696,6 +2805,7 @@ public Action Team_Nexus(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "BTN");
 		ServerCommand("bot_add_t %s", "XELLOW");
 		ServerCommand("bot_add_t %s", "SEMINTE");
@@ -2714,6 +2824,7 @@ public Action Team_PACT(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "darko");
 		ServerCommand("bot_add_ct %s", "lunAtic");
 		ServerCommand("bot_add_ct %s", "Goofy");
@@ -2724,6 +2835,7 @@ public Action Team_PACT(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "darko");
 		ServerCommand("bot_add_t %s", "lunAtic");
 		ServerCommand("bot_add_t %s", "Goofy");
@@ -2742,6 +2854,7 @@ public Action Team_Heretics(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "davidp");
 		ServerCommand("bot_add_ct %s", "Maka");
 		ServerCommand("bot_add_ct %s", "devoduvek");
@@ -2752,6 +2865,7 @@ public Action Team_Heretics(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "davidp");
 		ServerCommand("bot_add_t %s", "Maka");
 		ServerCommand("bot_add_t %s", "devoduvek");
@@ -2770,6 +2884,7 @@ public Action Team_FCDB(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "razOk");
 		ServerCommand("bot_add_ct %s", "matusik");
 		ServerCommand("bot_add_ct %s", "Ao-");
@@ -2780,6 +2895,7 @@ public Action Team_FCDB(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "razOk");
 		ServerCommand("bot_add_t %s", "matusik");
 		ServerCommand("bot_add_t %s", "Ao-");
@@ -2798,6 +2914,7 @@ public Action Team_Nemiga(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ROBO");
 		ServerCommand("bot_add_ct %s", "mds");
 		ServerCommand("bot_add_ct %s", "lollipop21k");
@@ -2808,6 +2925,7 @@ public Action Team_Nemiga(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ROBO");
 		ServerCommand("bot_add_t %s", "mds");
 		ServerCommand("bot_add_t %s", "lollipop21k");
@@ -2826,6 +2944,7 @@ public Action Team_pro100(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "dimasick");
 		ServerCommand("bot_add_ct %s", "WorldEdit");
 		ServerCommand("bot_add_ct %s", "YEKINDAR");
@@ -2836,6 +2955,7 @@ public Action Team_pro100(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "dimasick");
 		ServerCommand("bot_add_t %s", "WorldEdit");
 		ServerCommand("bot_add_t %s", "YEKINDAR");
@@ -2854,6 +2974,7 @@ public Action Team_eUnited(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "freakazoid");
 		ServerCommand("bot_add_ct %s", "Cooper-");
 		ServerCommand("bot_add_ct %s", "MarKE");
@@ -2864,6 +2985,7 @@ public Action Team_eUnited(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "freakazoid");
 		ServerCommand("bot_add_t %s", "Cooper-");
 		ServerCommand("bot_add_t %s", "MarKE");
@@ -2882,6 +3004,7 @@ public Action Team_Mythic(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "C0M");
 		ServerCommand("bot_add_ct %s", "fl0m");
 		ServerCommand("bot_add_ct %s", "Katie");
@@ -2892,6 +3015,7 @@ public Action Team_Mythic(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "C0M");
 		ServerCommand("bot_add_t %s", "fl0m");
 		ServerCommand("bot_add_t %s", "Katie");
@@ -2910,6 +3034,7 @@ public Action Team_Singularity(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "wrath");
 		ServerCommand("bot_add_ct %s", "Relyks");
 		ServerCommand("bot_add_ct %s", "seb");
@@ -2920,6 +3045,7 @@ public Action Team_Singularity(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "wrath");
 		ServerCommand("bot_add_t %s", "Relyks");
 		ServerCommand("bot_add_t %s", "seb");
@@ -2938,6 +3064,7 @@ public Action Team_DETONA(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "prt");
 		ServerCommand("bot_add_ct %s", "tiburci0");
 		ServerCommand("bot_add_ct %s", "v$m");
@@ -2948,6 +3075,7 @@ public Action Team_DETONA(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "prt");
 		ServerCommand("bot_add_t %s", "tiburci0");
 		ServerCommand("bot_add_t %s", "v$m");
@@ -2966,6 +3094,7 @@ public Action Team_Infinity(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "cruzN");
 		ServerCommand("bot_add_ct %s", "malbsMd");
 		ServerCommand("bot_add_ct %s", "spamzzy");
@@ -2976,6 +3105,7 @@ public Action Team_Infinity(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "cruzN");
 		ServerCommand("bot_add_t %s", "malbsMd");
 		ServerCommand("bot_add_t %s", "spamzzy");
@@ -2994,6 +3124,7 @@ public Action Team_Isurus(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "1962");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
@@ -3004,6 +3135,7 @@ public Action Team_Isurus(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "1962");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
@@ -3022,6 +3154,7 @@ public Action Team_paiN(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "PKL");
 		ServerCommand("bot_add_ct %s", "land1n");
 		ServerCommand("bot_add_ct %s", "tatazin");
@@ -3032,6 +3165,7 @@ public Action Team_paiN(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "PKL");
 		ServerCommand("bot_add_t %s", "land1n");
 		ServerCommand("bot_add_t %s", "tatazin");
@@ -3050,6 +3184,7 @@ public Action Team_Sharks(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "meyern");
 		ServerCommand("bot_add_ct %s", "jnt");
 		ServerCommand("bot_add_ct %s", "leo_drunky");
@@ -3060,6 +3195,7 @@ public Action Team_Sharks(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "meyern");
 		ServerCommand("bot_add_t %s", "jnt");
 		ServerCommand("bot_add_t %s", "leo_drunky");
@@ -3078,6 +3214,7 @@ public Action Team_One(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "\"bld V\"");
 		ServerCommand("bot_add_ct %s", "Maluk3");
 		ServerCommand("bot_add_ct %s", "trk");
@@ -3088,6 +3225,7 @@ public Action Team_One(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "\"bld V\"");
 		ServerCommand("bot_add_t %s", "Maluk3");
 		ServerCommand("bot_add_t %s", "trk");
@@ -3106,6 +3244,7 @@ public Action Team_W7M(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "skullz");
 		ServerCommand("bot_add_ct %s", "raafa");
 		ServerCommand("bot_add_ct %s", "ryotzz");
@@ -3116,6 +3255,7 @@ public Action Team_W7M(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "skullz");
 		ServerCommand("bot_add_t %s", "raafa");
 		ServerCommand("bot_add_t %s", "ryotzz");
@@ -3134,6 +3274,7 @@ public Action Team_Avant(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "soju_j");
 		ServerCommand("bot_add_ct %s", "sterling");
 		ServerCommand("bot_add_ct %s", "apoc");
@@ -3144,6 +3285,7 @@ public Action Team_Avant(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "soju_j");
 		ServerCommand("bot_add_t %s", "sterling");
 		ServerCommand("bot_add_t %s", "apoc");
@@ -3162,6 +3304,7 @@ public Action Team_Chiefs(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "tucks");
 		ServerCommand("bot_add_ct %s", "BL1TZ");
 		ServerCommand("bot_add_ct %s", "Texta");
@@ -3172,6 +3315,7 @@ public Action Team_Chiefs(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "tucks");
 		ServerCommand("bot_add_t %s", "BL1TZ");
 		ServerCommand("bot_add_t %s", "Texta");
@@ -3190,6 +3334,7 @@ public Action Team_LEISURE(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "padow");
 		ServerCommand("bot_add_ct %s", "amigo");
 		ServerCommand("bot_add_ct %s", "fly");
@@ -3200,6 +3345,7 @@ public Action Team_LEISURE(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "padow");
 		ServerCommand("bot_add_t %s", "amigo");
 		ServerCommand("bot_add_t %s", "fly");
@@ -3218,6 +3364,7 @@ public Action Team_ORDER(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "emagine");
 		ServerCommand("bot_add_ct %s", "aliStair");
 		ServerCommand("bot_add_ct %s", "hatz");
@@ -3228,6 +3375,7 @@ public Action Team_ORDER(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "emagine");
 		ServerCommand("bot_add_t %s", "aliStair");
 		ServerCommand("bot_add_t %s", "hatz");
@@ -3246,6 +3394,7 @@ public Action Team_BlackS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "hue9ze");
 		ServerCommand("bot_add_ct %s", "addict");
 		ServerCommand("bot_add_ct %s", "cookie");
@@ -3256,6 +3405,7 @@ public Action Team_BlackS(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "hue9ze");
 		ServerCommand("bot_add_t %s", "addict");
 		ServerCommand("bot_add_t %s", "cookie");
@@ -3274,6 +3424,7 @@ public Action Team_eXtatus(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "luko");
 		ServerCommand("bot_add_ct %s", "wEAMO");
 		ServerCommand("bot_add_ct %s", "desty");
@@ -3284,6 +3435,7 @@ public Action Team_eXtatus(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "luko");
 		ServerCommand("bot_add_t %s", "wEAMO");
 		ServerCommand("bot_add_t %s", "desty");
@@ -3302,6 +3454,7 @@ public Action Team_SYF(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ino");
 		ServerCommand("bot_add_ct %s", "Teal");
 		ServerCommand("bot_add_ct %s", "ekul");
@@ -3312,6 +3465,7 @@ public Action Team_SYF(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ino");
 		ServerCommand("bot_add_t %s", "Teal");
 		ServerCommand("bot_add_t %s", "ekul");
@@ -3330,6 +3484,7 @@ public Action Team_5Power(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "bottle");
 		ServerCommand("bot_add_ct %s", "Savage");
 		ServerCommand("bot_add_ct %s", "xiaosaGe");
@@ -3340,6 +3495,7 @@ public Action Team_5Power(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "bottle");
 		ServerCommand("bot_add_t %s", "Savage");
 		ServerCommand("bot_add_t %s", "xiaosaGe");
@@ -3358,6 +3514,7 @@ public Action Team_EHOME(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "insane");
 		ServerCommand("bot_add_ct %s", "originalheart");
 		ServerCommand("bot_add_ct %s", "Marek");
@@ -3368,6 +3525,7 @@ public Action Team_EHOME(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "insane");
 		ServerCommand("bot_add_t %s", "originalheart");
 		ServerCommand("bot_add_t %s", "Marek");
@@ -3386,6 +3544,7 @@ public Action Team_ALPHA(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "MAIROLLS");
 		ServerCommand("bot_add_ct %s", "Olivia");
 		ServerCommand("bot_add_ct %s", "Kntz");
@@ -3396,6 +3555,7 @@ public Action Team_ALPHA(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "MAIROLLS");
 		ServerCommand("bot_add_t %s", "Olivia");
 		ServerCommand("bot_add_t %s", "Kntz");
@@ -3414,6 +3574,7 @@ public Action Team_dreamScape(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Bobosaur");
 		ServerCommand("bot_add_ct %s", "splashske");
 		ServerCommand("bot_add_ct %s", "alecks");
@@ -3424,6 +3585,7 @@ public Action Team_dreamScape(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Bobosaur");
 		ServerCommand("bot_add_t %s", "splashske");
 		ServerCommand("bot_add_t %s", "alecks");
@@ -3442,6 +3604,7 @@ public Action Team_Beyond(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TOR");
 		ServerCommand("bot_add_ct %s", "bnwGiggs");
 		ServerCommand("bot_add_ct %s", "RoLEX");
@@ -3452,6 +3615,7 @@ public Action Team_Beyond(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TOR");
 		ServerCommand("bot_add_t %s", "bnwGiggs");
 		ServerCommand("bot_add_t %s", "RoLEX");
@@ -3470,6 +3634,7 @@ public Action Team_Entity(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Amaterasu");
 		ServerCommand("bot_add_ct %s", "Psy");
 		ServerCommand("bot_add_ct %s", "Excali");
@@ -3480,6 +3645,7 @@ public Action Team_Entity(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Amaterasu");
 		ServerCommand("bot_add_t %s", "Psy");
 		ServerCommand("bot_add_t %s", "Excali");
@@ -3498,6 +3664,7 @@ public Action Team_FrostFire(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "aimaNNN");
 		ServerCommand("bot_add_ct %s", "hiqa1");
 		ServerCommand("bot_add_ct %s", "acAp");
@@ -3508,6 +3675,7 @@ public Action Team_FrostFire(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "aimaNNN");
 		ServerCommand("bot_add_t %s", "hiqa1");
 		ServerCommand("bot_add_t %s", "acAp");
@@ -3526,6 +3694,7 @@ public Action Team_Lucid(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "wannafly");
 		ServerCommand("bot_add_ct %s", "PTC");
 		ServerCommand("bot_add_ct %s", "cbbk");
@@ -3536,6 +3705,7 @@ public Action Team_Lucid(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "wannafly");
 		ServerCommand("bot_add_t %s", "PTC");
 		ServerCommand("bot_add_t %s", "cbbk");
@@ -3554,6 +3724,7 @@ public Action Team_NASR(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "breAker");
 		ServerCommand("bot_add_ct %s", "Nami");
 		ServerCommand("bot_add_ct %s", "kitkat");
@@ -3564,6 +3735,7 @@ public Action Team_NASR(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "breAker");
 		ServerCommand("bot_add_t %s", "Nami");
 		ServerCommand("bot_add_t %s", "kitkat");
@@ -3582,6 +3754,7 @@ public Action Team_Portal(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "traNz");
 		ServerCommand("bot_add_ct %s", "Ttyke");
 		ServerCommand("bot_add_ct %s", "DVDOV");
@@ -3592,6 +3765,7 @@ public Action Team_Portal(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "traNz");
 		ServerCommand("bot_add_t %s", "Ttyke");
 		ServerCommand("bot_add_t %s", "DVDOV");
@@ -3610,6 +3784,7 @@ public Action Team_Brutals(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "V3nom");
 		ServerCommand("bot_add_ct %s", "RiX");
 		ServerCommand("bot_add_ct %s", "Juventa");
@@ -3620,6 +3795,7 @@ public Action Team_Brutals(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "V3nom");
 		ServerCommand("bot_add_t %s", "RiX");
 		ServerCommand("bot_add_t %s", "Juventa");
@@ -3638,6 +3814,7 @@ public Action Team_iNvictus(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ribbiZ");
 		ServerCommand("bot_add_ct %s", "Manan");
 		ServerCommand("bot_add_ct %s", "Pashasahil");
@@ -3648,6 +3825,7 @@ public Action Team_iNvictus(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ribbiZ");
 		ServerCommand("bot_add_t %s", "Manan");
 		ServerCommand("bot_add_t %s", "Pashasahil");
@@ -3666,6 +3844,7 @@ public Action Team_nxl(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "soifong");
 		ServerCommand("bot_add_ct %s", "RamCikiciew");
 		ServerCommand("bot_add_ct %s", "Qbo");
@@ -3676,6 +3855,7 @@ public Action Team_nxl(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "soifong");
 		ServerCommand("bot_add_t %s", "RamCikiciew");
 		ServerCommand("bot_add_t %s", "Qbo");
@@ -3694,6 +3874,7 @@ public Action Team_ATK(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "motm");
 		ServerCommand("bot_add_ct %s", "oSee");
 		ServerCommand("bot_add_ct %s", "JT");
@@ -3704,6 +3885,7 @@ public Action Team_ATK(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "motm");
 		ServerCommand("bot_add_t %s", "oSee");
 		ServerCommand("bot_add_t %s", "JT");
@@ -3722,6 +3904,7 @@ public Action Team_energy(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TheM4N");
 		ServerCommand("bot_add_ct %s", "Dweezil");
 		ServerCommand("bot_add_ct %s", "kaNibalistic");
@@ -3732,6 +3915,7 @@ public Action Team_energy(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TheM4N");
 		ServerCommand("bot_add_t %s", "Dweezil");
 		ServerCommand("bot_add_t %s", "kaNibalistic");
@@ -3750,6 +3934,7 @@ public Action Team_Furious(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "laser");
 		ServerCommand("bot_add_ct %s", "iKrystal");
 		ServerCommand("bot_add_ct %s", "PREDI");
@@ -3760,6 +3945,7 @@ public Action Team_Furious(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "laser");
 		ServerCommand("bot_add_t %s", "iKrystal");
 		ServerCommand("bot_add_t %s", "PREDI");
@@ -3778,6 +3964,7 @@ public Action Team_BLUEJAYS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "dEE");
 		ServerCommand("bot_add_ct %s", "DiMKE");
 		ServerCommand("bot_add_ct %s", "aVN");
@@ -3788,6 +3975,7 @@ public Action Team_BLUEJAYS(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "dEE");
 		ServerCommand("bot_add_t %s", "DiMKE");
 		ServerCommand("bot_add_t %s", "aVN");
@@ -3806,6 +3994,7 @@ public Action Team_EXECUTIONERS(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ZesBeeW");
 		ServerCommand("bot_add_ct %s", "FamouZ");
 		ServerCommand("bot_add_ct %s", "maestro");
@@ -3816,6 +4005,7 @@ public Action Team_EXECUTIONERS(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ZesBeeW");
 		ServerCommand("bot_add_t %s", "FamouZ");
 		ServerCommand("bot_add_t %s", "maestro");
@@ -3834,6 +4024,7 @@ public Action Team_Vexed(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mezii");
 		ServerCommand("bot_add_ct %s", "Kray");
 		ServerCommand("bot_add_ct %s", "Adam9130");
@@ -3844,6 +4035,7 @@ public Action Team_Vexed(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mezii");
 		ServerCommand("bot_add_t %s", "Kray");
 		ServerCommand("bot_add_t %s", "Adam9130");
@@ -3862,6 +4054,7 @@ public Action Team_GroundZero(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "BURNRUOk");
 		ServerCommand("bot_add_ct %s", "void");
 		ServerCommand("bot_add_ct %s", "zemp");
@@ -3872,6 +4065,7 @@ public Action Team_GroundZero(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "BURNRUOk");
 		ServerCommand("bot_add_t %s", "void");
 		ServerCommand("bot_add_t %s", "zemp");
@@ -3890,6 +4084,7 @@ public Action Team_Aristocracy(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mouz");
 		ServerCommand("bot_add_ct %s", "rallen");
 		ServerCommand("bot_add_ct %s", "TaZ");
@@ -3900,6 +4095,7 @@ public Action Team_Aristocracy(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mouz");
 		ServerCommand("bot_add_t %s", "rallen");
 		ServerCommand("bot_add_t %s", "TaZ");
@@ -3918,6 +4114,7 @@ public Action Team_BTRG(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Eeyore");
 		ServerCommand("bot_add_ct %s", "Drea3er");
 		ServerCommand("bot_add_ct %s", "xccurate");
@@ -3928,6 +4125,7 @@ public Action Team_BTRG(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Eeyore");
 		ServerCommand("bot_add_t %s", "Drea3er");
 		ServerCommand("bot_add_t %s", "xccurate");
@@ -3946,6 +4144,7 @@ public Action Team_Keyd(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "SHOOWTiME");
 		ServerCommand("bot_add_ct %s", "zqk");
 		ServerCommand("bot_add_ct %s", "dzt");
@@ -3956,6 +4155,7 @@ public Action Team_Keyd(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "SHOOWTiME");
 		ServerCommand("bot_add_t %s", "zqk");
 		ServerCommand("bot_add_t %s", "dzt");
@@ -3974,6 +4174,7 @@ public Action Team_GTZ(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "emp");
 		ServerCommand("bot_add_ct %s", "MISK");
 		ServerCommand("bot_add_ct %s", "CarboN");
@@ -3984,6 +4185,7 @@ public Action Team_GTZ(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "emp");
 		ServerCommand("bot_add_t %s", "MISK");
 		ServerCommand("bot_add_t %s", "CarboN");
@@ -4002,6 +4204,7 @@ public Action Team_Flames(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TeSeS");
 		ServerCommand("bot_add_ct %s", "farlig");
 		ServerCommand("bot_add_ct %s", "AcilioN");
@@ -4012,6 +4215,7 @@ public Action Team_Flames(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TeSeS");
 		ServerCommand("bot_add_t %s", "farlig");
 		ServerCommand("bot_add_t %s", "AcilioN");
@@ -4030,6 +4234,7 @@ public Action Team_eu4ia(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kek0");
 		ServerCommand("bot_add_ct %s", "MasterdaN");
 		ServerCommand("bot_add_ct %s", "diNk");
@@ -4040,6 +4245,7 @@ public Action Team_eu4ia(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kek0");
 		ServerCommand("bot_add_t %s", "MasterdaN");
 		ServerCommand("bot_add_t %s", "diNk");
@@ -4058,6 +4264,7 @@ public Action Team_Fierce(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Astroo");
 		ServerCommand("bot_add_ct %s", "Impulse");
 		ServerCommand("bot_add_ct %s", "frei");
@@ -4068,6 +4275,7 @@ public Action Team_Fierce(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Astroo");
 		ServerCommand("bot_add_t %s", "Impulse");
 		ServerCommand("bot_add_t %s", "frei");
@@ -4086,6 +4294,7 @@ public Action Team_Trident(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TEX");
 		ServerCommand("bot_add_ct %s", "zorboT");
 		ServerCommand("bot_add_ct %s", "Rackem");
@@ -4096,6 +4305,7 @@ public Action Team_Trident(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TEX");
 		ServerCommand("bot_add_t %s", "zorboT");
 		ServerCommand("bot_add_t %s", "Rackem");
@@ -4114,6 +4324,7 @@ public Action Team_Syman(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "neaLaN");
 		ServerCommand("bot_add_ct %s", "Ramz1k");
 		ServerCommand("bot_add_ct %s", "n0rb3r7");
@@ -4124,6 +4335,7 @@ public Action Team_Syman(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "neaLaN");
 		ServerCommand("bot_add_t %s", "Ramz1k");
 		ServerCommand("bot_add_t %s", "n0rb3r7");
@@ -4142,6 +4354,7 @@ public Action Team_wNv(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "k4Mi");
 		ServerCommand("bot_add_ct %s", "zWin");
 		ServerCommand("bot_add_ct %s", "Pure");
@@ -4152,6 +4365,7 @@ public Action Team_wNv(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "k4Mi");
 		ServerCommand("bot_add_t %s", "zWin");
 		ServerCommand("bot_add_t %s", "Pure");
@@ -4170,6 +4384,7 @@ public Action Team_Goliath(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "massacRe");
 		ServerCommand("bot_add_ct %s", "Detrony");
 		ServerCommand("bot_add_ct %s", "deviaNt");
@@ -4180,6 +4395,7 @@ public Action Team_Goliath(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "massacRe");
 		ServerCommand("bot_add_t %s", "Detrony");
 		ServerCommand("bot_add_t %s", "deviaNt");
@@ -4198,6 +4414,7 @@ public Action Team_Endpoint(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "MiGHTYMAX");
 		ServerCommand("bot_add_ct %s", "Russ");
 		ServerCommand("bot_add_ct %s", "robiin");
@@ -4208,6 +4425,7 @@ public Action Team_Endpoint(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "MiGHTYMAX");
 		ServerCommand("bot_add_t %s", "Russ");
 		ServerCommand("bot_add_t %s", "robiin");
@@ -4226,6 +4444,7 @@ public Action Team_Genuine(int client, int args)
 	
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "stat");
 		ServerCommand("bot_add_ct %s", "Jinxx");
 		ServerCommand("bot_add_ct %s", "apocdud");
@@ -4236,6 +4455,7 @@ public Action Team_Genuine(int client, int args)
 	
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "stat");
 		ServerCommand("bot_add_t %s", "Jinxx");
 		ServerCommand("bot_add_t %s", "apocdud");
@@ -4254,6 +4474,7 @@ public Action Team_MiTH(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "NIFFY");
 		ServerCommand("bot_add_ct %s", "Leaf");
 		ServerCommand("bot_add_ct %s", "JUSTCAUSE");
@@ -4264,6 +4485,7 @@ public Action Team_MiTH(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "NIFFY");
 		ServerCommand("bot_add_t %s", "Leaf");
 		ServerCommand("bot_add_t %s", "JUSTCAUSE");
@@ -4282,6 +4504,7 @@ public Action Team_UOL(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "crisby");
 		ServerCommand("bot_add_ct %s", "kZyJL");
 		ServerCommand("bot_add_ct %s", "Andyy");
@@ -4292,6 +4515,7 @@ public Action Team_UOL(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "crisby");
 		ServerCommand("bot_add_t %s", "kZyJL");
 		ServerCommand("bot_add_t %s", "Andyy");
@@ -4310,6 +4534,7 @@ public Action Team_9INE(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ACM");
 		ServerCommand("bot_add_ct %s", "phzy");
 		ServerCommand("bot_add_ct %s", "Djury");
@@ -4320,6 +4545,7 @@ public Action Team_9INE(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ACM");
 		ServerCommand("bot_add_t %s", "phzy");
 		ServerCommand("bot_add_t %s", "Djury");
@@ -4338,6 +4564,7 @@ public Action Team_Baecon(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "Demonos");
 		ServerCommand("bot_add_ct %s", "SHOUW");
@@ -4348,6 +4575,7 @@ public Action Team_Baecon(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "Demonos");
 		ServerCommand("bot_add_t %s", "SHOUW");
@@ -4366,6 +4594,7 @@ public Action Team_Corvidae(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DANZ");
 		ServerCommand("bot_add_ct %s", "dash");
 		ServerCommand("bot_add_ct %s", "m1tch");
@@ -4376,6 +4605,7 @@ public Action Team_Corvidae(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DANZ");
 		ServerCommand("bot_add_t %s", "dash");
 		ServerCommand("bot_add_t %s", "m1tch");
@@ -4394,6 +4624,7 @@ public Action Team_Wizards(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "KALAS");
 		ServerCommand("bot_add_ct %s", "v1NCHENSO7");
 		ServerCommand("bot_add_ct %s", "Kiles");
@@ -4404,6 +4635,7 @@ public Action Team_Wizards(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "KALAS");
 		ServerCommand("bot_add_t %s", "v1NCHENSO7");
 		ServerCommand("bot_add_t %s", "Kiles");
@@ -4422,6 +4654,7 @@ public Action Team_Illuminar(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "oskarish");
 		ServerCommand("bot_add_ct %s", "STOMP");
 		ServerCommand("bot_add_ct %s", "mono");
@@ -4432,6 +4665,7 @@ public Action Team_Illuminar(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "oskarish");
 		ServerCommand("bot_add_t %s", "STOMP");
 		ServerCommand("bot_add_t %s", "mono");
@@ -4450,6 +4684,7 @@ public Action Team_Queso(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TheClaran");
 		ServerCommand("bot_add_ct %s", "rAmbi");
 		ServerCommand("bot_add_ct %s", "VARES");
@@ -4460,6 +4695,7 @@ public Action Team_Queso(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TheClaran");
 		ServerCommand("bot_add_t %s", "rAmbi");
 		ServerCommand("bot_add_t %s", "VARES");
@@ -4478,6 +4714,7 @@ public Action Team_WindRain(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Swaggy");
 		ServerCommand("bot_add_ct %s", "TotunG");
 		ServerCommand("bot_add_ct %s", "Ping");
@@ -4488,6 +4725,7 @@ public Action Team_WindRain(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Swaggy");
 		ServerCommand("bot_add_t %s", "TotunG");
 		ServerCommand("bot_add_t %s", "Ping");
@@ -4506,6 +4744,7 @@ public Action Team_GameAgents(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "pounh");
 		ServerCommand("bot_add_ct %s", "FliP1");
 		ServerCommand("bot_add_ct %s", "COSMEEEN");
@@ -4516,6 +4755,7 @@ public Action Team_GameAgents(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "pounh");
 		ServerCommand("bot_add_t %s", "FliP1");
 		ServerCommand("bot_add_t %s", "COSMEEEN");
@@ -4534,6 +4774,7 @@ public Action Team_Orange(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Max");
 		ServerCommand("bot_add_ct %s", "cara");
 		ServerCommand("bot_add_ct %s", "formlesS");
@@ -4544,6 +4785,7 @@ public Action Team_Orange(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Max");
 		ServerCommand("bot_add_t %s", "cara");
 		ServerCommand("bot_add_t %s", "formlesS");
@@ -4562,6 +4804,7 @@ public Action Team_IG(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "EXPRO");
 		ServerCommand("bot_add_ct %s", "V4D1M");
 		ServerCommand("bot_add_ct %s", "flying");
@@ -4572,6 +4815,7 @@ public Action Team_IG(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "EXPRO");
 		ServerCommand("bot_add_t %s", "V4D1M");
 		ServerCommand("bot_add_t %s", "flying");
@@ -4590,6 +4834,7 @@ public Action Team_HR(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ANGE1");
 		ServerCommand("bot_add_ct %s", "nukkye");
 		ServerCommand("bot_add_ct %s", "Flarich");
@@ -4600,6 +4845,7 @@ public Action Team_HR(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ANGE1");
 		ServerCommand("bot_add_t %s", "nukkye");
 		ServerCommand("bot_add_t %s", "Flarich");
@@ -4618,6 +4864,7 @@ public Action Team_Dice(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "XpG");
 		ServerCommand("bot_add_ct %s", "nonick");
 		ServerCommand("bot_add_ct %s", "Kan4");
@@ -4628,6 +4875,7 @@ public Action Team_Dice(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "XpG");
 		ServerCommand("bot_add_t %s", "nonick");
 		ServerCommand("bot_add_t %s", "Kan4");
@@ -4646,6 +4894,7 @@ public Action Team_Absolute(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "crow");
 		ServerCommand("bot_add_ct %s", "Laz");
 		ServerCommand("bot_add_ct %s", "barce");
@@ -4656,6 +4905,7 @@ public Action Team_Absolute(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "crow");
 		ServerCommand("bot_add_t %s", "Laz");
 		ServerCommand("bot_add_t %s", "barce");
@@ -4674,6 +4924,7 @@ public Action Team_KPI(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "xikii");
 		ServerCommand("bot_add_ct %s", "SunPayus");
 		ServerCommand("bot_add_ct %s", "meisoN");
@@ -4684,6 +4935,7 @@ public Action Team_KPI(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "xikii");
 		ServerCommand("bot_add_t %s", "SunPayus");
 		ServerCommand("bot_add_t %s", "meisoN");
@@ -4702,6 +4954,7 @@ public Action Team_PlanetKey(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "xenn");
 		ServerCommand("bot_add_ct %s", "s1n");
 		ServerCommand("bot_add_ct %s", "boostey");
@@ -4712,6 +4965,7 @@ public Action Team_PlanetKey(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "xenn");
 		ServerCommand("bot_add_t %s", "s1n");
 		ServerCommand("bot_add_t %s", "boostey");
@@ -4730,6 +4984,7 @@ public Action Team_mCon(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "ketchup");
 		ServerCommand("bot_add_ct %s", "KlitZz");
 		ServerCommand("bot_add_ct %s", "spinm");
@@ -4740,6 +4995,7 @@ public Action Team_mCon(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "ketchup");
 		ServerCommand("bot_add_t %s", "KlitZz");
 		ServerCommand("bot_add_t %s", "spinm");
@@ -4758,6 +5014,7 @@ public Action Team_DreamEaters(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "CHEHOL");
 		ServerCommand("bot_add_ct %s", "Quantium");
 		ServerCommand("bot_add_ct %s", "Kas9k");
@@ -4768,6 +5025,7 @@ public Action Team_DreamEaters(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "CHEHOL");
 		ServerCommand("bot_add_t %s", "Quantium");
 		ServerCommand("bot_add_t %s", "Kas9k");
@@ -4786,6 +5044,7 @@ public Action Team_HLE(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kinqie");
 		ServerCommand("bot_add_ct %s", "speed4k");
 		ServerCommand("bot_add_ct %s", "Krad");
@@ -4796,6 +5055,7 @@ public Action Team_HLE(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kinqie");
 		ServerCommand("bot_add_t %s", "speed4k");
 		ServerCommand("bot_add_t %s", "Krad");
@@ -4814,6 +5074,7 @@ public Action Team_Gambit(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nafany");
 		ServerCommand("bot_add_ct %s", "sh1ro");
 		ServerCommand("bot_add_ct %s", "interz");
@@ -4824,6 +5085,7 @@ public Action Team_Gambit(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nafany");
 		ServerCommand("bot_add_t %s", "sh1ro");
 		ServerCommand("bot_add_t %s", "interz");
@@ -4842,6 +5104,7 @@ public Action Team_Wisla(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Kap3r");
 		ServerCommand("bot_add_ct %s", "SZPERO");
 		ServerCommand("bot_add_ct %s", "mynio");
@@ -4852,6 +5115,7 @@ public Action Team_Wisla(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Kap3r");
 		ServerCommand("bot_add_t %s", "SZPERO");
 		ServerCommand("bot_add_t %s", "mynio");
@@ -4870,6 +5134,7 @@ public Action Team_Imperial(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "KHTEX");
 		ServerCommand("bot_add_ct %s", "dumau");
 		ServerCommand("bot_add_ct %s", "tge");
@@ -4880,6 +5145,7 @@ public Action Team_Imperial(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "KHTEX");
 		ServerCommand("bot_add_t %s", "dumau");
 		ServerCommand("bot_add_t %s", "tge");
@@ -4898,6 +5164,7 @@ public Action Team_Big5(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kustoM_");
 		ServerCommand("bot_add_ct %s", "Spartan");
 		ServerCommand("bot_add_ct %s", "SloWye-");
@@ -4908,6 +5175,7 @@ public Action Team_Big5(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kustoM_");
 		ServerCommand("bot_add_t %s", "Spartan");
 		ServerCommand("bot_add_t %s", "SloWye-");
@@ -4926,6 +5194,7 @@ public Action Team_Unique(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "R0b3n");
 		ServerCommand("bot_add_ct %s", "zorte");
 		ServerCommand("bot_add_ct %s", "PASHANOJ");
@@ -4936,6 +5205,7 @@ public Action Team_Unique(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "R0b3n");
 		ServerCommand("bot_add_t %s", "zorte");
 		ServerCommand("bot_add_t %s", "PASHANOJ");
@@ -4954,6 +5224,7 @@ public Action Team_Asterion(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "blackie");
 		ServerCommand("bot_add_ct %s", "NexFox");
 		ServerCommand("bot_add_ct %s", "NiNo");
@@ -4964,6 +5235,7 @@ public Action Team_Asterion(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "blackie");
 		ServerCommand("bot_add_t %s", "NexFox");
 		ServerCommand("bot_add_t %s", "NiNo");
@@ -4982,6 +5254,7 @@ public Action Team_Izako(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Patitek");
 		ServerCommand("bot_add_ct %s", "NEEX");
 		ServerCommand("bot_add_ct %s", "EXUS");
@@ -4992,6 +5265,7 @@ public Action Team_Izako(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Patitek");
 		ServerCommand("bot_add_t %s", "NEEX");
 		ServerCommand("bot_add_t %s", "EXUS");
@@ -5010,6 +5284,7 @@ public Action Team_Riot(int client, int args)
 
 	if(StrEqual(arg, "ct"))
 	{
+		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mitch");
 		ServerCommand("bot_add_ct %s", "ptr");
 		ServerCommand("bot_add_ct %s", "crashies");
@@ -5020,6 +5295,7 @@ public Action Team_Riot(int client, int args)
 
 	if(StrEqual(arg, "t"))
 	{
+		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mitch");
 		ServerCommand("bot_add_t %s", "ptr");
 		ServerCommand("bot_add_t %s", "crashies");
@@ -5090,6 +5366,15 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 {
 	if(IsFakeClient(client))
 	{
+		char wname[32];
+		
+		GetClientWeapon(client, wname, sizeof(wname));
+		
+		if((StrEqual(wname, "weapon_m4a1_silencer")) || (StrEqual(wname, "weapon_sg556")))
+		{
+			SetEntProp(client, Prop_Send, "m_bInBuyZone", 0);
+		}
+	
 		int m_iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
 		if(StrEqual(weapon,"m4a1"))
 		{ 
@@ -5220,7 +5505,7 @@ public Action Timer_ShouldAttack(Handle timer, int serial) {
 
     g_hShouldAttackTimer[client] = null;
     return Plugin_Handled;
-}
+}  
 
 public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	int userid = event.GetInt("userid");
