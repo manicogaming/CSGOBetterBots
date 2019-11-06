@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"[2stoned]xxl_cs"
+{
+	"CTSpawn_x" "0.530000"
+	"CTSpawn_y" "0.770000"
+	"TSpawn_x" "0.430000"
+	"TSpawn_y" "0.140000"
+	"material" "overviews/[2stoned]xxl_cs"
+	"pos_x" "-1562.000000"
+	"pos_y" "868.000000"
+	"scale" "2.850000"
+}
