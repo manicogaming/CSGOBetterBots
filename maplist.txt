@@ -1,4 +1,4 @@
-// csgosl 2.7.6 config 1 at Wed Nov 06 01:12:07 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.6 config 1 at Thu Nov 07 23:35:31 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -22,7 +22,6 @@ $2000$_pro_b2
 7th_mythic_realistic_v2
 [2stoned]xxl_cs
 aim_100hp
-aim_47th
 aim_advance
 aim_ak-47_go
 aim_ak-colt
@@ -170,7 +169,6 @@ fy_jungleworldx_b2
 fy_killzone
 fy_matrix2
 fy_pool_day_classic
-fy_poolday_reunion
 fy_poolparty_v3
 fy_pools
 fy_rainbow

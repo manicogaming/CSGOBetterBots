@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_container_autosniper"
+{
+	"CTSpawn_x" "0.780000"
+	"CTSpawn_y" "0.150000"
+	"TSpawn_x" "0.790000"
+	"TSpawn_y" "0.850000"
+	"material" "overviews/aim_container_autosniper"
+	"pos_x" "-1152.000000"
+	"pos_y" "640.000000"
+	"scale" "1.750000"
+}
