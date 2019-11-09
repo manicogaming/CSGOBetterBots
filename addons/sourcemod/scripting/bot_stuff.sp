@@ -161,8 +161,8 @@ char g_BotName[][] = {
 	"emi",
 	"EspiranTo",
 	//coL Players
-	"dephh",
-	"ShahZaM",
+	"k0nfig",
+	"poizon",
 	"oBo",
 	"RUSH",
 	"blameF",
@@ -561,7 +561,7 @@ char g_BotName[][] = {
 	"PTC",
 	"cbbk",
 	"JohnOlsen",
-	"qqGod",
+	"Akino",
 	//NASR Players
 	"breAker",
 	"Nami",
@@ -1715,8 +1715,8 @@ public Action Team_coL(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "dephh");
-		ServerCommand("bot_add_ct %s", "ShahZaM");
+		ServerCommand("bot_add_ct %s", "k0nfig");
+		ServerCommand("bot_add_ct %s", "poizon");
 		ServerCommand("bot_add_ct %s", "oBo");
 		ServerCommand("bot_add_ct %s", "RUSH");
 		ServerCommand("bot_add_ct %s", "blameF");
@@ -1726,8 +1726,8 @@ public Action Team_coL(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "dephh");
-		ServerCommand("bot_add_t %s", "ShahZaM");
+		ServerCommand("bot_add_t %s", "k0nfig");
+		ServerCommand("bot_add_t %s", "poizon");
 		ServerCommand("bot_add_t %s", "oBo");
 		ServerCommand("bot_add_t %s", "RUSH");
 		ServerCommand("bot_add_t %s", "blameF");
@@ -3699,7 +3699,7 @@ public Action Team_Lucid(int client, int args)
 		ServerCommand("bot_add_ct %s", "PTC");
 		ServerCommand("bot_add_ct %s", "cbbk");
 		ServerCommand("bot_add_ct %s", "JohnOlsen");
-		ServerCommand("bot_add_ct %s", "qqGod");
+		ServerCommand("bot_add_ct %s", "Akino");
 		ServerCommand("mp_teamlogo_1 lucid");
 	}
 	
@@ -3710,7 +3710,7 @@ public Action Team_Lucid(int client, int args)
 		ServerCommand("bot_add_t %s", "PTC");
 		ServerCommand("bot_add_t %s", "cbbk");
 		ServerCommand("bot_add_t %s", "JohnOlsen");
-		ServerCommand("bot_add_t %s", "qqGod");
+		ServerCommand("bot_add_t %s", "Akino");
 		ServerCommand("mp_teamlogo_2 lucid");
 	}
 	
@@ -5897,7 +5897,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//coL Players
-	if((StrEqual(botname, "dephh")) || (StrEqual(botname, "ShahZaM")) || (StrEqual(botname, "oBo")) || (StrEqual(botname, "RUSH")) || (StrEqual(botname, "blameF")))
+	if((StrEqual(botname, "k0nfig")) || (StrEqual(botname, "poizon")) || (StrEqual(botname, "oBo")) || (StrEqual(botname, "RUSH")) || (StrEqual(botname, "blameF")))
 	{
 		CS_SetClientClanTag(client, "coL");
 	}
@@ -6293,7 +6293,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LucidDream Players
-	if((StrEqual(botname, "wannafly")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "qqGod")))
+	if((StrEqual(botname, "wannafly")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "Akino")))
 	{
 		CS_SetClientClanTag(client, "LucidDream");
 	}

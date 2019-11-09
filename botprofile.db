@@ -905,11 +905,11 @@ End
 
 //coL Players
 
-ProP+Rifle "dephh"
+ProP+Rifle "k0nfig"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "ShahZaM"
+EliteAwp+SniperPro "poizon"
 	VoicePitch = 106
 End
 
@@ -2373,7 +2373,7 @@ ProP+Rifle "JohnOlsen"
 	VoicePitch = 110
 End
 
-ProP+Rifle "qqGod"
+ProP+Rifle "Akino"
 	VoicePitch = 110
 End
 
