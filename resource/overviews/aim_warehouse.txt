@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_warehouse"
+{
+	"CTSpawn_x" "0.580000"
+	"CTSpawn_y" "0.090000"
+	"TSpawn_x" "0.580000"
+	"TSpawn_y" "0.910000"
+	"material" "overviews/aim_warehouse"
+	"pos_x" "-1824.000000"
+	"pos_y" "2976.000000"
+	"scale" "3.310000"
+}

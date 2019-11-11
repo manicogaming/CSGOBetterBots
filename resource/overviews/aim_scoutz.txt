@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_scoutz"
+{
+	"CTSpawn_x" "0.960000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.110000"
+	"TSpawn_y" "0.470000"
+	"material" "overviews/aim_scoutz"
+	"pos_x" "-1592.000000"
+	"pos_y" "1564.000000"
+	"scale" "3.010000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-74.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-74.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}

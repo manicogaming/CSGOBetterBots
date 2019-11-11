@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_redline"
+{
+	"CTSpawn_x" "0.960000"
+	"CTSpawn_y" "0.200000"
+	"TSpawn_x" "0.990000"
+	"TSpawn_y" "0.800000"
+	"material" "overviews/aim_redline"
+	"pos_x" "-1280.000000"
+	"pos_y" "1328.000000"
+	"scale" "1.750000"
+}

@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_stashhouse"
+{
+	"CTSpawn_x" "0.710000"
+	"CTSpawn_y" "0.440000"
+	"TSpawn_x" "0.290000"
+	"TSpawn_y" "0.440000"
+	"material" "overviews/aim_stashhouse"
+	"pos_x" "-2112.000000"
+	"pos_y" "1856.000000"
+	"scale" "4.130000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "192.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "192.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}
