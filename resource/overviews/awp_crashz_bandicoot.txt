@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"awp_crashz_bandicoot"
+{
+	"CTSpawn_x" "0.630000"
+	"CTSpawn_y" "0.780000"
+	"TSpawn_x" "0.370000"
+	"TSpawn_y" "0.220000"
+	"material" "overviews/awp_crashz_bandicoot"
+	"pos_x" "-1152.000000"
+	"pos_y" "1152.000000"
+	"scale" "2.250000"
+}
