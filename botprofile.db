@@ -1453,7 +1453,7 @@ ProP+Rifle "Cabbi"
 	VoicePitch = 110
 End
 
-//SMASH Players
+//GODSENT Players
 
 ProP+Rifle "maden"
 	VoicePitch = 91
@@ -1845,7 +1845,7 @@ ProP+Rifle "food"
 	VoicePitch = 110
 End
 
-ProP+Rifle "vanity"
+ProP+Rifle "moose"
 	VoicePitch = 110
 End
 
@@ -2330,28 +2330,6 @@ ProP+Rifle "skillZ"
 End
 
 ProP+Rifle "DeathMakeR"
-	VoicePitch = 110
-End
-
-//FrostFire Players
-
-ProP+Rifle "aimaNNN"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "hiqa1"
-	VoicePitch = 106
-End
-
-ProP+Rifle "acAp"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Subbey"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Avirity"
 	VoicePitch = 110
 End
 
@@ -3421,7 +3399,7 @@ EliteAwp+SniperPro "dumau"
 	VoicePitch = 106
 End
 
-ProP+Rifle "tge"
+ProP+Rifle "brutt"
 	VoicePitch = 95
 End
 
@@ -3540,6 +3518,28 @@ ProP+Rifle "FNS"
 End
 
 ProP+Rifle "Jonji"
+	VoicePitch = 110
+End
+
+//Chaos Players
+
+ProP+Rifle "cam"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "wippie"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Infinite"
+	VoicePitch = 95
+End
+
+ProP+Rifle "steel_"
+	VoicePitch = 110
+End
+
+ProP+Rifle "ben1337"
 	VoicePitch = 110
 End
 

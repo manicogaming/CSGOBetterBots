@@ -310,7 +310,7 @@ char g_BotName[][] = {
 	"Daffu",
 	"thamlike",
 	"Cabbi",
-	//SMASH Players
+	//GODSENT Players
 	"maden",
 	"Maikelele",
 	"kRYSTAL",
@@ -417,7 +417,7 @@ char g_BotName[][] = {
 	"Cooper-",
 	"MarKE",
 	"food",
-	"vanity",
+	"moose",
 	//Mythic Players
 	"C0M",
 	"fl0m",
@@ -550,12 +550,6 @@ char g_BotName[][] = {
 	"Excali",
 	"skillZ",
 	"DeathMakeR",
-	//FrostFire Players
-	"aimaNNN",
-	"hiqa1",
-	"acAp",
-	"Subbey",
-	"Avirity",
 	//LucidDream Players
 	"wannafly",
 	"PTC",
@@ -847,7 +841,7 @@ char g_BotName[][] = {
 	//Imperial Players
 	"KHTEX",
 	"dumau",
-	"tge",
+	"brutt",
 	"delboNi",
 	"iDk",
 	//Big5 Players
@@ -880,6 +874,12 @@ char g_BotName[][] = {
 	"crashies",
 	"FNS",
 	"Jonji"
+	//Chaos Players
+	"cam",
+	"wippie",
+	"Infinite",
+	"steel_",
+	"ben1337"
 };
  
 public Plugin myinfo =
@@ -950,7 +950,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_pducks", Team_PDucks);
 	RegConsoleCmd("team_havu", Team_HAVU);
 	RegConsoleCmd("team_lyngby", Team_Lyngby);
-	RegConsoleCmd("team_smash", Team_SMASH);
+	RegConsoleCmd("team_godsent", Team_GODSENT);
 	RegConsoleCmd("team_nordavind", Team_Nordavind);
 	RegConsoleCmd("team_sj", Team_SJ);
 	RegConsoleCmd("team_tricked", Team_Tricked);
@@ -990,7 +990,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_dreamscape", Team_dreamScape);
 	RegConsoleCmd("team_beyond", Team_Beyond);
 	RegConsoleCmd("team_entity", Team_Entity);
-	RegConsoleCmd("team_frostfire", Team_FrostFire);
 	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_portal", Team_Portal);
@@ -1045,6 +1044,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_asterion", Team_Asterion);
 	RegConsoleCmd("team_izako", Team_Izako);
 	RegConsoleCmd("team_riot", Team_Riot);
+	RegConsoleCmd("team_chaos", Team_Chaos);
 }
 
 public Action Team_NiP(int client, int args)
@@ -2457,7 +2457,7 @@ public Action Team_Lyngby(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_SMASH(int client, int args)
+public Action Team_GODSENT(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2470,7 +2470,7 @@ public Action Team_SMASH(int client, int args)
 		ServerCommand("bot_add_ct %s", "kRYSTAL");
 		ServerCommand("bot_add_ct %s", "zehN");
 		ServerCommand("bot_add_ct %s", "STYKO");
-		ServerCommand("mp_teamlogo_1 smash");
+		ServerCommand("mp_teamlogo_1 god");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -2481,7 +2481,7 @@ public Action Team_SMASH(int client, int args)
 		ServerCommand("bot_add_t %s", "kRYSTAL");
 		ServerCommand("bot_add_t %s", "zehN");
 		ServerCommand("bot_add_t %s", "STYKO");
-		ServerCommand("mp_teamlogo_2 smash");
+		ServerCommand("mp_teamlogo_2 god");
 	}
 	
 	return Plugin_Handled;
@@ -2979,7 +2979,7 @@ public Action Team_eUnited(int client, int args)
 		ServerCommand("bot_add_ct %s", "Cooper-");
 		ServerCommand("bot_add_ct %s", "MarKE");
 		ServerCommand("bot_add_ct %s", "food");
-		ServerCommand("bot_add_ct %s", "vanity");
+		ServerCommand("bot_add_ct %s", "moose");
 		ServerCommand("mp_teamlogo_1 eun");
 	}
 	
@@ -2990,7 +2990,7 @@ public Action Team_eUnited(int client, int args)
 		ServerCommand("bot_add_t %s", "Cooper-");
 		ServerCommand("bot_add_t %s", "MarKE");
 		ServerCommand("bot_add_t %s", "food");
-		ServerCommand("bot_add_t %s", "vanity");
+		ServerCommand("bot_add_t %s", "moose");
 		ServerCommand("mp_teamlogo_2 eun");
 	}
 	
@@ -3652,36 +3652,6 @@ public Action Team_Entity(int client, int args)
 		ServerCommand("bot_add_t %s", "skillZ");
 		ServerCommand("bot_add_t %s", "DeathMakeR");
 		ServerCommand("mp_teamlogo_2 enti");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_FrostFire(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "aimaNNN");
-		ServerCommand("bot_add_ct %s", "hiqa1");
-		ServerCommand("bot_add_ct %s", "acAp");
-		ServerCommand("bot_add_ct %s", "Subbey");
-		ServerCommand("bot_add_ct %s", "Avirity");
-		ServerCommand("mp_teamlogo_1 frost");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "aimaNNN");
-		ServerCommand("bot_add_t %s", "hiqa1");
-		ServerCommand("bot_add_t %s", "acAp");
-		ServerCommand("bot_add_t %s", "Subbey");
-		ServerCommand("bot_add_t %s", "Avirity");
-		ServerCommand("mp_teamlogo_2 frost");
 	}
 	
 	return Plugin_Handled;
@@ -5137,7 +5107,7 @@ public Action Team_Imperial(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "KHTEX");
 		ServerCommand("bot_add_ct %s", "dumau");
-		ServerCommand("bot_add_ct %s", "tge");
+		ServerCommand("bot_add_ct %s", "brutt");
 		ServerCommand("bot_add_ct %s", "delboNi");
 		ServerCommand("bot_add_ct %s", "iDk");
 		ServerCommand("mp_teamlogo_1 imp");
@@ -5148,7 +5118,7 @@ public Action Team_Imperial(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "KHTEX");
 		ServerCommand("bot_add_t %s", "dumau");
-		ServerCommand("bot_add_t %s", "tge");
+		ServerCommand("bot_add_t %s", "brutt");
 		ServerCommand("bot_add_t %s", "delboNi");
 		ServerCommand("bot_add_t %s", "iDk");
 		ServerCommand("mp_teamlogo_2 imp");
@@ -5302,6 +5272,36 @@ public Action Team_Riot(int client, int args)
 		ServerCommand("bot_add_t %s", "FNS");
 		ServerCommand("bot_add_t %s", "Jonji");
 		ServerCommand("mp_teamlogo_2 riot");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Chaos(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "cam");
+		ServerCommand("bot_add_ct %s", "wippie");
+		ServerCommand("bot_add_ct %s", "Infinite");
+		ServerCommand("bot_add_ct %s", "steel_");
+		ServerCommand("bot_add_ct %s", "ben1337");
+		ServerCommand("mp_teamlogo_1 chaos");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "cam");
+		ServerCommand("bot_add_t %s", "wippie");
+		ServerCommand("bot_add_t %s", "Infinite");
+		ServerCommand("bot_add_t %s", "steel_");
+		ServerCommand("bot_add_t %s", "ben1337");
+		ServerCommand("mp_teamlogo_2 chaos");
 	}
 
 	return Plugin_Handled;
@@ -6046,10 +6046,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Lyngby");
 	}
 	
-	//SMASH Players
+	//GODSENT Players
 	if((StrEqual(botname, "maden")) || (StrEqual(botname, "Maikelele")) || (StrEqual(botname, "kRYSTAL")) || (StrEqual(botname, "zehN")) || (StrEqual(botname, "STYKO")))
 	{
-		CS_SetClientClanTag(client, "SMASH");
+		CS_SetClientClanTag(client, "GODSENT");
 	}
 	
 	//Nordavind Players
@@ -6149,7 +6149,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//eUnited Players
-	if((StrEqual(botname, "freakazoid")) || (StrEqual(botname, "Cooper-")) || (StrEqual(botname, "MarKE")) || (StrEqual(botname, "food")) || (StrEqual(botname, "vanity")))
+	if((StrEqual(botname, "freakazoid")) || (StrEqual(botname, "Cooper-")) || (StrEqual(botname, "MarKE")) || (StrEqual(botname, "food")) || (StrEqual(botname, "moose")))
 	{
 		CS_SetClientClanTag(client, "eUnited");
 	}
@@ -6284,12 +6284,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "skillZ")) || (StrEqual(botname, "DeathMakeR")))
 	{
 		CS_SetClientClanTag(client, "Entity");
-	}
-	
-	//FrostFire Players
-	if((StrEqual(botname, "aimaNNN")) || (StrEqual(botname, "hiqa1")) || (StrEqual(botname, "acAp")) || (StrEqual(botname, "Subbey")) || (StrEqual(botname, "Avirity")))
-	{
-		CS_SetClientClanTag(client, "FrostFire");
 	}
 	
 	//LucidDream Players
@@ -6581,7 +6575,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(botname, "KHTEX")) || (StrEqual(botname, "dumau")) || (StrEqual(botname, "tge")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "iDk")))
+	if((StrEqual(botname, "KHTEX")) || (StrEqual(botname, "dumau")) || (StrEqual(botname, "brutt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "iDk")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
@@ -6614,6 +6608,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "mitch")) || (StrEqual(botname, "ptr")) || (StrEqual(botname, "crashies")) || (StrEqual(botname, "FNS")) || (StrEqual(botname, "Jonji")))
 	{
 		CS_SetClientClanTag(client, "Riot");
+	}
+	
+	//Chaos Players
+	if((StrEqual(botname, "cam")) || (StrEqual(botname, "wippie")) || (StrEqual(botname, "Infinite")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "ben1337")))
+	{
+		CS_SetClientClanTag(client, "Chaos");
 	}
 }
 
@@ -6858,7 +6858,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 87;
 	}
 	
-	if (StrEqual(sClan, "SMASH"))
+	if (StrEqual(sClan, "GODSENT"))
 	{
 		g_iProfileRank[client] = 88;
 	}
@@ -7056,11 +7056,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Entity"))
 	{
 		g_iProfileRank[client] = 127;
-	}
-	
-	if (StrEqual(sClan, "FrostFire"))
-	{
-		g_iProfileRank[client] = 128;
 	}
 	
 	if (StrEqual(sClan, "LucidDream"))
@@ -7331,5 +7326,10 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Riot"))
 	{
 		g_iProfileRank[client] = 182;
+	}
+	
+	if (StrEqual(sClan, "Chaos"))
+	{
+		g_iProfileRank[client] = 183;
 	}
 }
