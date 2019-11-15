@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"awp_metro"
+{
+	"CTSpawn_x" "0.230000"
+	"CTSpawn_y" "0.460000"
+	"TSpawn_x" "0.800000"
+	"TSpawn_y" "0.550000"
+	"material" "overviews/awp_metro"
+	"pos_x" "-1024.000000"
+	"pos_y" "1024.000000"
+	"scale" "2.000000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-446.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-446.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}
