@@ -1,4 +1,4 @@
-// csgosl 2.7.6 config 1 at Sat Nov 09 19:57:41 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.6 config 1 at Sun Nov 17 01:29:34 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -77,8 +77,6 @@ awp_india
 awp_india_csgo
 awp_lego_2
 awp_lego_2011
-awp_lego_2_crash_go
-awp_lego_2_p1n0_vl
 awp_lego_2_shootout
 awp_lego_8
 awp_lego_9
@@ -103,9 +101,6 @@ carparkm1
 cs_agency
 cs_area35
 cs_assault
-cs_assault_2005
-cs_assault_hslan
-cs_assault_source
 cs_beachassault_ek
 cs_bloodstrike_2017
 cs_bloodstrike_old
@@ -132,7 +127,6 @@ de_inferno
 de_inferno_pondsite
 de_lake
 de_maihouse
-de_mill_ce
 de_minimetzel_hslan
 de_mirage
 de_nightforest
