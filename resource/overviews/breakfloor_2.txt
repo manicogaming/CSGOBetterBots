@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"breakfloor_2"
+{
+	"CTSpawn_x" "1.120000"
+	"CTSpawn_y" "0.360000"
+	"TSpawn_x" "1.120000"
+	"TSpawn_y" "0.630000"
+	"material" "overviews/breakfloor_2"
+	"pos_x" "-1152.000000"
+	"pos_y" "352.000000"
+	"scale" "1.380000"
+}

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"cs_beachassault_ek"
+{
+	"CTSpawn_x" "0.360000"
+	"CTSpawn_y" "0.350000"
+	"TSpawn_x" "-0.340000"
+	"TSpawn_y" "0.660000"
+	"material" "overviews/cs_beachassault_ek"
+	"pos_x" "-1044.000000"
+	"pos_y" "1420.000000"
+	"scale" "4.130000"
+}

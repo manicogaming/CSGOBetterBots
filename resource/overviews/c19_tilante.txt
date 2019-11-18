@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"c19_tilante"
+{
+	"CTSpawn_x" "0.190000"
+	"CTSpawn_y" "0.880000"
+	"TSpawn_x" "0.100000"
+	"TSpawn_y" "0.150000"
+	"material" "overviews/c19_tilante"
+	"pos_x" "-709.000000"
+	"pos_y" "1140.000000"
+	"scale" "1.950000"
+}

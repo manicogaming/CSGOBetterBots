@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"awp_pro"
+{
+	"CTSpawn_x" "-5.630000"
+	"CTSpawn_y" "0.910000"
+	"TSpawn_x" "-5.630000"
+	"TSpawn_y" "0.090000"
+	"material" "overviews/awp_pro"
+	"pos_x" "8032.000000"
+	"pos_y" "-10304.000000"
+	"scale" "3.060000"
+}
