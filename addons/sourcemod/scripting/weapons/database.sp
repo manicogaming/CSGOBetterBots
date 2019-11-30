@@ -147,10 +147,10 @@ public void SQLConnectCallback(Database database, const char[] error, any data)
 	{
 		db = database;
 		char dbIdentifier[10];
-		
+	
 		db.Driver.GetIdentifier(dbIdentifier, sizeof(dbIdentifier));
 		bool mysql = StrEqual(dbIdentifier, "mysql");
-
+		
 		CreateMainTable(mysql);
 	}
 }
@@ -158,12 +158,12 @@ public void SQLConnectCallback(Database database, const char[] error, any data)
 void CreateMainTable(bool mysql, bool recreate = false)
 {
 	char createQuery[20480];
-
+	
 	int index = 0;
 
 	index += FormatEx(createQuery[index], sizeof(createQuery) - index, "	\
 		CREATE TABLE IF NOT EXISTS %sweapons (								\
-			name varchar(32) NOT NULL PRIMARY KEY, 						\
+			name varchar(32) NOT NULL PRIMARY KEY,	 						\
 			knife int(4) NOT NULL DEFAULT '0', 								\
 			awp int(4) NOT NULL DEFAULT '0', 								\
 			awp_float decimal(3,2) NOT NULL DEFAULT '0.0', 					\
@@ -471,13 +471,38 @@ void CreateMainTable(bool mysql, bool recreate = false)
 			knife_css_trak int(1) NOT NULL DEFAULT '0', 					\
 			knife_css_trak_count int(10) NOT NULL DEFAULT '0', 				\
 			knife_css_tag varchar(256) NOT NULL DEFAULT '', 				\
-			knife_css_seed int(10) NOT NULL DEFAULT '-1')");
-
+			knife_css_seed int(10) NOT NULL DEFAULT '-1',					\
+			knife_cord int(4) NOT NULL DEFAULT '0', 						\
+			knife_cord_float decimal(3,2) NOT NULL DEFAULT '0.0',			\
+			knife_cord_trak int(1) NOT NULL DEFAULT '0', 					\
+			knife_cord_trak_count int(10) NOT NULL DEFAULT '0', 			\
+			knife_cord_tag varchar(256) NOT NULL DEFAULT '', ");
+	index += FormatEx(createQuery[index], sizeof(createQuery) - index, "	\
+			knife_cord_seed int(10) NOT NULL DEFAULT '-1',					\
+			knife_canis int(4) NOT NULL DEFAULT '0', 						\
+			knife_canis_float decimal(3,2) NOT NULL DEFAULT '0.0',			\
+			knife_canis_trak int(1) NOT NULL DEFAULT '0', 					\
+			knife_canis_trak_count int(10) NOT NULL DEFAULT '0', 			\
+			knife_canis_tag varchar(256) NOT NULL DEFAULT '', 				\
+			knife_canis_seed int(10) NOT NULL DEFAULT '-1',					\
+			knife_outdoor int(4) NOT NULL DEFAULT '0', 						\
+			knife_outdoor_float decimal(3,2) NOT NULL DEFAULT '0.0',		\
+			knife_outdoor_trak int(1) NOT NULL DEFAULT '0', 				\
+			knife_outdoor_trak_count int(10) NOT NULL DEFAULT '0', 			\
+			knife_outdoor_tag varchar(256) NOT NULL DEFAULT '', 			\
+			knife_outdoor_seed int(10) NOT NULL DEFAULT '-1',				\
+			knife_skeleton int(4) NOT NULL DEFAULT '0', 					\
+			knife_skeleton_float decimal(3,2) NOT NULL DEFAULT '0.0',		\
+			knife_skeleton_trak int(1) NOT NULL DEFAULT '0', 				\
+			knife_skeleton_trak_count int(10) NOT NULL DEFAULT '0', 		\
+			knife_skeleton_tag varchar(256) NOT NULL DEFAULT '', 			\
+			knife_skeleton_seed int(10) NOT NULL DEFAULT '-1')");
+	
 	if (mysql)
 	{
 		 index += FormatEx(createQuery[index], sizeof(createQuery) - index, " ENGINE=InnoDB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 	}
-
+	
 	if (recreate)
 	{
 		db.Query(T_ReCreateMainTableCallback, createQuery, mysql, DBPrio_High);
@@ -496,11 +521,10 @@ public void T_ReCreateMainTableCallback(Database database, DBResultSet results, 
 	}
 	else
 	{
-		
 		int index = 0;
 		
 		char migrateQuery[8192];
-		
+
 		index += FormatEx(migrateQuery[index], sizeof(migrateQuery) - index, "																	\
 			INSERT INTO %sweapons (name, knife, awp, awp_float, awp_trak, awp_trak_count, awp_tag, ak47, ak47_float, 					\
 			ak47_trak, ak47_trak_count, ak47_tag, m4a1, m4a1_float, m4a1_trak, m4a1_trak_count, m4a1_tag, m4a1_silencer, 					\
@@ -555,6 +579,7 @@ public void T_MigrateOldDataCallback(Database database, DBResultSet results, con
 	else
 	{
 		LogMessage("%s Old data has been migrated successfully", (mysql ? "MySQL" : "SQLite"));
+		
 		char dropTableQuery[512];
 		Format(dropTableQuery, sizeof(dropTableQuery), "DROP TABLE %sweapons_tmp", g_TablePrefix);
 		db.Query(T_DropOldTableCallback, dropTableQuery, mysql, DBPrio_High);
@@ -570,6 +595,18 @@ public void T_DropOldTableCallback(Database database, DBResultSet results, const
 	else
 	{
 		LogMessage("%s Old table has been dropped successfully", (mysql ? "MySQL" : "SQLite"));
+		if(++g_iDatabaseState > 1)
+		{
+			LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
+			for(int i = 1; i <= MaxClients; i++)
+			{
+				if(IsClientInGame(i) && IsClientAuthorized(i))
+				{
+					OnClientPostAdminCheck(i);
+				}
+			}
+			DeleteInactivePlayerData();
+		}
 	}
 }
 
@@ -581,19 +618,13 @@ public void T_CreateMainTableCallback(Database database, DBResultSet results, co
 	}
 	else
 	{
-		AddWeaponColumns("knife_ursus", false);
-		AddWeaponColumns("knife_gypsy_jackknife", false);
-		AddWeaponColumns("knife_stiletto", false);
-		AddWeaponColumns("knife_widowmaker", false);
-		AddWeaponColumns("mp5sd", false);
-		AddWeaponColumns("knife_css");
-
-		addSeedColumns(mysql);
+		g_iMigrationStep = 0;
+		AddWeaponColumns(mysql, "knife_ursus", false);
 		
 		char createQuery[512];
 		Format(createQuery, sizeof(createQuery), "			\
 			CREATE TABLE %sweapons_timestamps ( 			\
-				name varchar(128) NOT NULL PRIMARY KEY, 	\
+				name varchar(32) NOT NULL PRIMARY KEY, 	\
 				last_seen int(11) NOT NULL)", g_TablePrefix);
 		
 		if (mysql)
@@ -618,11 +649,11 @@ public void T_SeedColumnCallback(Database database, DBResultSet results, const c
 	if (results == null)
 	{
 		LogMessage("%s Attempting to create seed columns", (mysql ? "MySQL" : "SQLite"));
-
+		
 		char seedColumnsQuery[8192];
-
+		
 		int index = 0;
-
+		
 		if (mysql)
 		{
 			index += FormatEx(seedColumnsQuery[index], sizeof(seedColumnsQuery) - index, "										\
@@ -676,7 +707,7 @@ public void T_SeedColumnCallback(Database database, DBResultSet results, const c
 					ADD COLUMN knife_stiletto_seed int(10) NOT NULL DEFAULT '-1' AFTER knife_stiletto_tag,					\
 					ADD COLUMN knife_widowmaker_seed int(10) NOT NULL DEFAULT '-1' AFTER knife_widowmaker_tag,				\
 					ADD COLUMN mp5sd_seed int(10) NOT NULL DEFAULT '-1' AFTER mp5sd_tag");
-
+			
 			db.Query(T_SeedConfirmationCallback, seedColumnsQuery, mysql, DBPrio_High);
 		}
 		else
@@ -684,6 +715,21 @@ public void T_SeedColumnCallback(Database database, DBResultSet results, const c
 			char renameQuery[512];
 			Format(renameQuery, sizeof(renameQuery), "ALTER TABLE %sweapons RENAME TO %sweapons_tmp", g_TablePrefix, g_TablePrefix);
 			db.Query(T_RenameCallback, renameQuery, mysql, DBPrio_High);
+		}
+	}
+	else
+	{
+		if(++g_iDatabaseState > 1)
+		{
+			LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
+			for(int i = 1; i <= MaxClients; i++)
+			{
+				if(IsClientInGame(i) && IsClientAuthorized(i))
+				{
+					OnClientPostAdminCheck(i);
+				}
+			}
+			DeleteInactivePlayerData();
 		}
 	}
 }
@@ -709,51 +755,83 @@ public void T_SeedConfirmationCallback(Database database, DBResultSet results, c
 	else
 	{
 		LogMessage("Successfully created seed columns");
+		if(++g_iDatabaseState > 1)
+		{
+			LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
+			for(int i = 1; i <= MaxClients; i++)
+			{
+				if(IsClientInGame(i) && IsClientAuthorized(i))
+				{
+					OnClientPostAdminCheck(i);
+				}
+			}
+			DeleteInactivePlayerData();
+		}
 	}
 }
 
-void AddWeaponColumns(const char[] weapon, bool seedColumn = true)
+void AddWeaponColumns(bool mysql, const char[] weapon, bool seedColumn = true)
 {
+	Transaction txn = new Transaction();
 	char query[512];
-	
-	SQL_LockDatabase(db);
-	
 	Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s int(4) NOT NULL DEFAULT '0'", g_TablePrefix, weapon);
-	SQL_FastQuery(db, query);
+	txn.AddQuery(query);
 	Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s_float decimal(3,2) NOT NULL DEFAULT '0.0'", g_TablePrefix, weapon);
-	SQL_FastQuery(db, query);
+	txn.AddQuery(query);
 	Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s_trak int(1) NOT NULL DEFAULT '0'", g_TablePrefix, weapon);
-	SQL_FastQuery(db, query);
+	txn.AddQuery(query);
 	Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s_trak_count int(10) NOT NULL DEFAULT '0'", g_TablePrefix, weapon);
-	SQL_FastQuery(db, query);
+	txn.AddQuery(query);
 	Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s_tag varchar(256) NOT NULL DEFAULT ''", g_TablePrefix, weapon);
-	SQL_FastQuery(db, query);
+	txn.AddQuery(query);
 	if (seedColumn)
 	{
 		Format(query, sizeof(query), "ALTER TABLE %sweapons ADD %s_seed int(10) NOT NULL DEFAULT '-1'", g_TablePrefix, weapon);
-		SQL_FastQuery(db, query);
+		txn.AddQuery(query);
 	}
-	
-	SQL_UnlockDatabase(db);
+	db.Execute(txn, Txn_OnSucess, Txn_OnFail, mysql);
+}
+
+public void Txn_OnSucess(Database database, bool mysql, int numQueries, DBResultSet[] results, any[] queryData)
+{
+	if(++g_iMigrationStep >= sizeof(g_MigrationWeapons))
+	{
+		addSeedColumns(mysql);
+	}
+	else
+	{
+		AddWeaponColumns(mysql, g_MigrationWeapons[g_iMigrationStep], g_iMigrationStep > 4);
+	}
+}
+
+public void Txn_OnFail(Database database, bool mysql, int numQueries, const char[] error, int failIndex, any[] queryData)
+{
+	if(++g_iMigrationStep >= sizeof(g_MigrationWeapons))
+	{
+		addSeedColumns(mysql);
+	}
+	else
+	{
+		AddWeaponColumns(mysql, g_MigrationWeapons[g_iMigrationStep], g_iMigrationStep > 4);
+	}
 }
 
 public void T_CreateTimestampTableCallback(Database database, DBResultSet results, const char[] error, bool mysql)
 {
 	if (results == null)
 	{
-		LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
-		for(int i = 1; i <= MaxClients; i++)
+		if(++g_iDatabaseState > 1)
 		{
-			if(IsClientInGame(i))
+			LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
+			for(int i = 1; i <= MaxClients; i++)
 			{
-				OnClientPutInServer(i);
-				if(IsClientAuthorized(i))
+				if(IsClientInGame(i) && IsClientAuthorized(i))
 				{
 					OnClientPostAdminCheck(i);
 				}
 			}
+			DeleteInactivePlayerData();
 		}
-		DeleteInactivePlayerData();
 	}
 	else
 	{
@@ -774,19 +852,18 @@ public void T_InsertTimestampsCallback(Database database, DBResultSet results, c
 	}
 	else
 	{
-		LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
-		for(int i = 1; i <= MaxClients; i++)
+		if(++g_iDatabaseState > 1)
 		{
-			if(IsClientInGame(i))
+			LogMessage("%s DB connection successful", (mysql ? "MySQL" : "SQLite"));
+			for(int i = 1; i <= MaxClients; i++)
 			{
-				OnClientPutInServer(i);
-				if(IsClientAuthorized(i))
+				if(IsClientInGame(i) && IsClientAuthorized(i))
 				{
 					OnClientPostAdminCheck(i);
 				}
 			}
+			DeleteInactivePlayerData();
 		}
-		DeleteInactivePlayerData();
 	}
 }
 

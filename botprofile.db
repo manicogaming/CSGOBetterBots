@@ -855,7 +855,7 @@ ProP+Rifle "FiReMaNNN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "decov9jse"
+ProP+Rifle "akz"
 	VoicePitch = 110
 End
 
@@ -1269,7 +1269,7 @@ ProP+Rifle "FASHR"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Monu"
+ProP+Rifle "D0cC"
 	VoicePitch = 110
 End
 
@@ -1761,28 +1761,6 @@ ProP+Rifle "Lucky"
 	VoicePitch = 110
 End
 
-//FCDB Players
-
-ProP+Rifle "razOk"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "matusik"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Ao-"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Cludi"
-	VoicePitch = 110
-End
-
-ProP+Rifle "vrs"
-	VoicePitch = 110
-End
-
 //Nemiga Players
 
 ProP+Rifle "ROBO"
@@ -1873,7 +1851,7 @@ End
 
 //Singularity Players
 
-ProP+Rifle "wrath"
+ProP+Rifle "Zellsis"
 	VoicePitch = 91
 End
 
@@ -1951,7 +1929,7 @@ ProP+Rifle "Reversive"
 	VoicePitch = 95
 End
 
-ProP+Rifle "nbl"
+ProP+Rifle "decov9jse"
 	VoicePitch = 110
 End
 
@@ -1969,7 +1947,7 @@ EliteAwp+SniperPro "land1n"
 	VoicePitch = 106
 End
 
-ProP+Rifle "tatazin"
+ProP+Rifle "NEKIZ"
 	VoicePitch = 95
 End
 
@@ -2845,7 +2823,7 @@ ProP+Rifle "massacRe"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Detrony"
+EliteAwp+SniperPro "mango"
 	VoicePitch = 106
 End
 
@@ -2861,47 +2839,47 @@ ProP+Rifle "ZipZip"
 	VoicePitch = 110
 End
 
-//Endpoint Players
+//Secret Players
 
-ProP+Rifle "MiGHTYMAX"
+ProP+Rifle "juanflatroo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Russ"
+EliteAwp+SniperPro "tudsoN"
 	VoicePitch = 106
 End
 
-ProP+Rifle "robiin"
+ProP+Rifle "rigoN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Puls3"
+ProP+Rifle "sinnopsyy"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Kryptix"
+ProP+Rifle "anarkez"
 	VoicePitch = 110
 End
 
-//Genuine Players
+//Incept Players
 
-ProP+Rifle "stat"
+ProP+Rifle "flaw"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Jinxx"
+EliteAwp+SniperPro "jtr"
 	VoicePitch = 106
 End
 
-ProP+Rifle "apocdud"
+ProP+Rifle "nettik"
 	VoicePitch = 95
 End
 
-ProP+Rifle "SkulL"
+ProP+Rifle "DannyG"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Mayker"
+ProP+Rifle "vanilla"
 	VoicePitch = 110
 End
 

@@ -54,7 +54,6 @@ stock bool IsValidClient(int client)
 	{
 		return false;
 	}
-	
 	return true;
 }
 

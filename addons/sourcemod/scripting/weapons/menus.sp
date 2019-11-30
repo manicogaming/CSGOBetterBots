@@ -87,7 +87,7 @@ public Action WeaponsMenuTimer(Handle timer, DataPack pack)
 	int clientIndex = GetClientOfUserId(pack.ReadCell());
 	int menuSelectionPosition = pack.ReadCell();
 	
-	if(IsClientInGame(clientIndex))
+	if(IsValidClient(clientIndex))
 	{
 		int menuTime;
 		if((menuTime = GetRemainingGracePeriodSeconds(clientIndex)) >= 0)
@@ -175,7 +175,7 @@ public int WeaponMenuHandler(Menu menu, MenuAction action, int client, int selec
 public Action StatTrakMenuTimer(Handle timer, int userid)
 {
 	int clientIndex = GetClientOfUserId(userid);
-	if(IsClientInGame(clientIndex))
+	if(IsValidClient(clientIndex))
 	{
 		int menuTime;
 		if((menuTime = GetRemainingGracePeriodSeconds(clientIndex)) >= 0)
@@ -288,7 +288,7 @@ public Action FloatTimer(Handle timer, DataPack pack)
 	int clientIndex = GetClientOfUserId(pack.ReadCell());
 	int index = pack.ReadCell();
 	
-	if(IsClientInGame(clientIndex))
+	if(IsValidClient(clientIndex))
 	{
 		char updateFields[256];
 		char weaponName[32];
@@ -330,12 +330,12 @@ Menu CreateSeedMenu(int client)
 
 	Format(buffer, sizeof(buffer), "%T", "SeedSave", client);
 	menu.AddItem("sseed", buffer, g_iSeedRandom[client][g_iIndex[client]] == 0 ? ITEMDRAW_DISABLED : ITEMDRAW_DEFAULT);
-	
+
 	Format(buffer, sizeof(buffer), "%T", "ResetSeed", client);
 	menu.AddItem("seedr", buffer, g_iWeaponSeed[client][g_iIndex[client]] == -1 ? ITEMDRAW_DISABLED : ITEMDRAW_DEFAULT);
 
 	menu.ExitBackButton = true;
-
+	
 	return menu;
 }
 
@@ -356,19 +356,19 @@ public int SeedMenuHandler(Menu menu, MenuAction action, int client, int selecti
 					CreateTimer(0.1, SeedMenuTimer, GetClientUserId(client));
 				}
 				else if (StrEqual(buffer, "cseed"))
-				{					
+				{
 					g_bWaitingForSeed[client] = true;
 					PrintToChat(client, " %s \x04%t", g_ChatPrefix, "SeedInstruction");
 				}
 				else if (StrEqual(buffer, "sseed"))
-				{	
+				{
 					if(g_iSeedRandom[client][g_iIndex[client]] > 0) 
 					{
 						g_iWeaponSeed[client][g_iIndex[client]] = g_iSeedRandom[client][g_iIndex[client]];
 					}
 					g_iSeedRandom[client][g_iIndex[client]] = 0;
 					RefreshWeapon(client, g_iIndex[client]);
-					
+
 					char updateFields[256];
 					char weaponName[32];
 					RemoveWeaponPrefix(g_WeaponClasses[g_iIndex[client]], weaponName, sizeof(weaponName));
@@ -382,14 +382,14 @@ public int SeedMenuHandler(Menu menu, MenuAction action, int client, int selecti
 				{
 					g_iWeaponSeed[client][g_iIndex[client]] = -1;
 					g_iSeedRandom[client][g_iIndex[client]] = 0;
-
+					
 					char updateFields[256];
 					char weaponName[32];
 					RemoveWeaponPrefix(g_WeaponClasses[g_iIndex[client]], weaponName, sizeof(weaponName));
 					Format(updateFields, sizeof(updateFields), "%s_seed = -1", weaponName);
 					UpdatePlayerData(client, updateFields);
 					CreateTimer(0.1, SeedMenuTimer, GetClientUserId(client));
-
+					
 					PrintToChat(client, " %s \x04%t", g_ChatPrefix, "SeedReset");
 				}
 			}
@@ -605,7 +605,7 @@ public int ColorsMenuHandler(Menu menu, MenuAction action, int client, int selec
 public Action NameTagColorsMenuTimer(Handle timer, int userid)
 {
 	int clientIndex = GetClientOfUserId(userid);
-	if(IsClientInGame(clientIndex))
+	if(IsValidClient(clientIndex))
 	{
 		int menuTime;
 		if((menuTime = GetRemainingGracePeriodSeconds(clientIndex)) >= 0)
@@ -681,7 +681,7 @@ Menu CreateWeaponMenu(int client)
 	
 	Format(buffer, sizeof(buffer), "%T", "SetSkin", client);
 	menu.AddItem("skin", buffer);
-	
+
 	bool weaponHasSkin = (g_iSkins[client][index] != 0);
 	
 	if (g_bEnableFloat)
@@ -691,12 +691,6 @@ Menu CreateWeaponMenu(int client)
 		int wear = 100 - RoundFloat(fValue);
 		Format(buffer, sizeof(buffer), "%T%d%%", "SetFloat", client, wear);
 		menu.AddItem("float", buffer, weaponHasSkin ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
-	}
-	
-	if (g_bEnableSeed)
-	{
-		Format(buffer, sizeof(buffer), "%T", "Seed", client);
-		menu.AddItem("seed", buffer, weaponHasSkin ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
 	}
 	
 	if (g_bEnableStatTrak)
@@ -718,6 +712,12 @@ Menu CreateWeaponMenu(int client)
 		menu.AddItem("nametag", buffer, weaponHasSkin ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
 	}
 	
+	if (g_bEnableSeed)
+	{
+		Format(buffer, sizeof(buffer), "%T", "Seed", client);
+		menu.AddItem("seed", buffer, weaponHasSkin ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
+	}
+
 	menu.ExitBackButton = true;
 	
 	return menu;
@@ -815,6 +815,14 @@ Menu CreateKnifeMenu(int client)
 	char buffer[60];
 	Format(buffer, sizeof(buffer), "%T", "OwnKnife", client);
 	menu.AddItem("0", buffer, g_iKnife[client] != 0 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
+	Format(buffer, sizeof(buffer), "%T", "weapon_knife_cord", client);
+	menu.AddItem("49", buffer, g_iKnife[client] != 49 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
+	Format(buffer, sizeof(buffer), "%T", "weapon_knife_canis", client);
+	menu.AddItem("50", buffer, g_iKnife[client] != 50 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
+	Format(buffer, sizeof(buffer), "%T", "weapon_knife_outdoor", client);
+	menu.AddItem("51", buffer, g_iKnife[client] != 51 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
+	Format(buffer, sizeof(buffer), "%T", "weapon_knife_skeleton", client);
+	menu.AddItem("52", buffer, g_iKnife[client] != 52 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
 	Format(buffer, sizeof(buffer), "%T", "weapon_knife_css", client);
 	menu.AddItem("48", buffer, g_iKnife[client] != 48 ? ITEMDRAW_DEFAULT : ITEMDRAW_DISABLED);
 	Format(buffer, sizeof(buffer), "%T", "weapon_knife_ursus", client);

@@ -29,6 +29,7 @@ public void OnConfigsExecuted()
 	
 	if(db == null)
 	{
+		g_iDatabaseState = 0;
 		Database.Connect(SQLConnectCallback, g_DBConnection);
 	}
 	else
@@ -57,7 +58,12 @@ public void OnConfigsExecuted()
 
 public void OnClientPutInServer(int client)
 {
-	if(IsValidClient(client))
+	if(IsFakeClient(client))
+	{
+		if(g_bEnableStatTrak)
+			SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+	}
+	else if(IsValidClient(client))
 	{
 		g_iIndex[client] = 0;
 		g_FloatTimer[client] = INVALID_HANDLE;
@@ -73,10 +79,21 @@ public void OnClientPutInServer(int client)
 
 public void OnClientPostAdminCheck(int client)
 {
-	char name[128];
-	GetClientName(client, name, sizeof(name));
-	GetPlayerData(client);
-	QueryClientConVar(client, "cl_language", ConVarCallBack);
+	if(g_iDatabaseState > 1 && IsValidClient(client))
+	{
+		char steam32[20];
+		char temp[20];
+		GetClientAuthId(client, AuthId_Steam3, steam32, sizeof(steam32));
+		strcopy(temp, sizeof(temp), steam32[5]);
+		int index;
+		if((index = StrContains(temp, "]")) > -1)
+		{
+			temp[index] = '\0';
+		}
+		g_iSteam32[client] = StringToInt(temp);
+		GetPlayerData(client);
+		QueryClientConVar(client, "cl_language", ConVarCallBack);
+	}
 }
 
 public void ConVarCallBack(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)
@@ -89,7 +106,12 @@ public void ConVarCallBack(QueryCookie cookie, int client, ConVarQueryResult res
 
 public void OnClientDisconnect(int client)
 {
-	if(IsValidClient(client))
+	if(IsFakeClient(client))
+	{
+		if(g_bEnableStatTrak)
+			SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+	}
+	else if(IsValidClient(client))
 	{
 		UnhookPlayer(client);
 		g_iSteam32[client] = 0;

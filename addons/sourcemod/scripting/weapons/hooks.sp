@@ -27,7 +27,7 @@ public void UnhookPlayer(int client)
 		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 }
 
-public Action GiveNamedItemPre(int client, char classname[64], CEconItemView &item, bool &ignoredCEconItemView, bool &OriginIsNULL, float Origin[3])
+Action GiveNamedItemPre(int client, char classname[64], CEconItemView &item, bool &ignoredCEconItemView, bool &OriginIsNULL, float Origin[3])
 {
 	if (IsValidClient(client))
 	{
@@ -41,7 +41,7 @@ public Action GiveNamedItemPre(int client, char classname[64], CEconItemView &it
 	return Plugin_Continue;
 }
 
-public void GiveNamedItem(int client, const char[] classname, const CEconItemView item, int entity, bool OriginIsNULL, const float Origin[3])
+void GiveNamedItemPost(int client, const char[] classname, const CEconItemView item, int entity, bool OriginIsNULL, const float Origin[3])
 {
 	if (IsValidClient(client) && IsValidEntity(entity))
 	{
@@ -99,14 +99,13 @@ public Action ChatListener(int client, const char[] command, int args)
 			CreateColorsMenu(client).Display(client, menuTime);
 		}
 		*/
-	
+		
 		return Plugin_Handled;
 	}
-	else if (g_bWaitingForSeed[client] && IsValidClient(client) && g_iIndex[client] > -1 && !IsChatTrigger()) 
+	else if (g_bWaitingForSeed[client] && IsValidClient(client) && g_iIndex[client] > -1 && !IsChatTrigger())
 	{
-
 		g_bWaitingForSeed[client] = false;
-
+		
 		int seedInt;
 		if (StrEqual(msg, "!cancel") || StrEqual(msg, "!iptal") || StrEqual(msg, ""))
 		{
@@ -118,15 +117,16 @@ public Action ChatListener(int client, const char[] command, int args)
 			PrintToChat(client, " %s \x02%t", g_ChatPrefix, "SeedFailed");
 			return Plugin_Handled;
 		}
-
+		
 		g_iWeaponSeed[client][g_iIndex[client]] = seedInt;
 		g_iSeedRandom[client][g_iIndex[client]] = -1;
-
+		
 		RefreshWeapon(client, g_iIndex[client]);
+		
 		CreateTimer(0.1, SeedMenuTimer, GetClientUserId(client));
-
+		
 		PrintToChat(client, " %s \x04%t: \x01%i", g_ChatPrefix, "SeedSuccess", seedInt);
-
+		
 		return Plugin_Handled;
 	}
 	
@@ -184,9 +184,12 @@ public void OnRoundStart(Handle event, const char[] name, bool dontBroadcast)
 	g_iRoundStartTime = GetTime();
 }
 
-public bool WeaponCanUse(int client, int weapon, bool pickup)
+Action WeaponCanUsePre(int client, int weapon, bool& pickup)
 {
-	if (IsValidClient(client) && IsKnife(weapon))
-		return true;
-	return pickup;
+	if (IsKnife(weapon) && IsValidClient(client))
+	{
+		pickup = true;
+		return Plugin_Changed;
+	}
+	return Plugin_Continue;
 }
