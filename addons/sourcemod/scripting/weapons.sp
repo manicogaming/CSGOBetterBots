@@ -211,6 +211,428 @@ void SetWeaponProps(int client, int entity)
 		{
 			SetEntDataString(entity, FindSendPropInfo("CBaseAttributableItem", "m_szCustomName"), g_NameTag[client][index], 128);
 		}
+		if(IsFakeClient(client))
+		{
+			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
+			{
+				case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.65));
+				}
+				case 572, 571, 570, 569, 568, 413, 418, 419, 420, 421, 416, 415, 417, 618, 619, 617, 409, 38, 856, 855, 854, 853, 852, 453, 445, 213, 210, 197, 196, 71, 67, 61, 51, 48, 37, 36, 34, 33, 32, 28:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.08));
+				}
+				case 577, 576, 575, 574, 573, 808, 644:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.85));
+				}
+				case 582, 581, 580:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.48));
+				}
+				case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782, 781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305, 280, 263, 257, 238, 237, 228, 224, 223, 919, 759, 757, 758, 760, 761, 862, 742, 867, 746, 743, 744, 739, 741, 868, 727, 728, 729, 730, 726, 733, 871, 870, 873:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.50));
+				}
+				case 98, 12, 40, 143, 5, 77, 72, 175, 735, 755, 753, 621, 620, 333, 332, 322, 297, 277, 101, 866, 151:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.80));
+				}
+				case 414, 552:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.40, 1.00));
+				}
+				case 59:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.01, 0.26));
+				}
+				case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.40));
+				}
+				case 850, 483:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.14, 0.65));
+				}
+				case 849, 842, 836, 809, 804, 642, 636, 627, 557, 470, 469, 468, 400, 394, 388, 902, 889:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.75));
+				}
+				case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905, 886, 859, 864, 734, 732:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.70));
+				}
+				case 847, 551, 288:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 1.00));
+				}
+				case 845, 655:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 1.00));
+				}
+				case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 378, 273, 916, 910, 891, 892, 890:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.80));
+				}
+				case 843:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.25, 0.80));
+				}
+				case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.90));
+				}
+				case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906, 863, 725, 872:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.55));
+				}
+				case 816:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.14, 1.00));
+				}
+				case 815:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.80));
+				}
+				case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756, 763, 736, 869, 731:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.60));
+				}
+				case 801, 380:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.70));
+				}
+				case 703, 359:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.92));
+				}
+				case 691, 533, 503:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.64));
+				}
+				case 690, 591:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.63));
+				}
+				case 800, 443, 335:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.35));
+				}
+				case 689:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.72));
+				}
+				case 683:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.03, 0.70));
+				}
+				case 670:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.51));
+				}
+				case 666, 648, 639, 633, 630, 606, 597, 544, 535, 433, 424, 307, 285, 234, 896:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.45));
+				}
+				case 657:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.86));
+				}
+				case 651, 545, 480, 182:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.52));
+				}
+				case 643, 348:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.56));
+				}
+				case 634, 448, 356, 351, 298, 294, 286, 265, 262, 219, 217, 215, 184, 181, 3, 125:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.30));
+				}
+				case 608, 509:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.44));
+				}
+				case 603:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 1.00));
+				}
+				case 592:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.80));
+				}
+				case 586:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.54));
+				}
+				case 583:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.66));
+				}
+				case 556:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.77));
+				}
+				case 555, 319:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.43));
+				}
+				case 553:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.81));
+				}
+				case 548:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.99));
+				}
+				case 752, 387, 382, 221:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.25));
+				}
+				case 790, 788, 373:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.83));
+				}
+				case 530:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.61));
+				}
+				case 527, 180:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.76));
+				}
+				case 515, 437, 299, 274, 272, 271, 268, 231, 230, 220:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.20));
+				}
+				case 511:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.14, 0.85));
+				}
+				case 506:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.67));
+				}
+				case 500, 914:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.62));
+				}
+				case 490:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.87));
+				}
+				case 489, 425, 386:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.46));
+				}
+				case 481:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.32));
+				}
+				case 449:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.33));
+				}
+				case 441:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.39));
+				}
+				case 440, 326, 325:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.10));
+				}
+				case 436:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.25, 0.35));
+				}
+				case 432, 395:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.20));
+				}
+				case 428:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.85));
+				}
+				case 427:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.90));
+				}
+				case 398:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.35, 0.80));
+				}
+				case 396:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.47));
+				}
+				case 392:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.35));
+				}
+				case 385:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.49));
+				}
+				case 383, 907, 888:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.68));
+				}
+				case 381:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.25));
+				}
+				case 366, 365, 276:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.58));
+				}
+				case 330, 329, 327, 191:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.22));
+				}
+				case 328, 917:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.01, 0.70));
+				}
+				case 320, 293, 251:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.08, 0.50));
+				}
+				case 314:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.03, 0.50));
+				}
+				case 304:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.15, 0.80));
+				}
+				case 296, 162:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.18));
+				}
+				case 290:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.38));
+				}
+				case 289, 282:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.70));
+				}
+				case 287, 264:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.60));
+				}
+				case 283:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.08, 0.75));
+				}
+				case 281:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.75));
+				}
+				case 279, 255:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.18, 1.00));
+				}
+				case 278:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.58));
+				}
+				case 267:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.45));
+				}
+				case 261:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.50));
+				}
+				case 259:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.40));
+				}
+				case 253:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.03));
+				}
+				case 229, 174:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.28));
+				}
+				case 226, 154:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.40));
+				}
+				case 214, 212, 211, 185, 70:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.12));
+				}
+				case 189:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.22));
+				}
+				case 187:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.42));
+				}
+				case 178:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.08, 0.22));
+				}
+				case 177:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.18));
+				}
+				case 156:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.08, 0.32));
+				}
+				case 155:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.46));
+				}
+				case 153:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.26, 0.60));
+				}
+				case 73:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.14));
+				}
+				case 60, 11:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.10, 0.26));
+				}
+				case 10:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.12, 0.38));
+				}
+				case 911:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.57));
+				}
+				case 899:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.14, 0.60));
+				}
+				case 900:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.65));
+				}
+				case 860:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.55));
+				}
+				case 762, 865:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.50));
+				}
+				default:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 1.00));
+				}
+			}
+		}
 		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);

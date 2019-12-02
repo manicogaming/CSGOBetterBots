@@ -27,6 +27,34 @@ char g_sCTRngGrenadesList[][] = {
     "weapon_incgrenade"
 };
 
+char CTModels[][] = {
+	"models/player/custom_player/legacy/ctm_st6_variante.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variantk.mdl",
+	"models/player/custom_player/legacy/ctm_fbi_variantf.mdl",
+	"models/player/custom_player/legacy/ctm_sas_variantf.mdl",
+	"models/player/custom_player/legacy/ctm_fbi_variantg.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variantg.mdl",
+	"models/player/custom_player/legacy/ctm_fbi_varianth.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variantm.mdl",
+	"models/player/custom_player/legacy/ctm_st6_varianti.mdl",
+	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl"
+};
+
+char TModels[][] = {
+	"models/player/custom_player/legacy/tm_phoenix_variantf.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_varianth.mdl",
+	"models/player/custom_player/legacy/tm_leet_variantg.mdl",
+	"models/player/custom_player/legacy/tm_balkan_varianti.mdl",
+	"models/player/custom_player/legacy/tm_leet_varianth.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variantg.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variantf.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variantj.mdl",
+	"models/player/custom_player/legacy/tm_leet_varianti.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variantg.mdl",
+	"models/player/custom_player/legacy/tm_balkan_varianth.mdl",
+	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
+};
+
 char g_BotName[][] = {
 	//MIBR Players
 	"kNgV-",
@@ -5308,12 +5336,37 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 {
 	for(int i = 1; i <= MaxClients; i++)
 	{
-		if(IsClientInGame(i))
+		if(IsClientInGame(i) && IsFakeClient(i))
 		{
 			if(g_hShouldAttackTimer[i] != INVALID_HANDLE)
 			{
 				KillTimer(g_hShouldAttackTimer[i]);
 				g_hShouldAttackTimer[i] = INVALID_HANDLE;
+			}
+			
+			if(GetRandomInt(1,3) == 1)
+			{
+				if(GetClientTeam(i) == CS_TEAM_CT)
+				{
+					SetEntityModel(i, CTModels[GetRandomInt(0, sizeof(CTModels) - 1)]);
+				}
+				else if(GetClientTeam(i) == CS_TEAM_T)
+				{
+					SetEntityModel(i, TModels[GetRandomInt(0, sizeof(TModels) - 1)]);
+				}
+			}
+			
+			int rnd = GetRandomInt(1,2);
+			switch(rnd)
+			{
+				case 1:
+				{
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(3,31));
+				}
+				case 2:
+				{
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,40));
+				}
 			}
 		}
 	}
@@ -5373,7 +5426,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 					RemovePlayerItem(client, iWeapon);
 				}
 				
-				m_iAccount -= 2750;
+				m_iAccount -= 3000;
 				GivePlayerItem(client, "weapon_sg556");
 				if ((m_iAccount > 16000) || (m_iAccount < 0))
 					m_iAccount = 1500;
@@ -5474,13 +5527,13 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	int userid = event.GetInt("userid");
 	int client = GetClientOfUserId(userid);
 	
-	int rnd = GetRandomInt(1,15);
+	int rnd = GetRandomInt(1,17);
 	
 	switch(rnd)
 	{
 		case 1:
 		{
-			g_iCoin[client] = GetRandomInt(874,970);
+			g_iCoin[client] = GetRandomInt(874,978);
 		}
 		case 2:
 		{
@@ -5496,7 +5549,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 		}
 		case 5:
 		{
-			g_iCoin[client] = GetRandomInt(1028,1057);
+			g_iCoin[client] = GetRandomInt(1028,1060);
 		}
 		case 6:
 		{
@@ -5538,6 +5591,14 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 		{
 			g_iCoin[client] = GetRandomInt(4555,4558);
 		}
+		case 16:
+		{
+			g_iCoin[client] = GetRandomInt(4623,4626);
+		}
+		case 17:
+		{
+			g_iCoin[client] = GetRandomInt(4550,4553);
+		}
 	}
 
 	int team = GetClientTeam(client);
@@ -5550,7 +5611,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 		
         if(GetRandomInt(1,10) == 1)
         {
-            if(team == 3)
+            if(team == CS_TEAM_CT)
             {
                 char usp[32];
                 
