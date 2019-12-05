@@ -11,7 +11,7 @@
 bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1],g_iProfileRankOffset, g_iCoinOffset;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iMusicOffset;
 
 char g_sTRngGrenadesList[][] = {
     "weapon_flashbang",
@@ -120,7 +120,7 @@ char g_BotName[][] = {
 	"stanislaw",
 	"tarik",
 	"Brehze",
-	"nahtE",
+	"Ethan",
 	"CeRq",
 	//Thieves Players
 	"AZR",
@@ -248,7 +248,7 @@ char g_BotName[][] = {
 	"DuDe",
 	"kressy",
 	"mantuu",
-	//Grayhound Players
+	//RNG Players
 	"INS",
 	"sico",
 	"dexter",
@@ -957,7 +957,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_vp", Team_VP);
 	RegConsoleCmd("team_apeks", Team_Apeks);
 	RegConsoleCmd("team_attax", Team_aTTaX);
-	RegConsoleCmd("team_grayhound", Team_Grayhound);
+	RegConsoleCmd("team_rng", Team_Renegades);
 	RegConsoleCmd("team_mvppk", Team_MVPPK);
 	RegConsoleCmd("team_envy", Team_Envy);
 	RegConsoleCmd("team_spirit", Team_Spirit);
@@ -1379,7 +1379,7 @@ public Action Team_EG(int client, int args)
 		ServerCommand("bot_add_ct %s", "stanislaw");
 		ServerCommand("bot_add_ct %s", "tarik");
 		ServerCommand("bot_add_ct %s", "Brehze");
-		ServerCommand("bot_add_ct %s", "nahtE");
+		ServerCommand("bot_add_ct %s", "Ethan");
 		ServerCommand("bot_add_ct %s", "CeRq");
 		ServerCommand("mp_teamlogo_1 eg");
 	}
@@ -1390,7 +1390,7 @@ public Action Team_EG(int client, int args)
 		ServerCommand("bot_add_t %s", "stanislaw");
 		ServerCommand("bot_add_t %s", "tarik");
 		ServerCommand("bot_add_t %s", "Brehze");
-		ServerCommand("bot_add_t %s", "nahtE");
+		ServerCommand("bot_add_t %s", "Ethan");
 		ServerCommand("bot_add_t %s", "CeRq");
 		ServerCommand("mp_teamlogo_2 eg");
 	}
@@ -2028,7 +2028,7 @@ public Action Team_aTTaX(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Grayhound(int client, int args)
+public Action Team_Renegades(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2041,7 +2041,7 @@ public Action Team_Grayhound(int client, int args)
 		ServerCommand("bot_add_ct %s", "dexter");
 		ServerCommand("bot_add_ct %s", "DickStacy");
 		ServerCommand("bot_add_ct %s", "malta");
-		ServerCommand("mp_teamlogo_1 gray");
+		ServerCommand("mp_teamlogo_1 ren");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -2052,7 +2052,7 @@ public Action Team_Grayhound(int client, int args)
 		ServerCommand("bot_add_t %s", "dexter");
 		ServerCommand("bot_add_t %s", "DickStacy");
 		ServerCommand("bot_add_t %s", "malta");
-		ServerCommand("mp_teamlogo_2 gray");
+		ServerCommand("mp_teamlogo_2 ren");
 	}
 	
 	return Plugin_Handled;
@@ -5302,6 +5302,7 @@ public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
 	g_iCoinOffset = FindSendPropInfo("CCSPlayerResource", "m_nActiveCoinRank");
+	g_iMusicOffset = FindSendPropInfo("CCSPlayerResource", "m_nMusicID");
 
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, Hook_OnThinkPost);
@@ -5354,19 +5355,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				{
 					SetEntityModel(i, TModels[GetRandomInt(0, sizeof(TModels) - 1)]);
 				}
-			}
-			
-			int rnd = GetRandomInt(1,2);
-			switch(rnd)
-			{
-				case 1:
-				{
-					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(3,31));
-				}
-				case 2:
-				{
-					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,40));
-				}
+				
 			}
 		}
 	}
@@ -5376,6 +5365,7 @@ public void Hook_OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
 	SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
+	SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
 }
 
 public Action CS_OnBuyCommand(int client, const char[] weapon)
@@ -5606,30 +5596,44 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	if (!client) return;
 
 	if(IsFakeClient(client))
-    {
-        CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
+	{
+		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
 		
-        if(GetRandomInt(1,10) == 1)
-        {
-            if(team == CS_TEAM_CT)
-            {
-                char usp[32];
-                
-                GetClientWeapon(client, usp, sizeof(usp));
-                
-                if(StrEqual(usp, "weapon_usp_silencer"))
-                {
-                    int uspslot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
-                    
-                    if (uspslot != -1)
-                    {
-                        RemovePlayerItem(client, uspslot);
-                    }
-                    GivePlayerItem(client, "weapon_hkp2000");
-                }
-            }
-        }
-    }
+		if(GetRandomInt(1,10) == 1)
+		{
+			if(team == CS_TEAM_CT)
+			{
+				char usp[32];
+				
+				GetClientWeapon(client, usp, sizeof(usp));
+
+				if(StrEqual(usp, "weapon_usp_silencer"))
+				{
+					int uspslot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
+					
+					if (uspslot != -1)
+					{
+						RemovePlayerItem(client, uspslot);
+					}
+					GivePlayerItem(client, "weapon_hkp2000");
+				}
+			}
+		}
+		
+		int rndm = GetRandomInt(1,2);
+		
+		switch(rndm)
+		{
+			case 1:
+			{
+				g_iMusic[client] = GetRandomInt(3,31);
+			}
+			case 2:
+			{
+				g_iMusic[client] = GetRandomInt(39,40);
+			}
+		}
+	}
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle timer, int serial) 
@@ -5849,7 +5853,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//EG Players
-	if((StrEqual(botname, "stanislaw")) || (StrEqual(botname, "tarik")) || (StrEqual(botname, "Brehze")) || (StrEqual(botname, "nahtE")) || (StrEqual(botname, "CeRq")))
+	if((StrEqual(botname, "stanislaw")) || (StrEqual(botname, "tarik")) || (StrEqual(botname, "Brehze")) || (StrEqual(botname, "Ethan")) || (StrEqual(botname, "CeRq")))
 	{
 		CS_SetClientClanTag(client, "EG");
 	}
@@ -5980,10 +5984,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "aTTaX");
 	}
 	
-	//Grayhound Players
+	//RNG Players
 	if((StrEqual(botname, "INS")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "DickStacy")) || (StrEqual(botname, "malta")))
 	{
-		CS_SetClientClanTag(client, "Grayhound");
+		CS_SetClientClanTag(client, "RNG");
 	}
 	
 	//MVP.PK Players
@@ -6801,7 +6805,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 72;
 	}
 	
-	if (StrEqual(sClan, "Grayhound"))
+	if (StrEqual(sClan, "RNG"))
 	{
 		g_iProfileRank[client] = 73;
 	}

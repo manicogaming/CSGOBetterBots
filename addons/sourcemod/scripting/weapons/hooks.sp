@@ -149,12 +149,6 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 		
 	int index = GetWeaponIndex(weapon);
 	
-	if (index != -1 && g_iSkins[attacker][index] != 0 && g_iStatTrak[attacker][index] != 1)
-		return Plugin_Continue;
-		
-	if (GetEntProp(weapon, Prop_Send, "m_nFallbackStatTrak") == -1)
-		return Plugin_Continue;
-		
 	int previousOwner;
 	if ((previousOwner = GetEntPropEnt(weapon, Prop_Send, "m_hPrevOwner")) != INVALID_ENT_REFERENCE && previousOwner != attacker)
 		return Plugin_Continue;

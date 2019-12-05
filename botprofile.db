@@ -645,7 +645,7 @@ ProP+Rifle "stanislaw"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "tarik"
+EliteAwp+SniperPro "CeRq"
 	VoicePitch = 106
 End
 
@@ -653,11 +653,11 @@ ProP+Rifle "Brehze"
 	VoicePitch = 95
 End
 
-ProP+Rifle "nahtE"
+ProP+Rifle "Ethan"
 	VoicePitch = 110
 End
 
-ProP+Rifle "CeRq"
+ProP+Rifle "tarik"
 	VoicePitch = 90
 End
 
@@ -1123,7 +1123,7 @@ ProP+Rifle "mantuu"
 	VoicePitch = 110
 End
 
-//Grayhound Players
+//RNG Players
 
 ProP+Rifle "INS"
 	VoicePitch = 91
