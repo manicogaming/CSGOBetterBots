@@ -1519,25 +1519,25 @@ ProP+Rifle "xartE"
 	VoicePitch = 110
 End
 
-//Tricked Players
+//Bren Players
 
-ProP+Rifle "roeJ"
+ProP+Rifle "Papichulo"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "acoR"
+EliteAwp+SniperPro "witz"
 	VoicePitch = 106
 End
 
-ProP+Rifle "HUNDEN"
+ProP+Rifle "Pro."
 	VoicePitch = 95
 End
 
-ProP+Rifle "Sjuush"
+ProP+Rifle "BORKUM"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Bubzkji"
+ProP+Rifle "Derek"
 	VoicePitch = 110
 End
 
@@ -3518,6 +3518,28 @@ ProP+Rifle "steel_"
 End
 
 ProP+Rifle "ben1337"
+	VoicePitch = 110
+End
+
+//OneThree Players
+
+ProP+Rifle "Dosia"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "mou"
+	VoicePitch = 106
+End
+
+ProP+Rifle "captainMo"
+	VoicePitch = 95
+End
+
+ProP+Rifle "DD"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Karsa"
 	VoicePitch = 110
 End
 
