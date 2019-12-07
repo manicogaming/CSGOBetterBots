@@ -5,8 +5,11 @@
 #include <sdkhooks>
 #include <sdktools>
 #include <cstrike>
+#include <fpvm_interface>
 
 //#pragma newdecls required
+
+#define WEAPON "weapon_glock" // weapon to replace
 
 bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
@@ -53,6 +56,11 @@ char TModels[][] = {
 	"models/player/custom_player/legacy/tm_balkan_variantg.mdl",
 	"models/player/custom_player/legacy/tm_balkan_varianth.mdl",
 	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
+};
+
+char GlockModels[][] = {
+	"models/weapons/v_glockneonoir.mdl",
+	"models/weapons/v_glocknobrain.mdl"
 };
 
 char g_BotName[][] = {
@@ -5375,14 +5383,14 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	for(int i = 1; i <= MaxClients; i++)
 	{
 		if(IsClientInGame(i) && IsFakeClient(i))
-		{
+		{			
 			if(g_hShouldAttackTimer[i] != INVALID_HANDLE)
 			{
 				KillTimer(g_hShouldAttackTimer[i]);
 				g_hShouldAttackTimer[i] = INVALID_HANDLE;
 			}
 			
-			if(GetRandomInt(1,3) == 1)
+			if(GetRandomInt(1,100) <= 35)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
@@ -5408,14 +5416,11 @@ public void Hook_OnThinkPost(int iEnt)
 public Action CS_OnBuyCommand(int client, const char[] weapon)
 {
 	if(IsFakeClient(client))
-	{
-		char wname[32];
-		
-		GetClientWeapon(client, wname, sizeof(wname));
-		
-		if((StrEqual(wname, "weapon_m4a1_silencer")) || (StrEqual(wname, "weapon_sg556")))
+	{	
+		if(GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 		{
 			SetEntProp(client, Prop_Send, "m_bInBuyZone", 0);
+			return Plugin_Continue;
 		}
 	
 		int m_iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
@@ -5423,7 +5428,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		{ 
 			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 			
-			if(GetRandomInt(1,5) == 1)
+			if(GetRandomInt(1,100) <= 20)
 			{
 				if (iWeapon != -1)
 				{
@@ -5433,7 +5438,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				m_iAccount -= 3100;
 				GivePlayerItem(client, "weapon_m4a1_silencer");
 				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 1500;
+					m_iAccount = 0;
 				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
@@ -5446,7 +5451,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		{
 			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 			
-			if(GetRandomInt(1,3) == 1)
+			if(GetRandomInt(1,100) <= 35)
 			{
 				if (iWeapon != -1)
 				{
@@ -5456,7 +5461,53 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				m_iAccount -= 3000;
 				GivePlayerItem(client, "weapon_sg556");
 				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 1500;
+					m_iAccount = 0;
+				SetClientMoney(client, m_iAccount);
+				return Plugin_Handled; 
+			}
+			else
+			{
+				return Plugin_Continue;
+			}
+		}
+		else if(StrEqual(weapon,"mac10"))
+		{
+			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				if (iWeapon != -1)
+				{
+					RemovePlayerItem(client, iWeapon);
+				}
+				
+				m_iAccount -= 1800;
+				GivePlayerItem(client, "weapon_galilar");
+				if ((m_iAccount > 16000) || (m_iAccount < 0))
+					m_iAccount = 0;
+				SetClientMoney(client, m_iAccount);
+				return Plugin_Handled; 
+			}
+			else
+			{
+				return Plugin_Continue;
+			}
+		}
+		else if(StrEqual(weapon,"mp9"))
+		{
+			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				if (iWeapon != -1)
+				{
+					RemovePlayerItem(client, iWeapon);
+				}
+				
+				m_iAccount -= 2050;
+				GivePlayerItem(client, "weapon_famas");
+				if ((m_iAccount > 16000) || (m_iAccount < 0))
+					m_iAccount = 0;
 				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
@@ -5519,7 +5570,7 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 		{
 			int m_iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			
-			if(GetRandomInt(1,10) == 1)
+			if(GetRandomInt(1,100) <= 10)
 			{
 				FakeClientCommand(i, "+lookatweapon");
 				FakeClientCommand(i, "-lookatweapon");
@@ -5528,10 +5579,6 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 			if(m_iAccount == 800)
 			{
 				FakeClientCommand(i, "buy vest");
-			}
-			else if(m_iAccount > 3000)
-			{
-				FakeClientCommand(i, "buy vesthelm");
 			}
 		}
 	}	
@@ -5636,7 +5683,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	{
 		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
 		
-		if(GetRandomInt(1,10) == 1)
+		if(GetRandomInt(1,100) <= 10)
 		{
 			if(team == CS_TEAM_CT)
 			{
@@ -5655,6 +5702,23 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 					GivePlayerItem(client, "weapon_hkp2000");
 				}
 			}
+		}
+		
+		if(GetRandomInt(1,100) <= 20)
+		{
+			if(GetClientTeam(client) == CS_TEAM_T)
+			{
+				FPVMI_AddViewModelToClient(client, WEAPON, PrecacheModel(GlockModels[GetRandomInt(0, sizeof(GlockModels) - 1)])); // add custom view model to the player
+				if(FPVMI_GetClientViewModel(client, WEAPON) != -1)
+				{
+					int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+					SetEntProp(ActiveWeapon, Prop_Send, "m_nFallbackPaintKit", 0);
+				}
+			}
+		}
+		else
+		{
+			FPVMI_RemoveViewModelToClient(client, WEAPON);
 		}
 		
 		int rndm = GetRandomInt(1,2);
@@ -5710,7 +5774,7 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 				}
 				case 2:
 				{
-					if(team == 3)
+					if(team == CS_TEAM_CT)
 					{
 						int ctcz = GetRandomInt(1,2);
 						
@@ -5728,7 +5792,7 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 							}
 						}
 					}
-					else if(team == 2)
+					else if(team == CS_TEAM_T)
 					{
 						int tcz = GetRandomInt(1,2);
 						
@@ -5759,7 +5823,18 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	{
 		RemoveNades(client);
 
-		if (team == 2) { 
+		if((GetEntProp(client, Prop_Data, "m_ArmorValue") < 50) || (GetEntProp(client, Prop_Send, "m_bHasHelmet") == 0))
+		{
+			SetEntProp(client, Prop_Data, "m_ArmorValue", 100, 1); 
+			SetEntProp(client, Prop_Send, "m_bHasHelmet", 1);
+			
+			m_iAccount -= 1000;
+			if ((m_iAccount > 16000) || (m_iAccount < 0))
+					m_iAccount = 0;
+			SetClientMoney(client, m_iAccount);
+		}
+		
+		if (team == CS_TEAM_T) { 
 			GivePlayerItem(client, g_sTRngGrenadesList[GetRandomInt(0, sizeof(g_sTRngGrenadesList) - 1)]);
 		}
 		else { 
