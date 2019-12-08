@@ -9,8 +9,6 @@
 
 //#pragma newdecls required
 
-#define WEAPON "weapon_glock" // weapon to replace
-
 bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
@@ -60,7 +58,8 @@ char TModels[][] = {
 
 char GlockModels[][] = {
 	"models/weapons/v_glockneonoir.mdl",
-	"models/weapons/v_glocknobrain.mdl"
+	"models/weapons/v_glocknobrain.mdl",
+	"models/weapons/v_glockoni.mdl"
 };
 
 char g_BotName[][] = {
@@ -930,6 +929,7 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
+	HookEvent("player_death", OnPlayerDeath);
 	HookEvent("round_start", OnRoundStart);
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -3586,7 +3586,7 @@ public Action Team_dreamScape(int client, int args)
 		ServerCommand("bot_add_ct %s", "alecks");
 		ServerCommand("bot_add_ct %s", "Benkai");
 		ServerCommand("bot_add_ct %s", "d4v41");
-		ServerCommand("mp_teamlogo_1 boot");
+		ServerCommand("mp_teamlogo_1 dream");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -3597,7 +3597,7 @@ public Action Team_dreamScape(int client, int args)
 		ServerCommand("bot_add_t %s", "alecks");
 		ServerCommand("bot_add_t %s", "Benkai");
 		ServerCommand("bot_add_t %s", "d4v41");
-		ServerCommand("mp_teamlogo_2 boot");
+		ServerCommand("mp_teamlogo_2 dream");
 	}
 	
 	return Plugin_Handled;
@@ -5679,6 +5679,23 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	
 	if (!client) return;
 
+	if(GetRandomInt(1,100) <= 20)
+	{
+		char weapon[32];
+		
+		GetClientWeapon(client, weapon, sizeof(weapon));
+
+		if(StrEqual(weapon, "weapon_glock"))
+		{
+			if(FPVMI_GetClientViewModel(client, "weapon_glock") == -1)
+			{
+				FPVMI_AddViewModelToClient(client, "weapon_glock", PrecacheModel(GlockModels[GetRandomInt(0, sizeof(GlockModels) - 1)])); // add custom view model to the player
+				int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+				SetEntProp(slot, Prop_Send, "m_nFallbackPaintKit", 0);
+			}
+		}
+	}
+
 	if(IsFakeClient(client))
 	{
 		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
@@ -5704,23 +5721,6 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 			}
 		}
 		
-		if(GetRandomInt(1,100) <= 20)
-		{
-			if(GetClientTeam(client) == CS_TEAM_T)
-			{
-				FPVMI_AddViewModelToClient(client, WEAPON, PrecacheModel(GlockModels[GetRandomInt(0, sizeof(GlockModels) - 1)])); // add custom view model to the player
-				if(FPVMI_GetClientViewModel(client, WEAPON) != -1)
-				{
-					int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-					SetEntProp(ActiveWeapon, Prop_Send, "m_nFallbackPaintKit", 0);
-				}
-			}
-		}
-		else
-		{
-			FPVMI_RemoveViewModelToClient(client, WEAPON);
-		}
-		
 		int rndm = GetRandomInt(1,2);
 		
 		switch(rndm)
@@ -5735,6 +5735,14 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 			}
 		}
 	}
+}
+
+public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
+{
+	int userid = event.GetInt("userid");
+	int client = GetClientOfUserId(userid);
+	
+	FPVMI_RemoveViewModelToClient(client, "weapon_glock");
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle timer, int serial) 

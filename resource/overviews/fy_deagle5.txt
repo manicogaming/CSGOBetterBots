@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_deagle5"
+{
+	"CTSpawn_x" "0.880000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.130000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/fy_deagle5"
+	"pos_x" "-1280.000000"
+	"pos_y" "1280.000000"
+	"scale" "2.500000"
+}

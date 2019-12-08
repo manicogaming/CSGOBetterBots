@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_conflict"
+{
+	"CTSpawn_x" "0.490000"
+	"CTSpawn_y" "0.880000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.120000"
+	"material" "overviews/fy_conflict"
+	"pos_x" "-1504.000000"
+	"pos_y" "384.000000"
+	"scale" "2.940000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-8.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-8.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}

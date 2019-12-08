@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"dm_bloodsport"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.830000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.170000"
+	"material" "overviews/dm_bloodsport"
+	"pos_x" "-1166.000000"
+	"pos_y" "1166.000000"
+	"scale" "2.280000"
+}

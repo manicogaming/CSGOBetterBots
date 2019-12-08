@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fun_pacman_v1"
+{
+	"CTSpawn_x" "-0.290000"
+	"CTSpawn_y" "0.110000"
+	"TSpawn_x" "-0.270000"
+	"TSpawn_y" "0.890000"
+	"material" "overviews/fun_pacman_v1"
+	"pos_x" "-176.000000"
+	"pos_y" "1408.000000"
+	"scale" "1.500000"
+}
