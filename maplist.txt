@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Sun Dec 08 01:54:32 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Sun Dec 08 20:59:07 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -125,7 +125,6 @@ de_overpass
 de_safehouse
 de_shortdust
 de_shortnuke
-de_skyscraper
 de_spain
 de_stmarc
 de_studio
@@ -147,7 +146,6 @@ fy_faceover_wb
 fy_highway_s
 fy_iceworld_beta
 fy_iceworld_go
-fy_iceworld_origins
 fy_jungleworldx_b2
 fy_killzone
 fy_matrix2
