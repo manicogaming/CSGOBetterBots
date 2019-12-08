@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_highway_s"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.090000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.910000"
+	"material" "overviews/fy_highway_s"
+	"pos_x" "-2176.000000"
+	"pos_y" "2112.000000"
+	"scale" "4.250000"
+}

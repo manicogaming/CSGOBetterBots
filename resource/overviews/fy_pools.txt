@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_pools"
+{
+	"CTSpawn_x" "1.150000"
+	"CTSpawn_y" "0.740000"
+	"TSpawn_x" "0.420000"
+	"TSpawn_y" "0.270000"
+	"material" "overviews/fy_pools"
+	"pos_x" "-1156.000000"
+	"pos_y" "898.000000"
+	"scale" "1.750000"
+}

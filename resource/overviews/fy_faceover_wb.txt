@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_faceover_wb"
+{
+	"CTSpawn_x" "0.170000"
+	"CTSpawn_y" "0.190000"
+	"TSpawn_x" "0.410000"
+	"TSpawn_y" "0.810000"
+	"material" "overviews/fy_faceover_wb"
+	"pos_x" "-448.500000"
+	"pos_y" "320.000000"
+	"scale" "1.130000"
+}

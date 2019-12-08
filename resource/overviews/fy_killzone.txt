@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_killzone"
+{
+	"CTSpawn_x" "0.430000"
+	"CTSpawn_y" "0.210000"
+	"TSpawn_x" "0.420000"
+	"TSpawn_y" "0.810000"
+	"material" "overviews/fy_killzone"
+	"pos_x" "-1216.000000"
+	"pos_y" "1216.000000"
+	"scale" "2.560000"
+}
