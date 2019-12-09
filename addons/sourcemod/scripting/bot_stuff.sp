@@ -7,8 +7,6 @@
 #include <cstrike>
 #include <fpvm_interface>
 
-//#pragma newdecls required
-
 bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
@@ -5695,7 +5693,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 			}
 		}
 	}
-
+	
 	if(IsFakeClient(client))
 	{
 		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
@@ -5742,7 +5740,10 @@ public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 	int userid = event.GetInt("userid");
 	int client = GetClientOfUserId(userid);
 	
-	FPVMI_RemoveViewModelToClient(client, "weapon_glock");
+	if(IsClientInGame(client))
+	{
+		FPVMI_RemoveViewModelToClient(client, "weapon_glock");
+	}
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle timer, int serial) 
