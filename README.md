@@ -9,9 +9,8 @@ I edited the following plugins.
 - Aimbot is not active when the player is holding an AWP
 - Every shot has a chance to activate the aimbot
 
-# [[CSGO] Gloves](https://forums.alliedmods.net/showthread.php?t=299977)
-- Made it so that it doesn't skip BOTs
-- Database now saves the selected Gloves by Player name and not SteamID because all bots have the same SteamID
+# [Franc1sco/Franug-CSGO-Gloves](https://github.com/Franc1sco/Franug-CSGO-Gloves)
+- BOTs will get random gloves
 
 # [SQL Matches](https://forums.alliedmods.net/showthread.php?t=312488)
 - The following is now added to the database
