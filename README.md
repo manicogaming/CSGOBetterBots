@@ -33,6 +33,10 @@ I edited the following plugins.
 - Made it so that it doesn't skip BOTs
 - All the data is now saved and queried by name as BOTs don't have a SteamID
 
+# [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
+- Made it so that it doesn't skip BOTs
+- Added more Ranks
+
 # Other Files
 
 There's an improved BotProfile.db I've edited that was also originally made by [tNzxX](https://www.youtube.com/channel/UCF6sK9PaONILzTd42baWxkA) and the BotProfile.db he made can be found [here](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497).
