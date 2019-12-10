@@ -57,7 +57,17 @@ char TModels[][] = {
 char GlockModels[][] = {
 	"models/weapons/v_glockneonoir.mdl",
 	"models/weapons/v_glocknobrain.mdl",
-	"models/weapons/v_glockoni.mdl"
+	"models/weapons/v_glockwarlord.mdl",
+	"models/weapons/v_glockbiker.mdl",
+	"models/weapons/v_glockoni.mdl",
+	"models/weapons/v_glockabrams.mdl",
+	"models/weapons/v_glocksacrifice.mdl",
+	"models/weapons/v_glockphoenix.mdl",
+	"models/weapons/v_glockskull.mdl",
+	"models/weapons/v_glockpuncher.mdl",
+	"models/weapons/v_glockmarauder.mdl",
+	"models/weapons/v_glockbioweapon.mdl",
+	"models/weapons/v_glockkhorkoi.mdl"
 };
 
 char g_BotName[][] = {
@@ -5677,7 +5687,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	
 	if (!client) return;
 
-	if(GetRandomInt(1,100) <= 20)
+	if(GetRandomInt(1,100) <= 25)
 	{
 		char weapon[32];
 		
