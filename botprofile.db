@@ -60,10 +60,10 @@ Template SniperPro
 		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
-		WeaponPreference = ump45
-		WeaponPreference = mp7
 		WeaponPreference = famas
 		WeaponPreference = galilar
+		WeaponPreference = ump45
+		WeaponPreference = mp7
 End
 
 Template Rifle
@@ -72,10 +72,10 @@ Template Rifle
 		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
-		WeaponPreference = ump45
-		WeaponPreference = mp7
 		WeaponPreference = galilar
 		WeaponPreference = famas
+		WeaponPreference = ump45
+		WeaponPreference = mp7
 End
 
 Template Sniper
@@ -86,10 +86,10 @@ Template Sniper
 		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
-		WeaponPreference = ump45
-		WeaponPreference = mp7
 		WeaponPreference = famas
 		WeaponPreference = galilar
+		WeaponPreference = ump45
+		WeaponPreference = mp7
 End
 
 Template Power
@@ -1587,23 +1587,23 @@ End
 
 //Lions Players
 
-ProP+Rifle "YuRk0"
+ProP+Rifle "HUNDEN"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Jibrix"
+EliteAwp+SniperPro "acoR"
 	VoicePitch = 106
 End
 
-ProP+Rifle "Kairi"
+ProP+Rifle "Sjuush"
 	VoicePitch = 95
 End
 
-ProP+Rifle "HUMANZ"
+ProP+Rifle "Bubzkji"
 	VoicePitch = 110
 End
 
-ProP+Rifle "NaOw"
+ProP+Rifle "roeJ"
 	VoicePitch = 110
 End
 
@@ -1763,7 +1763,7 @@ End
 
 //Nemiga Players
 
-ProP+Rifle "ROBO"
+ProP+Rifle "spellfull"
 	VoicePitch = 91
 End
 
@@ -2203,11 +2203,11 @@ End
 
 //EHOME Players
 
-ProP+Rifle "insane"
+ProP+Rifle "equal"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "originalheart"
+EliteAwp+SniperPro "DeStRoYeR"
 	VoicePitch = 106
 End
 
@@ -2307,7 +2307,7 @@ ProP+Rifle "skillZ"
 	VoicePitch = 110
 End
 
-ProP+Rifle "DeathMakeR"
+ProP+Rifle "Ace"
 	VoicePitch = 110
 End
 
@@ -2511,23 +2511,23 @@ End
 
 //BLUEJAYS Players
 
-ProP+Rifle "dEE"
+ProP+Rifle "maxz"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "DiMKE"
+EliteAwp+SniperPro "Tsubasa"
 	VoicePitch = 106
 End
 
-ProP+Rifle "aVN"
+ProP+Rifle "jansen"
 	VoicePitch = 95
 End
 
-ProP+Rifle "sarenii"
+ProP+Rifle "RykuN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "c0llins"
+ProP+Rifle "skillmaschine JJ_-"
 	VoicePitch = 110
 End
 
@@ -2597,25 +2597,25 @@ ProP+Rifle "pan1K"
 	VoicePitch = 110
 End
 
-//Aristocracy Players
+//AVEZ Players
 
-ProP+Rifle "mouz"
+ProP+Rifle "MOLSI"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "rallen"
+EliteAwp+SniperPro "hades"
 	VoicePitch = 106
 End
 
-ProP+Rifle "TaZ"
+ProP+Rifle "KEi"
 	VoicePitch = 95
 End
 
-ProP+Rifle "MINISE"
+ProP+Rifle "Kylar"
 	VoicePitch = 110
 End
 
-ProP+Rifle "dycha"
+ProP+Rifle "nawrot"
 	VoicePitch = 110
 End
 
@@ -3139,7 +3139,7 @@ ProP+Rifle "flying"
 	VoicePitch = 95
 End
 
-ProP+Rifle "equal"
+ProP+Rifle "sPiNacH"
 	VoicePitch = 110
 End
 
@@ -3377,7 +3377,7 @@ EliteAwp+SniperPro "dumau"
 	VoicePitch = 106
 End
 
-ProP+Rifle "brutt"
+ProP+Rifle "tatazin"
 	VoicePitch = 95
 End
 

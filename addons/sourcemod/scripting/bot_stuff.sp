@@ -70,6 +70,445 @@ char GlockModels[][] = {
 	"models/weapons/v_glockkhorkoi.mdl"
 };
 
+char USPModels[][] = {
+	"models/weapons/v_uspbiomech.mdl",
+	"models/weapons/v_uspnortheagle.mdl",
+	"models/weapons/v_uspfatcap.mdl",
+	"models/weapons/v_uspwolfpack.mdl",
+	"models/weapons/v_uspleder.mdl",
+	"models/weapons/v_uspchopper.mdl",
+	"models/weapons/v_uspkumichodragon.mdl",
+	"models/weapons/v_usppuncher.mdl",
+	"models/weapons/v_uspprime.mdl",
+	"models/weapons/v_uspstealthhunter.mdl",
+	"models/weapons/v_uspoathbreaker.mdl",
+	"models/weapons/v_uspfroststorm.mdl"
+};
+
+char P2000Models[][] = {
+	"models/weapons/v_p2000casehardened.mdl",
+	"models/weapons/v_p2000nuclearthreat.mdl",
+	"models/weapons/v_p2000fade.mdl",
+	"models/weapons/v_p2000venom.mdl",
+	"models/weapons/v_p2000royalscarab.mdl",
+	"models/weapons/v_p2000biker.mdl",
+	"models/weapons/v_p2000faust.mdl"
+};
+
+char P250Models[][] = {
+	"models/weapons/v_p250dragon.mdl",
+	"models/weapons/v_p250tikitime.mdl",
+	"models/weapons/v_p250chopper.mdl",
+	"models/weapons/v_p250mantis.mdl",
+	"models/weapons/v_p250constructionsite.mdl",
+	"models/weapons/v_p250corroden.mdl",
+	"models/weapons/v_p250furiousscience.mdl",
+	"models/weapons/v_p250cyrex.mdl",
+	"models/weapons/v_p250crush.mdl",
+	"models/weapons/v_p250oni.mdl",
+	"models/weapons/v_p250alpha.mdl",
+	"models/weapons/v_p250shardsofinferno.mdl",
+	"models/weapons/v_p250hellhoud.mdl",
+	"models/weapons/v_p250tribal.mdl",
+	"models/weapons/v_p250antrax.mdl"
+};
+
+char CZ75Models[][] = {
+	"models/weapons/v_cz75fade.mdl",
+	"models/weapons/v_cz75phantom.mdl",
+	"models/weapons/v_cz75carabinieri.mdl",
+	"models/weapons/v_cz75praetorian.mdl",
+	"models/weapons/v_cz75juiceseries.mdl",
+	"models/weapons/v_cz75clockwork.mdl",
+	"models/weapons/v_cz75divine.mdl",
+	"models/weapons/v_cz75secrets.mdl",
+	"models/weapons/v_cz75soulslayer.mdl",
+	"models/weapons/v_cz75trampelephant.mdl"
+};
+
+char DeagleModels[][] = {
+	"models/weapons/v_deaglegold.mdl",
+	"models/weapons/v_deagletitan.mdl",
+	"models/weapons/v_deaglebrightwater.mdl",
+	"models/weapons/v_deagleskulls.mdl",
+	"models/weapons/v_deagledejackal.mdl",
+	"models/weapons/v_deaglesunburst.mdl",
+	"models/weapons/v_deagleduke.mdl",
+	"models/weapons/v_deaglespartan.mdl",
+	"models/weapons/v_deagleunit.mdl",
+	"models/weapons/v_deaglewraith.mdl",
+	"models/weapons/v_deaglestreetshooter.mdl",
+	"models/weapons/v_deagleearthelemental.mdl",
+	"models/weapons/v_deagleicedragon.mdl",
+	"models/weapons/v_deaglecyberwanderer.mdl",
+	"models/weapons/v_deaglemechanicaltrick.mdl",
+	"models/weapons/v_deagleserpent.mdl"
+};
+
+char RevolverModels[][] = {
+	"models/weapons/v_revolvertigertooth.mdl",
+	"models/weapons/v_revolveremerald.mdl",
+	"models/weapons/v_revolverblaze.mdl",
+	"models/weapons/v_revolverladyfelicity.mdl",
+	"models/weapons/v_revolvermachinery.mdl",
+	"models/weapons/v_revolvergrand.mdl",
+	"models/weapons/v_revolverscavengersmayhem.mdl"
+};
+
+char FiveSevenModels[][] = {
+	"models/weapons/v_fivesevennuclearthreat.mdl",
+	"models/weapons/v_fivesevenfreehand.mdl",
+	"models/weapons/v_fivesevenpointdisarray.mdl",
+	"models/weapons/v_fivesevenbadqueen.mdl",
+	"models/weapons/v_fivesevensymbiosis.mdl",
+	"models/weapons/v_fivesevenoppositions.mdl",
+	"models/weapons/v_fivesevencybershark.mdl",
+	"models/weapons/v_fivesevenbloodvine.mdl",
+	"models/weapons/v_fivesevenwildblood.mdl",
+	"models/weapons/v_fivesevennordicrelic.mdl",
+	"models/weapons/v_fivesevenbloodsport.mdl",
+	"models/weapons/v_fivesevenleather.mdl",
+	"models/weapons/v_fivesevendragon.mdl",
+	"models/weapons/v_fivesevenwasteland.mdl",
+	"models/weapons/v_fivesevenelypse.mdl",
+	"models/weapons/v_fivesevenbigiron.mdl"
+};
+
+char Tec9Models[][] = {
+	"models/weapons/v_tec9feverdream.mdl",
+	"models/weapons/v_tec9ghost.mdl",
+	"models/weapons/v_tec9corebeatz.mdl",
+	"models/weapons/v_tec9dynamite.mdl",
+	"models/weapons/v_tec9cybernetik.mdl",
+	"models/weapons/v_tec9puncher.mdl",
+	"models/weapons/v_tec9obsidian.mdl",
+	"models/weapons/v_tec9hawksky.mdl",
+	"models/weapons/v_tec9horsos.mdl",
+	"models/weapons/v_tec9niners.mdl",
+	"models/weapons/v_tec9rosedeath.mdl",
+	"models/weapons/v_tec9collision.mdl",
+	"models/weapons/v_tec9lava.mdl",
+	"models/weapons/v_tec9ratsquad.mdl"
+};
+
+char DualiesModels[][] = {
+	"models/weapons/v_elitedezastre.mdl",
+	"models/weapons/v_eliteroadwarrior.mdl",
+	"models/weapons/v_elitelunaysol.mdl",
+	"models/weapons/v_elitedeadwood.mdl",
+	"models/weapons/v_elitecomrade.mdl",
+	"models/weapons/v_elitehawkeye.mdl",
+	"models/weapons/v_eliteorangerebel.mdl"
+};
+
+char NovaModels[][] = {
+	"models/weapons/v_novastormrage.mdl",
+	"models/weapons/v_novashallowgrave.mdl",
+	"models/weapons/v_novamedusa.mdl"
+};
+
+char SawedOffModels[][] = {
+	"models/weapons/v_sawedoffscifitech.mdl",
+	"models/weapons/v_sawedoffghettoblaster.mdl",
+	"models/weapons/v_sawedofftaktik.mdl",
+	"models/weapons/v_sawedoffragnarok.mdl",
+	"models/weapons/v_sawedoffsuperstructure.mdl",
+	"models/weapons/v_sawedoffscorpious.mdl",
+	"models/weapons/v_sawedoffphoenixorigins.mdl",
+	"models/weapons/v_sawedoffpsychopath.mdl"
+};
+
+char Mag7Models[][] = {
+	"models/weapons/v_mag7nightstalker.mdl",
+	"models/weapons/v_mag7zhaoyu.mdl"
+};
+
+char XM1014Models[][] = {
+	"models/weapons/v_xm1014richdeath.mdl",
+	"models/weapons/v_xm1014outlands.mdl",
+	"models/weapons/v_xm1014fade.mdl",
+	"models/weapons/v_xm1014necromancer.mdl",
+	"models/weapons/v_xm1014burnished.mdl",
+	"models/weapons/v_xm1014wastelandrebel.mdl",
+	"models/weapons/v_xm1014vandal.mdl",
+	"models/weapons/v_xm1014redtiger.mdl"
+};
+
+char M249Models[][] = {
+	"models/weapons/v_m249downvoter.mdl"
+};
+
+char NegevModels[][] = {
+	"models/weapons/v_negevsynergy.mdl",
+	"models/weapons/v_negevcrossbar.mdl"
+};
+
+char MP9Models[][] = {
+	"models/weapons/v_mp9falcon.mdl",
+	"models/weapons/v_mp9comics.mdl",
+	"models/weapons/v_mp9exposure.mdl",
+	"models/weapons/v_mp9bloodsport.mdl",
+	"models/weapons/v_mp9noraqi.mdl",
+	"models/weapons/v_mp9striker.mdl",
+	"models/weapons/v_mp9battlegreen.mdl",
+	"models/weapons/v_mp9rubydiamond.mdl",
+	"models/weapons/v_mp9wilddragon.mdl",
+	"models/weapons/v_mp9bughunt.mdl",
+	"models/weapons/v_mp9leather.mdl"
+};
+
+char Mac10Models[][] = {
+	"models/weapons/v_mac10reactor.mdl",
+	"models/weapons/v_mac10plasmax.mdl",
+	"models/weapons/v_mac10inferno.mdl",
+	"models/weapons/v_mac10strike.mdl",
+	"models/weapons/v_mac10discerningthug.mdl",
+	"models/weapons/v_mac10anarchy.mdl",
+	"models/weapons/v_mac10bigiron.mdl",
+	"models/weapons/v_mac10tread.mdl",
+	"models/weapons/v_mac10wastelandrebel.mdl"
+};
+
+char MP7Models[][] = {
+	"models/weapons/v_mp7boom.mdl",
+	"models/weapons/v_mp7kintsugi.mdl",
+	"models/weapons/v_mp7nightcall.mdl",
+	"models/weapons/v_mp7doppler.mdl",
+	"models/weapons/v_mp7factory.mdl",
+	"models/weapons/v_mp7deimos.mdl",
+	"models/weapons/v_mp7brushed.mdl",
+	"models/weapons/v_mp7fragtech.mdl",
+	"models/weapons/v_mp7renegade.mdl",
+	"models/weapons/v_mp7bob.mdl"
+};
+
+char MP5Models[][] = {
+	"models/weapons/v_mp5sdlethalinjection.mdl",
+	"models/weapons/v_mp5sdcasehardened.mdl",
+	"models/weapons/v_mp5sdcrimsonweb.mdl",
+	"models/weapons/v_mp5sdfreehand.mdl",
+	"models/weapons/v_mp5sdhydroponic.mdl",
+	"models/weapons/v_mp5sdreactor.mdl",
+	"models/weapons/v_mp5sdslaughter.mdl",
+	"models/weapons/v_mp5sdtigertooth.mdl",
+	"models/weapons/v_mp5sdtwilightgalaxy.mdl"
+};
+
+char UMP45Models[][] = {
+	"models/weapons/v_ump45neonoir.mdl",
+	"models/weapons/v_ump45dodgygreen.mdl",
+	"models/weapons/v_ump45mechadragon.mdl",
+	"models/weapons/v_ump45dragonbreath.mdl",
+	"models/weapons/v_ump45dragonfire.mdl",
+	"models/weapons/v_ump45anarchy.mdl",
+	"models/weapons/v_ump45phobos.mdl",
+	"models/weapons/v_ump45overdrive.mdl",
+	"models/weapons/v_ump45fresh.mdl",
+	"models/weapons/v_ump45demon.mdl",
+	"models/weapons/v_ump45nemo.mdl",
+	"models/weapons/v_ump45primal.mdl",
+	"models/weapons/v_ump45vertex.mdl",
+	"models/weapons/v_ump45tread.mdl",
+	"models/weapons/v_ump45witsend.mdl"
+};
+
+char P90Models[][] = {
+	"models/weapons/v_p90critical.mdl",
+	"models/weapons/v_p90kami.mdl",
+	"models/weapons/v_p90marblefade.mdl",
+	"models/weapons/v_p90projectzeroeight.mdl",
+	"models/weapons/v_p90ravens.mdl",
+	"models/weapons/v_p90sagittarius.mdl",
+	"models/weapons/v_p90fusion.mdl",
+	"models/weapons/v_p90eyespy.mdl",
+	"models/weapons/v_p90harrier.mdl",
+	"models/weapons/v_p90strawberryrush.mdl",
+	"models/weapons/v_p90hellfire.mdl",
+	"models/weapons/v_p90eternalrebirth.mdl",
+	"models/weapons/v_p90theswarm.mdl",
+	"models/weapons/v_p90furylessred.mdl",
+	"models/weapons/v_p90ultrabeam.mdl",
+	"models/weapons/v_p90neonrider.mdl",
+	"models/weapons/v_p90cyclone.mdl"
+};
+
+char BizonModels[][] = {
+	"models/weapons/v_bizonsubmarine.mdl",
+	"models/weapons/v_bizondeathwarning.mdl",
+	"models/weapons/v_bizonsteammachine.mdl",
+	"models/weapons/v_bizonsurvivorz.mdl",
+	"models/weapons/v_bizondakadaka.mdl",
+	"models/weapons/v_bizonintrepid.mdl",
+	"models/weapons/v_bizonfirebreathing.mdl",
+	"models/weapons/v_bizonenduro.mdl",
+	"models/weapons/v_bizonfeline.mdl"
+};
+
+char GalilModels[][] = {
+	"models/weapons/v_galiltigertooth.mdl",
+	"models/weapons/v_galilfalcon.mdl",
+	"models/weapons/v_galilrevolution.mdl",
+	"models/weapons/v_galilscorchingdragon.mdl",
+	"models/weapons/v_galilshield.mdl",
+	"models/weapons/v_galilcoup.mdl",
+	"models/weapons/v_galilsirius.mdl",
+	"models/weapons/v_galilshootout.mdl",
+	"models/weapons/v_galiloctopus.mdl"
+};
+
+char FamasModels[][] = {
+	"models/weapons/v_famassavage.mdl",
+	"models/weapons/v_famascupidsarrow.mdl",
+	"models/weapons/v_famasfrak.mdl",
+	"models/weapons/v_famastigertooth.mdl",
+	"models/weapons/v_famasmaneater.mdl",
+	"models/weapons/v_famasmarblefade.mdl",
+	"models/weapons/v_famasslaughter.mdl",
+	"models/weapons/v_famasexo.mdl",
+	"models/weapons/v_famasbloody.mdl",
+	"models/weapons/v_famasbetty.mdl",
+	"models/weapons/v_famasauspicouspower.mdl",
+	"models/weapons/v_famasmagnalance.mdl",
+	"models/weapons/v_famaspolice.mdl",
+	"models/weapons/v_famastokolosi.mdl",
+	"models/weapons/v_famasgodofwar.mdl",
+	"models/weapons/v_famaswasp.mdl",
+	"models/weapons/v_famasdeathspine.mdl",
+	"models/weapons/v_famascarthage.mdl",
+	"models/weapons/v_famasfalconblue.mdl",
+	"models/weapons/v_famasjungletiger.mdl",
+	"models/weapons/v_famasgoldlegend.mdl",
+	"models/weapons/v_famasascii.mdl"
+};
+
+char AK47Models[][] = {
+	"models/weapons/v_ak47lightofking.mdl",
+	"models/weapons/v_ak47royalplatinumgold.mdl",
+	"models/weapons/v_ak47lycanthrope.mdl",
+	"models/weapons/v_ak47fade.mdl",
+	"models/weapons/v_ak47tigertooth.mdl",
+	"models/weapons/v_ak47emerald.mdl",
+	"models/weapons/v_ak47marblefade.mdl",
+	"models/weapons/v_ak47ruby.mdl",
+	"models/weapons/v_ak47sapphire.mdl",
+	"models/weapons/v_ak47slaughter.mdl",
+	"models/weapons/v_ak47blackpearl.mdl",
+	"models/weapons/v_ak47relic.mdl",
+	"models/weapons/v_ak47signal.mdl",
+	"models/weapons/v_ak47catacombs.mdl",
+	"models/weapons/v_ak47phantomdisruptor.mdl",
+	"models/weapons/v_ak47carbonfiber.mdl",
+	"models/weapons/v_ak47suninleo.mdl",
+	"models/weapons/v_ak47cobaltdisruption.mdl",
+	"models/weapons/v_ak47boom.mdl",
+	"models/weapons/v_ak47faceofthefight.mdl"
+};
+
+char M4A4Models[][] = {
+	"models/weapons/v_m4a4emerald.mdl",
+	"models/weapons/v_m4a4blackpearl.mdl",
+	"models/weapons/v_m4a4ruby.mdl",
+	"models/weapons/v_m4a4sapphire.mdl",
+	"models/weapons/v_m4a4neonrider.mdl",
+	"models/weapons/v_m4a4roadhog.mdl",
+	"models/weapons/v_m4a4killconfirmed.mdl",
+	"models/weapons/v_m4a4styx.mdl",
+	"models/weapons/v_m4a4hypnotic.mdl",
+	"models/weapons/v_m4a4graphite.mdl",
+	"models/weapons/v_m4a4grinder.mdl",
+	"models/weapons/v_m4a4catacombs.mdl",
+	"models/weapons/v_m4a4cagedsteel.mdl",
+	"models/weapons/v_m4a4chainmail.mdl",
+	"models/weapons/v_m4a4silverquartz.mdl",
+	"models/weapons/v_m4a4darkwater.mdl",
+	"models/weapons/v_m4a4darkage.mdl",
+	"models/weapons/v_m4a4newmonarchy.mdl",
+	"models/weapons/v_m4a4alliance.mdl",
+	"models/weapons/v_m4a4celticserpent.mdl",
+	"models/weapons/v_m4a4anti.mdl"
+};
+
+char M4A1SModels[][] = {
+	"models/weapons/v_m4a1shydroponic.mdl",
+	"models/weapons/v_m4a1swhitefang.mdl",
+	"models/weapons/v_m4a1shighvoltagegod.mdl",
+	"models/weapons/v_m4a1shaywire.mdl",
+	"models/weapons/v_m4a1sbrotwist.mdl",
+	"models/weapons/v_m4a1sfaust.mdl",
+	"models/weapons/v_m4a1s66gun.mdl",
+	"models/weapons/v_m4a1sprivycouncillor.mdl",
+	"models/weapons/v_m4a1sforte.mdl",
+	"models/weapons/v_m4a1scutter.mdl"
+};
+
+char SG556Models[][] = {
+	"models/weapons/v_sg556moonrise.mdl",
+	"models/weapons/v_sg556akihabaraaccept.mdl",
+	"models/weapons/v_sg556volcanowarrior.mdl",
+	"models/weapons/v_sg556blitz.mdl",
+	"models/weapons/v_sg556radar.mdl",
+	"models/weapons/v_sg556flamingdragon.mdl",
+	"models/weapons/v_sg556leonardo.mdl"
+};
+
+char AUGModels[][] = {
+	"models/weapons/v_augthunderstorm.mdl",
+	"models/weapons/v_augaugust.mdl",
+	"models/weapons/v_augonix.mdl",
+	"models/weapons/v_augwolfsbane.mdl",
+	"models/weapons/v_augslither.mdl",
+	"models/weapons/v_augrus.mdl",
+	"models/weapons/v_augasura.mdl"
+};
+
+char SCAR20Models[][] = {
+	"models/weapons/v_scar20falcon.mdl",
+	"models/weapons/v_scar20etherealdragon.mdl",
+	"models/weapons/v_scar20crimsonkimono.mdl",
+	"models/weapons/v_scar20ridinghood.mdl",
+	"models/weapons/v_scar20destroyer.mdl",
+	"models/weapons/v_scar20fire.mdl"
+};
+
+char G3SG1Models[][] = {
+	"models/weapons/v_g3sg1savage.mdl",
+	"models/weapons/v_g3sg1hollowking.mdl",
+	"models/weapons/v_g3sg1bulletprooftrooper.mdl",
+	"models/weapons/v_g3sg1abstraction.mdl",
+	"models/weapons/v_g3sg1cybernetik.mdl",
+	"models/weapons/v_g3sg1survivorz.mdl"
+};
+
+char SSG08Models[][] = {
+	"models/weapons/v_ssg08ctpower.mdl",
+	"models/weapons/v_ssg08comebacker.mdl",
+	"models/weapons/v_ssg08kingcobra.mdl",
+	"models/weapons/v_ssg08supercharged.mdl",
+	"models/weapons/v_ssg08savannahpredator.mdl",
+	"models/weapons/v_ssg08tread.mdl",
+	"models/weapons/v_ssg08bushfire.mdl",
+	"models/weapons/v_ssg08sharkdiver.mdl"
+};
+
+char AWPModels[][] = {
+	"models/weapons/v_awprose.mdl",
+	"models/weapons/v_awphades.mdl",
+	"models/weapons/v_awpfreehand.mdl",
+	"models/weapons/v_awpreactor.mdl",
+	"models/weapons/v_awporangedash.mdl",
+	"models/weapons/v_awpblackgold.mdl",
+	"models/weapons/v_awppurplecatacombs.mdl",
+	"models/weapons/v_awpnucleargarden.mdl",
+	"models/weapons/v_awphandwritten.mdl",
+	"models/weapons/v_awpplasmax.mdl",
+	"models/weapons/v_awproadwarrior.mdl",
+	"models/weapons/v_awpnecronomigun.mdl",
+	"models/weapons/v_awpprimal.mdl",
+	"models/weapons/v_awpmvp.mdl",
+	"models/weapons/v_awpvampir.mdl",
+	"models/weapons/v_awpabrams.mdl"
+};
+
 char g_BotName[][] = {
 	//MIBR Players
 	"kNgV-",
@@ -125,7 +564,7 @@ char g_BotName[][] = {
 	"woxic",
 	"frozen",
 	"ropz",
-	//TyLoo Players
+	//TYLOO Players
 	"Summer",
 	"Attacker",
 	"BnTneT",
@@ -390,11 +829,11 @@ char g_BotName[][] = {
 	"MUTiRiS",
 	"arki",
 	//Lions Players
-	"YuRk0",
-	"Jibrix",
-	"Kairi",
-	"HUMANZ",
-	"NaOw",
+	"HUNDEN",
+	"acoR",
+	"Sjuush",
+	"Bubzkji",
+	"roeJ",
 	//Riders Players
 	"mopoz",
 	"EasTor",
@@ -438,7 +877,7 @@ char g_BotName[][] = {
 	"kioShiMa",
 	"Lucky",
 	//Nemiga Players
-	"ROBO",
+	"spellfull",
 	"mds",
 	"lollipop21k",
 	"Jyo",
@@ -558,8 +997,8 @@ char g_BotName[][] = {
 	"shuadapai",
 	"Viva",
 	//EHOME Players
-	"insane",
-	"originalheart",
+	"equal",
+	"DeStRoYeR",
 	"Marek",
 	"SLOWLY",
 	"4king",
@@ -586,7 +1025,7 @@ char g_BotName[][] = {
 	"Psy",
 	"Excali",
 	"skillZ",
-	"DeathMakeR",
+	"Ace",
 	//LucidDream Players
 	"wannafly",
 	"PTC",
@@ -642,11 +1081,11 @@ char g_BotName[][] = {
 	"TISAN",
 	"Tio",
 	//BLUEJAYS Players
-	"dEE",
-	"DiMKE",
-	"aVN",
-	"sarenii",
-	"c0llins",
+	"maxz",
+	"Tsubasa",
+	"jansen",
+	"RykuN",
+	"skillmaschine JJ_-",
 	//EXECUTIONERS Players
 	"ZesBeeW",
 	"FamouZ",
@@ -665,12 +1104,12 @@ char g_BotName[][] = {
 	"zemp",
 	"zeph",
 	"pan1K",
-	//Aristocracy Players
-	"mouz",
-	"rallen",
-	"TaZ",
-	"MINISE",
-	"dycha",
+	//AVEZ Players
+	"MOLSI",
+	"hades",
+	"KEi",
+	"Kylar",
+	"nawrot",
 	//BTRG Players
 	"Eeyore",
 	"Drea3er",
@@ -813,7 +1252,7 @@ char g_BotName[][] = {
 	"EXPRO",
 	"V4D1M",
 	"flying",
-	"equal",
+	"sPiNacH",
 	"Koshak",
 	//HR Players
 	"ANGE1",
@@ -878,7 +1317,7 @@ char g_BotName[][] = {
 	//Imperial Players
 	"KHTEX",
 	"dumau",
-	"brutt",
+	"tatazin",
 	"delboNi",
 	"iDk",
 	//Big5 Players
@@ -956,7 +1395,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_fnatic", Team_fnatic);
 	RegConsoleCmd("team_north", Team_North);
 	RegConsoleCmd("team_mouz", Team_mouz);
-	RegConsoleCmd("team_tyloo", Team_TyLoo);
+	RegConsoleCmd("team_tyloo", Team_TYLOO);
 	RegConsoleCmd("team_eg", Team_EG);
 	RegConsoleCmd("team_thieves", Team_Thieves);
 	RegConsoleCmd("team_navi", Team_NaVi);
@@ -1046,7 +1485,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_executioners", Team_EXECUTIONERS);
 	RegConsoleCmd("team_vexed", Team_Vexed);
 	RegConsoleCmd("team_groundzero", Team_GroundZero);
-	RegConsoleCmd("team_aristocracy", Team_Aristocracy);
+	RegConsoleCmd("team_avez", Team_AVEZ);
 	RegConsoleCmd("team_btrg", Team_BTRG);
 	RegConsoleCmd("team_keyd", Team_Keyd);
 	RegConsoleCmd("team_gtz", Team_GTZ);
@@ -1361,7 +1800,7 @@ public Action Team_mouz(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_TyLoo(int client, int args)
+public Action Team_TYLOO(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2689,22 +3128,22 @@ public Action Team_Lions(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "YuRk0");
-		ServerCommand("bot_add_ct %s", "Jibrix");
-		ServerCommand("bot_add_ct %s", "Kairi");
-		ServerCommand("bot_add_ct %s", "HUMANZ");
-		ServerCommand("bot_add_ct %s", "NaOw");
+		ServerCommand("bot_add_ct %s", "HUNDEN");
+		ServerCommand("bot_add_ct %s", "acoR");
+		ServerCommand("bot_add_ct %s", "Sjuush");
+		ServerCommand("bot_add_ct %s", "Bubzkji");
+		ServerCommand("bot_add_ct %s", "roeJ");
 		ServerCommand("mp_teamlogo_1 lion");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "YuRk0");
-		ServerCommand("bot_add_t %s", "Jibrix");
-		ServerCommand("bot_add_t %s", "Kairi");
-		ServerCommand("bot_add_t %s", "HUMANZ");
-		ServerCommand("bot_add_t %s", "NaOw");
+		ServerCommand("bot_add_t %s", "HUNDEN");
+		ServerCommand("bot_add_t %s", "acoR");
+		ServerCommand("bot_add_t %s", "Sjuush");
+		ServerCommand("bot_add_t %s", "Bubzkji");
+		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("mp_teamlogo_2 lion");
 	}
 	
@@ -2929,7 +3368,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "ROBO");
+		ServerCommand("bot_add_ct %s", "spellfull");
 		ServerCommand("bot_add_ct %s", "mds");
 		ServerCommand("bot_add_ct %s", "lollipop21k");
 		ServerCommand("bot_add_ct %s", "Jyo");
@@ -2940,7 +3379,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "ROBO");
+		ServerCommand("bot_add_t %s", "spellfull");
 		ServerCommand("bot_add_t %s", "mds");
 		ServerCommand("bot_add_t %s", "lollipop21k");
 		ServerCommand("bot_add_t %s", "Jyo");
@@ -3529,8 +3968,8 @@ public Action Team_EHOME(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "insane");
-		ServerCommand("bot_add_ct %s", "originalheart");
+		ServerCommand("bot_add_ct %s", "equal");
+		ServerCommand("bot_add_ct %s", "DeStRoYeR");
 		ServerCommand("bot_add_ct %s", "Marek");
 		ServerCommand("bot_add_ct %s", "SLOWLY");
 		ServerCommand("bot_add_ct %s", "4king");
@@ -3540,8 +3979,8 @@ public Action Team_EHOME(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "insane");
-		ServerCommand("bot_add_t %s", "originalheart");
+		ServerCommand("bot_add_t %s", "equal");
+		ServerCommand("bot_add_t %s", "DeStRoYeR");
 		ServerCommand("bot_add_t %s", "Marek");
 		ServerCommand("bot_add_t %s", "SLOWLY");
 		ServerCommand("bot_add_t %s", "4king");
@@ -3653,7 +4092,7 @@ public Action Team_Entity(int client, int args)
 		ServerCommand("bot_add_ct %s", "Psy");
 		ServerCommand("bot_add_ct %s", "Excali");
 		ServerCommand("bot_add_ct %s", "skillZ");
-		ServerCommand("bot_add_ct %s", "DeathMakeR");
+		ServerCommand("bot_add_ct %s", "Ace");
 		ServerCommand("mp_teamlogo_1 enti");
 	}
 	
@@ -3664,7 +4103,7 @@ public Action Team_Entity(int client, int args)
 		ServerCommand("bot_add_t %s", "Psy");
 		ServerCommand("bot_add_t %s", "Excali");
 		ServerCommand("bot_add_t %s", "skillZ");
-		ServerCommand("bot_add_t %s", "DeathMakeR");
+		ServerCommand("bot_add_t %s", "Ace");
 		ServerCommand("mp_teamlogo_2 enti");
 	}
 	
@@ -3949,22 +4388,22 @@ public Action Team_BLUEJAYS(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "dEE");
-		ServerCommand("bot_add_ct %s", "DiMKE");
-		ServerCommand("bot_add_ct %s", "aVN");
-		ServerCommand("bot_add_ct %s", "sarenii");
-		ServerCommand("bot_add_ct %s", "c0llins");
+		ServerCommand("bot_add_ct %s", "maxz");
+		ServerCommand("bot_add_ct %s", "Tsubasa");
+		ServerCommand("bot_add_ct %s", "jansen");
+		ServerCommand("bot_add_ct %s", "RykuN");
+		ServerCommand("bot_add_ct %s", "skillmaschine JJ_-");
 		ServerCommand("mp_teamlogo_1 blueja");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "dEE");
-		ServerCommand("bot_add_t %s", "DiMKE");
-		ServerCommand("bot_add_t %s", "aVN");
-		ServerCommand("bot_add_t %s", "sarenii");
-		ServerCommand("bot_add_t %s", "c0llins");
+		ServerCommand("bot_add_t %s", "maxz");
+		ServerCommand("bot_add_t %s", "Tsubasa");
+		ServerCommand("bot_add_t %s", "jansen");
+		ServerCommand("bot_add_t %s", "RykuN");
+		ServerCommand("bot_add_t %s", "skillmaschine JJ_-");
 		ServerCommand("mp_teamlogo_2 blueja");
 	}
 	
@@ -4061,7 +4500,7 @@ public Action Team_GroundZero(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Aristocracy(int client, int args)
+public Action Team_AVEZ(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -4069,23 +4508,23 @@ public Action Team_Aristocracy(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "mouz");
-		ServerCommand("bot_add_ct %s", "rallen");
-		ServerCommand("bot_add_ct %s", "TaZ");
-		ServerCommand("bot_add_ct %s", "MINISE");
-		ServerCommand("bot_add_ct %s", "dycha");
-		ServerCommand("mp_teamlogo_1 arist");
+		ServerCommand("bot_add_ct %s", "MOLSI");
+		ServerCommand("bot_add_ct %s", "hades");
+		ServerCommand("bot_add_ct %s", "KEi");
+		ServerCommand("bot_add_ct %s", "Kylar");
+		ServerCommand("bot_add_ct %s", "nawrot");
+		ServerCommand("mp_teamlogo_1 avez");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "mouz");
-		ServerCommand("bot_add_t %s", "rallen");
-		ServerCommand("bot_add_t %s", "TaZ");
-		ServerCommand("bot_add_t %s", "MINISE");
-		ServerCommand("bot_add_t %s", "dycha");
-		ServerCommand("mp_teamlogo_2 arist");
+		ServerCommand("bot_add_t %s", "MOLSI");
+		ServerCommand("bot_add_t %s", "hades");
+		ServerCommand("bot_add_t %s", "KEi");
+		ServerCommand("bot_add_t %s", "Kylar");
+		ServerCommand("bot_add_t %s", "nawrot");
+		ServerCommand("mp_teamlogo_2 avez");
 	}
 	
 	return Plugin_Handled;
@@ -4792,7 +5231,7 @@ public Action Team_IG(int client, int args)
 		ServerCommand("bot_add_ct %s", "EXPRO");
 		ServerCommand("bot_add_ct %s", "V4D1M");
 		ServerCommand("bot_add_ct %s", "flying");
-		ServerCommand("bot_add_ct %s", "equal");
+		ServerCommand("bot_add_ct %s", "sPiNacH");
 		ServerCommand("bot_add_ct %s", "Koshak");
 		ServerCommand("mp_teamlogo_1 ig");
 	}
@@ -4803,7 +5242,7 @@ public Action Team_IG(int client, int args)
 		ServerCommand("bot_add_t %s", "EXPRO");
 		ServerCommand("bot_add_t %s", "V4D1M");
 		ServerCommand("bot_add_t %s", "flying");
-		ServerCommand("bot_add_t %s", "equal");
+		ServerCommand("bot_add_t %s", "sPiNacH");
 		ServerCommand("bot_add_t %s", "Koshak");
 		ServerCommand("mp_teamlogo_2 ig");
 	}
@@ -5121,7 +5560,7 @@ public Action Team_Imperial(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "KHTEX");
 		ServerCommand("bot_add_ct %s", "dumau");
-		ServerCommand("bot_add_ct %s", "brutt");
+		ServerCommand("bot_add_ct %s", "tatazin");
 		ServerCommand("bot_add_ct %s", "delboNi");
 		ServerCommand("bot_add_ct %s", "iDk");
 		ServerCommand("mp_teamlogo_1 imp");
@@ -5132,7 +5571,7 @@ public Action Team_Imperial(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "KHTEX");
 		ServerCommand("bot_add_t %s", "dumau");
-		ServerCommand("bot_add_t %s", "brutt");
+		ServerCommand("bot_add_t %s", "tatazin");
 		ServerCommand("bot_add_t %s", "delboNi");
 		ServerCommand("bot_add_t %s", "iDk");
 		ServerCommand("mp_teamlogo_2 imp");
@@ -5386,6 +5825,11 @@ public void OnClientPostAdminCheck(int client)
 	SetCustomPrivateRank(client);
 }
 
+public OnClientPutInServer(client)  
+{  
+	SDKHook(client, SDKHook_WeaponEquipPost, OnWeaponEquipPost);
+}
+
 public void OnRoundStart(Handle event, char[] name, bool dbc)
 {
 	for(int i = 1; i <= MaxClients; i++)
@@ -5450,6 +5894,20 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
+			else if(GetRandomInt(1,100) <= 10)
+			{
+				if (iWeapon != -1)
+				{
+					RemovePlayerItem(client, iWeapon);
+				}
+				
+				m_iAccount -= 3300;
+				GivePlayerItem(client, "weapon_aug");
+				if ((m_iAccount > 16000) || (m_iAccount < 0))
+					m_iAccount = 0;
+				SetClientMoney(client, m_iAccount);
+				return Plugin_Handled; 
+			}
 			else
 			{
 				return Plugin_Continue;
@@ -5472,10 +5930,6 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 					m_iAccount = 0;
 				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
-			}
-			else
-			{
-				return Plugin_Continue;
 			}
 		}
 		else if(StrEqual(weapon,"mac10"))
@@ -5529,10 +5983,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 			return Plugin_Continue;
 		}
 	}
-	else
-	{
-		return Plugin_Continue;
-	}
+	return Plugin_Continue;
 }
 
 public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3], float angles[3], int& weapon, int& subtype, int& cmdnum, int& tickcount, int& seed, int mouse[2])
@@ -5686,23 +6137,6 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	int team = GetClientTeam(client);
 	
 	if (!client) return;
-
-	if(GetRandomInt(1,100) <= 25)
-	{
-		char weapon[32];
-		
-		GetClientWeapon(client, weapon, sizeof(weapon));
-
-		if(StrEqual(weapon, "weapon_glock"))
-		{
-			if(FPVMI_GetClientViewModel(client, "weapon_glock") == -1)
-			{
-				FPVMI_AddViewModelToClient(client, "weapon_glock", PrecacheModel(GlockModels[GetRandomInt(0, sizeof(GlockModels) - 1)])); // add custom view model to the player
-				int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
-				SetEntProp(slot, Prop_Send, "m_nFallbackPaintKit", 0);
-			}
-		}
-	}
 	
 	if(IsFakeClient(client))
 	{
@@ -5739,7 +6173,552 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 			}
 			case 2:
 			{
-				g_iMusic[client] = GetRandomInt(39,40);
+				g_iMusic[client] = GetRandomInt(39,41);
+			}
+		}
+	}
+}
+
+public void OnWeaponEquipPost(int client, int weapon)
+{
+	char sWeapon[32];
+	GetEdictClassname(weapon, sWeapon, sizeof(sWeapon));
+	
+	char weaponname[32];
+	GetClientWeapon(client, weaponname, sizeof(weaponname));
+	
+	if(GetEntPropEnt(weapon, Prop_Send, "m_hOwnerEntity") == client)
+	{
+		if(GetRandomInt(1,100) <= 20)
+		{
+			if(StrEqual(sWeapon, "weapon_glock"))
+			{
+				if(StrEqual(weaponname, "weapon_glock"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_glock") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel(GlockModels[GetRandomInt(0, sizeof(GlockModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_glock");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_hkp2000"))
+			{
+				if(StrEqual(weaponname, "weapon_hkp2000"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_hkp2000") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_hkp2000", PrecacheModel(P2000Models[GetRandomInt(0, sizeof(P2000Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_hkp2000");
+						}
+					}
+				}
+				else if(StrEqual(weaponname, "weapon_usp_silencer"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_usp_silencer") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel(USPModels[GetRandomInt(0, sizeof(USPModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_usp_silencer");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_p250"))
+			{
+				if(StrEqual(weaponname, "weapon_p250"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_p250") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_p250", PrecacheModel(P250Models[GetRandomInt(0, sizeof(P250Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_p250");
+						}
+					}
+				}
+				else if(StrEqual(weaponname, "weapon_cz75a"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_cz75a") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_cz75a", PrecacheModel(CZ75Models[GetRandomInt(0, sizeof(CZ75Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_cz75a");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_deagle"))
+			{
+				if(StrEqual(weaponname, "weapon_deagle"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_deagle") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_deagle", PrecacheModel(DeagleModels[GetRandomInt(0, sizeof(DeagleModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_deagle");
+						}
+					}
+				}
+				else if(StrEqual(weaponname, "weapon_revolver"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_revolver") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_revolver", PrecacheModel(RevolverModels[GetRandomInt(0, sizeof(RevolverModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_revolver");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_fiveseven"))
+			{
+				if(StrEqual(weaponname, "weapon_fiveseven"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_fiveseven") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_fiveseven", PrecacheModel(FiveSevenModels[GetRandomInt(0, sizeof(FiveSevenModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_fiveseven");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_tec9"))
+			{
+				if(StrEqual(weaponname, "weapon_tec9"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_tec9") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_tec9", PrecacheModel(Tec9Models[GetRandomInt(0, sizeof(Tec9Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_tec9");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_elite"))
+			{
+				if(StrEqual(weaponname, "weapon_elite"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_elite") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_elite", PrecacheModel(DualiesModels[GetRandomInt(0, sizeof(DualiesModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_elite");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_nova"))
+			{
+				if(StrEqual(weaponname, "weapon_nova"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_nova") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_nova", PrecacheModel(NovaModels[GetRandomInt(0, sizeof(NovaModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_nova");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_sawedoff"))
+			{
+				if(StrEqual(weaponname, "weapon_sawedoff"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_sawedoff") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel(SawedOffModels[GetRandomInt(0, sizeof(SawedOffModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_sawedoff");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_mag7"))
+			{
+				if(StrEqual(weaponname, "weapon_mag7"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_mag7") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel(Mag7Models[GetRandomInt(0, sizeof(Mag7Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_mag7");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_xm1014"))
+			{
+				if(StrEqual(weaponname, "weapon_xm1014"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_xm1014") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_xm1014", PrecacheModel(XM1014Models[GetRandomInt(0, sizeof(XM1014Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_xm1014");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_m249"))
+			{
+				if(StrEqual(weaponname, "weapon_m249"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_m249") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_m249", PrecacheModel(M249Models[GetRandomInt(0, sizeof(M249Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_m249");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_negev"))
+			{
+				if(StrEqual(weaponname, "weapon_negev"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_negev") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel(NegevModels[GetRandomInt(0, sizeof(NegevModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_negev");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_mp9"))
+			{
+				if(StrEqual(weaponname, "weapon_mp9"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_mp9") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel(MP9Models[GetRandomInt(0, sizeof(MP9Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_mp9");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_mac10"))
+			{
+				if(StrEqual(weaponname, "weapon_mac10"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_mac10") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_mac10", PrecacheModel(Mac10Models[GetRandomInt(0, sizeof(Mac10Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_mac10");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_mp7"))
+			{
+				if(StrEqual(weaponname, "weapon_mp7"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_mp7") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_mp7", PrecacheModel(MP7Models[GetRandomInt(0, sizeof(MP7Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_mp7");
+						}
+					}
+				}
+				else if(StrEqual(weaponname, "weapon_mp5sd"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_mp5sd") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_mp5sd", PrecacheModel(MP5Models[GetRandomInt(0, sizeof(MP5Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_mp5sd");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_ump45"))
+			{
+				if(StrEqual(weaponname, "weapon_ump45"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_ump45") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel(UMP45Models[GetRandomInt(0, sizeof(UMP45Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_ump45");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_p90"))
+			{
+				if(StrEqual(weaponname, "weapon_p90"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_p90") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel(P90Models[GetRandomInt(0, sizeof(P90Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_p90");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_bizon"))
+			{
+				if(StrEqual(weaponname, "weapon_bizon"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_bizon") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_bizon", PrecacheModel(BizonModels[GetRandomInt(0, sizeof(BizonModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_bizon");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_galilar"))
+			{
+				if(StrEqual(weaponname, "weapon_galilar"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_galilar") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel(GalilModels[GetRandomInt(0, sizeof(GalilModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_galilar");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_famas"))
+			{
+				if(StrEqual(weaponname, "weapon_famas"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_famas") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel(FamasModels[GetRandomInt(0, sizeof(FamasModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_famas");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_ak47"))
+			{
+				if(StrEqual(weaponname, "weapon_ak47"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_ak47") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_ak47", PrecacheModel(AK47Models[GetRandomInt(0, sizeof(AK47Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_ak47");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_m4a1"))
+			{
+				if(StrEqual(weaponname, "weapon_m4a1"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_m4a1") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel(M4A4Models[GetRandomInt(0, sizeof(M4A4Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_m4a1");
+						}
+					}
+				}
+				else if(StrEqual(weaponname, "weapon_m4a1_silencer"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_m4a1_silencer") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel(M4A1SModels[GetRandomInt(0, sizeof(M4A1SModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_m4a1_silencer");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_sg556"))
+			{
+				if(StrEqual(weaponname, "weapon_sg556"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_sg556") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel(SG556Models[GetRandomInt(0, sizeof(SG556Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_sg556");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_aug"))
+			{
+				if(StrEqual(weaponname, "weapon_aug"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_aug") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel(AUGModels[GetRandomInt(0, sizeof(AUGModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_aug");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_scar20"))
+			{
+				if(StrEqual(weaponname, "weapon_scar20"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_scar20") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel(SCAR20Models[GetRandomInt(0, sizeof(SCAR20Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_scar20");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_gs3sg1"))
+			{
+				if(StrEqual(weaponname, "weapon_gs3sg1"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_gs3sg1") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_gs3sg1", PrecacheModel(G3SG1Models[GetRandomInt(0, sizeof(G3SG1Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_gs3sg1");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_ssg08"))
+			{
+				if(StrEqual(weaponname, "weapon_ssg08"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_ssg08") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel(SSG08Models[GetRandomInt(0, sizeof(SSG08Models) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_ssg08");
+						}
+					}
+				}
+			}
+			else if(StrEqual(sWeapon, "weapon_awp"))
+			{
+				if(StrEqual(weaponname, "weapon_awp"))
+				{
+					if(FPVMI_GetClientViewModel(client, "weapon_awp") == -1)
+					{
+						int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+						if (slot != -1)
+						{
+							RemovePlayerItem(client, slot);
+							FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel(AWPModels[GetRandomInt(0, sizeof(AWPModels) - 1)])); // add custom view model to the player
+							GivePlayerItem(client, "weapon_awp");
+						}
+					}
+				}
 			}
 		}
 	}
@@ -5753,6 +6732,39 @@ public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 	if(IsClientInGame(client))
 	{
 		FPVMI_RemoveViewModelToClient(client, "weapon_glock");
+		FPVMI_RemoveViewModelToClient(client, "weapon_usp_silencer");
+		FPVMI_RemoveViewModelToClient(client, "weapon_hkp2000");
+		FPVMI_RemoveViewModelToClient(client, "weapon_p250");
+		FPVMI_RemoveViewModelToClient(client, "weapon_cz75a");
+		FPVMI_RemoveViewModelToClient(client, "weapon_deagle");
+		FPVMI_RemoveViewModelToClient(client, "weapon_revolver");
+		FPVMI_RemoveViewModelToClient(client, "weapon_fiveseven");
+		FPVMI_RemoveViewModelToClient(client, "weapon_tec9");
+		FPVMI_RemoveViewModelToClient(client, "weapon_elite");
+		FPVMI_RemoveViewModelToClient(client, "weapon_nova");
+		FPVMI_RemoveViewModelToClient(client, "weapon_sawedoff");
+		FPVMI_RemoveViewModelToClient(client, "weapon_mag7");
+		FPVMI_RemoveViewModelToClient(client, "weapon_xm1014");
+		FPVMI_RemoveViewModelToClient(client, "weapon_m249");
+		FPVMI_RemoveViewModelToClient(client, "weapon_negev");
+		FPVMI_RemoveViewModelToClient(client, "weapon_mp9");
+		FPVMI_RemoveViewModelToClient(client, "weapon_mac10");
+		FPVMI_RemoveViewModelToClient(client, "weapon_mp7");
+		FPVMI_RemoveViewModelToClient(client, "weapon_mp5sd");
+		FPVMI_RemoveViewModelToClient(client, "weapon_ump45");
+		FPVMI_RemoveViewModelToClient(client, "weapon_p90");
+		FPVMI_RemoveViewModelToClient(client, "weapon_bizon");
+		FPVMI_RemoveViewModelToClient(client, "weapon_galilar");
+		FPVMI_RemoveViewModelToClient(client, "weapon_famas");
+		FPVMI_RemoveViewModelToClient(client, "weapon_ak47");
+		FPVMI_RemoveViewModelToClient(client, "weapon_m4a1");
+		FPVMI_RemoveViewModelToClient(client, "weapon_m4a1_silencer");
+		FPVMI_RemoveViewModelToClient(client, "weapon_sg556");
+		FPVMI_RemoveViewModelToClient(client, "weapon_aug");
+		FPVMI_RemoveViewModelToClient(client, "weapon_scar20");
+		FPVMI_RemoveViewModelToClient(client, "weapon_gs3sg1");
+		FPVMI_RemoveViewModelToClient(client, "weapon_ssg08");
+		FPVMI_RemoveViewModelToClient(client, "weapon_awp");
 	}
 }
 
@@ -5977,10 +6989,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "mouz");
 	}
 	
-	//TyLoo Players
+	//TYLOO Players
 	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "Attacker")) || (StrEqual(botname, "BnTneT")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "Freeman")))
 	{
-		CS_SetClientClanTag(client, "TyLoo");
+		CS_SetClientClanTag(client, "TYLOO");
 	}
 	
 	//EG Players
@@ -6242,7 +7254,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Lions Players
-	if((StrEqual(botname, "YuRk0")) || (StrEqual(botname, "Jibrix")) || (StrEqual(botname, "Kairi")) || (StrEqual(botname, "HUMANZ")) || (StrEqual(botname, "NaOw")))
+	if((StrEqual(botname, "HUNDEN")) || (StrEqual(botname, "acoR")) || (StrEqual(botname, "Sjuush")) || (StrEqual(botname, "Bubzkji")) || (StrEqual(botname, "roeJ")))
 	{
 		CS_SetClientClanTag(client, "Lions");
 	}
@@ -6290,7 +7302,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Nemiga Players
-	if((StrEqual(botname, "ROBO")) || (StrEqual(botname, "mds")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
+	if((StrEqual(botname, "spellfull")) || (StrEqual(botname, "mds")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
 	{
 		CS_SetClientClanTag(client, "Nemiga");
 	}
@@ -6410,7 +7422,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//EHOME Players
-	if((StrEqual(botname, "insane")) || (StrEqual(botname, "originalheart")) || (StrEqual(botname, "Marek")) || (StrEqual(botname, "SLOWLY")) || (StrEqual(botname, "4king")))
+	if((StrEqual(botname, "equal")) || (StrEqual(botname, "DeStRoYeR")) || (StrEqual(botname, "Marek")) || (StrEqual(botname, "SLOWLY")) || (StrEqual(botname, "4king")))
 	{
 		CS_SetClientClanTag(client, "EHOME");
 	}
@@ -6434,7 +7446,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Entity Players
-	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "skillZ")) || (StrEqual(botname, "DeathMakeR")))
+	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "skillZ")) || (StrEqual(botname, "Ace")))
 	{
 		CS_SetClientClanTag(client, "Entity");
 	}
@@ -6488,7 +7500,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BLUEJAYS Players
-	if((StrEqual(botname, "dEE")) || (StrEqual(botname, "DiMKE")) || (StrEqual(botname, "aVN")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "c0llins")))
+	if((StrEqual(botname, "maxz")) || (StrEqual(botname, "Tsubasa")) || (StrEqual(botname, "jansen")) || (StrEqual(botname, "RykuN")) || (StrEqual(botname, "skillmaschine JJ_-")))
 	{
 		CS_SetClientClanTag(client, "BLUEJAYS");
 	}
@@ -6511,10 +7523,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "GroundZero");
 	}
 	
-	//Aristocracy Players
-	if((StrEqual(botname, "mouz")) || (StrEqual(botname, "rallen")) || (StrEqual(botname, "TaZ")) || (StrEqual(botname, "MINISE")) || (StrEqual(botname, "dycha")))
+	//AVEZ Players
+	if((StrEqual(botname, "MOLSI")) || (StrEqual(botname, "hades")) || (StrEqual(botname, "KEi")) || (StrEqual(botname, "Kylar")) || (StrEqual(botname, "nawrot")))
 	{
-		CS_SetClientClanTag(client, "Aristocracy");
+		CS_SetClientClanTag(client, "AVEZ");
 	}
 	
 	//BTRG Players
@@ -6662,7 +7674,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//IG Players
-	if((StrEqual(botname, "EXPRO")) || (StrEqual(botname, "V4D1M")) || (StrEqual(botname, "flying")) || (StrEqual(botname, "equal")) || (StrEqual(botname, "Koshak")))
+	if((StrEqual(botname, "EXPRO")) || (StrEqual(botname, "V4D1M")) || (StrEqual(botname, "flying")) || (StrEqual(botname, "sPiNacH")) || (StrEqual(botname, "Koshak")))
 	{
 		CS_SetClientClanTag(client, "IG");
 	}
@@ -6728,7 +7740,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(botname, "KHTEX")) || (StrEqual(botname, "dumau")) || (StrEqual(botname, "brutt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "iDk")))
+	if((StrEqual(botname, "KHTEX")) || (StrEqual(botname, "dumau")) || (StrEqual(botname, "tatazin")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "iDk")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
@@ -6827,7 +7839,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 49;
 	}
 	
-	if (StrEqual(sClan, "TyLoo"))
+	if (StrEqual(sClan, "TYLOO"))
 	{
 		g_iProfileRank[client] = 50;
 	}
@@ -7277,7 +8289,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 140;
 	}
 	
-	if (StrEqual(sClan, "Aristocracy"))
+	if (StrEqual(sClan, "AVEZ"))
 	{
 		g_iProfileRank[client] = 141;
 	}
