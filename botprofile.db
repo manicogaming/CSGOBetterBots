@@ -437,7 +437,7 @@ ProP+Rifle "TACO"
 	VoicePitch = 110
 End
 
-ProP+Rifle "LUCAS1"
+ProP+Rifle "meyern"
 	VoicePitch = 90
 End
 
@@ -815,28 +815,6 @@ ProP+Rifle "nex"
 	VoicePitch = 110
 End
 
-//AVANGAR Players
-
-ProP+Rifle "buster"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "Jame"
-	VoicePitch = 106
-End
-
-ProP+Rifle "qikert"
-	VoicePitch = 95
-End
-
-ProP+Rifle "AdreN"
-	VoicePitch = 110
-End
-
-ProP+Rifle "SANJI"
-	VoicePitch = 110
-End
-
 //Rejected Players
 
 ProP+Rifle "fara"
@@ -1059,23 +1037,23 @@ End
 
 //VP Players
 
-ProP+Rifle "MICHU"
+ProP+Rifle "buster"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "snatchie"
+EliteAwp+SniperPro "Jame"
 	VoicePitch = 106
 End
 
-ProP+Rifle "phr"
+ProP+Rifle "qikert"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Snax"
+ProP+Rifle "SANJI"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Vegi"
+ProP+Rifle "AdreN"
 	VoicePitch = 110
 End
 
@@ -1503,7 +1481,7 @@ ProP+Rifle "arvid"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Jamppi"
+EliteAwp+SniperPro "STOVVE"
 	VoicePitch = 106
 End
 
@@ -1961,7 +1939,7 @@ End
 
 //Sharks Players
 
-ProP+Rifle "meyern"
+ProP+Rifle "RCF"
 	VoicePitch = 91
 End
 
@@ -2179,13 +2157,13 @@ ProP+Rifle "urbz"
 	VoicePitch = 110
 End
 
-//5Power Players
+//RisingStars Players
 
 ProP+Rifle "bottle"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "Savage"
+EliteAwp+SniperPro "HZ"
 	VoicePitch = 106
 End
 
@@ -3461,7 +3439,7 @@ ProP+Rifle "Patitek"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "NEEX"
+EliteAwp+SniperPro "Hyper"
 	VoicePitch = 106
 End
 
@@ -3540,6 +3518,116 @@ ProP+Rifle "DD"
 End
 
 ProP+Rifle "Karsa"
+	VoicePitch = 110
+End
+
+//Lynn Players
+
+ProP+Rifle "XG"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "mitsuha"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Aree"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Yvonne"
+	VoicePitch = 110
+End
+
+ProP+Rifle "XinKoiNg"
+	VoicePitch = 110
+End
+
+//Triumph Players
+
+ProP+Rifle "xCeeD"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "Voltage"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Spongey"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Snakes"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Grim"
+	VoicePitch = 110
+End
+
+//FATE Players
+
+ProP+Rifle "doublemagic"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "KalubeR"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Duplicate"
+	VoicePitch = 95
+End
+
+ProP+Rifle "Mar"
+	VoicePitch = 110
+End
+
+ProP+Rifle "niki1"
+	VoicePitch = 110
+End
+
+//Canids Players
+
+ProP+Rifle "pesadelo"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "nythonzinho"
+	VoicePitch = 106
+End
+
+ProP+Rifle "nak"
+	VoicePitch = 95
+End
+
+ProP+Rifle "latto"
+	VoicePitch = 110
+End
+
+ProP+Rifle "fnx"
+	VoicePitch = 110
+End
+
+//ESPADA Players
+
+ProP+Rifle "h1glaiN"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "degster"
+	VoicePitch = 106
+End
+
+ProP+Rifle "FinigaN"
+	VoicePitch = 95
+End
+
+ProP+Rifle "RAiLWAY"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Dima"
 	VoicePitch = 110
 End
 

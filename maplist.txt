@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Tue Dec 17 23:58:15 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Fri Dec 20 15:22:59 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -154,6 +154,7 @@ fy_poolparty_v3
 fy_pools
 fy_rainbow
 fy_rainyday
+fy_rocks
 fy_sandstone_t0
 gd_cbble
 gd_rialto
