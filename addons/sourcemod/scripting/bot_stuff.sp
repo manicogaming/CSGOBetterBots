@@ -5725,7 +5725,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 			buttons |= IN_ATTACK; 
 
 			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(2.5, Timer_ShouldAttack, GetClientSerial(client));
+				CreateTimer(GetRandomFloat(1.0, 5.0), Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
 
@@ -5746,7 +5746,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 		{
 			if(StrEqual(botname, g_BotName[i]))
 			{
-				if(index == 9 || index == 40)
+				if(index == 9)
 				{
 					return Plugin_Continue;
 				}
@@ -5761,7 +5761,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				{
 					GetClientAbsOrigin(Ent, targetEyes);
 					GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
-					if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY))
+					if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40)
 					{
 						if(GetRandomInt(1,5) == 1)
 						{
@@ -5772,6 +5772,28 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							targetEyes[2] += 40.5;
 						}
 						buttons |= IN_ATTACK;
+					}
+					else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY))
+					{
+						if(GetRandomInt(1,5) == 1)
+						{
+							targetEyes[2] += 65.5;
+						}
+						else
+						{
+							targetEyes[2] += 40.5;
+						}
+					}
+					else if(buttons & IN_ATTACK && index == 40)
+					{
+						if(GetRandomInt(1,3) == 1)
+						{
+							targetEyes[2] += 65.5;
+						}
+						else
+						{
+							targetEyes[2] += 40.5;
+						}
 					}
 					else
 					{
@@ -6144,13 +6166,16 @@ public bool RemoveWeaponBySlot(int client, int iSlot)
 
 stock bool IsPointVisible(const float start[3], const float end[3])
 {
-	TR_TraceRayFilter(start, end, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, TraceEntityFilterStuff);
-	return TR_GetFraction() >= 0.9;
+	Handle hTrace = TR_TraceRayFilterEx(start, end, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
+	if (TR_DidHit(hTrace)) { delete hTrace; return false; }
+	delete hTrace;
+	return true;
 }
 
-public bool TraceEntityFilterStuff(int entity, int mask)
+public bool ClientViewsFilter(int Entity, int Mask, any Junk)
 {
-	return entity > MaxClients;
+	if (Entity >= 1 && Entity <= MaxClients) return false;
+	return true;
 }
 
 stock bool IsWeaponSlotActive(int iClient, int iSlot)

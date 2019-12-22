@@ -4,11 +4,6 @@ In here there are some plugins that I personality edited to add the features of 
 
 I edited the following plugins.
 
-# [[ANY] Aimbot (Auto Aimer)](https://forums.alliedmods.net/showthread.php?t=283342)
-- Removed the Admin Only Option for the !aimbot command to use with another plugin that I created.
-- Aimbot is not active when the player is holding an AWP
-- Every shot has a chance to activate the aimbot
-
 # [Franc1sco/Franug-CSGO-Gloves](https://github.com/Franc1sco/Franug-CSGO-Gloves)
 - BOTs will get random gloves
 
