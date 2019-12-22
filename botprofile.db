@@ -54,7 +54,6 @@ End
 
 Template SniperPro
 		WeaponPreference = awp
-		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
 		WeaponPreference = sg556
@@ -126,7 +125,7 @@ End
 // skill templates
 
 Template ProP
-		Skill = 0
+		Skill = 100
 		Rank = 500
 		Teamwork = 100
 		Aggression = 55
@@ -1097,7 +1096,7 @@ ProP+Rifle "kressy"
 	VoicePitch = 110
 End
 
-ProP+Rifle "mantuu"
+ProP+Rifle "enkay J"
 	VoicePitch = 110
 End
 
@@ -3628,6 +3627,28 @@ ProP+Rifle "RAiLWAY"
 End
 
 ProP+Rifle "Dima"
+	VoicePitch = 110
+End
+
+//OG Players
+
+ProP+Rifle "NBK-"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "mantuu"
+	VoicePitch = 106
+End
+
+ProP+Rifle "Aleksib"
+	VoicePitch = 95
+End
+
+ProP+Rifle "valde"
+	VoicePitch = 110
+End
+
+ProP+Rifle "ISSAA"
 	VoicePitch = 110
 End
 

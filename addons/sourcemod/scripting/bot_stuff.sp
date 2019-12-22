@@ -10,6 +10,7 @@ bool g_bShouldAttack[MAXPLAYERS + 1];
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
 int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iMusicOffset;
+ConVar g_cvPredictionConVars[1] = {null};
 
 char g_sTRngGrenadesList[][] = {
     "weapon_flashbang",
@@ -239,7 +240,7 @@ char g_BotName[][] = {
 	"slaxz",
 	"DuDe",
 	"kressy",
-	"mantuu",
+	"enkay J",
 	//RNG Players
 	"INS",
 	"sico",
@@ -929,7 +930,13 @@ char g_BotName[][] = {
 	"degster",
 	"FinigaN",
 	"RAiLWAY",
-	"Dima"
+	"Dima",
+	//OG Players
+	"NBK-",
+	"mantuu",
+	"Aleksib",
+	"valde",
+	"ISSAA"
 };
  
 public Plugin myinfo =
@@ -945,13 +952,8 @@ public void OnPluginStart()
 {
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
 	HookEvent("round_start", OnRoundStart);
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsClientInGame(i) && IsFakeClient(i))
-		{
-			OnClientPostAdminCheck(i);
-		}
-	}
+	
+	g_cvPredictionConVars[0] = FindConVar("weapon_recoil_scale");
 	
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
@@ -1099,6 +1101,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_fate", Team_FATE);
 	RegConsoleCmd("team_canids", Team_Canids);
 	RegConsoleCmd("team_espada", Team_ESPADA);
+	RegConsoleCmd("team_og", Team_OG);
 }
 
 public Action Team_NiP(int client, int args)
@@ -2013,7 +2016,7 @@ public Action Team_aTTaX(int client, int args)
 		ServerCommand("bot_add_ct %s", "slaxz");
 		ServerCommand("bot_add_ct %s", "DuDe");
 		ServerCommand("bot_add_ct %s", "kressy");
-		ServerCommand("bot_add_ct %s", "mantuu");
+		ServerCommand("bot_add_ct %s", "enkay J");
 		ServerCommand("mp_teamlogo_1 alt");
 	}
 	
@@ -2024,7 +2027,7 @@ public Action Team_aTTaX(int client, int args)
 		ServerCommand("bot_add_t %s", "slaxz");
 		ServerCommand("bot_add_t %s", "DuDe");
 		ServerCommand("bot_add_t %s", "kressy");
-		ServerCommand("bot_add_t %s", "mantuu");
+		ServerCommand("bot_add_t %s", "enkay J");
 		ServerCommand("mp_teamlogo_2 alt");
 	}
 	
@@ -5481,6 +5484,36 @@ public Action Team_ESPADA(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_OG(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "NBK-");
+		ServerCommand("bot_add_ct %s", "mantuu");
+		ServerCommand("bot_add_ct %s", "Aleksib");
+		ServerCommand("bot_add_ct %s", "valde");
+		ServerCommand("bot_add_ct %s", "ISSAA");
+		ServerCommand("mp_teamlogo_1 og");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "NBK-");
+		ServerCommand("bot_add_t %s", "mantuu");
+		ServerCommand("bot_add_t %s", "Aleksib");
+		ServerCommand("bot_add_t %s", "valde");
+		ServerCommand("bot_add_t %s", "ISSAA");
+		ServerCommand("mp_teamlogo_2 og");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5692,7 +5725,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 			buttons |= IN_ATTACK; 
 
 			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(5.0, Timer_ShouldAttack, GetClientSerial(client));
+				CreateTimer(2.5, Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
 
@@ -5702,6 +5735,82 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 		KillTimer(g_hShouldAttackTimer[client]);
 		g_hShouldAttackTimer[client] = null;
 		return Plugin_Continue;
+	}
+	
+	if(IsValidClient(client) && IsPlayerAlive(client))
+	{
+		char botname[512];
+		GetClientName(client, botname, sizeof(botname));
+		
+		for(int i = 0; i <= sizeof(g_BotName) - 1; i++)
+		{
+			if(StrEqual(botname, g_BotName[i]))
+			{
+				if(index == 9 || index == 40)
+				{
+					return Plugin_Continue;
+				}
+				
+				float camangle[3], clientEyes[3], targetEyes[3];
+				GetClientEyePosition(client, clientEyes);
+				int Ent = Client_GetClosest(clientEyes, client);
+				
+				float vec[3], angle[3];
+				
+				if(IsValidClient(Ent))
+				{
+					GetClientAbsOrigin(Ent, targetEyes);
+					GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
+					if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY))
+					{
+						if(GetRandomInt(1,5) == 1)
+						{
+							targetEyes[2] += 65.5;
+						}
+						else
+						{
+							targetEyes[2] += 40.5;
+						}
+						buttons |= IN_ATTACK;
+					}
+					else
+					{
+						return Plugin_Continue;
+					}
+					MakeVectorFromPoints(targetEyes, clientEyes, vec);
+					GetVectorAngles(vec, camangle);
+					camangle[0] *= -1.0;
+					camangle[1] += 180.0;
+					ClampAngle(camangle);
+					float vecPunchAngle[3];
+		
+					if (GetEngineVersion() == Engine_CSGO || GetEngineVersion() == Engine_CSS)
+					{
+						GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
+					}
+					else
+					{
+						GetEntPropVector(client, Prop_Send, "m_vecPunchAngle", vecPunchAngle);
+					}
+					
+					if(g_cvPredictionConVars[0] != null)
+					{
+						camangle[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
+						camangle[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
+					}					
+					TeleportEntity(client, NULL_VECTOR, camangle, NULL_VECTOR);
+				}
+				
+				if (buttons & IN_ATTACK)
+				{
+					if(index == 7 || index == 8 || index == 10 || index == 13 || index == 14 || index == 16 || index == 39 || index == 60 || index == 28)
+					{
+						buttons |= IN_DUCK;
+						return Plugin_Changed;
+					}
+				}
+			}
+		}
 	}
 
 	return Plugin_Continue;
@@ -6031,7 +6140,65 @@ public bool RemoveWeaponBySlot(int client, int iSlot)
         return true;
     }
     return false;
-} 
+}
+
+stock bool IsPointVisible(const float start[3], const float end[3])
+{
+	TR_TraceRayFilter(start, end, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, TraceEntityFilterStuff);
+	return TR_GetFraction() >= 0.9;
+}
+
+public bool TraceEntityFilterStuff(int entity, int mask)
+{
+	return entity > MaxClients;
+}
+
+stock bool IsWeaponSlotActive(int iClient, int iSlot)
+{
+    return GetPlayerWeaponSlot(iClient, iSlot) == GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
+}
+
+stock int Client_GetClosest(float vecOrigin_center[3], const int client)
+{
+	float vecOrigin_edict[3];
+	float distance = -1.0;
+	int closestEdict = -1;
+	for(int i=1;i<=MaxClients;i++)
+	{
+		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
+			continue;
+		GetEntPropVector(i, Prop_Data, "m_vecOrigin", vecOrigin_edict);
+		GetClientEyePosition(i, vecOrigin_edict);
+		if(GetClientTeam(i) != GetClientTeam(client))
+		{
+			if(IsPointVisible(vecOrigin_center, vecOrigin_edict))
+			{
+				float edict_distance = GetVectorDistance(vecOrigin_center, vecOrigin_edict);
+				if((edict_distance < distance) || (distance == -1.0))
+				{
+					distance = edict_distance;
+					closestEdict = i;
+				}
+			}
+		}
+	}
+	return closestEdict;
+}
+
+stock void ClampAngle(float fAngles[3])
+{
+	while(fAngles[0] > 89.0)  fAngles[0]-=360.0;
+	while(fAngles[0] < -89.0) fAngles[0]+=360.0;
+	while(fAngles[1] > 180.0) fAngles[1]-=360.0;
+	while(fAngles[1] <-180.0) fAngles[1]+=360.0;
+}
+
+bool IsValidClient(int client) 
+{
+	if(!(1 <= client <= MaxClients ) || !IsClientInGame(client)) 
+		return false; 
+	return true; 
+}
 
 public void Pro_Players(char[] botname, int client)
 {
@@ -6217,7 +6384,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//aTTaX Players
-	if((StrEqual(botname, "stfN")) || (StrEqual(botname, "slaxz")) || (StrEqual(botname, "DuDe")) || (StrEqual(botname, "kressy")) || (StrEqual(botname, "mantuu")))
+	if((StrEqual(botname, "stfN")) || (StrEqual(botname, "slaxz")) || (StrEqual(botname, "DuDe")) || (StrEqual(botname, "kressy")) || (StrEqual(botname, "enkay J")))
 	{
 		CS_SetClientClanTag(client, "aTTaX");
 	}
@@ -6910,6 +7077,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "h1glaiN")) || (StrEqual(botname, "degster")) || (StrEqual(botname, "FinigaN")) || (StrEqual(botname, "RAiLWAY")) || (StrEqual(botname, "Dima")))
 	{
 		CS_SetClientClanTag(client, "ESPADA");
+	}
+	
+	//OG Players
+	if((StrEqual(botname, "NBK-")) || (StrEqual(botname, "mantuu")) || (StrEqual(botname, "Aleksib")) || (StrEqual(botname, "valde")) || (StrEqual(botname, "ISSAA")))
+	{
+		CS_SetClientClanTag(client, "OG");
 	}
 }
 
@@ -7647,5 +7820,10 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "ESPADA"))
 	{
 		g_iProfileRank[client] = 186;
+	}
+	
+	if (StrEqual(sClan, "OG"))
+	{
+		g_iProfileRank[client] = 187;
 	}
 }

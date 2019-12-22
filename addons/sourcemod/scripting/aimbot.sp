@@ -109,6 +109,7 @@ INCLUDES
 #include <sourcemod>
 #include <sdktools>
 #include <sdkhooks>
+#include <cstrike>
 
 // Protection for SMAC users.
 #undef REQUIRE_PLUGIN
@@ -357,22 +358,29 @@ public Action Event_WeaponFire(Event hEvent, const char[] chName, bool bDontBroa
 		return Plugin_Continue;
 	}
 	
-	char awp[32];
+	int iActiveWeapon = GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
 	
-	GetClientWeapon(iClient, awp, sizeof(awp));
-	
-	if(StrEqual(awp, "weapon_awp"))
+	if (!IsValidEdict(iActiveWeapon) || iActiveWeapon == -1)
 	{
 		return Plugin_Continue;
 	}
+	
+	int index = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 
 	if(GetRandomInt(1,5) == 1)
 	{
-		int iTarget = GetClosestClient(iClient);
-		
-		if (iTarget > 0)
+		if(index == 40 || index == 1 || index == 2 || index == 3 || index == 4 || index == 30 || index == 32 || index == 36 || index == 61 || index == 63 || index == 64)
 		{
-			LookAtClient(iClient, iTarget);
+			int iTarget = GetClosestClient(iClient);
+		
+			if (iTarget > 0)
+			{
+				LookAtClient(iClient, iTarget);
+			}
+		}
+		else
+		{
+			return Plugin_Continue;
 		}
 	}
 	
@@ -428,33 +436,38 @@ public Action OnPlayerRunCmd(int iClient, int &iButtons, int &iImpulse, float fV
 		return Plugin_Continue;
 	}
 	
-	char awp[32];
-	
-	GetClientWeapon(iClient, awp, sizeof(awp));
-	
-	if(StrEqual(awp, "weapon_awp"))
-	{
-		return Plugin_Continue;
-	}
+	int index = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	
 	if(GetRandomInt(1,5) == 1)
-	{	
-		if ((iButtons & IN_ATTACK) == IN_ATTACK || g_cvAimbotAutoAim.BoolValue)
+	{
+		if(index == 40 || index == 1 || index == 2 || index == 3 || index == 4 || index == 30 || index == 32 || index == 36 || index == 61 || index == 63 || index == 64)
 		{
-		
-			int iTarget = GetClosestClient(iClient);
-			int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
-			
-			if (iClipAmmo > 0 && iTarget > 0)
+			if ((iButtons & IN_ATTACK) == IN_ATTACK || g_cvAimbotAutoAim.BoolValue)
 			{
-				LookAtClient(iClient, iTarget);
+			
+				int iTarget = GetClosestClient(iClient);
+				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
+				
+				if (iClipAmmo > 0 && iTarget > 0)
+				{
+					LookAtClient(iClient, iTarget);
+				}
 			}
+		}
+		else
+		{
+			return Plugin_Continue;
 		}
 	}
 	
 	// No Spread Addition
 	iSeed = 0;
 	return Plugin_Changed;
+}
+
+stock bool IsWeaponSlotActive(int iClient, int iSlot)
+{
+    return GetPlayerWeaponSlot(iClient, iSlot) == GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
 }
 
 stock void LookAtClient(int iClient, int iTarget)
