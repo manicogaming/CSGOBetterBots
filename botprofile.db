@@ -56,7 +56,6 @@ Template SniperPro
 		WeaponPreference = awp
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
-		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
 		WeaponPreference = famas
@@ -79,7 +78,6 @@ End
 
 Template Sniper
 		WeaponPreference = awp
-		WeaponPreference = ssg08
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
 		WeaponPreference = sg556
@@ -119,7 +117,7 @@ End
 Template AutoSniper
 		WeaponPreference = scar20
 		WeaponPreference = g3sg1
-		WeaponPreference = sg008
+		WeaponPreference = ssg08
 End
 
 // skill templates

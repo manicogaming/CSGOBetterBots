@@ -5534,14 +5534,6 @@ public void OnClientPostAdminCheck(int client)
 	char botname[512];
 	GetClientName(client, botname, sizeof(botname));
 	
-	for(int i = 0; i <= sizeof(g_BotName) - 1; i++)
-	{
-		if(StrEqual(botname, g_BotName[i]))
-		{
-			FakeClientCommand(client, "say !aimbot");
-		}
-	}
-	
 	Pro_Players(botname, client);
 	
 	g_iProfileRank[client] = GetRandomInt(1,40);
@@ -5725,7 +5717,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 			buttons |= IN_ATTACK; 
 
 			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(GetRandomFloat(1.0, 5.0), Timer_ShouldAttack, GetClientSerial(client));
+				CreateTimer(3.0, Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
 
@@ -6148,20 +6140,20 @@ public void SetClientMoney(int client, int money)
 
 public void RemoveNades(int client)
 {
-    while(RemoveWeaponBySlot(client, 3)){}
-    for(int i = 0; i < 6; i++)
-        SetEntProp(client, Prop_Send, "m_iAmmo", 0, _, g_iaGrenadeOffsets[i]);
+	while(RemoveWeaponBySlot(client, 3)){}
+	for(int i = 0; i < 6; i++)
+		SetEntProp(client, Prop_Send, "m_iAmmo", 0, _, g_iaGrenadeOffsets[i]);
 }
 
 public bool RemoveWeaponBySlot(int client, int iSlot)
 {
-    int iEntity = GetPlayerWeaponSlot(client, iSlot);
-    if(IsValidEdict(iEntity)) {
-        RemovePlayerItem(client, iEntity);
-        AcceptEntityInput(iEntity, "Kill");
-        return true;
-    }
-    return false;
+	int iEntity = GetPlayerWeaponSlot(client, iSlot);
+	if(IsValidEdict(iEntity)) {
+		RemovePlayerItem(client, iEntity);
+		AcceptEntityInput(iEntity, "Kill");
+		return true;
+	}
+	return false;
 }
 
 stock bool IsPointVisible(const float start[3], const float end[3])
@@ -6180,7 +6172,7 @@ public bool ClientViewsFilter(int Entity, int Mask, any Junk)
 
 stock bool IsWeaponSlotActive(int iClient, int iSlot)
 {
-    return GetPlayerWeaponSlot(iClient, iSlot) == GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
+	return GetPlayerWeaponSlot(iClient, iSlot) == GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
 }
 
 stock int Client_GetClosest(float vecOrigin_center[3], const int client)
@@ -6192,6 +6184,9 @@ stock int Client_GetClosest(float vecOrigin_center[3], const int client)
 	{
 		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
 			continue;
+		if (!IsTargetInSightRange(client, i))
+			continue;
+		
 		GetEntPropVector(i, Prop_Data, "m_vecOrigin", vecOrigin_edict);
 		GetClientEyePosition(i, vecOrigin_edict);
 		if(GetClientTeam(i) != GetClientTeam(client))
@@ -6223,6 +6218,57 @@ bool IsValidClient(int client)
 	if(!(1 <= client <= MaxClients ) || !IsClientInGame(client)) 
 		return false; 
 	return true; 
+}
+
+stock bool IsTargetInSightRange(int client, int target, float angle = 60.0, float distance = 0.0, bool heightcheck = true, bool negativeangle = false)
+{
+	if (angle > 360.0)
+		angle = 360.0;
+	
+	if (angle < 0.0)
+		return false;
+	
+	float clientpos[3];
+	float targetpos[3];
+	float anglevector[3];
+	float targetvector[3];
+	float resultangle;
+	float resultdistance;
+	
+	GetClientEyeAngles(client, anglevector);
+	anglevector[0] = anglevector[2] = 0.0;
+	GetAngleVectors(anglevector, anglevector, NULL_VECTOR, NULL_VECTOR);
+	NormalizeVector(anglevector, anglevector);
+	if (negativeangle)
+		NegateVector(anglevector);
+	
+	GetClientAbsOrigin(client, clientpos);
+	GetClientAbsOrigin(target, targetpos);
+	
+	if (heightcheck && distance > 0)
+		resultdistance = GetVectorDistance(clientpos, targetpos);
+	
+	clientpos[2] = targetpos[2] = 0.0;
+	MakeVectorFromPoints(clientpos, targetpos, targetvector);
+	NormalizeVector(targetvector, targetvector);
+	
+	resultangle = RadToDeg(ArcCosine(GetVectorDotProduct(targetvector, anglevector)));
+	
+	if (resultangle <= angle / 2)
+	{
+		if (distance > 0)
+		{
+			if (!heightcheck)
+				resultdistance = GetVectorDistance(clientpos, targetpos);
+			
+			if (distance >= resultdistance)
+				return true;
+			else return false;
+		}
+		else return true;
+	}
+	
+	return false;
 }
 
 public void Pro_Players(char[] botname, int client)
