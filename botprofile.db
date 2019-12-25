@@ -2110,25 +2110,25 @@ ProP+Rifle "Wolfah"
 	VoicePitch = 110
 End
 
-//eXtatus Players
+//SKADE Players
 
-ProP+Rifle "luko"
+ProP+Rifle "Rock1nG"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "wEAMO"
+EliteAwp+SniperPro "dennyslaw"
 	VoicePitch = 106
 End
 
-ProP+Rifle "desty"
+ProP+Rifle "rafftu"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Fraged"
+ProP+Rifle "Rainwaker"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Pechyn"
+ProP+Rifle "SPELLAN"
 	VoicePitch = 110
 End
 

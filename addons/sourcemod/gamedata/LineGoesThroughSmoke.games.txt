@@ -1,0 +1,46 @@
+"Games"
+{
+	"csgo"
+	{
+		"Offsets"
+		{
+			"OS"
+			{
+				"linux"     "1"
+				"windows"   "2"
+			}
+		}
+		"Signatures"
+		{
+			"CheckAreaAgainstAllZoneAreas" //Area #%d is disconnected from goal area #%d
+			{
+				"library"	"server"
+				"linux"		"\x55\x89\xE5\x57\x56\x53\x83\xEC\x4C\x89\x45\xD0\x8B\x15"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x14\x8B\x15\x2A\x2A\x2A\x2A\x33\xC0"
+			}
+			"CBotManager::IsLineBlockedBySmoke" //CBotManager::IsLineBlockedBySmoke
+			{
+				"library"	"server"
+				"linux"		"\x55\x89\xE5\x57\x56\x53\x83\xEC\x5C\xA1\x2A\x2A\x2A\x2A\x8B\x75\x0C\x8B\x5D\x10"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\xA1\x2A\x2A\x2A\x2A\x53\x56\x57\x8B\xF9"
+			}
+		}
+		"Addresses"
+		{
+			"TheBots"
+			{
+				"linux"
+				{
+					"signature"	"CheckAreaAgainstAllZoneAreas"
+					"read"		"14"
+				}
+				"windows"
+				{
+					"signature"	"CheckAreaAgainstAllZoneAreas"
+					"read"		"8"
+				}
+				"read"		"0"
+			}
+		}
+	}
+}

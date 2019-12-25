@@ -7,6 +7,7 @@
 #include <cstrike>
 
 bool g_bShouldAttack[MAXPLAYERS + 1];
+bool g_bFlashed[MAXPLAYERS + 1] = false;
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
 int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iMusicOffset;
@@ -517,12 +518,12 @@ char g_BotName[][] = {
 	"cookie",
 	"jeepy",
 	"Wolfah",
-	//eXtatus Players
-	"luko",
-	"wEAMO",
-	"desty",
-	"Fraged",
-	"Pechyn",
+	//SKADE Players
+	"Rock1nG",
+	"dennyslaw",
+	"rafftu",
+	"Rainwaker",
+	"SPELLAN",
 	//SYF Players
 	"ino",
 	"Teal",
@@ -952,6 +953,7 @@ public void OnPluginStart()
 {
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
 	HookEvent("round_start", OnRoundStart);
+	HookEventEx("player_blind", Event_PlayerBlind, EventHookMode_Pre);
 	
 	g_cvPredictionConVars[0] = FindConVar("weapon_recoil_scale");
 	
@@ -1032,7 +1034,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_order", Team_ORDER);
 	RegConsoleCmd("team_blacks", Team_BlackS);
-	RegConsoleCmd("team_extatus", Team_eXtatus);
+	RegConsoleCmd("team_skade", Team_SKADE);
 	RegConsoleCmd("team_syf", Team_SYF);
 	RegConsoleCmd("team_risingstars", Team_RisingStars);
 	RegConsoleCmd("team_ehome", Team_EHOME);
@@ -3414,7 +3416,7 @@ public Action Team_BlackS(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_eXtatus(int client, int args)
+public Action Team_SKADE(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3422,23 +3424,23 @@ public Action Team_eXtatus(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "luko");
-		ServerCommand("bot_add_ct %s", "wEAMO");
-		ServerCommand("bot_add_ct %s", "desty");
-		ServerCommand("bot_add_ct %s", "Fraged");
-		ServerCommand("bot_add_ct %s", "Pechyn");
-		ServerCommand("mp_teamlogo_1 ext");
+		ServerCommand("bot_add_ct %s", "Rock1nG");
+		ServerCommand("bot_add_ct %s", "dennyslaw");
+		ServerCommand("bot_add_ct %s", "rafftu");
+		ServerCommand("bot_add_ct %s", "Rainwaker");
+		ServerCommand("bot_add_ct %s", "SPELLAN");
+		ServerCommand("mp_teamlogo_1 ska");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "luko");
-		ServerCommand("bot_add_t %s", "wEAMO");
-		ServerCommand("bot_add_t %s", "desty");
-		ServerCommand("bot_add_t %s", "Fraged");
-		ServerCommand("bot_add_t %s", "Pechyn");
-		ServerCommand("mp_teamlogo_2 ext");
+		ServerCommand("bot_add_t %s", "Rock1nG");
+		ServerCommand("bot_add_t %s", "dennyslaw");
+		ServerCommand("bot_add_t %s", "rafftu");
+		ServerCommand("bot_add_t %s", "Rainwaker");
+		ServerCommand("bot_add_t %s", "SPELLAN");
+		ServerCommand("mp_teamlogo_2 ska");
 	}
 	
 	return Plugin_Handled;
@@ -5720,13 +5722,10 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				CreateTimer(3.0, Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
-
-		return Plugin_Changed;
 	} else if (g_hShouldAttackTimer[client] != null) {
 		// kill timer since the client has switch weapon and it's pointless to continue
 		KillTimer(g_hShouldAttackTimer[client]);
 		g_hShouldAttackTimer[client] = null;
-		return Plugin_Continue;
 	}
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
@@ -5743,7 +5742,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 					return Plugin_Continue;
 				}
 				
-				float camangle[3], clientEyes[3], targetEyes[3];
+				float camangle[3], clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
 				GetClientEyePosition(client, clientEyes);
 				int Ent = Client_GetClosest(clientEyes, client);
 				
@@ -5752,40 +5751,50 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				if(IsValidClient(Ent))
 				{
 					GetClientAbsOrigin(Ent, targetEyes);
+					GetClientAbsOrigin(Ent, targetEyesBase);
+					GetClientAbsOrigin(Ent, targetEyes3);
 					GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
+					GetClientEyePosition(Ent, targetEyes2);
 					if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40)
 					{
-						if(GetRandomInt(1,5) == 1)
+						if(GetRandomInt(1,4) == 1)
 						{
-							targetEyes[2] += 65.5;
+							targetEyes[2] = targetEyes2[2];
 						}
 						else
 						{
-							targetEyes[2] += 40.5;
+							targetEyes[2] += GetRandomFloat(30.5, 45.5);
 						}
 						buttons |= IN_ATTACK;
 					}
 					else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY))
 					{
-						if(GetRandomInt(1,5) == 1)
+						if(GetRandomInt(1,4) == 1)
 						{
-							targetEyes[2] += 65.5;
+							targetEyes[2] = targetEyes2[2];
 						}
 						else
 						{
-							targetEyes[2] += 40.5;
+							targetEyes[2] += GetRandomFloat(30.5, 45.5);
 						}
 					}
 					else if(buttons & IN_ATTACK && index == 40)
 					{
 						if(GetRandomInt(1,3) == 1)
 						{
-							targetEyes[2] += 65.5;
+							targetEyes[2] = targetEyes2[2];
 						}
 						else
 						{
-							targetEyes[2] += 40.5;
+							targetEyes[2] += GetRandomFloat(30.5, 45.5);
 						}
+					}
+					else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+					{
+						targetEyes[2] += 78.5;
+						g_bShouldAttack[client] = true;
+						buttons &= ~IN_ATTACK; 
+						g_hShouldAttackTimer[client] = null;
 					}
 					else
 					{
@@ -6101,6 +6110,26 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	return Plugin_Stop;
 }
 
+public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadcast)
+{
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	
+	if (GetEntPropFloat(client, Prop_Send, "m_flFlashMaxAlpha") >= 180.0)
+	{
+		float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
+		if (duration >= 1.5)
+		{
+			g_bFlashed[client] = true;
+			CreateTimer(duration, UnFlashed_Timer, client);
+		}
+	}
+}
+
+public Action UnFlashed_Timer(Handle timer, int client)
+{
+	g_bFlashed[client] = false;
+}
+
 public void OnClientDisconnect(int client)
 {
 	if(client)
@@ -6158,7 +6187,7 @@ public bool RemoveWeaponBySlot(int client, int iSlot)
 
 stock bool IsPointVisible(const float start[3], const float end[3])
 {
-	Handle hTrace = TR_TraceRayFilterEx(start, end, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
+	Handle hTrace = TR_TraceRayFilterEx(start, end, MASK_SOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
 	if (TR_DidHit(hTrace)) { delete hTrace; return false; }
 	delete hTrace;
 	return true;
@@ -6186,9 +6215,13 @@ stock int Client_GetClosest(float vecOrigin_center[3], const int client)
 			continue;
 		if (!IsTargetInSightRange(client, i))
 			continue;
+		if (g_bFlashed[client])
+			continue;
 		
 		GetEntPropVector(i, Prop_Data, "m_vecOrigin", vecOrigin_edict);
 		GetClientEyePosition(i, vecOrigin_edict);
+		if(LineGoesThroughSmoke(vecOrigin_center, vecOrigin_edict))
+			continue;
 		if(GetClientTeam(i) != GetClientTeam(client))
 		{
 			if(IsPointVisible(vecOrigin_center, vecOrigin_edict))
@@ -6220,7 +6253,7 @@ bool IsValidClient(int client)
 	return true; 
 }
 
-stock bool IsTargetInSightRange(int client, int target, float angle = 60.0, float distance = 0.0, bool heightcheck = true, bool negativeangle = false)
+stock bool IsTargetInSightRange(int client, int target, float angle = 40.0, float distance = 0.0, bool heightcheck = true, bool negativeangle = false)
 {
 	if (angle > 360.0)
 		angle = 360.0;
@@ -6269,6 +6302,51 @@ stock bool IsTargetInSightRange(int client, int target, float angle = 60.0, floa
 	}
 	
 	return false;
+}
+
+stock bool LineGoesThroughSmoke(float from[3], float to[3])
+{
+	static Address TheBots;
+	static Handle CBotManager_IsLineBlockedBySmoke;
+	static int OS;
+	
+	if(OS == 0)
+	{
+		Handle hGameConf = LoadGameConfigFile("LineGoesThroughSmoke.games");
+		if(!hGameConf)
+		{
+			SetFailState("Could not read LineGoesThroughSmoke.games.txt");
+			return false;
+		}
+		
+		OS = GameConfGetOffset(hGameConf, "OS");
+		
+		TheBots = GameConfGetAddress(hGameConf, "TheBots");
+		if(!TheBots)
+		{
+			CloseHandle(hGameConf);
+			SetFailState("TheBots == null");
+			return false;
+		}
+		
+		StartPrepSDKCall(SDKCall_Raw);
+		PrepSDKCall_SetFromConf(hGameConf, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
+		PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+		PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+		if(OS == 1) PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+		PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+		if(!(CBotManager_IsLineBlockedBySmoke = EndPrepSDKCall()))
+		{
+			CloseHandle(hGameConf);
+			SetFailState("Failed to get CBotManager::IsLineBlockedBySmoke function");
+			return false;
+		}
+		
+		CloseHandle(hGameConf);
+	}
+	
+	if(OS == 1) return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to, 1.0);
+	return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to);
 }
 
 public void Pro_Players(char[] botname, int client)
@@ -6736,10 +6814,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "BlackS");
 	}
 	
-	//eXtatus Players
-	if((StrEqual(botname, "luko")) || (StrEqual(botname, "wEAMO")) || (StrEqual(botname, "desty")) || (StrEqual(botname, "Fraged")) || (StrEqual(botname, "Pechyn")))
+	//SKADE Players
+	if((StrEqual(botname, "Rock1nG")) || (StrEqual(botname, "dennyslaw")) || (StrEqual(botname, "rafftu")) || (StrEqual(botname, "Rainwaker")) || (StrEqual(botname, "SPELLAN")))
 	{
-		CS_SetClientClanTag(client, "eXtatus");
+		CS_SetClientClanTag(client, "SKADE");
 	}
 	
 	//SYF Players
@@ -7558,7 +7636,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 119;
 	}
 	
-	if (StrEqual(sClan, "eXtatus"))
+	if (StrEqual(sClan, "SKADE"))
 	{
 		g_iProfileRank[client] = 120;
 	}
