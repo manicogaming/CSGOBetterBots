@@ -5549,10 +5549,10 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	{
 		if(IsClientInGame(i) && IsFakeClient(i))
 		{			
-			if(g_hShouldAttackTimer[i] != INVALID_HANDLE)
+			if(g_hShouldAttackTimer[i] != null)
 			{
 				KillTimer(g_hShouldAttackTimer[i]);
-				g_hShouldAttackTimer[i] = INVALID_HANDLE;
+				g_hShouldAttackTimer[i] = null;
 			}
 			
 			if(GetRandomInt(1,100) <= 35)
@@ -5719,7 +5719,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 			buttons |= IN_ATTACK; 
 
 			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(3.0, Timer_ShouldAttack, GetClientSerial(client));
+				CreateTimer(GetRandomFloat(3.0, 10.0), Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
 	} else if (g_hShouldAttackTimer[client] != null) {
