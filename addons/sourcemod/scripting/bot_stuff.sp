@@ -927,10 +927,10 @@ char g_BotName[][] = {
 	"latto",
 	"fnx",
 	//ESPADA Players
-	"h1glaiN",
+	"Patsanchick",
 	"degster",
 	"FinigaN",
-	"RAiLWAY",
+	"S0tF1k",
 	"Dima",
 	//OG Players
 	"NBK-",
@@ -5464,10 +5464,10 @@ public Action Team_ESPADA(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "h1glaiN");
+		ServerCommand("bot_add_ct %s", "Patsanchick");
 		ServerCommand("bot_add_ct %s", "degster");
 		ServerCommand("bot_add_ct %s", "FinigaN");
-		ServerCommand("bot_add_ct %s", "RAiLWAY");
+		ServerCommand("bot_add_ct %s", "S0tF1k");
 		ServerCommand("bot_add_ct %s", "Dima");
 		ServerCommand("mp_teamlogo_1 esp");
 	}
@@ -5475,10 +5475,10 @@ public Action Team_ESPADA(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "h1glaiN");
+		ServerCommand("bot_add_t %s", "Patsanchick");
 		ServerCommand("bot_add_t %s", "degster");
 		ServerCommand("bot_add_t %s", "FinigaN");
-		ServerCommand("bot_add_t %s", "RAiLWAY");
+		ServerCommand("bot_add_t %s", "S0tF1k");
 		ServerCommand("bot_add_t %s", "Dima");
 		ServerCommand("mp_teamlogo_2 esp");
 	}
@@ -5742,86 +5742,99 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 					return Plugin_Continue;
 				}
 				
-				float camangle[3], clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
+				float clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
 				GetClientEyePosition(client, clientEyes);
 				int Ent = Client_GetClosest(clientEyes, client);
 				
-				float vec[3], angle[3];
+				float angle[3];
 				
 				if(IsValidClient(Ent))
 				{
-					GetClientAbsOrigin(Ent, targetEyes);
-					GetClientAbsOrigin(Ent, targetEyesBase);
-					GetClientAbsOrigin(Ent, targetEyes3);
-					GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
-					GetClientEyePosition(Ent, targetEyes2);
-					if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40)
+					int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
+					if (iClipAmmo > 0)
 					{
-						if(GetRandomInt(1,4) == 1)
+						GetClientAbsOrigin(Ent, targetEyes);
+						GetClientAbsOrigin(Ent, targetEyesBase);
+						GetClientAbsOrigin(Ent, targetEyes3);
+						GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
+						GetClientEyePosition(Ent, targetEyes2);
+						if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40)
 						{
-							targetEyes[2] = targetEyes2[2];
+							if(GetRandomInt(1,4) == 1)
+							{
+								targetEyes[2] = targetEyes2[2];
+							}
+							else
+							{
+								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+							}
+							buttons |= IN_ATTACK;
+						}
+						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY))
+						{
+							if(GetRandomInt(1,4) == 1)
+							{
+								targetEyes[2] = targetEyes2[2];
+							}
+							else
+							{
+								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+							}
+						}
+						else if(buttons & IN_ATTACK && index == 40)
+						{
+							if(GetRandomInt(1,3) == 1)
+							{
+								targetEyes[2] = targetEyes2[2];
+							}
+							else
+							{
+								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+							}
+						}
+						else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+						{
+							targetEyes[2] += 78.5;
+							g_bShouldAttack[client] = true;
+							buttons &= ~IN_ATTACK; 
+							g_hShouldAttackTimer[client] = null;
 						}
 						else
 						{
-							targetEyes[2] += GetRandomFloat(30.5, 45.5);
+							return Plugin_Continue;
 						}
-						buttons |= IN_ATTACK;
-					}
-					else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY))
-					{
-						if(GetRandomInt(1,4) == 1)
+						float flPos[3];
+						GetClientEyePosition(client, flPos);
+
+						float flAng[3];
+						GetClientEyeAngles(client, flAng);
+						
+						// get normalised direction from target to client
+						float desired_dir[3];
+						MakeVectorFromPoints(flPos, targetEyes, desired_dir);
+						GetVectorAngles(desired_dir, desired_dir);			
+						
+						flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
+						flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
+						
+						float vecPunchAngle[3];
+			
+						if (GetEngineVersion() == Engine_CSGO || GetEngineVersion() == Engine_CSS)
 						{
-							targetEyes[2] = targetEyes2[2];
+							GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
 						}
 						else
 						{
-							targetEyes[2] += GetRandomFloat(30.5, 45.5);
+							GetEntPropVector(client, Prop_Send, "m_vecPunchAngle", vecPunchAngle);
 						}
-					}
-					else if(buttons & IN_ATTACK && index == 40)
-					{
-						if(GetRandomInt(1,3) == 1)
+						
+						if(g_cvPredictionConVars[0] != null)
 						{
-							targetEyes[2] = targetEyes2[2];
-						}
-						else
-						{
-							targetEyes[2] += GetRandomFloat(30.5, 45.5);
-						}
+							flAng[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
+							flAng[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
+						}		
+						TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);	
 					}
-					else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
-					{
-						targetEyes[2] += 78.5;
-						g_bShouldAttack[client] = true;
-						buttons &= ~IN_ATTACK; 
-						g_hShouldAttackTimer[client] = null;
-					}
-					else
-					{
-						return Plugin_Continue;
-					}
-					MakeVectorFromPoints(targetEyes, clientEyes, vec);
-					GetVectorAngles(vec, camangle);
-					camangle[0] *= -1.0;
-					camangle[1] += 180.0;
-					ClampAngle(camangle);
-					float vecPunchAngle[3];
-		
-					if (GetEngineVersion() == Engine_CSGO || GetEngineVersion() == Engine_CSS)
-					{
-						GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
-					}
-					else
-					{
-						GetEntPropVector(client, Prop_Send, "m_vecPunchAngle", vecPunchAngle);
-					}
-					
-					if(g_cvPredictionConVars[0] != null)
-					{
-						camangle[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
-						camangle[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
-					}					
-					TeleportEntity(client, NULL_VECTOR, camangle, NULL_VECTOR);
 				}
 				
 				if (buttons & IN_ATTACK)
@@ -6185,12 +6198,35 @@ public bool RemoveWeaponBySlot(int client, int iSlot)
 	return false;
 }
 
-stock bool IsPointVisible(const float start[3], const float end[3])
+stock float AngleNormalize(float angle)
 {
-	Handle hTrace = TR_TraceRayFilterEx(start, end, MASK_SOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
-	if (TR_DidHit(hTrace)) { delete hTrace; return false; }
-	delete hTrace;
-	return true;
+	angle = fmodf(angle, 360.0);
+	if (angle > 180) 
+	{
+		angle -= 360;
+	}
+	if (angle < -180)
+	{
+		angle += 360;
+	}
+	
+	return angle;
+}
+
+stock float fmodf(float number, float denom)
+{
+	return number - RoundToFloor(number / denom) * denom;
+}
+
+stock bool IsPointVisible(float start[3], float end[3])
+{
+	TR_TraceRayFilter(start, end, MASK_PLAYERSOLID, RayType_EndPoint, TraceEntityFilterStuff);
+	return TR_GetFraction() >= 0.9;
+}
+
+public bool TraceEntityFilterStuff(int entity, int mask)
+{
+	return entity > MaxClients;
 }
 
 public bool ClientViewsFilter(int Entity, int Mask, any Junk)
@@ -6199,17 +6235,17 @@ public bool ClientViewsFilter(int Entity, int Mask, any Junk)
 	return true;
 }
 
-stock bool IsWeaponSlotActive(int iClient, int iSlot)
+stock bool IsWeaponSlotActive(int client, int slot)
 {
-	return GetPlayerWeaponSlot(iClient, iSlot) == GetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon");
+    return GetPlayerWeaponSlot(client, slot) == GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 }
 
-stock int Client_GetClosest(float vecOrigin_center[3], const int client)
+stock int Client_GetClosest(float vecOrigin_center[3], int client)
 {
 	float vecOrigin_edict[3];
 	float distance = -1.0;
 	int closestEdict = -1;
-	for(int i=1;i<=MaxClients;i++)
+	for(int i = 1; i <= MaxClients ; i++)
 	{
 		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
 			continue;
@@ -6224,7 +6260,7 @@ stock int Client_GetClosest(float vecOrigin_center[3], const int client)
 			continue;
 		if(GetClientTeam(i) != GetClientTeam(client))
 		{
-			if(IsPointVisible(vecOrigin_center, vecOrigin_edict))
+			if(IsPointVisible(vecOrigin_center, vecOrigin_edict) && ClientViews(client, i))
 			{
 				float edict_distance = GetVectorDistance(vecOrigin_center, vecOrigin_edict);
 				if((edict_distance < distance) || (distance == -1.0))
@@ -6238,12 +6274,42 @@ stock int Client_GetClosest(float vecOrigin_center[3], const int client)
 	return closestEdict;
 }
 
-stock void ClampAngle(float fAngles[3])
+stock bool ClientViews(int Viewer, int Target, float fMaxDistance=0.0, float fThreshold=0.70)
 {
-	while(fAngles[0] > 89.0)  fAngles[0]-=360.0;
-	while(fAngles[0] < -89.0) fAngles[0]+=360.0;
-	while(fAngles[1] > 180.0) fAngles[1]-=360.0;
-	while(fAngles[1] <-180.0) fAngles[1]+=360.0;
+    // Retrieve view and target eyes position
+    float fViewPos[3];   GetClientEyePosition(Viewer, fViewPos);
+    float fViewAng[3];   GetClientEyeAngles(Viewer, fViewAng);
+    float fViewDir[3];
+    float fTargetPos[3]; GetClientEyePosition(Target, fTargetPos);
+    float fTargetDir[3];
+    float fDistance[3];
+	
+    // Calculate view direction
+    fViewAng[0] = fViewAng[2] = 0.0;
+    GetAngleVectors(fViewAng, fViewDir, NULL_VECTOR, NULL_VECTOR);
+    
+    // Calculate distance to viewer to see if it can be seen.
+    fDistance[0] = fTargetPos[0]-fViewPos[0];
+    fDistance[1] = fTargetPos[1]-fViewPos[1];
+    fDistance[2] = 0.0;
+    if (fMaxDistance != 0.0)
+    {
+        if (((fDistance[0]*fDistance[0])+(fDistance[1]*fDistance[1])) >= (fMaxDistance*fMaxDistance))
+            return false;
+    }
+    
+    // Check dot product. If it's negative, that means the viewer is facing
+    // backwards to the target.
+    NormalizeVector(fDistance, fTargetDir);
+    if (GetVectorDotProduct(fViewDir, fTargetDir) < fThreshold) return false;
+    
+    // Now check if there are no obstacles in between through raycasting
+    Handle hTrace = TR_TraceRayFilterEx(fViewPos, fTargetPos, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
+    if (TR_DidHit(hTrace)) {CloseHandle(hTrace); return false;}
+    CloseHandle(hTrace);
+    
+    // Done, it's visible
+    return true;
 }
 
 bool IsValidClient(int client) 
@@ -7223,7 +7289,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ESPADA Players
-	if((StrEqual(botname, "h1glaiN")) || (StrEqual(botname, "degster")) || (StrEqual(botname, "FinigaN")) || (StrEqual(botname, "RAiLWAY")) || (StrEqual(botname, "Dima")))
+	if((StrEqual(botname, "Patsanchick")) || (StrEqual(botname, "degster")) || (StrEqual(botname, "FinigaN")) || (StrEqual(botname, "S0tF1k")) || (StrEqual(botname, "Dima")))
 	{
 		CS_SetClientClanTag(client, "ESPADA");
 	}

@@ -70,8 +70,8 @@ Template Rifle
 		WeaponPreference = sg556
 		WeaponPreference = mac10
 		WeaponPreference = mp9
-		WeaponPreference = galilar
 		WeaponPreference = famas
+		WeaponPreference = galilar
 		WeaponPreference = ump45
 		WeaponPreference = mp7
 End
@@ -3608,7 +3608,7 @@ End
 
 //ESPADA Players
 
-ProP+Rifle "h1glaiN"
+ProP+Rifle "Patsanchick"
 	VoicePitch = 91
 End
 
@@ -3620,7 +3620,7 @@ ProP+Rifle "FinigaN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "RAiLWAY"
+ProP+Rifle "S0tF1k"
 	VoicePitch = 110
 End
 
