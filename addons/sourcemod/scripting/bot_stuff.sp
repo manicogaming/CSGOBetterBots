@@ -5750,6 +5750,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				
 				if(IsValidClient(Ent))
 				{
+					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
+					{
+						buttons |= IN_JUMP;
+						return Plugin_Changed;
+					}
 					int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
 					if (iClipAmmo > 0)
 					{

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_church_garden_b1"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.190000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.800000"
+	"material" "overviews/gg_church_garden_b1"
+	"pos_x" "-704.000000"
+	"pos_y" "704.000000"
+	"scale" "1.380000"
+}

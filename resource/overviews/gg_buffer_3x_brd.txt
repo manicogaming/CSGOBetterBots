@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_buffer_3x_brd"
+{
+	"CTSpawn_x" "0.880000"
+	"CTSpawn_y" "0.510000"
+	"TSpawn_x" "0.120000"
+	"TSpawn_y" "0.490000"
+	"material" "overviews/gg_buffer_3x_brd"
+	"pos_x" "-1152.000000"
+	"pos_y" "1152.000000"
+	"scale" "2.250000"
+}

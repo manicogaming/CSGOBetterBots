@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_iceworld2k"
+{
+	"CTSpawn_x" "0.270000"
+	"CTSpawn_y" "0.770000"
+	"TSpawn_x" "0.260000"
+	"TSpawn_y" "0.240000"
+	"material" "overviews/gg_iceworld2k"
+	"pos_x" "-832.000000"
+	"pos_y" "1216.000000"
+	"scale" "2.130000"
+}

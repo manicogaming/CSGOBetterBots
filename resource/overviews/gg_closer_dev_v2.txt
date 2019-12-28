@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_closer_dev_v2"
+{
+	"CTSpawn_x" "1.260000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.600000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/gg_closer_dev_v2"
+	"pos_x" "-1280.000000"
+	"pos_y" "1536.000000"
+	"scale" "1.750000"
+}

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_bridgekeeper"
+{
+	"CTSpawn_x" "0.620000"
+	"CTSpawn_y" "0.760000"
+	"TSpawn_x" "0.900000"
+	"TSpawn_y" "0.240000"
+	"material" "overviews/gg_bridgekeeper"
+	"pos_x" "-1912.000000"
+	"pos_y" "2304.000000"
+	"scale" "2.970000"
+}
