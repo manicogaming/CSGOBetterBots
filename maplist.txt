@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Fri Dec 27 16:01:12 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Mon Dec 30 20:49:14 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -137,6 +137,7 @@ dz_blacksite
 dz_junglety
 dz_sirocco
 fun_pacman_v1
+fy_back_street
 fy_concrete
 fy_conflict
 fy_deagle5
@@ -164,8 +165,20 @@ genx_brickworld3
 gg_aim_shotty_csgo
 gg_arena_brazil
 gg_bastion_advanced
+gg_bridgekeeper
+gg_buffer_3x_brd
+gg_ccss_two_towers
+gg_church_garden_b1
+gg_closer_dev_v2
+gg_comic_cell_arena_hdr
+gg_construct_city
 gg_ctm_csgo
 gg_fy_funtimes
+gg_icebattle
+gg_iceworld2k
+gg_imma_dust
+gg_killhouse_b1
+gg_lego_arena
 gg_neonlight
 gg_office
 gg_simple_v1

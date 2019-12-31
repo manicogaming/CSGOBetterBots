@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_lego_arena"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.720000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.280000"
+	"material" "overviews/gg_lego_arena"
+	"pos_x" "-1128.000000"
+	"pos_y" "1128.000000"
+	"scale" "2.200000"
+}

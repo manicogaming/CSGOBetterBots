@@ -1188,11 +1188,11 @@ End
 
 //CeX Players
 
-ProP+Rifle "LiamjS"
+ProP+Rifle "MT"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "resu"
+EliteAwp+SniperPro "Impact"
 	VoicePitch = 106
 End
 
@@ -1200,7 +1200,7 @@ ProP+Rifle "Nukeddog"
 	VoicePitch = 95
 End
 
-ProP+Rifle "JamesBT"
+ProP+Rifle "CYPHER"
 	VoicePitch = 110
 End
 

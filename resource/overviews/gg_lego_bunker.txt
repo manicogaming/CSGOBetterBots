@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"gg_lego_bunker"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.230000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.770000"
+	"material" "overviews/gg_lego_bunker"
+	"pos_x" "-960.000000"
+	"pos_y" "704.000000"
+	"scale" "1.880000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-85.636703"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-85.636703"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}

@@ -267,10 +267,10 @@ char g_BotName[][] = {
 	"chopper",
 	"magixx",
 	//CeX Players
-	"LiamjS",
-	"resu",
+	"MT",
+	"Impact",
 	"Nukeddog",
-	"JamesBT",
+	"CYPHER",
 	"Murky",
 	//LDLC Players
 	"rodeN",
@@ -2164,10 +2164,10 @@ public Action Team_CeX(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "LiamjS");
-		ServerCommand("bot_add_ct %s", "resu");
+		ServerCommand("bot_add_ct %s", "MT");
+		ServerCommand("bot_add_ct %s", "Impact");
 		ServerCommand("bot_add_ct %s", "Nukeddog");
-		ServerCommand("bot_add_ct %s", "JamesBT");
+		ServerCommand("bot_add_ct %s", "CYPHER");
 		ServerCommand("bot_add_ct %s", "Murky");
 		ServerCommand("mp_teamlogo_1 cex");
 	}
@@ -2175,10 +2175,10 @@ public Action Team_CeX(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "LiamjS");
-		ServerCommand("bot_add_t %s", "resu");
+		ServerCommand("bot_add_t %s", "MT");
+		ServerCommand("bot_add_t %s", "Impact");
 		ServerCommand("bot_add_t %s", "Nukeddog");
-		ServerCommand("bot_add_t %s", "JamesBT");
+		ServerCommand("bot_add_t %s", "CYPHER");
 		ServerCommand("bot_add_t %s", "Murky");
 		ServerCommand("mp_teamlogo_2 cex");
 	}
@@ -5719,7 +5719,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 			buttons |= IN_ATTACK; 
 
 			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(GetRandomFloat(3.0, 10.0), Timer_ShouldAttack, GetClientSerial(client));
+				CreateTimer(GetRandomFloat(3.0, 20.0), Timer_ShouldAttack, GetClientSerial(client));
 			}
 		}
 	} else if (g_hShouldAttackTimer[client] != null) {
@@ -5741,29 +5741,28 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				{
 					return Plugin_Continue;
 				}
-				
 				float clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
 				GetClientEyePosition(client, clientEyes);
 				int Ent = Client_GetClosest(clientEyes, client);
 				
 				float angle[3];
-				
-				if(IsValidClient(Ent))
+				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
+				if (iClipAmmo > 0)
 				{
-					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
+					if(IsValidClient(Ent))
 					{
-						buttons |= IN_JUMP;
-						return Plugin_Changed;
-					}
-					int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
-					if (iClipAmmo > 0)
-					{
+						if(GetEntityMoveType(client) == MOVETYPE_LADDER)
+						{
+							buttons |= IN_JUMP;
+							return Plugin_Changed;
+						}
+						
 						GetClientAbsOrigin(Ent, targetEyes);
 						GetClientAbsOrigin(Ent, targetEyesBase);
 						GetClientAbsOrigin(Ent, targetEyes3);
 						GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
 						GetClientEyePosition(Ent, targetEyes2);
-						if(IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40)
+						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38) || index == 63)
 						{
 							if(GetRandomInt(1,4) == 1)
 							{
@@ -5771,11 +5770,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+								targetEyes[2] += GetRandomFloat(40.5, 55.5);
 							}
 							buttons |= IN_ATTACK;
 						}
-						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY))
+						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY) && index != 63)
 						{
 							if(GetRandomInt(1,4) == 1)
 							{
@@ -5783,10 +5782,10 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+								targetEyes[2] += GetRandomFloat(40.5, 55.5);
 							}
 						}
-						else if(buttons & IN_ATTACK && index == 40)
+						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
 						{
 							if(GetRandomInt(1,3) == 1)
 							{
@@ -5794,7 +5793,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(30.5, 45.5);
+								targetEyes[2] += GetRandomFloat(40.5, 55.5);
 							}
 						}
 						else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
@@ -5840,14 +5839,14 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}		
 						TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);	
 					}
-				}
-				
-				if (buttons & IN_ATTACK)
-				{
-					if(index == 7 || index == 8 || index == 10 || index == 13 || index == 14 || index == 16 || index == 39 || index == 60 || index == 28)
+					
+					if (buttons & IN_ATTACK)
 					{
-						buttons |= IN_DUCK;
-						return Plugin_Changed;
+						if(index == 7 || index == 8 || index == 10 || index == 13 || index == 14 || index == 16 || index == 39 || index == 60 || index == 28)
+						{
+							buttons |= IN_DUCK;
+							return Plugin_Changed;
+						}
 					}
 				}
 			}
@@ -5982,7 +5981,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	{
 		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
 		
-		if(GetRandomInt(1,100) <= 10)
+		if(GetRandomInt(1,100) >= 10)
 		{
 			if(team == CS_TEAM_CT)
 			{
@@ -5990,7 +5989,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 				
 				GetClientWeapon(client, usp, sizeof(usp));
 
-				if(StrEqual(usp, "weapon_usp_silencer"))
+				if(StrEqual(usp, "weapon_hkp2000"))
 				{
 					int uspslot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 					
@@ -5998,7 +5997,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 					{
 						RemovePlayerItem(client, uspslot);
 					}
-					GivePlayerItem(client, "weapon_hkp2000");
+					GivePlayerItem(client, "weapon_usp_silencer");
 				}
 			}
 		}
@@ -6634,7 +6633,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//CeX Players
-	if((StrEqual(botname, "LiamjS")) || (StrEqual(botname, "resu")) || (StrEqual(botname, "Nukeddog")) || (StrEqual(botname, "JamesBT")) || (StrEqual(botname, "Murky")))
+	if((StrEqual(botname, "MT")) || (StrEqual(botname, "Impact")) || (StrEqual(botname, "Nukeddog")) || (StrEqual(botname, "CYPHER")) || (StrEqual(botname, "Murky")))
 	{
 		CS_SetClientClanTag(client, "CeX");
 	}
