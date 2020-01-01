@@ -770,12 +770,6 @@ char g_BotName[][] = {
 	"VARES",
 	"mik",
 	"Yaba",
-	//W&R Players
-	"Swaggy",
-	"TotunG",
-	"Ping",
-	"Br0die",
-	"Tadpole",
 	//GameAgents Players
 	"pounh",
 	"FliP1",
@@ -1076,7 +1070,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_wizards", Team_Wizards);
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_queso", Team_Queso);
-	RegConsoleCmd("team_windrain", Team_WindRain);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_orange", Team_Orange);
 	RegConsoleCmd("team_ig", Team_IG);
@@ -4676,36 +4669,6 @@ public Action Team_Queso(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_WindRain(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Swaggy");
-		ServerCommand("bot_add_ct %s", "TotunG");
-		ServerCommand("bot_add_ct %s", "Ping");
-		ServerCommand("bot_add_ct %s", "Br0die");
-		ServerCommand("bot_add_ct %s", "Tadpole");
-		ServerCommand("mp_teamlogo_1 wr");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Swaggy");
-		ServerCommand("bot_add_t %s", "TotunG");
-		ServerCommand("bot_add_t %s", "Ping");
-		ServerCommand("bot_add_t %s", "Br0die");
-		ServerCommand("bot_add_t %s", "Tadpole");
-		ServerCommand("mp_teamlogo_2 wr");
-	}
-
-	return Plugin_Handled;
-}
-
 public Action Team_GameAgents(int client, int args)
 {
 	char arg[12];
@@ -5575,7 +5538,10 @@ public void Hook_OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
 	SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
-	SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
+	if(IsValidClient(iEnt) && IsFakeClient(iEnt))
+	{
+		SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
+	}
 }
 
 public Action CS_OnBuyCommand(int client, const char[] weapon)
@@ -7136,12 +7102,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Queso");
 	}
 	
-	//W&R Players
-	if((StrEqual(botname, "Swaggy")) || (StrEqual(botname, "TotunG")) || (StrEqual(botname, "Ping")) || (StrEqual(botname, "Br0die")) || (StrEqual(botname, "Tadpole")))
-	{
-		CS_SetClientClanTag(client, "W&R");
-	}
-	
 	//GameAgents Players
 	if((StrEqual(botname, "pounh")) || (StrEqual(botname, "FliP1")) || (StrEqual(botname, "COSMEEEN")) || (StrEqual(botname, "kalle")) || (StrEqual(botname, "PALM1")))
 	{
@@ -7919,11 +7879,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Queso"))
 	{
 		g_iProfileRank[client] = 162;
-	}
-	
-	if (StrEqual(sClan, "W&R"))
-	{
-		g_iProfileRank[client] = 163;
 	}
 	
 	if (StrEqual(sClan, "GameAgents"))

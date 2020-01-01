@@ -3034,28 +3034,6 @@ ProP+Rifle "Yaba"
 	VoicePitch = 110
 End
 
-//W&R Players
-
-ProP+Rifle "Swaggy"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "TotunG"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Ping"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Br0die"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Tadpole"
-	VoicePitch = 110
-End
-
 //GameAgents Players
 
 ProP+Rifle "pounh"

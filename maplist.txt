@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Mon Dec 30 20:49:14 GMT 2019 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Wed Jan 01 04:36:25 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -179,8 +179,13 @@ gg_iceworld2k
 gg_imma_dust
 gg_killhouse_b1
 gg_lego_arena
+gg_lego_bunker
+gg_lego_rgb_ggn
+gg_mr_max
 gg_neonlight
 gg_office
+gg_orange_arena_trx
+gg_p@pys_@peros
 gg_simple_v1
 ka_rainbow
 ka_swim_pool
