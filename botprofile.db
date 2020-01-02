@@ -1614,15 +1614,15 @@ EliteAwp+SniperPro "obj"
 	VoicePitch = 106
 End
 
-ProP+Rifle "JUST"
+ProP+Rifle "zlynx"
 	VoicePitch = 95
 End
 
-ProP+Rifle "stadodo"
+ProP+Rifle "ZELIN"
 	VoicePitch = 110
 End
 
-ProP+Rifle "pr"
+ProP+Rifle "kst"
 	VoicePitch = 110
 End
 
@@ -3625,6 +3625,28 @@ ProP+Rifle "valde"
 End
 
 ProP+Rifle "ISSAA"
+	VoicePitch = 110
+End
+
+//LiViD Players
+
+ProP+Rifle "huynh"
+	VoicePitch = 91
+End
+
+EliteAwp+SniperPro "MkaeL"
+	VoicePitch = 106
+End
+
+ProP+Rifle "INCRED"
+	VoicePitch = 95
+End
+
+ProP+Rifle "gMd"
+	VoicePitch = 110
+End
+
+ProP+Rifle "effys"
 	VoicePitch = 110
 End
 

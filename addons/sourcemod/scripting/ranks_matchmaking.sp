@@ -545,18 +545,6 @@ public void CheckRanks(int client, int points)
 	
 	if(rank[client] < oldrank[client] && rank[client] > 0)
 	{
-		switch(g_RankPoints_HudOverlay)
-		{
-			case 0:
-			{
-				SetHudTextParams(-1.0, 0.125, 5.0, 255, 255, 255, 255, 0, 0.25, 1.5, 0.5);
-				ShowHudText(client, 5, "%t", "Rank Down", RankStrings[rank[client]]);
-			}
-			case 1:
-			{
-				ShowOverlay(client, RankOverlays[rank[client] - 1], g_RankPoints_OverlayTime);
-			}
-		}
 		
 		if(g_RankPoints_SoundEnable)
 		{

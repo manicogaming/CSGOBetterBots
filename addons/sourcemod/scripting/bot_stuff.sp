@@ -383,9 +383,9 @@ char g_BotName[][] = {
 	//OFFSET Players
 	"RIZZ",
 	"obj",
-	"JUST",
-	"stadodo",
-	"pr",
+	"zlynx",
+	"ZELIN",
+	"kst",
 	//x6tence Players
 	"NikoM",
 	"JonY BoY",
@@ -931,7 +931,13 @@ char g_BotName[][] = {
 	"mantuu",
 	"Aleksib",
 	"valde",
-	"ISSAA"
+	"ISSAA",
+	//LiViD Players
+	"huynh",
+	"MkaeL",
+	"INCRED",
+	"gMd",
+	"effys"
 };
  
 public Plugin myinfo =
@@ -1097,6 +1103,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_canids", Team_Canids);
 	RegConsoleCmd("team_espada", Team_ESPADA);
 	RegConsoleCmd("team_og", Team_OG);
+	RegConsoleCmd("team_livid", Team_LiViD);
 }
 
 public Action Team_NiP(int client, int args)
@@ -2729,9 +2736,9 @@ public Action Team_OFFSET(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "RIZZ");
 		ServerCommand("bot_add_ct %s", "obj");
-		ServerCommand("bot_add_ct %s", "JUST");
-		ServerCommand("bot_add_ct %s", "stadodo");
-		ServerCommand("bot_add_ct %s", "pr");
+		ServerCommand("bot_add_ct %s", "zlynx");
+		ServerCommand("bot_add_ct %s", "ZELIN");
+		ServerCommand("bot_add_ct %s", "kst");
 		ServerCommand("mp_teamlogo_1 offs");
 	}
 	
@@ -2740,9 +2747,9 @@ public Action Team_OFFSET(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "RIZZ");
 		ServerCommand("bot_add_t %s", "obj");
-		ServerCommand("bot_add_t %s", "JUST");
-		ServerCommand("bot_add_t %s", "stadodo");
-		ServerCommand("bot_add_t %s", "pr");
+		ServerCommand("bot_add_t %s", "zlynx");
+		ServerCommand("bot_add_t %s", "ZELIN");
+		ServerCommand("bot_add_t %s", "kst");
 		ServerCommand("mp_teamlogo_2 offs");
 	}
 	
@@ -5479,6 +5486,36 @@ public Action Team_OG(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_LiViD(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "huynh");
+		ServerCommand("bot_add_ct %s", "MkaeL");
+		ServerCommand("bot_add_ct %s", "INCRED");
+		ServerCommand("bot_add_ct %s", "gMd");
+		ServerCommand("bot_add_ct %s", "ISSAA");
+		ServerCommand("mp_teamlogo_1 livid");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "huynh");
+		ServerCommand("bot_add_t %s", "MkaeL");
+		ServerCommand("bot_add_t %s", "INCRED");
+		ServerCommand("bot_add_t %s", "gMd");
+		ServerCommand("bot_add_t %s", "effys");
+		ServerCommand("mp_teamlogo_2 livid");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5538,10 +5575,7 @@ public void Hook_OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
 	SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
-	if(IsValidClient(iEnt) && IsFakeClient(iEnt))
-	{
-		SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
-	}
+	SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
 }
 
 public Action CS_OnBuyCommand(int client, const char[] weapon)
@@ -6713,7 +6747,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//OFFSET Players
-	if((StrEqual(botname, "RIZZ")) || (StrEqual(botname, "obj")) || (StrEqual(botname, "JUST")) || (StrEqual(botname, "stadodo")) || (StrEqual(botname, "pr")))
+	if((StrEqual(botname, "RIZZ")) || (StrEqual(botname, "obj")) || (StrEqual(botname, "zlynx")) || (StrEqual(botname, "ZELIN")) || (StrEqual(botname, "kst")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}
@@ -7262,6 +7296,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "NBK-")) || (StrEqual(botname, "mantuu")) || (StrEqual(botname, "Aleksib")) || (StrEqual(botname, "valde")) || (StrEqual(botname, "ISSAA")))
 	{
 		CS_SetClientClanTag(client, "OG");
+	}
+	
+	//LiViD Players
+	if((StrEqual(botname, "huynh")) || (StrEqual(botname, "MkaeL")) || (StrEqual(botname, "INCRED")) || (StrEqual(botname, "gMd")) || (StrEqual(botname, "effys")))
+	{
+		CS_SetClientClanTag(client, "LiViD");
 	}
 }
 
@@ -7879,6 +7919,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Queso"))
 	{
 		g_iProfileRank[client] = 162;
+	}
+	
+	if (StrEqual(sClan, "LiViD"))
+	{
+		g_iProfileRank[client] = 163;
 	}
 	
 	if (StrEqual(sClan, "GameAgents"))
