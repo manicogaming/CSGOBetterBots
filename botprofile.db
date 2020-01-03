@@ -1276,11 +1276,11 @@ End
 
 //DIVIZON Players
 
-ProP+Rifle "TR1P"
+ProP+Rifle "slunixx"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "glaVed"
+EliteAwp+SniperPro "eleKz"
 	VoicePitch = 106
 End
 
@@ -1292,7 +1292,7 @@ ProP+Rifle "n1kista"
 	VoicePitch = 110
 End
 
-ProP+Rifle "MajoRR"
+ProP+Rifle "ykyli"
 	VoicePitch = 110
 End
 
@@ -2044,28 +2044,6 @@ ProP+Rifle "zewsy"
 	VoicePitch = 110
 End
 
-//LEISURE Players
-
-ProP+Rifle "padow"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "amigo"
-	VoicePitch = 106
-End
-
-ProP+Rifle "fly"
-	VoicePitch = 95
-End
-
-ProP+Rifle "cHap"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Rand"
-	VoicePitch = 110
-End
-
 //ORDER Players
 
 ProP+Rifle "emagine"
@@ -2640,23 +2618,23 @@ End
 
 //GTZ Players
 
-ProP+Rifle "emp"
+ProP+Rifle "k0mpa"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "MISK"
+EliteAwp+SniperPro "StepA"
 	VoicePitch = 106
 End
 
-ProP+Rifle "CarboN"
+ProP+Rifle "slaxx"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Kustom"
+ProP+Rifle "Jaepe"
 	VoicePitch = 110
 End
 
-ProP+Rifle "shellzy"
+ProP+Rifle "rafaxF"
 	VoicePitch = 110
 End
 
@@ -3383,28 +3361,6 @@ ProP+Rifle "Polt"
 End
 
 ProP+Rifle "fenvicious"
-	VoicePitch = 110
-End
-
-//Asterion Players
-
-ProP+Rifle "blackie"
-	VoicePitch = 91
-End
-
-EliteAwp+SniperPro "NexFox"
-	VoicePitch = 106
-End
-
-ProP+Rifle "NiNo"
-	VoicePitch = 95
-End
-
-ProP+Rifle "Bernard"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Clash"
 	VoicePitch = 110
 End
 

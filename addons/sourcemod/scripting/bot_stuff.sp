@@ -10,7 +10,7 @@ bool g_bShouldAttack[MAXPLAYERS + 1];
 bool g_bFlashed[MAXPLAYERS + 1] = false;
 Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iMusicOffset;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
 ConVar g_cvPredictionConVars[1] = {null};
 
 char g_sTRngGrenadesList[][] = {
@@ -291,11 +291,11 @@ char g_BotName[][] = {
 	"RuStY",
 	"hampus",
 	//DIVIZON Players
-	"TR1P",
-	"glaVed",
+	"slunixx",
+	"eleKz",
 	"hyped",
 	"n1kista",
-	"MajoRR",
+	"ykyli",
 	//EURONICS Players
 	"red",
 	"pdy",
@@ -500,12 +500,6 @@ char g_BotName[][] = {
 	"Texta",
 	"ofnu",
 	"zewsy",
-	//LEISURE Players
-	"padow",
-	"amigo",
-	"fly",
-	"cHap",
-	"Rand",
 	//ORDER Players
 	"emagine",
 	"aliStair",
@@ -663,11 +657,11 @@ char g_BotName[][] = {
 	"f4stzin",
 	"KILLDREAM",
 	//GTZ Players
-	"emp",
-	"MISK",
-	"CarboN",
-	"Kustom",
-	"shellzy",
+	"k0mpa",
+	"StepA",
+	"slaxx",
+	"Jaepe",
+	"rafaxF",
 	//Flames Players
 	"TeSeS",
 	"farlig",
@@ -866,12 +860,6 @@ char g_BotName[][] = {
 	"PASHANOJ",
 	"Polt",
 	"fenvicious",
-	//Asterion Players
-	"blackie",
-	"NexFox",
-	"NiNo",
-	"Bernard",
-	"Clash",
 	//Izako Players
 	"Patitek",
 	"Hyper",
@@ -1031,7 +1019,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_w7m", Team_W7M);
 	RegConsoleCmd("team_avant", Team_Avant);
 	RegConsoleCmd("team_chiefs", Team_Chiefs);
-	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_order", Team_ORDER);
 	RegConsoleCmd("team_blacks", Team_BlackS);
 	RegConsoleCmd("team_skade", Team_SKADE);
@@ -1092,7 +1079,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_imperial", Team_Imperial);
 	RegConsoleCmd("team_big5", Team_Big5);
 	RegConsoleCmd("team_Unique", Team_Unique);
-	RegConsoleCmd("team_asterion", Team_Asterion);
 	RegConsoleCmd("team_izako", Team_Izako);
 	RegConsoleCmd("team_riot", Team_Riot);
 	RegConsoleCmd("team_chaos", Team_Chaos);
@@ -2284,22 +2270,22 @@ public Action Team_DIVIZON(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "TR1P");
-		ServerCommand("bot_add_ct %s", "glaVed");
+		ServerCommand("bot_add_ct %s", "slunixx");
+		ServerCommand("bot_add_ct %s", "eleKz");
 		ServerCommand("bot_add_ct %s", "hyped");
 		ServerCommand("bot_add_ct %s", "n1kista");
-		ServerCommand("bot_add_ct %s", "MajoRR");
+		ServerCommand("bot_add_ct %s", "ykyli");
 		ServerCommand("mp_teamlogo_1 divi");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "TR1P");
-		ServerCommand("bot_add_t %s", "glaVed");
+		ServerCommand("bot_add_t %s", "slunixx");
+		ServerCommand("bot_add_t %s", "eleKz");
 		ServerCommand("bot_add_t %s", "hyped");
 		ServerCommand("bot_add_t %s", "n1kista");
-		ServerCommand("bot_add_t %s", "MajoRR");
+		ServerCommand("bot_add_t %s", "ykyli");
 		ServerCommand("mp_teamlogo_2 divi");
 	}
 	
@@ -3326,36 +3312,6 @@ public Action Team_Chiefs(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_LEISURE(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "padow");
-		ServerCommand("bot_add_ct %s", "amigo");
-		ServerCommand("bot_add_ct %s", "fly");
-		ServerCommand("bot_add_ct %s", "cHap");
-		ServerCommand("bot_add_ct %s", "Rand");
-		ServerCommand("mp_teamlogo_1 leis");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "padow");
-		ServerCommand("bot_add_t %s", "amigo");
-		ServerCommand("bot_add_t %s", "fly");
-		ServerCommand("bot_add_t %s", "cHap");
-		ServerCommand("bot_add_t %s", "Rand");
-		ServerCommand("mp_teamlogo_2 leis");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_ORDER(int client, int args)
 {
 	char arg[12];
@@ -4144,22 +4100,22 @@ public Action Team_GTZ(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "emp");
-		ServerCommand("bot_add_ct %s", "MISK");
-		ServerCommand("bot_add_ct %s", "CarboN");
-		ServerCommand("bot_add_ct %s", "Kustom");
-		ServerCommand("bot_add_ct %s", "shellzy");
+		ServerCommand("bot_add_ct %s", "k0mpa");
+		ServerCommand("bot_add_ct %s", "StepA");
+		ServerCommand("bot_add_ct %s", "slaxx");
+		ServerCommand("bot_add_ct %s", "Jaepe");
+		ServerCommand("bot_add_ct %s", "rafaxF");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "emp");
-		ServerCommand("bot_add_t %s", "MISK");
-		ServerCommand("bot_add_t %s", "CarboN");
-		ServerCommand("bot_add_t %s", "Kustom");
-		ServerCommand("bot_add_t %s", "shellzy");
+		ServerCommand("bot_add_t %s", "k0mpa");
+		ServerCommand("bot_add_t %s", "StepA");
+		ServerCommand("bot_add_t %s", "slaxx");
+		ServerCommand("bot_add_t %s", "Jaepe");
+		ServerCommand("bot_add_t %s", "rafaxF");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
 	
@@ -5156,36 +5112,6 @@ public Action Team_Unique(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Asterion(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "blackie");
-		ServerCommand("bot_add_ct %s", "NexFox");
-		ServerCommand("bot_add_ct %s", "NiNo");
-		ServerCommand("bot_add_ct %s", "Bernard");
-		ServerCommand("bot_add_ct %s", "Clash");
-		ServerCommand("mp_teamlogo_1 ast");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "blackie");
-		ServerCommand("bot_add_t %s", "NexFox");
-		ServerCommand("bot_add_t %s", "NiNo");
-		ServerCommand("bot_add_t %s", "Bernard");
-		ServerCommand("bot_add_t %s", "Clash");
-		ServerCommand("mp_teamlogo_2 ast");
-	}
-
-	return Plugin_Handled;
-}
-
 public Action Team_Izako(int client, int args)
 {
 	char arg[12];
@@ -5520,7 +5446,6 @@ public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
 	g_iCoinOffset = FindSendPropInfo("CCSPlayerResource", "m_nActiveCoinRank");
-	g_iMusicOffset = FindSendPropInfo("CCSPlayerResource", "m_nMusicID");
 
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, Hook_OnThinkPost);
@@ -5547,7 +5472,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 {
 	for(int i = 1; i <= MaxClients; i++)
 	{
-		if(IsClientInGame(i) && IsFakeClient(i))
+		if(IsValidClient(i) && IsFakeClient(i))
 		{			
 			if(g_hShouldAttackTimer[i] != null)
 			{
@@ -5567,6 +5492,19 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				}
 				
 			}
+			int rndm = GetRandomInt(1,2);
+		
+			switch(rndm)
+			{
+				case 1:
+				{
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(3,31));
+				}
+				case 2:
+				{
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,41));
+				}
+			}
 		}
 	}
 }
@@ -5575,12 +5513,11 @@ public void Hook_OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
 	SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
-	SetEntDataArray(iEnt, g_iMusicOffset, g_iMusic, MAXPLAYERS+1);
 }
 
 public Action CS_OnBuyCommand(int client, const char[] weapon)
 {
-	if(IsFakeClient(client))
+	if(IsValidClient(client) && IsFakeClient(client))
 	{	
 		if(GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 		{
@@ -5860,7 +5797,7 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && IsFakeClient(i))
+		if (IsValidClient(i) && IsFakeClient(i))
 		{
 			int m_iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			
@@ -5977,7 +5914,7 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 	
 	if (!client) return;
 	
-	if(IsFakeClient(client))
+	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(client)); 
 		
@@ -6008,11 +5945,11 @@ public void OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast) {
 		{
 			case 1:
 			{
-				g_iMusic[client] = GetRandomInt(3,31);
+				SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(3,31));
 			}
 			case 2:
 			{
-				g_iMusic[client] = GetRandomInt(39,41);
+				SetEntProp(client, Prop_Send, "m_unMusicID", GetRandomInt(39,41));
 			}
 		}
 	}
@@ -6160,7 +6097,7 @@ public void OnPluginEnd()
 {
 	for(int client = 1; client <= MaxClients; client++)
 	{
-		if(IsClientInGame(client) && IsFakeClient(client))
+		if(IsValidClient(client) && IsFakeClient(client))
 		{
 			OnClientDisconnect(client);
 		}
@@ -6657,7 +6594,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//DIVIZON Players
-	if((StrEqual(botname, "TR1P")) || (StrEqual(botname, "glaVed")) || (StrEqual(botname, "hyped")) || (StrEqual(botname, "n1kista")) || (StrEqual(botname, "MajoRR")))
+	if((StrEqual(botname, "slunixx")) || (StrEqual(botname, "eleKz")) || (StrEqual(botname, "hyped")) || (StrEqual(botname, "n1kista")) || (StrEqual(botname, "ykyli")))
 	{
 		CS_SetClientClanTag(client, "DIVIZON");
 	}
@@ -6866,12 +6803,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Chiefs");
 	}
 	
-	//LEISURE Players
-	if((StrEqual(botname, "padow")) || (StrEqual(botname, "amigo")) || (StrEqual(botname, "fly")) || (StrEqual(botname, "cHap")) || (StrEqual(botname, "Rand")))
-	{
-		CS_SetClientClanTag(client, "LEISURE");
-	}
-	
 	//ORDER Players
 	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "USTILO")) || (StrEqual(botname, "Valiance")))
 	{
@@ -7029,7 +6960,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//GTZ Players
-	if((StrEqual(botname, "emp")) || (StrEqual(botname, "MISK")) || (StrEqual(botname, "CarboN")) || (StrEqual(botname, "Kustom")) || (StrEqual(botname, "shellzy")))
+	if((StrEqual(botname, "k0mpa")) || (StrEqual(botname, "StepA")) || (StrEqual(botname, "slaxx")) || (StrEqual(botname, "Jaepe")) || (StrEqual(botname, "rafaxF")))
 	{
 		CS_SetClientClanTag(client, "GTZ");
 	}
@@ -7230,12 +7161,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "R0b3n")) || (StrEqual(botname, "zorte")) || (StrEqual(botname, "PASHANOJ")) || (StrEqual(botname, "Polt")) || (StrEqual(botname, "fenvicious")))
 	{
 		CS_SetClientClanTag(client, "Unique");
-	}
-	
-	//Asterion Players
-	if((StrEqual(botname, "blackie")) || (StrEqual(botname, "NexFox")) || (StrEqual(botname, "NiNo")) || (StrEqual(botname, "Bernard")) || (StrEqual(botname, "Clash")))
-	{
-		CS_SetClientClanTag(client, "Asterion");
 	}
 	
 	//Izako Players
@@ -7691,11 +7616,6 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 116;
 	}
 	
-	if (StrEqual(sClan, "LEISURE"))
-	{
-		g_iProfileRank[client] = 117;
-	}
-	
 	if (StrEqual(sClan, "ORDER"))
 	{
 		g_iProfileRank[client] = 118;
@@ -8004,11 +7924,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Unique"))
 	{
 		g_iProfileRank[client] = 179;
-	}
-	
-	if (StrEqual(sClan, "Asterion"))
-	{
-		g_iProfileRank[client] = 180;
 	}
 	
 	if (StrEqual(sClan, "Izako"))
