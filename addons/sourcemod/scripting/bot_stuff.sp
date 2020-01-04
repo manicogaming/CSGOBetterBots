@@ -276,7 +276,7 @@ char g_BotName[][] = {
 	"rodeN",
 	"Happy",
 	"MAJ3R",
-	"xms",
+	"Ozstrik3r",
 	"SIXER",
 	//Defusekids Player
 	"v1N",
@@ -411,9 +411,9 @@ char g_BotName[][] = {
 	"Crityourface",
 	"Sobol",
 	//Heretics Players
-	"davidp",
+	"jeyN",
 	"Maka",
-	"devoduvek",
+	"xms",
 	"kioShiMa",
 	"Lucky",
 	//Nemiga Players
@@ -738,7 +738,7 @@ char g_BotName[][] = {
 	"brA",
 	"Demonos",
 	"SHOUW",
-	"sark",
+	"horvy",
 	"axoN",
 	//Corvidae Players
 	"DANZ",
@@ -826,7 +826,7 @@ char g_BotName[][] = {
 	"JACKPOT",
 	//HLE Players
 	"kinqie",
-	"speed4k",
+	"rAge",
 	"Krad",
 	"Forester",
 	"svyat",
@@ -2183,7 +2183,7 @@ public Action Team_LDLC(int client, int args)
 		ServerCommand("bot_add_ct %s", "rodeN");
 		ServerCommand("bot_add_ct %s", "Happy");
 		ServerCommand("bot_add_ct %s", "MAJ3R");
-		ServerCommand("bot_add_ct %s", "xms");
+		ServerCommand("bot_add_ct %s", "Ozstrik3r");
 		ServerCommand("bot_add_ct %s", "SIXER");
 		ServerCommand("mp_teamlogo_1 ldlc");
 	}
@@ -2194,7 +2194,7 @@ public Action Team_LDLC(int client, int args)
 		ServerCommand("bot_add_t %s", "rodeN");
 		ServerCommand("bot_add_t %s", "Happy");
 		ServerCommand("bot_add_t %s", "MAJ3R");
-		ServerCommand("bot_add_t %s", "xms");
+		ServerCommand("bot_add_t %s", "Ozstrik3r");
 		ServerCommand("bot_add_t %s", "SIXER");
 		ServerCommand("mp_teamlogo_2 ldlc");
 	}
@@ -2870,9 +2870,9 @@ public Action Team_Heretics(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "davidp");
+		ServerCommand("bot_add_ct %s", "jeyN");
 		ServerCommand("bot_add_ct %s", "Maka");
-		ServerCommand("bot_add_ct %s", "devoduvek");
+		ServerCommand("bot_add_ct %s", "xms");
 		ServerCommand("bot_add_ct %s", "kioShiMa");
 		ServerCommand("bot_add_ct %s", "Lucky");
 		ServerCommand("mp_teamlogo_1 here");
@@ -2881,9 +2881,9 @@ public Action Team_Heretics(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "davidp");
+		ServerCommand("bot_add_t %s", "jeyN");
 		ServerCommand("bot_add_t %s", "Maka");
-		ServerCommand("bot_add_t %s", "devoduvek");
+		ServerCommand("bot_add_t %s", "xms");
 		ServerCommand("bot_add_t %s", "kioShiMa");
 		ServerCommand("bot_add_t %s", "Lucky");
 		ServerCommand("mp_teamlogo_2 here");
@@ -4493,7 +4493,7 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "Demonos");
 		ServerCommand("bot_add_ct %s", "SHOUW");
-		ServerCommand("bot_add_ct %s", "sark");
+		ServerCommand("bot_add_ct %s", "horvy");
 		ServerCommand("bot_add_ct %s", "axoN");
 		ServerCommand("mp_teamlogo_1 baec");
 	}
@@ -4504,7 +4504,7 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "Demonos");
 		ServerCommand("bot_add_t %s", "SHOUW");
-		ServerCommand("bot_add_t %s", "sark");
+		ServerCommand("bot_add_t %s", "horvy");
 		ServerCommand("bot_add_t %s", "axoN");
 		ServerCommand("mp_teamlogo_2 baec");
 	}
@@ -4941,7 +4941,7 @@ public Action Team_HLE(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kinqie");
-		ServerCommand("bot_add_ct %s", "speed4k");
+		ServerCommand("bot_add_ct %s", "rAge");
 		ServerCommand("bot_add_ct %s", "Krad");
 		ServerCommand("bot_add_ct %s", "Forester");
 		ServerCommand("bot_add_ct %s", "svyat");
@@ -4952,7 +4952,7 @@ public Action Team_HLE(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kinqie");
-		ServerCommand("bot_add_t %s", "speed4k");
+		ServerCommand("bot_add_t %s", "rAge");
 		ServerCommand("bot_add_t %s", "Krad");
 		ServerCommand("bot_add_t %s", "Forester");
 		ServerCommand("bot_add_t %s", "svyat");
@@ -6576,7 +6576,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LDLC Players
-	if((StrEqual(botname, "rodeN")) || (StrEqual(botname, "Happy")) || (StrEqual(botname, "MAJ3R")) || (StrEqual(botname, "xms")) || (StrEqual(botname, "SIXER")))
+	if((StrEqual(botname, "rodeN")) || (StrEqual(botname, "Happy")) || (StrEqual(botname, "MAJ3R")) || (StrEqual(botname, "Ozstrik3r")) || (StrEqual(botname, "SIXER")))
 	{
 		CS_SetClientClanTag(client, "LDLC");
 	}
@@ -6714,7 +6714,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Heretics Players
-	if((StrEqual(botname, "davidp")) || (StrEqual(botname, "Maka")) || (StrEqual(botname, "devoduvek")) || (StrEqual(botname, "kioShiMa")) || (StrEqual(botname, "Lucky")))
+	if((StrEqual(botname, "jeyN")) || (StrEqual(botname, "Maka")) || (StrEqual(botname, "xms")) || (StrEqual(botname, "kioShiMa")) || (StrEqual(botname, "Lucky")))
 	{
 		CS_SetClientClanTag(client, "Heretics");
 	}
@@ -7038,7 +7038,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Baecon Players
-	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "SHOUW")) || (StrEqual(botname, "sark")) || (StrEqual(botname, "axoN")))
+	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "SHOUW")) || (StrEqual(botname, "horvy")) || (StrEqual(botname, "axoN")))
 	{
 		CS_SetClientClanTag(client, "Baecon");
 	}
@@ -7128,7 +7128,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//HLE Players
-	if((StrEqual(botname, "kinqie")) || (StrEqual(botname, "speed4k")) || (StrEqual(botname, "Krad")) || (StrEqual(botname, "Forester")) || (StrEqual(botname, "svyat")))
+	if((StrEqual(botname, "kinqie")) || (StrEqual(botname, "rAge")) || (StrEqual(botname, "Krad")) || (StrEqual(botname, "Forester")) || (StrEqual(botname, "svyat")))
 	{
 		CS_SetClientClanTag(client, "HLE");
 	}

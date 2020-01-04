@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Sat Jan 04 01:02:39 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Sat Jan 04 21:47:59 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -186,6 +186,9 @@ gg_office
 gg_orange_arena_trx
 gg_p@pys_@peros
 gg_simple_v1
+gg_simpsons_japanz_v2
+gg_simpsons_mega
+gg_southpark_mini_tower
 ka_rainbow
 ka_swim_pool
 kills_ct

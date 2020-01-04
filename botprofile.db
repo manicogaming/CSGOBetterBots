@@ -1225,7 +1225,7 @@ ProP+Rifle "MAJ3R"
 	VoicePitch = 102
 End
 
-ProP+Rifle "xms"
+ProP+Rifle "Ozstrik3r"
 	VoicePitch = 96
 End
 
@@ -1719,7 +1719,7 @@ End
 
 //Heretics Players
 
-ProP+Rifle "davidp"
+ProP+Rifle "jeyN"
 	VoicePitch = 114
 End
 
@@ -1727,7 +1727,7 @@ EliteAwp+SniperPro "Maka"
 	VoicePitch = 92
 End
 
-ProP+Rifle "devoduvek"
+ProP+Rifle "xms"
 	VoicePitch = 108
 End
 
@@ -2919,7 +2919,7 @@ ProP+Rifle "SHOUW"
 	VoicePitch = 94
 End
 
-ProP+Rifle "sark"
+ProP+Rifle "horvy"
 	VoicePitch = 88
 End
 
@@ -3241,7 +3241,7 @@ ProP+Rifle "kinqie"
 	VoicePitch = 108
 End
 
-EliteAwp+SniperPro "speed4k"
+EliteAwp+SniperPro "rAge"
 	VoicePitch = 89
 End
 
