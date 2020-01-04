@@ -33,7 +33,7 @@ Default
 	WeaponPreference = none
 	Cost = 0
 	Difficulty = EASY+NORMAL+HARD+EXPERT
-	VoicePitch = 97
+	VoicePitch = 100
 	Skin = 0
 	LookAngleMaxAccelNormal = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.9.9.9.9
 	LookAngleStiffnessNormal = 5000.0
@@ -130,7 +130,7 @@ Template ProP
 		ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
-		VoicePitch = 84
+		VoicePitch = 100
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001
 		AimFocusOffsetScale = 0.0000000000000000000000001
@@ -146,7 +146,7 @@ Template EliteAwp
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		ReactionTime = 0.00000000000000000000000000000000000000000000000000001
-		VoicePitch = 104
+		VoicePitch = 95
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001
 		AimFocusOffsetScale = 0.0000000000000000000000001
@@ -161,7 +161,7 @@ Template ElitePassive
 		ReactionTime = 0.000000000000000000000001
 		AttackDelay = 0
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 83
+		VoicePitch = 85
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.00001
 		AimFocusOffsetScale = 0.00001
@@ -176,7 +176,7 @@ Template Elite
 		ReactionTime = 0.000000000000000000000001
 		AttackDelay = 0
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 75
+		VoicePitch = 70
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.00001
 		AimFocusOffsetScale = 0.00001
@@ -190,6 +190,7 @@ Template ExpertAwp
 		Teamwork = 85
 		AttackDelay = 0
 		ReactionTime = 0.00001
+		VoicePitch = 70
 		Difficulty = EXPERT+HARD+NORMAL+EASY
 		AimFocusInitial = 0.025
 		AimFocusDecay = 0.0025
@@ -205,6 +206,7 @@ Template ExpertPassive
 		AttackDelay = 0
 		ReactionTime = 0.00001
 		Difficulty = EXPERT+HARD+NORMAL+EASY
+		VoicePitch = 88
 		AimFocusInitial = 0.024
 		AimFocusDecay = 0.024
 		AimFocusOffsetScale = 0.024
@@ -218,6 +220,7 @@ Template Expert
 		Teamwork = 79
 		AttackDelay = 0
 		ReactionTime = 0.00001
+		VoicePitch = 92
 		Difficulty = EXPERT+HARD+NORMAL+EASY
 		AimFocusInitial = 0.020
 		AimFocusDecay = 0.020
@@ -233,7 +236,7 @@ Template VeryHard
 		ReactionTime = 0.00001
 		Teamwork = 78
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 88
+		VoicePitch = 92
 		AimFocusInitial = 0.020
 		AimFocusDecay = 0.020
 		AimFocusOffsetScale = 0.020
@@ -248,7 +251,7 @@ Template VeryHardARG
 		ReactionTime = 0.00001
 		Teamwork = 77
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 83
+		VoicePitch = 94
 		AimFocusInitial = 0.015
 		AimFocusDecay = 0.015
 		AimFocusOffsetScale = 0.015
@@ -263,7 +266,7 @@ Template Hard
 		ReactionTime = 0.00001
 		Teamwork = 76
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 73
+		VoicePitch = 94
 		AimFocusInitial = 0.018
 		AimFocusDecay = 0.018
 		AimFocusOffsetScale = 0.018
@@ -278,7 +281,7 @@ Template HardARG
 		ReactionTime = 0.00001
 		Teamwork = 75
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 108
+		VoicePitch = 96
 		AimFocusInitial = 0.15
 		AimFocusDecay = 0.15
 		AimFocusOffsetScale = 0.15
@@ -294,7 +297,7 @@ Template Tough
 		ReactionTime = 0.00001
 		Teamwork = 74
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 83
+		VoicePitch = 96
 		AimFocusInitial = 0.18
 		AimFocusDecay = 0.18
 		AimFocusOffsetScale = 0.18
@@ -308,7 +311,7 @@ Template ToughARG
 		AttackDelay = 0
 		ReactionTime = 0.00001
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 114
+		VoicePitch = 96
 		AimFocusInitial = 0.20
 		AimFocusDecay = 0.20
 		AimFocusOffsetScale = 0.20
@@ -3691,7 +3694,7 @@ Elite+Rifle "-FaK- TuB"
 End
 
 Elite+Rifle "-FaK- .T3ch_N0ne.*"
-        VoicePitch = 
+        VoicePitch = 70
 End
 
 ElitePassive+Rifle "-FaK- Onslaught"
@@ -4352,7 +4355,7 @@ VeryHard+Sniper Nails
 End
 
 VeryHard+Power Hammer
-        VoicePitch = 
+        VoicePitch = 108
 End
 
 VeryHard+Power Crank
@@ -4853,7 +4856,7 @@ Tough+Rifle "z@@L"
 End
 
 ToughARG+Shotgun pwnisnotaword
-        VoicePitch = 
+        VoicePitch = 95
 End
 
 ToughARG+Rifle [TsT]weakling
@@ -5009,7 +5012,7 @@ Tough+Rifle Reares
 End
 
 Tough+Rifle Macaw
-        VoicePitch = 
+        VoicePitch = 93
 End
 
 Tough+Rifle Torus
@@ -5143,7 +5146,7 @@ End
 //----------------------------------------
 
 Normal+Rifle "Crouching Camper Hidden Noob"    
-        VoicePitch = 
+        VoicePitch = 91
 End
 
 NormalARG+Rifle "Love Blister"
@@ -5151,7 +5154,7 @@ NormalARG+Rifle "Love Blister"
 End
 
 Normal+Rifle [BiE]WormEateR 
-        VoicePitch = 
+        VoicePitch = 103
 End
 
 Normal+Rifle "[BiE]El Terrible"     
@@ -5537,7 +5540,7 @@ Fair+Spray Kal
 End
 
 Fair+Spray Deano
-        VoicePitch = 
+        VoicePitch = 80
 End
 
 FairSNIPER+Sniper Dusty
