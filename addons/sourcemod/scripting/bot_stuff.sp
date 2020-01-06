@@ -5707,7 +5707,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(40.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 55.5);
 							}
 							buttons |= IN_ATTACK;
 						}
@@ -5719,7 +5719,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(40.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 55.5);
 							}
 						}
 						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
@@ -5730,7 +5730,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(40.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 55.5);
 							}
 						}
 						else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
