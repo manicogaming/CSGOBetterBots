@@ -1097,7 +1097,7 @@ ProP+Rifle "kressy"
 	VoicePitch = 91
 End
 
-ProP+Rifle "enkay J"
+ProP+Rifle "mirbit"
 	VoicePitch = 87
 End
 
@@ -1321,47 +1321,25 @@ ProP+Rifle "pdy"
 	VoicePitch = 77
 End
 
-//expert Players
-
-ProP+Rifle "Aika"
-	VoicePitch = 75
-End
-
-EliteAwp+SniperPro "syncD"
-	VoicePitch = 107
-End
-
-ProP+Rifle "BMLN"
-	VoicePitch = 79
-End
-
-ProP+Rifle "HighKitty"
-	VoicePitch = 110
-End
-
-ProP+Rifle "VENIQ"
-	VoicePitch = 78
-End
-
 //PANTHERS Players
 
-ProP+Rifle "rUFY"
+ProP+Rifle "boostey"
 	VoicePitch = 85
 End
 
-EliteAwp+SniperPro "darkz"
+EliteAwp+SniperPro "HighKitty"
 	VoicePitch = 88
 End
 
-ProP+Rifle "denzel"
+ProP+Rifle "syncD"
 	VoicePitch = 113
 End
 
-ProP+Rifle "expo"
+ProP+Rifle "BMLN"
 	VoicePitch = 111
 End
 
-ProP+Rifle "stowny"
+ProP+Rifle "Aika"
 	VoicePitch = 105
 End
 
@@ -1961,7 +1939,7 @@ End
 
 //One Players
 
-ProP+Rifle "bld V"
+ProP+Rifle "dav1dddd"
 	VoicePitch = 111
 End
 
@@ -1973,7 +1951,7 @@ ProP+Rifle "trk"
 	VoicePitch = 81
 End
 
-ProP+Rifle "bit"
+ProP+Rifle "felps"
 	VoicePitch = 85
 End
 
@@ -2709,23 +2687,23 @@ End
 
 //Trident Players
 
-ProP+Rifle "TEX"
+ProP+Rifle "nope"
 	VoicePitch = 76
 End
 
-EliteAwp+SniperPro "zorboT"
+EliteAwp+SniperPro "Quasar GT"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Rackem"
+ProP+Rifle "MDK"
 	VoicePitch = 94
 End
 
-ProP+Rifle "jhd"
+ProP+Rifle "JP"
 	VoicePitch = 80
 End
 
-ProP+Rifle "jtr"
+ProP+Rifle "Versa"
 	VoicePitch = 100
 End
 
@@ -2819,7 +2797,7 @@ End
 
 //Incept Players
 
-ProP+Rifle "flaw"
+ProP+Rifle "micalis"
 	VoicePitch = 79
 End
 
@@ -2827,11 +2805,11 @@ EliteAwp+SniperPro "jtr"
 	VoicePitch = 88
 End
 
-ProP+Rifle "nettik"
+ProP+Rifle "Koro"
 	VoicePitch = 107
 End
 
-ProP+Rifle "DannyG"
+ProP+Rifle "Rackem"
 	VoicePitch = 109
 End
 
@@ -2885,7 +2863,7 @@ End
 
 //9INE Players
 
-ProP+Rifle "ACM"
+ProP+Rifle "nicoodoz"
 	VoicePitch = 79
 End
 
@@ -3179,7 +3157,7 @@ EliteAwp+SniperPro "s1n"
 	VoicePitch = 78
 End
 
-ProP+Rifle "boostey"
+ProP+Rifle "skyye"
 	VoicePitch = 78
 End
 
@@ -3187,7 +3165,7 @@ ProP+Rifle "Kirby"
 	VoicePitch = 78
 End
 
-ProP+Rifle "Krimbo"
+ProP+Rifle "yannick1h"
 	VoicePitch = 100
 End
 
