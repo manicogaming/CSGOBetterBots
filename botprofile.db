@@ -509,23 +509,23 @@ End
 
 //C9 Players
 
-ProP+Rifle "autimatic"
+ProP+Rifle "JT"
 	VoicePitch = 80
 End
 
-EliteAwp+SniperPro "mixwell"
+EliteAwp+SniperPro "Sonic"
 	VoicePitch = 105
 End
 
-ProP+Rifle "daps"
+ProP+Rifle "motm"
 	VoicePitch = 93
 End
 
-ProP+Rifle "koosta"
+ProP+Rifle "oSee"
 	VoicePitch = 88
 End
 
-ProP+Rifle "Subroza"
+ProP+Rifle "floppy"
 	VoicePitch = 104
 End
 
@@ -799,7 +799,7 @@ ProP+Rifle "tiziaN"
 	VoicePitch = 71
 End
 
-EliteAwp+SniperPro "smooya"
+EliteAwp+SniperPro "syrsoN"
 	VoicePitch = 81
 End
 
@@ -975,7 +975,7 @@ ProP+Rifle "oskar"
 	VoicePitch = 86
 End
 
-EliteAwp+SniperPro "syrsoN"
+EliteAwp+SniperPro "dycha"
 	VoicePitch = 81
 End
 
@@ -1687,7 +1687,7 @@ ProP+Rifle "Goofy"
 	VoicePitch = 71
 End
 
-ProP+Rifle "Crityourface"
+ProP+Rifle "MINISE"
 	VoicePitch = 115
 End
 
@@ -2377,25 +2377,25 @@ ProP+Rifle "smoof"
 	VoicePitch = 97
 End
 
-//ATK Players
+//QB Players
 
-ProP+Rifle "motm"
+ProP+Rifle "MadLife"
 	VoicePitch = 100
 End
 
-EliteAwp+SniperPro "oSee"
+EliteAwp+SniperPro "Electro"
 	VoicePitch = 112
 End
 
-ProP+Rifle "JT"
+ProP+Rifle "nafan9"
 	VoicePitch = 82
 End
 
-ProP+Rifle "floppy"
+ProP+Rifle "Raider"
 	VoicePitch = 109
 End
 
-ProP+Rifle "Sonic"
+ProP+Rifle "L4F"
 	VoicePitch = 75
 End
 
@@ -2815,28 +2815,6 @@ End
 
 ProP+Rifle "vanilla"
 	VoicePitch = 91
-End
-
-//MiTH Players
-
-ProP+Rifle "NIFFY"
-	VoicePitch = 73
-End
-
-EliteAwp+SniperPro "Leaf"
-	VoicePitch = 93
-End
-
-ProP+Rifle "JUSTCAUSE"
-	VoicePitch = 71
-End
-
-ProP+Rifle "Reality"
-	VoicePitch = 74
-End
-
-ProP+Rifle "PPOverdose"
-	VoicePitch = 114
 End
 
 //UOL Players
@@ -4729,10 +4707,6 @@ End
 
 Hard+Spray Bandit
         VoicePitch = 98
-End
-
-Hard+Rifle Raider
-        VoicePitch = 94
 End
 
 Hard+Rifle Blade
