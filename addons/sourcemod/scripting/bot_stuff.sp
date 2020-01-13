@@ -468,7 +468,7 @@ char g_sBotName[][] = {
 	"biguzera",
 	"hardzao",
 	//Sharks Players
-	"RCF",
+	"heat",
 	"jnt",
 	"leo_drunky",
 	"exit",
@@ -916,7 +916,13 @@ char g_sBotName[][] = {
 	"kwezz",
 	"Luckyv1",
 	"torben",
-	"Toft"
+	"Toft",
+	//Gen.G Players
+	"autimatic",
+	"koosta",
+	"daps",
+	"s0m",
+	"BnTeT"
 };
  
 public Plugin myinfo =
@@ -1080,6 +1086,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_og", Team_OG);
 	RegConsoleCmd("team_livid", Team_LiViD);
 	RegConsoleCmd("team_tricked", Team_Tricked);
+	RegConsoleCmd("Team_geng", Team_GenG);
 }
 
 public Action Team_NiP(int client, int args)
@@ -3130,7 +3137,7 @@ public Action Team_Sharks(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "RCF");
+		ServerCommand("bot_add_ct %s", "heat");
 		ServerCommand("bot_add_ct %s", "jnt");
 		ServerCommand("bot_add_ct %s", "leo_drunky");
 		ServerCommand("bot_add_ct %s", "exit");
@@ -3141,7 +3148,7 @@ public Action Team_Sharks(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "RCF");
+		ServerCommand("bot_add_t %s", "heat");
 		ServerCommand("bot_add_t %s", "jnt");
 		ServerCommand("bot_add_t %s", "leo_drunky");
 		ServerCommand("bot_add_t %s", "exit");
@@ -5372,6 +5379,36 @@ public Action Team_Tricked(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_GenG(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "autimatic");
+		ServerCommand("bot_add_ct %s", "koosta");
+		ServerCommand("bot_add_ct %s", "daps");
+		ServerCommand("bot_add_ct %s", "s0m");
+		ServerCommand("bot_add_ct %s", "BnTeT");
+		ServerCommand("mp_teamlogo_1 gen");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "autimatic");
+		ServerCommand("bot_add_t %s", "koosta");
+		ServerCommand("bot_add_t %s", "daps");
+		ServerCommand("bot_add_t %s", "s0m");
+		ServerCommand("bot_add_t %s", "BnTeT");
+		ServerCommand("mp_teamlogo_2 gen");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6971,7 +7008,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sharks Players
-	if((StrEqual(botname, "RCF")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "Luken")))
+	if((StrEqual(botname, "heat")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "Luken")))
 	{
 		CS_SetClientClanTag(client, "Sharks");
 	}
@@ -7418,6 +7455,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "kiR")) || (StrEqual(botname, "kwezz")) || (StrEqual(botname, "Luckyv1")) || (StrEqual(botname, "torben")) || (StrEqual(botname, "Toft")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
+	}
+	
+	//Gen.G Players
+	if((StrEqual(botname, "autimatic")) || (StrEqual(botname, "koosta")) || (StrEqual(botname, "daps")) || (StrEqual(botname, "s0m")) || (StrEqual(botname, "BnTeT")))
+	{
+		CS_SetClientClanTag(client, "Gen.G");
 	}
 }
 
@@ -7930,6 +7973,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "BTRG"))
 	{
 		g_iProfileRank[client] = 142;
+	}
+	
+	if (StrEqual(sClan, "Gen.G"))
+	{
+		g_iProfileRank[client] = 143;
 	}
 	
 	if (StrEqual(sClan, "Furious"))

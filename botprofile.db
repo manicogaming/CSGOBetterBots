@@ -1917,7 +1917,7 @@ End
 
 //Sharks Players
 
-ProP+Rifle "RCF"
+ProP+Rifle "heat"
 	VoicePitch = 108
 End
 
@@ -3563,6 +3563,28 @@ End
 
 ProP+Rifle "Toft"
 	VoicePitch = 112
+End
+
+//Gen.G Players
+
+ProP+Rifle "autimatic"
+	VoicePitch = 85
+End
+
+EliteAwp+SniperPro "koosta"
+	VoicePitch = 108
+End
+
+ProP+Rifle "daps"
+	VoicePitch = 115
+End
+
+ProP+Rifle "s0m"
+	VoicePitch = 92
+End
+
+ProP+Rifle "BnTeT"
+	VoicePitch = 103
 End
 
 EliteAwp+SniperPro "XD | ryu"
