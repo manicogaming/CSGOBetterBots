@@ -579,7 +579,7 @@ ProP+Rifle "Kjaerbye"
 	VoicePitch = 112
 End
 
-EliteAwp+SniperPro "JUGi"
+EliteAwp+SniperPro "MSL"
 	VoicePitch = 85
 End
 
@@ -1213,7 +1213,7 @@ End
 
 //LDLC Players
 
-ProP+Rifle "rodeN"
+ProP+Rifle "LOGAN"
 	VoicePitch = 90
 End
 
@@ -1437,7 +1437,7 @@ ProP+Rifle "tenzki"
 	VoicePitch = 105
 End
 
-EliteAwp+SniperPro "hallzerk"
+EliteAwp+SniperPro "NaToSaphiX"
 	VoicePitch = 93
 End
 
@@ -1445,7 +1445,7 @@ ProP+Rifle "RUBINO"
 	VoicePitch = 76
 End
 
-ProP+Rifle "H4RR3"
+ProP+Rifle "HS"
 	VoicePitch = 100
 End
 
@@ -2201,28 +2201,6 @@ ProP+Rifle "d4v41"
 	VoicePitch = 94
 End
 
-//Beyond Players
-
-ProP+Rifle "TOR"
-	VoicePitch = 84
-End
-
-EliteAwp+SniperPro "bnwGiggs"
-	VoicePitch = 90
-End
-
-ProP+Rifle "RoLEX"
-	VoicePitch = 78
-End
-
-ProP+Rifle "veta"
-	VoicePitch = 75
-End
-
-ProP+Rifle "Geniuss"
-	VoicePitch = 84
-End
-
 //Entity Players
 
 ProP+Rifle "Amaterasu"
@@ -2537,7 +2515,7 @@ ProP+Rifle "MOLSI"
 	VoicePitch = 92
 End
 
-EliteAwp+SniperPro "hades"
+EliteAwp+SniperPro "Markoś"
 	VoicePitch = 93
 End
 
@@ -3303,11 +3281,11 @@ End
 
 //Izako Players
 
-ProP+Rifle "szejn"
+ProP+Rifle "azizz"
 	VoicePitch = 98
 End
 
-EliteAwp+SniperPro "Prism"
+EliteAwp+SniperPro "ewrzyn"
 	VoicePitch = 97
 End
 
@@ -3315,7 +3293,7 @@ ProP+Rifle "EXUS"
 	VoicePitch = 106
 End
 
-ProP+Rifle "siuhy"
+ProP+Rifle "pr3e"
 	VoicePitch = 115
 End
 
@@ -3539,7 +3517,7 @@ ProP+Rifle "gMd"
 	VoicePitch = 92
 End
 
-ProP+Rifle "effys"
+ProP+Rifle "c4Lypso"
 	VoicePitch = 88
 End
 
@@ -3585,6 +3563,28 @@ End
 
 ProP+Rifle "BnTeT"
 	VoicePitch = 103
+End
+
+//Endpoint Players
+
+ProP+Rifle "Surreal"
+	VoicePitch = 85
+End
+
+EliteAwp+SniperPro "CRUC1AL"
+	VoicePitch = 113
+End
+
+ProP+Rifle "Thomas"
+	VoicePitch = 78
+End
+
+ProP+Rifle "robiin"
+	VoicePitch = 104
+End
+
+ProP+Rifle "MiGHTYMAX"
+	VoicePitch = 96
 End
 
 EliteAwp+SniperPro "XD | ryu"
