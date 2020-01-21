@@ -495,7 +495,7 @@ EliteAwp+SniperPro "twist"
 	VoicePitch = 110
 End
 
-ProP+Rifle "f0rest"
+ProP+Rifle "nawwk"
 	VoicePitch = 99
 End
 
@@ -1155,7 +1155,7 @@ EliteAwp+SniperPro "ryann"
 	VoicePitch = 71
 End
 
-ProP+Rifle "s0m"
+ProP+Rifle "Eley"
 	VoicePitch = 74
 End
 
@@ -1261,7 +1261,7 @@ ProP+Rifle "dennis"
 	VoicePitch = 108
 End
 
-EliteAwp+SniperPro "nawwk"
+EliteAwp+SniperPro "draken"
 	VoicePitch = 72
 End
 
@@ -3607,6 +3607,28 @@ End
 
 ProP+Rifle "rmn"
 	VoicePitch = 109
+End
+
+//Dignitas Players
+
+ProP+Rifle "GeT_RiGhT"
+	VoicePitch = 109
+End
+
+EliteAwp+SniperPro "hallzerk"
+	VoicePitch = 89
+End
+
+ProP+Rifle "f0rest"
+	VoicePitch = 110
+End
+
+ProP+Rifle "friberg"
+	VoicePitch = 86
+End
+
+ProP+Rifle "Xizt"
+	VoicePitch = 102
 End
 
 EliteAwp+SniperPro "XD | ryu"
