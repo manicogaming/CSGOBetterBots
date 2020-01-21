@@ -1217,15 +1217,15 @@ ProP+Rifle "LOGAN"
 	VoicePitch = 90
 End
 
-EliteAwp+SniperPro "Happy"
+EliteAwp+SniperPro "Lambert"
 	VoicePitch = 105
 End
 
-ProP+Rifle "MAJ3R"
+ProP+Rifle "hAdji"
 	VoicePitch = 102
 End
 
-ProP+Rifle "Ozstrik3r"
+ProP+Rifle "Gringo"
 	VoicePitch = 96
 End
 
@@ -1521,7 +1521,7 @@ End
 
 //Giants Players
 
-ProP+Rifle "rmn"
+ProP+Rifle "NOPEEj"
 	VoicePitch = 95
 End
 
@@ -1533,11 +1533,11 @@ ProP+Rifle "Cunha"
 	VoicePitch = 104
 End
 
-ProP+Rifle "MUTiRiS"
+ProP+Rifle "BLOODZ"
 	VoicePitch = 77
 End
 
-ProP+Rifle "arki"
+ProP+Rifle "renatoohaxx"
 	VoicePitch = 73
 End
 
@@ -1797,11 +1797,11 @@ ProP+Rifle "Katie"
 	VoicePitch = 70
 End
 
-ProP+Rifle "hazed"
+ProP+Rifle "DAVEY"
 	VoicePitch = 93
 End
 
-ProP+Rifle "SileNt"
+ProP+Rifle "Polen"
 	VoicePitch = 91
 End
 
@@ -1969,7 +1969,7 @@ EliteAwp+SniperPro "raafa"
 	VoicePitch = 72
 End
 
-ProP+Rifle "ryotzz"
+ProP+Rifle "ableJ"
 	VoicePitch = 101
 End
 
@@ -2549,7 +2549,7 @@ ProP+Rifle "ImpressioN"
 	VoicePitch = 98
 End
 
-ProP+Rifle "adrnkiNg"
+ProP+Rifle "XigN"
 	VoicePitch = 115
 End
 
@@ -3585,6 +3585,28 @@ End
 
 ProP+Rifle "MiGHTYMAX"
 	VoicePitch = 96
+End
+
+//sAw Players
+
+ProP+Rifle "arki"
+	VoicePitch = 112
+End
+
+EliteAwp+SniperPro "stadodo"
+	VoicePitch = 83
+End
+
+ProP+Rifle "JUST"
+	VoicePitch = 104
+End
+
+ProP+Rifle "MUTiRiS"
+	VoicePitch = 112
+End
+
+ProP+Rifle "rmn"
+	VoicePitch = 109
 End
 
 EliteAwp+SniperPro "XD | ryu"

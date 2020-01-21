@@ -277,9 +277,9 @@ char g_sBotName[][] = {
 	"Murky",
 	//LDLC Players
 	"LOGAN",
-	"Happy",
-	"MAJ3R",
-	"Ozstrik3r",
+	"Lambert",
+	"hAdji",
+	"Gringo",
 	"SIXER",
 	//Defusekids Player
 	"v1N",
@@ -360,11 +360,11 @@ char g_sBotName[][] = {
 	"dixon",
 	"jJavi",
 	//Giants Players
-	"rmn",
+	"NOPEEj",
 	"fox",
 	"Cunha",
-	"MUTiRiS",
-	"arki",
+	"BLOODZ",
+	"renatoohaxx",
 	//Lions Players
 	"HUNDEN",
 	"acoR",
@@ -435,8 +435,8 @@ char g_sBotName[][] = {
 	"C0M",
 	"fl0m",
 	"Katie",
-	"hazed",
-	"SileNt",
+	"DAVEY",
+	"Polen",
 	//Singularity Players
 	"Zellsis",
 	"Relyks",
@@ -482,7 +482,7 @@ char g_sBotName[][] = {
 	//W7M Players
 	"skullz",
 	"raafa",
-	"ryotzz",
+	"ableJ",
 	"pancc",
 	"realziN",
 	//Avant Players
@@ -574,7 +574,7 @@ char g_sBotName[][] = {
 	"RiX",
 	"Juventa",
 	"astaRR",
-	"Fox",
+	"spy",
 	//iNvictus Players
 	"ribbiZ",
 	"Manan",
@@ -640,7 +640,7 @@ char g_sBotName[][] = {
 	"Drea3er",
 	"xccurate",
 	"ImpressioN",
-	"adrnkiNg",
+	"XigN",
 	//GTZ Players
 	"k0mpa",
 	"StepA",
@@ -922,7 +922,13 @@ char g_sBotName[][] = {
 	"CRUC1AL",
 	"Thomas",
 	"robiin",
-	"MiGHTYMAX"
+	"MiGHTYMAX",
+	//sAw Players
+	"arki",
+	"stadodo",
+	"JUST",
+	"MUTiRiS",
+	"rmn"
 };
  
 public Plugin myinfo =
@@ -1087,6 +1093,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_geng", Team_GenG);
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
+	RegConsoleCmd("team_saw", Team_sAw);
 }
 
 public Action Team_NiP(int client, int args)
@@ -2178,9 +2185,9 @@ public Action Team_LDLC(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "LOGAN");
-		ServerCommand("bot_add_ct %s", "Happy");
-		ServerCommand("bot_add_ct %s", "MAJ3R");
-		ServerCommand("bot_add_ct %s", "Ozstrik3r");
+		ServerCommand("bot_add_ct %s", "Lambert");
+		ServerCommand("bot_add_ct %s", "hAdji");
+		ServerCommand("bot_add_ct %s", "Gringo");
 		ServerCommand("bot_add_ct %s", "SIXER");
 		ServerCommand("mp_teamlogo_1 ldlc");
 	}
@@ -2189,9 +2196,9 @@ public Action Team_LDLC(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "LOGAN");
-		ServerCommand("bot_add_t %s", "Happy");
-		ServerCommand("bot_add_t %s", "MAJ3R");
-		ServerCommand("bot_add_t %s", "Ozstrik3r");
+		ServerCommand("bot_add_t %s", "Lambert");
+		ServerCommand("bot_add_t %s", "hAdji");
+		ServerCommand("bot_add_t %s", "Gringo");
 		ServerCommand("bot_add_t %s", "SIXER");
 		ServerCommand("mp_teamlogo_2 ldlc");
 	}
@@ -2597,22 +2604,22 @@ public Action Team_Giants(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "rmn");
+		ServerCommand("bot_add_ct %s", "NOPEEj");
 		ServerCommand("bot_add_ct %s", "fox");
 		ServerCommand("bot_add_ct %s", "Cunha");
-		ServerCommand("bot_add_ct %s", "MUTiRiS");
-		ServerCommand("bot_add_ct %s", "arki");
+		ServerCommand("bot_add_ct %s", "BLOODZ");
+		ServerCommand("bot_add_ct %s", "renatoohaxx");
 		ServerCommand("mp_teamlogo_1 giant");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "rmn");
+		ServerCommand("bot_add_t %s", "NOPEEj");
 		ServerCommand("bot_add_t %s", "fox");
 		ServerCommand("bot_add_t %s", "Cunha");
-		ServerCommand("bot_add_t %s", "MUTiRiS");
-		ServerCommand("bot_add_t %s", "arki");
+		ServerCommand("bot_add_t %s", "BLOODZ");
+		ServerCommand("bot_add_t %s", "renatoohaxx");
 		ServerCommand("mp_teamlogo_2 giant");
 	}
 	
@@ -2960,8 +2967,8 @@ public Action Team_Mythic(int client, int args)
 		ServerCommand("bot_add_ct %s", "C0M");
 		ServerCommand("bot_add_ct %s", "fl0m");
 		ServerCommand("bot_add_ct %s", "Katie");
-		ServerCommand("bot_add_ct %s", "hazed");
-		ServerCommand("bot_add_ct %s", "SileNt");
+		ServerCommand("bot_add_ct %s", "DAVEY");
+		ServerCommand("bot_add_ct %s", "Polen");
 		ServerCommand("mp_teamlogo_1 myth");
 	}
 	
@@ -2971,8 +2978,8 @@ public Action Team_Mythic(int client, int args)
 		ServerCommand("bot_add_t %s", "C0M");
 		ServerCommand("bot_add_t %s", "fl0m");
 		ServerCommand("bot_add_t %s", "Katie");
-		ServerCommand("bot_add_t %s", "hazed");
-		ServerCommand("bot_add_t %s", "SileNt");
+		ServerCommand("bot_add_t %s", "DAVEY");
+		ServerCommand("bot_add_t %s", "Polen");
 		ServerCommand("mp_teamlogo_2 myth");
 	}
 	
@@ -3199,7 +3206,7 @@ public Action Team_W7M(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "skullz");
 		ServerCommand("bot_add_ct %s", "raafa");
-		ServerCommand("bot_add_ct %s", "ryotzz");
+		ServerCommand("bot_add_ct %s", "ableJ");
 		ServerCommand("bot_add_ct %s", "pancc");
 		ServerCommand("bot_add_ct %s", "realziN");
 		ServerCommand("mp_teamlogo_1 w7m");
@@ -3210,7 +3217,7 @@ public Action Team_W7M(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "skullz");
 		ServerCommand("bot_add_t %s", "raafa");
-		ServerCommand("bot_add_t %s", "ryotzz");
+		ServerCommand("bot_add_t %s", "ableJ");
 		ServerCommand("bot_add_t %s", "pancc");
 		ServerCommand("bot_add_t %s", "realziN");
 		ServerCommand("mp_teamlogo_2 w7m");
@@ -3981,7 +3988,7 @@ public Action Team_BTRG(int client, int args)
 		ServerCommand("bot_add_ct %s", "Drea3er");
 		ServerCommand("bot_add_ct %s", "xccurate");
 		ServerCommand("bot_add_ct %s", "ImpressioN");
-		ServerCommand("bot_add_ct %s", "adrnkiNg");
+		ServerCommand("bot_add_ct %s", "XigN");
 		ServerCommand("mp_teamlogo_1 btrg");
 	}
 	
@@ -3992,7 +3999,7 @@ public Action Team_BTRG(int client, int args)
 		ServerCommand("bot_add_t %s", "Drea3er");
 		ServerCommand("bot_add_t %s", "xccurate");
 		ServerCommand("bot_add_t %s", "ImpressioN");
-		ServerCommand("bot_add_t %s", "adrnkiNg");
+		ServerCommand("bot_add_t %s", "XigN");
 		ServerCommand("mp_teamlogo_2 btrg");
 	}
 	
@@ -5409,6 +5416,36 @@ public Action Team_Endpoint(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_sAw(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "arki");
+		ServerCommand("bot_add_ct %s", "stadodo");
+		ServerCommand("bot_add_ct %s", "JUST");
+		ServerCommand("bot_add_ct %s", "MUTiRiS");
+		ServerCommand("bot_add_ct %s", "rmn");
+		ServerCommand("mp_teamlogo_1 saw");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "arki");
+		ServerCommand("bot_add_t %s", "stadodo");
+		ServerCommand("bot_add_t %s", "JUST");
+		ServerCommand("bot_add_t %s", "MUTiRiS");
+		ServerCommand("bot_add_t %s", "rmn");
+		ServerCommand("mp_teamlogo_2 saw");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5438,7 +5475,9 @@ public void OnClientPostAdminCheck(int client)
 }
 
 public void OnRoundStart(Handle event, char[] name, bool dbc)
-{
+{	
+	g_bFreezetimeEnd = false;
+	
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
@@ -5573,11 +5612,17 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 		
 		GetCurrentMap(g_smap, sizeof(g_smap));			
 		
-		if(!StrEqual(g_smap, "de_mirage")) return Plugin_Continue;
-		
 		int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		
-		if (index == 45)
+		if(StrEqual(g_smap, "de_mirage") && index == 45)
+		{
+			return Plugin_Handled;
+		}
+		else if(g_bFlashed[client])
+		{
+			return Plugin_Handled;
+		}
+		else if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
 		{
 			return Plugin_Handled;
 		}
@@ -5737,18 +5782,17 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{
+		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !(index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
+		{
+			FakeClientCommand(client, "use weapon_knife");
+		}
 		char botname[512];
 		GetClientName(client, botname, sizeof(botname));
 		
 		for(int i = 0; i <= sizeof(g_sBotName) - 1; i++)
 		{
 			if(StrEqual(botname, g_sBotName[i]))
-			{
-				if(index == 9)
-				{
-					return Plugin_Continue;
-				}
-				
+			{				
 				float clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
 				GetClientEyePosition(client, clientEyes);
 				int Ent = Client_GetClosest(clientEyes, client);
@@ -5756,7 +5800,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				float angle[3];
 				
 				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
-				if (iClipAmmo > 0)
+				if (iClipAmmo > 0 && g_bFreezetimeEnd)
 				{
 					if(IsValidClient(Ent))
 					{
@@ -5771,7 +5815,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						GetClientAbsOrigin(Ent, targetEyes3);
 						GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
 						GetClientEyePosition(Ent, targetEyes2);
-						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38) || index == 63)
+						
+						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38 && index != 9) || index == 63)
 						{
 							if(GetRandomInt(1,4) == 1)
 							{
@@ -5779,7 +5824,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 52.5);
 							}
 							buttons |= IN_ATTACK;
 						}
@@ -5791,7 +5836,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 52.5);
 							}
 						}
 						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
@@ -5802,7 +5847,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 55.5);
+								targetEyes[2] += GetRandomFloat(37.5, 52.5);
 							}
 						}
 						else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
@@ -5811,6 +5856,10 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							g_bShouldAttack[client] = true;
 							buttons &= ~IN_ATTACK; 
 							g_hShouldAttackTimer[client] = null;
+						}
+						else if(buttons & IN_ATTACK && index == 9)
+						{
+							targetEyes[2] += GetRandomFloat(45.5, 50.5);
 						}
 						else
 						{
@@ -6055,7 +6104,8 @@ public Action Timer_ShouldAttack(Handle timer, int serial) {
     return Plugin_Handled;
 }  
 
-public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) {
+public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) 
+{
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		int rnd = GetRandomInt(1,18);
@@ -6137,11 +6187,11 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) {
 		}
 		
 		if(IsValidClient(i) && IsFakeClient(i))
-		{
+		{			
 			int team = GetClientTeam(i);
 		
 			if (!i) return;
-			CreateTimer(0.1, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
+			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
 			if(GetRandomInt(1,100) >= 10)
 			{
@@ -6194,76 +6244,73 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	bool m_bInBuyZone = view_as<bool>(GetEntProp(client, Prop_Send, "m_bInBuyZone"));
 	
 	if (!m_bInBuyZone) return Plugin_Stop;
+	
+	int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
+	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 
-	if((m_iAccount > 1500) && (m_iAccount < 3000))
+	if((m_iAccount > 1500) && (m_iAccount < 3000) && iPrimary == -1)
 	{
-		int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
-		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-		
-		if (iPrimary == -1)
+		if (iWeapon != -1)
 		{
-			if (iWeapon != -1)
+			RemovePlayerItem(client, iWeapon);
+		}
+		
+		int rndpistol = GetRandomInt(1,3);
+		
+		switch(rndpistol)
+		{
+			case 1:
 			{
-				RemovePlayerItem(client, iWeapon);
+				GivePlayerItem(client, "weapon_p250");
+				SetClientMoney(client, m_iAccount - 300);
 			}
-			
-			int rndpistol = GetRandomInt(1,3);
-			
-			switch(rndpistol)
+			case 2:
 			{
-				case 1:
+				if(team == CS_TEAM_CT)
 				{
-					GivePlayerItem(client, "weapon_p250");
-					SetClientMoney(client, m_iAccount - 300);
-				}
-				case 2:
-				{
-					if(team == CS_TEAM_CT)
+					int ctcz = GetRandomInt(1,2);
+					
+					switch(ctcz)
 					{
-						int ctcz = GetRandomInt(1,2);
-						
-						switch(ctcz)
+						case 1:
 						{
-							case 1:
-							{
-								GivePlayerItem(client, "weapon_fiveseven");
-								SetClientMoney(client, m_iAccount - 500);
-							}
-							case 2:
-							{
-								GivePlayerItem(client, "weapon_cz75a");
-								SetClientMoney(client, m_iAccount - 500);
-							}
+							GivePlayerItem(client, "weapon_fiveseven");
+							SetClientMoney(client, m_iAccount - 500);
 						}
-					}
-					else if(team == CS_TEAM_T)
-					{
-						int tcz = GetRandomInt(1,2);
-						
-						switch(tcz)
+						case 2:
 						{
-							case 1:
-							{
-								GivePlayerItem(client, "weapon_tec9");
-								SetClientMoney(client, m_iAccount - 500);
-							}
-							case 2:
-							{
-								GivePlayerItem(client, "weapon_cz75a");
-								SetClientMoney(client, m_iAccount - 500);
-							}
+							GivePlayerItem(client, "weapon_cz75a");
+							SetClientMoney(client, m_iAccount - 500);
 						}
 					}
 				}
-				case 3:
+				else if(team == CS_TEAM_T)
 				{
-					GivePlayerItem(client, "weapon_deagle");
-					SetClientMoney(client, m_iAccount - 700);
+					int tcz = GetRandomInt(1,2);
+					
+					switch(tcz)
+					{
+						case 1:
+						{
+							GivePlayerItem(client, "weapon_tec9");
+							SetClientMoney(client, m_iAccount - 500);
+						}
+						case 2:
+						{
+							GivePlayerItem(client, "weapon_cz75a");
+							SetClientMoney(client, m_iAccount - 500);
+						}
+					}
 				}
+			}
+			case 3:
+			{
+				GivePlayerItem(client, "weapon_deagle");
+				SetClientMoney(client, m_iAccount - 700);
 			}
 		}
 	}
-	else if(m_iAccount > 3000)
+	else if(m_iAccount > 3000 || iPrimary != -1)
 	{
 		RemoveNades(client);
 
@@ -6299,6 +6346,7 @@ public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadc
 		float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
 		if (duration >= 1.5)
 		{
+			FakeClientCommand(client, "use weapon_knife");
 			g_bFlashed[client] = true;
 			CreateTimer(duration, UnFlashed_Timer, client);
 		}
@@ -6342,6 +6390,17 @@ stock bool FakeClientCommandThrottled(int client, const char[] command)
 	
 	return true;
 }
+
+stock int GetAliveTeamCount(int team)
+{
+    int number = 0;
+    for (int i=1; i<=MaxClients; i++)
+    {
+        if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == team) 
+            number++;
+    }
+    return number;
+} 
 
 public void SetClientMoney(int client, int money)
 {
@@ -6815,7 +6874,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LDLC Players
-	if((StrEqual(botname, "LOGAN")) || (StrEqual(botname, "Happy")) || (StrEqual(botname, "MAJ3R")) || (StrEqual(botname, "Ozstrik3r")) || (StrEqual(botname, "SIXER")))
+	if((StrEqual(botname, "LOGAN")) || (StrEqual(botname, "Lambert")) || (StrEqual(botname, "hAdji")) || (StrEqual(botname, "Gringo")) || (StrEqual(botname, "SIXER")))
 	{
 		CS_SetClientClanTag(client, "LDLC");
 	}
@@ -6899,7 +6958,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Giants Players
-	if((StrEqual(botname, "rmn")) || (StrEqual(botname, "fox")) || (StrEqual(botname, "Cunha")) || (StrEqual(botname, "MUTiRiS")) || (StrEqual(botname, "arki")))
+	if((StrEqual(botname, "NOPEEj")) || (StrEqual(botname, "fox")) || (StrEqual(botname, "Cunha")) || (StrEqual(botname, "BLOODZ")) || (StrEqual(botname, "renatoohaxx")))
 	{
 		CS_SetClientClanTag(client, "Giants");
 	}
@@ -6971,7 +7030,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Mythic Players
-	if((StrEqual(botname, "C0M")) || (StrEqual(botname, "fl0m")) || (StrEqual(botname, "Katie")) || (StrEqual(botname, "hazed")) || (StrEqual(botname, "SileNt")))
+	if((StrEqual(botname, "C0M")) || (StrEqual(botname, "fl0m")) || (StrEqual(botname, "Katie")) || (StrEqual(botname, "DAVEY")) || (StrEqual(botname, "Polen")))
 	{
 		CS_SetClientClanTag(client, "Mythic");
 	}
@@ -7019,7 +7078,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//W7M Players
-	if((StrEqual(botname, "skullz")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "ryotzz")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
+	if((StrEqual(botname, "skullz")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "ableJ")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
 	{
 		CS_SetClientClanTag(client, "W7M");
 	}
@@ -7109,7 +7168,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Brutals Players
-	if((StrEqual(botname, "V3nom")) || (StrEqual(botname, "RiX")) || (StrEqual(botname, "Juventa")) || (StrEqual(botname, "astaRR")) || (StrEqual(botname, "Fox")))
+	if((StrEqual(botname, "V3nom")) || (StrEqual(botname, "RiX")) || (StrEqual(botname, "Juventa")) || (StrEqual(botname, "astaRR")) || (StrEqual(botname, "spy")))
 	{
 		CS_SetClientClanTag(client, "Brutals");
 	}
@@ -7169,7 +7228,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BTRG Players
-	if((StrEqual(botname, "Eeyore")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "xccurate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "adrnkiNg")))
+	if((StrEqual(botname, "Eeyore")) || (StrEqual(botname, "Drea3er")) || (StrEqual(botname, "xccurate")) || (StrEqual(botname, "ImpressioN")) || (StrEqual(botname, "XigN")))
 	{
 		CS_SetClientClanTag(client, "BTRG");
 	}
@@ -7460,6 +7519,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "Surreal")) || (StrEqual(botname, "CRUC1AL")) || (StrEqual(botname, "Thomas")) || (StrEqual(botname, "robiin")) || (StrEqual(botname, "MiGHTYMAX")))
 	{
 		CS_SetClientClanTag(client, "Endpoint");
+	}
+	
+	//sAw Players
+	if((StrEqual(botname, "arki")) || (StrEqual(botname, "stadodo")) || (StrEqual(botname, "JUST")) || (StrEqual(botname, "MUTiRiS")) || (StrEqual(botname, "rmn")))
+	{
+		CS_SetClientClanTag(client, "sAw");
 	}
 }
 
@@ -7887,6 +7952,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "dream[S]cape"))
 	{
 		g_iProfileRank[client] = 125;
+	}
+	
+	if (StrEqual(sClan, "sAw"))
+	{
+		g_iProfileRank[client] = 126;
 	}
 	
 	if (StrEqual(sClan, "Entity"))
