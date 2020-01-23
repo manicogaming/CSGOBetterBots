@@ -3845,7 +3845,7 @@ public Action Team_BLUEJAYS(int client, int args)
 		ServerCommand("bot_add_ct %s", "Tsubasa");
 		ServerCommand("bot_add_ct %s", "jansen");
 		ServerCommand("bot_add_ct %s", "RykuN");
-		ServerCommand("bot_add_ct %s", "skillmaschine JJ_-");
+		ServerCommand("bot_add_ct %s", "\"skillmaschine JJ_-\"");
 		ServerCommand("mp_teamlogo_1 blueja");
 	}
 	
@@ -3856,7 +3856,7 @@ public Action Team_BLUEJAYS(int client, int args)
 		ServerCommand("bot_add_t %s", "Tsubasa");
 		ServerCommand("bot_add_t %s", "jansen");
 		ServerCommand("bot_add_t %s", "RykuN");
-		ServerCommand("bot_add_t %s", "skillmaschine JJ_-");
+		ServerCommand("bot_add_t %s", "\"skillmaschine JJ_-\"");
 		ServerCommand("mp_teamlogo_2 blueja");
 	}
 	
@@ -4142,7 +4142,7 @@ public Action Team_Trident(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nope");
-		ServerCommand("bot_add_ct %s", "Quasar GT");
+		ServerCommand("bot_add_ct %s", "\"Quasar GT\"");
 		ServerCommand("bot_add_ct %s", "MDK");
 		ServerCommand("bot_add_ct %s", "JP");
 		ServerCommand("bot_add_ct %s", "Versa");
@@ -4153,7 +4153,7 @@ public Action Team_Trident(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nope");
-		ServerCommand("bot_add_t %s", "Quasar GT");
+		ServerCommand("bot_add_t %s", "\"Quasar GT\"");
 		ServerCommand("bot_add_t %s", "MDK");
 		ServerCommand("bot_add_t %s", "JP");
 		ServerCommand("bot_add_t %s", "Versa");
@@ -5836,6 +5836,25 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				
 				float angle[3];
 				
+				if(GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0)
+				{
+					int weapon_ak47 = GetNearestEntity(client, "weapon_ak47*"); 
+					int akslot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+					
+					if(akslot != -1)
+					{
+						int akindex = GetEntProp(akslot, Prop_Send, "m_iItemDefinitionIndex");
+						
+						if(weapon_ak47 != -1 && akindex != 7)
+						{
+							float ak47location[3];
+							GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);
+							
+							TF2_MoveTo(client, ak47location, vel, angles);
+						}
+					}
+				}
+				
 				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
 				if (iClipAmmo > 0 && g_bFreezetimeEnd)
 				{
@@ -6439,6 +6458,51 @@ stock int GetAliveTeamCount(int team)
     }
     return number;
 } 
+
+stock void TF2_MoveTo(int client, float flGoal[3], float fVel[3], float fAng[3])
+{
+    float flPos[3];
+    GetClientAbsOrigin(client, flPos);
+
+    float newmove[3];
+    SubtractVectors(flGoal, flPos, newmove);
+    
+    newmove[1] = -newmove[1];
+    
+    float sin = Sine(fAng[1] * FLOAT_PI / 180.0);
+    float cos = Cosine(fAng[1] * FLOAT_PI / 180.0);                        
+    
+    fVel[0] = cos * newmove[0] - sin * newmove[1];
+    fVel[1] = sin * newmove[0] + cos * newmove[1];
+    
+    NormalizeVector(fVel, fVel);
+    ScaleVector(fVel, 450.0);
+}
+
+public int GetNearestEntity(int client, char[] classname) // https://forums.alliedmods.net/showthread.php?t=318542
+{
+    int nearestEntity = -1;
+    float clientVecOrigin[3], entityVecOrigin[3];
+    
+    //Get the distance between the first entity and client
+    float distance, nearestDistance = -1.0;
+    
+    //Find all the entity and compare the distances
+    int entity = -1;
+    while ((entity = FindEntityByClassname(entity, classname)) != -1)
+    {
+        GetEntPropVector(entity, Prop_Data, "m_vecOrigin", entityVecOrigin);
+        distance = GetVectorDistance(clientVecOrigin, entityVecOrigin);
+        
+        if (distance < nearestDistance || nearestDistance == -1.0)
+        {
+            nearestEntity = entity;
+            nearestDistance = distance;
+        }
+    }
+    
+    return nearestEntity;
+}
 
 public void SetClientMoney(int client, int money)
 {

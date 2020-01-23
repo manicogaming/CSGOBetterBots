@@ -138,7 +138,7 @@ Template ProP
 End
 
 Template EliteAwp
-        Skill = 15
+        Skill = 100
 		Rank = 2001
 		Cost = 3000
 		Aggression = 100
