@@ -6,15 +6,12 @@
 #include <sdktools>
 #include <cstrike>
 
-bool g_bShouldAttack[MAXPLAYERS + 1];
 bool g_bFlashed[MAXPLAYERS + 1] = false;
 bool g_bFreezetimeEnd = false;
-Handle g_hShouldAttackTimer[MAXPLAYERS + 1];
+bool g_bPinPulled[MAXPLAYERS + 1] = false;
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndnade[MAXPLAYERS+1];
-float g_fShouldAttackTime[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
 ConVar g_cvPredictionConVars[1] = {null};
-char g_smap[64];
 
 char g_sTRngGrenadesList[][] = {
     "weapon_flashbang",
@@ -414,7 +411,7 @@ char g_sBotName[][] = {
 	"kioShiMa",
 	"Lucky",
 	//Nemiga Players
-	"spellfull",
+	"speed4k",
 	"mds",
 	"lollipop21k",
 	"Jyo",
@@ -853,7 +850,7 @@ char g_sBotName[][] = {
 	"Jonji",
 	//Chaos Players
 	"cam",
-	"wippie",
+	"vanity",
 	"smooya",
 	"steel_",
 	"ben1337",
@@ -1296,7 +1293,7 @@ public Action Team_fnatic(int client, int args)
 		ServerCommand("bot_add_ct %s", "KRiMZ");
 		ServerCommand("bot_add_ct %s", "Brollan");
 		ServerCommand("bot_add_ct %s", "Golden");
-		ServerCommand("mp_teamlogo_1 fntc");
+		ServerCommand("mp_teamlogo_1 fnatic");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -1307,7 +1304,7 @@ public Action Team_fnatic(int client, int args)
 		ServerCommand("bot_add_t %s", "KRiMZ");
 		ServerCommand("bot_add_t %s", "Brollan");
 		ServerCommand("bot_add_t %s", "Golden");
-		ServerCommand("mp_teamlogo_2 fntc");
+		ServerCommand("mp_teamlogo_2 fnatic");
 	}
 	
 	return Plugin_Handled;
@@ -2881,7 +2878,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "spellfull");
+		ServerCommand("bot_add_ct %s", "speed4k");
 		ServerCommand("bot_add_ct %s", "mds");
 		ServerCommand("bot_add_ct %s", "lollipop21k");
 		ServerCommand("bot_add_ct %s", "Jyo");
@@ -2892,7 +2889,7 @@ public Action Team_Nemiga(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "spellfull");
+		ServerCommand("bot_add_t %s", "speed4k");
 		ServerCommand("bot_add_t %s", "mds");
 		ServerCommand("bot_add_t %s", "lollipop21k");
 		ServerCommand("bot_add_t %s", "Jyo");
@@ -3962,7 +3959,7 @@ public Action Team_AVEZ(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "MOLSI");
-		ServerCommand("bot_add_ct %s", "Markoś");
+		ServerCommand("bot_add_ct %s", "\"Markoś\"");
 		ServerCommand("bot_add_ct %s", "KEi");
 		ServerCommand("bot_add_ct %s", "Kylar");
 		ServerCommand("bot_add_ct %s", "nawrot");
@@ -3973,7 +3970,7 @@ public Action Team_AVEZ(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "MOLSI");
-		ServerCommand("bot_add_t %s", "Markoś");
+		ServerCommand("bot_add_t %s", "\"Markoś\"");
 		ServerCommand("bot_add_t %s", "KEi");
 		ServerCommand("bot_add_t %s", "Kylar");
 		ServerCommand("bot_add_t %s", "nawrot");
@@ -5072,7 +5069,7 @@ public Action Team_Chaos(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "cam");
-		ServerCommand("bot_add_ct %s", "wippie");
+		ServerCommand("bot_add_ct %s", "vanity");
 		ServerCommand("bot_add_ct %s", "smooya");
 		ServerCommand("bot_add_ct %s", "steel_");
 		ServerCommand("bot_add_ct %s", "ben1337");
@@ -5083,7 +5080,7 @@ public Action Team_Chaos(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "cam");
-		ServerCommand("bot_add_t %s", "wippie");
+		ServerCommand("bot_add_t %s", "vanity");
 		ServerCommand("bot_add_t %s", "smooya");
 		ServerCommand("bot_add_t %s", "steel_");
 		ServerCommand("bot_add_t %s", "ben1337");
@@ -5518,14 +5515,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
-		{	
-			g_fShouldAttackTime[i] = GetRandomFloat(3.0, 10.0);
-			if(g_hShouldAttackTimer[i] != null)
-			{
-				KillTimer(g_hShouldAttackTimer[i]);
-				g_hShouldAttackTimer[i] = null;
-			}
-			
+		{			
 			if(GetRandomInt(1,100) <= 35)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
@@ -5551,80 +5541,6 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,41));
 				}
 			}
-			
-			GetCurrentMap(g_smap, sizeof(g_smap));
-			
-			if(StrEqual(g_smap, "de_mirage"))
-			{
-				if(GetClientTeam(i) == CS_TEAM_T)
-				{
-					g_iRndnade[i] = GetRandomInt(1,10);
-					
-					switch(g_iRndnade[i])
-					{
-						case 1: //Stairs Smoke
-						{
-							g_fShouldAttackTime[i] = 5.0;
-						}
-						case 2: //Jungle Smoke
-						{
-							g_fShouldAttackTime[i] = 8.5;
-						}
-						case 3: //Top-Mid Smoke
-						{
-							g_fShouldAttackTime[i] = 1.2;
-						}
-						case 4: //Triple Smoke
-						{
-							g_fShouldAttackTime[i] = 7.5;
-						}
-						case 5: //Window Smoke
-						{
-							g_fShouldAttackTime[i] = 10.6;
-						}
-						case 6: //Short Smoke
-						{
-							g_fShouldAttackTime[i] = 11.8;
-						}
-						case 7: //Right B Short Smoke
-						{
-							g_fShouldAttackTime[i] = 8.6;
-						}
-						case 8: //Site B Smoke
-						{
-							g_fShouldAttackTime[i] = 10.9;
-						}
-						case 9: //CT Smoke
-						{
-							g_fShouldAttackTime[i] = 9.7;
-						}
-						case 10: //Connector Smoke
-						{
-							g_fShouldAttackTime[i] = 18.2;
-						}
-					}
-				}
-				else if(GetClientTeam(i) == CS_TEAM_CT)
-				{
-					g_iRndnade[i] = GetRandomInt(1,3);
-					
-					switch(g_iRndnade[i])
-					{
-						case 1: //Palace Smoke
-						{
-							g_fShouldAttackTime[i] = 4.0;
-						}
-						case 2: //Ramp Smoke
-						{
-							g_fShouldAttackTime[i] = 4.9;
-						}
-						case 3: //Apps Smoke
-						{
-							g_fShouldAttackTime[i] = 7.6;
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -5645,17 +5561,11 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-		if (ActiveWeapon == -1)  return Plugin_Continue;
-		
-		GetCurrentMap(g_smap, sizeof(g_smap));			
+		if (ActiveWeapon == -1)  return Plugin_Continue;	
 		
 		int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		
-		if(StrEqual(g_smap, "de_mirage") && index == 45)
-		{
-			return Plugin_Handled;
-		}
-		else if(g_bFlashed[client])
+		if(g_bFlashed[client])
 		{
 			return Plugin_Handled;
 		}
@@ -5796,33 +5706,23 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	if (ActiveWeapon == -1)  return Plugin_Continue;
 	
 	int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	
-	if (index == 43 || index == 44 || index == 45 || index == 46 || index == 48)
-	{
-		if (buttons & IN_ATTACK && g_bShouldAttack[client]) {
-			// release attack
-			buttons &= ~IN_ATTACK; 
-			g_bShouldAttack[client] = false;
-		}
-		else {
-			buttons |= IN_ATTACK; 
 			
-			if (g_hShouldAttackTimer[client] == null) {
-				CreateTimer(g_fShouldAttackTime[client], Timer_ShouldAttack, GetClientSerial(client));
-			}
-		}
-	} else if (g_hShouldAttackTimer[client] != null) {
-		// kill timer since the client has switch weapon and it's pointless to continue
-		KillTimer(g_hShouldAttackTimer[client]);
-		g_hShouldAttackTimer[client] = null;
+	if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+	{
+		g_bPinPulled[client] = true;
+	}
+	else
+	{
+		CreateTimer(0.1, PinNotPulled, GetClientSerial(client));
 	}
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{
-		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !(index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
+		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !(index == 49 || index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
 		{
 			FakeClientCommand(client, "use weapon_knife");
 		}
+
 		char botname[512];
 		GetClientName(client, botname, sizeof(botname));
 		
@@ -5836,30 +5736,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				
 				float angle[3];
 				
-				if(GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0)
-				{
-					int weapon_ak47 = GetNearestEntity(client, "weapon_ak47*"); 
-					int akslot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-					
-					if(akslot != -1)
-					{
-						int akindex = GetEntProp(akslot, Prop_Send, "m_iItemDefinitionIndex");
-						
-						if(weapon_ak47 != -1 && akindex != 7)
-						{
-							float ak47location[3];
-							GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);
-							
-							TF2_MoveTo(client, ak47location, vel, angles);
-						}
-					}
-				}
-				
 				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
 				if (iClipAmmo > 0 && g_bFreezetimeEnd)
 				{
 					if(IsValidClient(Ent))
-					{
+					{						
 						if(GetEntityMoveType(client) == MOVETYPE_LADDER)
 						{
 							buttons |= IN_JUMP;
@@ -5907,12 +5788,10 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								targetEyes[2] += GetRandomFloat(37.5, 52.5);
 							}
 						}
-						else if(IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
 						{
-							targetEyes[2] = targetEyes2[2];
-							g_bShouldAttack[client] = true;
+							targetEyes[2] += GetRandomFloat(37.5, 52.5);
 							buttons &= ~IN_ATTACK; 
-							g_hShouldAttackTimer[client] = null;
 						}
 						else if(buttons & IN_ATTACK && index == 9)
 						{
@@ -5971,159 +5850,21 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	return Plugin_Continue;
 }
 
-public void OnGameFrame()
-{	
-	float angles[3];
-	
-	for (int i = 1; i <= MaxClients; i++)
+public Action PinNotPulled(Handle timer, any serial)
+{
+	int client = GetClientFromSerial(serial); // Validate the client serial
+ 
+	if (client == 0) // The serial is no longer valid, the player must have disconnected
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && g_bFreezetimeEnd)
-		{
-			GetCurrentMap(g_smap, sizeof(g_smap));
-			
-			int ActiveWeapon = GetEntPropEnt(i, Prop_Send, "m_hActiveWeapon"); 
-			if (ActiveWeapon != -1)
-			{
-				if(StrEqual(g_smap, "de_mirage"))
-				{
-					if(GetClientTeam(i) == CS_TEAM_T)
-					{
-						int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-						
-						if (index == 45)
-						{
-							switch(g_iRndnade[i])
-							{
-								case 1: //Stairs Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos 1152.0252685546875 -1183.9996337890625 -205.57168579101562");
-									angles[0] = -41.0;
-									angles[1] = -165.7000274658203;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 2: //Jungle Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos 815.9910888671875 -1416.0472412109375 -108.96875");
-									angles[0] = -27.0;
-									angles[1] = -173.18418884277344;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 3: //Top-Mid Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos 1422.737548828125 34.83058547973633 -167.96875");
-									angles[0] = -43.0;
-									angles[1] = 196.81642150878906;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 4: //Triple Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos 815.375732421875 -1335.2979736328125 -108.96875");
-									angles[0] = -23.0;
-									angles[1] = -152.66416931152344;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 5: //Window Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos 343.3015441894531 -621.6193237304688 -163.42958068847656");
-									angles[0] = -31.0;
-									angles[1] = -180.30368041992188;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 6: //Short Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -344.4013671875 -791.5076293945312 -264.6990661621094");
-									angles[0] = -33.0;
-									angles[1] = 139.8362274169922;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 7: //Right B Short Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -160.03125 887.998779296875 -135.32872009277344");
-									angles[0] = -59.0;
-									angles[1] = -162.1563720703125;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 8: //Site B Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -736.1307983398438 623.972900390625 -75.96875");
-									angles[0] = -51.0;
-									angles[1] = -171.13607788085938;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 9: //CT Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -31.915441513061523 -1418.0308837890625 -167.96875");
-									angles[0] = -59.0;
-									angles[1] = -132.108642578125;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 10: //Connector Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -1071.96875 -380.01055908203125 -263.96875");
-									angles[0] = -5.0;
-									angles[1] = -47.29572677612305;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-							}
-						}
-						else
-						{
-							SetEntityMoveType(i, MOVETYPE_WALK);
-						}
-					}
-					else if(GetClientTeam(i) == CS_TEAM_CT)
-					{
-						int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-						
-						if (index == 45)
-						{
-							switch(g_iRndnade[i])
-							{
-								case 1: //Palace Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -971.3928833007812 -2458.048583984375 -167.97039794921875");
-									angles[0] = -56.0;
-									angles[1] = 15.02410888671875;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 2: //Ramp Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -879.9768676757812 -2263.990478515625 -171.08224487304688");
-									angles[0] = -9.0;
-									angles[1] = 34.35212707519531;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-								case 3: //Apps Smoke
-								{
-									SetEntityMoveType(i, MOVETYPE_NONE);
-									FakeClientCommandThrottled(i, "setpos -1935.9974365234375 -251.9894561767578 -159.96875");
-									angles[0] = -20.0;
-									angles[1] = 71.88358306884766;
-									TeleportEntity(i, NULL_VECTOR, angles, NULL_VECTOR);
-								}
-							}
-						}
-						else
-						{
-							SetEntityMoveType(i, MOVETYPE_WALK);
-						}
-					}
-				}
-			}
-		}
+		return Plugin_Stop;
 	}
+	
+	if (IsValidClient(client) && IsFakeClient(client))
+	{
+		g_bPinPulled[client] = false;
+	}
+	
+	return Plugin_Handled;
 }
 
 public Action Timer_CheckPlayer(Handle Timer, any data)
@@ -6147,19 +5888,6 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 		}
 	}	
 }
-
-public Action Timer_ShouldAttack(Handle timer, int serial) {
-    int client = GetClientFromSerial(serial);
-
-    // check if client is the same has the one before when the timer started
-    if (client != 0) {
-        // set variable so next frame knows that client need to release attack
-        g_bShouldAttack[client] = true;
-    }
-
-    g_hShouldAttackTimer[client] = null;
-    return Plugin_Handled;
-}  
 
 public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) 
 {
@@ -6319,7 +6047,6 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 			case 1:
 			{
 				GivePlayerItem(client, "weapon_p250");
-				SetClientMoney(client, m_iAccount - 300);
 			}
 			case 2:
 			{
@@ -6332,12 +6059,10 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 						case 1:
 						{
 							GivePlayerItem(client, "weapon_fiveseven");
-							SetClientMoney(client, m_iAccount - 500);
 						}
 						case 2:
 						{
 							GivePlayerItem(client, "weapon_cz75a");
-							SetClientMoney(client, m_iAccount - 500);
 						}
 					}
 				}
@@ -6350,12 +6075,10 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 						case 1:
 						{
 							GivePlayerItem(client, "weapon_tec9");
-							SetClientMoney(client, m_iAccount - 500);
 						}
 						case 2:
 						{
 							GivePlayerItem(client, "weapon_cz75a");
-							SetClientMoney(client, m_iAccount - 500);
 						}
 					}
 				}
@@ -6363,7 +6086,6 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 			case 3:
 			{
 				GivePlayerItem(client, "weapon_deagle");
-				SetClientMoney(client, m_iAccount - 700);
 			}
 		}
 	}
@@ -6403,7 +6125,10 @@ public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadc
 		float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
 		if (duration >= 1.5)
 		{
-			FakeClientCommand(client, "use weapon_knife");
+			if(IsFakeClient(client))
+			{
+				FakeClientCommand(client, "use weapon_knife");
+			}
 			g_bFlashed[client] = true;
 			CreateTimer(duration, UnFlashed_Timer, client);
 		}
@@ -6458,51 +6183,6 @@ stock int GetAliveTeamCount(int team)
     }
     return number;
 } 
-
-stock void TF2_MoveTo(int client, float flGoal[3], float fVel[3], float fAng[3])
-{
-    float flPos[3];
-    GetClientAbsOrigin(client, flPos);
-
-    float newmove[3];
-    SubtractVectors(flGoal, flPos, newmove);
-    
-    newmove[1] = -newmove[1];
-    
-    float sin = Sine(fAng[1] * FLOAT_PI / 180.0);
-    float cos = Cosine(fAng[1] * FLOAT_PI / 180.0);                        
-    
-    fVel[0] = cos * newmove[0] - sin * newmove[1];
-    fVel[1] = sin * newmove[0] + cos * newmove[1];
-    
-    NormalizeVector(fVel, fVel);
-    ScaleVector(fVel, 450.0);
-}
-
-public int GetNearestEntity(int client, char[] classname) // https://forums.alliedmods.net/showthread.php?t=318542
-{
-    int nearestEntity = -1;
-    float clientVecOrigin[3], entityVecOrigin[3];
-    
-    //Get the distance between the first entity and client
-    float distance, nearestDistance = -1.0;
-    
-    //Find all the entity and compare the distances
-    int entity = -1;
-    while ((entity = FindEntityByClassname(entity, classname)) != -1)
-    {
-        GetEntPropVector(entity, Prop_Data, "m_vecOrigin", entityVecOrigin);
-        distance = GetVectorDistance(clientVecOrigin, entityVecOrigin);
-        
-        if (distance < nearestDistance || nearestDistance == -1.0)
-        {
-            nearestEntity = entity;
-            nearestDistance = distance;
-        }
-    }
-    
-    return nearestEntity;
-}
 
 public void SetClientMoney(int client, int money)
 {
@@ -6586,12 +6266,182 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 	float vecOrigin_edict[3];
 	float distance = -1.0;
 	int closestEdict = -1;
+	int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+	int index;
+	char clantag[64];
+	
+	CS_GetClientClanTag(client, clantag, sizeof(clantag));
+	
+	if(ActiveWeapon != -1)
+	{
+		index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	}
+	
 	for(int i = 1; i <= MaxClients ; i++)
 	{
 		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
 			continue;
-		if (!IsTargetInSightRange(client, i))
-			continue;
+		
+		if(StrEqual(clantag, "pro100")) //30th
+		{
+			if (!IsTargetInSightRange(client, i, 45.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "INTZ")) //29th
+		{
+			if (!IsTargetInSightRange(client, i, 50.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Syman")) //28th
+		{
+			if (!IsTargetInSightRange(client, i, 55.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "TYLOO")) //27th
+		{
+			if (!IsTargetInSightRange(client, i, 60.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Spirit")) //26th
+		{
+			if (!IsTargetInSightRange(client, i, 65.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "GODSENT")) //25th
+		{
+			if (!IsTargetInSightRange(client, i, 70.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "OG")) //24th
+		{
+			if (!IsTargetInSightRange(client, i, 75.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "North")) //23rd
+		{
+			if (!IsTargetInSightRange(client, i, 80.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "BIG")) //22nd
+		{
+			if (!IsTargetInSightRange(client, i, 85.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "CR4ZY")) //21st
+		{
+			if (!IsTargetInSightRange(client, i, 90.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "RNG")) //20th
+		{
+			if (!IsTargetInSightRange(client, i, 95.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "VP")) //19th
+		{
+			if (!IsTargetInSightRange(client, i, 100.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "FURIA")) //18th
+		{
+			if (!IsTargetInSightRange(client, i, 105.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "C9")) //17th
+		{
+			if (!IsTargetInSightRange(client, i, 110.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Lions")) //16th
+		{
+			if (!IsTargetInSightRange(client, i, 115.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "MIBR")) //15th
+		{
+			if (!IsTargetInSightRange(client, i, 120.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Heroic")) //14th
+		{
+			if (!IsTargetInSightRange(client, i, 125.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "forZe")) //13th
+		{
+			if (!IsTargetInSightRange(client, i, 130.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "ENCE")) //12th
+		{
+			if (!IsTargetInSightRange(client, i, 135.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "NiP")) //11th
+		{
+			if (!IsTargetInSightRange(client, i, 140.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "G2")) //10th
+		{
+			if (!IsTargetInSightRange(client, i, 145.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Na´Vi")) //9th
+		{
+			if (!IsTargetInSightRange(client, i, 150.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "FaZe")) //8th
+		{
+			if (!IsTargetInSightRange(client, i, 155.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Thieves")) //7th
+		{
+			if (!IsTargetInSightRange(client, i, 160.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "EG")) //6th
+		{
+			if (!IsTargetInSightRange(client, i, 165.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Vitality")) //5th
+		{
+			if (!IsTargetInSightRange(client, i, 170.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "fnatic")) //4th
+		{
+			if (!IsTargetInSightRange(client, i, 175.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Liquid")) //3rd
+		{
+			if (!IsTargetInSightRange(client, i, 180.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "mouz")) //2nd
+		{
+			if (!IsTargetInSightRange(client, i, 185.0))
+				continue;	
+		}
+		else if(StrEqual(clantag, "Astralis")) //1st
+		{
+			if (!IsTargetInSightRange(client, i, 190.0))
+				continue;	
+		}
+		else if(index == 9)
+		{
+			if (!IsTargetInSightRange(client, i, 180.0))
+				continue;	
+		}
+		else
+		{
+			if (!IsTargetInSightRange(client, i))
+				continue;
+		}
 		if (g_bFlashed[client])
 			continue;
 		
@@ -6603,6 +6453,27 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 		{
 			if(IsPointVisible(vecOrigin_center, vecOrigin_edict) && ClientViews(client, i))
 			{
+				int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+				int iSecondary = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
+				int iClipAmmo;
+				
+				if(iPrimary != -1)
+				{
+					iClipAmmo = GetEntProp(iPrimary, Prop_Send, "m_iClip1");
+				}
+				
+				if(!IsWeaponSlotActive(client, CS_SLOT_GRENADE) || !g_bPinPulled[client])
+				{
+					if(iClipAmmo > 0 && iPrimary != -1)
+					{
+						SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iPrimary); 
+					}
+					else if(iPrimary == -1 && iSecondary != -1)
+					{
+						SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iSecondary); 
+					}
+				}
+				
 				float edict_distance = GetVectorDistance(vecOrigin_center, vecOrigin_edict);
 				if((edict_distance < distance) || (distance == -1.0))
 				{
@@ -6716,7 +6587,7 @@ stock bool LineGoesThroughSmoke(float from[3], float to[3])
 	static Address TheBots;
 	static Handle CBotManager_IsLineBlockedBySmoke;
 	static int OS;
-	
+
 	if(OS == 0)
 	{
 		Handle hGameConf = LoadGameConfigFile("LineGoesThroughSmoke.games");
@@ -6751,7 +6622,7 @@ stock bool LineGoesThroughSmoke(float from[3], float to[3])
 		
 		CloseHandle(hGameConf);
 	}
-	
+
 	if(OS == 1) return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to, 1.0);
 	return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to);
 }
@@ -7114,7 +6985,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Nemiga Players
-	if((StrEqual(botname, "spellfull")) || (StrEqual(botname, "mds")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
+	if((StrEqual(botname, "speed4k")) || (StrEqual(botname, "mds")) || (StrEqual(botname, "lollipop21k")) || (StrEqual(botname, "Jyo")) || (StrEqual(botname, "boX")))
 	{
 		CS_SetClientClanTag(client, "Nemiga");
 	}
@@ -7552,7 +7423,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Chaos Players
-	if((StrEqual(botname, "cam")) || (StrEqual(botname, "wippie")) || (StrEqual(botname, "smooya")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "ben1337")))
+	if((StrEqual(botname, "cam")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "smooya")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "ben1337")))
 	{
 		CS_SetClientClanTag(client, "Chaos");
 	}

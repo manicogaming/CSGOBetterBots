@@ -216,11 +216,9 @@ public void GetRanksGradesSounds()
 	Format(buffer, sizeof(buffer), "sound/%s", g_RankPoints_SoundRankUp);
 	AddFileToDownloadsTable(buffer);
 	Format(buffer, sizeof(buffer), "*/%s", g_RankPoints_SoundRankUp);
-	FakePrecacheSound(buffer);
 	Format(buffer, sizeof(buffer), "sound/%s", g_RankPoints_SoundRankDown);
 	AddFileToDownloadsTable(buffer);
 	Format(buffer, sizeof(buffer), "*/%s", g_RankPoints_SoundRankDown);
-	FakePrecacheSound(buffer);
 }
 
 public void GetRanksOverlays()
@@ -228,7 +226,6 @@ public void GetRanksOverlays()
 	for(int i = 0; i < 61; i++)
 	{
 		Format(RankOverlays[i], sizeof(RankOverlays[]), "lvl_overlays/overlay_hd_%d", (i+1));
-		PrecacheDecalAnyDownload(RankOverlays[i]);
 	}
 }
 

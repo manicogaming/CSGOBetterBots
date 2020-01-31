@@ -1719,7 +1719,7 @@ End
 
 //Nemiga Players
 
-ProP+Rifle "spellfull"
+ProP+Rifle "speed4k"
 	VoicePitch = 106
 End
 
@@ -3329,11 +3329,11 @@ ProP+Rifle "cam"
 	VoicePitch = 93
 End
 
-EliteAwp+SniperPro "wippie"
+EliteAwp+SniperPro "smooya"
 	VoicePitch = 97
 End
 
-ProP+Rifle "smooya"
+ProP+Rifle "vanity"
 	VoicePitch = 100
 End
 
