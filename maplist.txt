@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Fri Jan 31 18:04:02 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Mon Feb 03 01:36:49 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -188,6 +188,9 @@ gg_simpsons_mega
 gg_southpark_mini_tower
 gg_southpark_versus
 gg_wowarena_papys_aperos
+iv_de_dustworld
+iv_de_stoneworld
+joey_twosided
 ka_rainbow
 ka_swim_pool
 kills_ct

@@ -1397,7 +1397,7 @@ EliteAwp+SniperPro "Twinx"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Daffu"
+ProP+Rifle "maNkz"
 	VoicePitch = 83
 End
 
@@ -1807,23 +1807,23 @@ End
 
 //Singularity Players
 
-ProP+Rifle "Zellsis"
+ProP+Rifle "Jabbi"
 	VoicePitch = 113
 End
 
-EliteAwp+SniperPro "Relyks"
+EliteAwp+SniperPro "mertz"
 	VoicePitch = 75
 End
 
-ProP+Rifle "seb"
+ProP+Rifle "Queenix"
 	VoicePitch = 85
 End
 
-ProP+Rifle "dazzLe"
+ProP+Rifle "TOBIZ"
 	VoicePitch = 113
 End
 
-ProP+Rifle "dapr"
+ProP+Rifle "Celrate"
 	VoicePitch = 107
 End
 
@@ -1851,7 +1851,7 @@ End
 
 //Infinity Players
 
-ProP+Rifle "cruzN"
+ProP+Rifle "k1Nky"
 	VoicePitch = 112
 End
 
@@ -2157,7 +2157,7 @@ ProP+Rifle "4king"
 	VoicePitch = 109
 End
 
-//ALPHA Players
+//Beyond Players
 
 ProP+Rifle "MAIROLLS"
 	VoicePitch = 90
@@ -2171,7 +2171,7 @@ ProP+Rifle "Kntz"
 	VoicePitch = 102
 End
 
-ProP+Rifle "SeveN89"
+ProP+Rifle "stk"
 	VoicePitch = 89
 End
 
@@ -2483,7 +2483,7 @@ ProP+Rifle "L1NK"
 	VoicePitch = 114
 End
 
-ProP+Rifle "ec1s"
+ProP+Rifle "Russ"
 	VoicePitch = 114
 End
 
@@ -3347,11 +3347,11 @@ End
 
 //OneThree Players
 
-ProP+Rifle "Dosia"
+ProP+Rifle "Ayeon"
 	VoicePitch = 103
 End
 
-EliteAwp+SniperPro "mou"
+EliteAwp+SniperPro "lan"
 	VoicePitch = 96
 End
 
@@ -3629,6 +3629,28 @@ End
 
 ProP+Rifle "Xizt"
 	VoicePitch = 102
+End
+
+//Skyfire Players
+
+ProP+Rifle "Mizzy"
+	VoicePitch = 86
+End
+
+EliteAwp+SniperPro "Gumpton"
+	VoicePitch = 105
+End
+
+ProP+Rifle "affiNity"
+	VoicePitch = 100
+End
+
+ProP+Rifle "LikiAU"
+	VoicePitch = 107
+End
+
+ProP+Rifle "lato"
+	VoicePitch = 95
 End
 
 EliteAwp+SniperPro "XD | ryu"

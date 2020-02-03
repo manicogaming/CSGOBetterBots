@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"joey_twosided"
+{
+	"CTSpawn_x" "0.300000"
+	"CTSpawn_y" "0.120000"
+	"TSpawn_x" "0.300000"
+	"TSpawn_y" "0.860000"
+	"material" "overviews/joey_twosided"
+	"pos_x" "-1125.000000"
+	"pos_y" "1201.000000"
+	"scale" "2.790000"
+}
