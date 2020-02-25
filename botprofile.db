@@ -859,7 +859,7 @@ ProP+Rifle "arT"
 	VoicePitch = 86
 End
 
-//CR4ZY Players
+//c0ntact Players
 
 ProP+Rifle "LETN1"
 	VoicePitch = 74
@@ -2201,28 +2201,6 @@ ProP+Rifle "d4v41"
 	VoicePitch = 94
 End
 
-//Entity Players
-
-ProP+Rifle "Amaterasu"
-	VoicePitch = 87
-End
-
-EliteAwp+SniperPro "Psy"
-	VoicePitch = 93
-End
-
-ProP+Rifle "Excali"
-	VoicePitch = 113
-End
-
-ProP+Rifle "skillZ"
-	VoicePitch = 92
-End
-
-ProP+Rifle "Ace"
-	VoicePitch = 92
-End
-
 //Lucid Players
 
 ProP+Rifle "Jinx"
@@ -2255,7 +2233,7 @@ EliteAwp+SniperPro "Nami"
 	VoicePitch = 96
 End
 
-ProP+Rifle "kitkat"
+ProP+Rifle "Ejram"
 	VoicePitch = 113
 End
 
@@ -2263,7 +2241,7 @@ ProP+Rifle "havoK"
 	VoicePitch = 72
 End
 
-ProP+Rifle "kAzoo"
+ProP+Rifle "Pogba"
 	VoicePitch = 71
 End
 

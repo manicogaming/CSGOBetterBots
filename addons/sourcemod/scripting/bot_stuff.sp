@@ -56,6 +56,34 @@ char g_sTModels[][] = {
 	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
 };
 
+char g_sUSPModels[][] = {
+	"models/weapons/v_uspstickers1.mdl",
+	"models/weapons/v_uspstickers2.mdl",
+	"models/weapons/v_uspstickers3.mdl",
+	"models/weapons/v_uspstickers4.mdl",
+	"models/weapons/v_uspstickers5.mdl",
+	"models/weapons/v_uspstickers6.mdl",
+	"models/weapons/v_uspstickers7.mdl",
+	"models/weapons/v_uspstickers8.mdl",
+	"models/weapons/v_uspstickers9.mdl",
+	"models/weapons/v_uspstickers10.mdl",
+	"models/weapons/v_uspstickers11.mdl",
+	"models/weapons/v_uspstickers12.mdl",
+	"models/weapons/v_uspstickers13.mdl"
+};
+
+char g_sGlockModels[][] = {
+	"models/weapons/v_glockstickers1.mdl",
+	"models/weapons/v_glockstickers2.mdl",
+	"models/weapons/v_glockstickers3.mdl",
+	"models/weapons/v_glockstickers4.mdl",
+	"models/weapons/v_glockstickers5.mdl",
+	"models/weapons/v_glockstickers6.mdl",
+	"models/weapons/v_glockstickers7.mdl",
+	"models/weapons/v_glockstickers8.mdl",
+	"models/weapons/v_glockstickers9.mdl"
+};
+
 char g_sBotName[][] = {
 	//MIBR Players
 	"kNgV-",
@@ -177,7 +205,7 @@ char g_sBotName[][] = {
 	"VINI",
 	"kscerato",
 	"HEN1",
-	//CR4ZY Players
+	//c0ntact Players
 	"LETN1",
 	"ottoNd",
 	"SHiPZ",
@@ -543,12 +571,6 @@ char g_sBotName[][] = {
 	"alecks",
 	"Benkai",
 	"d4v41",
-	//Entity Players
-	"Amaterasu",
-	"Psy",
-	"Excali",
-	"skillZ",
-	"Ace",
 	//LucidDream Players
 	"Jinx",
 	"PTC",
@@ -558,9 +580,9 @@ char g_sBotName[][] = {
 	//NASR Players
 	"breAker",
 	"Nami",
-	"kitkat",
+	"Ejram",
 	"havoK",
-	"kAzoo",
+	"Pogba",
 	//Portal Players
 	"traNz",
 	"Ttyke",
@@ -1004,7 +1026,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_big", Team_BIG);
 	RegConsoleCmd("team_rejected", Team_Rejected);
 	RegConsoleCmd("team_furia", Team_FURIA);
-	RegConsoleCmd("team_cr4zy", Team_CR4ZY);
+	RegConsoleCmd("team_contact", Team_c0ntact);
 	RegConsoleCmd("team_col", Team_coL);
 	RegConsoleCmd("team_vici", Team_ViCi);
 	RegConsoleCmd("team_forze", Team_forZe);
@@ -1065,7 +1087,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_ehome", Team_EHOME);
 	RegConsoleCmd("team_beyond", Team_Beyond);
 	RegConsoleCmd("team_dreamscape", Team_dreamScape);
-	RegConsoleCmd("team_entity", Team_Entity);
 	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_portal", Team_Portal);
@@ -1737,7 +1758,7 @@ public Action Team_FURIA(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_CR4ZY(int client, int args)
+public Action Team_c0ntact(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -1750,7 +1771,7 @@ public Action Team_CR4ZY(int client, int args)
 		ServerCommand("bot_add_ct %s", "SHiPZ");
 		ServerCommand("bot_add_ct %s", "emi");
 		ServerCommand("bot_add_ct %s", "EspiranTo");
-		ServerCommand("mp_teamlogo_1 cr4z");
+		ServerCommand("mp_teamlogo_1 c0n");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -1761,7 +1782,7 @@ public Action Team_CR4ZY(int client, int args)
 		ServerCommand("bot_add_t %s", "SHiPZ");
 		ServerCommand("bot_add_t %s", "emi");
 		ServerCommand("bot_add_t %s", "EspiranTo");
-		ServerCommand("mp_teamlogo_2 cr4z");
+		ServerCommand("mp_teamlogo_2 c0n");
 	}
 	
 	return Plugin_Handled;
@@ -3567,36 +3588,6 @@ public Action Team_dreamScape(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Entity(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Amaterasu");
-		ServerCommand("bot_add_ct %s", "Psy");
-		ServerCommand("bot_add_ct %s", "Excali");
-		ServerCommand("bot_add_ct %s", "skillZ");
-		ServerCommand("bot_add_ct %s", "Ace");
-		ServerCommand("mp_teamlogo_1 enti");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Amaterasu");
-		ServerCommand("bot_add_t %s", "Psy");
-		ServerCommand("bot_add_t %s", "Excali");
-		ServerCommand("bot_add_t %s", "skillZ");
-		ServerCommand("bot_add_t %s", "Ace");
-		ServerCommand("mp_teamlogo_2 enti");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Lucid(int client, int args)
 {
 	char arg[12];
@@ -3637,9 +3628,9 @@ public Action Team_NASR(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "breAker");
 		ServerCommand("bot_add_ct %s", "Nami");
-		ServerCommand("bot_add_ct %s", "kitkat");
+		ServerCommand("bot_add_ct %s", "Ejram");
 		ServerCommand("bot_add_ct %s", "havoK");
-		ServerCommand("bot_add_ct %s", "kAzoo");
+		ServerCommand("bot_add_ct %s", "Pogba");
 		ServerCommand("mp_teamlogo_1 nasr");
 	}
 	
@@ -3648,9 +3639,9 @@ public Action Team_NASR(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "breAker");
 		ServerCommand("bot_add_t %s", "Nami");
-		ServerCommand("bot_add_t %s", "kitkat");
+		ServerCommand("bot_add_t %s", "Ejram");
 		ServerCommand("bot_add_t %s", "havoK");
-		ServerCommand("bot_add_t %s", "kAzoo");
+		ServerCommand("bot_add_t %s", "Pogba");
 		ServerCommand("mp_teamlogo_2 nasr");
 	}
 	
@@ -5949,7 +5940,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 52.5);
+								targetEyes[2] += GetRandomFloat(35.5, 50.5);
 							}
 							
 							buttons |= IN_ATTACK;
@@ -5962,7 +5953,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 52.5);
+								targetEyes[2] += GetRandomFloat(35.5, 50.5);
 							}
 						}
 						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
@@ -5973,12 +5964,12 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								targetEyes[2] += GetRandomFloat(37.5, 52.5);
+								targetEyes[2] += GetRandomFloat(35.5, 50.5);
 							}
 						}
 						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
 						{
-							targetEyes[2] += GetRandomFloat(37.5, 52.5);
+							targetEyes[2] += GetRandomFloat(35.5, 50.5);
 							buttons &= ~IN_ATTACK; 
 						}
 						else if(buttons & IN_ATTACK && index == 9)
@@ -6160,15 +6151,13 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 		}
 		
 		if(IsValidClient(i) && IsFakeClient(i))
-		{			
-			int team = GetClientTeam(i);
-		
+		{
 			if (!i) return;
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
 			if(GetRandomInt(1,100) >= 10)
 			{
-				if(team == CS_TEAM_CT)
+				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
 					char usp[32];
 					
@@ -6212,7 +6201,7 @@ public void OnWeaponEquipPost(int client, int weapon)
 	{
 		if(GetEntPropEnt(weapon, Prop_Send, "m_hOwnerEntity") == client)
 		{
-			if(GetRandomInt(1,100) <= 20)
+			if(GetRandomInt(1,100) <= 30)
 			{
 				switch(index)
 				{
@@ -6220,82 +6209,142 @@ public void OnWeaponEquipPost(int client, int weapon)
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_usp_silencer") == -1)
 						{
-							int rndskin = GetRandomInt(1,10);
 							int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
 							
 							if (slot != -1)
 							{
+								RemovePlayerItem(client, slot);
+								FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel(g_sUSPModels[GetRandomInt(0, sizeof(g_sUSPModels) - 1)])); // add custom view model to the player
+								int entity = GivePlayerItem(client, "weapon_usp_silencer");
+								
+								int rndskin = GetRandomInt(1,25);
+								
 								switch(rndskin)
 								{
 									case 1:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspblueprint1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 657);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 0);
 									}
 									case 2:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspnightops1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 236);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 657);
 									}
 									case 3:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspcheckengine1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2); 
 										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 796);
 									}
 									case 4:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspblueprint2.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 657);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 705);
 									}
 									case 5:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspflashback1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 817);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 637);
 									}
 									case 6:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspstainless1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5); 
 										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 817);
 									}
 									case 7:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspcortex1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 705);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 504);
 									}
 									case 8:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspcyrex1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 637);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 236);
 									}
 									case 9:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_uspkillconfirmed1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 504);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 313);
 									}
 									case 10:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_usp_silencer", PrecacheModel("models/weapons/v_usporion1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_usp_silencer");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 313);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 277);
+									}
+									case 11:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 653);
+									}
+									case 12:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 339);
+									}
+									case 13:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 221);
+									}
+									case 14:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 290);
+									}
+									case 15:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 183);
+									}
+									case 16:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 60);
+									}
+									case 17:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 318);
+									}
+									case 18:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 540);
+									}
+									case 19:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 489);
+									}
+									case 20:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 217);
+									}
+									case 21:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 364);
+									}
+									case 22:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 443);
+									}
+									case 23:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 454);
+									}
+									case 24:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 332);
+									}
+									case 25:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 25);
 									}
 								}
 							}
@@ -6369,117 +6418,167 @@ public void OnWeaponEquipPost(int client, int weapon)
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_glock") == -1)
 						{
-							int rndskin = GetRandomInt(1,15);
 							int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
 							
 							if (slot != -1)
 							{
+								RemovePlayerItem(client, slot);
+								FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel(g_sGlockModels[GetRandomInt(0, sizeof(g_sGlockModels) - 1)])); // add custom view model to the player
+								int entity = GivePlayerItem(client, "weapon_glock");
+								
+								int rndskin = GetRandomInt(1,30);
+								
 								switch(rndskin)
 								{
 									case 1:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glocktwilightgalaxy1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 437);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 0);
 									}
 									case 2:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockfade1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 38);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 532);
 									}
 									case 3:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockmoonrise1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 694);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 381);
 									}
 									case 4:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glocknucleargarden1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 789);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 159);
 									}
 									case 5:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockbunsenburner1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4); 
 										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 479);
 									}
 									case 6:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glocksteeldisruption1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 230);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 399);
 									}
 									case 7:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockwarhawk1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 713);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 38);
 									}
 									case 8:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockoffworld1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 680);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 2);
 									}
 									case 9:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockreactor1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 367);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 694);
 									}
 									case 10:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockwaterelemental1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 353);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 789);
 									}
 									case 11:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockbrass1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 159);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 680);
 									}
 									case 12:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockwastelandrebel1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 586);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 808);
 									}
 									case 13:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glocksacrifice1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 623);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 367);
 									}
 									case 14:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockcatacombs1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 399);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 918);
 									}
 									case 15:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_glock", PrecacheModel("models/weapons/v_glockgroundwater1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_glock");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 2);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 230);
+									}
+									case 16:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 437);
+									}
+									case 17:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 713);
+									}
+									case 18:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 586);
+									}
+									case 19:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 353);
+									}
+									case 20:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 607);
+									}
+									case 21:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 48);
+									}
+									case 22:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 732);
+									}
+									case 23:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 623);
+									}
+									case 24:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 495);
+									}
+									case 25:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 278);
+									}
+									case 26:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 3);
+									}
+									case 27:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 799);
+									}
+									case 28:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 40);
+									}
+									case 29:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 293);
+									}
+									case 30:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 208);
 									}
 								}
 							}
@@ -7044,7 +7143,7 @@ public void OnWeaponEquipPost(int client, int weapon)
 										RemovePlayerItem(client, slot);
 										FPVMI_SetClientModel(client, "weapon_deagle", PrecacheModel("models/weapons/v_deaglecodered1.mdl")); // add custom view model to the player
 										int entity = GivePlayerItem(client, "weapon_deagle");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 231);
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 711);
 									}
 									case 6:
 									{
@@ -7192,246 +7291,6 @@ public void OnWeaponEquipPost(int client, int weapon)
 							}
 						}
 					}
-					case 27:
-					{
-						if(FPVMI_GetClientViewModel(client, "weapon_mag7") == -1)
-						{
-							int rndskin = GetRandomInt(1,20);
-							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-							
-							if (slot != -1)
-							{
-								switch(rndskin)
-								{
-									case 1:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7swag71.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 703);
-									}
-									case 2:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7swag72.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 703);
-									}
-									case 3:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7counterterrace1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 462);
-									}
-									case 4:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7bulldozer1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 39);
-									}
-									case 5:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7storm1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 100);
-									}
-									case 6:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7heat1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 431);
-									}
-									case 7:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7hazard1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 198);
-									}
-									case 8:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7hardwater1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 666);
-									}
-									case 9:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7memento1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 177);
-									}
-									case 10:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7sanddune1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 99);
-									}
-									case 11:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7petroglyph1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 608);
-									}
-									case 12:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7metallicddpat1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 34);
-									}
-									case 13:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7firestarter1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 385);
-									}
-									case 14:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7praetorian1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 535);
-									}
-									case 15:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7irradiatedalert1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 171);
-									}
-									case 16:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7heavenguard1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 291);
-									}
-									case 17:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7silver1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 32);
-									}
-									case 18:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7seabird1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 473);
-									}
-									case 19:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7sonar1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 633);
-									}
-									case 20:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mag7", PrecacheModel("models/weapons/v_mag7cobaltcore1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mag7");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 499);
-									}
-								}
-							}
-						}
-					}
-					case 29:
-					{
-						if(FPVMI_GetClientViewModel(client, "weapon_sawedoff") == -1)
-						{
-							int rndskin = GetRandomInt(1,10);
-							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-							
-							if (slot != -1)
-							{
-								switch(rndskin)
-								{
-									case 1:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffdevourer1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 720);
-									}
-									case 2:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffthekraken1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 256);
-									}
-									case 3:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffhighwayman1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 390);
-									}
-									case 4:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedofffubar1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 552);
-									}
-									case 5:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedofforangeddpat1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 83);
-									}
-									case 6:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffamberfade1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 246);
-									}
-									case 7:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffzander1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 655);
-									}
-									case 8:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffwastelandprincess1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 638);
-									}
-									case 9:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedofflimelight1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 596);
-									}
-									case 10:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_sawedoff", PrecacheModel("models/weapons/v_sawedoffyorick1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_sawedoff");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 517);
-									}
-								}
-							}
-						}
-					}
 					case 25:
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_xm1014") == -1)
@@ -7534,105 +7393,6 @@ public void OnWeaponEquipPost(int client, int weapon)
 										FPVMI_SetClientModel(client, "weapon_m249", PrecacheModel("models/weapons/v_m249nebulacrusader1.mdl")); // add custom view model to the player
 										int entity = GivePlayerItem(client, "weapon_m249");
 										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 496);
-									}
-								}
-							}
-						}
-					}
-					case 28:
-					{
-						if(FPVMI_GetClientViewModel(client, "weapon_negev") == -1)
-						{
-							int rndskin = GetRandomInt(1,12);
-							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-							
-							if (slot != -1)
-							{
-								switch(rndskin)
-								{
-									case 1:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevpowerloader1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 514);
-									}
-									case 2:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevanodizednavy1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 28);
-									}
-									case 3:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevarmysheen1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 298);
-									}
-									case 4:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevmanowar1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 432);
-									}
-									case 5:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevcalicamo1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 240);
-									}
-									case 6:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevdazzle1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 610);
-									}
-									case 7:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevloudmouth1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 483);
-									}
-									case 8:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevpalm1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 201);
-									}
-									case 9:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevterrain1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 285);
-									}
-									case 10:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevdesertstrike1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 355);
-									}
-									case 11:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevnuclearwaste1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 369);
-									}
-									case 12:
-									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_negev", PrecacheModel("models/weapons/v_negevbratatat1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_negev");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 317);
 									}
 								}
 							}
@@ -8118,54 +7878,730 @@ public void OnWeaponEquipPost(int client, int weapon)
 							}
 						}
 					}
+					case 24:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_ump45") == -1)
+						{
+							int rndskin = GetRandomInt(1,9);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45arcticwolf1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 704);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45exposure1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 688);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45primalsaber1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 556);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45urbanddpat1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 17);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45scaffold1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 652);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45blaze1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 37);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45falloutwarning1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 169);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45riot1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 488);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ump45", PrecacheModel("models/weapons/v_ump45grandprix1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ump45");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 436);
+									}
+								}
+							}
+						}
+					}
+					case 19:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_p90") == -1)
+						{
+							int rndskin = GetRandomInt(1,14);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90asiimov1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 359);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90offworld1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 849);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90deathbykitty1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 156);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90deathgrip1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 669);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90chopper1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 593);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90shallowgrave1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 636);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90coldblooded1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 67);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90emeralddragon1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 182);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90module1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 335);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90grim1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 611);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90shapewood1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 516);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90trigon1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 283);
+									}
+									case 13:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90elitebuild1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 486);
+									}
+									case 14:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_p90", PrecacheModel("models/weapons/v_p90traction1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_p90");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 717);
+									}
+								}
+							}
+						}
+					}
+					case 26:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_bizon") == -1)
+						{
+							int rndskin = GetRandomInt(1,3);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_bizon", PrecacheModel("models/weapons/v_bizonfuelrod1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_bizon");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 508);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_bizon", PrecacheModel("models/weapons/v_bizonjudgementofanubis1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_bizon");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 542);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_bizon", PrecacheModel("models/weapons/v_bizonhighroller1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_bizon");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 676);
+									}
+								}
+							}
+						}
+					}
+					case 13:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_galilar") == -1)
+						{
+							int rndskin = GetRandomInt(1,17);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilakoben1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 842);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilsignal1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 807);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilaquaterrace1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 460);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilcrimsontsunami1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 647);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilsugarrush1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 661);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilchatterbox1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 398);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilcerberus1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 379);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilbluetitanium1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 216);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilbluetitanium2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 216);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilsandstorm1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 264);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilorangeddpat1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 83);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilorangeddpat2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 83);
+									}
+									case 13:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilblacksand1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 629);
+									}
+									case 14:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilrocketpop1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 478);
+									}
+									case 15:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilfirefight1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 546);
+									}
+									case 16:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galileco1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 428);
+									}
+									case 17:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_galilar", PrecacheModel("models/weapons/v_galilstonecold1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_galilar");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 494);
+									}
+								}
+							}
+						}
+					}
+					case 10:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_famas") == -1)
+						{
+							int rndskin = GetRandomInt(1,14);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famascyanospatter1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 92);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famascyanospatter2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 92);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famaseyeofathena1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 723);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasmechaindustries1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 626);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasstyx1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 371);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasmacabre1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 659);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famassurvivorz1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 492);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famassurvivorz2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 492);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasrollcage1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 604);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famassergeant1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 288);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famaspulse1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 260);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasvalence1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 529);
+									}
+									case 13:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasdjinn1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 429);
+									}
+									case 14:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_famas", PrecacheModel("models/weapons/v_famasspitfire1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_famas");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 194);
+									}
+								}
+							}
+						}
+					}
 					case 16:
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_m4a1") == -1)
 						{
-							if(FPVMI_GetClientViewModel(client, "weapon_m4a1") == -1)
+							int rndskin = GetRandomInt(1,5);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
 							{
-								int rndskin = GetRandomInt(1,5);
-								int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-								
-								if (slot != -1)
+								switch(rndskin)
 								{
-									switch(rndskin)
+									case 1:
 									{
-										case 1:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4xray1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 215);
-										}
-										case 2:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4converter1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 793);
-										}
-										case 3:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4magnesium1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 811);
-										}
-										case 4:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4mainframe1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 780);
-										}
-										case 5:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4jungletiger1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 16);
-										}
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4xray1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 215);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4converter1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 793);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4magnesium1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 811);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4mainframe1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 780);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1", PrecacheModel("models/weapons/v_m4a4jungletiger1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 16);
+									}
+								}
+							}
+						}
+					}
+					case 39:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_sg556") == -1)
+						{
+							int rndskin = GetRandomInt(1,11);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556tigermoth1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 519);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556cyrex1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 487);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556phantom1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 686);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556ultraviolet1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 98);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556bulldozer1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 39);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556tigermoth2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 519);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556falloutwarning1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 378);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556damascussteel1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 247);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556triarch1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 613);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556aerial1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 598);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_sg556", PrecacheModel("models/weapons/v_sg556traveler1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_sg556");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 363);
+									}
+								}
+							}
+						}
+					}
+					case 8:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_aug") == -1)
+						{
+							int rndskin = GetRandomInt(1,14);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augmidnightlily1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 727);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augstymphalian1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 690);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augfleetflock1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 541);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augsydmead1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 601);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augakihabaraaccept1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 455);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augradiationhazard1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 375);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_auganodizednavy1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 197);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augaristocrat1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 583);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augchameleon1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 280);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augtorque1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 305);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augcopperhead1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 10);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augbengaltiger1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 9);
+									}
+									case 13:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augricochet1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 507);
+									}
+									case 14:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_aug", PrecacheModel("models/weapons/v_augwings1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_aug");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 73);
 									}
 								}
 							}
@@ -8175,120 +8611,351 @@ public void OnWeaponEquipPost(int client, int weapon)
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_awp") == -1)
 						{
-							if(FPVMI_GetClientViewModel(client, "weapon_awp") == -1)
+							int rndskin = GetRandomInt(1,15);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
 							{
-								int rndskin = GetRandomInt(1,15);
-								int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-								
-								if (slot != -1)
+								switch(rndskin)
 								{
-									switch(rndskin)
+									case 1:
 									{
-										case 1:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
-										}
-										case 2:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpwildfire1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 917);
-										}
-										case 3:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awplightningstrike1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 51);
-										}
-										case 4:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awppaw1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 718);
-										}
-										case 5:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore2.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
-										}
-										case 6:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpacheron1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 788);
-										}
-										case 7:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpsafarimesh1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 72);
-										}
-										case 8:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpmedusa1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 446);
-										}
-										case 9:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpneonoir1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 803);
-										}
-										case 10:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore3.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
-										}
-										case 11:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awppinkddpat1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 84);
-										}
-										case 12:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpgraphite1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 212);
-										}
-										case 13:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpcontainmentbreach1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 887);
-										}
-										case 14:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpsuninleo1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 451);
-										}
-										case 15:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpmortis1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_awp");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 691);
-										}
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpwildfire1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 917);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awplightningstrike1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 51);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awppaw1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 718);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpacheron1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 788);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpsafarimesh1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 72);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpmedusa1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 446);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpneonoir1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 803);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpdragonlore3.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 344);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awppinkddpat1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 84);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpgraphite1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 212);
+									}
+									case 13:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpcontainmentbreach1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 887);
+									}
+									case 14:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpsuninleo1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 451);
+									}
+									case 15:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_awp", PrecacheModel("models/weapons/v_awpmortis1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_awp");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 691);
+									}
+								}
+							}
+						}
+					}
+					case 40:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_ssg08") == -1)
+						{
+							int rndskin = GetRandomInt(1,11);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08abyss1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 361);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08bigiron1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 503);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08bloodinthewater1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 222);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08detour1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 319);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08deathshead1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 670);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08dragonfire1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 624);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08acidfade1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 253);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08darkwater1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 60);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08necropos1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 538);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08slashed1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 304);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_ssg08", PrecacheModel("models/weapons/v_ssg08ghostcrusader1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_ssg08");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 554);
+									}
+								}
+							}
+						}
+					}
+					case 38:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_scar20") == -1)
+						{
+							int rndskin = GetRandomInt(1,12);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20cyrex1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 312);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20bloodsport1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 597);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20cardiac1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 391);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20blueprint1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 642);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20crimsonweb1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 232);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20storm1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 100);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20carbonfiber1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 70);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20emerald1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 196);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20outbreak1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 518);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20sandmesh1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 116);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20grotto1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 406);
+									}
+									case 12:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_scar20", PrecacheModel("models/weapons/v_scar20greenmarine1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_scar20");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 502);
+									}
+								}
+							}
+						}
+					}
+					case 11:
+					{
+						if(FPVMI_GetClientViewModel(client, "weapon_g3sg1") == -1)
+						{
+							int rndskin = GetRandomInt(1,4);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
+							{
+								switch(rndskin)
+								{
+									case 1:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_g3sg1", PrecacheModel("models/weapons/v_g3sg1flux1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_g3sg1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 493);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_g3sg1", PrecacheModel("models/weapons/v_g3sg1theexecutioner1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_g3sg1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 511);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_g3sg1", PrecacheModel("models/weapons/v_g3sg1chronos1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_g3sg1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 438);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_g3sg1", PrecacheModel("models/weapons/v_g3sg1stinger1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_g3sg1");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 628);
 									}
 								}
 							}
@@ -8298,92 +8965,89 @@ public void OnWeaponEquipPost(int client, int weapon)
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_m4a1_silencer") == -1)
 						{
-							if(FPVMI_GetClientViewModel(client, "weapon_m4a1_silencer") == -1)
+							int rndskin = GetRandomInt(1,11);
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							
+							if (slot != -1)
 							{
-								int rndskin = GetRandomInt(1,11);
-								int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
-								
-								if (slot != -1)
+								switch(rndskin)
 								{
-									switch(rndskin)
+									case 1:
 									{
-										case 1:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1shotrod1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 445);
-										}
-										case 2:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sguardian1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 257);
-										}
-										case 3:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sguardian2.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 257);
-										}
-										case 4:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sicarusfell1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 440);
-										}
-										case 5:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sdarkwater1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 60);
-										}
-										case 6:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1shotrod2.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 445);
-										}
-										case 7:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sknight1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 326);
-										}
-										case 8:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1smechaindustries1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 587);
-										}
-										case 9:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sflashback1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 631);
-										}
-										case 10:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1scontrolpanel1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 792);
-										}
-										case 11:
-										{
-											RemovePlayerItem(client, slot);
-											FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1snightmare1.mdl")); // add custom view model to the player
-											int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
-											SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 714);
-										}
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1shotrod1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 445);
+									}
+									case 2:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sguardian1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 257);
+									}
+									case 3:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sguardian2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 257);
+									}
+									case 4:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sicarusfell1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 440);
+									}
+									case 5:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sdarkwater1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 60);
+									}
+									case 6:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1shotrod2.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 445);
+									}
+									case 7:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sknight1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 326);
+									}
+									case 8:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1smechaindustries1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 587);
+									}
+									case 9:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1sflashback1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 631);
+									}
+									case 10:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1scontrolpanel1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 792);
+									}
+									case 11:
+									{
+										RemovePlayerItem(client, slot);
+										FPVMI_SetClientModel(client, "weapon_m4a1_silencer", PrecacheModel("models/weapons/v_m4a1snightmare1.mdl")); // add custom view model to the player
+										int entity = GivePlayerItem(client, "weapon_m4a1_silencer");
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 714);
 									}
 								}
 							}
@@ -8576,6 +9240,240 @@ public void OnWeaponEquipPost(int client, int weapon)
 			}
 		}
 	}
+	
+	if(IsValidClient(client))
+	{
+		if(GetEntProp(weapon, Prop_Send, "m_nModelIndex") != 0)
+		{
+			switch(index)
+			{
+				case 61:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 504:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 653:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 705:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 339:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 313:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 221:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 817:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 637:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 290:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 183:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 60:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 318:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 657:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 540:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 489:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 217:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 277:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 796:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 364:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 236:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 443:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 454:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 332:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 25:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+					}
+				}
+				case 4:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 586:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 353:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 437:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 694:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 607:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 532:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 381:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 230:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 48:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 732:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 789:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 38:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 159:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 918:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 808:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 713:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 680:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 623:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 495:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 479:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 399:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 278:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 367:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 799:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 40:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 293:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 2:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 208:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
@@ -8585,40 +9483,142 @@ public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 	
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		FPVMI_RemoveViewModelToClient(client, "weapon_glock");
-		FPVMI_RemoveViewModelToClient(client, "weapon_usp_silencer");
-		FPVMI_RemoveViewModelToClient(client, "weapon_hkp2000");
-		FPVMI_RemoveViewModelToClient(client, "weapon_p250");
-		FPVMI_RemoveViewModelToClient(client, "weapon_cz75a");
-		FPVMI_RemoveViewModelToClient(client, "weapon_deagle");
-		FPVMI_RemoveViewModelToClient(client, "weapon_revolver");
-		FPVMI_RemoveViewModelToClient(client, "weapon_fiveseven");
-		FPVMI_RemoveViewModelToClient(client, "weapon_tec9");
-		FPVMI_RemoveViewModelToClient(client, "weapon_elite");
-		FPVMI_RemoveViewModelToClient(client, "weapon_nova");
-		FPVMI_RemoveViewModelToClient(client, "weapon_sawedoff");
-		FPVMI_RemoveViewModelToClient(client, "weapon_mag7");
-		FPVMI_RemoveViewModelToClient(client, "weapon_xm1014");
-		FPVMI_RemoveViewModelToClient(client, "weapon_m249");
-		FPVMI_RemoveViewModelToClient(client, "weapon_negev");
-		FPVMI_RemoveViewModelToClient(client, "weapon_mp9");
-		FPVMI_RemoveViewModelToClient(client, "weapon_mac10");
-		FPVMI_RemoveViewModelToClient(client, "weapon_mp7");
-		FPVMI_RemoveViewModelToClient(client, "weapon_mp5sd");
-		FPVMI_RemoveViewModelToClient(client, "weapon_ump45");
-		FPVMI_RemoveViewModelToClient(client, "weapon_p90");
-		FPVMI_RemoveViewModelToClient(client, "weapon_bizon");
-		FPVMI_RemoveViewModelToClient(client, "weapon_galilar");
-		FPVMI_RemoveViewModelToClient(client, "weapon_famas");
-		FPVMI_RemoveViewModelToClient(client, "weapon_ak47");
-		FPVMI_RemoveViewModelToClient(client, "weapon_m4a1");
-		FPVMI_RemoveViewModelToClient(client, "weapon_m4a1_silencer");
-		FPVMI_RemoveViewModelToClient(client, "weapon_sg556");
-		FPVMI_RemoveViewModelToClient(client, "weapon_aug");
-		FPVMI_RemoveViewModelToClient(client, "weapon_scar20");
-		FPVMI_RemoveViewModelToClient(client, "weapon_gs3sg1");
-		FPVMI_RemoveViewModelToClient(client, "weapon_ssg08");
-		FPVMI_RemoveViewModelToClient(client, "weapon_awp");
+		if(FPVMI_GetClientViewModel(client, "weapon_glock") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_glock");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_usp_silencer") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_usp_silencer");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_hkp2000") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_hkp2000");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_p250") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_p250");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_cz75a") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_cz75a");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_deagle") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_deagle");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_revolver") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_revolver");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_fiveseven") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_fiveseven");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_tec9") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_tec9");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_elite") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_elite");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_nova") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_nova");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_sawedoff") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_sawedoff");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_mag7") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_mag7");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_xm1014") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_xm1014");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_m249") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_m249");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_negev") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_negev");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_mp9") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_mp9");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_mac10") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_mac10");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_mp7") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_mp7");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_mp5sd") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_mp5sd");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_ump45") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_ump45");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_p90") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_p90");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_bizon") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_bizon");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_galilar") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_galilar");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_famas") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_famas");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_ak47") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_ak47");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_m4a1") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_m4a1");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_m4a1_silencer") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_m4a1_silencer");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_sg556") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_sg556");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_aug") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_aug");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_scar20") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_scar20");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_g3sg1") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_g3sg1");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_ssg08") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_ssg08");
+		}
+		if(FPVMI_GetClientViewModel(client, "weapon_awp") != -1)
+		{
+			FPVMI_RemoveViewModelToClient(client, "weapon_awp");
+		}
 	}
 }
 
@@ -8770,6 +9770,27 @@ public void OnPluginEnd()
 	}
 }
 
+// Get model index and prevent server from crash
+Weapon_GetViewModelIndex(client, sIndex)
+{
+    while ((sIndex = FindEntityByClassname2(sIndex, "predicted_viewmodel")) != -1)
+    {
+        new Owner = GetEntPropEnt(sIndex, Prop_Send, "m_hOwner");
+        
+        if (Owner != client)
+            continue;
+        
+        return sIndex;
+    }
+    return -1;
+}
+// Get entity name
+FindEntityByClassname2(sStartEnt, String:szClassname[])
+{
+    while (sStartEnt > -1 && !IsValidEntity(sStartEnt)) sStartEnt--;
+    return FindEntityByClassname(sStartEnt, szClassname);
+}
+
 float g_flNextCommand[MAXPLAYERS + 1];
 stock bool FakeClientCommandThrottled(int client, const char[] command)
 {
@@ -8892,17 +9913,17 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
 			continue;
 		
-		if(StrEqual(clantag, "pro100")) //30th
+		if(StrEqual(clantag, "Syman")) //30th
 		{
 			if (!IsTargetInSightRange(client, i, 50.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "Syman")) //29th
+		else if(StrEqual(clantag, "Flames")) //29th
 		{
 			if (!IsTargetInSightRange(client, i, 60.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "coL")) //28th
+		else if(StrEqual(clantag, "TYLOO")) //28th
 		{
 			if (!IsTargetInSightRange(client, i, 70.0))
 				continue;	
@@ -8912,52 +9933,52 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 			if (!IsTargetInSightRange(client, i, 80.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "TYLOO")) //26th
+		else if(StrEqual(clantag, "North")) //26th
 		{
 			if (!IsTargetInSightRange(client, i, 90.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "OG")) //25th
+		else if(StrEqual(clantag, "BIG")) //25th
 		{
 			if (!IsTargetInSightRange(client, i, 100.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "North")) //24th
+		else if(StrEqual(clantag, "c0ntact")) //24th
 		{
 			if (!IsTargetInSightRange(client, i, 110.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "BIG")) //23rd
+		else if(StrEqual(clantag, "coL")) //23rd
 		{
 			if (!IsTargetInSightRange(client, i, 120.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "CR4ZY")) //22nd
+		else if(StrEqual(clantag, "RNG")) //22nd
 		{
 			if (!IsTargetInSightRange(client, i, 130.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "RNG")) //21st
+		else if(StrEqual(clantag, "FURIA")) //21st
 		{
 			if (!IsTargetInSightRange(client, i, 140.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "FURIA")) //20th
+		else if(StrEqual(clantag, "C9")) //20th
 		{
 			if (!IsTargetInSightRange(client, i, 150.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "C9")) //19th
+		else if(StrEqual(clantag, "GODSENT")) //19th
 		{
 			if (!IsTargetInSightRange(client, i, 160.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "GODSENT")) //18th
+		else if(StrEqual(clantag, "VP")) //18th
 		{
 			if (!IsTargetInSightRange(client, i, 170.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "VP")) //17th
+		else if(StrEqual(clantag, "OG")) //17th
 		{
 			if (!IsTargetInSightRange(client, i, 180.0))
 				continue;	
@@ -8972,12 +9993,12 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 			if (!IsTargetInSightRange(client, i, 200.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "forZe")) //14th
+		else if(StrEqual(clantag, "NiP")) //14th
 		{
 			if (!IsTargetInSightRange(client, i, 210.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "ENCE")) //13th
+		else if(StrEqual(clantag, "forZe")) //13th
 		{
 			if (!IsTargetInSightRange(client, i, 220.0))
 				continue;	
@@ -8987,7 +10008,7 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 			if (!IsTargetInSightRange(client, i, 230.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "NiP")) //11th
+		else if(StrEqual(clantag, "ENCE")) //11th
 		{
 			if (!IsTargetInSightRange(client, i, 240.0))
 				continue;	
@@ -9007,12 +10028,12 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 			if (!IsTargetInSightRange(client, i, 270.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "Na´Vi")) //7th
+		else if(StrEqual(clantag, "Vitality")) //7th
 		{
 			if (!IsTargetInSightRange(client, i, 280.0))
 				continue;	
 		}
-		else if(StrEqual(clantag, "Vitality")) //6th
+		else if(StrEqual(clantag, "Na´Vi")) //6th
 		{
 			if (!IsTargetInSightRange(client, i, 290.0))
 				continue;	
@@ -9072,7 +10093,7 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 					iClipAmmo = GetEntProp(iPrimary, Prop_Send, "m_iClip1");
 				}
 				
-				if(!IsWeaponSlotActive(client, CS_SLOT_GRENADE) || !g_bPinPulled[client])
+				if(IsWeaponSlotActive(client, CS_SLOT_GRENADE) && !g_bPinPulled[client])
 				{
 					if(iClipAmmo > 0 && iPrimary != -1)
 					{
@@ -9360,10 +10381,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "FURIA");
 	}
 	
-	//CR4ZY Players
+	//c0ntact Players
 	if((StrEqual(botname, "LETN1")) || (StrEqual(botname, "ottoNd")) || (StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "emi")) || (StrEqual(botname, "EspiranTo")))
 	{
-		CS_SetClientClanTag(client, "CR4ZY");
+		CS_SetClientClanTag(client, "c0ntact");
 	}
 	
 	//coL Players
@@ -9726,12 +10747,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "dream[S]cape");
 	}
 	
-	//Entity Players
-	if((StrEqual(botname, "Amaterasu")) || (StrEqual(botname, "Psy")) || (StrEqual(botname, "Excali")) || (StrEqual(botname, "skillZ")) || (StrEqual(botname, "Ace")))
-	{
-		CS_SetClientClanTag(client, "Entity");
-	}
-	
 	//LucidDream Players
 	if((StrEqual(botname, "Jinx")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "Lakia")))
 	{
@@ -9739,7 +10754,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//NASR Players
-	if((StrEqual(botname, "breAker")) || (StrEqual(botname, "Nami")) || (StrEqual(botname, "kitkat")) || (StrEqual(botname, "havoK")) || (StrEqual(botname, "kAzoo")))
+	if((StrEqual(botname, "breAker")) || (StrEqual(botname, "Nami")) || (StrEqual(botname, "Ejram")) || (StrEqual(botname, "havoK")) || (StrEqual(botname, "Pogba")))
 	{
 		CS_SetClientClanTag(client, "NASR");
 	}
@@ -10258,7 +11273,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 61;
 	}
 	
-	if (StrEqual(sClan, "CR4ZY"))
+	if (StrEqual(sClan, "c0ntact"))
 	{
 		g_iProfileRank[client] = 62;
 	}
@@ -10581,11 +11596,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "sAw"))
 	{
 		g_iProfileRank[client] = 126;
-	}
-	
-	if (StrEqual(sClan, "Entity"))
-	{
-		g_iProfileRank[client] = 127;
 	}
 	
 	if (StrEqual(sClan, "OneThree"))
