@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Sat Feb 29 02:08:17 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Sun Mar 01 00:59:01 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -132,7 +132,6 @@ de_train
 de_vertigo
 deathzone
 dm_bloodsport
-dz_junglety
 fun_pacman_v1
 fy_back_street
 fy_concrete

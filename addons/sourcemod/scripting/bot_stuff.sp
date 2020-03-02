@@ -107,7 +107,8 @@ char g_sFiveSevenModels[][] = {
 
 char g_sCZ75Models[][] = {
 	"models/weapons/v_cz75stickers1.mdl",
-	"models/weapons/v_cz75stickers2.mdl"
+	"models/weapons/v_cz75stickers2.mdl",
+	"models/weapons/v_cz75stickers3.mdl"
 };
 
 char g_sTec9Models[][] = {
@@ -149,6 +150,10 @@ char g_sXM1014Models[][] = {
 
 char g_sM249Models[][] = {
 	"models/weapons/v_m249stickers1.mdl"
+};
+
+char g_sMP9Models[][] = {
+	"models/weapons/v_mp9stickers1.mdl"
 };
 
 char g_sBotName[][] = {
@@ -315,11 +320,11 @@ char g_sBotName[][] = {
 	"cadiaN",
 	"stavn",
 	//INTZ Players
-	"chelo",
-	"shz",
-	"xand",
-	"boltz",
-	"yeL",
+	"maxcel",
+	"gut0",
+	"danoco",
+	"detr0it",
+	"kLv",
 	//VP Players
 	"buster",
 	"Jame",
@@ -342,7 +347,7 @@ char g_sBotName[][] = {
 	"INS",
 	"sico",
 	"dexter",
-	"DickStacy",
+	"Hatz",
 	"malta",
 	//MVP.PK Players
 	"glow",
@@ -593,7 +598,7 @@ char g_sBotName[][] = {
 	//ORDER Players
 	"emagine",
 	"aliStair",
-	"hatz",
+	"Rickeh",
 	"USTILO",
 	"Valiance",
 	//BlackS Players
@@ -632,12 +637,12 @@ char g_sBotName[][] = {
 	"Kntz",
 	"stk",
 	"foxz",
-	//dream[S]cape Players
-	"Bobosaur",
-	"splashske",
-	"alecks",
-	"Benkai",
-	"d4v41",
+	//BOOM Players
+	"chelo",
+	"yeL",
+	"shz",
+	"boltz",
+	"felps",
 	//LucidDream Players
 	"Jinx",
 	"PTC",
@@ -737,8 +742,8 @@ char g_sBotName[][] = {
 	//Flames Players
 	"TeSeS",
 	"farlig",
-	"AcilioN",
-	"TMB",
+	"HooXi",
+	"refrezh",
 	"Nodios",
 	//BPro Players
 	"FlashBack",
@@ -746,12 +751,6 @@ char g_sBotName[][] = {
 	"POP0V",
 	"Krs7N",
 	"milly",
-	//Fierce Players
-	"Astroo",
-	"Luzuh",
-	"frei",
-	"jenko",
-	"Puls3",
 	//Trident Players
 	"nope",
 	"Quasar GT",
@@ -803,15 +802,9 @@ char g_sBotName[][] = {
 	//Baecon Players
 	"brA",
 	"Demonos",
-	"SHOUW",
+	"tyko",
 	"horvy",
-	"axoN",
-	//Corvidae Players
-	"DANZ",
-	"dash",
-	"m1tch",
-	"nibke",
-	"Dirty",
+	"KILLDREAM",
 	//Wizards Players
 	"KALAS",
 	"v1NCHENSO7",
@@ -833,8 +826,8 @@ char g_sBotName[][] = {
 	//aL Players
 	"pounh",
 	"FliP1",
-	"maty",
-	"kalle",
+	"Butters",
+	"Remoy",
 	"PALM1",
 	//Orange Players
 	"Max",
@@ -957,10 +950,10 @@ char g_sBotName[][] = {
 	"Yvonne",
 	"XinKoiNg",
 	//Triumph Players
-	"xCeeD",
+	"Shakezullah",
 	"Voltage",
 	"Spongey",
-	"Snakes",
+	"Asuna",
 	"Grim",
 	//FATE Players
 	"doublemagic",
@@ -1051,7 +1044,13 @@ char g_sBotName[][] = {
 	"howl",
 	"hidenway",
 	"kade0",
-	"spellfull"
+	"spellfull",
+	//CR4ZY Players
+	"dERZKIY",
+	"Sergiz",
+	"dOBRIY",
+	"Psycho",
+	"SENSEi"
 };
  
 public Plugin myinfo =
@@ -1153,7 +1152,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_risingstars", Team_RisingStars);
 	RegConsoleCmd("team_ehome", Team_EHOME);
 	RegConsoleCmd("team_beyond", Team_Beyond);
-	RegConsoleCmd("team_dreamscape", Team_dreamScape);
+	RegConsoleCmd("team_boom", Team_BOOM);
 	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_portal", Team_Portal);
@@ -1172,7 +1171,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_gtz", Team_GTZ);
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_bpro", Team_BPro);
-	RegConsoleCmd("team_fierce", Team_Fierce);
 	RegConsoleCmd("team_trident", Team_Trident);
 	RegConsoleCmd("team_syman", Team_Syman);
 	RegConsoleCmd("team_wnv", Team_wNv);
@@ -1182,7 +1180,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_uol", Team_UOL);
 	RegConsoleCmd("team_9ine", Team_9INE);
 	RegConsoleCmd("team_baecon", Team_Baecon);
-	RegConsoleCmd("team_corvidae", Team_Corvidae);
 	RegConsoleCmd("team_wizards", Team_Wizards);
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_queso", Team_Queso);
@@ -1223,6 +1220,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_ambush", Team_Ambush);
 	RegConsoleCmd("team_kova", Team_KOVA);
 	RegConsoleCmd("team_avangar", Team_AVANGAR);
+	RegConsoleCmd("team_cr4zy", Team_CR4ZY);
 }
 
 public Action Team_NiP(int client, int args)
@@ -2043,22 +2041,22 @@ public Action Team_INTZ(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "chelo");
-		ServerCommand("bot_add_ct %s", "shz");
-		ServerCommand("bot_add_ct %s", "xand");
-		ServerCommand("bot_add_ct %s", "boltz");
-		ServerCommand("bot_add_ct %s", "yeL");
+		ServerCommand("bot_add_ct %s", "maxcel");
+		ServerCommand("bot_add_ct %s", "gut0");
+		ServerCommand("bot_add_ct %s", "danoco");
+		ServerCommand("bot_add_ct %s", "detr0it");
+		ServerCommand("bot_add_ct %s", "kLv");
 		ServerCommand("mp_teamlogo_1 intz");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "chelo");
-		ServerCommand("bot_add_t %s", "shz");
-		ServerCommand("bot_add_t %s", "xand");
-		ServerCommand("bot_add_t %s", "boltz");
-		ServerCommand("bot_add_t %s", "yeL");
+		ServerCommand("bot_add_t %s", "maxcel");
+		ServerCommand("bot_add_t %s", "gut0");
+		ServerCommand("bot_add_t %s", "danoco");
+		ServerCommand("bot_add_t %s", "detr0it");
+		ServerCommand("bot_add_t %s", "kLv");
 		ServerCommand("mp_teamlogo_2 intz");
 	}
 	
@@ -2166,7 +2164,7 @@ public Action Team_Renegades(int client, int args)
 		ServerCommand("bot_add_ct %s", "INS");
 		ServerCommand("bot_add_ct %s", "sico");
 		ServerCommand("bot_add_ct %s", "dexter");
-		ServerCommand("bot_add_ct %s", "DickStacy");
+		ServerCommand("bot_add_ct %s", "Hatz");
 		ServerCommand("bot_add_ct %s", "malta");
 		ServerCommand("mp_teamlogo_1 ren");
 	}
@@ -2177,7 +2175,7 @@ public Action Team_Renegades(int client, int args)
 		ServerCommand("bot_add_t %s", "INS");
 		ServerCommand("bot_add_t %s", "sico");
 		ServerCommand("bot_add_t %s", "dexter");
-		ServerCommand("bot_add_t %s", "DickStacy");
+		ServerCommand("bot_add_t %s", "Hatz");
 		ServerCommand("bot_add_t %s", "malta");
 		ServerCommand("mp_teamlogo_2 ren");
 	}
@@ -3425,7 +3423,7 @@ public Action Team_ORDER(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "emagine");
 		ServerCommand("bot_add_ct %s", "aliStair");
-		ServerCommand("bot_add_ct %s", "hatz");
+		ServerCommand("bot_add_ct %s", "Rickeh");
 		ServerCommand("bot_add_ct %s", "USTILO");
 		ServerCommand("bot_add_ct %s", "Valiance");
 		ServerCommand("mp_teamlogo_1 order");
@@ -3436,7 +3434,7 @@ public Action Team_ORDER(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "emagine");
 		ServerCommand("bot_add_t %s", "aliStair");
-		ServerCommand("bot_add_t %s", "hatz");
+		ServerCommand("bot_add_t %s", "Rickeh");
 		ServerCommand("bot_add_t %s", "USTILO");
 		ServerCommand("bot_add_t %s", "Valiance");
 		ServerCommand("mp_teamlogo_2 order");
@@ -3625,7 +3623,7 @@ public Action Team_Beyond(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_dreamScape(int client, int args)
+public Action Team_BOOM(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3633,23 +3631,23 @@ public Action Team_dreamScape(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Bobosaur");
-		ServerCommand("bot_add_ct %s", "splashske");
-		ServerCommand("bot_add_ct %s", "alecks");
-		ServerCommand("bot_add_ct %s", "Benkai");
-		ServerCommand("bot_add_ct %s", "d4v41");
-		ServerCommand("mp_teamlogo_1 dream");
+		ServerCommand("bot_add_ct %s", "chelo");
+		ServerCommand("bot_add_ct %s", "yeL");
+		ServerCommand("bot_add_ct %s", "shz");
+		ServerCommand("bot_add_ct %s", "boltz");
+		ServerCommand("bot_add_ct %s", "felps");
+		ServerCommand("mp_teamlogo_1 boom");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Bobosaur");
-		ServerCommand("bot_add_t %s", "splashske");
-		ServerCommand("bot_add_t %s", "alecks");
-		ServerCommand("bot_add_t %s", "Benkai");
-		ServerCommand("bot_add_t %s", "d4v41");
-		ServerCommand("mp_teamlogo_2 dream");
+		ServerCommand("bot_add_t %s", "chelo");
+		ServerCommand("bot_add_t %s", "yeL");
+		ServerCommand("bot_add_t %s", "shz");
+		ServerCommand("bot_add_t %s", "boltz");
+		ServerCommand("bot_add_t %s", "felps");
+		ServerCommand("mp_teamlogo_2 boom");
 	}
 	
 	return Plugin_Handled;
@@ -4145,8 +4143,8 @@ public Action Team_Flames(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TeSeS");
 		ServerCommand("bot_add_ct %s", "farlig");
-		ServerCommand("bot_add_ct %s", "AcilioN");
-		ServerCommand("bot_add_ct %s", "TMB");
+		ServerCommand("bot_add_ct %s", "HooXi");
+		ServerCommand("bot_add_ct %s", "refrezh");
 		ServerCommand("bot_add_ct %s", "Nodios");
 		ServerCommand("mp_teamlogo_1 copen");
 	}
@@ -4156,8 +4154,8 @@ public Action Team_Flames(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TeSeS");
 		ServerCommand("bot_add_t %s", "farlig");
-		ServerCommand("bot_add_t %s", "AcilioN");
-		ServerCommand("bot_add_t %s", "TMB");
+		ServerCommand("bot_add_t %s", "HooXi");
+		ServerCommand("bot_add_t %s", "refrezh");
 		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 copen");
 	}
@@ -4190,36 +4188,6 @@ public Action Team_BPro(int client, int args)
 		ServerCommand("bot_add_t %s", "Krs7N");
 		ServerCommand("bot_add_t %s", "milly");
 		ServerCommand("mp_teamlogo_2 bpro");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Fierce(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Astroo");
-		ServerCommand("bot_add_ct %s", "Luzuh");
-		ServerCommand("bot_add_ct %s", "frei");
-		ServerCommand("bot_add_ct %s", "jenko");
-		ServerCommand("bot_add_ct %s", "Puls3");
-		ServerCommand("mp_teamlogo_1 fierce");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Astroo");
-		ServerCommand("bot_add_t %s", "Luzuh");
-		ServerCommand("bot_add_t %s", "frei");
-		ServerCommand("bot_add_t %s", "jenko");
-		ServerCommand("bot_add_t %s", "Puls3");
-		ServerCommand("mp_teamlogo_2 fierce");
 	}
 	
 	return Plugin_Handled;
@@ -4475,9 +4443,9 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "Demonos");
-		ServerCommand("bot_add_ct %s", "SHOUW");
+		ServerCommand("bot_add_ct %s", "tyko");
 		ServerCommand("bot_add_ct %s", "horvy");
-		ServerCommand("bot_add_ct %s", "axoN");
+		ServerCommand("bot_add_ct %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_1 baec");
 	}
 
@@ -4486,40 +4454,10 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "Demonos");
-		ServerCommand("bot_add_t %s", "SHOUW");
+		ServerCommand("bot_add_t %s", "tyko");
 		ServerCommand("bot_add_t %s", "horvy");
-		ServerCommand("bot_add_t %s", "axoN");
+		ServerCommand("bot_add_t %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_2 baec");
-	}
-
-	return Plugin_Handled;
-}
-
-public Action Team_Corvidae(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "DANZ");
-		ServerCommand("bot_add_ct %s", "dash");
-		ServerCommand("bot_add_ct %s", "m1tch");
-		ServerCommand("bot_add_ct %s", "nibke");
-		ServerCommand("bot_add_ct %s", "Dirty");
-		ServerCommand("mp_teamlogo_1 corv");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "DANZ");
-		ServerCommand("bot_add_t %s", "dash");
-		ServerCommand("bot_add_t %s", "m1tch");
-		ServerCommand("bot_add_t %s", "nibke");
-		ServerCommand("bot_add_t %s", "Dirty");
-		ServerCommand("mp_teamlogo_2 corv");
 	}
 
 	return Plugin_Handled;
@@ -4625,8 +4563,8 @@ public Action Team_aL(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "pounh");
 		ServerCommand("bot_add_ct %s", "FliP1");
-		ServerCommand("bot_add_ct %s", "maty");
-		ServerCommand("bot_add_ct %s", "kalle");
+		ServerCommand("bot_add_ct %s", "Butters");
+		ServerCommand("bot_add_ct %s", "Remoy");
 		ServerCommand("bot_add_ct %s", "PALM1");
 		ServerCommand("mp_teamlogo_1 aL");
 	}
@@ -4636,8 +4574,8 @@ public Action Team_aL(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "pounh");
 		ServerCommand("bot_add_t %s", "FliP1");
-		ServerCommand("bot_add_t %s", "maty");
-		ServerCommand("bot_add_t %s", "kalle");
+		ServerCommand("bot_add_t %s", "Butters");
+		ServerCommand("bot_add_t %s", "Remoy");
 		ServerCommand("bot_add_t %s", "PALM1");
 		ServerCommand("mp_teamlogo_2 aL");
 	}
@@ -5253,10 +5191,10 @@ public Action Team_Triumph(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "xCeeD");
+		ServerCommand("bot_add_ct %s", "Shakezullah");
 		ServerCommand("bot_add_ct %s", "Voltage");
 		ServerCommand("bot_add_ct %s", "Spongey");
-		ServerCommand("bot_add_ct %s", "Snakes");
+		ServerCommand("bot_add_ct %s", "Asuna");
 		ServerCommand("bot_add_ct %s", "Grim");
 		ServerCommand("mp_teamlogo_1 tri");
 	}
@@ -5264,10 +5202,10 @@ public Action Team_Triumph(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "xCeeD");
+		ServerCommand("bot_add_t %s", "Shakezullah");
 		ServerCommand("bot_add_t %s", "Voltage");
 		ServerCommand("bot_add_t %s", "Spongey");
-		ServerCommand("bot_add_t %s", "Snakes");
+		ServerCommand("bot_add_t %s", "Asuna");
 		ServerCommand("bot_add_t %s", "Grim");
 		ServerCommand("mp_teamlogo_2 tri");
 	}
@@ -5720,6 +5658,36 @@ public Action Team_AVANGAR(int client, int args)
 		ServerCommand("bot_add_t %s", "kade0");
 		ServerCommand("bot_add_t %s", "spellfull");
 		ServerCommand("mp_teamlogo_2 avg");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_CR4ZY(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "dERZKIY");
+		ServerCommand("bot_add_ct %s", "Sergiz");
+		ServerCommand("bot_add_ct %s", "dOBRIY");
+		ServerCommand("bot_add_ct %s", "Psycho");
+		ServerCommand("bot_add_ct %s", "SENSEi");
+		ServerCommand("mp_teamlogo_1 cr4z");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "dERZKIY");
+		ServerCommand("bot_add_t %s", "Sergiz");
+		ServerCommand("bot_add_t %s", "dOBRIY");
+		ServerCommand("bot_add_t %s", "Psycho");
+		ServerCommand("bot_add_t %s", "SENSEi");
+		ServerCommand("mp_teamlogo_2 cr4z");
 	}
 
 	return Plugin_Handled;
@@ -8156,75 +8124,152 @@ public void OnWeaponEquipPost(int client, int weapon)
 					{
 						if(FPVMI_GetClientViewModel(client, "weapon_mp9") == -1)
 						{
-							int rndskin = GetRandomInt(1,9);
-							int slot = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY); 
+							int slot = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY); 
 							
 							if (slot != -1)
 							{
+								RemovePlayerItem(client, slot);
+								FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel(g_sMP9Models[GetRandomInt(0, sizeof(g_sMP9Models) - 1)])); // add custom view model to the player
+								int entity = GivePlayerItem(client, "weapon_mp9");
+								
+								int rndskin = GetRandomInt(1,27);
+								
 								switch(rndskin)
 								{
 									case 1:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9modestthreat1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 804);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 0);
 									}
 									case 2:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9hypnotic1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 61);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 368);
 									}
 									case 3:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9roseiron1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 262);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 482);
 									}
 									case 4:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9bulldozer1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 39);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 262);
 									}
 									case 5:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9settingsun1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 368);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 804);
 									}
 									case 6:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9airlock1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 609);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 61);
 									}
 									case 7:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9deadlypoison1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6); 
 										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 403);
 									}
 									case 8:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9rubypoisondart1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 482);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 386);
 									}
 									case 9:
 									{
-										RemovePlayerItem(client, slot);
-										FPVMI_SetClientModel(client, "weapon_mp9", PrecacheModel("models/weapons/v_mp9dart1.mdl")); // add custom view model to the player
-										int entity = GivePlayerItem(client, "weapon_mp9");
-										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 386);
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 39);
+									}
+									case 10:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 609);
+									}
+									case 11:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 910);
+									}
+									case 12:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 734);
+									}
+									case 13:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 679);
+									}
+									case 14:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 867);
+									}
+									case 15:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 715);
+									}
+									case 16:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 697);
+									}
+									case 17:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 630);
+									}
+									case 18:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 549);
+									}
+									case 19:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 448);
+									}
+									case 20:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 329);
+									}
+									case 21:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 33);
+									}
+									case 22:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 141);
+									}
+									case 23:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 755);
+									}
+									case 24:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 100);
+									}
+									case 25:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 366);
+									}
+									case 26:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 148);
+									}
+									case 27:
+									{
+										SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26); 
+										SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", 199);
 									}
 								}
 							}
@@ -11333,6 +11378,116 @@ public void OnWeaponEquipPost(int client, int weapon)
 						}
 					}
 				}
+				case 34:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 910:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 609:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 734:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 679:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 482:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 262:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 61:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 867:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 39:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 804:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 715:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 697:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 630:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 549:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 403:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 386:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 448:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 368:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 329:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 33:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 141:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 755:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 100:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 366:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 148:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 199:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -12286,7 +12441,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//INTZ Players
-	if((StrEqual(botname, "chelo")) || (StrEqual(botname, "shz")) || (StrEqual(botname, "xand")) || (StrEqual(botname, "boltz")) || (StrEqual(botname, "yeL")))
+	if((StrEqual(botname, "maxcel")) || (StrEqual(botname, "gut0")) || (StrEqual(botname, "danoco")) || (StrEqual(botname, "detr0it")) || (StrEqual(botname, "kLv")))
 	{
 		CS_SetClientClanTag(client, "INTZ");
 	}
@@ -12310,7 +12465,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//RNG Players
-	if((StrEqual(botname, "INS")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "DickStacy")) || (StrEqual(botname, "malta")))
+	if((StrEqual(botname, "INS")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "Hatz")) || (StrEqual(botname, "malta")))
 	{
 		CS_SetClientClanTag(client, "RNG");
 	}
@@ -12562,7 +12717,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//ORDER Players
-	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "hatz")) || (StrEqual(botname, "USTILO")) || (StrEqual(botname, "Valiance")))
+	if((StrEqual(botname, "emagine")) || (StrEqual(botname, "aliStair")) || (StrEqual(botname, "Rickeh")) || (StrEqual(botname, "USTILO")) || (StrEqual(botname, "Valiance")))
 	{
 		CS_SetClientClanTag(client, "ORDER");
 	}
@@ -12603,10 +12758,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Beyond");
 	}
 	
-	//dream[S]cape Players
-	if((StrEqual(botname, "Bobosaur")) || (StrEqual(botname, "splashske")) || (StrEqual(botname, "alecks")) || (StrEqual(botname, "Benkai")) || (StrEqual(botname, "d4v41")))
+	//BOOM Players
+	if((StrEqual(botname, "chelo")) || (StrEqual(botname, "yeL")) || (StrEqual(botname, "shz")) || (StrEqual(botname, "boltz")) || (StrEqual(botname, "felps")))
 	{
-		CS_SetClientClanTag(client, "dream[S]cape");
+		CS_SetClientClanTag(client, "BOOM");
 	}
 	
 	//LucidDream Players
@@ -12706,7 +12861,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Flames Players
-	if((StrEqual(botname, "TeSeS")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "AcilioN")) || (StrEqual(botname, "TMB")) || (StrEqual(botname, "Nodios")))
+	if((StrEqual(botname, "TeSeS")) || (StrEqual(botname, "farlig")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "refrezh")) || (StrEqual(botname, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}
@@ -12715,12 +12870,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "FlashBack")) || (StrEqual(botname, "REDSTAR")) || (StrEqual(botname, "POP0V")) || (StrEqual(botname, "Krs7N")) || (StrEqual(botname, "milly")))
 	{
 		CS_SetClientClanTag(client, "BPro");
-	}
-	
-	//Fierce Players
-	if((StrEqual(botname, "Astroo")) || (StrEqual(botname, "Luzuh")) || (StrEqual(botname, "frei")) || (StrEqual(botname, "jenko")) || (StrEqual(botname, "Puls3")))
-	{
-		CS_SetClientClanTag(client, "Fierce");
 	}
 	
 	//Trident Players
@@ -12772,15 +12921,9 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Baecon Players
-	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "SHOUW")) || (StrEqual(botname, "horvy")) || (StrEqual(botname, "axoN")))
+	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "tyko")) || (StrEqual(botname, "horvy")) || (StrEqual(botname, "KILLDREAM")))
 	{
 		CS_SetClientClanTag(client, "Baecon");
-	}
-	
-	//Corvidae Players
-	if((StrEqual(botname, "DANZ")) || (StrEqual(botname, "dash")) || (StrEqual(botname, "m1tch")) || (StrEqual(botname, "nibke")) || (StrEqual(botname, "Dirty")))
-	{
-		CS_SetClientClanTag(client, "Corvidae");
 	}
 	
 	//Wizards Players
@@ -12802,7 +12945,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//aL Players
-	if((StrEqual(botname, "pounh")) || (StrEqual(botname, "FliP1")) || (StrEqual(botname, "maty")) || (StrEqual(botname, "kalle")) || (StrEqual(botname, "PALM1")))
+	if((StrEqual(botname, "pounh")) || (StrEqual(botname, "FliP1")) || (StrEqual(botname, "Butters")) || (StrEqual(botname, "Remoy")) || (StrEqual(botname, "PALM1")))
 	{
 		CS_SetClientClanTag(client, "aL");
 	}
@@ -12928,7 +13071,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Triumph Players
-	if((StrEqual(botname, "xCeeD")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "Spongey")) || (StrEqual(botname, "Snakes")) || (StrEqual(botname, "Grim")))
+	if((StrEqual(botname, "Shakezullah")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "Spongey")) || (StrEqual(botname, "Asuna")) || (StrEqual(botname, "Grim")))
 	{
 		CS_SetClientClanTag(client, "Triumph");
 	}
@@ -13021,6 +13164,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "TNDKingg")) || (StrEqual(botname, "howl")) || (StrEqual(botname, "hidenway")) || (StrEqual(botname, "kade0")) || (StrEqual(botname, "spellfull")))
 	{
 		CS_SetClientClanTag(client, "AVANGAR");
+	}
+	
+	//CR4ZY Players
+	if((StrEqual(botname, "dERZKIY")) || (StrEqual(botname, "Sergiz")) || (StrEqual(botname, "dOBRIY")) || (StrEqual(botname, "Psycho")) || (StrEqual(botname, "SENSEi")))
+	{
+		CS_SetClientClanTag(client, "CR4ZY");
 	}
 }
 
@@ -13450,7 +13599,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 124;
 	}
 	
-	if (StrEqual(sClan, "dream[S]cape"))
+	if (StrEqual(sClan, "BOOM"))
 	{
 		g_iProfileRank[client] = 125;
 	}
@@ -13458,6 +13607,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "sAw"))
 	{
 		g_iProfileRank[client] = 126;
+	}
+	
+	if (StrEqual(sClan, "CR4ZY"))
+	{
+		g_iProfileRank[client] = 127;
 	}
 	
 	if (StrEqual(sClan, "OneThree"))
@@ -13560,11 +13714,6 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 147;
 	}
 	
-	if (StrEqual(sClan, "Fierce"))
-	{
-		g_iProfileRank[client] = 148;
-	}
-	
 	if (StrEqual(sClan, "Trident"))
 	{
 		g_iProfileRank[client] = 149;
@@ -13613,11 +13762,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Baecon"))
 	{
 		g_iProfileRank[client] = 158;
-	}
-	
-	if (StrEqual(sClan, "Corvidae"))
-	{
-		g_iProfileRank[client] = 159;
 	}
 	
 	if (StrEqual(sClan, "Wizards"))
