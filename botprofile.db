@@ -789,7 +789,7 @@ ProP+Rifle "RpK"
 	VoicePitch = 80
 End
 
-ProP+Rifle "ALEX"
+ProP+Rifle "Misutaaa"
 	VoicePitch = 97
 End
 
@@ -1089,7 +1089,7 @@ EliteAwp+SniperPro "slaxz"
 	VoicePitch = 106
 End
 
-ProP+Rifle "DuDe"
+ProP+Rifle "ScrunK"
 	VoicePitch = 95
 End
 
@@ -1235,11 +1235,11 @@ End
 
 //Defusekids Players
 
-ProP+Rifle "v1N"
+ProP+Rifle "HOLMES"
 	VoicePitch = 100
 End
 
-EliteAwp+SniperPro "G1DO"
+EliteAwp+SniperPro "VANITY"
 	VoicePitch = 90
 End
 
@@ -1543,7 +1543,7 @@ End
 
 //Lions Players
 
-ProP+Rifle "HUNDEN"
+ProP+Rifle "AcilioN"
 	VoicePitch = 76
 End
 
@@ -1761,47 +1761,47 @@ ProP+Rifle "NickelBack"
 	VoicePitch = 71
 End
 
-//eUnited Players
+//YaLLa Players
 
-ProP+Rifle "freakazoid"
+ProP+Rifle "Remind"
 	VoicePitch = 113
 End
 
-EliteAwp+SniperPro "Cooper-"
+EliteAwp+SniperPro "DEAD"
 	VoicePitch = 77
 End
 
-ProP+Rifle "MarKE"
+ProP+Rifle "Kheops"
 	VoicePitch = 73
 End
 
-ProP+Rifle "food"
+ProP+Rifle "Senpai"
 	VoicePitch = 92
 End
 
-ProP+Rifle "moose"
+ProP+Rifle "fredi"
 	VoicePitch = 85
 End
 
-//Mythic Players
+//Yeah Players
 
-ProP+Rifle "C0M"
+ProP+Rifle "tatazin"
 	VoicePitch = 91
 End
 
-EliteAwp+SniperPro "fl0m"
+EliteAwp+SniperPro "RCF"
 	VoicePitch = 114
 End
 
-ProP+Rifle "Katie"
+ProP+Rifle "f4stzin"
 	VoicePitch = 70
 End
 
-ProP+Rifle "DAVEY"
+ProP+Rifle "iDk"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Polen"
+ProP+Rifle "dumau"
 	VoicePitch = 91
 End
 
@@ -1983,7 +1983,7 @@ End
 
 //Avant Players
 
-ProP+Rifle "soju_j"
+ProP+Rifle "BL1TZ"
 	VoicePitch = 74
 End
 
@@ -1995,7 +1995,7 @@ ProP+Rifle "apoc"
 	VoicePitch = 114
 End
 
-ProP+Rifle "J1rah"
+ProP+Rifle "ofnu"
 	VoicePitch = 88
 End
 
@@ -2027,7 +2027,7 @@ End
 
 //ORDER Players
 
-ProP+Rifle "emagine"
+ProP+Rifle "J1rah"
 	VoicePitch = 88
 End
 
@@ -2225,23 +2225,23 @@ End
 
 //NASR Players
 
-ProP+Rifle "breAker"
+ProP+Rifle "proxyyb"
 	VoicePitch = 73
 End
 
-EliteAwp+SniperPro "Nami"
+EliteAwp+SniperPro "Real1ze"
 	VoicePitch = 96
 End
 
-ProP+Rifle "Ejram"
+ProP+Rifle "BOROS"
 	VoicePitch = 113
 End
 
-ProP+Rifle "havoK"
+ProP+Rifle "aLvAr-"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Pogba"
+ProP+Rifle "Just1ce"
 	VoicePitch = 71
 End
 
@@ -2391,7 +2391,7 @@ ProP+Rifle "niox"
 	VoicePitch = 100
 End
 
-ProP+Rifle "nicolaszo"
+ProP+Rifle "iKrystal"
 	VoicePitch = 76
 End
 
@@ -2607,7 +2607,7 @@ EliteAwp+SniperPro "Quasar GT"
 	VoicePitch = 95
 End
 
-ProP+Rifle "MDK"
+ProP+Rifle "clutchyy"
 	VoicePitch = 94
 End
 
@@ -2969,28 +2969,6 @@ End
 
 ProP+Rifle "DEVIL"
 	VoicePitch = 78
-End
-
-//Absolute Players
-
-ProP+Rifle "crow"
-	VoicePitch = 101
-End
-
-EliteAwp+SniperPro "Laz"
-	VoicePitch = 83
-End
-
-ProP+Rifle "barce"
-	VoicePitch = 97
-End
-
-ProP+Rifle "takej"
-	VoicePitch = 108
-End
-
-ProP+Rifle "Reita"
-	VoicePitch = 111
 End
 
 //KPI Players
@@ -3690,6 +3668,28 @@ ProP+Rifle "Psycho"
 End
 
 ProP+Rifle "SENSEi"
+	VoicePitch = 106
+End
+
+//Redemption Players
+
+ProP+Rifle "drg"
+	VoicePitch = 110
+End
+
+EliteAwp+SniperPro "ALLE"
+	VoicePitch = 94
+End
+
+ProP+Rifle "remix"
+	VoicePitch = 84
+End
+
+ProP+Rifle "sutecas"
+	VoicePitch = 113
+End
+
+ProP+Rifle "dok"
 	VoicePitch = 106
 End
 
@@ -5415,10 +5415,6 @@ End
 
 Normal+Spray Andy
         VoicePitch = 108
-End
-
-Normal+Spray Senpai
-        VoicePitch = 81
 End
 
 NormalSNIPER+AutoSniper Pete
