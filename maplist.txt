@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Tue Mar 10 17:36:28 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Mon Mar 16 21:38:09 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -155,7 +155,6 @@ fy_rocks
 fy_sandstone_t0
 fy_simpsons_h
 fy_twotowers
-gd_cbble
 gd_rialto
 genx_brickworld3
 gg_aim_shotty_csgo

@@ -991,7 +991,7 @@ ProP+Rifle "denis"
 	VoicePitch = 72
 End
 
-//Heroic Players
+//FPX Players
 
 ProP+Rifle "es3tag"
 	VoicePitch = 100
@@ -1155,15 +1155,15 @@ EliteAwp+SniperPro "ryann"
 	VoicePitch = 71
 End
 
-ProP+Rifle "Eley"
+ProP+Rifle "Calyx"
 	VoicePitch = 74
 End
 
-ProP+Rifle "ANDROID"
+ProP+Rifle "MICHU"
 	VoicePitch = 73
 End
 
-ProP+Rifle "FugLy"
+ProP+Rifle "moose"
 	VoicePitch = 105
 End
 
@@ -1697,7 +1697,7 @@ End
 
 //Heretics Players
 
-ProP+Rifle "jeyN"
+ProP+Rifle "Nivera"
 	VoicePitch = 114
 End
 
@@ -2511,11 +2511,11 @@ End
 
 //BTRG Players
 
-ProP+Rifle "Eeyore"
+ProP+Rifle "HeiB"
 	VoicePitch = 81
 End
 
-EliteAwp+SniperPro "Drea3er"
+EliteAwp+SniperPro "zWin"
 	VoicePitch = 110
 End
 
@@ -2647,7 +2647,7 @@ ProP+Rifle "k4Mi"
 	VoicePitch = 82
 End
 
-EliteAwp+SniperPro "zWin"
+EliteAwp+SniperPro "FB"
 	VoicePitch = 92
 End
 
@@ -3253,7 +3253,7 @@ ProP+Rifle "steel_"
 	VoicePitch = 102
 End
 
-ProP+Rifle "ben1337"
+ProP+Rifle "SicK"
 	VoicePitch = 111
 End
 
@@ -3411,25 +3411,25 @@ ProP+Rifle "ISSAA"
 	VoicePitch = 103
 End
 
-//LiViD Players
+//Reason Players
 
-ProP+Rifle "huynh"
+ProP+Rifle "Frei"
 	VoicePitch = 94
 End
 
-EliteAwp+SniperPro "MkaeL"
+EliteAwp+SniperPro "Astroo"
 	VoicePitch = 79
 End
 
-ProP+Rifle "INCRED"
+ProP+Rifle "jenko"
 	VoicePitch = 82
 End
 
-ProP+Rifle "gMd"
+ProP+Rifle "Puls3"
 	VoicePitch = 92
 End
 
-ProP+Rifle "c4Lypso"
+ProP+Rifle "stan1ey"
 	VoicePitch = 88
 End
 
@@ -3565,7 +3565,7 @@ ProP+Rifle "lato"
 	VoicePitch = 95
 End
 
-//Maple Players
+//ZIGMA Players
 
 ProP+Rifle "NIFFY"
 	VoicePitch = 81
@@ -3583,7 +3583,7 @@ ProP+Rifle "PPOverdose"
 	VoicePitch = 108
 End
 
-ProP+Rifle "fluke0137"
+ProP+Rifle "RoLEX"
 	VoicePitch = 72
 End
 
@@ -3601,7 +3601,7 @@ ProP+Rifle "zeq"
 	VoicePitch = 108
 End
 
-ProP+Rifle "bazzy"
+ProP+Rifle "Lukki"
 	VoicePitch = 113
 End
 
@@ -3647,6 +3647,10 @@ End
 
 ProP+Rifle "kade0"
 	VoicePitch = 88
+End
+
+ProP+Rifle "spellfull"
+	VoicePitch = 106
 End
 
 //CR4ZY Players
