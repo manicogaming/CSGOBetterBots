@@ -1587,7 +1587,7 @@ End
 
 //OFFSET Players
 
-ProP+Rifle "RIZZ"
+ProP+Rifle "sc4rx"
 	VoicePitch = 94
 End
 
@@ -1603,7 +1603,7 @@ ProP+Rifle "ZELIN"
 	VoicePitch = 77
 End
 
-ProP+Rifle "kst"
+ProP+Rifle "drifking"
 	VoicePitch = 110
 End
 
@@ -2581,7 +2581,7 @@ ProP+Rifle "FlashBack"
 	VoicePitch = 101
 End
 
-EliteAwp+SniperPro "REDSTAR"
+EliteAwp+SniperPro "viltrex"
 	VoicePitch = 72
 End
 
@@ -2995,7 +2995,7 @@ End
 
 //PlanetKey Players
 
-ProP+Rifle "xenn"
+ProP+Rifle "NinoZjE"
 	VoicePitch = 106
 End
 

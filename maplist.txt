@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Mon Mar 16 21:38:09 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Thu Mar 19 00:48:40 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -190,6 +190,7 @@ gg_wowarena_papys_aperos
 iv_de_dustworld
 iv_de_stoneworld
 joey_twosided
+ka_beams_s
 ka_rainbow
 ka_swim_pool
 kills_ct

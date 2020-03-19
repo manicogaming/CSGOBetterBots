@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"knas_bunker_css"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.140000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.860000"
+	"material" "overviews/knas_bunker_css"
+	"pos_x" "-1152.000000"
+	"pos_y" "1152.000000"
+	"scale" "2.250000"
+}

@@ -69,7 +69,8 @@ char g_sUSPModels[][] = {
 	"models/weapons/v_uspstickers10.mdl",
 	"models/weapons/v_uspstickers11.mdl",
 	"models/weapons/v_uspstickers12.mdl",
-	"models/weapons/v_uspstickers13.mdl"
+	"models/weapons/v_uspstickers13.mdl",
+	"models/weapons/v_uspstickers14.mdl"
 };
 
 char g_sP2000Models[][] = {
@@ -97,7 +98,8 @@ char g_sP250Models[][] = {
 	"models/weapons/v_p250stickers3.mdl",
 	"models/weapons/v_p250stickers4.mdl",
 	"models/weapons/v_p250stickers5.mdl",
-	"models/weapons/v_p250stickers6.mdl"
+	"models/weapons/v_p250stickers6.mdl",
+	"models/weapons/v_p250stickers7.mdl"
 };
 
 char g_sFiveSevenModels[][] = {
@@ -304,7 +306,9 @@ char g_sAWPModels[][] = {
 	"models/weapons/v_awpstickers52.mdl",
 	"models/weapons/v_awpstickers53.mdl",
 	"models/weapons/v_awpstickers54.mdl",
-	"models/weapons/v_awpstickers55.mdl"
+	"models/weapons/v_awpstickers55.mdl",
+	"models/weapons/v_awpstickers56.mdl",
+	"models/weapons/v_awpstickers57.mdl"
 };
 
 char g_sSSG08Models[][] = {
@@ -362,7 +366,8 @@ char g_sM4A1SModels[][] = {
 	"models/weapons/v_m4a1sstickers37.mdl",
 	"models/weapons/v_m4a1sstickers38.mdl",
 	"models/weapons/v_m4a1sstickers39.mdl",
-	"models/weapons/v_m4a1sstickers40.mdl"
+	"models/weapons/v_m4a1sstickers40.mdl",
+	"models/weapons/v_m4a1sstickers41.mdl"
 };
 
 char g_sAK47Models[][] = {
@@ -485,7 +490,8 @@ char g_sAK47Models[][] = {
 	"models/weapons/v_ak47stickers117.mdl",
 	"models/weapons/v_ak47stickers118.mdl",
 	"models/weapons/v_ak47stickers119.mdl",
-	"models/weapons/v_ak47stickers120.mdl"
+	"models/weapons/v_ak47stickers120.mdl",
+	"models/weapons/v_ak47stickers121.mdl"
 };
 
 char g_sBotName[][] = {
@@ -808,11 +814,11 @@ char g_sBotName[][] = {
 	"alex*",
 	"loWel",
 	//OFFSET Players
-	"RIZZ",
+	"sc4rx",
 	"obj",
 	"zlynx",
 	"ZELIN",
-	"kst",
+	"drifking",
 	//x6tence Players
 	"NikoM",
 	"JonY BoY",
@@ -1079,7 +1085,7 @@ char g_sBotName[][] = {
 	"Nodios",
 	//BPro Players
 	"FlashBack",
-	"REDSTAR",
+	"viltrex",
 	"POP0V",
 	"Krs7N",
 	"milly",
@@ -1192,11 +1198,11 @@ char g_sBotName[][] = {
 	"donQ",
 	"NaOw",
 	//PlanetKey Players
-	"stefank0k0",
-	"ACTiV",
-	"Cargo",
-	"Krabbe",
-	"Simply",
+	"NinoZjE",
+	"s1n",
+	"skyye",
+	"Kirby",
+	"yannick1h",
 	//mCon Players
 	"k1Nzo",
 	"shaGGy",
@@ -3153,22 +3159,22 @@ public Action Team_OFFSET(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "RIZZ");
+		ServerCommand("bot_add_ct %s", "sc4rx");
 		ServerCommand("bot_add_ct %s", "obj");
 		ServerCommand("bot_add_ct %s", "zlynx");
 		ServerCommand("bot_add_ct %s", "ZELIN");
-		ServerCommand("bot_add_ct %s", "kst");
+		ServerCommand("bot_add_ct %s", "drifking");
 		ServerCommand("mp_teamlogo_1 offs");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "RIZZ");
+		ServerCommand("bot_add_t %s", "sc4rx");
 		ServerCommand("bot_add_t %s", "obj");
 		ServerCommand("bot_add_t %s", "zlynx");
 		ServerCommand("bot_add_t %s", "ZELIN");
-		ServerCommand("bot_add_t %s", "kst");
+		ServerCommand("bot_add_t %s", "drifking");
 		ServerCommand("mp_teamlogo_2 offs");
 	}
 	
@@ -4504,7 +4510,7 @@ public Action Team_BPro(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "FlashBack");
-		ServerCommand("bot_add_ct %s", "REDSTAR");
+		ServerCommand("bot_add_ct %s", "viltrex");
 		ServerCommand("bot_add_ct %s", "POP0V");
 		ServerCommand("bot_add_ct %s", "Krs7N");
 		ServerCommand("bot_add_ct %s", "milly");
@@ -4515,7 +4521,7 @@ public Action Team_BPro(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "FlashBack");
-		ServerCommand("bot_add_t %s", "REDSTAR");
+		ServerCommand("bot_add_t %s", "viltrex");
 		ServerCommand("bot_add_t %s", "POP0V");
 		ServerCommand("bot_add_t %s", "Krs7N");
 		ServerCommand("bot_add_t %s", "milly");
@@ -5073,22 +5079,22 @@ public Action Team_PlanetKey(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "stefank0k0");
-		ServerCommand("bot_add_ct %s", "ACTiV");
-		ServerCommand("bot_add_ct %s", "Cargo");
-		ServerCommand("bot_add_ct %s", "Krabbe");
-		ServerCommand("bot_add_ct %s", "Simply");
+		ServerCommand("bot_add_ct %s", "NinoZjE");
+		ServerCommand("bot_add_ct %s", "s1n");
+		ServerCommand("bot_add_ct %s", "skyye");
+		ServerCommand("bot_add_ct %s", "Kirby");
+		ServerCommand("bot_add_ct %s", "yannick1h");
 		ServerCommand("mp_teamlogo_1 planet");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "stefank0k0");
-		ServerCommand("bot_add_t %s", "ACTiV");
-		ServerCommand("bot_add_t %s", "Cargo");
-		ServerCommand("bot_add_t %s", "Krabbe");
-		ServerCommand("bot_add_t %s", "Simply");
+		ServerCommand("bot_add_t %s", "NinoZjE");
+		ServerCommand("bot_add_t %s", "s1n");
+		ServerCommand("bot_add_t %s", "skyye");
+		ServerCommand("bot_add_t %s", "Kirby");
+		ServerCommand("bot_add_t %s", "yannick1h");
 		ServerCommand("mp_teamlogo_2 planet");
 	}
 
@@ -6054,7 +6060,6 @@ public void OnClientPostAdminCheck(int client)
 	SetCustomPrivateRank(client);
 	
 	SDKHook(client, SDKHook_WeaponSwitch, Hook_WeaponSwitch);
-	SDKHook(client, SDKHook_WeaponEquip, OnWeaponEquip);
 	SDKHook(client, SDKHook_WeaponEquipPost, OnWeaponEquipPost);
 }
 
@@ -6122,6 +6127,3298 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 		else if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
 		{
 			return Plugin_Handled;
+		}
+	}
+	
+	int index = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
+	
+	if(IsValidClient(client))
+	{	
+		if(GetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nModelIndex") != 0)
+		{
+			switch(index)
+			{
+				case 61:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 504:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 653:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 705:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 339:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 313:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 221:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 817:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 637:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 290:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 183:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 60:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 318:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 657:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 540:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 489:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 217:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 277:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 796:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 364:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 236:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 443:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 454:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 332:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 25:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+					}
+				}
+				case 32:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 389:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 591:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 184:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 211:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 894:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 667:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 485:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 246:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 71:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 700:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 635:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 550:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 515:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 357:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 338:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 275:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 32:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 443:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 346:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 95:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 21:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 104:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+					}
+				}
+				case 4:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 586:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 353:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 437:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 694:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 607:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 532:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 381:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 230:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 48:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 732:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 789:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 38:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 159:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 918:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 808:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 713:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 680:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 623:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 495:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 479:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 399:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 278:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 367:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 799:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 40:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 293:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 2:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 208:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+					}
+				}
+				case 36:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 678:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 551:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 404:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 388:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 271:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 258:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 295:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 907:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 125:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 813:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 668:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 501:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 358:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 162:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 749:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 168:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 848:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 650:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 592:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 426:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 230:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 219:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 786:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 102:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 164:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 741:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 466:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+						case 373:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 34:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
+						}
+						case 207:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
+						}
+						case 15:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 33);
+						}
+						case 777:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 467:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 34);
+						}
+						case 77:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 35);
+						}
+						case 99:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 27:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 36);
+						}
+					}
+				}
+				case 3:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 837:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 660:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 427:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 352:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 906:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 530:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 510:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 274:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 44:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 464:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 693:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 646:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 605:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 585:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 387:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 223:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 265:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 729:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 254:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 252:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 377:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 141:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 784:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 46:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 78:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 210:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 151:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+					}
+				}
+				case 63:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 270:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 643:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 476:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 269:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 709:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 687:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 543:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 435:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 350:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 268:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 325:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 622:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 602:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 218:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 334:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 315:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 12:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 859:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 453:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 322:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 297:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 333:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 298:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 366:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+					}
+				}
+				case 30:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 889:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 614:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 791:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 839:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 555:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 520:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 272:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 248:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 179:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 905:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 816:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 722:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 684:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 671:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 599:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 539:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 303:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 289:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 216:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 463:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 374:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 159:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 36:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 733:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 738:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 439:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 235:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 459:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 17:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 242:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+						case 2:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
+						}
+						case 206:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
+						}
+					}
+				}
+				case 1:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 711:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 185:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 805:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 527:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 351:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 231:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 61:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 841:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 603:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 397:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 232:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 273:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 757:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 470:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 469:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 328:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 347:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 37:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 645:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 509:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 425:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 296:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 237:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 40:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 468:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 17:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 90:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+					}
+				}
+				case 2:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 658:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 747:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 625:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 396:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 261:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 220:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 447:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 249:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 153:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 895:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 903:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 710:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 544:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 528:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 491:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 307:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 276:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 190:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 453:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 28:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 860:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 43:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 450:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 330:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 46:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 47:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+					}
+				}
+				case 35:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 537:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 62:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 286:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 716:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 699:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 634:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 356:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 263:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 214:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 746:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 890:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 809:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 590:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 484:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 225:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 191:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 164:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 166:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 294:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 299:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 785:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 450:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 99:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 107:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 170:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 25:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 158:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+					}
+				}
+				case 25:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 850:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 393:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 689:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 654:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 557:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 521:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 314:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 706:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 616:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 505:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 407:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 320:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 760:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 370:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 348:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 238:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 166:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 731:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 42:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 240:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 169:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 96:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 205:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 95:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 135:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+					}
+				}
+				case 14:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 902:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 648:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 496:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 900:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 547:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 401:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 266:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 452:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 243:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 75:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 151:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 472:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 22:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 202:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+					}
+				}
+				case 34:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 910:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 609:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 734:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 679:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 482:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 262:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 61:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 867:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 39:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 804:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 715:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 697:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 630:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 549:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 403:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 386:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 448:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 368:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 329:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 33:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 141:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 755:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 100:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 366:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 148:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 199:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+					}
+				}
+				case 17:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 898:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 433:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 812:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 651:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 402:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 337:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 310:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 284:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 188:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 742:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 908:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 840:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 682:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 665:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 589:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 534:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 498:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 98:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 761:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+						case 38:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 372:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 246:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 748:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 343:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 32:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 157:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 871:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
+						}
+						case 333:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 101:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 17:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+					}
+				}
+				case 33:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 696:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 481:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 893:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 719:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 536:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 500:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 213:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 752:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 847:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 649:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 627:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 423:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 354:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 11:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 728:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 250:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 28:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 102:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 782:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 15:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 141:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 175:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 442:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 365:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 5:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 245:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 209:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+					}
+				}
+				case 23:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 810:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 915:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 846:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 800:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 888:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 781:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 872:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 753:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+					}
+				}
+				case 24:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 802:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 556:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 916:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 851:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 704:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 688:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 652:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 436:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 672:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 615:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 488:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 392:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 362:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 281:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 193:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 725:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 441:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 37:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 70:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 15:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 169:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 778:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 90:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 333:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 175:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 17:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 93:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+					}
+				}
+				case 19:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 359:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 156:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 911:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 636:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 516:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 283:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 67:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 182:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 669:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 593:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 20:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 228:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 759:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 849:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 717:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 611:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 486:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 335:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 311:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 744:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 776:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 244:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 111:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 726:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 342:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 234:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 169:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 100:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 175:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 124:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+					}
+				}
+				case 26:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 542:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 676:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 884:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 508:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 13:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 349:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 306:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 692:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 641:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 594:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 526:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 224:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 267:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 159:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 203:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 164:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 3:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 376:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 236:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 70:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 873:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 775:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 457:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 148:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 149:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 25:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 171:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+					}
+				}
+				case 13:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 398:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 661:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 428:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 807:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 647:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 546:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 494:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 83:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 379:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 842:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 629:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 478:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 308:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 216:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 264:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 192:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 460:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 297:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 790:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 237:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 235:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 76:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 101:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 119:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 241:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+					}
+				}
+				case 10:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 919:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 604:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 723:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 626:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 429:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 154:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 529:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 477:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 288:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 260:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 371:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 194:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 904:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 835:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 659:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 492:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 218:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 178:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 869:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 244:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 92:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 863:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 47:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 22:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+					}
+				}
+				case 16:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 309:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 844:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 695:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 632:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 533:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 512:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 155:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 336:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 255:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 215:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 664:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 588:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 400:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 449:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 480:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 384:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 187:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 471:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 164:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 811:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 176:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 793:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 167:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 730:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 780:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 17:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 101:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 16:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 8:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+					}
+				}
+				case 39:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 897:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 487:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 750:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 686:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 613:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 519:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 287:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 39:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 815:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 702:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 598:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 553:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 186:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 98:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 28:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 247:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 864:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 378:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 363:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 243:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 861:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 298:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 136:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 101:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+					}
+				}
+				case 8:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 280:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 455:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 913:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 845:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 690:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 601:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 541:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 9:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 886:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 583:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 305:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 758:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 727:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 779:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 708:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 674:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 507:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 73:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 197:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 33:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 10:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 375:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 740:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 794:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 444:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 46:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 100:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 47:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+					}
+				}
+				case 9:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 887:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 917:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 803:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 662:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 475:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 395:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 279:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 51:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 736:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 756:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 446:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 344:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 691:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 640:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 525:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 181:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 227:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 259:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 212:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 174:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 838:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 718:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 584:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 424:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 84:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 251:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 788:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 30:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+						case 451:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 72:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+					}
+				}
+				case 40:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 624:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 222:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 899:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 503:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 670:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 554:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 868:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 538:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 60:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 361:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 304:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 743:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 751:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 319:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 253:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 233:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 200:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 762:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 99:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 96:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 26:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+					}
+				}
+				case 38:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 597:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 391:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 312:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 165:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 612:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 196:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 896:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 914:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 685:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 642:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 518:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 502:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 406:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 232:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 159:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 70:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 157:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 865:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 298:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 100:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 46:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 116:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+					}
+				}
+				case 11:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 511:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 493:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 806:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 712:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 628:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 438:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 891:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 677:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 606:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 545:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 382:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 229:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 195:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 739:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 294:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 235:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 6:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 465:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 46:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 147:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 74:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 72:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 8:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+					}
+				}
+				case 60:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 587:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 548:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 497:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 430:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 360:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 714:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 681:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 644:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 301:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 257:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 792:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 445:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 326:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 321:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 631:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 383:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 189:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 60:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 440:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+						case 254:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 663:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 217:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 235:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 862:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 77:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+					}
+				}
+				case 7:
+				{
+					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
+					{
+						case 801:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
+						}
+						case 707:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
+						}
+						case 675:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
+						}
+						case 639:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
+						}
+						case 600:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
+						}
+						case 524:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
+						}
+						case 474:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
+						}
+						case 380:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
+						}
+						case 316:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
+						}
+						case 302:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
+						}
+						case 180:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
+						}
+						case 724:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
+						}
+						case 506:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
+						}
+						case 490:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
+						}
+						case 394:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
+						}
+						case 282:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
+						}
+						case 14:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
+						}
+						case 44:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
+						}
+						case 456:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
+						}
+						case 340:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
+						}
+						case 885:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
+						}
+						case 656:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
+						}
+						case 226:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
+						}
+						case 795:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
+						}
+						case 341:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
+						}
+						case 300:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
+						}
+						case 836:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
+						}
+						case 422:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
+						}
+						case 172:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
+						}
+						case 745:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
+						}
+						case 72:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
+						}
+						case 122:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 33);
+						}
+						case 170:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
+						}
+					}
+				}
+			}
 		}
 	}
 	return Plugin_Continue;
@@ -6569,13 +9866,8 @@ public void OnWeaponEquipPost(int client, int weapon)
 	int index = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
 	
 	if(IsValidClient(client) && IsFakeClient(client))
-	{
-		if(index != 43 && index != 44 && index != 45 && index != 46 && index != 47 && index != 48)
-		{
-			SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", weapon); 
-		}
-		
-		if(GetEntPropEnt(weapon, Prop_Send, "m_hOwnerEntity") == client)
+	{		
+		if(GetEntPropEnt(weapon, Prop_Send, "m_hPrevOwner") == -1)
 		{
 			if(GetRandomInt(1,100) <= 25)
 			{
@@ -11222,3301 +14514,6 @@ public void OnWeaponEquipPost(int client, int weapon)
 	}
 }
 
-public void OnWeaponEquip(int client, int weapon)
-{
-	int index = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
-	
-	if(IsValidClient(client))
-	{	
-		if(GetEntProp(weapon, Prop_Send, "m_nModelIndex") != 0)
-		{
-			switch(index)
-			{
-				case 61:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 504:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 653:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 705:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 339:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 313:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 221:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 817:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 637:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 290:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 183:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 60:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 318:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 657:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 540:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 489:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 217:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 277:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 796:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 364:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 236:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 443:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 454:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 332:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 25:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-					}
-				}
-				case 32:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 389:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 591:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 184:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 211:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 894:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 667:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 485:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 246:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 71:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 700:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 635:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 550:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 515:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 357:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 338:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 275:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 32:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 443:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 346:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 95:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 21:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 104:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-					}
-				}
-				case 4:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 586:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 353:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 437:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 694:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 607:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 532:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 381:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 230:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 48:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 732:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 789:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 38:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 159:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 918:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 808:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 713:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 680:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 623:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 495:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 479:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 399:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 278:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 367:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 3:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 799:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 40:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 293:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 2:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 208:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-					}
-				}
-				case 36:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 678:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 551:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 404:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 388:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 271:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 258:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 295:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 907:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 125:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 813:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 668:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 501:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 358:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 162:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 749:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 168:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 848:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 650:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 592:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 426:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 230:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 219:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 786:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 102:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 164:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 741:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 466:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-						case 373:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 34:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
-						}
-						case 207:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
-						}
-						case 15:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 33);
-						}
-						case 777:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 467:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 34);
-						}
-						case 77:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 35);
-						}
-						case 99:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 27:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 36);
-						}
-					}
-				}
-				case 3:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 837:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 660:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 427:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 352:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 906:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 530:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 510:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 274:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 44:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 464:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 693:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 646:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 605:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 585:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 387:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 223:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 265:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 729:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 254:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 252:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 377:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 141:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 3:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 784:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 46:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 78:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 210:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 151:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-					}
-				}
-				case 63:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 270:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 643:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 476:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 269:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 709:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 687:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 543:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 435:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 350:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 268:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 325:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 622:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 602:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 218:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 334:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 315:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 12:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 859:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 453:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 322:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 297:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 333:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 298:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 366:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-					}
-				}
-				case 30:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 889:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 614:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 791:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 839:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 555:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 520:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 272:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 248:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 179:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 905:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 816:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 722:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 684:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 671:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 599:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 539:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 303:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 289:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 216:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 463:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 374:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 159:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 36:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 733:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 738:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 439:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 235:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 459:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 17:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 242:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-						case 2:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
-						}
-						case 206:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
-						}
-					}
-				}
-				case 1:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 711:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 185:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 805:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 527:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 351:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 231:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 61:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 841:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 603:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 397:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 232:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 273:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 757:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 470:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 469:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 328:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 347:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 37:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 645:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 509:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 425:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 296:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 237:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 40:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 468:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 17:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 90:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-					}
-				}
-				case 2:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 658:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 747:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 625:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 396:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 261:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 220:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 447:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 249:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 153:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 895:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 903:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 710:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 544:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 528:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 491:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 307:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 276:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 190:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 453:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 28:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 860:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 43:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 450:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 330:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 46:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 47:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-					}
-				}
-				case 35:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 537:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 62:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 286:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 716:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 699:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 634:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 356:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 263:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 214:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 746:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 890:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 809:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 590:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 484:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 225:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 191:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 164:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 166:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 294:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 299:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 3:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 785:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 450:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 99:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 107:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 170:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 25:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 158:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-					}
-				}
-				case 25:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 850:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 393:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 689:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 654:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 557:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 521:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 314:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 706:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 616:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 505:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 407:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 320:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 760:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 370:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 348:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 238:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 166:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 731:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 42:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 240:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 169:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 96:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 205:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 95:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 135:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-					}
-				}
-				case 14:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 902:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 648:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 496:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 900:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 547:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 401:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 266:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 452:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 243:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 75:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 151:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 472:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 22:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 202:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-					}
-				}
-				case 34:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 910:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 609:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 734:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 679:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 482:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 262:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 61:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 867:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 39:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 804:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 715:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 697:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 630:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 549:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 403:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 386:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 448:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 368:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 329:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 33:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 141:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 755:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 100:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 366:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 148:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 199:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-					}
-				}
-				case 17:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 898:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 433:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 812:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 651:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 402:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 337:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 310:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 284:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 188:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 742:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 908:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 840:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 682:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 665:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 589:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 534:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 498:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 98:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 761:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-						case 38:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 372:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 246:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 748:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 343:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 32:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 3:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 157:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 871:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
-						}
-						case 333:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 101:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 17:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-					}
-				}
-				case 33:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 696:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 481:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 893:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 719:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 536:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 500:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 213:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 752:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 847:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 649:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 627:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 423:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 354:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 11:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 728:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 250:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 28:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 102:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 782:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 15:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 141:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 175:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 442:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 365:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 5:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 245:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 209:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-					}
-				}
-				case 23:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 810:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 915:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 846:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 800:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 888:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 781:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 872:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 753:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-					}
-				}
-				case 24:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 802:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 556:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 916:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 851:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 704:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 688:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 652:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 436:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 672:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 615:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 488:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 392:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 362:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 281:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 193:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 725:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 441:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 37:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 70:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 15:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 169:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 778:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 90:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 333:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 175:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 17:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 93:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-					}
-				}
-				case 19:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 359:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 156:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 911:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 636:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 516:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 283:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 67:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 182:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 669:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 593:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 20:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 228:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 759:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 849:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 717:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 611:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 486:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 335:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 311:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 744:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 776:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 244:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 111:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 726:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 342:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 234:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 169:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 100:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 175:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 124:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-					}
-				}
-				case 26:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 542:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 676:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 884:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 508:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 13:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 349:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 306:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 692:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 641:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 594:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 526:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 224:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 267:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 159:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 203:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 164:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 3:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 376:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 236:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 70:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 873:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 775:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 457:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 148:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 149:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 25:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 171:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-					}
-				}
-				case 13:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 398:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 661:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 428:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 807:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 647:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 546:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 494:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 83:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 379:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 842:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 629:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 478:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 308:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 216:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 264:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 192:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 460:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 297:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 790:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 237:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 235:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 76:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 101:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 119:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 241:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-					}
-				}
-				case 10:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 919:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 604:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 723:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 626:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 429:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 154:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 529:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 477:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 288:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 260:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 371:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 194:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 904:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 835:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 659:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 492:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 218:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 178:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 869:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 244:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 92:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 863:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 47:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 22:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-					}
-				}
-				case 16:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 309:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 844:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 695:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 632:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 533:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 512:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 155:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 336:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 255:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 215:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 664:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 588:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 400:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 449:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 480:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 384:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 187:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 471:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 164:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 811:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 176:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 793:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 167:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 730:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 780:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 17:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 101:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 16:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 8:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-					}
-				}
-				case 39:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 897:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 487:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 750:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 686:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 613:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 519:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 287:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 39:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 815:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 702:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 598:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 553:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 186:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 98:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 28:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 247:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 864:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 378:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 363:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 243:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 861:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 298:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 136:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 101:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-					}
-				}
-				case 8:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 280:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 455:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 913:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 845:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 690:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 601:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 541:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 9:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 886:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 583:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 305:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 758:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 727:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 779:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 708:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 674:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 507:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 73:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 197:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 33:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 10:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 375:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 740:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 794:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 444:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 46:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 100:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 47:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-					}
-				}
-				case 9:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 887:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 917:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 803:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 662:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 475:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 395:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 279:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 51:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 736:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 756:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 446:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 344:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 691:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 640:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 525:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 181:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 227:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 259:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 212:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 174:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 838:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 718:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 584:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 424:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 84:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 251:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 788:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 30:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-						case 451:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 72:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-					}
-				}
-				case 40:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 624:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 222:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 899:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 503:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 670:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 554:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 868:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 538:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 60:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 361:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 304:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 743:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 751:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 319:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 253:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 233:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 200:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 762:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 99:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 96:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 26:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-					}
-				}
-				case 38:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 597:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 391:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 312:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 165:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 612:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 196:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 896:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 914:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 685:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 642:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 518:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 502:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 406:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 232:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 159:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 70:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 157:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 865:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 298:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 100:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 46:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 116:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-					}
-				}
-				case 11:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 511:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 493:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 806:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 712:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 628:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 438:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 891:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 677:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 606:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 545:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 382:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 229:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 195:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 739:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 294:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 235:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 6:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 465:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 46:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 147:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 74:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 72:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 8:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-					}
-				}
-				case 60:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 587:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 548:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 497:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 430:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 360:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 714:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 681:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 644:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 301:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 257:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 792:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 445:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 326:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 321:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 631:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 383:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 189:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 60:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 440:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-						case 254:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 663:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 217:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 235:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 862:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 77:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-					}
-				}
-				case 7:
-				{
-					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
-					{
-						case 801:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
-						}
-						case 707:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 15);
-						}
-						case 675:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
-						}
-						case 639:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
-						}
-						case 600:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 18);
-						}
-						case 524:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 7);
-						}
-						case 474:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 19);
-						}
-						case 380:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 20);
-						}
-						case 316:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
-						}
-						case 302:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
-						}
-						case 180:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 9);
-						}
-						case 724:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 21);
-						}
-						case 506:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
-						}
-						case 490:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 23);
-						}
-						case 394:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
-						}
-						case 282:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
-						}
-						case 14:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 25);
-						}
-						case 44:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
-						}
-						case 456:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
-						}
-						case 340:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 27);
-						}
-						case 885:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 28);
-						}
-						case 656:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 5);
-						}
-						case 226:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
-						}
-						case 795:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
-						}
-						case 341:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
-						}
-						case 300:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 29);
-						}
-						case 836:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 30);
-						}
-						case 422:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 31);
-						}
-						case 172:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
-						}
-						case 745:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 32);
-						}
-						case 72:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
-						}
-						case 122:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 33);
-						}
-						case 170:
-						{
-							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 public Action OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 {
 	int userid = event.GetInt("userid");
@@ -14796,7 +14793,6 @@ public void OnClientDisconnect(int client)
 		g_iCoin[client] = 0;
 		g_iProfileRank[client] = 0;
 		SDKUnhook(client, SDKHook_WeaponSwitch, Hook_WeaponSwitch);
-		SDKUnhook(client, SDKHook_WeaponEquip, OnWeaponEquip);
 		SDKUnhook(client, SDKHook_WeaponEquipPost, OnWeaponEquipPost);
 	}
 }
@@ -15622,7 +15618,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//OFFSET Players
-	if((StrEqual(botname, "RIZZ")) || (StrEqual(botname, "obj")) || (StrEqual(botname, "zlynx")) || (StrEqual(botname, "ZELIN")) || (StrEqual(botname, "kst")))
+	if((StrEqual(botname, "sc4rx")) || (StrEqual(botname, "obj")) || (StrEqual(botname, "zlynx")) || (StrEqual(botname, "ZELIN")) || (StrEqual(botname, "drifking")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}
@@ -15892,7 +15888,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//BPro Players
-	if((StrEqual(botname, "FlashBack")) || (StrEqual(botname, "REDSTAR")) || (StrEqual(botname, "POP0V")) || (StrEqual(botname, "Krs7N")) || (StrEqual(botname, "milly")))
+	if((StrEqual(botname, "FlashBack")) || (StrEqual(botname, "viltrex")) || (StrEqual(botname, "POP0V")) || (StrEqual(botname, "Krs7N")) || (StrEqual(botname, "milly")))
 	{
 		CS_SetClientClanTag(client, "BPro");
 	}
@@ -16006,7 +16002,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//PlanetKey Players
-	if((StrEqual(botname, "stefank0k0")) || (StrEqual(botname, "ACTiV")) || (StrEqual(botname, "Cargo")) || (StrEqual(botname, "Krabbe")) || (StrEqual(botname, "Simply")))
+	if((StrEqual(botname, "NinoZjE")) || (StrEqual(botname, "s1n")) || (StrEqual(botname, "skyye")) || (StrEqual(botname, "Kirby")) || (StrEqual(botname, "yannick1h")))
 	{
 		CS_SetClientClanTag(client, "PlanetKey");
 	}

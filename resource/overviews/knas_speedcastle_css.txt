@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"knas_speedcastle_css"
+{
+	"CTSpawn_x" "0.780000"
+	"CTSpawn_y" "0.240000"
+	"TSpawn_x" "0.200000"
+	"TSpawn_y" "0.780000"
+	"material" "overviews/knas_speedcastle_css"
+	"pos_x" "-1920.000000"
+	"pos_y" "2304.000000"
+	"scale" "3.810000"
+}
