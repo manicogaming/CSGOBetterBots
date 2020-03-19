@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"m_maze"
+{
+	"CTSpawn_x" "-0.010000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "-0.020000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/m_maze"
+	"pos_x" "-640.000000"
+	"pos_y" "1568.000000"
+	"scale" "2.560000"
+}

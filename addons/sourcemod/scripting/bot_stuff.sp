@@ -308,7 +308,8 @@ char g_sAWPModels[][] = {
 	"models/weapons/v_awpstickers54.mdl",
 	"models/weapons/v_awpstickers55.mdl",
 	"models/weapons/v_awpstickers56.mdl",
-	"models/weapons/v_awpstickers57.mdl"
+	"models/weapons/v_awpstickers57.mdl",
+	"models/weapons/v_awpstickers58.mdl"
 };
 
 char g_sSSG08Models[][] = {

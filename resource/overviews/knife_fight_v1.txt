@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"knife_fight_v1"
+{
+	"CTSpawn_x" "-0.340000"
+	"CTSpawn_y" "0.140000"
+	"TSpawn_x" "0.260000"
+	"TSpawn_y" "0.860000"
+	"material" "overviews/knife_fight_v1"
+	"pos_x" "-464.000000"
+	"pos_y" "1024.000000"
+	"scale" "1.940000"
+}
