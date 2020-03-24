@@ -9,10 +9,21 @@
 
 bool g_bFlashed[MAXPLAYERS + 1] = false;
 bool g_bFreezetimeEnd = false;
+bool g_bBombPlanted = false;
 bool g_bPinPulled[MAXPLAYERS + 1] = false;
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndnade[MAXPLAYERS+1];
 ConVar g_cvPredictionConVars[1] = {null};
+char g_sMap[64];
+Handle hGameConfig = INVALID_HANDLE;
+Handle hBotMoveTo = INVALID_HANDLE;
+
+enum _BotRouteType
+{
+	SAFEST_ROUTE = 0,
+	FASTEST_ROUTE,
+	UNKNOWN_ROUTE
+}
 
 char g_sTRngGrenadesList[][] = {
     "weapon_flashbang",
@@ -70,14 +81,18 @@ char g_sUSPModels[][] = {
 	"models/weapons/v_uspstickers11.mdl",
 	"models/weapons/v_uspstickers12.mdl",
 	"models/weapons/v_uspstickers13.mdl",
-	"models/weapons/v_uspstickers14.mdl"
+	"models/weapons/v_uspstickers14.mdl",
+	"models/weapons/v_uspstickers15.mdl",
+	"models/weapons/v_uspstickers16.mdl",
+	"models/weapons/v_uspstickers17.mdl"
 };
 
 char g_sP2000Models[][] = {
 	"models/weapons/v_p2000stickers1.mdl",
 	"models/weapons/v_p2000stickers2.mdl",
 	"models/weapons/v_p2000stickers3.mdl",
-	"models/weapons/v_p2000stickers4.mdl"
+	"models/weapons/v_p2000stickers4.mdl",
+	"models/weapons/v_p2000stickers5.mdl"
 };
 
 char g_sGlockModels[][] = {
@@ -89,7 +104,12 @@ char g_sGlockModels[][] = {
 	"models/weapons/v_glockstickers6.mdl",
 	"models/weapons/v_glockstickers7.mdl",
 	"models/weapons/v_glockstickers8.mdl",
-	"models/weapons/v_glockstickers9.mdl"
+	"models/weapons/v_glockstickers9.mdl",
+	"models/weapons/v_glockstickers10.mdl",
+	"models/weapons/v_glockstickers11.mdl",
+	"models/weapons/v_glockstickers12.mdl",
+	"models/weapons/v_glockstickers13.mdl",
+	"models/weapons/v_glockstickers14.mdl"
 };
 
 char g_sP250Models[][] = {
@@ -110,7 +130,14 @@ char g_sFiveSevenModels[][] = {
 char g_sCZ75Models[][] = {
 	"models/weapons/v_cz75stickers1.mdl",
 	"models/weapons/v_cz75stickers2.mdl",
-	"models/weapons/v_cz75stickers3.mdl"
+	"models/weapons/v_cz75stickers3.mdl",
+	"models/weapons/v_cz75stickers4.mdl",
+	"models/weapons/v_cz75stickers5.mdl",
+	"models/weapons/v_cz75stickers6.mdl",
+	"models/weapons/v_cz75stickers7.mdl",
+	"models/weapons/v_cz75stickers8.mdl",
+	"models/weapons/v_cz75stickers9.mdl",
+	"models/weapons/v_cz75stickers10.mdl"
 };
 
 char g_sTec9Models[][] = {
@@ -132,7 +159,11 @@ char g_sDeagleModels[][] = {
 	"models/weapons/v_deaglestickers9.mdl",
 	"models/weapons/v_deaglestickers10.mdl",
 	"models/weapons/v_deaglestickers11.mdl",
-	"models/weapons/v_deaglestickers12.mdl"
+	"models/weapons/v_deaglestickers12.mdl",
+	"models/weapons/v_deaglestickers13.mdl",
+	"models/weapons/v_deaglestickers14.mdl",
+	"models/weapons/v_deaglestickers15.mdl",
+	"models/weapons/v_deaglestickers16.mdl"
 };
 
 char g_sEliteModels[][] = {
@@ -155,7 +186,8 @@ char g_sM249Models[][] = {
 };
 
 char g_sMP9Models[][] = {
-	"models/weapons/v_mp9stickers1.mdl"
+	"models/weapons/v_mp9stickers1.mdl",
+	"models/weapons/v_mp9stickers2.mdl"
 };
 
 char g_sMAC10Models[][] = {
@@ -180,7 +212,8 @@ char g_sMP5Models[][] = {
 char g_sUMP45Models[][] = {
 	"models/weapons/v_ump45stickers1.mdl",
 	"models/weapons/v_ump45stickers2.mdl",
-	"models/weapons/v_ump45stickers3.mdl"
+	"models/weapons/v_ump45stickers3.mdl",
+	"models/weapons/v_ump45stickers4.mdl"
 };
 
 char g_sP90Models[][] = {
@@ -240,15 +273,35 @@ char g_sM4A4Models[][] = {
 	"models/weapons/v_m4a4stickers34.mdl",
 	"models/weapons/v_m4a4stickers35.mdl",
 	"models/weapons/v_m4a4stickers36.mdl",
-	"models/weapons/v_m4a4stickers37.mdl"
+	"models/weapons/v_m4a4stickers37.mdl",
+	"models/weapons/v_m4a4stickers38.mdl",
+	"models/weapons/v_m4a4stickers39.mdl"
 };
 
 char g_sSG556Models[][] = {
-	"models/weapons/v_sg556stickers1.mdl"
+	"models/weapons/v_sg556stickers1.mdl",
+	"models/weapons/v_sg556stickers2.mdl",
+	"models/weapons/v_sg556stickers3.mdl",
+	"models/weapons/v_sg556stickers4.mdl",
+	"models/weapons/v_sg556stickers5.mdl",
+	"models/weapons/v_sg556stickers6.mdl",
+	"models/weapons/v_sg556stickers7.mdl",
+	"models/weapons/v_sg556stickers8.mdl",
+	"models/weapons/v_sg556stickers9.mdl",
+	"models/weapons/v_sg556stickers10.mdl"
 };
 
 char g_sAugModels[][] = {
-	"models/weapons/v_augstickers1.mdl"
+	"models/weapons/v_augstickers1.mdl",
+	"models/weapons/v_augstickers2.mdl",
+	"models/weapons/v_augstickers3.mdl",
+	"models/weapons/v_augstickers4.mdl",
+	"models/weapons/v_augstickers5.mdl",
+	"models/weapons/v_augstickers6.mdl",
+	"models/weapons/v_augstickers7.mdl",
+	"models/weapons/v_augstickers8.mdl",
+	"models/weapons/v_augstickers9.mdl",
+	"models/weapons/v_augstickers10.mdl"
 };
 
 char g_sAWPModels[][] = {
@@ -309,7 +362,11 @@ char g_sAWPModels[][] = {
 	"models/weapons/v_awpstickers55.mdl",
 	"models/weapons/v_awpstickers56.mdl",
 	"models/weapons/v_awpstickers57.mdl",
-	"models/weapons/v_awpstickers58.mdl"
+	"models/weapons/v_awpstickers58.mdl",
+	"models/weapons/v_awpstickers59.mdl",
+	"models/weapons/v_awpstickers60.mdl",
+	"models/weapons/v_awpstickers61.mdl",
+	"models/weapons/v_awpstickers62.mdl"
 };
 
 char g_sSSG08Models[][] = {
@@ -368,7 +425,8 @@ char g_sM4A1SModels[][] = {
 	"models/weapons/v_m4a1sstickers38.mdl",
 	"models/weapons/v_m4a1sstickers39.mdl",
 	"models/weapons/v_m4a1sstickers40.mdl",
-	"models/weapons/v_m4a1sstickers41.mdl"
+	"models/weapons/v_m4a1sstickers41.mdl",
+	"models/weapons/v_m4a1sstickers42.mdl"
 };
 
 char g_sAK47Models[][] = {
@@ -492,7 +550,14 @@ char g_sAK47Models[][] = {
 	"models/weapons/v_ak47stickers118.mdl",
 	"models/weapons/v_ak47stickers119.mdl",
 	"models/weapons/v_ak47stickers120.mdl",
-	"models/weapons/v_ak47stickers121.mdl"
+	"models/weapons/v_ak47stickers121.mdl",
+	"models/weapons/v_ak47stickers122.mdl",
+	"models/weapons/v_ak47stickers123.mdl",
+	"models/weapons/v_ak47stickers124.mdl",
+	"models/weapons/v_ak47stickers126.mdl",
+	"models/weapons/v_ak47stickers127.mdl",
+	"models/weapons/v_ak47stickers128.mdl",
+	"models/weapons/v_ak47stickers129.mdl"
 };
 
 char g_sBotName[][] = {
@@ -1406,10 +1471,22 @@ public void OnPluginStart()
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
 	HookEvent("player_death", OnPlayerDeath);
 	HookEvent("round_start", OnRoundStart);
+	HookEvent("round_end", OnRoundEnd);
 	HookEvent("round_freeze_end", OnFreezetimeEnd);
+	HookEvent("bomb_planted", OnBombPlanted);
 	HookEventEx("player_blind", Event_PlayerBlind, EventHookMode_Pre);
 	
 	g_cvPredictionConVars[0] = FindConVar("weapon_recoil_scale");
+	
+	hGameConfig = LoadGameConfigFile("botstuff.games");
+	if (hGameConfig == INVALID_HANDLE)
+		SetFailState("Failed to found botstuff.games game config.");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "MoveTo");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
+	hBotMoveTo = EndPrepSDKCall();
 	
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
@@ -6067,11 +6144,12 @@ public void OnClientPostAdminCheck(int client)
 public void OnRoundStart(Handle event, char[] name, bool dbc)
 {	
 	g_bFreezetimeEnd = false;
+	g_bBombPlanted = false;
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
-		{			
+		{					
 			if(GetRandomInt(1,100) <= 35)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
@@ -6094,8 +6172,47 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				}
 				case 2:
 				{
-					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,41));
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,42));
 				}
+			}
+			
+			GetCurrentMap(g_sMap, sizeof(g_sMap));
+			
+			if(StrEqual(g_sMap, "de_mirage"))
+			{
+				if(GetClientTeam(i) == CS_TEAM_T)
+				{
+					g_iRndnade[i] = GetRandomInt(1,8);
+				}
+				else if(GetClientTeam(i) == CS_TEAM_CT)
+				{
+					g_iRndnade[i] = GetRandomInt(1,2);
+				}
+			}
+		}
+	}
+}
+
+public void OnRoundEnd(Handle event, char[] name, bool dbc)
+{		
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(IsValidClient(i) && IsFakeClient(i))
+		{	
+			int weapon_ak47 = GetNearestEntity(i, "weapon_ak47"); 
+			int akslot = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+			float ak47location[3];
+			int akindex;
+			
+			if(akslot != -1)
+			{
+				akindex = GetEntProp(akslot, Prop_Send, "m_iItemDefinitionIndex");
+			}
+
+			if(IsValidEntity(weapon_ak47) && ((akindex != 7 && akindex != 9 && akindex != 39) || akslot == -1))
+			{
+				GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);				
+				BotMoveTo(i, ak47location, FASTEST_ROUTE);
 			}
 		}
 	}
@@ -6104,6 +6221,11 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 public void OnFreezetimeEnd(Handle event, char[] name, bool dbc)
 {
 	g_bFreezetimeEnd = true;
+}
+
+public void OnBombPlanted(Handle event, char[] name, bool dbc)
+{
+	g_bBombPlanted = true;
 }
 
 public void Hook_OnThinkPost(int iEnt)
@@ -6143,6 +6265,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 504:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
@@ -6245,6 +6371,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 389:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
@@ -6339,6 +6469,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 586:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 17);
@@ -6461,6 +6595,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 678:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
@@ -6611,6 +6749,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 837:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 24);
@@ -6729,6 +6871,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 270:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
@@ -6831,6 +6977,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 889:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 16);
@@ -6965,6 +7115,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 711:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
@@ -7079,6 +7233,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 658:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 8);
@@ -7189,6 +7347,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 537:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
@@ -7307,6 +7469,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 850:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
@@ -7413,6 +7579,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 902:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 3);
@@ -7475,6 +7645,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 910:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
@@ -7585,6 +7759,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 898:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 26);
@@ -7715,6 +7893,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 696:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 22);
@@ -7829,6 +8011,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 810:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
@@ -7867,6 +8053,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 802:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
@@ -7981,6 +8171,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 359:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
@@ -8107,6 +8301,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 542:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
@@ -8221,6 +8419,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 398:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
@@ -8327,6 +8529,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 919:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
@@ -8429,6 +8635,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 309:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 6);
@@ -8551,6 +8761,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 897:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 11);
@@ -8653,6 +8867,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 280:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 10);
@@ -8771,6 +8989,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 887:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 13);
@@ -8897,6 +9119,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 624:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 4);
@@ -8987,6 +9213,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 597:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 12);
@@ -9081,6 +9311,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 511:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 1);
@@ -9179,6 +9413,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 587:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 2);
@@ -9285,6 +9523,10 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 				{
 					switch(GetEntProp(weapon, Prop_Send, "m_nFallbackPaintKit"))
 					{
+						case 0:
+						{
+							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 0);
+						}
 						case 801:
 						{
 							SetEntProp(Weapon_GetViewModelIndex(client, -1), Prop_Send, "m_nSkin", 14);
@@ -9554,7 +9796,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	if (ActiveWeapon == -1)  return Plugin_Continue;
 	
 	int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-			
+	
 	if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
 	{
 		g_bPinPulled[client] = true;
@@ -9691,6 +9933,211 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 				}
+				
+				if (g_bFreezetimeEnd && !g_bBombPlanted)
+				{
+					GetCurrentMap(g_sMap, sizeof(g_sMap));
+					
+					if (ActiveWeapon != -1)
+					{
+						if(StrEqual(g_sMap, "de_mirage"))
+						{
+							float location_check[3];
+							
+							GetClientAbsOrigin(client, location_check);
+							
+							//T Side Smokes
+							float stairs_smoke[3] = { 1152.0252685546875, -1183.9996337890625, -205.57168579101562 };
+							float jungle_smoke[3] = { 815.9910888671875, -1416.0472412109375, -108.96875 };
+							float topmid_smoke[3] = { 1422.737548828125, 34.83058547973633, -167.96875 };
+							float triple_smoke[3] = { 815.375732421875, -1335.2979736328125, -108.96875 };
+							float short_smoke[3] = { -160.03125, 887.998779296875, -135.32872009277344 };
+							float rightbshort_smoke[3] = { -160.03125, 887.998779296875, -135.32872009277344 };
+							float siteb_smoke[3] = { -736.1307983398438, 623.972900390625, -75.96875 };
+							float ct_smoke[3] = { 871.9862060546875, -1036.03125, -251.96875 };
+							
+							float stairs_chainDistance, jungle_chainDistance, topmid_chainDistance, triple_chainDistance, short_chainDistance, rightbshort_chainDistance, siteb_chainDistance, ct_chainDistance;
+							
+							stairs_chainDistance = GetVectorDistance(location_check, stairs_smoke);
+							jungle_chainDistance = GetVectorDistance(location_check, jungle_smoke);
+							topmid_chainDistance = GetVectorDistance(location_check, topmid_smoke);
+							triple_chainDistance = GetVectorDistance(location_check, triple_smoke);
+							short_chainDistance = GetVectorDistance(location_check, short_smoke);
+							rightbshort_chainDistance = GetVectorDistance(location_check, rightbshort_smoke);
+							siteb_chainDistance = GetVectorDistance(location_check, siteb_smoke);
+							ct_chainDistance = GetVectorDistance(location_check, ct_smoke);
+							
+							//CT Side Smokes
+							float ramp_smoke[3] = { -879.9768676757812, -2263.990478515625, -171.08224487304688 };
+							float apps_smoke[3] = { -1935.9974365234375, -251.9894561767578, -159.96875 };
+							
+							float ramp_chainDistance, apps_chainDistance;
+							
+							ramp_chainDistance = GetVectorDistance(location_check, ramp_smoke);
+							apps_chainDistance = GetVectorDistance(location_check, apps_smoke);
+							
+							if(GetClientTeam(client) == CS_TEAM_T)
+							{
+								if (index == 45)
+								{							
+									switch(g_iRndnade[client])
+									{
+										case 1: //Stairs Smoke
+										{
+											BotMoveTo(client, stairs_smoke, FASTEST_ROUTE);
+											if(stairs_chainDistance < 50)
+											{
+												angles[0] = -41.0;
+												angles[1] = -165.7000274658203;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, stairs_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 2: //Jungle Smoke
+										{
+											BotMoveTo(client, jungle_smoke, FASTEST_ROUTE);
+											if(jungle_chainDistance < 50)
+											{
+												angles[0] = -27.0;
+												angles[1] = -173.18418884277344;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, jungle_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 3: //Top-Mid Smoke
+										{
+											BotMoveTo(client, topmid_smoke, FASTEST_ROUTE);
+											if(topmid_chainDistance < 50)
+											{
+												angles[0] = -43.0;
+												angles[1] = 196.81642150878906;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, topmid_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 4: //Triple Smoke
+										{
+											BotMoveTo(client, triple_smoke, FASTEST_ROUTE);
+											if(triple_chainDistance < 50)
+											{
+												angles[0] = -23.0;
+												angles[1] = -152.66416931152344;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, triple_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 5: //Short Smoke
+										{
+											BotMoveTo(client, short_smoke, FASTEST_ROUTE);
+											if(short_chainDistance < 50)
+											{
+												angles[0] = -56.0;
+												angles[1] = -129.1563720703125;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, short_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 6: //Right B Short Smoke
+										{
+											BotMoveTo(client, rightbshort_smoke, FASTEST_ROUTE);
+											if(rightbshort_chainDistance < 50)
+											{
+												angles[0] = -59.0;
+												angles[1] = -162.1563720703125;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, rightbshort_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 7: //Site B Smoke
+										{
+											BotMoveTo(client, siteb_smoke, FASTEST_ROUTE);
+											if(siteb_chainDistance < 50)
+											{
+												angles[0] = -51.0;
+												angles[1] = -171.13607788085938;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, siteb_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 8: //CT Smoke
+										{
+											BotMoveTo(client, ct_smoke, FASTEST_ROUTE);
+											if(ct_chainDistance < 50)
+											{
+												angles[0] = -46.0;
+												angles[1] = -143.02418518066406;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, ct_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+												buttons |= IN_JUMP;
+											}
+										}
+									}
+								}
+							}
+							else if(GetClientTeam(client) == CS_TEAM_CT)
+							{
+								if (index == 45)
+								{
+									switch(g_iRndnade[client])
+									{
+										case 1: //Ramp Smoke
+										{
+											BotMoveTo(client, ramp_smoke, FASTEST_ROUTE);
+											if(ramp_chainDistance < 50)
+											{
+												angles[0] = -9.0;
+												angles[1] = 34.35212707519531;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, ramp_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+										case 2: //Apps Smoke
+										{
+											BotMoveTo(client, apps_smoke, FASTEST_ROUTE);
+											if(apps_chainDistance < 50)
+											{
+												angles[0] = -20.0;
+												angles[1] = 71.88358306884766;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, apps_smoke, angles, vel);
+												buttons &= ~IN_ATTACK;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -9741,7 +10188,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		int rnd = GetRandomInt(1,18);
+		int rnd = GetRandomInt(1,19);
 		
 		switch(rnd)
 		{
@@ -9799,7 +10246,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 			}
 			case 14:
 			{
-				g_iCoin[i] = GetRandomInt(6001,6033);
+				g_iCoin[i] = GetRandomInt(6001,6034);
 			}
 			case 15:
 			{
@@ -9817,6 +10264,10 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 			{
 				g_iCoin[i] = GetRandomInt(4674,4679);
 			}
+			case 19:
+			{
+				g_iCoin[i] = GetRandomInt(4682,4692);
+			}
 		}
 		
 		if(IsValidClient(i) && IsFakeClient(i))
@@ -9824,7 +10275,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 			if (!i) return;
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
-			if(GetRandomInt(1,100) >= 10)
+			if(GetRandomInt(1,100) >= 15)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
@@ -9870,7 +10321,7 @@ public void OnWeaponEquipPost(int client, int weapon)
 	{		
 		if(GetEntPropEnt(weapon, Prop_Send, "m_hPrevOwner") == -1)
 		{
-			if(GetRandomInt(1,100) <= 25)
+			if(GetRandomInt(1,100) <= 30)
 			{
 				switch(index)
 				{
@@ -14854,6 +15305,38 @@ stock int GetAliveTeamCount(int team)
     return number;
 }
 
+public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
+{
+	SDKCall(hBotMoveTo, client, origin, routeType);
+}
+
+public int GetNearestEntity(int client, char[] classname) // https://forums.alliedmods.net/showthread.php?t=318542
+{
+    int nearestEntity = -1;
+    float clientVecOrigin[3], entityVecOrigin[3];
+    
+    GetEntPropVector(client, Prop_Data, "m_vecOrigin", clientVecOrigin); // Line 2607
+    
+    //Get the distance between the first entity and client
+    float distance, nearestDistance = -1.0;
+    
+    //Find all the entity and compare the distances
+    int entity = -1;
+    while ((entity = FindEntityByClassname(entity, classname)) != -1)
+    {
+        GetEntPropVector(entity, Prop_Data, "m_vecOrigin", entityVecOrigin); // Line 2610
+        distance = GetVectorDistance(clientVecOrigin, entityVecOrigin);
+        
+        if (distance < nearestDistance || nearestDistance == -1.0)
+        {
+            nearestEntity = entity;
+            nearestDistance = distance;
+        }
+    }
+    
+    return nearestEntity;
+}
+
 public void SetClientMoney(int client, int money)
 {
 	SetEntProp(client, Prop_Send, "m_iAccount", money);
@@ -14911,7 +15394,7 @@ stock float fmodf(float number, float denom)
 
 stock bool IsPointVisible(float start[3], float end[3])
 {
-	TR_TraceRayFilter(start, end, MASK_PLAYERSOLID, RayType_EndPoint, TraceEntityFilterStuff);
+	TR_TraceRayFilter(start, end, MASK_VISIBLE, RayType_EndPoint, TraceEntityFilterStuff);
 	return TR_GetFraction() >= 0.9;
 }
 
@@ -15186,7 +15669,7 @@ stock bool ClientViews(int Viewer, int Target, float fMaxDistance=0.0, float fTh
     if (GetVectorDotProduct(fViewDir, fTargetDir) < fThreshold) return false;
     
     // Now check if there are no obstacles in between through raycasting
-    Handle hTrace = TR_TraceRayFilterEx(fViewPos, fTargetPos, MASK_PLAYERSOLID_BRUSHONLY, RayType_EndPoint, ClientViewsFilter);
+    Handle hTrace = TR_TraceRayFilterEx(fViewPos, fTargetPos, MASK_VISIBLE, RayType_EndPoint, ClientViewsFilter);
     if (TR_DidHit(hTrace)) {CloseHandle(hTrace); return false;}
     CloseHandle(hTrace);
     

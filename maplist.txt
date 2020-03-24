@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Thu Mar 19 00:48:40 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Tue Mar 24 05:41:17 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -193,4 +193,10 @@ joey_twosided
 ka_beams_s
 ka_rainbow
 ka_swim_pool
+ka_tanks
 kills_ct
+knas_bunker_css
+knas_speedcastle_css
+knife_fight_v1
+m_maze
+mcdonalds-mds
