@@ -2141,7 +2141,7 @@ ProP+Rifle "equal"
 	VoicePitch = 98
 End
 
-EliteAwp+SniperPro "DeStRoYeR"
+EliteAwp+SniperPro "Despair"
 	VoicePitch = 86
 End
 
@@ -2243,28 +2243,6 @@ End
 
 ProP+Rifle "Just1ce"
 	VoicePitch = 71
-End
-
-//Portal Players
-
-ProP+Rifle "traNz"
-	VoicePitch = 98
-End
-
-EliteAwp+SniperPro "Ttyke"
-	VoicePitch = 105
-End
-
-ProP+Rifle "DVDOV"
-	VoicePitch = 81
-End
-
-ProP+Rifle "PokemoN"
-	VoicePitch = 114
-End
-
-ProP+Rifle "Ebeee"
-	VoicePitch = 113
 End
 
 //Brutality Players
@@ -2757,7 +2735,7 @@ ProP+Rifle "nicoodoz"
 	VoicePitch = 79
 End
 
-EliteAwp+SniperPro "phzy"
+EliteAwp+SniperPro "acm"
 	VoicePitch = 108
 End
 
@@ -2783,11 +2761,11 @@ EliteAwp+SniperPro "Demonos"
 	VoicePitch = 86
 End
 
-ProP+Rifle "tyko"
+ProP+Rifle "kst"
 	VoicePitch = 94
 End
 
-ProP+Rifle "horvy"
+ProP+Rifle "fakesS2"
 	VoicePitch = 88
 End
 
@@ -2911,7 +2889,7 @@ ProP+Rifle "EXPRO"
 	VoicePitch = 85
 End
 
-EliteAwp+SniperPro "V4D1M"
+EliteAwp+SniperPro "DeStRoYeR"
 	VoicePitch = 113
 End
 
@@ -2919,7 +2897,7 @@ ProP+Rifle "flying"
 	VoicePitch = 103
 End
 
-ProP+Rifle "sPiNacH"
+ProP+Rifle "killmatic"
 	VoicePitch = 79
 End
 
@@ -3543,25 +3521,25 @@ ProP+Rifle "Xizt"
 	VoicePitch = 102
 End
 
-//Skyfire Players
+//D13 Players
 
-ProP+Rifle "Mizzy"
+ProP+Rifle "Tamiraarita"
 	VoicePitch = 86
 End
 
-EliteAwp+SniperPro "Gumpton"
+EliteAwp+SniperPro "rate"
 	VoicePitch = 105
 End
 
-ProP+Rifle "affiNity"
+ProP+Rifle "sKINEE"
 	VoicePitch = 100
 End
 
-ProP+Rifle "LikiAU"
+ProP+Rifle "sK0R"
 	VoicePitch = 107
 End
 
-ProP+Rifle "lato"
+ProP+Rifle "ANNIHILATION"
 	VoicePitch = 95
 End
 
@@ -3601,7 +3579,7 @@ ProP+Rifle "zeq"
 	VoicePitch = 108
 End
 
-ProP+Rifle "Lukki"
+ProP+Rifle "Typos"
 	VoicePitch = 113
 End
 

@@ -12,7 +12,7 @@ bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bPinPulled[MAXPLAYERS + 1] = false;
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndnade[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndSmoke[MAXPLAYERS+1], g_iRndMolotov[MAXPLAYERS+1];
 ConVar g_cvPredictionConVars[1] = {null};
 char g_sMap[64];
 Handle hGameConfig = INVALID_HANDLE;
@@ -25,21 +25,21 @@ enum _BotRouteType
 	UNKNOWN_ROUTE
 }
 
-char g_sTRngGrenadesList[][] = {
+static char g_sTRngGrenadesList[][] = {
     "weapon_flashbang",
     "weapon_smokegrenade",
     "weapon_hegrenade",
     "weapon_molotov"
 };
 
-char g_sCTRngGrenadesList[][] = {
+static char g_sCTRngGrenadesList[][] = {
     "weapon_flashbang",
     "weapon_smokegrenade",
     "weapon_hegrenade",
     "weapon_incgrenade"
 };
 
-char g_sCTModels[][] = {
+static char g_sCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_st6_variante.mdl",
 	"models/player/custom_player/legacy/ctm_st6_variantk.mdl",
 	"models/player/custom_player/legacy/ctm_fbi_variantf.mdl",
@@ -52,7 +52,7 @@ char g_sCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl"
 };
 
-char g_sTModels[][] = {
+static char g_sTModels[][] = {
 	"models/player/custom_player/legacy/tm_phoenix_variantf.mdl",
 	"models/player/custom_player/legacy/tm_phoenix_varianth.mdl",
 	"models/player/custom_player/legacy/tm_leet_variantg.mdl",
@@ -67,7 +67,7 @@ char g_sTModels[][] = {
 	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
 };
 
-char g_sUSPModels[][] = {
+static char g_sUSPModels[][] = {
 	"models/weapons/v_uspstickers1.mdl",
 	"models/weapons/v_uspstickers2.mdl",
 	"models/weapons/v_uspstickers3.mdl",
@@ -87,15 +87,20 @@ char g_sUSPModels[][] = {
 	"models/weapons/v_uspstickers17.mdl"
 };
 
-char g_sP2000Models[][] = {
+static char g_sP2000Models[][] = {
 	"models/weapons/v_p2000stickers1.mdl",
 	"models/weapons/v_p2000stickers2.mdl",
 	"models/weapons/v_p2000stickers3.mdl",
 	"models/weapons/v_p2000stickers4.mdl",
-	"models/weapons/v_p2000stickers5.mdl"
+	"models/weapons/v_p2000stickers5.mdl",
+	"models/weapons/v_p2000stickers6.mdl",
+	"models/weapons/v_p2000stickers7.mdl",
+	"models/weapons/v_p2000stickers8.mdl",
+	"models/weapons/v_p2000stickers9.mdl",
+	"models/weapons/v_p2000stickers10.mdl"
 };
 
-char g_sGlockModels[][] = {
+static char g_sGlockModels[][] = {
 	"models/weapons/v_glockstickers1.mdl",
 	"models/weapons/v_glockstickers2.mdl",
 	"models/weapons/v_glockstickers3.mdl",
@@ -112,22 +117,33 @@ char g_sGlockModels[][] = {
 	"models/weapons/v_glockstickers14.mdl"
 };
 
-char g_sP250Models[][] = {
+static char g_sP250Models[][] = {
 	"models/weapons/v_p250stickers1.mdl",
 	"models/weapons/v_p250stickers2.mdl",
 	"models/weapons/v_p250stickers3.mdl",
 	"models/weapons/v_p250stickers4.mdl",
 	"models/weapons/v_p250stickers5.mdl",
 	"models/weapons/v_p250stickers6.mdl",
-	"models/weapons/v_p250stickers7.mdl"
+	"models/weapons/v_p250stickers7.mdl",
+	"models/weapons/v_p250stickers8.mdl",
+	"models/weapons/v_p250stickers9.mdl",
+	"models/weapons/v_p250stickers10.mdl"
 };
 
-char g_sFiveSevenModels[][] = {
+static char g_sFiveSevenModels[][] = {
 	"models/weapons/v_fivesevenstickers1.mdl",
-	"models/weapons/v_fivesevenstickers2.mdl"
+	"models/weapons/v_fivesevenstickers2.mdl",
+	"models/weapons/v_fivesevenstickers3.mdl",
+	"models/weapons/v_fivesevenstickers4.mdl",
+	"models/weapons/v_fivesevenstickers5.mdl",
+	"models/weapons/v_fivesevenstickers6.mdl",
+	"models/weapons/v_fivesevenstickers7.mdl",
+	"models/weapons/v_fivesevenstickers8.mdl",
+	"models/weapons/v_fivesevenstickers9.mdl",
+	"models/weapons/v_fivesevenstickers10.mdl"
 };
 
-char g_sCZ75Models[][] = {
+static char g_sCZ75Models[][] = {
 	"models/weapons/v_cz75stickers1.mdl",
 	"models/weapons/v_cz75stickers2.mdl",
 	"models/weapons/v_cz75stickers3.mdl",
@@ -140,14 +156,20 @@ char g_sCZ75Models[][] = {
 	"models/weapons/v_cz75stickers10.mdl"
 };
 
-char g_sTec9Models[][] = {
+static char g_sTec9Models[][] = {
 	"models/weapons/v_tec9stickers1.mdl",
 	"models/weapons/v_tec9stickers2.mdl",
 	"models/weapons/v_tec9stickers3.mdl",
-	"models/weapons/v_tec9stickers4.mdl"
+	"models/weapons/v_tec9stickers4.mdl",
+	"models/weapons/v_tec9stickers5.mdl",
+	"models/weapons/v_tec9stickers6.mdl",
+	"models/weapons/v_tec9stickers7.mdl",
+	"models/weapons/v_tec9stickers8.mdl",
+	"models/weapons/v_tec9stickers9.mdl",
+	"models/weapons/v_tec9stickers10.mdl"
 };
 
-char g_sDeagleModels[][] = {
+static char g_sDeagleModels[][] = {
 	"models/weapons/v_deaglestickers1.mdl",
 	"models/weapons/v_deaglestickers2.mdl",
 	"models/weapons/v_deaglestickers3.mdl",
@@ -166,77 +188,113 @@ char g_sDeagleModels[][] = {
 	"models/weapons/v_deaglestickers16.mdl"
 };
 
-char g_sEliteModels[][] = {
+static char g_sEliteModels[][] = {
 	"models/weapons/v_elitestickers1.mdl",
-	"models/weapons/v_elitestickers2.mdl"
+	"models/weapons/v_elitestickers2.mdl",
+	"models/weapons/v_elitestickers3.mdl",
+	"models/weapons/v_elitestickers4.mdl",
+	"models/weapons/v_elitestickers5.mdl",
+	"models/weapons/v_elitestickers6.mdl",
+	"models/weapons/v_elitestickers7.mdl",
+	"models/weapons/v_elitestickers8.mdl",
+	"models/weapons/v_elitestickers9.mdl",
+	"models/weapons/v_elitestickers10.mdl"
 };
 
-char g_sNovaModels[][] = {
+static char g_sNovaModels[][] = {
 	"models/weapons/v_novastickers1.mdl"
 };
 
-char g_sXM1014Models[][] = {
+static char g_sXM1014Models[][] = {
 	"models/weapons/v_xm1014stickers1.mdl",
 	"models/weapons/v_xm1014stickers2.mdl",
 	"models/weapons/v_xm1014stickers3.mdl"
 };
 
-char g_sM249Models[][] = {
+static char g_sM249Models[][] = {
 	"models/weapons/v_m249stickers1.mdl"
 };
 
-char g_sMP9Models[][] = {
+static char g_sMP9Models[][] = {
 	"models/weapons/v_mp9stickers1.mdl",
-	"models/weapons/v_mp9stickers2.mdl"
+	"models/weapons/v_mp9stickers2.mdl",
+	"models/weapons/v_mp9stickers3.mdl",
+	"models/weapons/v_mp9stickers4.mdl",
+	"models/weapons/v_mp9stickers5.mdl",
+	"models/weapons/v_mp9stickers6.mdl",
+	"models/weapons/v_mp9stickers7.mdl",
+	"models/weapons/v_mp9stickers8.mdl",
+	"models/weapons/v_mp9stickers9.mdl",
+	"models/weapons/v_mp9stickers10.mdl"
 };
 
-char g_sMAC10Models[][] = {
+static char g_sMAC10Models[][] = {
 	"models/weapons/v_mac10stickers1.mdl",
 	"models/weapons/v_mac10stickers2.mdl",
 	"models/weapons/v_mac10stickers3.mdl",
-	"models/weapons/v_mac10stickers4.mdl"
+	"models/weapons/v_mac10stickers4.mdl",
+	"models/weapons/v_mac10stickers5.mdl",
+	"models/weapons/v_mac10stickers6.mdl",
+	"models/weapons/v_mac10stickers7.mdl",
+	"models/weapons/v_mac10stickers8.mdl",
+	"models/weapons/v_mac10stickers9.mdl",
+	"models/weapons/v_mac10stickers10.mdl"
 };
 
-char g_sMP7Models[][] = {
+static char g_sMP7Models[][] = {
 	"models/weapons/v_mp7stickers1.mdl",
 	"models/weapons/v_mp7stickers2.mdl",
 	"models/weapons/v_mp7stickers3.mdl"
 };
 
-char g_sMP5Models[][] = {
+static char g_sMP5Models[][] = {
 	"models/weapons/v_mp5sdstickers1.mdl",
 	"models/weapons/v_mp5sdstickers2.mdl",
 	"models/weapons/v_mp5sdstickers3.mdl"
 };
 
-char g_sUMP45Models[][] = {
+static char g_sUMP45Models[][] = {
 	"models/weapons/v_ump45stickers1.mdl",
 	"models/weapons/v_ump45stickers2.mdl",
 	"models/weapons/v_ump45stickers3.mdl",
 	"models/weapons/v_ump45stickers4.mdl"
 };
 
-char g_sP90Models[][] = {
+static char g_sP90Models[][] = {
 	"models/weapons/v_p90stickers1.mdl"
 };
 
-char g_sBizonModels[][] = {
+static char g_sBizonModels[][] = {
 	"models/weapons/v_bizonstickers1.mdl"
 };
 
-char g_sGalilModels[][] = {
+static char g_sGalilModels[][] = {
 	"models/weapons/v_galilstickers1.mdl",
 	"models/weapons/v_galilstickers2.mdl",
-	"models/weapons/v_galilstickers3.mdl"
+	"models/weapons/v_galilstickers3.mdl",
+	"models/weapons/v_galilstickers4.mdl",
+	"models/weapons/v_galilstickers5.mdl",
+	"models/weapons/v_galilstickers6.mdl",
+	"models/weapons/v_galilstickers7.mdl",
+	"models/weapons/v_galilstickers8.mdl",
+	"models/weapons/v_galilstickers9.mdl",
+	"models/weapons/v_galilstickers10.mdl"
 };
 
-char g_sFamasModels[][] = {
+static char g_sFamasModels[][] = {
 	"models/weapons/v_famasstickers1.mdl",
 	"models/weapons/v_famasstickers2.mdl",
-	"models/weapons/v_famasstickers3.mdl"
+	"models/weapons/v_famasstickers3.mdl",
+	"models/weapons/v_famasstickers4.mdl",
+	"models/weapons/v_famasstickers5.mdl",
+	"models/weapons/v_famasstickers6.mdl",
+	"models/weapons/v_famasstickers7.mdl",
+	"models/weapons/v_famasstickers8.mdl",
+	"models/weapons/v_famasstickers9.mdl",
+	"models/weapons/v_famasstickers10.mdl"
 };
 
-char g_sM4A4Models[][] = {
+static char g_sM4A4Models[][] = {
 	"models/weapons/v_m4a4stickers1.mdl",
 	"models/weapons/v_m4a4stickers2.mdl",
 	"models/weapons/v_m4a4stickers3.mdl",
@@ -278,7 +336,7 @@ char g_sM4A4Models[][] = {
 	"models/weapons/v_m4a4stickers39.mdl"
 };
 
-char g_sSG556Models[][] = {
+static char g_sSG556Models[][] = {
 	"models/weapons/v_sg556stickers1.mdl",
 	"models/weapons/v_sg556stickers2.mdl",
 	"models/weapons/v_sg556stickers3.mdl",
@@ -291,7 +349,7 @@ char g_sSG556Models[][] = {
 	"models/weapons/v_sg556stickers10.mdl"
 };
 
-char g_sAugModels[][] = {
+static char g_sAugModels[][] = {
 	"models/weapons/v_augstickers1.mdl",
 	"models/weapons/v_augstickers2.mdl",
 	"models/weapons/v_augstickers3.mdl",
@@ -304,7 +362,7 @@ char g_sAugModels[][] = {
 	"models/weapons/v_augstickers10.mdl"
 };
 
-char g_sAWPModels[][] = {
+static char g_sAWPModels[][] = {
 	"models/weapons/v_awpstickers1.mdl",
 	"models/weapons/v_awpstickers2.mdl",
 	"models/weapons/v_awpstickers3.mdl",
@@ -366,25 +424,27 @@ char g_sAWPModels[][] = {
 	"models/weapons/v_awpstickers59.mdl",
 	"models/weapons/v_awpstickers60.mdl",
 	"models/weapons/v_awpstickers61.mdl",
-	"models/weapons/v_awpstickers62.mdl"
+	"models/weapons/v_awpstickers62.mdl",
+	"models/weapons/v_awpstickers63.mdl",
+	"models/weapons/v_awpstickers64.mdl"
 };
 
-char g_sSSG08Models[][] = {
+static char g_sSSG08Models[][] = {
 	"models/weapons/v_ssg08stickers1.mdl",
 	"models/weapons/v_ssg08stickers2.mdl",
 	"models/weapons/v_ssg08stickers3.mdl",
 	"models/weapons/v_ssg08stickers4.mdl"
 };
 
-char g_sSCAR20Models[][] = {
+static char g_sSCAR20Models[][] = {
 	"models/weapons/v_scar20stickers1.mdl"
 };
 
-char g_sG3SG1Models[][] = {
+static char g_sG3SG1Models[][] = {
 	"models/weapons/v_g3sg1stickers1.mdl"
 };
 
-char g_sM4A1SModels[][] = {
+static char g_sM4A1SModels[][] = {
 	"models/weapons/v_m4a1sstickers1.mdl",
 	"models/weapons/v_m4a1sstickers2.mdl",
 	"models/weapons/v_m4a1sstickers3.mdl",
@@ -429,7 +489,7 @@ char g_sM4A1SModels[][] = {
 	"models/weapons/v_m4a1sstickers42.mdl"
 };
 
-char g_sAK47Models[][] = {
+static char g_sAK47Models[][] = {
 	"models/weapons/v_ak47stickers1.mdl",
 	"models/weapons/v_ak47stickers2.mdl",
 	"models/weapons/v_ak47stickers3.mdl",
@@ -557,10 +617,11 @@ char g_sAK47Models[][] = {
 	"models/weapons/v_ak47stickers126.mdl",
 	"models/weapons/v_ak47stickers127.mdl",
 	"models/weapons/v_ak47stickers128.mdl",
-	"models/weapons/v_ak47stickers129.mdl"
+	"models/weapons/v_ak47stickers129.mdl",
+	"models/weapons/v_ak47stickers130.mdl"
 };
 
-char g_sBotName[][] = {
+static char g_sBotName[][] = {
 	//MIBR Players
 	"kNgV-",
 	"FalleN",
@@ -1031,7 +1092,7 @@ char g_sBotName[][] = {
 	"Viva",
 	//EHOME Players
 	"equal",
-	"DeStRoYeR",
+	"Despair",
 	"Marek",
 	"SLOWLY",
 	"4king",
@@ -1059,12 +1120,6 @@ char g_sBotName[][] = {
 	"BOROS",
 	"aLvAr-",
 	"Just1ce",
-	//Portal Players
-	"traNz",
-	"Ttyke",
-	"DVDOV",
-	"PokemoN",
-	"Ebeee",
 	//Brutals Players
 	"V3nom",
 	"RiX",
@@ -1199,15 +1254,15 @@ char g_sBotName[][] = {
 	".P4TriCK",
 	//9INE Players
 	"nicoodoz",
-	"phzy",
+	"acm",
 	"Djury",
 	"aybeN",
 	"MistFire",
 	//Baecon Players
 	"brA",
 	"Demonos",
-	"tyko",
-	"horvy",
+	"kst",
+	"fakesS2",
 	"KILLDREAM",
 	//Wizards Players
 	"KALAS",
@@ -1241,9 +1296,9 @@ char g_sBotName[][] = {
 	"risk",
 	//IG Players
 	"EXPRO",
-	"V4D1M",
+	"DeStRoYeR",
 	"flying",
-	"sPiNacH",
+	"killmatic",
 	"Koshak",
 	//HR Players
 	"ANGE1",
@@ -1413,12 +1468,12 @@ char g_sBotName[][] = {
 	"f0rest",
 	"friberg",
 	"Xizt",
-	//Skyfire Players
-	"Mizzy",
-	"Gumpton",
-	"affiNity",
-	"LikiAU",
-	"lato",
+	//D13 Players
+	"Tamiraarita",
+	"rate",
+	"sKINEE",
+	"sK0R",
+	"ANNIHILATION",
 	//ZIGMA Players
 	"NIFFY",
 	"Reality",
@@ -1429,7 +1484,7 @@ char g_sBotName[][] = {
 	"Inzta",
 	"Ryxxo",
 	"zeq",
-	"Lukki",
+	"Typos",
 	"IceBerg",
 	//KOVA Players
 	"pietola",
@@ -1471,7 +1526,6 @@ public void OnPluginStart()
 	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
 	HookEvent("player_death", OnPlayerDeath);
 	HookEvent("round_start", OnRoundStart);
-	HookEvent("round_end", OnRoundEnd);
 	HookEvent("round_freeze_end", OnFreezetimeEnd);
 	HookEvent("bomb_planted", OnBombPlanted);
 	HookEventEx("player_blind", Event_PlayerBlind, EventHookMode_Pre);
@@ -1571,7 +1625,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_boom", Team_BOOM);
 	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
-	RegConsoleCmd("team_portal", Team_Portal);
 	RegConsoleCmd("team_brutals", Team_Brutals);
 	RegConsoleCmd("team_invictus", Team_iNvictus);
 	RegConsoleCmd("team_nxl", Team_nxl);
@@ -1630,7 +1683,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
 	RegConsoleCmd("team_saw", Team_sAw);
 	RegConsoleCmd("team_dignitas", Team_Dignitas);
-	RegConsoleCmd("team_skyfire", Team_Skyfire);
+	RegConsoleCmd("team_d13", Team_D13);
 	RegConsoleCmd("team_zigma", Team_ZIGMA);
 	RegConsoleCmd("team_ambush", Team_Ambush);
 	RegConsoleCmd("team_kova", Team_KOVA);
@@ -3988,7 +4041,7 @@ public Action Team_EHOME(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "equal");
-		ServerCommand("bot_add_ct %s", "DeStRoYeR");
+		ServerCommand("bot_add_ct %s", "Despair");
 		ServerCommand("bot_add_ct %s", "Marek");
 		ServerCommand("bot_add_ct %s", "SLOWLY");
 		ServerCommand("bot_add_ct %s", "4king");
@@ -3999,7 +4052,7 @@ public Action Team_EHOME(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "equal");
-		ServerCommand("bot_add_t %s", "DeStRoYeR");
+		ServerCommand("bot_add_t %s", "Despair");
 		ServerCommand("bot_add_t %s", "Marek");
 		ServerCommand("bot_add_t %s", "SLOWLY");
 		ServerCommand("bot_add_t %s", "4king");
@@ -4124,36 +4177,6 @@ public Action Team_NASR(int client, int args)
 		ServerCommand("bot_add_t %s", "aLvAr-");
 		ServerCommand("bot_add_t %s", "Just1ce");
 		ServerCommand("mp_teamlogo_2 nasr");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Portal(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "traNz");
-		ServerCommand("bot_add_ct %s", "Ttyke");
-		ServerCommand("bot_add_ct %s", "DVDOV");
-		ServerCommand("bot_add_ct %s", "PokemoN");
-		ServerCommand("bot_add_ct %s", "Ebeee");
-		ServerCommand("mp_teamlogo_1 port");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "traNz");
-		ServerCommand("bot_add_t %s", "Ttyke");
-		ServerCommand("bot_add_t %s", "DVDOV");
-		ServerCommand("bot_add_t %s", "PokemoN");
-		ServerCommand("bot_add_t %s", "Ebeee");
-		ServerCommand("mp_teamlogo_2 port");
 	}
 	
 	return Plugin_Handled;
@@ -4828,7 +4851,7 @@ public Action Team_9INE(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nicoodoz");
-		ServerCommand("bot_add_ct %s", "phzy");
+		ServerCommand("bot_add_ct %s", "acm");
 		ServerCommand("bot_add_ct %s", "Djury");
 		ServerCommand("bot_add_ct %s", "aybeN");
 		ServerCommand("bot_add_ct %s", "MistFire");
@@ -4839,7 +4862,7 @@ public Action Team_9INE(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nicoodoz");
-		ServerCommand("bot_add_t %s", "phzy");
+		ServerCommand("bot_add_t %s", "acm");
 		ServerCommand("bot_add_t %s", "Djury");
 		ServerCommand("bot_add_t %s", "aybeN");
 		ServerCommand("bot_add_t %s", "MistFire");
@@ -4859,8 +4882,8 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "Demonos");
-		ServerCommand("bot_add_ct %s", "tyko");
-		ServerCommand("bot_add_ct %s", "horvy");
+		ServerCommand("bot_add_ct %s", "kst");
+		ServerCommand("bot_add_ct %s", "fakesS2");
 		ServerCommand("bot_add_ct %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_1 baec");
 	}
@@ -4870,8 +4893,8 @@ public Action Team_Baecon(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "Demonos");
-		ServerCommand("bot_add_t %s", "tyko");
-		ServerCommand("bot_add_t %s", "horvy");
+		ServerCommand("bot_add_t %s", "kst");
+		ServerCommand("bot_add_t %s", "fakesS2");
 		ServerCommand("bot_add_t %s", "KILLDREAM");
 		ServerCommand("mp_teamlogo_2 baec");
 	}
@@ -5038,9 +5061,9 @@ public Action Team_IG(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "EXPRO");
-		ServerCommand("bot_add_ct %s", "V4D1M");
+		ServerCommand("bot_add_ct %s", "DeStRoYeR");
 		ServerCommand("bot_add_ct %s", "flying");
-		ServerCommand("bot_add_ct %s", "sPiNacH");
+		ServerCommand("bot_add_ct %s", "killmatic");
 		ServerCommand("bot_add_ct %s", "Koshak");
 		ServerCommand("mp_teamlogo_1 ig");
 	}
@@ -5049,9 +5072,9 @@ public Action Team_IG(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "EXPRO");
-		ServerCommand("bot_add_t %s", "V4D1M");
+		ServerCommand("bot_add_t %s", "DeStRoYeR");
 		ServerCommand("bot_add_t %s", "flying");
-		ServerCommand("bot_add_t %s", "sPiNacH");
+		ServerCommand("bot_add_t %s", "killmatic");
 		ServerCommand("bot_add_t %s", "Koshak");
 		ServerCommand("mp_teamlogo_2 ig");
 	}
@@ -5899,7 +5922,7 @@ public Action Team_Dignitas(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Skyfire(int client, int args)
+public Action Team_D13(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -5907,23 +5930,23 @@ public Action Team_Skyfire(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Mizzy");
-		ServerCommand("bot_add_ct %s", "Gumpton");
-		ServerCommand("bot_add_ct %s", "affiNity");
-		ServerCommand("bot_add_ct %s", "LikiAU");
-		ServerCommand("bot_add_ct %s", "lato");
-		ServerCommand("mp_teamlogo_1 sky");
+		ServerCommand("bot_add_ct %s", "Tamiraarita");
+		ServerCommand("bot_add_ct %s", "rate");
+		ServerCommand("bot_add_ct %s", "sKINEE");
+		ServerCommand("bot_add_ct %s", "sK0R");
+		ServerCommand("bot_add_ct %s", "ANNIHILATION");
+		ServerCommand("mp_teamlogo_1 d13");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Mizzy");
-		ServerCommand("bot_add_t %s", "Gumpton");
-		ServerCommand("bot_add_t %s", "affiNity");
-		ServerCommand("bot_add_t %s", "LikiAU");
-		ServerCommand("bot_add_t %s", "lato");
-		ServerCommand("mp_teamlogo_2 sky");
+		ServerCommand("bot_add_t %s", "Tamiraarita");
+		ServerCommand("bot_add_t %s", "rate");
+		ServerCommand("bot_add_t %s", "sKINEE");
+		ServerCommand("bot_add_t %s", "sK0R");
+		ServerCommand("bot_add_t %s", "ANNIHILATION");
+		ServerCommand("mp_teamlogo_2 d13");
 	}
 
 	return Plugin_Handled;
@@ -5970,7 +5993,7 @@ public Action Team_Ambush(int client, int args)
 		ServerCommand("bot_add_ct %s", "Inzta");
 		ServerCommand("bot_add_ct %s", "Ryxxo");
 		ServerCommand("bot_add_ct %s", "zeq");
-		ServerCommand("bot_add_ct %s", "Lukki");
+		ServerCommand("bot_add_ct %s", "Typos");
 		ServerCommand("bot_add_ct %s", "IceBerg");
 		ServerCommand("mp_teamlogo_1 ambu");
 	}
@@ -5981,7 +6004,7 @@ public Action Team_Ambush(int client, int args)
 		ServerCommand("bot_add_t %s", "Inzta");
 		ServerCommand("bot_add_t %s", "Ryxxo");
 		ServerCommand("bot_add_t %s", "zeq");
-		ServerCommand("bot_add_t %s", "Lukki");
+		ServerCommand("bot_add_t %s", "Typos");
 		ServerCommand("bot_add_t %s", "IceBerg");
 		ServerCommand("mp_teamlogo_2 ambu");
 	}
@@ -6149,7 +6172,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
-		{					
+		{				
 			if(GetRandomInt(1,100) <= 35)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
@@ -6182,37 +6205,14 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 			{
 				if(GetClientTeam(i) == CS_TEAM_T)
 				{
-					g_iRndnade[i] = GetRandomInt(1,8);
+					g_iRndSmoke[i] = GetRandomInt(1,12);
+					g_iRndMolotov[i] = GetRandomInt(1,4);
 				}
 				else if(GetClientTeam(i) == CS_TEAM_CT)
 				{
-					g_iRndnade[i] = GetRandomInt(1,2);
+					g_iRndSmoke[i] = GetRandomInt(1,3);
+					g_iRndMolotov[i] = GetRandomInt(1,3);
 				}
-			}
-		}
-	}
-}
-
-public void OnRoundEnd(Handle event, char[] name, bool dbc)
-{		
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if(IsValidClient(i) && IsFakeClient(i))
-		{	
-			int weapon_ak47 = GetNearestEntity(i, "weapon_ak47"); 
-			int akslot = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
-			float ak47location[3];
-			int akindex;
-			
-			if(akslot != -1)
-			{
-				akindex = GetEntProp(akslot, Prop_Send, "m_iItemDefinitionIndex");
-			}
-
-			if(IsValidEntity(weapon_ak47) && ((akindex != 7 && akindex != 9 && akindex != 39) || akslot == -1))
-			{
-				GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);				
-				BotMoveTo(i, ak47location, FASTEST_ROUTE);
 			}
 		}
 	}
@@ -9803,7 +9803,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	}
 	else
 	{
-		CreateTimer(0.1, PinNotPulled, GetClientSerial(client));
+		CreateTimer(0.1, PinNotPulled, GetClientUserId(client));
 	}
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
@@ -9935,11 +9935,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				}
 				
 				if (g_bFreezetimeEnd && !g_bBombPlanted)
-				{
-					GetCurrentMap(g_sMap, sizeof(g_sMap));
-					
+				{					
 					if (ActiveWeapon != -1)
 					{
+						GetCurrentMap(g_sMap, sizeof(g_sMap));
+						
 						if(StrEqual(g_sMap, "de_mirage"))
 						{
 							float location_check[3];
@@ -9951,148 +9951,301 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							float jungle_smoke[3] = { 815.9910888671875, -1416.0472412109375, -108.96875 };
 							float topmid_smoke[3] = { 1422.737548828125, 34.83058547973633, -167.96875 };
 							float triple_smoke[3] = { 815.375732421875, -1335.2979736328125, -108.96875 };
-							float short_smoke[3] = { -160.03125, 887.998779296875, -135.32872009277344 };
-							float rightbshort_smoke[3] = { -160.03125, 887.998779296875, -135.32872009277344 };
+							float short_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
+							float rightbshort_smoke[3] = { -540.6637573242188, 520.0005493164062, -81.35236358642578 };
+							float leftbshort_smoke[3] = { -148.03125, 353.0000305175781, -34.42769432067871 };
 							float siteb_smoke[3] = { -736.1307983398438, 623.972900390625, -75.96875 };
-							float ct_smoke[3] = { 871.9862060546875, -1036.03125, -251.96875 };
+							float bench_smoke[3] = { -540.6637573242188, 520.0005493164062, -81.35236358642578 };
+							float connector_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
+							float window_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
+							float backb_smoke[3] = { -736.1307983398438, 623.972900390625, -75.96875 };
 							
-							float stairs_chainDistance, jungle_chainDistance, topmid_chainDistance, triple_chainDistance, short_chainDistance, rightbshort_chainDistance, siteb_chainDistance, ct_chainDistance;
+							float stairs_smoke_distance, jungle_smoke_distance, topmid_smoke_distance, triple_smoke_distance, short_smoke_distance, rightbshort_smoke_distance, leftbshort_smoke_distance, siteb_smoke_distance, bench_smoke_distance, connector_smoke_distance, window_smoke_distance, backb_smoke_distance;
 							
-							stairs_chainDistance = GetVectorDistance(location_check, stairs_smoke);
-							jungle_chainDistance = GetVectorDistance(location_check, jungle_smoke);
-							topmid_chainDistance = GetVectorDistance(location_check, topmid_smoke);
-							triple_chainDistance = GetVectorDistance(location_check, triple_smoke);
-							short_chainDistance = GetVectorDistance(location_check, short_smoke);
-							rightbshort_chainDistance = GetVectorDistance(location_check, rightbshort_smoke);
-							siteb_chainDistance = GetVectorDistance(location_check, siteb_smoke);
-							ct_chainDistance = GetVectorDistance(location_check, ct_smoke);
+							stairs_smoke_distance = GetVectorDistance(location_check, stairs_smoke);
+							jungle_smoke_distance = GetVectorDistance(location_check, jungle_smoke);
+							topmid_smoke_distance = GetVectorDistance(location_check, topmid_smoke);
+							triple_smoke_distance = GetVectorDistance(location_check, triple_smoke);
+							short_smoke_distance = GetVectorDistance(location_check, short_smoke);
+							rightbshort_smoke_distance = GetVectorDistance(location_check, rightbshort_smoke);
+							leftbshort_smoke_distance = GetVectorDistance(location_check, leftbshort_smoke);
+							siteb_smoke_distance = GetVectorDistance(location_check, siteb_smoke);
+							bench_smoke_distance = GetVectorDistance(location_check, bench_smoke);
+							connector_smoke_distance = GetVectorDistance(location_check, connector_smoke);
+							window_smoke_distance = GetVectorDistance(location_check, window_smoke);
+							backb_smoke_distance = GetVectorDistance(location_check, backb_smoke);
 							
 							//CT Side Smokes
 							float ramp_smoke[3] = { -879.9768676757812, -2263.990478515625, -171.08224487304688 };
-							float apps_smoke[3] = { -1935.9974365234375, -251.9894561767578, -159.96875 };
+							float apps_smoke[3] = { -2635.96875, 104.00126647949219, -159.52517700195312 };
+							float palace_smoke[3] = { -971.3928833007812, -2458.048583984375, -167.97039794921875 };
 							
-							float ramp_chainDistance, apps_chainDistance;
+							float ramp_smoke_distance, apps_smoke_distance, palace_smoke_distance;
 							
-							ramp_chainDistance = GetVectorDistance(location_check, ramp_smoke);
-							apps_chainDistance = GetVectorDistance(location_check, apps_smoke);
+							ramp_smoke_distance = GetVectorDistance(location_check, ramp_smoke);
+							apps_smoke_distance = GetVectorDistance(location_check, apps_smoke);
+							palace_smoke_distance = GetVectorDistance(location_check, palace_smoke);
+							
+							//T Side Molotovs
+							
+							float sandwich_molotov[3] = { 545.7005615234375, -1557.8095703125, -263.96875 };
+							float underwindowb_molotov[3] = { -1471.96875, 664.0037841796875, -47.96874809265137 };
+							float carb_molotov[3] = { -1607.9808349609375, 863.890869140625, -47.96874809265137 };
+							float bench_molotov[3] = { -1607.9808349609375, 863.890869140625, -47.96874809265137 };
+							
+							float sandwich_molotov_distance, underwindowb_molotov_distance, carb_molotov_distance, bench_molotov_distance;
+							
+							sandwich_molotov_distance = GetVectorDistance(location_check, sandwich_molotov);
+							underwindowb_molotov_distance = GetVectorDistance(location_check, underwindowb_molotov);
+							carb_molotov_distance = GetVectorDistance(location_check, carb_molotov);
+							bench_molotov_distance = GetVectorDistance(location_check, bench_molotov);
+							
+							//CT Side Molotovs
+							float apps_molotov[3] = { -2411.96875, -247.99261474609375, -164.74143981933594 };
+							float ramp_molotov[3] = { -783.987060546875, -2177.00146484375, -179.96875 };
+							float palace_molotov[3] = { -783.987060546875, -2177.00146484375, -179.96875 };
+							
+							float apps_molotov_distance, ramp_molotov_distance, palace_molotov_distance;
+							
+							apps_molotov_distance = GetVectorDistance(location_check, apps_molotov);
+							ramp_molotov_distance = GetVectorDistance(location_check, ramp_molotov);
+							palace_molotov_distance = GetVectorDistance(location_check, palace_molotov);
 							
 							if(GetClientTeam(client) == CS_TEAM_T)
 							{
 								if (index == 45)
-								{							
-									switch(g_iRndnade[client])
+								{
+									switch(g_iRndSmoke[client])
 									{
 										case 1: //Stairs Smoke
 										{
 											BotMoveTo(client, stairs_smoke, FASTEST_ROUTE);
-											if(stairs_chainDistance < 50)
+											if(stairs_smoke_distance < 50)
 											{
-												angles[0] = -41.0;
+												angles[0] = -43.0;
 												angles[1] = -165.7000274658203;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, stairs_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 2: //Jungle Smoke
 										{
 											BotMoveTo(client, jungle_smoke, FASTEST_ROUTE);
-											if(jungle_chainDistance < 50)
+											if(jungle_smoke_distance < 50)
 											{
-												angles[0] = -27.0;
+												angles[0] = -28.0;
 												angles[1] = -173.18418884277344;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, jungle_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 3: //Top-Mid Smoke
 										{
 											BotMoveTo(client, topmid_smoke, FASTEST_ROUTE);
-											if(topmid_chainDistance < 50)
+											buttons &= ~IN_ATTACK; 
+											if(topmid_smoke_distance < 50)
 											{
-												angles[0] = -43.0;
+												angles[0] = -39.0;
 												angles[1] = 196.81642150878906;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, topmid_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 4: //Triple Smoke
 										{
 											BotMoveTo(client, triple_smoke, FASTEST_ROUTE);
-											if(triple_chainDistance < 50)
+											if(triple_smoke_distance < 50)
 											{
-												angles[0] = -23.0;
-												angles[1] = -152.66416931152344;
+												angles[0] = -46.0;
+												angles[1] = -151.66416931152344;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, triple_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 5: //Short Smoke
 										{
 											BotMoveTo(client, short_smoke, FASTEST_ROUTE);
-											if(short_chainDistance < 50)
+											if(short_smoke_distance < 50)
 											{
-												angles[0] = -56.0;
-												angles[1] = -129.1563720703125;
+												angles[0] = -53.0;
+												angles[1] = -197.30368041992188;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, short_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 6: //Right B Short Smoke
 										{
 											BotMoveTo(client, rightbshort_smoke, FASTEST_ROUTE);
-											if(rightbshort_chainDistance < 50)
+											if(rightbshort_smoke_distance < 50)
 											{
-												angles[0] = -59.0;
-												angles[1] = -162.1563720703125;
+												angles[0] = -70.0;
+												angles[1] = -179.62820434570312;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, rightbshort_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
-										case 7: //Site B Smoke
+										case 7: //Left B Short Smoke
+										{
+											BotMoveTo(client, leftbshort_smoke, FASTEST_ROUTE);
+											if(leftbshort_smoke_distance < 50)
+											{
+												angles[0] = -60.0;
+												angles[1] = -173.82362365722656;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, leftbshort_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 8: //Site B Smoke
 										{
 											BotMoveTo(client, siteb_smoke, FASTEST_ROUTE);
-											if(siteb_chainDistance < 50)
+											if(siteb_smoke_distance < 50)
 											{
-												angles[0] = -51.0;
-												angles[1] = -171.13607788085938;
+												angles[0] = -57.0;
+												angles[1] = -161.13607788085938;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, siteb_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
-										case 8: //CT Smoke
+										case 9: //Bench Smoke
 										{
-											BotMoveTo(client, ct_smoke, FASTEST_ROUTE);
-											if(ct_chainDistance < 50)
+											BotMoveTo(client, bench_smoke, FASTEST_ROUTE);
+											if(bench_smoke_distance < 50)
 											{
-												angles[0] = -46.0;
-												angles[1] = -143.02418518066406;
+												angles[0] = -40.0;
+												angles[1] = -179.62820434570312;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
-												TeleportEntity(client, ct_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
-												buttons |= IN_JUMP;
+												TeleportEntity(client, bench_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 10: //Connector Smoke
+										{
+											BotMoveTo(client, connector_smoke, FASTEST_ROUTE);
+											if(connector_smoke_distance < 50)
+											{
+												angles[0] = -12.0;
+												angles[1] = -170.30368041992188;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, connector_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 11: //Window Smoke
+										{
+											BotMoveTo(client, window_smoke, FASTEST_ROUTE);
+											if(window_smoke_distance < 50)
+											{
+												angles[0] = -31.0;
+												angles[1] = -180.30368041992188;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, window_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 12: //Back B Smoke
+										{
+											BotMoveTo(client, backb_smoke, FASTEST_ROUTE);
+											if(backb_smoke_distance < 50)
+											{
+												angles[0] = -56.0;
+												angles[1] = -158.13607788085938;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, backb_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+									}
+								}
+								else if(index == 46 || index == 48)
+								{
+									switch(g_iRndMolotov[client])
+									{
+										case 1: //Sandwich Molotv
+										{
+											BotMoveTo(client, sandwich_molotov, FASTEST_ROUTE);
+											if(sandwich_molotov_distance < 50)
+											{
+												angles[0] = -23.0;
+												angles[1] = -180.61326599121094;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, sandwich_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 2: //Under Window B Molotv
+										{
+											BotMoveTo(client, underwindowb_molotov, FASTEST_ROUTE);
+											if(underwindowb_molotov_distance < 50)
+											{
+												angles[0] = -9.0;
+												angles[1] = 114.92156982421875;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, underwindowb_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 3: //Car B Molotv
+										{
+											BotMoveTo(client, carb_molotov, FASTEST_ROUTE);
+											if(carb_molotov_distance < 50)
+											{
+												angles[0] = 0.0;
+												angles[1] = -153.24478149414062;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, carb_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 4: //Bench Molotv
+										{
+											BotMoveTo(client, bench_molotov, FASTEST_ROUTE);
+											if(bench_molotov_distance < 50)
+											{
+												angles[0] = -1.0;
+												angles[1] = -154.24478149414062;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, bench_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 									}
@@ -10102,12 +10255,12 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							{
 								if (index == 45)
 								{
-									switch(g_iRndnade[client])
+									switch(g_iRndSmoke[client])
 									{
 										case 1: //Ramp Smoke
 										{
 											BotMoveTo(client, ramp_smoke, FASTEST_ROUTE);
-											if(ramp_chainDistance < 50)
+											if(ramp_smoke_distance < 50)
 											{
 												angles[0] = -9.0;
 												angles[1] = 34.35212707519531;
@@ -10115,21 +10268,83 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, ramp_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 										case 2: //Apps Smoke
 										{
 											BotMoveTo(client, apps_smoke, FASTEST_ROUTE);
-											if(apps_chainDistance < 50)
+											if(apps_smoke_distance < 50)
 											{
-												angles[0] = -20.0;
-												angles[1] = 71.88358306884766;
+												angles[0] = -21.0;
+												angles[1] = 32.99325180053711;
 												vel[0] = 0.0;
 												vel[1] = 0.0;
 												vel[2] = 0.0;
 												TeleportEntity(client, apps_smoke, angles, vel);
-												buttons &= ~IN_ATTACK;
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 3: //Palace Smoke
+										{
+											BotMoveTo(client, palace_smoke, FASTEST_ROUTE);
+											if(palace_smoke_distance < 50)
+											{
+												angles[0] = -55.0;
+												angles[1] = 15.02410888671875;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, palace_smoke, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+									}
+								}
+								else if(index == 46 || index == 48)
+								{
+									switch(g_iRndMolotov[client])
+									{
+										case 1: //Apps Molotv
+										{
+											BotMoveTo(client, apps_molotov, FASTEST_ROUTE);
+											if(apps_molotov_distance < 50)
+											{
+												angles[0] = -24.0;
+												angles[1] = 56.12193298339844;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, apps_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 2: //Ramp Molotv
+										{
+											BotMoveTo(client, ramp_molotov, FASTEST_ROUTE);
+											if(ramp_molotov_distance < 50)
+											{
+												angles[0] = -22.0;
+												angles[1] = 44.734649658203125;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, ramp_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
+											}
+										}
+										case 3: //Palace Molotv
+										{
+											BotMoveTo(client, palace_molotov, FASTEST_ROUTE);
+											if(palace_molotov_distance < 50)
+											{
+												angles[0] = -17.0;
+												angles[1] = 3.734649658203125;
+												vel[0] = 0.0;
+												vel[1] = 0.0;
+												vel[2] = 0.0;
+												TeleportEntity(client, palace_molotov, angles, vel);
+												buttons &= ~IN_ATTACK; 
 											}
 										}
 									}
@@ -10145,22 +10360,16 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 	return Plugin_Continue;
 }
 
-public Action PinNotPulled(Handle timer, any serial)
+public Action PinNotPulled(Handle timer, any client)
 {
-	int client = GetClientFromSerial(serial); // Validate the client serial
- 
-	if (client == 0) // The serial is no longer valid, the player must have disconnected
-	{
-		return Plugin_Stop;
-	}
-	
-	if (IsValidClient(client) && IsFakeClient(client))
+	client = GetClientOfUserId(client);
+	if(client != 0 && IsClientInGame(client))
 	{
 		g_bPinPulled[client] = false;
 	}
 	
 	return Plugin_Handled;
-}
+} 
 
 public Action Timer_CheckPlayer(Handle Timer, any data)
 {
@@ -16252,7 +16461,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//EHOME Players
-	if((StrEqual(botname, "equal")) || (StrEqual(botname, "DeStRoYeR")) || (StrEqual(botname, "Marek")) || (StrEqual(botname, "SLOWLY")) || (StrEqual(botname, "4king")))
+	if((StrEqual(botname, "equal")) || (StrEqual(botname, "Despair")) || (StrEqual(botname, "Marek")) || (StrEqual(botname, "SLOWLY")) || (StrEqual(botname, "4king")))
 	{
 		CS_SetClientClanTag(client, "EHOME");
 	}
@@ -16279,12 +16488,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "proxyyb")) || (StrEqual(botname, "Real1ze")) || (StrEqual(botname, "BOROS")) || (StrEqual(botname, "aLvAr-")) || (StrEqual(botname, "Just1ce")))
 	{
 		CS_SetClientClanTag(client, "NASR");
-	}
-	
-	//Portal Players
-	if((StrEqual(botname, "traNz")) || (StrEqual(botname, "Ttyke")) || (StrEqual(botname, "DVDOV")) || (StrEqual(botname, "PokemoN")) || (StrEqual(botname, "Ebeee")))
-	{
-		CS_SetClientClanTag(client, "Portal");
 	}
 	
 	//Brutals Players
@@ -16420,13 +16623,13 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//9INE Players
-	if((StrEqual(botname, "nicoodoz")) || (StrEqual(botname, "phzy")) || (StrEqual(botname, "Djury")) || (StrEqual(botname, "aybeN")) || (StrEqual(botname, "MistFire")))
+	if((StrEqual(botname, "nicoodoz")) || (StrEqual(botname, "acm")) || (StrEqual(botname, "Djury")) || (StrEqual(botname, "aybeN")) || (StrEqual(botname, "MistFire")))
 	{
 		CS_SetClientClanTag(client, "9INE");
 	}
 	
 	//Baecon Players
-	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "tyko")) || (StrEqual(botname, "horvy")) || (StrEqual(botname, "KILLDREAM")))
+	if((StrEqual(botname, "brA")) || (StrEqual(botname, "Demonos")) || (StrEqual(botname, "kst")) || (StrEqual(botname, "fakesS2")) || (StrEqual(botname, "KILLDREAM")))
 	{
 		CS_SetClientClanTag(client, "Baecon");
 	}
@@ -16462,7 +16665,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//IG Players
-	if((StrEqual(botname, "EXPRO")) || (StrEqual(botname, "V4D1M")) || (StrEqual(botname, "flying")) || (StrEqual(botname, "sPiNacH")) || (StrEqual(botname, "Koshak")))
+	if((StrEqual(botname, "EXPRO")) || (StrEqual(botname, "DeStRoYeR")) || (StrEqual(botname, "flying")) || (StrEqual(botname, "killmatic")) || (StrEqual(botname, "Koshak")))
 	{
 		CS_SetClientClanTag(client, "IG");
 	}
@@ -16635,10 +16838,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Dignitas");
 	}
 	
-	//Skyfire Players
-	if((StrEqual(botname, "Mizzy")) || (StrEqual(botname, "Gumpton")) || (StrEqual(botname, "affiNity")) || (StrEqual(botname, "LikiAU")) || (StrEqual(botname, "lato")))
+	//D13 Players
+	if((StrEqual(botname, "Tamiraarita")) || (StrEqual(botname, "rate")) || (StrEqual(botname, "sKINEE")) || (StrEqual(botname, "sK0R")) || (StrEqual(botname, "ANNIHILATION")))
 	{
-		CS_SetClientClanTag(client, "Skyfire");
+		CS_SetClientClanTag(client, "D13");
 	}
 	
 	//ZIGMA Players
@@ -16648,7 +16851,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Ambush Players
-	if((StrEqual(botname, "Inzta")) || (StrEqual(botname, "Ryxxo")) || (StrEqual(botname, "zeq")) || (StrEqual(botname, "Lukki")) || (StrEqual(botname, "IceBerg")))
+	if((StrEqual(botname, "Inzta")) || (StrEqual(botname, "Ryxxo")) || (StrEqual(botname, "zeq")) || (StrEqual(botname, "Typos")) || (StrEqual(botname, "IceBerg")))
 	{
 		CS_SetClientClanTag(client, "Ambush");
 	}
@@ -17134,11 +17337,6 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 130;
 	}
 	
-	if (StrEqual(sClan, "Portal"))
-	{
-		g_iProfileRank[client] = 131;
-	}
-	
 	if (StrEqual(sClan, "Brutals"))
 	{
 		g_iProfileRank[client] = 132;
@@ -17369,7 +17567,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 179;
 	}
 	
-	if (StrEqual(sClan, "Skyfire"))
+	if (StrEqual(sClan, "D13"))
 	{
 		g_iProfileRank[client] = 180;
 	}
