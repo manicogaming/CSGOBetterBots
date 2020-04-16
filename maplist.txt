@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Fri Mar 27 01:50:35 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Wed Apr 15 22:07:24 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -106,11 +106,12 @@ cs_italy
 cs_lanpartymayhem
 cs_militia
 cs_office
+de_anubis
 de_bank
-de_breach
 de_cache
 de_canals
 de_cbble
+de_chlorine
 de_desert
 de_dust2
 de_inferno
@@ -126,7 +127,6 @@ de_shortdust
 de_shortnuke
 de_spain
 de_stmarc
-de_studio
 de_sugarcane
 de_train
 de_vertigo
@@ -200,3 +200,7 @@ knas_speedcastle_css
 knife_fight_v1
 m_maze
 mcdonalds-mds
+moziz_walzor
+mx_tree_b1
+nyaarena
+oa_sentinel1

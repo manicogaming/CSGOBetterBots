@@ -37,7 +37,7 @@ public Plugin myinfo =
 	name = "Weapons & Knives",
 	author = "kgns | oyunhost.net",
 	description = "All in one weapon skin management",
-	version = "1.5.0",
+	version = "1.6.0",
 	url = "https://www.oyunhost.net"
 };
 
@@ -215,7 +215,7 @@ void SetWeaponProps(int client, int entity)
 		{
 			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
 			{
-				case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861:
+				case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.65));
 				}
@@ -259,7 +259,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.75));
 				}
-				case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905, 886, 859, 864, 734, 732:
+				case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905, 886, 859, 864, 734, 732, 950:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.70));
 				}
@@ -271,7 +271,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 1.00));
 				}
-				case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 378, 273, 916, 910, 891, 892, 890:
+				case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 378, 273, 916, 910, 891, 892, 890, 942:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.80));
 				}
@@ -295,11 +295,11 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.02, 0.80));
 				}
-				case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756, 763, 736, 869, 731:
+				case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756, 763, 736, 869, 731, 952:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.60));
 				}
-				case 801, 380:
+				case 801, 380, 943:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.05, 0.70));
 				}
@@ -319,7 +319,7 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.35));
 				}
-				case 689:
+				case 689, 956:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.72));
 				}
@@ -627,6 +627,10 @@ void SetWeaponProps(int client, int entity)
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.50));
 				}
+				case 946:
+				{
+					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 0.84));
+				}
 				default:
 				{
 					SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.00, 1.00));
@@ -731,7 +735,7 @@ void RefreshWeapon(int client, int index, bool defaultKnife = false)
 
 public Action ReserveAmmoTimer(Handle timer, DataPack pack)
 {
-	ResetPack(pack);
+	pack.Reset();
 	int clientIndex = GetClientOfUserId(pack.ReadCell());
 	int offset = pack.ReadCell();
 	int ammo = pack.ReadCell();

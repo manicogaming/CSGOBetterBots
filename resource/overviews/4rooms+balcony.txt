@@ -14,11 +14,11 @@
 		"default"
 		{
 			"AltitudeMax" "10000.000000"
-			"AltitudeMin" "-751.000000"
+			"AltitudeMin" "-662.434021"
 		}
 		"layer1"
 		{
-			"AltitudeMax" "-751.000000"
+			"AltitudeMax" "-662.434021"
 			"AltitudeMin" "-10000.000000"
 		}
 	}

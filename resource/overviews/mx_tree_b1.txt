@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"mx_tree_b1"
+{
+	"CTSpawn_x" "0.760000"
+	"CTSpawn_y" "0.510000"
+	"TSpawn_x" "1.520000"
+	"TSpawn_y" "0.490000"
+	"material" "overviews/mx_tree_b1"
+	"pos_x" "-2048.000000"
+	"pos_y" "1376.000000"
+	"scale" "2.420000"
+}

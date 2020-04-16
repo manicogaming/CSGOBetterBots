@@ -18,10 +18,12 @@
 void GetPlayerData(int client)
 {
 	char name[128];
-	GetClientName(client, name, sizeof(name));
-	char query[255];
-	FormatEx(query, sizeof(query), "SELECT * FROM %sweapons WHERE name = '%s'", g_TablePrefix, name);
-	db.Query(T_GetPlayerDataCallback, query, GetClientUserId(client));
+	if(GetClientName(client, name, sizeof(name)))
+	{
+		char query[255];
+		FormatEx(query, sizeof(query), "SELECT * FROM %sweapons WHERE name = '%s'", g_TablePrefix, name);
+		db.Query(T_GetPlayerDataCallback, query, GetClientUserId(client));
+	}
 }
 
 public void T_GetPlayerDataCallback(Database database, DBResultSet results, const char[] error, int userid)
@@ -36,23 +38,25 @@ public void T_GetPlayerDataCallback(Database database, DBResultSet results, cons
 		else if (results.RowCount == 0)
 		{
 			char name[128];
-			GetClientName(clientIndex, name, sizeof(name));
-			char query[255];
-			FormatEx(query, sizeof(query), "INSERT INTO %sweapons (name) VALUES ('%s')", g_TablePrefix, name);
-			DataPack pack = new DataPack();
-			pack.WriteString(name);
-			pack.WriteString(query);
-			db.Query(T_InsertCallback, query, pack);
-			for(int i = 0; i < sizeof(g_WeaponClasses); i++)
+			if(GetClientName(clientIndex, name, sizeof(name)))
 			{
-				g_iSkins[clientIndex][i] = 0;
-				g_iStatTrak[clientIndex][i] = 0;
-				g_iStatTrakCount[clientIndex][i] = 0;
-				g_NameTag[clientIndex][i] = "";
-				g_fFloatValue[clientIndex][i] = 0.0;
-				g_iWeaponSeed[clientIndex][i] = -1;
+				char query[255];
+				FormatEx(query, sizeof(query), "INSERT INTO %sweapons (name) VALUES ('%s')", g_TablePrefix, name);
+				DataPack pack = new DataPack();
+				pack.WriteString(name);
+				pack.WriteString(query);
+				db.Query(T_InsertCallback, query, pack);
+				for(int i = 0; i < sizeof(g_WeaponClasses); i++)
+				{
+					g_iSkins[clientIndex][i] = 0;
+					g_iStatTrak[clientIndex][i] = 0;
+					g_iStatTrakCount[clientIndex][i] = 0;
+					g_NameTag[clientIndex][i] = "";
+					g_fFloatValue[clientIndex][i] = 0.0;
+					g_iWeaponSeed[clientIndex][i] = -1;
+				}
+				g_iKnife[clientIndex] = 0;
 			}
-			g_iKnife[clientIndex] = 0;
 		}
 		else
 		{
@@ -70,12 +74,14 @@ public void T_GetPlayerDataCallback(Database database, DBResultSet results, cons
 				g_iKnife[clientIndex] = results.FetchInt(1);
 			}
 			char name[128];
-			GetClientName(clientIndex, name, 128);
-			char query[255];
-			FormatEx(query, sizeof(query), "REPLACE INTO %sweapons_timestamps (name, last_seen) VALUES ('%s', %d)", g_TablePrefix, name, GetTime());
-			DataPack pack = new DataPack();
-			pack.WriteString(query);
-			db.Query(T_TimestampCallback, query, pack);
+			if(GetClientName(clientIndex, name, sizeof(name)))
+			{
+				char query[255];
+				FormatEx(query, sizeof(query), "REPLACE INTO %sweapons_timestamps (name, last_seen) VALUES ('%s', %d)", g_TablePrefix, name, GetTime());
+				DataPack pack = new DataPack();
+				pack.WriteString(query);
+				db.Query(T_TimestampCallback, query, pack);
+			}
 		}
 	}
 }
@@ -99,7 +105,7 @@ public void T_InsertCallback(Database database, DBResultSet results, const char[
 		newPack.WriteString(query);
 		db.Query(T_TimestampCallback, query, newPack);
 	}
-	CloseHandle(pack);
+	delete pack;
 }
 
 public void T_TimestampCallback(Database database, DBResultSet results, const char[] error, DataPack pack)
@@ -111,18 +117,21 @@ public void T_TimestampCallback(Database database, DBResultSet results, const ch
 		pack.ReadString(buffer, 1024);
 		LogError("Timestamp Query failed! query: \"%s\" error: \"%s\"", buffer, error);
 	}
-	CloseHandle(pack);
+	delete pack;
 }
 
 void UpdatePlayerData(int client, char[] updateFields)
 {
 	char name[128];
 	GetClientName(client, name, sizeof(name));
-	char query[1024];
-	FormatEx(query, sizeof(query), "UPDATE %sweapons SET %s WHERE name = '%s'", g_TablePrefix, updateFields, name);
-	DataPack pack = new DataPack();
-	pack.WriteString(query);
-	db.Query(T_UpdatePlayerDataCallback, query, pack);
+	if(GetClientName(client, name, sizeof(name)))
+	{
+		char query[1024];
+		FormatEx(query, sizeof(query), "UPDATE %sweapons SET %s WHERE name = '%s'", g_TablePrefix, updateFields, name);
+		DataPack pack = new DataPack();
+		pack.WriteString(query);
+		db.Query(T_UpdatePlayerDataCallback, query, pack);
+	}
 }
 
 public void T_UpdatePlayerDataCallback(Database database, DBResultSet results, const char[] error, DataPack pack)
@@ -134,7 +143,7 @@ public void T_UpdatePlayerDataCallback(Database database, DBResultSet results, c
 		pack.ReadString(buffer, 1024);
 		LogError("Update Player failed! query: \"%s\" error: \"%s\"", buffer, error);
 	}
-	CloseHandle(pack);
+	delete pack;
 }
 
 public void SQLConnectCallback(Database database, const char[] error, any data)
@@ -907,5 +916,5 @@ public void T_DeleteInactivePlayerDataCallback(Database database, DBResultSet re
 			LogMessage("Inactive players' data has been deleted");
 		}
 	}
-	CloseHandle(pack);
+	delete pack;
 }
