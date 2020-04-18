@@ -887,7 +887,7 @@ static char g_sBotName[][] = {
 	"birdfromsky",
 	"Twinx",
 	"maNkz",
-	"thamlike",
+	"Raalz",
 	"Cabbi",
 	//GODSENT Players
 	"maden",
@@ -1153,12 +1153,6 @@ static char g_sBotName[][] = {
 	"maestro",
 	"Snyder",
 	"Sys",
-	//Vexed Players
-	"mezii",
-	"Kray",
-	"Adam9130",
-	"L1NK",
-	"Russ",
 	//GroundZero Players
 	"BURNRUOk",
 	"void",
@@ -1343,7 +1337,7 @@ static char g_sBotName[][] = {
 	"R0b3n",
 	"zorte",
 	"PASHANOJ",
-	"Polt",
+	"kenzor",
 	"fenvicious",
 	//Izako Players
 	"azizz",
@@ -1466,9 +1460,9 @@ static char g_sBotName[][] = {
 	"peku",
 	"Twixie",
 	//CR4ZY Players
-	"dERZKIY",
+	"DemQQ",
 	"Sergiz",
-	"dOBRIY",
+	"7oX1C",
 	"Psycho",
 	"SENSEi",
 	//Redemption Players
@@ -1604,7 +1598,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_furious", Team_Furious);
 	RegConsoleCmd("team_bluejays", Team_BLUEJAYS);
 	RegConsoleCmd("team_executioners", Team_EXECUTIONERS);
-	RegConsoleCmd("team_vexed", Team_Vexed);
 	RegConsoleCmd("team_groundzero", Team_GroundZero);
 	RegConsoleCmd("team_avez", Team_AVEZ);
 	RegConsoleCmd("team_btrg", Team_BTRG);
@@ -2962,7 +2955,7 @@ public Action Team_Lyngby(int client, int args)
 		ServerCommand("bot_add_ct %s", "birdfromsky");
 		ServerCommand("bot_add_ct %s", "Twinx");
 		ServerCommand("bot_add_ct %s", "maNkz");
-		ServerCommand("bot_add_ct %s", "thamlike");
+		ServerCommand("bot_add_ct %s", "Raalz");
 		ServerCommand("bot_add_ct %s", "Cabbi");
 		ServerCommand("mp_teamlogo_1 lyng");
 	}
@@ -2973,7 +2966,7 @@ public Action Team_Lyngby(int client, int args)
 		ServerCommand("bot_add_t %s", "birdfromsky");
 		ServerCommand("bot_add_t %s", "Twinx");
 		ServerCommand("bot_add_t %s", "maNkz");
-		ServerCommand("bot_add_t %s", "thamlike");
+		ServerCommand("bot_add_t %s", "Raalz");
 		ServerCommand("bot_add_t %s", "Cabbi");
 		ServerCommand("mp_teamlogo_2 lyng");
 	}
@@ -4301,36 +4294,6 @@ public Action Team_EXECUTIONERS(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Vexed(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "mezii");
-		ServerCommand("bot_add_ct %s", "Kray");
-		ServerCommand("bot_add_ct %s", "Adam9130");
-		ServerCommand("bot_add_ct %s", "L1NK");
-		ServerCommand("bot_add_ct %s", "Russ");
-		ServerCommand("mp_teamlogo_1 vex");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "mezii");
-		ServerCommand("bot_add_t %s", "Kray");
-		ServerCommand("bot_add_t %s", "Adam9130");
-		ServerCommand("bot_add_t %s", "L1NK");
-		ServerCommand("bot_add_t %s", "Russ");
-		ServerCommand("mp_teamlogo_2 vex");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_GroundZero(int client, int args)
 {
 	char arg[12];
@@ -5242,7 +5205,7 @@ public Action Team_Unique(int client, int args)
 		ServerCommand("bot_add_ct %s", "R0b3n");
 		ServerCommand("bot_add_ct %s", "zorte");
 		ServerCommand("bot_add_ct %s", "PASHANOJ");
-		ServerCommand("bot_add_ct %s", "Polt");
+		ServerCommand("bot_add_ct %s", "kenzor");
 		ServerCommand("bot_add_ct %s", "fenvicious");
 		ServerCommand("mp_teamlogo_1 uniq");
 	}
@@ -5253,7 +5216,7 @@ public Action Team_Unique(int client, int args)
 		ServerCommand("bot_add_t %s", "R0b3n");
 		ServerCommand("bot_add_t %s", "zorte");
 		ServerCommand("bot_add_t %s", "PASHANOJ");
-		ServerCommand("bot_add_t %s", "Polt");
+		ServerCommand("bot_add_t %s", "kenzor");
 		ServerCommand("bot_add_t %s", "fenvicious");
 		ServerCommand("mp_teamlogo_2 uniq");
 	}
@@ -5869,9 +5832,9 @@ public Action Team_CR4ZY(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "dERZKIY");
+		ServerCommand("bot_add_ct %s", "DemQQ");
 		ServerCommand("bot_add_ct %s", "Sergiz");
-		ServerCommand("bot_add_ct %s", "dOBRIY");
+		ServerCommand("bot_add_ct %s", "7oX1C");
 		ServerCommand("bot_add_ct %s", "Psycho");
 		ServerCommand("bot_add_ct %s", "SENSEi");
 		ServerCommand("mp_teamlogo_1 cr4z");
@@ -5880,9 +5843,9 @@ public Action Team_CR4ZY(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "dERZKIY");
+		ServerCommand("bot_add_t %s", "DemQQ");
 		ServerCommand("bot_add_t %s", "Sergiz");
-		ServerCommand("bot_add_t %s", "dOBRIY");
+		ServerCommand("bot_add_t %s", "7oX1C");
 		ServerCommand("bot_add_t %s", "Psycho");
 		ServerCommand("bot_add_t %s", "SENSEi");
 		ServerCommand("mp_teamlogo_2 cr4z");
@@ -6178,7 +6141,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				}
 				case 2:
 				{
-					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,42));
+					SetEntProp(i, Prop_Send, "m_unMusicID", GetRandomInt(39,49));
 				}
 			}
 			
@@ -9807,11 +9770,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 		{
 			if(StrEqual(botname, g_sBotName[i]))
 			{				
-				float clientEyes[3], targetEyes[3], targetEyes2[3], targetEyes3[3], targetEyesBase[3];
+				float clientEyes[3], targetEyes[3], targetEyes2[3];
 				GetClientEyePosition(client, clientEyes);
-				int Ent = Client_GetClosest(clientEyes, client);
-				
-				float angle[3];
+				int Ent = GetClosestClient(client);
 				
 				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
 				if (iClipAmmo > 0 && g_bFreezetimeEnd)
@@ -9825,9 +9786,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 						
 						GetClientAbsOrigin(Ent, targetEyes);
-						GetClientAbsOrigin(Ent, targetEyesBase);
-						GetClientAbsOrigin(Ent, targetEyes3);
-						GetEntPropVector(Ent, Prop_Data, "m_angRotation", angle);
 						GetClientEyePosition(Ent, targetEyes2);
 						
 						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38 && index != 9) || index == 63)
@@ -9878,15 +9836,13 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						{
 							return Plugin_Continue;
 						}
-						float flPos[3];
-						GetClientEyePosition(client, flPos);
-
+						
 						float flAng[3];
 						GetClientEyeAngles(client, flAng);
 						
 						// get normalised direction from target to client
 						float desired_dir[3];
-						MakeVectorFromPoints(flPos, targetEyes, desired_dir);
+						MakeVectorFromPoints(clientEyes, targetEyes, desired_dir);
 						GetVectorAngles(desired_dir, desired_dir);			
 						
 						flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
@@ -9987,7 +9943,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), true, false);
 						}
 					}
-					else if(weapon_tec9 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
+					
+					if(weapon_tec9 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -10005,7 +9962,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), true, false);
 						}
 					}
-					else if(weapon_fiveseven != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
+					
+					if(weapon_fiveseven != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -10023,7 +9981,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), true, false);
 						}
 					}
-					else if(weapon_p250 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61)))
+					
+					if(weapon_p250 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -10041,7 +10000,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), true, false);
 						}
 					}
-					else if(weapon_usp_silencer != -1 && secondaryindex == 4)
+					
+					if(weapon_usp_silencer != -1 && secondaryindex == 4)
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -15728,33 +15688,22 @@ stock float fmodf(float number, float denom)
 	return number - RoundToFloor(number / denom) * denom;
 }
 
-stock bool IsPointVisible(float start[3], float end[3])
-{
-	TR_TraceRayFilter(start, end, MASK_VISIBLE, RayType_EndPoint, TraceEntityFilterStuff);
-	return TR_GetFraction() >= 0.9;
-}
-
-public bool TraceEntityFilterStuff(int entity, int mask)
-{
-	return entity > MaxClients;
-}
-
-public bool ClientViewsFilter(int Entity, int Mask, any Junk)
-{
-    if (Entity >= 1 && Entity <= MaxClients) return false;
-    return true;
-}
-
 stock bool IsWeaponSlotActive(int client, int slot)
 {
     return GetPlayerWeaponSlot(client, slot) == GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 }
 
-stock int Client_GetClosest(float vecOrigin_center[3], int client)
+stock int GetClosestClient(int client)
 {
-	float vecOrigin_edict[3];
-	float distance = -1.0;
-	int closestEdict = -1;
+	float fClientOrigin[3], fTargetOrigin[3];
+	
+	GetClientAbsOrigin(client, fClientOrigin);
+	
+	int clientTeam = GetClientTeam(client);
+	int iClosestTarget = -1;
+	
+	float fClosestDistance = -1.0;
+	float fTargetDistance;
 	int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	int index;
 	char clantag[64];
@@ -15766,251 +15715,267 @@ stock int Client_GetClosest(float vecOrigin_center[3], int client)
 		index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	}
 	
-	for(int i = 1; i <= MaxClients ; i++)
+	CS_GetClientClanTag(client, clantag, sizeof(clantag));
+	
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (!IsClientInGame(i) || !IsPlayerAlive(i) || (i == client))
-			continue;
-		
-		if(StrEqual(clantag, "TYLOO")) //30th
+		if (IsValidClient(i))
 		{
-			if (!IsTargetInSightRange(client, i, 50.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Sprout")) //29th
-		{
-			if (!IsTargetInSightRange(client, i, 60.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "C9")) //28th
-		{
-			if (!IsTargetInSightRange(client, i, 70.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "HAVU")) //27th
-		{
-			if (!IsTargetInSightRange(client, i, 80.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "RNG")) //26th
-		{
-			if (!IsTargetInSightRange(client, i, 90.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Heroic")) //25th
-		{
-			if (!IsTargetInSightRange(client, i, 100.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "ENCE")) //24th
-		{
-			if (!IsTargetInSightRange(client, i, 110.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "North")) //23rd
-		{
-			if (!IsTargetInSightRange(client, i, 120.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Spirit")) //22nd
-		{
-			if (!IsTargetInSightRange(client, i, 130.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "coL")) //21st
-		{
-			if (!IsTargetInSightRange(client, i, 140.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "GODSENT")) //20th
-		{
-			if (!IsTargetInSightRange(client, i, 150.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "VP")) //19th
-		{
-			if (!IsTargetInSightRange(client, i, 160.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "forZe")) //18th
-		{
-			if (!IsTargetInSightRange(client, i, 170.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "MIBR")) //17th
-		{
-			if (!IsTargetInSightRange(client, i, 180.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Gen.G")) //16th
-		{
-			if (!IsTargetInSightRange(client, i, 190.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "BIG")) //15th
-		{
-			if (!IsTargetInSightRange(client, i, 200.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "OG")) //14th
-		{
-			if (!IsTargetInSightRange(client, i, 210.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Lions")) //13th
-		{
-			if (!IsTargetInSightRange(client, i, 220.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "NiP")) //12th
-		{
-			if (!IsTargetInSightRange(client, i, 230.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "FURIA")) //11th
-		{
-			if (!IsTargetInSightRange(client, i, 240.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Vitality")) //10th
-		{
-			if (!IsTargetInSightRange(client, i, 250.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Thieves")) //9th
-		{
-			if (!IsTargetInSightRange(client, i, 260.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "FaZe")) //8th
-		{
-			if (!IsTargetInSightRange(client, i, 270.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "EG")) //7th
-		{
-			if (!IsTargetInSightRange(client, i, 280.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Liquid")) //6th
-		{
-			if (!IsTargetInSightRange(client, i, 290.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "G2")) //5th
-		{
-			if (!IsTargetInSightRange(client, i, 300.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "mouz")) //4th
-		{
-			if (!IsTargetInSightRange(client, i, 310.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "fnatic")) //3rd
-		{
-			if (!IsTargetInSightRange(client, i, 320.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Astralis")) //2nd
-		{
-			if (!IsTargetInSightRange(client, i, 330.0))
-				continue;	
-		}
-		else if(StrEqual(clantag, "Na´Vi")) //1st
-		{
-			if (!IsTargetInSightRange(client, i, 340.0))
-				continue;	
-		}
-		else if(index == 9)
-		{
-			if (!IsTargetInSightRange(client, i, 180.0))
-				continue;	
-		}
-		else
-		{
-			if (!IsTargetInSightRange(client, i))
-				continue;
-		}
-		if (g_bFlashed[client])
-			continue;
-		
-		GetEntPropVector(i, Prop_Data, "m_vecOrigin", vecOrigin_edict);
-		GetClientEyePosition(i, vecOrigin_edict);
-		if(LineGoesThroughSmoke(vecOrigin_center, vecOrigin_edict))
-			continue;
-		if(GetClientTeam(i) != GetClientTeam(client))
-		{
-			if(IsPointVisible(vecOrigin_center, vecOrigin_edict) && ClientViews(client, i))
+			if (client == i || GetClientTeam(i) == clientTeam || !IsPlayerAlive(i))
 			{
-				int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-				int iSecondary = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
-				int iClipAmmo;
-				
-				if(iPrimary != -1)
+				continue;
+			}
+			
+			GetClientAbsOrigin(i, fTargetOrigin);
+			fTargetDistance = GetVectorDistance(fClientOrigin, fTargetOrigin);
+
+			if (fTargetDistance > fClosestDistance && fClosestDistance > -1.0)
+			{
+				continue;
+			}
+
+			if (!ClientCanSeeTarget(client, i))
+			{
+				continue;
+			}
+
+			if (GetEngineVersion() == Engine_CSGO)
+			{
+				if (GetEntPropFloat(i, Prop_Send, "m_fImmuneToGunGameDamageTime") > 0.0)
 				{
-					iClipAmmo = GetEntProp(iPrimary, Prop_Send, "m_iClip1");
-				}
-				
-				if(IsWeaponSlotActive(client, CS_SLOT_GRENADE) && !g_bPinPulled[client])
-				{
-					if(iClipAmmo > 0 && iPrimary != -1)
-					{
-						SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iPrimary); 
-					}
-					else if(iPrimary == -1 && iSecondary != -1)
-					{
-						SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iSecondary); 
-					}
-				}
-				
-				float edict_distance = GetVectorDistance(vecOrigin_center, vecOrigin_edict);
-				if((edict_distance < distance) || (distance == -1.0))
-				{
-					distance = edict_distance;
-					closestEdict = i;
+					continue;
 				}
 			}
+
+			if(StrEqual(clantag, "TYLOO")) //30th
+			{
+				if (!IsTargetInSightRange(client, i, 50.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Sprout")) //29th
+			{
+				if (!IsTargetInSightRange(client, i, 60.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "C9")) //28th
+			{
+				if (!IsTargetInSightRange(client, i, 70.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "HAVU")) //27th
+			{
+				if (!IsTargetInSightRange(client, i, 80.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "RNG")) //26th
+			{
+				if (!IsTargetInSightRange(client, i, 90.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Heroic")) //25th
+			{
+				if (!IsTargetInSightRange(client, i, 100.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "ENCE")) //24th
+			{
+				if (!IsTargetInSightRange(client, i, 110.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "North")) //23rd
+			{
+				if (!IsTargetInSightRange(client, i, 120.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Spirit")) //22nd
+			{
+				if (!IsTargetInSightRange(client, i, 130.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "coL")) //21st
+			{
+				if (!IsTargetInSightRange(client, i, 140.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "GODSENT")) //20th
+			{
+				if (!IsTargetInSightRange(client, i, 150.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "VP")) //19th
+			{
+				if (!IsTargetInSightRange(client, i, 160.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "forZe")) //18th
+			{
+				if (!IsTargetInSightRange(client, i, 170.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "MIBR")) //17th
+			{
+				if (!IsTargetInSightRange(client, i, 180.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Gen.G")) //16th
+			{
+				if (!IsTargetInSightRange(client, i, 190.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "BIG")) //15th
+			{
+				if (!IsTargetInSightRange(client, i, 200.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "OG")) //14th
+			{
+				if (!IsTargetInSightRange(client, i, 210.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Lions")) //13th
+			{
+				if (!IsTargetInSightRange(client, i, 220.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "NiP")) //12th
+			{
+				if (!IsTargetInSightRange(client, i, 230.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "FURIA")) //11th
+			{
+				if (!IsTargetInSightRange(client, i, 240.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Vitality")) //10th
+			{
+				if (!IsTargetInSightRange(client, i, 250.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Thieves")) //9th
+			{
+				if (!IsTargetInSightRange(client, i, 260.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "FaZe")) //8th
+			{
+				if (!IsTargetInSightRange(client, i, 270.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "EG")) //7th
+			{
+				if (!IsTargetInSightRange(client, i, 280.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Liquid")) //6th
+			{
+				if (!IsTargetInSightRange(client, i, 290.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "G2")) //5th
+			{
+				if (!IsTargetInSightRange(client, i, 300.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "mouz")) //4th
+			{
+				if (!IsTargetInSightRange(client, i, 310.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "fnatic")) //3rd
+			{
+				if (!IsTargetInSightRange(client, i, 320.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Astralis")) //2nd
+			{
+				if (!IsTargetInSightRange(client, i, 330.0))
+					continue;	
+			}
+			else if(StrEqual(clantag, "Na´Vi")) //1st
+			{
+				if (!IsTargetInSightRange(client, i, 340.0))
+					continue;	
+			}
+			else if(index == 9)
+			{
+				if (!IsTargetInSightRange(client, i, 180.0))
+					continue;	
+			}
+			else
+			{
+				if (!IsTargetInSightRange(client, i))
+					continue;
+			}
+			
+			if (g_bFlashed[client])
+			{
+				continue;
+			}
+			
+			if(LineGoesThroughSmoke(fClientOrigin, fTargetOrigin))
+			{
+				continue;
+			}
+			
+			int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+			int iSecondary = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
+			int iClipAmmo;
+			
+			if(iPrimary != -1)
+			{
+				iClipAmmo = GetEntProp(iPrimary, Prop_Send, "m_iClip1");
+			}
+			
+			if(IsWeaponSlotActive(client, CS_SLOT_GRENADE) && !g_bPinPulled[client])
+			{
+				if(iClipAmmo > 0 && iPrimary != -1)
+				{
+					SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iPrimary); 
+				}
+				else if(iPrimary == -1 && iSecondary != -1)
+				{
+					SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", iSecondary); 
+				}
+			}
+			
+			fClosestDistance = fTargetDistance;
+			iClosestTarget = i;
 		}
 	}
-	return closestEdict;
+	
+	return iClosestTarget;
 }
 
-stock bool ClientViews(int Viewer, int Target, float fMaxDistance=0.0, float fThreshold=0.70)
+stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
 {
-    // Retrieve view and target eyes position
-    float fViewPos[3];   GetClientEyePosition(Viewer, fViewPos);
-    float fViewAng[3];   GetClientEyeAngles(Viewer, fViewAng);
-    float fViewDir[3];
-    float fTargetPos[3]; GetClientEyePosition(Target, fTargetPos);
-    float fTargetDir[3];
-    float fDistance[3];
+	float fClientPosition[3]; float fTargetPosition[3];
 	
-    // Calculate view direction
-    fViewAng[0] = fViewAng[2] = 0.0;
-    GetAngleVectors(fViewAng, fViewDir, NULL_VECTOR, NULL_VECTOR);
-    
-    // Calculate distance to viewer to see if it can be seen.
-    fDistance[0] = fTargetPos[0]-fViewPos[0];
-    fDistance[1] = fTargetPos[1]-fViewPos[1];
-    fDistance[2] = 0.0;
-    if (fMaxDistance != 0.0)
-    {
-        if (((fDistance[0]*fDistance[0])+(fDistance[1]*fDistance[1])) >= (fMaxDistance*fMaxDistance))
-            return false;
-    }
-    
-    // Check dot product. If it's negative, that means the viewer is facing
-    // backwards to the target.
-    NormalizeVector(fDistance, fTargetDir);
-    if (GetVectorDotProduct(fViewDir, fTargetDir) < fThreshold) return false;
-    
-    // Now check if there are no obstacles in between through raycasting
-    Handle hTrace = TR_TraceRayFilterEx(fViewPos, fTargetPos, MASK_VISIBLE, RayType_EndPoint, ClientViewsFilter);
-    if (TR_DidHit(hTrace)) {CloseHandle(hTrace); return false;}
-    CloseHandle(hTrace);
-    
-    // Done, it's visible
-    return true;
+	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
+	fClientPosition[2] += fHeight;
+	
+	GetClientEyePosition(iTarget, fTargetPosition);
+	
+	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fTargetPosition, false) < fDistance)
+	{
+		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, fTargetPosition, MASK_SOLID_BRUSHONLY, RayType_EndPoint, Base_TraceFilter);
+		
+		if (TR_DidHit(hTrace))
+		{
+			delete hTrace;
+			return false;
+		}
+		
+		delete hTrace;
+		return true;
+	}
+	
+	return false;
+}
+
+public bool Base_TraceFilter(int iEntity, int iContentsMask, int iData)
+{
+	return iEntity == iData;
 }
 
 bool IsValidClient(int client) 
@@ -16378,7 +16343,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Lyngby Players
-	if((StrEqual(botname, "birdfromsky")) || (StrEqual(botname, "Twinx")) || (StrEqual(botname, "maNkz")) || (StrEqual(botname, "thamlike")) || (StrEqual(botname, "Cabbi")))
+	if((StrEqual(botname, "birdfromsky")) || (StrEqual(botname, "Twinx")) || (StrEqual(botname, "maNkz")) || (StrEqual(botname, "Raalz")) || (StrEqual(botname, "Cabbi")))
 	{
 		CS_SetClientClanTag(client, "Lyngby");
 	}
@@ -16641,12 +16606,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "EXECUTIONERS");
 	}
 	
-	//Vexed Players
-	if((StrEqual(botname, "mezii")) || (StrEqual(botname, "Kray")) || (StrEqual(botname, "Adam9130")) || (StrEqual(botname, "L1NK")) || (StrEqual(botname, "Russ")))
-	{
-		CS_SetClientClanTag(client, "Vexed");
-	}
-	
 	//GroundZero Players
 	if((StrEqual(botname, "BURNRUOk")) || (StrEqual(botname, "void")) || (StrEqual(botname, "Llamas")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "PEARSS")))
 	{
@@ -16834,7 +16793,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Unique Players
-	if((StrEqual(botname, "R0b3n")) || (StrEqual(botname, "zorte")) || (StrEqual(botname, "PASHANOJ")) || (StrEqual(botname, "Polt")) || (StrEqual(botname, "fenvicious")))
+	if((StrEqual(botname, "R0b3n")) || (StrEqual(botname, "zorte")) || (StrEqual(botname, "PASHANOJ")) || (StrEqual(botname, "kenzor")) || (StrEqual(botname, "fenvicious")))
 	{
 		CS_SetClientClanTag(client, "Unique");
 	}
@@ -16960,7 +16919,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//CR4ZY Players
-	if((StrEqual(botname, "dERZKIY")) || (StrEqual(botname, "Sergiz")) || (StrEqual(botname, "dOBRIY")) || (StrEqual(botname, "Psycho")) || (StrEqual(botname, "SENSEi")))
+	if((StrEqual(botname, "DemQQ")) || (StrEqual(botname, "Sergiz")) || (StrEqual(botname, "7oX1C")) || (StrEqual(botname, "Psycho")) || (StrEqual(botname, "SENSEi")))
 	{
 		CS_SetClientClanTag(client, "CR4ZY");
 	}
@@ -17452,11 +17411,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "EXECUTIONERS"))
 	{
 		g_iProfileRank[client] = 138;
-	}
-	
-	if (StrEqual(sClan, "Vexed"))
-	{
-		g_iProfileRank[client] = 139;
 	}
 	
 	if (StrEqual(sClan, "GroundZero"))

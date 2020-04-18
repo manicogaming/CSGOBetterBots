@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Wed Apr 15 22:07:24 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.7.8 config 1 at Fri Apr 17 21:15:33 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -132,6 +132,7 @@ de_train
 de_vertigo
 deathzone
 dm_bloodsport
+dz_junglety
 fun_pacman_v1
 fy_back_street
 fy_concrete
@@ -204,3 +205,4 @@ moziz_walzor
 mx_tree_b1
 nyaarena
 oa_sentinel1
+obe_jungle
