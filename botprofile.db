@@ -3169,7 +3169,7 @@ ProP+Rifle "Shakezullah"
 	VoicePitch = 109
 End
 
-ProAwp+SniperPro "Voltage"
+ProAwp+SniperPro "Junior"
 	VoicePitch = 93
 End
 
@@ -3177,7 +3177,7 @@ ProP+Rifle "Spongey"
 	VoicePitch = 100
 End
 
-ProP+Rifle "Asuna"
+ProP+Rifle "curry"
 	VoicePitch = 79
 End
 
@@ -3559,6 +3559,28 @@ ProP+Rifle "squidah"
 	VoicePitch = 79
 End
 
+//eXploit Players
+
+ProP+Rifle "pizituh"
+	VoicePitch = 112
+End
+
+ProAwp+SniperPro "BuJ"
+	VoicePitch = 101
+End
+
+ProP+Rifle "sark"
+	VoicePitch = 112
+End
+
+ProP+Rifle "MISK"
+	VoicePitch = 107
+End
+
+ProP+Rifle "Cunha"
+	VoicePitch = 79
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
@@ -3867,12 +3889,8 @@ Elite+Rifle Dumbazo
     VoicePitch = 84
 End
 
-EliteAwp+SniperPro "Miyu ♡"
+EliteAwp+SniperPro "Miyu"
         VoicePitch = 95
-End
-
-EliteAwp+SniperPro "バタフライボット"
-        VoicePitch = 105
 End
 
 EliteAwp+SniperPro "Saiko"
@@ -3887,19 +3905,11 @@ ElitePassive+Rifle "Certifed Quality"
         VoicePitch = 80
 End
 
-ElitePassive+Rifle "祈雨"
-        VoicePitch = 90
-End
-
 ElitePassive+Rifle berthe
         VoicePitch = 96
 End
 
-Elite+Rifle "✿ Agєяα ✿"
-        VoicePitch = 84
-End
-
-Elite+Rifle "Düktor"
+Elite+Rifle "Duktor"
         VoicePitch = 86
 End
 
@@ -3923,7 +3933,7 @@ EliteAwp+SniperPro Hikari
         VoicePitch = 80
 End
 
-ElitePassive+Rifle "El Jägermeister"
+ElitePassive+Rifle "El Jagermeister"
         VoicePitch = 112
 End
 
@@ -3931,7 +3941,7 @@ Elite+Rifle "hambug | buying skins"
         VoicePitch = 88
 End
 
-ElitePassive+Rifle "山口 二矢 | A E S T H E T I C"
+ElitePassive+Rifle "A E S T H E T I C"
         VoicePitch = 110
 End
 

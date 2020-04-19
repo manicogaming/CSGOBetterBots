@@ -85,7 +85,8 @@ char g_sUSPModels[][] = {
 	"models/weapons/v_uspstickers14.mdl",
 	"models/weapons/v_uspstickers15.mdl",
 	"models/weapons/v_uspstickers16.mdl",
-	"models/weapons/v_uspstickers17.mdl"
+	"models/weapons/v_uspstickers17.mdl",
+	"models/weapons/v_uspstickers18.mdl"
 };
 
 char g_sP2000Models[][] = {
@@ -1371,9 +1372,9 @@ static char g_sBotName[][] = {
 	"XinKoiNg",
 	//Triumph Players
 	"Shakezullah",
-	"Voltage",
+	"Junior",
 	"Spongey",
-	"Asuna",
+	"curry",
 	"Grim",
 	//FATE Players
 	"doublemagic",
@@ -1476,7 +1477,13 @@ static char g_sBotName[][] = {
 	"bron",
 	"dvl",
 	"Munk",
-	"squidah"
+	"squidah",
+	//eXploit Players
+	"pizituh",
+	"BuJ",
+	"sark",
+	"MISK",
+	"Cunha"
 };
  
 public Plugin myinfo =
@@ -1652,6 +1659,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_cr4zy", Team_CR4ZY);
 	RegConsoleCmd("team_redemption", Team_Redemption);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
+	RegConsoleCmd("team_exploit", Team_eXploit);
 }
 
 public Action Team_NiP(int client, int args)
@@ -5383,9 +5391,9 @@ public Action Team_Triumph(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Shakezullah");
-		ServerCommand("bot_add_ct %s", "Voltage");
+		ServerCommand("bot_add_ct %s", "Junior");
 		ServerCommand("bot_add_ct %s", "Spongey");
-		ServerCommand("bot_add_ct %s", "Asuna");
+		ServerCommand("bot_add_ct %s", "curry");
 		ServerCommand("bot_add_ct %s", "Grim");
 		ServerCommand("mp_teamlogo_1 tri");
 	}
@@ -5394,9 +5402,9 @@ public Action Team_Triumph(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Shakezullah");
-		ServerCommand("bot_add_t %s", "Voltage");
+		ServerCommand("bot_add_t %s", "Junior");
 		ServerCommand("bot_add_t %s", "Spongey");
-		ServerCommand("bot_add_t %s", "Asuna");
+		ServerCommand("bot_add_t %s", "curry");
 		ServerCommand("bot_add_t %s", "Grim");
 		ServerCommand("mp_teamlogo_2 tri");
 	}
@@ -5909,6 +5917,36 @@ public Action Team_GameAgents(int client, int args)
 		ServerCommand("bot_add_t %s", "Munk");
 		ServerCommand("bot_add_t %s", "squidah");
 		ServerCommand("mp_teamlogo_2 game");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_eXploit(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "pizituh");
+		ServerCommand("bot_add_ct %s", "BuJ");
+		ServerCommand("bot_add_ct %s", "sark");
+		ServerCommand("bot_add_ct %s", "MISK");
+		ServerCommand("bot_add_ct %s", "Cunha");
+		ServerCommand("mp_teamlogo_1 expl");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "pizituh");
+		ServerCommand("bot_add_t %s", "BuJ");
+		ServerCommand("bot_add_t %s", "sark");
+		ServerCommand("bot_add_t %s", "MISK");
+		ServerCommand("bot_add_t %s", "Cunha");
+		ServerCommand("mp_teamlogo_2 expl");
 	}
 
 	return Plugin_Handled;
@@ -16829,7 +16867,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Triumph Players
-	if((StrEqual(botname, "Shakezullah")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "Spongey")) || (StrEqual(botname, "Asuna")) || (StrEqual(botname, "Grim")))
+	if((StrEqual(botname, "Shakezullah")) || (StrEqual(botname, "Junior")) || (StrEqual(botname, "Spongey")) || (StrEqual(botname, "curry")) || (StrEqual(botname, "Grim")))
 	{
 		CS_SetClientClanTag(client, "Triumph");
 	}
@@ -16934,6 +16972,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "blackpinklisa")) || (StrEqual(botname, "bron")) || (StrEqual(botname, "dvl")) || (StrEqual(botname, "Munk")) || (StrEqual(botname, "squidah")))
 	{
 		CS_SetClientClanTag(client, "GameAgents");
+	}
+	
+	//eXploit Players
+	if((StrEqual(botname, "pizituh")) || (StrEqual(botname, "BuJ")) || (StrEqual(botname, "sark")) || (StrEqual(botname, "MISK")) || (StrEqual(botname, "Cunha")))
+	{
+		CS_SetClientClanTag(client, "eXploit");
 	}
 }
 
@@ -17526,6 +17570,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "aL"))
 	{
 		g_iProfileRank[client] = 164;
+	}
+	
+	if (StrEqual(sClan, "eXploit"))
+	{
+		g_iProfileRank[client] = 165;
 	}
 	
 	if (StrEqual(sClan, "IG"))
