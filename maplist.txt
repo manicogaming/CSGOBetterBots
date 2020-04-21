@@ -1,4 +1,4 @@
-// csgosl 2.7.8 config 1 at Sun Apr 19 01:36:41 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.8 config 1 at Tue Apr 21 00:52:34 WEST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -181,7 +181,6 @@ gg_mr_max
 gg_neonlight
 gg_office
 gg_orange_arena_trx
-gg_p@pys_@peros
 gg_simple_v1
 gg_simpsons_japanz_v2
 gg_simpsons_mega
