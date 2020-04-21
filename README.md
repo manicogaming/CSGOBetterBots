@@ -1,6 +1,6 @@
 # Edited Plugins
 
-In here there are some plugins that I personality edited to add the features of those plugins to the BOTs. I'm using these edited plugins on a Local Server because on a dedicated server I'll get a Token ban.
+In here there are some plugins that I personality edited to add the features of those plugins to the BOTs. I'm using these edited plugins on a Local Server because on a public server I'll get a Token ban.
 
 I edited the following plugins.
 
@@ -28,9 +28,13 @@ I edited the following plugins.
 - Made it so that it doesn't skip BOTs
 - All the data is now saved and queried by name as BOTs don't have a SteamID
 
-# [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
+# [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/Franc1sco/Franug-Sprayss)
 - Made it so that it doesn't skip BOTs
 - Added more Ranks
+
+# [Franc1sco/Franug-Sprays](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
+- BOTs will automatically use their sprays
+- Added all Sprays from CS:GO
 
 # Other Files
 
