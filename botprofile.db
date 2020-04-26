@@ -995,7 +995,7 @@ ProAwp+SniperPro "b0RUP"
 	VoicePitch = 96
 End
 
-ProP+Rifle "Snappi"
+ProP+Rifle "nikozan"
 	VoicePitch = 112
 End
 
@@ -1069,7 +1069,7 @@ ProP+Rifle "akEz"
 	VoicePitch = 80
 End
 
-ProP+Rifle "Radifaction"
+ProP+Rifle "Polly"
 	VoicePitch = 71
 End
 
@@ -1273,11 +1273,11 @@ End
 
 //DIVIZON Players
 
-ProP+Rifle "slunixx"
+ProP+Rifle "devus"
 	VoicePitch = 75
 End
 
-ProAwp+SniperPro "CEQU"
+ProAwp+SniperPro "akay"
 	VoicePitch = 107
 End
 
@@ -1313,28 +1313,6 @@ End
 
 ProP+Rifle "pdy"
 	VoicePitch = 77
-End
-
-//PANTHERS Players
-
-ProP+Rifle "boostey"
-	VoicePitch = 85
-End
-
-ProAwp+SniperPro "HighKitty"
-	VoicePitch = 88
-End
-
-ProP+Rifle "syncD"
-	VoicePitch = 113
-End
-
-ProP+Rifle "BMLN"
-	VoicePitch = 111
-End
-
-ProP+Rifle "Aika"
-	VoicePitch = 105
 End
 
 //PDucks Players
@@ -1827,7 +1805,7 @@ ProP+Rifle "k1Nky"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "malbsMd"
+ProAwp+SniperPro "sam_A"
 	VoicePitch = 74
 End
 
@@ -1835,7 +1813,7 @@ ProP+Rifle "spamzzy"
 	VoicePitch = 87
 End
 
-ProP+Rifle "sam_A"
+ProP+Rifle "tor1towOw"
 	VoicePitch = 81
 End
 
@@ -3562,23 +3540,45 @@ End
 //eXploit Players
 
 ProP+Rifle "pizituh"
-	VoicePitch = 112
+	VoicePitch = 91
 End
 
 ProAwp+SniperPro "BuJ"
-	VoicePitch = 101
+	VoicePitch = 93
 End
 
 ProP+Rifle "sark"
-	VoicePitch = 112
+	VoicePitch = 114
 End
 
 ProP+Rifle "MISK"
-	VoicePitch = 107
+	VoicePitch = 97
 End
 
 ProP+Rifle "Cunha"
-	VoicePitch = 79
+	VoicePitch = 88
+End
+
+//nerdRage Players
+
+ProP+Rifle "Frazehh"
+	VoicePitch = 96
+End
+
+ProAwp+SniperPro "Br0die"
+	VoicePitch = 112
+End
+
+ProP+Rifle "Ping"
+	VoicePitch = 104
+End
+
+ProP+Rifle "Tadpole"
+	VoicePitch = 96
+End
+
+ProP+Rifle "LNZ"
+	VoicePitch = 86
 End
 
 EliteAwp+SniperPro "XD | ryu"
