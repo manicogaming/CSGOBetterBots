@@ -1227,28 +1227,6 @@ ProP+Rifle "SIXER"
 	VoicePitch = 108
 End
 
-//Defusekids Players
-
-ProP+Rifle "HOLMES"
-	VoicePitch = 100
-End
-
-ProAwp+SniperPro "van1ty"
-	VoicePitch = 90
-End
-
-ProP+Rifle "FASHR"
-	VoicePitch = 96
-End
-
-ProP+Rifle "D0cC"
-	VoicePitch = 101
-End
-
-ProP+Rifle "rilax"
-	VoicePitch = 101
-End
-
 //GamerLegion Players
 
 ProP+Rifle "dennis"
@@ -2535,7 +2513,7 @@ ProAwp+SniperPro "jtr"
 	VoicePitch = 88
 End
 
-ProP+Rifle "Koro"
+ProP+Rifle "zeph"
 	VoicePitch = 107
 End
 
@@ -2543,7 +2521,7 @@ ProP+Rifle "Rackem"
 	VoicePitch = 109
 End
 
-ProP+Rifle "vanilla"
+ProP+Rifle "yourwombat"
 	VoicePitch = 91
 End
 
@@ -2703,11 +2681,11 @@ End
 
 //HR Players
 
-ProP+Rifle "ANGE1"
+ProP+Rifle "kAliNkA"
 	VoicePitch = 74
 End
 
-ProAwp+SniperPro "nukkye"
+ProAwp+SniperPro "jR"
 	VoicePitch = 86
 End
 
@@ -2715,11 +2693,11 @@ ProP+Rifle "Flarich"
 	VoicePitch = 89
 End
 
-ProP+Rifle "crush"
+ProP+Rifle "ProbLeM"
 	VoicePitch = 87
 End
 
-ProP+Rifle "AiyvaN"
+ProP+Rifle "JIaYm"
 	VoicePitch = 94
 End
 
@@ -3185,7 +3163,7 @@ ProP+Rifle "ISSAA"
 	VoicePitch = 103
 End
 
-//Reason Players
+//Vexed Players
 
 ProP+Rifle "Frei"
 	VoicePitch = 94
@@ -3511,7 +3489,7 @@ ProP+Rifle "FejtZ"
 	VoicePitch = 77
 End
 
-ProP+Rifle "ToH1o"
+ProP+Rifle "shokz"
 	VoicePitch = 81
 End
 
