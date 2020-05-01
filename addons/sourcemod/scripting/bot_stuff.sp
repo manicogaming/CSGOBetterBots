@@ -214,7 +214,7 @@ static char g_sBotName[][] = {
 	"El1an",
 	"bondik",
 	//Sprout Players
-	"oskar",
+	"snatchie",
 	"dycha",
 	"Spiidi",
 	"faveN",
@@ -255,12 +255,6 @@ static char g_sBotName[][] = {
 	"dexter",
 	"Hatz",
 	"malta",
-	//MVP.PK Players
-	"glow",
-	"termi",
-	"Rb",
-	"k1Ng",
-	"stax",
 	//Envy Players
 	"Nifty",
 	"ryann",
@@ -829,7 +823,7 @@ static char g_sBotName[][] = {
 	"kiR",
 	"kwezz",
 	"Luckyv1",
-	"torben",
+	"sycrone",
 	"Toft",
 	//Gen.G Players
 	"autimatic",
@@ -978,7 +972,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_apeks", Team_Apeks);
 	RegConsoleCmd("team_attax", Team_aTTaX);
 	RegConsoleCmd("team_rng", Team_Renegades);
-	RegConsoleCmd("team_mvppk", Team_MVPPK);
 	RegConsoleCmd("team_envy", Team_Envy);
 	RegConsoleCmd("team_spirit", Team_Spirit);
 	RegConsoleCmd("team_cex", Team_CeX);
@@ -1818,7 +1811,7 @@ public Action Team_Sprout(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "oskar");
+		ServerCommand("bot_add_ct %s", "snatchie");
 		ServerCommand("bot_add_ct %s", "dycha");
 		ServerCommand("bot_add_ct %s", "Spiidi");
 		ServerCommand("bot_add_ct %s", "faveN");
@@ -1829,7 +1822,7 @@ public Action Team_Sprout(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "oskar");
+		ServerCommand("bot_add_t %s", "snatchie");
 		ServerCommand("bot_add_t %s", "dycha");
 		ServerCommand("bot_add_t %s", "Spiidi");
 		ServerCommand("bot_add_t %s", "faveN");
@@ -2015,36 +2008,6 @@ public Action Team_Renegades(int client, int args)
 		ServerCommand("bot_add_t %s", "Hatz");
 		ServerCommand("bot_add_t %s", "malta");
 		ServerCommand("mp_teamlogo_2 ren");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_MVPPK(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "glow");
-		ServerCommand("bot_add_ct %s", "termi");
-		ServerCommand("bot_add_ct %s", "Rb");
-		ServerCommand("bot_add_ct %s", "k1Ng");
-		ServerCommand("bot_add_ct %s", "stax");
-		ServerCommand("mp_teamlogo_1 mvp");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "glow");
-		ServerCommand("bot_add_t %s", "termi");
-		ServerCommand("bot_add_t %s", "Rb");
-		ServerCommand("bot_add_t %s", "k1Ng");
-		ServerCommand("bot_add_t %s", "stax");
-		ServerCommand("mp_teamlogo_2 mvp");
 	}
 	
 	return Plugin_Handled;
@@ -4881,7 +4844,7 @@ public Action Team_Tricked(int client, int args)
 		ServerCommand("bot_add_ct %s", "kiR");
 		ServerCommand("bot_add_ct %s", "kwezz");
 		ServerCommand("bot_add_ct %s", "Luckyv1");
-		ServerCommand("bot_add_ct %s", "torben");
+		ServerCommand("bot_add_ct %s", "sycrone");
 		ServerCommand("bot_add_ct %s", "Toft");
 		ServerCommand("mp_teamlogo_1 trick");
 	}
@@ -4892,7 +4855,7 @@ public Action Team_Tricked(int client, int args)
 		ServerCommand("bot_add_t %s", "kiR");
 		ServerCommand("bot_add_t %s", "kwezz");
 		ServerCommand("bot_add_t %s", "Luckyv1");
-		ServerCommand("bot_add_t %s", "torben");
+		ServerCommand("bot_add_t %s", "sycrone");
 		ServerCommand("bot_add_t %s", "Toft");
 		ServerCommand("mp_teamlogo_2 trick");
 	}
@@ -5361,90 +5324,73 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
 		{			
-			if(GetRandomInt(1,100) <= 35)
+			if(GetRandomInt(1,100) <= 40)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
 					SetEntityModel(i, g_sCTModels[GetRandomInt(0, sizeof(g_sCTModels) - 1)]);
 					
-					int patchslot = GetRandomInt(1,4);
-					
-					switch(patchslot)
+					if(GetRandomInt(1,100) <= 40)
 					{
-						case 1:
+						int rndpatch = GetRandomInt(1,2);
+						
+						switch(rndpatch)
 						{
-							if(GetRandomInt(1,100) <= 25)
+							case 1:
 							{
-								int rndpatch = GetRandomInt(1,2);
-								
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-									}
-								}
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
+							}
+							case 2:
+							{
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
 							}
 						}
-						case 2:
+					}
+					if(GetRandomInt(1,100) <= 40)
+					{
+						int rndpatch = GetRandomInt(1,2);
+						
+						switch(rndpatch)
 						{
-							if(GetRandomInt(1,100) <= 25)
+							case 1:
 							{
-								int rndpatch = GetRandomInt(1,2);
-								
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-									}
-								}
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
+							}
+							case 2:
+							{
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
 							}
 						}
-						case 3:
+					}
+					if(GetRandomInt(1,100) <= 40)
+					{
+						int rndpatch = GetRandomInt(1,2);
+						
+						switch(rndpatch)
 						{
-							if(GetRandomInt(1,100) <= 25)
+							case 1:
 							{
-								int rndpatch = GetRandomInt(1,2);
-								
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
+							}
+							case 2:
+							{
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
 							}
 						}
-						case 4:
+					}
+					if(GetRandomInt(1,100) <= 40)
+					{
+						int rndpatch = GetRandomInt(1,2);
+						
+						switch(rndpatch)
 						{
-							if(GetRandomInt(1,100) <= 25)
+							case 1:
 							{
-								int rndpatch = GetRandomInt(1,2);
-								
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
+							}
+							case 2:
+							{
+								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
 							}
 						}
 					}
@@ -7311,7 +7257,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sprout Players
-	if((StrEqual(botname, "oskar")) || (StrEqual(botname, "dycha")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "denis")))
+	if((StrEqual(botname, "snatchie")) || (StrEqual(botname, "dycha")) || (StrEqual(botname, "Spiidi")) || (StrEqual(botname, "faveN")) || (StrEqual(botname, "denis")))
 	{
 		CS_SetClientClanTag(client, "Sprout");
 	}
@@ -7350,12 +7296,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "INS")) || (StrEqual(botname, "sico")) || (StrEqual(botname, "dexter")) || (StrEqual(botname, "Hatz")) || (StrEqual(botname, "malta")))
 	{
 		CS_SetClientClanTag(client, "RNG");
-	}
-	
-	//MVP.PK Players
-	if((StrEqual(botname, "glow")) || (StrEqual(botname, "termi")) || (StrEqual(botname, "Rb")) || (StrEqual(botname, "k1Ng")) || (StrEqual(botname, "stax")))
-	{
-		CS_SetClientClanTag(client, "MVP.PK");
 	}
 	
 	//Envy Players
@@ -7923,7 +7863,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Tricked Players
-	if((StrEqual(botname, "kiR")) || (StrEqual(botname, "kwezz")) || (StrEqual(botname, "Luckyv1")) || (StrEqual(botname, "torben")) || (StrEqual(botname, "Toft")))
+	if((StrEqual(botname, "kiR")) || (StrEqual(botname, "kwezz")) || (StrEqual(botname, "Luckyv1")) || (StrEqual(botname, "sycrone")) || (StrEqual(botname, "Toft")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
 	}
@@ -8177,11 +8117,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "RNG"))
 	{
 		g_iProfileRank[client] = 73;
-	}
-	
-	if (StrEqual(sClan, "MVP.PK"))
-	{
-		g_iProfileRank[client] = 74;
 	}
 	
 	if (StrEqual(sClan, "Envy"))

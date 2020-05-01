@@ -20,6 +20,7 @@
 #include <sdkhooks>
 #include <cstrike>
 #include <PTaH>
+#include <csgo_weaponstickers>
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -658,6 +659,26 @@ void SetWeaponProps(int client, int entity)
 				{
 					g_iStatTrak[client][index] = 0;
 				}
+			}
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
+			}
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
+			}
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
+			}
+			
+			if(GetRandomInt(1,100) <= 40)
+			{
+				CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
 			}
 		}
 		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);

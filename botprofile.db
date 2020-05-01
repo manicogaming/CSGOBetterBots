@@ -965,7 +965,7 @@ End
 
 //Sprout Players
 
-ProP+Rifle "oskar"
+ProP+Rifle "snatchie"
 	VoicePitch = 86
 End
 
@@ -1115,28 +1115,6 @@ End
 
 ProP+Rifle "malta"
 	VoicePitch = 89
-End
-
-//MVP.PK Players
-
-ProP+Rifle "glow"
-	VoicePitch = 83
-End
-
-ProAwp+SniperPro "termi"
-	VoicePitch = 93
-End
-
-ProP+Rifle "Rb"
-	VoicePitch = 112
-End
-
-ProP+Rifle "k1Ng"
-	VoicePitch = 101
-End
-
-ProP+Rifle "stax"
-	VoicePitch = 74
 End
 
 //Envy Players
@@ -3199,7 +3177,7 @@ ProP+Rifle "Luckyv1"
 	VoicePitch = 83
 End
 
-ProP+Rifle "torben"
+ProP+Rifle "sycrone"
 	VoicePitch = 110
 End
 

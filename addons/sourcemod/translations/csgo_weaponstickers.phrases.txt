@@ -1,0 +1,142 @@
+"Phrases"
+{
+	"Menu Stickers Title"
+	{
+		"en"		"[Weapon Stickers].\n- Use !sticker <name> to search for stickers.\n \nSelect Slot:"
+		"pt"		"[Weapon Stickers].\n- Utilize !sticker <nome> para pesquisar por stickers.\n \nSelecione o Slot:"
+	}
+	"Menu Stickers Slot Already Title"
+	{
+		"#format"	"{1:s},{2:i},{3:s}"
+		"en"		"Choose sticker for {1} [slot {2}].\nCurrent sticker: {3}\n \nSelect Set:"
+		"pt"		"Escolher sticker para {1} [slot {2}].\nSticker atual: {3}\n \nSelecione o Set:"
+	}
+	"Menu Stickers Slot Title"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"Choose sticker for {1} [slot {2}].\n \nSelect Set:"
+		"pt"		"Escolher sticker para {1} [slot {2}].\n \nSelecione o Set:"
+	}
+	"Menu Stickers Slot Title AllSlots"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"Choose sticker for {1}.\n \nSelect Set:"
+		"pt"		"Escolher sticker para {1}.\n \nSelecione o Set:"
+	}
+	"Menu Stickers Slot Remove"
+	{
+		"en"		"Remove Sticker"
+		"pt"		"Remover Sticker"
+	}
+	"Menu Stickers Set Already Title"
+	{
+		"#format"	"{1:s},{2:i},{3:s},{4:s}"
+		"en"		"Choose sticker for {1} [slot {2}].\nCurrent sticker: {3}\n \nViewing stickers '{4}':"
+		"pt"		"Escolher sticker para {1} [slot {2}].\nSticker atual: {3}\n \nVisualizando stickers '{4}':"
+	}
+	"Menu Stickers Set Title"
+	{
+		"#format"	"{1:s},{2:i},{3:s}"
+		"en"		"Choose sticker for {1} [slot {2}].\n \nViewing stickers '{3}':"
+		"pt"		"Escolher sticker para {1} [slot {2}].\n \nVisualizando stickers '{3}':"
+	}
+	"Menu Stickers Set Title AllSlots"
+	{
+		"#format"	"{1:s},{2:i},{3:s}"
+		"en"		"Choose sticker for {1}.\n \nViewing stickers '{3}':"
+		"pt"		"Escolher sticker para {1}.\n \nVisualizando stickers '{3}':"
+	}
+	"Menu Stickers Set Search Already Title"
+	{
+		"#format"	"{1:s},{2:i},{3:s},{4:s}"
+		"en"		"Choose sticker for {1} [slot {2}].\nCurrent sticker: {3}\n \nSearching sticker '{4}':"
+		"pt"		"Escolher sticker para {1} [slot {2}].\nSticker atual: {3}\n \nPesquisando sticker '{4}':"
+	}
+	"Menu Stickers Set Search Title"
+	{
+		"#format"	"{1:s},{2:i},{3:s}"
+		"en"		"Choose sticker for {1} [slot {2}].\n \nSearching sticker '{3}':"
+		"pt"		"Escolher sticker para {1} [slot {2}].\n \nPesquisando sticker '{3}':"
+	}
+	"Menu Stickers Set Search Title AllSlots"
+	{
+		"#format"	"{1:s},{2:i},{3:s}"
+		"en"		"Choose sticker for {1}.\n \nSearching sticker '{3}':"
+		"pt"		"Escolher sticker para {1}.\n \nPesquisando sticker '{3}':"
+	}
+	"Menu Stickers Slot Search None"
+	{
+		"en"		"No stickers found!"
+		"pt"		"Nenhum sticker encontrado!"
+	}
+	"Disabled Feature"
+	{
+		"en"		"This feature is disabled!"
+		"pt"		"Esse recurso está desativado!"
+	}
+	"Min Length Search"
+	{
+		"en"		"You must enter at least 2 characters."
+		"pt"		"Você deve inserir no minimo 2 caracteres."
+	}
+	"Need Alive"
+	{
+		"en"		"You must be alive to use this feature."
+		"pt"		"Você precisa estar vivo para utilizar esse recurso."
+	}
+	"Delay Sticker"
+	{
+		"#format"	"{1:i}"
+		"en"		"You should wait {lightgreen}{1} {default}second(s) to change your weapon stickers again."
+		"pt"		"Você deve esperar {lightgreen}{1} {default}segundo(s) para alterar novamente os stickers da sua arma."
+	}
+	"Change Sticker"
+	{
+		"#format"	"{1:s},{2:s},{3:i}"
+		"en"		"You added the {orchid}{1}{default} sticker for {green}{2}{default} in the slot {lightgreen}{3}{default}."
+		"pt"		"Você adicionou o sticker {orchid}{1}{default} para a {green}{2}{default} no slot {lightgreen}{3}{default}."
+	}
+	"Change Sticker AllSlots"
+	{
+		"#format"	"{1:s},{2:s}"
+		"en"		"You added the {orchid}{1}{default} sticker for {green}{2}{default} in all slots."
+		"pt"		"Você adicionou o sticker {orchid}{1}{default} para a {green}{2}{default} em todos os slots."
+	}
+	"Remove Sticker"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"Você removeu o sticker do slot {lightgreen}{2}{default} da {green}{1}{default}."
+		"pt"		"Você removeu o sticker do slot {lightgreen}{2}{default} da {green}{1}{default}."
+	}
+	"Remove Sticker AllSlots"
+	{
+		"#format"	"{1:s}"
+		"en"		"Você removeu o sticker de todos os slots da {green}{1}{default}."
+		"pt"		"Você removeu o sticker de todos os slots da {green}{1}{default}."
+	}
+	"Invalid Stickers Weapon"
+	{
+		"en"		"This weapon is not valid for customizing stickers."
+		"pt"		"Essa arma não é valida para personalizar os stickers."
+	}
+	"Unknown Error"
+	{
+		"en"		"There was an error while trying to update your weapon stickers, try again!"
+		"pt"		"Ocorreu um erro ao tentar atualizar os stickers da sua arma, tente novamente!"
+	}
+	"Validate Error"
+	{
+		"en"		"There was an error validating your weapon, try again!"
+		"pt"		"Ocorreu um erro na validação da sua arma, tente novamente!"
+	}
+	"None Sticker"
+	{
+		"en"		"None"
+		"pt"		"Nenhum"
+	}
+	"All Slots"
+	{
+		"en"		"All Slots"
+		"pt"		"Todos Slots"
+	}
+}
