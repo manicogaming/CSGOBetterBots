@@ -1567,7 +1567,7 @@ ProAwp+SniperPro "XELLOW"
 	VoicePitch = 77
 End
 
-ProP+Rifle "SEMINTE"
+ProP+Rifle "mhN1"
 	VoicePitch = 95
 End
 
@@ -1575,7 +1575,7 @@ ProP+Rifle "iM"
 	VoicePitch = 110
 End
 
-ProP+Rifle "starkiller"
+ProP+Rifle "sXe"
 	VoicePitch = 88
 End
 
@@ -1721,7 +1721,7 @@ ProAwp+SniperPro "mertz"
 	VoicePitch = 75
 End
 
-ProP+Rifle "Casle"
+ProP+Rifle "Fessor"
 	VoicePitch = 85
 End
 
@@ -2223,7 +2223,7 @@ ProP+Rifle "nbl"
 	VoicePitch = 81
 End
 
-ProAwp+SniperPro "EYKER"
+ProAwp+SniperPro "anarchist"
 	VoicePitch = 112
 End
 
@@ -2525,28 +2525,6 @@ ProP+Rifle ".P4TriCK"
 	VoicePitch = 114
 End
 
-//9INE Players
-
-ProP+Rifle "nicoodoz"
-	VoicePitch = 79
-End
-
-ProAwp+SniperPro "acm"
-	VoicePitch = 108
-End
-
-ProP+Rifle "Djury"
-	VoicePitch = 71
-End
-
-ProP+Rifle "aybeN"
-	VoicePitch = 95
-End
-
-ProP+Rifle "MistFire"
-	VoicePitch = 70
-End
-
 //Baecon Players
 
 ProP+Rifle "emp"
@@ -2566,28 +2544,6 @@ ProP+Rifle "fakesS2"
 End
 
 ProP+Rifle "KILLDREAM"
-	VoicePitch = 74
-End
-
-//Wizards Players
-
-ProP+Rifle "KALAS"
-	VoicePitch = 115
-End
-
-ProAwp+SniperPro "v1NCHENSO7"
-	VoicePitch = 78
-End
-
-ProP+Rifle "Kiles"
-	VoicePitch = 105
-End
-
-ProP+Rifle "Fit1nho"
-	VoicePitch = 93
-End
-
-ProP+Rifle "Ryd3r-"
 	VoicePitch = 74
 End
 
@@ -2715,7 +2671,7 @@ ProP+Rifle "meisoN"
 	VoicePitch = 103
 End
 
-ProP+Rifle "donQ"
+ProP+Rifle "YuRk0"
 	VoicePitch = 92
 End
 
@@ -2967,7 +2923,7 @@ End
 
 //Chaos Players
 
-ProP+Rifle "cam"
+ProP+Rifle "Xeppaa"
 	VoicePitch = 93
 End
 
@@ -2983,7 +2939,7 @@ ProP+Rifle "steel_"
 	VoicePitch = 102
 End
 
-ProP+Rifle "mCe"
+ProP+Rifle "leaf"
 	VoicePitch = 111
 End
 
@@ -3251,7 +3207,7 @@ ProP+Rifle "rmn"
 	VoicePitch = 109
 End
 
-//Dignitas Players
+//DIG Players
 
 ProP+Rifle "GeT_RiGhT"
 	VoicePitch = 109

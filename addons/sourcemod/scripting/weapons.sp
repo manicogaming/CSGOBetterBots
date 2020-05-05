@@ -21,6 +21,7 @@
 #include <cstrike>
 #include <PTaH>
 #include <csgo_weaponstickers>
+#include <eItems>
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -663,22 +664,98 @@ void SetWeaponProps(int client, int entity)
 			
 			if(GetRandomInt(1,100) <= 40)
 			{
-				CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-			}
-			
-			if(GetRandomInt(1,100) <= 40)
-			{
-				CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-			}
-			
-			if(GetRandomInt(1,100) <= 40)
-			{
-				CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
-			}
-			
-			if(GetRandomInt(1,100) <= 40)
-			{
-				CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+				int rndsticker = GetRandomInt(1,16);
+				
+				switch (rndsticker)
+				{
+					case 1:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 2:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 3:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 4:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 5:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 6:
+					{
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 7:
+					{
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 8:
+					{
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 9:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 10:
+					{
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 11:
+					{
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 12:
+					{
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 13:
+					{
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 14:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 15:
+					{
+						CS_SetWeaponSticker(client, entity, 0, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 1, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 2, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+						CS_SetWeaponSticker(client, entity, 3, eItems_GetStickerDefIndexByStickerNum(GetRandomInt(0, eItems_GetStickersCount() -1)), 0.0);
+					}
+					case 16:
+					{
+						int iStickerNum = GetRandomInt(0, eItems_GetStickersCount() -1);
+						int iStickerDefIndex = eItems_GetStickerDefIndexByStickerNum(iStickerNum);
+						
+						CS_SetWeaponSticker(client, entity, 0, iStickerDefIndex, 0.0);
+						CS_SetWeaponSticker(client, entity, 1, iStickerDefIndex, 0.0);
+						CS_SetWeaponSticker(client, entity, 2, iStickerDefIndex, 0.0);
+						CS_SetWeaponSticker(client, entity, 3, iStickerDefIndex, 0.0);
+					}
+				}
 			}
 		}
 		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
