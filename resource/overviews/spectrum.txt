@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"spectrum"
+{
+	"CTSpawn_x" "-0.590000"
+	"CTSpawn_y" "0.190000"
+	"TSpawn_x" "0.010000"
+	"TSpawn_y" "0.800000"
+	"material" "overviews/spectrum"
+	"pos_x" "-128.000000"
+	"pos_y" "1088.000000"
+	"scale" "1.190000"
+}

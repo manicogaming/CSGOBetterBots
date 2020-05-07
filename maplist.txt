@@ -1,4 +1,4 @@
-// csgosl 2.8 config 1 at Tue May 05 19:36:27 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.8 config 1 at Wed May 06 19:05:47 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -204,3 +204,4 @@ mx_tree_b1
 nyaarena
 oa_sentinel1
 obe_jungle
+pet_sematary_final

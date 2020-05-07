@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"scoutzknivez"
+{
+	"CTSpawn_x" "0.440000"
+	"CTSpawn_y" "0.880000"
+	"TSpawn_x" "0.630000"
+	"TSpawn_y" "0.110000"
+	"material" "overviews/scoutzknivez"
+	"pos_x" "-1128.000000"
+	"pos_y" "1092.000000"
+	"scale" "2.130000"
+}

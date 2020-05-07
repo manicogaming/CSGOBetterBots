@@ -7356,7 +7356,7 @@ stock int GetClosestClient(int client)
 stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
 {
 	float fClientPosition[3]; float fTargetPosition[3];
-	
+
 	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
 	fClientPosition[2] += fHeight;
 	
@@ -7364,7 +7364,7 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	
 	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fTargetPosition, false) < fDistance)
 	{
-		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, fTargetPosition, MASK_SOLID_BRUSHONLY, RayType_EndPoint, Base_TraceFilter);
+		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, fTargetPosition, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
 		
 		if (TR_DidHit(hTrace))
 		{

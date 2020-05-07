@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"playground_x_s"
+{
+	"CTSpawn_x" "0.720000"
+	"CTSpawn_y" "0.900000"
+	"TSpawn_x" "1.320000"
+	"TSpawn_y" "0.090000"
+	"material" "overviews/playground_x_s"
+	"pos_x" "-2240.000000"
+	"pos_y" "1536.000000"
+	"scale" "2.880000"
+}
