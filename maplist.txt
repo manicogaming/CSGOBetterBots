@@ -1,4 +1,4 @@
-// csgosl 2.8 config 1 at Wed May 06 19:05:47 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.8 config 1 at Fri May 08 00:50:11 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -6,6 +6,7 @@ $2000$_pro_b2
 10th_mythic_roofcube_v1
 14th_mythic_house_v1
 2000_classic_b2
+2nd_mythic_town_v5
 35hp_colors
 35hp_gladiators_go
 35hp_iceworld
@@ -205,3 +206,12 @@ nyaarena
 oa_sentinel1
 obe_jungle
 pet_sematary_final
+playground_x_s
+rox_dust_tower
+sj_dustland
+spectrum
+tk_dustworld_hd
+trenchwarfare
+ww_skyrail
+xi_rockyaim
+xmas_nipperhouse

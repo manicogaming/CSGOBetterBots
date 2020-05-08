@@ -6044,13 +6044,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				if (iClipAmmo > 0 && g_bFreezetimeEnd)
 				{
 					if(IsValidClient(Ent))
-					{						
-						if(GetEntityMoveType(client) == MOVETYPE_LADDER)
-						{
-							buttons |= IN_JUMP;
-							return Plugin_Changed;
-						}
-						
+					{	
 						GetClientAbsOrigin(Ent, targetEyes);
 						GetClientEyePosition(Ent, targetEyes2);
 						

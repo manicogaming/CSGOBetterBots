@@ -1,0 +1,9 @@
+"xmas_nipperhouse"
+{
+	"material"	"overviews/xmas_nipperhouse_radar"	// texture file
+	"pos_x"		"-3713"	// upper left world coordinate
+	"pos_y"		"1977"
+	"scale"		"5" 
+
+
+}

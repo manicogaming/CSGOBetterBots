@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"tk_dustworld_hd"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.180000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.830000"
+	"material" "overviews/tk_dustworld_hd"
+	"pos_x" "-1172.000000"
+	"pos_y" "1192.000000"
+	"scale" "2.290000"
+}
