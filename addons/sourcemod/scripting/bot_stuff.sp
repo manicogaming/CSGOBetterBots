@@ -1,7 +1,6 @@
 #pragma semicolon 1
 
 #include <sourcemod>
-#include <clientprefs>
 #include <sdkhooks>
 #include <sdktools>
 #include <cstrike>
@@ -12,9 +11,8 @@ bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bPinPulled[MAXPLAYERS + 1] = false;
 int g_iaGrenadeOffsets[] = {15, 17, 16, 14, 18, 17};
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndSmoke[MAXPLAYERS+1], g_iRndMolotov[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
 ConVar g_cvPredictionConVars[1] = {null};
-char g_sMap[64];
 Handle hGameConfig = INVALID_HANDLE;
 Handle hBotMoveTo = INVALID_HANDLE;
 
@@ -5226,16 +5224,19 @@ public void OnMapEnd()
 
 public void OnClientPostAdminCheck(int client)
 {
-	char botname[512];
-	GetClientName(client, botname, sizeof(botname));
-	
-	Pro_Players(botname, client);
-	
 	g_iProfileRank[client] = GetRandomInt(1,40);
-	
-	SetCustomPrivateRank(client);
-	
-	SDKHook(client, SDKHook_WeaponSwitch, Hook_WeaponSwitch);
+
+	if(IsValidClient(client) && IsFakeClient(client))
+	{
+		char botname[512];
+		GetClientName(client, botname, sizeof(botname));
+		
+		Pro_Players(botname, client);
+		
+		SetCustomPrivateRank(client);
+		
+		SDKHook(client, SDKHook_WeaponSwitch, Hook_WeaponSwitch);	
+	}
 }
 
 public void OnRoundStart(Handle event, char[] name, bool dbc)
@@ -5826,22 +5827,6 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 			}
 			
 			SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
-			
-			GetCurrentMap(g_sMap, sizeof(g_sMap));
-			
-			if(StrEqual(g_sMap, "de_mirage"))
-			{
-				if(GetClientTeam(i) == CS_TEAM_T)
-				{
-					g_iRndSmoke[i] = GetRandomInt(1,12);
-					g_iRndMolotov[i] = GetRandomInt(1,4);
-				}
-				else if(GetClientTeam(i) == CS_TEAM_CT)
-				{
-					g_iRndSmoke[i] = GetRandomInt(1,3);
-					g_iRndMolotov[i] = GetRandomInt(1,3);
-				}
-			}
 		}
 	}
 }
@@ -5894,36 +5879,21 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		}
 	
 		int m_iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
+		
 		if(StrEqual(weapon,"m4a1"))
-		{ 
-			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-			
+		{
 			if(GetRandomInt(1,100) <= 30)
 			{
-				if (iWeapon != -1)
-				{
-					RemovePlayerItem(client, iWeapon);
-				}
+				CSGO_SetMoney(client, m_iAccount - 2900);
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
 				
-				m_iAccount -= 2900;
-				GivePlayerItem(client, "weapon_m4a1_silencer");
-				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
 			else if(GetRandomInt(1,100) <= 5)
 			{
-				if (iWeapon != -1)
-				{
-					RemovePlayerItem(client, iWeapon);
-				}
+				CSGO_SetMoney(client, m_iAccount - 3300);
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
 				
-				m_iAccount -= 3300;
-				GivePlayerItem(client, "weapon_aug");
-				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
 			else
@@ -5933,39 +5903,21 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		}
 		else if(StrEqual(weapon,"ak47"))
 		{
-			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-			
 			if(GetRandomInt(1,100) <= 5)
 			{
-				if (iWeapon != -1)
-				{
-					RemovePlayerItem(client, iWeapon);
-				}
+				CSGO_SetMoney(client, m_iAccount - 3000);
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_sg556");
 				
-				m_iAccount -= 3000;
-				GivePlayerItem(client, "weapon_sg556");
-				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
 		}
 		else if(StrEqual(weapon,"mac10"))
 		{
-			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-			
 			if(GetRandomInt(1,100) <= 40)
 			{
-				if (iWeapon != -1)
-				{
-					RemovePlayerItem(client, iWeapon);
-				}
+				CSGO_SetMoney(client, m_iAccount - 1800);
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
 				
-				m_iAccount -= 1800;
-				GivePlayerItem(client, "weapon_galilar");
-				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
 			else
@@ -5975,20 +5927,11 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		}
 		else if(StrEqual(weapon,"mp9"))
 		{
-			int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-			
 			if(GetRandomInt(1,100) <= 40)
 			{
-				if (iWeapon != -1)
-				{
-					RemovePlayerItem(client, iWeapon);
-				}
+				CSGO_SetMoney(client, m_iAccount - 2050);
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
 				
-				m_iAccount -= 2050;
-				GivePlayerItem(client, "weapon_famas");
-				if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-				SetClientMoney(client, m_iAccount);
 				return Plugin_Handled; 
 			}
 			else
@@ -6101,16 +6044,15 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							return Plugin_Continue;
 						}
 						
-						float flAng[3];
-						GetClientEyeAngles(client, flAng);
+						float fTargetAngles[3]; float fFinalPos[3];
 						
-						// get normalised direction from target to client
-						float desired_dir[3];
-						MakeVectorFromPoints(clientEyes, targetEyes, desired_dir);
-						GetVectorAngles(desired_dir, desired_dir);			
+						GetClientEyeAngles(Ent, fTargetAngles);
 						
-						flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
-						flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
+						float fVecFinal[3];
+						AddInFrontOf(targetEyes, fTargetAngles, 7.0, fVecFinal);
+						MakeVectorFromPoints(clientEyes, fVecFinal, fFinalPos);
+						
+						GetVectorAngles(fFinalPos, fFinalPos);
 						
 						float vecPunchAngle[3];
 			
@@ -6125,11 +6067,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						if(g_cvPredictionConVars[0] != null)
 						{
-							flAng[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
-							flAng[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
+							fFinalPos[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
+							fFinalPos[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
 						}
 						
-						TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);	
+						TeleportEntity(client, NULL_VECTOR, fFinalPos, NULL_VECTOR);
 						
 						if (buttons & IN_ATTACK)
 						{
@@ -6329,426 +6271,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}	
 				}
-				
-				if (g_bFreezetimeEnd && !g_bBombPlanted)
-				{
-					if (ActiveWeapon != -1)
-					{
-						GetCurrentMap(g_sMap, sizeof(g_sMap));
-						
-						if(StrEqual(g_sMap, "de_mirage"))
-						{
-							float location_check[3];
-							
-							GetClientAbsOrigin(client, location_check);
-							
-							//T Side Smokes
-							float stairs_smoke[3] = { 1152.0252685546875, -1183.9996337890625, -205.57168579101562 };
-							float jungle_smoke[3] = { 815.9910888671875, -1416.0472412109375, -108.96875 };
-							float topmid_smoke[3] = { 1422.737548828125, 34.83058547973633, -167.96875 };
-							float triple_smoke[3] = { 815.375732421875, -1335.2979736328125, -108.96875 };
-							float short_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
-							float rightbshort_smoke[3] = { -540.6637573242188, 520.0005493164062, -81.35236358642578 };
-							float leftbshort_smoke[3] = { -148.03125, 353.0000305175781, -34.42769432067871 };
-							float siteb_smoke[3] = { -736.1307983398438, 623.972900390625, -75.96875 };
-							float bench_smoke[3] = { -540.6637573242188, 520.0005493164062, -81.35236358642578 };
-							float connector_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
-							float window_smoke[3] = { 343.3015441894531, -621.6193237304688, -163.42958068847656 };
-							float backb_smoke[3] = { -736.1307983398438, 623.972900390625, -75.96875 };
-							
-							float stairs_smoke_distance, jungle_smoke_distance, topmid_smoke_distance, triple_smoke_distance, short_smoke_distance, rightbshort_smoke_distance, leftbshort_smoke_distance, siteb_smoke_distance, bench_smoke_distance, connector_smoke_distance, window_smoke_distance, backb_smoke_distance;
-							
-							stairs_smoke_distance = GetVectorDistance(location_check, stairs_smoke);
-							jungle_smoke_distance = GetVectorDistance(location_check, jungle_smoke);
-							topmid_smoke_distance = GetVectorDistance(location_check, topmid_smoke);
-							triple_smoke_distance = GetVectorDistance(location_check, triple_smoke);
-							short_smoke_distance = GetVectorDistance(location_check, short_smoke);
-							rightbshort_smoke_distance = GetVectorDistance(location_check, rightbshort_smoke);
-							leftbshort_smoke_distance = GetVectorDistance(location_check, leftbshort_smoke);
-							siteb_smoke_distance = GetVectorDistance(location_check, siteb_smoke);
-							bench_smoke_distance = GetVectorDistance(location_check, bench_smoke);
-							connector_smoke_distance = GetVectorDistance(location_check, connector_smoke);
-							window_smoke_distance = GetVectorDistance(location_check, window_smoke);
-							backb_smoke_distance = GetVectorDistance(location_check, backb_smoke);
-							
-							//CT Side Smokes
-							float ramp_smoke[3] = { -879.9768676757812, -2263.990478515625, -171.08224487304688 };
-							float apps_smoke[3] = { -2635.96875, 104.00126647949219, -159.52517700195312 };
-							float palace_smoke[3] = { -971.3928833007812, -2458.048583984375, -167.97039794921875 };
-							
-							float ramp_smoke_distance, apps_smoke_distance, palace_smoke_distance;
-							
-							ramp_smoke_distance = GetVectorDistance(location_check, ramp_smoke);
-							apps_smoke_distance = GetVectorDistance(location_check, apps_smoke);
-							palace_smoke_distance = GetVectorDistance(location_check, palace_smoke);
-							
-							//T Side Molotovs
-							
-							float sandwich_molotov[3] = { 545.7005615234375, -1557.8095703125, -263.96875 };
-							float underwindowb_molotov[3] = { -1471.96875, 664.0037841796875, -47.96874809265137 };
-							float carb_molotov[3] = { -1607.9808349609375, 863.890869140625, -47.96874809265137 };
-							float bench_molotov[3] = { -1607.9808349609375, 863.890869140625, -47.96874809265137 };
-							
-							float sandwich_molotov_distance, underwindowb_molotov_distance, carb_molotov_distance, bench_molotov_distance;
-							
-							sandwich_molotov_distance = GetVectorDistance(location_check, sandwich_molotov);
-							underwindowb_molotov_distance = GetVectorDistance(location_check, underwindowb_molotov);
-							carb_molotov_distance = GetVectorDistance(location_check, carb_molotov);
-							bench_molotov_distance = GetVectorDistance(location_check, bench_molotov);
-							
-							//CT Side Molotovs
-							float apps_molotov[3] = { -2411.96875, -247.99261474609375, -164.74143981933594 };
-							float ramp_molotov[3] = { -783.987060546875, -2177.00146484375, -179.96875 };
-							float palace_molotov[3] = { -783.987060546875, -2177.00146484375, -179.96875 };
-							
-							float apps_molotov_distance, ramp_molotov_distance, palace_molotov_distance;
-							
-							apps_molotov_distance = GetVectorDistance(location_check, apps_molotov);
-							ramp_molotov_distance = GetVectorDistance(location_check, ramp_molotov);
-							palace_molotov_distance = GetVectorDistance(location_check, palace_molotov);
-							
-							if(GetClientTeam(client) == CS_TEAM_T)
-							{
-								if (index == 45)
-								{
-									switch(g_iRndSmoke[client])
-									{
-										case 1: //Stairs Smoke
-										{
-											BotMoveTo(client, stairs_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && stairs_smoke_distance < 50)
-											{
-												angles[0] = -43.0;
-												angles[1] = -165.7000274658203;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, stairs_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 2: //Jungle Smoke
-										{
-											BotMoveTo(client, jungle_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && jungle_smoke_distance < 50)
-											{
-												angles[0] = -28.0;
-												angles[1] = -173.18418884277344;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, jungle_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 3: //Top-Mid Smoke
-										{
-											BotMoveTo(client, topmid_smoke, FASTEST_ROUTE);
-											buttons &= ~IN_ATTACK; 
-											if(buttons & IN_ATTACK && topmid_smoke_distance < 50)
-											{
-												angles[0] = -39.0;
-												angles[1] = 196.81642150878906;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, topmid_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 4: //Triple Smoke
-										{
-											BotMoveTo(client, triple_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && triple_smoke_distance < 50)
-											{
-												angles[0] = -46.0;
-												angles[1] = -151.66416931152344;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, triple_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 5: //Short Smoke
-										{
-											BotMoveTo(client, short_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && short_smoke_distance < 50)
-											{
-												angles[0] = -53.0;
-												angles[1] = -197.30368041992188;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, short_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 6: //Right B Short Smoke
-										{
-											BotMoveTo(client, rightbshort_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && rightbshort_smoke_distance < 50)
-											{
-												angles[0] = -70.0;
-												angles[1] = -179.62820434570312;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, rightbshort_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 7: //Left B Short Smoke
-										{
-											BotMoveTo(client, leftbshort_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && leftbshort_smoke_distance < 50)
-											{
-												angles[0] = -60.0;
-												angles[1] = -173.82362365722656;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, leftbshort_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 8: //Site B Smoke
-										{
-											BotMoveTo(client, siteb_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && siteb_smoke_distance < 50)
-											{
-												angles[0] = -57.0;
-												angles[1] = -161.13607788085938;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, siteb_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 9: //Bench Smoke
-										{
-											BotMoveTo(client, bench_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && bench_smoke_distance < 50)
-											{
-												angles[0] = -40.0;
-												angles[1] = -179.62820434570312;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, bench_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 10: //Connector Smoke
-										{
-											BotMoveTo(client, connector_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && connector_smoke_distance < 50)
-											{
-												angles[0] = -12.0;
-												angles[1] = -170.30368041992188;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, connector_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 11: //Window Smoke
-										{
-											BotMoveTo(client, window_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && window_smoke_distance < 50)
-											{
-												angles[0] = -31.0;
-												angles[1] = -180.30368041992188;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, window_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 12: //Back B Smoke
-										{
-											BotMoveTo(client, backb_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && backb_smoke_distance < 50)
-											{
-												angles[0] = -56.0;
-												angles[1] = -158.13607788085938;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, backb_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-									}
-								}
-								else if(index == 46 || index == 48)
-								{
-									switch(g_iRndMolotov[client])
-									{
-										case 1: //Sandwich Molotv
-										{
-											BotMoveTo(client, sandwich_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && sandwich_molotov_distance < 50)
-											{
-												angles[0] = -23.0;
-												angles[1] = -180.61326599121094;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, sandwich_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 2: //Under Window B Molotv
-										{
-											BotMoveTo(client, underwindowb_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && underwindowb_molotov_distance < 50)
-											{
-												angles[0] = -9.0;
-												angles[1] = 114.92156982421875;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, underwindowb_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 3: //Car B Molotv
-										{
-											BotMoveTo(client, carb_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && carb_molotov_distance < 50)
-											{
-												angles[0] = 0.0;
-												angles[1] = -153.24478149414062;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, carb_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 4: //Bench Molotv
-										{
-											BotMoveTo(client, bench_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && bench_molotov_distance < 50)
-											{
-												angles[0] = -1.0;
-												angles[1] = -154.24478149414062;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, bench_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-									}
-								}
-							}
-							else if(GetClientTeam(client) == CS_TEAM_CT)
-							{
-								if (index == 45)
-								{
-									switch(g_iRndSmoke[client])
-									{
-										case 1: //Ramp Smoke
-										{
-											BotMoveTo(client, ramp_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && ramp_smoke_distance < 50)
-											{
-												angles[0] = -9.0;
-												angles[1] = 34.35212707519531;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, ramp_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 2: //Apps Smoke
-										{
-											BotMoveTo(client, apps_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && apps_smoke_distance < 50)
-											{
-												angles[0] = -21.0;
-												angles[1] = 32.99325180053711;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, apps_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 3: //Palace Smoke
-										{
-											BotMoveTo(client, palace_smoke, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && palace_smoke_distance < 50)
-											{
-												angles[0] = -55.0;
-												angles[1] = 15.02410888671875;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, palace_smoke, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-									}
-								}
-								else if(index == 46 || index == 48)
-								{
-									switch(g_iRndMolotov[client])
-									{
-										case 1: //Apps Molotv
-										{
-											BotMoveTo(client, apps_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && apps_molotov_distance < 50)
-											{
-												angles[0] = -24.0;
-												angles[1] = 56.12193298339844;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, apps_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 2: //Ramp Molotv
-										{
-											BotMoveTo(client, ramp_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && ramp_molotov_distance < 50)
-											{
-												angles[0] = -22.0;
-												angles[1] = 44.734649658203125;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, ramp_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-										case 3: //Palace Molotv
-										{
-											BotMoveTo(client, palace_molotov, FASTEST_ROUTE);
-											if(buttons & IN_ATTACK && palace_molotov_distance < 50)
-											{
-												angles[0] = -17.0;
-												angles[1] = 3.734649658203125;
-												vel[0] = 0.0;
-												vel[1] = 0.0;
-												vel[2] = 0.0;
-												TeleportEntity(client, palace_molotov, angles, vel);
-												buttons &= ~IN_ATTACK; 
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
 			}
 		}
 	}
@@ -6812,7 +6334,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 		}
 		
 		if(IsValidClient(i) && IsFakeClient(i))
-		{
+		{		
 			if (!i) return;
 			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
@@ -6821,20 +6343,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
-					char usp[32];
-					
-					GetClientWeapon(i, usp, sizeof(usp));
-
-					if(StrEqual(usp, "weapon_hkp2000"))
-					{
-						int uspslot = GetPlayerWeaponSlot(i, CS_SLOT_SECONDARY);
-						
-						if (uspslot != -1)
-						{
-							RemovePlayerItem(i, uspslot);
-						}
-						GivePlayerItem(i, "weapon_usp_silencer");
-					}
+					CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 				}
 			}
 			
@@ -6857,25 +6366,19 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	
 	if (!m_bInBuyZone) return Plugin_Stop;
 	
-	int iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 	char default_primary[64];
 	GetClientWeapon(client, default_primary, sizeof(default_primary));
 
 	if((m_iAccount > 1500) && (m_iAccount < 2500) && iPrimary == -1 && (StrEqual(default_primary, "weapon_hkp2000") || StrEqual(default_primary, "weapon_usp_silencer") || StrEqual(default_primary, "weapon_glock")))
-	{
-		if (iWeapon != -1)
-		{
-			RemovePlayerItem(client, iWeapon);
-		}
-		
+	{		
 		int rndpistol = GetRandomInt(1,3);
 		
 		switch(rndpistol)
 		{
 			case 1:
 			{
-				GivePlayerItem(client, "weapon_p250");
+				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_p250");
 			}
 			case 2:
 			{
@@ -6887,11 +6390,11 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 					{
 						case 1:
 						{
-							GivePlayerItem(client, "weapon_fiveseven");
+							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_fiveseven");
 						}
 						case 2:
 						{
-							GivePlayerItem(client, "weapon_cz75a");
+							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
 						}
 					}
 				}
@@ -6903,18 +6406,18 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 					{
 						case 1:
 						{
-							GivePlayerItem(client, "weapon_tec9");
+							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_tec9");
 						}
 						case 2:
 						{
-							GivePlayerItem(client, "weapon_cz75a");
+							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
 						}
 					}
 				}
 			}
 			case 3:
 			{
-				GivePlayerItem(client, "weapon_deagle");
+				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_deagle");
 			}
 		}
 	}
@@ -6927,10 +6430,7 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 			SetEntProp(client, Prop_Data, "m_ArmorValue", 100, 1); 
 			SetEntProp(client, Prop_Send, "m_bHasHelmet", 1);
 			
-			m_iAccount -= 1000;
-			if ((m_iAccount > 16000) || (m_iAccount < 0))
-					m_iAccount = 0;
-			SetClientMoney(client, m_iAccount);
+			CSGO_SetMoney(client, m_iAccount - 1000);
 		}
 		
 		if (team == CS_TEAM_T) { 
@@ -6949,17 +6449,17 @@ public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadc
 {
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	
-	if (GetEntPropFloat(client, Prop_Send, "m_flFlashMaxAlpha") >= 180.0)
+	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
-		if (duration >= 1.5)
+		if (GetEntPropFloat(client, Prop_Send, "m_flFlashMaxAlpha") >= 180.0)
 		{
-			if(IsFakeClient(client))
+			float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
+			if (duration >= 1.5)
 			{
 				FakeClientCommand(client, "use weapon_knife");
+				g_bFlashed[client] = true;
+				CreateTimer(duration, UnFlashed_Timer, client);
 			}
-			g_bFlashed[client] = true;
-			CreateTimer(duration, UnFlashed_Timer, client);
 		}
 	}
 }
@@ -6971,7 +6471,7 @@ public Action UnFlashed_Timer(Handle timer, int client)
 
 public void OnClientDisconnect(int client)
 {
-	if(client)
+	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		g_iCoin[client] = 0;
 		g_iProfileRank[client] = 0;
@@ -6988,17 +6488,6 @@ public void OnPluginEnd()
 			OnClientDisconnect(client);
 		}
 	}
-}
-
-stock int GetAliveTeamCount(int team)
-{
-    int number = 0;
-    for (int i=1; i<=MaxClients; i++)
-    {
-        if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == team) 
-            number++;
-    }
-    return number;
 }
 
 public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
@@ -7031,23 +6520,40 @@ public int GetNearestEntity(int client, char[] classname)
     }
     
     return nearestEntity;
-} 
+}
 
-public void SetClientMoney(int client, int money)
+stock void CSGO_SetMoney(int client, int amount)
 {
-	SetEntProp(client, Prop_Send, "m_iAccount", money);
+	if (amount < 0)
+		amount = 0;
 	
-	int moneyEntity = CreateEntityByName("game_money");
+	int max = FindConVar("mp_maxmoney").IntValue;
 	
-	DispatchKeyValue(moneyEntity, "Award Text", "");
+	if (amount > max)
+		amount = max;
 	
-	DispatchSpawn(moneyEntity);
-	
-	AcceptEntityInput(moneyEntity, "SetMoneyAmount 0");
+	SetEntProp(client, Prop_Send, "m_iAccount", amount);
+}
 
-	AcceptEntityInput(moneyEntity, "AddMoneyPlayer", client);
-	
-	AcceptEntityInput(moneyEntity, "Kill");
+stock int CSGO_ReplaceWeapon(int client, int slot, const char[] class)
+{
+	int weapon = GetPlayerWeaponSlot(client, slot);
+
+	if (IsValidEntity(weapon))
+	{
+		if (GetEntPropEnt(weapon, Prop_Send, "m_hOwnerEntity") != client)
+			SetEntPropEnt(weapon, Prop_Send, "m_hOwnerEntity", client);
+
+		CS_DropWeapon(client, weapon, false, true);
+		AcceptEntityInput(weapon, "Kill");
+	}
+
+	weapon = GivePlayerItem(client, class);
+
+	if (IsValidEntity(weapon))
+		EquipPlayerWeapon(client, weapon);
+
+	return weapon;
 }
 
 public void RemoveNades(int client)
@@ -7066,26 +6572,6 @@ public bool RemoveWeaponBySlot(int client, int iSlot)
 		return true;
 	}
 	return false;
-}
-
-stock float AngleNormalize(float angle)
-{
-	angle = fmodf(angle, 360.0);
-	if (angle > 180) 
-	{
-		angle -= 360;
-	}
-	if (angle < -180)
-	{
-		angle += 360;
-	}
-	
-	return angle;
-}
-
-stock float fmodf(float number, float denom)
-{
-	return number - RoundToFloor(number / denom) * denom;
 }
 
 stock bool IsWeaponSlotActive(int client, int slot)
@@ -7347,44 +6833,6 @@ stock int GetClosestClient(int client)
 	return iClosestTarget;
 }
 
-stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
-{
-	float fClientPosition[3]; float fTargetPosition[3];
-
-	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
-	fClientPosition[2] += fHeight;
-	
-	GetClientEyePosition(iTarget, fTargetPosition);
-	
-	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fTargetPosition, false) < fDistance)
-	{
-		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, fTargetPosition, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
-		
-		if (TR_DidHit(hTrace))
-		{
-			delete hTrace;
-			return false;
-		}
-		
-		delete hTrace;
-		return true;
-	}
-	
-	return false;
-}
-
-public bool Base_TraceFilter(int iEntity, int iContentsMask, int iData)
-{
-	return iEntity == iData;
-}
-
-bool IsValidClient(int client) 
-{
-	if(!(1 <= client <= MaxClients ) || !IsClientInGame(client)) 
-		return false; 
-	return true; 
-}
-
 stock bool IsTargetInSightRange(int client, int target, float angle = 40.0, float distance = 0.0, bool heightcheck = true, bool negativeangle = false)
 {
 	if (angle > 360.0)
@@ -7436,6 +6884,53 @@ stock bool IsTargetInSightRange(int client, int target, float angle = 40.0, floa
 	return false;
 }
 
+stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
+{
+	float fClientPosition[3]; float fTargetPosition[3];
+
+	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
+	fClientPosition[2] += fHeight;
+	
+	GetClientEyePosition(iTarget, fTargetPosition);
+	
+	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fTargetPosition, false) < fDistance)
+	{
+		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, fTargetPosition, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
+		
+		if (TR_DidHit(hTrace))
+		{
+			delete hTrace;
+			return false;
+		}
+		
+		delete hTrace;
+		return true;
+	}
+	
+	return false;
+}
+
+public bool Base_TraceFilter(int iEntity, int iContentsMask, int iData)
+{
+	return iEntity == iData;
+}
+
+stock void AddInFrontOf(float fVecOrigin[3], float fVecAngle[3], float fUnits, float fOutPut[3])
+{
+	float fVecView[3]; GetViewVector(fVecAngle, fVecView);
+	
+	fOutPut[0] = fVecView[0] * fUnits + fVecOrigin[0];
+	fOutPut[1] = fVecView[1] * fUnits + fVecOrigin[1];
+	fOutPut[2] = fVecView[2] * fUnits + fVecOrigin[2];
+}
+
+stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
+{
+	fOutPut[0] = Cosine(fVecAngle[1] / (180 / FLOAT_PI));
+	fOutPut[1] = Sine(fVecAngle[1] / (180 / FLOAT_PI));
+	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
+}
+
 stock bool LineGoesThroughSmoke(float from[3], float to[3])
 {
 	static Address TheBots;
@@ -7479,6 +6974,22 @@ stock bool LineGoesThroughSmoke(float from[3], float to[3])
 
 	if(OS == 1) return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to, 1.0);
 	return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to);
+}
+
+stock int GetAliveTeamCount(int team)
+{
+    int number = 0;
+    for (int i=1; i<=MaxClients; i++)
+    {
+        if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == team) 
+            number++;
+    }
+    return number;
+}
+
+stock bool IsValidClient(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }
 
 public void Pro_Players(char[] botname, int client)

@@ -1,4 +1,4 @@
-// csgosl 2.8 config 1 at Fri May 08 00:50:11 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.8 config 1 at Sun May 10 04:13:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -8,10 +8,12 @@ $2000$_pro_b2
 2000_classic_b2
 2nd_mythic_town_v5
 35hp_colors
+35hp_dust_2012
 35hp_gladiators_go
 35hp_iceworld
 35hp_lego_go
 35hp_minecraft_go
+35hp_orange_box_handel
 35hp_peace
 35hp_rush_hour
 35hp_white_palm
@@ -24,6 +26,8 @@ $2000$_pro_b2
 [2stoned]xxl_cs
 aim_100hp
 aim_advance
+aim_ag_brickedin
+aim_ag_texture
 aim_ak-47_go
 aim_ak-colt
 aim_ak-colt_v2
@@ -41,6 +45,7 @@ aim_crazyjump_go
 aim_deagle7k_real
 aim_deagle_ultra
 aim_depot_beta01
+aim_dust
 aim_headshot2_csgo
 aim_junkyard
 aim_map

@@ -296,12 +296,12 @@ public Action hookPlayerSpawn(Handle event, const char[] name, bool dontBroadcas
 	
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 		
-	SetUserGloves(client, g_iGlove[client],g_iSkin[client], false, true);		
-	
+	SetUserGloves(client, g_iGlove[client],g_iSkin[client], false, true);	
+
 	if(IsFakeClient(client))
 	{
 		SetUserGloves(client, -1,-1, false, true);	
-	}
+	}	
 }
 
 /*
