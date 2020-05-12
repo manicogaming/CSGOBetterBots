@@ -32,7 +32,7 @@ I edited the following plugins.
 - Made it so that it doesn't skip BOTs
 - Added more Ranks
 
-# [Franc1sco/Franug-Sprays](https://github.com/Franc1sco/Franug-Sprayss)
+# [Franc1sco/Franug-Sprays](https://github.com/Franc1sco/Franug-Sprays)
 - BOTs will automatically use their sprays
 - Added all Sprays from CS:GO
 
