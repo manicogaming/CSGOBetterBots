@@ -2843,7 +2843,7 @@ ProAwp+SniperPro "Spartan"
 	VoicePitch = 85
 End
 
-ProP+Rifle "SloWye-"
+ProP+Rifle "konvict"
 	VoicePitch = 93
 End
 
@@ -2909,7 +2909,7 @@ ProAwp+SniperPro "MisteM"
 	VoicePitch = 94
 End
 
-ProP+Rifle "flexeeee"
+ProP+Rifle "SloWye"
 	VoicePitch = 79
 End
 
@@ -2917,7 +2917,7 @@ ProP+Rifle "Fadey"
 	VoicePitch = 77
 End
 
-ProP+Rifle "TenZ"
+ProP+Rifle "Doru"
 	VoicePitch = 102
 End
 
@@ -3469,6 +3469,28 @@ End
 
 ProP+Rifle "grzes1x"
 	VoicePitch = 91
+End
+
+//Defusekids Players
+
+ProP+Rifle "notaN"
+	VoicePitch = 108
+End
+
+ProAwp+SniperPro "G1DO"
+	VoicePitch = 97
+End
+
+ProP+Rifle "marix"
+	VoicePitch = 115
+End
+
+ProP+Rifle "v1N"
+	VoicePitch = 87
+End
+
+ProP+Rifle "Monu"
+	VoicePitch = 106
 End
 
 EliteAwp+SniperPro "XD | ryu"

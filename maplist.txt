@@ -1,4 +1,4 @@
-// csgosl 2.8 config 1 at Sun May 10 04:13:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.8 config 1 at Wed May 13 00:18:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 //DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -46,6 +46,7 @@ aim_deagle7k_real
 aim_deagle_ultra
 aim_depot_beta01
 aim_dust
+aim_glass_handel_v2_fix
 aim_headshot2_csgo
 aim_junkyard
 aim_map
@@ -54,6 +55,7 @@ aim_map_duelies
 aim_map_gamma
 aim_neon_handel
 aim_notsocrazyjump
+aim_pro
 aim_redline
 aim_scopearena
 aim_scoutz

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_glass_handel_v2_fix"
+{
+	"CTSpawn_x" "0.490000"
+	"CTSpawn_y" "0.870000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.130000"
+	"material" "overviews/aim_glass_handel_v2_fix"
+	"pos_x" "-1361.000000"
+	"pos_y" "1407.000000"
+	"scale" "2.690000"
+}
