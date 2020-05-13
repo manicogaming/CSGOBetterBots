@@ -2939,7 +2939,7 @@ ProP+Rifle "steel_"
 	VoicePitch = 102
 End
 
-ProP+Rifle "leaf"
+ProP+Rifle "Jonji"
 	VoicePitch = 111
 End
 
@@ -3491,6 +3491,28 @@ End
 
 ProP+Rifle "Monu"
 	VoicePitch = 106
+End
+
+//London Players
+
+ProP+Rifle "RezzeD"
+	VoicePitch = 78
+End
+
+ProAwp+SniperPro "entz"
+	VoicePitch = 110
+End
+
+ProP+Rifle "dobbo"
+	VoicePitch = 108
+End
+
+ProP+Rifle "mrhui"
+	VoicePitch = 78
+End
+
+ProP+Rifle "MBL"
+	VoicePitch = 104
 End
 
 EliteAwp+SniperPro "XD | ryu"

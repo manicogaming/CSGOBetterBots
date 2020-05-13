@@ -742,7 +742,7 @@ static char g_sBotName[][] = {
 	"vanity",
 	"Voltage",
 	"steel_",
-	"leaf",
+	"Jonji",
 	//OneThree Players
 	"ChildKing",
 	"lan",
@@ -886,7 +886,13 @@ static char g_sBotName[][] = {
 	"G1DO",
 	"marix",
 	"v1N",
-	"Monu"
+	"Monu",
+	//London Players
+	"RezzeD",
+	"entz",
+	"dobbo",
+	"mrhui",
+	"MBL"
 };
  
 public Plugin myinfo =
@@ -1070,6 +1076,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_pompa", Team_Pompa);
 	RegConsoleCmd("team_defusekids", Team_Defusekids);
+	RegConsoleCmd("team_london", Team_London);
 }
 
 public Action Team_NiP(int client, int args)
@@ -4504,7 +4511,7 @@ public Action Team_Chaos(int client, int args)
 		ServerCommand("bot_add_ct %s", "vanity");
 		ServerCommand("bot_add_ct %s", "Voltage");
 		ServerCommand("bot_add_ct %s", "steel_");
-		ServerCommand("bot_add_ct %s", "leaf");
+		ServerCommand("bot_add_ct %s", "Jonji");
 		ServerCommand("mp_teamlogo_1 chaos");
 	}
 
@@ -4515,7 +4522,7 @@ public Action Team_Chaos(int client, int args)
 		ServerCommand("bot_add_t %s", "vanity");
 		ServerCommand("bot_add_t %s", "Voltage");
 		ServerCommand("bot_add_t %s", "steel_");
-		ServerCommand("bot_add_t %s", "leaf");
+		ServerCommand("bot_add_t %s", "Jonji");
 		ServerCommand("mp_teamlogo_2 chaos");
 	}
 
@@ -5237,6 +5244,36 @@ public Action Team_Defusekids(int client, int args)
 		ServerCommand("bot_add_t %s", "v1N");
 		ServerCommand("bot_add_t %s", "Monu");
 		ServerCommand("mp_teamlogo_2 defu");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_London(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "RezzeD");
+		ServerCommand("bot_add_ct %s", "entz");
+		ServerCommand("bot_add_ct %s", "dobbo");
+		ServerCommand("bot_add_ct %s", "mrhui");
+		ServerCommand("bot_add_ct %s", "MBL");
+		ServerCommand("mp_teamlogo_1 lon");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "RezzeD");
+		ServerCommand("bot_add_t %s", "entz");
+		ServerCommand("bot_add_t %s", "dobbo");
+		ServerCommand("bot_add_t %s", "mrhui");
+		ServerCommand("bot_add_t %s", "MBL");
+		ServerCommand("mp_teamlogo_2 lon");
 	}
 
 	return Plugin_Handled;
@@ -6044,7 +6081,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								
 								if(iBone < 0)
 									continue;
@@ -6052,7 +6089,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(!IsPointVisible(client, Ent, clientEyes, vecBody))
+								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								{
+									targetEyes[2] = vecBody[2];
+								}
+								else
 								{
 									iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
@@ -6064,10 +6105,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
-								}
-								else
-								{
-									targetEyes[2] = vecBody[2];
 								}
 							}
 							
@@ -6090,14 +6127,18 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								if(iBone < 0)
 									continue;
 									
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(!IsPointVisible(client, Ent, clientEyes, vecBody))
+								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								{
+									targetEyes[2] = vecBody[2];
+								}
+								else
 								{
 									iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
@@ -6109,10 +6150,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
-								}
-								else
-								{
-									targetEyes[2] = vecBody[2];
 								}
 							}
 						}
@@ -6146,14 +6183,18 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							}
 							else
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								if(iBone < 0)
 									continue;
 									
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(!IsPointVisible(client, Ent, clientEyes, vecBody))
+								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								{
+									targetEyes[2] = vecBody[2];
+								}
+								else
 								{
 									iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
@@ -6165,10 +6206,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
-								}
-								else
-								{
-									targetEyes[2] = vecBody[2];
 								}
 							}
 						}
@@ -6187,14 +6224,18 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 						else if(buttons & IN_ATTACK && index == 9)
 						{
-							int iBone = LookupBone(Ent, "spine_3");
+							int iBone = LookupBone(Ent, "spine_2");
 							if(iBone < 0)
 								continue;
 								
 							float vecBody[3], vecBad[3];
 							GetBonePosition(Ent, iBone, vecBody, vecBad);
 							
-							if(!IsPointVisible(client, Ent, clientEyes, vecBody))
+							if(IsPointVisible(client, Ent, clientEyes, vecBody))
+							{
+								targetEyes[2] = vecBody[2];
+							}
+							else
 							{
 								iBone = LookupBone(Ent, "head_0");
 								if(iBone < 0)
@@ -6206,10 +6247,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								vecHead[2] += 4.0;
 								
 								targetEyes[2] = vecHead[2];
-							}
-							else
-							{
-								targetEyes[2] = vecBody[2];
 							}
 						}
 						else
@@ -6228,15 +6265,8 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						GetVectorAngles(fFinalPos, fFinalPos);
 						
 						float vecPunchAngle[3];
-			
-						if (GetEngineVersion() == Engine_CSGO || GetEngineVersion() == Engine_CSS)
-						{
-							GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
-						}
-						else
-						{
-							GetEntPropVector(client, Prop_Send, "m_vecPunchAngle", vecPunchAngle);
-						}
+						
+						GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
 						
 						if(g_cvPredictionConVars[0] != null)
 						{
@@ -6317,7 +6347,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, deaglelocation, FASTEST_ROUTE);
 						}
 						
-						if(distance < 25 && secondary != -1)
+						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 						{
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 						}
@@ -6345,7 +6375,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, tec9location, FASTEST_ROUTE);
 						}
 						
-						if(distance < 25 && secondary != -1)
+						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 						{
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 						}
@@ -6373,7 +6403,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, fivesevenlocation, FASTEST_ROUTE);
 						}
 						
-						if(distance < 25 && secondary != -1)
+						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 						{
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 						}
@@ -6401,7 +6431,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, p250location, FASTEST_ROUTE);
 						}
 						
-						if(distance < 25 && secondary != -1)
+						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 						{
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 						}
@@ -6429,7 +6459,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, usplocation, FASTEST_ROUTE);
 						}
 						
-						if(distance < 25 && secondary != -1)
+						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 						{
 							CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 						}
@@ -7066,6 +7096,15 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	GetBonePosition(iTarget, iBone, vecHead, vecBad);
 	
 	vecHead[2] += 4.0;
+	
+	if(!IsPointVisible(client, iTarget, fClientPosition, vecHead))
+	{
+		iBone = LookupBone(iTarget, "spine_2");
+		if(iBone < 0)
+			return false;
+			
+		GetBonePosition(iTarget, iBone, vecHead, vecBad);
+	}
 	
 	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, vecHead, false) < fDistance)
 	{
@@ -7878,7 +7917,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Chaos Players
-	if((StrEqual(botname, "Xeppaa")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "leaf")))
+	if((StrEqual(botname, "Xeppaa")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "Jonji")))
 	{
 		CS_SetClientClanTag(client, "Chaos");
 	}
@@ -8025,6 +8064,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "notaN")) || (StrEqual(botname, "G1DO")) || (StrEqual(botname, "marix")) || (StrEqual(botname, "v1N")) || (StrEqual(botname, "Monu")))
 	{
 		CS_SetClientClanTag(client, "Defusekids");
+	}
+	
+	//London Players
+	if((StrEqual(botname, "RezzeD")) || (StrEqual(botname, "entz")) || (StrEqual(botname, "dobbo")) || (StrEqual(botname, "mrhui")) || (StrEqual(botname, "MBL")))
+	{
+		CS_SetClientClanTag(client, "London");
 	}
 }
 
@@ -8532,6 +8577,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Defusekids"))
 	{
 		g_iProfileRank[client] = 148;
+	}
+	
+	if (StrEqual(sClan, "London"))
+	{
+		g_iProfileRank[client] = 149;
 	}
 	
 	if (StrEqual(sClan, "Syman"))
