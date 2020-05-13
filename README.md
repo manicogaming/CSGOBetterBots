@@ -28,11 +28,11 @@ I edited the following plugins.
 - Made it so that it doesn't skip BOTs
 - All the data is now saved and queried by name as BOTs don't have a SteamID
 
-# [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/Franc1sco/Franug-Sprayss)
+# [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
 - Made it so that it doesn't skip BOTs
 - Added more Ranks
 
-# [Franc1sco/Franug-Sprays](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
+# [Franc1sco/Franug-Sprays](https://github.com/Franc1sco/Franug-Sprays)
 - BOTs will automatically use their sprays
 - Added all Sprays from CS:GO
 
