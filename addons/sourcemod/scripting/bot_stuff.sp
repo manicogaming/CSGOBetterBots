@@ -10,6 +10,7 @@ bool g_bFlashed[MAXPLAYERS + 1] = false;
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bPinPulled[MAXPLAYERS + 1] = false;
+bool g_bBodyShot[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
 ConVar g_cvPredictionConVars[1] = {null};
 Handle g_hGameConfig;
@@ -565,7 +566,7 @@ static char g_sBotName[][] = {
 	"Sys",
 	//GroundZero Players
 	"BURNRUOk",
-	"void",
+	"Liki",
 	"Llamas",
 	"Noobster",
 	"PEARSS",
@@ -3638,7 +3639,7 @@ public Action Team_GroundZero(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "BURNRUOk");
-		ServerCommand("bot_add_ct %s", "void");
+		ServerCommand("bot_add_ct %s", "Liki");
 		ServerCommand("bot_add_ct %s", "Llamas");
 		ServerCommand("bot_add_ct %s", "Noobster");
 		ServerCommand("bot_add_ct %s", "PEARSS");
@@ -3649,7 +3650,7 @@ public Action Team_GroundZero(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "BURNRUOk");
-		ServerCommand("bot_add_t %s", "void");
+		ServerCommand("bot_add_t %s", "Liki");
 		ServerCommand("bot_add_t %s", "Llamas");
 		ServerCommand("bot_add_t %s", "Noobster");
 		ServerCommand("bot_add_t %s", "PEARSS");
@@ -6066,20 +6067,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38 && index != 9) || index == 63)
 						{
-							if(GetRandomInt(1,4) == 1)
-							{
-								int iBone = LookupBone(Ent, "head_0");
-								if(iBone < 0)
-									continue;
-									
-								float vecHead[3], vecBad[3];
-								GetBonePosition(Ent, iBone, vecHead, vecBad);
-								
-								vecHead[2] += 4.0;
-								
-								targetEyes[2] = vecHead[2];
-							}
-							else
+							if(g_bBodyShot[client])
 							{
 								int iBone = LookupBone(Ent, "spine_2");
 								
@@ -6089,86 +6077,129 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								targetEyes[2] = vecBody[2];
+							}
+							else
+							{
+								if(GetRandomInt(1,4) == 1)
 								{
-									targetEyes[2] = vecBody[2];
-								}
-								else
-								{
-									iBone = LookupBone(Ent, "head_0");
+									int iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
 										continue;
 										
-									float vecHead[3];
+									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
 								}
+								else
+								{
+									int iBone = LookupBone(Ent, "spine_2");
+									
+									if(iBone < 0)
+										continue;
+										
+									float vecBody[3], vecBad[3];
+									GetBonePosition(Ent, iBone, vecBody, vecBad);
+									
+									if(IsPointVisible(client, Ent, clientEyes, vecBody))
+									{
+										targetEyes[2] = vecBody[2];
+									}
+									else
+									{
+										iBone = LookupBone(Ent, "head_0");
+										if(iBone < 0)
+											continue;
+											
+										float vecHead[3];
+										GetBonePosition(Ent, iBone, vecHead, vecBad);
+										
+										vecHead[2] += 4.0;
+										
+										targetEyes[2] = vecHead[2];
+									}
+								}	
 							}
 							
 							buttons |= IN_ATTACK;
 						}
 						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY) && index != 63 && index != 1)
 						{
-							if(GetRandomInt(1,4) == 1)
-							{
-								int iBone = LookupBone(Ent, "head_0");
-								if(iBone < 0)
-									continue;
-									
-								float vecHead[3], vecBad[3];
-								GetBonePosition(Ent, iBone, vecHead, vecBad);
-								
-								vecHead[2] += 4.0;
-								
-								targetEyes[2] = vecHead[2];
-							}
-							else
+							if(g_bBodyShot[client])
 							{
 								int iBone = LookupBone(Ent, "spine_2");
+								
 								if(iBone < 0)
 									continue;
 									
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								targetEyes[2] = vecBody[2];
+							}
+							else
+							{
+								if(GetRandomInt(1,4) == 1)
 								{
-									targetEyes[2] = vecBody[2];
-								}
-								else
-								{
-									iBone = LookupBone(Ent, "head_0");
+									int iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
 										continue;
 										
-									float vecHead[3];
+									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
 								}
+								else
+								{
+									int iBone = LookupBone(Ent, "spine_2");
+									
+									if(iBone < 0)
+										continue;
+										
+									float vecBody[3], vecBad[3];
+									GetBonePosition(Ent, iBone, vecBody, vecBad);
+									
+									if(IsPointVisible(client, Ent, clientEyes, vecBody))
+									{
+										targetEyes[2] = vecBody[2];
+									}
+									else
+									{
+										iBone = LookupBone(Ent, "head_0");
+										if(iBone < 0)
+											continue;
+											
+										float vecHead[3];
+										GetBonePosition(Ent, iBone, vecHead, vecBad);
+										
+										vecHead[2] += 4.0;
+										
+										targetEyes[2] = vecHead[2];
+									}
+								}	
 							}
 						}
 						else if(buttons & IN_ATTACK && index == 1)
 						{
-							int iBone = LookupBone(Ent, "head_0");
-							if(iBone < 0)
-								continue;
+							if(g_bBodyShot[client])
+							{
+								int iBone = LookupBone(Ent, "spine_2");
 								
-							float vecHead[3], vecBad[3];
-							GetBonePosition(Ent, iBone, vecHead, vecBad);
-							
-							vecHead[2] += 4.0;
-							
-							targetEyes[2] = vecHead[2];
-						}
-						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
-						{
-							if(GetRandomInt(1,4) == 1)
+								if(iBone < 0)
+									continue;
+									
+								float vecBody[3], vecBad[3];
+								GetBonePosition(Ent, iBone, vecBody, vecBad);
+								
+								targetEyes[2] = vecBody[2];
+							}
+							else
 							{
 								int iBone = LookupBone(Ent, "head_0");
 								if(iBone < 0)
@@ -6179,34 +6210,66 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								
 								vecHead[2] += 4.0;
 								
-								targetEyes[2] = vecHead[2];
+								targetEyes[2] = vecHead[2];	
 							}
-							else
+						}
+						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
+						{
+							if(g_bBodyShot[client])
 							{
 								int iBone = LookupBone(Ent, "spine_2");
+								
 								if(iBone < 0)
 									continue;
 									
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								if(IsPointVisible(client, Ent, clientEyes, vecBody))
+								targetEyes[2] = vecBody[2];
+							}
+							else
+							{
+								if(GetRandomInt(1,4) == 1)
 								{
-									targetEyes[2] = vecBody[2];
-								}
-								else
-								{
-									iBone = LookupBone(Ent, "head_0");
+									int iBone = LookupBone(Ent, "head_0");
 									if(iBone < 0)
 										continue;
 										
-									float vecHead[3];
+									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
 									vecHead[2] += 4.0;
 									
 									targetEyes[2] = vecHead[2];
 								}
+								else
+								{
+									int iBone = LookupBone(Ent, "spine_2");
+									
+									if(iBone < 0)
+										continue;
+										
+									float vecBody[3], vecBad[3];
+									GetBonePosition(Ent, iBone, vecBody, vecBad);
+									
+									if(IsPointVisible(client, Ent, clientEyes, vecBody))
+									{
+										targetEyes[2] = vecBody[2];
+									}
+									else
+									{
+										iBone = LookupBone(Ent, "head_0");
+										if(iBone < 0)
+											continue;
+											
+										float vecHead[3];
+										GetBonePosition(Ent, iBone, vecHead, vecBad);
+										
+										vecHead[2] += 4.0;
+										
+										targetEyes[2] = vecHead[2];
+									}
+								}	
 							}
 						}
 						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
@@ -6275,14 +6338,14 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 						
 						TeleportEntity(client, NULL_VECTOR, fFinalPos, NULL_VECTOR);
-					}
-					
-					if (buttons & IN_ATTACK)
-					{
-						if(index == 7 || index == 8 || index == 10 || index == 13 || index == 14 || index == 16 || index == 39 || index == 60 || index == 28)
+						
+						if (buttons & IN_ATTACK)
 						{
-							buttons |= IN_DUCK;
-							return Plugin_Changed;
+							if(index == 7 || index == 8 || index == 10 || index == 13 || index == 14 || index == 16 || index == 39 || index == 60 || index == 28)
+							{
+								buttons |= IN_DUCK;
+								return Plugin_Changed;
+							}
 						}
 					}
 				}
@@ -7083,10 +7146,9 @@ stock bool IsTargetInSightRange(int client, int target, float angle = 40.0, floa
 
 stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
 {
-	float fClientPosition[3];
-
-	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
-	fClientPosition[2] += fHeight;
+	float clientEyes[3];
+	
+	GetClientEyePosition(client, clientEyes);
 	
 	int iBone = LookupBone(iTarget, "head_0");
 	if(iBone < 0)
@@ -7097,18 +7159,24 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	
 	vecHead[2] += 4.0;
 	
-	if(!IsPointVisible(client, iTarget, fClientPosition, vecHead))
+	if(IsPointVisible(client, iTarget, clientEyes, vecHead))
+	{
+		g_bBodyShot[client] = false;
+	}
+	else
 	{
 		iBone = LookupBone(iTarget, "spine_2");
 		if(iBone < 0)
 			return false;
 			
 		GetBonePosition(iTarget, iBone, vecHead, vecBad);
+		
+		g_bBodyShot[client] = true;
 	}
 	
-	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, vecHead, false) < fDistance)
+	if (fDistance == 0.0 || GetVectorDistance(clientEyes, vecHead, false) < fDistance)
 	{
-		Handle hTrace = TR_TraceRayFilterEx(fClientPosition, vecHead, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
+		Handle hTrace = TR_TraceRayFilterEx(clientEyes, vecHead, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
 		
 		if (TR_DidHit(hTrace))
 		{
@@ -7737,7 +7805,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//GroundZero Players
-	if((StrEqual(botname, "BURNRUOk")) || (StrEqual(botname, "void")) || (StrEqual(botname, "Llamas")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "PEARSS")))
+	if((StrEqual(botname, "BURNRUOk")) || (StrEqual(botname, "Liki")) || (StrEqual(botname, "Llamas")) || (StrEqual(botname, "Noobster")) || (StrEqual(botname, "PEARSS")))
 	{
 		CS_SetClientClanTag(client, "GroundZero");
 	}

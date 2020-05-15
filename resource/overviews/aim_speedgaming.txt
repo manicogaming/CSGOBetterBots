@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_speedgaming"
+{
+	"CTSpawn_x" "0.530000"
+	"CTSpawn_y" "0.200000"
+	"TSpawn_x" "0.470000"
+	"TSpawn_y" "0.800000"
+	"material" "overviews/aim_speedgaming"
+	"pos_x" "-1128.000000"
+	"pos_y" "1128.000000"
+	"scale" "2.200000"
+}

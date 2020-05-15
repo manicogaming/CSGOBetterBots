@@ -2289,7 +2289,7 @@ ProP+Rifle "BURNRUOk"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "void"
+ProAwp+SniperPro "Liki"
 	VoicePitch = 110
 End
 
