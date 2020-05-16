@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri May 15 00:10:51 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat May 16 00:31:19 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -61,12 +61,18 @@ aim_scopearena
 aim_scoutz
 aim_shotgun3
 aim_shyam
+aim_speedgaming
 aim_stashhouse
+aim_tmp
+aim_tmp-fun
+aim_tmp_mac10_v2
 aim_treearena
 aim_usp_v2
 aim_warehouse
 aim_warmup
+aim_winter_deagle_up2010
 ar_baggage
+ar_cbq
 ar_dizzy
 ar_lunacy
 ar_monastery
@@ -81,6 +87,7 @@ awp_crashz_v4
 awp_crashz_v5
 awp_dust
 awp_dust_sky
+awp_gazebo
 awp_ice_csgo
 awp_india
 awp_india_csgo

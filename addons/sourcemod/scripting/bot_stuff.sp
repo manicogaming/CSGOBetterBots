@@ -786,12 +786,12 @@ static char g_sBotName[][] = {
 	"Aleksib",
 	"valde",
 	"ISSAA",
-	//Vexed Players
-	"Frei",
-	"Astroo",
-	"jenko",
-	"Puls3",
-	"stan1ey",
+	//Wizards Players
+	"krii",
+	"Kvik",
+	"pounh",
+	"PALM1",
+	"FliP1",
 	//Tricked Players
 	"kiR",
 	"kwezz",
@@ -893,7 +893,19 @@ static char g_sBotName[][] = {
 	"entz",
 	"dobbo",
 	"mrhui",
-	"MBL"
+	"MBL",
+	//GameAgents Players
+	"SEMINTE",
+	"r1d3r",
+	"KunKKa",
+	"nJ",
+	"COSMEEEN",
+	//Keyd Players
+	"bnc",
+	"mawth",
+	"tifa",
+	"jota",
+	"piria"
 };
  
 public Plugin myinfo =
@@ -1060,7 +1072,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_canids", Team_Canids);
 	RegConsoleCmd("team_espada", Team_ESPADA);
 	RegConsoleCmd("team_og", Team_OG);
-	RegConsoleCmd("team_vexed", Team_Vexed);
+	RegConsoleCmd("team_wizards", Team_Wizards);
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_geng", Team_GenG);
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
@@ -1078,6 +1090,8 @@ public void OnPluginStart()
 	RegConsoleCmd("team_pompa", Team_Pompa);
 	RegConsoleCmd("team_defusekids", Team_Defusekids);
 	RegConsoleCmd("team_london", Team_London);
+	RegConsoleCmd("team_gameagents", Team_GameAgents);
+	RegConsoleCmd("team_keyd", Team_Keyd);
 }
 
 public Action Team_NiP(int client, int args)
@@ -4740,7 +4754,7 @@ public Action Team_OG(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Vexed(int client, int args)
+public Action Team_Wizards(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -4748,23 +4762,23 @@ public Action Team_Vexed(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Frei");
-		ServerCommand("bot_add_ct %s", "Astroo");
-		ServerCommand("bot_add_ct %s", "jenko");
-		ServerCommand("bot_add_ct %s", "Puls3");
-		ServerCommand("bot_add_ct %s", "stan1ey");
-		ServerCommand("mp_teamlogo_1 vex");
+		ServerCommand("bot_add_ct %s", "krii");
+		ServerCommand("bot_add_ct %s", "Kvik");
+		ServerCommand("bot_add_ct %s", "pounh");
+		ServerCommand("bot_add_ct %s", "PALM1");
+		ServerCommand("bot_add_ct %s", "FliP1");
+		ServerCommand("mp_teamlogo_1 wiz");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Frei");
-		ServerCommand("bot_add_t %s", "Astroo");
-		ServerCommand("bot_add_t %s", "jenko");
-		ServerCommand("bot_add_t %s", "Puls3");
-		ServerCommand("bot_add_t %s", "stan1ey");
-		ServerCommand("mp_teamlogo_2 vex");
+		ServerCommand("bot_add_t %s", "krii");
+		ServerCommand("bot_add_t %s", "Kvik");
+		ServerCommand("bot_add_t %s", "pounh");
+		ServerCommand("bot_add_t %s", "PALM1");
+		ServerCommand("bot_add_t %s", "FliP1");
+		ServerCommand("mp_teamlogo_2 wiz");
 	}
 
 	return Plugin_Handled;
@@ -5275,6 +5289,66 @@ public Action Team_London(int client, int args)
 		ServerCommand("bot_add_t %s", "mrhui");
 		ServerCommand("bot_add_t %s", "MBL");
 		ServerCommand("mp_teamlogo_2 lon");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_GameAgents(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "SEMINTE");
+		ServerCommand("bot_add_ct %s", "r1d3r");
+		ServerCommand("bot_add_ct %s", "KunKKa");
+		ServerCommand("bot_add_ct %s", "nJ");
+		ServerCommand("bot_add_ct %s", "COSMEEEN");
+		ServerCommand("mp_teamlogo_1 game");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "SEMINTE");
+		ServerCommand("bot_add_t %s", "r1d3r");
+		ServerCommand("bot_add_t %s", "KunKKa");
+		ServerCommand("bot_add_t %s", "nJ");
+		ServerCommand("bot_add_t %s", "COSMEEEN");
+		ServerCommand("mp_teamlogo_2 game");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Keyd(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "bnc");
+		ServerCommand("bot_add_ct %s", "mawth");
+		ServerCommand("bot_add_ct %s", "tifa");
+		ServerCommand("bot_add_ct %s", "jota");
+		ServerCommand("bot_add_ct %s", "piria");
+		ServerCommand("mp_teamlogo_1 keyds");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "bnc");
+		ServerCommand("bot_add_t %s", "mawth");
+		ServerCommand("bot_add_t %s", "tifa");
+		ServerCommand("bot_add_t %s", "jota");
+		ServerCommand("bot_add_t %s", "piria");
+		ServerCommand("mp_teamlogo_2 keyds");
 	}
 
 	return Plugin_Handled;
@@ -8032,10 +8106,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "OG");
 	}
 	
-	//Vexed Players
-	if((StrEqual(botname, "Frei")) || (StrEqual(botname, "Astroo")) || (StrEqual(botname, "jenko")) || (StrEqual(botname, "Puls3")) || (StrEqual(botname, "stan1ey")))
+	//Wizards Players
+	if((StrEqual(botname, "krii")) || (StrEqual(botname, "Kvik")) || (StrEqual(botname, "pounh")) || (StrEqual(botname, "PALM1")) || (StrEqual(botname, "FliP1")))
 	{
-		CS_SetClientClanTag(client, "Vexed");
+		CS_SetClientClanTag(client, "Wizards");
 	}
 	
 	//Tricked Players
@@ -8138,6 +8212,18 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "RezzeD")) || (StrEqual(botname, "entz")) || (StrEqual(botname, "dobbo")) || (StrEqual(botname, "mrhui")) || (StrEqual(botname, "MBL")))
 	{
 		CS_SetClientClanTag(client, "London");
+	}
+	
+	//GameAgents Players
+	if((StrEqual(botname, "SEMINTE")) || (StrEqual(botname, "r1d3r")) || (StrEqual(botname, "KunKKa")) || (StrEqual(botname, "nJ")) || (StrEqual(botname, "COSMEEEN")))
+	{
+		CS_SetClientClanTag(client, "GameAgents");
+	}
+	
+	//Keyd Players
+	if((StrEqual(botname, "bnc")) || (StrEqual(botname, "mawth")) || (StrEqual(botname, "tifa")) || (StrEqual(botname, "jota")) || (StrEqual(botname, "piria")))
+	{
+		CS_SetClientClanTag(client, "Keyd");
 	}
 }
 
@@ -8687,6 +8773,11 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 156;
 	}
 	
+	if (StrEqual(sClan, "GameAgents"))
+	{
+		g_iProfileRank[client] = 157;
+	}
+	
 	if (StrEqual(sClan, "Baecon"))
 	{
 		g_iProfileRank[client] = 158;
@@ -8695,6 +8786,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Redemption"))
 	{
 		g_iProfileRank[client] = 159;
+	}
+	
+	if (StrEqual(sClan, "Keyd"))
+	{
+		g_iProfileRank[client] = 160;
 	}
 	
 	if (StrEqual(sClan, "Illuminar"))
@@ -8707,7 +8803,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 162;
 	}
 	
-	if (StrEqual(sClan, "Vexed"))
+	if (StrEqual(sClan, "Wizards"))
 	{
 		g_iProfileRank[client] = 163;
 	}

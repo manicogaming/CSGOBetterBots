@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"aim_winter_deagle_up2010"
+{
+	"CTSpawn_x" "0.460000"
+	"CTSpawn_y" "0.490000"
+	"TSpawn_x" "1.130000"
+	"TSpawn_y" "0.490000"
+	"material" "overviews/aim_winter_deagle_up2010"
+	"pos_x" "-1168.000000"
+	"pos_y" "912.000000"
+	"scale" "1.780000"
+}

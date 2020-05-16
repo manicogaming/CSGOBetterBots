@@ -3097,25 +3097,25 @@ ProP+Rifle "ISSAA"
 	VoicePitch = 103
 End
 
-//Vexed Players
+//Wizards Players
 
-ProP+Rifle "Frei"
+ProP+Rifle "krii"
 	VoicePitch = 94
 End
 
-ProAwp+SniperPro "Astroo"
+ProAwp+SniperPro "Kvik"
 	VoicePitch = 79
 End
 
-ProP+Rifle "jenko"
+ProP+Rifle "pounh"
 	VoicePitch = 82
 End
 
-ProP+Rifle "Puls3"
+ProP+Rifle "PALM1"
 	VoicePitch = 92
 End
 
-ProP+Rifle "stan1ey"
+ProP+Rifle "FliP1"
 	VoicePitch = 88
 End
 
@@ -3513,6 +3513,50 @@ End
 
 ProP+Rifle "MBL"
 	VoicePitch = 104
+End
+
+//GameAgents Players
+
+ProP+Rifle "SEMINTE"
+	VoicePitch = 110
+End
+
+ProAwp+SniperPro "r1d3r"
+	VoicePitch = 97
+End
+
+ProP+Rifle "KunKKa"
+	VoicePitch = 85
+End
+
+ProP+Rifle "nJ"
+	VoicePitch = 87
+End
+
+ProP+Rifle "COSMEEEN"
+	VoicePitch = 79
+End
+
+//Keyd Players
+
+ProP+Rifle "bnc"
+	VoicePitch = 85
+End
+
+ProAwp+SniperPro "mawth"
+	VoicePitch = 108
+End
+
+ProP+Rifle "tifa"
+	VoicePitch = 100
+End
+
+ProP+Rifle "jota"
+	VoicePitch = 98
+End
+
+ProP+Rifle "piria"
+	VoicePitch = 115
 End
 
 EliteAwp+SniperPro "XD | ryu"
