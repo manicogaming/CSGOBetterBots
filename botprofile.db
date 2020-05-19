@@ -2307,7 +2307,7 @@ End
 
 //AVEZ Players
 
-ProP+Rifle "MOLSI"
+ProP+Rifle "byali"
 	VoicePitch = 92
 End
 
@@ -2391,28 +2391,6 @@ End
 
 ProP+Rifle "Nodios"
 	VoicePitch = 86
-End
-
-//BPro Players
-
-ProP+Rifle "FlashBack"
-	VoicePitch = 101
-End
-
-ProAwp+SniperPro "viltrex"
-	VoicePitch = 72
-End
-
-ProP+Rifle "POP0V"
-	VoicePitch = 92
-End
-
-ProP+Rifle "Krs7N"
-	VoicePitch = 91
-End
-
-ProP+Rifle "milly"
-	VoicePitch = 91
 End
 
 //Syman Players
@@ -2681,23 +2659,23 @@ End
 
 //PlanetKey Players
 
-ProP+Rifle "NinoZjE"
+ProP+Rifle "LapeX"
 	VoicePitch = 106
 End
 
-ProAwp+SniperPro "s1n"
+ProAwp+SniperPro "Printek"
 	VoicePitch = 78
 End
 
-ProP+Rifle "skyye"
+ProP+Rifle "glaVed"
 	VoicePitch = 78
 End
 
-ProP+Rifle "Kirby"
+ProP+Rifle "ND"
 	VoicePitch = 78
 End
 
-ProP+Rifle "yannick1h"
+ProP+Rifle "impulsG"
 	VoicePitch = 100
 End
 
