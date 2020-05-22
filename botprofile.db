@@ -30,17 +30,16 @@ Default
 	AimFocusDecay = 0.00001 // how much focus shrinks per second (.25 = 25% of size after 1 sec)
 	AimFocusOffsetScale = 0.00001 // controls accuracy when tracking to target (0 == perfect, should always be < 1)
 	AimfocusInterval = 0.00001 // how often focus is adjusted (smaller intervals means better movement tracking)
-	WeaponPreference = none
 	Cost = 0
-	Difficulty = EASY+NORMAL+HARD+EXPERT
+	Difficulty = NORMAL
 	VoicePitch = 100
 	Skin = 0
-	LookAngleMaxAccelNormal = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.9.9.9.9
-	LookAngleStiffnessNormal = 5000.0
+	LookAngleMaxAccelNormal = 2800.0
+	LookAngleStiffnessNormal = 350.0
 	LookAngleDampingNormal = 45.0
-	LookAngleMaxAccelAttacking = 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.9.9.9.9
-	LookAngleStiffnessAttacking = 5200.0
-	LookAngleDampingAttacking = 40.100
+	LookAngleMaxAccelAttacking = 2000.0
+	LookAngleStiffnessAttacking = 1200.0
+	LookAngleDampingAttacking = 75.0
 End 
 
 //----------------------------------------------------------------------------
@@ -185,18 +184,18 @@ Template ElitePassive
 End
 
 Template Elite
-        Skill = 24
-		Rank = 850
-		Aggression = 25
-		Teamwork = 90
-		ReactionTime = 0.000000000000000000000001
+        Skill = 0
+		Rank = 500
+		Teamwork = 100
+		Aggression = 55
+		ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
 		AttackDelay = 0
 		Difficulty = EXPERT+HARD+NORMAL+EASY
-		VoicePitch = 70
+		VoicePitch = 110
 		AimFocusInitial = 0.00001
-		AimFocusDecay = 0.00001
-		AimFocusOffsetScale = 0.00001
-		AimfocusInterval = 0.00001
+		AimFocusDecay = 0.0000001
+		AimFocusOffsetScale = 0.0000000000000000000000001
+		AimfocusInterval = 0.0000000000001
 End
 
 Template ExpertAwp
@@ -453,7 +452,7 @@ ProP+Rifle "TACO"
 	VoicePitch = 96
 End
 
-ProP+Rifle "meyern"
+ProP+Rifle "trk"
 	VoicePitch = 100
 End
 
@@ -503,7 +502,7 @@ End
 
 //NiP Players
 
-ProP+Rifle "Lekr0"
+ProP+Rifle "hampus"
 	VoicePitch = 110
 End
 
@@ -1223,7 +1222,7 @@ ProP+Rifle "RuStY"
 	VoicePitch = 95
 End
 
-ProP+Rifle "hampus"
+ProP+Rifle "ScreaM"
 	VoicePitch = 77
 End
 
@@ -1241,7 +1240,7 @@ ProP+Rifle "hyped"
 	VoicePitch = 97
 End
 
-ProP+Rifle "merisinho"
+ProP+Rifle "FabeeN"
 	VoicePitch = 89
 End
 
@@ -1853,7 +1852,7 @@ ProAwp+SniperPro "Maluk3"
 	VoicePitch = 83
 End
 
-ProP+Rifle "trk"
+ProP+Rifle "cky"
 	VoicePitch = 81
 End
 
@@ -3534,6 +3533,28 @@ ProP+Rifle "jota"
 End
 
 ProP+Rifle "piria"
+	VoicePitch = 115
+End
+
+//Epsilon Players
+
+ProP+Rifle "ALEXJ"
+	VoicePitch = 85
+End
+
+ProAwp+SniperPro "smogger"
+	VoicePitch = 108
+End
+
+ProP+Rifle "Celebrations"
+	VoicePitch = 100
+End
+
+ProP+Rifle "Masti"
+	VoicePitch = 98
+End
+
+ProP+Rifle "Blytz"
 	VoicePitch = 115
 End
 
