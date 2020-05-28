@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_dustdm"
+{
+	"CTSpawn_x" "0.130000"
+	"CTSpawn_y" "0.520000"
+	"TSpawn_x" "0.550000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/fy_dustdm"
+	"pos_x" "-1608.000000"
+	"pos_y" "1432.000000"
+	"scale" "3.520000"
+}

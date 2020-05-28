@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_hot_dust_war"
+{
+	"CTSpawn_x" "-0.390000"
+	"CTSpawn_y" "0.460000"
+	"TSpawn_x" "0.340000"
+	"TSpawn_y" "0.450000"
+	"material" "overviews/fy_hot_dust_war"
+	"pos_x" "-464.000000"
+	"pos_y" "581.500000"
+	"scale" "1.940000"
+}

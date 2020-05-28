@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_buball"
+{
+	"CTSpawn_x" "0.090000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.920000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/fy_buball"
+	"pos_x" "-1408.000000"
+	"pos_y" "1408.000000"
+	"scale" "2.750000"
+}

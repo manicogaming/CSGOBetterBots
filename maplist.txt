@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri May 22 01:54:03 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Thu May 28 01:18:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -64,7 +64,6 @@ aim_shyam
 aim_speedgaming
 aim_stashhouse
 aim_tmp
-aim_tmp-fun
 aim_tmp_mac10_v2
 aim_treearena
 aim_usp_v2
@@ -112,6 +111,7 @@ blood_gulch
 breakfloor_2
 c19_tilante
 carparkm1
+clue
 cs_agency
 cs_assault
 cs_beachassault_ek
@@ -147,22 +147,31 @@ de_train
 de_vertigo
 deathzone
 dm_bloodsport
+dm_jolly
 fun_pacman_v1
 fy_back_street
+fy_buball
+fy_buzzkill_sh
 fy_concrete
 fy_conflict
 fy_deagle5
 fy_december_v2
 fy_dust_css
+fy_dustdm
 fy_faceover_wb
+fy_fight_tunnel_sr
 fy_highway_s
+fy_hot_dust_war
+fy_iceworld
+fy_iceworld_09_v2
 fy_iceworld_beta
+fy_iceworld_crachfulgore
 fy_iceworld_go
 fy_jungleworldx_b2
 fy_killzone
 fy_matrix2
 fy_pool_day_classic
-fy_poolparty_v3
+fy_poolparty
 fy_pools
 fy_rainbow
 fy_rainyday

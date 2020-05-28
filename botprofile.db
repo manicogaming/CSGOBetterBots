@@ -1030,7 +1030,7 @@ End
 
 //VP Players
 
-ProP+Rifle "buster"
+ProP+Rifle "YEKINDAR"
 	VoicePitch = 113
 End
 
@@ -1248,47 +1248,47 @@ ProP+Rifle "ykyli"
 	VoicePitch = 114
 End
 
-//EURONICS Players
+//EYES Players
 
-ProP+Rifle "red"
+ProP+Rifle "Zarin"
 	VoicePitch = 102
 End
 
-ProAwp+SniperPro "maRky"
+ProAwp+SniperPro "ACTiV"
 	VoicePitch = 75
 End
 
-ProP+Rifle "PerX"
+ProP+Rifle "Hydro"
 	VoicePitch = 76
 End
 
-ProP+Rifle "Seeeya"
+ProP+Rifle "SativR"
 	VoicePitch = 96
 End
 
-ProP+Rifle "pdy"
+ProP+Rifle "HTMy"
 	VoicePitch = 77
 End
 
 //PDucks Players
 
-ProP+Rifle "stefank0k0"
+ProP+Rifle "ChLo"
 	VoicePitch = 72
 End
 
-ProAwp+SniperPro "ACTiV"
+ProAwp+SniperPro "sTaR"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Cargo"
+ProP+Rifle "wizzem"
 	VoicePitch = 84
 End
 
-ProP+Rifle "Krabbe"
+ProP+Rifle "maxz"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Simply"
+ProP+Rifle "Cl34v3rs"
 	VoicePitch = 71
 End
 
@@ -1342,7 +1342,7 @@ ProP+Rifle "maden"
 	VoicePitch = 88
 End
 
-ProAwp+SniperPro "Maikelele"
+ProAwp+SniperPro "farlig"
 	VoicePitch = 78
 End
 
@@ -1654,7 +1654,7 @@ ProAwp+SniperPro "WorldEdit"
 	VoicePitch = 77
 End
 
-ProP+Rifle "YEKINDAR"
+ProP+Rifle "fostar"
 	VoicePitch = 112
 End
 
@@ -1852,7 +1852,7 @@ ProAwp+SniperPro "Maluk3"
 	VoicePitch = 83
 End
 
-ProP+Rifle "cky"
+ProP+Rifle "malbsMd"
 	VoicePitch = 81
 End
 
@@ -1910,7 +1910,7 @@ End
 
 //Chiefs Players
 
-ProP+Rifle "stat"
+ProP+Rifle "HUGHMUNGUS"
 	VoicePitch = 91
 End
 
@@ -2328,11 +2328,11 @@ End
 
 //BTRG Players
 
-ProP+Rifle "HeiB"
+ProP+Rifle "Eeyore"
 	VoicePitch = 81
 End
 
-ProAwp+SniperPro "start"
+ProAwp+SniperPro "Geniuss"
 	VoicePitch = 110
 End
 
@@ -2376,7 +2376,7 @@ ProP+Rifle "Queenix"
 	VoicePitch = 99
 End
 
-ProAwp+SniperPro "farlig"
+ProAwp+SniperPro "zEVES"
 	VoicePitch = 71
 End
 
@@ -2630,7 +2630,7 @@ ProP+Rifle "Polox"
 	VoicePitch = 89
 End
 
-ProP+Rifle "DEVIL"
+ProP+Rifle "Djoko"
 	VoicePitch = 78
 End
 
@@ -3360,25 +3360,25 @@ ProP+Rifle "Cunha"
 	VoicePitch = 88
 End
 
-//nerdRage Players
+//Wolsung Players
 
-ProP+Rifle "Frazehh"
+ProP+Rifle "hyskeee"
 	VoicePitch = 96
 End
 
-ProAwp+SniperPro "Br0die"
+ProAwp+SniperPro "discplex"
 	VoicePitch = 112
 End
 
-ProP+Rifle "Ping"
+ProP+Rifle "Gekons"
 	VoicePitch = 104
 End
 
-ProP+Rifle "Tadpole"
+ProP+Rifle "rabbit"
 	VoicePitch = 96
 End
 
-ProP+Rifle "LNZ"
+ProP+Rifle "shield"
 	VoicePitch = 86
 End
 

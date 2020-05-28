@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_iceworld_crachfulgore"
+{
+	"CTSpawn_x" "0.270000"
+	"CTSpawn_y" "0.510000"
+	"TSpawn_x" "-0.370000"
+	"TSpawn_y" "0.510000"
+	"material" "overviews/fy_iceworld_crachfulgore"
+	"pos_x" "-451.000000"
+	"pos_y" "707.000000"
+	"scale" "1.940000"
+}

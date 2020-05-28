@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_buzzkill_sh"
+{
+	"CTSpawn_x" "0.340000"
+	"CTSpawn_y" "0.800000"
+	"TSpawn_x" "0.340000"
+	"TSpawn_y" "0.210000"
+	"material" "overviews/fy_buzzkill_sh"
+	"pos_x" "-1377.000000"
+	"pos_y" "1344.000000"
+	"scale" "2.630000"
+}
