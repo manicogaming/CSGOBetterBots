@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_officemini"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.600000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.400000"
+	"material" "overviews/fy_officemini"
+	"pos_x" "-1568.000000"
+	"pos_y" "1568.000000"
+	"scale" "3.060000"
+}

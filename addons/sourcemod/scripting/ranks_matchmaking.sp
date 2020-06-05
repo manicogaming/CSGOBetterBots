@@ -18,7 +18,7 @@ int rank[MAXPLAYERS+1] = {0, ...};
 int oldrank[MAXPLAYERS+1] = {0, ...};
 
 // ConVar Variables
-ConVar g_CVAR_RanksPoints[61];
+ConVar g_CVAR_RanksPoints[51];
 ConVar g_CVAR_RankPoints_Type;
 ConVar g_CVAR_RankPoints_Flag;
 ConVar g_CVAR_RankPoints_Prefix;
@@ -37,14 +37,14 @@ float g_RankPoints_OverlayTime;
 char g_RankPoints_SoundRankUp[PLATFORM_MAX_PATH];
 char g_RankPoints_SoundRankDown[PLATFORM_MAX_PATH];
 char g_RankPoints_Prefix[40];
-int RankPoints[61];
+int RankPoints[51];
 
 bool g_zrank;
 bool g_kentorankme;
 bool g_hlstatsx;
 
-char RankStrings[62][256];
-char RankOverlays[61][PLATFORM_MAX_PATH];
+char RankStrings[52][256];
+char RankOverlays[51][PLATFORM_MAX_PATH];
 
 public Plugin myinfo = 
 {
@@ -59,7 +59,7 @@ public void OnPluginStart()
 {
 	RegConsoleCmd("sm_mm", Menu_Points);
 	HookEvent("announce_phase_end", Event_AnnouncePhaseEnd);
-	HookEvent("player_death", Event_PlayerDeath);
+	HookEventEx("cs_win_panel_match", cs_win_panel_match);
 	HookEvent("player_disconnect", Event_Disconnect, EventHookMode_Pre);
 	
 	// ConVar to check which rank you want
@@ -124,16 +124,6 @@ public void OnPluginStart()
 	g_CVAR_RanksPoints[48] = CreateConVar("ranks_matchmaking_point_lem", "7300", "Number of Points to reach Legendary Eagle Master", _, true, 0.0, false);
 	g_CVAR_RanksPoints[49] = CreateConVar("ranks_matchmaking_point_smfc", "7450", "Number of Points to reach Supreme Master First Class", _, true, 0.0, false);
 	g_CVAR_RanksPoints[50] = CreateConVar("ranks_matchmaking_point_ge", "7600", "Number of Points to reach Global Elite", _, true, 0.0, false);
-	g_CVAR_RanksPoints[51] = CreateConVar("ranks_matchmaking_point_f1", "7750", "Number of Points to reach FaceIT Level 1", _, true, 0.0, false);
-	g_CVAR_RanksPoints[52] = CreateConVar("ranks_matchmaking_point_f2", "7900", "Number of Points to reach FaceIT Level 2", _, true, 0.0, false);
-	g_CVAR_RanksPoints[53] = CreateConVar("ranks_matchmaking_point_f3", "8050", "Number of Points to reach FaceIT Level 3", _, true, 0.0, false);
-	g_CVAR_RanksPoints[54] = CreateConVar("ranks_matchmaking_point_f4", "8200", "Number of Points to reach FaceIT Level 4", _, true, 0.0, false);
-	g_CVAR_RanksPoints[55] = CreateConVar("ranks_matchmaking_point_f5", "8350", "Number of Points to reach FaceIT Level 5", _, true, 0.0, false);
-	g_CVAR_RanksPoints[56] = CreateConVar("ranks_matchmaking_point_f6", "8500", "Number of Points to reach FaceIT Level 6", _, true, 0.0, false);
-	g_CVAR_RanksPoints[57] = CreateConVar("ranks_matchmaking_point_f7", "8650", "Number of Points to reach FaceIT Level 7", _, true, 0.0, false);
-	g_CVAR_RanksPoints[58] = CreateConVar("ranks_matchmaking_point_f8", "8800", "Number of Points to reach FaceIT Level 8", _, true, 0.0, false);
-	g_CVAR_RanksPoints[59] = CreateConVar("ranks_matchmaking_point_f9", "8950", "Number of Points to reach FaceIT Level 9", _, true, 0.0, false);
-	g_CVAR_RanksPoints[60] = CreateConVar("ranks_matchmaking_point_f10", "9100", "Number of Points to reach FaceIT Level 10", _, true, 0.0, false);
 	
 	LoadTranslations("ranks_matchmaking.phrases");
 	AutoExecConfig(true, "ranks_matchmaking");
@@ -171,7 +161,7 @@ public void OnLibraryRemoved(const char[] name)
 
 public void OnMapStart()
 {
-	for (int i = 0; i < 61; i++)
+	for (int i = 0; i < 51; i++)
 		RankPoints[i] = g_CVAR_RanksPoints[i].IntValue;
 		
 	g_RankPoints_HudOverlay = g_CVAR_RankPoints_HudOverlay.IntValue;
@@ -223,7 +213,7 @@ public void GetRanksGradesSounds()
 
 public void GetRanksOverlays()
 {
-	for(int i = 0; i < 61; i++)
+	for(int i = 0; i < 51; i++)
 	{
 		Format(RankOverlays[i], sizeof(RankOverlays[]), "lvl_overlays/overlay_hd_%d", (i+1));
 	}
@@ -283,16 +273,6 @@ public void GetRanksNames()
 	FormatEx(RankStrings[49], sizeof(RankStrings[]), "%t", "Legendary Eagle Master");
 	FormatEx(RankStrings[50], sizeof(RankStrings[]), "%t", "Supreme First Master Class");
 	FormatEx(RankStrings[51], sizeof(RankStrings[]), "%t", "Global Elite");
-	FormatEx(RankStrings[52], sizeof(RankStrings[]), "%t", "FaceIT Level 1");
-	FormatEx(RankStrings[53], sizeof(RankStrings[]), "%t", "FaceIT Level 2");
-	FormatEx(RankStrings[54], sizeof(RankStrings[]), "%t", "FaceIT Level 3");
-	FormatEx(RankStrings[55], sizeof(RankStrings[]), "%t", "FaceIT Level 4");
-	FormatEx(RankStrings[56], sizeof(RankStrings[]), "%t", "FaceIT Level 5");
-	FormatEx(RankStrings[57], sizeof(RankStrings[]), "%t", "FaceIT Level 6");
-	FormatEx(RankStrings[58], sizeof(RankStrings[]), "%t", "FaceIT Level 7");
-	FormatEx(RankStrings[59], sizeof(RankStrings[]), "%t", "FaceIT Level 8");
-	FormatEx(RankStrings[60], sizeof(RankStrings[]), "%t", "FaceIT Level 9");
-	FormatEx(RankStrings[61], sizeof(RankStrings[]), "%t", "FaceIT Level 10");
 }
 
 public Action RankMe_OnPlayerLoaded(int client)
@@ -335,24 +315,6 @@ public void _HLStatsX_API_Response(int command, int payload, int client, DataPac
 	delete pack;
 
 	CheckRanks(client, points);
-}
-
-public Action Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast)
-{
-	int victim = GetClientOfUserId(event.GetInt("userid"));
-	
-	if(IsValidClient(victim))
-		CheckPoints(victim);
-	
-	int attacker = GetClientOfUserId(event.GetInt("attacker"));
-	
-	if(IsValidClient(attacker))
-		CheckPoints(attacker);
-	
-	int assister = GetClientOfUserId(event.GetInt("assister"));
-	
-	if(IsValidClient(assister))
-		CheckPoints(assister);
 }
 
 public Action Event_Disconnect(Event event, const char[] name, bool dontBroadcast)
@@ -413,7 +375,7 @@ public void CheckRanks(int client, int points)
 		rank[client] = 44;
 	else if(points >= RankPoints[8] && points < RankPoints[9]) // Hunter Fox II
 		rank[client] = 45;
-	else if(points >= RankPoints[9] && points < RankPoints[10]) // Hunter Fox II
+	else if(points >= RankPoints[9] && points < RankPoints[10]) // Hunter Fox III
 		rank[client] = 46;
 	else if(points >= RankPoints[10] && points < RankPoints[11]) // Hunter Fox Elite
 		rank[client] = 47;
@@ -495,28 +457,8 @@ public void CheckRanks(int client, int points)
 		rank[client] = 16;
 	else if(points >= RankPoints[49] && points < RankPoints[50]) // Supreme Master First Class
 		rank[client] = 17;
-	else if(points >= RankPoints[50] && points < RankPoints[51]) // Global Elite
+	else if(points >= RankPoints[50]) // Global Elite
 		rank[client] = 18;
-	else if(points >= RankPoints[51] && points < RankPoints[52]) // FaceIT Level 1
-		rank[client] = 52;
-	else if(points >= RankPoints[52] && points < RankPoints[53]) // FaceIT Level 2
-		rank[client] = 53;
-	else if(points >= RankPoints[53] && points < RankPoints[54]) // FaceIT Level 3
-		rank[client] = 54;
-	else if(points >= RankPoints[54] && points < RankPoints[55]) // FaceIT Level 4
-		rank[client] = 55;
-	else if(points >= RankPoints[55] && points < RankPoints[56]) // FaceIT Level 5
-		rank[client] = 56;
-	else if(points >= RankPoints[56] && points < RankPoints[57]) // FaceIT Level 6
-		rank[client] = 57;
-	else if(points >= RankPoints[57] && points < RankPoints[58]) // FaceIT Level 7
-		rank[client] = 58;
-	else if(points >= RankPoints[58] && points < RankPoints[59]) // FaceIT Level 8
-		rank[client] = 59;
-	else if(points >= RankPoints[59] && points < RankPoints[60]) // FaceIT Level 9
-		rank[client] = 60;
-	else if(points >= RankPoints[60]) // FaceIT Level 10
-		rank[client] = 61;
 	
 	if(rank[client] > oldrank[client] && rank[client] > 0)
 	{
@@ -538,6 +480,8 @@ public void CheckRanks(int client, int points)
 			ClientCommand(client, "playgamesound Music.StopAllMusic");
 			EmitSoundToClient(client, g_RankPoints_SoundRankUp, SOUND_FROM_PLAYER, SNDCHAN_STATIC, SNDLEVEL_NONE, _, 0.75);
 		}
+		
+		RankUpdate(client, oldrank[client], rank[client]);
 	}
 	
 	if(rank[client] < oldrank[client] && rank[client] > 0)
@@ -552,6 +496,25 @@ public void CheckRanks(int client, int points)
 	
 	oldrank[client] = rank[client];
 	
+}
+
+public void RankUpdate(int client, int old_rank, int new_rank)
+{
+	Protobuf pb = view_as<Protobuf>(StartMessageAll("ServerRankUpdate", USERMSG_RELIABLE));
+
+	// Можно добавлять сразу несколько оружий в одно сообщение
+	Protobuf rank_update = pb.AddMessage("rank_update");
+	
+	int stats_return[29];
+	
+	RankMe_GetStats(client, stats_return);
+	
+	rank_update.SetInt("account_id", GetSteamAccountID(client)); // Defindex оружия
+	rank_update.SetInt("rank_old", old_rank); // Skin ID оружия (344 - Dragon Lore)
+	rank_update.SetInt("rank_new", new_rank); // Редкость оружия. Влияет на задержку выпадения.
+	rank_update.SetInt("num_wins", (stats_return[15] + stats_return[16]) / 16); // Редкость оружия. Влияет на задержку выпадения.
+	
+	EndMessage();
 }
 
 public void Hook_OnThinkPost(int iEnt)
@@ -606,6 +569,17 @@ public int Panel_Handler(Menu menu, MenuAction action, int client, int choice)
 	else if (action == MenuAction_End)
 	{
 		delete menu;
+	}
+}
+
+public void cs_win_panel_match(Handle event, const char[] eventname, bool dontBroadcast)
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(IsValidClient(i))
+		{
+			CheckPoints(i);
+		}
 	}
 }
 

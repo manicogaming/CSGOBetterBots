@@ -17,6 +17,7 @@ Handle g_hGameConfig;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
 Handle g_hGetBonePosition;
+Handle g_hBotSetEnemy;
 Handle g_hBotAttack;
 
 enum _BotRouteType
@@ -25,6 +26,11 @@ enum _BotRouteType
 	FASTEST_ROUTE,
 	UNKNOWN_ROUTE
 }
+
+int g_iPatchDefIndex[] = {
+	4550, 4551, 4552, 4553, 4554, 4555, 4556, 4557, 4558, 4559, 4560, 4561, 4562, 4563, 4564, 4565, 4566, 4567, 4568, 4569,
+	4570, 4589, 4591, 4592, 4593, 4594, 4595, 4596, 4597, 4598, 4599, 4600
+};
 
 char g_sCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_st6_variante.mdl",
@@ -112,9 +118,9 @@ static char g_sBotName[][] = {
 	//TYLOO Players
 	"Summer",
 	"Attacker",
-	"xeta",
+	"SLOWLY",
 	"somebody",
-	"Freeman",
+	"DANK1NG",
 	//EG Players
 	"stanislaw",
 	"tarik",
@@ -260,10 +266,10 @@ static char g_sBotName[][] = {
 	"CYPHER",
 	"Murky",
 	//LDLC Players
-	"LOGAN",
+	"afroo",
 	"Lambert",
 	"hAdji",
-	"Gringo",
+	"bodyy",
 	"SIXER",
 	//GamerLegion Players
 	"dennis",
@@ -287,7 +293,7 @@ static char g_sBotName[][] = {
 	"hyskeee",
 	"discplex",
 	"Gekons",
-	"rabbit",
+	"keen",
 	"shield",
 	//PDucks Players
 	"ChLo",
@@ -316,7 +322,7 @@ static char g_sBotName[][] = {
 	//Nordavind Players
 	"tenzki",
 	"NaToSaphiX",
-	"RUBINO",
+	"H4RR3",
 	"HS",
 	"cromen",
 	//SJ Players
@@ -355,12 +361,6 @@ static char g_sBotName[][] = {
 	"zlynx",
 	"ZELIN",
 	"drifking",
-	//x6tence Players
-	"NikoM",
-	"JonY BoY",
-	"tomi",
-	"OMG",
-	"tutehen",
 	//eSuba Players
 	"NIO",
 	"Levi",
@@ -402,7 +402,7 @@ static char g_sBotName[][] = {
 	"DEAD",
 	"Kheops",
 	"Senpai",
-	"fredi",
+	"Lyhn",
 	//Yeah Players
 	"tatazin",
 	"RCF",
@@ -416,11 +416,11 @@ static char g_sBotName[][] = {
 	"TOBIZ",
 	"Celrate",
 	//DETONA Players
-	"rikz",
-	"tiburci0",
+	"nak",
+	"piria",
 	"v$m",
 	"Lucaozy",
-	"Tuurtle",
+	"zevy",
 	//Infinity Players
 	"k1Nky",
 	"tor1towOw",
@@ -432,7 +432,7 @@ static char g_sBotName[][] = {
 	"Noktse",
 	"Reversive",
 	"decov9jse",
-	"maxujas",
+	"caike",
 	//paiN Players
 	"PKL",
 	"land1n",
@@ -440,7 +440,7 @@ static char g_sBotName[][] = {
 	"biguzera",
 	"hardzao",
 	//Sharks Players
-	"heat",
+	"supLex",
 	"jnt",
 	"leo_drunky",
 	"exit",
@@ -454,7 +454,7 @@ static char g_sBotName[][] = {
 	//W7M Players
 	"skullz",
 	"raafa",
-	"ableJ",
+	"Tuurtle",
 	"pancc",
 	"realziN",
 	//Avant Players
@@ -465,10 +465,10 @@ static char g_sBotName[][] = {
 	"HaZR",
 	//Chiefs Players
 	"HUGHMUNGUS",
-	"Jinxx",
+	"Vexite",
 	"apocdud",
-	"SkulL",
-	"Mayker",
+	"zeph",
+	"soju_j",
 	//ORDER Players
 	"J1rah",
 	"aliStair",
@@ -506,11 +506,11 @@ static char g_sBotName[][] = {
 	"boltz",
 	"felps",
 	//LucidDream Players
-	"Jinx",
+	"SeveN89",
 	"PTC",
 	"cbbk",
 	"JohnOlsen",
-	"Lakia",
+	"foxz",
 	//NASR Players
 	"proxyyb",
 	"Real1ze",
@@ -584,14 +584,14 @@ static char g_sBotName[][] = {
 	"ImpressioN",
 	"XigN",
 	//GTZ Players
-	"k0mpa",
+	"deLonge",
 	"StepA",
 	"slaxx",
 	"Jaepe",
 	"rafaxF",
 	//Flames Players
 	"Queenix",
-	"zEVES",
+	"HECTOz",
 	"HooXi",
 	"refrezh",
 	"Nodios",
@@ -615,9 +615,9 @@ static char g_sBotName[][] = {
 	"anarkez",
 	//Incept Players
 	"micalis",
-	"jtr",
-	"zeph",
-	"Rackem",
+	"SkulL",
+	"nibke",
+	"Rev",
 	"yourwombat",
 	//UOL Players
 	"crisby",
@@ -704,7 +704,7 @@ static char g_sBotName[][] = {
 	"fanatyk",
 	"jedqr",
 	//Imperial Players
-	"KHTEX",
+	"adr",
 	"zqk",
 	"dzt",
 	"delboNi",
@@ -713,7 +713,7 @@ static char g_sBotName[][] = {
 	"kustoM_",
 	"Spartan",
 	"konvict",
-	"takbok",
+	"maniaq",
 	"Tiaantjie",
 	//Unique Players
 	"R0b3n",
@@ -736,7 +736,7 @@ static char g_sBotName[][] = {
 	//Chaos Players
 	"Xeppaa",
 	"vanity",
-	"Voltage",
+	"leaf",
 	"steel_",
 	"Jonji",
 	//OneThree Players
@@ -766,9 +766,9 @@ static char g_sBotName[][] = {
 	//Canids Players
 	"DeStiNy",
 	"nythonzinho",
-	"nak",
+	"heat",
 	"latto",
-	"fnx",
+	"KHTEX",
 	//ESPADA Players
 	"Patsanchick",
 	"degster",
@@ -820,7 +820,7 @@ static char g_sBotName[][] = {
 	//D13 Players
 	"Tamiraarita",
 	"rate",
-	"sKINEE",
+	"Mistercap",
 	"sK0R",
 	"ANNIHILATION",
 	//ZIGMA Players
@@ -877,7 +877,7 @@ static char g_sBotName[][] = {
 	"Czapel",
 	"M4tthi",
 	"grzes1x",
-	//Defusekids Players
+	//LLL Players
 	"notaN",
 	"G1DO",
 	"marix",
@@ -900,13 +900,19 @@ static char g_sBotName[][] = {
 	"mawth",
 	"tifa",
 	"jota",
-	"piria",
+	"Kaos",
 	//Epsilon Players
 	"ALEXJ",
 	"smogger",
 	"Celebrations",
 	"Masti",
-	"Blytz"
+	"Blytz",
+	//TIGER Players
+	"erkaSt",
+	"nin9",
+	"dobu",
+	"kabal",
+	"ncl"
 };
  
 public Plugin myinfo =
@@ -952,9 +958,16 @@ public void OnPluginStart()
 	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::SetBotEnemy");
+	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
+	if ((g_hBotSetEnemy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::SetBotEnemy signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::Attack");
 	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
-	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");	
+	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
+	
+	eItems_OnItemsSynced();
 	
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
@@ -1006,7 +1019,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lions", Team_Lions);
 	RegConsoleCmd("team_riders", Team_Riders);
 	RegConsoleCmd("team_offset", Team_OFFSET);
-	RegConsoleCmd("team_x6tence", Team_x6tence);
 	RegConsoleCmd("team_esuba", Team_eSuba);
 	RegConsoleCmd("team_nexus", Team_Nexus);
 	RegConsoleCmd("team_pact", Team_PACT);
@@ -1093,11 +1105,12 @@ public void OnPluginStart()
 	RegConsoleCmd("team_smash", Team_SMASH);
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_pompa", Team_Pompa);
-	RegConsoleCmd("team_defusekids", Team_Defusekids);
+	RegConsoleCmd("team_lll", Team_LLL);
 	RegConsoleCmd("team_london", Team_London);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_keyd", Team_Keyd);
-	RegConsoleCmd("team_Epsilon", Team_Epsilon);
+	RegConsoleCmd("team_epsilon", Team_Epsilon);
+	RegConsoleCmd("team_tiger", Team_TIGER);
 }
 
 public Action Team_NiP(int client, int args)
@@ -1380,9 +1393,9 @@ public Action Team_TYLOO(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Summer");
 		ServerCommand("bot_add_ct %s", "Attacker");
-		ServerCommand("bot_add_ct %s", "xeta");
+		ServerCommand("bot_add_ct %s", "SLOWLY");
 		ServerCommand("bot_add_ct %s", "somebody");
-		ServerCommand("bot_add_ct %s", "Freeman");
+		ServerCommand("bot_add_ct %s", "DANK1NG");
 		ServerCommand("mp_teamlogo_1 tyl");
 	}
 	
@@ -1391,9 +1404,9 @@ public Action Team_TYLOO(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Summer");
 		ServerCommand("bot_add_t %s", "Attacker");
-		ServerCommand("bot_add_t %s", "xeta");
+		ServerCommand("bot_add_t %s", "SLOWLY");
 		ServerCommand("bot_add_t %s", "somebody");
-		ServerCommand("bot_add_t %s", "Freeman");
+		ServerCommand("bot_add_t %s", "DANK1NG");
 		ServerCommand("mp_teamlogo_2 tyl");
 	}
 	
@@ -2128,10 +2141,10 @@ public Action Team_LDLC(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "LOGAN");
+		ServerCommand("bot_add_ct %s", "afroo");
 		ServerCommand("bot_add_ct %s", "Lambert");
 		ServerCommand("bot_add_ct %s", "hAdji");
-		ServerCommand("bot_add_ct %s", "Gringo");
+		ServerCommand("bot_add_ct %s", "bodyy");
 		ServerCommand("bot_add_ct %s", "SIXER");
 		ServerCommand("mp_teamlogo_1 ldl");
 	}
@@ -2139,10 +2152,10 @@ public Action Team_LDLC(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "LOGAN");
+		ServerCommand("bot_add_t %s", "afroo");
 		ServerCommand("bot_add_t %s", "Lambert");
 		ServerCommand("bot_add_t %s", "hAdji");
-		ServerCommand("bot_add_t %s", "Gringo");
+		ServerCommand("bot_add_t %s", "bodyy");
 		ServerCommand("bot_add_t %s", "SIXER");
 		ServerCommand("mp_teamlogo_2 ldl");
 	}
@@ -2251,7 +2264,7 @@ public Action Team_Wolsung(int client, int args)
 		ServerCommand("bot_add_ct %s", "hyskeee");
 		ServerCommand("bot_add_ct %s", "discplex");
 		ServerCommand("bot_add_ct %s", "Gekons");
-		ServerCommand("bot_add_ct %s", "rabbit");
+		ServerCommand("bot_add_ct %s", "keen");
 		ServerCommand("bot_add_ct %s", "shield");
 		ServerCommand("mp_teamlogo_1 wols");
 	}
@@ -2262,7 +2275,7 @@ public Action Team_Wolsung(int client, int args)
 		ServerCommand("bot_add_t %s", "hyskeee");
 		ServerCommand("bot_add_t %s", "discplex");
 		ServerCommand("bot_add_t %s", "Gekons");
-		ServerCommand("bot_add_t %s", "rabbit");
+		ServerCommand("bot_add_t %s", "keen");
 		ServerCommand("bot_add_t %s", "shield");
 		ServerCommand("mp_teamlogo_2 wols");
 	}
@@ -2400,7 +2413,7 @@ public Action Team_Nordavind(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "tenzki");
 		ServerCommand("bot_add_ct %s", "NaToSaphiX");
-		ServerCommand("bot_add_ct %s", "RUBINO");
+		ServerCommand("bot_add_ct %s", "H4RR3");
 		ServerCommand("bot_add_ct %s", "HS");
 		ServerCommand("bot_add_ct %s", "cromen");
 		ServerCommand("mp_teamlogo_1 nord");
@@ -2411,7 +2424,7 @@ public Action Team_Nordavind(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "tenzki");
 		ServerCommand("bot_add_t %s", "NaToSaphiX");
-		ServerCommand("bot_add_t %s", "RUBINO");
+		ServerCommand("bot_add_t %s", "H4RR3");
 		ServerCommand("bot_add_t %s", "HS");
 		ServerCommand("bot_add_t %s", "cromen");
 		ServerCommand("mp_teamlogo_2 nord");
@@ -2595,36 +2608,6 @@ public Action Team_OFFSET(int client, int args)
 		ServerCommand("bot_add_t %s", "ZELIN");
 		ServerCommand("bot_add_t %s", "drifking");
 		ServerCommand("mp_teamlogo_2 offs");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_x6tence(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "NikoM");
-		ServerCommand("bot_add_ct %s", "\"JonY BoY\"");
-		ServerCommand("bot_add_ct %s", "tomi");
-		ServerCommand("bot_add_ct %s", "OMG");
-		ServerCommand("bot_add_ct %s", "tutehen");
-		ServerCommand("mp_teamlogo_1 x6t");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "NikoM");
-		ServerCommand("bot_add_t %s", "\"JonY BoY\"");
-		ServerCommand("bot_add_t %s", "tomi");
-		ServerCommand("bot_add_t %s", "OMG");
-		ServerCommand("bot_add_t %s", "tutehen");
-		ServerCommand("mp_teamlogo_2 x6t");
 	}
 	
 	return Plugin_Handled;
@@ -2822,7 +2805,7 @@ public Action Team_YaLLa(int client, int args)
 		ServerCommand("bot_add_ct %s", "DEAD");
 		ServerCommand("bot_add_ct %s", "Kheops");
 		ServerCommand("bot_add_ct %s", "Senpai");
-		ServerCommand("bot_add_ct %s", "fredi");
+		ServerCommand("bot_add_ct %s", "Lyhn");
 		ServerCommand("mp_teamlogo_1 yall");
 	}
 	
@@ -2833,7 +2816,7 @@ public Action Team_YaLLa(int client, int args)
 		ServerCommand("bot_add_t %s", "DEAD");
 		ServerCommand("bot_add_t %s", "Kheops");
 		ServerCommand("bot_add_t %s", "Senpai");
-		ServerCommand("bot_add_t %s", "fredi");
+		ServerCommand("bot_add_t %s", "Lyhn");
 		ServerCommand("mp_teamlogo_2 yall");
 	}
 	
@@ -2908,22 +2891,22 @@ public Action Team_DETONA(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "rikz");
-		ServerCommand("bot_add_ct %s", "tiburci0");
+		ServerCommand("bot_add_ct %s", "nak");
+		ServerCommand("bot_add_ct %s", "piria");
 		ServerCommand("bot_add_ct %s", "v$m");
 		ServerCommand("bot_add_ct %s", "Lucaozy");
-		ServerCommand("bot_add_ct %s", "Tuurtle");
+		ServerCommand("bot_add_ct %s", "zevy");
 		ServerCommand("mp_teamlogo_1 deto");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "rikz");
-		ServerCommand("bot_add_t %s", "tiburci0");
+		ServerCommand("bot_add_t %s", "nak");
+		ServerCommand("bot_add_t %s", "piria");
 		ServerCommand("bot_add_t %s", "v$m");
 		ServerCommand("bot_add_t %s", "Lucaozy");
-		ServerCommand("bot_add_t %s", "Tuurtle");
+		ServerCommand("bot_add_t %s", "zevy");
 		ServerCommand("mp_teamlogo_2 deto");
 	}
 	
@@ -2972,7 +2955,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
 		ServerCommand("bot_add_ct %s", "decov9jse");
-		ServerCommand("bot_add_ct %s", "maxujas");
+		ServerCommand("bot_add_ct %s", "caike");
 		ServerCommand("mp_teamlogo_1 isu");
 	}
 	
@@ -2983,7 +2966,7 @@ public Action Team_Isurus(int client, int args)
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
 		ServerCommand("bot_add_t %s", "decov9jse");
-		ServerCommand("bot_add_t %s", "maxujas");
+		ServerCommand("bot_add_t %s", "caike");
 		ServerCommand("mp_teamlogo_2 isu");
 	}
 	
@@ -3028,7 +3011,7 @@ public Action Team_Sharks(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "heat");
+		ServerCommand("bot_add_ct %s", "supLex");
 		ServerCommand("bot_add_ct %s", "jnt");
 		ServerCommand("bot_add_ct %s", "leo_drunky");
 		ServerCommand("bot_add_ct %s", "exit");
@@ -3039,7 +3022,7 @@ public Action Team_Sharks(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "heat");
+		ServerCommand("bot_add_t %s", "supLex");
 		ServerCommand("bot_add_t %s", "jnt");
 		ServerCommand("bot_add_t %s", "leo_drunky");
 		ServerCommand("bot_add_t %s", "exit");
@@ -3090,7 +3073,7 @@ public Action Team_W7M(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "skullz");
 		ServerCommand("bot_add_ct %s", "raafa");
-		ServerCommand("bot_add_ct %s", "ableJ");
+		ServerCommand("bot_add_ct %s", "Tuurtle");
 		ServerCommand("bot_add_ct %s", "pancc");
 		ServerCommand("bot_add_ct %s", "realziN");
 		ServerCommand("mp_teamlogo_1 w7m");
@@ -3101,7 +3084,7 @@ public Action Team_W7M(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "skullz");
 		ServerCommand("bot_add_t %s", "raafa");
-		ServerCommand("bot_add_t %s", "ableJ");
+		ServerCommand("bot_add_t %s", "Tuurtle");
 		ServerCommand("bot_add_t %s", "pancc");
 		ServerCommand("bot_add_t %s", "realziN");
 		ServerCommand("mp_teamlogo_2 w7m");
@@ -3149,10 +3132,10 @@ public Action Team_Chiefs(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "HUGHMUNGUS");
-		ServerCommand("bot_add_ct %s", "Jinxx");
+		ServerCommand("bot_add_ct %s", "Vexite");
 		ServerCommand("bot_add_ct %s", "apocdud");
-		ServerCommand("bot_add_ct %s", "SkulL");
-		ServerCommand("bot_add_ct %s", "Mayker");
+		ServerCommand("bot_add_ct %s", "zeph");
+		ServerCommand("bot_add_ct %s", "soju_j");
 		ServerCommand("mp_teamlogo_1 chief");
 	}
 	
@@ -3160,10 +3143,10 @@ public Action Team_Chiefs(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "HUGHMUNGUS");
-		ServerCommand("bot_add_t %s", "Jinxx");
+		ServerCommand("bot_add_t %s", "Vexite");
 		ServerCommand("bot_add_t %s", "apocdud");
-		ServerCommand("bot_add_t %s", "SkulL");
-		ServerCommand("bot_add_t %s", "Mayker");
+		ServerCommand("bot_add_t %s", "zeph");
+		ServerCommand("bot_add_t %s", "soju_j");
 		ServerCommand("mp_teamlogo_2 chief");
 	}
 	
@@ -3358,22 +3341,22 @@ public Action Team_Lucid(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Jinx");
+		ServerCommand("bot_add_ct %s", "SeveN89");
 		ServerCommand("bot_add_ct %s", "PTC");
 		ServerCommand("bot_add_ct %s", "cbbk");
 		ServerCommand("bot_add_ct %s", "JohnOlsen");
-		ServerCommand("bot_add_ct %s", "Lakia");
+		ServerCommand("bot_add_ct %s", "foxz");
 		ServerCommand("mp_teamlogo_1 lucid");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Jinx");
+		ServerCommand("bot_add_t %s", "SeveN89");
 		ServerCommand("bot_add_t %s", "PTC");
 		ServerCommand("bot_add_t %s", "cbbk");
 		ServerCommand("bot_add_t %s", "JohnOlsen");
-		ServerCommand("bot_add_t %s", "Lakia");
+		ServerCommand("bot_add_t %s", "foxz");
 		ServerCommand("mp_teamlogo_2 lucid");
 	}
 	
@@ -3748,7 +3731,7 @@ public Action Team_GTZ(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "k0mpa");
+		ServerCommand("bot_add_ct %s", "deLonge");
 		ServerCommand("bot_add_ct %s", "StepA");
 		ServerCommand("bot_add_ct %s", "slaxx");
 		ServerCommand("bot_add_ct %s", "Jaepe");
@@ -3759,7 +3742,7 @@ public Action Team_GTZ(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "k0mpa");
+		ServerCommand("bot_add_t %s", "deLonge");
 		ServerCommand("bot_add_t %s", "StepA");
 		ServerCommand("bot_add_t %s", "slaxx");
 		ServerCommand("bot_add_t %s", "Jaepe");
@@ -3779,7 +3762,7 @@ public Action Team_Flames(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Queenix");
-		ServerCommand("bot_add_ct %s", "zEVES");
+		ServerCommand("bot_add_ct %s", "HECTOz");
 		ServerCommand("bot_add_ct %s", "HooXi");
 		ServerCommand("bot_add_ct %s", "refrezh");
 		ServerCommand("bot_add_ct %s", "Nodios");
@@ -3790,7 +3773,7 @@ public Action Team_Flames(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Queenix");
-		ServerCommand("bot_add_t %s", "zEVES");
+		ServerCommand("bot_add_t %s", "HECTOz");
 		ServerCommand("bot_add_t %s", "HooXi");
 		ServerCommand("bot_add_t %s", "refrezh");
 		ServerCommand("bot_add_t %s", "Nodios");
@@ -3899,9 +3882,9 @@ public Action Team_Incept(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "micalis");
-		ServerCommand("bot_add_ct %s", "jtr");
-		ServerCommand("bot_add_ct %s", "zeph");
-		ServerCommand("bot_add_ct %s", "Rackem");
+		ServerCommand("bot_add_ct %s", "SkulL");
+		ServerCommand("bot_add_ct %s", "nibke");
+		ServerCommand("bot_add_ct %s", "Rev");
 		ServerCommand("bot_add_ct %s", "yourwombat");
 		ServerCommand("mp_teamlogo_1 ince");
 	}
@@ -3910,9 +3893,9 @@ public Action Team_Incept(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "micalis");
-		ServerCommand("bot_add_t %s", "jtr");
-		ServerCommand("bot_add_t %s", "zeph");
-		ServerCommand("bot_add_t %s", "Rackem");
+		ServerCommand("bot_add_t %s", "SkulL");
+		ServerCommand("bot_add_t %s", "nibke");
+		ServerCommand("bot_add_t %s", "Rev");
 		ServerCommand("bot_add_t %s", "yourwombat");
 		ServerCommand("mp_teamlogo_2 ince");
 	}
@@ -4348,7 +4331,7 @@ public Action Team_Imperial(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "KHTEX");
+		ServerCommand("bot_add_ct %s", "adr");
 		ServerCommand("bot_add_ct %s", "zqk");
 		ServerCommand("bot_add_ct %s", "dzt");
 		ServerCommand("bot_add_ct %s", "delboNi");
@@ -4359,7 +4342,7 @@ public Action Team_Imperial(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "KHTEX");
+		ServerCommand("bot_add_t %s", "adr");
 		ServerCommand("bot_add_t %s", "zqk");
 		ServerCommand("bot_add_t %s", "dzt");
 		ServerCommand("bot_add_t %s", "delboNi");
@@ -4381,7 +4364,7 @@ public Action Team_Big5(int client, int args)
 		ServerCommand("bot_add_ct %s", "kustoM_");
 		ServerCommand("bot_add_ct %s", "Spartan");
 		ServerCommand("bot_add_ct %s", "konvict");
-		ServerCommand("bot_add_ct %s", "takbok");
+		ServerCommand("bot_add_ct %s", "maniaq");
 		ServerCommand("bot_add_ct %s", "Tiaantjie");
 		ServerCommand("mp_teamlogo_1 big5");
 	}
@@ -4392,7 +4375,7 @@ public Action Team_Big5(int client, int args)
 		ServerCommand("bot_add_t %s", "kustoM_");
 		ServerCommand("bot_add_t %s", "Spartan");
 		ServerCommand("bot_add_t %s", "konvict");
-		ServerCommand("bot_add_t %s", "takbok");
+		ServerCommand("bot_add_t %s", "maniaq");
 		ServerCommand("bot_add_t %s", "Tiaantjie");
 		ServerCommand("mp_teamlogo_2 big5");
 	}
@@ -4500,7 +4483,7 @@ public Action Team_Chaos(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Xeppaa");
 		ServerCommand("bot_add_ct %s", "vanity");
-		ServerCommand("bot_add_ct %s", "Voltage");
+		ServerCommand("bot_add_ct %s", "leaf");
 		ServerCommand("bot_add_ct %s", "steel_");
 		ServerCommand("bot_add_ct %s", "Jonji");
 		ServerCommand("mp_teamlogo_1 chaos");
@@ -4511,7 +4494,7 @@ public Action Team_Chaos(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Xeppaa");
 		ServerCommand("bot_add_t %s", "vanity");
-		ServerCommand("bot_add_t %s", "Voltage");
+		ServerCommand("bot_add_t %s", "leaf");
 		ServerCommand("bot_add_t %s", "steel_");
 		ServerCommand("bot_add_t %s", "Jonji");
 		ServerCommand("mp_teamlogo_2 chaos");
@@ -4650,9 +4633,9 @@ public Action Team_Canids(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DeStiNy");
 		ServerCommand("bot_add_ct %s", "nythonzinho");
-		ServerCommand("bot_add_ct %s", "nak");
+		ServerCommand("bot_add_ct %s", "heat");
 		ServerCommand("bot_add_ct %s", "latto");
-		ServerCommand("bot_add_ct %s", "fnx");
+		ServerCommand("bot_add_ct %s", "KHTEX");
 		ServerCommand("mp_teamlogo_1 red");
 	}
 
@@ -4661,9 +4644,9 @@ public Action Team_Canids(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DeStiNy");
 		ServerCommand("bot_add_t %s", "nythonzinho");
-		ServerCommand("bot_add_t %s", "nak");
+		ServerCommand("bot_add_t %s", "heat");
 		ServerCommand("bot_add_t %s", "latto");
-		ServerCommand("bot_add_t %s", "fnx");
+		ServerCommand("bot_add_t %s", "KHTEX");
 		ServerCommand("mp_teamlogo_2 red");
 	}
 
@@ -4920,7 +4903,7 @@ public Action Team_D13(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Tamiraarita");
 		ServerCommand("bot_add_ct %s", "rate");
-		ServerCommand("bot_add_ct %s", "sKINEE");
+		ServerCommand("bot_add_ct %s", "Mistercap");
 		ServerCommand("bot_add_ct %s", "sK0R");
 		ServerCommand("bot_add_ct %s", "ANNIHILATION");
 		ServerCommand("mp_teamlogo_1 d13");
@@ -4931,7 +4914,7 @@ public Action Team_D13(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Tamiraarita");
 		ServerCommand("bot_add_t %s", "rate");
-		ServerCommand("bot_add_t %s", "sKINEE");
+		ServerCommand("bot_add_t %s", "Mistercap");
 		ServerCommand("bot_add_t %s", "sK0R");
 		ServerCommand("bot_add_t %s", "ANNIHILATION");
 		ServerCommand("mp_teamlogo_2 d13");
@@ -5210,7 +5193,7 @@ public Action Team_Pompa(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Defusekids(int client, int args)
+public Action Team_LLL(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -5223,7 +5206,7 @@ public Action Team_Defusekids(int client, int args)
 		ServerCommand("bot_add_ct %s", "marix");
 		ServerCommand("bot_add_ct %s", "v1N");
 		ServerCommand("bot_add_ct %s", "Monu");
-		ServerCommand("mp_teamlogo_1 defu");
+		ServerCommand("mp_teamlogo_1 lll");
 	}
 
 	if(StrEqual(arg, "t"))
@@ -5234,7 +5217,7 @@ public Action Team_Defusekids(int client, int args)
 		ServerCommand("bot_add_t %s", "marix");
 		ServerCommand("bot_add_t %s", "v1N");
 		ServerCommand("bot_add_t %s", "Monu");
-		ServerCommand("mp_teamlogo_2 defu");
+		ServerCommand("mp_teamlogo_2 lll");
 	}
 
 	return Plugin_Handled;
@@ -5312,7 +5295,7 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_ct %s", "mawth");
 		ServerCommand("bot_add_ct %s", "tifa");
 		ServerCommand("bot_add_ct %s", "jota");
-		ServerCommand("bot_add_ct %s", "piria");
+		ServerCommand("bot_add_ct %s", "Kaos");
 		ServerCommand("mp_teamlogo_1 keyds");
 	}
 
@@ -5323,7 +5306,7 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_t %s", "mawth");
 		ServerCommand("bot_add_t %s", "tifa");
 		ServerCommand("bot_add_t %s", "jota");
-		ServerCommand("bot_add_t %s", "piria");
+		ServerCommand("bot_add_t %s", "Kaos");
 		ServerCommand("mp_teamlogo_2 keyds");
 	}
 
@@ -5355,6 +5338,36 @@ public Action Team_Epsilon(int client, int args)
 		ServerCommand("bot_add_t %s", "Masti");
 		ServerCommand("bot_add_t %s", "Blytz");
 		ServerCommand("mp_teamlogo_2 eps");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_TIGER(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "erkaSt");
+		ServerCommand("bot_add_ct %s", "nin9");
+		ServerCommand("bot_add_ct %s", "dobu");
+		ServerCommand("bot_add_ct %s", "kabal");
+		ServerCommand("bot_add_ct %s", "ncl");
+		ServerCommand("mp_teamlogo_1 tiger");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "erkaSt");
+		ServerCommand("bot_add_t %s", "nin9");
+		ServerCommand("bot_add_t %s", "dobu");
+		ServerCommand("bot_add_t %s", "kabal");
+		ServerCommand("bot_add_t %s", "ncl");
+		ServerCommand("mp_teamlogo_2 tiger");
 	}
 
 	return Plugin_Handled;
@@ -5411,282 +5424,105 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 					
 					if(GetRandomInt(1,100) <= 40)
 					{
-						int rndpatches = GetRandomInt(1,15);
-						
-						switch (rndpatches)
+						if(GetRandomInt(1,100) <= 75)
 						{
-							case 1:
-							{
-								int rndpatch = GetRandomInt(1,2);
+							int rndpatches = GetRandomInt(1,14);
 						
-								switch(rndpatch)
+							switch (rndpatches)
+							{
+								case 1:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-									}
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+								}
+								case 2:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+								}
+								case 3:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 4:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 5:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 6:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+								}
+								case 7:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 8:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 9:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 10:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 11:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 12:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 13:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 14:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
 								}
 							}
-							case 2:
+						}
+						else
+						{
+							int rndpatches = GetRandomInt(1,2);
+							
+							switch(rndpatches)
 							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
+								case 1:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-									}
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
 								}
-							}
-							case 3:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
+								case 2:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 4:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 5:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 6:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-									}
-								}
-							}
-							case 7:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 8:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 9:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 10:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 11:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 12:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 13:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 14:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 15:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
+									int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+									
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
 								}
 							}
 						}
@@ -5696,284 +5532,107 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				{
 					SetEntityModel(i, g_sTModels[GetRandomInt(0, sizeof(g_sTModels) - 1)]);
 					
-					if(GetRandomInt(1,100) <= 25)
+					if(GetRandomInt(1,100) <= 40)
 					{
-						int rndpatches = GetRandomInt(1,15);
-						
-						switch (rndpatches)
+						if(GetRandomInt(1,100) <= 75)
 						{
-							case 1:
-							{
-								int rndpatch = GetRandomInt(1,2);
+							int rndpatches = GetRandomInt(1,14);
 						
-								switch(rndpatch)
+							switch (rndpatches)
+							{
+								case 1:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-									}
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+								}
+								case 2:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+								}
+								case 3:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 4:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 5:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 6:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+								}
+								case 7:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 8:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 9:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 10:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+								}
+								case 11:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 12:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 13:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+								}
+								case 14:
+								{
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
 								}
 							}
-							case 2:
+						}
+						else
+						{
+							int rndpatches = GetRandomInt(1,2);
+							
+							switch(rndpatches)
 							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
+								case 1:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-									}
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
 								}
-							}
-							case 3:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
+								case 2:
 								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 4:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 5:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 6:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-									}
-								}
-							}
-							case 7:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 8:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 9:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 10:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-									}
-								}
-							}
-							case 11:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 12:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 13:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 14:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
-								}
-							}
-							case 15:
-							{
-								int rndpatch = GetRandomInt(1,2);
-						
-								switch(rndpatch)
-								{
-									case 1:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4550, 4570), 4, 3);
-									}
-									case 2:
-									{
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 0);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 1);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 2);
-										SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", GetRandomInt(4589, 4600), 4, 3);
-									}
+									int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+									
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
+									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
 								}
 							}
 						}
@@ -6103,7 +5762,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 }
 
 public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3], float angles[3], int& weapon, int& subtype, int& cmdnum, int& tickcount, int& seed, int mouse[2])
-{  
+{
 	if (!IsFakeClient(client)) return Plugin_Continue;
 	
 	int ActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
@@ -6149,13 +5808,13 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 						
 						GetClientAbsOrigin(Ent, targetEyes);
-						BotAttack(client, Ent);
+						BotSetEnemy(client, Ent);
 						
 						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && index != 40 && index != 11 && index != 38 && index != 9) || index == 63)
 						{
 							if(g_bBodyShot[client])
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								
 								if(iBone < 0)
 									continue;
@@ -6163,7 +5822,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								targetEyes[2] = vecBody[2];
+								targetEyes = vecBody;
 							}
 							else
 							{
@@ -6178,11 +5837,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									vecHead[2] += 4.0;
 									
-									targetEyes[2] = vecHead[2];
+									targetEyes = vecHead;
 								}
 								else
 								{
-									int iBone = LookupBone(Ent, "spine_3");
+									int iBone = LookupBone(Ent, "spine_2");
 									
 									if(iBone < 0)
 										continue;
@@ -6192,7 +5851,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									if(IsPointVisible(client, Ent, clientEyes, vecBody))
 									{
-										targetEyes[2] = vecBody[2];
+										targetEyes = vecBody;
 									}
 									else
 									{
@@ -6205,15 +5864,19 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 										
 										vecHead[2] += 4.0;
 										
-										targetEyes[2] = vecHead[2];
+										targetEyes = vecHead;
 									}
 								}	
 							}
 							
-							if(IsPlayerReloading(client)) {
+							if(IsPlayerReloading(client)) 
+							{
 								buttons &= ~IN_ATTACK;
-							} else {
+							} 
+							else 
+							{
 								buttons |= IN_ATTACK;
+								BotAttack(client, Ent);
 							}
 							
 							if(!(buttons & IN_DUCK))
@@ -6223,11 +5886,13 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								vel[2] = 0.0;
 							}
 						}
-						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_SECONDARY) && index != 63 && index != 1)
+						else if(IsWeaponSlotActive(client, CS_SLOT_SECONDARY) && index != 63 && index != 1)
 						{
+							BotAttack(client, Ent);
+							
 							if(g_bBodyShot[client])
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								
 								if(iBone < 0)
 									continue;
@@ -6235,7 +5900,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								targetEyes[2] = vecBody[2];
+								targetEyes = vecBody;
 							}
 							else
 							{
@@ -6250,11 +5915,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									vecHead[2] += 4.0;
 									
-									targetEyes[2] = vecHead[2];
+									targetEyes = vecHead;
 								}
 								else
 								{
-									int iBone = LookupBone(Ent, "spine_3");
+									int iBone = LookupBone(Ent, "spine_2");
 									
 									if(iBone < 0)
 										continue;
@@ -6264,7 +5929,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									if(IsPointVisible(client, Ent, clientEyes, vecBody))
 									{
-										targetEyes[2] = vecBody[2];
+										targetEyes = vecBody;
 									}
 									else
 									{
@@ -6277,16 +5942,18 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 										
 										vecHead[2] += 4.0;
 										
-										targetEyes[2] = vecHead[2];
+										targetEyes = vecHead;
 									}
 								}	
 							}
 						}
-						else if(buttons & IN_ATTACK && index == 1)
+						else if(index == 1)
 						{
+							BotAttack(client, Ent);
+							
 							if(g_bBodyShot[client])
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								
 								if(iBone < 0)
 									continue;
@@ -6294,7 +5961,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								targetEyes[2] = vecBody[2];
+								targetEyes = vecBody;
 							}
 							else
 							{
@@ -6307,14 +5974,20 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								
 								vecHead[2] += 4.0;
 								
-								targetEyes[2] = vecHead[2];	
+								targetEyes = vecHead;	
 							}
+							
+							vel[0] = 0.0;
+							vel[1] = 0.0;
+							vel[2] = 0.0;
 						}
-						else if(buttons & IN_ATTACK && (index == 40 || index == 11 || index == 38))
+						else if(index == 40 || index == 11 || index == 38)
 						{
+							BotAttack(client, Ent);
+							
 							if(g_bBodyShot[client])
 							{
-								int iBone = LookupBone(Ent, "spine_3");
+								int iBone = LookupBone(Ent, "spine_2");
 								
 								if(iBone < 0)
 									continue;
@@ -6322,7 +5995,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecBody[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecBody, vecBad);
 								
-								targetEyes[2] = vecBody[2];
+								targetEyes = vecBody;
 							}
 							else
 							{
@@ -6337,11 +6010,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									vecHead[2] += 4.0;
 									
-									targetEyes[2] = vecHead[2];
+									targetEyes = vecHead;
 								}
 								else
 								{
-									int iBone = LookupBone(Ent, "spine_3");
+									int iBone = LookupBone(Ent, "spine_2");
 									
 									if(iBone < 0)
 										continue;
@@ -6351,7 +6024,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 									if(IsPointVisible(client, Ent, clientEyes, vecBody))
 									{
-										targetEyes[2] = vecBody[2];
+										targetEyes = vecBody;
 									}
 									else
 									{
@@ -6364,28 +6037,30 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 										
 										vecHead[2] += 4.0;
 										
-										targetEyes[2] = vecHead[2];
+										targetEyes = vecHead;
 									}
 								}	
 							}
 						}
 						else if(buttons & IN_ATTACK && IsWeaponSlotActive(client, CS_SLOT_GRENADE))
 						{
-							int iBone = LookupBone(Ent, "spine_3");
+							int iBone = LookupBone(Ent, "spine_2");
 							if(iBone < 0)
 								continue;
 								
 							float vecBody[3], vecBad[3];
 							GetBonePosition(Ent, iBone, vecBody, vecBad);
 							
-							targetEyes[2] = vecBody[2];
+							targetEyes = vecBody;
 							
-							buttons &= ~IN_ATTACK; 
+							buttons &= ~IN_ATTACK;
 							g_bPinPulled[client] = false;
 						}
-						else if(buttons & IN_ATTACK && index == 9)
+						else if(index == 9)
 						{
-							int iBone = LookupBone(Ent, "spine_3");
+							BotAttack(client, Ent);
+							
+							int iBone = LookupBone(Ent, "spine_2");
 							if(iBone < 0)
 								continue;
 								
@@ -6394,7 +6069,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							
 							if(IsPointVisible(client, Ent, clientEyes, vecBody))
 							{
-								targetEyes[2] = vecBody[2];
+								targetEyes = vecBody;
 							}
 							else
 							{
@@ -6407,7 +6082,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								
 								vecHead[2] += 4.0;
 								
-								targetEyes[2] = vecHead[2];
+								targetEyes = vecHead;
 							}
 						}
 						else
@@ -6432,8 +6107,15 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						ScaleVector(vPunch, -(FindConVar("weapon_recoil_scale").FloatValue));
 						
 						AddVectors(eye_to_target, vPunch, eye_to_target);
-					
-						SmoothAim(client, eye_to_target);
+						
+						if(IsTargetInSightRange(client, Ent, 5.0))
+						{
+							TeleportEntity(client, NULL_VECTOR, eye_to_target, NULL_VECTOR);
+						}
+						else
+						{
+							SmoothAim(client, eye_to_target, GetRandomFloat(0.5, 0.9));
+						}
 						
 						if (buttons & IN_ATTACK)
 						{
@@ -6684,18 +6366,13 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		int rndcoin = GetRandomInt(1,2);
-		
-		switch(rndcoin)
+		if(GetRandomInt(1,2) == 1)
 		{
-			case 1:
-			{				
-				g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
-			}
-			case 2:
-			{				
-				g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
-			}
+			g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
+		}
+		else
+		{
+			g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
 		}
 		
 		if(IsValidClient(i) && IsFakeClient(i))
@@ -6824,7 +6501,6 @@ public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadc
 			float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
 			if (duration >= 1.5)
 			{
-				FakeClientCommandEx(client, "use weapon_knife");
 				g_bFlashed[client] = true;
 				CreateTimer(duration, UnFlashed_Timer, client);
 			}
@@ -6858,9 +6534,23 @@ public void OnPluginEnd()
 	}
 }
 
+public void eItems_OnItemsSynced()
+{
+	char sCurrentMap[64];
+	
+	GetCurrentMap(sCurrentMap, sizeof(sCurrentMap));
+	
+	ServerCommand("changelevel %s", sCurrentMap);
+}
+
 public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
 {
 	SDKCall(g_hBotMoveTo, client, origin, routeType);
+}
+
+public void BotSetEnemy(int client, int enemy)
+{
+	SDKCall(g_hBotSetEnemy, client, enemy);
 }
 
 public void BotAttack(int client, int enemy)
@@ -6960,7 +6650,7 @@ bool IsPlayerReloading(int client)
 		return true;
 	
 	//Ready to fire?
-	if(GetEntPropFloat(PlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime() + 0.1)
+	if(GetEntPropFloat(PlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime() + 1.0)
 		return false;
 	
 	return true;
@@ -7020,62 +6710,62 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(StrEqual(clantag, "Heroic")) //30th
+			if(StrEqual(clantag, "Riders")) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "HAVU")) //29th
+			else if(StrEqual(clantag, "HLE")) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "HLE")) //28th
+			else if(StrEqual(clantag, "Winstrike")) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Winstrike")) //27th
+			else if(StrEqual(clantag, "Heroic")) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "forZe")) //26th
+			else if(StrEqual(clantag, "VP")) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //25th
+			else if(StrEqual(clantag, "forZe")) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //24th
+			else if(StrEqual(clantag, "North")) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //23rd
+			else if(StrEqual(clantag, "Heretics")) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //22nd
+			else if(StrEqual(clantag, "OG")) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //21st
+			else if(StrEqual(clantag, "ENCE")) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //20th
+			else if(StrEqual(clantag, "BIG")) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "coL")) //19th
+			else if(StrEqual(clantag, "GODSENT")) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
@@ -7085,7 +6775,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "OG")) //17th
+			else if(StrEqual(clantag, "coL")) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
@@ -7095,22 +6785,22 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //15th
+			else if(StrEqual(clantag, "Lions")) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //14th
+			else if(StrEqual(clantag, "Gen.G")) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "NiP")) //13th
+			else if(StrEqual(clantag, "Spirit")) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //12th
+			else if(StrEqual(clantag, "NiP")) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
@@ -7145,12 +6835,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //5th
+			else if(StrEqual(clantag, "mouz")) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "mouz")) //4th
+			else if(StrEqual(clantag, "G2")) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
@@ -7160,12 +6850,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Na´Vi")) //2nd
+			else if(StrEqual(clantag, "Astralis")) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //1st
+			else if(StrEqual(clantag, "Na´Vi")) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
@@ -7273,26 +6963,25 @@ stock bool IsTargetInSightRange(int client, int target, float angle = 40.0, floa
 
 stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
 {
-	float clientEyes[3];
+	float fClientEyes[3], vecHead[3], vecBad[3];
 	
-	GetClientEyePosition(client, clientEyes);
+	GetClientEyePosition(client, fClientEyes);
 	
 	int iBone = LookupBone(iTarget, "head_0");
 	if(iBone < 0)
 		return false;
 		
-	float vecHead[3], vecBad[3];
 	GetBonePosition(iTarget, iBone, vecHead, vecBad);
 	
 	vecHead[2] += 4.0;
 	
-	if(IsPointVisible(client, iTarget, clientEyes, vecHead))
+	if(IsPointVisible(client, iTarget, fClientEyes, vecHead))
 	{
 		g_bBodyShot[client] = false;
 	}
 	else
 	{
-		iBone = LookupBone(iTarget, "spine_3");
+		iBone = LookupBone(iTarget, "spine_2");
 		if(iBone < 0)
 			return false;
 			
@@ -7301,9 +6990,9 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 		g_bBodyShot[client] = true;
 	}
 	
-	if (fDistance == 0.0 || GetVectorDistance(clientEyes, vecHead, false) < fDistance)
+	if (fDistance == 0.0 || GetVectorDistance(fClientEyes, vecHead, false) < fDistance)
 	{
-		Handle hTrace = TR_TraceRayFilterEx(clientEyes, vecHead, MASK_VISIBLE, RayType_EndPoint, Base_TraceFilter);
+		Handle hTrace = TR_TraceRayFilterEx(fClientEyes, vecHead, MASK_SHOT|CONTENTS_OPAQUE, RayType_EndPoint, Base_TraceFilter);
 		
 		if (TR_DidHit(hTrace))
 		{
@@ -7359,7 +7048,7 @@ stock float fmodf(float number, float denom)
 
 stock bool IsPointVisible(int looker, int target, float start[3], float point[3])
 {
-	TR_TraceRayFilter(start, point, MASK_VISIBLE, RayType_EndPoint, AimTargetFilter, looker);
+	TR_TraceRayFilter(start, point, MASK_SHOT|CONTENTS_OPAQUE, RayType_EndPoint, AimTargetFilter, looker);
 	if(!TR_DidHit() || TR_GetEntityIndex() == target)
 	{
 		return true;
@@ -7381,10 +7070,9 @@ public bool AimTargetFilter(int entity, int contentsMask, any iExclude)
 	return !(entity == iExclude);
 }
 
-public void SmoothAim(int client, float fDesiredAngles[3]) {
-	float fAngles[3], fTargetAngles[3], smoothing;
-	
-	smoothing = 0.3;
+public void SmoothAim(int client, float fDesiredAngles[3], float smoothing) 
+{
+	float fAngles[3], fTargetAngles[3];
 	
 	GetClientEyeAngles(client, fAngles);
 	
@@ -7514,7 +7202,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//TYLOO Players
-	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "Attacker")) || (StrEqual(botname, "xeta")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "Freeman")))
+	if((StrEqual(botname, "Summer")) || (StrEqual(botname, "Attacker")) || (StrEqual(botname, "SLOWLY")) || (StrEqual(botname, "somebody")) || (StrEqual(botname, "DANK1NG")))
 	{
 		CS_SetClientClanTag(client, "TYLOO");
 	}
@@ -7664,7 +7352,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LDLC Players
-	if((StrEqual(botname, "LOGAN")) || (StrEqual(botname, "Lambert")) || (StrEqual(botname, "hAdji")) || (StrEqual(botname, "Gringo")) || (StrEqual(botname, "SIXER")))
+	if((StrEqual(botname, "afroo")) || (StrEqual(botname, "Lambert")) || (StrEqual(botname, "hAdji")) || (StrEqual(botname, "bodyy")) || (StrEqual(botname, "SIXER")))
 	{
 		CS_SetClientClanTag(client, "LDLC");
 	}
@@ -7688,7 +7376,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Wolsung Players
-	if((StrEqual(botname, "hyskeee")) || (StrEqual(botname, "discplex")) || (StrEqual(botname, "Gekons")) || (StrEqual(botname, "rabbit")) || (StrEqual(botname, "shield")))
+	if((StrEqual(botname, "hyskeee")) || (StrEqual(botname, "discplex")) || (StrEqual(botname, "Gekons")) || (StrEqual(botname, "keen")) || (StrEqual(botname, "shield")))
 	{
 		CS_SetClientClanTag(client, "Wolsung");
 	}
@@ -7718,7 +7406,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Nordavind Players
-	if((StrEqual(botname, "tenzki")) || (StrEqual(botname, "NaToSaphiX")) || (StrEqual(botname, "RUBINO")) || (StrEqual(botname, "HS")) || (StrEqual(botname, "cromen")))
+	if((StrEqual(botname, "tenzki")) || (StrEqual(botname, "NaToSaphiX")) || (StrEqual(botname, "H4RR3")) || (StrEqual(botname, "HS")) || (StrEqual(botname, "cromen")))
 	{
 		CS_SetClientClanTag(client, "Nordavind");
 	}
@@ -7759,12 +7447,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "OFFSET");
 	}
 	
-	//x6tence Players
-	if((StrEqual(botname, "NikoM")) || (StrEqual(botname, "JonY BoY")) || (StrEqual(botname, "tomi")) || (StrEqual(botname, "OMG")) || (StrEqual(botname, "tutehen")))
-	{
-		CS_SetClientClanTag(client, "x6tence");
-	}
-	
 	//eSuba Players
 	if((StrEqual(botname, "NIO")) || (StrEqual(botname, "Levi")) || (StrEqual(botname, "luko")) || (StrEqual(botname, "Blogg1s")) || (StrEqual(botname, "The eLiVe")))
 	{
@@ -7802,7 +7484,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//YaLLa Players
-	if((StrEqual(botname, "Remind")) || (StrEqual(botname, "DEAD")) || (StrEqual(botname, "Kheops")) || (StrEqual(botname, "Senpai")) || (StrEqual(botname, "fredi")))
+	if((StrEqual(botname, "Remind")) || (StrEqual(botname, "DEAD")) || (StrEqual(botname, "Kheops")) || (StrEqual(botname, "Senpai")) || (StrEqual(botname, "Lyhn")))
 	{
 		CS_SetClientClanTag(client, "YaLLa");
 	}
@@ -7820,7 +7502,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//DETONA Players
-	if((StrEqual(botname, "rikz")) || (StrEqual(botname, "tiburci0")) || (StrEqual(botname, "v$m")) || (StrEqual(botname, "Lucaozy")) || (StrEqual(botname, "Tuurtle")))
+	if((StrEqual(botname, "nak")) || (StrEqual(botname, "piria")) || (StrEqual(botname, "v$m")) || (StrEqual(botname, "Lucaozy")) || (StrEqual(botname, "zevy")))
 	{
 		CS_SetClientClanTag(client, "DETONA");
 	}
@@ -7832,7 +7514,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Isurus Players
-	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "decov9jse")) || (StrEqual(botname, "maxujas")))
+	if((StrEqual(botname, "1962")) || (StrEqual(botname, "Noktse")) || (StrEqual(botname, "Reversive")) || (StrEqual(botname, "decov9jse")) || (StrEqual(botname, "caike")))
 	{
 		CS_SetClientClanTag(client, "Isurus");
 	}
@@ -7844,7 +7526,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Sharks Players
-	if((StrEqual(botname, "heat")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "Luken")))
+	if((StrEqual(botname, "supLex")) || (StrEqual(botname, "jnt")) || (StrEqual(botname, "leo_drunky")) || (StrEqual(botname, "exit")) || (StrEqual(botname, "Luken")))
 	{
 		CS_SetClientClanTag(client, "Sharks");
 	}
@@ -7856,7 +7538,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//W7M Players
-	if((StrEqual(botname, "skullz")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "ableJ")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
+	if((StrEqual(botname, "skullz")) || (StrEqual(botname, "raafa")) || (StrEqual(botname, "Tuurtle")) || (StrEqual(botname, "pancc")) || (StrEqual(botname, "realziN")))
 	{
 		CS_SetClientClanTag(client, "W7M");
 	}
@@ -7868,7 +7550,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Chiefs Players
-	if((StrEqual(botname, "HUGHMUNGUS")) || (StrEqual(botname, "Jinxx")) || (StrEqual(botname, "apocdud")) || (StrEqual(botname, "SkulL")) || (StrEqual(botname, "Mayker")))
+	if((StrEqual(botname, "HUGHMUNGUS")) || (StrEqual(botname, "Vexite")) || (StrEqual(botname, "apocdud")) || (StrEqual(botname, "zeph")) || (StrEqual(botname, "soju_j")))
 	{
 		CS_SetClientClanTag(client, "Chiefs");
 	}
@@ -7910,7 +7592,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//LucidDream Players
-	if((StrEqual(botname, "Jinx")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "Lakia")))
+	if((StrEqual(botname, "SeveN89")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "foxz")))
 	{
 		CS_SetClientClanTag(client, "LucidDream");
 	}
@@ -7988,13 +7670,13 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//GTZ Players
-	if((StrEqual(botname, "k0mpa")) || (StrEqual(botname, "StepA")) || (StrEqual(botname, "slaxx")) || (StrEqual(botname, "Jaepe")) || (StrEqual(botname, "rafaxF")))
+	if((StrEqual(botname, "deLonge")) || (StrEqual(botname, "StepA")) || (StrEqual(botname, "slaxx")) || (StrEqual(botname, "Jaepe")) || (StrEqual(botname, "rafaxF")))
 	{
 		CS_SetClientClanTag(client, "GTZ");
 	}
 	
 	//Flames Players
-	if((StrEqual(botname, "Queenix")) || (StrEqual(botname, "zEVES")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "refrezh")) || (StrEqual(botname, "Nodios")))
+	if((StrEqual(botname, "Queenix")) || (StrEqual(botname, "HECTOz")) || (StrEqual(botname, "HooXi")) || (StrEqual(botname, "refrezh")) || (StrEqual(botname, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}
@@ -8018,7 +7700,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Incept Players
-	if((StrEqual(botname, "micalis")) || (StrEqual(botname, "jtr")) || (StrEqual(botname, "zeph")) || (StrEqual(botname, "Rackem")) || (StrEqual(botname, "yourwombat")))
+	if((StrEqual(botname, "micalis")) || (StrEqual(botname, "SkulL")) || (StrEqual(botname, "nibke")) || (StrEqual(botname, "Rev")) || (StrEqual(botname, "yourwombat")))
 	{
 		CS_SetClientClanTag(client, "Incept");
 	}
@@ -8108,13 +7790,13 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(botname, "KHTEX")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "dzt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "SHOOWTiME")))
+	if((StrEqual(botname, "adr")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "dzt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
 	
 	//Big5 Players
-	if((StrEqual(botname, "kustoM_")) || (StrEqual(botname, "Spartan")) || (StrEqual(botname, "konvict")) || (StrEqual(botname, "takbok")) || (StrEqual(botname, "Tiaantjie")))
+	if((StrEqual(botname, "kustoM_")) || (StrEqual(botname, "Spartan")) || (StrEqual(botname, "konvict")) || (StrEqual(botname, "maniaq")) || (StrEqual(botname, "Tiaantjie")))
 	{
 		CS_SetClientClanTag(client, "Big5");
 	}
@@ -8138,7 +7820,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Chaos Players
-	if((StrEqual(botname, "Xeppaa")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "Voltage")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "Jonji")))
+	if((StrEqual(botname, "Xeppaa")) || (StrEqual(botname, "vanity")) || (StrEqual(botname, "leaf")) || (StrEqual(botname, "steel_")) || (StrEqual(botname, "Jonji")))
 	{
 		CS_SetClientClanTag(client, "Chaos");
 	}
@@ -8168,7 +7850,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Canids Players
-	if((StrEqual(botname, "DeStiNy")) || (StrEqual(botname, "nythonzinho")) || (StrEqual(botname, "nak")) || (StrEqual(botname, "latto")) || (StrEqual(botname, "fnx")))
+	if((StrEqual(botname, "DeStiNy")) || (StrEqual(botname, "nythonzinho")) || (StrEqual(botname, "heat")) || (StrEqual(botname, "latto")) || (StrEqual(botname, "KHTEX")))
 	{
 		CS_SetClientClanTag(client, "Canids");
 	}
@@ -8222,7 +7904,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//D13 Players
-	if((StrEqual(botname, "Tamiraarita")) || (StrEqual(botname, "rate")) || (StrEqual(botname, "sKINEE")) || (StrEqual(botname, "sK0R")) || (StrEqual(botname, "ANNIHILATION")))
+	if((StrEqual(botname, "Tamiraarita")) || (StrEqual(botname, "rate")) || (StrEqual(botname, "Mistercap")) || (StrEqual(botname, "sK0R")) || (StrEqual(botname, "ANNIHILATION")))
 	{
 		CS_SetClientClanTag(client, "D13");
 	}
@@ -8281,10 +7963,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Pompa");
 	}
 	
-	//Defusekids Players
+	//LLL Players
 	if((StrEqual(botname, "notaN")) || (StrEqual(botname, "G1DO")) || (StrEqual(botname, "marix")) || (StrEqual(botname, "v1N")) || (StrEqual(botname, "Monu")))
 	{
-		CS_SetClientClanTag(client, "Defusekids");
+		CS_SetClientClanTag(client, "LLL");
 	}
 	
 	//London Players
@@ -8300,7 +7982,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Keyd Players
-	if((StrEqual(botname, "bnc")) || (StrEqual(botname, "mawth")) || (StrEqual(botname, "tifa")) || (StrEqual(botname, "jota")) || (StrEqual(botname, "piria")))
+	if((StrEqual(botname, "bnc")) || (StrEqual(botname, "mawth")) || (StrEqual(botname, "tifa")) || (StrEqual(botname, "jota")) || (StrEqual(botname, "Kaos")))
 	{
 		CS_SetClientClanTag(client, "Keyd");
 	}
@@ -8309,6 +7991,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "ALEXJ")) || (StrEqual(botname, "smogger")) || (StrEqual(botname, "Celebrations")) || (StrEqual(botname, "Masti")) || (StrEqual(botname, "Blytz")))
 	{
 		CS_SetClientClanTag(client, "Epsilon");
+	}
+	
+	//TIGER Players
+	if((StrEqual(botname, "erkaSt")) || (StrEqual(botname, "nin9")) || (StrEqual(botname, "dobu")) || (StrEqual(botname, "kabal")) || (StrEqual(botname, "ncl")))
+	{
+		CS_SetClientClanTag(client, "TIGER");
 	}
 }
 
@@ -8578,11 +8266,6 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 96;
 	}
 	
-	if (StrEqual(sClan, "x6tence"))
-	{
-		g_iProfileRank[client] = 97;
-	}
-	
 	if (StrEqual(sClan, "eSuba"))
 	{
 		g_iProfileRank[client] = 98;
@@ -8773,6 +8456,11 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 138;
 	}
 	
+	if (StrEqual(sClan, "TIGER"))
+	{
+		g_iProfileRank[client] = 139;
+	}
+	
 	if (StrEqual(sClan, "GroundZero"))
 	{
 		g_iProfileRank[client] = 140;
@@ -8813,7 +8501,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 147;
 	}
 	
-	if (StrEqual(sClan, "Defusekids"))
+	if (StrEqual(sClan, "LLL"))
 	{
 		g_iProfileRank[client] = 148;
 	}

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_showdown"
+{
+	"CTSpawn_x" "-0.060000"
+	"CTSpawn_y" "0.780000"
+	"TSpawn_x" "-0.770000"
+	"TSpawn_y" "0.150000"
+	"material" "overviews/fy_showdown"
+	"pos_x" "-128.000000"
+	"pos_y" "3072.000000"
+	"scale" "3.380000"
+}

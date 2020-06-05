@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Thu May 28 01:18:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Jun 05 18:30:46 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -117,6 +117,7 @@ cs_assault
 cs_beachassault_ek
 cs_bloodstrike_old
 cs_cock
+cs_deadhouse
 cs_italy
 cs_lanpartymayhem
 cs_militia
@@ -170,6 +171,9 @@ fy_iceworld_go
 fy_jungleworldx_b2
 fy_killzone
 fy_matrix2
+fy_noxa
+fy_office
+fy_officemini
 fy_pool_day_classic
 fy_poolparty
 fy_pools
@@ -177,7 +181,10 @@ fy_rainbow
 fy_rainyday
 fy_rocks
 fy_sandstone_t0
+fy_showdown
 fy_simpsons_h
+fy_snow_07
+fy_towelie
 fy_twotowers
 gd_rialto
 genx_brickworld3

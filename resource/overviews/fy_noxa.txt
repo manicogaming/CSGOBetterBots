@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"fy_noxa"
+{
+	"CTSpawn_x" "0.490000"
+	"CTSpawn_y" "0.460000"
+	"TSpawn_x" "-0.380000"
+	"TSpawn_y" "0.480000"
+	"material" "overviews/fy_noxa"
+	"pos_x" "-1152.000000"
+	"pos_y" "1536.000000"
+	"scale" "4.060000"
+}
