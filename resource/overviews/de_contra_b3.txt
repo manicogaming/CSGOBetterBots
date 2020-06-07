@@ -1,0 +1,9 @@
+"de_contra"
+{
+	"material"	"overviews/de_contra_b3"	// texture file
+	"pos_x"		"-2679"	// X coordinate,
+	"pos_y"		"2491"	// Y coordinate,
+	"scale"		"5.0" 	// and used scale used when taking the screenshot
+	"rotate"	"0"	// map was rotated by 90 degress in image editor
+	"zoom"		"1.1"	// optimal zoom factor if map is shown in full size
+}

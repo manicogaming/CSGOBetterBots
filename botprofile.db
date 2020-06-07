@@ -2384,7 +2384,7 @@ ProP+Rifle "n0rb3r7"
 	VoicePitch = 106
 End
 
-ProP+Rifle "kreaz"
+ProP+Rifle "kade0"
 	VoicePitch = 100
 End
 
@@ -3517,45 +3517,67 @@ End
 //Epsilon Players
 
 ProP+Rifle "ALEXJ"
-	VoicePitch = 85
+	VoicePitch = 113
 End
 
 ProAwp+SniperPro "smogger"
-	VoicePitch = 108
+	VoicePitch = 92
 End
 
 ProP+Rifle "Celebrations"
-	VoicePitch = 100
+	VoicePitch = 84
 End
 
 ProP+Rifle "Masti"
-	VoicePitch = 98
+	VoicePitch = 105
 End
 
 ProP+Rifle "Blytz"
-	VoicePitch = 115
+	VoicePitch = 93
 End
 
 //TIGER Players
 
 ProP+Rifle "erkaSt"
-	VoicePitch = 85
+	VoicePitch = 107
 End
 
 ProAwp+SniperPro "nin9"
-	VoicePitch = 108
-End
-
-ProP+Rifle "dobu"
 	VoicePitch = 100
 End
 
+ProP+Rifle "dobu"
+	VoicePitch = 115
+End
+
 ProP+Rifle "kabal"
-	VoicePitch = 98
+	VoicePitch = 87
 End
 
 ProP+Rifle "ncl"
-	VoicePitch = 115
+	VoicePitch = 104
+End
+
+//LEISURE Players
+
+ProP+Rifle "stefank0k0"
+	VoicePitch = 84
+End
+
+ProAwp+SniperPro "NIXEED"
+	VoicePitch = 97
+End
+
+ProP+Rifle "JSXIce"
+	VoicePitch = 95
+End
+
+ProP+Rifle "fly"
+	VoicePitch = 95
+End
+
+ProP+Rifle "ser"
+	VoicePitch = 82
 End
 
 EliteAwp+SniperPro "XD | ryu"

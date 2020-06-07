@@ -1,0 +1,10 @@
+// HLTV overview description file for cs_coldwar.bsp
+
+"cs_coldwar"
+{
+	"material"	"overviews/cs_deso"
+	"pos_x"		"-240"	
+	"pos_y"		"3132"	
+	"scale"		"4.0"
+	"rotate"	"0"
+}
