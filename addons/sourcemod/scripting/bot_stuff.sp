@@ -715,10 +715,10 @@ static char g_sBotName[][] = {
 	"maniaq",
 	"Tiaantjie",
 	//Unique Players
-	"R0b3n",
-	"zorte",
-	"PASHANOJ",
-	"kenzor",
+	"crush",
+	"AiyvaN",
+	"shalfey",
+	"SELLTER",
 	"fenvicious",
 	//Izako Players
 	"Siuhy",
@@ -4399,10 +4399,10 @@ public Action Team_Unique(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "R0b3n");
-		ServerCommand("bot_add_ct %s", "zorte");
-		ServerCommand("bot_add_ct %s", "PASHANOJ");
-		ServerCommand("bot_add_ct %s", "kenzor");
+		ServerCommand("bot_add_ct %s", "crush");
+		ServerCommand("bot_add_ct %s", "AiyvaN");
+		ServerCommand("bot_add_ct %s", "shalfey");
+		ServerCommand("bot_add_ct %s", "SELLTER");
 		ServerCommand("bot_add_ct %s", "fenvicious");
 		ServerCommand("mp_teamlogo_1 uniq");
 	}
@@ -4410,10 +4410,10 @@ public Action Team_Unique(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "R0b3n");
-		ServerCommand("bot_add_t %s", "zorte");
-		ServerCommand("bot_add_t %s", "PASHANOJ");
-		ServerCommand("bot_add_t %s", "kenzor");
+		ServerCommand("bot_add_t %s", "crush");
+		ServerCommand("bot_add_t %s", "AiyvaN");
+		ServerCommand("bot_add_t %s", "shalfey");
+		ServerCommand("bot_add_t %s", "SELLTER");
 		ServerCommand("bot_add_t %s", "fenvicious");
 		ServerCommand("mp_teamlogo_2 uniq");
 	}
@@ -7641,7 +7641,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Unique Players
-	if((StrEqual(botname, "R0b3n")) || (StrEqual(botname, "zorte")) || (StrEqual(botname, "PASHANOJ")) || (StrEqual(botname, "kenzor")) || (StrEqual(botname, "fenvicious")))
+	if((StrEqual(botname, "crush")) || (StrEqual(botname, "AiyvaN")) || (StrEqual(botname, "shalfey")) || (StrEqual(botname, "SELLTER")) || (StrEqual(botname, "fenvicious")))
 	{
 		CS_SetClientClanTag(client, "Unique");
 	}
