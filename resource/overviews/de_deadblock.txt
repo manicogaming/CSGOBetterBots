@@ -1,0 +1,9 @@
+"de_deadblock"
+{
+	"material"	"overviews/de_deadblock"	// texture file
+	"pos_x"		"-1741"	// X coordinate,
+	"pos_y"		"3041"	// Y coordinate,
+	"scale"		"6.00" 	// and used scale used when taking the screenshot
+	"rotate"	"0"	// map was rotated by 90 degress in image editor
+	"zoom"		"6"	// optimal zoom factor if map is shown in full size
+}

@@ -1,0 +1,11 @@
+// HLTV overview description file for de_livehouse.bsp
+
+"de_livehouse"
+{
+	"material"	"overviews/de_livehouse_radar"	// texture file
+	"pos_x"		"-3333"	// upper left world coordinate
+	"pos_y"		"3455"
+	"scale"		"5.00" 
+	//"zoom"		"1.0"
+
+}

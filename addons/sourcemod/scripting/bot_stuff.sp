@@ -6,7 +6,6 @@
 #include <cstrike>
 #include <eItems>
 
-bool g_bFlashed[MAXPLAYERS + 1] = false;
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bPinPulled[MAXPLAYERS + 1] = false;
@@ -936,7 +935,6 @@ public void OnPluginStart()
 	HookEvent("round_start", OnRoundStart);
 	HookEvent("round_freeze_end", OnFreezetimeEnd);
 	HookEvent("bomb_planted", OnBombPlanted);
-	HookEventEx("player_blind", Event_PlayerBlind, EventHookMode_Pre);
 	
 	g_cvPredictionConVars[0] = FindConVar("weapon_recoil_scale");
 	
@@ -5710,11 +5708,7 @@ public Action Hook_WeaponSwitch(int client, int weapon)
 		
 		int index = GetEntProp(ActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		
-		if(g_bFlashed[client])
-		{
-			return Plugin_Handled;
-		}
-		else if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
+		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (index == 41 || index == 42 || index == 59 || index == 500 || index == 503 || index == 505 || index == 506 || index == 507 || index == 508 || index == 509 || index == 512 || index == 514 || index == 515 || index == 516 || index == 517 || index == 518 || index == 519 || index == 520 || index == 521 || index == 522 || index == 523 || index == 525))
 		{
 			return Plugin_Handled;
 		}
@@ -5837,8 +5831,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				GetClientEyePosition(client, clientEyes);
 				int Ent = GetClosestClient(client);
 				int iClipAmmo = GetEntProp(ActiveWeapon, Prop_Send, "m_iClip1");
+				bool bInReload = view_as<bool>(GetEntProp(ActiveWeapon, Prop_Data, "m_bInReload"));
 				
-				if (g_bFreezetimeEnd && iClipAmmo > 0)
+				if (g_bFreezetimeEnd && iClipAmmo > 0 && !bInReload)
 				{
 					if(IsValidClient(Ent))
 					{	
@@ -5875,8 +5870,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
-									vecHead[2] += 4.0;
-									
 									targetEyes = vecHead;
 								}
 								else
@@ -5901,8 +5894,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 											
 										float vecHead[3];
 										GetBonePosition(Ent, iBone, vecHead, vecBad);
-										
-										vecHead[2] += 4.0;
 										
 										targetEyes = vecHead;
 									}
@@ -5943,8 +5934,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
-									vecHead[2] += 4.0;
-									
 									targetEyes = vecHead;
 								}
 								else
@@ -5969,8 +5958,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 											
 										float vecHead[3];
 										GetBonePosition(Ent, iBone, vecHead, vecBad);
-										
-										vecHead[2] += 4.0;
 										
 										targetEyes = vecHead;
 									}
@@ -5999,8 +5986,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									
 								float vecHead[3], vecBad[3];
 								GetBonePosition(Ent, iBone, vecHead, vecBad);
-								
-								vecHead[2] += 4.0;
 								
 								targetEyes = vecHead;	
 							}
@@ -6034,8 +6019,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 									float vecHead[3], vecBad[3];
 									GetBonePosition(Ent, iBone, vecHead, vecBad);
 									
-									vecHead[2] += 4.0;
-									
 									targetEyes = vecHead;
 								}
 								else
@@ -6060,8 +6043,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 											
 										float vecHead[3];
 										GetBonePosition(Ent, iBone, vecHead, vecBad);
-										
-										vecHead[2] += 4.0;
 										
 										targetEyes = vecHead;
 									}
@@ -6104,8 +6085,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								float vecHead[3];
 								GetBonePosition(Ent, iBone, vecHead, vecBad);
 								
-								vecHead[2] += 4.0;
-								
 								targetEyes = vecHead;
 							}
 						}
@@ -6124,15 +6103,13 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						eye_to_target[1] = AngleNormalize(eye_to_target[1]);
 						eye_to_target[2] = 0.0;
 
-						float vecPunchAngle[3];
+						float vPunch[3];
 						
-						GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vecPunchAngle);
+						GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", vPunch);
 						
-						if(g_cvPredictionConVars[0] != null)
-						{
-							eye_to_target[0] -= vecPunchAngle[0] * GetConVarFloat(g_cvPredictionConVars[0]);
-							eye_to_target[1] -= vecPunchAngle[1] * GetConVarFloat(g_cvPredictionConVars[0]);
-						}
+						ScaleVector(vPunch, -(FindConVar("weapon_recoil_scale").FloatValue));
+						
+						AddVectors(eye_to_target, vPunch, eye_to_target);
 						
 						if(IsTargetInSightRange(client, Ent, 5.0))
 						{
@@ -6181,7 +6158,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, ak47location);
 
-						if(distance < 5000 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
+						if(distance < 2500 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
 						{
 							BotMoveTo(client, ak47location, FASTEST_ROUTE);
 						}
@@ -6196,7 +6173,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, ak47location);
 
-						if(distance < 5000 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
+						if(distance < 2500 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
 						{
 							BotMoveTo(client, ak47location, FASTEST_ROUTE);
 						}
@@ -6225,7 +6202,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, deaglelocation);
 						
-						if(distance < 5000 && ((deaglelocation[0] != 0.0) && (deaglelocation[1] != 0.0) && (deaglelocation[2] != 0.0)))
+						if(distance < 2500 && ((deaglelocation[0] != 0.0) && (deaglelocation[1] != 0.0) && (deaglelocation[2] != 0.0)))
 						{
 							BotMoveTo(client, deaglelocation, FASTEST_ROUTE);
 						}
@@ -6244,7 +6221,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, tec9location);
 						
-						if(distance < 5000 && ((tec9location[0] != 0.0) && (tec9location[1] != 0.0) && (tec9location[2] != 0.0)))
+						if(distance < 2500 && ((tec9location[0] != 0.0) && (tec9location[1] != 0.0) && (tec9location[2] != 0.0)))
 						{
 							BotMoveTo(client, tec9location, FASTEST_ROUTE);
 						}
@@ -6263,7 +6240,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, fivesevenlocation);
 						
-						if(distance < 5000 && ((fivesevenlocation[0] != 0.0) && (fivesevenlocation[1] != 0.0) && (fivesevenlocation[2] != 0.0)))
+						if(distance < 2500 && ((fivesevenlocation[0] != 0.0) && (fivesevenlocation[1] != 0.0) && (fivesevenlocation[2] != 0.0)))
 						{
 							BotMoveTo(client, fivesevenlocation, FASTEST_ROUTE);
 						}
@@ -6282,7 +6259,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, p250location);
 						
-						if(distance < 5000 && ((p250location[0] != 0.0) && (p250location[1] != 0.0) && (p250location[2] != 0.0)))
+						if(distance < 2500 && ((p250location[0] != 0.0) && (p250location[1] != 0.0) && (p250location[2] != 0.0)))
 						{
 							BotMoveTo(client, p250location, FASTEST_ROUTE);
 						}
@@ -6301,7 +6278,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, usplocation);
 						
-						if(distance < 5000 && ((usplocation[0] != 0.0) && (usplocation[1] != 0.0) && (usplocation[2] != 0.0)))
+						if(distance < 2500 && ((usplocation[0] != 0.0) && (usplocation[1] != 0.0) && (usplocation[2] != 0.0)))
 						{
 							BotMoveTo(client, usplocation, FASTEST_ROUTE);
 						}
@@ -6485,29 +6462,6 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	return Plugin_Stop;
 }
 
-public Action Event_PlayerBlind(Handle event, const char[] name, bool dontBroadcast)
-{
-	int client = GetClientOfUserId(GetEventInt(event, "userid"));
-	
-	if(IsValidClient(client) && IsFakeClient(client))
-	{
-		if (GetEntPropFloat(client, Prop_Send, "m_flFlashMaxAlpha") >= 180.0)
-		{
-			float duration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
-			if (duration >= 1.5)
-			{
-				g_bFlashed[client] = true;
-				CreateTimer(duration, UnFlashed_Timer, client);
-			}
-		}
-	}
-}
-
-public Action UnFlashed_Timer(Handle timer, int client)
-{
-	g_bFlashed[client] = false;
-}
-
 public void OnClientDisconnect(int client)
 {
 	if(IsValidClient(client) && IsFakeClient(client))
@@ -6683,97 +6637,97 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(StrEqual(clantag, "Riders")) //30th
+			if(StrEqual(clantag, "HLE")) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "HLE")) //29th
+			else if(StrEqual(clantag, "Winstrike")) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Winstrike")) //28th
+			else if(StrEqual(clantag, "Heroic")) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heroic")) //27th
+			else if(StrEqual(clantag, "Nemiga")) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //26th
+			else if(StrEqual(clantag, "North")) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "forZe")) //25th
+			else if(StrEqual(clantag, "VP")) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //24th
+			else if(StrEqual(clantag, "BIG")) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //23rd
+			else if(StrEqual(clantag, "forZe")) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "OG")) //22nd
+			else if(StrEqual(clantag, "GODSENT")) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //21st
+			else if(StrEqual(clantag, "Heretics")) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //20th
+			else if(StrEqual(clantag, "OG")) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //19th
+			else if(StrEqual(clantag, "C9")) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "MIBR")) //18th
+			else if(StrEqual(clantag, "ENCE")) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "coL")) //17th
+			else if(StrEqual(clantag, "Lions")) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "C9")) //16th
+			else if(StrEqual(clantag, "coL")) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //15th
+			else if(StrEqual(clantag, "Spirit")) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //14th
+			else if(StrEqual(clantag, "MIBR")) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //13th
+			else if(StrEqual(clantag, "NiP")) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "NiP")) //12th
+			else if(StrEqual(clantag, "Gen.G")) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
@@ -6813,7 +6767,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //4th
+			else if(StrEqual(clantag, "Astralis")) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
@@ -6823,7 +6777,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //2nd
+			else if(StrEqual(clantag, "G2")) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
@@ -6842,16 +6796,6 @@ stock int GetClosestClient(int client)
 			{
 				if (!IsTargetInSightRange(client, i))
 					continue;
-			}
-			
-			if (g_bFlashed[client])
-			{
-				continue;
-			}
-			
-			if(LineGoesThroughSmoke(fClientOrigin, fTargetOrigin))
-			{
-				continue;
 			}
 			
 			int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
@@ -6946,8 +6890,6 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 		
 	GetBonePosition(iTarget, iBone, fVecHead, fVecBad);
 	
-	fVecHead[2] += 4.0;
-	
 	if(BotIsVisible(client, fVecHead, false, client))
 	{
 		g_bBodyShot[client] = false;
@@ -7023,51 +6965,6 @@ stock float AngleNormalize(float angle)
 stock float fmodf(float number, float denom)
 {
     return number - RoundToFloor(number / denom) * denom;
-}
-
-stock bool LineGoesThroughSmoke(float from[3], float to[3])
-{
-	static Address TheBots;
-	static Handle CBotManager_IsLineBlockedBySmoke;
-	static int OS;
-
-	if(OS == 0)
-	{
-		Handle hGameConf = LoadGameConfigFile("LineGoesThroughSmoke.games");
-		if(!hGameConf)
-		{
-			SetFailState("Could not read LineGoesThroughSmoke.games.txt");
-			return false;
-		}
-		
-		OS = GameConfGetOffset(hGameConf, "OS");
-		
-		TheBots = GameConfGetAddress(hGameConf, "TheBots");
-		if(!TheBots)
-		{
-			CloseHandle(hGameConf);
-			SetFailState("TheBots == null");
-			return false;
-		}
-		
-		StartPrepSDKCall(SDKCall_Raw);
-		PrepSDKCall_SetFromConf(hGameConf, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
-		PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-		PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-		if(OS == 1) PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-		PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-		if(!(CBotManager_IsLineBlockedBySmoke = EndPrepSDKCall()))
-		{
-			CloseHandle(hGameConf);
-			SetFailState("Failed to get CBotManager::IsLineBlockedBySmoke function");
-			return false;
-		}
-		
-		CloseHandle(hGameConf);
-	}
-
-	if(OS == 1) return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to, 1.0);
-	return SDKCall(CBotManager_IsLineBlockedBySmoke, TheBots, from, to);
 }
 
 stock int GetAliveTeamCount(int team)

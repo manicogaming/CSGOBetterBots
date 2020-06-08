@@ -1,0 +1,9 @@
+"de_darkcastle_rebirth_v2"
+{
+	"material"	"overviews/de_darkcastle_rebirth_v2"	// fichier de texture
+	"pos_x"		"-3000"	// coordonées en X,
+	"pos_y"		"3734"	// coordonées en Y,
+	"scale"		"6.0" 	// l'échelle utilisée servant à prendre le screenshot
+	"rotate"	"0"	// la map a été tournée de 90 degrés dans l'éditeur d'images
+	"zoom"		"1"	// facteur de zoom optimal si la map est affichée en taille maximale
+}

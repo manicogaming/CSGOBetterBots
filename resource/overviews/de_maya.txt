@@ -1,0 +1,8 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_maya"
+{
+	"material" "overviews/de_maya"
+	"pos_x" "-2420.500000"
+	"pos_y" "3200.000000"
+	"scale" "5.600000"
+}
