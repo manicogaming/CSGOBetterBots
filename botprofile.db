@@ -1698,7 +1698,7 @@ ProAwp+SniperPro "mertz"
 	VoicePitch = 75
 End
 
-ProP+Rifle "Fessor"
+ProP+Rifle "Remoy"
 	VoicePitch = 85
 End
 
@@ -1954,7 +1954,7 @@ End
 
 //SKADE Players
 
-ProP+Rifle "Rock1nG"
+ProP+Rifle "Duplicate"
 	VoicePitch = 114
 End
 
@@ -1962,7 +1962,7 @@ ProAwp+SniperPro "dennyslaw"
 	VoicePitch = 81
 End
 
-ProP+Rifle "rafftu"
+ProP+Rifle "Oxygen"
 	VoicePitch = 101
 End
 
@@ -2530,11 +2530,11 @@ ProP+Rifle "TheClaran"
 	VoicePitch = 107
 End
 
-ProAwp+SniperPro "rAmbi"
+ProAwp+SniperPro "VARES"
 	VoicePitch = 82
 End
 
-ProP+Rifle "VARES"
+ProP+Rifle "thinkii"
 	VoicePitch = 101
 End
 
@@ -2676,28 +2676,6 @@ End
 
 ProP+Rifle "methoDs"
 	VoicePitch = 104
-End
-
-//DreamEaters Players
-
-ProP+Rifle "CHEHOL"
-	VoicePitch = 89
-End
-
-ProAwp+SniperPro "Quantium"
-	VoicePitch = 82
-End
-
-ProP+Rifle "Kas9k"
-	VoicePitch = 109
-End
-
-ProP+Rifle "minse"
-	VoicePitch = 76
-End
-
-ProP+Rifle "JACKPOT"
-	VoicePitch = 90
 End
 
 //HLE Players
@@ -2974,7 +2952,7 @@ ProAwp+SniperPro "KalubeR"
 	VoicePitch = 90
 End
 
-ProP+Rifle "Duplicate"
+ProP+Rifle "Bibby"
 	VoicePitch = 99
 End
 
@@ -3344,7 +3322,7 @@ ProP+Rifle "hyskeee"
 	VoicePitch = 96
 End
 
-ProAwp+SniperPro "discplex"
+ProAwp+SniperPro "rAW"
 	VoicePitch = 112
 End
 
@@ -3358,28 +3336,6 @@ End
 
 ProP+Rifle "shield"
 	VoicePitch = 86
-End
-
-//SMASH Players
-
-ProP+Rifle "disco doplan"
-	VoicePitch = 82
-End
-
-ProAwp+SniperPro "bubble"
-	VoicePitch = 107
-End
-
-ProP+Rifle "grux"
-	VoicePitch = 86
-End
-
-ProP+Rifle "FejtZ"
-	VoicePitch = 77
-End
-
-ProP+Rifle "shokz"
-	VoicePitch = 81
 End
 
 //AGF Players
@@ -3458,7 +3414,7 @@ ProAwp+SniperPro "entz"
 	VoicePitch = 110
 End
 
-ProP+Rifle "dobbo"
+ProP+Rifle "Tadpole"
 	VoicePitch = 108
 End
 
