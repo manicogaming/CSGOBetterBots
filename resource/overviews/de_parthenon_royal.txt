@@ -1,0 +1,19 @@
+"de_parthenon_royal" //your map name without the arrows (<>)
+{
+"material" "overviews/de_parthenon_royal" //This is the texture file you just created above.
+"pos_x" "-3653" //Number you wrote down earlier.
+"pos_y" "4299" //Number you wrote down earlier.
+"scale" "5.0" //Number you wrote down earlier.
+"rotate" "0" //Shouldn't have to change this.
+"zoom" "3.0" //Shouldn't have to change this either.
+
+	"CTSpawn_x"	"0.50"
+	"CTSpawn_y"	"0.72"
+	"TSpawn_x"	"0.59"
+	"TSpawn_y"	"0.13"
+	
+	"bombA_x"	"0.85"
+	"bombA_y"	"0.53"
+	"bombB_x"	"0.38"
+	"bombB_y"	"0.65"
+}

@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Thu Jun 11 04:01:59 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Wed Jun 17 05:18:05 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -149,6 +149,7 @@ de_mirage
 de_nuke
 de_nuke_ramps
 de_overpass
+de_parthenon_royal
 de_safehouse
 de_shortdust
 de_shortnuke

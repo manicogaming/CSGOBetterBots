@@ -505,14 +505,14 @@ public void RankUpdate(int client, int old_rank, int new_rank)
 	// Можно добавлять сразу несколько оружий в одно сообщение
 	Protobuf rank_update = pb.AddMessage("rank_update");
 	
-	int stats_return[29];
+	int stats_return[35];
 	
 	RankMe_GetStats(client, stats_return);
 	
 	rank_update.SetInt("account_id", GetSteamAccountID(client)); // Defindex оружия
 	rank_update.SetInt("rank_old", old_rank); // Skin ID оружия (344 - Dragon Lore)
 	rank_update.SetInt("rank_new", new_rank); // Редкость оружия. Влияет на задержку выпадения.
-	rank_update.SetInt("num_wins", (stats_return[15] + stats_return[16]) / 16); // Редкость оружия. Влияет на задержку выпадения.
+	rank_update.SetInt("num_wins", stats_return[23]); // Редкость оружия. Влияет на задержку выпадения.
 	
 	EndMessage();
 }

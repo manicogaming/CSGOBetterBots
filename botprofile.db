@@ -2216,28 +2216,6 @@ ProP+Rifle "pablek"
 	VoicePitch = 96
 End
 
-//BLUEJAYS Players
-
-ProP+Rifle "blocker"
-	VoicePitch = 83
-End
-
-ProAwp+SniperPro "numb"
-	VoicePitch = 94
-End
-
-ProP+Rifle "REDSTAR"
-	VoicePitch = 98
-End
-
-ProP+Rifle "Patrick"
-	VoicePitch = 79
-End
-
-ProP+Rifle "dream3r"
-	VoicePitch = 81
-End
-
 //EXECUTIONERS Players
 
 ProP+Rifle "ZesBeeW"
@@ -2332,7 +2310,7 @@ ProP+Rifle "deLonge"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "StepA"
+ProAwp+SniperPro "hug"
 	VoicePitch = 107
 End
 
@@ -2340,7 +2318,7 @@ ProP+Rifle "slaxx"
 	VoicePitch = 115
 End
 
-ProP+Rifle "Jaepe"
+ProP+Rifle "errekapaze"
 	VoicePitch = 90
 End
 
@@ -2746,7 +2724,7 @@ End
 
 //Imperial Players
 
-ProP+Rifle "adr"
+ProP+Rifle "fnx"
 	VoicePitch = 103
 End
 
@@ -2944,15 +2922,15 @@ End
 
 //FATE Players
 
-ProP+Rifle "doublemagic"
+ProP+Rifle "blocker"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "KalubeR"
+ProAwp+SniperPro "Patrick"
 	VoicePitch = 90
 End
 
-ProP+Rifle "Bibby"
+ProP+Rifle "harn"
 	VoicePitch = 99
 End
 
@@ -3358,28 +3336,6 @@ End
 
 ProP+Rifle "Lukki"
 	VoicePitch = 92
-End
-
-//Pompa Players
-
-ProP+Rifle "Miki Z Afryki"
-	VoicePitch = 81
-End
-
-ProAwp+SniperPro "splawik"
-	VoicePitch = 106
-End
-
-ProP+Rifle "Czapel"
-	VoicePitch = 96
-End
-
-ProP+Rifle "M4tthi"
-	VoicePitch = 86
-End
-
-ProP+Rifle "grzes1x"
-	VoicePitch = 91
 End
 
 //LLL Players

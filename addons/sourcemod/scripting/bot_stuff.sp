@@ -5,11 +5,14 @@
 #include <sdktools>
 #include <cstrike>
 #include <eItems>
+#include <csutils>
 
+char g_sMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
-bool g_bBodyShot[MAXPLAYERS + 1];
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset;
+bool g_bBodyShot[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute;
 ConVar g_cvPredictionConVars[1] = {null};
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
@@ -18,11 +21,12 @@ Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 
-enum _BotRouteType
+enum RouteType
 {
-	SAFEST_ROUTE = 0,
+	DEFAULT_ROUTE,
 	FASTEST_ROUTE,
-	UNKNOWN_ROUTE
+	SAFEST_ROUTE,
+	RETREAT_ROUTE,
 }
 
 int g_iPatchDefIndex[] = {
@@ -551,12 +555,6 @@ static char g_sBotName[][] = {
 	"niox",
 	"iKrystal",
 	"pablek",
-	//BLUEJAYS Players
-	"blocker",
-	"numb",
-	"REDSTAR",
-	"Patrick",
-	"dream3r",
 	//EXECUTIONERS Players
 	"ZesBeeW",
 	"FamouZ",
@@ -583,9 +581,9 @@ static char g_sBotName[][] = {
 	"XigN",
 	//GTZ Players
 	"deLonge",
-	"StepA",
+	"hug",
 	"slaxx",
-	"Jaepe",
+	"errekapaze",
 	"rafaxF",
 	//Flames Players
 	"Queenix",
@@ -696,7 +694,7 @@ static char g_sBotName[][] = {
 	"fanatyk",
 	"jedqr",
 	//Imperial Players
-	"adr",
+	"fnx",
 	"zqk",
 	"dzt",
 	"delboNi",
@@ -750,9 +748,9 @@ static char g_sBotName[][] = {
 	"curry",
 	"Grim",
 	//FATE Players
-	"doublemagic",
-	"KalubeR",
-	"Bibby",
+	"blocker",
+	"Patrick",
+	"harn",
 	"Mar",
 	"niki1",
 	//Canids Players
@@ -857,12 +855,6 @@ static char g_sBotName[][] = {
 	"netrick",
 	"TMB",
 	"Lukki",
-	//Pompa Players
-	"Miki Z Afryki",
-	"splawik",
-	"Czapel",
-	"M4tthi",
-	"grzes1x",
 	//LLL Players
 	"notaN",
 	"G1DO",
@@ -1045,7 +1037,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_qb", Team_QB);
 	RegConsoleCmd("team_energy", Team_energy);
 	RegConsoleCmd("team_furious", Team_Furious);
-	RegConsoleCmd("team_bluejays", Team_BLUEJAYS);
 	RegConsoleCmd("team_executioners", Team_EXECUTIONERS);
 	RegConsoleCmd("team_groundzero", Team_GroundZero);
 	RegConsoleCmd("team_avez", Team_AVEZ);
@@ -1096,7 +1087,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_redemption", Team_Redemption);
 	RegConsoleCmd("team_exploit", Team_eXploit);
 	RegConsoleCmd("team_agf", Team_AGF);
-	RegConsoleCmd("team_pompa", Team_Pompa);
 	RegConsoleCmd("team_lll", Team_LLL);
 	RegConsoleCmd("team_london", Team_London);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
@@ -3566,36 +3556,6 @@ public Action Team_Furious(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_BLUEJAYS(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "blocker");
-		ServerCommand("bot_add_ct %s", "numb");
-		ServerCommand("bot_add_ct %s", "REDSTAR");
-		ServerCommand("bot_add_ct %s", "Patrick");
-		ServerCommand("bot_add_ct %s", "dream3r");
-		ServerCommand("mp_teamlogo_1 blueja");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "blocker");
-		ServerCommand("bot_add_t %s", "numb");
-		ServerCommand("bot_add_t %s", "REDSTAR");
-		ServerCommand("bot_add_t %s", "Patrick");
-		ServerCommand("bot_add_t %s", "dream3r");
-		ServerCommand("mp_teamlogo_2 blueja");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_EXECUTIONERS(int client, int args)
 {
 	char arg[12];
@@ -3725,9 +3685,9 @@ public Action Team_GTZ(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "deLonge");
-		ServerCommand("bot_add_ct %s", "StepA");
+		ServerCommand("bot_add_ct %s", "hug");
 		ServerCommand("bot_add_ct %s", "slaxx");
-		ServerCommand("bot_add_ct %s", "Jaepe");
+		ServerCommand("bot_add_ct %s", "errekapaze");
 		ServerCommand("bot_add_ct %s", "rafaxF");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
@@ -3736,9 +3696,9 @@ public Action Team_GTZ(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "deLonge");
-		ServerCommand("bot_add_t %s", "StepA");
+		ServerCommand("bot_add_t %s", "hug");
 		ServerCommand("bot_add_t %s", "slaxx");
-		ServerCommand("bot_add_t %s", "Jaepe");
+		ServerCommand("bot_add_t %s", "errekapaze");
 		ServerCommand("bot_add_t %s", "rafaxF");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
@@ -4294,7 +4254,7 @@ public Action Team_Imperial(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "adr");
+		ServerCommand("bot_add_ct %s", "fnx");
 		ServerCommand("bot_add_ct %s", "zqk");
 		ServerCommand("bot_add_ct %s", "dzt");
 		ServerCommand("bot_add_ct %s", "delboNi");
@@ -4305,7 +4265,7 @@ public Action Team_Imperial(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "adr");
+		ServerCommand("bot_add_t %s", "fnx");
 		ServerCommand("bot_add_t %s", "zqk");
 		ServerCommand("bot_add_t %s", "dzt");
 		ServerCommand("bot_add_t %s", "delboNi");
@@ -4564,9 +4524,9 @@ public Action Team_FATE(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "doublemagic");
-		ServerCommand("bot_add_ct %s", "KalubeR");
-		ServerCommand("bot_add_ct %s", "Bibby");
+		ServerCommand("bot_add_ct %s", "blocker");
+		ServerCommand("bot_add_ct %s", "Patrick");
+		ServerCommand("bot_add_ct %s", "harn");
 		ServerCommand("bot_add_ct %s", "Mar");
 		ServerCommand("bot_add_ct %s", "niki1");
 		ServerCommand("mp_teamlogo_1 fate");
@@ -4575,9 +4535,9 @@ public Action Team_FATE(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "doublemagic");
-		ServerCommand("bot_add_t %s", "KalubeR");
-		ServerCommand("bot_add_t %s", "Bibby");
+		ServerCommand("bot_add_t %s", "blocker");
+		ServerCommand("bot_add_t %s", "Patrick");
+		ServerCommand("bot_add_t %s", "harn");
 		ServerCommand("bot_add_t %s", "Mar");
 		ServerCommand("bot_add_t %s", "niki1");
 		ServerCommand("mp_teamlogo_2 fate");
@@ -5096,36 +5056,6 @@ public Action Team_AGF(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Pompa(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "\"Miki Z Afryki\"");
-		ServerCommand("bot_add_ct %s", "splawik");
-		ServerCommand("bot_add_ct %s", "Czapel");
-		ServerCommand("bot_add_ct %s", "M4tthi");
-		ServerCommand("bot_add_ct %s", "grzes1x");
-		ServerCommand("mp_teamlogo_1 pompa");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "\"Miki Z Afryki\"");
-		ServerCommand("bot_add_t %s", "splawik");
-		ServerCommand("bot_add_t %s", "Czapel");
-		ServerCommand("bot_add_t %s", "M4tthi");
-		ServerCommand("bot_add_t %s", "grzes1x");
-		ServerCommand("mp_teamlogo_2 pompa");
-	}
-
-	return Plugin_Handled;
-}
-
 public Action Team_LLL(int client, int args)
 {
 	char arg[12];
@@ -5378,7 +5308,9 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
-		{			
+		{
+			g_bHasThrownNade[i] = false;
+			
 			if(GetRandomInt(1,100) <= 35)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
@@ -5603,7 +5535,57 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				}
 			}
 			
-			SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			if(eItems_AreItemsSynced())
+			{
+				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			}
+			
+			if(StrEqual(g_sMap, "de_mirage"))
+			{
+				if(GetClientTeam(i) == CS_TEAM_T)
+				{
+					switch(g_iRndExecute)
+					{
+						case 1:
+						{
+							g_iRndSmoke[i] = GetRandomInt(1,4); //A Execute
+						}
+						case 2:
+						{
+							g_iRndSmoke[i] = GetRandomInt(5,9); //Mid Execute
+						}
+						case 3:
+						{
+							g_iRndSmoke[i] = GetRandomInt(10,15); //B Execute
+						}
+					}
+				}
+			}
+			else if(StrEqual(g_sMap, "de_dust2"))
+			{
+				if(GetClientTeam(i) == CS_TEAM_T)
+				{
+					switch(g_iRndExecute)
+					{
+						case 1:
+						{
+							g_iRndSmoke[i] = GetRandomInt(1,2); //B Execute
+						}
+						case 2:
+						{
+							g_iRndSmoke[i] = GetRandomInt(3,4); //Mid to B Execute
+						}
+						case 3:
+						{
+							g_iRndSmoke[i] = GetRandomInt(5,8); //Short A Execute
+						}
+						case 4:
+						{
+							g_iRndSmoke[i] = GetRandomInt(9,11); //Long A Execute
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -5611,6 +5593,17 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 public void OnFreezetimeEnd(Handle event, char[] name, bool dbc)
 {
 	g_bFreezetimeEnd = true;
+	
+	GetCurrentMap(g_sMap, sizeof(g_sMap));
+	
+	if(StrEqual(g_sMap, "de_mirage"))
+	{
+		g_iRndExecute = GetRandomInt(1,3);
+	}
+	else if(StrEqual(g_sMap, "de_dust2"))
+	{
+		g_iRndExecute = GetRandomInt(1,4);
+	}
 }
 
 public void OnBombPlanted(Handle event, char[] name, bool dbc)
@@ -5905,10 +5898,6 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 								
 								targetEyes = vecHead;	
 							}
-							
-							vel[0] = 0.0;
-							vel[1] = 0.0;
-							vel[2] = 0.0;
 						}
 						else if(index == 40 || index == 11 || index == 38)
 						{
@@ -6060,9 +6049,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, ak47location);
 
-						if(distance < 2500 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
+						if(distance < 750 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
 						{
-							BotMoveTo(client, ak47location, FASTEST_ROUTE);
+							BotMoveTo(client, ak47location, SAFEST_ROUTE);
 						}
 					}
 					else if(weapon_ak47 != -1 && primary == -1)
@@ -6075,9 +6064,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, ak47location);
 
-						if(distance < 2500 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
+						if(distance < 750 && ((ak47location[0] != 0.0) && (ak47location[1] != 0.0) && (ak47location[2] != 0.0)))
 						{
-							BotMoveTo(client, ak47location, FASTEST_ROUTE);
+							BotMoveTo(client, ak47location, SAFEST_ROUTE);
 						}
 					}
 					
@@ -6104,9 +6093,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, deaglelocation);
 						
-						if(distance < 2500 && ((deaglelocation[0] != 0.0) && (deaglelocation[1] != 0.0) && (deaglelocation[2] != 0.0)))
+						if(distance < 750 && ((deaglelocation[0] != 0.0) && (deaglelocation[1] != 0.0) && (deaglelocation[2] != 0.0)))
 						{
-							BotMoveTo(client, deaglelocation, FASTEST_ROUTE);
+							BotMoveTo(client, deaglelocation, SAFEST_ROUTE);
 						}
 						
 						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
@@ -6123,9 +6112,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, tec9location);
 						
-						if(distance < 2500 && ((tec9location[0] != 0.0) && (tec9location[1] != 0.0) && (tec9location[2] != 0.0)))
+						if(distance < 750 && ((tec9location[0] != 0.0) && (tec9location[1] != 0.0) && (tec9location[2] != 0.0)))
 						{
-							BotMoveTo(client, tec9location, FASTEST_ROUTE);
+							BotMoveTo(client, tec9location, SAFEST_ROUTE);
 						}
 						
 						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
@@ -6142,9 +6131,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, fivesevenlocation);
 						
-						if(distance < 2500 && ((fivesevenlocation[0] != 0.0) && (fivesevenlocation[1] != 0.0) && (fivesevenlocation[2] != 0.0)))
+						if(distance < 750 && ((fivesevenlocation[0] != 0.0) && (fivesevenlocation[1] != 0.0) && (fivesevenlocation[2] != 0.0)))
 						{
-							BotMoveTo(client, fivesevenlocation, FASTEST_ROUTE);
+							BotMoveTo(client, fivesevenlocation, SAFEST_ROUTE);
 						}
 						
 						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
@@ -6161,9 +6150,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, p250location);
 						
-						if(distance < 2500 && ((p250location[0] != 0.0) && (p250location[1] != 0.0) && (p250location[2] != 0.0)))
+						if(distance < 750 && ((p250location[0] != 0.0) && (p250location[1] != 0.0) && (p250location[2] != 0.0)))
 						{
-							BotMoveTo(client, p250location, FASTEST_ROUTE);
+							BotMoveTo(client, p250location, SAFEST_ROUTE);
 						}
 						
 						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
@@ -6180,9 +6169,9 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						
 						float distance = GetVectorDistance(location_check, usplocation);
 						
-						if(distance < 2500 && ((usplocation[0] != 0.0) && (usplocation[1] != 0.0) && (usplocation[2] != 0.0)))
+						if(distance < 750 && ((usplocation[0] != 0.0) && (usplocation[1] != 0.0) && (usplocation[2] != 0.0)))
 						{
-							BotMoveTo(client, usplocation, FASTEST_ROUTE);
+							BotMoveTo(client, usplocation, SAFEST_ROUTE);
 						}
 						
 						if(distance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
@@ -6191,11 +6180,80 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 				}
+				
+				if (g_bFreezetimeEnd && !g_bBombPlanted && ActiveWeapon != -1)
+				{
+					GetCurrentMap(g_sMap, sizeof(g_sMap));
+					
+					if(StrEqual(g_sMap, "de_mirage"))
+					{
+						DoMirageSmokes(client);
+					}
+					else if(StrEqual(g_sMap, "de_dust2"))
+					{
+						DoDust2Smokes(client);
+					}
+				}
 			}
 		}
 	}
 
 	return Plugin_Continue;
+}
+
+public void CSU_OnThrowGrenade(int client, int entity, GrenadeType grenadeType, const float origin[3], const float velocity[3])
+{
+	PrintToChat(client, "origin[0] = %f;", origin[0]);
+	PrintToChat(client, "origin[1] = %f;", origin[1]);
+	PrintToChat(client, "origin[2] = %f;", origin[2]);
+	PrintToChat(client, "velocity[0] = %f;", velocity[0]);
+	PrintToChat(client, "velocity[1] = %f;", velocity[1]);
+	PrintToChat(client, "velocity[2] = %f;", velocity[2]);
+}
+
+public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) 
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(eItems_AreItemsSynced())
+		{
+			if(GetRandomInt(1,2) == 1)
+			{
+				g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
+			}
+			else
+			{
+				g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
+			}
+		}
+		
+		if(IsValidClient(i) && IsFakeClient(i))
+		{		
+			if (!i) return;
+			
+			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
+			
+			if(GetRandomInt(1,100) >= 15)
+			{
+				if(GetClientTeam(i) == CS_TEAM_CT)
+				{
+					char usp[32];
+					
+					GetClientWeapon(i, usp, sizeof(usp));
+
+					if(StrEqual(usp, "weapon_hkp2000"))
+					{
+						CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
+					}
+				}
+			}
+			
+			if(eItems_AreItemsSynced())
+			{
+				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			}
+		}
+	}
 }
 
 public Action Timer_CheckPlayer(Handle Timer, any data)
@@ -6223,45 +6281,6 @@ public Action Timer_CheckPlayer(Handle Timer, any data)
 			}
 		}
 	}	
-}
-
-public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) 
-{
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if(GetRandomInt(1,2) == 1)
-		{
-			g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
-		}
-		else
-		{
-			g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
-		}
-		
-		if(IsValidClient(i) && IsFakeClient(i))
-		{		
-			if (!i) return;
-			
-			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
-			
-			if(GetRandomInt(1,100) >= 15)
-			{
-				if(GetClientTeam(i) == CS_TEAM_CT)
-				{
-					char usp[32];
-					
-					GetClientWeapon(i, usp, sizeof(usp));
-
-					if(StrEqual(usp, "weapon_hkp2000"))
-					{
-						CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
-					}
-				}
-			}
-			
-			SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
-		}
-	}
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle timer, int serial) 
@@ -6376,14 +6395,12 @@ public void OnPluginEnd()
 
 public void eItems_OnItemsSynced()
 {
-	char sCurrentMap[64];
+	GetCurrentMap(g_sMap, sizeof(g_sMap));
 	
-	GetCurrentMap(sCurrentMap, sizeof(sCurrentMap));
-	
-	ServerCommand("changelevel %s", sCurrentMap);
+	ServerCommand("changelevel %s", g_sMap);
 }
 
-public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
+public void BotMoveTo(int client, float origin[3], RouteType routeType)
 {
 	SDKCall(g_hBotMoveTo, client, origin, routeType);
 }
@@ -6528,37 +6545,37 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(StrEqual(clantag, "HLE")) //30th
+			if(StrEqual(clantag, "Nemiga")) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Winstrike")) //29th
+			else if(StrEqual(clantag, "HLE")) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heroic")) //28th
+			else if(StrEqual(clantag, "Winstrike")) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Nemiga")) //27th
+			else if(StrEqual(clantag, "VP")) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //26th
+			else if(StrEqual(clantag, "GODSENT")) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //25th
+			else if(StrEqual(clantag, "North")) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //24th
+			else if(StrEqual(clantag, "Heroic")) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
@@ -6568,17 +6585,17 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //22nd
+			else if(StrEqual(clantag, "Heretics")) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //21st
+			else if(StrEqual(clantag, "OG")) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "OG")) //20th
+			else if(StrEqual(clantag, "coL")) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
@@ -6588,42 +6605,42 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //18th
+			else if(StrEqual(clantag, "MIBR")) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //17th
+			else if(StrEqual(clantag, "Spirit")) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "coL")) //16th
+			else if(StrEqual(clantag, "Gen.G")) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //15th
+			else if(StrEqual(clantag, "Thieves")) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "MIBR")) //14th
+			else if(StrEqual(clantag, "ENCE")) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "NiP")) //13th
+			else if(StrEqual(clantag, "Lions")) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //12th
+			else if(StrEqual(clantag, "EG")) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Thieves")) //11th
+			else if(StrEqual(clantag, "NiP")) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
@@ -6633,47 +6650,47 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "EG")) //9th
+			else if(StrEqual(clantag, "mouz")) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FURIA")) //8th
+			else if(StrEqual(clantag, "BIG")) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FaZe")) //7th
+			else if(StrEqual(clantag, "Liquid")) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Liquid")) //6th
+			else if(StrEqual(clantag, "Na´Vi")) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "mouz")) //5th
+			else if(StrEqual(clantag, "Astralis")) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //4th
+			else if(StrEqual(clantag, "FURIA")) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "fnatic")) //3rd
+			else if(StrEqual(clantag, "FaZe")) //3rd
 			{
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //2nd
+			else if(StrEqual(clantag, "fnatic")) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Na´Vi")) //1st
+			else if(StrEqual(clantag, "G2")) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
@@ -6851,6 +6868,618 @@ stock int GetAliveTeamCount(int team)
 stock bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
+}
+
+public void DoMirageSmokes(int client)
+{
+	float location_check[3];
+
+	GetClientAbsOrigin(client, location_check);
+
+	//T Side Smokes
+	float ct_smoke[3] = { 1086.446899, -1017.597046, -194.260651 };
+	float stairs_smoke[3] = { 1147.267944, -1183.978271, -141.513763 };
+	float jungle_smoke[3] = { 815.968750, -1458.905762, -44.906189 };
+	float asite_smoke[3] = { 832.254761, -1255.159180, -44.906189 };
+	float topmid_smoke[3] = { 1422.968750, 70.742500, -48.840103 };
+	float midshort_smoke[3] = { 1422.968750, 34.830582, -103.906189 };
+	float window_smoke[3] = { 1391.968750, -1012.820801, -103.906189 };
+	float bottomcon_smoke[3] = { 1135.968750, 647.975647, -197.322052 };
+	float topcon_smoke[3] = { 1391.858521, -1052.161865, -103.906189 };
+	float shortleft_smoke[3] = { -828.584106, 522.031250, -14.286514 };
+	float shortright_smoke[3] = { -148.031250, 353.031250, 29.634865 };
+	float bsite_smoke[3] = { -735.981140, 623.975159, -11.906189 };
+	float backofb_smoke[3] = { -783.987061, 623.968750, -11.906189 };
+	float marketdoor_smoke[3] = { -160.031250, 887.968750, -71.265564 };
+	float marketwindow_smoke[3] = { -160.031250, 887.968750, -71.265564 };
+
+	float ct_smoke_distance, stairs_smoke_distance, jungle_smoke_distance, asite_smoke_distance, topmid_smoke_distance, midshort_smoke_distance, window_smoke_distance, bottomcon_smoke_distance, topcon_smoke_distance,
+	shortleft_smoke_distance, shortright_smoke_distance, bsite_smoke_distance, backofb_smoke_distance, marketdoor_smoke_distance, marketwindow_smoke_distance;
+
+	ct_smoke_distance = GetVectorDistance(location_check, ct_smoke);
+	stairs_smoke_distance = GetVectorDistance(location_check, stairs_smoke);
+	jungle_smoke_distance = GetVectorDistance(location_check, jungle_smoke);
+	asite_smoke_distance = GetVectorDistance(location_check, asite_smoke);
+	topmid_smoke_distance = GetVectorDistance(location_check, topmid_smoke);
+	midshort_smoke_distance = GetVectorDistance(location_check, midshort_smoke);
+	window_smoke_distance = GetVectorDistance(location_check, window_smoke);
+	bottomcon_smoke_distance = GetVectorDistance(location_check, bottomcon_smoke);
+	topcon_smoke_distance = GetVectorDistance(location_check, topcon_smoke);
+	shortleft_smoke_distance = GetVectorDistance(location_check, shortleft_smoke);
+	shortright_smoke_distance = GetVectorDistance(location_check, shortright_smoke);
+	bsite_smoke_distance = GetVectorDistance(location_check, bsite_smoke);
+	backofb_smoke_distance = GetVectorDistance(location_check, backofb_smoke);
+	marketdoor_smoke_distance = GetVectorDistance(location_check, marketdoor_smoke);
+	marketwindow_smoke_distance = GetVectorDistance(location_check, marketwindow_smoke);
+
+	if(GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client])
+	{
+		switch(g_iRndSmoke[client])
+		{
+			case 1: //CT Smoke
+			{
+				BotMoveTo(client, ct_smoke, FASTEST_ROUTE);
+				if(ct_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1062.801147;
+					origin[1] = -1034.311279;
+					origin[2] = -133.976730;
+					
+					velocity[0] = -441.676635;
+					velocity[1] = -315.539398;
+					velocity[2] = 635.904418;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 2: //Stairs Smoke
+			{
+				BotMoveTo(client, stairs_smoke, FASTEST_ROUTE);
+				if(stairs_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1122.941772;
+					origin[1] = -1190.644775;
+					origin[2] = -115.101257;
+					
+					velocity[0] = -453.966583;
+					velocity[1] = -121.504554;
+					velocity[2] = 474.536865;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 3: //Jungle Smoke
+			{
+				BotMoveTo(client, jungle_smoke, FASTEST_ROUTE);
+				if(jungle_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 785.399047;
+					origin[1] = -1461.760742;
+					origin[2] = -24.280895;
+					
+					velocity[0] = -556.280883;
+					velocity[1] = -48.018508;
+					velocity[2] = 369.303039;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 4: //A Site Smoke
+			{
+				BotMoveTo(client, asite_smoke, FASTEST_ROUTE);
+				if(asite_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 805.123046;
+					origin[1] = -1270.940185;
+					origin[2] = -25.209976;
+					
+					velocity[0] = -491.993682;
+					velocity[1] = -286.768341;
+					velocity[2] = 352.396392;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 5: //Top-Mid Smoke
+			{
+				BotMoveTo(client, topmid_smoke, FASTEST_ROUTE);
+				if(topmid_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1395.172973;
+					origin[1] = 63.584007;
+					origin[2] = -25.641843;
+					
+					velocity[0] = -505.804138;
+					velocity[1] = -134.928771;
+					velocity[2] = 416.123657;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 6: //Mid-Short Smoke
+			{
+				BotMoveTo(client, midshort_smoke, FASTEST_ROUTE);
+				if(midshort_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1392.433837;
+					origin[1] = -231.219055;
+					origin[2] = -17.305377;
+					
+					velocity[0] = -557.391723;
+					velocity[1] = 5.051202;
+					velocity[2] = 615.354858;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 7: //Window Smoke
+			{
+				BotMoveTo(client, window_smoke, FASTEST_ROUTE);
+				if(window_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1259.146362;
+					origin[1] = -991.095458;
+					origin[2] = -76.503326;
+					
+					velocity[0] = -748.695434;
+					velocity[1] = 110.363220;
+					velocity[2] = 492.635467;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 8: //Bottom Con Smoke
+			{
+				BotMoveTo(client, bottomcon_smoke, FASTEST_ROUTE);
+				if(bottomcon_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1114.164550;
+					origin[1] = 629.839660;
+					origin[2] = -135.268310;
+					
+					velocity[0] = -396.773956;
+					velocity[1] = -330.021575;
+					velocity[2] = 669.743774;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 9: //Top Con Smoke
+			{
+				BotMoveTo(client, topcon_smoke, FASTEST_ROUTE);
+				if(topcon_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1359.151489;
+					origin[1] = -1055.655761;
+					origin[2] = -44.968437;
+					
+					velocity[0] = -576.975524;
+					velocity[1] = -63.035087;
+					velocity[2] = 614.470214;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 10: //Short-Left Smoke
+			{
+				BotMoveTo(client, shortleft_smoke, FASTEST_ROUTE);
+				if(shortleft_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -833.705017;
+					origin[1] = 521.811645;
+					origin[2] = 21.933916;
+					
+					velocity[0] = -126.220901;
+					velocity[1] = -3.954442;
+					velocity[2] = 653.081909;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 11: //Short-Right Smoke
+			{
+				BotMoveTo(client, shortright_smoke, FASTEST_ROUTE);
+				if(shortright_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -163.495468;
+					origin[1] = 350.919830;
+					origin[2] = 63.056510;
+					
+					velocity[0] = -281.795989;
+					velocity[1] = -38.421333;
+					velocity[2] = 602.159973;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 12: //B Site Smoke
+			{
+				BotMoveTo(client, bsite_smoke, FASTEST_ROUTE);
+				if(bsite_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -756.074218;
+					origin[1] = 620.800109;
+					origin[2] = 18.914443;
+					
+					velocity[0] = -365.059570;
+					velocity[1] = -57.660415;
+					velocity[2] = 554.828979;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 13: //Back of B Smoke
+			{
+				BotMoveTo(client, backofb_smoke, FASTEST_ROUTE);
+				if(backofb_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -800.745422;
+					origin[1] = 617.155517;
+					origin[2] = 20.180675;
+					
+					velocity[0] = -307.670806;
+					velocity[1] = -123.982215;
+					velocity[2] = 577.870788;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 14: //Market Door Smoke
+			{
+				BotMoveTo(client, marketdoor_smoke, FASTEST_ROUTE);
+				if(marketdoor_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -182.211257;
+					origin[1] = 875.810852;
+					origin[2] = -5.834220;
+					
+					velocity[0] = -403.612609;
+					velocity[1] = -214.881088;
+					velocity[2] = 731.215209;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 15: //Market Window Smoke
+			{
+				BotMoveTo(client, marketwindow_smoke, FASTEST_ROUTE);
+				if(marketwindow_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -177.872940;
+					origin[1] = 876.177795;
+					origin[2] = -2.811931;
+					
+					velocity[0] = -324.667755;
+					velocity[1] = -214.561050;
+					velocity[2] = 786.203857;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+		}
+	}
+}
+
+public void DoDust2Smokes(int client)
+{
+	float location_check[3];
+
+	GetClientAbsOrigin(client, location_check);
+
+	//T Side Smokes
+	float bdoors_smoke[3] = { -2185.970703, 1228.098267, 103.018547 };
+	float bwindow_smoke[3] = { -2168.985352, 1042.009155, 104.253571 };
+	float midtob_smoke[3] = { -493.977936, 746.946594, 66.300529 };
+	float midtobbox_smoke[3] = { -275.119781, 1345.367065, -58.695129 };
+	float xbox_smoke[3] = { -299.968750, -1163.968750, 141.760681 };
+	float shorta_smoke[3] = { 489.968750, 1446.031250, 64.615715 };
+	float shortboost_smoke[3] = { 489.968750, 1943.968750, 160.093811 };
+	float asite_smoke[3] = { 273.010040, 1650.206909, 90.072708 };
+	float longcorner_smoke[3] = { 490.603485, -363.968750, 73.093811 };
+	float across_smoke[3] = { 860.031250, 790.031250, 68.376785 };
+	float ct_smoke[3] = { 516.045349, 984.229309, 65.549103 };
+
+	float bdoors_smoke_distance, bwindow_smoke_distance, midtob_smoke_distance, midtobbox_smoke_distance, xbox_smoke_distance, shorta_smoke_distance, shortboost_smoke_distance, asite_smoke_distance, longcorner_smoke_distance,
+	across_smoke_distance, ct_smoke_distance;
+
+	bdoors_smoke_distance = GetVectorDistance(location_check, bdoors_smoke);
+	bwindow_smoke_distance = GetVectorDistance(location_check, bwindow_smoke);
+	midtob_smoke_distance = GetVectorDistance(location_check, midtob_smoke);
+	midtobbox_smoke_distance = GetVectorDistance(location_check, midtobbox_smoke);
+	xbox_smoke_distance = GetVectorDistance(location_check, xbox_smoke);
+	shorta_smoke_distance = GetVectorDistance(location_check, shorta_smoke);
+	shortboost_smoke_distance = GetVectorDistance(location_check, shortboost_smoke);
+	asite_smoke_distance = GetVectorDistance(location_check, asite_smoke);
+	longcorner_smoke_distance = GetVectorDistance(location_check, longcorner_smoke);
+	across_smoke_distance = GetVectorDistance(location_check, across_smoke);
+	ct_smoke_distance = GetVectorDistance(location_check, ct_smoke);
+
+	if(GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client])
+	{
+		switch(g_iRndSmoke[client])
+		{
+			case 1: //B Doors Smoke
+			{
+				BotMoveTo(client, bdoors_smoke, SAFEST_ROUTE);
+				if(bdoors_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -2175.164062;
+					origin[1] = 1241.078125;
+					origin[2] = 136.351242;
+					
+					velocity[0] = 196.042495;
+					velocity[1] = 213.844100;
+					velocity[2] = 599.477661;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 2: //B Window Smoke
+			{
+				BotMoveTo(client, bwindow_smoke, SAFEST_ROUTE);
+				if(bwindow_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -2154.991455;
+					origin[1] = 1070.825195;
+					origin[2] = 144.162094;
+					
+					velocity[0] = 254.350601;
+					velocity[1] = 523.965026;
+					velocity[2] = 583.653564;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 3: //Mid to B Smoke
+			{
+				BotMoveTo(client, midtob_smoke, SAFEST_ROUTE);
+				if(midtob_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -474.632446;
+					origin[1] = 889.059265;
+					origin[2] = 64.525901;
+					
+					velocity[0] = 124.725502;
+					velocity[1] = 917.540283;
+					velocity[2] = 257.509307;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 4: //Mid to B Box Smoke
+			{
+				BotMoveTo(client, midtobbox_smoke, SAFEST_ROUTE);
+				if(midtobbox_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -296.723052;
+					origin[1] = 1373.351318;
+					origin[2] = -9.332315;
+					
+					velocity[0] = -394.729125;
+					velocity[1] = 508.962188;
+					velocity[2] = 436.598510;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 5: //XBOX Smoke
+			{
+				BotMoveTo(client, xbox_smoke, SAFEST_ROUTE);
+				if(xbox_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = -300.048492;
+					origin[1] = -1130.833374;
+					origin[2] = 196.540557;
+					
+					velocity[0] = -1.451205;
+					velocity[1] = 603.327819;
+					velocity[2] = 537.364562;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 6: //Short A Smoke
+			{
+				BotMoveTo(client, shorta_smoke, SAFEST_ROUTE);
+				if(shorta_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 490.998962;
+					origin[1] = 1481.763061;
+					origin[2] = 74.216232;
+					
+					velocity[0] = 18.676774;
+					velocity[1] = 650.651428;
+					velocity[2] = 168.686401;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 7: //Short-Boost Smoke
+			{
+				BotMoveTo(client, shortboost_smoke, SAFEST_ROUTE);
+				if(shortboost_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 494.109680;
+					origin[1] = 1972.619873;
+					origin[2] = 142.579330;
+					
+					velocity[0] = 60.718303;
+					velocity[1] = 423.099121;
+					velocity[2] = 89.004837;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 8: //A Site Smoke
+			{
+				BotMoveTo(client, asite_smoke, SAFEST_ROUTE);
+				if(asite_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 284.403991;
+					origin[1] = 1661.423461;
+					origin[2] = 105.455070;
+					
+					velocity[0] = 206.951477;
+					velocity[1] = 201.738220;
+					velocity[2] = 599.998168;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 9: //Long Corner Smoke
+			{
+				BotMoveTo(client, longcorner_smoke, SAFEST_ROUTE);
+				if(longcorner_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 500.049377;
+					origin[1] = -342.446136;
+					origin[2] = 101.009735;
+					
+					velocity[0] = 201.955673;
+					velocity[1] = 390.799377;
+					velocity[2] = 501.971435;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 10: //A Cross Smoke
+			{
+				BotMoveTo(client, across_smoke, SAFEST_ROUTE);
+				if(across_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 1000.792358;
+					origin[1] = 925.208068;
+					origin[2] = 82.876365;
+					
+					velocity[0] = 641.745849;
+					velocity[1] = 616.289001;
+					velocity[2] = 329.346618;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+			case 11: //CT Smoke
+			{
+				BotMoveTo(client, ct_smoke, SAFEST_ROUTE);
+				if(ct_smoke_distance < 75)
+				{
+					float velocity[3], origin[3];
+					
+					origin[0] = 516.411621;
+					origin[1] = 1004.306518;
+					origin[2] = 96.275215;
+					
+					velocity[0] = 6.902427;
+					velocity[1] = 372.110961;
+					velocity[2] = 553.125915;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), origin, velocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
+			}
+		}
+	}
 }
 
 public void Pro_Players(char[] botname, int client)
@@ -7342,12 +7971,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Energy");
 	}
 	
-	//BLUEJAYS Players
-	if((StrEqual(botname, "blocker")) || (StrEqual(botname, "numb")) || (StrEqual(botname, "REDSTAR")) || (StrEqual(botname, "Patrick")) || (StrEqual(botname, "dream3r")))
-	{
-		CS_SetClientClanTag(client, "BLUEJAYS");
-	}
-	
 	//EXECUTIONERS Players
 	if((StrEqual(botname, "ZesBeeW")) || (StrEqual(botname, "FamouZ")) || (StrEqual(botname, "maestro")) || (StrEqual(botname, "Snyder")) || (StrEqual(botname, "Sys")))
 	{
@@ -7379,7 +8002,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//GTZ Players
-	if((StrEqual(botname, "deLonge")) || (StrEqual(botname, "StepA")) || (StrEqual(botname, "slaxx")) || (StrEqual(botname, "Jaepe")) || (StrEqual(botname, "rafaxF")))
+	if((StrEqual(botname, "deLonge")) || (StrEqual(botname, "hug")) || (StrEqual(botname, "slaxx")) || (StrEqual(botname, "errekapaze")) || (StrEqual(botname, "rafaxF")))
 	{
 		CS_SetClientClanTag(client, "GTZ");
 	}
@@ -7493,7 +8116,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(botname, "adr")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "dzt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "SHOOWTiME")))
+	if((StrEqual(botname, "fnx")) || (StrEqual(botname, "zqk")) || (StrEqual(botname, "dzt")) || (StrEqual(botname, "delboNi")) || (StrEqual(botname, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
@@ -7547,7 +8170,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//FATE Players
-	if((StrEqual(botname, "doublemagic")) || (StrEqual(botname, "KalubeR")) || (StrEqual(botname, "Bibby")) || (StrEqual(botname, "Mar")) || (StrEqual(botname, "niki1")))
+	if((StrEqual(botname, "blocker")) || (StrEqual(botname, "Patrick")) || (StrEqual(botname, "harn")) || (StrEqual(botname, "Mar")) || (StrEqual(botname, "niki1")))
 	{
 		CS_SetClientClanTag(client, "FATE");
 	}
@@ -7652,12 +8275,6 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "fr0slev")) || (StrEqual(botname, "Kristou")) || (StrEqual(botname, "netrick")) || (StrEqual(botname, "TMB")) || (StrEqual(botname, "Lukki")))
 	{
 		CS_SetClientClanTag(client, "AGF");
-	}
-	
-	//Pompa Players
-	if((StrEqual(botname, "Miki Z Afryki")) || (StrEqual(botname, "splawik")) || (StrEqual(botname, "Czapel")) || (StrEqual(botname, "M4tthi")) || (StrEqual(botname, "grzes1x")))
-	{
-		CS_SetClientClanTag(client, "Pompa");
 	}
 	
 	//LLL Players
@@ -8154,11 +8771,6 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 136;
 	}
 	
-	if (StrEqual(sClan, "BLUEJAYS"))
-	{
-		g_iProfileRank[client] = 137;
-	}
-	
 	if (StrEqual(sClan, "EXECUTIONERS"))
 	{
 		g_iProfileRank[client] = 138;
@@ -8222,11 +8834,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Syman"))
 	{
 		g_iProfileRank[client] = 150;
-	}
-	
-	if (StrEqual(sClan, "Pompa"))
-	{
-		g_iProfileRank[client] = 151;
 	}
 	
 	if (StrEqual(sClan, "Goliath"))
