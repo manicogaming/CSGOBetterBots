@@ -21,12 +21,11 @@ Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 
-enum RouteType
+enum _BotRouteType
 {
-	DEFAULT_ROUTE,
+	SAFEST_ROUTE = 0,
 	FASTEST_ROUTE,
-	SAFEST_ROUTE,
-	RETREAT_ROUTE,
+	UNKNOWN_ROUTE
 }
 
 int g_iPatchDefIndex[] = {
@@ -896,7 +895,13 @@ static char g_sBotName[][] = {
 	"NIXEED",
 	"JSXIce",
 	"fly",
-	"ser"
+	"ser",
+	//PENTA Players
+	"pdy",
+	"red",
+	"neviZ",
+	"xenn",
+	"syNx"
 };
  
 public Plugin myinfo =
@@ -1094,6 +1099,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_epsilon", Team_Epsilon);
 	RegConsoleCmd("team_tiger", Team_TIGER);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
+	RegConsoleCmd("team_penta", Team_PENTA);
 }
 
 public Action Team_NiP(int client, int args)
@@ -5266,6 +5272,36 @@ public Action Team_LEISURE(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_PENTA(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "pdy");
+		ServerCommand("bot_add_ct %s", "red");
+		ServerCommand("bot_add_ct %s", "neviZ");
+		ServerCommand("bot_add_ct %s", "xenn");
+		ServerCommand("bot_add_ct %s", "syNx");
+		ServerCommand("mp_teamlogo_1 penta");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "pdy");
+		ServerCommand("bot_add_t %s", "red");
+		ServerCommand("bot_add_t %s", "neviZ");
+		ServerCommand("bot_add_t %s", "xenn");
+		ServerCommand("bot_add_t %s", "syNx");
+		ServerCommand("mp_teamlogo_2 penta");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6400,7 +6436,7 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_sMap);
 }
 
-public void BotMoveTo(int client, float origin[3], RouteType routeType)
+public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
 {
 	SDKCall(g_hBotMoveTo, client, origin, routeType);
 }
@@ -8318,6 +8354,12 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "LEISURE");
 	}
+	
+	//PENTA Players
+	if((StrEqual(botname, "pdy")) || (StrEqual(botname, "red")) || (StrEqual(botname, "neviZ")) || (StrEqual(botname, "xenn")) || (StrEqual(botname, "syNx")))
+	{
+		CS_SetClientClanTag(client, "PENTA");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -8704,6 +8746,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Paradox"))
 	{
 		g_iProfileRank[client] = 121;
+	}
+	
+	if (StrEqual(sClan, "PENTA"))
+	{
+		g_iProfileRank[client] = 122;
 	}
 	
 	if (StrEqual(sClan, "Beyond"))

@@ -3492,6 +3492,28 @@ ProP+Rifle "ser"
 	VoicePitch = 82
 End
 
+//PENTA Players
+
+ProP+Rifle "pdy"
+	VoicePitch = 108
+End
+
+ProAwp+SniperPro "red"
+	VoicePitch = 101
+End
+
+ProP+Rifle "neviZ"
+	VoicePitch = 114
+End
+
+ProP+Rifle "xenn"
+	VoicePitch = 102
+End
+
+ProP+Rifle "syNx"
+	VoicePitch = 91
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
