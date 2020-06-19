@@ -5465,7 +5465,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 					
 					if(GetRandomInt(1,100) <= 40)
 					{
-						if(GetRandomInt(1,100) <= 75)
+						if(GetRandomInt(1,100) <= 65)
 						{
 							int rndpatches = GetRandomInt(1,14);
 						

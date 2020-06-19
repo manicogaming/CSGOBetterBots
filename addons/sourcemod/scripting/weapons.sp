@@ -663,7 +663,7 @@ void SetWeaponProps(int client, int entity)
 			
 			if(GetRandomInt(1,100) <= 40)
 			{
-				if(GetRandomInt(1,100) <= 75)
+				if(GetRandomInt(1,100) <= 65)
 				{
 					int rndsticker = GetRandomInt(1,14);
 				
@@ -767,6 +767,7 @@ void SetWeaponProps(int client, int entity)
 				}
 			}
 		}
+		
 		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);

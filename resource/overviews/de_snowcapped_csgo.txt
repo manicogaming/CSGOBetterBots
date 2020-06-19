@@ -1,0 +1,9 @@
+// HLTV overview description file for de_snowcapped_csgo.bsp
+
+"de_snowcapped_csgo"
+{
+	"material"	"overviews/de_snowcapped_csgo"	// texture file
+	"pos_x"		"2191"	// upper left world coordinate
+	"pos_y"		"7581"
+	"scale"		"3.80" 
+}
