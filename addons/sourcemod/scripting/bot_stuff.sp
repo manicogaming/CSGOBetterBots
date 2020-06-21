@@ -901,7 +901,13 @@ static char g_sBotName[][] = {
 	"red",
 	"neviZ",
 	"xenn",
-	"syNx"
+	"syNx",
+	//FTW Players
+	"NABOWOW",
+	"shellzy",
+	"whatz",
+	"plat",
+	"RIZZ"
 };
  
 public Plugin myinfo =
@@ -1100,6 +1106,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_tiger", Team_TIGER);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_penta", Team_PENTA);
+	RegConsoleCmd("team_ftw", Team_FTW);
 }
 
 public Action Team_NiP(int client, int args)
@@ -5302,6 +5309,36 @@ public Action Team_PENTA(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_FTW(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "NABOWOW");
+		ServerCommand("bot_add_ct %s", "shellzy");
+		ServerCommand("bot_add_ct %s", "whatz");
+		ServerCommand("bot_add_ct %s", "plat");
+		ServerCommand("bot_add_ct %s", "RIZZ");
+		ServerCommand("mp_teamlogo_1 ftw");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "NABOWOW");
+		ServerCommand("bot_add_t %s", "shellzy");
+		ServerCommand("bot_add_t %s", "whatz");
+		ServerCommand("bot_add_t %s", "plat");
+		ServerCommand("bot_add_t %s", "RIZZ");
+		ServerCommand("mp_teamlogo_2 ftw");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -8360,6 +8397,12 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "PENTA");
 	}
+	
+	//PENTA Players
+	if((StrEqual(botname, "NABOWOW")) || (StrEqual(botname, "shellzy")) || (StrEqual(botname, "whatz")) || (StrEqual(botname, "plat")) || (StrEqual(botname, "RIZZ")))
+	{
+		CS_SetClientClanTag(client, "FTW");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -8751,6 +8794,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "PENTA"))
 	{
 		g_iProfileRank[client] = 122;
+	}
+	
+	if (StrEqual(sClan, "FTW"))
+	{
+		g_iProfileRank[client] = 123;
 	}
 	
 	if (StrEqual(sClan, "Beyond"))

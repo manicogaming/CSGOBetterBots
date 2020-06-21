@@ -3514,6 +3514,28 @@ ProP+Rifle "syNx"
 	VoicePitch = 91
 End
 
+//FTW Players
+
+ProP+Rifle "NABOWOW"
+	VoicePitch = 103
+End
+
+ProAwp+SniperPro "shellzy"
+	VoicePitch = 93
+End
+
+ProP+Rifle "whatz"
+	VoicePitch = 77
+End
+
+ProP+Rifle "plat"
+	VoicePitch = 114
+End
+
+ProP+Rifle "RIZZ"
+	VoicePitch = 103
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
