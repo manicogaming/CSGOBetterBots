@@ -1,0 +1,12 @@
+
+"de_rotterdam"
+{
+	"material"	"overviews/de_rotterdam_radar"
+	"pos_x"		"-2895"
+	"pos_y"		"2527"
+	"scale"		"5.70"
+	"rotate"	"0"
+	"zoom"		"1.0"
+	
+}
+

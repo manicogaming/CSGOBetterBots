@@ -1,0 +1,9 @@
+"mapname"
+{
+	"material"	"overviews/de_icehouse"	// texture file
+	"pos_x"		"-3020"	// X coordinate,
+	"pos_y"		"1826"	// Y coordinate,
+	"scale"		"3.4" 	// and used scale used when taking the screenshot
+	"rotate"	"0"	// map was rotated by 90 degress in image editor
+	"zoom"		"1.1"	// optimal zoom factor if map is shown in full size
+}

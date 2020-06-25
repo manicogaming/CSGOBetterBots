@@ -2318,7 +2318,7 @@ ProP+Rifle "slaxx"
 	VoicePitch = 115
 End
 
-ProP+Rifle "errekapaze"
+ProP+Rifle "braadz"
 	VoicePitch = 90
 End
 
@@ -2326,7 +2326,7 @@ ProP+Rifle "rafaxF"
 	VoicePitch = 102
 End
 
-//Flames Players
+//x6tence Players
 
 ProP+Rifle "Queenix"
 	VoicePitch = 99
@@ -3358,28 +3358,6 @@ End
 
 ProP+Rifle "Monu"
 	VoicePitch = 106
-End
-
-//London Players
-
-ProP+Rifle "RezzeD"
-	VoicePitch = 78
-End
-
-ProAwp+SniperPro "entz"
-	VoicePitch = 110
-End
-
-ProP+Rifle "Tadpole"
-	VoicePitch = 108
-End
-
-ProP+Rifle "mrhui"
-	VoicePitch = 78
-End
-
-ProP+Rifle "MBL"
-	VoicePitch = 104
 End
 
 //GameAgents Players

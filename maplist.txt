@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Sun Jun 21 19:51:22 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Thu Jun 25 01:03:13 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -138,6 +138,7 @@ de_darkcastle_rebirth_v2
 de_deadblock
 de_desert
 de_dust2
+de_icehouse
 de_icewerk_csgo
 de_inferno
 de_inferno_pondsite
@@ -150,6 +151,8 @@ de_nuke
 de_nuke_ramps
 de_overpass
 de_parthenon_royal
+de_rotterdam
+de_russka_b2
 de_safehouse
 de_shortdust
 de_shortnuke
