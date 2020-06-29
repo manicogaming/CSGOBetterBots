@@ -901,7 +901,31 @@ static char g_sBotName[][] = {
 	"shellzy",
 	"whatz",
 	"plat",
-	"RIZZ"
+	"RIZZ",
+	//Titans Players
+	"simix",
+	"ritchiEE",
+	"Luz",
+	"sarenii",
+	"DENZSTOU",
+	//9INE Players
+	"CyderX",
+	"xfl0ud",
+	"MYTH",
+	"Izzy",
+	"QutionerX",
+	//nEophyte Players
+	"tMs1k",
+	"Neci",
+	"traxX",
+	"iNvis",
+	"ANSONE",
+	//Tigers Players
+	"MAXX",
+	"Lastík",
+	"zyored",
+	"wEAMO",
+	"manguss"
 };
  
 public Plugin myinfo =
@@ -1100,6 +1124,10 @@ public void OnPluginStart()
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_penta", Team_PENTA);
 	RegConsoleCmd("team_ftw", Team_FTW);
+	RegConsoleCmd("team_titans", Team_Titans);
+	RegConsoleCmd("team_9ine", Team_9INE);
+	RegConsoleCmd("team_neophyte", Team_nEophyte);
+	RegConsoleCmd("team_tigers", Team_Tigers);
 }
 
 public Action Team_NiP(int client, int args)
@@ -5302,6 +5330,126 @@ public Action Team_FTW(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Titans(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "simix");
+		ServerCommand("bot_add_ct %s", "ritchiEE");
+		ServerCommand("bot_add_ct %s", "Luz");
+		ServerCommand("bot_add_ct %s", "sarenii");
+		ServerCommand("bot_add_ct %s", "DENZSTOU");
+		ServerCommand("mp_teamlogo_1 titans");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "simix");
+		ServerCommand("bot_add_t %s", "ritchiEE");
+		ServerCommand("bot_add_t %s", "Luz");
+		ServerCommand("bot_add_t %s", "sarenii");
+		ServerCommand("bot_add_t %s", "DENZSTOU");
+		ServerCommand("mp_teamlogo_2 titans");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_9INE(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "CyderX");
+		ServerCommand("bot_add_ct %s", "xfl0ud");
+		ServerCommand("bot_add_ct %s", "MYTH");
+		ServerCommand("bot_add_ct %s", "Izzy");
+		ServerCommand("bot_add_ct %s", "QutionerX");
+		ServerCommand("mp_teamlogo_1 9ine");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "CyderX");
+		ServerCommand("bot_add_t %s", "xfl0ud");
+		ServerCommand("bot_add_t %s", "MYTH");
+		ServerCommand("bot_add_t %s", "Izzy");
+		ServerCommand("bot_add_t %s", "QutionerX");
+		ServerCommand("mp_teamlogo_2 9ine");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_nEophyte(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "tMs1k");
+		ServerCommand("bot_add_ct %s", "Neci");
+		ServerCommand("bot_add_ct %s", "traxX");
+		ServerCommand("bot_add_ct %s", "iNvis");
+		ServerCommand("bot_add_ct %s", "QutionerX");
+		ServerCommand("mp_teamlogo_1 neo");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "tMs1k");
+		ServerCommand("bot_add_t %s", "Neci");
+		ServerCommand("bot_add_t %s", "traxX");
+		ServerCommand("bot_add_t %s", "iNvis");
+		ServerCommand("bot_add_t %s", "ANSONE");
+		ServerCommand("mp_teamlogo_2 neo");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Tigers(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "MAXX");
+		ServerCommand("bot_add_ct %s", "Lastík");
+		ServerCommand("bot_add_ct %s", "zyored");
+		ServerCommand("bot_add_ct %s", "wEAMO");
+		ServerCommand("bot_add_ct %s", "manguss");
+		ServerCommand("mp_teamlogo_1 tigers");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "MAXX");
+		ServerCommand("bot_add_t %s", "Lastík");
+		ServerCommand("bot_add_t %s", "zyored");
+		ServerCommand("bot_add_t %s", "wEAMO");
+		ServerCommand("bot_add_t %s", "manguss");
+		ServerCommand("mp_teamlogo_2 tigers");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -8360,6 +8508,30 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "FTW");
 	}
+	
+	//Titans Players
+	if((StrEqual(botname, "simix")) || (StrEqual(botname, "ritchiEE")) || (StrEqual(botname, "Luz")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "DENZSTOU")))
+	{
+		CS_SetClientClanTag(client, "Titans");
+	}
+	
+	//9INE Players
+	if((StrEqual(botname, "simix")) || (StrEqual(botname, "ritchiEE")) || (StrEqual(botname, "Luz")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "DENZSTOU")))
+	{
+		CS_SetClientClanTag(client, "9INE");
+	}
+	
+	//nEophyte Players
+	if((StrEqual(botname, "tMs1k")) || (StrEqual(botname, "Neci")) || (StrEqual(botname, "traxX")) || (StrEqual(botname, "iNvis")) || (StrEqual(botname, "ANSONE")))
+	{
+		CS_SetClientClanTag(client, "nEophyte");
+	}
+	
+	//Tigers Players
+	if((StrEqual(botname, "MAXX")) || (StrEqual(botname, "Lastík")) || (StrEqual(botname, "zyored")) || (StrEqual(botname, "wEAMO")) || (StrEqual(botname, "manguss")))
+	{
+		CS_SetClientClanTag(client, "Tigers");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -8823,6 +8995,11 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 136;
 	}
 	
+	if (StrEqual(sClan, "Titans"))
+	{
+		g_iProfileRank[client] = 137;
+	}
+	
 	if (StrEqual(sClan, "EXECUTIONERS"))
 	{
 		g_iProfileRank[client] = 138;
@@ -8878,9 +9055,19 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 148;
 	}
 	
+	if (StrEqual(sClan, "9INE"))
+	{
+		g_iProfileRank[client] = 149;
+	}
+	
 	if (StrEqual(sClan, "Syman"))
 	{
 		g_iProfileRank[client] = 150;
+	}
+	
+	if (StrEqual(sClan, "nEophyte"))
+	{
+		g_iProfileRank[client] = 151;
 	}
 	
 	if (StrEqual(sClan, "Goliath"))
@@ -8966,6 +9153,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Dice"))
 	{
 		g_iProfileRank[client] = 168;
+	}
+	
+	if (StrEqual(sClan, "Tigers"))
+	{
+		g_iProfileRank[client] = 169;
 	}
 	
 	if (StrEqual(sClan, "KPI"))

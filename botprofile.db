@@ -3514,6 +3514,94 @@ ProP+Rifle "RIZZ"
 	VoicePitch = 103
 End
 
+//Titans Players
+
+ProP+Rifle "simix"
+	VoicePitch = 91
+End
+
+ProAwp+SniperPro "ritchiEE"
+	VoicePitch = 107
+End
+
+ProP+Rifle "Luz"
+	VoicePitch = 109
+End
+
+ProP+Rifle "sarenii"
+	VoicePitch = 103
+End
+
+ProP+Rifle "DENZSTOU"
+	VoicePitch = 81
+End
+
+//9INE Players
+
+ProP+Rifle "CyderX"
+	VoicePitch = 78
+End
+
+ProAwp+SniperPro "xfl0ud"
+	VoicePitch = 90
+End
+
+ProP+Rifle "MYTH"
+	VoicePitch = 89
+End
+
+ProP+Rifle "Izzy"
+	VoicePitch = 106
+End
+
+ProP+Rifle "QutionerX"
+	VoicePitch = 97
+End
+
+//nEophyte Players
+
+ProP+Rifle "tMs1k"
+	VoicePitch = 87
+End
+
+ProAwp+SniperPro "Neci"
+	VoicePitch = 89
+End
+
+ProP+Rifle "traxX"
+	VoicePitch = 100
+End
+
+ProP+Rifle "iNvis"
+	VoicePitch = 110
+End
+
+ProP+Rifle "ANSONE"
+	VoicePitch = 86
+End
+
+//Tigers Players
+
+ProP+Rifle "MAXX"
+	VoicePitch = 77
+End
+
+ProAwp+SniperPro "Lastík"
+	VoicePitch = 113
+End
+
+ProP+Rifle "zyored"
+	VoicePitch = 110
+End
+
+ProP+Rifle "wEAMO"
+	VoicePitch = 84
+End
+
+ProP+Rifle "manguss"
+	VoicePitch = 89
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
