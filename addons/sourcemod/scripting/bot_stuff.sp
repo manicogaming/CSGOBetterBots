@@ -6729,47 +6729,47 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(StrEqual(clantag, "Nemiga")) //30th
+			if(StrEqual(clantag, "HAVU")) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //29th
+			else if(StrEqual(clantag, "HLE")) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "HLE")) //28th
+			else if(StrEqual(clantag, "GODSENT")) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Winstrike")) //27th
+			else if(StrEqual(clantag, "North")) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //26th
+			else if(StrEqual(clantag, "Heretics")) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //25th
+			else if(StrEqual(clantag, "forZe")) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heroic")) //24th
+			else if(StrEqual(clantag, "Nemiga")) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "forZe")) //23rd
+			else if(StrEqual(clantag, "Heroic")) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //22nd
+			else if(StrEqual(clantag, "VP")) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
@@ -6784,27 +6784,27 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //19th
+			else if(StrEqual(clantag, "Thieves")) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //18th
+			else if(StrEqual(clantag, "Gen.G")) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Thieves")) //17th
+			else if(StrEqual(clantag, "ENCE")) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //16th
+			else if(StrEqual(clantag, "Lions")) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //15th
+			else if(StrEqual(clantag, "Spirit")) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
@@ -6824,47 +6824,47 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Liquid")) //11th
+			else if(StrEqual(clantag, "coL")) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "coL")) //10th
+			else if(StrEqual(clantag, "Liquid")) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "EG")) //9th
+			else if(StrEqual(clantag, "Astralis")) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //8th
+			else if(StrEqual(clantag, "EG")) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //7th
+			else if(StrEqual(clantag, "BIG")) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "fnatic")) //6th
+			else if(StrEqual(clantag, "FURIA")) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FURIA")) //5th
+			else if(StrEqual(clantag, "fnatic")) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Na´Vi")) //4th
+			else if(StrEqual(clantag, "FaZe")) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FaZe")) //3rd
+			else if(StrEqual(clantag, "G2")) //3rd
 			{
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
@@ -6874,7 +6874,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //1st
+			else if(StrEqual(clantag, "Na´Vi")) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
