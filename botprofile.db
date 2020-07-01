@@ -2590,28 +2590,6 @@ ProP+Rifle "Djoko"
 	VoicePitch = 78
 End
 
-//KPI Players
-
-ProP+Rifle "xikii"
-	VoicePitch = 90
-End
-
-ProAwp+SniperPro "SunPayus"
-	VoicePitch = 85
-End
-
-ProP+Rifle "meisoN"
-	VoicePitch = 103
-End
-
-ProP+Rifle "YuRk0"
-	VoicePitch = 92
-End
-
-ProP+Rifle "NaOw"
-	VoicePitch = 95
-End
-
 //PlanetKey Players
 
 ProP+Rifle "LapeX"

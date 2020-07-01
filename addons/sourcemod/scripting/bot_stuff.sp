@@ -656,12 +656,6 @@ static char g_sBotName[][] = {
 	"Kan4",
 	"Polox",
 	"Djoko",
-	//KPI Players
-	"xikii",
-	"SunPayus",
-	"meisoN",
-	"YuRk0",
-	"NaOw",
 	//PlanetKey Players
 	"LapeX",
 	"Printek",
@@ -1083,7 +1077,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_ig", Team_IG);
 	RegConsoleCmd("team_hr", Team_HR);
 	RegConsoleCmd("team_dice", Team_Dice);
-	RegConsoleCmd("team_kpi", Team_KPI);
 	RegConsoleCmd("team_planetkey", Team_PlanetKey);
 	RegConsoleCmd("team_mcon", Team_mCon);
 	RegConsoleCmd("team_hle", Team_HLE);
@@ -4095,36 +4088,6 @@ public Action Team_Dice(int client, int args)
 		ServerCommand("bot_add_t %s", "Polox");
 		ServerCommand("bot_add_t %s", "Djoko");
 		ServerCommand("mp_teamlogo_2 dice");
-	}
-
-	return Plugin_Handled;
-}
-
-public Action Team_KPI(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "xikii");
-		ServerCommand("bot_add_ct %s", "SunPayus");
-		ServerCommand("bot_add_ct %s", "meisoN");
-		ServerCommand("bot_add_ct %s", "YuRk0");
-		ServerCommand("bot_add_ct %s", "NaOw");
-		ServerCommand("mp_teamlogo_1 kpi");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "xikii");
-		ServerCommand("bot_add_t %s", "SunPayus");
-		ServerCommand("bot_add_t %s", "meisoN");
-		ServerCommand("bot_add_t %s", "YuRk0");
-		ServerCommand("bot_add_t %s", "NaOw");
-		ServerCommand("mp_teamlogo_2 kpi");
 	}
 
 	return Plugin_Handled;
@@ -8263,12 +8226,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "Dice");
 	}
 	
-	//KPI Players
-	if((StrEqual(botname, "xikii")) || (StrEqual(botname, "SunPayus")) || (StrEqual(botname, "meisoN")) || (StrEqual(botname, "YuRk0")) || (StrEqual(botname, "NaOw")))
-	{
-		CS_SetClientClanTag(client, "KPI");
-	}
-	
 	//PlanetKey Players
 	if((StrEqual(botname, "LapeX")) || (StrEqual(botname, "Printek")) || (StrEqual(botname, "glaVed")) || (StrEqual(botname, "ND")) || (StrEqual(botname, "impulsG")))
 	{
@@ -9158,11 +9115,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Tigers"))
 	{
 		g_iProfileRank[client] = 169;
-	}
-	
-	if (StrEqual(sClan, "KPI"))
-	{
-		g_iProfileRank[client] = 170;
 	}
 	
 	if (StrEqual(sClan, "PlanetKey"))
