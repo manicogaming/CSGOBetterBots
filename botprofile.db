@@ -2150,25 +2150,25 @@ ProP+Rifle "smoof"
 	VoicePitch = 97
 End
 
-//QB Players
+//Berzerk Players
 
-ProP+Rifle "MadLife"
+ProP+Rifle "SolEk"
 	VoicePitch = 100
 End
 
-ProAwp+SniperPro "Electro"
+ProAwp+SniperPro "s1n"
 	VoicePitch = 112
 End
 
-ProP+Rifle "nafan9"
+ProP+Rifle "tahsiN"
 	VoicePitch = 82
 End
 
-ProP+Rifle "Raider"
+ProP+Rifle "syken"
 	VoicePitch = 109
 End
 
-ProP+Rifle "L4F"
+ProP+Rifle "skyye"
 	VoicePitch = 75
 End
 
@@ -2186,11 +2186,11 @@ ProP+Rifle "Lichl0rd"
 	VoicePitch = 101
 End
 
-ProP+Rifle "Damz"
+ProP+Rifle "Tiaantije"
 	VoicePitch = 93
 End
 
-ProP+Rifle "kreatioN"
+ProP+Rifle "mango"
 	VoicePitch = 78
 End
 
@@ -2376,11 +2376,11 @@ ProP+Rifle "massacRe"
 	VoicePitch = 98
 End
 
-ProAwp+SniperPro "mango"
+ProAwp+SniperPro "LighteRTZ"
 	VoicePitch = 115
 End
 
-ProP+Rifle "deviaNt"
+ProP+Rifle "adM"
 	VoicePitch = 99
 End
 
@@ -3578,6 +3578,72 @@ End
 
 ProP+Rifle "manguss"
 	VoicePitch = 89
+End
+
+//9z Players
+
+ProP+Rifle "dgt"
+	VoicePitch = 93
+End
+
+ProAwp+SniperPro "try"
+	VoicePitch = 107
+End
+
+ProP+Rifle "maxujas"
+	VoicePitch = 77
+End
+
+ProP+Rifle "bit"
+	VoicePitch = 87
+End
+
+ProP+Rifle "meyern"
+	VoicePitch = 104
+End
+
+//Malvinas Players
+
+ProP+Rifle "gAtito"
+	VoicePitch = 82
+End
+
+ProAwp+SniperPro "fakzwall"
+	VoicePitch = 88
+End
+
+ProP+Rifle "minimal"
+	VoicePitch = 94
+End
+
+ProP+Rifle "kissmyaug"
+	VoicePitch = 75
+End
+
+ProP+Rifle "guidimon"
+	VoicePitch = 109
+End
+
+//Sinister5 Players
+
+ProP+Rifle "zerOchaNce"
+	VoicePitch = 93
+End
+
+ProAwp+SniperPro "FreakY"
+	VoicePitch = 88
+End
+
+ProP+Rifle "deviaNt"
+	VoicePitch = 100
+End
+
+ProP+Rifle "spoof"
+	VoicePitch = 112
+End
+
+ProP+Rifle "ELUSIVE"
+	VoicePitch = 94
 End
 
 EliteAwp+SniperPro "XD | ryu"
