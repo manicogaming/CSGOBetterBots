@@ -5564,7 +5564,24 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	g_bBombPlanted = false;
 	
 	for (int i = 1; i <= MaxClients; i++)
-	{
+	{		
+		if(eItems_AreItemsSynced() && IsValidClient(i))
+		{
+			if(IsFakeClient(i))
+			{
+				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			}
+			
+			if(GetRandomInt(1,2) == 1)
+			{
+				g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
+			}
+			else
+			{
+				g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
+			}
+		}
+		
 		if(IsValidClient(i) && IsFakeClient(i))
 		{
 			g_bHasThrownNade[i] = false;
@@ -5791,11 +5808,6 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 						}
 					}
 				}
-			}
-			
-			if(eItems_AreItemsSynced())
-			{
-				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
 			}
 			
 			if(StrEqual(g_sMap, "de_mirage"))
@@ -6472,19 +6484,7 @@ public void CSU_OnThrowGrenade(int client, int entity, GrenadeType grenadeType, 
 public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast) 
 {
 	for (int i = 1; i <= MaxClients; i++)
-	{
-		if(eItems_AreItemsSynced())
-		{
-			if(GetRandomInt(1,2) == 1)
-			{
-				g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
-			}
-			else
-			{
-				g_iCoin[i] = eItems_GetPinDefIndexByPinNum(GetRandomInt(0, eItems_GetPinsCount() -1));
-			}
-		}
-		
+	{		
 		if(IsValidClient(i) && IsFakeClient(i))
 		{		
 			if (!i) return;
@@ -6504,11 +6504,6 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 						CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 					}
 				}
-			}
-			
-			if(eItems_AreItemsSynced())
-			{
-				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
 			}
 		}
 	}
