@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Jul 03 21:01:20 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Jul 04 14:51:10 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -146,6 +146,7 @@ de_inferno_pondsite
 de_lake
 de_livehouse
 de_maya
+de_mentalhospital_beta
 de_minimetzel_hslan
 de_mirage
 de_nuke
@@ -164,6 +165,7 @@ de_sugarcane
 de_train
 de_vacant
 de_vertigo
+de_xmas_hotel
 deathzone
 dm_bloodsport
 dm_jolly

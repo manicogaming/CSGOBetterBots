@@ -1,0 +1,14 @@
+"$400$_lite_4s"
+{
+	"material" "overviews/$400$_lite_4s"
+	"pos_x" "-1012"
+	"pos_y" "1130"
+	"scale" "2.40" 
+	"rotate" "0"
+	"zoom" "1.3"
+	
+	"CTSpawn_x"	"0.90"
+	"CTSpawn_y"	"0.52"
+	"TSpawn_x"	"0.13"
+	"TSpawn_y"	"0.53"
+}

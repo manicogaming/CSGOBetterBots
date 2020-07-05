@@ -1,0 +1,7 @@
+"$2011$_csgo"
+{
+	"material"	"overviews/$2011$_csgo"	// texture file
+	"pos_x"		"-1820"	// upper left world coordinate
+	"pos_y"		"1877"
+	"scale"		"3.00" 
+}
