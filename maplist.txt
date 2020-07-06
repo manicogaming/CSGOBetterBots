@@ -1,8 +1,11 @@
-// csgosl 2.9.1 config 1 at Sat Jul 04 14:51:10 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Mon Jul 06 01:24:59 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
+$2000$_japan
 $2000$_pro_b2
+$2011$_csgo
+$400$_lite_4s
 10th_mythic_roofcube_v1
 14th_mythic_house_v1
 2000_classic_b2
@@ -23,6 +26,7 @@ $2000$_pro_b2
 4th_mythic_ktaschool_v4
 5th_mythic_redsun_v1
 7th_mythic_realistic_v2
+828_dust
 [2stoned]xxl_cs
 aim_100hp
 aim_advance
@@ -112,6 +116,7 @@ breakfloor_2
 c19_tilante
 carparkm1
 clue
+cs_1337_assault_b2
 cs_agency
 cs_assault
 cs_beachassault_ek
@@ -125,6 +130,7 @@ cs_lanpartymayhem
 cs_militia
 cs_office
 cs_winternights
+de_1_6_vertigo
 de_alexandra
 de_anubis
 de_bank

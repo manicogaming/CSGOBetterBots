@@ -1,0 +1,13 @@
+// HLTV overview description file for aim_deagle7k_norm.bsp
+
+"aim_deagle7k_norm"
+{
+	"material"	"overviews/aim_deagle7k_norm_radar"	// texture file
+	"pos_x"		"-1121"	// upper left world coordinate
+	"pos_y"		"994"
+	"scale"		"2.2" 
+	"rotate"	"0"
+	"zoom"		"0"
+
+	// loading screen icons and positions
+}
