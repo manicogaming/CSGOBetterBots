@@ -177,7 +177,7 @@ static char g_sBotName[][] = {
 	"kscerato",
 	"HEN1",
 	//c0ntact Players
-	"LETN1",
+	"Snappi",
 	"ottoNd",
 	"SHiPZ",
 	"emi",
@@ -221,8 +221,8 @@ static char g_sBotName[][] = {
 	//INTZ Players
 	"maxcel",
 	"gut0",
-	"danoco",
-	"detr0it",
+	"dukka",
+	"paredao",
 	"kLv",
 	//VP Players
 	"YEKINDAR",
@@ -604,7 +604,7 @@ static char g_sBotName[][] = {
 	"ZipZip",
 	//Secret Players
 	"juanflatroo",
-	"tudsoN",
+	"smF",
 	"PERCY",
 	"sinnopsyy",
 	"anarkez",
@@ -865,7 +865,7 @@ static char g_sBotName[][] = {
 	"mawth",
 	"tifa",
 	"jota",
-	"Kaos",
+	"puni",
 	//Epsilon Players
 	"ALEXJ",
 	"smogger",
@@ -1722,7 +1722,7 @@ public Action Team_c0ntact(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "LETN1");
+		ServerCommand("bot_add_ct %s", "Snappi");
 		ServerCommand("bot_add_ct %s", "ottoNd");
 		ServerCommand("bot_add_ct %s", "SHiPZ");
 		ServerCommand("bot_add_ct %s", "emi");
@@ -1733,7 +1733,7 @@ public Action Team_c0ntact(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "LETN1");
+		ServerCommand("bot_add_t %s", "Snappi");
 		ServerCommand("bot_add_t %s", "ottoNd");
 		ServerCommand("bot_add_t %s", "SHiPZ");
 		ServerCommand("bot_add_t %s", "emi");
@@ -1934,8 +1934,8 @@ public Action Team_INTZ(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "maxcel");
 		ServerCommand("bot_add_ct %s", "gut0");
-		ServerCommand("bot_add_ct %s", "danoco");
-		ServerCommand("bot_add_ct %s", "detr0it");
+		ServerCommand("bot_add_ct %s", "dukka");
+		ServerCommand("bot_add_ct %s", "paredao");
 		ServerCommand("bot_add_ct %s", "kLv");
 		ServerCommand("mp_teamlogo_1 intz");
 	}
@@ -1945,8 +1945,8 @@ public Action Team_INTZ(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "maxcel");
 		ServerCommand("bot_add_t %s", "gut0");
-		ServerCommand("bot_add_t %s", "danoco");
-		ServerCommand("bot_add_t %s", "detr0it");
+		ServerCommand("bot_add_t %s", "dukka");
+		ServerCommand("bot_add_t %s", "paredao");
 		ServerCommand("bot_add_t %s", "kLv");
 		ServerCommand("mp_teamlogo_2 intz");
 	}
@@ -3853,7 +3853,7 @@ public Action Team_Secret(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "juanflatroo");
-		ServerCommand("bot_add_ct %s", "tudsoN");
+		ServerCommand("bot_add_ct %s", "smF");
 		ServerCommand("bot_add_ct %s", "PERCY");
 		ServerCommand("bot_add_ct %s", "sinnopsyy");
 		ServerCommand("bot_add_ct %s", "anarkez");
@@ -3864,7 +3864,7 @@ public Action Team_Secret(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "juanflatroo");
-		ServerCommand("bot_add_t %s", "tudsoN");
+		ServerCommand("bot_add_t %s", "smF");
 		ServerCommand("bot_add_t %s", "PERCY");
 		ServerCommand("bot_add_t %s", "sinnopsyy");
 		ServerCommand("bot_add_t %s", "anarkez");
@@ -5146,7 +5146,7 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_ct %s", "mawth");
 		ServerCommand("bot_add_ct %s", "tifa");
 		ServerCommand("bot_add_ct %s", "jota");
-		ServerCommand("bot_add_ct %s", "Kaos");
+		ServerCommand("bot_add_ct %s", "puni");
 		ServerCommand("mp_teamlogo_1 keyds");
 	}
 
@@ -5157,7 +5157,7 @@ public Action Team_Keyd(int client, int args)
 		ServerCommand("bot_add_t %s", "mawth");
 		ServerCommand("bot_add_t %s", "tifa");
 		ServerCommand("bot_add_t %s", "jota");
-		ServerCommand("bot_add_t %s", "Kaos");
+		ServerCommand("bot_add_t %s", "puni");
 		ServerCommand("mp_teamlogo_2 keyds");
 	}
 
@@ -6808,77 +6808,77 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //28th
+			else if(StrEqual(clantag, "Heretics")) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //27th
+			else if(StrEqual(clantag, "forZe")) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //26th
+			else if(StrEqual(clantag, "Nemiga")) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "forZe")) //25th
+			else if(StrEqual(clantag, "VP")) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Nemiga")) //24th
+			else if(StrEqual(clantag, "North")) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heroic")) //23rd
+			else if(StrEqual(clantag, "C9")) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //22nd
+			else if(StrEqual(clantag, "GODSENT")) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "OG")) //21st
+			else if(StrEqual(clantag, "ENCE")) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "C9")) //20th
+			else if(StrEqual(clantag, "Spirit")) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Thieves")) //19th
+			else if(StrEqual(clantag, "Lions")) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //18th
+			else if(StrEqual(clantag, "Heroic")) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //17th
+			else if(StrEqual(clantag, "Thieves")) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //16th
+			else if(StrEqual(clantag, "MIBR")) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //15th
+			else if(StrEqual(clantag, "Gen.G")) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "MIBR")) //14th
+			else if(StrEqual(clantag, "OG")) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
@@ -6898,42 +6898,42 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Liquid")) //10th
+			else if(StrEqual(clantag, "Astralis")) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //9th
+			else if(StrEqual(clantag, "FURIA")) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "EG")) //8th
+			else if(StrEqual(clantag, "Liquid")) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //7th
+			else if(StrEqual(clantag, "FaZe")) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FURIA")) //6th
+			else if(StrEqual(clantag, "fnatic")) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "fnatic")) //5th
+			else if(StrEqual(clantag, "G2")) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FaZe")) //4th
+			else if(StrEqual(clantag, "Na´Vi")) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //3rd
+			else if(StrEqual(clantag, "EG")) //3rd
 			{
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
@@ -6943,7 +6943,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Na´Vi")) //1st
+			else if(StrEqual(clantag, "BIG")) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
@@ -7853,7 +7853,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//c0ntact Players
-	if((StrEqual(botname, "LETN1")) || (StrEqual(botname, "ottoNd")) || (StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "emi")) || (StrEqual(botname, "EspiranTo")))
+	if((StrEqual(botname, "Snappi")) || (StrEqual(botname, "ottoNd")) || (StrEqual(botname, "SHiPZ")) || (StrEqual(botname, "emi")) || (StrEqual(botname, "EspiranTo")))
 	{
 		CS_SetClientClanTag(client, "c0ntact");
 	}
@@ -7895,7 +7895,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//INTZ Players
-	if((StrEqual(botname, "maxcel")) || (StrEqual(botname, "gut0")) || (StrEqual(botname, "danoco")) || (StrEqual(botname, "detr0it")) || (StrEqual(botname, "kLv")))
+	if((StrEqual(botname, "maxcel")) || (StrEqual(botname, "gut0")) || (StrEqual(botname, "dukka")) || (StrEqual(botname, "paredao")) || (StrEqual(botname, "kLv")))
 	{
 		CS_SetClientClanTag(client, "INTZ");
 	}
@@ -8279,7 +8279,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Secret Players
-	if((StrEqual(botname, "juanflatroo")) || (StrEqual(botname, "tudsoN")) || (StrEqual(botname, "PERCY")) || (StrEqual(botname, "sinnopsyy")) || (StrEqual(botname, "anarkez")))
+	if((StrEqual(botname, "juanflatroo")) || (StrEqual(botname, "smF")) || (StrEqual(botname, "PERCY")) || (StrEqual(botname, "sinnopsyy")) || (StrEqual(botname, "anarkez")))
 	{
 		CS_SetClientClanTag(client, "Secret");
 	}
@@ -8537,7 +8537,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Keyd Players
-	if((StrEqual(botname, "bnc")) || (StrEqual(botname, "mawth")) || (StrEqual(botname, "tifa")) || (StrEqual(botname, "jota")) || (StrEqual(botname, "Kaos")))
+	if((StrEqual(botname, "bnc")) || (StrEqual(botname, "mawth")) || (StrEqual(botname, "tifa")) || (StrEqual(botname, "jota")) || (StrEqual(botname, "puni")))
 	{
 		CS_SetClientClanTag(client, "Keyd");
 	}

@@ -854,7 +854,7 @@ End
 
 //c0ntact Players
 
-ProP+Rifle "LETN1"
+ProP+Rifle "Snappi"
 	VoicePitch = 74
 End
 
@@ -1016,11 +1016,11 @@ ProAwp+SniperPro "gut0"
 	VoicePitch = 100
 End
 
-ProP+Rifle "danoco"
+ProP+Rifle "dukka"
 	VoicePitch = 85
 End
 
-ProP+Rifle "detr0it"
+ProP+Rifle "paredao"
 	VoicePitch = 101
 End
 
@@ -2398,7 +2398,7 @@ ProP+Rifle "juanflatroo"
 	VoicePitch = 91
 End
 
-ProAwp+SniperPro "tudsoN"
+ProAwp+SniperPro "smF"
 	VoicePitch = 95
 End
 
@@ -3378,7 +3378,7 @@ ProP+Rifle "jota"
 	VoicePitch = 98
 End
 
-ProP+Rifle "Kaos"
+ProP+Rifle "puni"
 	VoicePitch = 115
 End
 

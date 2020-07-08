@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Mon Jul 06 01:24:59 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Wed Jul 08 01:11:13 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -46,7 +46,9 @@ aim_badsiblings
 aim_cbble
 aim_container_autosniper
 aim_crazyjump_go
+aim_deagle7k_norm
 aim_deagle7k_real
+aim_deagle_retrowave
 aim_deagle_ultra
 aim_depot_beta01
 aim_dust
