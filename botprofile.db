@@ -2200,11 +2200,11 @@ ProP+Rifle "nbl"
 	VoicePitch = 81
 End
 
-ProAwp+SniperPro "anarchist"
+ProAwp+SniperPro "tom1"
 	VoicePitch = 112
 End
 
-ProP+Rifle "niox"
+ProP+Rifle "Owensinho"
 	VoicePitch = 100
 End
 
@@ -3620,7 +3620,7 @@ ProP+Rifle "kissmyaug"
 	VoicePitch = 75
 End
 
-ProP+Rifle "guidimon"
+ProP+Rifle "rushardo"
 	VoicePitch = 109
 End
 
@@ -3644,6 +3644,28 @@ End
 
 ProP+Rifle "ELUSIVE"
 	VoicePitch = 94
+End
+
+//SINNERS Players
+
+ProP+Rifle "ZEDKO"
+	VoicePitch = 104
+End
+
+ProAwp+SniperPro "CaNNiE"
+	VoicePitch = 83
+End
+
+ProP+Rifle "SHOCK"
+	VoicePitch = 97
+End
+
+ProP+Rifle "beastik"
+	VoicePitch = 96
+End
+
+ProP+Rifle "NEOFRAG"
+	VoicePitch = 84
 End
 
 EliteAwp+SniperPro "XD | ryu"

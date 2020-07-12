@@ -550,8 +550,8 @@ static char g_sBotName[][] = {
 	"mango",
 	//Furious Players
 	"nbl",
-	"anarchist",
-	"niox",
+	"tom1",
+	"Owensinho",
 	"iKrystal",
 	"pablek",
 	//EXECUTIONERS Players
@@ -931,13 +931,19 @@ static char g_sBotName[][] = {
 	"fakzwall",
 	"minimal",
 	"kissmyaug",
-	"guidimon",
+	"rushardo",
 	//Sinister5 Players
 	"zerOchaNce",
 	"FreakY",
 	"deviaNt",
 	"spoof",
-	"ELUSIVE"
+	"ELUSIVE",
+	//SINNERS Players
+	"ZEDKO",
+	"CaNNiE",
+	"SHOCK",
+	"beastik",
+	"NEOFRAG"
 };
  
 public Plugin myinfo =
@@ -1142,6 +1148,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_9z", Team_9z);
 	RegConsoleCmd("team_malvinas", Team_Malvinas);
 	RegConsoleCmd("team_sinister5", Team_Sinister5);
+	RegConsoleCmd("team_sinners", Team_SINNERS);
 }
 
 public Action Team_NiP(int client, int args)
@@ -3583,8 +3590,8 @@ public Action Team_Furious(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nbl");
-		ServerCommand("bot_add_ct %s", "anarchist");
-		ServerCommand("bot_add_ct %s", "niox");
+		ServerCommand("bot_add_ct %s", "tom1");
+		ServerCommand("bot_add_ct %s", "Owensinho");
 		ServerCommand("bot_add_ct %s", "iKrystal");
 		ServerCommand("bot_add_ct %s", "pablek");
 		ServerCommand("mp_teamlogo_1 furio");
@@ -3594,8 +3601,8 @@ public Action Team_Furious(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nbl");
-		ServerCommand("bot_add_t %s", "anarchist");
-		ServerCommand("bot_add_t %s", "niox");
+		ServerCommand("bot_add_t %s", "tom1");
+		ServerCommand("bot_add_t %s", "Owensinho");
 		ServerCommand("bot_add_t %s", "iKrystal");
 		ServerCommand("bot_add_t %s", "pablek");
 		ServerCommand("mp_teamlogo_2 furio");
@@ -5476,7 +5483,7 @@ public Action Team_Malvinas(int client, int args)
 		ServerCommand("bot_add_ct %s", "fakzwall");
 		ServerCommand("bot_add_ct %s", "minimal");
 		ServerCommand("bot_add_ct %s", "kissmyaug");
-		ServerCommand("bot_add_ct %s", "guidimon");
+		ServerCommand("bot_add_ct %s", "rushardo");
 		ServerCommand("mp_teamlogo_1 malv");
 	}
 
@@ -5487,7 +5494,7 @@ public Action Team_Malvinas(int client, int args)
 		ServerCommand("bot_add_t %s", "fakzwall");
 		ServerCommand("bot_add_t %s", "minimal");
 		ServerCommand("bot_add_t %s", "kissmyaug");
-		ServerCommand("bot_add_t %s", "guidimon");
+		ServerCommand("bot_add_t %s", "rushardo");
 		ServerCommand("mp_teamlogo_2 malv");
 	}
 
@@ -5519,6 +5526,36 @@ public Action Team_Sinister5(int client, int args)
 		ServerCommand("bot_add_t %s", "spoof");
 		ServerCommand("bot_add_t %s", "ELUSIVE");
 		ServerCommand("mp_teamlogo_2 sini");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_SINNERS(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "ZEDKO");
+		ServerCommand("bot_add_ct %s", "CaNNiE");
+		ServerCommand("bot_add_ct %s", "SHOCK");
+		ServerCommand("bot_add_ct %s", "beastik");
+		ServerCommand("bot_add_ct %s", "NEOFRAG");
+		ServerCommand("mp_teamlogo_1 sinn");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "ZEDKO");
+		ServerCommand("bot_add_t %s", "CaNNiE");
+		ServerCommand("bot_add_t %s", "SHOCK");
+		ServerCommand("bot_add_t %s", "beastik");
+		ServerCommand("bot_add_t %s", "NEOFRAG");
+		ServerCommand("mp_teamlogo_2 sinn");
 	}
 
 	return Plugin_Handled;
@@ -8249,7 +8286,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Furious Players
-	if((StrEqual(botname, "nbl")) || (StrEqual(botname, "anarchist")) || (StrEqual(botname, "niox")) || (StrEqual(botname, "iKrystal")) || (StrEqual(botname, "pablek")))
+	if((StrEqual(botname, "nbl")) || (StrEqual(botname, "tom1")) || (StrEqual(botname, "Owensinho")) || (StrEqual(botname, "iKrystal")) || (StrEqual(botname, "pablek")))
 	{
 		CS_SetClientClanTag(client, "Furious");
 	}
@@ -8603,7 +8640,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Malvinas Players
-	if((StrEqual(botname, "gAtito")) || (StrEqual(botname, "fakzwall")) || (StrEqual(botname, "minimal")) || (StrEqual(botname, "kissmyaug")) || (StrEqual(botname, "guidimon")))
+	if((StrEqual(botname, "gAtito")) || (StrEqual(botname, "fakzwall")) || (StrEqual(botname, "minimal")) || (StrEqual(botname, "kissmyaug")) || (StrEqual(botname, "rushardo")))
 	{
 		CS_SetClientClanTag(client, "Malvinas");
 	}
@@ -8612,6 +8649,12 @@ public void Pro_Players(char[] botname, int client)
 	if((StrEqual(botname, "zerOchaNce")) || (StrEqual(botname, "FreakY")) || (StrEqual(botname, "deviaNt")) || (StrEqual(botname, "spoof")) || (StrEqual(botname, "ELUSIVE")))
 	{
 		CS_SetClientClanTag(client, "Sinister5");
+	}
+	
+	//SINNERS Players
+	if((StrEqual(botname, "ZEDKO")) || (StrEqual(botname, "CaNNiE")) || (StrEqual(botname, "SHOCK")) || (StrEqual(botname, "beastik")) || (StrEqual(botname, "NEOFRAG")))
+	{
+		CS_SetClientClanTag(client, "SINNERS");
 	}
 }
 
@@ -8859,6 +8902,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "Bren"))
 	{
 		g_iProfileRank[client] = 91;
+	}
+	
+	if (StrEqual(sClan, "SINNERS"))
+	{
+		g_iProfileRank[client] = 92;
 	}
 	
 	if (StrEqual(sClan, "Giants"))
