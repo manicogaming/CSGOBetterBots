@@ -1068,7 +1068,7 @@ ProP+Rifle "akEz"
 	VoicePitch = 80
 End
 
-ProP+Rifle "Polly"
+ProP+Rifle "dennis"
 	VoicePitch = 71
 End
 
@@ -1160,28 +1160,6 @@ ProP+Rifle "magixx"
 	VoicePitch = 111
 End
 
-//CeX Players
-
-ProP+Rifle "MT"
-	VoicePitch = 100
-End
-
-ProAwp+SniperPro "Impact"
-	VoicePitch = 111
-End
-
-ProP+Rifle "Nukeddog"
-	VoicePitch = 80
-End
-
-ProP+Rifle "CYPHER"
-	VoicePitch = 100
-End
-
-ProP+Rifle "Murky"
-	VoicePitch = 113
-End
-
 //LDLC Players
 
 ProP+Rifle "afroo"
@@ -1206,15 +1184,15 @@ End
 
 //GamerLegion Players
 
-ProP+Rifle "dennis"
+ProP+Rifle "mezii"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "draken"
+ProAwp+SniperPro "eraa"
 	VoicePitch = 72
 End
 
-ProP+Rifle "freddieb"
+ProP+Rifle "Zero"
 	VoicePitch = 110
 End
 
@@ -1222,7 +1200,7 @@ ProP+Rifle "RuStY"
 	VoicePitch = 95
 End
 
-ProP+Rifle "ScreaM"
+ProP+Rifle "Adam9130"
 	VoicePitch = 77
 End
 
@@ -1738,7 +1716,7 @@ ProP+Rifle "k1Nky"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "sam_A"
+ProAwp+SniperPro "BRUNO"
 	VoicePitch = 74
 End
 
@@ -1750,7 +1728,7 @@ ProP+Rifle "tor1towOw"
 	VoicePitch = 81
 End
 
-ProP+Rifle "Daveys"
+ProP+Rifle "points"
 	VoicePitch = 100
 End
 
