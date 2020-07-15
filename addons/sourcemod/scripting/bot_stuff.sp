@@ -20,6 +20,7 @@ Handle g_hLookupBone;
 Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
+Handle g_hBotIsBusy;
 
 enum _BotRouteType
 {
@@ -500,12 +501,6 @@ static char g_sBotName[][] = {
 	"shz",
 	"boltz",
 	"felps",
-	//LucidDream Players
-	"SeveN89",
-	"PTC",
-	"cbbk",
-	"JohnOlsen",
-	"foxz",
 	//NASR Players
 	"proxyyb",
 	"Real1ze",
@@ -994,6 +989,11 @@ public void OnPluginStart()
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
 	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
+	
 	eItems_OnItemsSynced();
 	
 	RegConsoleCmd("team_nip", Team_NiP);
@@ -1069,7 +1069,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_paradox", Team_Paradox);
 	RegConsoleCmd("team_beyond", Team_Beyond);
 	RegConsoleCmd("team_boom", Team_BOOM);
-	RegConsoleCmd("team_lucid", Team_Lucid);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_revolution", Team_Revolution);
 	RegConsoleCmd("team_shift", Team_SHIFT);
@@ -3329,36 +3328,6 @@ public Action Team_BOOM(int client, int args)
 		ServerCommand("bot_add_t %s", "boltz");
 		ServerCommand("bot_add_t %s", "felps");
 		ServerCommand("mp_teamlogo_2 boom");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Lucid(int client, int args)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "SeveN89");
-		ServerCommand("bot_add_ct %s", "PTC");
-		ServerCommand("bot_add_ct %s", "cbbk");
-		ServerCommand("bot_add_ct %s", "JohnOlsen");
-		ServerCommand("bot_add_ct %s", "foxz");
-		ServerCommand("mp_teamlogo_1 lucid");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "SeveN89");
-		ServerCommand("bot_add_t %s", "PTC");
-		ServerCommand("bot_add_t %s", "cbbk");
-		ServerCommand("bot_add_t %s", "JohnOlsen");
-		ServerCommand("bot_add_t %s", "foxz");
-		ServerCommand("mp_teamlogo_2 lucid");
 	}
 	
 	return Plugin_Handled;
@@ -6296,7 +6265,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 					}
 				}
 				
-				if(g_bFreezetimeEnd && !g_bBombPlanted)
+				if(g_bFreezetimeEnd && !g_bBombPlanted && GetEntityMoveType(client) != MOVETYPE_LADDER && !BotIsBusy(client))
 				{
 					//Rifles
 					int weapon_ak47 = GetNearestEntity(client, "weapon_ak47"); 
@@ -6666,6 +6635,11 @@ public void BotAttack(int client, int enemy)
 public bool BotIsVisible(int client, float pos[3], bool testFOV, int ignore)
 {
 	return SDKCall(g_hBotIsVisible, client, pos, testFOV, ignore);
+}
+
+public bool BotIsBusy(int client)
+{
+	return SDKCall(g_hBotIsBusy, client);
 }
 
 stock int LookupBone(int iEntity, const char[] szName)
@@ -8176,12 +8150,6 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "BOOM");
 	}
 	
-	//LucidDream Players
-	if((StrEqual(botname, "SeveN89")) || (StrEqual(botname, "PTC")) || (StrEqual(botname, "cbbk")) || (StrEqual(botname, "JohnOlsen")) || (StrEqual(botname, "foxz")))
-	{
-		CS_SetClientClanTag(client, "LucidDream");
-	}
-	
 	//NASR Players
 	if((StrEqual(botname, "proxyyb")) || (StrEqual(botname, "Real1ze")) || (StrEqual(botname, "BOROS")) || (StrEqual(botname, "Dementor")) || (StrEqual(botname, "Just1ce")))
 	{
@@ -9039,11 +9007,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "OneThree"))
 	{
 		g_iProfileRank[client] = 128;
-	}
-	
-	if (StrEqual(sClan, "LucidDream"))
-	{
-		g_iProfileRank[client] = 129;
 	}
 	
 	if (StrEqual(sClan, "NASR"))

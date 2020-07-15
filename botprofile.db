@@ -2018,28 +2018,6 @@ ProP+Rifle "felps"
 	VoicePitch = 94
 End
 
-//Lucid Players
-
-ProP+Rifle "SeveN89"
-	VoicePitch = 95
-End
-
-ProAwp+SniperPro "PTC"
-	VoicePitch = 85
-End
-
-ProP+Rifle "cbbk"
-	VoicePitch = 75
-End
-
-ProP+Rifle "JohnOlsen"
-	VoicePitch = 80
-End
-
-ProP+Rifle "foxz"
-	VoicePitch = 101
-End
-
 //NASR Players
 
 ProP+Rifle "proxyyb"
