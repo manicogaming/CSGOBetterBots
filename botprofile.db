@@ -2354,7 +2354,7 @@ ProP+Rifle "massacRe"
 	VoicePitch = 98
 End
 
-ProAwp+SniperPro "LighteRTZ"
+ProAwp+SniperPro "kaNibalistic"
 	VoicePitch = 115
 End
 
@@ -2476,7 +2476,7 @@ ProP+Rifle "innocent"
 	VoicePitch = 112
 End
 
-ProP+Rifle "reatz"
+ProP+Rifle "rallen"
 	VoicePitch = 73
 End
 

@@ -592,7 +592,7 @@ static char g_sBotName[][] = {
 	"Keoz",
 	//Goliath Players
 	"massacRe",
-	"LighteRTZ",
+	"kaNibalistic",
 	"adM",
 	"adaro",
 	"ZipZip",
@@ -625,7 +625,7 @@ static char g_sBotName[][] = {
 	"Snax",
 	"mouz",
 	"innocent",
-	"reatz",
+	"rallen",
 	//Queso Players
 	"TheClaran",
 	"thinkii",
@@ -3793,7 +3793,7 @@ public Action Team_Goliath(int client, int args)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "massacRe");
-		ServerCommand("bot_add_ct %s", "LighteRTZ");
+		ServerCommand("bot_add_ct %s", "kaNibalistic");
 		ServerCommand("bot_add_ct %s", "adM");
 		ServerCommand("bot_add_ct %s", "adaro");
 		ServerCommand("bot_add_ct %s", "ZipZip");
@@ -3804,7 +3804,7 @@ public Action Team_Goliath(int client, int args)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "massacRe");
-		ServerCommand("bot_add_t %s", "LighteRTZ");
+		ServerCommand("bot_add_t %s", "kaNibalistic");
 		ServerCommand("bot_add_t %s", "adM");
 		ServerCommand("bot_add_t %s", "adaro");
 		ServerCommand("bot_add_t %s", "ZipZip");
@@ -3946,7 +3946,7 @@ public Action Team_Illuminar(int client, int args)
 		ServerCommand("bot_add_ct %s", "Snax");
 		ServerCommand("bot_add_ct %s", "mouz");
 		ServerCommand("bot_add_ct %s", "innocent");
-		ServerCommand("bot_add_ct %s", "reatz");
+		ServerCommand("bot_add_ct %s", "rallen");
 		ServerCommand("mp_teamlogo_1 illu");
 	}
 
@@ -3957,7 +3957,7 @@ public Action Team_Illuminar(int client, int args)
 		ServerCommand("bot_add_t %s", "Snax");
 		ServerCommand("bot_add_t %s", "mouz");
 		ServerCommand("bot_add_t %s", "innocent");
-		ServerCommand("bot_add_t %s", "reatz");
+		ServerCommand("bot_add_t %s", "rallen");
 		ServerCommand("mp_teamlogo_2 illu");
 	}
 
@@ -8267,7 +8267,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Goliath Players
-	if((StrEqual(botname, "massacRe")) || (StrEqual(botname, "LighteRTZ")) || (StrEqual(botname, "adM")) || (StrEqual(botname, "adaro")) || (StrEqual(botname, "ZipZip")))
+	if((StrEqual(botname, "massacRe")) || (StrEqual(botname, "kaNibalistic")) || (StrEqual(botname, "adM")) || (StrEqual(botname, "adaro")) || (StrEqual(botname, "ZipZip")))
 	{
 		CS_SetClientClanTag(client, "Goliath");
 	}
@@ -8297,7 +8297,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//Illuminar Players
-	if((StrEqual(botname, "Vegi")) || (StrEqual(botname, "Snax")) || (StrEqual(botname, "mouz")) || (StrEqual(botname, "innocent")) || (StrEqual(botname, "reatz")))
+	if((StrEqual(botname, "Vegi")) || (StrEqual(botname, "Snax")) || (StrEqual(botname, "mouz")) || (StrEqual(botname, "innocent")) || (StrEqual(botname, "rallen")))
 	{
 		CS_SetClientClanTag(client, "Illuminar");
 	}
