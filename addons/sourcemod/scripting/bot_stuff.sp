@@ -22,11 +22,12 @@ Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 
-enum _BotRouteType
+enum RouteType
 {
-	SAFEST_ROUTE = 0,
+	DEFAULT_ROUTE,
 	FASTEST_ROUTE,
-	UNKNOWN_ROUTE
+	SAFEST_ROUTE,
+	RETREAT_ROUTE,
 }
 
 int g_iPatchDefIndex[] = {
@@ -6622,7 +6623,7 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_sMap);
 }
 
-public void BotMoveTo(int client, float origin[3], _BotRouteType routeType)
+public void BotMoveTo(int client, float origin[3], RouteType routeType)
 {
 	SDKCall(g_hBotMoveTo, client, origin, routeType);
 }
