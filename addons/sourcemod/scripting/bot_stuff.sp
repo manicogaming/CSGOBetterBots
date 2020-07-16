@@ -609,12 +609,12 @@ static char g_sBotName[][] = {
 	"Andyy",
 	"JDC",
 	".P4TriCK",
-	//Baecon Players
-	"brA",
-	"emp",
-	"kst",
-	"fakesS2",
-	"KILLDREAM",
+	//RADIX Players
+	"mrhui",
+	"MBL",
+	"RezzeD",
+	"entz",
+	"CYPHER",
 	//Illuminar Players
 	"Vegi",
 	"Snax",
@@ -1087,7 +1087,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_secret", Team_Secret);
 	RegConsoleCmd("team_incept", Team_Incept);
 	RegConsoleCmd("team_uol", Team_UOL);
-	RegConsoleCmd("team_baecon", Team_Baecon);
+	RegConsoleCmd("team_radix", Team_RADIX);
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_queso", Team_Queso);
 	RegConsoleCmd("team_ig", Team_IG);
@@ -3873,7 +3873,7 @@ public Action Team_UOL(int client, int args)
 	return Plugin_Handled;
 }
 
-public Action Team_Baecon(int client, int args)
+public Action Team_RADIX(int client, int args)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3881,23 +3881,23 @@ public Action Team_Baecon(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "brA");
-		ServerCommand("bot_add_ct %s", "emp");
-		ServerCommand("bot_add_ct %s", "kst");
-		ServerCommand("bot_add_ct %s", "fakesS2");
-		ServerCommand("bot_add_ct %s", "KILLDREAM");
-		ServerCommand("mp_teamlogo_1 baec");
+		ServerCommand("bot_add_ct %s", "mrhui");
+		ServerCommand("bot_add_ct %s", "MBL");
+		ServerCommand("bot_add_ct %s", "RezzeD");
+		ServerCommand("bot_add_ct %s", "entz");
+		ServerCommand("bot_add_ct %s", "CYPHER");
+		ServerCommand("mp_teamlogo_1 radix");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "brA");
-		ServerCommand("bot_add_t %s", "emp");
-		ServerCommand("bot_add_t %s", "kst");
-		ServerCommand("bot_add_t %s", "fakesS2");
-		ServerCommand("bot_add_t %s", "KILLDREAM");
-		ServerCommand("mp_teamlogo_2 baec");
+		ServerCommand("bot_add_t %s", "mrhui");
+		ServerCommand("bot_add_t %s", "MBL");
+		ServerCommand("bot_add_t %s", "RezzeD");
+		ServerCommand("bot_add_t %s", "entz");
+		ServerCommand("bot_add_t %s", "CYPHER");
+		ServerCommand("mp_teamlogo_2 radix");
 	}
 
 	return Plugin_Handled;
@@ -8258,10 +8258,10 @@ public void Pro_Players(char[] botname, int client)
 		CS_SetClientClanTag(client, "UOL");
 	}
 	
-	//Baecon Players
-	if((StrEqual(botname, "brA")) || (StrEqual(botname, "emp")) || (StrEqual(botname, "kst")) || (StrEqual(botname, "fakesS2")) || (StrEqual(botname, "KILLDREAM")))
+	//RADIX Players
+	if((StrEqual(botname, "mrhui")) || (StrEqual(botname, "MBL")) || (StrEqual(botname, "RezzeD")) || (StrEqual(botname, "entz")) || (StrEqual(botname, "CYPHER")))
 	{
-		CS_SetClientClanTag(client, "Baecon");
+		CS_SetClientClanTag(client, "RADIX");
 	}
 	
 	//Illuminar Players
@@ -9149,7 +9149,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 157;
 	}
 	
-	if (StrEqual(sClan, "Baecon"))
+	if (StrEqual(sClan, "RADIX"))
 	{
 		g_iProfileRank[client] = 158;
 	}

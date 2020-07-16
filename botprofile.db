@@ -2414,25 +2414,25 @@ ProP+Rifle ".P4TriCK"
 	VoicePitch = 114
 End
 
-//Baecon Players
+//RADIX Players
 
-ProP+Rifle "emp"
+ProP+Rifle "MBL"
 	VoicePitch = 103
 End
 
-ProAwp+SniperPro "brA"
+ProAwp+SniperPro "mrhui"
 	VoicePitch = 86
 End
 
-ProP+Rifle "kst"
+ProP+Rifle "RezzeD"
 	VoicePitch = 94
 End
 
-ProP+Rifle "fakesS2"
+ProP+Rifle "entz"
 	VoicePitch = 88
 End
 
-ProP+Rifle "KILLDREAM"
+ProP+Rifle "CYPHER"
 	VoicePitch = 74
 End
 
