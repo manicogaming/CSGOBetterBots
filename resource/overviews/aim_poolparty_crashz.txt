@@ -1,0 +1,15 @@
+// HLTV overview description file for ar_baggage.bsp
+
+"aim_poolparty_crashz"
+{
+	"material"	"overviews/aim_poolparty_crashz"	// texture file
+	"pos_x"		"-1552"	// upper left world coordinate
+	"pos_y"		"1600"
+	"scale"		"3.0" 
+	"rotate"	"1"
+	"zoom"		"2"
+}
+
+
+
+//Overview: scale 3.00, pos_x -1549, pos_y 1592
