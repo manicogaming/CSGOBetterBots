@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Jul 10 02:06:19 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sun Jul 19 16:19:11 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -40,7 +40,6 @@ aim_ak47_colt
 aim_ak_colt_subway
 aim_akm4ruins2
 aim_awp
-aim_aztec2_css
 aim_badneighbors
 aim_badsiblings
 aim_cbble
@@ -61,6 +60,7 @@ aim_map_duelies
 aim_map_gamma
 aim_neon_handel
 aim_notsocrazyjump
+aim_poolparty_crashz
 aim_pro
 aim_redline
 aim_scopearena
@@ -72,7 +72,6 @@ aim_stashhouse
 aim_tmp
 aim_tmp_mac10_v2
 aim_treearena
-aim_usp_v2
 aim_warehouse
 aim_warmup
 aim_winter_deagle_up2010
@@ -92,7 +91,6 @@ awp_crashz_v4
 awp_crashz_v5
 awp_dust
 awp_dust_sky
-awp_gazebo
 awp_ice_csgo
 awp_india
 awp_india_csgo
@@ -206,7 +204,6 @@ fy_pool_day_classic
 fy_poolparty
 fy_pools
 fy_rainbow
-fy_rainyday
 fy_rocks
 fy_sandstone_t0
 fy_showdown
@@ -262,7 +259,6 @@ moziz_walzor
 mx_tree_b1
 nyaarena
 oa_sentinel1
-obe_jungle
 pet_sematary_final
 playground_x_s
 rox_dust_tower

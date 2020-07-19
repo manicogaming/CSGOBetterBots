@@ -212,6 +212,7 @@ void SetWeaponProps(int client, int entity)
 		{
 			SetEntDataString(entity, FindSendPropInfo("CBaseAttributableItem", "m_szCustomName"), g_NameTag[client][index], 128);
 		}
+		
 		if(IsFakeClient(client))
 		{
 			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
@@ -653,10 +654,20 @@ void SetWeaponProps(int client, int entity)
 				}
 				case 254, 253, 252, 110, 25, 242, 245, 249, 236, 244, 92, 147, 136, 96, 251, 250, 21, 800, 28, 101, 158, 344, 326, 328, 325, 327, 329, 332, 32, 294, 323, 333, 330, 179, 168, 167, 169, 171, 379, 371, 367, 368, 372, 370, 374, 378, 375, 377, 373, 369, 376, 750, 747, 795, 749, 752, 793, 796, 751, 797, 799, 798, 748, 753, 794, 755, 90, 754, 39, 37, 33, 2, 233, 243, 240, 46, 27, 241, 523, 30, 141, 157, 99, 8, 148, 124, 170, 116, 247, 235, 159, 321, 84, 318, 322, 319, 238, 15, 95, 100, 22, 119, 248, 237, 246, 3, 34, 234, 74, 78, 47, 107, 149, 792, 791, 789, 779, 787, 788, 781, 776, 786, 780, 790, 783, 782, 777, 784, 778, 775, 785, 153, 172, 111, 70, 17, 135:
 				{
-					g_iStatTrak[client][index] = 0;
+					if(GetRandomInt(1,100) <= 30)
+					{
+						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 12);
+						g_iStatTrak[client][index] = 0;
+					}
+					else
+					{
+						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
+						g_iStatTrak[client][index] = 0;
+					}
 				}
 				default:
 				{
+					SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
 					g_iStatTrak[client][index] = 0;
 				}
 			}
