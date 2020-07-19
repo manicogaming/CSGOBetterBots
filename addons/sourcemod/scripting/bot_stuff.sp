@@ -5780,7 +5780,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				}
 			}
 			
-			if(StrEqual(g_sMap, "de_mirage"))
+			if(strcmp(g_sMap, "de_mirage") == 0)
 			{
 				if(GetClientTeam(i) == CS_TEAM_T)
 				{
@@ -5801,7 +5801,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 					}
 				}
 			}
-			else if(StrEqual(g_sMap, "de_dust2"))
+			else if(strcmp(g_sMap, "de_dust2") == 0)
 			{
 				if(GetClientTeam(i) == CS_TEAM_T)
 				{
@@ -5836,11 +5836,11 @@ public void OnFreezetimeEnd(Handle event, char[] name, bool dbc)
 	
 	GetCurrentMap(g_sMap, sizeof(g_sMap));
 	
-	if(StrEqual(g_sMap, "de_mirage"))
+	if(strcmp(g_sMap, "de_mirage") == 0)
 	{
 		g_iRndExecute = GetRandomInt(1,3);
 	}
-	else if(StrEqual(g_sMap, "de_dust2"))
+	else if(strcmp(g_sMap, "de_dust2") == 0)
 	{
 		g_iRndExecute = GetRandomInt(1,4);
 	}
@@ -5879,14 +5879,14 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 {
 	if(IsValidClient(client) && IsFakeClient(client))
 	{	
-		if(!g_bFreezetimeEnd && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && !((StrEqual(weapon,"molotov") || StrEqual(weapon,"incgrenade") || StrEqual(weapon,"decoy") || StrEqual(weapon,"flashbang") || StrEqual(weapon,"hegrenade") || StrEqual(weapon,"smokegrenade"))))
+		if(!g_bFreezetimeEnd && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && !((strcmp(weapon,"molotov") == 0 || strcmp(weapon,"incgrenade") == 0 || strcmp(weapon,"decoy") == 0 || strcmp(weapon,"flashbang") == 0 || strcmp(weapon,"hegrenade") == 0 || strcmp(weapon,"smokegrenade") == 0)))
 		{
 			return Plugin_Handled;
 		}
 	
 		int m_iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
 		
-		if(StrEqual(weapon,"m4a1"))
+		if(strcmp(weapon,"m4a1") == 0)
 		{
 			if(GetRandomInt(1,100) <= 30)
 			{
@@ -5907,7 +5907,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				return Plugin_Continue;
 			}
 		}
-		else if(StrEqual(weapon,"ak47"))
+		else if(strcmp(weapon,"ak47") == 0)
 		{
 			if(GetRandomInt(1,100) <= 5)
 			{
@@ -5917,7 +5917,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				return Plugin_Handled; 
 			}
 		}
-		else if(StrEqual(weapon,"mac10"))
+		else if(strcmp(weapon,"mac10") == 0)
 		{
 			if(GetRandomInt(1,100) <= 40)
 			{
@@ -5931,7 +5931,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				return Plugin_Continue;
 			}
 		}
-		else if(StrEqual(weapon,"mp9"))
+		else if(strcmp(weapon,"mp9") == 0)
 		{
 			if(GetRandomInt(1,100) <= 40)
 			{
@@ -5974,7 +5974,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 		
 		for(int i = 0; i <= sizeof(g_sBotName) - 1; i++)
 		{
-			if(StrEqual(botname, g_sBotName[i]))
+			if(strcmp(botname, g_sBotName[i]) == 0)
 			{				
 				float clientEyes[3], targetEyes[3];
 				GetClientEyePosition(client, clientEyes);
@@ -6279,7 +6279,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						primaryindex = GetEntProp(primary, Prop_Send, "m_iItemDefinitionIndex");
 					}
 
-					if(weapon_ak47 != -1 && (primaryindex != 7 && primaryindex != 9))
+					if(IsValidEntity(weapon_ak47) && (primaryindex != 7 && primaryindex != 9))
 					{
 						GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);
 						
@@ -6294,7 +6294,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 							BotMoveTo(client, ak47location, SAFEST_ROUTE);
 						}
 					}
-					else if(weapon_ak47 != -1 && primary == -1)
+					else if(IsValidEntity(weapon_ak47) && primary == -1)
 					{
 						GetEntPropVector(weapon_ak47, Prop_Send, "m_vecOrigin", ak47location);		
 						
@@ -6325,7 +6325,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						secondaryindex = GetEntProp(secondary, Prop_Send, "m_iItemDefinitionIndex");
 					}	
 					
-					if(weapon_deagle != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36) || (secondaryindex == 30) || (secondaryindex == 3) || (secondaryindex == 63)))
+					if(IsValidEntity(weapon_deagle) && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36) || (secondaryindex == 30) || (secondaryindex == 3) || (secondaryindex == 63)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -6344,7 +6344,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 					
-					if(weapon_tec9 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
+					if(IsValidEntity(weapon_tec9) && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -6363,7 +6363,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 					
-					if(weapon_fiveseven != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
+					if(IsValidEntity(weapon_fiveseven) && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61) || (secondaryindex == 36)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -6382,7 +6382,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 					
-					if(weapon_p250 != -1 && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61)))
+					if(IsValidEntity(weapon_p250) && ((secondaryindex == 4) || (secondaryindex == 32) || (secondaryindex == 61)))
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -6401,7 +6401,7 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 						}
 					}
 					
-					if(weapon_usp_silencer != -1 && secondaryindex == 4)
+					if(IsValidEntity(weapon_usp_silencer) && secondaryindex == 4)
 					{
 						float location_check[3];
 						GetClientAbsOrigin(client, location_check);
@@ -6425,11 +6425,11 @@ public Action OnPlayerRunCmd(int client, int& buttons, int& impulse, float vel[3
 				{
 					GetCurrentMap(g_sMap, sizeof(g_sMap));
 					
-					if(StrEqual(g_sMap, "de_mirage"))
+					if(strcmp(g_sMap, "de_mirage") == 0)
 					{
 						DoMirageSmokes(client);
 					}
-					else if(StrEqual(g_sMap, "de_dust2"))
+					else if(strcmp(g_sMap, "de_dust2") == 0)
 					{
 						DoDust2Smokes(client);
 					}
@@ -6469,7 +6469,7 @@ public void OnPlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 					
 					GetClientWeapon(i, usp, sizeof(usp));
 
-					if(StrEqual(usp, "weapon_hkp2000"))
+					if(strcmp(usp, "weapon_hkp2000") == 0)
 					{
 						CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 					}
@@ -6524,7 +6524,7 @@ public Action RFrame_CheckBuyZoneValue(Handle timer, int serial)
 	char default_primary[64];
 	GetClientWeapon(client, default_primary, sizeof(default_primary));
 
-	if((m_iAccount > 1500) && (m_iAccount < 2500) && iPrimary == -1 && (StrEqual(default_primary, "weapon_hkp2000") || StrEqual(default_primary, "weapon_usp_silencer") || StrEqual(default_primary, "weapon_glock")))
+	if((m_iAccount > 1500) && (m_iAccount < 2500) && iPrimary == -1 && (strcmp(default_primary, "weapon_hkp2000") == 0 || strcmp(default_primary, "weapon_usp_silencer") == 0 || strcmp(default_primary, "weapon_glock") == 0))
 	{		
 		int rndpistol = GetRandomInt(1,3);
 		
@@ -6773,152 +6773,152 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(StrEqual(clantag, "Gambit")) //30th
+			if(strcmp(clantag, "Gambit") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heretics")) //29th
+			else if(strcmp(clantag, "Heretics") == 0) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "HAVU")) //28th
+			else if(strcmp(clantag, "HAVU") == 0) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "forZe")) //27th
+			else if(strcmp(clantag, "forZe") == 0) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Nemiga")) //26th
+			else if(strcmp(clantag, "Nemiga") == 0) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "VP")) //25th
+			else if(strcmp(clantag, "VP") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "North")) //24th
+			else if(strcmp(clantag, "North") == 0) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "C9")) //23rd
+			else if(strcmp(clantag, "C9") == 0) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "ENCE")) //22nd
+			else if(strcmp(clantag, "ENCE") == 0) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "GODSENT")) //21st
+			else if(strcmp(clantag, "GODSENT") == 0) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Spirit")) //20th
+			else if(strcmp(clantag, "Spirit") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Lions")) //19th
+			else if(strcmp(clantag, "Lions") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Heroic")) //18th
+			else if(strcmp(clantag, "Heroic") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Thieves")) //17th
+			else if(strcmp(clantag, "Thieves") == 0) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "OG")) //16th
+			else if(strcmp(clantag, "OG") == 0) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "MIBR")) //15th
+			else if(strcmp(clantag, "MIBR") == 0) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Gen.G")) //14th
+			else if(strcmp(clantag, "Gen.G") == 0) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "mouz")) //13th
+			else if(strcmp(clantag, "mouz") == 0) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "NiP")) //12th
+			else if(strcmp(clantag, "NiP") == 0) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Astralis")) //11th
+			else if(strcmp(clantag, "Astralis") == 0) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "coL")) //10th
+			else if(strcmp(clantag, "coL") == 0) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FURIA")) //9th
+			else if(strcmp(clantag, "FURIA") == 0) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Liquid")) //8th
+			else if(strcmp(clantag, "Liquid") == 0) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "fnatic")) //7th
+			else if(strcmp(clantag, "fnatic") == 0) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "FaZe")) //6th
+			else if(strcmp(clantag, "FaZe") == 0) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "G2")) //5th
+			else if(strcmp(clantag, "G2") == 0) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Na´Vi")) //4th
+			else if(strcmp(clantag, "Na´Vi") == 0) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "EG")) //3rd
+			else if(strcmp(clantag, "EG") == 0) //3rd
 			{
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "Vitality")) //2nd
+			else if(strcmp(clantag, "Vitality") == 0) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(StrEqual(clantag, "BIG")) //1st
+			else if(strcmp(clantag, "BIG") == 0) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
