@@ -3624,6 +3624,28 @@ ProP+Rifle "NEOFRAG"
 	VoicePitch = 84
 End
 
+//Impact Players
+
+ProP+Rifle "DaneJoris"
+	VoicePitch = 82
+End
+
+ProAwp+SniperPro "JoJo"
+	VoicePitch = 115
+End
+
+ProP+Rifle "tconnors"
+	VoicePitch = 111
+End
+
+ProP+Rifle "viz"
+	VoicePitch = 113
+End
+
+ProP+Rifle "insane"
+	VoicePitch = 75
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End

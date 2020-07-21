@@ -933,7 +933,13 @@ static char g_sBotName[][] = {
 	"CaNNiE",
 	"SHOCK",
 	"beastik",
-	"NEOFRAG"
+	"NEOFRAG",
+	//Impact Players
+	"DaneJoris",
+	"JoJo",
+	"tconnors",
+	"viz",
+	"insane"
 };
  
 public Plugin myinfo =
@@ -1142,6 +1148,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_malvinas", Team_Malvinas);
 	RegConsoleCmd("team_sinister5", Team_Sinister5);
 	RegConsoleCmd("team_sinners", Team_SINNERS);
+	RegConsoleCmd("team_impact", Team_Impact);
 }
 
 public Action Team_NiP(int client, int args)
@@ -5494,6 +5501,36 @@ public Action Team_SINNERS(int client, int args)
 	return Plugin_Handled;
 }
 
+public Action Team_Impact(int client, int args)
+{
+	char arg[12];
+	GetCmdArg(1, arg, sizeof(arg));
+
+	if(StrEqual(arg, "ct"))
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "DaneJoris");
+		ServerCommand("bot_add_ct %s", "JoJo");
+		ServerCommand("bot_add_ct %s", "tconnors");
+		ServerCommand("bot_add_ct %s", "viz");
+		ServerCommand("bot_add_ct %s", "insane");
+		ServerCommand("mp_teamlogo_1 impa");
+	}
+
+	if(StrEqual(arg, "t"))
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "DaneJoris");
+		ServerCommand("bot_add_t %s", "JoJo");
+		ServerCommand("bot_add_t %s", "tconnors");
+		ServerCommand("bot_add_t %s", "viz");
+		ServerCommand("bot_add_t %s", "insane");
+		ServerCommand("mp_teamlogo_2 impa");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6773,7 +6810,7 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(strcmp(clantag, "Gambit") == 0) //30th
+			if(strcmp(clantag, "HLE") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
@@ -6783,7 +6820,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "HAVU") == 0) //28th
+			else if(strcmp(clantag, "Gambit") == 0) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
@@ -6798,12 +6835,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "VP") == 0) //25th
+			else if(strcmp(clantag, "North") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "North") == 0) //24th
+			else if(strcmp(clantag, "VP") == 0) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
@@ -6813,27 +6850,27 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "ENCE") == 0) //22nd
+			else if(strcmp(clantag, "Lions") == 0) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "GODSENT") == 0) //21st
+			else if(strcmp(clantag, "ENCE") == 0) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "Spirit") == 0) //20th
+			else if(strcmp(clantag, "GODSENT") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "Lions") == 0) //19th
+			else if(strcmp(clantag, "Heroic") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "Heroic") == 0) //18th
+			else if(strcmp(clantag, "Spirit") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
@@ -6843,12 +6880,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "OG") == 0) //16th
+			else if(strcmp(clantag, "MIBR") == 0) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(strcmp(clantag, "MIBR") == 0) //15th
+			else if(strcmp(clantag, "OG") == 0) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
@@ -8582,6 +8619,12 @@ public void Pro_Players(char[] botname, int client)
 	{
 		CS_SetClientClanTag(client, "SINNERS");
 	}
+	
+	//Impact Players
+	if((StrEqual(botname, "DaneJoris")) || (StrEqual(botname, "JoJo")) || (StrEqual(botname, "tconnors")) || (StrEqual(botname, "viz")) || (StrEqual(botname, "insane")))
+	{
+		CS_SetClientClanTag(client, "Impact");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -8763,6 +8806,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(sClan, "LDLC"))
 	{
 		g_iProfileRank[client] = 78;
+	}
+	
+	if (StrEqual(sClan, "Impact"))
+	{
+		g_iProfileRank[client] = 79;
 	}
 	
 	if (StrEqual(sClan, "GamerLegion"))
