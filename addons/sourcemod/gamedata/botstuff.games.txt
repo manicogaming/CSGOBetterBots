@@ -38,7 +38,7 @@
 			{
 				// Is second result in a function that uses the 'CoveringFriend' string
 				"library"	"server"
-				"windows"	"\x80\xB9\x1C\x3E\x00\x00\x00\x75\x2A"
+				"windows"	"\x80\xB9\x3C\x3E\x00\x00\x00\x75\x2A"
 			}
 		}
 	}

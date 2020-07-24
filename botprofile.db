@@ -1668,7 +1668,7 @@ End
 
 //Singularity Players
 
-ProP+Rifle "Jabbi"
+ProP+Rifle "nicoodoz"
 	VoicePitch = 113
 End
 
@@ -2170,28 +2170,6 @@ End
 
 ProP+Rifle "pablek"
 	VoicePitch = 96
-End
-
-//EXECUTIONERS Players
-
-ProP+Rifle "ZesBeeW"
-	VoicePitch = 86
-End
-
-ProAwp+SniperPro "FamouZ"
-	VoicePitch = 115
-End
-
-ProP+Rifle "maestro"
-	VoicePitch = 101
-End
-
-ProP+Rifle "Snyder"
-	VoicePitch = 75
-End
-
-ProP+Rifle "Sys"
-	VoicePitch = 72
 End
 
 //GroundZero Players
@@ -3492,25 +3470,25 @@ ProP+Rifle "QutionerX"
 	VoicePitch = 97
 End
 
-//nEophyte Players
+//QBF Players
 
-ProP+Rifle "tMs1k"
+ProP+Rifle "JACKPOT"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "Neci"
+ProAwp+SniperPro "Quantium"
 	VoicePitch = 89
 End
 
-ProP+Rifle "traxX"
+ProP+Rifle "Kas9k"
 	VoicePitch = 100
 End
 
-ProP+Rifle "iNvis"
+ProP+Rifle "rommi"
 	VoicePitch = 110
 End
 
-ProP+Rifle "ANSONE"
+ProP+Rifle "lesswill"
 	VoicePitch = 86
 End
 

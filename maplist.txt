@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Sun Jul 19 23:41:44 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Jul 24 01:44:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -138,7 +138,6 @@ de_boohouse_go
 de_cache
 de_canals
 de_cbble
-de_chlorine
 de_contra_b3
 de_darkcastle_rebirth_v2
 de_deadblock
@@ -155,6 +154,7 @@ de_maya
 de_mentalhospital_beta
 de_minimetzel_hslan
 de_mirage
+de_mutiny
 de_nuke
 de_nuke_ramps
 de_overpass
@@ -168,6 +168,7 @@ de_snowcapped_csgo
 de_spain
 de_stmarc
 de_sugarcane
+de_swamp
 de_train
 de_vacant
 de_vertigo
