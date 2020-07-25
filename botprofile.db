@@ -3406,15 +3406,15 @@ End
 
 //FTW Players
 
-ProP+Rifle "NABOWOW"
+ProP+Rifle "sh1zlEE"
 	VoicePitch = 103
 End
 
-ProAwp+SniperPro "shellzy"
+ProAwp+SniperPro "Jaepe"
 	VoicePitch = 93
 End
 
-ProP+Rifle "whatz"
+ProP+Rifle "brA"
 	VoicePitch = 77
 End
 
@@ -3458,7 +3458,7 @@ ProAwp+SniperPro "xfl0ud"
 	VoicePitch = 90
 End
 
-ProP+Rifle "MYTH"
+ProP+Rifle "qRaxs"
 	VoicePitch = 89
 End
 

@@ -875,9 +875,9 @@ static char g_sBotName[][] = {
 	"xenn",
 	"syNx",
 	//FTW Players
-	"NABOWOW",
-	"shellzy",
-	"whatz",
+	"sh1zlEE",
+	"Jaepe",
+	"brA",
 	"plat",
 	"RIZZ",
 	//Titans Players
@@ -889,7 +889,7 @@ static char g_sBotName[][] = {
 	//9INE Players
 	"CyderX",
 	"xfl0ud",
-	"MYTH",
+	"qRaxs",
 	"Izzy",
 	"QutionerX",
 	//QBF Players
@@ -5202,9 +5202,9 @@ public Action Team_FTW(int client, int args)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "NABOWOW");
-		ServerCommand("bot_add_ct %s", "shellzy");
-		ServerCommand("bot_add_ct %s", "whatz");
+		ServerCommand("bot_add_ct %s", "sh1zlEE");
+		ServerCommand("bot_add_ct %s", "Jaepe");
+		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "plat");
 		ServerCommand("bot_add_ct %s", "RIZZ");
 		ServerCommand("mp_teamlogo_1 ftw");
@@ -5213,9 +5213,9 @@ public Action Team_FTW(int client, int args)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "NABOWOW");
-		ServerCommand("bot_add_t %s", "shellzy");
-		ServerCommand("bot_add_t %s", "whatz");
+		ServerCommand("bot_add_t %s", "sh1zlEE");
+		ServerCommand("bot_add_t %s", "Jaepe");
+		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "plat");
 		ServerCommand("bot_add_t %s", "RIZZ");
 		ServerCommand("mp_teamlogo_2 ftw");
@@ -5264,7 +5264,7 @@ public Action Team_9INE(int client, int args)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "CyderX");
 		ServerCommand("bot_add_ct %s", "xfl0ud");
-		ServerCommand("bot_add_ct %s", "MYTH");
+		ServerCommand("bot_add_ct %s", "qRaxs");
 		ServerCommand("bot_add_ct %s", "Izzy");
 		ServerCommand("bot_add_ct %s", "QutionerX");
 		ServerCommand("mp_teamlogo_1 9ine");
@@ -5275,7 +5275,7 @@ public Action Team_9INE(int client, int args)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "CyderX");
 		ServerCommand("bot_add_t %s", "xfl0ud");
-		ServerCommand("bot_add_t %s", "MYTH");
+		ServerCommand("bot_add_t %s", "qRaxs");
 		ServerCommand("bot_add_t %s", "Izzy");
 		ServerCommand("bot_add_t %s", "QutionerX");
 		ServerCommand("mp_teamlogo_2 9ine");
@@ -8524,7 +8524,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//PENTA Players
-	if((StrEqual(botname, "NABOWOW")) || (StrEqual(botname, "shellzy")) || (StrEqual(botname, "whatz")) || (StrEqual(botname, "plat")) || (StrEqual(botname, "RIZZ")))
+	if((StrEqual(botname, "sh1zlEE")) || (StrEqual(botname, "Jaepe")) || (StrEqual(botname, "brA")) || (StrEqual(botname, "plat")) || (StrEqual(botname, "RIZZ")))
 	{
 		CS_SetClientClanTag(client, "FTW");
 	}
@@ -8536,7 +8536,7 @@ public void Pro_Players(char[] botname, int client)
 	}
 	
 	//9INE Players
-	if((StrEqual(botname, "simix")) || (StrEqual(botname, "ritchiEE")) || (StrEqual(botname, "Luz")) || (StrEqual(botname, "sarenii")) || (StrEqual(botname, "DENZSTOU")))
+	if((StrEqual(botname, "CyderX")) || (StrEqual(botname, "xfl0ud")) || (StrEqual(botname, "qRaxs")) || (StrEqual(botname, "Izzy")) || (StrEqual(botname, "QutionerX")))
 	{
 		CS_SetClientClanTag(client, "9INE");
 	}
