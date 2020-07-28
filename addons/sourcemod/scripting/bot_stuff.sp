@@ -932,7 +932,13 @@ static char g_szBotName[][] = {
 	"JoJo",
 	"tconnors",
 	"viz",
-	"insane"
+	"insane",
+	//ERN Players
+	"j1NZO",
+	"mvN",
+	"Kirby",
+	"FreeZe",
+	"S3NSEY"
 };
  
 public Plugin myinfo =
@@ -1139,6 +1145,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_sinister5", Team_Sinister5);
 	RegConsoleCmd("team_sinners", Team_SINNERS);
 	RegConsoleCmd("team_impact", Team_Impact);
+	RegConsoleCmd("team_ern", Team_ERN);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -5491,6 +5498,36 @@ public Action Team_Impact(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_ERN(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "j1NZO");
+		ServerCommand("bot_add_ct %s", "mvN");
+		ServerCommand("bot_add_ct %s", "Kirby");
+		ServerCommand("bot_add_ct %s", "FreeZe");
+		ServerCommand("bot_add_ct %s", "S3NSEY");
+		ServerCommand("mp_teamlogo_1 ern");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "j1NZO");
+		ServerCommand("bot_add_t %s", "mvN");
+		ServerCommand("bot_add_t %s", "Kirby");
+		ServerCommand("bot_add_t %s", "FreeZe");
+		ServerCommand("bot_add_t %s", "S3NSEY");
+		ServerCommand("mp_teamlogo_2 ern");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6808,27 +6845,27 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Lions") == 0) //22nd
+			else if(strcmp(szClanTag, "ENCE") == 0) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "ENCE") == 0) //21st
+			else if(strcmp(szClanTag, "Lions") == 0) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "GODSENT") == 0) //20th
+			else if(strcmp(szClanTag, "Heroic") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //19th
+			else if(strcmp(szClanTag, "Spirit") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Spirit") == 0) //18th
+			else if(strcmp(szClanTag, "GODSENT") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
@@ -8577,6 +8614,12 @@ public void Pro_Players(char[] szBotName, int client)
 	{
 		CS_SetClientClanTag(client, "Impact");
 	}
+	
+	//ERN Players
+	if((strcmp(szBotName, "j1NZO") == 0) || (strcmp(szBotName, "mvN") == 0) || (strcmp(szBotName, "Kirby") == 0) || (strcmp(szBotName, "FreeZe") == 0) || (strcmp(szBotName, "S3NSEY") == 0))
+	{
+		CS_SetClientClanTag(client, "ERN");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -8753,6 +8796,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "Spirit"))
 	{
 		g_iProfileRank[client] = 76;
+	}
+	
+	if (strcmp(szClan, "ERN") == 0)
+	{
+		g_iProfileRank[client] = 77;
 	}
 	
 	if (StrEqual(szClan, "LDLC"))

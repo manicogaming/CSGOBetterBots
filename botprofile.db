@@ -3624,6 +3624,28 @@ ProP+Rifle "insane"
 	VoicePitch = 75
 End
 
+//ERN Players
+
+ProP+Rifle "j1NZO"
+	VoicePitch = 113
+End
+
+ProAwp+SniperPro "mvN"
+	VoicePitch = 109
+End
+
+ProP+Rifle "Kirby"
+	VoicePitch = 75
+End
+
+ProP+Rifle "FreeZe"
+	VoicePitch = 100
+End
+
+ProP+Rifle "S3NSEY"
+	VoicePitch = 81
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
