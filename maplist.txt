@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Jul 24 01:44:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Tue Jul 28 01:20:35 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -175,7 +175,6 @@ de_vertigo
 de_xmas_hotel
 deathzone
 dm_bloodsport
-dm_jolly
 fun_pacman_v1
 fy_back_street
 fy_buball

@@ -6438,14 +6438,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 	return Plugin_Continue;
 }
 
-public void CSU_OnThrowGrenade(int client, int entity, GrenadeType grenadeType, const float origin[3], const float velocity[3])
+public void CSU_OnThrowGrenade(int client, int iEntity, GrenadeType grenadeType, const float fOrigin[3], const float fVelocity[3])
 {
-	PrintToChat(client, "origin[0] = %f;", origin[0]);
-	PrintToChat(client, "origin[1] = %f;", origin[1]);
-	PrintToChat(client, "origin[2] = %f;", origin[2]);
-	PrintToChat(client, "velocity[0] = %f;", velocity[0]);
-	PrintToChat(client, "velocity[1] = %f;", velocity[1]);
-	PrintToChat(client, "velocity[2] = %f;", velocity[2]);
+	PrintToChat(client, "fOrigin[0] = %f;", fOrigin[0]);
+	PrintToChat(client, "fOrigin[1] = %f;", fOrigin[1]);
+	PrintToChat(client, "fOrigin[2] = %f;", fOrigin[2]);
+	PrintToChat(client, "fVelocity[0] = %f;", fVelocity[0]);
+	PrintToChat(client, "fVelocity[1] = %f;", fVelocity[1]);
+	PrintToChat(client, "fVelocity[2] = %f;", fVelocity[2]);
 }
 
 public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcast) 
@@ -6505,7 +6505,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 {
 	int client = GetClientFromSerial(iSerial);
 
-	if (!IsValidClient(client) && !IsFakeClient(client)) return Plugin_Stop;
+	if (!client || !IsClientInGame(client) || !IsPlayerAlive(client)) return Plugin_Stop;
 	int iTeam = GetClientTeam(client);
 	if (iTeam < 2) return Plugin_Stop;
 
