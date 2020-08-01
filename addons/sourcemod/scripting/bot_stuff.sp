@@ -675,12 +675,12 @@ static char g_szBotName[][] = {
 	"dzt",
 	"delboNi",
 	"SHOOWTiME",
-	//Big5 Players
-	"kustoM_",
-	"Spartan",
-	"konvict",
-	"maniaq",
-	"Tiaantjie",
+	//Pompa Players
+	"iso",
+	"SKRZYNKA",
+	"LAYNER",
+	"OLIMP",
+	"blacktear5",
 	//Unique Players
 	"crush",
 	"AiyvaN",
@@ -786,7 +786,7 @@ static char g_szBotName[][] = {
 	//D13 Players
 	"Tamiraarita",
 	"rate",
-	"Mistercap",
+	"shinobi",
 	"sK0R",
 	"ANNIHILATION",
 	//ZIGMA Players
@@ -938,7 +938,19 @@ static char g_szBotName[][] = {
 	"mvN",
 	"Kirby",
 	"FreeZe",
-	"S3NSEY"
+	"S3NSEY",
+	//BL4ZE Players
+	"Rossi",
+	"Marzil",
+	"SkRossi",
+	"Raph",
+	"cara",
+	//Global Players
+	"HellrangeR",
+	"Karam1L",
+	"hellff",
+	"DEATHMAKER",
+	"SpawN"
 };
  
 public Plugin myinfo =
@@ -1102,7 +1114,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_gambit", Team_Gambit);
 	RegConsoleCmd("team_wisla", Team_Wisla);
 	RegConsoleCmd("team_imperial", Team_Imperial);
-	RegConsoleCmd("team_big5", Team_Big5);
+	RegConsoleCmd("team_pompa", Team_Pompa);
 	RegConsoleCmd("team_Unique", Team_Unique);
 	RegConsoleCmd("team_izako", Team_Izako);
 	RegConsoleCmd("team_atk", Team_ATK);
@@ -1146,6 +1158,8 @@ public void OnPluginStart()
 	RegConsoleCmd("team_sinners", Team_SINNERS);
 	RegConsoleCmd("team_impact", Team_Impact);
 	RegConsoleCmd("team_ern", Team_ERN);
+	RegConsoleCmd("team_bl4ze", Team_BL4ZE);
+	RegConsoleCmd("team_global", Team_Global);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -4208,7 +4222,7 @@ public Action Team_Imperial(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Big5(int client, int iArgs)
+public Action Team_Pompa(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -4216,23 +4230,23 @@ public Action Team_Big5(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "kustoM_");
-		ServerCommand("bot_add_ct %s", "Spartan");
-		ServerCommand("bot_add_ct %s", "konvict");
-		ServerCommand("bot_add_ct %s", "maniaq");
-		ServerCommand("bot_add_ct %s", "Tiaantjie");
-		ServerCommand("mp_teamlogo_1 big5");
+		ServerCommand("bot_add_ct %s", "iso");
+		ServerCommand("bot_add_ct %s", "SKRZYNKA");
+		ServerCommand("bot_add_ct %s", "LAYNER");
+		ServerCommand("bot_add_ct %s", "OLIMP");
+		ServerCommand("bot_add_ct %s", "blacktear5");
+		ServerCommand("mp_teamlogo_1 pompa");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "kustoM_");
-		ServerCommand("bot_add_t %s", "Spartan");
-		ServerCommand("bot_add_t %s", "konvict");
-		ServerCommand("bot_add_t %s", "maniaq");
-		ServerCommand("bot_add_t %s", "Tiaantjie");
-		ServerCommand("mp_teamlogo_2 big5");
+		ServerCommand("bot_add_t %s", "iso");
+		ServerCommand("bot_add_t %s", "SKRZYNKA");
+		ServerCommand("bot_add_t %s", "LAYNER");
+		ServerCommand("bot_add_t %s", "OLIMP");
+		ServerCommand("bot_add_t %s", "blacktear5");
+		ServerCommand("mp_teamlogo_2 pompa");
 	}
 
 	return Plugin_Handled;
@@ -4758,7 +4772,7 @@ public Action Team_D13(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Tamiraarita");
 		ServerCommand("bot_add_ct %s", "rate");
-		ServerCommand("bot_add_ct %s", "Mistercap");
+		ServerCommand("bot_add_ct %s", "shinobi");
 		ServerCommand("bot_add_ct %s", "sK0R");
 		ServerCommand("bot_add_ct %s", "ANNIHILATION");
 		ServerCommand("mp_teamlogo_1 d13");
@@ -4769,7 +4783,7 @@ public Action Team_D13(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Tamiraarita");
 		ServerCommand("bot_add_t %s", "rate");
-		ServerCommand("bot_add_t %s", "Mistercap");
+		ServerCommand("bot_add_t %s", "shinobi");
 		ServerCommand("bot_add_t %s", "sK0R");
 		ServerCommand("bot_add_t %s", "ANNIHILATION");
 		ServerCommand("mp_teamlogo_2 d13");
@@ -5528,6 +5542,66 @@ public Action Team_ERN(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_BL4ZE(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "Rossi");
+		ServerCommand("bot_add_ct %s", "Marzil");
+		ServerCommand("bot_add_ct %s", "SkRossi");
+		ServerCommand("bot_add_ct %s", "Raph");
+		ServerCommand("bot_add_ct %s", "cara");
+		ServerCommand("mp_teamlogo_1 bl4ze");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "Rossi");
+		ServerCommand("bot_add_t %s", "Marzil");
+		ServerCommand("bot_add_t %s", "SkRossi");
+		ServerCommand("bot_add_t %s", "Raph");
+		ServerCommand("bot_add_t %s", "cara");
+		ServerCommand("mp_teamlogo_2 bl4ze");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_Global(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "HellrangeR");
+		ServerCommand("bot_add_ct %s", "Karam1L");
+		ServerCommand("bot_add_ct %s", "hellff");
+		ServerCommand("bot_add_ct %s", "DEATHMAKER");
+		ServerCommand("bot_add_ct %s", "SpawN");
+		ServerCommand("mp_teamlogo_1 global");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "HellrangeR");
+		ServerCommand("bot_add_t %s", "Karam1L");
+		ServerCommand("bot_add_t %s", "hellff");
+		ServerCommand("bot_add_t %s", "DEATHMAKER");
+		ServerCommand("bot_add_t %s", "SpawN");
+		ServerCommand("mp_teamlogo_2 global");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5570,12 +5644,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	for (int i = 1; i <= MaxClients; i++)
 	{		
 		if(eItems_AreItemsSynced() && IsValidClient(i))
-		{
-			if(IsFakeClient(i))
-			{
-				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
-			}
-			
+		{			
 			if(GetRandomInt(1,2) == 1)
 			{
 				g_iCoin[i] = eItems_GetCoinDefIndexByCoinNum(GetRandomInt(0, eItems_GetCoinsCount() -1));
@@ -6492,6 +6561,8 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 		if(IsValidClient(i) && IsFakeClient(i))
 		{
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
+			
+			SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
 			
 			if(GetRandomInt(1,100) >= 15)
 			{
@@ -8357,10 +8428,10 @@ public void Pro_Players(char[] szBotName, int client)
 		CS_SetClientClanTag(client, "Imperial");
 	}
 	
-	//Big5 Players
-	if((StrEqual(szBotName, "kustoM_")) || (StrEqual(szBotName, "Spartan")) || (StrEqual(szBotName, "konvict")) || (StrEqual(szBotName, "maniaq")) || (StrEqual(szBotName, "Tiaantjie")))
+	//Pompa Players
+	if((StrEqual(szBotName, "iso")) || (StrEqual(szBotName, "SKRZYNKA")) || (StrEqual(szBotName, "LAYNER")) || (StrEqual(szBotName, "OLIMP")) || (StrEqual(szBotName, "blacktear5")))
 	{
-		CS_SetClientClanTag(client, "Big5");
+		CS_SetClientClanTag(client, "Pompa");
 	}
 	
 	//Unique Players
@@ -8466,7 +8537,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//D13 Players
-	if((StrEqual(szBotName, "Tamiraarita")) || (StrEqual(szBotName, "rate")) || (StrEqual(szBotName, "Mistercap")) || (StrEqual(szBotName, "sK0R")) || (StrEqual(szBotName, "ANNIHILATION")))
+	if((StrEqual(szBotName, "Tamiraarita")) || (StrEqual(szBotName, "rate")) || (StrEqual(szBotName, "shinobi")) || (StrEqual(szBotName, "sK0R")) || (StrEqual(szBotName, "ANNIHILATION")))
 	{
 		CS_SetClientClanTag(client, "D13");
 	}
@@ -8619,6 +8690,18 @@ public void Pro_Players(char[] szBotName, int client)
 	if((strcmp(szBotName, "j1NZO") == 0) || (strcmp(szBotName, "mvN") == 0) || (strcmp(szBotName, "Kirby") == 0) || (strcmp(szBotName, "FreeZe") == 0) || (strcmp(szBotName, "S3NSEY") == 0))
 	{
 		CS_SetClientClanTag(client, "ERN");
+	}
+	
+	//BL4ZE Players
+	if((strcmp(szBotName, "Rossi") == 0) || (strcmp(szBotName, "Marzil") == 0) || (strcmp(szBotName, "SkRossi") == 0) || (strcmp(szBotName, "Raph") == 0) || (strcmp(szBotName, "cara") == 0))
+	{
+		CS_SetClientClanTag(client, "BL4ZE");
+	}
+	
+	//Global Players
+	if((strcmp(szBotName, "HellrangeR") == 0) || (strcmp(szBotName, "Karam1L") == 0) || (strcmp(szBotName, "hellff") == 0) || (strcmp(szBotName, "DEATHMAKER") == 0) || (strcmp(szBotName, "SpawN") == 0))
+	{
+		CS_SetClientClanTag(client, "Global");
 	}
 }
 
@@ -8786,6 +8869,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "RNG"))
 	{
 		g_iProfileRank[client] = 73;
+	}
+	
+	if (strcmp(szClan, "BL4ZE") == 0)
+	{
+		g_iProfileRank[client] = 74;
 	}
 	
 	if (StrEqual(szClan, "Envy"))
@@ -9058,6 +9146,11 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 128;
 	}
 	
+	if (strcmp(szClan, "Global") == 0)
+	{
+		g_iProfileRank[client] = 129;
+	}
+	
 	if (StrEqual(szClan, "NASR"))
 	{
 		g_iProfileRank[client] = 130;
@@ -9293,7 +9386,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 177;
 	}
 	
-	if (StrEqual(szClan, "Big5"))
+	if (StrEqual(szClan, "Pompa"))
 	{
 		g_iProfileRank[client] = 178;
 	}

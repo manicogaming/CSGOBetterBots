@@ -2656,25 +2656,25 @@ ProP+Rifle "SHOOWTiME"
 	VoicePitch = 77
 End
 
-//Big5 Players
+//Pompa Players
 
-ProP+Rifle "kustoM_"
+ProP+Rifle "iso"
 	VoicePitch = 111
 End
 
-ProAwp+SniperPro "Spartan"
+ProAwp+SniperPro "SKRZYNKA"
 	VoicePitch = 85
 End
 
-ProP+Rifle "konvict"
+ProP+Rifle "LAYNER"
 	VoicePitch = 93
 End
 
-ProP+Rifle "maniaq"
+ProP+Rifle "OLIMP"
 	VoicePitch = 91
 End
 
-ProP+Rifle "Tiaantjie"
+ProP+Rifle "blacktear5"
 	VoicePitch = 94
 End
 
@@ -3062,7 +3062,7 @@ ProAwp+SniperPro "rate"
 	VoicePitch = 105
 End
 
-ProP+Rifle "Mistercap"
+ProP+Rifle "shinobi"
 	VoicePitch = 100
 End
 
@@ -3643,6 +3643,50 @@ ProP+Rifle "FreeZe"
 End
 
 ProP+Rifle "S3NSEY"
+	VoicePitch = 81
+End
+
+//BL4ZE Players
+
+ProP+Rifle "Rossi"
+	VoicePitch = 78
+End
+
+ProAwp+SniperPro "Marzil"
+	VoicePitch = 101
+End
+
+ProP+Rifle "SkRossi"
+	VoicePitch = 89
+End
+
+ProP+Rifle "Raph"
+	VoicePitch = 84
+End
+
+ProP+Rifle "cara"
+	VoicePitch = 108
+End
+
+//Global Players
+
+ProP+Rifle "HellrangeR"
+	VoicePitch = 82
+End
+
+ProAwp+SniperPro "Karam1L"
+	VoicePitch = 84
+End
+
+ProP+Rifle "hellff"
+	VoicePitch = 80
+End
+
+ProP+Rifle "DEATHMAKER"
+	VoicePitch = 109
+End
+
+ProP+Rifle "SpawN"
 	VoicePitch = 81
 End
 

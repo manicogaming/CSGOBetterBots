@@ -24,6 +24,7 @@
 #undef REQUIRE_PLUGIN
 #include <custom_gloves>
 #include <fnemotes>
+#include <PTaH>
 
 #define		PREFIX			"★ {green}[Gloves]{default}"
 
@@ -728,12 +729,19 @@ stock void SetUserGloves (int client, int glove = -1, int skin = -1, bool bSave 
 						glove = GetArrayCell(g_RandomGloves[clientlang[client]], random);
 						skin = GetArrayCell(g_RandomSkins[clientlang[client]], random);
 					}
-						
+					
 					SetEntProp(ent, Prop_Send, "m_iItemIDLow", -1);
 					SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", glove);
 					SetEntProp(ent, Prop_Send, "m_nFallbackPaintKit", skin);
 					
-					SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", g_fUserQuality [ client ]);
+					if(IsFakeClient(client))
+					{
+						SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.80));
+					}
+					else
+					{
+						SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", g_fUserQuality [ client ]);
+					}
 					SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
 					SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
 					bool g_iEnableWorldModel = GetConVarBool(cvar_thirdperson);
@@ -746,6 +754,8 @@ stock void SetUserGloves (int client, int glove = -1, int skin = -1, bool bSave 
 					
 					SetEntPropEnt(client, Prop_Send, "m_hMyWearables", ent);
 					if(g_iEnableWorldModel) SetEntProp(client, Prop_Send, "m_nBody", 1);
+					
+					PTaH_ForceFullUpdate(client);
 			
 				}
 			}
