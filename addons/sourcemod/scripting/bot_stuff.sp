@@ -6369,7 +6369,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 				}
 				
-				if(g_bFreezetimeEnd && !g_bBombPlanted && GetEntityMoveType(client) != MOVETYPE_LADDER && !BotIsBusy(client))
+				if(g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client))
 				{
 					//Rifles
 					int iAK47 = GetNearestEntity(client, "weapon_ak47"); 
@@ -6562,7 +6562,10 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 		{
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
-			SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			if(eItems_AreItemsSynced())
+			{
+				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			}
 			
 			if(GetRandomInt(1,100) >= 15)
 			{
