@@ -1416,11 +1416,11 @@ ProP+Rifle "pr"
 	VoicePitch = 104
 End
 
-ProP+Rifle "BLOODZ"
+ProP+Rifle "obj"
 	VoicePitch = 77
 End
 
-ProP+Rifle "renatoohaxx"
+ProP+Rifle "RIZZ"
 	VoicePitch = 73
 End
 
@@ -1474,7 +1474,7 @@ ProP+Rifle "sc4rx"
 	VoicePitch = 94
 End
 
-ProAwp+SniperPro "obj"
+ProAwp+SniperPro "KILLDREAM"
 	VoicePitch = 108
 End
 
@@ -3198,11 +3198,11 @@ ProP+Rifle "sark"
 	VoicePitch = 114
 End
 
-ProP+Rifle "MISK"
+ProP+Rifle "renatoohaxx"
 	VoicePitch = 97
 End
 
-ProP+Rifle "Cunha"
+ProP+Rifle "BLOODZ"
 	VoicePitch = 88
 End
 
@@ -3422,7 +3422,7 @@ ProP+Rifle "plat"
 	VoicePitch = 114
 End
 
-ProP+Rifle "RIZZ"
+ProP+Rifle "Cunha"
 	VoicePitch = 103
 End
 

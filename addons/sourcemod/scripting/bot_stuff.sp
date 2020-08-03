@@ -337,8 +337,8 @@ static char g_szBotName[][] = {
 	"NOPEEj",
 	"fox",
 	"pr",
-	"BLOODZ",
-	"renatoohaxx",
+	"obj",
+	"RIZZ",
 	//Lions Players
 	"AcilioN",
 	"acoR",
@@ -353,7 +353,7 @@ static char g_szBotName[][] = {
 	"loWel",
 	//OFFSET Players
 	"sc4rx",
-	"obj",
+	"KILLDREAM",
 	"zlynx",
 	"ZELIN",
 	"drifking",
@@ -823,8 +823,8 @@ static char g_szBotName[][] = {
 	"pizituh",
 	"BuJ",
 	"sark",
-	"MISK",
-	"Cunha",
+	"renatoohaxx",
+	"BLOODZ",
 	//AGF Players
 	"fr0slev",
 	"Kristou",
@@ -878,7 +878,7 @@ static char g_szBotName[][] = {
 	"Jaepe",
 	"brA",
 	"plat",
-	"RIZZ",
+	"Cunha",
 	//Titans Players
 	"simix",
 	"ritchiEE",
@@ -2523,8 +2523,8 @@ public Action Team_Giants(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "NOPEEj");
 		ServerCommand("bot_add_ct %s", "fox");
 		ServerCommand("bot_add_ct %s", "pr");
-		ServerCommand("bot_add_ct %s", "BLOODZ");
-		ServerCommand("bot_add_ct %s", "renatoohaxx");
+		ServerCommand("bot_add_ct %s", "obj");
+		ServerCommand("bot_add_ct %s", "RIZZ");
 		ServerCommand("mp_teamlogo_1 giant");
 	}
 	
@@ -2534,8 +2534,8 @@ public Action Team_Giants(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "NOPEEj");
 		ServerCommand("bot_add_t %s", "fox");
 		ServerCommand("bot_add_t %s", "pr");
-		ServerCommand("bot_add_t %s", "BLOODZ");
-		ServerCommand("bot_add_t %s", "renatoohaxx");
+		ServerCommand("bot_add_t %s", "obj");
+		ServerCommand("bot_add_t %s", "RIZZ");
 		ServerCommand("mp_teamlogo_2 giant");
 	}
 	
@@ -2611,7 +2611,7 @@ public Action Team_OFFSET(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "sc4rx");
-		ServerCommand("bot_add_ct %s", "obj");
+		ServerCommand("bot_add_ct %s", "KILLDREAM");
 		ServerCommand("bot_add_ct %s", "zlynx");
 		ServerCommand("bot_add_ct %s", "ZELIN");
 		ServerCommand("bot_add_ct %s", "drifking");
@@ -2622,7 +2622,7 @@ public Action Team_OFFSET(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "sc4rx");
-		ServerCommand("bot_add_t %s", "obj");
+		ServerCommand("bot_add_t %s", "KILLDREAM");
 		ServerCommand("bot_add_t %s", "zlynx");
 		ServerCommand("bot_add_t %s", "ZELIN");
 		ServerCommand("bot_add_t %s", "drifking");
@@ -4953,8 +4953,8 @@ public Action Team_eXploit(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "pizituh");
 		ServerCommand("bot_add_ct %s", "BuJ");
 		ServerCommand("bot_add_ct %s", "sark");
-		ServerCommand("bot_add_ct %s", "MISK");
-		ServerCommand("bot_add_ct %s", "Cunha");
+		ServerCommand("bot_add_ct %s", "renatoohaxx");
+		ServerCommand("bot_add_ct %s", "BLOODZ");
 		ServerCommand("mp_teamlogo_1 expl");
 	}
 
@@ -4964,8 +4964,8 @@ public Action Team_eXploit(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "pizituh");
 		ServerCommand("bot_add_t %s", "BuJ");
 		ServerCommand("bot_add_t %s", "sark");
-		ServerCommand("bot_add_t %s", "MISK");
-		ServerCommand("bot_add_t %s", "Cunha");
+		ServerCommand("bot_add_t %s", "renatoohaxx");
+		ServerCommand("bot_add_t %s", "BLOODZ");
 		ServerCommand("mp_teamlogo_2 expl");
 	}
 
@@ -5224,7 +5224,7 @@ public Action Team_FTW(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Jaepe");
 		ServerCommand("bot_add_ct %s", "brA");
 		ServerCommand("bot_add_ct %s", "plat");
-		ServerCommand("bot_add_ct %s", "RIZZ");
+		ServerCommand("bot_add_ct %s", "Cunha");
 		ServerCommand("mp_teamlogo_1 ftw");
 	}
 
@@ -5235,7 +5235,7 @@ public Action Team_FTW(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Jaepe");
 		ServerCommand("bot_add_t %s", "brA");
 		ServerCommand("bot_add_t %s", "plat");
-		ServerCommand("bot_add_t %s", "RIZZ");
+		ServerCommand("bot_add_t %s", "Cunha");
 		ServerCommand("mp_teamlogo_2 ftw");
 	}
 
@@ -8090,7 +8090,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Giants Players
-	if((StrEqual(szBotName, "NOPEEj")) || (StrEqual(szBotName, "fox")) || (StrEqual(szBotName, "pr")) || (StrEqual(szBotName, "BLOODZ")) || (StrEqual(szBotName, "renatoohaxx")))
+	if((StrEqual(szBotName, "NOPEEj")) || (StrEqual(szBotName, "fox")) || (StrEqual(szBotName, "pr")) || (StrEqual(szBotName, "obj")) || (StrEqual(szBotName, "RIZZ")))
 	{
 		CS_SetClientClanTag(client, "Giants");
 	}
@@ -8108,7 +8108,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//OFFSET Players
-	if((StrEqual(szBotName, "sc4rx")) || (StrEqual(szBotName, "obj")) || (StrEqual(szBotName, "zlynx")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
+	if((StrEqual(szBotName, "sc4rx")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "zlynx")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}
@@ -8576,7 +8576,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//eXploit Players
-	if((StrEqual(szBotName, "pizituh")) || (StrEqual(szBotName, "BuJ")) || (StrEqual(szBotName, "sark")) || (StrEqual(szBotName, "MISK")) || (StrEqual(szBotName, "Cunha")))
+	if((StrEqual(szBotName, "pizituh")) || (StrEqual(szBotName, "BuJ")) || (StrEqual(szBotName, "sark")) || (StrEqual(szBotName, "renatoohaxx")) || (StrEqual(szBotName, "BLOODZ")))
 	{
 		CS_SetClientClanTag(client, "eXploit");
 	}
@@ -8630,7 +8630,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//PENTA Players
-	if((StrEqual(szBotName, "sh1zlEE")) || (StrEqual(szBotName, "Jaepe")) || (StrEqual(szBotName, "brA")) || (StrEqual(szBotName, "plat")) || (StrEqual(szBotName, "RIZZ")))
+	if((StrEqual(szBotName, "sh1zlEE")) || (StrEqual(szBotName, "Jaepe")) || (StrEqual(szBotName, "brA")) || (StrEqual(szBotName, "plat")) || (StrEqual(szBotName, "Cunha")))
 	{
 		CS_SetClientClanTag(client, "FTW");
 	}
