@@ -1,0 +1,13 @@
+// AWP ROOST
+
+"awp_roost"
+{
+	"CTSpawn_x" "0.790000"
+	"CTSpawn_y" "0.500000"
+	"TSpawn_x" "0.210000"
+	"TSpawn_y" "0.500000"
+	"material" "overviews/awp_roost"
+	"pos_x" "-1312.000000"
+	"pos_y" "1312.000000"
+	"scale" "2.560000"
+}

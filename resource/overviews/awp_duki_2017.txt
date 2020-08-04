@@ -1,0 +1,10 @@
+// HLTV overview description file for awp_duki_2017.bsp
+
+"awp_duki_2017"
+{
+	"material"	"overviews/awp_duki_2017"	// texture file
+	"pos_x"		"-1535"	// upper left world coordinate
+	"pos_y"		"1645"
+	"scale"		"3.00" 
+
+}

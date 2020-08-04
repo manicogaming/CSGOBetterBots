@@ -39,7 +39,7 @@ public void OnPluginStart()
 
 	g_hMinPing	= CreateConVar("bp_minping", "25");
 	g_hMaxPing	= CreateConVar("bp_maxping", "100");
-	g_hInterval	= CreateConVar("bp_interval", "3");
+	g_hInterval	= CreateConVar("bp_interval", "5");
 	
 	g_iPing	= FindSendPropInfo("CPlayerResource", "m_iPing");
 

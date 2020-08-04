@@ -1,0 +1,7 @@
+"awp_rp94"
+{
+	"material"	"overviews/awp_rp94"	// texture file 
+	"pos_x"		"-1563"	
+	"pos_y"		"1500"   
+	"scale"		"3.00" 
+}

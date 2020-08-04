@@ -1,0 +1,11 @@
+"
+
+awp_roost_2020"
+{
+	"material"	"overviews/
+
+awp_roost_2020"	// texture file
+	"pos_x"		"-1419"	// upper left world coordinate
+	"pos_y"		"1263"
+	"scale"		"2.6" 
+}

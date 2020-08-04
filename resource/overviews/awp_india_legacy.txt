@@ -1,0 +1,11 @@
+"awp_india_legacy"
+{
+	"CTSpawn_x" "0.500000"
+	"CTSpawn_y" "0.850000"
+	"TSpawn_x" "0.500000"
+	"TSpawn_y" "0.150000"
+	"material" "overviews/awp_india_legacy"
+	"pos_x" "-1664.000000"
+	"pos_y" "1664.000000"
+	"scale" "3.250000"
+}
