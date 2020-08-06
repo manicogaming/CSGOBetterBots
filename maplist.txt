@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Tue Aug 04 00:03:07 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Thu Aug 06 00:28:51 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -40,11 +40,13 @@ aim_ak47_colt
 aim_ak_colt_subway
 aim_akm4ruins2
 aim_awp
+aim_aztec_go
 aim_badneighbors
 aim_badsiblings
 aim_cbble
 aim_container_autosniper
 aim_crazyjump_go
+aim_deagle5_classic
 aim_deagle7k_norm
 aim_deagle7k_real
 aim_deagle_retrowave
@@ -89,14 +91,19 @@ awp_crashz_bandicoot
 awp_crashz_v14
 awp_crashz_v4
 awp_crashz_v5
+awp_duki_2017
 awp_dust
 awp_dust_sky
+awp_gony_2018
 awp_ice_csgo
 awp_india
 awp_india_csgo
+awp_india_legacy
 awp_lego_2
 awp_lego_2011
 awp_lego_2_shootout
+awp_lego_2_winter
+awp_lego_4b
 awp_lego_8
 awp_lego_9
 awp_map_source_b1
@@ -107,9 +114,13 @@ awp_newmap_beta
 awp_paradise
 awp_pro
 awp_rainbow
+awp_roost
+awp_roost_2020
+awp_rp94
 awp_source
 awp_subzero
 awp_war
+awp_zeecore
 ba_winterforest_b1
 blood_gulch
 breakfloor_2
@@ -131,6 +142,8 @@ cs_militia
 cs_office
 cs_winternights
 de_1_6_vertigo
+de_abbey
+de_abyss
 de_alexandra
 de_anubis
 de_bank

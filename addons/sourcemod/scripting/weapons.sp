@@ -665,11 +665,6 @@ void SetWeaponProps(int client, int entity)
 						g_iStatTrak[client][index] = 0;
 					}
 				}
-				default:
-				{
-					SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
-					g_iStatTrak[client][index] = 0;
-				}
 			}
 			
 			if(GetRandomInt(1,100) <= 40)
