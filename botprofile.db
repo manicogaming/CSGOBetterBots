@@ -480,7 +480,7 @@ End
 
 //Astralis Players
 
-ProP+Rifle "Xyp9x"
+ProP+Rifle "es3tag"
 	VoicePitch = 77
 End
 
@@ -488,7 +488,7 @@ ProAwp+SniperPro "device"
 	VoicePitch = 104
 End
 
-ProP+Rifle "gla1ve"
+ProP+Rifle "Bubzkji"
 	VoicePitch = 95
 End
 
@@ -1134,7 +1134,7 @@ ProP+Rifle "MICHU"
 	VoicePitch = 73
 End
 
-ProP+Rifle "moose"
+ProP+Rifle "LEGIJA"
 	VoicePitch = 105
 End
 
@@ -1438,7 +1438,7 @@ ProP+Rifle "Sjuush"
 	VoicePitch = 90
 End
 
-ProP+Rifle "Bubzkji"
+ProP+Rifle "innocent"
 	VoicePitch = 112
 End
 
@@ -1452,7 +1452,7 @@ ProP+Rifle "mopoz"
 	VoicePitch = 99
 End
 
-ProAwp+SniperPro "EasTor"
+ProAwp+SniperPro "larsen"
 	VoicePitch = 109
 End
 
@@ -1464,7 +1464,7 @@ ProP+Rifle "alex*"
 	VoicePitch = 107
 End
 
-ProP+Rifle "loWel"
+ProP+Rifle "shokz"
 	VoicePitch = 98
 End
 
@@ -1856,7 +1856,7 @@ ProP+Rifle "apoc"
 	VoicePitch = 114
 End
 
-ProP+Rifle "ofnu"
+ProP+Rifle "HUGHMUNGUS"
 	VoicePitch = 88
 End
 
@@ -1866,7 +1866,7 @@ End
 
 //Chiefs Players
 
-ProP+Rifle "HUGHMUNGUS"
+ProP+Rifle "ofnu"
 	VoicePitch = 91
 End
 
@@ -2428,11 +2428,11 @@ ProP+Rifle "mouz"
 	VoicePitch = 111
 End
 
-ProP+Rifle "innocent"
+ProP+Rifle "reatz"
 	VoicePitch = 112
 End
 
-ProP+Rifle "rallen"
+ProP+Rifle "mono"
 	VoicePitch = 73
 End
 
@@ -3688,6 +3688,28 @@ End
 
 ProP+Rifle "SpawN"
 	VoicePitch = 81
+End
+
+//Conquer Players
+
+ProP+Rifle "NiNLeX"
+	VoicePitch = 86
+End
+
+ProAwp+SniperPro "RONDE"
+	VoicePitch = 92
+End
+
+ProP+Rifle "S1rva"
+	VoicePitch = 91
+End
+
+ProP+Rifle "jelo"
+	VoicePitch = 94
+End
+
+ProP+Rifle "KonZero"
+	VoicePitch = 92
 End
 
 EliteAwp+SniperPro "XD | ryu"

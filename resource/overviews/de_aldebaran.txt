@@ -1,0 +1,25 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_aldebaran"
+{
+	"TSpawn_x" "0.160000"
+	"TSpawn_y" "0.520000"
+	"CTSpawn_x" "0.970000"
+	"CTSpawn_y" "0.570000"
+	"material" "overviews/de_aldebaran"
+	"pos_x" "-2560.000000"
+	"pos_y" "3792.000000"
+	"scale" "4.590000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-576.000000"
+		}
+		"layer1"
+		{
+			"AltitudeMax" "-576.000000"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}
