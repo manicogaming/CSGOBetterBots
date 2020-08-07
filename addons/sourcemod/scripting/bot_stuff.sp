@@ -6437,7 +6437,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
 
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
@@ -6454,7 +6454,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
 
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
@@ -6481,7 +6481,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
 
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
@@ -6498,7 +6498,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
 
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
@@ -6535,12 +6535,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fDeagleLocation);
 								
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6567,12 +6567,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fTec9Location);
 								
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6599,12 +6599,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fFiveSevenLocation);
 								
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6631,12 +6631,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fP250Location);
 								
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fP250Location, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6663,12 +6663,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fUSPLocation);
 								
-								if(fDistance < 750)
+								if(fDistance < 750.0)
 								{
 									BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6920,7 +6920,7 @@ public int GetNearestEntity(int client, char[] szClassname)
     GetEntPropVector(client, Prop_Data, "m_vecOrigin", fClientOrigin); // Line 2607
     
     //Get the distance between the first entity and client
-    float fDistance, fNearestDistance = -1.0;
+    float fDistance, fNearestDistance = 750.0;
     
     //Find all the entity and compare the distances
     int iEntity = -1;

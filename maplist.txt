@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Thu Aug 06 00:28:51 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Aug 07 04:15:12 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -144,6 +144,8 @@ cs_winternights
 de_1_6_vertigo
 de_abbey
 de_abyss
+de_aerospace
+de_aldebaran
 de_alexandra
 de_anubis
 de_bank
