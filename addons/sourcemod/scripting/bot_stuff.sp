@@ -158,7 +158,7 @@ static char g_szBotName[][] = {
 	"allu",
 	"sergej",
 	"Aerial",
-	"xseveN",
+	"Jamppi",
 	//Vitality Players
 	"shox",
 	"ZywOo",
@@ -301,7 +301,7 @@ static char g_szBotName[][] = {
 	"ZOREE",
 	"sLowi",
 	"doto",
-	"Hoody",
+	"xseveN",
 	"sAw",
 	//Lyngby Players
 	"birdfromsky",
@@ -803,7 +803,7 @@ static char g_szBotName[][] = {
 	"IceBerg",
 	//KOVA Players
 	"pietola",
-	"Derkeps",
+	"spargo",
 	"uli",
 	"peku",
 	"Twixie",
@@ -1631,7 +1631,7 @@ public Action Team_ENCE(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "allu");
 		ServerCommand("bot_add_ct %s", "sergej");
 		ServerCommand("bot_add_ct %s", "Aerial");
-		ServerCommand("bot_add_ct %s", "xseveN");
+		ServerCommand("bot_add_ct %s", "Jamppi");
 		ServerCommand("mp_teamlogo_1 ence");
 	}
 	
@@ -1642,7 +1642,7 @@ public Action Team_ENCE(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "allu");
 		ServerCommand("bot_add_t %s", "sergej");
 		ServerCommand("bot_add_t %s", "Aerial");
-		ServerCommand("bot_add_t %s", "xseveN");
+		ServerCommand("bot_add_t %s", "Jamppi");
 		ServerCommand("mp_teamlogo_2 ence");
 	}
 	
@@ -2350,7 +2350,7 @@ public Action Team_HAVU(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "ZOREE");
 		ServerCommand("bot_add_ct %s", "sLowi");
 		ServerCommand("bot_add_ct %s", "doto");
-		ServerCommand("bot_add_ct %s", "Hoody");
+		ServerCommand("bot_add_ct %s", "xseveN");
 		ServerCommand("bot_add_ct %s", "sAw");
 		ServerCommand("mp_teamlogo_1 havu");
 	}
@@ -2361,7 +2361,7 @@ public Action Team_HAVU(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "ZOREE");
 		ServerCommand("bot_add_t %s", "sLowi");
 		ServerCommand("bot_add_t %s", "doto");
-		ServerCommand("bot_add_t %s", "Hoody");
+		ServerCommand("bot_add_t %s", "xseveN");
 		ServerCommand("bot_add_t %s", "sAw");
 		ServerCommand("mp_teamlogo_2 havu");
 	}
@@ -4868,7 +4868,7 @@ public Action Team_KOVA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "pietola");
-		ServerCommand("bot_add_ct %s", "Derkeps");
+		ServerCommand("bot_add_ct %s", "spargo");
 		ServerCommand("bot_add_ct %s", "uli");
 		ServerCommand("bot_add_ct %s", "peku");
 		ServerCommand("bot_add_ct %s", "Twixie");
@@ -4879,7 +4879,7 @@ public Action Team_KOVA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "pietola");
-		ServerCommand("bot_add_t %s", "Derkeps");
+		ServerCommand("bot_add_t %s", "spargo");
 		ServerCommand("bot_add_t %s", "uli");
 		ServerCommand("bot_add_t %s", "peku");
 		ServerCommand("bot_add_t %s", "Twixie");
@@ -8063,7 +8063,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//ENCE Players
-	if((StrEqual(szBotName, "suNny")) || (StrEqual(szBotName, "Aerial")) || (StrEqual(szBotName, "allu")) || (StrEqual(szBotName, "sergej")) || (StrEqual(szBotName, "xseveN")))
+	if((StrEqual(szBotName, "suNny")) || (StrEqual(szBotName, "Aerial")) || (StrEqual(szBotName, "allu")) || (StrEqual(szBotName, "sergej")) || (StrEqual(szBotName, "Jamppi")))
 	{
 		CS_SetClientClanTag(client, "ENCE");
 	}
@@ -8207,7 +8207,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//HAVU Players
-	if((StrEqual(szBotName, "ZOREE")) || (StrEqual(szBotName, "sLowi")) || (StrEqual(szBotName, "doto")) || (StrEqual(szBotName, "Hoody")) || (StrEqual(szBotName, "sAw")))
+	if((StrEqual(szBotName, "ZOREE")) || (StrEqual(szBotName, "sLowi")) || (StrEqual(szBotName, "doto")) || (StrEqual(szBotName, "xseveN")) || (StrEqual(szBotName, "sAw")))
 	{
 		CS_SetClientClanTag(client, "HAVU");
 	}
@@ -8711,7 +8711,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//KOVA Players
-	if((StrEqual(szBotName, "pietola")) || (StrEqual(szBotName, "Derkeps")) || (StrEqual(szBotName, "uli")) || (StrEqual(szBotName, "peku")) || (StrEqual(szBotName, "Twixie")))
+	if((StrEqual(szBotName, "pietola")) || (StrEqual(szBotName, "spargo")) || (StrEqual(szBotName, "uli")) || (StrEqual(szBotName, "peku")) || (StrEqual(szBotName, "Twixie")))
 	{
 		CS_SetClientClanTag(client, "KOVA");
 	}

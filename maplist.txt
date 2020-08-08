@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Aug 07 04:15:12 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Aug 07 23:56:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -77,12 +77,8 @@ aim_treearena
 aim_warehouse
 aim_warmup
 aim_winter_deagle_up2010
-ar_baggage
 ar_cbq
 ar_dizzy
-ar_lunacy
-ar_monastery
-ar_shoots
 awp_1337
 awp_arena
 awp_backgammon_b1

@@ -32,15 +32,25 @@
 #include "weapons/database.sp"
 #include "weapons/config.sp"
 #include "weapons/menus.sp"
+#include "weapons/natives.sp"
+
+//#define DEBUG
 
 public Plugin myinfo = 
 {
 	name = "Weapons & Knives",
 	author = "kgns | oyunhost.net",
 	description = "All in one weapon skin management",
-	version = "1.6.0",
+	version = "1.7.0",
 	url = "https://www.oyunhost.net"
 };
+
+public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max)
+{
+	CreateNative("Weapons_SetClientKnife", Weapons_SetClientKnife_Native);
+	CreateNative("Weapons_GetClientKnife", Weapons_GetClientKnife_Native);
+	return APLRes_Success;
+}
 
 public void OnPluginStart()
 {
@@ -97,7 +107,68 @@ public void OnPluginStart()
 	AddCommandListener(ChatListener, "say");
 	AddCommandListener(ChatListener, "say2");
 	AddCommandListener(ChatListener, "say_team");
+	
+	#if defined DEBUG
+	RegAdminCmd("sm_setknife", Command_SetKnife, ADMFLAG_ROOT, "Sets knife of specific player.");
+	RegAdminCmd("sm_getknife", Command_GetClientKnife, ADMFLAG_ROOT, "Gets specific player's knife class name.");
+	#endif
+	
+	for(int i = 0; i < sizeof(g_iWeaponSeed); i++)
+	{
+		for(int j = 0; j < sizeof(g_iWeaponSeed[]); j++)
+		{
+			g_iWeaponSeed[i][j] = -1;
+		}
+	}
 }
+
+#if defined DEBUG
+public Action Command_SetKnife(int client, int args)
+{
+	if(args != 2)
+	{
+		ReplyToCommand(client, "[SM] Usage: sm_setknife <playername> <weaponname>");
+		return Plugin_Handled;
+	}
+	char buffer[64];
+	GetCmdArg(1, buffer, sizeof(buffer));
+	int target = FindTarget(client, buffer);
+	if(target == -1)
+	{
+		ReplyToCommand(client, "[SM] Please enter valid playername!");
+		return Plugin_Handled;
+	}
+	GetCmdArg(2, buffer, sizeof(buffer));
+	if(SetClientKnife(target, buffer) == -1)
+	{
+		ReplyToCommand(client, "[SM] Knife %s is not valid.", buffer);
+		return Plugin_Handled;
+	}
+	ReplyToCommand(client, "[SM] Successfully set %N's knife.", target);
+	return Plugin_Handled;
+}
+
+public Action Command_GetClientKnife(int client, int args)
+{
+	if(args != 1)
+	{
+		ReplyToCommand(client, "[SM] Usage: sm_getknife <playername>");
+		return Plugin_Handled;
+	}
+	char buffer[32];
+	GetCmdArg(1, buffer, sizeof(buffer));
+	int target = FindTarget(client, buffer);
+	if(target == -1)
+	{
+		ReplyToCommand(client, "[SM] Please enter valid playername!");
+		return Plugin_Handled;
+	}
+	char sKnife[64];
+	GetClientKnife(client, sKnife, sizeof(sKnife));
+	ReplyToCommand(client, "[SM] %N's knife is %s.", target, sKnife);
+	return Plugin_Handled;
+}
+#endif
 
 public Action CommandWeaponSkins(int client, int args)
 {
@@ -653,38 +724,44 @@ void SetWeaponProps(int client, int entity)
 				}
 			}
 			
-			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
+			if(IsKnife(entity))
 			{
-				case 125, 255, 256, 259, 257, 258, 262, 260, 261, 263, 267, 264, 265, 266, 675, 678, 681, 683, 676, 686, 687, 688, 679, 689, 680, 674, 682, 673, 684, 677, 685, 504, 
-				497, 490, 493, 503, 494, 501, 496, 500, 491, 495, 492, 498, 505, 499, 502, 639, 653, 644, 640, 643, 647, 652, 654, 648, 651, 645, 646, 650, 655, 642, 649, 641, 512, 
-				522, 506, 511, 516, 519, 514, 510, 508, 521, 520, 509, 507, 515, 517, 518, 524, 533, 527, 525, 537, 529, 532, 535, 536, 530, 540, 538, 526, 528, 534, 539, 279, 280, 
-				282, 286, 283, 287, 290, 284, 288, 285, 291, 281, 289, 380, 389, 391, 393, 388, 384, 383, 381, 390, 385, 386, 392, 387, 382, 662, 660, 664, 661, 658, 656, 669, 670, 
-				667, 668, 657, 663, 666, 671, 659, 672, 665, 359, 360, 353, 351, 352, 358, 350, 356, 349, 361, 357, 362, 354, 355, 180, 185, 211, 212, 182, 183, 188, 187, 189, 186, 
-				192, 191, 195, 193, 190, 309, 313, 310, 315, 307, 311, 336, 302, 339, 312, 301, 337, 314, 305, 306, 335, 334, 338, 303, 304, 308, 632, 624, 626, 636, 638, 637, 631, 
-				634, 625, 628, 623, 627, 629, 635, 630, 633, 622, 600, 604, 601, 609, 614, 603, 607, 613, 608, 612, 611, 602, 610, 615, 616, 606, 605, 587, 586, 588, 591, 597, 584, 
-				595, 583, 593, 596, 598, 585, 592, 589, 590, 599, 594, 475, 474, 487, 481, 476, 480, 483, 485, 482, 477, 478, 489, 486, 479, 488, 484, 316, 155, 9, 181, 62, 184, 13, 
-				213, 20, 317, 320, 156, 14, 174, 83, 162, 176, 177, 178, 215, 231, 227, 154, 226, 228, 225, 223, 224, 230, 229, 548, 542, 551, 541, 556, 554, 557, 546, 543, 555, 553, 
-				549, 550, 544, 547, 545, 552, 398, 395, 400, 394, 404, 397, 402, 405, 396, 399, 403, 401, 406, 407, 430, 433, 428, 427, 429, 424, 431, 435, 436, 422, 425, 426, 432,
-				434, 423, 222, 67, 221, 214, 220, 232, 217, 218, 216, 219, 270, 269, 271, 273, 274, 272, 268, 277, 278, 276, 275, 73, 11, 51, 61, 48, 60, 695, 696, 705, 691, 690,
-				694, 703, 704, 699, 698, 702, 701, 693, 697, 700, 706, 692, 707, 711, 714, 720, 723, 718, 709, 716, 719, 712, 713, 717, 708, 715, 722, 721, 710, 808, 816, 804, 814,
-				809, 803, 805, 810, 802, 817, 813, 807, 812, 806, 811, 815, 917, 919, 910, 913, 911, 915, 916, 907, 906, 902, 918, 904, 908, 909, 903, 905, 914, 844, 837, 845, 850,
-				843, 838, 841, 851, 846, 839, 836, 849, 848, 842, 840, 835, 847, 801, 858, 855, 854, 853, 852, 856, 857, 579, 581, 567, 577, 562, 582, 566, 576, 561, 620, 565, 59,
-				38, 12, 43, 5, 42, 44, 175, 735, 143, 77, 72, 558, 573, 569, 570, 571, 572, 568, 563, 580, 578, 413, 409, 414, 418, 419, 420, 421, 415, 416, 417, 410, 411, 98, 40,
-				618, 619, 617, 621, 559, 574, 564, 575, 560, 887, 898, 897, 889, 899, 885, 886, 894, 893, 884, 888, 895, 896, 900, 891, 892, 890, 946, 957, 941, 947, 948, 956, 955,
-				951, 954, 953, 943, 945, 942, 949, 944, 950, 952, 958, 960, 967, 968, 973, 969, 966, 974, 965, 964, 972, 961, 963, 970, 971, 962, 959:
+				if(GetRandomInt(1,100) <= 30)
 				{
-					if(GetRandomInt(1,100) <= 30)
-					{
-						g_iStatTrak[client][index] = 1;
-					}
-					else
-					{
-						g_iStatTrak[client][index] = 0;
-					}
+					SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", GetTotalKnifeStatTrakCount(client));
 				}
-				default:
+			}
+			else
+			{
+				switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
 				{
-					g_iStatTrak[client][index] = 0;
+					case 125, 255, 256, 259, 257, 258, 262, 260, 261, 263, 267, 264, 265, 266, 675, 678, 681, 683, 676, 686, 687, 688, 679, 689, 680, 674, 682, 673, 684, 677, 685, 504, 
+					497, 490, 493, 503, 494, 501, 496, 500, 491, 495, 492, 498, 505, 499, 502, 639, 653, 644, 640, 643, 647, 652, 654, 648, 651, 645, 646, 650, 655, 642, 649, 641, 512, 
+					522, 506, 511, 516, 519, 514, 510, 508, 521, 520, 509, 507, 515, 517, 518, 524, 533, 527, 525, 537, 529, 532, 535, 536, 530, 540, 538, 526, 528, 534, 539, 279, 280, 
+					282, 286, 283, 287, 290, 284, 288, 285, 291, 281, 289, 380, 389, 391, 393, 388, 384, 383, 381, 390, 385, 386, 392, 387, 382, 662, 660, 664, 661, 658, 656, 669, 670, 
+					667, 668, 657, 663, 666, 671, 659, 672, 665, 359, 360, 353, 351, 352, 358, 350, 356, 349, 361, 357, 362, 354, 355, 180, 185, 211, 212, 182, 183, 188, 187, 189, 186, 
+					192, 191, 195, 193, 190, 309, 313, 310, 315, 307, 311, 336, 302, 339, 312, 301, 337, 314, 305, 306, 335, 334, 338, 303, 304, 308, 632, 624, 626, 636, 638, 637, 631, 
+					634, 625, 628, 623, 627, 629, 635, 630, 633, 622, 600, 604, 601, 609, 614, 603, 607, 613, 608, 612, 611, 602, 610, 615, 616, 606, 605, 587, 586, 588, 591, 597, 584, 
+					595, 583, 593, 596, 598, 585, 592, 589, 590, 599, 594, 475, 474, 487, 481, 476, 480, 483, 485, 482, 477, 478, 489, 486, 479, 488, 484, 316, 155, 9, 181, 62, 184, 13, 
+					213, 20, 317, 320, 156, 14, 174, 83, 162, 176, 177, 178, 215, 231, 227, 154, 226, 228, 225, 223, 224, 230, 229, 548, 542, 551, 541, 556, 554, 557, 546, 543, 555, 553, 
+					549, 550, 544, 547, 545, 552, 398, 395, 400, 394, 404, 397, 402, 405, 396, 399, 403, 401, 406, 407, 430, 433, 428, 427, 429, 424, 431, 435, 436, 422, 425, 426, 432,
+					434, 423, 222, 67, 221, 214, 220, 232, 217, 218, 216, 219, 270, 269, 271, 273, 274, 272, 268, 277, 278, 276, 275, 73, 11, 51, 61, 48, 60, 695, 696, 705, 691, 690,
+					694, 703, 704, 699, 698, 702, 701, 693, 697, 700, 706, 692, 707, 711, 714, 720, 723, 718, 709, 716, 719, 712, 713, 717, 708, 715, 722, 721, 710, 808, 816, 804, 814,
+					809, 803, 805, 810, 802, 817, 813, 807, 812, 806, 811, 815, 917, 919, 910, 913, 911, 915, 916, 907, 906, 902, 918, 904, 908, 909, 903, 905, 914, 844, 837, 845, 850,
+					843, 838, 841, 851, 846, 839, 836, 849, 848, 842, 840, 835, 847, 801, 12, 44, 887, 898, 897, 889, 98, 899, 885, 886, 894, 893, 884, 888, 895, 896, 900, 891, 892, 890,
+					946, 957, 941, 947, 948, 956, 955, 951, 954, 953, 943, 945, 942, 949, 944, 950, 952, 958, 960, 967,	968, 973, 969, 966, 974, 965, 964, 972, 961, 963, 970, 971, 962, 959:
+					{
+						if(GetRandomInt(1,100) <= 30)
+						{
+							SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", g_iStatTrakCount[client][index]);
+							SetEntProp(entity, Prop_Send, "m_iEntityQuality", 9);
+						}
+					}
+					default:
+					{
+						SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", -1);
+						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
+					}
 				}
 			}
 			
@@ -795,7 +872,7 @@ void SetWeaponProps(int client, int entity)
 			}
 		}
 		
-		SetEntProp(entity, Prop_Send, "m_iAccountID", g_iSteam32[client]);
+		SetEntProp(entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client));
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
 	}

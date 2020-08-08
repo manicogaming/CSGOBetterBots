@@ -55,6 +55,7 @@ Template SniperPro
 		WeaponPreference = awp
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
+		WeaponPreference = ssg08
 		WeaponPreference = mp9
 		WeaponPreference = mac10
 		WeaponPreference = famas
@@ -79,7 +80,7 @@ Template Sniper
 		WeaponPreference = awp
 		WeaponPreference = ak47
 		WeaponPreference = m4a1
-		WeaponPreference = sg556
+		WeaponPreference = ssg08
 		WeaponPreference = mp9
 		WeaponPreference = mac10
 		WeaponPreference = famas
@@ -782,7 +783,7 @@ ProP+Rifle "Aerial"
 	VoicePitch = 110
 End
 
-ProP+Rifle "xseveN"
+ProP+Rifle "Jamppi"
 	VoicePitch = 91
 End
 
@@ -1284,7 +1285,7 @@ ProP+Rifle "doto"
 	VoicePitch = 73
 End
 
-ProP+Rifle "Hoody"
+ProP+Rifle "xseveN"
 	VoicePitch = 89
 End
 
@@ -3124,7 +3125,7 @@ ProP+Rifle "pietola"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "Derkeps"
+ProAwp+SniperPro "peku"
 	VoicePitch = 104
 End
 
@@ -3132,7 +3133,7 @@ ProP+Rifle "uli"
 	VoicePitch = 106
 End
 
-ProP+Rifle "peku"
+ProP+Rifle "spargo"
 	VoicePitch = 102
 End
 
