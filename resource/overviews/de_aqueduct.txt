@@ -1,0 +1,9 @@
+//Overview: scale 5.00, pos_x -2234, pos_y 918
+
+"de_aquedcut"
+{
+"material" "overviews/de_aquedcut"
+"pos_x" "-2234"
+"pos_y" "918"
+"scale" "4.75"
+}
