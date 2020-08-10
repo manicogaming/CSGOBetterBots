@@ -230,7 +230,7 @@ static char g_szBotName[][] = {
 	"Jame",
 	"qikert",
 	"SANJI",
-	"AdreN",
+	"buster",
 	//Apeks Players
 	"Marcelious",
 	"truth",
@@ -1991,7 +1991,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Jame");
 		ServerCommand("bot_add_ct %s", "qikert");
 		ServerCommand("bot_add_ct %s", "SANJI");
-		ServerCommand("bot_add_ct %s", "AdreN");
+		ServerCommand("bot_add_ct %s", "buster");
 		ServerCommand("mp_teamlogo_1 virtus");
 	}
 	
@@ -2002,7 +2002,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Jame");
 		ServerCommand("bot_add_t %s", "qikert");
 		ServerCommand("bot_add_t %s", "SANJI");
-		ServerCommand("bot_add_t %s", "AdreN");
+		ServerCommand("bot_add_t %s", "buster");
 		ServerCommand("mp_teamlogo_2 virtus");
 	}
 	
@@ -5702,7 +5702,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				{
 					SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
 					
-					if(GetRandomInt(1,100) <= 40)
+					if(GetRandomInt(1,100) <= 25)
 					{
 						if(GetRandomInt(1,100) <= 75)
 						{
@@ -6385,7 +6385,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						
 						AddVectors(fEyeTarget, fPunch, fEyeTarget);
 						
-						if(IsTargetInSightRange(client, iEnt, 7.5))
+						if(IsTargetInSightRange(client, iEnt, 7.5) || iButtons & IN_ATTACK)
 						{
 							TeleportEntity(client, NULL_VECTOR, fEyeTarget, NULL_VECTOR);
 						}
@@ -8135,7 +8135,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//VP Players
-	if((StrEqual(szBotName, "YEKINDAR")) || (StrEqual(szBotName, "Jame")) || (StrEqual(szBotName, "qikert")) || (StrEqual(szBotName, "SANJI")) || (StrEqual(szBotName, "AdreN")))
+	if((StrEqual(szBotName, "YEKINDAR")) || (StrEqual(szBotName, "Jame")) || (StrEqual(szBotName, "qikert")) || (StrEqual(szBotName, "SANJI")) || (StrEqual(szBotName, "buster")))
 	{
 		CS_SetClientClanTag(client, "VP");
 	}

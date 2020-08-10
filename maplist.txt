@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Aug 07 23:56:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Mon Aug 10 01:58:54 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -17,7 +17,6 @@ $400$_lite_4s
 35hp_lego_go
 35hp_minecraft_go
 35hp_orange_box_handel
-35hp_peace
 35hp_rush_hour
 35hp_white_palm
 3mc_training
@@ -143,6 +142,8 @@ de_abyss
 de_aerospace
 de_aldebaran
 de_alexandra
+de_ali
+de_amalia
 de_anubis
 de_bank
 de_boohouse_go
@@ -273,7 +274,6 @@ pet_sematary_final
 playground_x_s
 rox_dust_tower
 sj_dustland
-spectrum
 tk_dustworld_hd
 trenchwarfare
 ww_skyrail

@@ -765,7 +765,7 @@ void SetWeaponProps(int client, int entity)
 				}
 			}
 			
-			if(GetRandomInt(1,100) <= 40)
+			if(GetRandomInt(1,100) <= 25)
 			{
 				if(GetRandomInt(1,100) <= 65)
 				{

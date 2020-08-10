@@ -1,0 +1,25 @@
+//Map Overview for Counter-Strike Global Offensive 
+"de_amalia"
+{
+				"material"		"overviews/de_amalia_radar" 
+
+				"pos_x"			"-2201" 
+				"pos_y"			"1646" 
+				"scale"			"4.5" 
+				"rotate"			"" 
+				"zoom"			"" 
+
+
+// Icon Positions
+				"CTSpawn_x"		"0.57"
+				"CTSpawn_y"		"0.1"
+				"TSpawn_x"		"0.31"
+				"TSpawn_y"		"0.85"
+
+
+				"bombA_x"			"0.79"
+				"bombA_y"			"0.41"
+				"bombB_x"			"0.28"
+				"bombB_y"			"0.24"
+
+}
