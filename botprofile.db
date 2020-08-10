@@ -3713,6 +3713,28 @@ ProP+Rifle "KonZero"
 	VoicePitch = 92
 End
 
+//Rooster Players
+
+ProP+Rifle "DannyG"
+	VoicePitch = 94
+End
+
+ProAwp+SniperPro "nettik"
+	VoicePitch = 91
+End
+
+ProP+Rifle "chelleos"
+	VoicePitch = 88
+End
+
+ProP+Rifle "ADK"
+	VoicePitch = 78
+End
+
+ProP+Rifle "asap"
+	VoicePitch = 81
+End
+
 EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End

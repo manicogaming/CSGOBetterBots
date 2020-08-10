@@ -1,0 +1,11 @@
+// HLTV overview description file for de_astramania.bsp
+
+"de_astramania"
+{
+	"material"	"overviews/de_astramania"	// texture file
+	"pos_x"		"-2549"	// upper left world coordinate
+	"pos_y"		"1885"
+	"scale"		"4.5" 
+	"rotate"	"1"
+	"zoom"		"1.5"
+}
