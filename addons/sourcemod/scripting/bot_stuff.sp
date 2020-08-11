@@ -70,7 +70,7 @@ static char g_szBotName[][] = {
 	"TACO",
 	"trk",
 	//FaZe Players
-	"olofmeister",
+	"Kjaerbye",
 	"broky",
 	"NiKo",
 	"rain",
@@ -545,10 +545,10 @@ static char g_szBotName[][] = {
 	"pablek",
 	//GroundZero Players
 	"BURNRUOk",
-	"Liki",
+	"Laes",
 	"Llamas",
 	"Noobster",
-	"PEARSS",
+	"Mayker",
 	//AVEZ Players
 	"byali",
 	"Markoś",
@@ -880,11 +880,11 @@ static char g_szBotName[][] = {
 	"plat",
 	"Cunha",
 	//Titans Players
-	"simix",
-	"ritchiEE",
-	"Luz",
+	"doublemagic",
+	"KalubeR",
+	"rafftu",
 	"sarenii",
-	"DENZSTOU",
+	"viltrex",
 	//9INE Players
 	"CyderX",
 	"xfl0ud",
@@ -1244,7 +1244,7 @@ public Action Team_FaZe(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "olofmeister");
+		ServerCommand("bot_add_ct %s", "Kjaerbye");
 		ServerCommand("bot_add_ct %s", "broky");
 		ServerCommand("bot_add_ct %s", "NiKo");
 		ServerCommand("bot_add_ct %s", "rain");
@@ -1255,7 +1255,7 @@ public Action Team_FaZe(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "olofmeister");
+		ServerCommand("bot_add_t %s", "Kjaerbye");
 		ServerCommand("bot_add_t %s", "broky");
 		ServerCommand("bot_add_t %s", "NiKo");
 		ServerCommand("bot_add_t %s", "rain");
@@ -3585,10 +3585,10 @@ public Action Team_GroundZero(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "BURNRUOk");
-		ServerCommand("bot_add_ct %s", "Liki");
+		ServerCommand("bot_add_ct %s", "Laes");
 		ServerCommand("bot_add_ct %s", "Llamas");
 		ServerCommand("bot_add_ct %s", "Noobster");
-		ServerCommand("bot_add_ct %s", "PEARSS");
+		ServerCommand("bot_add_ct %s", "Mayker");
 		ServerCommand("mp_teamlogo_1 ground");
 	}
 	
@@ -3596,10 +3596,10 @@ public Action Team_GroundZero(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "BURNRUOk");
-		ServerCommand("bot_add_t %s", "Liki");
+		ServerCommand("bot_add_t %s", "Laes");
 		ServerCommand("bot_add_t %s", "Llamas");
 		ServerCommand("bot_add_t %s", "Noobster");
-		ServerCommand("bot_add_t %s", "PEARSS");
+		ServerCommand("bot_add_t %s", "Mayker");
 		ServerCommand("mp_teamlogo_2 ground");
 	}
 	
@@ -5264,22 +5264,22 @@ public Action Team_Titans(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "simix");
-		ServerCommand("bot_add_ct %s", "ritchiEE");
-		ServerCommand("bot_add_ct %s", "Luz");
+		ServerCommand("bot_add_ct %s", "doublemagic");
+		ServerCommand("bot_add_ct %s", "KalubeR");
+		ServerCommand("bot_add_ct %s", "rafftu");
 		ServerCommand("bot_add_ct %s", "sarenii");
-		ServerCommand("bot_add_ct %s", "DENZSTOU");
+		ServerCommand("bot_add_ct %s", "viltrex");
 		ServerCommand("mp_teamlogo_1 titans");
 	}
 
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "simix");
-		ServerCommand("bot_add_t %s", "ritchiEE");
-		ServerCommand("bot_add_t %s", "Luz");
+		ServerCommand("bot_add_t %s", "doublemagic");
+		ServerCommand("bot_add_t %s", "KalubeR");
+		ServerCommand("bot_add_t %s", "rafftu");
 		ServerCommand("bot_add_t %s", "sarenii");
-		ServerCommand("bot_add_t %s", "DENZSTOU");
+		ServerCommand("bot_add_t %s", "viltrex");
 		ServerCommand("mp_teamlogo_2 titans");
 	}
 
@@ -8016,7 +8016,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//FaZe Players
-	if((StrEqual(szBotName, "olofmeister")) || (StrEqual(szBotName, "broky")) || (StrEqual(szBotName, "NiKo")) || (StrEqual(szBotName, "rain")) || (StrEqual(szBotName, "coldzera")))
+	if((StrEqual(szBotName, "Kjaerbye")) || (StrEqual(szBotName, "broky")) || (StrEqual(szBotName, "NiKo")) || (StrEqual(szBotName, "rain")) || (StrEqual(szBotName, "coldzera")))
 	{
 		CS_SetClientClanTag(client, "FaZe");
 	}
@@ -8484,7 +8484,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//GroundZero Players
-	if((StrEqual(szBotName, "BURNRUOk")) || (StrEqual(szBotName, "Liki")) || (StrEqual(szBotName, "Llamas")) || (StrEqual(szBotName, "Noobster")) || (StrEqual(szBotName, "PEARSS")))
+	if((StrEqual(szBotName, "BURNRUOk")) || (StrEqual(szBotName, "Laes")) || (StrEqual(szBotName, "Llamas")) || (StrEqual(szBotName, "Noobster")) || (StrEqual(szBotName, "Mayker")))
 	{
 		CS_SetClientClanTag(client, "GroundZero");
 	}
@@ -8826,7 +8826,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Titans Players
-	if((StrEqual(szBotName, "simix")) || (StrEqual(szBotName, "ritchiEE")) || (StrEqual(szBotName, "Luz")) || (StrEqual(szBotName, "sarenii")) || (StrEqual(szBotName, "DENZSTOU")))
+	if((StrEqual(szBotName, "doublemagic")) || (StrEqual(szBotName, "KalubeR")) || (StrEqual(szBotName, "rafftu")) || (StrEqual(szBotName, "sarenii")) || (StrEqual(szBotName, "viltrex")))
 	{
 		CS_SetClientClanTag(client, "Titans");
 	}

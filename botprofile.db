@@ -459,7 +459,7 @@ End
 
 //FaZe Players
 
-ProP+Rifle "olofmeister"
+ProP+Rifle "Kjaerbye"
 	VoicePitch = 113
 End
 
@@ -2179,7 +2179,7 @@ ProP+Rifle "BURNRUOk"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "Liki"
+ProAwp+SniperPro "Laes"
 	VoicePitch = 110
 End
 
@@ -2191,7 +2191,7 @@ ProP+Rifle "Noobster"
 	VoicePitch = 75
 End
 
-ProP+Rifle "PEARSS"
+ProP+Rifle "Mayker"
 	VoicePitch = 108
 End
 
@@ -3429,15 +3429,15 @@ End
 
 //Titans Players
 
-ProP+Rifle "simix"
+ProP+Rifle "KalubeR"
 	VoicePitch = 91
 End
 
-ProAwp+SniperPro "ritchiEE"
+ProAwp+SniperPro "doublemagic"
 	VoicePitch = 107
 End
 
-ProP+Rifle "Luz"
+ProP+Rifle "rafftu"
 	VoicePitch = 109
 End
 
@@ -3445,7 +3445,7 @@ ProP+Rifle "sarenii"
 	VoicePitch = 103
 End
 
-ProP+Rifle "DENZSTOU"
+ProP+Rifle "viltrex"
 	VoicePitch = 81
 End
 
