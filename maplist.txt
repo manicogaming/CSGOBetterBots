@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Tue Aug 11 03:33:34 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Tue Aug 11 22:27:09 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -40,6 +40,7 @@ aim_ak_colt_subway
 aim_akm4ruins2
 aim_awp
 aim_aztec_go
+aim_aztecplace_kuli
 aim_badneighbors
 aim_badsiblings
 aim_cbble
@@ -94,6 +95,8 @@ awp_ice_csgo
 awp_india
 awp_india_csgo
 awp_india_legacy
+awp_l4f_lego
+awp_l4f_puls
 awp_lego_2
 awp_lego_2011
 awp_lego_2_shootout
@@ -152,6 +155,8 @@ de_astra_v2
 de_astramania
 de_aurelia
 de_austria
+de_aztec_classic
+de_aztec_snow
 de_bank
 de_boohouse_go
 de_cache

@@ -5739,9 +5739,9 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 				{
 					SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
 					
-					if(GetRandomInt(1,100) <= 25)
+					if(GetRandomInt(1,100) <= 30)
 					{
-						if(GetRandomInt(1,100) <= 75)
+						if(GetRandomInt(1,100) <= 65)
 						{
 							int iRndPatchCombo = GetRandomInt(1,14);
 						
@@ -6226,7 +6226,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								}	
 							}
 							
-							if(IsTargetInSightRange(client, iEnt, 7.5))
+							if(IsTargetInSightRange(client, iEnt, 10.0))
 							{
 								iButtons |= IN_ATTACK;
 							}
@@ -6422,13 +6422,13 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						
 						AddVectors(fEyeTarget, fPunch, fEyeTarget);
 						
-						if(IsTargetInSightRange(client, iEnt, 7.5) || iButtons & IN_ATTACK)
+						if(IsTargetInSightRange(client, iEnt, 10.0))
 						{
 							TeleportEntity(client, NULL_VECTOR, fEyeTarget, NULL_VECTOR);
 						}
 						else
 						{
-							SmoothAim(client, fEyeTarget, GetRandomFloat(0.50, 0.99));
+							SmoothAim(client, fEyeTarget, GetRandomFloat(0.70, 0.99));
 						}
 						
 						BotAttack(client, iEnt);
