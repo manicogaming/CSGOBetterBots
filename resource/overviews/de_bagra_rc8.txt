@@ -1,0 +1,10 @@
+"de_bagra_rc8"
+{
+	"material"	"overviews/de_bagra_rc8_radar"
+	"pos_x"		"-2692"
+	"pos_y"		"2406"
+	"scale"		"5.5"
+	"rotate"	"0"
+	"zoom"		"0"
+}
+

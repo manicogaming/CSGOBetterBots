@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Thu Aug 13 01:25:36 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Aug 14 01:47:29 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -129,6 +129,7 @@ cs_1337_assault_b2
 cs_agency
 cs_apollo
 cs_assault
+cs_backalley
 cs_beachassault_ek
 cs_bloodstrike_old
 cs_cock
@@ -157,6 +158,7 @@ de_aurelia
 de_austria
 de_aztec_classic
 de_aztec_snow
+de_bagra_rc8
 de_bank
 de_boohouse_go
 de_cache
