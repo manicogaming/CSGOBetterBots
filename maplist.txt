@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Aug 14 01:47:29 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Aug 15 02:34:45 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -43,6 +43,7 @@ aim_aztec_go
 aim_aztecplace_kuli
 aim_badneighbors
 aim_badsiblings
+aim_bazaar_wingman
 aim_cbble
 aim_container_autosniper
 aim_crazyjump_go
@@ -160,6 +161,10 @@ de_aztec_classic
 de_aztec_snow
 de_bagra_rc8
 de_bank
+de_basalt
+de_bastion2
+de_bazaar
+de_berth
 de_boohouse_go
 de_cache
 de_canals

@@ -28,39 +28,14 @@ public void OnClientSettingsChanged(int client)
 	
 	userInfo[8] = g_iSteamIDs[client];
 	
-	bool lockTable1 = LockStringTables(false);
-	SetStringTableData(tableIdx, client - 1, userInfo, 256);
-	LockStringTables(lockTable1);
-	
-	CreateTimer(0.1, Timer_FixScoreboard);
-}
-
-public Action Timer_FixScoreboard(Handle hTimer, any data)
-{
-	for (int i = 1; i <= MaxClients; i++)
+	if(GetRandomInt(1,100) <= 70)
 	{
-		if (IsValidClient(i) && IsFakeClient(i))
-		{
-			int tableIdx = FindStringTable("userinfo");
-		 
-			if (tableIdx == INVALID_STRING_TABLE)
-				return;
-			 
-			char userInfo[PLAYER_INFO_LEN];
-
-			if (!GetStringTableData(tableIdx, i - 1, userInfo, PLAYER_INFO_LEN))
-				return;
-			
-			userInfo[8] = g_iSteamIDs[i];
-			bool lockTable = LockStringTables(false);
-			
-			SetStringTableData(tableIdx, i - 1, userInfo, PLAYER_INFO_LEN);
-			LockStringTables(lockTable);
-		}
-	}	
-}
-
-stock bool IsValidClient(int client)
-{
-	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
+		userInfo[184] = GetRandomInt(1,500);
+	}
+	
+	userInfo[316] = 0;
+	
+	bool lockTable1 = LockStringTables(false);
+	SetStringTableData(tableIdx, client - 1, userInfo, PLAYER_INFO_LEN);
+	LockStringTables(lockTable1);
 }

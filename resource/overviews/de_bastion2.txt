@@ -1,0 +1,22 @@
+"de_bastion2"
+{
+	"material"	"overviews/de_bastion2"	// texture file
+	"pos_x"		"-3029"	// upper left world coordinate
+	"pos_y"		"1567"
+	"scale"		"6.00"
+//	"rotate"	"90"
+	"zoom"		"2.0"
+
+	"CTSpawn_x"	"0.747"
+	"CTSpawn_y"	"0.079"
+	"TSpawn_x"	"0.373"
+	"TSpawn_y"	"0.906"
+	
+	"bombA_x"	"0.775"
+	"bombA_y"	"0.365"
+	"bombB_x"	"0.458"
+	"bombB_y"	"0.179"
+ 
+}
+
+
