@@ -573,7 +573,7 @@ static char g_szBotName[][] = {
 	"HooXi",
 	"refrezh",
 	"Nodios",
-	//Syman Players
+	//K23 Players
 	"neaLaN",
 	"mou",
 	"n0rb3r7",
@@ -986,6 +986,8 @@ public void OnPluginStart()
 	HookEvent("round_start", OnRoundStart);
 	HookEvent("round_freeze_end", OnFreezetimeEnd);
 	HookEvent("bomb_planted", OnBombPlanted);
+	HookEvent("bomb_defused", OnBombDefusedOrExploded);
+	HookEvent("bomb_exploded", OnBombDefusedOrExploded);
 	
 	g_hGameConfig = LoadGameConfigFile("botstuff.games");
 	if (g_hGameConfig == INVALID_HANDLE)
@@ -1115,7 +1117,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_btrg", Team_BTRG);
 	RegConsoleCmd("team_gtz", Team_GTZ);
 	RegConsoleCmd("team_x6tence", Team_x6tence);
-	RegConsoleCmd("team_syman", Team_Syman);
+	RegConsoleCmd("team_k23", Team_K23);
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_secret", Team_Secret);
 	RegConsoleCmd("team_incept", Team_Incept);
@@ -3733,7 +3735,7 @@ public Action Team_x6tence(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Syman(int client, int iArgs)
+public Action Team_K23(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3746,7 +3748,7 @@ public Action Team_Syman(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "n0rb3r7");
 		ServerCommand("bot_add_ct %s", "kade0");
 		ServerCommand("bot_add_ct %s", "Keoz");
-		ServerCommand("mp_teamlogo_1 syma");
+		ServerCommand("mp_teamlogo_1 k23");
 	}
 	
 	if(StrEqual(arg, "t"))
@@ -3757,7 +3759,7 @@ public Action Team_Syman(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "n0rb3r7");
 		ServerCommand("bot_add_t %s", "kade0");
 		ServerCommand("bot_add_t %s", "Keoz");
-		ServerCommand("mp_teamlogo_2 syma");
+		ServerCommand("mp_teamlogo_2 k23");
 	}
 	
 	return Plugin_Handled;
@@ -6065,6 +6067,11 @@ public void OnBombPlanted(Handle event, char[] name, bool dbc)
 	g_bBombPlanted = true;
 }
 
+public void OnBombDefusedOrExploded(Handle event, char[] name, bool dbc)
+{
+	g_bBombPlanted = false;
+}
+
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
@@ -6511,7 +6518,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
 
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
@@ -6528,14 +6535,15 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
 
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
 							}
 						}
 					}
-					else if(IsValidEntity(iM4A1))
+					
+					if(IsValidEntity(iM4A1))
 					{
 						float fM4A1Location[3];
 						
@@ -6555,9 +6563,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
 
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
+								}
+								
+								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+								{
+									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
 								}
 							}
 						}
@@ -6572,7 +6585,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
 
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
@@ -6609,7 +6622,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fDeagleLocation);
 								
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
 								}
@@ -6621,7 +6634,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}
 					}
-					else if(IsValidEntity(iTec9))
+					
+					if(IsValidEntity(iTec9))
 					{
 						float fTec9Location[3];
 						
@@ -6641,7 +6655,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fTec9Location);
 								
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
 								}
@@ -6653,7 +6667,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}
 					}
-					else if(IsValidEntity(iFiveSeven))
+					
+					if(IsValidEntity(iFiveSeven))
 					{
 						float fFiveSevenLocation[3];
 						
@@ -6673,7 +6688,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fFiveSevenLocation);
 								
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
 								}
@@ -6685,7 +6700,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}
 					}
-					else if(IsValidEntity(iP250))
+					
+					if(IsValidEntity(iP250))
 					{
 						float fP250Location[3];
 						
@@ -6705,7 +6721,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fP250Location);
 								
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fP250Location, FASTEST_ROUTE);
 								}
@@ -6717,7 +6733,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}
 					}
-					else if(IsValidEntity(iUSP))
+					
+					if(IsValidEntity(iUSP))
 					{
 						float fUSPLocation[3];
 						
@@ -6737,7 +6754,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								float fDistance = GetVectorDistance(fClientLocation, fUSPLocation);
 								
-								if(fDistance < 750.0)
+								if(fDistance < 500.0)
 								{
 									BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
 								}
@@ -6994,7 +7011,7 @@ public int GetNearestEntity(int client, char[] szClassname)
     GetEntPropVector(client, Prop_Data, "m_vecOrigin", fClientOrigin); // Line 2607
     
     //Get the distance between the first entity and client
-    float fDistance, fNearestDistance = 750.0;
+    float fDistance, fNearestDistance = 500.0;
     
     //Find all the entity and compare the distances
     int iEntity = -1;
@@ -8544,10 +8561,10 @@ public void Pro_Players(char[] szBotName, int client)
 		CS_SetClientClanTag(client, "x6tence");
 	}
 	
-	//Syman Players
+	//K23 Players
 	if((StrEqual(szBotName, "neaLaN")) || (StrEqual(szBotName, "mou")) || (StrEqual(szBotName, "n0rb3r7")) || (StrEqual(szBotName, "kade0")) || (StrEqual(szBotName, "Keoz")))
 	{
-		CS_SetClientClanTag(client, "Syman");
+		CS_SetClientClanTag(client, "K23");
 	}
 	
 	//Goliath Players
@@ -9492,7 +9509,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 149;
 	}
 	
-	if (StrEqual(szClan, "Syman"))
+	if (StrEqual(szClan, "K23"))
 	{
 		g_iProfileRank[client] = 150;
 	}

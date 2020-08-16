@@ -30,7 +30,7 @@ public void OnClientSettingsChanged(int client)
 	
 	if(GetRandomInt(1,100) <= 70)
 	{
-		userInfo[184] = GetRandomInt(1,500);
+		userInfo[184] = GetRandomInt(1,100);
 	}
 	
 	userInfo[316] = 0;
