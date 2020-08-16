@@ -2645,7 +2645,7 @@ ProAwp+SniperPro "zqk"
 	VoicePitch = 109
 End
 
-ProP+Rifle "dzt"
+ProP+Rifle "LUCAS1"
 	VoicePitch = 92
 End
 
@@ -3160,28 +3160,6 @@ ProP+Rifle "Psycho"
 End
 
 ProP+Rifle "SENSEi"
-	VoicePitch = 106
-End
-
-//Redemption Players
-
-ProP+Rifle "drg"
-	VoicePitch = 110
-End
-
-ProAwp+SniperPro "ALLE"
-	VoicePitch = 94
-End
-
-ProP+Rifle "remix"
-	VoicePitch = 84
-End
-
-ProP+Rifle "w1"
-	VoicePitch = 113
-End
-
-ProP+Rifle "dok"
 	VoicePitch = 106
 End
 

@@ -25,12 +25,17 @@ public void OnClientSettingsChanged(int client)
 
 	if (!GetStringTableData(tableIdx, client - 1, userInfo, PLAYER_INFO_LEN))
 		return;
+		
+	int accountId = GetRandomInt(1,100);
 	
 	userInfo[8] = g_iSteamIDs[client];
 	
 	if(GetRandomInt(1,100) <= 70)
 	{
-		userInfo[184] = GetRandomInt(1,100);
+		userInfo[184] = accountId;
+		userInfo[185] = accountId >> 8;
+		userInfo[186] = accountId >> 16;
+		userInfo[187] = accountId >> 24;
 	}
 	
 	userInfo[316] = 0;

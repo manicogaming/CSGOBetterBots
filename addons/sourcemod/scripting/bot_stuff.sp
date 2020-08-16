@@ -672,7 +672,7 @@ static char g_szBotName[][] = {
 	//Imperial Players
 	"fnx",
 	"zqk",
-	"dzt",
+	"LUCAS1",
 	"delboNi",
 	"SHOOWTiME",
 	//Pompa Players
@@ -813,12 +813,6 @@ static char g_szBotName[][] = {
 	"7oX1C",
 	"Psycho",
 	"SENSEi",
-	//Redemption Players
-	"drg",
-	"ALLE",
-	"remix",
-	"w1",
-	"dok",
 	//eXploit Players
 	"pizituh",
 	"BuJ",
@@ -1157,7 +1151,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_ambush", Team_Ambush);
 	RegConsoleCmd("team_kova", Team_KOVA);
 	RegConsoleCmd("team_cr4zy", Team_CR4ZY);
-	RegConsoleCmd("team_redemption", Team_Redemption);
 	RegConsoleCmd("team_exploit", Team_eXploit);
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_lll", Team_LLL);
@@ -4225,7 +4218,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "fnx");
 		ServerCommand("bot_add_ct %s", "zqk");
-		ServerCommand("bot_add_ct %s", "dzt");
+		ServerCommand("bot_add_ct %s", "LUCAS1");
 		ServerCommand("bot_add_ct %s", "delboNi");
 		ServerCommand("bot_add_ct %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_1 imp");
@@ -4236,7 +4229,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "fnx");
 		ServerCommand("bot_add_t %s", "zqk");
-		ServerCommand("bot_add_t %s", "dzt");
+		ServerCommand("bot_add_t %s", "LUCAS1");
 		ServerCommand("bot_add_t %s", "delboNi");
 		ServerCommand("bot_add_t %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_2 imp");
@@ -4930,36 +4923,6 @@ public Action Team_CR4ZY(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Psycho");
 		ServerCommand("bot_add_t %s", "SENSEi");
 		ServerCommand("mp_teamlogo_2 cr4z");
-	}
-
-	return Plugin_Handled;
-}
-
-public Action Team_Redemption(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "drg");
-		ServerCommand("bot_add_ct %s", "ALLE");
-		ServerCommand("bot_add_ct %s", "remix");
-		ServerCommand("bot_add_ct %s", "w1");
-		ServerCommand("bot_add_ct %s", "dok");
-		ServerCommand("mp_teamlogo_1 redem");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "drg");
-		ServerCommand("bot_add_t %s", "ALLE");
-		ServerCommand("bot_add_t %s", "remix");
-		ServerCommand("bot_add_t %s", "w1");
-		ServerCommand("bot_add_t %s", "dok");
-		ServerCommand("mp_teamlogo_2 redem");
 	}
 
 	return Plugin_Handled;
@@ -5774,226 +5737,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 			
 			if(GetRandomInt(1,100) <= 35)
 			{
-				if(GetClientTeam(i) == CS_TEAM_CT)
-				{
-					SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
-					
-					if(GetRandomInt(1,100) <= 30)
-					{
-						if(GetRandomInt(1,100) <= 65)
-						{
-							int iRndPatchCombo = GetRandomInt(1,14);
-						
-							switch (iRndPatchCombo)
-							{
-								case 1:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-								}
-								case 2:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-								}
-								case 3:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 4:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 5:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 6:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-								}
-								case 7:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 8:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 9:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 10:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 11:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 12:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 13:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 14:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-							}
-						}
-						else
-						{
-							int iRndPatchCombo = GetRandomInt(1,2);
-							
-							switch(iRndPatchCombo)
-							{
-								case 1:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 2:
-								{
-									int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-									
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
-								}
-							}
-						}
-					}
-				}
-				else if(GetClientTeam(i) == CS_TEAM_T)
-				{
-					SetEntityModel(i, g_szTModels[GetRandomInt(0, sizeof(g_szTModels) - 1)]);
-					
-					if(GetRandomInt(1,100) <= 40)
-					{
-						if(GetRandomInt(1,100) <= 65)
-						{
-							int iRndPatchCombo = GetRandomInt(1,14);
-						
-							switch (iRndPatchCombo)
-							{
-								case 1:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-								}
-								case 2:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-								}
-								case 3:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 4:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 5:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 6:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-								}
-								case 7:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 8:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 9:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 10:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-								}
-								case 11:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 12:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 13:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 14:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-							}
-						}
-						else
-						{
-							int iRndPatchCombo = GetRandomInt(1,2);
-							
-							switch(iRndPatchCombo)
-							{
-								case 1:
-								{
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
-								}
-								case 2:
-								{
-									int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-									
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
-									SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
-								}
-							}
-						}
-					}
-				}
+				CreateTimer(1.3, Timer_ApplyAgent, i);
 			}
 			
 			if(strcmp(g_szMap, "de_mirage") == 0)
@@ -6039,6 +5783,232 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 						{
 							g_iRndSmoke[i] = GetRandomInt(9,11); //Long A Execute
 						}
+					}
+				}
+			}
+		}
+	}
+}
+
+public Action Timer_ApplyAgent(Handle hTimer, any i)
+{
+	if (!IsValidClient(i) && !IsFakeClient(i)) return;
+	
+	if(GetClientTeam(i) == CS_TEAM_CT)
+	{
+		SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
+		
+		if(GetRandomInt(1,100) <= 30)
+		{
+			if(GetRandomInt(1,100) <= 65)
+			{
+				int iRndPatchCombo = GetRandomInt(1,14);
+			
+				switch (iRndPatchCombo)
+				{
+					case 1:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+					}
+					case 2:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+					}
+					case 3:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 4:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 5:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 6:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+					}
+					case 7:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 8:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 9:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 10:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 11:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 12:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 13:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 14:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+				}
+			}
+			else
+			{
+				int iRndPatchCombo = GetRandomInt(1,2);
+				
+				switch(iRndPatchCombo)
+				{
+					case 1:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 2:
+					{
+						int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+						
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
+					}
+				}
+			}
+		}
+	}
+	else if(GetClientTeam(i) == CS_TEAM_T)
+	{
+		SetEntityModel(i, g_szTModels[GetRandomInt(0, sizeof(g_szTModels) - 1)]);
+		
+		if(GetRandomInt(1,100) <= 40)
+		{
+			if(GetRandomInt(1,100) <= 65)
+			{
+				int iRndPatchCombo = GetRandomInt(1,14);
+			
+				switch (iRndPatchCombo)
+				{
+					case 1:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+					}
+					case 2:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+					}
+					case 3:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 4:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 5:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 6:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+					}
+					case 7:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 8:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 9:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 10:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+					}
+					case 11:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 12:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 13:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 14:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+				}
+			}
+			else
+			{
+				int iRndPatchCombo = GetRandomInt(1,2);
+				
+				switch(iRndPatchCombo)
+				{
+					case 1:
+					{
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+					}
+					case 2:
+					{
+						int iPatchDefIndex = g_iPatchDefIndex[GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+						
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
 					}
 				}
 			}
@@ -8658,7 +8628,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "dzt")) || (StrEqual(szBotName, "delboNi")) || (StrEqual(szBotName, "SHOOWTiME")))
+	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "LUCAS1")) || (StrEqual(szBotName, "delboNi")) || (StrEqual(szBotName, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
@@ -8799,12 +8769,6 @@ public void Pro_Players(char[] szBotName, int client)
 	if((StrEqual(szBotName, "DemQQ")) || (StrEqual(szBotName, "Sergiz")) || (StrEqual(szBotName, "7oX1C")) || (StrEqual(szBotName, "Psycho")) || (StrEqual(szBotName, "SENSEi")))
 	{
 		CS_SetClientClanTag(client, "CR4ZY");
-	}
-	
-	//Redemption Players
-	if((StrEqual(szBotName, "drg")) || (StrEqual(szBotName, "ALLE")) || (StrEqual(szBotName, "remix")) || (StrEqual(szBotName, "w1")) || (StrEqual(szBotName, "dok")))
-	{
-		CS_SetClientClanTag(client, "Redemption");
 	}
 	
 	//eXploit Players
@@ -9552,11 +9516,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "RADIX"))
 	{
 		g_iProfileRank[client] = 158;
-	}
-	
-	if (StrEqual(szClan, "Redemption"))
-	{
-		g_iProfileRank[client] = 159;
 	}
 	
 	if (StrEqual(szClan, "Keyd"))
