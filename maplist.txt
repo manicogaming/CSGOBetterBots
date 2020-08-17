@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Sun Aug 16 19:24:45 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Mon Aug 17 03:13:02 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -165,6 +165,8 @@ de_basalt
 de_bastion2
 de_bazaar
 de_berth
+de_bikinibottom
+de_biome
 de_boohouse_go
 de_cache
 de_canals
