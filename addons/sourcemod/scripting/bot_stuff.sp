@@ -721,8 +721,8 @@ static char g_szBotName[][] = {
 	"Shakezullah",
 	"Junior",
 	"Spongey",
-	"curry",
-	"tacitus",
+	"penny",
+	"moose",
 	//FATE Players
 	"blocker",
 	"Patrick",
@@ -889,7 +889,7 @@ static char g_szBotName[][] = {
 	"JACKPOT",
 	"Quantium",
 	"Kas9k",
-	"telstar",
+	"hiji",
 	"lesswill",
 	//Tigers Players
 	"MAXX",
@@ -4459,8 +4459,8 @@ public Action Team_Triumph(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Shakezullah");
 		ServerCommand("bot_add_ct %s", "Junior");
 		ServerCommand("bot_add_ct %s", "Spongey");
-		ServerCommand("bot_add_ct %s", "curry");
-		ServerCommand("bot_add_ct %s", "tacitus");
+		ServerCommand("bot_add_ct %s", "penny");
+		ServerCommand("bot_add_ct %s", "moose");
 		ServerCommand("mp_teamlogo_1 tri");
 	}
 
@@ -4470,8 +4470,8 @@ public Action Team_Triumph(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Shakezullah");
 		ServerCommand("bot_add_t %s", "Junior");
 		ServerCommand("bot_add_t %s", "Spongey");
-		ServerCommand("bot_add_t %s", "curry");
-		ServerCommand("bot_add_t %s", "tacitus");
+		ServerCommand("bot_add_t %s", "penny");
+		ServerCommand("bot_add_t %s", "moose");
 		ServerCommand("mp_teamlogo_2 tri");
 	}
 
@@ -5299,7 +5299,7 @@ public Action Team_QBF(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "JACKPOT");
 		ServerCommand("bot_add_ct %s", "Quantium");
 		ServerCommand("bot_add_ct %s", "Kas9k");
-		ServerCommand("bot_add_ct %s", "telstar");
+		ServerCommand("bot_add_ct %s", "hiji");
 		ServerCommand("bot_add_ct %s", "lesswill");
 		ServerCommand("mp_teamlogo_1 qbf");
 	}
@@ -5310,7 +5310,7 @@ public Action Team_QBF(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "JACKPOT");
 		ServerCommand("bot_add_t %s", "Quantium");
 		ServerCommand("bot_add_t %s", "Kas9k");
-		ServerCommand("bot_add_t %s", "telstar");
+		ServerCommand("bot_add_t %s", "hiji");
 		ServerCommand("bot_add_t %s", "lesswill");
 		ServerCommand("mp_teamlogo_2 qbf");
 	}
@@ -8943,7 +8943,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Triumph Players
-	if((StrEqual(szBotName, "Shakezullah")) || (StrEqual(szBotName, "Junior")) || (StrEqual(szBotName, "Spongey")) || (StrEqual(szBotName, "curry")) || (StrEqual(szBotName, "tacitus")))
+	if((StrEqual(szBotName, "Shakezullah")) || (StrEqual(szBotName, "Junior")) || (StrEqual(szBotName, "Spongey")) || (StrEqual(szBotName, "penny")) || (StrEqual(szBotName, "moose")))
 	{
 		CS_SetClientClanTag(client, "Triumph");
 	}
@@ -9111,7 +9111,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//QBF Players
-	if((StrEqual(szBotName, "JACKPOT")) || (StrEqual(szBotName, "Quantium")) || (StrEqual(szBotName, "Kas9k")) || (StrEqual(szBotName, "telstar")) || (StrEqual(szBotName, "lesswill")))
+	if((StrEqual(szBotName, "JACKPOT")) || (StrEqual(szBotName, "Quantium")) || (StrEqual(szBotName, "Kas9k")) || (StrEqual(szBotName, "hiji")) || (StrEqual(szBotName, "lesswill")))
 	{
 		CS_SetClientClanTag(client, "QBF");
 	}

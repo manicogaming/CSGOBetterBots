@@ -2825,11 +2825,11 @@ ProP+Rifle "Spongey"
 	VoicePitch = 100
 End
 
-ProP+Rifle "curry"
+ProP+Rifle "penny"
 	VoicePitch = 79
 End
 
-ProP+Rifle "tacitus"
+ProP+Rifle "moose"
 	VoicePitch = 87
 End
 
@@ -3463,7 +3463,7 @@ ProP+Rifle "Kas9k"
 	VoicePitch = 100
 End
 
-ProP+Rifle "telstar"
+ProP+Rifle "hiji"
 	VoicePitch = 110
 End
 
