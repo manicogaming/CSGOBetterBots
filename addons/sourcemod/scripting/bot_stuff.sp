@@ -352,7 +352,7 @@ static char g_szBotName[][] = {
 	"alex*",
 	"larsen",
 	//OFFSET Players
-	"sc4rx",
+	"rafaxF",
 	"KILLDREAM",
 	"zlynx",
 	"ZELIN",
@@ -562,11 +562,11 @@ static char g_szBotName[][] = {
 	"ImpressioN",
 	"XigN",
 	//GTZ Players
-	"deLonge",
-	"hug",
+	"StepA",
+	"snapy",
 	"slaxx",
-	"braadz",
-	"rafaxF",
+	"Dante",
+	"fakes2",
 	//x6tence Players
 	"Queenix",
 	"HECTOz",
@@ -2626,7 +2626,7 @@ public Action Team_OFFSET(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "sc4rx");
+		ServerCommand("bot_add_ct %s", "rafaxF");
 		ServerCommand("bot_add_ct %s", "KILLDREAM");
 		ServerCommand("bot_add_ct %s", "zlynx");
 		ServerCommand("bot_add_ct %s", "ZELIN");
@@ -2637,7 +2637,7 @@ public Action Team_OFFSET(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "sc4rx");
+		ServerCommand("bot_add_t %s", "rafaxF");
 		ServerCommand("bot_add_t %s", "KILLDREAM");
 		ServerCommand("bot_add_t %s", "zlynx");
 		ServerCommand("bot_add_t %s", "ZELIN");
@@ -3676,22 +3676,22 @@ public Action Team_GTZ(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "deLonge");
-		ServerCommand("bot_add_ct %s", "hug");
+		ServerCommand("bot_add_ct %s", "StepA");
+		ServerCommand("bot_add_ct %s", "snapy");
 		ServerCommand("bot_add_ct %s", "slaxx");
-		ServerCommand("bot_add_ct %s", "braadz");
-		ServerCommand("bot_add_ct %s", "rafaxF");
+		ServerCommand("bot_add_ct %s", "Dante");
+		ServerCommand("bot_add_ct %s", "fakes2");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
 	
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "deLonge");
-		ServerCommand("bot_add_t %s", "hug");
+		ServerCommand("bot_add_t %s", "StepA");
+		ServerCommand("bot_add_t %s", "snapy");
 		ServerCommand("bot_add_t %s", "slaxx");
-		ServerCommand("bot_add_t %s", "braadz");
-		ServerCommand("bot_add_t %s", "rafaxF");
+		ServerCommand("bot_add_t %s", "Dante");
+		ServerCommand("bot_add_t %s", "fakes2");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
 	
@@ -7114,32 +7114,32 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(strcmp(szClanTag, "HLE") == 0) //30th
+			if(strcmp(szClanTag, "One") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heretics") == 0) //29th
+			else if(strcmp(szClanTag, "Gambit") == 0) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "forZe") == 0) //28th
+			else if(strcmp(szClanTag, "Chaos") == 0) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Gambit") == 0) //27th
+			else if(strcmp(szClanTag, "Nemiga") == 0) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Nemiga") == 0) //26th
+			else if(strcmp(szClanTag, "VP") == 0) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "VP") == 0) //25th
+			else if(strcmp(szClanTag, "forZe") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
@@ -7169,7 +7169,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //19th
+			else if(strcmp(szClanTag, "GODSENT") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
@@ -7179,7 +7179,7 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "GODSENT") == 0) //17th
+			else if(strcmp(szClanTag, "Astralis") == 0) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
@@ -7199,42 +7199,42 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "OG") == 0) //13th
+			else if(strcmp(szClanTag, "NiP") == 0) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "NiP") == 0) //12th
+			else if(strcmp(szClanTag, "OG") == 0) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Astralis") == 0) //11th
+			else if(strcmp(szClanTag, "Heroic") == 0) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Liquid") == 0) //10th
+			else if(strcmp(szClanTag, "FaZe") == 0) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "coL") == 0) //9th
+			else if(strcmp(szClanTag, "Liquid") == 0) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "FURIA") == 0) //8th
+			else if(strcmp(szClanTag, "fnatic") == 0) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "FaZe") == 0) //7th
+			else if(strcmp(szClanTag, "coL") == 0) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "fnatic") == 0) //6th
+			else if(strcmp(szClanTag, "FURIA") == 0) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
@@ -8577,7 +8577,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//OFFSET Players
-	if((StrEqual(szBotName, "sc4rx")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "zlynx")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
+	if((StrEqual(szBotName, "rafaxF")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "zlynx")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}
@@ -8787,7 +8787,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//GTZ Players
-	if((StrEqual(szBotName, "deLonge")) || (StrEqual(szBotName, "hug")) || (StrEqual(szBotName, "slaxx")) || (StrEqual(szBotName, "braadz")) || (StrEqual(szBotName, "rafaxF")))
+	if((StrEqual(szBotName, "StepA")) || (StrEqual(szBotName, "snapy")) || (StrEqual(szBotName, "slaxx")) || (StrEqual(szBotName, "Dante")) || (StrEqual(szBotName, "fakes2")))
 	{
 		CS_SetClientClanTag(client, "GTZ");
 	}

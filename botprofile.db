@@ -1471,7 +1471,7 @@ End
 
 //OFFSET Players
 
-ProP+Rifle "sc4rx"
+ProP+Rifle "rafaxF"
 	VoicePitch = 94
 End
 
@@ -2241,11 +2241,11 @@ End
 
 //GTZ Players
 
-ProP+Rifle "deLonge"
+ProP+Rifle "StepA"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "hug"
+ProAwp+SniperPro "snapy"
 	VoicePitch = 107
 End
 
@@ -2253,11 +2253,11 @@ ProP+Rifle "slaxx"
 	VoicePitch = 115
 End
 
-ProP+Rifle "braadz"
+ProP+Rifle "Dante"
 	VoicePitch = 90
 End
 
-ProP+Rifle "rafaxF"
+ProP+Rifle "fakes2"
 	VoicePitch = 102
 End
 
