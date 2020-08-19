@@ -20,14 +20,16 @@ Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
+Handle g_hBotEquipBestWeapon;
 
 enum RouteType
 {
-	DEFAULT_ROUTE,
-	FASTEST_ROUTE,
-	SAFEST_ROUTE,
-	RETREAT_ROUTE,
+  DEFAULT_ROUTE = 0,
+  FASTEST_ROUTE = 1,
+  SAFEST_ROUTE = 2,
+  RETREAT_ROUTE = 3,
 }
+
 
 int g_iPatchDefIndex[] = {
 	4550, 4551, 4552, 4553, 4554, 4555, 4556, 4557, 4558, 4559, 4560, 4561, 4562, 4563, 4564, 4565, 4566, 4567, 4568, 4569,
@@ -1023,6 +1025,11 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Pointer);
+	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
 	
 	delete g_hGameConfig;
 	
@@ -6229,7 +6236,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				if (g_bFreezetimeEnd && iClipAmmo > 0 && !bInReload)
 				{
 					if(IsValidClient(iEnt))
-					{	
+					{
+						if(!IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+						{
+							BotEquipBestWeapon(client, true);
+						}
+						
 						if(!IsWeaponSlotActive(client, CS_SLOT_KNIFE) && GetEntityMoveType(client) == MOVETYPE_LADDER)
 						{
 							iButtons |= IN_JUMP;
@@ -6513,7 +6525,21 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 				}
 				
-				if(g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client))
+				int iHostage = GetNearestEntity(client, "hostage_entity");
+				float fHostageDistance;
+				
+				if(IsValidEntity(iHostage) && GetClientTeam(client) == CS_TEAM_CT)
+				{
+					float fHostageLocation[3];
+					GetEntPropVector(iHostage, Prop_Send, "m_vecOrigin", fHostageLocation);
+					
+					float fClientLocation[3];
+					GetClientAbsOrigin(client, fClientLocation);		
+					
+					fHostageDistance = GetVectorDistance(fClientLocation, fHostageLocation);
+				}
+				
+				if(g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && (fHostageDistance > 100.0 || !IsValidEntity(iHostage)))
 				{
 					//Rifles
 					int iAK47 = GetNearestEntity(client, "weapon_ak47"); 
@@ -6991,6 +7017,11 @@ public bool BotIsVisible(int client, float fPos[3], bool bTestFOV, int iIgnore)
 public bool BotIsBusy(int client)
 {
 	return SDKCall(g_hBotIsBusy, client);
+}
+
+public void BotEquipBestWeapon(int client, bool bMustEquip)
+{
+	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
 }
 
 stock int LookupBone(int iEntity, const char[] szName)
@@ -7484,7 +7515,7 @@ public void DoMirageSmokes(int client)
 		{
 			case 1: //CT Smoke
 			{
-				BotMoveTo(client, fCTSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
 				if(fCTSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7504,7 +7535,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 2: //Stairs Smoke
 			{
-				BotMoveTo(client, fStairsSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fStairsSmoke, FASTEST_ROUTE);
 				if(fStairsSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7524,7 +7555,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 3: //Jungle Smoke
 			{
-				BotMoveTo(client, fJungleSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fJungleSmoke, FASTEST_ROUTE);
 				if(fJungleSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7544,7 +7575,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 4: //A Site Smoke
 			{
-				BotMoveTo(client, fASiteSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
 				if(fASiteSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7564,7 +7595,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 5: //Top-Mid Smoke
 			{
-				BotMoveTo(client, fTopMidSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fTopMidSmoke, FASTEST_ROUTE);
 				if(fTopMidSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7584,7 +7615,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 6: //Mid-Short Smoke
 			{
-				BotMoveTo(client, fMidShortSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fMidShortSmoke, FASTEST_ROUTE);
 				if(fMidShortSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7604,7 +7635,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 7: //Window Smoke
 			{
-				BotMoveTo(client, fWindowSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fWindowSmoke, FASTEST_ROUTE);
 				if(fWindowSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7624,7 +7655,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 8: //Bottom Con Smoke
 			{
-				BotMoveTo(client, fBottomConSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBottomConSmoke, FASTEST_ROUTE);
 				if(fBottomConSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7644,7 +7675,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 9: //Top Con Smoke
 			{
-				BotMoveTo(client, fTopConSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fTopConSmoke, FASTEST_ROUTE);
 				if(fTopConSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7664,7 +7695,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 10: //Short-Left Smoke
 			{
-				BotMoveTo(client, fShortLeftSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fShortLeftSmoke, FASTEST_ROUTE);
 				if(fShotLeftSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7684,7 +7715,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 11: //Short-Right Smoke
 			{
-				BotMoveTo(client, fShortRightSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fShortRightSmoke, FASTEST_ROUTE);
 				if(fShortRightSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7704,7 +7735,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 12: //B Site Smoke
 			{
-				BotMoveTo(client, fBSiteSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
 				if(fBSiteSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7724,7 +7755,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 13: //Back of B Smoke
 			{
-				BotMoveTo(client, fBackOfBSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBackOfBSmoke, FASTEST_ROUTE);
 				if(fBackOfBSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7744,7 +7775,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 14: //Market Door Smoke
 			{
-				BotMoveTo(client, fMarketDoorSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fMarketDoorSmoke, FASTEST_ROUTE);
 				if(fMarketDoorSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7764,7 +7795,7 @@ public void DoMirageSmokes(int client)
 			}
 			case 15: //Market Window Smoke
 			{
-				BotMoveTo(client, fMarketWindowSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fMarketWindowSmoke, FASTEST_ROUTE);
 				if(fMarketWindowSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7826,7 +7857,7 @@ public void DoDust2Smokes(int client)
 		{
 			case 1: //B Doors Smoke
 			{
-				BotMoveTo(client, fBDoorsSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBDoorsSmoke, FASTEST_ROUTE);
 				if(fBDoorsSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7846,7 +7877,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 2: //B Window Smoke
 			{
-				BotMoveTo(client, fBWindowSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBWindowSmoke, FASTEST_ROUTE);
 				if(fBWindowSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7866,7 +7897,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 3: //Mid to B Smoke
 			{
-				BotMoveTo(client, fMidToBSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fMidToBSmoke, FASTEST_ROUTE);
 				if(fMidToBSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7886,7 +7917,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 4: //Mid to B Box Smoke
 			{
-				BotMoveTo(client, fMidToBBoxSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fMidToBBoxSmoke, FASTEST_ROUTE);
 				if(fMidToBBoxSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7906,7 +7937,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 5: //XBOX Smoke
 			{
-				BotMoveTo(client, fXBOXSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fXBOXSmoke, FASTEST_ROUTE);
 				if(fXBOXSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7926,7 +7957,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 6: //Short A Smoke
 			{
-				BotMoveTo(client, fShortASmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
 				if(fShortASmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7946,7 +7977,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 7: //Short-Boost Smoke
 			{
-				BotMoveTo(client, fShortBoostSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fShortBoostSmoke, FASTEST_ROUTE);
 				if(fShortBoostSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7966,7 +7997,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 8: //A Site Smoke
 			{
-				BotMoveTo(client, fASiteSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
 				if(fASiteSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -7986,7 +8017,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 9: //Long Corner Smoke
 			{
-				BotMoveTo(client, fLongCornerSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fLongCornerSmoke, FASTEST_ROUTE);
 				if(fLongCornerSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8006,7 +8037,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 10: //A Cross Smoke
 			{
-				BotMoveTo(client, fACrossSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fACrossSmoke, FASTEST_ROUTE);
 				if(fACrossSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8026,7 +8057,7 @@ public void DoDust2Smokes(int client)
 			}
 			case 11: //CT Smoke
 			{
-				BotMoveTo(client, fCTSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
 				if(fCTSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8085,7 +8116,7 @@ public void DoInfernoSmokes(int client)
 		{
 			case 1: //CT Smoke
 			{
-				BotMoveTo(client, fCTSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
 				if(fCTSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8105,7 +8136,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 2: //Coffin Smoke
 			{
-				BotMoveTo(client, fCoffinSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fCoffinSmoke, FASTEST_ROUTE);
 				if(fCoffinSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8125,7 +8156,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 3: //B Site Smoke
 			{
-				BotMoveTo(client, fBSiteSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
 				if(fBSiteSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8145,7 +8176,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 4: //Long A Smoke
 			{
-				BotMoveTo(client, fLongASmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fLongASmoke, FASTEST_ROUTE);
 				if(fLongASmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8165,7 +8196,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 5: //Site-Library Smoke
 			{
-				BotMoveTo(client, fSiteLibrarySmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fSiteLibrarySmoke, FASTEST_ROUTE);
 				if(fSiteLibrarySmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8185,7 +8216,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 6: //Pit Smoke
 			{
-				BotMoveTo(client, fPitSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fPitSmoke, FASTEST_ROUTE);
 				if(fPitSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8205,7 +8236,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 7: //Balcony Smoke
 			{
-				BotMoveTo(client, fBalconySmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBalconySmoke, FASTEST_ROUTE);
 				if(fBalconySmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8225,7 +8256,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 8: //Short A Smoke
 			{
-				BotMoveTo(client, fShortASmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
 				if(fShortASmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8245,7 +8276,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 9: //Arch Smoke
 			{
-				BotMoveTo(client, fArchSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fArchSmoke, FASTEST_ROUTE);
 				if(fArchSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
@@ -8265,7 +8296,7 @@ public void DoInfernoSmokes(int client)
 			}
 			case 10: //Balcony Long Smoke
 			{
-				BotMoveTo(client, fBalconyLongSmoke, SAFEST_ROUTE);
+				BotMoveTo(client, fBalconyLongSmoke, FASTEST_ROUTE);
 				if(fBalconyLongSmokeDis < 75)
 				{
 					float fVelocity[3], fOrigin[3];
