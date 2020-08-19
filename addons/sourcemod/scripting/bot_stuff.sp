@@ -985,7 +985,7 @@ public void OnPluginStart()
 	
 	g_hGameConfig = LoadGameConfigFile("botstuff.games");
 	if (g_hGameConfig == INVALID_HANDLE)
-		SetFailState("Failed to found botstuff.games game config.");
+		SetFailState("Failed to find botstuff.games game config.");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "MoveTo");
@@ -1023,6 +1023,8 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
+	
+	delete g_hGameConfig;
 	
 	eItems_OnItemsSynced();
 	
