@@ -43,7 +43,7 @@ int GetRandomSkin(int client, int index)
 {
 	int max = menuWeapons[g_iClientLanguage[client]][index].ItemCount;
 	int random = GetRandomInt(2, max);
-	char idStr[4];
+	char idStr[8];
 	menuWeapons[g_iClientLanguage[client]][index].GetItem(random, idStr, sizeof(idStr));
 	return StringToInt(idStr);
 }

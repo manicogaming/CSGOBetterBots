@@ -24,7 +24,6 @@
 #undef REQUIRE_PLUGIN
 #include <custom_gloves>
 #include <fnemotes>
-#include <PTaH>
 
 #define		PREFIX			"★ {green}[Gloves]{default}"
 
@@ -754,8 +753,6 @@ stock void SetUserGloves (int client, int glove = -1, int skin = -1, bool bSave 
 					
 					SetEntPropEnt(client, Prop_Send, "m_hMyWearables", ent);
 					if(g_iEnableWorldModel) SetEntProp(client, Prop_Send, "m_nBody", 1);
-					
-					PTaH_ForceFullUpdate(client);
 			
 				}
 			}

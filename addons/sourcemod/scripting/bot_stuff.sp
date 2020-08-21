@@ -109,7 +109,7 @@ static char g_szBotName[][] = {
 	"Golden",
 	//North Players
 	"MSL",
-	"Jumpy",
+	"Lekr0",
 	"aizy",
 	"cajunb",
 	"gade",
@@ -620,7 +620,7 @@ static char g_szBotName[][] = {
 	//Queso Players
 	"TheClaran",
 	"thinkii",
-	"VARES",
+	"HUMANZ",
 	"mik",
 	"Yaba",
 	//IG Players
@@ -1406,7 +1406,7 @@ public Action Team_North(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "MSL");
-		ServerCommand("bot_add_ct %s", "Jumpy");
+		ServerCommand("bot_add_ct %s", "Lekr0");
 		ServerCommand("bot_add_ct %s", "aizy");
 		ServerCommand("bot_add_ct %s", "cajunb");
 		ServerCommand("bot_add_ct %s", "gade");
@@ -1417,7 +1417,7 @@ public Action Team_North(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "MSL");
-		ServerCommand("bot_add_t %s", "Jumpy");
+		ServerCommand("bot_add_t %s", "Lekr0");
 		ServerCommand("bot_add_t %s", "aizy");
 		ServerCommand("bot_add_t %s", "cajunb");
 		ServerCommand("bot_add_t %s", "gade");
@@ -3957,7 +3957,7 @@ public Action Team_Queso(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TheClaran");
 		ServerCommand("bot_add_ct %s", "thinkii");
-		ServerCommand("bot_add_ct %s", "VARES");
+		ServerCommand("bot_add_ct %s", "HUMANZ");
 		ServerCommand("bot_add_ct %s", "mik");
 		ServerCommand("bot_add_ct %s", "Yaba");
 		ServerCommand("mp_teamlogo_1 ques");
@@ -3968,7 +3968,7 @@ public Action Team_Queso(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TheClaran");
 		ServerCommand("bot_add_t %s", "thinkii");
-		ServerCommand("bot_add_t %s", "VARES");
+		ServerCommand("bot_add_t %s", "HUMANZ");
 		ServerCommand("bot_add_t %s", "mik");
 		ServerCommand("bot_add_t %s", "Yaba");
 		ServerCommand("mp_teamlogo_2 ques");
@@ -5771,7 +5771,6 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 		{
 			g_bHasThrownNade[i] = false;
 			
-			CS_UpdateClientModel(i);
 			if(GetRandomInt(1,100) <= 35)
 			{
 				CreateTimer(1.3, Timer_ApplyAgent, i);
@@ -8364,7 +8363,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//North Players
-	if((StrEqual(szBotName, "MSL")) || (StrEqual(szBotName, "Jumpy")) || (StrEqual(szBotName, "aizy")) || (StrEqual(szBotName, "cajunb")) || (StrEqual(szBotName, "gade")))
+	if((StrEqual(szBotName, "MSL")) || (StrEqual(szBotName, "Lekr0")) || (StrEqual(szBotName, "aizy")) || (StrEqual(szBotName, "cajunb")) || (StrEqual(szBotName, "gade")))
 	{
 		CS_SetClientClanTag(client, "North");
 	}
@@ -8874,7 +8873,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Queso Players
-	if((StrEqual(szBotName, "TheClaran")) || (StrEqual(szBotName, "thinkii")) || (StrEqual(szBotName, "VARES")) || (StrEqual(szBotName, "mik")) || (StrEqual(szBotName, "Yaba")))
+	if((StrEqual(szBotName, "TheClaran")) || (StrEqual(szBotName, "thinkii")) || (StrEqual(szBotName, "HUMANZ")) || (StrEqual(szBotName, "mik")) || (StrEqual(szBotName, "Yaba")))
 	{
 		CS_SetClientClanTag(client, "Queso");
 	}
