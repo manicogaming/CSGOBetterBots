@@ -6236,7 +6236,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				{
 					if(IsValidClient(iEnt))
 					{
-						if(!IsWeaponSlotActive(client, CS_SLOT_GRENADE))
+						if(iDefIndex != 43 && iDefIndex != 44 && iDefIndex != 45 && iDefIndex != 46 && iDefIndex != 47 && iDefIndex != 48)
 						{
 							BotEquipBestWeapon(client, true);
 						}
