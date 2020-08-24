@@ -5807,6 +5807,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 		if(IsValidClient(i) && IsFakeClient(i))
 		{
 			g_bHasThrownNade[i] = false;
+			g_bBodyShot[i] = false;
 			
 			if(GetRandomInt(1,100) <= 35)
 			{
@@ -6256,7 +6257,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 			FakeClientCommandEx(client, "use weapon_knife");
 		}
 
-		char szBotName[512];
+		char szBotName[128];
 		GetClientName(client, szBotName, sizeof(szBotName));
 		
 		for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
@@ -6267,9 +6268,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
 				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
-				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
-				if (g_bFreezetimeEnd && iClipAmmo > 0 && !bInReload)
+				if (g_bFreezetimeEnd && iClipAmmo > 0)
 				{
 					if(IsValidClient(iEnt))
 					{
@@ -6283,8 +6283,6 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							iButtons |= IN_JUMP;
 							return Plugin_Changed;
 						}
-						
-						GetClientAbsOrigin(iEnt, fTargetEyes);
 						
 						if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9) || iDefIndex == 63)
 						{
@@ -6550,7 +6548,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						}
 						else
 						{
-							SmoothAim(client, fEyeTarget, GetRandomFloat(0.70, 0.99));
+							TF2_LookAtPos(client, fTargetEyes, GetRandomFloat(0.05, 0.70));
 						}
 						
 						BotAttack(client, iEnt);
@@ -6881,7 +6879,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 		}
 	}
 
-	return Plugin_Continue;
+	return Plugin_Changed;
 }
 
 public void CSU_OnThrowGrenade(int client, int iEntity, GrenadeType grenadeType, const float fOrigin[3], const float fVelocity[3])
@@ -6899,7 +6897,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 	for (int i = 1; i <= MaxClients; i++)
 	{		
 		if(IsValidClient(i) && IsFakeClient(i))
-		{
+		{			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
 			if(eItems_AreItemsSynced())
@@ -7153,8 +7151,6 @@ public int GetClosestClient(int client)
 	
 	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
 	
-	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
-	
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i))
@@ -7402,32 +7398,34 @@ stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, fl
 
 stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
 {
-	float fClientEyes[3], fHead[3], fBad[3];
+	float fClientPosition[3], fHead[3], fBad[3];
 	
-	GetClientEyePosition(client, fClientEyes);
+	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
+	fClientPosition[2] += fHeight;
 	
 	int iBone = LookupBone(iTarget, "head_0");
-	if(iBone < 0)
-		return false;
-		
-	GetBonePosition(iTarget, iBone, fHead, fBad);
 	
-	if(BotIsVisible(client, fHead, false, client))
+	if(iBone > 0)
 	{
-		g_bBodyShot[client] = false;
-	}
-	else
-	{
-		iBone = LookupBone(iTarget, "spine_2");
-		if(iBone < 0)
-			return false;
-			
 		GetBonePosition(iTarget, iBone, fHead, fBad);
-		
-		g_bBodyShot[client] = true;
+	
+		if(BotIsVisible(client, fHead, false, client))
+		{
+			g_bBodyShot[client] = false;
+		}
+		else
+		{
+			iBone = LookupBone(iTarget, "spine_2");
+			if(iBone > 0)
+			{
+				GetBonePosition(iTarget, iBone, fHead, fBad);
+				
+				g_bBodyShot[client] = true;
+			}
+		}
 	}
 	
-	if (fDistance == 0.0 || GetVectorDistance(fClientEyes, fHead, false) < fDistance)
+	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fHead, false) < fDistance)
 	{
 		if(BotIsVisible(client, fHead, false, client))
 		{
@@ -7456,17 +7454,24 @@ stock float[] VelocityExtrapolate(int client, float fEyePos[3])
 	return fV;
 }
 
-public void SmoothAim(int client, float fDesiredAngles[3], float fSmoothing) 
+stock void TF2_LookAtPos(int client, float flGoal[3], float flAimSpeed = 0.05)
 {
-	float fAngles[3], fTargetAngles[3];
-	
-	GetClientEyeAngles(client, fAngles);
-	
-	fTargetAngles[0] = fAngles[0] + AngleNormalize(fDesiredAngles[0] - fAngles[0]) * (1 - fSmoothing);
-	fTargetAngles[1] = fAngles[1] + AngleNormalize(fDesiredAngles[1] - fAngles[1]) * (1 - fSmoothing);
-	fTargetAngles[2] = fAngles[2];
-	
-	TeleportEntity(client, NULL_VECTOR, fTargetAngles, NULL_VECTOR);
+    float flPos[3];
+    GetClientEyePosition(client, flPos);
+
+    float flAng[3];
+    GetClientEyeAngles(client, flAng);
+    
+    // get normalised direction from target to client
+    float desired_dir[3];
+    MakeVectorFromPoints(flPos, flGoal, desired_dir);
+    GetVectorAngles(desired_dir, desired_dir);
+    
+    // ease the current direction to the target direction
+    flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * flAimSpeed;
+    flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * flAimSpeed;
+
+    TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
 }
 
 public float AngleNormalize(float fAngle)
