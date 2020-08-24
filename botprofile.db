@@ -1303,7 +1303,7 @@ ProAwp+SniperPro "Twinx"
 	VoicePitch = 72
 End
 
-ProP+Rifle "FeTiSh"
+ProP+Rifle "Maccen"
 	VoicePitch = 83
 End
 
@@ -3733,6 +3733,28 @@ End
 
 ProP+Rifle "Daffu"
 	VoicePitch = 103
+End
+
+//Baecon Players
+
+ProP+Rifle "emp"
+	VoicePitch = 91
+End
+
+ProAwp+SniperPro "vts"
+	VoicePitch = 105
+End
+
+ProP+Rifle "kst"
+	VoicePitch = 111
+End
+
+ProP+Rifle "whatz"
+	VoicePitch = 105
+End
+
+ProP+Rifle "shellzi"
+	VoicePitch = 79
 End
 
 EliteAwp+SniperPro "XD | ryu"

@@ -775,15 +775,6 @@ void SetWeaponProps(int client, int entity)
 				}
 			}
 			
-			if(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit") > 975)
-			{
-				if(GetRandomInt(1,100) <= 30)
-				{
-					SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", g_iStatTrakCount[client][index]);
-					SetEntProp(entity, Prop_Send, "m_iEntityQuality", 9);
-				}
-			}
-			
 			if(GetRandomInt(1,100) <= 30)
 			{
 				if(GetRandomInt(1,100) <= 65)

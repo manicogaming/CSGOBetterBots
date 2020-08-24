@@ -308,7 +308,7 @@ static char g_szBotName[][] = {
 	//Lyngby Players
 	"birdfromsky",
 	"Twinx",
-	"FeTiSh",
+	"Maccen",
 	"Raalz",
 	"Cabbi",
 	//GODSENT Players
@@ -964,7 +964,13 @@ static char g_szBotName[][] = {
 	"mertz",
 	"Basso",
 	"Jabbi",
-	"Daffu"
+	"Daffu",
+	//Baecon Players
+	"emp",
+	"vts",
+	"kst",
+	"whatz",
+	"shellzi"
 };
  
 public Plugin myinfo =
@@ -1185,6 +1191,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_conquer", Team_Conquer);
 	RegConsoleCmd("team_rooster", Team_Rooster);
 	RegConsoleCmd("team_flames", Team_Flames);
+	RegConsoleCmd("team_baecon", Team_Baecon);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -2397,7 +2404,7 @@ public Action Team_Lyngby(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "birdfromsky");
 		ServerCommand("bot_add_ct %s", "Twinx");
-		ServerCommand("bot_add_ct %s", "FeTiSh");
+		ServerCommand("bot_add_ct %s", "Maccen");
 		ServerCommand("bot_add_ct %s", "Raalz");
 		ServerCommand("bot_add_ct %s", "Cabbi");
 		ServerCommand("mp_teamlogo_1 lyng");
@@ -2408,7 +2415,7 @@ public Action Team_Lyngby(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "birdfromsky");
 		ServerCommand("bot_add_t %s", "Twinx");
-		ServerCommand("bot_add_t %s", "FeTiSh");
+		ServerCommand("bot_add_t %s", "Maccen");
 		ServerCommand("bot_add_t %s", "Raalz");
 		ServerCommand("bot_add_t %s", "Cabbi");
 		ServerCommand("mp_teamlogo_2 lyng");
@@ -5687,6 +5694,36 @@ public Action Team_Flames(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_Baecon(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "emp");
+		ServerCommand("bot_add_ct %s", "vts");
+		ServerCommand("bot_add_ct %s", "kst");
+		ServerCommand("bot_add_ct %s", "whatz");
+		ServerCommand("bot_add_ct %s", "shellzi");
+		ServerCommand("mp_teamlogo_1 baec");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "emp");
+		ServerCommand("bot_add_t %s", "vts");
+		ServerCommand("bot_add_t %s", "kst");
+		ServerCommand("bot_add_t %s", "whatz");
+		ServerCommand("bot_add_t %s", "shellzi");
+		ServerCommand("mp_teamlogo_2 baec");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6110,11 +6147,8 @@ public void OnThinkPost(int iEnt)
 public Action OnWeaponSwitch(int client, int iWeapon)
 {
 	if(IsValidClient(client) && IsFakeClient(client))
-	{
-		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-		if (iActiveWeapon == -1)  return Plugin_Continue;	
-		
-		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	{		
+		int iDefIndex = eItems_GetActiveWeaponDefIndex(client);
 		
 		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59 || iDefIndex == 500 || iDefIndex == 503 || iDefIndex == 505 || iDefIndex == 506 || iDefIndex == 507 || iDefIndex == 508 || iDefIndex == 509 || iDefIndex == 512 || iDefIndex == 514 || iDefIndex == 515 || iDefIndex == 516 || iDefIndex == 517 || iDefIndex == 518 || iDefIndex == 519 || iDefIndex == 520 || iDefIndex == 521 || iDefIndex == 522 || iDefIndex == 523 || iDefIndex == 525))
 		{
@@ -6207,10 +6241,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 {
 	if (!IsFakeClient(client)) return Plugin_Continue;
 	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-	if (iActiveWeapon == -1)  return Plugin_Continue;
-	
-	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	int iDefIndex = eItems_GetActiveWeaponDefIndex(client);
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{
@@ -6229,19 +6260,17 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				float fClientEyes[3], fTargetEyes[3];
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
-				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
-				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
-				if (g_bFreezetimeEnd && iClipAmmo > 0 && !bInReload)
+				if (g_bFreezetimeEnd && !IsPlayerReloading(client))
 				{
 					if(IsValidClient(iEnt))
 					{
-						if(iDefIndex != 43 && iDefIndex != 44 && iDefIndex != 45 && iDefIndex != 46 && iDefIndex != 47 && iDefIndex != 48)
+						if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_GRENADE)
 						{
 							BotEquipBestWeapon(client, true);
 						}
 						
-						if(!IsWeaponSlotActive(client, CS_SLOT_KNIFE) && GetEntityMoveType(client) == MOVETYPE_LADDER)
+						if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_KNIFE && GetEntityMoveType(client) == MOVETYPE_LADDER)
 						{
 							iButtons |= IN_JUMP;
 							return Plugin_Changed;
@@ -6249,7 +6278,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						
 						GetClientAbsOrigin(iEnt, fTargetEyes);
 						
-						if((IsWeaponSlotActive(client, CS_SLOT_PRIMARY) && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9) || iDefIndex == 63)
+						if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9) || iDefIndex == 63)
 						{
 							if(g_bBodyShot[client])
 							{
@@ -6316,7 +6345,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								fVel[2] = 0.0;
 							}
 						}
-						else if(IsWeaponSlotActive(client, CS_SLOT_SECONDARY) && iDefIndex != 63 && iDefIndex != 1)
+						else if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1)
 						{
 							if(g_bBodyShot[client])
 							{
@@ -6816,7 +6845,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 				}
 				
-				if (g_bFreezetimeEnd && !g_bBombPlanted && iActiveWeapon != -1)
+				if (g_bFreezetimeEnd && !g_bBombPlanted)
 				{
 					GetCurrentMap(g_szMap, sizeof(g_szMap));
 					
@@ -7023,12 +7052,12 @@ public void BotEquipBestWeapon(int client, bool bMustEquip)
 	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
 }
 
-stock int LookupBone(int iEntity, const char[] szName)
+public int LookupBone(int iEntity, const char[] szName)
 {
 	return SDKCall(g_hLookupBone, iEntity, szName);
 }
 
-stock void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAngles[3])
+public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAngles[3])
 {
 	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
 }
@@ -7060,7 +7089,7 @@ public int GetNearestEntity(int client, char[] szClassname)
     return iNearestEntity;
 }
 
-stock void CSGO_SetMoney(int client, int iAmount)
+public void CSGO_SetMoney(int client, int iAmount)
 {
 	if (iAmount < 0)
 		iAmount = 0;
@@ -7073,7 +7102,7 @@ stock void CSGO_SetMoney(int client, int iAmount)
 	SetEntProp(client, Prop_Send, "m_iAccount", iAmount);
 }
 
-stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
+public int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 {
 	int iWeapon = GetPlayerWeaponSlot(client, iSlot);
 
@@ -7094,12 +7123,25 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 	return iWeapon;
 }
 
-stock bool IsWeaponSlotActive(int client, int iSlot)
+public bool IsPlayerReloading(int client)
 {
-    return GetPlayerWeaponSlot(client, iSlot) == GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+	int iActiveWeapon = eItems_GetActiveWeapon(client);
+	
+	if(!IsValidEntity(iActiveWeapon))
+		return false;
+	
+	//Out of ammo?
+	if(GetEntProp(iActiveWeapon, Prop_Data, "m_iClip1") == 0)
+		return true;
+	
+	//Reloading?
+	if(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"))
+		return true;
+	
+	return true;
 }
 
-stock int GetClosestClient(int client)
+public int GetClosestClient(int client)
 {
 	float fClientOrigin[3], fTargetOrigin[3];
 	
@@ -7403,7 +7445,7 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	return false;
 }
 
-float[] VelocityExtrapolate(int client, float fEyePos[3])
+stock float[] VelocityExtrapolate(int client, float fEyePos[3])
 {
 	float fAbsVel[3];
 	GetEntPropVector(client, Prop_Data, "m_vecVelocity", fAbsVel);
@@ -7430,7 +7472,7 @@ public void SmoothAim(int client, float fDesiredAngles[3], float fSmoothing)
 	TeleportEntity(client, NULL_VECTOR, fTargetAngles, NULL_VECTOR);
 }
 
-stock float AngleNormalize(float fAngle)
+public float AngleNormalize(float fAngle)
 {
     fAngle = fmodf(fAngle, 360.0);
     if (fAngle > 180) 
@@ -7445,12 +7487,12 @@ stock float AngleNormalize(float fAngle)
     return fAngle;
 }
 
-stock float fmodf(float fNumber, float fDenom)
+public float fmodf(float fNumber, float fDenom)
 {
     return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
 }
 
-stock int GetAliveTeamCount(int iTeam)
+public int GetAliveTeamCount(int iTeam)
 {
     int iNumber = 0;
     for (int i=1; i<=MaxClients; i++)
@@ -7461,7 +7503,7 @@ stock int GetAliveTeamCount(int iTeam)
     return iNumber;
 }
 
-stock bool IsValidClient(int client)
+public bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }
@@ -8561,7 +8603,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Lyngby Players
-	if((StrEqual(szBotName, "birdfromsky")) || (StrEqual(szBotName, "Twinx")) || (StrEqual(szBotName, "FeTiSh")) || (StrEqual(szBotName, "Raalz")) || (StrEqual(szBotName, "Cabbi")))
+	if((StrEqual(szBotName, "birdfromsky")) || (StrEqual(szBotName, "Twinx")) || (StrEqual(szBotName, "Maccen")) || (StrEqual(szBotName, "Raalz")) || (StrEqual(szBotName, "Cabbi")))
 	{
 		CS_SetClientClanTag(client, "Lyngby");
 	}
@@ -9218,6 +9260,12 @@ public void Pro_Players(char[] szBotName, int client)
 	if((strcmp(szBotName, "maNkz") == 0) || (strcmp(szBotName, "mertz") == 0) || (strcmp(szBotName, "Basso") == 0) || (strcmp(szBotName, "Jabbi") == 0) || (strcmp(szBotName, "Daffu") == 0))
 	{
 		CS_SetClientClanTag(client, "Flames");
+	}
+	
+	//Baecon Players
+	if((strcmp(szBotName, "emp") == 0) || (strcmp(szBotName, "vts") == 0) || (strcmp(szBotName, "kst") == 0) || (strcmp(szBotName, "whatz") == 0) || (strcmp(szBotName, "shellzi") == 0))
+	{
+		CS_SetClientClanTag(client, "Baecon");
 	}
 }
 
@@ -9972,8 +10020,13 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 190;
 	}
 	
-	if (StrEqual(szClan, "Flames"))
+	if (strcmp(szClan, "Flames") == 0)
 	{
 		g_iProfileRank[client] = 191;
+	}
+	
+	if (strcmp(szClan, "Baecon") == 0)
+	{
+		g_iProfileRank[client] = 192;
 	}
 }
