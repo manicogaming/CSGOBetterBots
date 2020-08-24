@@ -7181,117 +7181,117 @@ public int GetClosestClient(int client)
 				}
 			}
 
-			if(strcmp(szClanTag, "One") == 0) //30th
+			if(strcmp(szClanTag, "Nemiga") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Gambit") == 0) //29th
+			else if(strcmp(szClanTag, "K23") == 0) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Chaos") == 0) //28th
+			else if(strcmp(szClanTag, "North") == 0) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Nemiga") == 0) //27th
+			else if(strcmp(szClanTag, "Sprout") == 0) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "VP") == 0) //26th
+			else if(strcmp(szClanTag, "Gambit") == 0) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "forZe") == 0) //25th
+			else if(strcmp(szClanTag, "Lions") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "North") == 0) //24th
+			else if(strcmp(szClanTag, "forZe") == 0) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Lions") == 0) //23rd
+			else if(strcmp(szClanTag, "Spirit") == 0) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "C9") == 0) //22nd
+			else if(strcmp(szClanTag, "Chaos") == 0) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "ENCE") == 0) //21st
+			else if(strcmp(szClanTag, "C9") == 0) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Spirit") == 0) //20th
+			else if(strcmp(szClanTag, "ENCE") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "GODSENT") == 0) //19th
+			else if(strcmp(szClanTag, "Thieves") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Thieves") == 0) //18th
+			else if(strcmp(szClanTag, "MIBR") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Astralis") == 0) //17th
+			else if(strcmp(szClanTag, "GODSENT") == 0) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "MIBR") == 0) //16th
+			else if(strcmp(szClanTag, "mouz") == 0) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Gen.G") == 0) //15th
+			else if(strcmp(szClanTag, "NiP") == 0) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "mouz") == 0) //14th
+			else if(strcmp(szClanTag, "Gen.G") == 0) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "NiP") == 0) //13th
+			else if(strcmp(szClanTag, "OG") == 0) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "OG") == 0) //12th
+			else if(strcmp(szClanTag, "FaZe") == 0) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //11th
+			else if(strcmp(szClanTag, "Astralis") == 0) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "FaZe") == 0) //10th
+			else if(strcmp(szClanTag, "fnatic") == 0) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Liquid") == 0) //9th
+			else if(strcmp(szClanTag, "Heroic") == 0) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "fnatic") == 0) //8th
+			else if(strcmp(szClanTag, "Liquid") == 0) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
@@ -7306,12 +7306,12 @@ public int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "G2") == 0) //5th
+			else if(strcmp(szClanTag, "Na´Vi") == 0) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Na´Vi") == 0) //4th
+			else if(strcmp(szClanTag, "G2") == 0) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
