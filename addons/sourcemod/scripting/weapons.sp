@@ -259,7 +259,7 @@ void SetWeaponProps(int client, int entity)
 		}
 		else
 		{
-			g_iSeedRandom[client][index] = GetRandomInt(0, 8192);
+			g_iSeedRandom[client][index] = GetRandomInt(1, 1000);
 			SetEntProp(entity, Prop_Send, "m_nFallbackSeed", g_iSeedRandom[client][index]);
 		}
 		

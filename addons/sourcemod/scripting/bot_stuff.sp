@@ -6148,7 +6148,10 @@ public Action OnWeaponSwitch(int client, int iWeapon)
 {
 	if(IsValidClient(client) && IsFakeClient(client))
 	{		
-		int iDefIndex = eItems_GetActiveWeaponDefIndex(client);
+		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+		if (iActiveWeapon == -1)  return Plugin_Continue;	
+		
+		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		
 		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && (iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59 || iDefIndex == 500 || iDefIndex == 503 || iDefIndex == 505 || iDefIndex == 506 || iDefIndex == 507 || iDefIndex == 508 || iDefIndex == 509 || iDefIndex == 512 || iDefIndex == 514 || iDefIndex == 515 || iDefIndex == 516 || iDefIndex == 517 || iDefIndex == 518 || iDefIndex == 519 || iDefIndex == 520 || iDefIndex == 521 || iDefIndex == 522 || iDefIndex == 523 || iDefIndex == 525))
 		{
@@ -6241,7 +6244,10 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 {
 	if (!IsFakeClient(client)) return Plugin_Continue;
 	
-	int iDefIndex = eItems_GetActiveWeaponDefIndex(client);
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+	if (iActiveWeapon == -1)  return Plugin_Continue;
+	
+	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{
@@ -6260,8 +6266,10 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				float fClientEyes[3], fTargetEyes[3];
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
+				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
+				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
-				if (g_bFreezetimeEnd && !IsPlayerReloading(client))
+				if (g_bFreezetimeEnd && iClipAmmo > 0 && !bInReload)
 				{
 					if(IsValidClient(iEnt))
 					{
@@ -6285,7 +6293,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								int iBone = LookupBone(iEnt, "spine_2");
 								
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fBody[3], fBad[3];
 								GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6298,7 +6306,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								{
 									int iBone = LookupBone(iEnt, "head_0");
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fHead[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6310,7 +6318,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									int iBone = LookupBone(iEnt, "spine_2");
 									
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fBody[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6323,7 +6331,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									{
 										iBone = LookupBone(iEnt, "head_0");
 										if(iBone < 0)
-											continue;
+											return Plugin_Continue;
 											
 										float fHead[3];
 										GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6352,7 +6360,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								int iBone = LookupBone(iEnt, "spine_2");
 								
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fBody[3], fBad[3];
 								GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6365,7 +6373,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								{
 									int iBone = LookupBone(iEnt, "head_0");
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fHead[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6377,7 +6385,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									int iBone = LookupBone(iEnt, "spine_2");
 									
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fBody[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6390,7 +6398,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									{
 										iBone = LookupBone(iEnt, "head_0");
 										if(iBone < 0)
-											continue;
+											return Plugin_Continue;
 											
 										float fHead[3];
 										GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6407,7 +6415,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								int iBone = LookupBone(iEnt, "spine_2");
 								
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fBody[3], fBad[3];
 								GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6418,12 +6426,19 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							{
 								int iBone = LookupBone(iEnt, "head_0");
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fHead[3], fBad[3];
 								GetBonePosition(iEnt, iBone, fHead, fBad);
 								
 								fTargetEyes = fHead;	
+							}
+							
+							if(!(GetEntityFlags(client) & FL_DUCKING))
+							{
+								fVel[0] = 0.0;
+								fVel[1] = 0.0;
+								fVel[2] = 0.0;
 							}
 						}
 						else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
@@ -6433,7 +6448,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								int iBone = LookupBone(iEnt, "spine_2");
 								
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fBody[3], fBad[3];
 								GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6446,7 +6461,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								{
 									int iBone = LookupBone(iEnt, "head_0");
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fHead[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6458,7 +6473,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									int iBone = LookupBone(iEnt, "spine_2");
 									
 									if(iBone < 0)
-										continue;
+										return Plugin_Continue;
 										
 									float fBody[3], fBad[3];
 									GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6471,7 +6486,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 									{
 										iBone = LookupBone(iEnt, "head_0");
 										if(iBone < 0)
-											continue;
+											return Plugin_Continue;
 											
 										float fHead[3];
 										GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -6485,7 +6500,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						{							
 							int iBone = LookupBone(iEnt, "spine_2");
 							if(iBone < 0)
-								continue;
+								return Plugin_Continue;
 								
 							float fBody[3], fBad[3];
 							GetBonePosition(iEnt, iBone, fBody, fBad);
@@ -6498,7 +6513,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							{
 								iBone = LookupBone(iEnt, "head_0");
 								if(iBone < 0)
-									continue;
+									return Plugin_Continue;
 									
 								float fHead[3];
 								GetBonePosition(iEnt, iBone, fHead, fBad);
@@ -7121,24 +7136,6 @@ public int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 		EquipPlayerWeapon(client, iWeapon);
 
 	return iWeapon;
-}
-
-public bool IsPlayerReloading(int client)
-{
-	int iActiveWeapon = eItems_GetActiveWeapon(client);
-	
-	if(!IsValidEntity(iActiveWeapon))
-		return false;
-	
-	//Out of ammo?
-	if(GetEntProp(iActiveWeapon, Prop_Data, "m_iClip1") == 0)
-		return true;
-	
-	//Reloading?
-	if(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"))
-		return true;
-	
-	return true;
 }
 
 public int GetClosestClient(int client)

@@ -1,0 +1,19 @@
+"de_bourg"
+{
+	"material" 	"overviews/de_bourg_radar"
+	"pos_x"	 	"-2731"
+	"pos_y"	 	"1104"
+	"scale" 	"4.7"
+	"zoom"		"1.2"
+	
+	"CTSpawn_x"	"0.4033"
+	"CTSpawn_y"	"0.8975"
+	"TSpawn_x"	"0.5742"
+	"TSpawn_y"	"0.0791"
+
+	"bombA_x" 	"0.6855"
+	"bombA_y" 	"0.7207"
+	"bombB_x" 	"0.2822"
+	"bombB_y" 	"0.5430"
+}
+
