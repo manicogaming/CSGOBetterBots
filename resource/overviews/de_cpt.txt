@@ -1,0 +1,10 @@
+"de_cpt"
+{
+	"material"	"overviews/de_cpt"	// texture file
+	"pos_x"		"-1939"	// upper left world coordinate
+	"pos_y"		"1807"
+	"scale"		"4" 
+	"rotate"	"0"
+	"zoom"		"0"
+}
+

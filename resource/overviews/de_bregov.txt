@@ -1,0 +1,16 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_bregov"
+{
+	"CTSpawn_x" "0.430000"
+    	"CTSpawn_y" "0.050000"
+    	"TSpawn_x" "0.580000"
+    	"TSpawn_y" "0.900000"
+	"material" "overviews/de_bregov"
+	"pos_x" "-3000.000000"
+	"pos_y" "3584.000000"
+	"scale" "5.320000"
+	"bombA_x"    "0.15"
+    	"bombA_y"    "0.37"
+    	"bombB_x"    "0.77"
+    	"bombB_y"    "0.30"
+}
