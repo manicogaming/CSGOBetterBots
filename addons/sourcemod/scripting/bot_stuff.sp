@@ -182,8 +182,8 @@ static char g_szBotName[][] = {
 	//c0ntact Players
 	"Snappi",
 	"ottoNd",
-	"SHiPZ",
-	"emi",
+	"smooya",
+	"Spinx",
 	"EspiranTo",
 	//coL Players
 	"k0nfig",
@@ -356,7 +356,7 @@ static char g_szBotName[][] = {
 	//OFFSET Players
 	"rafaxF",
 	"KILLDREAM",
-	"zlynx",
+	"EasTor",
 	"ZELIN",
 	"drifking",
 	//eSuba Players
@@ -1774,8 +1774,8 @@ public Action Team_c0ntact(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Snappi");
 		ServerCommand("bot_add_ct %s", "ottoNd");
-		ServerCommand("bot_add_ct %s", "SHiPZ");
-		ServerCommand("bot_add_ct %s", "emi");
+		ServerCommand("bot_add_ct %s", "smooya");
+		ServerCommand("bot_add_ct %s", "Spinx");
 		ServerCommand("bot_add_ct %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_1 c0n");
 	}
@@ -1785,8 +1785,8 @@ public Action Team_c0ntact(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Snappi");
 		ServerCommand("bot_add_t %s", "ottoNd");
-		ServerCommand("bot_add_t %s", "SHiPZ");
-		ServerCommand("bot_add_t %s", "emi");
+		ServerCommand("bot_add_t %s", "smooya");
+		ServerCommand("bot_add_t %s", "Spinx");
 		ServerCommand("bot_add_t %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_2 c0n");
 	}
@@ -2644,7 +2644,7 @@ public Action Team_OFFSET(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "rafaxF");
 		ServerCommand("bot_add_ct %s", "KILLDREAM");
-		ServerCommand("bot_add_ct %s", "zlynx");
+		ServerCommand("bot_add_ct %s", "EasTor");
 		ServerCommand("bot_add_ct %s", "ZELIN");
 		ServerCommand("bot_add_ct %s", "drifking");
 		ServerCommand("mp_teamlogo_1 offs");
@@ -2655,7 +2655,7 @@ public Action Team_OFFSET(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "rafaxF");
 		ServerCommand("bot_add_t %s", "KILLDREAM");
-		ServerCommand("bot_add_t %s", "zlynx");
+		ServerCommand("bot_add_t %s", "EasTor");
 		ServerCommand("bot_add_t %s", "ZELIN");
 		ServerCommand("bot_add_t %s", "drifking");
 		ServerCommand("mp_teamlogo_2 offs");
@@ -6278,7 +6278,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							BotEquipBestWeapon(client, true);
 						}
 						
-						if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_KNIFE && GetEntityMoveType(client) == MOVETYPE_LADDER)
+						if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_KNIFE && eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_GRENADE && GetEntityMoveType(client) == MOVETYPE_LADDER)
 						{
 							iButtons |= IN_JUMP;
 							return Plugin_Changed;
@@ -6339,7 +6339,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								}	
 							}
 							
-							if(IsTargetInSightRange(client, iEnt, 10.0))
+							if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 5000.0)
 							{
 								iButtons |= IN_ATTACK;
 							}
@@ -6548,7 +6548,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						}
 						else
 						{
-							TF2_LookAtPos(client, fTargetEyes, GetRandomFloat(0.05, 0.70));
+							TF2_LookAtPos(client, fTargetEyes, GetRandomFloat(0.01, 0.40));
 						}
 						
 						BotAttack(client, iEnt);
@@ -6604,11 +6604,9 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							if(fAK47Location[0] != 0.0 && fAK47Location[1] != 0.0 && fAK47Location[2] != 0.0)
 							{
 								float fClientLocation[3];
-								GetClientAbsOrigin(client, fClientLocation);		
-								
-								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
+								GetClientAbsOrigin(client, fClientLocation);
 
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fAK47Location) < 500.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
@@ -6622,10 +6620,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							{
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);		
-								
-								float fDistance = GetVectorDistance(fClientLocation, fAK47Location);
 
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fAK47Location) < 500.0)
 								{
 									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 								}
@@ -6649,16 +6645,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							if(fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
 							{
 								float fClientLocation[3];
-								GetClientAbsOrigin(client, fClientLocation);	
-								
-								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
+								GetClientAbsOrigin(client, fClientLocation);
 
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+								if(GetVectorDistance(fClientLocation, fM4A1Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
 								}
@@ -6671,11 +6665,9 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							if(fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
 							{
 								float fClientLocation[3];
-								GetClientAbsOrigin(client, fClientLocation);	
-								
-								float fDistance = GetVectorDistance(fClientLocation, fM4A1Location);
+								GetClientAbsOrigin(client, fClientLocation);
 
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
@@ -6710,14 +6702,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);	
 								
-								float fDistance = GetVectorDistance(fClientLocation, fDeagleLocation);
-								
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fDeagleLocation) < 500.0)
 								{
 									BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(GetVectorDistance(fClientLocation, fDeagleLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6741,16 +6731,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							if(fTec9Location[0] != 0.0 && fTec9Location[1] != 0.0 && fTec9Location[2] != 0.0)
 							{
 								float fClientLocation[3];
-								GetClientAbsOrigin(client, fClientLocation);	
+								GetClientAbsOrigin(client, fClientLocation);
 								
-								float fDistance = GetVectorDistance(fClientLocation, fTec9Location);
-								
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fTec9Location) < 500.0)
 								{
 									BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(GetVectorDistance(fClientLocation, fTec9Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6776,14 +6764,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);	
 								
-								float fDistance = GetVectorDistance(fClientLocation, fFiveSevenLocation);
-								
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 500.0)
 								{
 									BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6807,16 +6793,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							if(fP250Location[0] != 0.0 && fP250Location[1] != 0.0 && fP250Location[2] != 0.0)
 							{
 								float fClientLocation[3];
-								GetClientAbsOrigin(client, fClientLocation);	
+								GetClientAbsOrigin(client, fClientLocation);
 								
-								float fDistance = GetVectorDistance(fClientLocation, fP250Location);
-								
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fP250Location) < 500.0)
 								{
 									BotMoveTo(client, fP250Location, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(GetVectorDistance(fClientLocation, fP250Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -6842,14 +6826,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);	
 								
-								float fDistance = GetVectorDistance(fClientLocation, fUSPLocation);
-								
-								if(fDistance < 500.0)
+								if(GetVectorDistance(fClientLocation, fUSPLocation) < 500.0)
 								{
 									BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
 								}
 								
-								if(fDistance < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if(GetVectorDistance(fClientLocation, fUSPLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
 								}
@@ -7102,7 +7084,7 @@ public int GetNearestEntity(int client, char[] szClassname)
     return iNearestEntity;
 }
 
-public void CSGO_SetMoney(int client, int iAmount)
+stock void CSGO_SetMoney(int client, int iAmount)
 {
 	if (iAmount < 0)
 		iAmount = 0;
@@ -7115,7 +7097,7 @@ public void CSGO_SetMoney(int client, int iAmount)
 	SetEntProp(client, Prop_Send, "m_iAccount", iAmount);
 }
 
-public int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
+stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 {
 	int iWeapon = GetPlayerWeaponSlot(client, iSlot);
 
@@ -7136,7 +7118,7 @@ public int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 	return iWeapon;
 }
 
-public int GetClosestClient(int client)
+stock int GetClosestClient(int client)
 {
 	float fClientOrigin[3], fTargetOrigin[3];
 	
@@ -7440,7 +7422,7 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	return false;
 }
 
-stock float[] VelocityExtrapolate(int client, float fEyePos[3])
+float[] VelocityExtrapolate(int client, float fEyePos[3])
 {
 	float fAbsVel[3];
 	GetEntPropVector(client, Prop_Data, "m_vecVelocity", fAbsVel);
@@ -7474,7 +7456,7 @@ stock void TF2_LookAtPos(int client, float flGoal[3], float flAimSpeed = 0.05)
     TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
 }
 
-public float AngleNormalize(float fAngle)
+stock float AngleNormalize(float fAngle)
 {
     fAngle = fmodf(fAngle, 360.0);
     if (fAngle > 180) 
@@ -7489,12 +7471,12 @@ public float AngleNormalize(float fAngle)
     return fAngle;
 }
 
-public float fmodf(float fNumber, float fDenom)
+stock float fmodf(float fNumber, float fDenom)
 {
     return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
 }
 
-public int GetAliveTeamCount(int iTeam)
+stock int GetAliveTeamCount(int iTeam)
 {
     int iNumber = 0;
     for (int i=1; i<=MaxClients; i++)
@@ -7505,7 +7487,7 @@ public int GetAliveTeamCount(int iTeam)
     return iNumber;
 }
 
-public bool IsValidClient(int client)
+stock bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }
@@ -8479,7 +8461,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//c0ntact Players
-	if((StrEqual(szBotName, "Snappi")) || (StrEqual(szBotName, "ottoNd")) || (StrEqual(szBotName, "SHiPZ")) || (StrEqual(szBotName, "emi")) || (StrEqual(szBotName, "EspiranTo")))
+	if((StrEqual(szBotName, "Snappi")) || (StrEqual(szBotName, "ottoNd")) || (StrEqual(szBotName, "smooya")) || (StrEqual(szBotName, "Spinx")) || (StrEqual(szBotName, "EspiranTo")))
 	{
 		CS_SetClientClanTag(client, "c0ntact");
 	}
@@ -8653,7 +8635,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//OFFSET Players
-	if((StrEqual(szBotName, "rafaxF")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "zlynx")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
+	if((StrEqual(szBotName, "rafaxF")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "EasTor")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}

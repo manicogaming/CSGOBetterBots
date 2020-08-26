@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Mon Aug 24 17:27:14 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Wed Aug 26 01:15:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -141,6 +141,7 @@ cs_italy
 cs_lanpartymayhem
 cs_militia
 cs_office
+cs_warmblow_beta01
 cs_winternights
 de_1_6_vertigo
 de_abbey
@@ -169,10 +170,13 @@ de_biome
 de_bombspot_bitcoin
 de_boohouse_go
 de_bourg
+de_breach
+de_bregov
 de_cache
 de_canals
 de_cbble
 de_contra_b3
+de_cpt
 de_darkcastle_rebirth_v2
 de_deadblock
 de_desert

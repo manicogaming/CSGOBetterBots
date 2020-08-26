@@ -863,11 +863,11 @@ ProAwp+SniperPro "ottoNd"
 	VoicePitch = 105
 End
 
-ProP+Rifle "SHiPZ"
+ProP+Rifle "smooya"
 	VoicePitch = 115
 End
 
-ProP+Rifle "emi"
+ProP+Rifle "Spinx"
 	VoicePitch = 73
 End
 
@@ -1479,7 +1479,7 @@ ProAwp+SniperPro "KILLDREAM"
 	VoicePitch = 108
 End
 
-ProP+Rifle "zlynx"
+ProP+Rifle "EasTor"
 	VoicePitch = 114
 End
 

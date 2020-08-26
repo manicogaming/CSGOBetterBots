@@ -1,0 +1,9 @@
+// HLTV overview description file for wm_cabin
+"wm_cabin"
+{
+	"material"	"overviews/wm_cabin"	// texture file
+	"pos_x"		"-152"			// upper left world coordinate
+	"pos_y"		"1390"
+	"scale"		"3.00"
+	"zoom"		"1.0"
+}
