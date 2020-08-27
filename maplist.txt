@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Wed Aug 26 01:15:06 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Thu Aug 27 00:58:33 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -134,6 +134,7 @@ cs_backalley
 cs_beachassault_ek
 cs_bird
 cs_bloodstrike_old
+cs_camouflage_csgo
 cs_coldwar
 cs_deadhouse
 cs_frozen
@@ -173,6 +174,7 @@ de_bourg
 de_breach
 de_bregov
 de_cache
+de_calamari
 de_canals
 de_cbble
 de_contra_b3
@@ -301,6 +303,7 @@ playground_x_s
 rox_dust_tower
 sj_dustland
 tk_dustworld_hd
+wm_cabin
 ww_skyrail
 xi_rockyaim
 xmas_nipperhouse
