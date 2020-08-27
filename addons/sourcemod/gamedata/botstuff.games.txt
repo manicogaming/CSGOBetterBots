@@ -4,7 +4,7 @@
 	{
 		"Signatures"
 		{
-			"MoveTo"
+			"CCSBot::MoveTo"
 			{
 				// Below 'Checking out where our friend was killed'
 				"library"	"server"
@@ -45,6 +45,12 @@
 				// Has 'weapon_knife' string
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x80\x7D\x08\x00\x56\x8B\xF1\x75\x2A"
+			}
+			"CCSBot::OnAudibleEvent"
+			{
+				// Has 'Heard noise (%s from %s, pri %s, time %3.1f)\n' string
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF0\x83\xEC\x58\x56\x57\x8B\xF9\xF3\x0F\x11\x5C\x24\x24"
 			}
 		}
 	}

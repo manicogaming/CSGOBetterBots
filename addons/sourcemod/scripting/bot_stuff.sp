@@ -21,13 +21,22 @@ Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotEquipBestWeapon;
+Handle g_hBotAudibleEvent;
 
 enum RouteType
 {
-  DEFAULT_ROUTE = 0,
-  FASTEST_ROUTE = 1,
-  SAFEST_ROUTE = 2,
-  RETREAT_ROUTE = 3,
+	DEFAULT_ROUTE = 0,
+	FASTEST_ROUTE = 1,
+	SAFEST_ROUTE = 2,
+	RETREAT_ROUTE = 3,
+}
+
+enum PriorityType
+{
+	PRIORITY_LOW = 0,
+	PRIORITY_MEDIUM = 1,
+	PRIORITY_HIGH = 2,
+	PRIORITY_UNINTERRUPTABLE = 3,
 }
 
 
@@ -984,22 +993,23 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	HookEvent("player_spawn", OnPlayerSpawn, EventHookMode_Post);
+	HookEvent("player_spawn", OnPlayerSpawn);
 	HookEvent("round_start", OnRoundStart);
 	HookEvent("round_freeze_end", OnFreezetimeEnd);
 	HookEvent("bomb_planted", OnBombPlanted);
 	HookEvent("bomb_defused", OnBombDefusedOrExploded);
 	HookEvent("bomb_exploded", OnBombDefusedOrExploded);
+	HookEvent("bomb_beginplant", OnBombBeginPlant, EventHookMode_Pre);
 	
 	g_hGameConfig = LoadGameConfigFile("botstuff.games");
 	if (g_hGameConfig == INVALID_HANDLE)
 		SetFailState("Failed to find botstuff.games game config.");
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "MoveTo");
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
-	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for MoveTo signature!");	
+	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");	
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
@@ -1036,6 +1046,17 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Pointer);
 	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::OnAudibleEvent");
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hBotAudibleEvent = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::OnAudibleEvent signature!");
 	
 	delete g_hGameConfig;
 	
@@ -6129,14 +6150,31 @@ public void OnFreezetimeEnd(Handle event, char[] name, bool dbc)
 	}
 }
 
-public void OnBombPlanted(Handle event, char[] name, bool dbc)
+public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	g_bBombPlanted = true;
 }
 
-public void OnBombDefusedOrExploded(Handle event, char[] name, bool dbc)
+public void OnBombDefusedOrExploded(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	g_bBombPlanted = false;
+}
+
+public Action OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int iPlanter = GetClientOfUserId(eEvent.GetInt("userid"));
+	
+	float fPlanterOrigin[3];
+			
+	GetClientAbsOrigin(iPlanter, fPlanterOrigin);
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(IsValidClient(i) && IsPlayerAlive(i) && IsFakeClient(i) && GetClientTeam(i) == CS_TEAM_CT)
+		{
+			BotAudibleEvent(i, eEvent, iPlanter, 99999.0, PRIORITY_HIGH, true, false, fPlanterOrigin);
+		}
+	}
 }
 
 public void OnThinkPost(int iEnt)
@@ -6523,16 +6561,18 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						{
 							return Plugin_Continue;
 						}
+
+						float flAng[3];
+						GetClientEyeAngles(client, flAng);
 						
-						float fEyeTarget[3];
-			
-						SubtractVectors(VelocityExtrapolate(iEnt, fTargetEyes), VelocityExtrapolate(client, fClientEyes), fEyeTarget);
-										
-						GetVectorAngles(fEyeTarget, fEyeTarget);
+						// get normalised direction from target to client
+						float desired_dir[3];
+						MakeVectorFromPoints(fClientEyes, fTargetEyes, desired_dir);
+						GetVectorAngles(desired_dir, desired_dir);
 						
-						fEyeTarget[0] = AngleNormalize(fEyeTarget[0]);
-						fEyeTarget[1] = AngleNormalize(fEyeTarget[1]);
-						fEyeTarget[2] = 0.0;
+						// ease the current direction to the target direction
+						flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
+						flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
 
 						float fPunch[3];
 						
@@ -6540,11 +6580,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						
 						ScaleVector(fPunch, -(FindConVar("weapon_recoil_scale").FloatValue));
 						
-						AddVectors(fEyeTarget, fPunch, fEyeTarget);
+						AddVectors(flAng, fPunch, flAng);
 						
 						if(IsTargetInSightRange(client, iEnt, 5.0))
 						{
-							TeleportEntity(client, NULL_VECTOR, fEyeTarget, NULL_VECTOR);
+							TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
 						}
 						else
 						{
@@ -7047,6 +7087,11 @@ public void BotEquipBestWeapon(int client, bool bMustEquip)
 	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
 }
 
+public void BotAudibleEvent(int client, Event eEvent, int iPlayer, float fRange, PriorityType priorityType, bool bIsHostile, bool bIsFootstep, const float fActualOrigin[3])
+{
+	SDKCall(g_hBotAudibleEvent, client, eEvent, iPlayer, fRange, priorityType, bIsHostile, bIsFootstep, fActualOrigin);
+}
+
 public int LookupBone(int iEntity, const char[] szName)
 {
 	return SDKCall(g_hLookupBone, iEntity, szName);
@@ -7420,20 +7465,6 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	}
 	
 	return false;
-}
-
-float[] VelocityExtrapolate(int client, float fEyePos[3])
-{
-	float fAbsVel[3];
-	GetEntPropVector(client, Prop_Data, "m_vecVelocity", fAbsVel);
-	
-	float fV[3];
-	
-	fV[0] = fEyePos[0] + (fAbsVel[0] * GetTickInterval());
-	fV[1] = fEyePos[1] + (fAbsVel[1] * GetTickInterval());
-	fV[2] = fEyePos[2] + (fAbsVel[2] * GetTickInterval());
-	
-	return fV;
 }
 
 stock void TF2_LookAtPos(int client, float flGoal[3], float flAimSpeed = 0.05)
