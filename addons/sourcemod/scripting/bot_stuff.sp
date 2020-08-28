@@ -22,6 +22,7 @@ Handle g_hBotIsBusy;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotAudibleEvent;
 Handle g_hBotStrafeAway;
+Handle g_hBotWiggle;
 
 enum RouteType
 {
@@ -1027,7 +1028,7 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
 	
@@ -1056,6 +1057,10 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::StrafeAwayFromPosition");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotStrafeAway = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::StrafeAwayFromPosition signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::Wiggle");
+	if ((g_hBotWiggle = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Wiggle signature!");
 	
 	delete g_hGameConfig;
 	
@@ -5729,7 +5734,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsValidClient(i) && IsFakeClient(i))
+		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = view_as<bool>(GetEntProp(i, Prop_Send, "m_bInBuyZone"));
@@ -5781,7 +5786,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{		
-		if(eItems_AreItemsSynced() && IsValidClient(i))
+		if(eItems_AreItemsSynced() && IsValidClient(i) && IsPlayerAlive(i))
 		{			
 			if(GetRandomInt(1,2) == 1)
 			{
@@ -5793,7 +5798,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 			}
 		}
 		
-		if(IsValidClient(i) && IsFakeClient(i))
+		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
 			g_bHasThrownNade[i] = false;
 			
@@ -6152,7 +6157,7 @@ public void OnThinkPost(int iEnt)
 
 public Action OnWeaponSwitch(int client, int iWeapon)
 {
-	if(IsValidClient(client) && IsFakeClient(client))
+	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 	{		
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
 		if (iActiveWeapon == -1)  return Plugin_Continue;	
@@ -6170,7 +6175,7 @@ public Action OnWeaponSwitch(int client, int iWeapon)
 
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 {
-	if(IsValidClient(client) && IsFakeClient(client))
+	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 	{	
 		if(!g_bFreezetimeEnd && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && !((strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0 || strcmp(szWeapon, "smokegrenade") == 0)))
 		{
@@ -6272,12 +6277,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				float fClientEyes[3], fTargetEyes[3], fTargetOrigin[3];
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
+				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
+				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
 				if(IsValidClient(iEnt) && g_bFreezetimeEnd)
 				{
 					GetClientAbsOrigin(iEnt, fTargetOrigin);
 					
-					if(IsPlayerReloading(client))
+					if(iClipAmmo == 0 || bInReload)
 					{
 						BotStrafeAway(client, fTargetOrigin);
 					}
@@ -6316,7 +6323,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							float fBody[3], fBad[3];
 							GetBonePosition(iEnt, iBone, fBody, fBad);
 							
-							if(BotIsVisible(client, fBody, false, client))
+							if(BotIsVisible(client, fBody, false, -1))
 							{
 								fTargetEyes = fBody;
 							}
@@ -6333,7 +6340,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}	
 						
-						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
+						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iClipAmmo > 0 || !bInReload))
 						{
 							iButtons |= IN_ATTACK;
 						}
@@ -6368,7 +6375,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							float fBody[3], fBad[3];
 							GetBonePosition(iEnt, iBone, fBody, fBad);
 							
-							if(BotIsVisible(client, fBody, false, client))
+							if(BotIsVisible(client, fBody, false, -1))
 							{
 								fTargetEyes = fBody;
 							}
@@ -6383,7 +6390,9 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								
 								fTargetEyes = fHead;
 							}
-						}	
+						}
+						
+						BotWiggle(client);
 					}
 					else if(iDefIndex == 1)
 					{
@@ -6426,7 +6435,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							float fBody[3], fBad[3];
 							GetBonePosition(iEnt, iBone, fBody, fBad);
 							
-							if(BotIsVisible(client, fBody, false, client))
+							if(BotIsVisible(client, fBody, false, -1))
 							{
 								fTargetEyes = fBody;
 							}
@@ -6452,7 +6461,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						float fBody[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fBody, fBad);
 						
-						if(BotIsVisible(client, fBody, false, client))
+						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
 						}
@@ -6828,7 +6837,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{		
-		if(IsValidClient(i) && IsFakeClient(i))
+		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
@@ -7007,6 +7016,11 @@ public void BotStrafeAway(int client, const float fPos[3])
 	SDKCall(g_hBotStrafeAway, client, fPos);
 }
 
+public void BotWiggle(int client)
+{
+	SDKCall(g_hBotWiggle, client);
+}
+
 public int LookupBone(int iEntity, const char[] szName)
 {
 	return SDKCall(g_hLookupBone, iEntity, szName);
@@ -7076,24 +7090,6 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 		EquipPlayerWeapon(client, iWeapon);
 
 	return iWeapon;
-}
-
-bool IsPlayerReloading(int client)
-{
-	int PlayerWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-	
-	if(!IsValidEntity(PlayerWeapon))
-		return false;
-	
-	//Out of ammo?
-	if(GetEntProp(PlayerWeapon, Prop_Data, "m_iClip1") == 0)
-		return true;
-	
-	//Reloading?
-	if(GetEntProp(PlayerWeapon, Prop_Data, "m_bInReload"))
-		return true;
-	
-	return true;
 }
 
 stock int GetClosestClient(int client)
@@ -7371,7 +7367,7 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	
 	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fHead, false) < fDistance)
 	{
-		if(BotIsVisible(client, fHead, false, client))
+		if(BotIsVisible(client, fHead, false, -1))
 		{
 			return true;
 		}
