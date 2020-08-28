@@ -3229,28 +3229,6 @@ ProP+Rifle "Lukki"
 	VoicePitch = 92
 End
 
-//LLL Players
-
-ProP+Rifle "notaN"
-	VoicePitch = 108
-End
-
-ProAwp+SniperPro "G1DO"
-	VoicePitch = 97
-End
-
-ProP+Rifle "marix"
-	VoicePitch = 115
-End
-
-ProP+Rifle "v1N"
-	VoicePitch = 87
-End
-
-ProP+Rifle "Monu"
-	VoicePitch = 106
-End
-
 //GameAgents Players
 
 ProP+Rifle "markk"

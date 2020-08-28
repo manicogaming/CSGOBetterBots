@@ -38,7 +38,7 @@ public void OnPluginStart()
 	CreateConVar("bp_version", PLUGIN_VERSION, "", FCVAR_REPLICATED | FCVAR_NOTIFY);
 
 	g_hMinPing	= CreateConVar("bp_minping", "25");
-	g_hMaxPing	= CreateConVar("bp_maxping", "100");
+	g_hMaxPing	= CreateConVar("bp_maxping", "150");
 	g_hInterval	= CreateConVar("bp_interval", "5");
 	
 	g_iPing	= FindSendPropInfo("CPlayerResource", "m_iPing");
@@ -74,7 +74,7 @@ public void OnGameFrame()
 		{
 			if(!IsValidEdict(i) || !IsClientInGame(i) || !IsFakeClient(i))
 				continue;
-
+				
 			SetEntData(g_iPlayerManager, g_iPing + (i * 4), GetRandomInt(g_hMinPing.IntValue, g_hMaxPing.IntValue));
 		}
 	}
