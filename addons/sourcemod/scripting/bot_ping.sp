@@ -1,7 +1,3 @@
-/* put the line below after all of the includes!
-#pragma newdecls required
-*/
-
 #include <sourcemod>
 #include <sdktools>
 
@@ -38,7 +34,7 @@ public void OnPluginStart()
 	CreateConVar("bp_version", PLUGIN_VERSION, "", FCVAR_REPLICATED | FCVAR_NOTIFY);
 
 	g_hMinPing	= CreateConVar("bp_minping", "25");
-	g_hMaxPing	= CreateConVar("bp_maxping", "150");
+	g_hMaxPing	= CreateConVar("bp_maxping", "100");
 	g_hInterval	= CreateConVar("bp_interval", "5");
 	
 	g_iPing	= FindSendPropInfo("CPlayerResource", "m_iPing");

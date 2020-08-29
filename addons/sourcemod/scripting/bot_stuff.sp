@@ -19,9 +19,7 @@ Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
-Handle g_hBotEquipBestWeapon;
 Handle g_hBotAudibleEvent;
-Handle g_hBotStrafeAway;
 Handle g_hBotWiggle;
 
 enum RouteType
@@ -1038,11 +1036,6 @@ public void OnPluginStart()
 	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Pointer);
-	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::OnAudibleEvent");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
@@ -1052,11 +1045,6 @@ public void OnPluginStart()
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotAudibleEvent = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::OnAudibleEvent signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::StrafeAwayFromPosition");
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hBotStrafeAway = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::StrafeAwayFromPosition signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::Wiggle");
@@ -6274,24 +6262,17 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 		{
 			if(strcmp(szBotName, g_szBotName[i]) == 0)
 			{				
-				float fClientEyes[3], fTargetEyes[3], fTargetOrigin[3];
+				float fClientEyes[3], fTargetEyes[3];
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
 				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
 				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
 				if(IsValidClient(iEnt) && g_bFreezetimeEnd)
-				{
-					GetClientAbsOrigin(iEnt, fTargetOrigin);
-					
-					if(iClipAmmo == 0 || bInReload)
+				{					
+					if(iClipAmmo == 0 && bInReload)
 					{
-						BotStrafeAway(client, fTargetOrigin);
-					}
-					
-					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_GRENADE)
-					{
-						BotEquipBestWeapon(client, true);
+						BotWiggle(client);
 					}
 					
 					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_KNIFE && eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_GRENADE && GetEntityMoveType(client) == MOVETYPE_LADDER)
@@ -6340,7 +6321,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}	
 						
-						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iClipAmmo > 0 || !bInReload))
+						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && iClipAmmo > 0 && !bInReload)
 						{
 							iButtons |= IN_ATTACK;
 						}
@@ -7001,19 +6982,9 @@ public bool BotIsBusy(int client)
 	return SDKCall(g_hBotIsBusy, client);
 }
 
-public void BotEquipBestWeapon(int client, bool bMustEquip)
-{
-	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
-}
-
 public void BotAudibleEvent(int client, Event eEvent, int iPlayer, float fRange, PriorityType priorityType, bool bIsHostile, bool bIsFootstep, const float fActualOrigin[3])
 {
 	SDKCall(g_hBotAudibleEvent, client, eEvent, iPlayer, fRange, priorityType, bIsHostile, bIsFootstep, fActualOrigin);
-}
-
-public void BotStrafeAway(int client, const float fPos[3])
-{
-	SDKCall(g_hBotStrafeAway, client, fPos);
 }
 
 public void BotWiggle(int client)

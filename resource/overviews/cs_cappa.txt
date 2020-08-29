@@ -1,0 +1,30 @@
+"cs_cappa"
+{
+	"CTSpawn_x" "0.530000"
+	"CTSpawn_y" "0.920000"
+	"Hostage1_x" "0.720000"
+	"Hostage1_y" "0.120000"
+	"Hostage2_x" "0.780000"
+	"Hostage2_y" "0.420000"
+	"Hostage3_x" "0.380000"
+	"Hostage3_y" "0.190000"
+	"TSpawn_x" "0.480000"
+	"TSpawn_y" "0.090000"
+	"material" "overviews/cs_cappa"
+	"pos_x" "-1976.001709"
+	"pos_y" "1385.002075"
+	"scale" "3.870000"
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000.000000"
+			"AltitudeMin" "-523.461975"
+		}
+		"lower"
+		{
+			"AltitudeMax" "-523.461975"
+			"AltitudeMin" "-10000.000000"
+		}
+	}
+}

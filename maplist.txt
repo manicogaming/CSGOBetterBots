@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Fri Aug 28 20:40:43 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Aug 29 02:25:05 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -135,6 +135,7 @@ cs_beachassault_ek
 cs_bird
 cs_bloodstrike_old
 cs_camouflage_csgo
+cs_cappa
 cs_coldwar
 cs_deadhouse
 cs_frozen
