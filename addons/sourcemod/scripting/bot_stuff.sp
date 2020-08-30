@@ -11,7 +11,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute;
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -21,6 +21,7 @@ Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotAudibleEvent;
 Handle g_hBotWiggle;
+Handle g_hBotIsHiding;
 
 enum RouteType
 {
@@ -124,7 +125,7 @@ static char g_szBotName[][] = {
 	//mouz Players
 	"karrigan",
 	"chrisJ",
-	"woxic",
+	"Bymas",
 	"frozen",
 	"ropz",
 	//TYLOO Players
@@ -972,7 +973,13 @@ static char g_szBotName[][] = {
 	"vts",
 	"kst",
 	"whatz",
-	"shellzi"
+	"shellzi",
+	//KPI Players
+	"dobbo",
+	"SAYN",
+	"Aaron",
+	"Butters",
+	"xertionic"
 };
  
 public Plugin myinfo =
@@ -1049,6 +1056,11 @@ public void OnPluginStart()
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::Wiggle");
 	if ((g_hBotWiggle = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Wiggle signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotIsHiding = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
 	
 	delete g_hGameConfig;
 	
@@ -1204,6 +1216,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_rooster", Team_Rooster);
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_baecon", Team_Baecon);
+	RegConsoleCmd("team_kpi", Team_KPI);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -1456,7 +1469,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "karrigan");
 		ServerCommand("bot_add_ct %s", "chrisJ");
-		ServerCommand("bot_add_ct %s", "woxic");
+		ServerCommand("bot_add_ct %s", "Bymas");
 		ServerCommand("bot_add_ct %s", "frozen");
 		ServerCommand("bot_add_ct %s", "ropz");
 		ServerCommand("mp_teamlogo_1 mss");
@@ -1467,7 +1480,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "karrigan");
 		ServerCommand("bot_add_t %s", "chrisJ");
-		ServerCommand("bot_add_t %s", "woxic");
+		ServerCommand("bot_add_t %s", "Bymas");
 		ServerCommand("bot_add_t %s", "frozen");
 		ServerCommand("bot_add_t %s", "ropz");
 		ServerCommand("mp_teamlogo_2 mss");
@@ -5706,6 +5719,36 @@ public Action Team_Baecon(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_KPI(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "dobbo");
+		ServerCommand("bot_add_ct %s", "SAYN");
+		ServerCommand("bot_add_ct %s", "Aaron");
+		ServerCommand("bot_add_ct %s", "Butters");
+		ServerCommand("bot_add_ct %s", "xertionic");
+		ServerCommand("mp_teamlogo_1 kpi");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "dobbo");
+		ServerCommand("bot_add_t %s", "SAYN");
+		ServerCommand("bot_add_t %s", "Aaron");
+		ServerCommand("bot_add_t %s", "Butters");
+		ServerCommand("bot_add_t %s", "xertionic");
+		ServerCommand("mp_teamlogo_2 kpi");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5767,7 +5810,7 @@ public void OnClientPostAdminCheck(int client)
 	}
 }
 
-public void OnRoundStart(Handle event, char[] name, bool dbc)
+public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {	
 	g_bFreezetimeEnd = false;
 	g_bBombPlanted = false;
@@ -5789,6 +5832,7 @@ public void OnRoundStart(Handle event, char[] name, bool dbc)
 		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
 			g_bHasThrownNade[i] = false;
+			g_iUncrouchChance[i] = GetRandomInt(1,100);
 			
 			if(GetRandomInt(1,100) <= 35)
 			{
@@ -6090,7 +6134,7 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 	}
 }
 
-public void OnFreezetimeEnd(Handle event, char[] name, bool dbc)
+public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
 	
@@ -6503,6 +6547,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						}
 					}
 					
+					return Plugin_Changed;
+				}
+				
+				if(BotIsHiding(client) && !(iButtons & IN_ATTACK) && g_iUncrouchChance[client] <= 50)
+				{
+					iButtons &= ~IN_DUCK;
 					return Plugin_Changed;
 				}
 				
@@ -6990,6 +7040,11 @@ public void BotAudibleEvent(int client, Event eEvent, int iPlayer, float fRange,
 public void BotWiggle(int client)
 {
 	SDKCall(g_hBotWiggle, client);
+}
+
+public bool BotIsHiding(int client)
+{
+	return SDKCall(g_hBotIsHiding, client);
 }
 
 public int LookupBone(int iEntity, const char[] szName)
@@ -8310,7 +8365,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//mouz Players
-	if((StrEqual(szBotName, "karrigan")) || (StrEqual(szBotName, "chrisJ")) || (StrEqual(szBotName, "woxic")) || (StrEqual(szBotName, "frozen")) || (StrEqual(szBotName, "ropz")))
+	if((StrEqual(szBotName, "karrigan")) || (StrEqual(szBotName, "chrisJ")) || (StrEqual(szBotName, "Bymas")) || (StrEqual(szBotName, "frozen")) || (StrEqual(szBotName, "ropz")))
 	{
 		CS_SetClientClanTag(client, "mouz");
 	}
@@ -9160,6 +9215,12 @@ public void Pro_Players(char[] szBotName, int client)
 	{
 		CS_SetClientClanTag(client, "Baecon");
 	}
+	
+	//KPI Players
+	if((strcmp(szBotName, "dobbo") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "xertionic") == 0))
+	{
+		CS_SetClientClanTag(client, "KPI");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -9751,6 +9812,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "RADIX"))
 	{
 		g_iProfileRank[client] = 158;
+	}
+	
+	if (strcmp(szClan, "KPI") == 0)
+	{
+		g_iProfileRank[client] = 159;
 	}
 	
 	if (StrEqual(szClan, "Keyd"))

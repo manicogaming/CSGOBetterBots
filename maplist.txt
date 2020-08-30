@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Sat Aug 29 02:25:05 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Aug 29 21:21:45 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -177,6 +177,7 @@ de_bregov
 de_cache
 de_calamari
 de_canals
+de_cargo
 de_cbble
 de_contra_b3
 de_cpt

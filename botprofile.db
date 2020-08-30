@@ -617,11 +617,11 @@ ProP+Rifle "karrigan"
 	VoicePitch = 103
 End
 
-ProAwp+SniperPro "woxic"
+ProAwp+SniperPro "chrisJ"
 	VoicePitch = 114
 End
 
-ProP+Rifle "chrisJ"
+ProP+Rifle "Bymas"
 	VoicePitch = 71
 End
 
@@ -3733,6 +3733,28 @@ End
 
 ProP+Rifle "shellzi"
 	VoicePitch = 79
+End
+
+//KPI Players
+
+ProP+Rifle "dobbo"
+	VoicePitch = 82
+End
+
+ProAwp+SniperPro "SAYN"
+	VoicePitch = 110
+End
+
+ProP+Rifle "Aaron"
+	VoicePitch = 101
+End
+
+ProP+Rifle "Butters"
+	VoicePitch = 90
+End
+
+ProP+Rifle "xertionic"
+	VoicePitch = 92
 End
 
 EliteAwp+SniperPro "XD | ryu"
