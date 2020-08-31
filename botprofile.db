@@ -2349,28 +2349,6 @@ ProP+Rifle "anarkez"
 	VoicePitch = 80
 End
 
-//Incept Players
-
-ProP+Rifle "micalis"
-	VoicePitch = 79
-End
-
-ProAwp+SniperPro "Rev"
-	VoicePitch = 88
-End
-
-ProP+Rifle "nibke"
-	VoicePitch = 107
-End
-
-ProP+Rifle "SkulL"
-	VoicePitch = 109
-End
-
-ProP+Rifle "yourwombat"
-	VoicePitch = 91
-End
-
 //UOL Players
 
 ProP+Rifle "crisby"
@@ -3755,6 +3733,28 @@ End
 
 ProP+Rifle "xertionic"
 	VoicePitch = 92
+End
+
+//hREDS Players
+
+ProP+Rifle "eDi"
+	VoicePitch = 102
+End
+
+ProAwp+SniperPro "oopee"
+	VoicePitch = 80
+End
+
+ProP+Rifle "VORMISTO"
+	VoicePitch = 99
+End
+
+ProP+Rifle "Samppa"
+	VoicePitch = 84
+End
+
+ProP+Rifle "xartE"
+	VoicePitch = 78
 End
 
 EliteAwp+SniperPro "XD | ryu"

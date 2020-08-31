@@ -602,12 +602,6 @@ static char g_szBotName[][] = {
 	"PERCY",
 	"sinnopsyy",
 	"anarkez",
-	//Incept Players
-	"micalis",
-	"SkulL",
-	"nibke",
-	"Rev",
-	"yourwombat",
 	//UOL Players
 	"crisby",
 	"kZyJL",
@@ -979,7 +973,13 @@ static char g_szBotName[][] = {
 	"SAYN",
 	"Aaron",
 	"Butters",
-	"xertionic"
+	"xertionic",
+	//hREDS Players
+	"eDi",
+	"oopee",
+	"VORMISTO",
+	"Samppa",
+	"xartE"
 };
  
 public Plugin myinfo =
@@ -1154,7 +1154,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_k23", Team_K23);
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_secret", Team_Secret);
-	RegConsoleCmd("team_incept", Team_Incept);
 	RegConsoleCmd("team_uol", Team_UOL);
 	RegConsoleCmd("team_radix", Team_RADIX);
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
@@ -1217,6 +1216,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_baecon", Team_Baecon);
 	RegConsoleCmd("team_kpi", Team_KPI);
+	RegConsoleCmd("team_hreds", Team_hREDS);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -3859,36 +3859,6 @@ public Action Team_Secret(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Incept(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "micalis");
-		ServerCommand("bot_add_ct %s", "SkulL");
-		ServerCommand("bot_add_ct %s", "nibke");
-		ServerCommand("bot_add_ct %s", "Rev");
-		ServerCommand("bot_add_ct %s", "yourwombat");
-		ServerCommand("mp_teamlogo_1 ince");
-	}
-	
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "micalis");
-		ServerCommand("bot_add_t %s", "SkulL");
-		ServerCommand("bot_add_t %s", "nibke");
-		ServerCommand("bot_add_t %s", "Rev");
-		ServerCommand("bot_add_t %s", "yourwombat");
-		ServerCommand("mp_teamlogo_2 ince");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_UOL(int client, int iArgs)
 {
 	char arg[12];
@@ -5749,6 +5719,36 @@ public Action Team_KPI(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_hREDS(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "eDi");
+		ServerCommand("bot_add_ct %s", "oopee");
+		ServerCommand("bot_add_ct %s", "VORMISTO");
+		ServerCommand("bot_add_ct %s", "Samppa");
+		ServerCommand("bot_add_ct %s", "xartE");
+		ServerCommand("mp_teamlogo_1 hreds");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "eDi");
+		ServerCommand("bot_add_t %s", "oopee");
+		ServerCommand("bot_add_t %s", "VORMISTO");
+		ServerCommand("bot_add_t %s", "Samppa");
+		ServerCommand("bot_add_t %s", "xartE");
+		ServerCommand("mp_teamlogo_2 hreds");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -6327,7 +6327,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					
 					if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9) || iDefIndex == 63)
 					{
-						if(GetRandomInt(1,3) == 1)
+						if(GetRandomInt(1,4) == 1)
 						{
 							int iBone = LookupBone(iEnt, "head_0");
 							if(iBone < 0)
@@ -6379,7 +6379,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					else if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1)
 					{
-						if(GetRandomInt(1,3) == 1)
+						if(GetRandomInt(1,4) == 1)
 						{
 							int iBone = LookupBone(iEnt, "head_0");
 							if(iBone < 0)
@@ -6439,7 +6439,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
 					{
-						if(GetRandomInt(1,3) == 1)
+						if(GetRandomInt(1,4) == 1)
 						{
 							int iBone = LookupBone(iEnt, "head_0");
 							if(iBone < 0)
@@ -6538,19 +6538,16 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					
 					BotAttack(client, iEnt);
 					
-					if ((iButtons & IN_ATTACK) == IN_ATTACK)
+					if (iButtons & IN_ATTACK && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 					{
-						if(iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28)
-						{
-							iButtons |= IN_DUCK;
-							return Plugin_Changed;
-						}
+						iButtons |= IN_DUCK;
+						return Plugin_Changed;
 					}
 					
 					return Plugin_Changed;
 				}
 				
-				if(BotIsHiding(client) && !(iButtons & IN_ATTACK) && g_iUncrouchChance[client] <= 50)
+				if(BotIsHiding(client) && (!(iButtons & IN_ATTACK) || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE) && g_iUncrouchChance[client] <= 50)
 				{
 					iButtons &= ~IN_DUCK;
 					return Plugin_Changed;
@@ -8844,12 +8841,6 @@ public void Pro_Players(char[] szBotName, int client)
 		CS_SetClientClanTag(client, "Secret");
 	}
 	
-	//Incept Players
-	if((StrEqual(szBotName, "micalis")) || (StrEqual(szBotName, "SkulL")) || (StrEqual(szBotName, "nibke")) || (StrEqual(szBotName, "Rev")) || (StrEqual(szBotName, "yourwombat")))
-	{
-		CS_SetClientClanTag(client, "Incept");
-	}
-	
 	//UOL Players
 	if((StrEqual(szBotName, "crisby")) || (StrEqual(szBotName, "kZyJL")) || (StrEqual(szBotName, "Andyy")) || (StrEqual(szBotName, "JDC")) || (StrEqual(szBotName, ".P4TriCK")))
 	{
@@ -9220,6 +9211,12 @@ public void Pro_Players(char[] szBotName, int client)
 	if((strcmp(szBotName, "dobbo") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "xertionic") == 0))
 	{
 		CS_SetClientClanTag(client, "KPI");
+	}
+	
+	//hREDS Players
+	if((strcmp(szBotName, "eDi") == 0) || (strcmp(szBotName, "oopee") == 0) || (strcmp(szBotName, "VORMISTO") == 0) || (strcmp(szBotName, "Samppa") == 0) || (strcmp(szBotName, "xartE") == 0))
+	{
+		CS_SetClientClanTag(client, "hREDS");
 	}
 }
 
@@ -9789,7 +9786,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 153;
 	}
 	
-	if (StrEqual(szClan, "Incept"))
+	if (strcmp(szClan, "hREDS") == 0)
 	{
 		g_iProfileRank[client] = 154;
 	}
