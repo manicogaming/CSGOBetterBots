@@ -1673,7 +1673,7 @@ ProP+Rifle "nicoodoz"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "Casle"
+ProAwp+SniperPro "TOBIZ"
 	VoicePitch = 75
 End
 
@@ -1681,7 +1681,7 @@ ProP+Rifle "Remoy"
 	VoicePitch = 85
 End
 
-ProP+Rifle "TOBIZ"
+ProP+Rifle "notaN"
 	VoicePitch = 113
 End
 
@@ -2107,25 +2107,25 @@ ProP+Rifle "xera"
 	VoicePitch = 97
 End
 
-//Berzerk Players
+//LLL Players
 
-ProP+Rifle "SolEk"
+ProP+Rifle "simix"
 	VoicePitch = 100
 End
 
-ProAwp+SniperPro "s1n"
+ProAwp+SniperPro "Stev0se"
 	VoicePitch = 112
 End
 
-ProP+Rifle "tahsiN"
+ProP+Rifle "ritchiEE"
 	VoicePitch = 82
 End
 
-ProP+Rifle "syken"
+ProP+Rifle "rilax"
 	VoicePitch = 109
 End
 
-ProP+Rifle "skyye"
+ProP+Rifle "FASHR"
 	VoicePitch = 75
 End
 
@@ -2525,25 +2525,25 @@ ProP+Rifle "impulsG"
 	VoicePitch = 100
 End
 
-//mCon Players
+//Vexed Players
 
-ProP+Rifle "k1Nzo"
+ProP+Rifle "dox"
 	VoicePitch = 111
 End
 
-ProAwp+SniperPro "shaGGy"
+ProAwp+SniperPro "shyyne"
 	VoicePitch = 103
 End
 
-ProP+Rifle "luosrevo"
+ProP+Rifle "leafy"
 	VoicePitch = 113
 End
 
-ProP+Rifle "ReFuZR"
+ProP+Rifle "shateri"
 	VoicePitch = 107
 End
 
-ProP+Rifle "methoDs"
+ProP+Rifle "volt"
 	VoicePitch = 104
 End
 
@@ -2663,7 +2663,7 @@ ProP+Rifle "crush"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "AiyvaN"
+ProAwp+SniperPro "Fierce"
 	VoicePitch = 102
 End
 
@@ -2737,7 +2737,7 @@ ProP+Rifle "vanity"
 	VoicePitch = 100
 End
 
-ProP+Rifle "steel_"
+ProP+Rifle "MarKE"
 	VoicePitch = 102
 End
 
@@ -3327,7 +3327,7 @@ ProAwp+SniperPro "red"
 	VoicePitch = 101
 End
 
-ProP+Rifle "neviZ"
+ProP+Rifle "s1n"
 	VoicePitch = 114
 End
 
@@ -3335,7 +3335,7 @@ ProP+Rifle "xenn"
 	VoicePitch = 102
 End
 
-ProP+Rifle "syNx"
+ProP+Rifle "skyye"
 	VoicePitch = 91
 End
 
@@ -3547,11 +3547,11 @@ ProAwp+SniperPro "JoJo"
 	VoicePitch = 115
 End
 
-ProP+Rifle "tconnors"
+ProP+Rifle "f1ukie"
 	VoicePitch = 111
 End
 
-ProP+Rifle "Switchy"
+ProP+Rifle "Koalanoob"
 	VoicePitch = 113
 End
 
