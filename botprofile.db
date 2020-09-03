@@ -1009,11 +1009,11 @@ End
 
 //INTZ Players
 
-ProP+Rifle "maxcel"
+ProP+Rifle "guZERA"
 	VoicePitch = 89
 End
 
-ProAwp+SniperPro "gut0"
+ProAwp+SniperPro "BALEROSTYLE"
 	VoicePitch = 100
 End
 
@@ -1025,7 +1025,7 @@ ProP+Rifle "paredao"
 	VoicePitch = 101
 End
 
-ProP+Rifle "kLv"
+ProP+Rifle "chara"
 	VoicePitch = 100
 End
 
@@ -2373,7 +2373,7 @@ End
 
 //RADIX Players
 
-ProP+Rifle "MBL"
+ProP+Rifle "joss"
 	VoicePitch = 103
 End
 
@@ -2381,7 +2381,7 @@ ProAwp+SniperPro "mrhui"
 	VoicePitch = 86
 End
 
-ProP+Rifle "RezzeD"
+ProP+Rifle "brky"
 	VoicePitch = 94
 End
 
@@ -2389,7 +2389,7 @@ ProP+Rifle "entz"
 	VoicePitch = 88
 End
 
-ProP+Rifle "CYPHER"
+ProP+Rifle "eZo"
 	VoicePitch = 74
 End
 
@@ -2799,7 +2799,7 @@ ProAwp+SniperPro "Junior"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Spongey"
+ProP+Rifle "ryann"
 	VoicePitch = 100
 End
 
@@ -2901,7 +2901,7 @@ End
 
 //Wizards Players
 
-ProP+Rifle "krii"
+ProP+Rifle "maty"
 	VoicePitch = 94
 End
 
@@ -2913,7 +2913,7 @@ ProP+Rifle "pounh"
 	VoicePitch = 82
 End
 
-ProP+Rifle "PALM1"
+ProP+Rifle "kolor"
 	VoicePitch = 92
 End
 
@@ -3569,7 +3569,7 @@ ProAwp+SniperPro "mvN"
 	VoicePitch = 109
 End
 
-ProP+Rifle "Kirby"
+ProP+Rifle "ReacTioNNN"
 	VoicePitch = 75
 End
 
@@ -3755,6 +3755,28 @@ End
 
 ProP+Rifle "xartE"
 	VoicePitch = 78
+End
+
+//Lemondogs Players
+
+ProP+Rifle "xelos"
+	VoicePitch = 110
+End
+
+ProAwp+SniperPro "kaktus"
+	VoicePitch = 107
+End
+
+ProP+Rifle "hemzk9"
+	VoicePitch = 93
+End
+
+ProP+Rifle "Mann3n"
+	VoicePitch = 110
+End
+
+ProP+Rifle "gamersdont"
+	VoicePitch = 107
 End
 
 EliteAwp+SniperPro "XD | ryu"
