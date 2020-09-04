@@ -1,0 +1,9 @@
+//Overview: scale 4.50, pos_x -1505, pos_y 2674
+
+"de_central_castle"
+{
+         "material"       "de_central_castle"
+         "pos_x"          "-1505"
+         "pos_y"          "2674"
+         "scale"          "4.50"
+}

@@ -87,7 +87,7 @@ static char g_szBotName[][] = {
 	"rain",
 	"coldzera",
 	//Astralis Players
-	"es3tag",
+	"gla1ve",
 	"device",
 	"Bubzkji",
 	"Magisk",
@@ -720,7 +720,7 @@ static char g_szBotName[][] = {
 	"XG",
 	"mitsuha",
 	"Aree",
-	"Mr.mao",
+	"EXPRO",
 	"XinKoiNg",
 	//Triumph Players
 	"Shakezullah",
@@ -1322,7 +1322,7 @@ public Action Team_Astralis(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "es3tag");
+		ServerCommand("bot_add_ct %s", "gla1ve");
 		ServerCommand("bot_add_ct %s", "device");
 		ServerCommand("bot_add_ct %s", "Bubzkji");
 		ServerCommand("bot_add_ct %s", "Magisk");
@@ -1333,7 +1333,7 @@ public Action Team_Astralis(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "es3tag");
+		ServerCommand("bot_add_t %s", "gla1ve");
 		ServerCommand("bot_add_t %s", "device");
 		ServerCommand("bot_add_t %s", "Bubzkji");
 		ServerCommand("bot_add_t %s", "Magisk");
@@ -4445,7 +4445,7 @@ public Action Team_Lynn(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "XG");
 		ServerCommand("bot_add_ct %s", "mitsuha");
 		ServerCommand("bot_add_ct %s", "Aree");
-		ServerCommand("bot_add_ct %s", "Mr.mao");
+		ServerCommand("bot_add_ct %s", "EXPRO");
 		ServerCommand("bot_add_ct %s", "XinKoiNg");
 		ServerCommand("mp_teamlogo_1 lynn");
 	}
@@ -4456,7 +4456,7 @@ public Action Team_Lynn(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "XG");
 		ServerCommand("bot_add_t %s", "mitsuha");
 		ServerCommand("bot_add_t %s", "Aree");
-		ServerCommand("bot_add_t %s", "Mr.mao");
+		ServerCommand("bot_add_t %s", "EXPRO");
 		ServerCommand("bot_add_t %s", "XinKoiNg");
 		ServerCommand("mp_teamlogo_2 lynn");
 	}
@@ -8357,7 +8357,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Astralis Players
-	if((StrEqual(szBotName, "es3tag")) || (StrEqual(szBotName, "device")) || (StrEqual(szBotName, "Bubzkji")) || (StrEqual(szBotName, "Magisk")) || (StrEqual(szBotName, "dupreeh")))
+	if((StrEqual(szBotName, "gla1ve")) || (StrEqual(szBotName, "device")) || (StrEqual(szBotName, "Bubzkji")) || (StrEqual(szBotName, "Magisk")) || (StrEqual(szBotName, "dupreeh")))
 	{
 		CS_SetClientClanTag(client, "Astralis");
 	}
@@ -8987,7 +8987,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Lynn Players
-	if((StrEqual(szBotName, "XG")) || (StrEqual(szBotName, "mitsuha")) || (StrEqual(szBotName, "Aree")) || (StrEqual(szBotName, "Mr.mao")) || (StrEqual(szBotName, "XinKoiNg")))
+	if((StrEqual(szBotName, "XG")) || (StrEqual(szBotName, "mitsuha")) || (StrEqual(szBotName, "Aree")) || (StrEqual(szBotName, "EXPRO")) || (StrEqual(szBotName, "XinKoiNg")))
 	{
 		CS_SetClientClanTag(client, "Lynn");
 	}

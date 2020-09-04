@@ -1,0 +1,12 @@
+// HLTV overview description file for de_cbble.bsp
+
+"de_cbble_clangame"
+{
+	"material"	"overviews/de_cbble_clangame"	// texture file
+	"pos_x"		"-3720"	// upper left world coordinate
+	"pos_y"		"3056"
+	"scale"		"5.5"
+	"rotate"	"0"
+	"zoom"		"5"
+}
+
