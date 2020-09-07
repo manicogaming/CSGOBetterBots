@@ -2439,7 +2439,7 @@ End
 
 //IG Players
 
-ProP+Rifle "0i"
+ProP+Rifle "bottle"
 	VoicePitch = 85
 End
 
@@ -2755,7 +2755,7 @@ ProAwp+SniperPro "lan"
 	VoicePitch = 96
 End
 
-ProP+Rifle "bottle"
+ProP+Rifle "MarT1n"
 	VoicePitch = 113
 End
 
