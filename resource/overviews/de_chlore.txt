@@ -1,0 +1,16 @@
+"de_chlore"
+{
+	"material"	"overviews/de_chlore_radar"
+	"pos_x"         "-2071"
+	"pos_y"         "2725"
+	"scale"		"4.00"
+
+                "CTSpawn_x"         "0.14"
+                "CTSpawn_y"         "0.39"
+                "TSpawn_x"           "0.85"
+                "TSpawn_y"           "0.35"
+
+	"bombA_x"	"0.49"
+	"bombA_y"	"0.74"
+}
+

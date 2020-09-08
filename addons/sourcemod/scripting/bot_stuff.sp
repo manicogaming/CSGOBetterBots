@@ -986,7 +986,13 @@ static char g_szBotName[][] = {
 	"kaktus",
 	"hemzk9",
 	"Mann3n",
-	"gamersdont"
+	"gamersdont",
+	//Alpha Players
+	"Medi",
+	"dez1per",
+	"LeguliaS",
+	"NolderN",
+	"fakeZ"
 };
  
 public Plugin myinfo =
@@ -1227,6 +1233,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_kpi", Team_KPI);
 	RegConsoleCmd("team_hreds", Team_hREDS);
 	RegConsoleCmd("team_lemondogs", Team_Lemondogs);
+	RegConsoleCmd("team_alpha", Team_Alpha);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -5789,6 +5796,36 @@ public Action Team_Lemondogs(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_Alpha(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "Medi");
+		ServerCommand("bot_add_ct %s", "dez1per");
+		ServerCommand("bot_add_ct %s", "LeguliaS");
+		ServerCommand("bot_add_ct %s", "NolderN");
+		ServerCommand("bot_add_ct %s", "fakeZ");
+		ServerCommand("mp_teamlogo_1 alpha");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "Medi");
+		ServerCommand("bot_add_t %s", "dez1per");
+		ServerCommand("bot_add_t %s", "LeguliaS");
+		ServerCommand("bot_add_t %s", "NolderN");
+		ServerCommand("bot_add_t %s", "fakeZ");
+		ServerCommand("mp_teamlogo_2 alpha");
+	}
+
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -7227,12 +7264,12 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(strcmp(szClanTag, "One") == 0) //30th
+			if(strcmp(szClanTag, "K23") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "K23") == 0) //29th
+			else if(strcmp(szClanTag, "One") == 0) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
@@ -7247,62 +7284,62 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "ENCE") == 0) //26th
+			else if(strcmp(szClanTag, "GODSENT") == 0) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "GODSENT") == 0) //25th
+			else if(strcmp(szClanTag, "Chaos") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "forZe") == 0) //24th
+			else if(strcmp(szClanTag, "C9") == 0) //24th
 			{
 				if (!IsTargetInSightRange(client, i, 110.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "C9") == 0) //23rd
+			else if(strcmp(szClanTag, "Lions") == 0) //23rd
 			{
 				if (!IsTargetInSightRange(client, i, 120.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "mouz") == 0) //22nd
+			else if(strcmp(szClanTag, "forZe") == 0) //22nd
 			{
 				if (!IsTargetInSightRange(client, i, 130.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Lions") == 0) //21st
+			else if(strcmp(szClanTag, "MIBR") == 0) //21st
 			{
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Spirit") == 0) //20th
+			else if(strcmp(szClanTag, "mouz") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Chaos") == 0) //19th
+			else if(strcmp(szClanTag, "Thieves") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Sprout") == 0) //18th
+			else if(strcmp(szClanTag, "Spirit") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Gen.G") == 0) //17th
+			else if(strcmp(szClanTag, "Sprout") == 0) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "MIBR") == 0) //16th
+			else if(strcmp(szClanTag, "Gen.G") == 0) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Thieves") == 0) //15th
+			else if(strcmp(szClanTag, "ENCE") == 0) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
@@ -7332,22 +7369,22 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "coL") == 0) //9th
+			else if(strcmp(szClanTag, "FURIA") == 0) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Liquid") == 0) //8th
+			else if(strcmp(szClanTag, "Na´Vi") == 0) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Na´Vi") == 0) //7th
+			else if(strcmp(szClanTag, "Liquid") == 0) //7th
 			{
 				if (!IsTargetInSightRange(client, i, 280.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "FURIA") == 0) //6th
+			else if(strcmp(szClanTag, "coL") == 0) //6th
 			{
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
@@ -7362,12 +7399,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "EG") == 0) //3rd
+			else if(strcmp(szClanTag, "Heroic") == 0) //3rd
 			{
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //2nd
+			else if(strcmp(szClanTag, "EG") == 0) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
@@ -9689,6 +9726,12 @@ public void Pro_Players(char[] szBotName, int client)
 	{
 		CS_SetClientClanTag(client, "Lemondogs");
 	}
+	
+	//Alpha Players
+	if((strcmp(szBotName, "Medi") == 0) || (strcmp(szBotName, "dez1per") == 0) || (strcmp(szBotName, "LeguliaS") == 0) || (strcmp(szBotName, "NolderN") == 0) || (strcmp(szBotName, "fakeZ") == 0))
+	{
+		CS_SetClientClanTag(client, "Alpha");
+	}
 }
 
 public void SetCustomPrivateRank(int client)
@@ -10455,5 +10498,10 @@ public void SetCustomPrivateRank(int client)
 	if (strcmp(szClan, "Lemondogs") == 0)
 	{
 		g_iProfileRank[client] = 193;
+	}
+	
+	if (strcmp(szClan, "Alpha") == 0)
+	{
+		g_iProfileRank[client] = 194;
 	}
 }
