@@ -64,6 +64,12 @@
 				"library"	"server"
 				"windows"	"\x56\x8B\xF1\xE8\x2A\x2A\x2A\x2A\x84\xC0\x75\x2A\x8B\x06"
 			}
+			"CCSBot::EquipBestWeapon"
+			{
+				// Has 'weapon_knife' string
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x80\x7D\x08\x00\x56\x8B\xF1\x75\x2A"
+			}
 		}
 	}
 }

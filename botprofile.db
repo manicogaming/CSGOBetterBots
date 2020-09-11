@@ -991,7 +991,7 @@ ProP+Rifle "TeSeS"
 	VoicePitch = 100
 End
 
-ProAwp+SniperPro "b0RUP"
+ProAwp+SniperPro "cadiaN"
 	VoicePitch = 96
 End
 
@@ -999,7 +999,7 @@ ProP+Rifle "nikozan"
 	VoicePitch = 112
 End
 
-ProP+Rifle "cadiaN"
+ProP+Rifle "b0RUP"
 	VoicePitch = 96
 End
 
@@ -1119,11 +1119,11 @@ End
 
 //Envy Players
 
-ProP+Rifle "Nifty"
+ProP+Rifle "Thomas"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "kuben"
+ProAwp+SniperPro "Nifty"
 	VoicePitch = 71
 End
 
@@ -1215,15 +1215,15 @@ ProAwp+SniperPro "akay"
 	VoicePitch = 107
 End
 
-ProP+Rifle "hyped"
+ProP+Rifle "striNg"
 	VoicePitch = 97
 End
 
-ProP+Rifle "FabeeN"
+ProP+Rifle "kryptoN"
 	VoicePitch = 89
 End
 
-ProP+Rifle "ykyli"
+ProP+Rifle "bLooDyyY"
 	VoicePitch = 114
 End
 
@@ -1659,7 +1659,7 @@ ProP+Rifle "f4stzin"
 	VoicePitch = 70
 End
 
-ProP+Rifle "iDk"
+ProP+Rifle "Swisher"
 	VoicePitch = 93
 End
 
@@ -2745,7 +2745,7 @@ ProP+Rifle "Jonji"
 	VoicePitch = 111
 End
 
-//OneThree Players
+//Wings Players
 
 ProP+Rifle "ChildKing"
 	VoicePitch = 103
@@ -2975,7 +2975,7 @@ ProAwp+SniperPro "CRUC1AL"
 	VoicePitch = 113
 End
 
-ProP+Rifle "Thomas"
+ProP+Rifle "MiGHTYMAX"
 	VoicePitch = 78
 End
 
@@ -3301,19 +3301,19 @@ ProP+Rifle "stefank0k0"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "NIXEED"
+ProAwp+SniperPro "BischeR"
 	VoicePitch = 97
 End
 
-ProP+Rifle "Zester"
+ProP+Rifle "farmaG"
 	VoicePitch = 95
 End
 
-ProP+Rifle "fly"
+ProP+Rifle "FabeeN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Spexyyy"
+ProP+Rifle "bustrex"
 	VoicePitch = 82
 End
 
@@ -3565,7 +3565,7 @@ ProP+Rifle "j1NZO"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "mvN"
+ProAwp+SniperPro "fly"
 	VoicePitch = 109
 End
 
