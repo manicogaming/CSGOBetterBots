@@ -1065,7 +1065,7 @@ ProP+Rifle "Grusarn"
 	VoicePitch = 71
 End
 
-ProP+Rifle "akEz"
+ProP+Rifle "Nasty"
 	VoicePitch = 80
 End
 
@@ -1225,28 +1225,6 @@ End
 
 ProP+Rifle "bLooDyyY"
 	VoicePitch = 114
-End
-
-//EYES Players
-
-ProP+Rifle "Zarin"
-	VoicePitch = 102
-End
-
-ProAwp+SniperPro "ACTiV"
-	VoicePitch = 75
-End
-
-ProP+Rifle "Hydro"
-	VoicePitch = 76
-End
-
-ProP+Rifle "SativR"
-	VoicePitch = 96
-End
-
-ProP+Rifle "HTMy"
-	VoicePitch = 77
 End
 
 //PDucks Players
@@ -2411,7 +2389,7 @@ ProP+Rifle "reatz"
 	VoicePitch = 112
 End
 
-ProP+Rifle "tudsoN"
+ProP+Rifle "phr"
 	VoicePitch = 73
 End
 
@@ -2663,7 +2641,7 @@ ProP+Rifle "crush"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "Fierce"
+ProAwp+SniperPro "H1te"
 	VoicePitch = 102
 End
 
@@ -3547,7 +3525,7 @@ ProAwp+SniperPro "JoJo"
 	VoicePitch = 115
 End
 
-ProP+Rifle "f1ukie"
+ProP+Rifle "ERIC"
 	VoicePitch = 111
 End
 
