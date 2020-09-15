@@ -119,3 +119,7 @@ Menu menuWeapons[MAX_LANG][sizeof(g_WeaponClasses)];
 StringMap g_smWeaponIndex;
 StringMap g_smWeaponDefIndex;
 StringMap g_smLanguageIndex;
+
+int AccountID = 0;
+int g_iBOTAccountID[MAXPLAYERS+1];
+int g_OldUserId[MAXPLAYERS+1];

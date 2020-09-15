@@ -58,7 +58,19 @@ char g_szCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_fbi_varianth.mdl",
 	"models/player/custom_player/legacy/ctm_st6_variantm.mdl",
 	"models/player/custom_player/legacy/ctm_st6_varianti.mdl",
-	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl"
+	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl",
+	"models/player/custom_player/kirby/kumlafbi/kumlafbi.mdl",
+	"models/player/custom_player/kuristaja/cso2/choi/choi.mdl",
+	"models/player/custom_player/kuristaja/cso2/emma/emma.mdl",
+	"models/player/custom_player/kuristaja/cso2/lisa/lisa.mdl",
+	"models/player/custom_player/kuristaja/cso2/gign/gign.mdl",
+	"models/player/custom_player/kuristaja/cso2/sas/sas.mdl",
+	"models/player/custom_player/kuristaja/cso2/sas/sas2.mdl",
+	"models/player/custom_player/kuristaja/cso2/707/707.mdl",
+	"models/player/custom_player/kuristaja/cso2/lincoln/lincoln.mdl",
+	"models/player/custom_player/kuristaja/cso2/gsg9/gsg9.mdl",
+	"models/player/custom_player/kuristaja/cso2/helga/helga.mdl",
+	"models/player/custom_player/legacy/ctm_georgian.mdl"
 };
 
 char g_szTModels[][] = {
@@ -73,7 +85,18 @@ char g_szTModels[][] = {
 	"models/player/custom_player/legacy/tm_leet_varianti.mdl",
 	"models/player/custom_player/legacy/tm_balkan_variantg.mdl",
 	"models/player/custom_player/legacy/tm_balkan_varianth.mdl",
-	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
+	"models/player/custom_player/legacy/tm_leet_variantf.mdl",
+	"models/player/custom_player/kirby/sasterrorist/sas.mdl",
+	"models/player/custom_player/kirby/leetkumla/leetkumla.mdl",
+	"models/player/custom_player/kuristaja/cso2/arctic/arctic.mdl",
+	"models/player/custom_player/kuristaja/cso2/leet/leet.mdl",
+	"models/player/custom_player/kuristaja/cso2/mila/mila.mdl",
+	"models/player/custom_player/kuristaja/cso2/carrie/carrie.mdl",
+	"models/player/custom_player/kuristaja/cso2/karachenko/karachenko.mdl",
+	"models/player/custom_player/kuristaja/cso2/phoenix/phoenix.mdl",
+	"models/player/custom_player/kuristaja/cso2/natalie/natalie.mdl",
+	"models/player/custom_player/legacy/tm_leet_variant_classic.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variant_guerilla.mdl"
 };
 
 static char g_szBotName[][] = {
@@ -900,10 +923,10 @@ static char g_szBotName[][] = {
 	"bit",
 	"meyern",
 	//Malvinas Players
-	"gAtito",
+	"ABM",
 	"fakzwall",
 	"minimal",
-	"kissmyaug",
+	"kary",
 	"rushardo",
 	//Sinister5 Players
 	"zerOchaNce",
@@ -988,7 +1011,13 @@ static char g_szBotName[][] = {
 	"dez1per",
 	"LeguliaS",
 	"NolderN",
-	"fakeZ"
+	"fakeZ",
+	//CeX Players
+	"Murky",
+	"Impact",
+	"RezzeD",
+	"fluFFS",
+	"ifan"
 };
  
 public Plugin myinfo =
@@ -1236,6 +1265,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_hreds", Team_hREDS);
 	RegConsoleCmd("team_lemondogs", Team_Lemondogs);
 	RegConsoleCmd("team_alpha", Team_Alpha);
+	RegConsoleCmd("team_cex", Team_CeX);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -5356,10 +5386,10 @@ public Action Team_Malvinas(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "gAtito");
+		ServerCommand("bot_add_ct %s", "ABM");
 		ServerCommand("bot_add_ct %s", "fakzwall");
 		ServerCommand("bot_add_ct %s", "minimal");
-		ServerCommand("bot_add_ct %s", "kissmyaug");
+		ServerCommand("bot_add_ct %s", "kary");
 		ServerCommand("bot_add_ct %s", "rushardo");
 		ServerCommand("mp_teamlogo_1 malv");
 	}
@@ -5367,10 +5397,10 @@ public Action Team_Malvinas(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "gAtito");
+		ServerCommand("bot_add_t %s", "ABM");
 		ServerCommand("bot_add_t %s", "fakzwall");
 		ServerCommand("bot_add_t %s", "minimal");
-		ServerCommand("bot_add_t %s", "kissmyaug");
+		ServerCommand("bot_add_t %s", "kary");
 		ServerCommand("bot_add_t %s", "rushardo");
 		ServerCommand("mp_teamlogo_2 malv");
 	}
@@ -5793,6 +5823,36 @@ public Action Team_Alpha(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "NolderN");
 		ServerCommand("bot_add_t %s", "fakeZ");
 		ServerCommand("mp_teamlogo_2 alpha");
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Team_CeX(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+
+	if(strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "Murky");
+		ServerCommand("bot_add_ct %s", "Impact");
+		ServerCommand("bot_add_ct %s", "RezzeD");
+		ServerCommand("bot_add_ct %s", "fluFFS");
+		ServerCommand("bot_add_ct %s", "ifan");
+		ServerCommand("mp_teamlogo_1 cex");
+	}
+
+	if(strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "Murky");
+		ServerCommand("bot_add_t %s", "Impact");
+		ServerCommand("bot_add_t %s", "RezzeD");
+		ServerCommand("bot_add_t %s", "fluFFS");
+		ServerCommand("bot_add_t %s", "ifan");
+		ServerCommand("mp_teamlogo_2 cex");
 	}
 
 	return Plugin_Handled;
@@ -7521,9 +7581,9 @@ stock int GetAliveTeamCount(int iTeam)
     return iNumber;
 }
 
-stock bool IsValidClient(int client)
+public bool IsValidClient(int client)
 {
-	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
+	return ((0 < client <= MaxClients) && IsClientInGame(client));
 }
 
 public void DoMirageSmokes(int client)
@@ -9601,7 +9661,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Malvinas Players
-	if((StrEqual(szBotName, "gAtito")) || (StrEqual(szBotName, "fakzwall")) || (StrEqual(szBotName, "minimal")) || (StrEqual(szBotName, "kissmyaug")) || (StrEqual(szBotName, "rushardo")))
+	if((StrEqual(szBotName, "ABM")) || (StrEqual(szBotName, "fakzwall")) || (StrEqual(szBotName, "minimal")) || (StrEqual(szBotName, "kary")) || (StrEqual(szBotName, "rushardo")))
 	{
 		CS_SetClientClanTag(client, "Malvinas");
 	}
@@ -9688,6 +9748,12 @@ public void Pro_Players(char[] szBotName, int client)
 	if((strcmp(szBotName, "Medi") == 0) || (strcmp(szBotName, "dez1per") == 0) || (strcmp(szBotName, "LeguliaS") == 0) || (strcmp(szBotName, "NolderN") == 0) || (strcmp(szBotName, "fakeZ") == 0))
 	{
 		CS_SetClientClanTag(client, "Alpha");
+	}
+	
+	//CeX Players
+	if((strcmp(szBotName, "Murky") == 0) || (strcmp(szBotName, "Impact") == 0) || (strcmp(szBotName, "RezzeD") == 0) || (strcmp(szBotName, "fluFFS") == 0) || (strcmp(szBotName, "ifan") == 0))
+	{
+		CS_SetClientClanTag(client, "CeX");
 	}
 }
 
@@ -9900,6 +9966,11 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "DIVIZON"))
 	{
 		g_iProfileRank[client] = 81;
+	}
+	
+	if (strcmp(szClan, "CeX") == 0)
+	{
+		g_iProfileRank[client] = 82;
 	}
 	
 	if (StrEqual(szClan, "Tricked"))

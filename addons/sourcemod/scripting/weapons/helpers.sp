@@ -48,13 +48,9 @@ int GetRandomSkin(int client, int index)
 	return StringToInt(idStr);
 }
 
-bool IsValidClient(int client)
+public bool IsValidClient(int client)
 {
-	if (!(1 <= client <= MaxClients) || !IsClientInGame(client) || IsClientSourceTV(client) || IsClientReplay(client))
-	{
-		return false;
-	}
-	return true;
+	return ((0 < client <= MaxClients) && IsClientInGame(client));
 }
 
 int GetWeaponIndex(int entity)

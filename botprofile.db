@@ -3451,7 +3451,7 @@ End
 
 //Malvinas Players
 
-ProP+Rifle "gAtito"
+ProP+Rifle "ABM"
 	VoicePitch = 82
 End
 
@@ -3463,7 +3463,7 @@ ProP+Rifle "minimal"
 	VoicePitch = 94
 End
 
-ProP+Rifle "kissmyaug"
+ProP+Rifle "kary"
 	VoicePitch = 75
 End
 
@@ -3777,6 +3777,28 @@ End
 
 ProP+Rifle "fakeZ"
 	VoicePitch = 112
+End
+
+//CeX Players
+
+ProP+Rifle "Murky"
+	VoicePitch = 92
+End
+
+ProAwp+SniperPro "Impact"
+	VoicePitch = 84
+End
+
+ProP+Rifle "RezzeD"
+	VoicePitch = 86
+End
+
+ProP+Rifle "fluFFS"
+	VoicePitch = 99
+End
+
+ProP+Rifle "ifan"
+	VoicePitch = 86
 End
 
 EliteAwp+SniperPro "XD | ryu"

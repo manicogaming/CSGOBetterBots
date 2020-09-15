@@ -92,6 +92,15 @@ public void OnClientPostAdminCheck(int client)
 		GetPlayerData(client);
 		QueryClientConVar(client, "cl_language", ConVarCallBack);
 	}
+	
+	if(IsValidClient(client) && IsFakeClient(client))
+	{
+		if(GetClientUserId(client) != g_OldUserId[client])
+		{
+			g_iBOTAccountID[client] = AccountID++;
+			g_OldUserId[client] = GetClientUserId(client);
+		}
+	}
 }
 
 public void ConVarCallBack(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)

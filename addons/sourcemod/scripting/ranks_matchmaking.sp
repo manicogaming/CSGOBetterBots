@@ -3,7 +3,6 @@
 #include <sdktools>
 #include <cstrike>
 #include <clientprefs>
-#include <overlays>
 
 #undef REQUIRE_PLUGIN
 #include <kento_rankme/rankme>
@@ -22,8 +21,6 @@ ConVar g_CVAR_RanksPoints[51];
 ConVar g_CVAR_RankPoints_Type;
 ConVar g_CVAR_RankPoints_Flag;
 ConVar g_CVAR_RankPoints_Prefix;
-ConVar g_CVAR_RankPoints_HudOverlay;
-ConVar g_CVAR_RankPoints_OverlayTime;
 ConVar g_CVAR_RankPoints_SoundEnable;
 ConVar g_CVAR_RankPoints_SoundRankUp;
 ConVar g_CVAR_RankPoints_SoundRankDown;
@@ -31,9 +28,7 @@ ConVar g_CVAR_RankPoints_SoundRankDown;
 // Variables to store ConVar values;
 int g_RankPoints_Type;
 int g_RankPoints_Flag;
-int g_RankPoints_HudOverlay;
 int g_RankPoints_SoundEnable;
-float g_RankPoints_OverlayTime;
 char g_RankPoints_SoundRankUp[PLATFORM_MAX_PATH];
 char g_RankPoints_SoundRankDown[PLATFORM_MAX_PATH];
 char g_RankPoints_Prefix[40];
@@ -44,7 +39,6 @@ bool g_kentorankme;
 bool g_hlstatsx;
 
 char RankStrings[52][256];
-char RankOverlays[51][PLATFORM_MAX_PATH];
 
 public Plugin myinfo = 
 {
@@ -66,8 +60,6 @@ public void OnPluginStart()
 	g_CVAR_RankPoints_Type = CreateConVar("ranks_matchmaking_typeofrank", "0", "Type of Rank that you want to use for this plugin (0 for Kento Rankme, 1 for GameMe, 2 for ZR Rank, 3 for HLStatsX)", _, true, 0.0, true, 3.0);
 	g_CVAR_RankPoints_Prefix = CreateConVar("ranks_matchmaking_prefix", "[{purple}Fake Ranks{default}]", "Chat Prefix");
 	g_CVAR_RankPoints_Flag = CreateConVar("ranks_matchmaking_flag", "", "Flag to restrict the ranks to certain players (leave it empty to enable for everyone)");
-	g_CVAR_RankPoints_HudOverlay = CreateConVar("ranks_matchmaking_hudoverlay" , "1", "Chooses between a HUD Text Message (0) or an Overlay (1)", _, true, 0.0, true, 1.0);
-	g_CVAR_RankPoints_OverlayTime = CreateConVar("ranks_matchmaking_overlaytime", "5.0", "Time between showing and deleting the overlay (need \"ranks_matchmaking_hudoverlay\" set to 1). 0.0 means forever", _, true, 0.0, false);
 	g_CVAR_RankPoints_SoundEnable = CreateConVar("ranks_matchmaking_soundenable", "1", "Enable sounds when a player ranks up or deranks", _, true, 0.0, true, 1.0);
 	g_CVAR_RankPoints_SoundRankUp = CreateConVar("ranks_matchmaking_soundrankup", "levels_ranks/levelup.mp3", "Path to the sound which will play on Rank Up (needs \"ranks_matchmaking_soundenable\" set to 1)");
 	g_CVAR_RankPoints_SoundRankDown = CreateConVar("ranks_matchmaking_soundrankdown", "levels_ranks/leveldown.mp3", "Path to the sound which will play on Derank (needs \"ranks_matchmaking_soundenable\" set to 1)");
@@ -163,9 +155,6 @@ public void OnMapStart()
 {
 	for (int i = 0; i < 51; i++)
 		RankPoints[i] = g_CVAR_RanksPoints[i].IntValue;
-		
-	g_RankPoints_HudOverlay = g_CVAR_RankPoints_HudOverlay.IntValue;
-	g_RankPoints_OverlayTime = g_CVAR_RankPoints_OverlayTime.FloatValue;
 	
 	g_CVAR_RankPoints_Prefix.GetString(g_RankPoints_Prefix, sizeof(g_RankPoints_Prefix));
 	
@@ -193,9 +182,6 @@ public void OnMapStart()
 	
 	GetRanksNames();
 	
-	if(g_RankPoints_HudOverlay)
-		GetRanksOverlays();
-	
 	if(g_RankPoints_SoundEnable)
 		GetRanksGradesSounds();
 }
@@ -209,14 +195,6 @@ public void GetRanksGradesSounds()
 	Format(buffer, sizeof(buffer), "sound/%s", g_RankPoints_SoundRankDown);
 	AddFileToDownloadsTable(buffer);
 	Format(buffer, sizeof(buffer), "*/%s", g_RankPoints_SoundRankDown);
-}
-
-public void GetRanksOverlays()
-{
-	for(int i = 0; i < 51; i++)
-	{
-		Format(RankOverlays[i], sizeof(RankOverlays[]), "lvl_overlays/overlay_hd_%d", (i+1));
-	}
 }
 
 public void GetRanksNames()
@@ -461,20 +439,7 @@ public void CheckRanks(int client, int points)
 		rank[client] = 18;
 	
 	if(rank[client] > oldrank[client] && rank[client] > 0)
-	{
-		switch(g_RankPoints_HudOverlay)
-		{
-			case 0:
-			{
-				SetHudTextParams(-1.0, 0.125, 5.0, 255, 255, 255, 255, 0, 0.25, 1.5, 0.5);
-				ShowHudText(client, 5, "%t", "Rank Up", RankStrings[rank[client]]);
-			}
-			case 1:
-			{
-				ShowOverlay(client, RankOverlays[rank[client] - 1], g_RankPoints_OverlayTime);
-			}
-		}
-		
+	{		
 		if(g_RankPoints_SoundEnable)
 		{
 			ClientCommand(client, "playgamesound Music.StopAllMusic");

@@ -29,11 +29,6 @@ public void OnClientSettingsChanged(int client)
 	
 	userInfo[8] = g_iSteamIDs[client];
 	
-	if(GetRandomInt(1,100) <= 70)
-	{
-		userInfo[184] = GetRandomInt(1,100);
-	}
-	
 	userInfo[316] = 0;
 	
 	bool lockTable1 = LockStringTables(false);

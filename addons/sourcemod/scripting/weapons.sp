@@ -880,9 +880,13 @@ void SetWeaponProps(int client, int entity)
 					}
 				}
 			}
+			
+			SetEntProp(entity, Prop_Send, "m_iAccountID", g_iBOTAccountID[client]);
 		}
-		
-		SetEntProp(entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client));
+		else
+		{
+			SetEntProp(entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client));
+		}
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
 	}
