@@ -30,14 +30,18 @@ I edited the following plugins.
 
 # [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
 - Made it so that it doesn't skip BOTs
-- Added more Ranks
+- Added all Official CS:GO ranks from every gamemode
+- Replaced Overlays with end game rank up animation
 
 # [Franc1sco/Franug-Sprays](https://github.com/Franc1sco/Franug-Sprays)
 - BOTs will automatically use their sprays
 - Added all Sprays from CS:GO
 
+# [[CS:GO] Weapon Stickers (!stickers)](https://forums.alliedmods.net/showthread.php?t=327078)
+- Added a native to set any attribute value
+
 # Other Files
 
-There's an improved BotProfile.db I've edited that was also originally made by [tNzxX](https://www.youtube.com/channel/UCF6sK9PaONILzTd42baWxkA) and the BotProfile.db he made can be found [here](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497).
+There's an improved BotProfile.db I've edited that is a mix of the one made by [tNzxX](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497) and the other made by [lolznoboz](https://gamebanana.com/scripts/10308).
 
 I also added all the NavMeshes of my maps and all the team logos I currently have.
