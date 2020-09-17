@@ -1,0 +1,11 @@
+// HLTV overview description file for de_cluj.bsp
+
+"de_cluj"
+{
+	"material"	"overviews/de_cluj"	// texture file
+	"pos_x"		"-2815"	// upper left world coordinate
+	"pos_y"		"1778"
+	"scale"		"4.0" 
+	"rotate"	"1"
+	"zoom"		"1.5"
+}

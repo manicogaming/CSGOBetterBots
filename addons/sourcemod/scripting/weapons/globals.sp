@@ -123,3 +123,4 @@ StringMap g_smLanguageIndex;
 int AccountID = 0;
 int g_iBOTAccountID[MAXPLAYERS+1];
 int g_OldUserId[MAXPLAYERS+1];
+bool g_bKnifeHasStatTrak[MAXPLAYERS+1][sizeof(g_WeaponClasses)];

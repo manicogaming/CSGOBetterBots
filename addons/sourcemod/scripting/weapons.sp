@@ -246,6 +246,7 @@ public Action CommandNameTag(int client, int args)
 void SetWeaponProps(int client, int entity)
 {
 	int index = GetWeaponIndex(entity);
+	
 	if (index > -1 && g_iSkins[client][index] != 0)
 	{
 		static int IDHigh = 16384;
@@ -267,7 +268,9 @@ void SetWeaponProps(int client, int entity)
 		{
 			if(g_bEnableStatTrak)
 			{
-				SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", g_iStatTrak[client][index] == 1 ? g_iStatTrakCount[client][index] : -1);
+				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrak[client][index] == 1 ? g_iStatTrakCount[client][index] : -1);
+				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+				
 				SetEntProp(entity, Prop_Send, "m_iEntityQuality", g_iStatTrak[client][index] == 1 ? 9 : 0);
 			}
 		}
@@ -275,7 +278,8 @@ void SetWeaponProps(int client, int entity)
 		{
 			if(g_bEnableStatTrak)
 			{
-				SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", g_iStatTrak[client][index] == 0 ? -1 : g_iKnifeStatTrakMode == 0 ? GetTotalKnifeStatTrakCount(client) : g_iStatTrakCount[client][index]);
+				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrak[client][index] == 0 ? -1 : g_iKnifeStatTrakMode == 0 ? GetTotalKnifeStatTrakCount(client) : g_iStatTrakCount[client][index]);
+				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
 			}
 			SetEntProp(entity, Prop_Send, "m_iEntityQuality", 3);
 		}
@@ -728,7 +732,15 @@ void SetWeaponProps(int client, int entity)
 			{
 				if(GetRandomInt(1,100) <= 30)
 				{
-					SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", GetTotalKnifeStatTrakCount(client));
+					CS_SetAttributeValue(client, entity, "kill eater", GetTotalKnifeStatTrakCount(client));
+					CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+					g_bKnifeHasStatTrak[client][index] = true;
+				}
+				else
+				{
+					CS_SetAttributeValue(client, entity, "kill eater", -1);
+					CS_SetAttributeValue(client, entity, "kill eater score type", -1);
+					g_bKnifeHasStatTrak[client][index] = false;
 				}
 			}
 			else
@@ -753,7 +765,9 @@ void SetWeaponProps(int client, int entity)
 					{
 						if(GetRandomInt(1,100) <= 30)
 						{
-							SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", g_iStatTrakCount[client][index]);
+							CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrakCount[client][index]);
+							CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+							
 							SetEntProp(entity, Prop_Send, "m_iEntityQuality", 9);
 						}
 					}
@@ -764,12 +778,15 @@ void SetWeaponProps(int client, int entity)
 					{
 						if(GetRandomInt(1,100) <= 30)
 						{
+							CS_SetAttributeValue(client, entity, "kill eater", -1);
+							CS_SetAttributeValue(client, entity, "kill eater score type", -1);
 							SetEntProp(entity, Prop_Send, "m_iEntityQuality", 12);
 						}
 					}
 					default:
 					{
-						SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", -1);
+						CS_SetAttributeValue(client, entity, "kill eater", -1);
+						CS_SetAttributeValue(client, entity, "kill eater score type", -1);
 						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
 					}
 				}

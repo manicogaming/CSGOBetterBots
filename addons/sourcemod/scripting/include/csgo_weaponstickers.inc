@@ -37,6 +37,8 @@
  */
 native bool CS_SetWeaponSticker(int client, int weapon, int slot, int defIndex, float wear);
 
+native bool CS_SetAttributeValue(int client, int weapon, const char[] attrname, int attrvalue);
+
 /**
  * Get random sticker index.
  *

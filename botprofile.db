@@ -2531,7 +2531,7 @@ ProP+Rifle "kinqie"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "rAge"
+ProAwp+SniperPro "starix"
 	VoicePitch = 89
 End
 
@@ -2961,7 +2961,7 @@ ProP+Rifle "robiin"
 	VoicePitch = 104
 End
 
-ProP+Rifle "MiGHTYMAX"
+ProP+Rifle "flameZ"
 	VoicePitch = 96
 End
 

@@ -154,16 +154,24 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 		return Plugin_Continue;
 	
 	g_iStatTrakCount[attacker][index]++;
-	/*
-	if (IsKnife(weapon))
+	
+	if(GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index])
 	{
-		SetEntProp(weapon, Prop_Send, "m_nFallbackStatTrak", g_iKnifeStatTrakMode == 0 ? GetTotalKnifeStatTrakCount(attacker) : g_iStatTrakCount[attacker][index]);
+		if(IsKnife(weapon))
+		{
+			CS_SetAttributeValue(attacker, weapon, "kill eater", GetTotalKnifeStatTrakCount(attacker));
+			CS_SetAttributeValue(attacker, weapon, "kill eater score type", 0);
+			
+			PTaH_ForceFullUpdate(attacker);
+		}
+		else
+		{			
+			CS_SetAttributeValue(attacker, weapon, "kill eater", g_iStatTrakCount[attacker][index]);
+			CS_SetAttributeValue(attacker, weapon, "kill eater score type", 0);
+			
+			PTaH_ForceFullUpdate(attacker);
+		}
 	}
-	else
-	{
-		SetEntProp(weapon, Prop_Send, "m_nFallbackStatTrak", g_iStatTrakCount[attacker][index]);
-	}
-	*/
 
 	char updateFields[256];
 	char weaponName[32];
@@ -174,8 +182,15 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 }
 
 public void OnRoundStart(Handle event, const char[] name, bool dontBroadcast)
-{
-	g_iRoundStartTime = GetTime();
+{	
+	if (IsWarmUpPeriod())
+	{
+		g_iRoundStartTime = 0;
+	}
+	else
+	{
+		g_iRoundStartTime = GetTime();
+	}
 }
 
 Action WeaponCanUsePre(int client, int weapon, bool& pickup)

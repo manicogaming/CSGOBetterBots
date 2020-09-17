@@ -678,7 +678,7 @@ static char g_szBotName[][] = {
 	"volt",
 	//HLE Players
 	"kinqie",
-	"rAge",
+	"starix",
 	"Krad",
 	"Forester",
 	"svyat",
@@ -795,7 +795,7 @@ static char g_szBotName[][] = {
 	"CRUC1AL",
 	"MiGHTYMAX",
 	"robiin",
-	"MiGHTYMAX",
+	"flameZ",
 	//sAw Players
 	"arki",
 	"stadodo",
@@ -4153,22 +4153,22 @@ public Action Team_HLE(int client, int iArgs)
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
 
-	if(StrEqual(arg, "ct"))
+	if(strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "kinqie");
-		ServerCommand("bot_add_ct %s", "rAge");
+		ServerCommand("bot_add_ct %s", "starix");
 		ServerCommand("bot_add_ct %s", "Krad");
 		ServerCommand("bot_add_ct %s", "Forester");
 		ServerCommand("bot_add_ct %s", "svyat");
 		ServerCommand("mp_teamlogo_1 hle");
 	}
 
-	if(StrEqual(arg, "t"))
+	if(strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "kinqie");
-		ServerCommand("bot_add_t %s", "rAge");
+		ServerCommand("bot_add_t %s", "starix");
 		ServerCommand("bot_add_t %s", "Krad");
 		ServerCommand("bot_add_t %s", "Forester");
 		ServerCommand("bot_add_t %s", "svyat");
@@ -4723,25 +4723,25 @@ public Action Team_Endpoint(int client, int iArgs)
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
 
-	if(StrEqual(arg, "ct"))
+	if(strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Surreal");
 		ServerCommand("bot_add_ct %s", "CRUC1AL");
 		ServerCommand("bot_add_ct %s", "MiGHTYMAX");
 		ServerCommand("bot_add_ct %s", "robiin");
-		ServerCommand("bot_add_ct %s", "MiGHTYMAX");
+		ServerCommand("bot_add_ct %s", "flameZ");
 		ServerCommand("mp_teamlogo_1 endp");
 	}
 
-	if(StrEqual(arg, "t"))
+	if(strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Surreal");
 		ServerCommand("bot_add_t %s", "CRUC1AL");
 		ServerCommand("bot_add_t %s", "MiGHTYMAX");
 		ServerCommand("bot_add_t %s", "robiin");
-		ServerCommand("bot_add_t %s", "MiGHTYMAX");
+		ServerCommand("bot_add_t %s", "flameZ");
 		ServerCommand("mp_teamlogo_2 endp");
 	}
 
@@ -6397,7 +6397,6 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
 				int iClipAmmo = GetEntProp(iActiveWeapon, Prop_Send, "m_iClip1");
-				bool bInReload = view_as<bool>(GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload"));
 				
 				if(IsValidClient(iEnt) && g_bFreezetimeEnd)
 				{
@@ -6406,15 +6405,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						BotEquipBestWeapon(client, true);
 					}
 					
-					if(iClipAmmo == 0 || bInReload)
+					if(iClipAmmo == 0)
 					{
 						BotWiggle(client);
 					}
 					
-					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_KNIFE && eItems_GetWeaponSlotByDefIndex(iDefIndex) != CS_SLOT_GRENADE && GetEntityMoveType(client) == MOVETYPE_LADDER)
+					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
 					{
-						iButtons |= IN_JUMP;
-						return Plugin_Changed;
+						return Plugin_Continue;
 					}
 					
 					if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
@@ -6457,7 +6455,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}	
 						
-						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iClipAmmo != 0 || !bInReload))
+						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && iClipAmmo != 0)
 						{
 							iButtons |= IN_ATTACK;
 						}
@@ -9415,7 +9413,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//HLE Players
-	if((StrEqual(szBotName, "kinqie")) || (StrEqual(szBotName, "rAge")) || (StrEqual(szBotName, "Krad")) || (StrEqual(szBotName, "Forester")) || (StrEqual(szBotName, "svyat")))
+	if((strcmp(szBotName, "kinqie") == 0) || (strcmp(szBotName, "starix") == 0) || (strcmp(szBotName, "Krad") == 0) || (strcmp(szBotName, "Forester") == 0) || (strcmp(szBotName, "svyat") == 0))
 	{
 		CS_SetClientClanTag(client, "HLE");
 	}
@@ -9529,7 +9527,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Endpoint Players
-	if((StrEqual(szBotName, "Surreal")) || (StrEqual(szBotName, "CRUC1AL")) || (StrEqual(szBotName, "MiGHTYMAX")) || (StrEqual(szBotName, "robiin")) || (StrEqual(szBotName, "MiGHTYMAX")))
+	if((strcmp(szBotName, "Surreal") == 0) || (strcmp(szBotName, "CRUC1AL") == 0) || (strcmp(szBotName, "MiGHTYMAX") == 0) || (strcmp(szBotName, "robiin") == 0) || (strcmp(szBotName, "flameZ") == 0))
 	{
 		CS_SetClientClanTag(client, "Endpoint");
 	}
@@ -10328,7 +10326,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 154;
 	}
 	
-	if (StrEqual(szClan, "Endpoint"))
+	if (strcmp(szClan, "Endpoint") == 0)
 	{
 		g_iProfileRank[client] = 155;
 	}
@@ -10423,7 +10421,7 @@ public void SetCustomPrivateRank(int client)
 		g_iProfileRank[client] = 173;
 	}
 	
-	if (StrEqual(szClan, "HLE"))
+	if (strcmp(szClan, "HLE") == 0)
 	{
 		g_iProfileRank[client] = 174;
 	}
