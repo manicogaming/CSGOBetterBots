@@ -1,0 +1,14 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"mg_cbble_small_v2"
+{
+	"CTSpawn_x" "0.517578125"
+	"CTSpawn_y" "0.173828125"
+	"TSpawn_x" "0.21875"
+	"TSpawn_y" "0.8359375"
+	"bombA_x"	"0.4169921875"
+	"bombA_y"	"0.458984375"
+	"material" "overviews/mg_cbble_small_v2"
+	"pos_x" "-3273.000000"
+	"pos_y" "2176.000000"
+	"scale" "4.540000"
+}

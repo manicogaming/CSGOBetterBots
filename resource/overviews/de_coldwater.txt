@@ -1,0 +1,11 @@
+// HLTV overview description file for de_coldwater.bsp
+
+"de_coldwater"
+{
+	"material"	"overviews/de_coldwater"
+	"pos_x"		"-3635"
+	"pos_y"		"2245"
+	"scale"		"5.0"
+	"rotate"	"0"
+	"zoom"		"1"
+}
