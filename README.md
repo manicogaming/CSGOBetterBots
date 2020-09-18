@@ -4,8 +4,9 @@ In here there are some plugins that I personality edited to add the features of 
 
 I edited the following plugins.
 
-# [Franc1sco/Franug-CSGO-Gloves](https://github.com/Franc1sco/Franug-CSGO-Gloves)
-- BOTs will get random gloves
+# [[CSGO] Gloves](https://forums.alliedmods.net/showthread.php?t=299977)
+- Made it so that it doesn't skip BOTs
+- All the data is now saved and queried by name as BOTs don't have a SteamID
 
 # [SQL Matches](https://forums.alliedmods.net/showthread.php?t=312488)
 - The following is now added to the database
