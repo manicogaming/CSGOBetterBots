@@ -269,7 +269,7 @@ void SetWeaponProps(int client, int entity)
 			if(g_bEnableStatTrak)
 			{
 				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrak[client][index] == 1 ? g_iStatTrakCount[client][index] : -1);
-				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+				CS_SetAttributeValue(client, entity, "kill eater score type", g_iStatTrak[client][index] == 0 ? -1 : 0);
 				
 				SetEntProp(entity, Prop_Send, "m_iEntityQuality", g_iStatTrak[client][index] == 1 ? 9 : 0);
 			}
@@ -279,7 +279,7 @@ void SetWeaponProps(int client, int entity)
 			if(g_bEnableStatTrak)
 			{
 				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrak[client][index] == 0 ? -1 : g_iKnifeStatTrakMode == 0 ? GetTotalKnifeStatTrakCount(client) : g_iStatTrakCount[client][index]);
-				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+				CS_SetAttributeValue(client, entity, "kill eater score type", g_iStatTrak[client][index] == 0 ? -1 : 0);
 			}
 			SetEntProp(entity, Prop_Send, "m_iEntityQuality", 3);
 		}

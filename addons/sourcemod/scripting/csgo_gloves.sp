@@ -732,6 +732,7 @@ stock void SetUserGloves (int client, int glove = -1, int skin = -1, bool bSave 
 					SetEntProp(ent, Prop_Send, "m_iItemIDLow", -1);
 					SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", glove);
 					SetEntProp(ent, Prop_Send, "m_nFallbackPaintKit", skin);
+					SetEntProp(ent, Prop_Send, "m_nFallbackSeed", GetRandomInt(1,1000));
 					
 					if(IsFakeClient(client))
 					{

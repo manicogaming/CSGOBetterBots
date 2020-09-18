@@ -48,7 +48,7 @@ int g_iPatchDefIndex[] = {
 	4570, 4589, 4591, 4592, 4593, 4594, 4595, 4596, 4597, 4598, 4599, 4600
 };
 
-char g_szCTModels[][] = {
+static char g_szCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_st6_variante.mdl",
 	"models/player/custom_player/legacy/ctm_st6_variantk.mdl",
 	"models/player/custom_player/legacy/ctm_fbi_variantf.mdl",
@@ -60,7 +60,6 @@ char g_szCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_st6_varianti.mdl",
 	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl",
 	"models/player/custom_player/kirby/kumlafbi/kumlafbi.mdl",
-	"models/player/custom_player/kuristaja/cso2/choi/choi.mdl",
 	"models/player/custom_player/kuristaja/cso2/emma/emma.mdl",
 	"models/player/custom_player/kuristaja/cso2/lisa/lisa.mdl",
 	"models/player/custom_player/kuristaja/cso2/gign/gign.mdl",
@@ -70,10 +69,14 @@ char g_szCTModels[][] = {
 	"models/player/custom_player/kuristaja/cso2/lincoln/lincoln.mdl",
 	"models/player/custom_player/kuristaja/cso2/gsg9/gsg9.mdl",
 	"models/player/custom_player/kuristaja/cso2/helga/helga.mdl",
-	"models/player/custom_player/legacy/ctm_georgian.mdl"
+	"models/player/custom_player/legacy/ctm_georgian.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variant_gsg9.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variant_sas.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variant_urban.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_hgrunt.mdl"
 };
 
-char g_szTModels[][] = {
+static char g_szTModels[][] = {
 	"models/player/custom_player/legacy/tm_phoenix_variantf.mdl",
 	"models/player/custom_player/legacy/tm_phoenix_varianth.mdl",
 	"models/player/custom_player/legacy/tm_leet_variantg.mdl",
@@ -96,7 +99,71 @@ char g_szTModels[][] = {
 	"models/player/custom_player/kuristaja/cso2/phoenix/phoenix.mdl",
 	"models/player/custom_player/kuristaja/cso2/natalie/natalie.mdl",
 	"models/player/custom_player/legacy/tm_leet_variant_classic.mdl",
-	"models/player/custom_player/legacy/tm_balkan_variant_guerilla.mdl"
+	"models/player/custom_player/legacy/tm_balkan_variant_guerilla.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_arctic.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_classic.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_leet_b.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_leet_color.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_variant_leet_r.mdl"
+};
+
+static char g_szCTArms[][] = {
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_gray.mdl",
+	"",
+	"models/player/custom_player/kuristaja/cso2/lisa/lisa_arms.mdl",
+	"",
+	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
+	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
+	"models/player/custom_player/kuristaja/cso2/707/707_arms.mdl",
+	"",
+	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_dark.mdl",
+	"",
+	"models/weapons/v_models/arms/ctm_heavy/v_sleeve_ctm_heavy.mdl",
+	"models/weapons/v_models/arms/gsg9/v_sleeve_gsg9.mdl",
+	"models/weapons/v_models/arms/sas/v_sleeve_sas.mdl",
+	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_green.mdl",
+	"models/weapons/v_models/arms/sas/v_sleeve_sas_ukmtp.mdl"
+};
+
+static char g_szTArms[][] = {
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"",
+	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
+	"models/weapons/v_models/arms/jumpsuit/v_sleeve_jumpsuit.mdl",
+	"models/player/custom_player/kuristaja/cso2/arctic/arctic_arms.mdl",
+	"models/player/custom_player/kuristaja/cso2/leet/leet_arms.mdl",
+	"",
+	"models/player/custom_player/kuristaja/cso2/carrie/carrie_arms.mdl",
+	"models/weapons/v_models/arms/balkan/v_sleeve_balkan_v2_variantf.mdl",
+	"",
+	"models/player/custom_player/kuristaja/cso2/natalie/natalie_arms.mdl",
+	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_green.mdl",
+	"",
+	"models/weapons/v_models/arms/sas/v_sleeve_sas_ukmtp.mdl",
+	"",
+	"models/weapons/v_models/arms/separatist/v_sleeve_separatist.mdl",
+	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_gray.mdl",
+	"models/weapons/v_models/arms/balkan/v_sleeve_balkan_v2_variantg.mdl"
 };
 
 static char g_szBotName[][] = {
@@ -6023,7 +6090,10 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 {
 	if(GetClientTeam(i) == CS_TEAM_CT)
 	{
-		SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
+		int iRandom = GetRandomInt(0, sizeof(g_szCTModels) - 1);
+		
+		SetEntityModel(i, g_szCTModels[iRandom]);
+		SetEntPropString(i, Prop_Send, "m_szArmsModel", g_szCTArms[iRandom]);
 		
 		if(GetRandomInt(1,100) <= 30)
 		{
@@ -6133,7 +6203,10 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 	}
 	else if(GetClientTeam(i) == CS_TEAM_T)
 	{
-		SetEntityModel(i, g_szTModels[GetRandomInt(0, sizeof(g_szTModels) - 1)]);
+		int iRandom = GetRandomInt(0, sizeof(g_szTModels) - 1);
+		
+		SetEntityModel(i, g_szTModels[iRandom]);
+		SetEntPropString(i, Prop_Send, "m_szArmsModel", g_szTArms[iRandom]);
 		
 		if(GetRandomInt(1,100) <= 40)
 		{

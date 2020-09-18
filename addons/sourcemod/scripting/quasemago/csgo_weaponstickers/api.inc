@@ -74,7 +74,7 @@ public int Native_SetAttributeValue(Handle plugins, int numParams)
 	
 	GetNativeString(3, attrname, sizeof(attrname));
 
-	int attrvalue = GetNativeCell(4);
+	int attrvalue = view_as<int>(GetNativeCell(4));
 
 	Address pEconItemView = pWeapon + view_as<Address>(g_EconItemOffset);
 	

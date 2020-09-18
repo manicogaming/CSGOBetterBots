@@ -155,7 +155,7 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 	
 	g_iStatTrakCount[attacker][index]++;
 	
-	if(GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index])
+	if(((IsFakeClient(attacker) && GetEntProp(weapon, Prop_Send, "m_iAccountID") == g_iBOTAccountID[attacker]) || GetEntProp(weapon, Prop_Send, "m_iAccountID") == GetSteamAccountID(attacker)) && (GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index]))
 	{
 		if(IsKnife(weapon))
 		{
