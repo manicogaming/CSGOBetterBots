@@ -11,7 +11,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute, g_iRoundStartedTime;
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
@@ -5981,6 +5981,11 @@ public void OnClientPostAdminCheck(int client)
 		Pro_Players(szBotName, client);
 		
 		SetCustomPrivateRank(client);
+		
+		if(eItems_AreItemsSynced())
+		{
+			g_iMusic[client] = eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1));
+		}
 	}
 }
 
@@ -7057,10 +7062,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 		{			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
-			if(eItems_AreItemsSynced())
-			{
-				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
-			}
+			SetEntProp(i, Prop_Send, "m_unMusicID", g_iMusic[i]);
 			
 			if(GetRandomInt(1,100) >= 15)
 			{

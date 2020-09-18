@@ -123,7 +123,6 @@ public void T_TimestampCallback(Database database, DBResultSet results, const ch
 void UpdatePlayerData(int client, char[] updateFields)
 {
 	char name[128];
-	GetClientName(client, name, sizeof(name));
 	if(GetClientName(client, name, sizeof(name)))
 	{
 		char query[1024];

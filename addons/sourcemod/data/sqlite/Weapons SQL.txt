@@ -3,3 +3,5 @@ update weapons set awp = -1, awp_float = 0.15, awp_trak = 0, ak47 = -1, ak47_flo
 UPDATE weapons SET knife = (ABS(RANDOM()) % (53 - 33) + 33);
 
 UPDATE weapons SET knife = (ABS(RANDOM()) % (47 - 33) + 33) WHERE knife = 47;
+
+update gloves set t_group = -1, t_glove = -1, ct_group = -1, ct_glove = -1;
