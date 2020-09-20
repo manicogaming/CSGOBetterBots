@@ -239,7 +239,6 @@ int SetClientKnife(int client, char[] sKnife, bool Native = false, bool update =
 		Format(updateFields, sizeof(updateFields), "knife = %d", knife);
 		UpdatePlayerData(client, updateFields);
 	}
-	RefreshWeapon(client, knife, knife == 0);
 	return 0;
 }
 

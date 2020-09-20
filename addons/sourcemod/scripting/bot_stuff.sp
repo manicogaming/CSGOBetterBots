@@ -58,22 +58,7 @@ static char g_szCTModels[][] = {
 	"models/player/custom_player/legacy/ctm_fbi_varianth.mdl",
 	"models/player/custom_player/legacy/ctm_st6_variantm.mdl",
 	"models/player/custom_player/legacy/ctm_st6_varianti.mdl",
-	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl",
-	"models/player/custom_player/kirby/kumlafbi/kumlafbi.mdl",
-	"models/player/custom_player/kuristaja/cso2/emma/emma.mdl",
-	"models/player/custom_player/kuristaja/cso2/lisa/lisa.mdl",
-	"models/player/custom_player/kuristaja/cso2/gign/gign.mdl",
-	"models/player/custom_player/kuristaja/cso2/sas/sas.mdl",
-	"models/player/custom_player/kuristaja/cso2/sas/sas2.mdl",
-	"models/player/custom_player/kuristaja/cso2/707/707.mdl",
-	"models/player/custom_player/kuristaja/cso2/lincoln/lincoln.mdl",
-	"models/player/custom_player/kuristaja/cso2/gsg9/gsg9.mdl",
-	"models/player/custom_player/kuristaja/cso2/helga/helga.mdl",
-	"models/player/custom_player/legacy/ctm_georgian.mdl",
-	"models/player/custom_player/legacy/ctm_st6_variant_gsg9.mdl",
-	"models/player/custom_player/legacy/ctm_st6_variant_sas.mdl",
-	"models/player/custom_player/legacy/ctm_st6_variant_urban.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_hgrunt.mdl"
+	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl"
 };
 
 static char g_szTModels[][] = {
@@ -88,82 +73,7 @@ static char g_szTModels[][] = {
 	"models/player/custom_player/legacy/tm_leet_varianti.mdl",
 	"models/player/custom_player/legacy/tm_balkan_variantg.mdl",
 	"models/player/custom_player/legacy/tm_balkan_varianth.mdl",
-	"models/player/custom_player/legacy/tm_leet_variantf.mdl",
-	"models/player/custom_player/kirby/sasterrorist/sas.mdl",
-	"models/player/custom_player/kirby/leetkumla/leetkumla.mdl",
-	"models/player/custom_player/kuristaja/cso2/arctic/arctic.mdl",
-	"models/player/custom_player/kuristaja/cso2/leet/leet.mdl",
-	"models/player/custom_player/kuristaja/cso2/mila/mila.mdl",
-	"models/player/custom_player/kuristaja/cso2/carrie/carrie.mdl",
-	"models/player/custom_player/kuristaja/cso2/karachenko/karachenko.mdl",
-	"models/player/custom_player/kuristaja/cso2/phoenix/phoenix.mdl",
-	"models/player/custom_player/kuristaja/cso2/natalie/natalie.mdl",
-	"models/player/custom_player/legacy/tm_leet_variant_classic.mdl",
-	"models/player/custom_player/legacy/tm_balkan_variant_guerilla.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_arctic.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_classic.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_leet_b.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_leet_color.mdl",
-	"models/player/custom_player/legacy/tm_phoenix_variant_leet_r.mdl"
-};
-
-static char g_szCTArms[][] = {
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_gray.mdl",
-	"",
-	"models/player/custom_player/kuristaja/cso2/lisa/lisa_arms.mdl",
-	"",
-	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
-	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
-	"models/player/custom_player/kuristaja/cso2/707/707_arms.mdl",
-	"",
-	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_dark.mdl",
-	"",
-	"models/weapons/v_models/arms/ctm_heavy/v_sleeve_ctm_heavy.mdl",
-	"models/weapons/v_models/arms/gsg9/v_sleeve_gsg9.mdl",
-	"models/weapons/v_models/arms/sas/v_sleeve_sas.mdl",
-	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_green.mdl",
-	"models/weapons/v_models/arms/sas/v_sleeve_sas_ukmtp.mdl"
-};
-
-static char g_szTArms[][] = {
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"",
-	"models/player/custom_player/kuristaja/cso2/sas/sas_arms.mdl",
-	"models/weapons/v_models/arms/jumpsuit/v_sleeve_jumpsuit.mdl",
-	"models/player/custom_player/kuristaja/cso2/arctic/arctic_arms.mdl",
-	"models/player/custom_player/kuristaja/cso2/leet/leet_arms.mdl",
-	"",
-	"models/player/custom_player/kuristaja/cso2/carrie/carrie_arms.mdl",
-	"models/weapons/v_models/arms/balkan/v_sleeve_balkan_v2_variantf.mdl",
-	"",
-	"models/player/custom_player/kuristaja/cso2/natalie/natalie_arms.mdl",
-	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_green.mdl",
-	"",
-	"models/weapons/v_models/arms/sas/v_sleeve_sas_ukmtp.mdl",
-	"",
-	"models/weapons/v_models/arms/separatist/v_sleeve_separatist.mdl",
-	"models/weapons/v_models/arms/fbi/v_sleeve_fbi_gray.mdl",
-	"models/weapons/v_models/arms/balkan/v_sleeve_balkan_v2_variantg.mdl"
+	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
 };
 
 static char g_szBotName[][] = {
@@ -522,7 +432,7 @@ static char g_szBotName[][] = {
 	"BRUNO",
 	"points",
 	//Isurus Players
-	"1962",
+	"JonY BoY",
 	"Noktse",
 	"Reversive",
 	"decov9jse",
@@ -3113,7 +3023,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "1962");
+		ServerCommand("bot_add_ct %s", "JonY BoY");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
 		ServerCommand("bot_add_ct %s", "decov9jse");
@@ -3124,7 +3034,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "1962");
+		ServerCommand("bot_add_t %s", "JonY BoY");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
 		ServerCommand("bot_add_t %s", "decov9jse");
@@ -6095,10 +6005,7 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 {
 	if(GetClientTeam(i) == CS_TEAM_CT)
 	{
-		int iRandom = GetRandomInt(0, sizeof(g_szCTModels) - 1);
-		
-		SetEntityModel(i, g_szCTModels[iRandom]);
-		SetEntPropString(i, Prop_Send, "m_szArmsModel", g_szCTArms[iRandom]);
+		SetEntityModel(i, g_szCTModels[GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
 		
 		if(GetRandomInt(1,100) <= 30)
 		{
@@ -6208,10 +6115,7 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 	}
 	else if(GetClientTeam(i) == CS_TEAM_T)
 	{
-		int iRandom = GetRandomInt(0, sizeof(g_szTModels) - 1);
-		
-		SetEntityModel(i, g_szTModels[iRandom]);
-		SetEntPropString(i, Prop_Send, "m_szArmsModel", g_szTArms[iRandom]);
+		SetEntityModel(i, g_szTModels[GetRandomInt(0, sizeof(g_szTModels) - 1)]);
 		
 		if(GetRandomInt(1,100) <= 40)
 		{
@@ -7064,7 +6968,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 			
 			SetEntProp(i, Prop_Send, "m_unMusicID", g_iMusic[i]);
 			
-			if(GetRandomInt(1,100) >= 15)
+			if(GetRandomInt(1,100) >= 25)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
@@ -9266,7 +9170,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Isurus Players
-	if((StrEqual(szBotName, "1962")) || (StrEqual(szBotName, "Noktse")) || (StrEqual(szBotName, "Reversive")) || (StrEqual(szBotName, "decov9jse")) || (StrEqual(szBotName, "caike")))
+	if((StrEqual(szBotName, "JonY BoY")) || (StrEqual(szBotName, "Noktse")) || (StrEqual(szBotName, "Reversive")) || (StrEqual(szBotName, "decov9jse")) || (StrEqual(szBotName, "caike")))
 	{
 		CS_SetClientClanTag(client, "Isurus");
 	}

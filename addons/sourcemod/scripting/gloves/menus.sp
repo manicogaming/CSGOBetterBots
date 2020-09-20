@@ -49,19 +49,7 @@ public int GloveMenuHandler(Menu menu, MenuAction action, int client, int select
 				
 				if(team == GetClientTeam(client))
 				{
-					int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-					if(activeWeapon != -1)
-					{
-						SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", -1);
-					}
 					GivePlayerGloves(client);
-					if(activeWeapon != -1)
-					{
-						DataPack dpack;
-						CreateDataTimer(0.1, ResetGlovesTimer, dpack);
-						dpack.WriteCell(client);
-						dpack.WriteCell(activeWeapon);
-					}
 				}
 				
 				DataPack pack;
@@ -97,18 +85,6 @@ public int GloveMenuHandler(Menu menu, MenuAction action, int client, int select
 	return 0;
 }
 
-public Action ResetGlovesTimer(Handle timer, DataPack pack)
-{
-	ResetPack(pack);
-	int clientIndex = pack.ReadCell();
-	int activeWeapon = pack.ReadCell();
-	
-	if(IsClientInGame(clientIndex) && IsValidEntity(activeWeapon))
-	{
-		SetEntPropEnt(clientIndex, Prop_Send, "m_hActiveWeapon", activeWeapon);
-	}
-}
-
 public int GloveMainMenuHandler(Menu menu, MenuAction action, int client, int selection)
 {
 	switch(action)
@@ -141,11 +117,6 @@ public int GloveMainMenuHandler(Menu menu, MenuAction action, int client, int se
 					
 					if(team == GetClientTeam(client))
 					{
-						int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-						if(activeWeapon != -1)
-						{
-							SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", -1);
-						}
 						if(index == 0)
 						{
 							int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
@@ -158,13 +129,6 @@ public int GloveMainMenuHandler(Menu menu, MenuAction action, int client, int se
 						else
 						{
 							GivePlayerGloves(client);
-						}
-						if(activeWeapon != -1)
-						{
-							DataPack dpack;
-							CreateDataTimer(0.1, ResetGlovesTimer, dpack);
-							dpack.WriteCell(client);
-							dpack.WriteCell(activeWeapon);
 						}
 					}
 					

@@ -18,6 +18,8 @@
 #include <sourcemod>
 #include <sdktools>
 #include <cstrike>
+#include <PTaH>
+#include <csgo_weaponstickers>
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -139,7 +141,11 @@ public void GivePlayerGloves(int client)
 		ent = CreateEntityByName("wearable_item");
 		if(ent != -1)
 		{
-			SetEntProp(ent, Prop_Send, "m_iItemIDLow", -1);
+			static int IDLow = 2048;
+			static int IDHigh = 16384;
+			
+			SetEntProp(ent, Prop_Send, "m_iItemIDLow", IDLow++);
+			SetEntProp(ent, Prop_Send, "m_iItemIDHigh", IDHigh++);
 			
 			if(g_iGloves[client][playerTeam] == -1)
 			{
@@ -148,24 +154,24 @@ public void GivePlayerGloves(int client)
 				GetRandomSkin(client, playerTeam, buffer, sizeof(buffer), g_iGroup[client][playerTeam]);
 				ExplodeString(buffer, ";", buffers, 2, 10);
 				SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", StringToInt(buffers[0]));
-				SetEntProp(ent, Prop_Send,  "m_nFallbackPaintKit", StringToInt(buffers[1]));
+				CS_SetAttributeValue(client, ent, "set item texture prefab", float(StringToInt(buffers[1])));
 			}
 			else
 			{
 				SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", g_iGroup[client][playerTeam]);
-				SetEntProp(ent, Prop_Send,  "m_nFallbackPaintKit", g_iGloves[client][playerTeam]);
+				CS_SetAttributeValue(client, ent, "set item texture prefab", float(g_iGloves[client][playerTeam]));
 			}
 			
 			if(IsFakeClient(client))
 			{
-				SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", GetRandomFloat(0.06, 0.80));
+				CS_SetAttributeValue(client, ent, "set item texture wear", GetRandomFloat(0.06, 0.80));
 			}
 			else
 			{
-				SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", g_fFloatValue[client][playerTeam]);
+				CS_SetAttributeValue(client, ent, "set item texture wear", g_fFloatValue[client][playerTeam]);
 			}
 			
-			SetEntProp(ent, Prop_Send, "m_nFallbackSeed", GetRandomInt(1,1000));
+			CS_SetAttributeValue(client, ent, "set item texture seed", float(GetRandomInt(1,1000)));
 			SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
 			SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
 			if(g_iEnableWorldModel) SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);
@@ -175,6 +181,8 @@ public void GivePlayerGloves(int client)
 			
 			SetEntPropEnt(client, Prop_Send, "m_hMyWearables", ent);
 			if(g_iEnableWorldModel) SetEntProp(client, Prop_Send, "m_nBody", 1);
+			
+			PTaH_ForceFullUpdate(client);
 		}
 	}
 }

@@ -906,7 +906,40 @@ void SetWeaponProps(int client, int entity)
 		}
 		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
+		
+		PTaH_ForceFullUpdate(client);
 	}
+}
+
+public void DropWeapon(int client)
+{
+	Protobuf pb = view_as<Protobuf>(StartMessageAll("SendPlayerItemDrops", USERMSG_RELIABLE));
+
+	Protobuf entity_updates = pb.AddMessage("entity_updates");
+
+	int itemId[2];
+	
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+	if (iActiveWeapon != -1)
+	{
+		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+		
+		int itemIDLow = 444;
+		int itemIDHigh = 555;
+		
+		itemId[0] = itemIDLow++;
+		itemId[1] = itemIDHigh++;
+
+		entity_updates.SetInt("accountid", g_iBOTAccountID[client]);
+		entity_updates.SetInt64("itemid", itemId);
+		entity_updates.SetInt("defindex", iDefIndex);
+		entity_updates.SetInt("paintindex", GetEntProp(iActiveWeapon, Prop_Send, "m_nFallbackPaintKit"));
+		entity_updates.SetInt("paintwear", view_as<int>(GetEntPropFloat(iActiveWeapon, Prop_Send, "m_flFallbackWear")));
+		entity_updates.SetInt("paintseed", GetEntProp(iActiveWeapon, Prop_Send, "m_nFallbackSeed"));
+		entity_updates.SetInt("quality", GetEntProp(iActiveWeapon, Prop_Send, "m_iEntityQuality"));
+	}
+	
+	EndMessage();
 }
 
 void RefreshWeapon(int client, int index, bool defaultKnife = false)

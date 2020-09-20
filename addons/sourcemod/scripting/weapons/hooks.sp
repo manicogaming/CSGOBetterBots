@@ -193,6 +193,25 @@ public void OnRoundStart(Handle event, const char[] name, bool dontBroadcast)
 	}
 }
 
+public void OnMapStart()
+{
+	CreateTimer(5.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+}
+
+public Action Timer_CheckPlayer(Handle hTimer, any data)
+{
+	for(int i = 1; i <= MaxClients; i++)
+	{
+		if(IsValidClient(i) && IsFakeClient(i))
+		{
+			if(GetRandomInt(1,100) <= 35)
+			{
+				DropWeapon(i);
+			}
+		}
+	}	
+}
+
 Action WeaponCanUsePre(int client, int weapon, bool& pickup)
 {
 	if (IsKnife(weapon) && IsValidClient(client))
