@@ -204,7 +204,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 	{
 		if(IsValidClient(i) && IsFakeClient(i))
 		{
-			if(GetRandomInt(1,100) <= 35)
+			if(GetRandomInt(1,100) <= 5)
 			{
 				DropWeapon(i);
 			}

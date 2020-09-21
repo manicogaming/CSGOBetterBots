@@ -11,7 +11,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iMusic[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iProfileRank[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iCoinOffset, g_iRndExecute, g_iRoundStartedTime;
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
@@ -92,7 +92,7 @@ static char g_szBotName[][] = {
 	//Astralis Players
 	"gla1ve",
 	"device",
-	"Bubzkji",
+	"es3tag",
 	"Magisk",
 	"dupreeh",
 	//NiP Players
@@ -1345,7 +1345,7 @@ public Action Team_Astralis(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "gla1ve");
 		ServerCommand("bot_add_ct %s", "device");
-		ServerCommand("bot_add_ct %s", "Bubzkji");
+		ServerCommand("bot_add_ct %s", "es3tag");
 		ServerCommand("bot_add_ct %s", "Magisk");
 		ServerCommand("bot_add_ct %s", "dupreeh");
 		ServerCommand("mp_teamlogo_1 astr");
@@ -1356,7 +1356,7 @@ public Action Team_Astralis(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "gla1ve");
 		ServerCommand("bot_add_t %s", "device");
-		ServerCommand("bot_add_t %s", "Bubzkji");
+		ServerCommand("bot_add_t %s", "es3tag");
 		ServerCommand("bot_add_t %s", "Magisk");
 		ServerCommand("bot_add_t %s", "dupreeh");
 		ServerCommand("mp_teamlogo_2 astr");
@@ -5891,11 +5891,6 @@ public void OnClientPostAdminCheck(int client)
 		Pro_Players(szBotName, client);
 		
 		SetCustomPrivateRank(client);
-		
-		if(eItems_AreItemsSynced())
-		{
-			g_iMusic[client] = eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1));
-		}
 	}
 }
 
@@ -6966,7 +6961,10 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 		{			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
-			SetEntProp(i, Prop_Send, "m_unMusicID", g_iMusic[i]);
+			if(eItems_AreItemsSynced())
+			{
+				SetEntProp(i, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			}
 			
 			if(GetRandomInt(1,100) >= 25)
 			{
@@ -8828,7 +8826,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Astralis Players
-	if((StrEqual(szBotName, "gla1ve")) || (StrEqual(szBotName, "device")) || (StrEqual(szBotName, "Bubzkji")) || (StrEqual(szBotName, "Magisk")) || (StrEqual(szBotName, "dupreeh")))
+	if((StrEqual(szBotName, "gla1ve")) || (StrEqual(szBotName, "device")) || (StrEqual(szBotName, "es3tag")) || (StrEqual(szBotName, "Magisk")) || (StrEqual(szBotName, "dupreeh")))
 	{
 		CS_SetClientClanTag(client, "Astralis");
 	}
