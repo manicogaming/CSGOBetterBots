@@ -1,0 +1,39 @@
+"de_cotroceni"
+{
+	"material"	"overviews/de_cotroceni"	// texture file
+	"pos_x"		"-2417"	// upper left world coordinate
+	"pos_y"		"1981"
+	"scale"		"4.5" 
+
+	"verticalsections"
+	{
+		"default" // The default "de_cotroceni_radar.dds" image
+		{
+			"AltitudeMax" "136"
+			"AltitudeMin" "0"
+		}
+		"higher"// If desired, the "de_cotroceni_higher_radar.dds" image
+		{
+			"AltitudeMax" "10000"
+			"AltitudeMin" "136"
+		}
+		"lower" // If desired, the "de_cotroceni_lower_radar.dds" image
+		{
+			"AltitudeMax" "0"
+			"AltitudeMin" "-10000"
+		}
+	}
+	
+	// loading screen icons and positions
+	"CTSpawn_x"		"0.46"
+				"CTSpawn_y"		"0.03"
+				"TSpawn_x"		"0.38"
+				"TSpawn_y"		"0.95"
+//Bomb site locations
+
+				"bombA_x"			"0.49"
+				"bombA_y"			"0.43"
+				"bombB_x"			"0.55"
+				"bombB_y"			"0.4"
+
+}

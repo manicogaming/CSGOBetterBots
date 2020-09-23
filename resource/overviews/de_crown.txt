@@ -1,0 +1,9 @@
+// HLTV overview description file for de_crown.bsp
+
+"de_crown"
+{
+	"material"	"overviews/de_crown"	// texture file
+	"pos_x"		"-1284"	// upper left world coordinate
+	"pos_y"		"3908"
+	"scale"		"6.0" 
+}

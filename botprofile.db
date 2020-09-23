@@ -753,7 +753,7 @@ ProAwp+SniperPro "GruBy"
 	VoicePitch = 106
 End
 
-ProP+Rifle "mhL"
+ProP+Rifle "dgl"
 	VoicePitch = 86
 End
 
@@ -761,7 +761,7 @@ ProP+Rifle "F1KU"
 	VoicePitch = 93
 End
 
-ProP+Rifle "oskarish"
+ProP+Rifle "leman"
 	VoicePitch = 88
 End
 
@@ -3543,7 +3543,7 @@ ProP+Rifle "j1NZO"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "fly"
+ProAwp+SniperPro "S3NSEY"
 	VoicePitch = 109
 End
 
@@ -3555,7 +3555,7 @@ ProP+Rifle "FreeZe"
 	VoicePitch = 100
 End
 
-ProP+Rifle "S3NSEY"
+ProP+Rifle "preet"
 	VoicePitch = 81
 End
 
