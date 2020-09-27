@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Tue Sep 22 23:11:48 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Sep 26 22:42:39 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -192,7 +192,9 @@ de_chlorine
 de_cluj
 de_coldwater
 de_contra_b3
+de_cotroceni
 de_cpt
+de_crown
 de_darkcastle_rebirth_v2
 de_deadblock
 de_desert

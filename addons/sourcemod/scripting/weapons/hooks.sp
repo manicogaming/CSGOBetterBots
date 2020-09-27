@@ -155,7 +155,7 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 	
 	g_iStatTrakCount[attacker][index]++;
 	
-	if(((IsFakeClient(attacker) && GetEntProp(weapon, Prop_Send, "m_iAccountID") == g_iBOTAccountID[attacker]) || GetEntProp(weapon, Prop_Send, "m_iAccountID") == GetSteamAccountID(attacker)) && (GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index]))
+	if(((IsFakeClient(attacker) && GetEntProp(weapon, Prop_Send, "m_iAccountID") == GetBotAccountID(attacker)) || GetEntProp(weapon, Prop_Send, "m_iAccountID") == GetSteamAccountID(attacker)) && (GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index]))
 	{
 		if(IsKnife(weapon))
 		{
@@ -195,7 +195,7 @@ public void OnRoundStart(Handle event, const char[] name, bool dontBroadcast)
 
 public void OnMapStart()
 {
-	CreateTimer(5.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(10.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public Action Timer_CheckPlayer(Handle hTimer, any data)

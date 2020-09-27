@@ -563,7 +563,7 @@ ProP+Rifle "JaCkz"
 	VoicePitch = 111
 End
 
-ProP+Rifle "AMANEK"
+ProP+Rifle "AmaNEk"
 	VoicePitch = 100
 End
 
@@ -577,7 +577,7 @@ ProAwp+SniperPro "JW"
 	VoicePitch = 76
 End
 
-ProP+Rifle "KRiMZ"
+ProP+Rifle "KRIMZ"
 	VoicePitch = 97
 End
 
@@ -845,7 +845,7 @@ ProP+Rifle "VINI"
 	VoicePitch = 96
 End
 
-ProP+Rifle "kscerato"
+ProP+Rifle "KSCERATO"
 	VoicePitch = 112
 End
 
@@ -1695,7 +1695,7 @@ ProP+Rifle "k1Nky"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "BRUNO"
+ProAwp+SniperPro "chuti"
 	VoicePitch = 74
 End
 
@@ -1887,28 +1887,6 @@ ProP+Rifle "Valiance"
 	VoicePitch = 72
 End
 
-//BlackS Players
-
-ProP+Rifle "hue9ze"
-	VoicePitch = 103
-End
-
-ProAwp+SniperPro "addict"
-	VoicePitch = 101
-End
-
-ProP+Rifle "cookie"
-	VoicePitch = 88
-End
-
-ProP+Rifle "jono"
-	VoicePitch = 87
-End
-
-ProP+Rifle "Wolfah"
-	VoicePitch = 80
-End
-
 //SKADE Players
 
 ProP+Rifle "Duplicate"
@@ -1933,7 +1911,7 @@ End
 
 //Paradox Players
 
-ProP+Rifle "ino"
+ProP+Rifle "rbz"
 	VoicePitch = 80
 End
 
@@ -1949,7 +1927,7 @@ ProP+Rifle "bedonka"
 	VoicePitch = 86
 End
 
-ProP+Rifle "urbz"
+ProP+Rifle "dangeR"
 	VoicePitch = 78
 End
 
@@ -2183,7 +2161,7 @@ ProAwp+SniperPro "Markoś"
 	VoicePitch = 93
 End
 
-ProP+Rifle "KEi"
+ProP+Rifle "tudsoN"
 	VoicePitch = 96
 End
 
@@ -2333,7 +2311,7 @@ ProP+Rifle "crisby"
 	VoicePitch = 105
 End
 
-ProAwp+SniperPro "kZyJL"
+ProAwp+SniperPro "kzy"
 	VoicePitch = 101
 End
 
@@ -2345,7 +2323,7 @@ ProP+Rifle "JDC"
 	VoicePitch = 74
 End
 
-ProP+Rifle ".P4TriCK"
+ProP+Rifle "P4TriCK"
 	VoicePitch = 114
 End
 
@@ -3599,7 +3577,7 @@ ProP+Rifle "DEATHMAKER"
 	VoicePitch = 109
 End
 
-ProP+Rifle "SpawN"
+ProP+Rifle "Lightningfast"
 	VoicePitch = 81
 End
 

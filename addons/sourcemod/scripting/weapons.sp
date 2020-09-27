@@ -21,6 +21,7 @@
 #include <cstrike>
 #include <PTaH>
 #include <csgo_weaponstickers>
+#include <bot_steamids>
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -898,7 +899,7 @@ void SetWeaponProps(int client, int entity)
 				}
 			}
 			
-			SetEntProp(entity, Prop_Send, "m_iAccountID", g_iBOTAccountID[client]);
+			SetEntProp(entity, Prop_Send, "m_iAccountID", GetBotAccountID(client));
 		}
 		else
 		{
@@ -930,7 +931,7 @@ public void DropWeapon(int client)
 		itemId[0] = itemIDLow++;
 		itemId[1] = itemIDHigh++;
 
-		entity_updates.SetInt("accountid", g_iBOTAccountID[client]);
+		entity_updates.SetInt("accountid", GetBotAccountID(client));
 		entity_updates.SetInt64("itemid", itemId);
 		entity_updates.SetInt("defindex", iDefIndex);
 		entity_updates.SetInt("paintindex", GetEntProp(iActiveWeapon, Prop_Send, "m_nFallbackPaintKit"));
