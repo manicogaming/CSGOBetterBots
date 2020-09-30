@@ -195,7 +195,7 @@ public void OnRoundStart(Handle event, const char[] name, bool dontBroadcast)
 
 public void OnMapStart()
 {
-	CreateTimer(10.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(15.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public Action Timer_CheckPlayer(Handle hTimer, any data)

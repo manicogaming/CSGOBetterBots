@@ -1,0 +1,9 @@
+"de_belukha"
+{
+	"material"	"overviews/de_belukha"	// texture file
+	"pos_x"		"-4491"	// upper left world coordinate
+	"pos_y"		"2541"
+	"scale"		"6"
+	"rotate"	"0"
+	"zoom"		"1"
+}

@@ -671,7 +671,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 181905573;
 	}
-	else if(strcmp(szBotName, "Sico") == 0)
+	else if(strcmp(szBotName, "sico") == 0)
 	{
 		accountId = 39266546;
 	}
@@ -1335,7 +1335,7 @@ public void OnClientSettingsChanged(int client)
 	}
 	else if(strcmp(szBotName, "Olivia") == 0)
 	{
-		accountId = 43786107;
+		accountId = 101480074;
 	}
 	else if(strcmp(szBotName, "stk") == 0)
 	{
