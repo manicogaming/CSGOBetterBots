@@ -1,0 +1,15 @@
+"Games"
+{
+	"csgo"
+	{
+		"Signatures"
+		{
+			// Is the function below the string '#Cstrike_TitlesTXT_Game_afk_bomb_drop' in CCSPlayer:PostThink
+			"CCSPlayer::SetRank" // MedalCategory_t category, MedalRank_t rank
+			{
+				"library"		"server"
+				"windows"		"\x55\x8B\xEC\x81\xC1\xCC\x15\x00\x00"
+			}
+		}
+	}
+}

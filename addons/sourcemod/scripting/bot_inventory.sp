@@ -14,7 +14,7 @@ bool g_bLateLoaded;
 int g_iWeaponCount;
 int g_iSkinCount;
 int g_iGloveCount;
-int g_iStoredKnife[MAXPLAYERS+1], g_iCoin[MAXPLAYERS+1], g_iCoinOffset;
+int g_iStoredKnife[MAXPLAYERS+1];
 int g_iStatTrakKills[MAXPLAYERS+1][1024];
 bool g_bKnifeHasStatTrak[MAXPLAYERS+1][1024];
 
@@ -28,6 +28,22 @@ int g_iKnifeDefIndex[] = {
 int g_iPatchDefIndex[] = {
 	4550, 4551, 4552, 4553, 4554, 4555, 4556, 4557, 4558, 4559, 4560, 4561, 4562, 4563, 4564, 4565, 4566, 4567, 4568, 4569,
 	4570, 4589, 4591, 4592, 4593, 4594, 4595, 4596, 4597, 4598, 4599, 4600
+};
+
+Handle g_hSetRank;
+
+enum MedalCategory_t
+{
+	MEDAL_CATEGORY_NONE = -1, 
+	MEDAL_CATEGORY_START = 0, 
+	MEDAL_CATEGORY_TEAM_AND_OBJECTIVE = 0, 
+	MEDAL_CATEGORY_COMBAT, 
+	MEDAL_CATEGORY_WEAPON, 
+	MEDAL_CATEGORY_MAP, 
+	MEDAL_CATEGORY_ARSENAL, 
+	MEDAL_CATEGORY_ACHIEVEMENTS_END, 
+	MEDAL_CATEGORY_SEASON_COIN = 5, 
+	MEDAL_CATEGORY_COUNT, 
 };
 
 static char g_szCTModels[][] = {
@@ -112,13 +128,20 @@ public void OnPluginStart()
 	{
 		PTaH(PTaH_WeaponCanUsePre, Hook, WeaponCanUsePre);
 	}
-}
-
-public void OnMapStart()
-{
-	g_iCoinOffset = FindSendPropInfo("CCSPlayerResource", "m_nActiveCoinRank");
 	
-	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
+	GameData hGameData = new GameData("botinventory.games");
+	
+	// https://github.com/perilouswithadollarsign/cstrike15_src/blob/29e4c1fda9698d5cebcdaf1a0de4b829fa149bf8/game/server/cstrike15/cs_player.cpp#L16369-L16372
+	// Changes the the rank of the player ( this case use is the coin )
+	// void CCSPlayer::SetRank( MedalCategory_t category, MedalRank_t rank )
+	StartPrepSDKCall(SDKCall_Player);
+	
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CCSPlayer::SetRank"); // void
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // int MedalCategory_t category
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // int MedalRank_t rank
+	
+	if (!(g_hSetRank = EndPrepSDKCall()))
+		SetFailState("Failed to get CCSPlayer::SetRank signature");
 }
 
 public void eItems_OnItemsSynced()
@@ -255,7 +278,7 @@ void GiveNamedItemPost(int client, const char[] classname, const CEconItemView i
 
 public void OnThinkPost(int iEnt)
 {
-	SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
+	//SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
 }
 
 public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3])
@@ -452,11 +475,11 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
 			
 			if(Math_GetRandomInt(1,2) == 1)
 			{
-				g_iCoin[clientIndex] = eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() -1));
+				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() -1)));
 			}
 			else
 			{
-				g_iCoin[clientIndex] = eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() -1));
+				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() -1)));
 			}
 		}
 		
@@ -1521,14 +1544,8 @@ public void OnClientDisconnect(int client)
 {
 	if(IsValidClient(client))
 	{
-		g_iCoin[client] = 0;
 		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
-}
-
-public void OnMapEnd()
-{
-	SDKUnhook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
 }
 
 public void OnPluginEnd()
