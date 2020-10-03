@@ -2,6 +2,7 @@
 
 #include <sourcemod>
 #include <sdktools>
+#include <smlib>
 
 #pragma newdecls required
 
@@ -359,7 +360,7 @@ public void OnClientSettingsChanged(int client)
 		accountId = 160954758;
 	}
 	//Liquid Players
-	else if(strcmp(szBotName, "EliGE") == 0)
+	else if(strcmp(szBotName, "ELiGE") == 0)
 	{
 		accountId = 106428011;
 	}
@@ -439,6 +440,10 @@ public void OnClientSettingsChanged(int client)
 		accountId = 222196859;
 	}
 	//FURIA Players
+	else if(strcmp(szBotName, "HEN1") == 0)
+	{
+		accountId = 57761535;
+	}
 	else if(strcmp(szBotName, "yuurih") == 0)
 	{
 		accountId = 204704832;
@@ -1687,10 +1692,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 35632848;
 	}
-	else if(strcmp(szBotName, "starix") == 0)
-	{
-		accountId = 53338238;
-	}
 	//Gambit Players
 	else if(strcmp(szBotName, "nafany") == 0)
 	{
@@ -2427,7 +2428,7 @@ public void OnClientSettingsChanged(int client)
 	//CeX Players
 	else
 	{
-		accountId = GetRandomInt(3, 1091249497);
+		accountId = Math_GetRandomInt(3, 1091249497);
 	}
 	
 	int steamIdHigh = 16781313;

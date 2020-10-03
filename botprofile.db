@@ -683,7 +683,7 @@ ProP+Rifle "AZR"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "jks"
+ProAwp+SniperPro "Gratisfaction"
 	VoicePitch = 110
 End
 
@@ -691,7 +691,7 @@ ProP+Rifle "jkaem"
 	VoicePitch = 97
 End
 
-ProP+Rifle "Gratisfaction"
+ProP+Rifle "jks"
 	VoicePitch = 80
 End
 
@@ -2509,7 +2509,7 @@ ProP+Rifle "kinqie"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "starix"
+ProAwp+SniperPro "DrobnY"
 	VoicePitch = 89
 End
 

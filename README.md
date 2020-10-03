@@ -4,10 +4,6 @@ In here there are some plugins that I personality edited to add the features of 
 
 I edited the following plugins.
 
-# [[CSGO] Gloves](https://forums.alliedmods.net/showthread.php?t=299977)
-- Made it so that it doesn't skip BOTs
-- All the data is now saved and queried by name as BOTs don't have a SteamID
-
 # [SQL Matches](https://forums.alliedmods.net/showthread.php?t=312488)
 - The following is now added to the database
   - Team names from mp_teamname_1 and mp_teamname_2
@@ -24,10 +20,6 @@ I edited the following plugins.
   - Assists
   - MVPs
   - Score
-  
-# [[CSGO] Weapon & Knives (Skins, Name Tags, StatTrak, Wear/Float) [!ws !knife !nametag]](https://forums.alliedmods.net/showthread.php?t=298770)
-- Made it so that it doesn't skip BOTs
-- All the data is now saved and queried by name as BOTs don't have a SteamID
 
 # [hallucinogenic/MatchMaking-Ranks-By-Points](https://github.com/hallucinogenic/MatchMaking-Ranks-By-Points)
 - Made it so that it doesn't skip BOTs

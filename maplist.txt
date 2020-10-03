@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Mon Sep 28 23:41:12 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sat Oct 03 20:13:17 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -51,7 +51,6 @@ aim_deagle5_classic
 aim_deagle7k_norm
 aim_deagle7k_real
 aim_deagle_retrowave
-aim_deagle_ultra
 aim_depot_beta01
 aim_dust
 aim_glass_handel_v2_fix
@@ -136,15 +135,17 @@ cs_bird
 cs_bloodstrike_old
 cs_camouflage_csgo
 cs_cappa
-cs_coldwar
 cs_compound
+cs_compound_d
 cs_concert
+cs_cruise
 cs_deadhouse
 cs_frozen
 cs_italy
 cs_lanpartymayhem
 cs_militia
 cs_office
+cs_office_d
 cs_warmblow_beta01
 cs_winternights
 de_1_6_vertigo
@@ -169,6 +170,7 @@ de_bank
 de_basalt
 de_bastion2
 de_bazaar
+de_belukha
 de_berth
 de_biome
 de_bombspot_bitcoin
@@ -195,6 +197,7 @@ de_contra_b3
 de_cotroceni
 de_cpt
 de_crown
+de_cypress
 de_darkcastle_rebirth_v2
 de_deadblock
 de_desert
@@ -229,6 +232,7 @@ de_train
 de_vacant
 de_vertigo
 de_xmas_hotel
+deagle_ultra
 deathzone
 dm_bloodsport
 fun_pacman_v1
