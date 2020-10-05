@@ -14,7 +14,34 @@ bool g_bLateLoaded;
 int g_iWeaponCount;
 int g_iSkinCount;
 int g_iGloveCount;
+
+int g_iMusicKit[MAXPLAYERS+1];
+int g_iCoin[MAXPLAYERS+1];
+int g_iCustomPlayerChance[MAXPLAYERS+1];
+int g_iCTModel[MAXPLAYERS+1];
+int g_iTModel[MAXPLAYERS+1];
+int g_iPatchChance[MAXPLAYERS+1];
+int g_iPatchComboChance[MAXPLAYERS+1];
+int g_iRndPatchCombo[MAXPLAYERS+1];
+int g_iRndPatch[MAXPLAYERS+1][4];
+int g_iRndSamePatch[MAXPLAYERS+1];
+
 int g_iStoredKnife[MAXPLAYERS+1];
+int g_iSkinDefIndex[MAXPLAYERS+1][1024];
+float g_fWeaponSkinWear[MAXPLAYERS+1][1024];
+int g_iWeaponSkinSeed[MAXPLAYERS+1][1024];
+int g_iStatTrakOrSouvenirChance[MAXPLAYERS+1][1024];
+int g_iStickerChance[MAXPLAYERS+1][1024];
+int g_iStickerComboChance[MAXPLAYERS+1][1024];
+int g_iRndStickerCombo[MAXPLAYERS+1][1024];
+int g_iRndSticker[MAXPLAYERS+1][1024][4];
+int g_iRndSameSticker[MAXPLAYERS+1][1024];
+
+int g_iStoredGlove[MAXPLAYERS+1];
+int g_iGloveSkin[MAXPLAYERS+1];
+float g_fGloveWear[MAXPLAYERS+1];
+int g_iGloveSeed[MAXPLAYERS+1];
+
 int g_iStatTrakKills[MAXPLAYERS+1][1024];
 bool g_bKnifeHasStatTrak[MAXPLAYERS+1][1024];
 
@@ -204,8 +231,529 @@ public void BuildSkinsArrayList()
 public void OnClientPutInServer(int client)
 {
 	if(IsValidClient(client))
-	{
-		g_iStoredKnife[client] = g_iKnifeDefIndex[Math_GetRandomInt(0, sizeof(g_iKnifeDefIndex) - 1)];
+	{		
+		if(eItems_AreItemsSynced())
+		{
+			g_iMusicKit[client] = eItems_GetMusicKitDefIndexByMusicKitNum(Math_GetRandomInt(0, eItems_GetMusicKitsCount() -1));
+			
+			if(Math_GetRandomInt(1,2) == 1)
+			{
+				g_iCoin[client] = eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() -1));
+			}
+			else
+			{
+				g_iCoin[client] = eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() -1)); 
+			}
+			
+			g_iCustomPlayerChance[client] = Math_GetRandomInt(1,100);
+			
+			g_iCTModel[client] = Math_GetRandomInt(0, sizeof(g_szCTModels) - 1);
+			g_iTModel[client] = Math_GetRandomInt(0, sizeof(g_szTModels) - 1);
+			
+			g_iPatchChance[client] = Math_GetRandomInt(1,100);
+			g_iPatchComboChance[client] = Math_GetRandomInt(1,100);
+			
+			if(g_iPatchComboChance[client] <= 65)
+			{
+				g_iRndPatchCombo[client] = Math_GetRandomInt(1,14);
+			}
+			else
+			{
+				g_iRndPatchCombo[client] = Math_GetRandomInt(1,2);
+			}
+			
+			g_iRndPatch[client][0] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			g_iRndPatch[client][1] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			g_iRndPatch[client][2] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			g_iRndPatch[client][3] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			
+			g_iRndSamePatch[client] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+		
+			g_iStoredGlove[client] = eItems_GetGlovesDefIndexByGlovesNum(Math_GetRandomInt(0, g_iGloveCount-1));
+			
+			int iGloveNum = eItems_GetGlovesNumByDefIndex(g_iStoredGlove[client]);
+			int iRandomGloveSkin = Math_GetRandomInt(0, g_ArrayGloves[iGloveNum].Length -1);
+			
+			if(iRandomGloveSkin != -1)
+			{
+				g_iGloveSkin[client] = g_ArrayGloves[iGloveNum].Get(iRandomGloveSkin);
+			}
+			
+			g_fGloveWear[client] = Math_GetRandomFloat(0.06, 0.80);
+			g_iGloveSeed[client] = Math_GetRandomInt(1,1000);
+			
+			g_iStoredKnife[client] = g_iKnifeDefIndex[Math_GetRandomInt(0, sizeof(g_iKnifeDefIndex) - 1)];
+			
+			for(int iWeapon = 0; iWeapon < g_iWeaponCount; iWeapon++)
+			{
+				int iWeaponDefIndex = eItems_GetWeaponDefIndexByWeaponNum(iWeapon);
+				int iRandomWeaponSkin = Math_GetRandomInt(0, g_ArrayWeapons[iWeapon].Length -1);
+				if(iRandomWeaponSkin != -1)
+				{
+					g_iSkinDefIndex[client][iWeaponDefIndex] = g_ArrayWeapons[iWeapon].Get(iRandomWeaponSkin);
+				}
+				
+				g_iWeaponSkinSeed[client][iWeaponDefIndex] = Math_GetRandomInt(1,1000);
+				g_iStatTrakOrSouvenirChance[client][iWeaponDefIndex] = Math_GetRandomInt(1,100);
+				g_iStickerChance[client][iWeaponDefIndex] = Math_GetRandomInt(1,100);
+				g_iStickerComboChance[client][iWeaponDefIndex] = Math_GetRandomInt(1,100);
+				
+				if(g_iStickerComboChance[client][iWeaponDefIndex] <= 65)
+				{
+					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1,14);
+				}
+				else
+				{
+					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1,2);
+				}
+				
+				g_iRndSticker[client][iWeaponDefIndex][0] = CS_GetRandomSticker();
+				g_iRndSticker[client][iWeaponDefIndex][1] = CS_GetRandomSticker();
+				g_iRndSticker[client][iWeaponDefIndex][2] = CS_GetRandomSticker();
+				g_iRndSticker[client][iWeaponDefIndex][3] = CS_GetRandomSticker();
+				
+				g_iRndSameSticker[client][iWeaponDefIndex] = CS_GetRandomSticker();
+				
+				switch(g_iSkinDefIndex[client][iWeaponDefIndex])
+				{
+					case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.65);
+					}
+					case 572, 571, 570, 569, 568, 413, 418, 419, 420, 421, 416, 415, 417, 618, 619, 617, 409, 38, 856, 855, 854, 853, 852, 453, 445, 213, 210, 197, 196, 71, 67, 61, 51, 48,
+					37, 36, 34, 33, 32, 28:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.08);
+					}
+					case 577, 576, 575, 574, 573, 808, 644:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.85);
+					}
+					case 582, 581, 580:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.48);
+					}
+					case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782,
+					781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305,
+					280, 263, 257, 238, 237, 228, 224, 223, 919, 759, 757, 758, 760, 761, 862, 742, 867, 746, 743, 744, 739, 741, 868, 727, 728, 729, 730, 726, 733, 871, 870, 873, 970:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.50);
+					}
+					case 98, 12, 40, 143, 5, 77, 72, 175, 735, 755, 753, 621, 620, 333, 332, 322, 297, 277, 101, 866, 151:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.80);
+					}
+					case 414, 552:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.40, 1.00);
+					}
+					case 59:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.01, 0.26);
+					}
+					case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.40);
+					}
+					case 850, 483:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.14, 0.65);
+					}
+					case 849, 842, 836, 809, 804, 642, 636, 627, 557, 470, 469, 468, 400, 394, 388, 902, 889, 963:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.75);
+					}
+					case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905,
+					886, 859, 864, 734, 732, 950, 959, 966:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.70);
+					}
+					case 847, 551, 288:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 1.00);
+					}
+					case 845, 655:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 1.00);
+					}
+					case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384,
+					378, 273, 916, 910, 891, 892, 890, 942, 962, 972, 974:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.80);
+					}
+					case 843:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.25, 0.80);
+					}
+					case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.90);
+					}
+					case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906, 863, 725, 872:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.55);
+					}
+					case 816:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.14, 1.00);
+					}
+					case 815:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.80);
+					}
+					case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756,
+					763, 736, 869, 731, 952, 968:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.60);
+					}
+					case 801, 380, 943:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.70);
+					}
+					case 703, 359:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.92);
+					}
+					case 691, 533, 503:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.64);
+					}
+					case 690, 591:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.63);
+					}
+					case 800, 443, 335:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.35);
+					}
+					case 689, 956:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.72);
+					}
+					case 683:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.03, 0.70);
+					}
+					case 670:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.51);
+					}
+					case 666, 648, 639, 633, 630, 606, 597, 544, 535, 433, 424, 307, 285, 234, 896:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.45);
+					}
+					case 657:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.86);
+					}
+					case 651, 545, 480, 182:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.52);
+					}
+					case 643, 348:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.56);
+					}
+					case 634, 448, 356, 351, 298, 294, 286, 265, 262, 219, 217, 215, 184, 181, 3, 125:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.30);
+					}
+					case 608, 509:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.44);
+					}
+					case 603:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 1.00);
+					}
+					case 592:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.80);
+					}
+					case 586:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.54);
+					}
+					case 583:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.66);
+					}
+					case 556:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.77);
+					}
+					case 555, 319:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.43);
+					}
+					case 553:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.81);
+					}
+					case 548:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.99);
+					}
+					case 752, 387, 382, 221:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.25);
+					}
+					case 790, 788, 373:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.83);
+					}
+					case 530:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.61);
+					}
+					case 527, 180:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.76);
+					}
+					case 515, 437, 299, 274, 272, 271, 268, 231, 230, 220:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.20);
+					}
+					case 511:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.14, 0.85);
+					}
+					case 506:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.67);
+					}
+					case 500, 914:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.62);
+					}
+					case 490:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.87);
+					}
+					case 489, 425, 386:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.46);
+					}
+					case 481:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.32);
+					}
+					case 449:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.33);
+					}
+					case 441:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.39);
+					}
+					case 440, 326, 325:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.10);
+					}
+					case 436:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.25, 0.35);
+					}
+					case 432, 395:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.20);
+					}
+					case 428:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.85);
+					}
+					case 427:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.90);
+					}
+					case 398:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.35, 0.80);
+					}
+					case 396:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.47);
+					}
+					case 392:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.35);
+					}
+					case 385:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.49);
+					}
+					case 383, 907, 888:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.68);
+					}
+					case 381:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.25);
+					}
+					case 366, 365, 276:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.58);
+					}
+					case 330, 329, 327, 191:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.22);
+					}
+					case 328, 917:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.01, 0.70);
+					}
+					case 320, 293, 251:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.08, 0.50);
+					}
+					case 314:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.03, 0.50);
+					}
+					case 304:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.15, 0.80);
+					}
+					case 296, 162:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.18);
+					}
+					case 290:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.38);
+					}
+					case 289, 282:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.70);
+					}
+					case 287, 264:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.60);
+					}
+					case 283:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.08, 0.75);
+					}
+					case 281:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.75);
+					}
+					case 279, 255:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.18, 1.00);
+					}
+					case 278:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.58);
+					}
+					case 267:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.45);
+					}
+					case 261:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.50);
+					}
+					case 259:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.40);
+					}
+					case 253:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.03);
+					}
+					case 229, 174:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.28);
+					}
+					case 226, 154:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.40);
+					}
+					case 214, 212, 211, 185, 70:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.12);
+					}
+					case 189:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.22);
+					}
+					case 187:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.42);
+					}
+					case 178:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.08, 0.22);
+					}
+					case 177:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.18);
+					}
+					case 156:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.08, 0.32);
+					}
+					case 155:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.46);
+					}
+					case 153:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.26, 0.60);
+					}
+					case 73:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.14);
+					}
+					case 60, 11:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.10, 0.26);
+					}
+					case 10:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.12, 0.38);
+					}
+					case 911:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.57);
+					}
+					case 899:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.14, 0.60);
+					}
+					case 900:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 0.65);
+					}
+					case 860:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.55);
+					}
+					case 762, 865:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.50);
+					}
+					case 946:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.84);
+					}
+					case 971:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.73);
+					}
+					case 958:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.79);
+					}
+					default:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 1.00);
+					}
+				}
+			}
+		}
+		
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
@@ -274,11 +822,6 @@ void GiveNamedItemPost(int client, const char[] classname, const CEconItemView i
 			SetWeaponProps(client, entity);
 		}
 	}
-}
-
-public void OnThinkPost(int iEnt)
-{
-	//SetEntDataArray(iEnt, g_iCoinOffset, g_iCoin, MAXPLAYERS+1);
 }
 
 public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3])
@@ -471,19 +1014,19 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
 		
 		if(eItems_AreItemsSynced())
 		{
-			SetEntProp(clientIndex, Prop_Send, "m_unMusicID", eItems_GetMusicKitDefIndexByMusicKitNum(Math_GetRandomInt(0, eItems_GetMusicKitsCount() -1)));
+			SetEntProp(clientIndex, Prop_Send, "m_unMusicID", g_iMusicKit[clientIndex]);
 			
 			if(Math_GetRandomInt(1,2) == 1)
 			{
-				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() -1)));
+				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[clientIndex]);
 			}
 			else
 			{
-				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() -1)));
+				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[clientIndex]);
 			}
 		}
 		
-		if(Math_GetRandomInt(1,100) <= 35)
+		if(g_iCustomPlayerChance[clientIndex] <= 35)
 		{
 			CreateTimer(1.3, Timer_ApplyAgent, clientIndex);
 		}
@@ -494,109 +1037,103 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 {
 	if(GetClientTeam(i) == CS_TEAM_CT)
 	{
-		SetEntityModel(i, g_szCTModels[Math_GetRandomInt(0, sizeof(g_szCTModels) - 1)]);
+		SetEntityModel(i, g_szCTModels[g_iCTModel[i]]);
 		
-		if(Math_GetRandomInt(1,100) <= 30)
+		if(g_iPatchChance[i] <= 30)
 		{
-			if(Math_GetRandomInt(1,100) <= 65)
+			if(g_iPatchComboChance[i] <= 65)
 			{
-				int iRndPatchCombo = Math_GetRandomInt(1,14);
-			
-				switch (iRndPatchCombo)
+				switch (g_iRndPatchCombo[i])
 				{
 					case 1:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
 					}
 					case 2:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
 					}
 					case 3:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 4:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 5:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 6:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
 					}
 					case 7:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 8:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 9:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 10:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 11:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 12:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 13:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 14:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 				}
 			}
 			else
 			{
-				int iRndPatchCombo = Math_GetRandomInt(1,2);
-				
-				switch(iRndPatchCombo)
+				switch(g_iRndPatchCombo[i])
 				{
 					case 1:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 2:
 					{
-						int iPatchDefIndex = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-						
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
 					}
 				}
 			}
@@ -604,109 +1141,103 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 	}
 	else if(GetClientTeam(i) == CS_TEAM_T)
 	{
-		SetEntityModel(i, g_szTModels[Math_GetRandomInt(0, sizeof(g_szTModels) - 1)]);
+		SetEntityModel(i, g_szTModels[g_iTModel[i]]);
 		
-		if(Math_GetRandomInt(1,100) <= 40)
+		if(g_iPatchChance[i] <= 40)
 		{
-			if(Math_GetRandomInt(1,100) <= 65)
+			if(g_iPatchComboChance[i] <= 65)
 			{
-				int iRndPatchCombo = Math_GetRandomInt(1,14);
-			
-				switch (iRndPatchCombo)
+				switch (g_iRndPatchCombo[i])
 				{
 					case 1:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
 					}
 					case 2:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
 					}
 					case 3:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 4:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 5:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 6:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
 					}
 					case 7:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 8:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 9:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 10:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
 					}
 					case 11:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 12:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 13:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 14:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 				}
 			}
 			else
 			{
-				int iRndPatchCombo = Math_GetRandomInt(1,2);
-				
-				switch(iRndPatchCombo)
+				switch(g_iRndPatchCombo[i])
 				{
 					case 1:
 					{
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)], 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 					}
 					case 2:
 					{
-						int iPatchDefIndex = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-						
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 0);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 1);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 2);
-						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", iPatchDefIndex, 4, 3);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
+						SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
 					}
 				}
 			}
@@ -724,453 +1255,9 @@ void SetWeaponProps(int client, int entity)
 		SetEntProp(entity, Prop_Send, "m_iItemIDLow", -1);
 		SetEntProp(entity, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		
-		int iWeaponNum = eItems_GetWeaponNumByDefIndex(index);
-		int iRandomSkin = Math_GetRandomInt(0, g_ArrayWeapons[iWeaponNum].Length -1);
-		int iRandomSkinDef;
-		if(iRandomSkin != -1)
-		{
-			iRandomSkinDef = g_ArrayWeapons[iWeaponNum].Get(iRandomSkin);
-		}
-		
-		SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", iRandomSkinDef);
-		
-		switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
-		{
-			case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.65));
-			}
-			case 572, 571, 570, 569, 568, 413, 418, 419, 420, 421, 416, 415, 417, 618, 619, 617, 409, 38, 856, 855, 854, 853, 852, 453, 445, 213, 210, 197, 196, 71, 67, 61, 51, 48,
-			37, 36, 34, 33, 32, 28:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.08));
-			}
-			case 577, 576, 575, 574, 573, 808, 644:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.85));
-			}
-			case 582, 581, 580:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.48));
-			}
-			case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782,
-			781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305,
-			280, 263, 257, 238, 237, 228, 224, 223, 919, 759, 757, 758, 760, 761, 862, 742, 867, 746, 743, 744, 739, 741, 868, 727, 728, 729, 730, 726, 733, 871, 870, 873, 970:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.50));
-			}
-			case 98, 12, 40, 143, 5, 77, 72, 175, 735, 755, 753, 621, 620, 333, 332, 322, 297, 277, 101, 866, 151:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.80));
-			}
-			case 414, 552:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.40, 1.00));
-			}
-			case 59:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.01, 0.26));
-			}
-			case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.40));
-			}
-			case 850, 483:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.14, 0.65));
-			}
-			case 849, 842, 836, 809, 804, 642, 636, 627, 557, 470, 469, 468, 400, 394, 388, 902, 889, 963:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.75));
-			}
-			case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905,
-			886, 859, 864, 734, 732, 950, 959, 966:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.70));
-			}
-			case 847, 551, 288:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 1.00));
-			}
-			case 845, 655:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 1.00));
-			}
-			case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384,
-			378, 273, 916, 910, 891, 892, 890, 942, 962, 972, 974:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.80));
-			}
-			case 843:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.25, 0.80));
-			}
-			case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.90));
-			}
-			case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906, 863, 725, 872:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.55));
-			}
-			case 816:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.14, 1.00));
-			}
-			case 815:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.80));
-			}
-			case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756,
-			763, 736, 869, 731, 952, 968:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.60));
-			}
-			case 801, 380, 943:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.70));
-			}
-			case 703, 359:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.92));
-			}
-			case 691, 533, 503:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.64));
-			}
-			case 690, 591:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.63));
-			}
-			case 800, 443, 335:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.35));
-			}
-			case 689, 956:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.72));
-			}
-			case 683:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.03, 0.70));
-			}
-			case 670:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.51));
-			}
-			case 666, 648, 639, 633, 630, 606, 597, 544, 535, 433, 424, 307, 285, 234, 896:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.45));
-			}
-			case 657:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.86));
-			}
-			case 651, 545, 480, 182:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.52));
-			}
-			case 643, 348:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.56));
-			}
-			case 634, 448, 356, 351, 298, 294, 286, 265, 262, 219, 217, 215, 184, 181, 3, 125:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.30));
-			}
-			case 608, 509:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.44));
-			}
-			case 603:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 1.00));
-			}
-			case 592:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.80));
-			}
-			case 586:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.54));
-			}
-			case 583:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.66));
-			}
-			case 556:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.77));
-			}
-			case 555, 319:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.43));
-			}
-			case 553:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.81));
-			}
-			case 548:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.99));
-			}
-			case 752, 387, 382, 221:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.25));
-			}
-			case 790, 788, 373:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.83));
-			}
-			case 530:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.61));
-			}
-			case 527, 180:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.76));
-			}
-			case 515, 437, 299, 274, 272, 271, 268, 231, 230, 220:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.20));
-			}
-			case 511:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.14, 0.85));
-			}
-			case 506:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.67));
-			}
-			case 500, 914:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.62));
-			}
-			case 490:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.87));
-			}
-			case 489, 425, 386:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.46));
-			}
-			case 481:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.32));
-			}
-			case 449:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.33));
-			}
-			case 441:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.39));
-			}
-			case 440, 326, 325:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.10));
-			}
-			case 436:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.25, 0.35));
-			}
-			case 432, 395:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.20));
-			}
-			case 428:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.85));
-			}
-			case 427:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.90));
-			}
-			case 398:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.35, 0.80));
-			}
-			case 396:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.47));
-			}
-			case 392:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.35));
-			}
-			case 385:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.49));
-			}
-			case 383, 907, 888:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.68));
-			}
-			case 381:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.25));
-			}
-			case 366, 365, 276:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.58));
-			}
-			case 330, 329, 327, 191:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.22));
-			}
-			case 328, 917:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.01, 0.70));
-			}
-			case 320, 293, 251:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.08, 0.50));
-			}
-			case 314:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.03, 0.50));
-			}
-			case 304:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.15, 0.80));
-			}
-			case 296, 162:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.18));
-			}
-			case 290:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.38));
-			}
-			case 289, 282:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.70));
-			}
-			case 287, 264:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.60));
-			}
-			case 283:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.08, 0.75));
-			}
-			case 281:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.75));
-			}
-			case 279, 255:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.18, 1.00));
-			}
-			case 278:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.58));
-			}
-			case 267:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.45));
-			}
-			case 261:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.50));
-			}
-			case 259:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.40));
-			}
-			case 253:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.03));
-			}
-			case 229, 174:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.28));
-			}
-			case 226, 154:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.40));
-			}
-			case 214, 212, 211, 185, 70:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.12));
-			}
-			case 189:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.22));
-			}
-			case 187:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.42));
-			}
-			case 178:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.08, 0.22));
-			}
-			case 177:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.18));
-			}
-			case 156:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.08, 0.32));
-			}
-			case 155:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.02, 0.46));
-			}
-			case 153:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.26, 0.60));
-			}
-			case 73:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.14));
-			}
-			case 60, 11:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.10, 0.26));
-			}
-			case 10:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.12, 0.38));
-			}
-			case 911:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.57));
-			}
-			case 899:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.14, 0.60));
-			}
-			case 900:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.05, 0.65));
-			}
-			case 860:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.55));
-			}
-			case 762, 865:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.06, 0.50));
-			}
-			case 946:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.84));
-			}
-			case 971:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.73));
-			}
-			case 958:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 0.79));
-			}
-			default:
-			{
-				SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", Math_GetRandomFloat(0.00, 1.00));
-			}
-		}
+		SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", g_iSkinDefIndex[client][index]);
+		SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", g_fWeaponSkinWear[client][index]);
+		SetEntProp(entity, Prop_Send, "m_nFallbackSeed", g_iWeaponSkinSeed[client][index]);
 		
 		int weapons_return[42];
 	
@@ -1318,7 +1405,7 @@ void SetWeaponProps(int client, int entity)
 		
 		if(eItems_IsDefIndexKnife(index))
 		{
-			if(Math_GetRandomInt(1,100) <= 30)
+			if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
 			{
 				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrakKills[client][index]);
 				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
@@ -1351,7 +1438,7 @@ void SetWeaponProps(int client, int entity)
 				843, 838, 841, 851, 846, 839, 836, 849, 848, 842, 840, 835, 847, 801, 12, 44, 887, 898, 897, 889, 98, 899, 885, 886, 894, 893, 884, 888, 895, 896, 900, 891, 892, 890,
 				946, 957, 941, 947, 948, 956, 955, 951, 954, 953, 943, 945, 942, 949, 944, 950, 952, 958, 960, 967,	968, 973, 969, 966, 974, 965, 964, 972, 961, 963, 970, 971, 962, 959:
 				{
-					if(Math_GetRandomInt(1,100) <= 30)
+					if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
 					{
 						CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrakKills[client][index]);
 						CS_SetAttributeValue(client, entity, "kill eater score type", 0);
@@ -1364,7 +1451,7 @@ void SetWeaponProps(int client, int entity)
 				90, 754, 39, 37, 33, 2, 233, 243, 240, 46, 27, 241, 523, 30, 141, 157, 99, 8, 148, 124, 170, 116, 247, 235, 159, 321, 84, 318, 322, 319, 238, 15, 95, 100, 22, 119,
 				248, 237, 246, 3, 34, 234, 74, 78, 47, 107, 149, 792, 791, 789, 779, 787, 788, 781, 776, 786, 780, 790, 783, 782, 777, 784, 778, 775, 785, 153, 172, 111, 70, 17, 135:
 				{
-					if(Math_GetRandomInt(1,100) <= 30)
+					if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
 					{
 						CS_SetAttributeValue(client, entity, "kill eater", -1);
 						CS_SetAttributeValue(client, entity, "kill eater score type", -1);
@@ -1380,107 +1467,101 @@ void SetWeaponProps(int client, int entity)
 			}
 		}
 		
-		if(Math_GetRandomInt(1,100) <= 30)
+		if(g_iStickerChance[client][index] <= 30)
 		{
-			if(Math_GetRandomInt(1,100) <= 65)
-			{
-				int rndsticker = Math_GetRandomInt(1,14);
-			
-				switch (rndsticker)
+			if(g_iStickerComboChance[client][index] <= 65)
+			{			
+				switch (g_iRndStickerCombo[client][index])
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
 					}
 					case 2:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
 					}
 					case 3:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
 					}
 					case 4:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 5:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
 					}
 					case 6:
 					{
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
 					}
 					case 7:
 					{
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
 					}
 					case 8:
 					{
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 9:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 10:
 					{
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
 					}
 					case 11:
 					{
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 12:
 					{
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 13:
 					{
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 14:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 				}
 			}
 			else
 			{
-				int rndsticker = Math_GetRandomInt(1,2);
-				
-				switch(rndsticker)
+				switch(g_iRndStickerCombo[client][index])
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, entity, 0, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 1, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, -1, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, -1, 0.0);
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
 					}
 					case 2:
-					{
-						int iStickerDefIndex = CS_GetRandomSticker();
-						
-						CS_SetWeaponSticker(client, entity, 0, iStickerDefIndex, 0.0);
-						CS_SetWeaponSticker(client, entity, 1, iStickerDefIndex, 0.0);
-						CS_SetWeaponSticker(client, entity, 2, iStickerDefIndex, 0.0);
-						CS_SetWeaponSticker(client, entity, 3, iStickerDefIndex, 0.0);
+					{						
+						CS_SetWeaponSticker(client, entity, 0, g_iRndSameSticker[client][index], 0.0);
+						CS_SetWeaponSticker(client, entity, 1, g_iRndSameSticker[client][index], 0.0);
+						CS_SetWeaponSticker(client, entity, 2, g_iRndSameSticker[client][index], 0.0);
+						CS_SetWeaponSticker(client, entity, 3, g_iRndSameSticker[client][index], 0.0);
 					}
 				}
 			}
@@ -1510,22 +1591,12 @@ public void GivePlayerGloves(int client)
 		SetEntProp(ent, Prop_Send, "m_iItemIDLow", IDLow++);
 		SetEntProp(ent, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		
-		int iGlove = eItems_GetGlovesDefIndexByGlovesNum(Math_GetRandomInt(0, g_iGloveCount-1));
+		SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", g_iStoredGlove[client]);
 		
-		SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", iGlove);
+		CS_SetAttributeValue(client, ent, "set item texture prefab", float(g_iGloveSkin[client]));
 		
-		int iGloveNum = eItems_GetGlovesNumByDefIndex(iGlove);
-		int iRandomSkin = Math_GetRandomInt(0, g_ArrayGloves[iGloveNum].Length -1);
-		int iRandomSkinDef;
-		if(iRandomSkin != -1)
-		{
-			iRandomSkinDef = g_ArrayGloves[iGloveNum].Get(iRandomSkin);
-		}
-		
-		CS_SetAttributeValue(client, ent, "set item texture prefab", float(iRandomSkinDef));
-		
-		CS_SetAttributeValue(client, ent, "set item texture wear", Math_GetRandomFloat(0.06, 0.80));
-		CS_SetAttributeValue(client, ent, "set item texture seed", float(Math_GetRandomInt(1,1000)));
+		CS_SetAttributeValue(client, ent, "set item texture wear", g_fGloveWear[client]);
+		CS_SetAttributeValue(client, ent, "set item texture seed", float(g_iGloveSeed[client]));
 		SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
 		SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
 		SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);

@@ -12,7 +12,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iProfileRank[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
@@ -5820,6 +5820,9 @@ public void OnClientPostAdminCheck(int client)
 		Pro_Players(szBotName, client);
 		
 		SetCustomPrivateRank(client);
+		
+		g_iUSPChance[client] = Math_GetRandomInt(1,100);
+		g_iM4A1SChance[client] = Math_GetRandomInt(1,100);
 	}
 }
 
@@ -6004,24 +6007,23 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		
 		if(strcmp(szWeapon, "m4a1") == 0)
 		{
-			if(Math_GetRandomInt(1,100) <= 30)
+			if(g_iM4A1SChance[client] <= 30)
 			{
 				CSGO_SetMoney(client, iAccount - 2900);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
 				
 				return Plugin_Handled; 
 			}
-			else if(Math_GetRandomInt(1,100) <= 5)
+			
+			if(Math_GetRandomInt(1,100) <= 5)
 			{
 				CSGO_SetMoney(client, iAccount - 3300);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
 				
 				return Plugin_Handled; 
 			}
-			else
-			{
-				return Plugin_Continue;
-			}
+			
+			return Plugin_Continue;
 		}
 		else if(strcmp(szWeapon, "ak47") == 0)
 		{
@@ -6682,7 +6684,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 		{			
 			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
-			if(Math_GetRandomInt(1,100) >= 25)
+			if(g_iUSPChance[i] >= 25)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{

@@ -529,7 +529,7 @@ ProP+Rifle "JT"
 	VoicePitch = 80
 End
 
-ProAwp+SniperPro "Sonic"
+ProAwp+SniperPro "oSee"
 	VoicePitch = 105
 End
 
@@ -537,7 +537,7 @@ ProP+Rifle "motm"
 	VoicePitch = 93
 End
 
-ProP+Rifle "oSee"
+ProP+Rifle "Sonic"
 	VoicePitch = 88
 End
 
