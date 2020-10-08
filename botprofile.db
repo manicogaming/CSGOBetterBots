@@ -951,7 +951,7 @@ ProAwp+SniperPro "Lack1"
 	VoicePitch = 114
 End
 
-ProP+Rifle "Hobbit"
+ProP+Rifle "NickelBack"
 	VoicePitch = 113
 End
 
@@ -1597,7 +1597,7 @@ ProP+Rifle "wayLander"
 	VoicePitch = 88
 End
 
-ProP+Rifle "NickelBack"
+ProP+Rifle "AiyvaN"
 	VoicePitch = 71
 End
 
@@ -2173,28 +2173,6 @@ ProP+Rifle "nawrot"
 	VoicePitch = 104
 End
 
-//BTRG Players
-
-ProP+Rifle "Eeyore"
-	VoicePitch = 81
-End
-
-ProAwp+SniperPro "Geniuss"
-	VoicePitch = 110
-End
-
-ProP+Rifle "xccurate"
-	VoicePitch = 107
-End
-
-ProP+Rifle "ImpressioN"
-	VoicePitch = 98
-End
-
-ProP+Rifle "XigN"
-	VoicePitch = 115
-End
-
 //GTZ Players
 
 ProP+Rifle "StepA"
@@ -2543,7 +2521,7 @@ ProP+Rifle "Ax1Le"
 	VoicePitch = 111
 End
 
-ProP+Rifle "supra"
+ProP+Rifle "Hobbit"
 	VoicePitch = 83
 End
 
@@ -3073,28 +3051,6 @@ End
 
 ProP+Rifle "Twixie"
 	VoicePitch = 76
-End
-
-//CR4ZY Players
-
-ProP+Rifle "DemQQ"
-	VoicePitch = 110
-End
-
-ProAwp+SniperPro "Sergiz"
-	VoicePitch = 94
-End
-
-ProP+Rifle "7oX1C"
-	VoicePitch = 84
-End
-
-ProP+Rifle "Psycho"
-	VoicePitch = 113
-End
-
-ProP+Rifle "SENSEi"
-	VoicePitch = 106
 End
 
 //eXploit Players

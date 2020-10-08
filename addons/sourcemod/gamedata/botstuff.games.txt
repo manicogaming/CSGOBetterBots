@@ -38,7 +38,7 @@
 			{
 				// Is second result in a function that uses the 'CoveringFriend' string
 				"library"	"server"
-				"windows"	"\x80\xB9\x64\x3E\x00\x00\x00\x75\x2A"
+				"windows"	"\x80\xB9\x74\x3E\x00\x00\x00\x75\x2A"
 			}
 			"CCSBot::OnAudibleEvent"
 			{
@@ -50,13 +50,13 @@
 			{
 				// Is the last function called in "CCSBot::StayOnNavMesh"
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x83\xEC\x28\x56\x8B\xF1\x57\x80\xBE\x71\x3B\x00\x00\x00"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x28\x56\x8B\xF1\x57\x80\xBE\x81\x3B\x00\x00\x00"
 			}
 			"CCSBot::IsAtHidingSpot"
 			{
 				// Is in the if statement after the if statement with the number '0.33000001' inside CCSBot::Update
 				"library"	"server"
-				"windows"	"\x8D\x81\x28\x3D\x00\x00\x39\x81\x5C\x3E\x00\x00\x74\x2A\x32\xC0\xC3"
+				"windows"	"\x8D\x81\x38\x3D\x00\x00\x39\x81\x6C\x3E\x00\x00\x74\x2A\x32\xC0\xC3"
 			}
 			"CCSBot::EquipKnife"
 			{

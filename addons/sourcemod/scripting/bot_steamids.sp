@@ -561,9 +561,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 107672171;
 	}
-	else if(strcmp(szBotName, "Hobbit") == 0)
+	else if(strcmp(szBotName, "NickelBack") == 0)
 	{
-		accountId = 68027030;
+		accountId = 1882779;
 	}
 	//Sprout Players
 	else if(strcmp(szBotName, "Spiidi") == 0)
@@ -1062,9 +1062,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 825268;
 	}
-	else if(strcmp(szBotName, "NickelBack") == 0)
+	else if(strcmp(szBotName, "AiyvaN") == 0)
 	{
-		accountId = 1882779;
+		accountId = 66592723;
 	}
 	else if(strcmp(szBotName, "pipsoN") == 0)
 	{
@@ -1456,27 +1456,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 58354081;
 	}
-	//BTRG Players
-	else if(strcmp(szBotName, "xccurate") == 0)
-	{
-		accountId = 177428807;
-	}
-	else if(strcmp(szBotName, "XigN") == 0)
-	{
-		accountId = 49809482;
-	}
-	else if(strcmp(szBotName, "Eeyore") == 0)
-	{
-		accountId = 119081987;
-	}
-	else if(strcmp(szBotName, "Geniuss") == 0)
-	{
-		accountId = 119384281;
-	}
-	else if(strcmp(szBotName, "ImpressioN") == 0)
-	{
-		accountId = 134688940;
-	}
 	//GTZ Players
 	else if(strcmp(szBotName, "fakes2") == 0)
 	{
@@ -1697,9 +1676,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 99448400;
 	}
-	else if(strcmp(szBotName, "supra") == 0)
+	else if(strcmp(szBotName, "Hobbit") == 0)
 	{
-		accountId = 164802191;
+		accountId = 68027030;
 	}
 	else if(strcmp(szBotName, "sh1ro") == 0)
 	{
@@ -2108,11 +2087,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "spargo") == 0)
 	{
 		accountId = 109596532;
-	}
-	//CR4ZY Players
-	else if(strcmp(szBotName, "Sergiz") == 0)
-	{
-		accountId = 110022176;
 	}
 	//eXploit Players
 	else if(strcmp(szBotName, "pizituh") == 0)
