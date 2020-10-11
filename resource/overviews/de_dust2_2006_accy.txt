@@ -1,0 +1,10 @@
+
+//Overview: scale 5.50, pos_x -3184, pos_y 4205
+
+"de_dust2_2006_accy"
+{
+"material" "overviews/de_dust2_2006_accy"
+"pos_x" "-3184"
+"pos_y" "4205"
+"scale" "5.50"
+}
