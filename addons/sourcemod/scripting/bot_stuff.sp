@@ -11,7 +11,7 @@
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
-bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
@@ -715,7 +715,7 @@ static char g_szBotName[][] = {
 	"kwezz",
 	"Luckyv1",
 	"sycrone",
-	"Toft",
+	"PR1mE",
 	//Gen.G Players
 	"autimatic",
 	"koosta",
@@ -4533,7 +4533,7 @@ public Action Team_Tricked(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "kwezz");
 		ServerCommand("bot_add_ct %s", "Luckyv1");
 		ServerCommand("bot_add_ct %s", "sycrone");
-		ServerCommand("bot_add_ct %s", "Toft");
+		ServerCommand("bot_add_ct %s", "PR1mE");
 		ServerCommand("mp_teamlogo_1 trick");
 	}
 
@@ -4544,7 +4544,7 @@ public Action Team_Tricked(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "kwezz");
 		ServerCommand("bot_add_t %s", "Luckyv1");
 		ServerCommand("bot_add_t %s", "sycrone");
-		ServerCommand("bot_add_t %s", "Toft");
+		ServerCommand("bot_add_t %s", "PR1mE");
 		ServerCommand("mp_teamlogo_2 trick");
 	}
 
@@ -5749,6 +5749,8 @@ public void OnClientPostAdminCheck(int client)
 		
 		g_iUSPChance[client] = Math_GetRandomInt(1,100);
 		g_iM4A1SChance[client] = Math_GetRandomInt(1,100);
+		
+		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
@@ -5757,6 +5759,38 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bFreezetimeEnd = false;
 	g_bBombPlanted = false;
 	g_iRoundStartedTime = GetTime();
+	
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{				
+		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
+		{
+			g_bHasThrownNade[i] = false;
+			g_bHasThrownSmoke[i] = false;
+			g_iUncrouchChance[i] = Math_GetRandomInt(1,100);
+			g_bCanAttack[i] = false;
+		}
+	}
+}
+
+public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
+{
+	g_bFreezetimeEnd = true;
+	
+	GetCurrentMap(g_szMap, sizeof(g_szMap));
+	
+	if(strcmp(g_szMap, "de_mirage") == 0)
+	{
+		g_iRndExecute = Math_GetRandomInt(1,3);
+	}
+	else if(strcmp(g_szMap, "de_dust2") == 0)
+	{
+		g_iRndExecute = Math_GetRandomInt(1,4);
+	}
+	else if(strcmp(g_szMap, "de_inferno") == 0)
+	{
+		g_iRndExecute = Math_GetRandomInt(1,3);
+	}
 	
 	int[] clients = new int[MaxClients];
 			
@@ -5860,36 +5894,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			}
 		}
 	}
-	
-	for (int i = 1; i <= MaxClients; i++)
-	{				
-		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
-		{
-			g_bHasThrownNade[i] = false;
-			g_bHasThrownSmoke[i] = false;
-			g_iUncrouchChance[i] = Math_GetRandomInt(1,100);
-		}
-	}
-}
-
-public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
-{
-	g_bFreezetimeEnd = true;
-	
-	GetCurrentMap(g_szMap, sizeof(g_szMap));
-	
-	if(strcmp(g_szMap, "de_mirage") == 0)
-	{
-		g_iRndExecute = Math_GetRandomInt(1,3);
-	}
-	else if(strcmp(g_szMap, "de_dust2") == 0)
-	{
-		g_iRndExecute = Math_GetRandomInt(1,4);
-	}
-	else if(strcmp(g_szMap, "de_inferno") == 0)
-	{
-		g_iRndExecute = Math_GetRandomInt(1,3);
-	}
 }
 
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -5918,6 +5922,14 @@ public void OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadc
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
+}
+
+public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3])
+{
+	if(IsValidClient(victim) && IsFakeClient(victim))
+	{
+		g_bCanAttack[victim] = true;
+	}
 }
 
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)
@@ -6024,7 +6036,12 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				GetClientEyePosition(client, fClientEyes);
 				int iEnt = GetClosestClient(client);
 				
-				if(IsValidClient(iEnt) && g_bFreezetimeEnd)
+				if(iEnt == -1)
+				{
+					g_bCanAttack[client] = false;
+				}
+				
+				if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client])
 				{
 					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
 					{
@@ -6134,6 +6151,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						}
 						
 						BotWiggle(client);
+						
+						iButtons &= ~IN_JUMP;
 					}
 					else if(iDefIndex == 1)
 					{
@@ -6722,6 +6741,7 @@ public void OnClientDisconnect(int client)
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		g_iProfileRank[client] = 0;
+		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
@@ -7063,10 +7083,16 @@ stock int GetClosestClient(int client)
 			
 			fClosestDistance = fTargetDistance;
 			iClosestTarget = i;
+			CreateTimer(0.15, Timer_Attack, client);
 		}
 	}
 	
 	return iClosestTarget;
+}
+
+public Action Timer_Attack(Handle hTimer, int client)
+{
+	g_bCanAttack[client] = true;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
@@ -9103,7 +9129,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Tricked Players
-	if((StrEqual(szBotName, "kiR")) || (StrEqual(szBotName, "kwezz")) || (StrEqual(szBotName, "Luckyv1")) || (StrEqual(szBotName, "sycrone")) || (StrEqual(szBotName, "Toft")))
+	if((StrEqual(szBotName, "kiR")) || (StrEqual(szBotName, "kwezz")) || (StrEqual(szBotName, "Luckyv1")) || (StrEqual(szBotName, "sycrone")) || (StrEqual(szBotName, "PR1mE")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
 	}

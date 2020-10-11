@@ -127,7 +127,8 @@ Template ProP
 		Rank = 500
 		Teamwork = 100
 		Aggression = 55
-		ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
+		//ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
+		ReactionTime = 0.15
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 100
@@ -145,7 +146,8 @@ Template ProAwp
 		Teamwork = 45
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
-		ReactionTime = 0.00000000000000000000000000000000000000000000000000001
+		//ReactionTime = 0.00000000000000000000000000000000000000000000000000001
+		ReactionTime = 0.15
 		VoicePitch = 95
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001
@@ -2873,7 +2875,7 @@ ProP+Rifle "sycrone"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Toft"
+ProP+Rifle "PR1mE"
 	VoicePitch = 112
 End
 

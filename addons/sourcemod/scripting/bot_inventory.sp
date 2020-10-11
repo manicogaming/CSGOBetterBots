@@ -1243,6 +1243,8 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 			}
 		}
 	}
+	
+	return Plugin_Stop;
 }
 
 void SetWeaponProps(int client, int entity)
@@ -1251,13 +1253,15 @@ void SetWeaponProps(int client, int entity)
 	
 	if (index > -1)
 	{
+		static int IDLow = 2048;
 		static int IDHigh = 16384;
-		SetEntProp(entity, Prop_Send, "m_iItemIDLow", -1);
+		SetEntProp(entity, Prop_Send, "m_iItemIDLow", IDLow++);
 		SetEntProp(entity, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		
-		SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", g_iSkinDefIndex[client][index]);
-		SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", g_fWeaponSkinWear[client][index]);
-		SetEntProp(entity, Prop_Send, "m_nFallbackSeed", g_iWeaponSkinSeed[client][index]);
+		CS_SetAttributeValue(client, entity, "set item texture prefab", float(g_iSkinDefIndex[client][index]));
+		
+		CS_SetAttributeValue(client, entity, "set item texture wear", g_fWeaponSkinWear[client][index]);
+		CS_SetAttributeValue(client, entity, "set item texture seed", float(g_iWeaponSkinSeed[client][index]));
 		
 		int weapons_return[42];
 	
