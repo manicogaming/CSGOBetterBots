@@ -70,6 +70,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x80\x7D\x08\x00\x56\x8B\xF1\x75\x2A"
 			}
+			"CCSBot::SetLookAt"
+			{
+				// Has '%3.1f SetLookAt( %s ), duration = %f\n' string
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
+			}
 		}
 	}
 }

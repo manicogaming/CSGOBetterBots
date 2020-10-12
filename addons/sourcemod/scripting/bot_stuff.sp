@@ -11,7 +11,7 @@
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
-bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
@@ -26,6 +26,7 @@ Handle g_hBotWiggle;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipKnife;
 Handle g_hBotEquipBestWeapon;
+Handle g_hBotSetLookAt;
 
 enum RouteType
 {
@@ -249,7 +250,7 @@ static char g_szBotName[][] = {
 	"bodyy",
 	"SIXER",
 	//GamerLegion Players
-	"mezii",
+	"dobbo",
 	"eraa",
 	"Zero",
 	"RuStY",
@@ -915,7 +916,7 @@ static char g_szBotName[][] = {
 	"whatz",
 	"shellzi",
 	//KPI Players
-	"dobbo",
+	"MHammond",
 	"SAYN",
 	"Aaron",
 	"Butters",
@@ -1036,6 +1037,17 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
 	
 	delete g_hGameConfig;
 	
@@ -2219,7 +2231,7 @@ public Action Team_GamerLegion(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "mezii");
+		ServerCommand("bot_add_ct %s", "dobbo");
 		ServerCommand("bot_add_ct %s", "eraa");
 		ServerCommand("bot_add_ct %s", "Zero");
 		ServerCommand("bot_add_ct %s", "RuStY");
@@ -2230,7 +2242,7 @@ public Action Team_GamerLegion(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "mezii");
+		ServerCommand("bot_add_t %s", "dobbo");
 		ServerCommand("bot_add_t %s", "eraa");
 		ServerCommand("bot_add_t %s", "Zero");
 		ServerCommand("bot_add_t %s", "RuStY");
@@ -5549,7 +5561,7 @@ public Action Team_KPI(int client, int iArgs)
 	if(strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "dobbo");
+		ServerCommand("bot_add_ct %s", "MHammond");
 		ServerCommand("bot_add_ct %s", "SAYN");
 		ServerCommand("bot_add_ct %s", "Aaron");
 		ServerCommand("bot_add_ct %s", "Butters");
@@ -5560,7 +5572,7 @@ public Action Team_KPI(int client, int iArgs)
 	if(strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "dobbo");
+		ServerCommand("bot_add_t %s", "MHammond");
 		ServerCommand("bot_add_t %s", "SAYN");
 		ServerCommand("bot_add_t %s", "Aaron");
 		ServerCommand("bot_add_t %s", "Butters");
@@ -5769,6 +5781,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bHasThrownSmoke[i] = false;
 			g_iUncrouchChance[i] = Math_GetRandomInt(1,100);
 			g_bCanAttack[i] = false;
+			g_bCanThrowSmoke[i] = false;
 		}
 	}
 }
@@ -5888,7 +5901,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			{
 				g_iRndSmoke[clients[0]] = 8; //A Long Execute
 				g_iRndSmoke[clients[1]] = 9; //A Long Execute
-				g_iRndSmoke[clients[2]] = 10; //A Long Execute
+				g_iRndSmoke[clients[2]] = 0; //A Long Execute
 				g_iRndSmoke[clients[3]] = 0; //A Long Execute
 				g_iRndSmoke[clients[4]] = 0; //A Long Execute
 			}
@@ -6797,6 +6810,11 @@ public int BotEquipBestWeapon(int client, bool bMustEquip)
 	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
 }
 
+public int BotSetLookAt(int client, const char[] szDesc, const float fPos[3], PriorityType pri, float fDuration, bool bClearIfClose, float fAngleTolerance, bool bAttack)
+{
+	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
+}
+
 public int LookupBone(int iEntity, const char[] szName)
 {
 	return SDKCall(g_hLookupBone, iEntity, szName);
@@ -6925,32 +6943,32 @@ stock int GetClosestClient(int client)
 				}
 			}
 
-			if(strcmp(szClanTag, "Nemiga") == 0) //30th
+			if(strcmp(szClanTag, "Endpoint") == 0) //30th
 			{
 				if (!IsTargetInSightRange(client, i, 50.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "ESPADA") == 0) //29th
+			else if(strcmp(szClanTag, "Nemiga") == 0) //29th
 			{
 				if (!IsTargetInSightRange(client, i, 60.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "VP") == 0) //28th
+			else if(strcmp(szClanTag, "One") == 0) //28th
 			{
 				if (!IsTargetInSightRange(client, i, 70.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "One") == 0) //27th
+			else if(strcmp(szClanTag, "VP") == 0) //27th
 			{
 				if (!IsTargetInSightRange(client, i, 80.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Lions") == 0) //26th
+			else if(strcmp(szClanTag, "forZe") == 0) //26th
 			{
 				if (!IsTargetInSightRange(client, i, 90.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "forZe") == 0) //25th
+			else if(strcmp(szClanTag, "Lions") == 0) //25th
 			{
 				if (!IsTargetInSightRange(client, i, 100.0))
 					continue;	
@@ -6975,67 +6993,67 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 140.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Chaos") == 0) //20th
+			else if(strcmp(szClanTag, "ENCE") == 0) //20th
 			{
 				if (!IsTargetInSightRange(client, i, 150.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Sprout") == 0) //19th
+			else if(strcmp(szClanTag, "Chaos") == 0) //19th
 			{
 				if (!IsTargetInSightRange(client, i, 160.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "ENCE") == 0) //18th
+			else if(strcmp(szClanTag, "Sprout") == 0) //18th
 			{
 				if (!IsTargetInSightRange(client, i, 170.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "FaZe") == 0) //17th
+			else if(strcmp(szClanTag, "Spirit") == 0) //17th
 			{
 				if (!IsTargetInSightRange(client, i, 180.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Spirit") == 0) //16th
+			else if(strcmp(szClanTag, "NiP") == 0) //16th
 			{
 				if (!IsTargetInSightRange(client, i, 190.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "fnatic") == 0) //15th
+			else if(strcmp(szClanTag, "mouz") == 0) //15th
 			{
 				if (!IsTargetInSightRange(client, i, 200.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "NiP") == 0) //14th
+			else if(strcmp(szClanTag, "Thieves") == 0) //14th
 			{
 				if (!IsTargetInSightRange(client, i, 210.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "OG") == 0) //13th
+			else if(strcmp(szClanTag, "fnatic") == 0) //13th
 			{
 				if (!IsTargetInSightRange(client, i, 220.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "mouz") == 0) //12th
+			else if(strcmp(szClanTag, "coL") == 0) //12th
 			{
 				if (!IsTargetInSightRange(client, i, 230.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Thieves") == 0) //11th
+			else if(strcmp(szClanTag, "G2") == 0) //11th
 			{
 				if (!IsTargetInSightRange(client, i, 240.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "coL") == 0) //10th
+			else if(strcmp(szClanTag, "Liquid") == 0) //10th
 			{
 				if (!IsTargetInSightRange(client, i, 250.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "G2") == 0) //9th
+			else if(strcmp(szClanTag, "FaZe") == 0) //9th
 			{
 				if (!IsTargetInSightRange(client, i, 260.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Liquid") == 0) //8th
+			else if(strcmp(szClanTag, "OG") == 0) //8th
 			{
 				if (!IsTargetInSightRange(client, i, 270.0))
 					continue;	
@@ -7050,12 +7068,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 290.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Vitality") == 0) //5th
+			else if(strcmp(szClanTag, "EG") == 0) //5th
 			{
 				if (!IsTargetInSightRange(client, i, 300.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "EG") == 0) //4th
+			else if(strcmp(szClanTag, "Vitality") == 0) //4th
 			{
 				if (!IsTargetInSightRange(client, i, 310.0))
 					continue;	
@@ -7065,12 +7083,12 @@ stock int GetClosestClient(int client)
 				if (!IsTargetInSightRange(client, i, 320.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Astralis") == 0) //2nd
+			else if(strcmp(szClanTag, "Heroic") == 0) //2nd
 			{
 				if (!IsTargetInSightRange(client, i, 330.0))
 					continue;	
 			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //1st
+			else if(strcmp(szClanTag, "Astralis") == 0) //1st
 			{
 				if (!IsTargetInSightRange(client, i, 340.0))
 					continue;	
@@ -7093,6 +7111,11 @@ stock int GetClosestClient(int client)
 public Action Timer_Attack(Handle hTimer, int client)
 {
 	g_bCanAttack[client] = true;
+}
+
+public Action Timer_ThrowSmoke(Handle hTimer, int client)
+{
+	g_bCanThrowSmoke[client] = true;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
@@ -7299,7 +7322,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-				if(fCTSmokeDis < 75)
+				if(fCTSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7311,15 +7334,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -315.539398;
 					fVelocity[2] = 635.904418;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-					g_bHasThrownSmoke[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fLampFlash, FASTEST_ROUTE);
 					
-				if(fLampFlashDis < 75)
+				if(fLampFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7341,7 +7371,7 @@ public void DoMirageSmokes(int client)
 		case 2: //Stairs Smoke
 		{
 			BotMoveTo(client, fStairsSmoke, FASTEST_ROUTE);
-			if(fStairsSmokeDis < 75)
+			if(fStairsSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7353,8 +7383,15 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = -121.504554;
 				fVelocity[2] = 474.536865;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				g_bHasThrownNade[client] = true;					
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
+				
+				BotSetLookAt(client, "Stairs Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}				
 			}
 		}
 		case 3: //Jungle Smoke
@@ -7362,7 +7399,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fJungleSmoke, FASTEST_ROUTE);
-				if(fJungleSmokeDis < 75)
+				if(fJungleSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7374,15 +7411,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -36.732955;
 					fVelocity[2] = 371.127532;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-					g_bHasThrownSmoke[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "Jungle Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 75)
+				if(fASiteFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7404,7 +7448,7 @@ public void DoMirageSmokes(int client)
 		case 4: //A Site Smoke
 		{
 			BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
-			if(fASiteSmokeDis < 75)
+			if(fASiteSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7416,9 +7460,15 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = -286.768341;
 				fVelocity[2] = 352.396392;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "A Site Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 5: //Top-Mid Smoke
@@ -7426,7 +7476,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fTopMidSmoke, FASTEST_ROUTE);
-				if(fTopMidSmokeDis < 75)
+				if(fTopMidSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7438,16 +7488,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -134.928771;
 					fVelocity[2] = 416.123657;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Top-Mid Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fConnectorFlash, FASTEST_ROUTE);
 					
-				if(fConnectorFlashDis < 75)
+				if(fConnectorFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7469,7 +7525,7 @@ public void DoMirageSmokes(int client)
 		case 6: //Mid-Short Smoke
 		{
 			BotMoveTo(client, fMidShortSmoke, FASTEST_ROUTE);
-			if(fMidShortSmokeDis < 75)
+			if(fMidShortSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7481,15 +7537,21 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = 5.051202;
 				fVelocity[2] = 615.354858;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Mid-Short Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 7: //Window Smoke
 		{
 			BotMoveTo(client, fWindowSmoke, FASTEST_ROUTE);
-			if(fWindowSmokeDis < 75)
+			if(fWindowSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7501,9 +7563,15 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = 110.363220;
 				fVelocity[2] = 492.635467;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 8: //Bottom Con Smoke
@@ -7511,7 +7579,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBottomConSmoke, FASTEST_ROUTE);
-				if(fBottomConSmokeDis < 75)
+				if(fBottomConSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7523,16 +7591,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -330.021575;
 					fVelocity[2] = 669.743774;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Bottom Con Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fMidFlash, FASTEST_ROUTE);
 					
-				if(fMidFlashDis < 75)
+				if(fMidFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7554,7 +7628,7 @@ public void DoMirageSmokes(int client)
 		case 9: //Top Con Smoke
 		{
 			BotMoveTo(client, fTopConSmoke, FASTEST_ROUTE);
-			if(fTopConSmokeDis < 75)
+			if(fTopConSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7566,9 +7640,15 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = -63.035087;
 				fVelocity[2] = 614.470214;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Top Con Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 10: //Short-Left Smoke
@@ -7576,7 +7656,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortLeftSmoke, FASTEST_ROUTE);
-				if(fShotLeftSmokeDis < 75)
+				if(fShotLeftSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7588,16 +7668,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -3.954442;
 					fVelocity[2] = 653.081909;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Short-Left Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fBCornerFlash, FASTEST_ROUTE);
 					
-				if(fBCornerFlashDis < 75)
+				if(fBCornerFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7621,7 +7707,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortRightSmoke, FASTEST_ROUTE);
-				if(fShortRightSmokeDis < 75)
+				if(fShortRightSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7633,16 +7719,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -38.421333;
 					fVelocity[2] = 602.159973;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Short-Right Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fBCarFlash, FASTEST_ROUTE);
 					
-				if(fBCarFlashDis < 75)
+				if(fBCarFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7666,7 +7758,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
-				if(fBSiteSmokeDis < 75)
+				if(fBSiteSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7678,16 +7770,22 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -57.660415;
 					fVelocity[2] = 554.828979;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "B Site Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fBShortFlash, FASTEST_ROUTE);
 					
-				if(fBShortFlashDis < 75)
+				if(fBShortFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7709,7 +7807,7 @@ public void DoMirageSmokes(int client)
 		case 13: //Market Door Smoke
 		{
 			BotMoveTo(client, fMarketDoorSmoke, FASTEST_ROUTE);
-			if(fMarketDoorSmokeDis < 75)
+			if(fMarketDoorSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7721,15 +7819,21 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = -214.881088;
 				fVelocity[2] = 731.215209;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Market Door Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 14: //Market Window Smoke
 		{
 			BotMoveTo(client, fMarketWindowSmoke, FASTEST_ROUTE);
-			if(fMarketWindowSmokeDis < 75)
+			if(fMarketWindowSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7741,9 +7845,15 @@ public void DoMirageSmokes(int client)
 				fVelocity[1] = -214.561050;
 				fVelocity[2] = 786.203857;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Market Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 	}
@@ -7808,7 +7918,7 @@ public void DoDust2Smokes(int client)
 		case 1: //B Doors Smoke
 		{
 			BotMoveTo(client, fBDoorsSmoke, FASTEST_ROUTE);
-			if(fBDoorsSmokeDis < 75)
+			if(fBDoorsSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7820,9 +7930,15 @@ public void DoDust2Smokes(int client)
 				fVelocity[1] = 284.139465;
 				fVelocity[2] = 564.549987;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "B Doors Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 2: //B Plat Smoke
@@ -7830,7 +7946,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBPlatSmoke, FASTEST_ROUTE);
-				if(fBPlatSmokeDis < 75)
+				if(fBPlatSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7842,16 +7958,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 306.983398;
 					fVelocity[2] = 589.998901;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "B Plat Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fBPopFlash, FASTEST_ROUTE);
 					
-				if(fBPopFlashDis < 75)
+				if(fBPopFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7875,7 +7997,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBWindowSmoke, FASTEST_ROUTE);
-				if(fBWindowSmokeDis < 75)
+				if(fBWindowSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7887,16 +8009,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 408.437530;
 					fVelocity[2] = 595.231140;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "B Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fBSiteFlash, FASTEST_ROUTE);
 					
-				if(fBSiteFlashDis < 75)
+				if(fBSiteFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7920,7 +8048,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fMidToBSmoke, FASTEST_ROUTE);
-				if(fMidToBSmokeDis < 75)
+				if(fMidToBSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7932,16 +8060,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 381.252441;
 					fVelocity[2] = 437.032684;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Mid to B Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fMidToBPopFlash, FASTEST_ROUTE);
 					
-				if(fMidToBPopFlashDis < 75)
+				if(fMidToBPopFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7965,7 +8099,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fMidToBBoxSmoke, FASTEST_ROUTE);
-				if(fMidToBBoxSmokeDis < 75)
+				if(fMidToBBoxSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7977,16 +8111,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 508.962188;
 					fVelocity[2] = 436.598510;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Mid to B Box Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fMidToBFlash, FASTEST_ROUTE);
 					
-				if(fMidToBFlashDis < 75)
+				if(fMidToBFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8010,7 +8150,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fXBOXSmoke, FASTEST_ROUTE);
-				if(fXBOXSmokeDis < 75)
+				if(fXBOXSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8022,16 +8162,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 590.050476;
 					fVelocity[2] = 562.489624;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "XBOX Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 75)
+				if(fASiteFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8055,7 +8201,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
-				if(fShortASmokeDis < 75)
+				if(fShortASmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8067,16 +8213,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 650.651428;
 					fVelocity[2] = 168.686401;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Short A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 75)
+				if(fASiteFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8098,7 +8250,7 @@ public void DoDust2Smokes(int client)
 		case 8: //Short-Boost Smoke
 		{
 			BotMoveTo(client, fShortBoostSmoke, FASTEST_ROUTE);
-			if(fShortBoostSmokeDis < 75)
+			if(fShortBoostSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8110,15 +8262,21 @@ public void DoDust2Smokes(int client)
 				fVelocity[1] = 423.099121;
 				fVelocity[2] = 89.004837;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Short-Boost Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 9: //A Site Smoke
 		{
 			BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
-			if(fASiteSmokeDis < 75)
+			if(fASiteSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8130,9 +8288,15 @@ public void DoDust2Smokes(int client)
 				fVelocity[1] = 201.738220;
 				fVelocity[2] = 599.998168;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "A Site Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 10: //Long Corner Smoke
@@ -8140,7 +8304,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fLongCornerSmoke, FASTEST_ROUTE);
-				if(fLongCornerSmokeDis < 75)
+				if(fLongCornerSmokeDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8152,16 +8316,22 @@ public void DoDust2Smokes(int client)
 					fVelocity[1] = 390.799377;
 					fVelocity[2] = 501.971435;
 					
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
-					g_bHasThrownSmoke[client] = true;
+					BotSetLookAt(client, "Long Corner Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
 				}
 			}
 			else
 			{
 				BotMoveTo(client, fLongFlash, FASTEST_ROUTE);
 					
-				if(fLongFlashDis < 75)
+				if(fLongFlashDis < 25)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8183,7 +8353,7 @@ public void DoDust2Smokes(int client)
 		case 11: //A Cross Smoke
 		{
 			BotMoveTo(client, fACrossSmoke, FASTEST_ROUTE);
-			if(fACrossSmokeDis < 75)
+			if(fACrossSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8195,15 +8365,21 @@ public void DoDust2Smokes(int client)
 				fVelocity[1] = 616.289001;
 				fVelocity[2] = 329.346618;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "A Cross Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 12: //CT Smoke
 		{
 			BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-			if(fCTSmokeDis < 75)
+			if(fCTSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8215,9 +8391,15 @@ public void DoDust2Smokes(int client)
 				fVelocity[1] = 372.110961;
 				fVelocity[2] = 553.125915;
 				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 	}
@@ -8230,18 +8412,17 @@ public void DoInfernoSmokes(int client)
 	GetClientAbsOrigin(client, fClientLocation);
 
 	//T Side Smokes
-	float fCTSmoke[3] = { 110.841675, 1569.613525, 196.076431 };
-	float fCoffinSmoke[3] = { 119.498764, 1586.964355, 178.733490 };
-	float fBSiteSmoke[3] = { 460.446625, 1828.490845, 200.176529 };
-	float fLongASmoke[3] = { 726.031250, 247.523590, 155.656830 };
-	float fSiteLibrarySmoke[3] = { 941.999634, 430.010284, 152.126373 };
-	float fPitSmoke[3] = { 492.353241, -267.968750, 152.093811 };
-	float fBalconySmoke[3] = { 1562.913696, -274.031250, 320.093811 };
-	float fShortASmoke[3] = { 538.036743, 699.968750, 157.900513 };
-	float fArchSmoke[3] = { 726.031250, 186.012909, 161.535645 };
-	float fBalconyLongSmoke[3] = { 1981.537354, 1225.969604, 238.093811 };
+	float fCTSmoke[3] = { 110.841888, 1569.614014, 132.013962 };
+	float fCoffinSmoke[3] = { 119.548485, 1587.026001, 114.601593 };
+	float fBSiteSmoke[3] = { 460.446747, 1828.490723, 136.114029 };
+	float fLongASmoke[3] = { 726.033081, 246.665131, 91.568497 };
+	float fSiteLibrarySmoke[3] = { 941.968750, 429.357513, 88.082214 };
+	float fPitSmoke[3] = { 492.249695, -267.968750, 88.031250 };
+	float fBalconySmoke[3] = { 1562.242065, -274.097748, 256.031250 };
+	float fShortASmoke[3] = { 538.006470, 699.968750, 93.837555 };
+	float fArchSmoke[3] = { 726.017151, 186.010574, 97.474045 };
 	
-	float fCTSmokeDis, fCoffinSmokeDis, fBSiteSmokeDis, fLongASmokeDis, fSiteLibrarySmokeDis, fPitSmokeDis, fBalconySmokeDis, fShortASmokeDis, fArchSmokeDis, fBalconyLongSmokeDis;
+	float fCTSmokeDis, fCoffinSmokeDis, fBSiteSmokeDis, fLongASmokeDis, fSiteLibrarySmokeDis, fPitSmokeDis, fBalconySmokeDis, fShortASmokeDis, fArchSmokeDis;
 
 	fCTSmokeDis = GetVectorDistance(fClientLocation, fCTSmoke);
 	fCoffinSmokeDis = GetVectorDistance(fClientLocation, fCoffinSmoke);
@@ -8252,34 +8433,80 @@ public void DoInfernoSmokes(int client)
 	fBalconySmokeDis = GetVectorDistance(fClientLocation, fBalconySmoke);
 	fShortASmokeDis = GetVectorDistance(fClientLocation, fShortASmoke);
 	fArchSmokeDis = GetVectorDistance(fClientLocation, fArchSmoke);
-	fBalconyLongSmokeDis = GetVectorDistance(fClientLocation, fBalconyLongSmoke);
+	
+	//T Side Flashes
+	
+	float fCTFlash[3] = { 194.896042, 1737.721069, 122.031250 };
+	float fBSiteFlash[3] = { 460.446747, 1828.490723, 136.114029 };
+	float fASiteFlash[3] = { 1155.149902, 589.968750, 122.031250 };
+	float fBalconyFlash[3] = { 1511.952637, -365.968750, 256.031250 };
+	float fLongFlash[3] = { 1517.968750, 424.031250, 137.895905 };
+	
+	float fCTFlashDis, fBSiteFlashDis, fASiteFlashDis, fBalconyFlashDis, fLongFlashDis;
+	
+	fCTFlashDis = GetVectorDistance(fClientLocation, fCTFlash);
+	fBSiteFlashDis = GetVectorDistance(fClientLocation, fBSiteFlash);
+	fASiteFlashDis = GetVectorDistance(fClientLocation, fASiteFlash);
+	fBalconyFlashDis = GetVectorDistance(fClientLocation, fBalconyFlash);
+	fLongFlashDis = GetVectorDistance(fClientLocation, fLongFlash);
 
 	switch(g_iRndSmoke[client])
 	{
 		case 1: //CT Smoke
 		{
-			BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-			if(fCTSmokeDis < 75)
+			if(!g_bHasThrownSmoke[client])
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 126.242744;
-				fOrigin[1] = 1594.645996;
-				fOrigin[2] = 218.488510;
-				
-				fVelocity[0] = 280.251098;
-				fVelocity[1] = 455.511444;
-				fVelocity[2] = 401.817474;
-				
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
+				if(fCTSmokeDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 126.242744;
+					fOrigin[1] = 1594.645996;
+					fOrigin[2] = 218.488510;
+					
+					fVelocity[0] = 280.251098;
+					fVelocity[1] = 455.511444;
+					fVelocity[2] = 401.817474;
+					
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
+				}
+			}
+			else
+			{
+				BotMoveTo(client, fCTFlash, FASTEST_ROUTE);
+					
+				if(fCTFlashDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 232.221496;
+					fOrigin[1] = 1771.950439;
+					fOrigin[2] = 206.091247;
+					
+					fVelocity[0] = 510.910461;
+					fVelocity[1] = 451.589202;
+					fVelocity[2] = 357.878143;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 2: //Coffin Smoke
 		{
 			BotMoveTo(client, fCoffinSmoke, FASTEST_ROUTE);
-			if(fCoffinSmokeDis < 75)
+			if(fCoffinSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8291,35 +8518,72 @@ public void DoInfernoSmokes(int client)
 				fVelocity[1] = 398.531372;
 				fVelocity[2] = 528.814270;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Coffin Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 3: //B Site Smoke
 		{
-			BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
-			if(fBSiteSmokeDis < 75)
+			if(!g_bHasThrownSmoke[client])
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 480.792480;
-				fOrigin[1] = 1853.970703;
-				fOrigin[2] = 217.621475;
-				
-				fVelocity[0] = 370.395050;
-				fVelocity[1] = 463.819519;
-				fVelocity[2] = 311.409393;
+				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
+				if(fBSiteSmokeDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 480.792480;
+					fOrigin[1] = 1853.970703;
+					fOrigin[2] = 217.621475;
+					
+					fVelocity[0] = 370.395050;
+					fVelocity[1] = 463.819519;
+					fVelocity[2] = 311.409393;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "B Site Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
+				}
+			}
+			else
+			{
+				BotMoveTo(client, fBSiteFlash, FASTEST_ROUTE);
+					
+				if(fBSiteFlashDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 502.760955;
+					fOrigin[1] = 1877.219116;
+					fOrigin[2] = 211.888961;
+					
+					fVelocity[0] = 518.502197;
+					fVelocity[1] = 597.576538;
+					fVelocity[2] = 270.139526;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 4: //Long A Smoke
 		{
 			BotMoveTo(client, fLongASmoke, FASTEST_ROUTE);
-			if(fLongASmokeDis < 75)
+			if(fLongASmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8331,35 +8595,72 @@ public void DoInfernoSmokes(int client)
 				fVelocity[1] = 353.701324;
 				fVelocity[2] = 392.463989;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Long A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 5: //Site-Library Smoke
 		{
-			BotMoveTo(client, fSiteLibrarySmoke, FASTEST_ROUTE);
-			if(fSiteLibrarySmokeDis < 75)
+			if(!g_bHasThrownSmoke[client])
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 966.898254;
-				fOrigin[1] = 435.972778;
-				fOrigin[2] = 178.775451;
-				
-				fVelocity[0] = 453.395233;
-				fVelocity[1] = 104.332847;
-				fVelocity[2] = 479.052581;
+				BotMoveTo(client, fSiteLibrarySmoke, FASTEST_ROUTE);
+				if(fSiteLibrarySmokeDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 966.898254;
+					fOrigin[1] = 435.972778;
+					fOrigin[2] = 178.775451;
+					
+					fVelocity[0] = 453.395233;
+					fVelocity[1] = 104.332847;
+					fVelocity[2] = 479.052581;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "Site-Library Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
+				}
+			}
+			else
+			{
+				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
+					
+				if(fASiteFlashDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 1246.527587;
+					fOrigin[1] = 503.508178;
+					fOrigin[2] = 240.461380;
+					
+					fVelocity[0] = 639.973205;
+					fVelocity[1] = -519.588073;
+					fVelocity[2] = 649.552429;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 6: //Pit Smoke
 		{
 			BotMoveTo(client, fPitSmoke, FASTEST_ROUTE);
-			if(fPitSmokeDis < 75)
+			if(fPitSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8371,55 +8672,121 @@ public void DoInfernoSmokes(int client)
 				fVelocity[1] = 83.064659;
 				fVelocity[2] = 509.670959;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Pit Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 7: //Balcony Smoke
 		{
-			BotMoveTo(client, fBalconySmoke, FASTEST_ROUTE);
-			if(fBalconySmokeDis < 75)
+			if(!g_bHasThrownSmoke[client])
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 1589.689697;
-				fOrigin[1] = -296.319335;
-				fOrigin[2] = 331.451446;
-				
-				fVelocity[0] = 496.743469;
-				fVelocity[1] = -405.579101;
-				fVelocity[2] = 200.657302;
+				BotMoveTo(client, fBalconySmoke, FASTEST_ROUTE);
+				if(fBalconySmokeDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 1589.689697;
+					fOrigin[1] = -296.319335;
+					fOrigin[2] = 331.451446;
+					
+					fVelocity[0] = 496.743469;
+					fVelocity[1] = -405.579101;
+					fVelocity[2] = 200.657302;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
+				}
+			}
+			else
+			{
+				BotMoveTo(client, fBalconyFlash, FASTEST_ROUTE);
+					
+				if(fBalconyFlashDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 1538.285522;
+					fOrigin[1] = -377.717254;
+					fOrigin[2] = 324.803131;
+					
+					fVelocity[0] = 485.635070;
+					fVelocity[1] = -213.789443;
+					fVelocity[2] = 407.226135;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 8: //Short A Smoke
 		{
-			BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
-			if(fShortASmokeDis < 75)
+			if(!g_bHasThrownSmoke[client])
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 571.783935;
-				fOrigin[1] = 689.233459;
-				fOrigin[2] = 168.702438;
-				
-				fVelocity[0] = 614.202392;
-				fVelocity[1] = -195.350540;
-				fVelocity[2] = 190.545516;
+				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
+				if(fShortASmokeDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 571.783935;
+					fOrigin[1] = 689.233459;
+					fOrigin[2] = 168.702438;
+					
+					fVelocity[0] = 614.202392;
+					fVelocity[1] = -195.350540;
+					fVelocity[2] = 190.545516;
 
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					
+					BotSetLookAt(client, "Short A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+					if(g_bCanThrowSmoke[client])
+					{
+						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+						g_bHasThrownSmoke[client] = true;
+					}
+				}
+			}
+			else
+			{
+				BotMoveTo(client, fLongFlash, FASTEST_ROUTE);
+					
+				if(fLongFlashDis < 25)
+				{
+					float fVelocity[3], fOrigin[3];
+					
+					fOrigin[0] = 1511.262329;
+					fOrigin[1] = 456.369445;
+					fOrigin[2] = 218.627883;
+					
+					fVelocity[0] = -122.038543;
+					fVelocity[1] = 588.462036;
+					fVelocity[2] = 297.317474;
+					
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
+					
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 		case 9: //Arch Smoke
 		{
 			BotMoveTo(client, fArchSmoke, FASTEST_ROUTE);
-			if(fArchSmokeDis < 75)
+			if(fArchSmokeDis < 25)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8430,30 +8797,16 @@ public void DoInfernoSmokes(int client)
 				fVelocity[0] = 289.468292;
 				fVelocity[1] = 296.649017;
 				fVelocity[2] = 522.759277;
-
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
 				
-				g_bHasThrownNade[client] = true;
-			}
-		}
-		case 10: //Balcony Long Smoke
-		{
-			BotMoveTo(client, fBalconyLongSmoke, FASTEST_ROUTE);
-			if(fBalconyLongSmokeDis < 75)
-			{
-				float fVelocity[3], fOrigin[3];
+				CreateTimer(3.0, Timer_ThrowSmoke, client);
 				
-				fOrigin[0] = 1982.299072;
-				fOrigin[1] = 1197.648315;
-				fOrigin[2] = 261.806457;
-				
-				fVelocity[0] = 19.747430;
-				fVelocity[1] = -515.353088;
-				fVelocity[2] = 425.483947;
-
-				CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-				
-				g_bHasThrownNade[client] = true;
+				BotSetLookAt(client, "Arch Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					
+				if(g_bCanThrowSmoke[client])
+				{
+					CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
+					g_bHasThrownNade[client] = true;
+				}
 			}
 		}
 	}
@@ -8667,7 +9020,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//GamerLegion Players
-	if((StrEqual(szBotName, "mezii")) || (StrEqual(szBotName, "eraa")) || (StrEqual(szBotName, "Zero")) || (StrEqual(szBotName, "RuStY")) || (StrEqual(szBotName, "Adam9130")))
+	if((StrEqual(szBotName, "dobbo")) || (StrEqual(szBotName, "eraa")) || (StrEqual(szBotName, "Zero")) || (StrEqual(szBotName, "RuStY")) || (StrEqual(szBotName, "Adam9130")))
 	{
 		CS_SetClientClanTag(client, "GamerLegion");
 	}
@@ -9333,7 +9686,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//KPI Players
-	if((strcmp(szBotName, "dobbo") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "xertionic") == 0))
+	if((strcmp(szBotName, "MHammond") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "xertionic") == 0))
 	{
 		CS_SetClientClanTag(client, "KPI");
 	}

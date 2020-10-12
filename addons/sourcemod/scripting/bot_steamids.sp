@@ -764,10 +764,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 80281757;
 	}
-	else if(strcmp(szBotName, "mezii") == 0)
-	{
-		accountId = 12874964;
-	}
 	//DIVIZON Players
 	//PDucks Players
 	//HAVU Players

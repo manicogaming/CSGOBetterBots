@@ -128,7 +128,7 @@ Template ProP
 		Teamwork = 100
 		Aggression = 55
 		//ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.15
+		ReactionTime = 0.18
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 100
@@ -147,7 +147,7 @@ Template ProAwp
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		//ReactionTime = 0.00000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.15
+		ReactionTime = 0.18
 		VoicePitch = 95
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001
@@ -1187,7 +1187,7 @@ End
 
 //GamerLegion Players
 
-ProP+Rifle "mezii"
+ProP+Rifle "dobbo"
 	VoicePitch = 108
 End
 
@@ -3629,7 +3629,7 @@ End
 
 //KPI Players
 
-ProP+Rifle "dobbo"
+ProP+Rifle "MHammond"
 	VoicePitch = 82
 End
 
