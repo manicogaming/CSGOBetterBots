@@ -46,12 +46,6 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF0\x83\xEC\x58\x56\x57\x8B\xF9\xF3\x0F\x11\x5C\x24\x24"
 			}
-			"CCSBot::Wiggle"
-			{
-				// Is the last function called in "CCSBot::StayOnNavMesh"
-				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x83\xEC\x28\x56\x8B\xF1\x57\x80\xBE\x81\x3B\x00\x00\x00"
-			}
 			"CCSBot::IsAtHidingSpot"
 			{
 				// Is in the if statement after the if statement with the number '0.33000001' inside CCSBot::Update

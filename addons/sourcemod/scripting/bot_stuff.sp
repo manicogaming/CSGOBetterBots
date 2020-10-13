@@ -22,7 +22,6 @@ Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotAudibleEvent;
-Handle g_hBotWiggle;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipKnife;
 Handle g_hBotEquipBestWeapon;
@@ -1019,10 +1018,6 @@ public void OnPluginStart()
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	if ((g_hBotAudibleEvent = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::OnAudibleEvent signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::Wiggle");
-	if ((g_hBotWiggle = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Wiggle signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
@@ -5709,6 +5704,8 @@ public void OnMapStart()
 	
 	GameRules_SetProp("m_bIsValveDS", 1);
 	GameRules_SetProp("m_bIsQuestEligible", 1);
+	
+	GetCurrentMap(g_szMap, sizeof(g_szMap));
 
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
@@ -5789,8 +5786,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
-	
-	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	
 	if(strcmp(g_szMap, "de_mirage") == 0)
 	{
@@ -6063,7 +6058,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					
 					if(Weapon_IsReloading(iActiveWeapon))
 					{
-						BotWiggle(client);
+						if(Math_GetRandomInt(1,100) <= 50)
+						{
+							moveSide(fVel, 250.0);
+						}
+						else
+						{
+							moveSide2(fVel, 250.0);
+						}
 					}
 					
 					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
@@ -6163,9 +6165,14 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							}
 						}
 						
-						BotWiggle(client);
-						
-						iButtons &= ~IN_JUMP;
+						if(Math_GetRandomInt(1,100) <= 50)
+						{
+							moveSide(fVel, 250.0);
+						}
+						else
+						{
+							moveSide2(fVel, 250.0);
+						}
 					}
 					else if(iDefIndex == 1)
 					{
@@ -6598,9 +6605,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				}
 				
 				if (g_bFreezetimeEnd && !g_bBombPlanted && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client])
-				{
-					GetCurrentMap(g_szMap, sizeof(g_szMap));
-					
+				{					
 					if(strcmp(g_szMap, "de_mirage") == 0)
 					{
 						DoMirageSmokes(client);
@@ -6759,9 +6764,7 @@ public void OnClientDisconnect(int client)
 }
 
 public void eItems_OnItemsSynced()
-{
-	GetCurrentMap(g_szMap, sizeof(g_szMap));
-	
+{	
 	ServerCommand("changelevel %s", g_szMap);
 }
 
@@ -6788,11 +6791,6 @@ public bool BotIsBusy(int client)
 public void BotAudibleEvent(int client, Event eEvent, int iPlayer, float fRange, PriorityType priorityType, bool bIsHostile, bool bIsFootstep, const float fActualOrigin[3])
 {
 	SDKCall(g_hBotAudibleEvent, client, eEvent, iPlayer, fRange, priorityType, bIsHostile, bIsFootstep, fActualOrigin);
-}
-
-public void BotWiggle(int client)
-{
-	SDKCall(g_hBotWiggle, client);
 }
 
 public bool BotIsHiding(int client)
@@ -6850,6 +6848,18 @@ public int GetNearestEntity(int client, char[] szClassname)
     }
     
     return iNearestEntity;
+}
+
+float moveSide(float fVel[3], float fMaxSpeed)
+{
+	fVel[1] = fMaxSpeed;
+	return fVel;
+}
+
+float moveSide2(float fVel[3],float fMaxSpeed)
+{
+	fVel[1] = -fMaxSpeed;
+	return fVel;
 }
 
 stock void CSGO_SetMoney(int client, int iAmount)
@@ -7265,7 +7275,7 @@ public void DoMirageSmokes(int client)
 	float fJungleSmoke[3] = { 815.449585, -1497.343506, -108.968750 };
 	float fASiteSmoke[3] = { 832.254761, -1255.159180, -108.968750 };
 	float fTopMidSmoke[3] = { 1422.968750, 70.759926, -112.902664 };
-	float fMidShortSmoke[3] = { 1422.968750, 34.830582, -167.968750 };
+	float fMidShortSmoke[3] = { 1422.999756, -248.031250, -167.968750 };
 	float fWindowSmoke[3] = { 1391.968750, -932.658752, -167.968750 };
 	float fBottomConSmoke[3] = { 1135.986816, 647.868591, -261.387939 };
 	float fTopConSmoke[3] = { 1391.974731, -1051.666992, -167.968750 };
