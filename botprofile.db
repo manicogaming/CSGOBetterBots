@@ -2559,11 +2559,11 @@ ProAwp+SniperPro "zqk"
 	VoicePitch = 109
 End
 
-ProP+Rifle "LUCAS1"
+ProP+Rifle "adr"
 	VoicePitch = 92
 End
 
-ProP+Rifle "delboNi"
+ProP+Rifle "iDk"
 	VoicePitch = 94
 End
 
@@ -2973,7 +2973,7 @@ ProP+Rifle "Tamiraarita"
 	VoicePitch = 86
 End
 
-ProAwp+SniperPro "rate"
+ProAwp+SniperPro "hasteka"
 	VoicePitch = 105
 End
 
@@ -3205,7 +3205,7 @@ ProP+Rifle "kabal"
 	VoicePitch = 87
 End
 
-ProP+Rifle "ncl"
+ProP+Rifle "rate"
 	VoicePitch = 104
 End
 

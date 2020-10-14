@@ -1636,10 +1636,5 @@ public void OnPluginEnd()
 
 stock bool IsValidClient(int client)
 {
-	// GetEntProp(client, Prop_Send, "m_bIsControllingBot") != 1
-    if (!(1 <= client <= MaxClients) || !IsClientInGame(client) || IsClientSourceTV(client) || IsClientReplay(client) || !IsFakeClient(client))
-    {
-        return false;
-    }
-    return true;
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && IsFakeClient(client) && !IsClientSourceTV(client);
 }

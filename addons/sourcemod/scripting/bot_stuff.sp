@@ -7,6 +7,7 @@
 #include <eItems>
 #include <csutils>
 #include <smlib>
+#include <navmesh>
 
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
@@ -629,8 +630,8 @@ static char g_szBotName[][] = {
 	//Imperial Players
 	"fnx",
 	"zqk",
-	"LUCAS1",
-	"delboNi",
+	"adr",
+	"iDk",
 	"SHOOWTiME",
 	//Pompa Players
 	"iso",
@@ -742,7 +743,7 @@ static char g_szBotName[][] = {
 	"Xizt",
 	//D13 Players
 	"Tamiraarita",
-	"rate",
+	"hasteka",
 	"shinobi",
 	"sK0R",
 	"ANNIHILATION",
@@ -799,7 +800,7 @@ static char g_szBotName[][] = {
 	"nin9",
 	"dobu",
 	"kabal",
-	"ncl",
+	"rate",
 	//LEISURE Players
 	"stefank0k0",
 	"BischeR",
@@ -4118,8 +4119,8 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "fnx");
 		ServerCommand("bot_add_ct %s", "zqk");
-		ServerCommand("bot_add_ct %s", "LUCAS1");
-		ServerCommand("bot_add_ct %s", "delboNi");
+		ServerCommand("bot_add_ct %s", "adr");
+		ServerCommand("bot_add_ct %s", "iDk");
 		ServerCommand("bot_add_ct %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_1 imp");
 	}
@@ -4129,8 +4130,8 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "fnx");
 		ServerCommand("bot_add_t %s", "zqk");
-		ServerCommand("bot_add_t %s", "LUCAS1");
-		ServerCommand("bot_add_t %s", "delboNi");
+		ServerCommand("bot_add_t %s", "adr");
+		ServerCommand("bot_add_t %s", "iDk");
 		ServerCommand("bot_add_t %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_2 imp");
 	}
@@ -4687,7 +4688,7 @@ public Action Team_D13(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Tamiraarita");
-		ServerCommand("bot_add_ct %s", "rate");
+		ServerCommand("bot_add_ct %s", "hasteka");
 		ServerCommand("bot_add_ct %s", "shinobi");
 		ServerCommand("bot_add_ct %s", "sK0R");
 		ServerCommand("bot_add_ct %s", "ANNIHILATION");
@@ -4698,7 +4699,7 @@ public Action Team_D13(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Tamiraarita");
-		ServerCommand("bot_add_t %s", "rate");
+		ServerCommand("bot_add_t %s", "hasteka");
 		ServerCommand("bot_add_t %s", "shinobi");
 		ServerCommand("bot_add_t %s", "sK0R");
 		ServerCommand("bot_add_t %s", "ANNIHILATION");
@@ -4960,7 +4961,7 @@ public Action Team_TIGER(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "nin9");
 		ServerCommand("bot_add_ct %s", "dobu");
 		ServerCommand("bot_add_ct %s", "kabal");
-		ServerCommand("bot_add_ct %s", "ncl");
+		ServerCommand("bot_add_ct %s", "rate");
 		ServerCommand("mp_teamlogo_1 tiger");
 	}
 
@@ -4971,7 +4972,7 @@ public Action Team_TIGER(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "nin9");
 		ServerCommand("bot_add_t %s", "dobu");
 		ServerCommand("bot_add_t %s", "kabal");
-		ServerCommand("bot_add_t %s", "ncl");
+		ServerCommand("bot_add_t %s", "rate");
 		ServerCommand("mp_teamlogo_2 tiger");
 	}
 
@@ -6031,6 +6032,24 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 		if(GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0)
 		{
 			BotEquipKnife(client);
+		}
+		
+		float fClientLoc[3];
+		
+		GetClientAbsOrigin(client, fClientLoc);
+		
+		CNavArea currAea = NavMesh_GetNearestArea(fClientLoc);
+		
+		if(currAea.Attributes & NAV_MESH_WALK)
+		{
+			iButtons |= IN_SPEED;
+			return Plugin_Changed;
+		}
+		
+		if(currAea.Attributes & NAV_MESH_RUN)
+		{
+			iButtons &= ~IN_SPEED;
+			return Plugin_Changed;
 		}
 
 		char szBotName[128];
@@ -7229,22 +7248,15 @@ stock void TF2_LookAtPos(int client, float flGoal[3], float flAimSpeed = 0.05)
 
 stock float AngleNormalize(float fAngle)
 {
-    fAngle = fmodf(fAngle, 360.0);
-    if (fAngle > 180) 
-    {
-        fAngle -= 360;
-    }
-    if (fAngle < -180)
-    {
-        fAngle += 360;
-    }
-    
-    return fAngle;
-}
-
-stock float fmodf(float fNumber, float fDenom)
-{
-    return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
+	fAngle -= RoundToFloor(fAngle / 360.0) * 360.0;
+	
+	if (fAngle > 180)
+		fAngle -= 360;
+	
+	if (fAngle < -180)
+		fAngle += 360;
+	
+	return fAngle;
 }
 
 stock int GetAliveTeamCount(int iTeam)
@@ -7258,9 +7270,9 @@ stock int GetAliveTeamCount(int iTeam)
     return iNumber;
 }
 
-public bool IsValidClient(int client)
+stock bool IsValidClient(int client)
 {
-	return ((0 < client <= MaxClients) && IsClientInGame(client));
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }
 
 public void DoMirageSmokes(int client)
@@ -9408,7 +9420,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "LUCAS1")) || (StrEqual(szBotName, "delboNi")) || (StrEqual(szBotName, "SHOOWTiME")))
+	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "adr")) || (StrEqual(szBotName, "iDk")) || (StrEqual(szBotName, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
@@ -9522,7 +9534,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//D13 Players
-	if((StrEqual(szBotName, "Tamiraarita")) || (StrEqual(szBotName, "rate")) || (StrEqual(szBotName, "shinobi")) || (StrEqual(szBotName, "sK0R")) || (StrEqual(szBotName, "ANNIHILATION")))
+	if((StrEqual(szBotName, "Tamiraarita")) || (StrEqual(szBotName, "hasteka")) || (StrEqual(szBotName, "shinobi")) || (StrEqual(szBotName, "sK0R")) || (StrEqual(szBotName, "ANNIHILATION")))
 	{
 		CS_SetClientClanTag(client, "D13");
 	}
@@ -9576,7 +9588,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//TIGER Players
-	if((StrEqual(szBotName, "erkaSt")) || (StrEqual(szBotName, "nin9")) || (StrEqual(szBotName, "dobu")) || (StrEqual(szBotName, "kabal")) || (StrEqual(szBotName, "ncl")))
+	if((StrEqual(szBotName, "erkaSt")) || (StrEqual(szBotName, "nin9")) || (StrEqual(szBotName, "dobu")) || (StrEqual(szBotName, "kabal")) || (StrEqual(szBotName, "rate")))
 	{
 		CS_SetClientClanTag(client, "TIGER");
 	}

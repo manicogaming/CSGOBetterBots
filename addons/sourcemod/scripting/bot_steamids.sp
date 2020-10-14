@@ -1710,9 +1710,9 @@ public void OnClientSettingsChanged(int client)
 		accountId = 150374922;
 	}
 	//Imperial Players
-	else if(strcmp(szBotName, "delboNi") == 0)
+	else if(strcmp(szBotName, "iDk") == 0)
 	{
-		accountId = 49145432;
+		accountId = 106435802;
 	}
 	else if(strcmp(szBotName, "zqk") == 0)
 	{
@@ -1726,9 +1726,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		accountId = 170178574;
 	}
-	else if(strcmp(szBotName, "LUCAS1") == 0)
+	else if(strcmp(szBotName, "adr") == 0)
 	{
-		accountId = 4780624;
+		accountId = 92954253;
 	}
 	//Pompa Players
 	//Unique Players
@@ -2154,10 +2154,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "kabal") == 0)
 	{
 		accountId = 161246388;
-	}
-	else if(strcmp(szBotName, "ncl") == 0)
-	{
-		accountId = 156030485;
 	}
 	else if(strcmp(szBotName, "nin9") == 0)
 	{
