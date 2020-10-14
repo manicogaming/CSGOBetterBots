@@ -1,0 +1,12 @@
+// HLTV overview description file for cs_italy.bsp
+
+"cs_italy_d"
+{
+	"material"	"overviews/cs_italy_d"	// texture file
+	"pos_x"		"-2647"	// upper left world coordinate
+	"pos_y"		"2592"
+	"scale"		"4.6" 
+	"rotate"	"1"
+	"zoom"		"1.5"
+}
+

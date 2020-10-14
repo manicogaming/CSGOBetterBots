@@ -1,0 +1,31 @@
+// HLTV overview description file for de_portugal_rc1.bsp
+
+"de_portugal_rc2"
+{
+	"material"	"overviews/de_portugal_rc2"	// texture file
+	"pos_x"		"-2787"	// upper left world coordinate
+	"pos_y"		"3090"
+	"scale"		"5.50" 
+
+ "verticalsections"
+    {
+        "default" // use the primary radar image
+        {
+            "AltitudeMax" "4000"
+            "AltitudeMin" "0"
+        }
+    }	
+
+
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.50"
+	"CTSpawn_y"	"0.14"
+	"TSpawn_x"	"0.50"
+	"TSpawn_y"	"0.94"
+
+	"bombA_x"	"0.31"
+	"bombA_y"	"0.23"
+	"bombB_x"	"0.66"
+	"bombB_y"	"0.32"
+
+}
