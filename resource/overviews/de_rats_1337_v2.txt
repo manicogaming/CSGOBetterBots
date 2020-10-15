@@ -1,0 +1,7 @@
+"de_rats_1337_v2"
+{
+    "material"  "overviews/de_rats_1337_v2"
+    "pos_x"        "-825"
+    "pos_y" "478"
+    "scale"     "2.09"
+}

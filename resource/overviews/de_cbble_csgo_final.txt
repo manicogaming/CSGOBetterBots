@@ -1,0 +1,12 @@
+// HLTV overview description file for de_cbble.bsp
+
+"de_cbble_csgo_final"
+{
+	"material"	"overviews/de_cbble_csgo_final"	// texture file
+	"pos_x"		"-3665"	// upper left world coordinate
+	"pos_y"		"3001"
+	"scale"		"5.2"
+	"rotate"	"0"
+	"zoom"		"1"
+}
+
