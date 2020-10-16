@@ -6664,7 +6664,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 	{		
 		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{			
-			CreateTimer(0.5, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
+			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
 			
 			if(g_iUSPChance[i] >= 25)
 			{

@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Wed Oct 14 02:44:41 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Fri Oct 16 03:21:00 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -29,7 +29,6 @@ $400$_lite_4s
 [2stoned]xxl_cs
 aim_100hp
 aim_advance
-aim_ag_brickedin
 aim_ag_texture
 aim_ak-47_go
 aim_ak-colt
@@ -142,6 +141,7 @@ cs_cruise
 cs_deadhouse
 cs_frozen
 cs_italy
+cs_italy_d
 cs_lanpartymayhem
 cs_militia
 cs_office
@@ -186,8 +186,10 @@ de_cartel
 de_castle
 de_cbble
 de_cbble_clangame
+de_cbble_csgo_final
 de_cbble_small_v2
 de_central_castle
+de_chateau_turzo
 de_chinatown
 de_chlore
 de_chlorine
@@ -200,6 +202,7 @@ de_cpl_strike_cs16_kp
 de_cpt
 de_crown
 de_cypress
+de_dahshur
 de_darkcastle_rebirth_v2
 de_deadblock
 de_desert
@@ -220,11 +223,16 @@ de_mutiny
 de_nocredit
 de_nuke
 de_nuke_ramps
+de_ore
 de_overpass
 de_parthenon_royal
+de_portugal_rc1
+de_prodigy_d
+de_rats_1337_v2
 de_rotterdam
 de_russka_b2
 de_safehouse
+de_saint
 de_shortdust
 de_shortnuke
 de_snowcapped_csgo

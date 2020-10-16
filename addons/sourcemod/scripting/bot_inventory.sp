@@ -1257,6 +1257,8 @@ void SetWeaponProps(int client, int entity)
 		static int IDHigh = 16384;
 		SetEntProp(entity, Prop_Send, "m_iItemIDLow", IDLow++);
 		SetEntProp(entity, Prop_Send, "m_iItemIDHigh", IDHigh++);
+		SetEntProp(entity, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
+		SetEntProp(entity, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
 		
 		CS_SetAttributeValue(client, entity, "set item texture prefab", float(g_iSkinDefIndex[client][index]));
 		
