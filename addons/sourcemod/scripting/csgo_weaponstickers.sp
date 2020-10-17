@@ -257,15 +257,15 @@ void SetWeaponSticker(int client, int entity)
 					return;
 				}
 
-				Address pEconItemView = pWeapon + view_as<Address>(g_EconItemOffset);
+				Address pEconItemView = pWeapon + view_as<Address>(g_econItemOffset);
 			
-				bool updated = false;
+				bool isUpdated = false;
 				for (int i = 0; i < MAX_STICKERS_SLOT; i++)
 				{
 					if (g_PlayerWeapon[client][index].m_sticker[i] != 0)
 					{
 						// Sticker updated.
-						updated = true;
+						isUpdated = true;
 
 						SetAttributeValue(client, pEconItemView, g_PlayerWeapon[client][index].m_sticker[i], "sticker slot %i id", i);
 						SetAttributeValue(client, pEconItemView, view_as<int>(0.0), "sticker slot %i wear", i); // default wear.
@@ -273,7 +273,7 @@ void SetWeaponSticker(int client, int entity)
 				}
 
 				// Update viewmodel if enabled.
-				if (updated && g_isStickerRefresh[client])
+				if (isUpdated && g_isStickerRefresh[client])
 				{
 					g_isStickerRefresh[client] = false;
 			
@@ -310,7 +310,7 @@ void LoadSDK()
 
 	// Setup CEconItem::GetItemDefinition.
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(gameConf, SDKConf_Virtual, "CEconItem_GetItemDefinition");
+	PrepSDKCall_SetFromConf(gameConf, SDKConf_Virtual, "CEconItem::GetItemDefinition");
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 
 	if (!(g_SDKGetItemDefinition = EndPrepSDKCall()))
@@ -321,7 +321,7 @@ void LoadSDK()
 
 	// Setup CEconItemDefinition::GetNumSupportedStickerSlots.
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(gameConf, SDKConf_Virtual, "CEconItemDefinition_GetNumSupportedStickerSlots");
+	PrepSDKCall_SetFromConf(gameConf, SDKConf_Virtual, "CEconItemDefinition::GetNumSupportedStickerSlots");
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 
 	if (!(g_SDKGetNumSupportedStickerSlots = EndPrepSDKCall()))
@@ -354,7 +354,7 @@ void LoadSDK()
 
 	// Setup CAttributeList::AddAttribute.
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CAttributeList_AddAttribute");
+	PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CAttributeList::AddAttribute");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 
 	if (g_ServerPlatform == OS_Windows)
@@ -374,7 +374,7 @@ void LoadSDK()
 	{
 		// Setup CEconItemSystem::GenerateAttribute.
 		StartPrepSDKCall(SDKCall_Raw);
-		PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CEconItemSystem_GenerateAttribute");
+		PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CEconItemSystem::GenerateAttribute");
 		PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 		PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 		PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
@@ -388,7 +388,7 @@ void LoadSDK()
 
 	// Setup CEconItemSchema::GetAttributeDefinitionByName.
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CEconItemSchema_GetAttributeDefinitionByName");
+	PrepSDKCall_SetFromConf(gameConf, SDKConf_Signature, "CEconItemSchema::GetAttributeDefinitionByName");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 
@@ -399,20 +399,14 @@ void LoadSDK()
 	}
 
 	// Get Offsets.
-	FindGameConfOffset(gameConf, g_EconItemView_AttributeListOffset, "CEconItemView::m_AttributeList");
-	FindGameConfOffset(gameConf, g_EconItemAttributeDefinition_iAttributeDefinitionIndexOffset, "CEconItemAttributeDefinition::m_iAttributeDefinitionIndex");
-	FindGameConfOffset(gameConf, g_Attributes_iAttributeDefinitionIndexOffset, "m_Attributes::m_iAttributeDefinitionIndex");
-	FindGameConfOffset(gameConf, g_Attributes_iRawValue32Offset, "m_Attributes::m_iRawValue32");
-	FindGameConfOffset(gameConf, g_Attributes_iRawInitialValue32Offset, "m_Attributes::m_iRawInitialValue32");
-	FindGameConfOffset(gameConf, g_Attributes_nRefundableCurrencyOffset, "m_Attributes::m_nRefundableCurrency");
-	FindGameConfOffset(gameConf, g_Attributes_bSetBonusOffset, "m_Attributes::m_bSetBonus");
-	FindGameConfOffset(gameConf, g_AttributeList_ReadOffset, "CAttributeList::read");
-	FindGameConfOffset(gameConf, g_AttributeList_CountOffset, "CAttributeList::count");
+	FindGameConfOffset(gameConf, g_networkedDynamicAttributesOffset, "m_NetworkedDynamicAttributesForDemos");
+	FindGameConfOffset(gameConf, g_attributeListReadOffset, "CAttributeList_Read");
+	FindGameConfOffset(gameConf, g_attributeListCountOffset, "CAttributeList_Count");
 
 	delete gameConf;
 
 	// Find netprops Offsets.
-	g_EconItemOffset = FindSendPropOffset("CBaseCombatWeapon", "m_Item");
+	g_econItemOffset = FindSendPropOffset("CBaseCombatWeapon", "m_Item");
 }
 
 void RefreshClientWeapon(int client, int index)

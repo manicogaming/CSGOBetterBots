@@ -14,6 +14,7 @@ bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iRndSmoke[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+float g_flReactionTime[MAXPLAYERS+1];
 ConVar g_cvPredictionConVar = null;
 Handle g_hGameConfig;
 Handle g_hBotMoveTo;
@@ -5720,6 +5721,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = view_as<bool>(GetEntProp(i, Prop_Send, "m_bInBuyZone"));
+			int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
 			
 			if(Math_GetRandomInt(1,100) <= 5)
 			{
@@ -5731,9 +5733,18 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			{
 				FakeClientCommandEx(i, "buy vest");
 			}
-			else if(iAccount > 3000 && bInBuyZone && ((GetEntProp(i, Prop_Data, "m_ArmorValue") < 50) || (GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)))
+			else if((iAccount > 3000 || iPrimary != -1) && bInBuyZone)
 			{
-				FakeClientCommandEx(i, "buy vesthelm");
+				if(GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
+				{
+					FakeClientCommandEx(i, "buy vest");
+					FakeClientCommandEx(i, "buy vesthelm");
+				}
+				
+				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0) 
+				{
+					FakeClientCommandEx(i, "buy defuser");
+				}
 			}
 		}
 	}	
@@ -6309,7 +6320,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					else
 					{
-						TF2_LookAtPos(client, fTargetEyes, GetRandomFloat(0.01, 0.30));
+						TF2_LookAtPos(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.30));
 					}
 					
 					BotAttack(client, iEnt);
@@ -6433,11 +6444,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
 								{
 									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fM4A1Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fM4A1Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
+									}
 								}
 							}
 						}
@@ -6488,11 +6499,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fDeagleLocation) < 500.0)
 								{
 									BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fDeagleLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fDeagleLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									}
 								}
 							}
 						}
@@ -6519,11 +6530,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fTec9Location) < 500.0)
 								{
 									BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fTec9Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fTec9Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									}
 								}
 							}
 						}
@@ -6550,11 +6561,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 500.0)
 								{
 									BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									}
 								}
 							}
 						}
@@ -6581,11 +6592,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fP250Location) < 500.0)
 								{
 									BotMoveTo(client, fP250Location, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fP250Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fP250Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									}
 								}
 							}
 						}
@@ -6612,11 +6623,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 								if(GetVectorDistance(fClientLocation, fUSPLocation) < 500.0)
 								{
 									BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
-								}
-								
-								if(GetVectorDistance(fClientLocation, fUSPLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
-								{
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									
+									if(GetVectorDistance(fClientLocation, fUSPLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
+									}
 								}
 							}
 						}
@@ -6752,23 +6763,6 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_deagle");
 			}
 		}
-	}
-	else if(iAccount > 3000 || iPrimary != -1)
-	{
-		if((GetEntProp(client, Prop_Data, "m_ArmorValue") < 50) || (GetEntProp(client, Prop_Send, "m_bHasHelmet") == 0))
-		{
-			SetEntProp(client, Prop_Data, "m_ArmorValue", 100, 1); 
-			SetEntProp(client, Prop_Send, "m_bHasHelmet", 1);
-			
-			CSGO_SetMoney(client, iAccount - 1000);
-		}
-		
-		if (iTeam == CS_TEAM_CT && GetEntProp(client, Prop_Send, "m_bHasDefuser") == 0) 
-		{ 
-			SetEntProp(client, Prop_Send, "m_bHasDefuser", 1);
-			CSGO_SetMoney(client, iAccount - 400);
-		}
-		
 	}
 	return Plugin_Stop;
 }
@@ -6939,6 +6933,22 @@ stock int GetClosestClient(int client)
 	float fClosestDistance = -1.0;
 	float fTargetDistance;
 	char szClanTag[64];
+	
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+	int iDefIndex;
+	if (iActiveWeapon != -1)
+	{
+		iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	}
+	
+	if(iDefIndex == 9 || iDefIndex == 11 || iDefIndex == 38 || iDefIndex == 40)
+	{
+		g_flReactionTime[client] = 0.1;
+	}
+	else
+	{
+		g_flReactionTime[client] = 0.17;
+	}
 	
 	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
 	
@@ -7130,7 +7140,7 @@ stock int GetClosestClient(int client)
 			
 			fClosestDistance = fTargetDistance;
 			iClosestTarget = i;
-			CreateTimer(0.15, Timer_Attack, client);
+			CreateTimer(g_flReactionTime[client], Timer_Attack, client);
 		}
 	}
 	
@@ -7344,7 +7354,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-				if(fCTSmokeDis < 25)
+				if(fCTSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7371,7 +7381,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fLampFlash, FASTEST_ROUTE);
 					
-				if(fLampFlashDis < 25)
+				if(fLampFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7393,7 +7403,7 @@ public void DoMirageSmokes(int client)
 		case 2: //Stairs Smoke
 		{
 			BotMoveTo(client, fStairsSmoke, FASTEST_ROUTE);
-			if(fStairsSmokeDis < 25)
+			if(fStairsSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7421,7 +7431,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fJungleSmoke, FASTEST_ROUTE);
-				if(fJungleSmokeDis < 25)
+				if(fJungleSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7448,7 +7458,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 25)
+				if(fASiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7470,7 +7480,7 @@ public void DoMirageSmokes(int client)
 		case 4: //A Site Smoke
 		{
 			BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
-			if(fASiteSmokeDis < 25)
+			if(fASiteSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7498,7 +7508,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fTopMidSmoke, FASTEST_ROUTE);
-				if(fTopMidSmokeDis < 25)
+				if(fTopMidSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7525,7 +7535,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fConnectorFlash, FASTEST_ROUTE);
 					
-				if(fConnectorFlashDis < 25)
+				if(fConnectorFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7547,7 +7557,7 @@ public void DoMirageSmokes(int client)
 		case 6: //Mid-Short Smoke
 		{
 			BotMoveTo(client, fMidShortSmoke, FASTEST_ROUTE);
-			if(fMidShortSmokeDis < 25)
+			if(fMidShortSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7573,7 +7583,7 @@ public void DoMirageSmokes(int client)
 		case 7: //Window Smoke
 		{
 			BotMoveTo(client, fWindowSmoke, FASTEST_ROUTE);
-			if(fWindowSmokeDis < 25)
+			if(fWindowSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7601,7 +7611,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBottomConSmoke, FASTEST_ROUTE);
-				if(fBottomConSmokeDis < 25)
+				if(fBottomConSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7628,7 +7638,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fMidFlash, FASTEST_ROUTE);
 					
-				if(fMidFlashDis < 25)
+				if(fMidFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7650,7 +7660,7 @@ public void DoMirageSmokes(int client)
 		case 9: //Top Con Smoke
 		{
 			BotMoveTo(client, fTopConSmoke, FASTEST_ROUTE);
-			if(fTopConSmokeDis < 25)
+			if(fTopConSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7678,7 +7688,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortLeftSmoke, FASTEST_ROUTE);
-				if(fShotLeftSmokeDis < 25)
+				if(fShotLeftSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7705,7 +7715,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fBCornerFlash, FASTEST_ROUTE);
 					
-				if(fBCornerFlashDis < 25)
+				if(fBCornerFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7729,7 +7739,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortRightSmoke, FASTEST_ROUTE);
-				if(fShortRightSmokeDis < 25)
+				if(fShortRightSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7756,7 +7766,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fBCarFlash, FASTEST_ROUTE);
 					
-				if(fBCarFlashDis < 25)
+				if(fBCarFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7780,7 +7790,7 @@ public void DoMirageSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
-				if(fBSiteSmokeDis < 25)
+				if(fBSiteSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7807,7 +7817,7 @@ public void DoMirageSmokes(int client)
 			{
 				BotMoveTo(client, fBShortFlash, FASTEST_ROUTE);
 					
-				if(fBShortFlashDis < 25)
+				if(fBShortFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7829,7 +7839,7 @@ public void DoMirageSmokes(int client)
 		case 13: //Market Door Smoke
 		{
 			BotMoveTo(client, fMarketDoorSmoke, FASTEST_ROUTE);
-			if(fMarketDoorSmokeDis < 25)
+			if(fMarketDoorSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7855,7 +7865,7 @@ public void DoMirageSmokes(int client)
 		case 14: //Market Window Smoke
 		{
 			BotMoveTo(client, fMarketWindowSmoke, FASTEST_ROUTE);
-			if(fMarketWindowSmokeDis < 25)
+			if(fMarketWindowSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7940,7 +7950,7 @@ public void DoDust2Smokes(int client)
 		case 1: //B Doors Smoke
 		{
 			BotMoveTo(client, fBDoorsSmoke, FASTEST_ROUTE);
-			if(fBDoorsSmokeDis < 25)
+			if(fBDoorsSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -7968,7 +7978,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBPlatSmoke, FASTEST_ROUTE);
-				if(fBPlatSmokeDis < 25)
+				if(fBPlatSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -7995,7 +8005,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fBPopFlash, FASTEST_ROUTE);
 					
-				if(fBPopFlashDis < 25)
+				if(fBPopFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8019,7 +8029,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBWindowSmoke, FASTEST_ROUTE);
-				if(fBWindowSmokeDis < 25)
+				if(fBWindowSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8046,7 +8056,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fBSiteFlash, FASTEST_ROUTE);
 					
-				if(fBSiteFlashDis < 25)
+				if(fBSiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8070,7 +8080,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fMidToBSmoke, FASTEST_ROUTE);
-				if(fMidToBSmokeDis < 25)
+				if(fMidToBSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8097,7 +8107,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fMidToBPopFlash, FASTEST_ROUTE);
 					
-				if(fMidToBPopFlashDis < 25)
+				if(fMidToBPopFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8121,7 +8131,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fMidToBBoxSmoke, FASTEST_ROUTE);
-				if(fMidToBBoxSmokeDis < 25)
+				if(fMidToBBoxSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8148,7 +8158,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fMidToBFlash, FASTEST_ROUTE);
 					
-				if(fMidToBFlashDis < 25)
+				if(fMidToBFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8172,7 +8182,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fXBOXSmoke, FASTEST_ROUTE);
-				if(fXBOXSmokeDis < 25)
+				if(fXBOXSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8199,7 +8209,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 25)
+				if(fASiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8223,7 +8233,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
-				if(fShortASmokeDis < 25)
+				if(fShortASmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8250,7 +8260,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 25)
+				if(fASiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8272,7 +8282,7 @@ public void DoDust2Smokes(int client)
 		case 8: //Short-Boost Smoke
 		{
 			BotMoveTo(client, fShortBoostSmoke, FASTEST_ROUTE);
-			if(fShortBoostSmokeDis < 25)
+			if(fShortBoostSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8298,7 +8308,7 @@ public void DoDust2Smokes(int client)
 		case 9: //A Site Smoke
 		{
 			BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
-			if(fASiteSmokeDis < 25)
+			if(fASiteSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8326,7 +8336,7 @@ public void DoDust2Smokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fLongCornerSmoke, FASTEST_ROUTE);
-				if(fLongCornerSmokeDis < 25)
+				if(fLongCornerSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8353,7 +8363,7 @@ public void DoDust2Smokes(int client)
 			{
 				BotMoveTo(client, fLongFlash, FASTEST_ROUTE);
 					
-				if(fLongFlashDis < 25)
+				if(fLongFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8375,7 +8385,7 @@ public void DoDust2Smokes(int client)
 		case 11: //A Cross Smoke
 		{
 			BotMoveTo(client, fACrossSmoke, FASTEST_ROUTE);
-			if(fACrossSmokeDis < 25)
+			if(fACrossSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8401,7 +8411,7 @@ public void DoDust2Smokes(int client)
 		case 12: //CT Smoke
 		{
 			BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-			if(fCTSmokeDis < 25)
+			if(fCTSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8479,7 +8489,7 @@ public void DoInfernoSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-				if(fCTSmokeDis < 25)
+				if(fCTSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8506,7 +8516,7 @@ public void DoInfernoSmokes(int client)
 			{
 				BotMoveTo(client, fCTFlash, FASTEST_ROUTE);
 					
-				if(fCTFlashDis < 25)
+				if(fCTFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8528,7 +8538,7 @@ public void DoInfernoSmokes(int client)
 		case 2: //Coffin Smoke
 		{
 			BotMoveTo(client, fCoffinSmoke, FASTEST_ROUTE);
-			if(fCoffinSmokeDis < 25)
+			if(fCoffinSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8556,7 +8566,7 @@ public void DoInfernoSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
-				if(fBSiteSmokeDis < 25)
+				if(fBSiteSmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8583,7 +8593,7 @@ public void DoInfernoSmokes(int client)
 			{
 				BotMoveTo(client, fBSiteFlash, FASTEST_ROUTE);
 					
-				if(fBSiteFlashDis < 25)
+				if(fBSiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8605,7 +8615,7 @@ public void DoInfernoSmokes(int client)
 		case 4: //Long A Smoke
 		{
 			BotMoveTo(client, fLongASmoke, FASTEST_ROUTE);
-			if(fLongASmokeDis < 25)
+			if(fLongASmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8633,7 +8643,7 @@ public void DoInfernoSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fSiteLibrarySmoke, FASTEST_ROUTE);
-				if(fSiteLibrarySmokeDis < 25)
+				if(fSiteLibrarySmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8660,7 +8670,7 @@ public void DoInfernoSmokes(int client)
 			{
 				BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
 					
-				if(fASiteFlashDis < 25)
+				if(fASiteFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8682,7 +8692,7 @@ public void DoInfernoSmokes(int client)
 		case 6: //Pit Smoke
 		{
 			BotMoveTo(client, fPitSmoke, FASTEST_ROUTE);
-			if(fPitSmokeDis < 25)
+			if(fPitSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				
@@ -8710,7 +8720,7 @@ public void DoInfernoSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fBalconySmoke, FASTEST_ROUTE);
-				if(fBalconySmokeDis < 25)
+				if(fBalconySmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8735,7 +8745,7 @@ public void DoInfernoSmokes(int client)
 			{
 				BotMoveTo(client, fBalconyFlash, FASTEST_ROUTE);
 					
-				if(fBalconyFlashDis < 25)
+				if(fBalconyFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8759,7 +8769,7 @@ public void DoInfernoSmokes(int client)
 			if(!g_bHasThrownSmoke[client])
 			{
 				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
-				if(fShortASmokeDis < 25)
+				if(fShortASmokeDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8786,7 +8796,7 @@ public void DoInfernoSmokes(int client)
 			{
 				BotMoveTo(client, fLongFlash, FASTEST_ROUTE);
 					
-				if(fLongFlashDis < 25)
+				if(fLongFlashDis < 25.0)
 				{
 					float fVelocity[3], fOrigin[3];
 					
@@ -8808,7 +8818,7 @@ public void DoInfernoSmokes(int client)
 		case 9: //Arch Smoke
 		{
 			BotMoveTo(client, fArchSmoke, FASTEST_ROUTE);
-			if(fArchSmokeDis < 25)
+			if(fArchSmokeDis < 25.0)
 			{
 				float fVelocity[3], fOrigin[3];
 				

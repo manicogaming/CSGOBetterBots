@@ -758,7 +758,7 @@ public void OnClientPutInServer(int client)
 	}
 }
 
-Action GiveNamedItemPre(int client, char classname[64], CEconItemView &item, bool &ignoredCEconItemView, bool &OriginIsNULL, float Origin[3])
+Action GiveNamedItemPre(int client, char szClassname[64], CEconItemView &pItem, bool &bIgnoredCEconItemView, bool &bOriginIsNULL, float fOrigin[3])
 {
 	int clientTeam = GetClientTeam(client);
 
@@ -767,7 +767,7 @@ Action GiveNamedItemPre(int client, char classname[64], CEconItemView &item, boo
 		return Plugin_Handled;
 	}
 	
-	int iDefIndex = eItems_GetWeaponDefIndexByClassName(classname);
+	int iDefIndex = eItems_GetWeaponDefIndexByClassName(szClassname);
 
 	if(iDefIndex <= -1)
 	{
@@ -784,209 +784,210 @@ Action GiveNamedItemPre(int client, char classname[64], CEconItemView &item, boo
 		return Plugin_Continue;
 	}
 
-	eItems_GetWeaponClassNameByDefIndex(g_iStoredKnife[client], classname, sizeof(classname));
-	ignoredCEconItemView = true;
+	eItems_GetWeaponClassNameByDefIndex(g_iStoredKnife[client], szClassname, sizeof(szClassname));
+	bIgnoredCEconItemView = true;
 
-	int iWeapon = CreateEntityByName(classname);
+	int iWeapon = CreateEntityByName(szClassname);
 
 	if (!IsValidEntity(iWeapon))
 	{
 		return Plugin_Changed;
 	}
 	
-	item = PTaH_GetEconItemViewFromEconEntity(iWeapon);
+	pItem = PTaH_GetEconItemViewFromEconEntity(iWeapon);
 	AcceptEntityInput(iWeapon, "Kill");
 	
 	return Plugin_Changed;
 }
 
-void GiveNamedItemPost(int client, const char[] classname, const CEconItemView item, int entity, bool OriginIsNULL, const float Origin[3])
+void GiveNamedItemPost(int client, const char[] szClassname, const CEconItemView pItem, int iEntity, bool bOriginIsNULL, const float fOrigin[3])
 {
-	int iDefIndex = eItems_GetWeaponDefIndexByClassName(classname);
+	int iDefIndex = eItems_GetWeaponDefIndexByClassName(szClassname);
 
 	if(iDefIndex <= -1)
 	{
 		return;
 	}
 
-	if(IsValidClient(client) && eItems_IsValidWeapon(entity))
+	if(IsValidClient(client) && eItems_IsValidWeapon(iEntity))
 	{
-		int iPrevOwner = GetEntProp(entity, Prop_Send, "m_hPrevOwner");
+		int iPrevOwner = GetEntProp(iEntity, Prop_Send, "m_hPrevOwner");
 		if(iPrevOwner == -1)
 		{
 			if (eItems_IsDefIndexKnife(iDefIndex))
 			{
-				EquipPlayerWeapon(client, entity);
-				SetEntProp(entity, Prop_Send, "m_iEntityQuality", 3);
+				EquipPlayerWeapon(client, iEntity);
+				SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 3);
 			}
-			SetWeaponProps(client, entity);
+			SetWeaponProps(client, iEntity);
 		}
 	}
 }
 
-public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3])
+public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
 {
-	if (float(GetClientHealth(victim)) - damage > 0.0)
+	if (float(GetClientHealth(victim)) - fDamage > 0.0)
 		return Plugin_Continue;
 		
-	if (!(damagetype & DMG_SLASH) && !(damagetype & DMG_BULLET))
+	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET))
 		return Plugin_Continue;
 		
 	if (!IsValidClient(attacker))
 		return Plugin_Continue;
 		
-	if (!eItems_IsValidWeapon(weapon))
+	if (!eItems_IsValidWeapon(iWeapon))
 		return Plugin_Continue;
 		
-	int index = eItems_GetWeaponDefIndexByWeapon(weapon);
+	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iWeapon);
 	
-	int weapons_return[42];
+	int iWeaponsReturn[42];
 	
-	RankMe_GetWeaponStats(attacker, weapons_return);
+	RankMe_GetWeaponStats(attacker, iWeaponsReturn);
 	
-	switch(index)
+	switch(iDefIndex)
 	{
 		case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[0];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[0];
 		}
 		case 4:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[1];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[1];
 		}
 		case 32:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[2];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[2];
 		}
 		case 61:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[3];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[3];
 		}
 		case 36:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[4];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[4];
 		}
 		case 1:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[5];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[5];
 		}
 		case 2:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[6];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[6];
 		}
 		case 3:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[7];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[7];
 		}
 		case 30:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[8];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[8];
 		}
 		case 63:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[9];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[9];
 		}
 		case 64:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[10];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[10];
 		}
 		case 35:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[11];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[11];
 		}
 		case 25:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[12];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[12];
 		}
 		case 27:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[13];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[13];
 		}
 		case 29:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[14];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[14];
 		}
 		case 26:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[15];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[15];
 		}
 		case 17:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[16];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[16];
 		}
 		case 34:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[17];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[17];
 		}
 		case 33:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[18];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[18];
 		}
 		case 24:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[19];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[19];
 		}
 		case 19:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[20];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[20];
 		}
 		case 13:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[21];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[21];
 		}
 		case 7:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[22];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[22];
 		}
 		case 38:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[23];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[23];
 		}
 		case 10:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[24];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[24];
 		}
 		case 16:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[25];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[25];
 		}
 		case 60:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[26];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[26];
 		}
 		case 8:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[27];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[27];
 		}
 		case 40:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[28];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[28];
 		}
 		case 39:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[29];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[29];
 		}
 		case 9:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[30];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[30];
 		}
 		case 11:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[31];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[31];
 		}
 		case 14:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[32];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[32];
 		}
 		case 28:
 		{
-			g_iStatTrakKills[attacker][index] = weapons_return[33];
+			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[33];
 		}
 	}
 	
-	if(GetEntProp(weapon, Prop_Send, "m_iAccountID") == GetBotAccountID(attacker) && (GetEntProp(weapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][index]))
+
+	if(GetEntProp(iWeapon, Prop_Send, "m_iAccountID") == GetBotAccountID(attacker) && (GetEntProp(iWeapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][iDefIndex]))
 	{
-		CS_SetAttributeValue(attacker, weapon, "kill eater", g_iStatTrakKills[attacker][index]+1);
+		CS_SetAttributeValue(attacker, iWeapon, "kill eater", g_iStatTrakKills[attacker][iDefIndex]+1);
 		
 		PTaH_ForceFullUpdate(attacker);
 	}
@@ -994,41 +995,41 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 	return Plugin_Continue;
 }
 
-Action WeaponCanUsePre(int client, int weapon, bool& pickup)
+Action WeaponCanUsePre(int client, int iWeapon, bool& bPickup)
 {
-	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(weapon);
+	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iWeapon);
 	if (eItems_IsDefIndexKnife(iDefIndex))
 	{
-		pickup = true;
+		bPickup = true;
 		return Plugin_Changed;
 	}
 	return Plugin_Continue;
 }
 
-public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast)
+public void Event_PlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	int clientIndex = GetClientOfUserId(event.GetInt("userid"));
-	if(IsValidClient(clientIndex))
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	if(IsValidClient(client))
 	{
-		GivePlayerGloves(clientIndex);
+		GivePlayerGloves(client);
 		
 		if(eItems_AreItemsSynced())
 		{
-			SetEntProp(clientIndex, Prop_Send, "m_unMusicID", g_iMusicKit[clientIndex]);
+			SetEntProp(client, Prop_Send, "m_unMusicID", g_iMusicKit[client]);
 			
 			if(Math_GetRandomInt(1,2) == 1)
 			{
-				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[clientIndex]);
+				SDKCall(g_hSetRank, client, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[client]);
 			}
 			else
 			{
-				SDKCall(g_hSetRank, clientIndex, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[clientIndex]);
+				SDKCall(g_hSetRank, client, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[client]);
 			}
 		}
 		
-		if(g_iCustomPlayerChance[clientIndex] <= 35)
+		if(g_iCustomPlayerChance[client] <= 35)
 		{
-			CreateTimer(1.3, Timer_ApplyAgent, clientIndex);
+			CreateTimer(1.3, Timer_ApplyAgent, client);
 		}
 	}
 }
@@ -1247,186 +1248,186 @@ public Action Timer_ApplyAgent(Handle hTimer, int i)
 	return Plugin_Stop;
 }
 
-void SetWeaponProps(int client, int entity)
+void SetWeaponProps(int client, int iEntity)
 {
-	int index = eItems_GetWeaponDefIndexByWeapon(entity);
+	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iEntity);
 	
-	if (index > -1)
+	if (iDefIndex > -1)
 	{
 		static int IDLow = 2048;
 		static int IDHigh = 16384;
-		SetEntProp(entity, Prop_Send, "m_iItemIDLow", IDLow++);
-		SetEntProp(entity, Prop_Send, "m_iItemIDHigh", IDHigh++);
-		SetEntProp(entity, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
-		SetEntProp(entity, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", IDLow++);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", IDHigh++);
+		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
+		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
 		
-		CS_SetAttributeValue(client, entity, "set item texture prefab", float(g_iSkinDefIndex[client][index]));
+		CS_SetAttributeValue(client, iEntity, "set item texture prefab", float(g_iSkinDefIndex[client][iDefIndex]));
 		
-		CS_SetAttributeValue(client, entity, "set item texture wear", g_fWeaponSkinWear[client][index]);
-		CS_SetAttributeValue(client, entity, "set item texture seed", float(g_iWeaponSkinSeed[client][index]));
+		CS_SetAttributeValue(client, iEntity, "set item texture wear", g_fWeaponSkinWear[client][iDefIndex]);
+		CS_SetAttributeValue(client, iEntity, "set item texture seed", float(g_iWeaponSkinSeed[client][iDefIndex]));
 		
-		int weapons_return[42];
+		int iWeaponsReturn[42];
 	
-		RankMe_GetWeaponStats(client, weapons_return);
+		RankMe_GetWeaponStats(client, iWeaponsReturn);
 		
-		switch(index)
+		switch(iDefIndex)
 		{
 			case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[0];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[0];
 			}
 			case 4:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[1];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[1];
 			}
 			case 32:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[2];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[2];
 			}
 			case 61:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[3];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[3];
 			}
 			case 36:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[4];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[4];
 			}
 			case 1:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[5];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[5];
 			}
 			case 2:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[6];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[6];
 			}
 			case 3:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[7];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[7];
 			}
 			case 30:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[8];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[8];
 			}
 			case 63:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[9];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[9];
 			}
 			case 64:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[10];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[10];
 			}
 			case 35:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[11];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[11];
 			}
 			case 25:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[12];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[12];
 			}
 			case 27:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[13];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[13];
 			}
 			case 29:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[14];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[14];
 			}
 			case 26:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[15];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[15];
 			}
 			case 17:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[16];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[16];
 			}
 			case 34:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[17];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[17];
 			}
 			case 33:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[18];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[18];
 			}
 			case 24:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[19];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[19];
 			}
 			case 19:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[20];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[20];
 			}
 			case 13:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[21];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[21];
 			}
 			case 7:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[22];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[22];
 			}
 			case 38:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[23];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[23];
 			}
 			case 10:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[24];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[24];
 			}
 			case 16:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[25];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[25];
 			}
 			case 60:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[26];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[26];
 			}
 			case 8:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[27];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[27];
 			}
 			case 40:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[28];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[28];
 			}
 			case 39:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[29];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[29];
 			}
 			case 9:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[30];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[30];
 			}
 			case 11:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[31];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[31];
 			}
 			case 14:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[32];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[32];
 			}
 			case 28:
 			{
-				g_iStatTrakKills[client][index] = weapons_return[33];
+				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[33];
 			}
 		}
 		
-		if(eItems_IsDefIndexKnife(index))
+		if(eItems_IsDefIndexKnife(iDefIndex))
 		{
-			if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
+			if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 			{
-				CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrakKills[client][index]);
-				CS_SetAttributeValue(client, entity, "kill eater score type", 0);
-				g_bKnifeHasStatTrak[client][index] = true;
+				CS_SetAttributeValue(client, iEntity, "kill eater", g_iStatTrakKills[client][iDefIndex]);
+				CS_SetAttributeValue(client, iEntity, "kill eater score type", 0);
+				g_bKnifeHasStatTrak[client][iDefIndex] = true;
 			}
 			else
 			{
-				CS_SetAttributeValue(client, entity, "kill eater", -1);
-				CS_SetAttributeValue(client, entity, "kill eater score type", -1);
-				g_bKnifeHasStatTrak[client][index] = false;
+				CS_SetAttributeValue(client, iEntity, "kill eater", -1);
+				CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
+				g_bKnifeHasStatTrak[client][iDefIndex] = false;
 			}
 		}
 		else
 		{
-			switch(GetEntProp(entity, Prop_Send, "m_nFallbackPaintKit"))
+			switch(GetEntProp(iEntity, Prop_Send, "m_nFallbackPaintKit"))
 			{
 				case 125, 255, 256, 259, 257, 258, 262, 260, 261, 263, 267, 264, 265, 266, 675, 678, 681, 683, 676, 686, 687, 688, 679, 689, 680, 674, 682, 673, 684, 677, 685, 504, 
 				497, 490, 493, 503, 494, 501, 496, 500, 491, 495, 492, 498, 505, 499, 502, 639, 653, 644, 640, 643, 647, 652, 654, 648, 651, 645, 646, 650, 655, 642, 649, 641, 512, 
@@ -1444,12 +1445,12 @@ void SetWeaponProps(int client, int entity)
 				843, 838, 841, 851, 846, 839, 836, 849, 848, 842, 840, 835, 847, 801, 12, 44, 887, 898, 897, 889, 98, 899, 885, 886, 894, 893, 884, 888, 895, 896, 900, 891, 892, 890,
 				946, 957, 941, 947, 948, 956, 955, 951, 954, 953, 943, 945, 942, 949, 944, 950, 952, 958, 960, 967,	968, 973, 969, 966, 974, 965, 964, 972, 961, 963, 970, 971, 962, 959:
 				{
-					if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
+					if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 					{
-						CS_SetAttributeValue(client, entity, "kill eater", g_iStatTrakKills[client][index]);
-						CS_SetAttributeValue(client, entity, "kill eater score type", 0);
+						CS_SetAttributeValue(client, iEntity, "kill eater", g_iStatTrakKills[client][iDefIndex]);
+						CS_SetAttributeValue(client, iEntity, "kill eater score type", 0);
 						
-						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 9);
+						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
 					}
 				}
 				case 254, 253, 252, 110, 25, 242, 245, 249, 236, 244, 92, 147, 136, 96, 251, 250, 21, 800, 28, 101, 158, 344, 326, 328, 325, 327, 329, 332, 32, 294, 323, 333, 330,
@@ -1457,125 +1458,125 @@ void SetWeaponProps(int client, int entity)
 				90, 754, 39, 37, 33, 2, 233, 243, 240, 46, 27, 241, 523, 30, 141, 157, 99, 8, 148, 124, 170, 116, 247, 235, 159, 321, 84, 318, 322, 319, 238, 15, 95, 100, 22, 119,
 				248, 237, 246, 3, 34, 234, 74, 78, 47, 107, 149, 792, 791, 789, 779, 787, 788, 781, 776, 786, 780, 790, 783, 782, 777, 784, 778, 775, 785, 153, 172, 111, 70, 17, 135:
 				{
-					if(g_iStatTrakOrSouvenirChance[client][index] <= 30)
+					if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 					{
-						CS_SetAttributeValue(client, entity, "kill eater", -1);
-						CS_SetAttributeValue(client, entity, "kill eater score type", -1);
-						SetEntProp(entity, Prop_Send, "m_iEntityQuality", 12);
+						CS_SetAttributeValue(client, iEntity, "kill eater", -1);
+						CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
+						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 12);
 					}
 				}
 				default:
 				{
-					CS_SetAttributeValue(client, entity, "kill eater", -1);
-					CS_SetAttributeValue(client, entity, "kill eater score type", -1);
-					SetEntProp(entity, Prop_Send, "m_iEntityQuality", 0);
+					CS_SetAttributeValue(client, iEntity, "kill eater", -1);
+					CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
+					SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 0);
 				}
 			}
 		}
 		
-		if(g_iStickerChance[client][index] <= 30)
+		if(g_iStickerChance[client][iDefIndex] <= 30)
 		{
-			if(g_iStickerComboChance[client][index] <= 65)
+			if(g_iStickerComboChance[client][iDefIndex] <= 65)
 			{			
-				switch (g_iRndStickerCombo[client][index])
+				switch (g_iRndStickerCombo[client][iDefIndex])
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
 					}
 					case 2:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
 					}
 					case 3:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
 					}
 					case 4:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 5:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
 					}
 					case 6:
 					{
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
 					}
 					case 7:
 					{
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
 					}
 					case 8:
 					{
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 9:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 10:
 					{
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
 					}
 					case 11:
 					{
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 12:
 					{
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 13:
 					{
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 14:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 				}
 			}
 			else
 			{
-				switch(g_iRndStickerCombo[client][index])
+				switch(g_iRndStickerCombo[client][iDefIndex])
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSticker[client][index][0], 0.0);
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSticker[client][index][1], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSticker[client][index][2], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSticker[client][index][3], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
 					}
 					case 2:
 					{						
-						CS_SetWeaponSticker(client, entity, 0, g_iRndSameSticker[client][index], 0.0);
-						CS_SetWeaponSticker(client, entity, 1, g_iRndSameSticker[client][index], 0.0);
-						CS_SetWeaponSticker(client, entity, 2, g_iRndSameSticker[client][index], 0.0);
-						CS_SetWeaponSticker(client, entity, 3, g_iRndSameSticker[client][index], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSameSticker[client][iDefIndex], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSameSticker[client][iDefIndex], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSameSticker[client][iDefIndex], 0.0);
+						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSameSticker[client][iDefIndex], 0.0);
 					}
 				}
 			}
 		}
 			
-		SetEntProp(entity, Prop_Send, "m_iAccountID", GetBotAccountID(client));
-		SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client);
-		SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
+		SetEntProp(iEntity, Prop_Send, "m_iAccountID", GetBotAccountID(client));
+		SetEntPropEnt(iEntity, Prop_Send, "m_hOwnerEntity", client);
+		SetEntPropEnt(iEntity, Prop_Send, "m_hPrevOwner", -1);
 		
 		PTaH_ForceFullUpdate(client);
 	}
@@ -1583,34 +1584,34 @@ void SetWeaponProps(int client, int entity)
 
 public void GivePlayerGloves(int client)
 {
-	int ent = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
-	if(ent != -1)
+	int iEntity = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
+	if(iEntity != -1)
 	{
-		AcceptEntityInput(ent, "KillHierarchy");
+		AcceptEntityInput(iEntity, "KillHierarchy");
 	}
-	ent = CreateEntityByName("wearable_item");
-	if(ent != -1 && eItems_AreItemsSynced())
+	iEntity = CreateEntityByName("wearable_item");
+	if(iEntity != -1 && eItems_AreItemsSynced())
 	{
 		static int IDLow = 2048;
 		static int IDHigh = 16384;
 		
-		SetEntProp(ent, Prop_Send, "m_iItemIDLow", IDLow++);
-		SetEntProp(ent, Prop_Send, "m_iItemIDHigh", IDHigh++);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", IDLow++);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		
-		SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", g_iStoredGlove[client]);
+		SetEntProp(iEntity, Prop_Send, "m_iItemDefinitionIndex", g_iStoredGlove[client]);
 		
-		CS_SetAttributeValue(client, ent, "set item texture prefab", float(g_iGloveSkin[client]));
+		CS_SetAttributeValue(client, iEntity, "set item texture prefab", float(g_iGloveSkin[client]));
 		
-		CS_SetAttributeValue(client, ent, "set item texture wear", g_fGloveWear[client]);
-		CS_SetAttributeValue(client, ent, "set item texture seed", float(g_iGloveSeed[client]));
-		SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
-		SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
-		SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);
-		SetEntProp(ent, Prop_Send, "m_bInitialized", 1);
+		CS_SetAttributeValue(client, iEntity, "set item texture wear", g_fGloveWear[client]);
+		CS_SetAttributeValue(client, iEntity, "set item texture seed", float(g_iGloveSeed[client]));
+		SetEntPropEnt(iEntity, Prop_Data, "m_hOwnerEntity", client);
+		SetEntPropEnt(iEntity, Prop_Data, "m_hParent", client);
+		SetEntPropEnt(iEntity, Prop_Data, "m_hMoveParent", client);
+		SetEntProp(iEntity, Prop_Send, "m_bInitialized", 1);
 		
-		DispatchSpawn(ent);
+		DispatchSpawn(iEntity);
 		
-		SetEntPropEnt(client, Prop_Send, "m_hMyWearables", ent);
+		SetEntPropEnt(client, Prop_Send, "m_hMyWearables", iEntity);
 		SetEntProp(client, Prop_Send, "m_nBody", 1);
 		
 		PTaH_ForceFullUpdate(client);
