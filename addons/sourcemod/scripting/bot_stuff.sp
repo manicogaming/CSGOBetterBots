@@ -5721,29 +5721,27 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = view_as<bool>(GetEntProp(i, Prop_Send, "m_bInBuyZone"));
-			int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
 			
 			if(Math_GetRandomInt(1,100) <= 5)
 			{
-				FakeClientCommandEx(i, "+lookatweapon");
-				FakeClientCommandEx(i, "-lookatweapon");
+				FakeClientCommand(i, "+lookatweapon");
+				FakeClientCommand(i, "-lookatweapon");
 			}
 			
 			if(iAccount == 800 && bInBuyZone)
 			{
-				FakeClientCommandEx(i, "buy vest");
+				FakeClientCommand(i, "buy vest");
 			}
-			else if((iAccount > 3000 || iPrimary != -1) && bInBuyZone)
+			else if((iAccount > 3000 || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
 			{
 				if(GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
 				{
-					FakeClientCommandEx(i, "buy vest");
-					FakeClientCommandEx(i, "buy vesthelm");
+					FakeClientCommand(i, "buy vesthelm");
 				}
 				
 				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0) 
 				{
-					FakeClientCommandEx(i, "buy defuser");
+					FakeClientCommand(i, "buy defuser");
 				}
 			}
 		}
@@ -5956,7 +5954,16 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 {
 	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 	{	
-		if(!g_bFreezetimeEnd && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && !((strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0 || strcmp(szWeapon, "smokegrenade") == 0)))
+		if(strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0
+		|| strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
+		{
+			return Plugin_Continue;
+		}
+		else if(GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0
+		|| strcmp(szWeapon, "m4a1") == 0	|| strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
+		|| strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
+		|| strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
+		|| strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
 		{
 			return Plugin_Handled;
 		}
@@ -5970,7 +5977,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				CSGO_SetMoney(client, iAccount - 2900);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
 				
-				return Plugin_Handled; 
+				return Plugin_Changed; 
 			}
 			
 			if(Math_GetRandomInt(1,100) <= 5)
@@ -5978,7 +5985,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				CSGO_SetMoney(client, iAccount - 3300);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
 				
-				return Plugin_Handled; 
+				return Plugin_Changed; 
 			}
 			
 			return Plugin_Continue;
@@ -5990,7 +5997,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				CSGO_SetMoney(client, iAccount - 3000);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_sg556");
 				
-				return Plugin_Handled; 
+				return Plugin_Changed; 
 			}
 		}
 		else if(strcmp(szWeapon, "mac10") == 0)
@@ -6000,7 +6007,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				CSGO_SetMoney(client, iAccount - 1800);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
 				
-				return Plugin_Handled; 
+				return Plugin_Changed; 
 			}
 			else
 			{
@@ -6014,7 +6021,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				CSGO_SetMoney(client, iAccount - 2050);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
 				
-				return Plugin_Handled; 
+				return Plugin_Changed; 
 			}
 			else
 			{
