@@ -24,7 +24,6 @@ Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotAudibleEvent;
 Handle g_hBotIsHiding;
-Handle g_hBotEquipKnife;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
 
@@ -1024,10 +1023,6 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsHiding = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipKnife");
-	if ((g_hBotEquipKnife = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipKnife signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
@@ -6106,9 +6101,9 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{
-		if(GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0)
+		if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex))
 		{
-			BotEquipKnife(client);
+			FakeClientCommandEx(client, "use weapon_knife");
 		}
 		
 		float fClientLoc[3];
@@ -6420,9 +6415,9 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					
 					fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
 					
-					if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && GetClosestClient(client) == -1)
+					if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && GetClosestClient(client) == -1 && !eItems_IsDefIndexKnife(iDefIndex))
 					{
-						BotEquipKnife(client);
+						FakeClientCommandEx(client, "use weapon_knife");
 					}
 				}
 				
@@ -6776,6 +6771,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	if (!bInBuyZone) return Plugin_Stop;
 	
 	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+	
 	char szDefaultPrimary[64];
 	GetClientWeapon(client, szDefaultPrimary, sizeof(szDefaultPrimary));
 
@@ -6875,11 +6871,6 @@ public void BotAudibleEvent(int client, Event eEvent, int iPlayer, float fRange,
 public bool BotIsHiding(int client)
 {
 	return SDKCall(g_hBotIsHiding, client);
-}
-
-public int BotEquipKnife(int client)
-{
-	SDKCall(g_hBotEquipKnife, client);
 }
 
 public int BotEquipBestWeapon(int client, bool bMustEquip)
