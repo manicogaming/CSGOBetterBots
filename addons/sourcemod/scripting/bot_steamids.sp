@@ -317,27 +317,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 21583315;
 	}
-	//Thieves Players
-	else if(strcmp(szBotName, "AZR") == 0)
-	{
-		iAccountID = 24832266;
-	}
-	else if(strcmp(szBotName, "jks") == 0)
-	{
-		iAccountID = 16839456;
-	}
-	else if(strcmp(szBotName, "jkaem") == 0)
-	{
-		iAccountID = 42442914;
-	}
-	else if(strcmp(szBotName, "Liazz") == 0)
-	{
-		iAccountID = 112055988;
-	}
-	else if(strcmp(szBotName, "Gratisfaction") == 0)
-	{
-		iAccountID = 5543683;
-	}
+	//Vireo.Pro Players
 	//Na´Vi Players
 	else if(strcmp(szBotName, "flamie") == 0)
 	{
@@ -638,9 +618,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 34633571;
 	}
-	else if(strcmp(szBotName, "truth") == 0)
+	else if(strcmp(szBotName, "jkaem") == 0)
 	{
-		iAccountID = 79528796;
+		iAccountID = 42442914;
 	}
 	else if(strcmp(szBotName, "dennis") == 0)
 	{
@@ -834,10 +814,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 21397689;
 	}
-	else if(strcmp(szBotName, "H4RR3") == 0)
-	{
-		iAccountID = 195566724;
-	}
 	else if(strcmp(szBotName, "NaToSaphiX") == 0)
 	{
 		iAccountID = 41330524;
@@ -1019,10 +995,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "xms") == 0)
 	{
 		iAccountID = 38509481;
-	}
-	else if(strcmp(szBotName, "Nivera") == 0)
-	{
-		iAccountID = 200530203;
 	}
 	//Nemiga Players
 	else if(strcmp(szBotName, "mds") == 0)
@@ -1462,19 +1434,19 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 110610542;
 	}
-	else if(strcmp(szBotName, "HooXi") == 0)
+	else if(strcmp(szBotName, "maNkz") == 0)
 	{
-		iAccountID = 38661042;
+		iAccountID = 81805084;
 	}
 	else if(strcmp(szBotName, "refrezh") == 0)
 	{
-		iAccountID = 104598470;
+		iAccountID = 7265511;
 	}
 	else if(strcmp(szBotName, "Queenix") == 0)
 	{
 		iAccountID = 70280269;
 	}
-	else if(strcmp(szBotName, "HECTOz") == 0)
+	else if(strcmp(szBotName, "zEVES") == 0)
 	{
 		iAccountID = 82890714;
 	}
@@ -1504,9 +1476,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 117421285;
 	}
-	else if(strcmp(szBotName, "adaro") == 0)
+	else if(strcmp(szBotName, "ELUSIVE") == 0)
 	{
-		iAccountID = 165184216;
+		iAccountID = 16704419;
 	}
 	else if(strcmp(szBotName, "ZipZip") == 0)
 	{
@@ -1516,9 +1488,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 119663636;
 	}
-	else if(strcmp(szBotName, "kaNibalistic") == 0)
+	else if(strcmp(szBotName, "Dweezil") == 0)
 	{
-		iAccountID = 32730121;
+		iAccountID = 79904271;
 	}
 	//Secret Players
 	else if(strcmp(szBotName, "sinnopsyy") == 0)
@@ -1923,17 +1895,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 56166832;
 	}
 	//Wizards Players
-	else if(strcmp(szBotName, "pounh") == 0)
+	else if(strcmp(szBotName, "Bernard") == 0)
 	{
-		iAccountID = 77088025;
-	}
-	else if(strcmp(szBotName, "Kvik") == 0)
-	{
-		iAccountID = 40982505;
-	}
-	else if(strcmp(szBotName, "kolor") == 0)
-	{
-		iAccountID = 159382791;
+		iAccountID = 77012567;
 	}
 	//Tricked Players
 	else if(strcmp(szBotName, "kwezz") == 0)
@@ -2020,13 +1984,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 100101582;
 	}
-	else if(strcmp(szBotName, "GeT_RiGhT") == 0)
+	else if(strcmp(szBotName, "H4RR3") == 0)
 	{
-		iAccountID = 21771190;
+		iAccountID = 195566724;
 	}
-	else if(strcmp(szBotName, "Xizt") == 0)
+	else if(strcmp(szBotName, "HEAP") == 0)
 	{
-		iAccountID = 26224992;
+		iAccountID = 181546146;
 	}
 	//D13 Players
 	//ZIGMA Players
@@ -2246,11 +2210,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 982445;
 	}
-	else if(strcmp(szBotName, "deviaNt") == 0)
-	{
-		iAccountID = 7077099;
-	}
-	else if(strcmp(szBotName, "ELUSIVE") == 0)
+	else if(strcmp(szBotName, "slayeRyEyE") == 0)
 	{
 		iAccountID = 16704419;
 	}
@@ -2363,6 +2323,10 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "Butters") == 0)
 	{
 		iAccountID = 75717540;
+	}
+	else if(strcmp(szBotName, "ztr") == 0)
+	{
+		iAccountID = 120175482;
 	}
 	//hREDS Players
 	else if(strcmp(szBotName, "eDi") == 0)
