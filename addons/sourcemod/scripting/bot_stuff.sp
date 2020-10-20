@@ -312,10 +312,10 @@ static char g_szBotName[][] = {
 	"obj",
 	"RIZZ",
 	//Lions Players
-	"AcilioN",
+	"HooXi",
 	"acoR",
 	"Sjuush",
-	"innocent",
+	"refrezh",
 	"roeJ",
 	//Riders Players
 	"mopoz",
@@ -531,7 +531,7 @@ static char g_szBotName[][] = {
 	"Queenix",
 	"zEVES",
 	"maNkz",
-	"refrezh",
+	"mertz",
 	"Nodios",
 	//K23 Players
 	"neaLaN",
@@ -901,7 +901,7 @@ static char g_szBotName[][] = {
 	"asap",
 	//Flames Players
 	"nicoodoz",
-	"mertz",
+	"AcilioN",
 	"Basso",
 	"Jabbi",
 	"Daffu",
@@ -912,7 +912,7 @@ static char g_szBotName[][] = {
 	"whatz",
 	"shellzi",
 	//KPI Players
-	"MHammond",
+	"pounh",
 	"SAYN",
 	"Aaron",
 	"Butters",
@@ -2526,10 +2526,10 @@ public Action Team_Lions(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "AcilioN");
+		ServerCommand("bot_add_ct %s", "HooXi");
 		ServerCommand("bot_add_ct %s", "acoR");
 		ServerCommand("bot_add_ct %s", "Sjuush");
-		ServerCommand("bot_add_ct %s", "innocent");
+		ServerCommand("bot_add_ct %s", "refrezh");
 		ServerCommand("bot_add_ct %s", "roeJ");
 		ServerCommand("mp_teamlogo_1 lion");
 	}
@@ -2537,10 +2537,10 @@ public Action Team_Lions(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "AcilioN");
+		ServerCommand("bot_add_t %s", "HooXi");
 		ServerCommand("bot_add_t %s", "acoR");
 		ServerCommand("bot_add_t %s", "Sjuush");
-		ServerCommand("bot_add_t %s", "innocent");
+		ServerCommand("bot_add_t %s", "refrezh");
 		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("mp_teamlogo_2 lion");
 	}
@@ -3609,7 +3609,7 @@ public Action Team_x6tence(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Queenix");
 		ServerCommand("bot_add_ct %s", "zEVES");
 		ServerCommand("bot_add_ct %s", "maNkz");
-		ServerCommand("bot_add_ct %s", "refrezh");
+		ServerCommand("bot_add_ct %s", "mertz");
 		ServerCommand("bot_add_ct %s", "Nodios");
 		ServerCommand("mp_teamlogo_1 x6t");
 	}
@@ -3620,7 +3620,7 @@ public Action Team_x6tence(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Queenix");
 		ServerCommand("bot_add_t %s", "zEVES");
 		ServerCommand("bot_add_t %s", "maNkz");
-		ServerCommand("bot_add_t %s", "refrezh");
+		ServerCommand("bot_add_t %s", "mertz");
 		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 x6t");
 	}
@@ -5467,7 +5467,7 @@ public Action Team_Flames(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nicoodoz");
-		ServerCommand("bot_add_ct %s", "mertz");
+		ServerCommand("bot_add_ct %s", "AcilioN");
 		ServerCommand("bot_add_ct %s", "Basso");
 		ServerCommand("bot_add_ct %s", "Jabbi");
 		ServerCommand("bot_add_ct %s", "Daffu");
@@ -5478,7 +5478,7 @@ public Action Team_Flames(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nicoodoz");
-		ServerCommand("bot_add_t %s", "mertz");
+		ServerCommand("bot_add_t %s", "AcilioN");
 		ServerCommand("bot_add_t %s", "Basso");
 		ServerCommand("bot_add_t %s", "Jabbi");
 		ServerCommand("bot_add_t %s", "Daffu");
@@ -5526,7 +5526,7 @@ public Action Team_KPI(int client, int iArgs)
 	if(strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "MHammond");
+		ServerCommand("bot_add_ct %s", "pounh");
 		ServerCommand("bot_add_ct %s", "SAYN");
 		ServerCommand("bot_add_ct %s", "Aaron");
 		ServerCommand("bot_add_ct %s", "Butters");
@@ -5537,7 +5537,7 @@ public Action Team_KPI(int client, int iArgs)
 	if(strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "MHammond");
+		ServerCommand("bot_add_t %s", "pounh");
 		ServerCommand("bot_add_t %s", "SAYN");
 		ServerCommand("bot_add_t %s", "Aaron");
 		ServerCommand("bot_add_t %s", "Butters");
@@ -9500,7 +9500,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Lions Players
-	if((StrEqual(szBotName, "AcilioN")) || (StrEqual(szBotName, "acoR")) || (StrEqual(szBotName, "Sjuush")) || (StrEqual(szBotName, "innocent")) || (StrEqual(szBotName, "roeJ")))
+	if((StrEqual(szBotName, "HooXi")) || (StrEqual(szBotName, "acoR")) || (StrEqual(szBotName, "Sjuush")) || (StrEqual(szBotName, "refrezh")) || (StrEqual(szBotName, "roeJ")))
 	{
 		CS_SetClientClanTag(client, "Lions");
 	}
@@ -9716,7 +9716,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//x6tence Players
-	if((StrEqual(szBotName, "Queenix")) || (StrEqual(szBotName, "zEVES")) || (StrEqual(szBotName, "maNkz")) || (StrEqual(szBotName, "refrezh")) || (StrEqual(szBotName, "Nodios")))
+	if((StrEqual(szBotName, "Queenix")) || (StrEqual(szBotName, "zEVES")) || (StrEqual(szBotName, "maNkz")) || (StrEqual(szBotName, "mertz")) || (StrEqual(szBotName, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "x6tence");
 	}
@@ -10088,7 +10088,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Flames Players
-	if((strcmp(szBotName, "nicoodoz") == 0) || (strcmp(szBotName, "mertz") == 0) || (strcmp(szBotName, "Basso") == 0) || (strcmp(szBotName, "Jabbi") == 0) || (strcmp(szBotName, "Daffu") == 0))
+	if((strcmp(szBotName, "nicoodoz") == 0) || (strcmp(szBotName, "AcilioN") == 0) || (strcmp(szBotName, "Basso") == 0) || (strcmp(szBotName, "Jabbi") == 0) || (strcmp(szBotName, "Daffu") == 0))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}
@@ -10100,7 +10100,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//KPI Players
-	if((strcmp(szBotName, "MHammond") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "ztr") == 0))
+	if((strcmp(szBotName, "pounh") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "ztr") == 0))
 	{
 		CS_SetClientClanTag(client, "KPI");
 	}

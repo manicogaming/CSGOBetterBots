@@ -1407,7 +1407,7 @@ End
 
 //Lions Players
 
-ProP+Rifle "AcilioN"
+ProP+Rifle "HooXi"
 	VoicePitch = 76
 End
 
@@ -1419,7 +1419,7 @@ ProP+Rifle "Sjuush"
 	VoicePitch = 90
 End
 
-ProP+Rifle "innocent"
+ProP+Rifle "refrezh"
 	VoicePitch = 112
 End
 
@@ -2211,7 +2211,7 @@ ProP+Rifle "maNkz"
 	VoicePitch = 99
 End
 
-ProP+Rifle "refrezh"
+ProP+Rifle "mertz"
 	VoicePitch = 96
 End
 
@@ -3585,11 +3585,11 @@ End
 
 //Flames Players
 
-ProP+Rifle "nicoodoz"
+ProP+Rifle "AcilioN"
 	VoicePitch = 83
 End
 
-ProAwp+SniperPro "mertz"
+ProAwp+SniperPro "nicoodoz"
 	VoicePitch = 98
 End
 
@@ -3629,7 +3629,7 @@ End
 
 //KPI Players
 
-ProP+Rifle "MHammond"
+ProP+Rifle "pounh"
 	VoicePitch = 82
 End
 

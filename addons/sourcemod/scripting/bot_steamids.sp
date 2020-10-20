@@ -886,13 +886,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 30968963;
 	}
-	else if(strcmp(szBotName, "AcilioN") == 0)
+	else if(strcmp(szBotName, "HooXi") == 0)
 	{
-		iAccountID = 56749436;
+		iAccountID = 38661042;
 	}
-	else if(strcmp(szBotName, "innocent") == 0)
+	else if(strcmp(szBotName, "refrezh") == 0)
 	{
-		iAccountID = 26563533;
+		iAccountID = 104598470;
 	}
 	//Riders Players
 	else if(strcmp(szBotName, "mopoz") == 0)
@@ -1438,9 +1438,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 81805084;
 	}
-	else if(strcmp(szBotName, "refrezh") == 0)
+	else if(strcmp(szBotName, "mertz") == 0)
 	{
-		iAccountID = 7265511;
+		iAccountID = 119498324;
 	}
 	else if(strcmp(szBotName, "Queenix") == 0)
 	{
@@ -2282,9 +2282,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 198705922;
 	}
 	//Flames Players
-	else if(strcmp(szBotName, "mertz") == 0)
+	else if(strcmp(szBotName, "AcilioN") == 0)
 	{
-		iAccountID = 119498324;
+		iAccountID = 56749436;
 	}
 	else if(strcmp(szBotName, "Basso") == 0)
 	{
@@ -2327,6 +2327,10 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "ztr") == 0)
 	{
 		iAccountID = 120175482;
+	}
+	else if(strcmp(szBotName, "pounh") == 0)
+	{
+		iAccountID = 77088025;
 	}
 	//hREDS Players
 	else if(strcmp(szBotName, "eDi") == 0)
