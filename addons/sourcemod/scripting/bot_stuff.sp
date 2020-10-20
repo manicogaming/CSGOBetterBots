@@ -23,7 +23,6 @@ Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
-Handle g_hBotSetLookAt;
 
 enum RouteType
 {
@@ -1014,17 +1013,6 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
-	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
 	
 	delete hGameConfig;
 	
@@ -6846,11 +6834,6 @@ public int BotEquipBestWeapon(int client, bool bMustEquip)
 	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
 }
 
-public int BotSetLookAt(int client, const char[] szDesc, const float fPos[3], PriorityType pri, float fDuration, bool bClearIfClose, float fAngleTolerance, bool bAttack)
-{
-	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
-}
-
 public int LookupBone(int iEntity, const char[] szName)
 {
 	return SDKCall(g_hLookupBone, iEntity, szName);
@@ -7391,7 +7374,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(7.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7440,7 +7423,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Stairs Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7466,9 +7449,9 @@ public void DoMirageSmokes(int client)
 					fVelocity[1] = -36.732955;
 					fVelocity[2] = 371.127532;
 					
-					CreateTimer(3.0, Timer_ThrowNade, client);
+					CreateTimer(2.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Jungle Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7519,7 +7502,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Top-Mid Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7568,7 +7551,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Mid-Short Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7594,7 +7577,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7622,7 +7605,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Bottom Con Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7671,7 +7654,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Top Con Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7699,7 +7682,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Short-Left Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7750,7 +7733,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Short-Right Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7801,7 +7784,7 @@ public void DoMirageSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Market Door Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 						
 					if(g_bCanThrowNade[client])
 					{
@@ -7850,7 +7833,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Market Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7880,7 +7863,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Sandwich Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7906,7 +7889,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(2.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Under Palace Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7932,7 +7915,7 @@ public void DoMirageSmokes(int client)
 				
 				CreateTimer(1.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Car Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8032,7 +8015,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "B Doors Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8060,7 +8043,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "B Plat Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8111,7 +8094,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "B Window Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8162,7 +8145,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(5.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Mid to B Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8213,7 +8196,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(5.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Mid to B Box Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8264,7 +8247,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(1.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "XBOX Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8313,7 +8296,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Short A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 				
 				if(g_bCanThrowNade[client])
 				{
@@ -8339,7 +8322,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Short-Boost Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8365,7 +8348,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "A Site Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8393,7 +8376,7 @@ public void DoDust2Smokes(int client)
 					
 					CreateTimer(0.5, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Long Corner Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8442,7 +8425,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "A Cross Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8468,7 +8451,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8498,7 +8481,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Back Plat Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8524,7 +8507,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(5.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "B Site Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8550,7 +8533,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(0.5, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Mid Doors Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8576,7 +8559,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Short Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8602,7 +8585,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Mid Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8628,7 +8611,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Goose Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8654,7 +8637,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(2.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Car Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8680,7 +8663,7 @@ public void DoDust2Smokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Pit Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8768,7 +8751,7 @@ public void DoInfernoSmokes(int client)
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "CT Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8819,7 +8802,7 @@ public void DoInfernoSmokes(int client)
 
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Coffin Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 						
 					if(g_bCanThrowNade[client])
 					{
@@ -8868,7 +8851,7 @@ public void DoInfernoSmokes(int client)
 
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Long A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -8896,7 +8879,7 @@ public void DoInfernoSmokes(int client)
 
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Site-Library Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -8945,7 +8928,7 @@ public void DoInfernoSmokes(int client)
 
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Pit Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9022,7 +9005,7 @@ public void DoInfernoSmokes(int client)
 
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					BotSetLookAt(client, "Short A Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -9071,7 +9054,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Arch Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9097,7 +9080,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Graveyard Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9123,7 +9106,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Library Smoke", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9153,7 +9136,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Quad Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9179,7 +9162,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "First Box Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9205,7 +9188,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Second Box Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -9231,7 +9214,7 @@ public void DoInfernoSmokes(int client)
 				
 				CreateTimer(0.2, Timer_ThrowNade, client);
 				
-				BotSetLookAt(client, "Pit Molotov", fOrigin, PRIORITY_HIGH, 4.0, false, 5.0, false);
+				TF2_LookAtPos(client, fOrigin, 0.40);
 					
 				if(g_bCanThrowNade[client])
 				{
