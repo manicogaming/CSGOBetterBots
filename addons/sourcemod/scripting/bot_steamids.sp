@@ -1623,14 +1623,6 @@ public void OnClientSettingsChanged(int client)
 	//PlanetKey Players
 	//Vexed Players
 	//HLE Players
-	else if(strcmp(szBotName, "kinqie") == 0)
-	{
-		iAccountID = 42106423;
-	}
-	else if(strcmp(szBotName, "Krad") == 0)
-	{
-		iAccountID = 71642904;
-	}
 	else if(strcmp(szBotName, "Forester") == 0)
 	{
 		iAccountID = 67083025;

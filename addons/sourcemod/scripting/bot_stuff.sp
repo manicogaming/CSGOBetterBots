@@ -8,13 +8,16 @@
 #include <csutils>
 #include <smlib>
 #include <navmesh>
+#include <dhooks>
 
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowNade[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iMolotov[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+float g_fHoldPos[MAXPLAYERS+1][3];
 ConVar g_cvPredictionConVar = null;
+CNavArea navArea[MAXPLAYERS+1];
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
 Handle g_hGetBonePosition;
@@ -23,6 +26,9 @@ Handle g_hBotIsVisible;
 Handle g_hBotIsBusy;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
+Handle g_hBotSetLookAt;
+Handle g_hBOTBlindDetour;
+Handle g_hBOTSetLookAtDetour;
 
 enum RouteType
 {
@@ -367,7 +373,7 @@ static char g_szBotName[][] = {
 	"AiyvaN",
 	//YaLLa Players
 	"Remind",
-	"DEAD",
+	"eku",
 	"Kheops",
 	"Senpai",
 	"Lyhn",
@@ -606,9 +612,9 @@ static char g_szBotName[][] = {
 	"shateri",
 	"volt",
 	//HLE Players
-	"kinqie",
+	"d1Ledez",
 	"DrobnY",
-	"Krad",
+	"Raijin",
 	"Forester",
 	"svyat",
 	//Gambit Players
@@ -963,58 +969,8 @@ public void OnPluginStart()
 	
 	g_cvPredictionConVar = FindConVar("weapon_recoil_scale");
 	
-	Handle hGameConfig = LoadGameConfigFile("botstuff.games");
-	if (hGameConfig == INVALID_HANDLE)
-		SetFailState("Failed to find botstuff.games game config.");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
-	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");	
-	
-	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
-	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
-	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
-	if ((g_hLookupBone = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
-	
-	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
-	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
-	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
-	
-	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsHiding = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
-	
-	delete hGameConfig;
+	LoadSDK();
+	LoadDetours();
 	
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
@@ -2797,7 +2753,7 @@ public Action Team_YaLLa(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Remind");
-		ServerCommand("bot_add_ct %s", "DEAD");
+		ServerCommand("bot_add_ct %s", "eku");
 		ServerCommand("bot_add_ct %s", "Kheops");
 		ServerCommand("bot_add_ct %s", "Senpai");
 		ServerCommand("bot_add_ct %s", "Lyhn");
@@ -2808,7 +2764,7 @@ public Action Team_YaLLa(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Remind");
-		ServerCommand("bot_add_t %s", "DEAD");
+		ServerCommand("bot_add_t %s", "eku");
 		ServerCommand("bot_add_t %s", "Kheops");
 		ServerCommand("bot_add_t %s", "Senpai");
 		ServerCommand("bot_add_t %s", "Lyhn");
@@ -3996,9 +3952,9 @@ public Action Team_HLE(int client, int iArgs)
 	if(strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "kinqie");
+		ServerCommand("bot_add_ct %s", "d1Ledez");
 		ServerCommand("bot_add_ct %s", "DrobnY");
-		ServerCommand("bot_add_ct %s", "Krad");
+		ServerCommand("bot_add_ct %s", "Raijin");
 		ServerCommand("bot_add_ct %s", "Forester");
 		ServerCommand("bot_add_ct %s", "svyat");
 		ServerCommand("mp_teamlogo_1 hle");
@@ -4007,9 +3963,9 @@ public Action Team_HLE(int client, int iArgs)
 	if(strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "kinqie");
+		ServerCommand("bot_add_t %s", "d1Ledez");
 		ServerCommand("bot_add_t %s", "DrobnY");
-		ServerCommand("bot_add_t %s", "Krad");
+		ServerCommand("bot_add_t %s", "Raijin");
 		ServerCommand("bot_add_t %s", "Forester");
 		ServerCommand("bot_add_t %s", "svyat");
 		ServerCommand("mp_teamlogo_2 hle");
@@ -5794,11 +5750,25 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 0; //A Execute
 				g_iSmoke[clients[4]] = 0; //A Execute
 				
-				g_iMolotov[clients[0]] = 0; //A Execute
-				g_iMolotov[clients[1]] = 0; //A Execute
-				g_iMolotov[clients[2]] = 0; //A Execute
-				g_iMolotov[clients[3]] = 1; //A Execute
-				g_iMolotov[clients[4]] = 2; //A Execute
+				g_iPositionToHold[clients[0]] = 0; //A Execute
+				g_iPositionToHold[clients[1]] = 0; //A Execute
+				g_iPositionToHold[clients[2]] = 0; //A Execute
+				g_iPositionToHold[clients[3]] = 1; //A Execute
+				g_iPositionToHold[clients[4]] = 2; //A Execute
+				
+				int iRampAreaIDs[] = {
+					2805, 341, 3507, 2854, 2852
+				};
+				
+				int iPalaceAreaIDs[] = {
+					3468, 203, 3465, 96, 3475, 3476
+				};
+				
+				navArea[clients[3]] = NavMesh_FindAreaByID(iRampAreaIDs[Math_GetRandomInt(0, sizeof(iRampAreaIDs) - 1)]);
+				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(iPalaceAreaIDs[Math_GetRandomInt(0, sizeof(iPalaceAreaIDs) - 1)]);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
 			case 2:
 			{
@@ -5808,11 +5778,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 7; //Mid Execute
 				g_iSmoke[clients[4]] = 8; //Mid Execute
 				
-				g_iMolotov[clients[0]] = 0; //A Execute
-				g_iMolotov[clients[1]] = 0; //A Execute
-				g_iMolotov[clients[2]] = 0; //A Execute
-				g_iMolotov[clients[3]] = 0; //A Execute
-				g_iMolotov[clients[4]] = 0; //A Execute
+				g_iPositionToHold[clients[0]] = 0; //Mid Execute
+				g_iPositionToHold[clients[1]] = 0; //Mid Execute
+				g_iPositionToHold[clients[2]] = 0; //Mid Execute
+				g_iPositionToHold[clients[3]] = 0; //Mid Execute
+				g_iPositionToHold[clients[4]] = 0; //Mid Execute
 			}
 			case 3:
 			{
@@ -5822,11 +5792,18 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 12; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
 				
-				g_iMolotov[clients[0]] = 0; //A Execute
-				g_iMolotov[clients[1]] = 0; //A Execute
-				g_iMolotov[clients[2]] = 0; //A Execute
-				g_iMolotov[clients[3]] = 0; //A Execute
-				g_iMolotov[clients[4]] = 3; //A Execute
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 0; //B Execute
+				g_iPositionToHold[clients[3]] = 0; //B Execute
+				g_iPositionToHold[clients[4]] = 3; //B Execute
+				
+				int iUnderpassAreaIDs[] = {
+					921, 270, 885
+				};
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(iUnderpassAreaIDs[Math_GetRandomInt(0, sizeof(iUnderpassAreaIDs) - 1)]);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
 		}
 	}
@@ -5842,11 +5819,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 0; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
 				
-				g_iMolotov[clients[0]] = 0; //B Execute
-				g_iMolotov[clients[1]] = 0; //B Execute
-				g_iMolotov[clients[2]] = 0; //B Execute
-				g_iMolotov[clients[3]] = 1; //B Execute
-				g_iMolotov[clients[4]] = 2; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 0; //B Execute
+				g_iPositionToHold[clients[3]] = 1; //B Execute
+				g_iPositionToHold[clients[4]] = 2; //B Execute
 			}
 			case 2:
 			{
@@ -5856,11 +5833,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 0; //Mid to B Execute
 				g_iSmoke[clients[4]] = 0; //Mid to B Execute
 				
-				g_iMolotov[clients[0]] = 0; //Mid to B Execute
-				g_iMolotov[clients[1]] = 0; //Mid to B Execute
-				g_iMolotov[clients[2]] = 3; //Mid to B Execute
-				g_iMolotov[clients[3]] = 4; //Mid to B Execute
-				g_iMolotov[clients[4]] = 5; //Mid to B Execute
+				g_iPositionToHold[clients[0]] = 0; //Mid to B Execute
+				g_iPositionToHold[clients[1]] = 0; //Mid to B Execute
+				g_iPositionToHold[clients[2]] = 3; //Mid to B Execute
+				g_iPositionToHold[clients[3]] = 4; //Mid to B Execute
+				g_iPositionToHold[clients[4]] = 5; //Mid to B Execute
 			}
 			case 3:
 			{
@@ -5870,11 +5847,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 9; //Short A Execute
 				g_iSmoke[clients[4]] = 0; //Short A Execute
 				
-				g_iMolotov[clients[0]] = 0; //Short A Execute
-				g_iMolotov[clients[1]] = 0; //Short A Execute
-				g_iMolotov[clients[2]] = 0; //Short A Execute
-				g_iMolotov[clients[3]] = 0; //Short A Execute
-				g_iMolotov[clients[4]] = 6; //Short A Execute
+				g_iPositionToHold[clients[0]] = 0; //Short A Execute
+				g_iPositionToHold[clients[1]] = 0; //Short A Execute
+				g_iPositionToHold[clients[2]] = 0; //Short A Execute
+				g_iPositionToHold[clients[3]] = 0; //Short A Execute
+				g_iPositionToHold[clients[4]] = 6; //Short A Execute
 			}
 			case 4:
 			{
@@ -5884,11 +5861,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 0; //Long A Execute
 				g_iSmoke[clients[4]] = 0; //Long A Execute
 				
-				g_iMolotov[clients[0]] = 0; //Long A Execute
-				g_iMolotov[clients[1]] = 0; //Long A Execute
-				g_iMolotov[clients[2]] = 0; //Long A Execute
-				g_iMolotov[clients[3]] = 7; //Long A Execute
-				g_iMolotov[clients[4]] = 8; //Long A Execute
+				g_iPositionToHold[clients[0]] = 0; //Long A Execute
+				g_iPositionToHold[clients[1]] = 0; //Long A Execute
+				g_iPositionToHold[clients[2]] = 0; //Long A Execute
+				g_iPositionToHold[clients[3]] = 7; //Long A Execute
+				g_iPositionToHold[clients[4]] = 8; //Long A Execute
 			}
 		}
 	}
@@ -5904,11 +5881,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 0; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
 				
-				g_iMolotov[clients[0]] = 0; //B Execute
-				g_iMolotov[clients[1]] = 0; //B Execute
-				g_iMolotov[clients[2]] = 1; //B Execute
-				g_iMolotov[clients[3]] = 2; //B Execute
-				g_iMolotov[clients[4]] = 3; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 1; //B Execute
+				g_iPositionToHold[clients[3]] = 2; //B Execute
+				g_iPositionToHold[clients[4]] = 3; //B Execute
 			}
 			case 2:
 			{
@@ -5918,11 +5895,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
 				g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
 				
-				g_iMolotov[clients[0]] = 0; //B Execute
-				g_iMolotov[clients[1]] = 0; //B Execute
-				g_iMolotov[clients[2]] = 0; //B Execute
-				g_iMolotov[clients[3]] = 0; //B Execute
-				g_iMolotov[clients[4]] = 4; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 0; //B Execute
+				g_iPositionToHold[clients[3]] = 0; //B Execute
+				g_iPositionToHold[clients[4]] = 4; //B Execute
 			}
 			case 3:
 			{
@@ -5932,11 +5909,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 10; //A Long Execute
 				g_iSmoke[clients[4]] = 0; //A Long Execute
 				
-				g_iMolotov[clients[0]] = 0; //B Execute
-				g_iMolotov[clients[1]] = 0; //B Execute
-				g_iMolotov[clients[2]] = 0; //B Execute
-				g_iMolotov[clients[3]] = 0; //B Execute
-				g_iMolotov[clients[4]] = 4; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 0; //B Execute
+				g_iPositionToHold[clients[3]] = 0; //B Execute
+				g_iPositionToHold[clients[4]] = 4; //B Execute
 			}
 		}
 	}
@@ -6049,6 +6026,48 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 	}
 	return Plugin_Continue;
+}
+
+public MRESReturn Detour_OnBOTBlind(Handle hParams)
+{
+	if(DHookGetParam(hParams, 2) < 2.0)
+	{
+		return MRES_Supercede;
+	}
+	return MRES_Ignored;
+}
+
+public MRESReturn Detour_OnBOTSetLookAt(Handle hParams)
+{
+	char szDesc[64];
+	
+	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
+	
+	if(strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0 
+	|| strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Avoid Flashbang") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+	{
+		return MRES_Ignored;
+	}
+	else if(strcmp(szDesc, "GrenadeThrowBend") == 0)
+	{
+		float fPos[3];
+		
+		DHookGetParamVector(hParams, 2, fPos);
+		fPos[2] += Math_GetRandomFloat(25.0, 75.0);
+		DHookSetParamVector(hParams, 2, fPos);
+		
+		return MRES_ChangedHandled;
+	}
+	else
+	{
+		float fPos[3];
+		
+		DHookGetParamVector(hParams, 2, fPos);
+		fPos[2] += 30.0;
+		DHookSetParamVector(hParams, 2, fPos);
+		
+		return MRES_ChangedHandled;
+	}
 }
 
 public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVel[3], float fAngles[3], int& iWeapon, int& iSubtype, int& iCmdNum, int& iTickCount, int& iSeed, int iMouse[2])
@@ -6682,12 +6701,8 @@ public void CSU_OnThrowGrenade(int client, int iEntity, GrenadeType grenadeType,
 {
 	if(IsValidClient(client))
 	{
-		PrintToChat(client, "fOrigin[0] = %f;", fOrigin[0]);
-		PrintToChat(client, "fOrigin[1] = %f;", fOrigin[1]);
-		PrintToChat(client, "fOrigin[2] = %f;", fOrigin[2]);
-		PrintToChat(client, "fVelocity[0] = %f;", fVelocity[0]);
-		PrintToChat(client, "fVelocity[1] = %f;", fVelocity[1]);
-		PrintToChat(client, "fVelocity[2] = %f;", fVelocity[2]);
+		PrintToChat(client, "float fOrigin[3] = { %f, %f, %f };", fOrigin[0], fOrigin[1], fOrigin[2]);
+		PrintToChat(client, "float fVelocity[3] = { %f, %f, %f };", fVelocity[0], fVelocity[1], fVelocity[2]);
 	}
 }
 
@@ -6804,6 +6819,117 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
+public void LoadSDK()
+{
+	Handle hGameConfig = LoadGameConfigFile("botstuff.games");
+	if (hGameConfig == INVALID_HANDLE)
+		SetFailState("Failed to find botstuff.games game config.");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
+	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");	
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
+	if ((g_hLookupBone = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
+	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
+	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotIsHiding = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
+	
+	delete hGameConfig;
+}
+
+public void LoadDetours()
+{
+	Handle hGameData = LoadGameConfigFile("botstuff.games");
+	if (!hGameData)
+	{
+		SetFailState("Failed to load botstuff gamedata.");
+		return;
+	}
+	
+	g_hBOTBlindDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_Ignore);
+	if (!g_hBOTBlindDetour)
+		SetFailState("Failed to setup detour for CCSBot::Blind");
+
+	if (!DHookSetFromConf(g_hBOTBlindDetour, hGameData, SDKConf_Signature, "CCSBot::Blind"))
+		SetFailState("Failed to load CCSBot::Blind signature from gamedata");
+
+	DHookAddParam(g_hBOTBlindDetour, HookParamType_Float); // holdTime
+	DHookAddParam(g_hBOTBlindDetour, HookParamType_Float); // fadeTime
+	DHookAddParam(g_hBOTBlindDetour, HookParamType_Float); // startingAlpha
+	
+	if (!DHookEnableDetour(g_hBOTBlindDetour, false, Detour_OnBOTBlind))
+		SetFailState("Failed to detour CCSBot::Blind.");
+	
+	g_hBOTSetLookAtDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_Ignore);
+	if (!g_hBOTSetLookAtDetour)
+		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
+
+	if (!DHookSetFromConf(g_hBOTSetLookAtDetour, hGameData, SDKConf_Signature, "CCSBot::SetLookAt"))
+		SetFailState("Failed to load CCSBot::SetLookAt signature from gamedata");
+		
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_CharPtr); // desc
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_VectorPtr); // pos
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_Int); // pri
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_Float); // duration
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_Bool); // clearIfClose
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_Float); // angleTolerance
+	DHookAddParam(g_hBOTSetLookAtDetour, HookParamType_Bool); // attack
+	
+	if (!DHookEnableDetour(g_hBOTSetLookAtDetour, false, Detour_OnBOTSetLookAt))
+		SetFailState("Failed to detour CCSBot::SetLookAt.");
+		
+	delete hGameData;
+}
+
 public void BotMoveTo(int client, float fOrigin[3], RouteType routeType)
 {
 	SDKCall(g_hBotMoveTo, client, fOrigin, routeType);
@@ -6832,6 +6958,11 @@ public bool BotIsHiding(int client)
 public int BotEquipBestWeapon(int client, bool bMustEquip)
 {
 	SDKCall(g_hBotEquipBestWeapon, client, bMustEquip);
+}
+
+public int BotSetLookAt(int client, const char[] szDesc, const float fPos[3], PriorityType pri, float fDuration, bool bClearIfClose, float fAngleTolerance, bool bAttack)
+{
+	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
 }
 
 public int LookupBone(int iEntity, const char[] szName)
@@ -7301,10 +7432,10 @@ public void DoMirageSmokes(int client)
 	//T Side Smokes
 	float fCTSmoke[3] = { 1086.991821, -1017.052612, -258.250946 };
 	float fStairsSmoke[3] = { 1147.428345, -1183.695313, -205.599060 };
-	float fJungleSmoke[3] = { 815.449585, -1497.343506, -108.968750 };
+	float fJungleSmoke[3] = { 815.810974, -1404.633789, -108.968750 };
 	float fTopMidSmoke[3] = { 1422.968750, 70.759926, -112.902664 };
-	float fMidShortSmoke[3] = { 1422.999756, -248.031250, -167.968750 };
-	float fWindowSmoke[3] = { 1391.968750, -932.658752, -167.968750 };
+	float fMidShortSmoke[3] = { 1423.128906, -231.116898, -140.400681 };
+	float fWindowSmoke[3] = { 1391.968750, -1012.190308, -167.968750 };
 	float fBottomConSmoke[3] = { 1135.986816, 647.868591, -261.387939 };
 	float fTopConSmoke[3] = { 1391.974731, -1051.666992, -167.968750 };
 	float fShortLeftSmoke[3] = { -824.853577, 522.031250, -78.349075 };
@@ -7324,16 +7455,6 @@ public void DoMirageSmokes(int client)
 	float fShortRightSmokeDis = GetVectorDistance(fClientLocation, fShortRightSmoke);
 	float fMarketDoorSmokeDis = GetVectorDistance(fClientLocation, fMarketDoorSmoke);
 	float fMarketWindowSmokeDis = GetVectorDistance(fClientLocation, fMarketWindowSmoke);
-	
-	//T Side Molotovs
-	
-	float fSandwichMolotov[3] = { 831.880615, -1255.223755, -108.968750 };
-	float fUnderPalaceMolotov[3] = { 568.571411, -2224.004395, -39.968750 };
-	float fCarMolotov[3] = { -1050.902710, 758.105408, -79.968750 };
-	
-	float fSandwichMolotovDis = GetVectorDistance(fClientLocation, fSandwichMolotov);
-	float fUnderPalaceMolotovDis = GetVectorDistance(fClientLocation, fUnderPalaceMolotov);
-	float fCarMolotovDis = GetVectorDistance(fClientLocation, fCarMolotov);
 	
 	//T Side Flashes
 	
@@ -7362,19 +7483,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
 				if(fCTSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
+					float fOrigin[3] = { 1062.656372, -1034.303344, -133.994354 };
+					float fVelocity[3] = { -442.833282, -313.916076, 635.902832 };
+					float fLookAt[3] = { -968.578002, -2475.483886, 1247.968750 };
 					
-					fOrigin[0] = 1062.801147;
-					fOrigin[1] = -1034.311279;
-					fOrigin[2] = -133.976730;
-					
-					fVelocity[0] = -441.676635;
-					fVelocity[1] = -315.539398;
-					fVelocity[2] = 635.904418;
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					CreateTimer(7.0, Timer_ThrowNade, client);
-					
-					TF2_LookAtPos(client, fOrigin, 0.40);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7389,15 +7504,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fLampFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 846.757019;
-					fOrigin[1] = -1048.592163;
-					fOrigin[2] = -164.580932;
-					
-					fVelocity[0] = -468.784454;
-					fVelocity[1] = -228.713546;
-					fVelocity[2] = 418.434661;
+					float fOrigin[3] = { 846.035766, -1048.600708, -164.552871 };
+					float fVelocity[3] = { -468.267089, -228.816040, 418.945373 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7411,19 +7519,13 @@ public void DoMirageSmokes(int client)
 			BotMoveTo(client, fStairsSmoke, FASTEST_ROUTE);
 			if(fStairsSmokeDis < 25.0)
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 1122.941772;
-				fOrigin[1] = -1190.644775;
-				fOrigin[2] = -115.101257;
-				
-				fVelocity[0] = -453.966583;
-				fVelocity[1] = -121.504554;
-				fVelocity[2] = 474.536865;
+				float fOrigin[3] = { 1122.725341, -1190.267456, -114.875701 };
+				float fVelocity[3] = { -449.523773, -119.596504, 479.131927 };
+				float fLookAt[3] = { -381.378540, -1587.050903, 1247.968750 };
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				TF2_LookAtPos(client, fOrigin, 0.40);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7439,19 +7541,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fJungleSmoke, FASTEST_ROUTE);
 				if(fJungleSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 784.901184;
-					fOrigin[1] = -1499.362182;
-					fOrigin[2] = -24.180629;
-					
-					fVelocity[0] = -555.893493;
-					fVelocity[1] = -36.732955;
-					fVelocity[2] = 371.127532;
+					float fOrigin[3] = { 786.237731, -1409.484741, -23.414875 };
+					float fVelocity[3] = { -540.984558, -82.985595, 385.062072 };
+					float fLookAt[3] = { -1490.079833, -1764.229858, 1247.968750 };
 					
 					CreateTimer(2.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7466,15 +7562,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fASiteFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 784.738037;
-					fOrigin[1] = -1499.896728;
-					fOrigin[2] = -24.371456;
-					
-					fVelocity[0] = -558.439086;
-					fVelocity[1] = -33.874183;
-					fVelocity[2] = 367.655029;
+					float fOrigin[3] = { 784.855957, -1499.212036, -24.270999 };
+					float fVelocity[3] = { -556.936279, -37.941215, 369.483062 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7490,19 +7579,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fTopMidSmoke, FASTEST_ROUTE);
 				if(fTopMidSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 1395.172973;
-					fOrigin[1] = 63.584007;
-					fOrigin[2] = -25.641843;
-					
-					fVelocity[0] = -505.804138;
-					fVelocity[1] = -134.928771;
-					fVelocity[2] = 416.123657;
+					float fOrigin[3] = { 1395.121459, 63.597442, -25.689208 };
+					float fVelocity[3] = { -506.739288, -134.136840, 415.261779 };
+					float fLookAt[3] = { -534.322998, -440.784057, 1247.968750 };
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7517,15 +7600,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fConnectorFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 325.153076;
-					fOrigin[1] = -695.950134;
-					fOrigin[2] = -86.720664;
-					
-					fVelocity[0] = -635.075988;
-					fVelocity[1] = -72.037834;
-					fVelocity[2] = 207.057556;
+					float fOrigin[3] = { 325.207397, -695.911193, -86.627334 };
+					float fVelocity[3] = { -634.500000, -71.740676, 208.833312 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7539,19 +7615,13 @@ public void DoMirageSmokes(int client)
 			BotMoveTo(client, fMidShortSmoke, FASTEST_ROUTE);
 			if(fMidShortSmokeDis < 25.0)
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 1392.433837;
-				fOrigin[1] = -231.219055;
-				fOrigin[2] = -17.305377;
-				
-				fVelocity[0] = -557.391723;
-				fVelocity[1] = 5.051202;
-				fVelocity[2] = 615.354858;
+				float fOrigin[3] = { 1392.466430, -231.284988, -17.280963 };
+				float fVelocity[3] = { -557.085876, 4.736944, 615.806396 };
+				float fLookAt[3] = { 1026.031250, -228.226913, 129.468246 };
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				TF2_LookAtPos(client, fOrigin, 0.40);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7565,19 +7635,13 @@ public void DoMirageSmokes(int client)
 			BotMoveTo(client, fWindowSmoke, FASTEST_ROUTE);
 			if(fWindowSmokeDis < 25.0)
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 1259.146362;
-				fOrigin[1] = -991.095458;
-				fOrigin[2] = -76.503326;
-				
-				fVelocity[0] = -748.695434;
-				fVelocity[1] = 110.363220;
-				fVelocity[2] = 492.635467;
+				float fOrigin[3] = { 1274.139526, -996.191772, -76.605072 };
+				float fVelocity[3] = { -746.536376, 103.599502, 490.783843 };
+				float fLookAt[3] = { -58.549804, -807.813232, 1247.968750 };
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				TF2_LookAtPos(client, fOrigin, 0.40);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7593,19 +7657,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fBottomConSmoke, FASTEST_ROUTE);
 				if(fBottomConSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 1114.164550;
-					fOrigin[1] = 629.839660;
-					fOrigin[2] = -135.268310;
-					
-					fVelocity[0] = -396.773956;
-					fVelocity[1] = -330.021575;
-					fVelocity[2] = 669.743774;
+					float fOrigin[3] = { 1114.211303, 629.887756, -135.189559 };
+					float fVelocity[3] = { -395.924011, -329.148590, 671.177124 };
+					float fLookAt[3] = { 869.895507, 426.846496, 36.145904 };
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7620,15 +7678,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fMidFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = 558.048706;
-					fOrigin[1] = 562.494262;
-					fOrigin[2] = -26.334602;
-					
-					fVelocity[0] = -734.658813;
-					fVelocity[1] = -627.225585;
-					fVelocity[2] = 369.816192;
+					float fOrigin[3] = { 545.679077, 552.365417, -26.126514 };
+					float fVelocity[3] = { -734.909973, -628.178283, 373.602722 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7642,19 +7693,13 @@ public void DoMirageSmokes(int client)
 			BotMoveTo(client, fTopConSmoke, FASTEST_ROUTE);
 			if(fTopConSmokeDis < 25.0)
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = 1359.151489;
-				fOrigin[1] = -1055.655761;
-				fOrigin[2] = -44.968437;
-				
-				fVelocity[0] = -576.975524;
-				fVelocity[1] = -63.035087;
-				fVelocity[2] = 614.470214;
+				float fOrigin[3] = { 1359.137817, -1055.348144, -44.989799 };
+				float fVelocity[3] = { -577.226684, -63.052207, 614.102783 };
+				float fLookAt[3] = { -1195.210327, -1349.580322, 1247.968627 };
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				TF2_LookAtPos(client, fOrigin, 0.40);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7670,19 +7715,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fShortLeftSmoke, FASTEST_ROUTE);
 				if(fShotLeftSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -833.705017;
-					fOrigin[1] = 521.811645;
-					fOrigin[2] = 21.933916;
-					
-					fVelocity[0] = -126.220901;
-					fVelocity[1] = -3.954442;
-					fVelocity[2] = 653.081909;
+					float fOrigin[3] = { -831.811828, 521.822814, 21.893959 };
+					float fVelocity[3] = { -127.920066, -5.121991, 652.748229 };
+					float fLookAt[3] = { -1101.803833, 510.950866, 1247.968750 };
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7697,15 +7736,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fBCornerFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -1056.013549;
-					fOrigin[1] = 613.627380;
-					fOrigin[2] = -5.342294;
-					
-					fVelocity[0] = -812.340820;
-					fVelocity[1] = 496.588989;
-					fVelocity[2] = 186.214370;
+					float fOrigin[3] = { -1063.741455, 618.508666, -5.295831 };
+					float fVelocity[3] = { -815.520690, 490.850402, 187.059844 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7721,19 +7753,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fShortRightSmoke, FASTEST_ROUTE);
 				if(fShortRightSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -163.495468;
-					fOrigin[1] = 350.919830;
-					fOrigin[2] = 63.056510;
-					
-					fVelocity[0] = -281.795989;
-					fVelocity[1] = -38.421333;
-					fVelocity[2] = 602.159973;
+					float fOrigin[3] = { -162.757492, 350.828277, 63.391471 };
+					float fVelocity[3] = { -267.975524, -39.678741, 608.255371 };
+					float fLookAt[3] = { -755.933654, 268.693511, 1247.968750 };
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					if(g_bCanThrowNade[client])
 					{
@@ -7748,15 +7774,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fBCarFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -334.721130;
-					fOrigin[1] = 571.007202;
-					fOrigin[2] = 37.930168;
-					
-					fVelocity[0] = -917.248718;
-					fVelocity[1] = -4.141701;
-					fVelocity[2] = 521.548706;
+					float fOrigin[3] = { -338.575317, 571.020385, 37.874942 };
+					float fVelocity[3] = { -917.720336, -3.984321, 520.543701 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7772,19 +7791,13 @@ public void DoMirageSmokes(int client)
 				BotMoveTo(client, fMarketDoorSmoke, FASTEST_ROUTE);
 				if(fMarketDoorSmokeDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -182.211257;
-					fOrigin[1] = 875.810852;
-					fOrigin[2] = -5.834220;
-					
-					fVelocity[0] = -403.612609;
-					fVelocity[1] = -214.881088;
-					fVelocity[2] = 731.215209;
+					float fOrigin[3] = { -177.884231, 876.140869, -2.832973 };
+					float fVelocity[3] = { -324.872985, -215.233276, 785.820922 };
+					float fLookAt[3] = { -737.791992, 506.064849, 766.888061 };
 					
 					CreateTimer(3.0, Timer_ThrowNade, client);
 					
-					TF2_LookAtPos(client, fOrigin, 0.40);
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 						
 					if(g_bCanThrowNade[client])
 					{
@@ -7799,15 +7812,8 @@ public void DoMirageSmokes(int client)
 					
 				if(fBShortFlashDis < 25.0)
 				{
-					float fVelocity[3], fOrigin[3];
-					
-					fOrigin[0] = -756.675903;
-					fOrigin[1] = 617.651672;
-					fOrigin[2] = 18.024847;
-					
-					fVelocity[0] = -376.037628;
-					fVelocity[1] = -114.951789;
-					fVelocity[2] = 538.640869;
+					float fOrigin[3] = { -756.752319, 617.745483, 17.992942 };
+					float fVelocity[3] = { -377.399230, -113.246368, 538.060302 };
 					
 					CSU_ThrowGrenade(client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
 					CSU_DelayThrowGrenade(0.5, client, GrenadeTypeFromString("flash"), fOrigin, fVelocity);
@@ -7821,19 +7827,13 @@ public void DoMirageSmokes(int client)
 			BotMoveTo(client, fMarketWindowSmoke, FASTEST_ROUTE);
 			if(fMarketWindowSmokeDis < 25.0)
 			{
-				float fVelocity[3], fOrigin[3];
-				
-				fOrigin[0] = -177.872940;
-				fOrigin[1] = 876.177795;
-				fOrigin[2] = -2.811931;
-				
-				fVelocity[0] = -324.667755;
-				fVelocity[1] = -214.561050;
-				fVelocity[2] = 786.203857;
+				float fOrigin[3] = { -182.219451, 876.147033, -5.846139 };
+				float fVelocity[3] = { -403.761627, -215.121276, 730.989990 };
+				float fLookAt[3] = { -876.840881, 506.064788, 659.370727 };
 				
 				CreateTimer(3.0, Timer_ThrowNade, client);
 				
-				TF2_LookAtPos(client, fOrigin, 0.40);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 				if(g_bCanThrowNade[client])
 				{
@@ -7844,83 +7844,59 @@ public void DoMirageSmokes(int client)
 		}
 	}
 	
-	switch(g_iMolotov[client])
+	switch(g_iPositionToHold[client])
 	{
-		case 1: //Sandwich Molotov
+		case 1: //Ramp Position
 		{
-			BotMoveTo(client, fSandwichMolotov, FASTEST_ROUTE);
-			if(fSandwichMolotovDis < 25.0)
+			if(!g_bCanThrowNade[client])
 			{
-				float fVelocity[3], fOrigin[3];
+				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
 				
-				fOrigin[0] = 800.370544;
-				fOrigin[1] = -1263.742919;
-				fOrigin[2] = -27.945163;
+				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
 				
-				fVelocity[0] = -577.736938;
-				fVelocity[1] = -155.278640;
-				fVelocity[2] = 302.623779;
-				
-				CreateTimer(3.0, Timer_ThrowNade, client);
-				
-				TF2_LookAtPos(client, fOrigin, 0.40);
-					
-				if(g_bCanThrowNade[client])
+				if(fHoldSpotDis < 25.0)
 				{
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("molotov"), fOrigin, fVelocity);
-					g_bHasThrownNade[client] = true;
+					float fLookAt[3] = { 226.302078, -1511.023315, -111.906189 };
+					
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(3.0, Timer_ThrowNade, client);
 				}
 			}
 		}
-		case 2: //Under Palace Molotov
+		case 2: //Palace Position
 		{
-			BotMoveTo(client, fUnderPalaceMolotov, FASTEST_ROUTE);
-			if(fUnderPalaceMolotovDis < 25.0)
+			if(!g_bCanThrowNade[client])
 			{
-				float fVelocity[3], fOrigin[3];
+				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
 				
-				fOrigin[0] = 251.833465;
-				fOrigin[1] = -2310.989990;
-				fOrigin[2] = 35.537940;
+				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
 				
-				fVelocity[0] = -913.272949;
-				fVelocity[1] = -250.547348;
-				fVelocity[2] = 202.232116;
-				
-				CreateTimer(2.0, Timer_ThrowNade, client);
-				
-				TF2_LookAtPos(client, fOrigin, 0.40);
-					
-				if(g_bCanThrowNade[client])
+				if(fHoldSpotDis < 25.0)
 				{
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("molotov"), fOrigin, fVelocity);
-					g_bHasThrownNade[client] = true;
+					float fLookAt[3] = { 164.354736, -2315.041016, 24.093811 };
+					
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowNade, client);
 				}
 			}
 		}
-		case 3: //Car Molotov
+		case 3: //Underpass Position
 		{
-			BotMoveTo(client, fCarMolotov, FASTEST_ROUTE);
-			if(fCarMolotovDis < 25.0)
+			if(!g_bCanThrowNade[client])
 			{
-				float fVelocity[3], fOrigin[3];
+				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
 				
-				fOrigin[0] = -1280.578857;
-				fOrigin[1] = 762.006103;
-				fOrigin[2] = -7.158094;
+				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
 				
-				fVelocity[0] = -961.089843;
-				fVelocity[1] = 16.463062;
-				fVelocity[2] = 153.172012;
-				
-				CreateTimer(1.0, Timer_ThrowNade, client);
-				
-				TF2_LookAtPos(client, fOrigin, 0.40);
-					
-				if(g_bCanThrowNade[client])
+				if(fHoldSpotDis < 25.0)
 				{
-					CSU_ThrowGrenade(client, GrenadeTypeFromString("molotov"), fOrigin, fVelocity);
-					g_bHasThrownNade[client] = true;
+					float fLookAt[3] = { -1012.153503, 387.799988, -303.906189 };
+					
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowNade, client);
 				}
 			}
 		}
@@ -8462,7 +8438,7 @@ public void DoDust2Smokes(int client)
 		}
 	}
 	
-	switch(g_iMolotov[client])
+	switch(g_iPositionToHold[client])
 	{
 		case 1: //Back Plat Molotov
 		{
@@ -9117,7 +9093,7 @@ public void DoInfernoSmokes(int client)
 		}
 	}
 	
-	switch(g_iMolotov[client])
+	switch(g_iPositionToHold[client])
 	{
 		case 1: //Quad Molotov
 		{
@@ -9554,7 +9530,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//YaLLa Players
-	if((StrEqual(szBotName, "Remind")) || (StrEqual(szBotName, "DEAD")) || (StrEqual(szBotName, "Kheops")) || (StrEqual(szBotName, "Senpai")) || (StrEqual(szBotName, "Lyhn")))
+	if((StrEqual(szBotName, "Remind")) || (StrEqual(szBotName, "eku")) || (StrEqual(szBotName, "Kheops")) || (StrEqual(szBotName, "Senpai")) || (StrEqual(szBotName, "Lyhn")))
 	{
 		CS_SetClientClanTag(client, "YaLLa");
 	}
@@ -9794,7 +9770,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//HLE Players
-	if((strcmp(szBotName, "kinqie") == 0) || (strcmp(szBotName, "DrobnY") == 0) || (strcmp(szBotName, "Krad") == 0) || (strcmp(szBotName, "Forester") == 0) || (strcmp(szBotName, "svyat") == 0))
+	if((strcmp(szBotName, "d1Ledez") == 0) || (strcmp(szBotName, "DrobnY") == 0) || (strcmp(szBotName, "Raijin") == 0) || (strcmp(szBotName, "Forester") == 0) || (strcmp(szBotName, "svyat") == 0))
 	{
 		CS_SetClientClanTag(client, "HLE");
 	}

@@ -1609,7 +1609,7 @@ ProP+Rifle "Remind"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "DEAD"
+ProAwp+SniperPro "eku"
 	VoicePitch = 77
 End
 
@@ -2485,7 +2485,7 @@ End
 
 //HLE Players
 
-ProP+Rifle "kinqie"
+ProP+Rifle "d1Ledez"
 	VoicePitch = 108
 End
 
@@ -2493,7 +2493,7 @@ ProAwp+SniperPro "DrobnY"
 	VoicePitch = 89
 End
 
-ProP+Rifle "Krad"
+ProP+Rifle "Raijin"
 	VoicePitch = 83
 End
 
