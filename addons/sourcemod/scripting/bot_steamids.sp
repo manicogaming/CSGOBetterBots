@@ -449,9 +449,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 75069143;
 	}
-	else if(strcmp(szBotName, "SHiPZ") == 0)
+	else if(strcmp(szBotName, "rigoN") == 0)
 	{
-		iAccountID = 254948893;
+		iAccountID = 212571293;
 	}
 	else if(strcmp(szBotName, "emi") == 0)
 	{
@@ -1340,10 +1340,18 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 22765766;
 	}
 	//NASR Players
-	//Revolution Players
-	else if(strcmp(szBotName, "Rambutan") == 0)
+	//TTT Players
+	else if(strcmp(szBotName, "dukiiii") == 0)
 	{
-		iAccountID = 138575149;
+		iAccountID = 114449;
+	}
+	else if(strcmp(szBotName, "pulzG") == 0)
+	{
+		iAccountID = 4110176;
+	}
+	else if(strcmp(szBotName, "syncD") == 0)
+	{
+		iAccountID = 232621986;
 	}
 	//SHIFT Players
 	else if(strcmp(szBotName, "Kishi") == 0)

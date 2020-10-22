@@ -865,7 +865,7 @@ ProAwp+SniperPro "ottoNd"
 	VoicePitch = 105
 End
 
-ProP+Rifle "smooya"
+ProP+Rifle "rigoN"
 	VoicePitch = 115
 End
 
@@ -1999,25 +1999,25 @@ ProP+Rifle "Just1ce"
 	VoicePitch = 71
 End
 
-//Revolution Players
+//TTT Players
 
-ProP+Rifle "Rambutan"
+ProP+Rifle "dukiiii"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "Fog"
+ProAwp+SniperPro "powerYY"
 	VoicePitch = 107
 End
 
-ProP+Rifle "Tee"
+ProP+Rifle "KrowNii"
 	VoicePitch = 73
 End
 
-ProP+Rifle "Jaybk"
+ProP+Rifle "pulzG"
 	VoicePitch = 113
 End
 
-ProP+Rifle "kun"
+ProP+Rifle "syncD"
 	VoicePitch = 79
 End
 
@@ -2475,7 +2475,7 @@ ProP+Rifle "leafy"
 	VoicePitch = 113
 End
 
-ProP+Rifle "shateri"
+ProP+Rifle "EIZA"
 	VoicePitch = 107
 End
 
