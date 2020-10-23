@@ -26,10 +26,6 @@ I edited the following plugins.
 - Added all Official CS:GO ranks from every gamemode
 - Replaced Overlays with end game rank up animation
 
-# [Franc1sco/Franug-Sprays](https://github.com/Franc1sco/Franug-Sprays)
-- BOTs will automatically use their sprays
-- Added all Sprays from CS:GO
-
 # [[CS:GO] Weapon Stickers (!stickers)](https://forums.alliedmods.net/showthread.php?t=327078)
 - Added a native to set any attribute value
 
