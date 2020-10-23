@@ -76,9 +76,9 @@ public void DoDust2Smokes(int client)
 				BotMoveTo(client, fBPlatSmoke, FASTEST_ROUTE);
 				if(fBPlatSmokeDis < 25.0)
 				{
-					float fOrigin[3] = { -2033.899902, 1089.731445, 136.258239 };
-					float fVelocity[3] = { 175.069198, 407.834411, 595.961975 };
-					float fLookAt[3] = { -1986.193725, 1201.230834, 411.259735 };
+					float fOrigin[3] = { -2166.843505, 1058.850219, 137.026596 };
+					float fVelocity[3] = { 39.056030, 306.057525, 590.356933 };
+					float fLookAt[3] = { -2097.739257, 1600.379150, 1055.968627 };
 					
 					CreateTimer(3.0, Timer_ThrowSmoke, client);
 					
@@ -87,7 +87,7 @@ public void DoDust2Smokes(int client)
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -132,7 +132,7 @@ public void DoDust2Smokes(int client)
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -177,7 +177,7 @@ public void DoDust2Smokes(int client)
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -222,7 +222,7 @@ public void DoDust2Smokes(int client)
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -260,14 +260,14 @@ public void DoDust2Smokes(int client)
 					float fVelocity[3] = { -0.179589, 590.701232, 561.324279 };
 					float fLookAt[3] = { -308.900268, 297.964477, 711.968750 };
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					CreateTimer(1.0, Timer_ThrowSmoke, client);
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 						
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -365,14 +365,14 @@ public void DoDust2Smokes(int client)
 					float fVelocity[3] = { 202.870849, 389.755371, 502.405334 };
 					float fLookAt[3] = { 788.981933, 217.204040, 711.968750 };
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					CreateTimer(1.0, Timer_ThrowSmoke, client);
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 						
 					if(g_bCanThrowSmoke[client])
 					{
 						CSU_ThrowGrenade(client, GrenadeTypeFromString("smoke"), fOrigin, fVelocity);
-						g_bHasThrownNade[client] = true;
+						g_bHasThrownSmoke[client] = true;
 					}				
 				}
 			}
@@ -388,7 +388,7 @@ public void DoDust2Smokes(int client)
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
-					CreateTimer(1.0, Timer_ThrowFlash, client);
+					CreateTimer(0.8, Timer_ThrowFlash, client);
 					
 					if(g_bCanThrowFlash[client])
 					{
@@ -453,11 +453,15 @@ public void DoDust2Smokes(int client)
 				
 				if(fHoldSpotDis < 25.0)
 				{
-					float fLookAt[3] = { -1134.639282, 1099.567749, 44.114410 };
+					float fLookAt[3] = { -1085.206177, 1362.727051, -48.119759 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -472,10 +476,14 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { -1975.937500, 1821.490356, 96.745338 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -490,10 +498,14 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { 176.276123, 353.036530, 63.525383 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -508,8 +520,12 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { 342.916260, 1485.740845, 65.328796 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
+					
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					CreateTimer(3.0, Timer_ThrowSmoke, client);
 				}
@@ -525,11 +541,15 @@ public void DoDust2Smokes(int client)
 				
 				if(fHoldSpotDis < 25.0)
 				{
-					float fLookAt[3] = { -458.858887, 1653.003052, -60.461395 };
+					float fLookAt[3] = { -462.108734, 2058.169922, -61.744308 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -544,8 +564,12 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { 776.948059, 2607.570801, 158.780182 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
+					
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					CreateTimer(3.0, Timer_ThrowSmoke, client);
 				}
@@ -562,10 +586,14 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { -161.266556, 398.383514, 62.534039 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -580,8 +608,12 @@ public void DoDust2Smokes(int client)
 				if(fHoldSpotDis < 25.0)
 				{
 					float fLookAt[3] = { 1328.326050, 1216.048950, 62.165554 };
+					float fBentLook[3], fEyePos[3];
 					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
+					GetClientEyePosition(client, fEyePos);
+					
+					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
+					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
 					CreateTimer(3.0, Timer_ThrowSmoke, client);
 				}

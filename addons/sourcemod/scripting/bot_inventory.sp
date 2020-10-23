@@ -58,6 +58,7 @@ int g_iPatchDefIndex[] = {
 };
 
 Handle g_hSetRank;
+Handle g_hForceUpdate;
 
 enum MedalCategory_t
 {
@@ -169,6 +170,14 @@ public void OnPluginStart()
 	
 	if (!(g_hSetRank = EndPrepSDKCall()))
 		SetFailState("Failed to get CCSPlayer::SetRank signature");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Virtual, "CGameClient::UpdateAcknowledgedFramecount"); // void
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	
+	if (!(g_hForceUpdate = EndPrepSDKCall()))
+		SetFailState("Failed to get CGameClient::UpdateAcknowledgedFramecount signature");
 }
 
 public void eItems_OnItemsSynced()
@@ -987,9 +996,12 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 
 	if(GetEntProp(iWeapon, Prop_Send, "m_iAccountID") == GetBotAccountID(attacker) && (GetEntProp(iWeapon, Prop_Send, "m_iEntityQuality") == 9 || g_bKnifeHasStatTrak[attacker][iDefIndex]))
 	{
-		CS_SetAttributeValue(attacker, iWeapon, "kill eater", g_iStatTrakKills[attacker][iDefIndex]+1);
+		CEconItemView pItem = PTaH_GetEconItemViewFromEconEntity(iWeapon);
+		CAttributeList pDynamicAttributes = pItem.NetworkedDynamicAttributesForDemos;
 		
-		PTaH_ForceFullUpdate(attacker);
+		pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[attacker][iDefIndex]+1);
+		
+		SDKCall(g_hForceUpdate, attacker, -1);
 	}
 	
 	return Plugin_Continue;
@@ -1261,10 +1273,12 @@ void SetWeaponProps(int client, int iEntity)
 		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
 		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
 		
-		CS_SetAttributeValue(client, iEntity, "set item texture prefab", float(g_iSkinDefIndex[client][iDefIndex]));
+		CEconItemView pItem = PTaH_GetEconItemViewFromEconEntity(iEntity);
+		CAttributeList pDynamicAttributes = pItem.NetworkedDynamicAttributesForDemos;
 		
-		CS_SetAttributeValue(client, iEntity, "set item texture wear", g_fWeaponSkinWear[client][iDefIndex]);
-		CS_SetAttributeValue(client, iEntity, "set item texture seed", float(g_iWeaponSkinSeed[client][iDefIndex]));
+		pDynamicAttributes.SetOrAddAttributeValue(6, float(g_iSkinDefIndex[client][iDefIndex]));
+		pDynamicAttributes.SetOrAddAttributeValue(7, float(g_iWeaponSkinSeed[client][iDefIndex]));
+		pDynamicAttributes.SetOrAddAttributeValue(8, g_fWeaponSkinWear[client][iDefIndex]);
 		
 		int iWeaponsReturn[42];
 	
@@ -1414,20 +1428,15 @@ void SetWeaponProps(int client, int iEntity)
 		{
 			if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 			{
-				CS_SetAttributeValue(client, iEntity, "kill eater", g_iStatTrakKills[client][iDefIndex]);
-				CS_SetAttributeValue(client, iEntity, "kill eater score type", 0);
+				pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
+				pDynamicAttributes.SetOrAddAttributeValue(81, 0);
+				
 				g_bKnifeHasStatTrak[client][iDefIndex] = true;
-			}
-			else
-			{
-				CS_SetAttributeValue(client, iEntity, "kill eater", -1);
-				CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
-				g_bKnifeHasStatTrak[client][iDefIndex] = false;
 			}
 		}
 		else
 		{
-			switch(GetEntProp(iEntity, Prop_Send, "m_nFallbackPaintKit"))
+			switch(g_iSkinDefIndex[client][iDefIndex])
 			{
 				case 125, 255, 256, 259, 257, 258, 262, 260, 261, 263, 267, 264, 265, 266, 675, 678, 681, 683, 676, 686, 687, 688, 679, 689, 680, 674, 682, 673, 684, 677, 685, 504, 
 				497, 490, 493, 503, 494, 501, 496, 500, 491, 495, 492, 498, 505, 499, 502, 639, 653, 644, 640, 643, 647, 652, 654, 648, 651, 645, 646, 650, 655, 642, 649, 641, 512, 
@@ -1447,8 +1456,8 @@ void SetWeaponProps(int client, int iEntity)
 				{
 					if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 					{
-						CS_SetAttributeValue(client, iEntity, "kill eater", g_iStatTrakKills[client][iDefIndex]);
-						CS_SetAttributeValue(client, iEntity, "kill eater score type", 0);
+						pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
+						pDynamicAttributes.SetOrAddAttributeValue(81, 0);
 						
 						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
 					}
@@ -1460,16 +1469,10 @@ void SetWeaponProps(int client, int iEntity)
 				{
 					if(g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
 					{
-						CS_SetAttributeValue(client, iEntity, "kill eater", -1);
-						CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
+						pDynamicAttributes.RemoveAttributeByDefIndex(80);
+						pDynamicAttributes.RemoveAttributeByDefIndex(81);
 						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 12);
 					}
-				}
-				default:
-				{
-					CS_SetAttributeValue(client, iEntity, "kill eater", -1);
-					CS_SetAttributeValue(client, iEntity, "kill eater score type", -1);
-					SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 0);
 				}
 			}
 		}
@@ -1578,7 +1581,7 @@ void SetWeaponProps(int client, int iEntity)
 		SetEntPropEnt(iEntity, Prop_Send, "m_hOwnerEntity", client);
 		SetEntPropEnt(iEntity, Prop_Send, "m_hPrevOwner", -1);
 		
-		PTaH_ForceFullUpdate(client);
+		SDKCall(g_hForceUpdate, client, -1);
 	}
 }
 
@@ -1595,15 +1598,18 @@ public void GivePlayerGloves(int client)
 		static int IDLow = 2048;
 		static int IDHigh = 16384;
 		
+		CEconItemView pItem = PTaH_GetEconItemViewFromEconEntity(iEntity);
+		CAttributeList pDynamicAttributes = pItem.NetworkedDynamicAttributesForDemos;
+		
 		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", IDLow++);
 		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", IDHigh++);
 		
 		SetEntProp(iEntity, Prop_Send, "m_iItemDefinitionIndex", g_iStoredGlove[client]);
 		
-		CS_SetAttributeValue(client, iEntity, "set item texture prefab", float(g_iGloveSkin[client]));
+		pDynamicAttributes.SetOrAddAttributeValue(6, float(g_iGloveSkin[client]));
+		pDynamicAttributes.SetOrAddAttributeValue(7, float(g_iGloveSeed[client]));
+		pDynamicAttributes.SetOrAddAttributeValue(8, g_fGloveWear[client]);
 		
-		CS_SetAttributeValue(client, iEntity, "set item texture wear", g_fGloveWear[client]);
-		CS_SetAttributeValue(client, iEntity, "set item texture seed", float(g_iGloveSeed[client]));
 		SetEntPropEnt(iEntity, Prop_Data, "m_hOwnerEntity", client);
 		SetEntPropEnt(iEntity, Prop_Data, "m_hParent", client);
 		SetEntPropEnt(iEntity, Prop_Data, "m_hMoveParent", client);
@@ -1614,7 +1620,7 @@ public void GivePlayerGloves(int client)
 		SetEntPropEnt(client, Prop_Send, "m_hMyWearables", iEntity);
 		SetEntProp(client, Prop_Send, "m_nBody", 1);
 		
-		PTaH_ForceFullUpdate(client);
+		SDKCall(g_hForceUpdate, client, -1);
 	}
 }
 

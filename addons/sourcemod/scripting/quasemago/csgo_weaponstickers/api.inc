@@ -1,7 +1,6 @@
 void LoadAPI()
 {
 	CreateNative("CS_SetWeaponSticker", Native_SetWeaponSticker);
-	CreateNative("CS_SetAttributeValue", Native_SetAttributeValue);
 	CreateNative("CS_GetRandomSticker", Native_GetRandomSticker);
 }
 
@@ -45,43 +44,11 @@ public int Native_SetWeaponSticker(Handle plugins, int numParams)
 	SetAttributeValue(client, pEconItemView, defIndex, "sticker slot %i id", slot);
 	SetAttributeValue(client, pEconItemView, view_as<int>(GetNativeCell(5)), "sticker slot %i wear", slot);
 
-	PTaH_ForceFullUpdate(client);
-	return true;
-}
-
-public int Native_SetAttributeValue(Handle plugins, int numParams)
-{
-	int client = GetNativeCell(1);
-	if (!client || !IsClientInGame(client))
+	if(!IsFakeClient(client))
 	{
-		ThrowNativeError(SP_ERROR_NATIVE, "Invalid client index [%i]", client);
-		return false;
+		PTaH_ForceFullUpdate(client);
 	}
 	
-	int weapon = GetNativeCell(2);
-	if (!IsValidEntity(weapon))
-	{
-		return false;
-	}
-
-	Address pWeapon = GetEntityAddress(weapon);
-	if (pWeapon == Address_Null)
-	{
-		ThrowNativeError(SP_ERROR_NATIVE, "Invalid weapon address [%i]", weapon);
-		return false;
-	}
-
-	char attrname[128];
-	
-	GetNativeString(3, attrname, sizeof(attrname));
-
-	int attrvalue = view_as<int>(GetNativeCell(4));
-
-	Address pEconItemView = pWeapon + view_as<Address>(g_econItemOffset);
-	
-	SetAttributeValue(client, pEconItemView, attrvalue, attrname);
-
-	PTaH_ForceFullUpdate(client);
 	return true;
 }
 

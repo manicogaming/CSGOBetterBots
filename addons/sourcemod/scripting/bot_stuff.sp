@@ -5832,7 +5832,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iPositionToHold[clients[4]] = 2; //B Execute
 				
 				int iLowerTunnelAreaIDs[] = {
-					7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641
+					7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641, 6669, 6625, 6618, 6653, 6635, 1373, 6649, 6623, 505, 521, 558
 				};
 				
 				int iBAreaIDs[] = {
