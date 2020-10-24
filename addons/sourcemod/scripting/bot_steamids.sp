@@ -478,9 +478,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 117537138;
 	}
-	else if(strcmp(szBotName, "oBo") == 0)
+	else if(strcmp(szBotName, "jks") == 0)
 	{
-		iAccountID = 138156260;
+		iAccountID = 16839456;
 	}
 	//ViCi Players
 	else if(strcmp(szBotName, "zhokiNg") == 0)
@@ -1051,10 +1051,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "RCF") == 0)
 	{
 		iAccountID = 206261197;
-	}
-	else if(strcmp(szBotName, "tatazin") == 0)
-	{
-		iAccountID = 34836484;
 	}
 	else if(strcmp(szBotName, "f4stzin") == 0)
 	{
@@ -1851,6 +1847,10 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "KHTEX") == 0)
 	{
 		iAccountID = 82196374;
+	}
+	else if(strcmp(szBotName, "tatazin") == 0)
+	{
+		iAccountID = 34836484;
 	}
 	//ESPADA Players
 	else if(strcmp(szBotName, "degster") == 0)

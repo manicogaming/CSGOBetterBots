@@ -887,7 +887,7 @@ ProAwp+SniperPro "poizon"
 	VoicePitch = 93
 End
 
-ProP+Rifle "oBo"
+ProP+Rifle "jks"
 	VoicePitch = 107
 End
 
@@ -1627,7 +1627,7 @@ End
 
 //Yeah Players
 
-ProP+Rifle "tatazin"
+ProP+Rifle "BOOBIE"
 	VoicePitch = 91
 End
 
@@ -2779,7 +2779,7 @@ ProAwp+SniperPro "nythonzinho"
 	VoicePitch = 79
 End
 
-ProP+Rifle "heat"
+ProP+Rifle "tatazin"
 	VoicePitch = 104
 End
 

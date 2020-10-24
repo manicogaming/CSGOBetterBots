@@ -171,7 +171,7 @@ static char g_szBotName[][] = {
 	//coL Players
 	"k0nfig",
 	"poizon",
-	"oBo",
+	"jks",
 	"RUSH",
 	"blameF",
 	//ViCi Players
@@ -379,7 +379,7 @@ static char g_szBotName[][] = {
 	"Senpai",
 	"Lyhn",
 	//Yeah Players
-	"tatazin",
+	"BOOBIE",
 	"RCF",
 	"f4stzin",
 	"Swisher",
@@ -693,7 +693,7 @@ static char g_szBotName[][] = {
 	//Canids Players
 	"DeStiNy",
 	"nythonzinho",
-	"heat",
+	"tatazin",
 	"latto",
 	"KHTEX",
 	//ESPADA Players
@@ -1739,7 +1739,7 @@ public Action Team_coL(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "k0nfig");
 		ServerCommand("bot_add_ct %s", "poizon");
-		ServerCommand("bot_add_ct %s", "oBo");
+		ServerCommand("bot_add_ct %s", "jks");
 		ServerCommand("bot_add_ct %s", "RUSH");
 		ServerCommand("bot_add_ct %s", "blameF");
 		ServerCommand("mp_teamlogo_1 col");
@@ -1750,7 +1750,7 @@ public Action Team_coL(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "k0nfig");
 		ServerCommand("bot_add_t %s", "poizon");
-		ServerCommand("bot_add_t %s", "oBo");
+		ServerCommand("bot_add_t %s", "jks");
 		ServerCommand("bot_add_t %s", "RUSH");
 		ServerCommand("bot_add_t %s", "blameF");
 		ServerCommand("mp_teamlogo_2 col");
@@ -2787,7 +2787,7 @@ public Action Team_Yeah(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "tatazin");
+		ServerCommand("bot_add_ct %s", "BOOBIE");
 		ServerCommand("bot_add_ct %s", "RCF");
 		ServerCommand("bot_add_ct %s", "f4stzin");
 		ServerCommand("bot_add_ct %s", "Swisher");
@@ -2798,7 +2798,7 @@ public Action Team_Yeah(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "tatazin");
+		ServerCommand("bot_add_t %s", "BOOBIE");
 		ServerCommand("bot_add_t %s", "RCF");
 		ServerCommand("bot_add_t %s", "f4stzin");
 		ServerCommand("bot_add_t %s", "Swisher");
@@ -4349,7 +4349,7 @@ public Action Team_Canids(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DeStiNy");
 		ServerCommand("bot_add_ct %s", "nythonzinho");
-		ServerCommand("bot_add_ct %s", "heat");
+		ServerCommand("bot_add_ct %s", "tatazin");
 		ServerCommand("bot_add_ct %s", "latto");
 		ServerCommand("bot_add_ct %s", "KHTEX");
 		ServerCommand("mp_teamlogo_1 red");
@@ -4360,7 +4360,7 @@ public Action Team_Canids(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DeStiNy");
 		ServerCommand("bot_add_t %s", "nythonzinho");
-		ServerCommand("bot_add_t %s", "heat");
+		ServerCommand("bot_add_t %s", "tatazin");
 		ServerCommand("bot_add_t %s", "latto");
 		ServerCommand("bot_add_t %s", "KHTEX");
 		ServerCommand("mp_teamlogo_2 red");
@@ -5725,7 +5725,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	g_bFreezetimeEnd = true;
+	CreateTimer(0.1, Timer_FreezetimeEnd);
 	
 	if(strcmp(g_szMap, "de_mirage") == 0)
 	{
@@ -5979,6 +5979,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			}
 		}
 	}
+}
+
+public Action Timer_FreezetimeEnd(Handle hTimer)
+{
+	g_bFreezetimeEnd = true;
 }
 
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -6423,7 +6428,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					else
 					{
-						TF2_LookAtPos(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.30));
+						TF2_LookAtPos(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.20));
 					}
 					
 					BotAttack(client, iEnt);
@@ -7627,7 +7632,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//coL Players
-	if((StrEqual(szBotName, "k0nfig")) || (StrEqual(szBotName, "poizon")) || (StrEqual(szBotName, "oBo")) || (StrEqual(szBotName, "RUSH")) || (StrEqual(szBotName, "blameF")))
+	if((StrEqual(szBotName, "k0nfig")) || (StrEqual(szBotName, "poizon")) || (StrEqual(szBotName, "jks")) || (StrEqual(szBotName, "RUSH")) || (StrEqual(szBotName, "blameF")))
 	{
 		CS_SetClientClanTag(client, "coL");
 	}
@@ -7837,7 +7842,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Yeah Players
-	if((StrEqual(szBotName, "tatazin")) || (StrEqual(szBotName, "RCF")) || (StrEqual(szBotName, "f4stzin")) || (StrEqual(szBotName, "Swisher")) || (StrEqual(szBotName, "dumau")))
+	if((StrEqual(szBotName, "BOOBIE")) || (StrEqual(szBotName, "RCF")) || (StrEqual(szBotName, "f4stzin")) || (StrEqual(szBotName, "Swisher")) || (StrEqual(szBotName, "dumau")))
 	{
 		CS_SetClientClanTag(client, "Yeah");
 	}
@@ -8149,7 +8154,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Canids Players
-	if((StrEqual(szBotName, "DeStiNy")) || (StrEqual(szBotName, "nythonzinho")) || (StrEqual(szBotName, "heat")) || (StrEqual(szBotName, "latto")) || (StrEqual(szBotName, "KHTEX")))
+	if((StrEqual(szBotName, "DeStiNy")) || (StrEqual(szBotName, "nythonzinho")) || (StrEqual(szBotName, "tatazin")) || (StrEqual(szBotName, "latto")) || (StrEqual(szBotName, "KHTEX")))
 	{
 		CS_SetClientClanTag(client, "Canids");
 	}
