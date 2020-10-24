@@ -27,9 +27,9 @@ int g_iRndPatch[MAXPLAYERS+1][4];
 int g_iRndSamePatch[MAXPLAYERS+1];
 
 int g_iStoredKnife[MAXPLAYERS+1];
-int g_iSkinDefIndex[MAXPLAYERS+1][1024];
-float g_fWeaponSkinWear[MAXPLAYERS+1][1024];
-int g_iWeaponSkinSeed[MAXPLAYERS+1][1024];
+int g_iSkinDefIndex[MAXPLAYERS+1][8192];
+float g_fWeaponSkinWear[MAXPLAYERS+1][8192];
+int g_iWeaponSkinSeed[MAXPLAYERS+1][8192];
 int g_iStatTrakOrSouvenirChance[MAXPLAYERS+1][1024];
 int g_iStickerChance[MAXPLAYERS+1][1024];
 int g_iStickerComboChance[MAXPLAYERS+1][1024];
@@ -157,6 +157,8 @@ public void OnPluginStart()
 		PTaH(PTaH_WeaponCanUsePre, Hook, WeaponCanUsePre);
 	}
 	
+	HookUserMessage(GetUserMessageId("EndOfMatchAllPlayersData"), OnEndOfMatchAllPlayersData, true);
+	
 	GameData hGameData = new GameData("botinventory.games");
 	
 	// https://github.com/perilouswithadollarsign/cstrike15_src/blob/29e4c1fda9698d5cebcdaf1a0de4b829fa149bf8/game/server/cstrike15/cs_player.cpp#L16369-L16372
@@ -235,6 +237,53 @@ public void BuildSkinsArrayList()
 			}
 		}
 	}
+}
+
+Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[] iPlayers, int iPlayersNum, bool bReliable, bool bInit)
+{
+	if(bReliable) 
+	{
+		int iDefIndex;
+		int client;
+		for (int i = 0; i < hMessage.GetRepeatedFieldCount("allplayerdata"); i++)
+		{
+			Protobuf allplayerdata = hMessage.ReadRepeatedMessage("allplayerdata", i);
+			
+			client = allplayerdata.ReadInt("entindex");
+			
+			if(IsFakeClient(client))
+			{
+				int iXuid[2];
+				
+				iXuid[1] = 17825793;
+				iXuid[0] = GetBotAccountID(client);
+				
+				allplayerdata.SetBool("isbot", false);
+				allplayerdata.SetInt64("xuid", iXuid);
+				
+				for (int j = 0; j < allplayerdata.GetRepeatedFieldCount("items"); j++)
+				{
+					Protobuf items = allplayerdata.ReadRepeatedMessage("items", j);
+					iDefIndex = items.ReadInt("defindex");
+
+					if(IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
+					{
+						items.SetInt("paintindex", g_iSkinDefIndex[client][iDefIndex]);
+						items.SetInt("paintwear", RoundFloat(g_fWeaponSkinWear[client][iDefIndex] * 100000.0));
+						items.SetInt("paintseed", g_iWeaponSkinSeed[client][iDefIndex]);
+					}
+					else
+					{
+						items.SetInt("defindex", g_iStoredKnife[client]);
+						items.SetInt("paintindex", g_iSkinDefIndex[client][g_iStoredKnife[client]]);
+						items.SetInt("paintwear", RoundFloat(g_fWeaponSkinWear[client][g_iStoredKnife[client]] * 100000.0));
+						items.SetInt("paintseed", g_iWeaponSkinSeed[client][g_iStoredKnife[client]]);
+					}
+				}
+			}
+		}
+	}
+	return Plugin_Changed;
 }
 
 public void OnClientPutInServer(int client)
