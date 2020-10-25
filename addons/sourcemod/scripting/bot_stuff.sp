@@ -633,7 +633,7 @@ static char g_szBotName[][] = {
 	//Imperial Players
 	"fnx",
 	"zqk",
-	"adr",
+	"togs",
 	"iDk",
 	"SHOOWTiME",
 	//Pompa Players
@@ -4049,7 +4049,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "fnx");
 		ServerCommand("bot_add_ct %s", "zqk");
-		ServerCommand("bot_add_ct %s", "adr");
+		ServerCommand("bot_add_ct %s", "togs");
 		ServerCommand("bot_add_ct %s", "iDk");
 		ServerCommand("bot_add_ct %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_1 imp");
@@ -4060,7 +4060,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "fnx");
 		ServerCommand("bot_add_t %s", "zqk");
-		ServerCommand("bot_add_t %s", "adr");
+		ServerCommand("bot_add_t %s", "togs");
 		ServerCommand("bot_add_t %s", "iDk");
 		ServerCommand("bot_add_t %s", "SHOOWTiME");
 		ServerCommand("mp_teamlogo_2 imp");
@@ -8094,7 +8094,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Imperial Players
-	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "adr")) || (StrEqual(szBotName, "iDk")) || (StrEqual(szBotName, "SHOOWTiME")))
+	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "togs")) || (StrEqual(szBotName, "iDk")) || (StrEqual(szBotName, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}

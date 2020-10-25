@@ -1,0 +1,10 @@
+//Overview: scale 8.00, pos_x -4542, pos_y 4932
+
+
+"de_dust_new"
+{
+ "material" "overviews/de_dust_new"
+ "pos_x"  "-4542"
+ "pos_y"  "4932"
+ "scale"  "8.00"
+}

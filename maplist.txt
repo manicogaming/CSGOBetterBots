@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Sat Oct 24 05:08:03 BST 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.1 config 1 at Sun Oct 25 05:07:58 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -207,6 +207,7 @@ de_deadblock
 de_desert
 de_dust2
 de_dust2_2006_accy
+de_dust_new
 de_icehouse
 de_icewerk_csgo
 de_industrial_estate
