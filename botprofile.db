@@ -491,7 +491,7 @@ ProAwp+SniperPro "device"
 	VoicePitch = 104
 End
 
-ProP+Rifle "es3tag"
+ProP+Rifle "Xyp9x"
 	VoicePitch = 95
 End
 
@@ -527,19 +527,19 @@ End
 
 //C9 Players
 
-ProP+Rifle "JT"
+ProP+Rifle "ALEX"
 	VoicePitch = 80
 End
 
-ProAwp+SniperPro "oSee"
+ProAwp+SniperPro "woxic"
 	VoicePitch = 105
 End
 
-ProP+Rifle "motm"
+ProP+Rifle "mezii"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Sonic"
+ProP+Rifle "es3tag"
 	VoicePitch = 88
 End
 
@@ -1627,7 +1627,7 @@ End
 
 //Yeah Players
 
-ProP+Rifle "BOOBIE"
+ProP+Rifle "bew"
 	VoicePitch = 91
 End
 
@@ -2779,7 +2779,7 @@ ProAwp+SniperPro "nythonzinho"
 	VoicePitch = 79
 End
 
-ProP+Rifle "tatazin"
+ProP+Rifle "dav1d"
 	VoicePitch = 104
 End
 

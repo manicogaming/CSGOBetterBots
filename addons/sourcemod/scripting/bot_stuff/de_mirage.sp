@@ -322,7 +322,7 @@ public void DoMirageSmokes(int client)
 					float fVelocity[3] = { -127.920066, -5.121991, 652.748229 };
 					float fLookAt[3] = { -1101.803833, 510.950866, 1247.968750 };
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					CreateTimer(1.5, Timer_ThrowSmoke, client);
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
@@ -480,7 +480,7 @@ public void DoMirageSmokes(int client)
 				
 				if(fHoldSpotDis < 25.0)
 				{
-					float fLookAt[3] = { 226.302078, -1511.023315, -111.906189 };
+					float fLookAt[3] = { -63.982632, -1674.684204, -103.906189 };
 					float fBentLook[3], fEyePos[3];
 					
 					GetClientEyePosition(client, fEyePos);

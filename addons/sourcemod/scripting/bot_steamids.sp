@@ -62,7 +62,7 @@ public void OnClientSettingsChanged(int client)
 
 	int iAccountID;
 	
-	char szBotName[512];
+	char szBotName[MAX_NAME_LENGTH];
 	GetClientName(client, szBotName, sizeof(szBotName));
 	
 	//Vitality Players
@@ -145,9 +145,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 23690923;
 	}
-	else if(strcmp(szBotName, "es3tag") == 0)
+	else if(strcmp(szBotName, "Xyp9x") == 0)
 	{
-		iAccountID = 1859646;
+		iAccountID = 30416534;
 	}
 	//NiP Players
 	else if(strcmp(szBotName, "REZ") == 0)
@@ -171,25 +171,25 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 193386133;
 	}
 	//C9 Players
-	else if(strcmp(szBotName, "JT") == 0)
+	else if(strcmp(szBotName, "ALEX") == 0)
 	{
-		iAccountID = 61449372;
+		iAccountID = 44605706;
 	}
-	else if(strcmp(szBotName, "motm") == 0)
+	else if(strcmp(szBotName, "mezii") == 0)
 	{
-		iAccountID = 60208330;
+		iAccountID = 12874964;
 	}
-	else if(strcmp(szBotName, "oSee") == 0)
+	else if(strcmp(szBotName, "woxic") == 0)
 	{
-		iAccountID = 87206806;
+		iAccountID = 123219778;
 	}
 	else if(strcmp(szBotName, "floppy") == 0)
 	{
 		iAccountID = 346253535;
 	}
-	else if(strcmp(szBotName, "Sonic") == 0)
+	else if(strcmp(szBotName, "es3tag") == 0)
 	{
-		iAccountID = 14864123;
+		iAccountID = 1859646;
 	}
 	//G2 Players
 	else if(strcmp(szBotName, "kennyS") == 0)
@@ -1060,6 +1060,10 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 234059589;
 	}
+	else if(strcmp(szBotName, "bew") == 0)
+	{
+		iAccountID = 3250945;
+	}
 	//Singularity Players
 	else if(strcmp(szBotName, "Celrate") == 0)
 	{
@@ -1843,10 +1847,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "KHTEX") == 0)
 	{
 		iAccountID = 82196374;
-	}
-	else if(strcmp(szBotName, "tatazin") == 0)
-	{
-		iAccountID = 34836484;
 	}
 	//ESPADA Players
 	else if(strcmp(szBotName, "degster") == 0)
