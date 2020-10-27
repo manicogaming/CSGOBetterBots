@@ -6134,7 +6134,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 		fPos[2] += 30.0;
 		
 		GetClientEyePosition(pThis, fClientEyes);		
-		BotBendLineOfSight(pThis, fClientEyes, fPos, fBentPos, 135.0);
+		BotBendLineOfSight(pThis, fClientEyes, fPos, fBentPos, 180.0);
 		
 		DHookSetParamVector(hParams, 2, fBentPos);
 		
@@ -6143,7 +6143,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 }
 
 public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
-{
+{		
 	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
 	if (iActiveWeapon == -1)  return MRES_Ignored;
 	
