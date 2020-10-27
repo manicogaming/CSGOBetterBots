@@ -5949,6 +5949,27 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iPositionToHold[clients[2]] = 1; //B Execute
 				g_iPositionToHold[clients[3]] = 2; //B Execute
 				g_iPositionToHold[clients[4]] = 3; //B Execute
+				
+				int iCTIDs[] = {
+					9, 3214, 3212, 507, 1823
+				};
+				
+				int iCTPushIDs[] = {
+					118, 1824, 367, 1820, 1256
+				};
+				
+				int iBottomBananaIDs[] = {
+					975, 313, 3353, 973, 56
+				};
+				
+				navArea[clients[2]] = NavMesh_FindAreaByID(iCTIDs[Math_GetRandomInt(0, sizeof(iCTIDs) - 1)]);
+				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
+				
+				navArea[clients[3]] = NavMesh_FindAreaByID(iCTPushIDs[Math_GetRandomInt(0, sizeof(iCTPushIDs) - 1)]);
+				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(iBottomBananaIDs[Math_GetRandomInt(0, sizeof(iBottomBananaIDs) - 1)]);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
 			case 2:
 			{
@@ -5958,11 +5979,14 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
 				g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
 				
-				g_iPositionToHold[clients[0]] = 0; //B Execute
-				g_iPositionToHold[clients[1]] = 0; //B Execute
-				g_iPositionToHold[clients[2]] = 0; //B Execute
-				g_iPositionToHold[clients[3]] = 0; //B Execute
-				g_iPositionToHold[clients[4]] = 4; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[1]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[2]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[3]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[4]] = 4; //A Short/Apps Execute
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
 			case 3:
 			{
@@ -5972,11 +5996,14 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[3]] = 10; //A Long Execute
 				g_iSmoke[clients[4]] = 0; //A Long Execute
 				
-				g_iPositionToHold[clients[0]] = 0; //B Execute
-				g_iPositionToHold[clients[1]] = 0; //B Execute
-				g_iPositionToHold[clients[2]] = 0; //B Execute
-				g_iPositionToHold[clients[3]] = 0; //B Execute
-				g_iPositionToHold[clients[4]] = 4; //B Execute
+				g_iPositionToHold[clients[0]] = 0; //A Long Execute
+				g_iPositionToHold[clients[1]] = 0; //A Long Execute
+				g_iPositionToHold[clients[2]] = 0; //A Long Execute
+				g_iPositionToHold[clients[3]] = 0; //A Long Execute
+				g_iPositionToHold[clients[4]] = 4; //A Long Execute
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
 		}
 	}
@@ -6134,7 +6161,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 		fPos[2] += 30.0;
 		
 		GetClientEyePosition(pThis, fClientEyes);		
-		BotBendLineOfSight(pThis, fClientEyes, fPos, fBentPos, 180.0);
+		BotBendLineOfSight(pThis, fClientEyes, fPos, fBentPos, 135.0);
 		
 		DHookSetParamVector(hParams, 2, fBentPos);
 		
