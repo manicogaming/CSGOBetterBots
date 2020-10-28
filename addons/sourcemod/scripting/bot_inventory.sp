@@ -52,11 +52,6 @@ int g_iKnifeDefIndex[] = {
 	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525
 };
 
-int g_iPatchDefIndex[] = {
-	4550, 4551, 4552, 4553, 4554, 4555, 4556, 4557, 4558, 4559, 4560, 4561, 4562, 4563, 4564, 4565, 4566, 4567, 4568, 4569,
-	4570, 4589, 4591, 4592, 4593, 4594, 4595, 4596, 4597, 4598, 4599, 4600
-};
-
 Handle g_hSetRank;
 Handle g_hForceUpdate;
 
@@ -472,12 +467,12 @@ public void OnClientPutInServer(int client)
 				g_iRndPatchCombo[client] = Math_GetRandomInt(1,2);
 			}
 			
-			g_iRndPatch[client][0] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-			g_iRndPatch[client][1] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-			g_iRndPatch[client][2] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
-			g_iRndPatch[client][3] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			g_iRndPatch[client][0] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() -1));
+			g_iRndPatch[client][1] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() -1));
+			g_iRndPatch[client][2] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() -1));
+			g_iRndPatch[client][3] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() -1));
 			
-			g_iRndSamePatch[client] = g_iPatchDefIndex[Math_GetRandomInt(0, sizeof(g_iPatchDefIndex) - 1)];
+			g_iRndSamePatch[client] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() -1));
 		
 			g_iStoredGlove[client] = eItems_GetGlovesDefIndexByGlovesNum(Math_GetRandomInt(0, g_iGloveCount-1));
 			
@@ -970,6 +965,11 @@ public void OnClientPutInServer(int client)
 
 Action GiveNamedItemPre(int client, char szClassname[64], CEconItemView &pItem, bool &bIgnoredCEconItemView, bool &bOriginIsNULL, float fOrigin[3])
 {
+	if(!IsValidClient(client))
+	{
+		return Plugin_Continue;
+	}
+	
 	int clientTeam = GetClientTeam(client);
 
 	if(clientTeam < CS_TEAM_T)
