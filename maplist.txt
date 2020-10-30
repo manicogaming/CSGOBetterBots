@@ -1,4 +1,4 @@
-// csgosl 2.9.1 config 1 at Wed Oct 28 02:34:46 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.2 config 1 at Fri Oct 30 03:23:35 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -205,11 +205,13 @@ de_dahshur
 de_darkcastle_rebirth_v2
 de_deadblock
 de_desert
+de_dust0_csgo
 de_dust2
 de_dust2_2006_accy
 de_dust2_cso2
 de_dust2_night
 de_dust2_winter_2019
+de_dust_cso2
 de_dust_new
 de_icehouse
 de_icewerk_csgo
@@ -241,7 +243,6 @@ de_shortnuke
 de_snowcapped_csgo
 de_spain
 de_stmarc
-de_sugarcane
 de_swamp
 de_train
 de_vacant
@@ -322,7 +323,6 @@ joey_twosided
 ka_beams_s
 ka_rainbow
 ka_swim_pool
-ka_tanks
 kills_ct
 knas_bunker_css
 knas_speedcastle_css

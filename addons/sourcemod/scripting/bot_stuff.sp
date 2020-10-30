@@ -6155,15 +6155,11 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 	}
 	else
 	{
-		float fPos[3], fClientEyes[3], fBentPos[3];
+		float fPos[3];
 		
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 30.0;
-		
-		GetClientEyePosition(pThis, fClientEyes);		
-		BotBendLineOfSight(pThis, fClientEyes, fPos, fBentPos, 135.0);
-		
-		DHookSetParamVector(hParams, 2, fBentPos);
+		DHookSetParamVector(hParams, 2, fPos);
 		
 		return MRES_ChangedHandled;
 	}
@@ -6568,6 +6564,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					
 					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
+					{
+						return Plugin_Continue;
+					}
+					
+					if(!(GetEntityFlags(client) & FL_ONGROUND))
 					{
 						return Plugin_Continue;
 					}

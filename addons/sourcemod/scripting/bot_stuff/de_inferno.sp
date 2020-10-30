@@ -77,7 +77,7 @@ public void DoInfernoSmokes(int client)
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
-					CreateTimer(1.0, Timer_ThrowFlash, client);
+					CreateTimer(2.0, Timer_ThrowFlash, client);
 					
 					if(g_bCanThrowFlash[client])
 					{
@@ -122,7 +122,7 @@ public void DoInfernoSmokes(int client)
 					
 					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
-					CreateTimer(1.0, Timer_ThrowFlash, client);
+					CreateTimer(0.5, Timer_ThrowFlash, client);
 					
 					if(g_bCanThrowFlash[client])
 					{
@@ -412,7 +412,7 @@ public void DoInfernoSmokes(int client)
 					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
 					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
@@ -434,7 +434,7 @@ public void DoInfernoSmokes(int client)
 					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
 					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, client);
+					CreateTimer(5.0, Timer_ThrowSmoke, client);
 				}
 			}
 		}
