@@ -13,7 +13,7 @@
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
-bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsAvoidingFlash[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 float g_fHoldPos[MAXPLAYERS+1][3];
 ConVar g_cvPredictionConVar = null;
@@ -6009,11 +6009,6 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	}
 }
 
-public Action Timer_FreezetimeEnd(Handle hTimer)
-{
-	g_bFreezetimeEnd = true;
-}
-
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	g_bBombPlanted = true;
@@ -6139,7 +6134,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if(strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0 
-	|| strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Avoid Flashbang") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+	|| strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Ignored;
 	}
@@ -6152,6 +6147,13 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 		DHookSetParamVector(hParams, 2, fPos);
 		
 		return MRES_ChangedHandled;
+	}
+	else if(strcmp(szDesc, "Avoid Flashbang") == 0)
+	{
+		g_bIsAvoidingFlash[pThis] = true;
+		CreateTimer(2.5, Timer_AvoidingFlash, pThis);
+		
+		return MRES_Ignored;
 	}
 	else
 	{
@@ -6544,7 +6546,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					g_bCanAttack[client] = false;
 				}
 				
-				if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client])
+				if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client] && !g_bIsAvoidingFlash[client])
 				{
 					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
 					{
@@ -7443,6 +7445,16 @@ public Action Timer_ThrowSmoke(Handle hTimer, int client)
 public Action Timer_ThrowFlash(Handle hTimer, int client)
 {
 	g_bCanThrowFlash[client] = true;
+}
+
+public Action Timer_FreezetimeEnd(Handle hTimer)
+{
+	g_bFreezetimeEnd = true;
+}
+
+public Action Timer_AvoidingFlash(Handle hTimer, int client)
+{
+	g_bIsAvoidingFlash[client] = false;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
