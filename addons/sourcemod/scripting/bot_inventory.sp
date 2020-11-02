@@ -265,7 +265,7 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 					{
 						items.SetInt("defindex", g_iStoredGlove[client]);
 						items.SetInt("paintindex", g_iGloveSkin[client]);
-						items.SetInt("paintwear", 1000000000 + RoundFloat(g_fGloveWear[client] * 1000000000.0));
+						items.SetInt("paintwear", 1000000000 + RoundFloat(g_fGloveWear[client] * 100000000.0));
 						items.SetInt("paintseed", g_iGloveSeed[client]);
 					}
 					else if(iDefIndex < 5036)
@@ -273,14 +273,14 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						if(IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
 						{
 							items.SetInt("paintindex", g_iSkinDefIndex[client][iDefIndex]);
-							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][iDefIndex] * 1000000000.0));
+							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][iDefIndex] * 100000000.0));
 							items.SetInt("paintseed", g_iWeaponSkinSeed[client][iDefIndex]);
 						}
 						else
 						{
 							items.SetInt("defindex", g_iStoredKnife[client]);
 							items.SetInt("paintindex", g_iSkinDefIndex[client][g_iStoredKnife[client]]);
-							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][g_iStoredKnife[client]] * 1000000000.0));
+							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][g_iStoredKnife[client]] * 100000000.0));
 							items.SetInt("paintseed", g_iWeaponSkinSeed[client][g_iStoredKnife[client]]);
 						}
 						
@@ -996,16 +996,6 @@ Action GiveNamedItemPre(int client, char szClassname[64], CEconItemView &pItem, 
 
 	eItems_GetWeaponClassNameByDefIndex(g_iStoredKnife[client], szClassname, sizeof(szClassname));
 	bIgnoredCEconItemView = true;
-
-	int iWeapon = CreateEntityByName(szClassname);
-
-	if (!IsValidEntity(iWeapon))
-	{
-		return Plugin_Changed;
-	}
-	
-	pItem = PTaH_GetEconItemViewFromEconEntity(iWeapon);
-	AcceptEntityInput(iWeapon, "Kill");
 	
 	return Plugin_Changed;
 }

@@ -1,4 +1,4 @@
-// csgosl 2.9.2 config 1 at Sat Oct 31 02:59:40 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Nov 02 04:06:37 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -138,6 +138,7 @@ cs_compound_d
 cs_concert
 cs_cruise
 cs_deadhouse
+cs_east_borough
 cs_frozen
 cs_italy
 cs_italy_d
@@ -213,6 +214,7 @@ de_dust2_night
 de_dust2_winter_2019
 de_dust_cso2
 de_dust_new
+de_dynasty
 de_icehouse
 de_icewerk_csgo
 de_industrial_estate
