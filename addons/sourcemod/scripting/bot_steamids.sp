@@ -120,9 +120,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 37085479;
 	}
-	else if(strcmp(szBotName, "NiKo") == 0)
+	else if(strcmp(szBotName, "olofmeister") == 0)
 	{
-		iAccountID = 81417650;
+		iAccountID = 28361465;
 	}
 	else if(strcmp(szBotName, "coldzera") == 0)
 	{
@@ -196,9 +196,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 64640068;
 	}
-	else if(strcmp(szBotName, "JaCkz") == 0)
+	else if(strcmp(szBotName, "NiKo") == 0)
 	{
-		iAccountID = 11977189;
+		iAccountID = 81417650;
 	}
 	else if(strcmp(szBotName, "AmaNEk") == 0)
 	{

@@ -1,0 +1,7 @@
+"fy_aztec_fire_csgo"
+{
+"material" "overviews/fy_aztec_fire_csgo"
+"pos_x" "-2045"
+"pos_y" "1308"
+"scale" "2.5"
+}

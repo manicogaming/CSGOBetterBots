@@ -1,0 +1,7 @@
+"fy_inferno_go"
+{
+ "material" "overviews/fy_inferno_go"
+ "pos_x"  "-929"
+ "pos_y"  "1480"
+ "scale"  "2.40"
+}

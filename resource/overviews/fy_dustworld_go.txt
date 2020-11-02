@@ -1,0 +1,7 @@
+"mdk_scoutzknivez_escaleras"
+{
+ "material" "overviews/fy_dustworld_go_radar"
+ "pos_x"  "-515"
+ "pos_y"  "218"
+ "scale"  "1.70"
+}
