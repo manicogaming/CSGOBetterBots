@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Mon Nov 02 04:06:37 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Tue Nov 03 02:37:07 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -77,6 +77,7 @@ aim_warmup
 aim_winter_deagle_up2010
 ar_cbq
 ar_dizzy
+ar_fjord
 awp_1337
 awp_arena
 awp_backgammon_b1
@@ -215,6 +216,12 @@ de_dust2_winter_2019
 de_dust_cso2
 de_dust_new
 de_dynasty
+de_fallgarden_9
+de_favela
+de_forlorn
+de_garrison
+de_golden
+de_graveyard
 de_icehouse
 de_icewerk_csgo
 de_industrial_estate
@@ -254,6 +261,7 @@ deagle_ultra
 deathzone
 dm_bloodsport
 fun_pacman_v1
+fy_aztec_fire_csgo
 fy_back_street
 fy_buball
 fy_buzzkill_sh
@@ -263,6 +271,7 @@ fy_deagle5
 fy_december_v2
 fy_dust_css
 fy_dustdm
+fy_dustworld_go
 fy_faceover_wb
 fy_fight_tunnel_sr
 fy_highway_s
@@ -271,6 +280,7 @@ fy_iceworld_09_v2
 fy_iceworld_beta
 fy_iceworld_crachfulgore
 fy_iceworld_go
+fy_inferno_go
 fy_jungleworldx_b2
 fy_killzone
 fy_matrix2
