@@ -1314,9 +1314,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 102456905;
 	}
-	else if(strcmp(szBotName, "qqGod") == 0)
+	else if(strcmp(szBotName, "Geniuss") == 0)
 	{
-		iAccountID = 36933299;
+		iAccountID = 119384281;
 	}
 	//BOOM Players
 	else if(strcmp(szBotName, "chelo") == 0)

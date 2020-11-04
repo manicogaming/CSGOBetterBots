@@ -16,7 +16,6 @@ bool g_bBombPlanted = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsAvoidingFlash[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 float g_fHoldPos[MAXPLAYERS+1][3];
-ConVar g_cvPredictionConVar = null;
 CNavArea navArea[MAXPLAYERS+1];
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -468,7 +467,7 @@ static char g_szBotName[][] = {
 	"Olivia",
 	"Kntz",
 	"stk",
-	"qqGod",
+	"Geniuss",
 	//BOOM Players
 	"chelo",
 	"yeL",
@@ -972,8 +971,6 @@ public void OnPluginStart()
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("bomb_defused", OnBombDefusedOrExploded);
 	HookEventEx("bomb_exploded", OnBombDefusedOrExploded);
-	
-	g_cvPredictionConVar = FindConVar("weapon_recoil_scale");
 	
 	LoadSDK();
 	LoadDetours();
@@ -3212,7 +3209,7 @@ public Action Team_Beyond(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Olivia");
 		ServerCommand("bot_add_ct %s", "Kntz");
 		ServerCommand("bot_add_ct %s", "stk");
-		ServerCommand("bot_add_ct %s", "qqGod");
+		ServerCommand("bot_add_ct %s", "Geniuss");
 		ServerCommand("mp_teamlogo_1 bey");
 	}
 	
@@ -3223,7 +3220,7 @@ public Action Team_Beyond(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Olivia");
 		ServerCommand("bot_add_t %s", "Kntz");
 		ServerCommand("bot_add_t %s", "stk");
-		ServerCommand("bot_add_t %s", "qqGod");
+		ServerCommand("bot_add_t %s", "Geniuss");
 		ServerCommand("mp_teamlogo_2 bey");
 	}
 	
@@ -6143,7 +6140,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 		float fPos[3];
 		
 		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += Math_GetRandomFloat(25.0, 75.0);
+		fPos[2] += Math_GetRandomFloat(25.0, 100.0);
 		DHookSetParamVector(hParams, 2, fPos);
 		
 		return MRES_ChangedHandled;
@@ -6151,7 +6148,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 	else if(strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
 		g_bIsAvoidingFlash[pThis] = true;
-		CreateTimer(2.5, Timer_AvoidingFlash, pThis);
+		CreateTimer(2.0, Timer_AvoidingFlash, pThis);
 		
 		return MRES_Ignored;
 	}
@@ -6763,7 +6760,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					{
 						return Plugin_Continue;
 					}
-
+					
 					float flAng[3];
 					GetClientEyeAngles(client, flAng);
 					
@@ -6777,14 +6774,13 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
 
 					float fPunchAngle[3];
-					
 					GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fPunchAngle);
 					
-					if(g_cvPredictionConVar != null)
-					{
-						flAng[0] -= fPunchAngle[0] * GetConVarFloat(g_cvPredictionConVar);
-						flAng[1] -= fPunchAngle[1] * GetConVarFloat(g_cvPredictionConVar);
-					}
+					ScaleVector(fPunchAngle, -(FindConVar("weapon_recoil_scale").FloatValue));
+					
+					AddVectors(flAng, fPunchAngle, flAng);
+					
+					fAngles = flAng;
 					
 					if(IsTargetInSightRange(client, iEnt, 5.0))
 					{
@@ -6792,7 +6788,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					}
 					else
 					{
-						TF2_LookAtPos(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.20));
+						LookAtPosition(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.20));
 					}
 					
 					BotAttack(client, iEnt);
@@ -7536,19 +7532,19 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 	return false;
 }
 
-stock void TF2_LookAtPos(int client, float flGoal[3], float flAimSpeed = 0.05)
+stock void LookAtPosition(int client, float flGoal[3], float flAimSpeed = 0.05)
 {
     float flPos[3];
     GetClientEyePosition(client, flPos);
 
     float flAng[3];
     GetClientEyeAngles(client, flAng);
-    
+
     // get normalised direction from target to client
     float desired_dir[3];
     MakeVectorFromPoints(flPos, flGoal, desired_dir);
     GetVectorAngles(desired_dir, desired_dir);
-    
+
     // ease the current direction to the target direction
     flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * flAimSpeed;
     flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * flAimSpeed;
@@ -8003,7 +7999,7 @@ public void Pro_Players(char[] szBotName, int client)
 	}
 	
 	//Beyond Players
-	if((StrEqual(szBotName, "MAIROLLS")) || (StrEqual(szBotName, "Olivia")) || (StrEqual(szBotName, "Kntz")) || (StrEqual(szBotName, "stk")) || (StrEqual(szBotName, "qqGod")))
+	if((StrEqual(szBotName, "MAIROLLS")) || (StrEqual(szBotName, "Olivia")) || (StrEqual(szBotName, "Kntz")) || (StrEqual(szBotName, "stk")) || (StrEqual(szBotName, "Geniuss")))
 	{
 		CS_SetClientClanTag(client, "Beyond");
 	}
