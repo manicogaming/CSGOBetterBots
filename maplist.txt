@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Wed Nov 04 05:12:40 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Fri Nov 06 06:03:20 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -17,7 +17,6 @@ $400$_lite_4s
 35hp_lego_go
 35hp_minecraft_go
 35hp_orange_box_handel
-35hp_rush_hour
 35hp_white_palm
 3mc_training
 3rd_mythic_metal_v1

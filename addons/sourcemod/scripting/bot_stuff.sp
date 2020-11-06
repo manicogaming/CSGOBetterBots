@@ -13,10 +13,12 @@
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
+bool g_bIsProBot[MAXPLAYERS+1] = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsAvoidingFlash[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-float g_fHoldPos[MAXPLAYERS+1][3];
+float g_fHoldPos[MAXPLAYERS+1][3], g_fTargetEyesZ[MAXPLAYERS+1];
 CNavArea navArea[MAXPLAYERS+1];
+int g_iBotAttackingOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
 Handle g_hGetBonePosition;
@@ -30,6 +32,7 @@ Handle g_hBotBendLineOfSight;
 Handle g_hBotBlindDetour;
 Handle g_hBotSetLookAtDetour;
 Handle g_hBotUpdateDetour;
+Handle g_hBotPickNewAimSpotDetour;
 
 enum RouteType
 {
@@ -5689,6 +5692,14 @@ public void OnClientPostAdminCheck(int client)
 		char szBotName[MAX_NAME_LENGTH];
 		GetClientName(client, szBotName, sizeof(szBotName));
 		
+		for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
+		{
+			if(strcmp(szBotName, g_szBotName[i]) == 0)
+			{
+				g_bIsProBot[client] = true;
+			}
+		}
+		
 		Pro_Players(szBotName, client);
 		
 		SetCustomPrivateRank(client);
@@ -6124,6 +6135,23 @@ public MRESReturn Detour_OnBOTBlind(Handle hParams)
 	return MRES_Ignored;
 }
 
+public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
+{
+	if(g_bIsProBot[client])
+	{
+		if(g_fTargetEyesZ[client] != 0.0)
+		{
+			SetEntDataFloat(client, g_iBotTargetSpotZOffset, g_fTargetEyesZ[client]);
+		}
+		else
+		{
+			SetEntDataFloat(client, g_iBotTargetSpotZOffset, GetEntDataFloat(client, g_iBotTargetSpotZOffset) + 25.0);
+		}
+	}
+	
+	return MRES_Ignored;
+}
+
 public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 {
 	char szDesc[64];
@@ -6197,7 +6225,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 				
 				fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
 				
-				if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && GetClosestClient(client) == -1 && !eItems_IsDefIndexKnife(iDefIndex))
+				if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && GetClosestClient(client) == -1 && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 				{
 					FakeClientCommandEx(client, "use weapon_knife");
 				}
@@ -6507,6 +6535,8 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 	
 	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	
+	bool bIsAttacking = view_as<bool>(GetEntData(client, g_iBotAttackingOffset));
+	
 	if(IsValidClient(client) && IsPlayerAlive(client))
 	{		
 		float fClientLoc[3];
@@ -6526,154 +6556,50 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 			iButtons &= ~IN_SPEED;
 			return Plugin_Changed;
 		}
-
-		char szBotName[MAX_NAME_LENGTH];
-		GetClientName(client, szBotName, sizeof(szBotName));
 		
-		for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
-		{
-			if(strcmp(szBotName, g_szBotName[i]) == 0)
-			{				
-				float fClientEyes[3], fTargetEyes[3];
-				GetClientEyePosition(client, fClientEyes);
-				int iEnt = GetClosestClient(client);
-				
-				if(iEnt == -1)
+		if(g_bIsProBot[client])
+		{				
+			float fClientEyes[3], fTargetEyes[3];
+			GetClientEyePosition(client, fClientEyes);
+			int iEnt = GetClosestClient(client);
+			
+			if(iEnt == -1)
+			{
+				g_bCanAttack[client] = false;
+			}
+			
+			if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client] && !g_bIsAvoidingFlash[client])
+			{
+				if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
-					g_bCanAttack[client] = false;
+					BotEquipBestWeapon(client, true);
 				}
 				
-				if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client] && !g_bIsAvoidingFlash[client])
+				if(IsPlayerReloading(client))
 				{
-					if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
+					if(Math_GetRandomInt(1,100) <= 50)
 					{
-						BotEquipBestWeapon(client, true);
+						moveSide(fVel, 250.0);
 					}
-					
-					if(Weapon_IsReloading(iActiveWeapon))
+					else
 					{
-						if(Math_GetRandomInt(1,100) <= 50)
-						{
-							moveSide(fVel, 250.0);
-						}
-						else
-						{
-							moveSide2(fVel, 250.0);
-						}
+						moveSide2(fVel, 250.0);
 					}
-					
-					if(GetEntityMoveType(client) == MOVETYPE_LADDER)
-					{
-						return Plugin_Continue;
-					}
-					
-					if(!(GetEntityFlags(client) & FL_ONGROUND))
-					{
-						return Plugin_Continue;
-					}
-					
-					if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
-					{
-						if(Math_GetRandomInt(1,4) == 1)
-						{
-							int iBone = LookupBone(iEnt, "head_0");
-							if(iBone < 0)
-								return Plugin_Continue;
-								
-							float fHead[3], fBad[3];
-							GetBonePosition(iEnt, iBone, fHead, fBad);
-							
-							fTargetEyes = fHead;
-						}
-						else
-						{
-							int iBone = LookupBone(iEnt, "spine_2");
-							
-							if(iBone < 0)
-								return Plugin_Continue;
-								
-							float fBody[3], fBad[3];
-							GetBonePosition(iEnt, iBone, fBody, fBad);
-							
-							if(BotIsVisible(client, fBody, false, -1))
-							{
-								fTargetEyes = fBody;
-							}
-							else
-							{
-								iBone = LookupBone(iEnt, "head_0");
-								if(iBone < 0)
-									return Plugin_Continue;
-									
-								float fHead[3];
-								GetBonePosition(iEnt, iBone, fHead, fBad);
-								
-								fTargetEyes = fHead;
-							}
-						}	
-						
-						if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !Weapon_IsReloading(iActiveWeapon))
-						{
-							iButtons |= IN_ATTACK;
-						}
-						
-						if(iButtons & IN_ATTACK && !(GetEntityFlags(client) & FL_DUCKING))
-						{
-							fVel[0] = 0.0;
-							fVel[1] = 0.0;
-							fVel[2] = 0.0;
-						}
-					}
-					else if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
-					{
-						if(Math_GetRandomInt(1,4) == 1)
-						{
-							int iBone = LookupBone(iEnt, "head_0");
-							if(iBone < 0)
-								return Plugin_Continue;
-								
-							float fHead[3], fBad[3];
-							GetBonePosition(iEnt, iBone, fHead, fBad);
-							
-							fTargetEyes = fHead;
-						}
-						else
-						{
-							int iBone = LookupBone(iEnt, "spine_2");
-							
-							if(iBone < 0)
-								return Plugin_Continue;
-								
-							float fBody[3], fBad[3];
-							GetBonePosition(iEnt, iBone, fBody, fBad);
-							
-							if(BotIsVisible(client, fBody, false, -1))
-							{
-								fTargetEyes = fBody;
-							}
-							else
-							{
-								iBone = LookupBone(iEnt, "head_0");
-								if(iBone < 0)
-									return Plugin_Continue;
-									
-								float fHead[3];
-								GetBonePosition(iEnt, iBone, fHead, fBad);
-								
-								fTargetEyes = fHead;
-							}
-						}
-						
-						if(Math_GetRandomInt(1,100) <= 50)
-						{
-							moveSide(fVel, 250.0);
-						}
-						else
-						{
-							moveSide2(fVel, 250.0);
-						}
-					}
-					else if(iDefIndex == 1)
+				}
+				
+				if(GetEntityMoveType(client) == MOVETYPE_LADDER)
+				{
+					return Plugin_Continue;
+				}
+				
+				if(!(GetEntityFlags(client) & FL_ONGROUND))
+				{
+					return Plugin_Continue;
+				}
+				
+				if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
+				{
+					if(Math_GetRandomInt(1,4) == 1)
 					{
 						int iBone = LookupBone(iEnt, "head_0");
 						if(iBone < 0)
@@ -6682,58 +6608,64 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						float fHead[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
-						fTargetEyes = fHead;	
-						
-						if(iButtons & IN_ATTACK && !(GetEntityFlags(client) & FL_DUCKING))
-						{
-							fVel[0] = 0.0;
-							fVel[1] = 0.0;
-							fVel[2] = 0.0;
-						}
+						fTargetEyes = fHead;
 					}
-					else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
+					else
 					{
-						if(Math_GetRandomInt(1,4) == 1)
+						int iBone = LookupBone(iEnt, "spine_2");
+						
+						if(iBone < 0)
+							return Plugin_Continue;
+							
+						float fBody[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fBody, fBad);
+						
+						if(BotIsVisible(client, fBody, false, -1))
 						{
-							int iBone = LookupBone(iEnt, "head_0");
+							fTargetEyes = fBody;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "head_0");
 							if(iBone < 0)
 								return Plugin_Continue;
 								
-							float fHead[3], fBad[3];
+							float fHead[3];
 							GetBonePosition(iEnt, iBone, fHead, fBad);
 							
 							fTargetEyes = fHead;
 						}
-						else
-						{
-							int iBone = LookupBone(iEnt, "spine_2");
-							
-							if(iBone < 0)
-								return Plugin_Continue;
-								
-							float fBody[3], fBad[3];
-							GetBonePosition(iEnt, iBone, fBody, fBad);
-							
-							if(BotIsVisible(client, fBody, false, -1))
-							{
-								fTargetEyes = fBody;
-							}
-							else
-							{
-								iBone = LookupBone(iEnt, "head_0");
-								if(iBone < 0)
-									return Plugin_Continue;
-									
-								float fHead[3];
-								GetBonePosition(iEnt, iBone, fHead, fBad);
-								
-								fTargetEyes = fHead;
-							}
-						}
+					}	
+					
+					if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
+					{
+						iButtons |= IN_ATTACK;
 					}
-					else if(iDefIndex == 9)
-					{							
+					
+					if(bIsAttacking && !(GetEntityFlags(client) & FL_DUCKING))
+					{
+						fVel[0] = 0.0;
+						fVel[1] = 0.0;
+						fVel[2] = 0.0;
+					}
+				}
+				else if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
+				{
+					if(Math_GetRandomInt(1,4) == 1)
+					{
+						int iBone = LookupBone(iEnt, "head_0");
+						if(iBone < 0)
+							return Plugin_Continue;
+							
+						float fHead[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fTargetEyes = fHead;
+					}
+					else
+					{
 						int iBone = LookupBone(iEnt, "spine_2");
+						
 						if(iBone < 0)
 							return Plugin_Continue;
 							
@@ -6756,57 +6688,149 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 							fTargetEyes = fHead;
 						}
 					}
+					
+					if(Math_GetRandomInt(1,100) <= 50)
+					{
+						moveSide(fVel, 250.0);
+					}
 					else
 					{
+						moveSide2(fVel, 250.0);
+					}
+				}
+				else if(iDefIndex == 1)
+				{
+					int iBone = LookupBone(iEnt, "head_0");
+					if(iBone < 0)
 						return Plugin_Continue;
-					}
+						
+					float fHead[3], fBad[3];
+					GetBonePosition(iEnt, iBone, fHead, fBad);
 					
-					float flAng[3];
-					GetClientEyeAngles(client, flAng);
+					fTargetEyes = fHead;	
 					
-					// get normalised direction from target to client
-					float desired_dir[3];
-					MakeVectorFromPoints(fClientEyes, fTargetEyes, desired_dir);
-					GetVectorAngles(desired_dir, desired_dir);
-					
-					// ease the current direction to the target direction
-					flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
-					flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
-
-					float fPunchAngle[3];
-					GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fPunchAngle);
-					
-					ScaleVector(fPunchAngle, -(FindConVar("weapon_recoil_scale").FloatValue));
-					
-					AddVectors(flAng, fPunchAngle, flAng);
-					
-					fAngles = flAng;
-					
-					if(IsTargetInSightRange(client, iEnt, 5.0))
+					if(bIsAttacking && !(GetEntityFlags(client) & FL_DUCKING))
 					{
-						TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
+						fVel[0] = 0.0;
+						fVel[1] = 0.0;
+						fVel[2] = 0.0;
+					}
+				}
+				else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
+				{
+					if(Math_GetRandomInt(1,4) == 1)
+					{
+						int iBone = LookupBone(iEnt, "head_0");
+						if(iBone < 0)
+							return Plugin_Continue;
+							
+						float fHead[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fTargetEyes = fHead;
 					}
 					else
 					{
-						LookAtPosition(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.20));
+						int iBone = LookupBone(iEnt, "spine_2");
+						
+						if(iBone < 0)
+							return Plugin_Continue;
+							
+						float fBody[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fBody, fBad);
+						
+						if(BotIsVisible(client, fBody, false, -1))
+						{
+							fTargetEyes = fBody;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "head_0");
+							if(iBone < 0)
+								return Plugin_Continue;
+								
+							float fHead[3];
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fTargetEyes = fHead;
+						}
 					}
+				}
+				else if(iDefIndex == 9)
+				{							
+					int iBone = LookupBone(iEnt, "spine_3");
+					if(iBone < 0)
+						return Plugin_Continue;
+						
+					float fBody[3], fBad[3];
+					GetBonePosition(iEnt, iBone, fBody, fBad);
 					
-					BotAttack(client, iEnt);
-					
-					if (iButtons & IN_ATTACK && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+					if(BotIsVisible(client, fBody, false, -1))
 					{
-						iButtons |= IN_DUCK;
-						return Plugin_Changed;
+						fTargetEyes = fBody;
 					}
-					
+					else
+					{
+						iBone = LookupBone(iEnt, "head_0");
+						if(iBone < 0)
+							return Plugin_Continue;
+							
+						float fHead[3];
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fTargetEyes = fHead;
+					}
+				}
+				else
+				{
+					return Plugin_Continue;
+				}
+				
+				float flAng[3];
+				GetClientEyeAngles(client, flAng);
+				
+				// get normalised direction from target to client
+				float desired_dir[3];
+				MakeVectorFromPoints(fClientEyes, fTargetEyes, desired_dir);
+				GetVectorAngles(desired_dir, desired_dir);
+				
+				// ease the current direction to the target direction
+				flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]);
+				flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]);
+
+				float fPunchAngle[3];
+				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fPunchAngle);
+				
+				ScaleVector(fPunchAngle, -(FindConVar("weapon_recoil_scale").FloatValue));
+				
+				AddVectors(flAng, fPunchAngle, flAng);
+				
+				if(IsTargetInSightRange(client, iEnt, 5.0))
+				{
+					TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
+				}
+				else
+				{
+					LookAtPosition(client, fTargetEyes, Math_GetRandomFloat(0.01, 0.20));
+				}
+				
+				g_fTargetEyesZ[client] = fTargetEyes[2];
+				
+				BotAttack(client, iEnt);
+				
+				if (bIsAttacking && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				{
+					iButtons |= IN_DUCK;
 					return Plugin_Changed;
 				}
 				
-				if(BotIsHiding(client) && g_iUncrouchChance[client] <= 50)
-				{
-					iButtons &= ~IN_DUCK;
-					return Plugin_Changed;
-				}
+				return Plugin_Changed;
+			}
+			
+			if(BotIsHiding(client) && g_iUncrouchChance[client] <= 50)
+			{
+				iButtons &= ~IN_DUCK;
+				return Plugin_Changed;
 			}
 		}
 	}
@@ -6941,6 +6965,22 @@ public void LoadSDK()
 	Handle hGameConfig = LoadGameConfigFile("botstuff.games");
 	if (hGameConfig == INVALID_HANDLE)
 		SetFailState("Failed to find botstuff.games game config.");
+		
+	if((g_iBotAttackingOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isAttacking")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_isAttacking offset.");
+	}
+	
+	if((g_iBotTargetSpotZOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.z")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_targetSpot.z offset.");
+	}
+	
+	if((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
+	}
+	
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -7064,6 +7104,17 @@ public void LoadDetours()
 		
 	if (!DHookEnableDetour(g_hBotUpdateDetour, false, Detour_OnBOTUpdate))
 		SetFailState("Failed to detour CCSBot::Update.");
+		
+	//CCSBot::PickNewAimSpot Detour
+	g_hBotPickNewAimSpotDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
+	if (!g_hBotPickNewAimSpotDetour)
+		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
+
+	if (!DHookSetFromConf(g_hBotPickNewAimSpotDetour, hGameData, SDKConf_Signature, "CCSBot::PickNewAimSpot"))
+		SetFailState("Failed to load CCSBot::PickNewAimSpot signature from gamedata");
+		
+	if (!DHookEnableDetour(g_hBotPickNewAimSpotDetour, true, Detour_OnBOTPickNewAimSpot))
+		SetFailState("Failed to detour CCSBot::PickNewAimSpot.");
 		
 	delete hGameData;
 }
@@ -7189,6 +7240,28 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 		EquipPlayerWeapon(client, iWeapon);
 
 	return iWeapon;
+}
+
+bool IsPlayerReloading(int client)
+{
+	int iPlayerWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+
+	if(!IsValidEntity(iPlayerWeapon))
+		return false;
+	
+	//Out of ammo?
+	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_iClip1") == 0)
+		return true;
+	
+	//Reloading?
+	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload"))
+		return true;
+	
+	//Ready to fire?
+	if(GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
+		return false;
+	
+	return true;
 }
 
 stock int GetTotalRoundTime()

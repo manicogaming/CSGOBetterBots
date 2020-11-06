@@ -76,6 +76,30 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x34\x53\x8B\xD9"
 			}
+			"CCSBot::PickNewAimSpot"
+			{
+				// Has 'mp_damage_headshot_only' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\x56\x8B\xF1\x57\x8B\x8E\xE4\x5D\x00\x00"
+			}
+		}
+		"Offsets"
+		{
+			"CCSBot::m_isAttacking"
+			{
+				//Is inside CCSBot::IsBusy
+				"windows"       "15988"
+			}
+			"CCSBot::m_targetSpot.z"
+			{
+				//Is inside CCSBot::PickNewAimSpot
+				"windows"       "23952"
+			}
+			"CCSBot::m_nearbyEnemyCount"
+			{
+				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
+				"windows"       "24080"
+			}
 		}
 	}
 }
