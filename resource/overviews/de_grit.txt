@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_grit"
+{
+	"CTSpawn_x" "3.500000"
+	"CTSpawn_y" "0.360000"
+	"TSpawn_x" "2.710000"
+	"TSpawn_y" "0.850000"
+	"material"	"overviews/de_grit_radar"	// texture file
+	"pos_x" "-6976.000000"
+	"pos_y" "5952.000000"
+	"scale" "3.810000"
+}
