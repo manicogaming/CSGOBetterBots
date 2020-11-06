@@ -5691,6 +5691,7 @@ public void OnClientPostAdminCheck(int client)
 	{
 		char szBotName[MAX_NAME_LENGTH];
 		GetClientName(client, szBotName, sizeof(szBotName));
+		g_bIsProBot[client] = false;
 		
 		for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
 		{
@@ -6608,7 +6609,21 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						float fHead[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
-						fTargetEyes = fHead;
+						if(BotIsVisible(client, fHead, false, -1))
+						{
+							fTargetEyes = fHead;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "spine_2");
+						
+							if(iBone < 0)
+								return Plugin_Continue;
+							
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fTargetEyes = fHead;
+						}
 					}
 					else
 					{
@@ -6660,7 +6675,21 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						float fHead[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
-						fTargetEyes = fHead;
+						if(BotIsVisible(client, fHead, false, -1))
+						{
+							fTargetEyes = fHead;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "spine_2");
+						
+							if(iBone < 0)
+								return Plugin_Continue;
+							
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fTargetEyes = fHead;
+						}
 					}
 					else
 					{
@@ -6707,7 +6736,21 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 					float fHead[3], fBad[3];
 					GetBonePosition(iEnt, iBone, fHead, fBad);
 					
-					fTargetEyes = fHead;	
+					if(BotIsVisible(client, fHead, false, -1))
+					{
+						fTargetEyes = fHead;
+					}
+					else
+					{
+						iBone = LookupBone(iEnt, "spine_2");
+					
+						if(iBone < 0)
+							return Plugin_Continue;
+						
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fTargetEyes = fHead;
+					}
 					
 					if(bIsAttacking && !(GetEntityFlags(client) & FL_DUCKING))
 					{
@@ -6727,7 +6770,21 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						float fHead[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
-						fTargetEyes = fHead;
+						if(BotIsVisible(client, fHead, false, -1))
+						{
+							fTargetEyes = fHead;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "spine_2");
+						
+							if(iBone < 0)
+								return Plugin_Continue;
+							
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fTargetEyes = fHead;
+						}
 					}
 					else
 					{
@@ -7589,6 +7646,15 @@ stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, fl
 		return false;
 	
 	GetBonePosition(iTarget, iBone, fHead, fBad);
+	
+	if(!BotIsVisible(client, fHead, false, -1))
+	{
+		iBone = LookupBone(iTarget, "spine_2");
+		if(iBone < 0)
+			return false;
+		
+		GetBonePosition(iTarget, iBone, fHead, fBad);
+	}
 	
 	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fHead, false) < fDistance)
 	{
