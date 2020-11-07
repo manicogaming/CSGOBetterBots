@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri Nov 06 19:54:05 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat Nov 07 01:53:50 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -221,6 +221,9 @@ de_forlorn
 de_garrison
 de_golden
 de_graveyard
+de_grind
+de_grit
+de_grotto
 de_icehouse
 de_icewerk_csgo
 de_industrial_estate

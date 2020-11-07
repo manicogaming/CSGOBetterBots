@@ -90,6 +90,16 @@
 				//Is inside CCSBot::IsBusy
 				"windows"       "15988"
 			}
+			"CCSBot::m_targetSpot.x"
+			{
+				//Is inside CCSBot::PickNewAimSpot
+				"windows"       "23944"
+			}
+			"CCSBot::m_targetSpot.y"
+			{
+				//Is inside CCSBot::PickNewAimSpot
+				"windows"       "23948"
+			}
 			"CCSBot::m_targetSpot.z"
 			{
 				//Is inside CCSBot::PickNewAimSpot
