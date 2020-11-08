@@ -14,7 +14,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bIsProBot[MAXPLAYERS+1] = false;
-bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 float g_fHoldPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS+1];
@@ -49,6 +49,27 @@ enum PriorityType
 	PRIORITY_HIGH = 2,
 	PRIORITY_UNINTERRUPTABLE = 3,
 }
+
+char g_szBoneNames[][] = {
+	"neck_0",
+	"pelvis",
+	"spine_0",
+	"spine_1",
+	"spine_2",
+	"spine_3",
+	"leg_upper_L",
+	"leg_upper_R",
+	"leg_lower_L",
+	"leg_lower_R",
+	"ankle_L",
+	"ankle_R",
+	"hand_L",
+	"hand_R",
+	"arm_upper_L",
+	"arm_lower_L",
+	"arm_upper_R",
+	"arm_lower_R"
+};
 
 static char g_szBotName[][] = {
 	//MIBR Players
@@ -6144,73 +6165,116 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		if (iActiveWeapon == -1)  return MRES_Ignored;
 		
 		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		int iEnt = GetClosestClient(client);
+		int iEnt = -1;
 		float fTargetEyes[3];
 		
-		if(iEnt == -1)
+		fTargetEyes = SelectBestTargetPos(client, iEnt);
+		
+		if(iEnt == -1 || fTargetEyes[2] == 0)
 		{
 			g_bCanAttack[client] = false;
+			return MRES_Ignored;
 		}
 		
-		if(IsValidClient(iEnt) && g_bCanAttack[client])
+		if(g_bCanAttack[client])
 		{
 			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 			{
-				if(Math_GetRandomInt(1,100) <= 65)
+				if(g_bIsHeadVisible[client])
 				{
-					int iBone = LookupBone(iEnt, "head_0");
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fHead[3], fBad[3];
-					GetBonePosition(iEnt, iBone, fHead, fBad);
-					
-					if(BotIsVisible(client, fHead, false, -1))
+					if(Math_GetRandomInt(1,100) <= 65)
 					{
-						fTargetEyes = fHead;
-					}
-					else
-					{
-						iBone = LookupBone(iEnt, "spine_2");
-					
-						if(iBone < 0)
-							return MRES_Ignored;
-						
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fTargetEyes = fHead;
-					}
-				}
-				else
-				{
-					int iBone = LookupBone(iEnt, "spine_2");
-					
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fBody[3], fBad[3];
-					GetBonePosition(iEnt, iBone, fBody, fBad);
-					
-					if(BotIsVisible(client, fBody, false, -1))
-					{
-						fTargetEyes = fBody;
-					}
-					else
-					{
-						iBone = LookupBone(iEnt, "head_0");
+						int iBone = LookupBone(iEnt, "head_0");
 						if(iBone < 0)
 							return MRES_Ignored;
 							
-						float fHead[3];
+						float fHead[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
+						fHead[2] += 4.0;
+						
 						fTargetEyes = fHead;
+					}
+					else
+					{
+						int iBone = LookupBone(iEnt, "spine_2");
+						
+						if(iBone < 0)
+							return MRES_Ignored;
+							
+						float fBody[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fBody, fBad);
+						
+						if(BotIsVisible(client, fBody, false, -1))
+						{
+							fTargetEyes = fBody;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "head_0");
+							if(iBone < 0)
+								return MRES_Ignored;
+								
+							float fHead[3];
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fHead[2] += 4.0;
+							
+							fTargetEyes = fHead;
+						}
 					}
 				}
 			}
 			else if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
 			{
-				if(Math_GetRandomInt(1,100) <= 65)
+				if(g_bIsHeadVisible[client])
+				{
+					if(Math_GetRandomInt(1,100) <= 65)
+					{
+						int iBone = LookupBone(iEnt, "head_0");
+						if(iBone < 0)
+							return MRES_Ignored;
+							
+						float fHead[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fHead[2] += 4.0;
+						
+						fTargetEyes = fHead;
+					}
+					else
+					{
+						int iBone = LookupBone(iEnt, "spine_2");
+						
+						if(iBone < 0)
+							return MRES_Ignored;
+							
+						float fBody[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fBody, fBad);
+						
+						if(BotIsVisible(client, fBody, false, -1))
+						{
+							fTargetEyes = fBody;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "head_0");
+							if(iBone < 0)
+								return MRES_Ignored;
+								
+							float fHead[3];
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fHead[2] += 4.0;
+							
+							fTargetEyes = fHead;
+						}
+					}
+				}
+			}
+			else if(iDefIndex == 1)
+			{
+				if(g_bIsHeadVisible[client])
 				{
 					int iBone = LookupBone(iEnt, "head_0");
 					if(iBone < 0)
@@ -6219,105 +6283,63 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					float fHead[3], fBad[3];
 					GetBonePosition(iEnt, iBone, fHead, fBad);
 					
-					if(BotIsVisible(client, fHead, false, -1))
-					{
-						fTargetEyes = fHead;
-					}
-					else
-					{
-						iBone = LookupBone(iEnt, "spine_2");
-					
-						if(iBone < 0)
-							return MRES_Ignored;
-						
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fTargetEyes = fHead;
-					}
-				}
-				else
-				{
-					int iBone = LookupBone(iEnt, "spine_2");
-					
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fBody[3], fBad[3];
-					GetBonePosition(iEnt, iBone, fBody, fBad);
-					
-					if(BotIsVisible(client, fBody, false, -1))
-					{
-						fTargetEyes = fBody;
-					}
-					else
-					{
-						iBone = LookupBone(iEnt, "head_0");
-						if(iBone < 0)
-							return MRES_Ignored;
-							
-						float fHead[3];
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fTargetEyes = fHead;
-					}
-				}
-			}
-			else if(iDefIndex == 1)
-			{
-				int iBone = LookupBone(iEnt, "head_0");
-				if(iBone < 0)
-					return MRES_Ignored;
-					
-				float fHead[3], fBad[3];
-				GetBonePosition(iEnt, iBone, fHead, fBad);
-				
-				if(BotIsVisible(client, fHead, false, -1))
-				{
-					fTargetEyes = fHead;
-				}
-				else
-				{
-					iBone = LookupBone(iEnt, "spine_2");
-				
-					if(iBone < 0)
-						return MRES_Ignored;
-					
-					GetBonePosition(iEnt, iBone, fHead, fBad);
+					fHead[2] += 4.0;
 					
 					fTargetEyes = fHead;
 				}
 			}
 			else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
 			{
-				if(Math_GetRandomInt(1,100) <= 65)
+				if(g_bIsHeadVisible[client])
 				{
-					int iBone = LookupBone(iEnt, "head_0");
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fHead[3], fBad[3];
-					GetBonePosition(iEnt, iBone, fHead, fBad);
-					
-					if(BotIsVisible(client, fHead, false, -1))
+					if(Math_GetRandomInt(1,100) <= 65)
 					{
+						int iBone = LookupBone(iEnt, "head_0");
+						if(iBone < 0)
+							return MRES_Ignored;
+							
+						float fHead[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fHead, fBad);
+						
+						fHead[2] += 4.0;
+						
 						fTargetEyes = fHead;
 					}
 					else
 					{
-						iBone = LookupBone(iEnt, "spine_2");
-					
+						int iBone = LookupBone(iEnt, "spine_2");
+						
 						if(iBone < 0)
 							return MRES_Ignored;
+							
+						float fBody[3], fBad[3];
+						GetBonePosition(iEnt, iBone, fBody, fBad);
 						
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fTargetEyes = fHead;
+						if(BotIsVisible(client, fBody, false, -1))
+						{
+							fTargetEyes = fBody;
+						}
+						else
+						{
+							iBone = LookupBone(iEnt, "head_0");
+							if(iBone < 0)
+								return MRES_Ignored;
+								
+							float fHead[3];
+							GetBonePosition(iEnt, iBone, fHead, fBad);
+							
+							fHead[2] += 4.0;
+							
+							fTargetEyes = fHead;
+						}
 					}
 				}
-				else
+			}
+			else if(iDefIndex == 9)
+			{			
+				if(g_bIsHeadVisible[client])
 				{
-					int iBone = LookupBone(iEnt, "spine_2");
-					
+					int iBone = LookupBone(iEnt, "spine_3");
 					if(iBone < 0)
 						return MRES_Ignored;
 						
@@ -6337,33 +6359,10 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 						float fHead[3];
 						GetBonePosition(iEnt, iBone, fHead, fBad);
 						
+						fHead[2] += 4.0;
+						
 						fTargetEyes = fHead;
 					}
-				}
-			}
-			else if(iDefIndex == 9)
-			{							
-				int iBone = LookupBone(iEnt, "spine_3");
-				if(iBone < 0)
-					return MRES_Ignored;
-					
-				float fBody[3], fBad[3];
-				GetBonePosition(iEnt, iBone, fBody, fBad);
-				
-				if(BotIsVisible(client, fBody, false, -1))
-				{
-					fTargetEyes = fBody;
-				}
-				else
-				{
-					iBone = LookupBone(iEnt, "head_0");
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fHead[3];
-					GetBonePosition(iEnt, iBone, fHead, fBad);
-					
-					fTargetEyes = fHead;
 				}
 			}
 			else
@@ -6446,7 +6445,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 				
 				fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
 				
-				if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && GetClosestClient(client) == -1 && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
+				if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 				{
 					FakeClientCommandEx(client, "use weapon_knife");
 				}
@@ -6782,17 +6781,17 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 		{				
 			float fClientEyes[3], fTargetEyes[3];
 			GetClientEyePosition(client, fClientEyes);
-			int iEnt = GetClosestClient(client);
+			int iEnt = -1;
+			fTargetEyes = SelectBestTargetPos(client, iEnt);
 			
-			if(iEnt == -1)
+			if(iEnt == -1 || fTargetEyes[2] == 0)
 			{
 				g_bCanAttack[client] = false;
+				return Plugin_Continue;
 			}
 			
-			if(IsValidClient(iEnt) && g_bFreezetimeEnd && g_bCanAttack[client])
+			if(g_bFreezetimeEnd && g_bCanAttack[client])
 			{
-				GetClientEyePosition(iEnt, fTargetEyes);
-				
 				if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
 					BotEquipBestWeapon(client, true);
@@ -7329,231 +7328,6 @@ stock int GetCurrentRoundTime()
 	return (GetTime() - g_iRoundStartedTime) - iFreezeTime;
 }
 
-stock int GetClosestClient(int client)
-{
-	float fClientOrigin[3], fTargetOrigin[3];
-	
-	GetClientAbsOrigin(client, fClientOrigin);
-	
-	int iClientTeam = GetClientTeam(client);
-	int iClosestTarget = -1;
-	
-	float fClosestDistance = -1.0;
-	float fTargetDistance;
-	char szClanTag[64];
-	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
-	int iDefIndex;
-	if (iActiveWeapon != -1)
-	{
-		iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	}
-	
-	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
-	
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i))
-		{
-			if (client == i || GetClientTeam(i) == iClientTeam || !IsPlayerAlive(i))
-			{
-				continue;
-			}
-			
-			GetClientAbsOrigin(i, fTargetOrigin);
-			fTargetDistance = GetVectorDistance(fClientOrigin, fTargetOrigin);
-
-			if (fTargetDistance > fClosestDistance && fClosestDistance > -1.0)
-			{
-				continue;
-			}
-
-			if (!ClientCanSeeTarget(client, i))
-			{
-				continue;
-			}
-
-			if (GetEngineVersion() == Engine_CSGO)
-			{
-				if (GetEntPropFloat(i, Prop_Send, "m_fImmuneToGunGameDamageTime") > 0.0)
-				{
-					continue;
-				}
-			}
-
-			if(strcmp(szClanTag, "Endpoint") == 0) //30th
-			{
-				if (!IsTargetInSightRange(client, i, 50.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Gen.G") == 0) //29th
-			{
-				if (!IsTargetInSightRange(client, i, 60.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "NEW") == 0) //28th
-			{
-				if (!IsTargetInSightRange(client, i, 70.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "sAw") == 0) //27th
-			{
-				if (!IsTargetInSightRange(client, i, 80.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "forZe") == 0) //26th
-			{
-				if (!IsTargetInSightRange(client, i, 90.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "ENCE") == 0) //25th
-			{
-				if (!IsTargetInSightRange(client, i, 100.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "One") == 0) //24th
-			{
-				if (!IsTargetInSightRange(client, i, 110.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "North") == 0) //23rd
-			{
-				if (!IsTargetInSightRange(client, i, 120.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Gambit") == 0) //22nd
-			{
-				if (!IsTargetInSightRange(client, i, 130.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Nemiga") == 0) //21st
-			{
-				if (!IsTargetInSightRange(client, i, 140.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Chaos") == 0) //20th
-			{
-				if (!IsTargetInSightRange(client, i, 150.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "GODSENT") == 0) //19th
-			{
-				if (!IsTargetInSightRange(client, i, 160.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Sprout") == 0) //18th
-			{
-				if (!IsTargetInSightRange(client, i, 170.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Spirit") == 0) //17th
-			{
-				if (!IsTargetInSightRange(client, i, 180.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "mouz") == 0) //16th
-			{
-				if (!IsTargetInSightRange(client, i, 190.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "VP") == 0) //15th
-			{
-				if (!IsTargetInSightRange(client, i, 200.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "coL") == 0) //14th
-			{
-				if (!IsTargetInSightRange(client, i, 210.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "G2") == 0) //13th
-			{
-				if (!IsTargetInSightRange(client, i, 220.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Liquid") == 0) //12th
-			{
-				if (!IsTargetInSightRange(client, i, 230.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "fnatic") == 0) //11th
-			{
-				if (!IsTargetInSightRange(client, i, 240.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "FaZe") == 0) //10th
-			{
-				if (!IsTargetInSightRange(client, i, 250.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "NiP") == 0) //9th
-			{
-				if (!IsTargetInSightRange(client, i, 260.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "EG") == 0) //8th
-			{
-				if (!IsTargetInSightRange(client, i, 270.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "OG") == 0) //7th
-			{
-				if (!IsTargetInSightRange(client, i, 280.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "BIG") == 0) //6th
-			{
-				if (!IsTargetInSightRange(client, i, 290.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Na´Vi") == 0) //5th
-			{
-				if (!IsTargetInSightRange(client, i, 300.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "FURIA") == 0) //4th
-			{
-				if (!IsTargetInSightRange(client, i, 310.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Astralis") == 0) //3rd
-			{
-				if (!IsTargetInSightRange(client, i, 320.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Vitality") == 0) //2nd
-			{
-				if (!IsTargetInSightRange(client, i, 330.0))
-					continue;	
-			}
-			else if(strcmp(szClanTag, "Heroic") == 0) //1st
-			{
-				if (!IsTargetInSightRange(client, i, 340.0))
-					continue;	
-			}
-			else
-			{
-				if (!IsTargetInSightRange(client, i))
-					continue;
-			}
-			
-			fClosestDistance = fTargetDistance;
-			iClosestTarget = i;
-			
-			if(iDefIndex == 9 || iDefIndex == 11 || iDefIndex == 38 || iDefIndex == 40)
-			{
-				g_bCanAttack[client] = true;
-			}
-			else
-			{
-				CreateTimer(0.17, Timer_Attack, client);
-			}
-		}
-	}
-	
-	return iClosestTarget;
-}
-
 public Action Timer_Attack(Handle hTimer, int client)
 {
 	g_bCanAttack[client] = true;
@@ -7572,6 +7346,262 @@ public Action Timer_ThrowFlash(Handle hTimer, int client)
 public Action Timer_FreezetimeEnd(Handle hTimer)
 {
 	g_bFreezetimeEnd = true;
+}
+
+float[] SelectBestTargetPos(int client, int &iBestEnemy)
+{
+	float fMyPos[3]; 
+	GetClientAbsOrigin(client, fMyPos);
+
+	float fTargetPos[3];
+	float fClosestDistance = 999999999999999.0;
+	
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+	int iDefIndex;
+	if (iActiveWeapon != -1)
+	{
+		iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	}
+	
+	char szClanTag[MAX_NAME_LENGTH];
+	
+	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(i == client)
+			continue;
+		
+		if(!IsClientInGame(i))
+			continue;
+		
+		if(!IsPlayerAlive(i))
+			continue;
+		
+		if (GetEntProp(i, Prop_Send, "m_bGunGameImmunity"))
+			continue;
+		
+		if(GetClientTeam(i) == GetClientTeam(client))
+			continue;
+		
+		if(strcmp(szClanTag, "Endpoint") == 0) //30th
+		{
+			if (!IsTargetInSightRange(client, i, 50.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Gen.G") == 0) //29th
+		{
+			if (!IsTargetInSightRange(client, i, 60.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "NEW") == 0) //28th
+		{
+			if (!IsTargetInSightRange(client, i, 70.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "sAw") == 0) //27th
+		{
+			if (!IsTargetInSightRange(client, i, 80.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "forZe") == 0) //26th
+		{
+			if (!IsTargetInSightRange(client, i, 90.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "ENCE") == 0) //25th
+		{
+			if (!IsTargetInSightRange(client, i, 100.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "One") == 0) //24th
+		{
+			if (!IsTargetInSightRange(client, i, 110.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "North") == 0) //23rd
+		{
+			if (!IsTargetInSightRange(client, i, 120.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Gambit") == 0) //22nd
+		{
+			if (!IsTargetInSightRange(client, i, 130.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Nemiga") == 0) //21st
+		{
+			if (!IsTargetInSightRange(client, i, 140.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Chaos") == 0) //20th
+		{
+			if (!IsTargetInSightRange(client, i, 150.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "GODSENT") == 0) //19th
+		{
+			if (!IsTargetInSightRange(client, i, 160.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Sprout") == 0) //18th
+		{
+			if (!IsTargetInSightRange(client, i, 170.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Spirit") == 0) //17th
+		{
+			if (!IsTargetInSightRange(client, i, 180.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "mouz") == 0) //16th
+		{
+			if (!IsTargetInSightRange(client, i, 190.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "VP") == 0) //15th
+		{
+			if (!IsTargetInSightRange(client, i, 200.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "coL") == 0) //14th
+		{
+			if (!IsTargetInSightRange(client, i, 210.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "G2") == 0) //13th
+		{
+			if (!IsTargetInSightRange(client, i, 220.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Liquid") == 0) //12th
+		{
+			if (!IsTargetInSightRange(client, i, 230.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "fnatic") == 0) //11th
+		{
+			if (!IsTargetInSightRange(client, i, 240.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "FaZe") == 0) //10th
+		{
+			if (!IsTargetInSightRange(client, i, 250.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "NiP") == 0) //9th
+		{
+			if (!IsTargetInSightRange(client, i, 260.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "EG") == 0) //8th
+		{
+			if (!IsTargetInSightRange(client, i, 270.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "OG") == 0) //7th
+		{
+			if (!IsTargetInSightRange(client, i, 280.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "BIG") == 0) //6th
+		{
+			if (!IsTargetInSightRange(client, i, 290.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Na´Vi") == 0) //5th
+		{
+			if (!IsTargetInSightRange(client, i, 300.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "FURIA") == 0) //4th
+		{
+			if (!IsTargetInSightRange(client, i, 310.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Astralis") == 0) //3rd
+		{
+			if (!IsTargetInSightRange(client, i, 320.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Vitality") == 0) //2nd
+		{
+			if (!IsTargetInSightRange(client, i, 330.0))
+				continue;	
+		}
+		else if(strcmp(szClanTag, "Heroic") == 0) //1st
+		{
+			if (!IsTargetInSightRange(client, i, 340.0))
+				continue;	
+		}
+		else
+		{
+			if (!IsTargetInSightRange(client, i))
+				continue;
+		}
+		
+		int iBone = LookupBone(i, "head_0");
+		if(iBone < 0)
+			continue;
+			
+		float fHead[3], fBad[3];
+		GetBonePosition(i, iBone, fHead, fBad);
+		
+		//Give this man a raise!
+		fHead[2] += 4.0;
+		
+		if(BotIsVisible(client, fHead, false, -1))
+		{
+			g_bIsHeadVisible[client] = true;
+		}
+		else
+		{
+			bool bVisibleOther = false;
+		
+			//Head wasn't visible, check other bones.
+			for(int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
+			{
+				iBone = LookupBone(i, g_szBoneNames[b]);
+				if(iBone < 0)
+					continue;
+				
+				GetBonePosition(i, iBone, fHead, fBad);
+				
+				if(BotIsVisible(client, fHead, false, -1))
+				{
+					g_bIsHeadVisible[client] = false;
+					bVisibleOther = true;
+					break;
+				}
+			}
+			
+			if(!bVisibleOther)
+				continue;
+		}
+
+		float fEnemyPos[3];
+		GetClientAbsOrigin(i, fEnemyPos);
+			
+		float fDistance = GetVectorDistance(fEnemyPos, fMyPos, true);
+		if(fDistance < fClosestDistance)
+		{
+			fClosestDistance = fDistance;
+			fTargetPos = fHead;
+			
+			iBestEnemy = i;
+			
+			if(iDefIndex == 9 || iDefIndex == 11 || iDefIndex == 38 || iDefIndex == 40)
+			{
+				g_bCanAttack[client] = true;
+			}
+			else
+			{
+				CreateTimer(0.17, Timer_Attack, client);
+			}
+		}
+	}
+	
+	return fTargetPos;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
@@ -7620,43 +7650,6 @@ stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, fl
 			else return false;
 		}
 		else return true;
-	}
-	
-	return false;
-}
-
-stock bool ClientCanSeeTarget(int client, int iTarget, float fDistance = 0.0, float fHeight = 50.0)
-{
-	float fClientPosition[3], fHead[3], fBad[3];
-	
-	GetEntPropVector(client, Prop_Send, "m_vecOrigin", fClientPosition);
-	fClientPosition[2] += fHeight;
-	
-	int iBone = LookupBone(iTarget, "head_0");
-	if(iBone < 0)
-		return false;
-	
-	GetBonePosition(iTarget, iBone, fHead, fBad);
-	
-	if(!BotIsVisible(client, fHead, false, -1))
-	{
-		iBone = LookupBone(iTarget, "spine_2");
-		if(iBone < 0)
-			return false;
-		
-		GetBonePosition(iTarget, iBone, fHead, fBad);
-	}
-	
-	if (fDistance == 0.0 || GetVectorDistance(fClientPosition, fHead, false) < fDistance)
-	{
-		if(BotIsVisible(client, fHead, false, -1))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
 	}
 	
 	return false;
