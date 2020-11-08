@@ -439,19 +439,19 @@ End
 
 //MIBR Players
 
-ProP+Rifle "kNgV-"
+ProP+Rifle "leo_drk"
 	VoicePitch = 73
 End
 
-ProAwp+SniperPro "FalleN"
+ProAwp+SniperPro "kNgV-"
 	VoicePitch = 80
 End
 
-ProP+Rifle "fer"
+ProP+Rifle "v$m"
 	VoicePitch = 88
 End
 
-ProP+Rifle "TACO"
+ProP+Rifle "LUCAS1"
 	VoicePitch = 96
 End
 
@@ -1679,11 +1679,11 @@ ProAwp+SniperPro "piria"
 	VoicePitch = 73
 End
 
-ProP+Rifle "v$m"
+ProP+Rifle "rikz"
 	VoicePitch = 83
 End
 
-ProP+Rifle "Lucaozy"
+ProP+Rifle "tiburci0"
 	VoicePitch = 84
 End
 
@@ -1767,7 +1767,7 @@ ProAwp+SniperPro "jnt"
 	VoicePitch = 72
 End
 
-ProP+Rifle "leo_drunky"
+ProP+Rifle "Lucaozy"
 	VoicePitch = 81
 End
 
@@ -2155,7 +2155,7 @@ End
 
 //AVEZ Players
 
-ProP+Rifle "byali"
+ProP+Rifle "Riczi"
 	VoicePitch = 92
 End
 
@@ -2163,7 +2163,7 @@ ProAwp+SniperPro "Markoś"
 	VoicePitch = 93
 End
 
-ProP+Rifle "tudsoN"
+ProP+Rifle "KEi"
 	VoicePitch = 96
 End
 
@@ -3275,25 +3275,25 @@ ProP+Rifle "Cunha"
 	VoicePitch = 103
 End
 
-//Titans Players
+//NEW Players
 
-ProP+Rifle "KalubeR"
+ProP+Rifle "djay"
 	VoicePitch = 91
 End
 
-ProAwp+SniperPro "doublemagic"
+ProAwp+SniperPro "PwnAlone"
 	VoicePitch = 107
 End
 
-ProP+Rifle "rafftu"
+ProP+Rifle "Rampage"
 	VoicePitch = 109
 End
 
-ProP+Rifle "sarenii"
+ProP+Rifle "ben1337"
 	VoicePitch = 103
 End
 
-ProP+Rifle "viltrex"
+ProP+Rifle "Bwills"
 	VoicePitch = 81
 End
 

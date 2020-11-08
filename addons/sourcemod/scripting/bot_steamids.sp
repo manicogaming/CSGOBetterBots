@@ -95,17 +95,17 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 74113976;
 	}
-	else if(strcmp(szBotName, "FalleN") == 0)
+	else if(strcmp(szBotName, "leo_drk") == 0)
 	{
-		iAccountID = 424467;
+		iAccountID = 58291277;
 	}
-	else if(strcmp(szBotName, "fer") == 0)
+	else if(strcmp(szBotName, "v$m") == 0)
 	{
-		iAccountID = 38921219;
+		iAccountID = 51467095;
 	}
-	else if(strcmp(szBotName, "TACO") == 0)
+	else if(strcmp(szBotName, "LUCAS1") == 0)
 	{
-		iAccountID = 52876568;
+		iAccountID = 4780624;
 	}
 	//FaZe Players
 	else if(strcmp(szBotName, "Kjaerbye") == 0)
@@ -1078,13 +1078,13 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 70656220;
 	}
 	//DETONA Players
-	else if(strcmp(szBotName, "v$m") == 0)
+	else if(strcmp(szBotName, "rikz") == 0)
 	{
-		iAccountID = 51467095;
+		iAccountID = 33104841;
 	}
-	else if(strcmp(szBotName, "Lucaozy") == 0)
+	else if(strcmp(szBotName, "tiburci0") == 0)
 	{
-		iAccountID = 197122745;
+		iAccountID = 51555347;
 	}
 	else if(strcmp(szBotName, "nak") == 0)
 	{
@@ -1154,9 +1154,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 50230614;
 	}
-	else if(strcmp(szBotName, "leo_drunky") == 0)
+	else if(strcmp(szBotName, "Lucaozy") == 0)
 	{
-		iAccountID = 58291277;
+		iAccountID = 197122745;
 	}
 	else if(strcmp(szBotName, "jnt") == 0)
 	{
@@ -1424,13 +1424,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 68256934;
 	}
-	else if(strcmp(szBotName, "byali") == 0)
+	else if(strcmp(szBotName, "KEi") == 0)
 	{
-		iAccountID = 18860354;
-	}
-	else if(strcmp(szBotName, "tudsoN") == 0)
-	{
-		iAccountID = 58354081;
+		iAccountID = 121422001;
 	}
 	//GTZ Players
 	else if(strcmp(szBotName, "fakes2") == 0)
@@ -2146,22 +2142,26 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 8661121;
 	}
-	//Titans Players
-	else if(strcmp(szBotName, "sarenii") == 0)
+	//NEW Players
+	else if(strcmp(szBotName, "ben1337") == 0)
 	{
-		iAccountID = 114087818;
+		iAccountID = 131461662;
 	}
-	else if(strcmp(szBotName, "doublemagic") == 0)
+	else if(strcmp(szBotName, "PwnAlone") == 0)
 	{
-		iAccountID = 161282046;
+		iAccountID = 24000649;
 	}
-	else if(strcmp(szBotName, "KalubeR") == 0)
+	else if(strcmp(szBotName, "djay") == 0)
 	{
-		iAccountID = 132424531;
+		iAccountID = 3935898;
 	}
-	else if(strcmp(szBotName, "rafftu") == 0)
+	else if(strcmp(szBotName, "Rampage") == 0)
 	{
-		iAccountID = 78588859;
+		iAccountID = 118220738;
+	}
+	else if(strcmp(szBotName, "Bwills") == 0)
+	{
+		iAccountID = 119308817;
 	}
 	//9INE Players
 	//QBF Players
