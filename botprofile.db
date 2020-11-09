@@ -128,7 +128,7 @@ Template ProP
 		Teamwork = 100
 		Aggression = 55
 		//ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.18
+		ReactionTime = 0.25
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 100
@@ -147,7 +147,7 @@ Template ProAwp
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		//ReactionTime = 0.00000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.18
+		ReactionTime = 0.25
 		VoicePitch = 95
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001

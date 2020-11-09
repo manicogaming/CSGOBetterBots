@@ -6182,20 +6182,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 65)
-					{
-						int iBone = LookupBone(iEnt, "head_0");
-						if(iBone < 0)
-							return MRES_Ignored;
-							
-						float fHead[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fHead[2] += 4.0;
-						
-						fTargetEyes = fHead;
-					}
-					else
+					if(Math_GetRandomInt(1,100) <= 45)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 						
@@ -6208,19 +6195,6 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
-						}
-						else
-						{
-							iBone = LookupBone(iEnt, "head_0");
-							if(iBone < 0)
-								return MRES_Ignored;
-								
-							float fHead[3];
-							GetBonePosition(iEnt, iBone, fHead, fBad);
-							
-							fHead[2] += 4.0;
-							
-							fTargetEyes = fHead;
 						}
 					}
 				}
@@ -6229,20 +6203,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 65)
-					{
-						int iBone = LookupBone(iEnt, "head_0");
-						if(iBone < 0)
-							return MRES_Ignored;
-							
-						float fHead[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fHead[2] += 4.0;
-						
-						fTargetEyes = fHead;
-					}
-					else
+					if(Math_GetRandomInt(1,100) <= 45)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 						
@@ -6256,56 +6217,14 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 						{
 							fTargetEyes = fBody;
 						}
-						else
-						{
-							iBone = LookupBone(iEnt, "head_0");
-							if(iBone < 0)
-								return MRES_Ignored;
-								
-							float fHead[3];
-							GetBonePosition(iEnt, iBone, fHead, fBad);
-							
-							fHead[2] += 4.0;
-							
-							fTargetEyes = fHead;
-						}
 					}
-				}
-			}
-			else if(iDefIndex == 1)
-			{
-				if(g_bIsHeadVisible[client])
-				{
-					int iBone = LookupBone(iEnt, "head_0");
-					if(iBone < 0)
-						return MRES_Ignored;
-						
-					float fHead[3], fBad[3];
-					GetBonePosition(iEnt, iBone, fHead, fBad);
-					
-					fHead[2] += 4.0;
-					
-					fTargetEyes = fHead;
 				}
 			}
 			else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 65)
-					{
-						int iBone = LookupBone(iEnt, "head_0");
-						if(iBone < 0)
-							return MRES_Ignored;
-							
-						float fHead[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fHead[2] += 4.0;
-						
-						fTargetEyes = fHead;
-					}
-					else
+					if(Math_GetRandomInt(1,100) <= 35)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 						
@@ -6318,19 +6237,6 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
-						}
-						else
-						{
-							iBone = LookupBone(iEnt, "head_0");
-							if(iBone < 0)
-								return MRES_Ignored;
-								
-							float fHead[3];
-							GetBonePosition(iEnt, iBone, fHead, fBad);
-							
-							fHead[2] += 4.0;
-							
-							fTargetEyes = fHead;
 						}
 					}
 				}
@@ -6349,19 +6255,6 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					if(BotIsVisible(client, fBody, false, -1))
 					{
 						fTargetEyes = fBody;
-					}
-					else
-					{
-						iBone = LookupBone(iEnt, "head_0");
-						if(iBone < 0)
-							return MRES_Ignored;
-							
-						float fHead[3];
-						GetBonePosition(iEnt, iBone, fHead, fBad);
-						
-						fHead[2] += 4.0;
-						
-						fTargetEyes = fHead;
 					}
 				}
 			}
@@ -6821,7 +6714,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				
 				if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 				{
-					if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
+					if(bIsAttacking && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
 					{
 						iButtons |= IN_ATTACK;
 					}
@@ -7596,7 +7489,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			}
 			else
 			{
-				CreateTimer(0.17, Timer_Attack, client);
+				CreateTimer(0.24, Timer_Attack, client);
 			}
 		}
 	}
