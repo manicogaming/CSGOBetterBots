@@ -128,7 +128,7 @@ Template ProP
 		Teamwork = 100
 		Aggression = 55
 		//ReactionTime = 0.0000000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.25
+		ReactionTime = 0.20
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		VoicePitch = 100
@@ -147,7 +147,7 @@ Template ProAwp
 		AttackDelay = 0
 		Difficulty = EASY+NORMAL+HARD+EXPERT
 		//ReactionTime = 0.00000000000000000000000000000000000000000000000000001
-		ReactionTime = 0.25
+		ReactionTime = 0.20
 		VoicePitch = 95
 		AimFocusInitial = 0.00001
 		AimFocusDecay = 0.0000001
@@ -1759,7 +1759,7 @@ End
 
 //Sharks Players
 
-ProP+Rifle "supLex"
+ProP+Rifle "pancc"
 	VoicePitch = 108
 End
 
@@ -1815,7 +1815,7 @@ ProP+Rifle "Tuurtle"
 	VoicePitch = 101
 End
 
-ProP+Rifle "pancc"
+ProP+Rifle "tatazin"
 	VoicePitch = 114
 End
 
@@ -2573,23 +2573,23 @@ End
 
 //Pompa Players
 
-ProP+Rifle "iso"
+ProP+Rifle "bnox"
 	VoicePitch = 111
 End
 
-ProAwp+SniperPro "SKRZYNKA"
+ProAwp+SniperPro "Grashog"
 	VoicePitch = 85
 End
 
-ProP+Rifle "LAYNER"
+ProP+Rifle "fr3nd"
 	VoicePitch = 93
 End
 
-ProP+Rifle "OLIMP"
+ProP+Rifle "Miki Z Afryki"
 	VoicePitch = 91
 End
 
-ProP+Rifle "blacktear5"
+ProP+Rifle "koyot"
 	VoicePitch = 94
 End
 
@@ -3255,7 +3255,7 @@ End
 
 //FTW Players
 
-ProP+Rifle "sh1zlEE"
+ProP+Rifle "NABOWOW"
 	VoicePitch = 103
 End
 

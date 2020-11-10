@@ -85,11 +85,6 @@
 		}
 		"Offsets"
 		{
-			"CCSBot::m_isAttacking"
-			{
-				//Is inside CCSBot::IsBusy
-				"windows"       "15988"
-			}
 			"CCSBot::m_targetSpot.x"
 			{
 				//Is inside CCSBot::PickNewAimSpot
