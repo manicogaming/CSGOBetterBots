@@ -41,30 +41,30 @@ public int Native_GetBotAccountID(Handle plugins, int numParams)
 		ThrowNativeError(SP_ERROR_NATIVE, "Invalid client index [%i]", client);
 		return false;
 	}
-	
+
 	return g_iAccountID[client];
 }
 
 public void OnClientSettingsChanged(int client)
 {
 	if (!IsFakeClient(client))
-		return;
+	return;
 
 	int iTableIdx = FindStringTable("userinfo");
 
 	if (iTableIdx == INVALID_STRING_TABLE)
-		return;
+	return;
 
 	char szUserInfo[PLAYER_INFO_LEN];
 
 	if (!GetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN))
-		return;
+	return;
 
 	int iAccountID;
-	
+
 	char szBotName[MAX_NAME_LENGTH];
 	GetClientName(client, szBotName, sizeof(szBotName));
-	
+
 	//Vitality Players
 	if(strcmp(szBotName, "ZywOo") == 0)
 	{
@@ -2372,31 +2372,31 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = Math_GetRandomInt(3, 1091249497);
 	}
-	
+
 	int iSteamIdHigh = 16781313;
-	
+
 	szUserInfo[PlayerInfo_XUID] = iSteamIdHigh;
 	szUserInfo[PlayerInfo_XUID + 1] = iSteamIdHigh >> 8;
 	szUserInfo[PlayerInfo_XUID + 2] = iSteamIdHigh >> 16;
 	szUserInfo[PlayerInfo_XUID + 3] = iSteamIdHigh >> 24;
-	
+
 	szUserInfo[PlayerInfo_XUID + 7] = iAccountID;
 	szUserInfo[PlayerInfo_XUID + 6] = iAccountID >> 8;
 	szUserInfo[PlayerInfo_XUID + 5] = iAccountID >> 16;
 	szUserInfo[PlayerInfo_XUID + 4] = iAccountID >> 24;
-	
+
 	Format(szUserInfo[PlayerInfo_SteamID], 32, "STEAM_1:%d:%d", iAccountID & 1, iAccountID >>> 1);
-	
+
 	szUserInfo[PlayerInfo_AccountID] = iAccountID;
 	szUserInfo[PlayerInfo_AccountID + 1] = iAccountID >> 8;
 	szUserInfo[PlayerInfo_AccountID + 2] = iAccountID >> 16;
 	szUserInfo[PlayerInfo_AccountID + 3] = iAccountID >> 24;
-	
+
 	szUserInfo[PlayerInfo_IsFakePlayer] = 0;
-	
+
 	bool lockTable = LockStringTables(false);
 	SetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN);
 	LockStringTables(lockTable);
-	
+
 	g_iAccountID[client] = iAccountID;
 }

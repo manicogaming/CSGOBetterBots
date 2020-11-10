@@ -977,7 +977,7 @@ static char g_szBotName[][] = {
 #include "bot_stuff/de_mirage.sp"
 #include "bot_stuff/de_dust2.sp"
 #include "bot_stuff/de_inferno.sp"
- 
+
 public Plugin myinfo =
 {
 	name = "BOT Stuff",
@@ -995,10 +995,10 @@ public void OnPluginStart()
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("bomb_defused", OnBombDefusedOrExploded);
 	HookEventEx("bomb_exploded", OnBombDefusedOrExploded);
-	
+
 	LoadSDK();
 	LoadDetours();
-	
+
 	RegConsoleCmd("team_nip", Team_NiP);
 	RegConsoleCmd("team_mibr", Team_MIBR);
 	RegConsoleCmd("team_faze", Team_FaZe);
@@ -1155,7 +1155,7 @@ public Action Team_NiP(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1166,7 +1166,7 @@ public Action Team_NiP(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "REZ");
 		ServerCommand("mp_teamlogo_1 nip");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1177,7 +1177,7 @@ public Action Team_NiP(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "REZ");
 		ServerCommand("mp_teamlogo_2 nip");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1185,7 +1185,7 @@ public Action Team_MIBR(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1196,7 +1196,7 @@ public Action Team_MIBR(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "trk");
 		ServerCommand("mp_teamlogo_1 mibr");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1207,7 +1207,7 @@ public Action Team_MIBR(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "trk");
 		ServerCommand("mp_teamlogo_2 mibr");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1215,7 +1215,7 @@ public Action Team_FaZe(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1226,7 +1226,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "coldzera");
 		ServerCommand("mp_teamlogo_1 faze");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1237,7 +1237,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "coldzera");
 		ServerCommand("mp_teamlogo_2 faze");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1245,7 +1245,7 @@ public Action Team_Astralis(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1256,7 +1256,7 @@ public Action Team_Astralis(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "dupreeh");
 		ServerCommand("mp_teamlogo_1 astr");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1267,7 +1267,7 @@ public Action Team_Astralis(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dupreeh");
 		ServerCommand("mp_teamlogo_2 astr");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1275,7 +1275,7 @@ public Action Team_C9(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1286,7 +1286,7 @@ public Action Team_C9(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "floppy");
 		ServerCommand("mp_teamlogo_1 c9");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1297,7 +1297,7 @@ public Action Team_C9(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "floppy");
 		ServerCommand("mp_teamlogo_2 c9");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1305,7 +1305,7 @@ public Action Team_G2(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1316,7 +1316,7 @@ public Action Team_G2(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "AmaNEk");
 		ServerCommand("mp_teamlogo_1 g2");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1327,7 +1327,7 @@ public Action Team_G2(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "AmaNEk");
 		ServerCommand("mp_teamlogo_2 g2");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1335,7 +1335,7 @@ public Action Team_fnatic(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1346,7 +1346,7 @@ public Action Team_fnatic(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Golden");
 		ServerCommand("mp_teamlogo_1 fnatic");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1357,7 +1357,7 @@ public Action Team_fnatic(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Golden");
 		ServerCommand("mp_teamlogo_2 fnatic");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1365,7 +1365,7 @@ public Action Team_North(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1376,7 +1376,7 @@ public Action Team_North(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "gade");
 		ServerCommand("mp_teamlogo_1 north");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1387,7 +1387,7 @@ public Action Team_North(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "gade");
 		ServerCommand("mp_teamlogo_2 north");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1395,7 +1395,7 @@ public Action Team_mouz(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1406,7 +1406,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "ropz");
 		ServerCommand("mp_teamlogo_1 mss");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1417,7 +1417,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "ropz");
 		ServerCommand("mp_teamlogo_2 mss");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1425,7 +1425,7 @@ public Action Team_TYLOO(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1436,7 +1436,7 @@ public Action Team_TYLOO(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "DANK1NG");
 		ServerCommand("mp_teamlogo_1 tyl");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1447,7 +1447,7 @@ public Action Team_TYLOO(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "DANK1NG");
 		ServerCommand("mp_teamlogo_2 tyl");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1455,7 +1455,7 @@ public Action Team_EG(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1466,7 +1466,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "CeRq");
 		ServerCommand("mp_teamlogo_1 eg");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1477,7 +1477,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "CeRq");
 		ServerCommand("mp_teamlogo_2 eg");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1485,7 +1485,7 @@ public Action Team_VireoPro(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1496,7 +1496,7 @@ public Action Team_VireoPro(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Ryze");
 		ServerCommand("mp_teamlogo_1 vireo");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1507,7 +1507,7 @@ public Action Team_VireoPro(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Ryze");
 		ServerCommand("mp_teamlogo_2 vireo");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1515,7 +1515,7 @@ public Action Team_NaVi(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1526,7 +1526,7 @@ public Action Team_NaVi(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Perfecto");
 		ServerCommand("mp_teamlogo_1 navi");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1537,7 +1537,7 @@ public Action Team_NaVi(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Perfecto");
 		ServerCommand("mp_teamlogo_2 navi");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1545,7 +1545,7 @@ public Action Team_Liquid(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1556,7 +1556,7 @@ public Action Team_Liquid(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Twistzz");
 		ServerCommand("mp_teamlogo_1 liq");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1567,7 +1567,7 @@ public Action Team_Liquid(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Twistzz");
 		ServerCommand("mp_teamlogo_2 liq");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1575,7 +1575,7 @@ public Action Team_AGO(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1586,7 +1586,7 @@ public Action Team_AGO(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "leman");
 		ServerCommand("mp_teamlogo_1 ago");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1597,7 +1597,7 @@ public Action Team_AGO(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "leman");
 		ServerCommand("mp_teamlogo_2 ago");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1605,7 +1605,7 @@ public Action Team_ENCE(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1616,7 +1616,7 @@ public Action Team_ENCE(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Jamppi");
 		ServerCommand("mp_teamlogo_1 enc");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1627,7 +1627,7 @@ public Action Team_ENCE(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Jamppi");
 		ServerCommand("mp_teamlogo_2 enc");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1635,7 +1635,7 @@ public Action Team_Vitality(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1646,7 +1646,7 @@ public Action Team_Vitality(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Misutaaa");
 		ServerCommand("mp_teamlogo_1 vita");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1657,7 +1657,7 @@ public Action Team_Vitality(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Misutaaa");
 		ServerCommand("mp_teamlogo_2 vita");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1665,7 +1665,7 @@ public Action Team_BIG(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1676,7 +1676,7 @@ public Action Team_BIG(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "k1to");
 		ServerCommand("mp_teamlogo_1 big");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1687,7 +1687,7 @@ public Action Team_BIG(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "k1to");
 		ServerCommand("mp_teamlogo_2 big");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1695,7 +1695,7 @@ public Action Team_FURIA(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1706,7 +1706,7 @@ public Action Team_FURIA(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "HEN1");
 		ServerCommand("mp_teamlogo_1 furi");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1717,7 +1717,7 @@ public Action Team_FURIA(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "HEN1");
 		ServerCommand("mp_teamlogo_2 furi");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1725,7 +1725,7 @@ public Action Team_c0ntact(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1736,7 +1736,7 @@ public Action Team_c0ntact(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_1 c0n");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1747,7 +1747,7 @@ public Action Team_c0ntact(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "EspiranTo");
 		ServerCommand("mp_teamlogo_2 c0n");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1755,7 +1755,7 @@ public Action Team_coL(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1766,7 +1766,7 @@ public Action Team_coL(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "blameF");
 		ServerCommand("mp_teamlogo_1 col");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1777,7 +1777,7 @@ public Action Team_coL(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "blameF");
 		ServerCommand("mp_teamlogo_2 col");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1785,7 +1785,7 @@ public Action Team_ViCi(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1796,7 +1796,7 @@ public Action Team_ViCi(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "advent");
 		ServerCommand("mp_teamlogo_1 vici");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1807,7 +1807,7 @@ public Action Team_ViCi(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "advent");
 		ServerCommand("mp_teamlogo_2 vici");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1815,7 +1815,7 @@ public Action Team_forZe(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1826,7 +1826,7 @@ public Action Team_forZe(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Jerry");
 		ServerCommand("mp_teamlogo_1 forz");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1837,7 +1837,7 @@ public Action Team_forZe(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Jerry");
 		ServerCommand("mp_teamlogo_2 forz");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1845,7 +1845,7 @@ public Action Team_Winstrike(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1856,7 +1856,7 @@ public Action Team_Winstrike(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "bondik");
 		ServerCommand("mp_teamlogo_1 win");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1867,7 +1867,7 @@ public Action Team_Winstrike(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "bondik");
 		ServerCommand("mp_teamlogo_2 win");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1875,7 +1875,7 @@ public Action Team_Sprout(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1886,7 +1886,7 @@ public Action Team_Sprout(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "denis");
 		ServerCommand("mp_teamlogo_1 spr");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1897,7 +1897,7 @@ public Action Team_Sprout(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "denis");
 		ServerCommand("mp_teamlogo_2 spr");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1905,7 +1905,7 @@ public Action Team_Heroic(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1916,7 +1916,7 @@ public Action Team_Heroic(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "stavn");
 		ServerCommand("mp_teamlogo_1 heroi");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1927,7 +1927,7 @@ public Action Team_Heroic(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "stavn");
 		ServerCommand("mp_teamlogo_2 heroi");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1935,7 +1935,7 @@ public Action Team_INTZ(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1946,7 +1946,7 @@ public Action Team_INTZ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "chara");
 		ServerCommand("mp_teamlogo_1 intz");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1957,7 +1957,7 @@ public Action Team_INTZ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "chara");
 		ServerCommand("mp_teamlogo_2 intz");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1965,7 +1965,7 @@ public Action Team_VP(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -1976,7 +1976,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "buster");
 		ServerCommand("mp_teamlogo_1 virtus");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -1987,7 +1987,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "buster");
 		ServerCommand("mp_teamlogo_2 virtus");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -1995,7 +1995,7 @@ public Action Team_Apeks(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2006,7 +2006,7 @@ public Action Team_Apeks(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "dennis");
 		ServerCommand("mp_teamlogo_1 ape");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2017,7 +2017,7 @@ public Action Team_Apeks(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dennis");
 		ServerCommand("mp_teamlogo_2 ape");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2025,7 +2025,7 @@ public Action Team_aTTaX(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2036,7 +2036,7 @@ public Action Team_aTTaX(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "mirbit");
 		ServerCommand("mp_teamlogo_1 alt");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2047,7 +2047,7 @@ public Action Team_aTTaX(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "mirbit");
 		ServerCommand("mp_teamlogo_2 alt");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2055,7 +2055,7 @@ public Action Team_Renegades(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2066,7 +2066,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "malta");
 		ServerCommand("mp_teamlogo_1 ren");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2077,7 +2077,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "malta");
 		ServerCommand("mp_teamlogo_2 ren");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2085,7 +2085,7 @@ public Action Team_Envy(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2096,7 +2096,7 @@ public Action Team_Envy(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "LEGIJA");
 		ServerCommand("mp_teamlogo_1 envy");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2107,7 +2107,7 @@ public Action Team_Envy(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "LEGIJA");
 		ServerCommand("mp_teamlogo_2 envy");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2115,7 +2115,7 @@ public Action Team_Spirit(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2126,7 +2126,7 @@ public Action Team_Spirit(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "magixx");
 		ServerCommand("mp_teamlogo_1 spir");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2137,7 +2137,7 @@ public Action Team_Spirit(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "magixx");
 		ServerCommand("mp_teamlogo_2 spir");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2145,7 +2145,7 @@ public Action Team_LDLC(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2156,7 +2156,7 @@ public Action Team_LDLC(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "SIXER");
 		ServerCommand("mp_teamlogo_1 ldl");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2167,7 +2167,7 @@ public Action Team_LDLC(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "SIXER");
 		ServerCommand("mp_teamlogo_2 ldl");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2175,7 +2175,7 @@ public Action Team_GamerLegion(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2186,7 +2186,7 @@ public Action Team_GamerLegion(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Adam9130");
 		ServerCommand("mp_teamlogo_1 glegion");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2197,7 +2197,7 @@ public Action Team_GamerLegion(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Adam9130");
 		ServerCommand("mp_teamlogo_2 glegion");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2205,7 +2205,7 @@ public Action Team_DIVIZON(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2216,7 +2216,7 @@ public Action Team_DIVIZON(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "bLooDyyY");
 		ServerCommand("mp_teamlogo_1 divi");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2227,7 +2227,7 @@ public Action Team_DIVIZON(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "bLooDyyY");
 		ServerCommand("mp_teamlogo_2 divi");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2235,7 +2235,7 @@ public Action Team_Wolsung(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2246,7 +2246,7 @@ public Action Team_Wolsung(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "shield");
 		ServerCommand("mp_teamlogo_1 wols");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2257,7 +2257,7 @@ public Action Team_Wolsung(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "shield");
 		ServerCommand("mp_teamlogo_2 wols");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2265,7 +2265,7 @@ public Action Team_PDucks(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2276,7 +2276,7 @@ public Action Team_PDucks(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Cl34v3rs");
 		ServerCommand("mp_teamlogo_1 playin");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2287,7 +2287,7 @@ public Action Team_PDucks(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Cl34v3rs");
 		ServerCommand("mp_teamlogo_2 playin");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2295,7 +2295,7 @@ public Action Team_HAVU(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2306,7 +2306,7 @@ public Action Team_HAVU(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sAw");
 		ServerCommand("mp_teamlogo_1 havu");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2317,7 +2317,7 @@ public Action Team_HAVU(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sAw");
 		ServerCommand("mp_teamlogo_2 havu");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2325,7 +2325,7 @@ public Action Team_Lyngby(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2336,7 +2336,7 @@ public Action Team_Lyngby(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Cabbi");
 		ServerCommand("mp_teamlogo_1 lyng");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2347,7 +2347,7 @@ public Action Team_Lyngby(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Cabbi");
 		ServerCommand("mp_teamlogo_2 lyng");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2355,7 +2355,7 @@ public Action Team_GODSENT(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2366,7 +2366,7 @@ public Action Team_GODSENT(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "STYKO");
 		ServerCommand("mp_teamlogo_1 god");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2377,7 +2377,7 @@ public Action Team_GODSENT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "STYKO");
 		ServerCommand("mp_teamlogo_2 god");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2385,7 +2385,7 @@ public Action Team_Nordavind(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2396,7 +2396,7 @@ public Action Team_Nordavind(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "cromen");
 		ServerCommand("mp_teamlogo_1 nord");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2407,7 +2407,7 @@ public Action Team_Nordavind(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "cromen");
 		ServerCommand("mp_teamlogo_2 nord");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2415,7 +2415,7 @@ public Action Team_SJ(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2426,7 +2426,7 @@ public Action Team_SJ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "jemi");
 		ServerCommand("mp_teamlogo_1 sjg");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2437,7 +2437,7 @@ public Action Team_SJ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "jemi");
 		ServerCommand("mp_teamlogo_2 sjg");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2445,7 +2445,7 @@ public Action Team_Bren(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2456,7 +2456,7 @@ public Action Team_Bren(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Derek");
 		ServerCommand("mp_teamlogo_1 bren");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2467,7 +2467,7 @@ public Action Team_Bren(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Derek");
 		ServerCommand("mp_teamlogo_2 bren");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2475,7 +2475,7 @@ public Action Team_Giants(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2486,7 +2486,7 @@ public Action Team_Giants(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "RIZZ");
 		ServerCommand("mp_teamlogo_1 giant");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2497,7 +2497,7 @@ public Action Team_Giants(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "RIZZ");
 		ServerCommand("mp_teamlogo_2 giant");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2505,7 +2505,7 @@ public Action Team_Lions(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2516,7 +2516,7 @@ public Action Team_Lions(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "roeJ");
 		ServerCommand("mp_teamlogo_1 lion");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2527,7 +2527,7 @@ public Action Team_Lions(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "roeJ");
 		ServerCommand("mp_teamlogo_2 lion");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2535,7 +2535,7 @@ public Action Team_Riders(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2546,7 +2546,7 @@ public Action Team_Riders(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "larsen");
 		ServerCommand("mp_teamlogo_1 movis");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2557,7 +2557,7 @@ public Action Team_Riders(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "larsen");
 		ServerCommand("mp_teamlogo_2 movis");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2565,7 +2565,7 @@ public Action Team_OFFSET(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2576,7 +2576,7 @@ public Action Team_OFFSET(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "drifking");
 		ServerCommand("mp_teamlogo_1 offs");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2587,7 +2587,7 @@ public Action Team_OFFSET(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "drifking");
 		ServerCommand("mp_teamlogo_2 offs");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2595,7 +2595,7 @@ public Action Team_eSuba(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2606,7 +2606,7 @@ public Action Team_eSuba(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "luko");
 		ServerCommand("mp_teamlogo_1 esu");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2617,7 +2617,7 @@ public Action Team_eSuba(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "luko");
 		ServerCommand("mp_teamlogo_2 esu");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2625,7 +2625,7 @@ public Action Team_Nexus(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2636,7 +2636,7 @@ public Action Team_Nexus(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sXe");
 		ServerCommand("mp_teamlogo_1 nex");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2647,7 +2647,7 @@ public Action Team_Nexus(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sXe");
 		ServerCommand("mp_teamlogo_2 nex");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2655,7 +2655,7 @@ public Action Team_PACT(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2666,7 +2666,7 @@ public Action Team_PACT(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Sobol");
 		ServerCommand("mp_teamlogo_1 pact");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2677,7 +2677,7 @@ public Action Team_PACT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Sobol");
 		ServerCommand("mp_teamlogo_2 pact");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2685,7 +2685,7 @@ public Action Team_Heretics(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2696,7 +2696,7 @@ public Action Team_Heretics(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Lucky");
 		ServerCommand("mp_teamlogo_1 here");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2707,7 +2707,7 @@ public Action Team_Heretics(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Lucky");
 		ServerCommand("mp_teamlogo_2 here");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2715,7 +2715,7 @@ public Action Team_Nemiga(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2726,7 +2726,7 @@ public Action Team_Nemiga(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "boX");
 		ServerCommand("mp_teamlogo_1 nem");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2737,7 +2737,7 @@ public Action Team_Nemiga(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "boX");
 		ServerCommand("mp_teamlogo_2 nem");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2745,7 +2745,7 @@ public Action Team_pro100(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2756,7 +2756,7 @@ public Action Team_pro100(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "AiyvaN");
 		ServerCommand("mp_teamlogo_1 pro");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2767,7 +2767,7 @@ public Action Team_pro100(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "AiyvaN");
 		ServerCommand("mp_teamlogo_2 pro");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2775,7 +2775,7 @@ public Action Team_YaLLa(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2786,7 +2786,7 @@ public Action Team_YaLLa(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Lyhn");
 		ServerCommand("mp_teamlogo_1 yall");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2797,7 +2797,7 @@ public Action Team_YaLLa(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Lyhn");
 		ServerCommand("mp_teamlogo_2 yall");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2805,7 +2805,7 @@ public Action Team_Yeah(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2816,7 +2816,7 @@ public Action Team_Yeah(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "dumau");
 		ServerCommand("mp_teamlogo_1 yeah");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2827,7 +2827,7 @@ public Action Team_Yeah(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dumau");
 		ServerCommand("mp_teamlogo_2 yeah");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2835,7 +2835,7 @@ public Action Team_Singularity(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2846,7 +2846,7 @@ public Action Team_Singularity(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Celrate");
 		ServerCommand("mp_teamlogo_1 sing");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2857,7 +2857,7 @@ public Action Team_Singularity(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Celrate");
 		ServerCommand("mp_teamlogo_2 sing");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2865,7 +2865,7 @@ public Action Team_DETONA(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2876,7 +2876,7 @@ public Action Team_DETONA(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "zevy");
 		ServerCommand("mp_teamlogo_1 deto");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2887,7 +2887,7 @@ public Action Team_DETONA(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "zevy");
 		ServerCommand("mp_teamlogo_2 deto");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2895,7 +2895,7 @@ public Action Team_Infinity(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2906,7 +2906,7 @@ public Action Team_Infinity(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "points");
 		ServerCommand("mp_teamlogo_1 infi");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2917,7 +2917,7 @@ public Action Team_Infinity(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "points");
 		ServerCommand("mp_teamlogo_2 infi");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2925,7 +2925,7 @@ public Action Team_Isurus(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2936,7 +2936,7 @@ public Action Team_Isurus(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "caike");
 		ServerCommand("mp_teamlogo_1 isu");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2947,7 +2947,7 @@ public Action Team_Isurus(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "caike");
 		ServerCommand("mp_teamlogo_2 isu");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2955,7 +2955,7 @@ public Action Team_paiN(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2966,7 +2966,7 @@ public Action Team_paiN(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "hardzao");
 		ServerCommand("mp_teamlogo_1 pain");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -2977,7 +2977,7 @@ public Action Team_paiN(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "hardzao");
 		ServerCommand("mp_teamlogo_2 pain");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -2985,7 +2985,7 @@ public Action Team_Sharks(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -2996,7 +2996,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Luken");
 		ServerCommand("mp_teamlogo_1 shark");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3007,7 +3007,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Luken");
 		ServerCommand("mp_teamlogo_2 shark");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3015,7 +3015,7 @@ public Action Team_One(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3026,7 +3026,7 @@ public Action Team_One(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "b4rtiN");
 		ServerCommand("mp_teamlogo_1 tone");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3037,7 +3037,7 @@ public Action Team_One(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "b4rtiN");
 		ServerCommand("mp_teamlogo_2 tone");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3045,7 +3045,7 @@ public Action Team_W7M(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3056,7 +3056,7 @@ public Action Team_W7M(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "realziN");
 		ServerCommand("mp_teamlogo_1 w7m");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3067,7 +3067,7 @@ public Action Team_W7M(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "realziN");
 		ServerCommand("mp_teamlogo_2 w7m");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3075,7 +3075,7 @@ public Action Team_Avant(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3086,7 +3086,7 @@ public Action Team_Avant(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "HaZR");
 		ServerCommand("mp_teamlogo_1 avant");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3097,7 +3097,7 @@ public Action Team_Avant(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "HaZR");
 		ServerCommand("mp_teamlogo_2 avant");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3105,7 +3105,7 @@ public Action Team_Chiefs(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3116,7 +3116,7 @@ public Action Team_Chiefs(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "soju_j");
 		ServerCommand("mp_teamlogo_1 chief");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3127,7 +3127,7 @@ public Action Team_Chiefs(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "soju_j");
 		ServerCommand("mp_teamlogo_2 chief");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3135,7 +3135,7 @@ public Action Team_ORDER(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3146,7 +3146,7 @@ public Action Team_ORDER(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Valiance");
 		ServerCommand("mp_teamlogo_1 order");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3157,7 +3157,7 @@ public Action Team_ORDER(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Valiance");
 		ServerCommand("mp_teamlogo_2 order");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3165,7 +3165,7 @@ public Action Team_SKADE(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3176,7 +3176,7 @@ public Action Team_SKADE(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "SPELLAN");
 		ServerCommand("mp_teamlogo_1 ska");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3187,7 +3187,7 @@ public Action Team_SKADE(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "SPELLAN");
 		ServerCommand("mp_teamlogo_2 ska");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3195,7 +3195,7 @@ public Action Team_Paradox(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3206,7 +3206,7 @@ public Action Team_Paradox(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "dangeR");
 		ServerCommand("mp_teamlogo_1 para");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3217,7 +3217,7 @@ public Action Team_Paradox(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dangeR");
 		ServerCommand("mp_teamlogo_2 para");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3225,7 +3225,7 @@ public Action Team_Beyond(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3236,7 +3236,7 @@ public Action Team_Beyond(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Geniuss");
 		ServerCommand("mp_teamlogo_1 bey");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3247,7 +3247,7 @@ public Action Team_Beyond(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Geniuss");
 		ServerCommand("mp_teamlogo_2 bey");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3255,7 +3255,7 @@ public Action Team_BOOM(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3266,7 +3266,7 @@ public Action Team_BOOM(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "felps");
 		ServerCommand("mp_teamlogo_1 boom");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3277,7 +3277,7 @@ public Action Team_BOOM(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "felps");
 		ServerCommand("mp_teamlogo_2 boom");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3285,7 +3285,7 @@ public Action Team_NASR(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3296,7 +3296,7 @@ public Action Team_NASR(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Just1ce");
 		ServerCommand("mp_teamlogo_1 nasr");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3307,7 +3307,7 @@ public Action Team_NASR(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Just1ce");
 		ServerCommand("mp_teamlogo_2 nasr");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3315,7 +3315,7 @@ public Action Team_TTT(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3326,7 +3326,7 @@ public Action Team_TTT(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "syncD");
 		ServerCommand("mp_teamlogo_1 ttt");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3337,7 +3337,7 @@ public Action Team_TTT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "syncD");
 		ServerCommand("mp_teamlogo_2 ttt");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3345,7 +3345,7 @@ public Action Team_SHIFT(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3356,7 +3356,7 @@ public Action Team_SHIFT(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Imcarnus");
 		ServerCommand("mp_teamlogo_1 shift");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3367,7 +3367,7 @@ public Action Team_SHIFT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Imcarnus");
 		ServerCommand("mp_teamlogo_2 shift");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3375,7 +3375,7 @@ public Action Team_nxl(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3386,7 +3386,7 @@ public Action Team_nxl(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "xera");
 		ServerCommand("mp_teamlogo_1 nxl");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3397,7 +3397,7 @@ public Action Team_nxl(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "xera");
 		ServerCommand("mp_teamlogo_2 nxl");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3405,7 +3405,7 @@ public Action Team_LLL(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
@@ -3416,7 +3416,7 @@ public Action Team_LLL(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "FASHR");
 		ServerCommand("mp_teamlogo_1 lll");
 	}
-	
+
 	if(strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
@@ -3427,7 +3427,7 @@ public Action Team_LLL(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "FASHR");
 		ServerCommand("mp_teamlogo_2 lll");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3435,7 +3435,7 @@ public Action Team_energy(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3446,7 +3446,7 @@ public Action Team_energy(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "mango");
 		ServerCommand("mp_teamlogo_1 ener");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3457,7 +3457,7 @@ public Action Team_energy(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "mango");
 		ServerCommand("mp_teamlogo_2 ener");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3465,7 +3465,7 @@ public Action Team_Furious(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3476,7 +3476,7 @@ public Action Team_Furious(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "pablek");
 		ServerCommand("mp_teamlogo_1 furio");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3487,7 +3487,7 @@ public Action Team_Furious(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "pablek");
 		ServerCommand("mp_teamlogo_2 furio");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3495,7 +3495,7 @@ public Action Team_GroundZero(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3506,7 +3506,7 @@ public Action Team_GroundZero(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Mayker");
 		ServerCommand("mp_teamlogo_1 ground");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3517,7 +3517,7 @@ public Action Team_GroundZero(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Mayker");
 		ServerCommand("mp_teamlogo_2 ground");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3525,7 +3525,7 @@ public Action Team_AVEZ(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3536,7 +3536,7 @@ public Action Team_AVEZ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "nawrot");
 		ServerCommand("mp_teamlogo_1 avez");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3547,7 +3547,7 @@ public Action Team_AVEZ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "nawrot");
 		ServerCommand("mp_teamlogo_2 avez");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3555,7 +3555,7 @@ public Action Team_GTZ(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3566,7 +3566,7 @@ public Action Team_GTZ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "fakes2");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3577,7 +3577,7 @@ public Action Team_GTZ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "fakes2");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3585,7 +3585,7 @@ public Action Team_x6tence(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3596,7 +3596,7 @@ public Action Team_x6tence(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Nodios");
 		ServerCommand("mp_teamlogo_1 x6t");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3607,7 +3607,7 @@ public Action Team_x6tence(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Nodios");
 		ServerCommand("mp_teamlogo_2 x6t");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3615,7 +3615,7 @@ public Action Team_K23(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3626,7 +3626,7 @@ public Action Team_K23(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Keoz");
 		ServerCommand("mp_teamlogo_1 k23");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3637,7 +3637,7 @@ public Action Team_K23(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Keoz");
 		ServerCommand("mp_teamlogo_2 k23");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3645,7 +3645,7 @@ public Action Team_Goliath(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3656,7 +3656,7 @@ public Action Team_Goliath(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "ZipZip");
 		ServerCommand("mp_teamlogo_1 gol");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3667,7 +3667,7 @@ public Action Team_Goliath(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "ZipZip");
 		ServerCommand("mp_teamlogo_2 gol");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -3675,7 +3675,7 @@ public Action Team_Secret(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
-	
+
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
@@ -3686,7 +3686,7 @@ public Action Team_Secret(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "anarkez");
 		ServerCommand("mp_teamlogo_1 secr");
 	}
-	
+
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
@@ -3697,7 +3697,7 @@ public Action Team_Secret(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "anarkez");
 		ServerCommand("mp_teamlogo_2 secr");
 	}
-	
+
 	return Plugin_Handled;
 }
 
@@ -5654,10 +5654,10 @@ public Action Team_CeX(int client, int iArgs)
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
-	
+
 	GameRules_SetProp("m_bIsValveDS", 1);
 	GameRules_SetProp("m_bIsQuestEligible", 1);
-	
+
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
@@ -5672,13 +5672,13 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = view_as<bool>(GetEntProp(i, Prop_Send, "m_bInBuyZone"));
-			
+
 			if(Math_GetRandomInt(1,100) <= 5)
 			{
 				FakeClientCommand(i, "+lookatweapon");
 				FakeClientCommand(i, "-lookatweapon");
 			}
-			
+
 			if(iAccount == 800 && bInBuyZone)
 			{
 				FakeClientCommand(i, "buy vest");
@@ -5689,14 +5689,14 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				{
 					FakeClientCommand(i, "buy vesthelm");
 				}
-				
-				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0) 
+
+				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0)
 				{
 					FakeClientCommand(i, "buy defuser");
 				}
 			}
 		}
-	}	
+	}
 }
 
 public void OnMapEnd()
@@ -5713,7 +5713,7 @@ public void OnClientPostAdminCheck(int client)
 		char szBotName[MAX_NAME_LENGTH];
 		GetClientName(client, szBotName, sizeof(szBotName));
 		g_bIsProBot[client] = false;
-		
+
 		for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
 		{
 			if(strcmp(szBotName, g_szBotName[i]) == 0)
@@ -5721,27 +5721,27 @@ public void OnClientPostAdminCheck(int client)
 				g_bIsProBot[client] = true;
 			}
 		}
-		
+
 		Pro_Players(szBotName, client);
-		
+
 		SetCustomPrivateRank(client);
-		
+
 		g_iUSPChance[client] = Math_GetRandomInt(1,100);
 		g_iM4A1SChance[client] = Math_GetRandomInt(1,100);
-		
+
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
-{	
+{
 	g_bFreezetimeEnd = false;
 	g_bBombPlanted = false;
 	g_iRoundStartedTime = GetTime();
-	
-	
+
+
 	for (int i = 1; i <= MaxClients; i++)
-	{				
+	{
 		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
 			g_bHasThrownNade[i] = false;
@@ -5757,7 +5757,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	CreateTimer(0.1, Timer_FreezetimeEnd);
-	
+
 	if(strcmp(g_szMap, "de_mirage") == 0)
 	{
 		g_iRndExecute = Math_GetRandomInt(1,3);
@@ -5770,11 +5770,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		g_iRndExecute = Math_GetRandomInt(1,3);
 	}
-	
+
 	int[] clients = new int[MaxClients];
 
 	Client_Get(clients, CLIENTFILTER_TEAMONE);
-	
+
 	if(strcmp(g_szMap, "de_mirage") == 0)
 	{
 		switch(g_iRndExecute)
@@ -5786,24 +5786,24 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 3; //A Execute
 				g_iSmoke[clients[3]] = 0; //A Execute
 				g_iSmoke[clients[4]] = 0; //A Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //A Execute
 				g_iPositionToHold[clients[1]] = 0; //A Execute
 				g_iPositionToHold[clients[2]] = 0; //A Execute
 				g_iPositionToHold[clients[3]] = 1; //A Execute
 				g_iPositionToHold[clients[4]] = 2; //A Execute
-				
+
 				int iRampAreaIDs[] = {
 					2805, 341, 3507, 2854, 2852
 				};
-				
+
 				int iPalaceAreaIDs[] = {
 					3468, 203, 3465, 96, 3475, 3476, 3463, 147, 146
 				};
-				
+
 				navArea[clients[3]] = NavMesh_FindAreaByID(iRampAreaIDs[Math_GetRandomInt(0, sizeof(iRampAreaIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iPalaceAreaIDs[Math_GetRandomInt(0, sizeof(iPalaceAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5814,7 +5814,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 6; //Mid Execute
 				g_iSmoke[clients[3]] = 7; //Mid Execute
 				g_iSmoke[clients[4]] = 8; //Mid Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //Mid Execute
 				g_iPositionToHold[clients[1]] = 0; //Mid Execute
 				g_iPositionToHold[clients[2]] = 0; //Mid Execute
@@ -5828,17 +5828,17 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 11; //B Execute
 				g_iSmoke[clients[3]] = 12; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //B Execute
 				g_iPositionToHold[clients[1]] = 0; //B Execute
 				g_iPositionToHold[clients[2]] = 0; //B Execute
 				g_iPositionToHold[clients[3]] = 0; //B Execute
 				g_iPositionToHold[clients[4]] = 3; //B Execute
-				
+
 				int iUnderpassAreaIDs[] = {
 					921, 270, 885
 				};
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iUnderpassAreaIDs[Math_GetRandomInt(0, sizeof(iUnderpassAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5855,24 +5855,24 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 3; //B Execute
 				g_iSmoke[clients[3]] = 0; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //B Execute
 				g_iPositionToHold[clients[1]] = 0; //B Execute
 				g_iPositionToHold[clients[2]] = 0; //B Execute
 				g_iPositionToHold[clients[3]] = 1; //B Execute
 				g_iPositionToHold[clients[4]] = 2; //B Execute
-				
+
 				int iLowerTunnelAreaIDs[] = {
 					7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641, 6669, 6625, 6618, 6653, 6635, 1373, 6649, 6623, 505, 521, 558
 				};
-				
+
 				int iBAreaIDs[] = {
 					8224, 1230, 7957
 				};
-				
+
 				navArea[clients[3]] = NavMesh_FindAreaByID(iLowerTunnelAreaIDs[Math_GetRandomInt(0, sizeof(iLowerTunnelAreaIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5883,31 +5883,31 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 0; //Mid to B Execute
 				g_iSmoke[clients[3]] = 0; //Mid to B Execute
 				g_iSmoke[clients[4]] = 0; //Mid to B Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //Mid to B Execute
 				g_iPositionToHold[clients[1]] = 0; //Mid to B Execute
 				g_iPositionToHold[clients[2]] = 3; //Mid to B Execute
 				g_iPositionToHold[clients[3]] = 4; //Mid to B Execute
 				g_iPositionToHold[clients[4]] = 5; //Mid to B Execute
-				
+
 				int iLongPushAreaIDs[] = {
 					7789, 7788, 7791, 7801, 7790
 				};
-				
+
 				int iShortPushAreaIDs[] = {
 					8776, 9127, 9126, 317, 8112, 8113
 				};
-				
+
 				int iMidAreaIDs[] = {
 					8020, 5241, 5319, 5268
 				};
-				
+
 				navArea[clients[2]] = NavMesh_FindAreaByID(iLongPushAreaIDs[Math_GetRandomInt(0, sizeof(iLongPushAreaIDs) - 1)]);
 				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
-				
+
 				navArea[clients[3]] = NavMesh_FindAreaByID(iShortPushAreaIDs[Math_GetRandomInt(0, sizeof(iShortPushAreaIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5918,17 +5918,17 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 8; //Short A Execute
 				g_iSmoke[clients[3]] = 9; //Short A Execute
 				g_iSmoke[clients[4]] = 0; //Short A Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //Short A Execute
 				g_iPositionToHold[clients[1]] = 0; //Short A Execute
 				g_iPositionToHold[clients[2]] = 0; //Short A Execute
 				g_iPositionToHold[clients[3]] = 0; //Short A Execute
 				g_iPositionToHold[clients[4]] = 6; //Short A Execute
-				
+
 				int iMidAreaIDs[] = {
 					7566, 7558, 4051, 7581, 4139
 				};
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5939,24 +5939,24 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 12; //Long A Execute
 				g_iSmoke[clients[3]] = 0; //Long A Execute
 				g_iSmoke[clients[4]] = 0; //Long A Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //Long A Execute
 				g_iPositionToHold[clients[1]] = 0; //Long A Execute
 				g_iPositionToHold[clients[2]] = 0; //Long A Execute
 				g_iPositionToHold[clients[3]] = 7; //Long A Execute
 				g_iPositionToHold[clients[4]] = 8; //Long A Execute
-				
+
 				int iMidPushAreaIDs[] = {
 					7342, 7343, 7348, 5370
 				};
-				
+
 				int iLongAreaIDs[] = {
 					3661, 9156, 9155, 3698, 9154, 9153, 3659
 				};
-				
+
 				navArea[clients[3]] = NavMesh_FindAreaByID(iMidPushAreaIDs[Math_GetRandomInt(0, sizeof(iMidPushAreaIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iLongAreaIDs[Math_GetRandomInt(0, sizeof(iLongAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -5973,31 +5973,31 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 0; //B Execute
 				g_iSmoke[clients[3]] = 0; //B Execute
 				g_iSmoke[clients[4]] = 0; //B Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //B Execute
 				g_iPositionToHold[clients[1]] = 0; //B Execute
 				g_iPositionToHold[clients[2]] = 1; //B Execute
 				g_iPositionToHold[clients[3]] = 2; //B Execute
 				g_iPositionToHold[clients[4]] = 3; //B Execute
-				
+
 				int iCTIDs[] = {
 					9, 3214, 3212, 507, 1823
 				};
-				
+
 				int iCTPushIDs[] = {
 					118, 1824, 367, 1820, 1256
 				};
-				
+
 				int iBottomBananaIDs[] = {
 					975, 313, 3353, 973, 56
 				};
-				
+
 				navArea[clients[2]] = NavMesh_FindAreaByID(iCTIDs[Math_GetRandomInt(0, sizeof(iCTIDs) - 1)]);
 				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
-				
+
 				navArea[clients[3]] = NavMesh_FindAreaByID(iCTPushIDs[Math_GetRandomInt(0, sizeof(iCTPushIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(iBottomBananaIDs[Math_GetRandomInt(0, sizeof(iBottomBananaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -6008,13 +6008,13 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 5; //A Short/Apps Execute
 				g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
 				g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //A Short/Apps Execute
 				g_iPositionToHold[clients[1]] = 0; //A Short/Apps Execute
 				g_iPositionToHold[clients[2]] = 0; //A Short/Apps Execute
 				g_iPositionToHold[clients[3]] = 0; //A Short/Apps Execute
 				g_iPositionToHold[clients[4]] = 4; //A Short/Apps Execute
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -6025,13 +6025,13 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 				g_iSmoke[clients[2]] = 9; //A Long Execute
 				g_iSmoke[clients[3]] = 10; //A Long Execute
 				g_iSmoke[clients[4]] = 0; //A Long Execute
-				
+
 				g_iPositionToHold[clients[0]] = 0; //A Long Execute
 				g_iPositionToHold[clients[1]] = 0; //A Long Execute
 				g_iPositionToHold[clients[2]] = 0; //A Long Execute
 				g_iPositionToHold[clients[3]] = 0; //A Long Execute
 				g_iPositionToHold[clients[4]] = 4; //A Long Execute
-				
+
 				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 			}
@@ -6065,41 +6065,41 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &inflictor, float
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 {
 	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{	
+	{
 		if(strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0
-		|| strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
+			|| strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
 		{
 			return Plugin_Continue;
 		}
 		else if(GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0
-		|| strcmp(szWeapon, "m4a1") == 0	|| strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
-		|| strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
-		|| strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
-		|| strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
+				|| strcmp(szWeapon, "m4a1") == 0	|| strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
+				|| strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
+				|| strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
+				|| strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
 		{
 			return Plugin_Handled;
 		}
-	
+
 		int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
-		
+
 		if(strcmp(szWeapon, "m4a1") == 0)
 		{
 			if(g_iM4A1SChance[client] <= 30)
 			{
 				CSGO_SetMoney(client, iAccount - 2900);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
-				
-				return Plugin_Changed; 
+
+				return Plugin_Changed;
 			}
-			
+
 			if(Math_GetRandomInt(1,100) <= 5)
 			{
 				CSGO_SetMoney(client, iAccount - 3300);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
-				
-				return Plugin_Changed; 
+
+				return Plugin_Changed;
 			}
-			
+
 			return Plugin_Continue;
 		}
 		else if(strcmp(szWeapon, "ak47") == 0)
@@ -6108,8 +6108,8 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			{
 				CSGO_SetMoney(client, iAccount - 3000);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_sg556");
-				
-				return Plugin_Changed; 
+
+				return Plugin_Changed;
 			}
 		}
 		else if(strcmp(szWeapon, "mac10") == 0)
@@ -6118,8 +6118,8 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			{
 				CSGO_SetMoney(client, iAccount - 1800);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
-				
-				return Plugin_Changed; 
+
+				return Plugin_Changed;
 			}
 			else
 			{
@@ -6132,8 +6132,8 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			{
 				CSGO_SetMoney(client, iAccount - 2050);
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
-				
-				return Plugin_Changed; 
+
+				return Plugin_Changed;
 			}
 			else
 			{
@@ -6161,21 +6161,21 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 {
 	if(g_bIsProBot[client])
 	{
-		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		if (iActiveWeapon == -1)  return MRES_Ignored;
-		
+
 		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		int iEnt = -1;
 		float fTargetEyes[3];
-		
+
 		fTargetEyes = SelectBestTargetPos(client, iEnt);
-		
+
 		if(iEnt == -1 || fTargetEyes[2] == 0)
 		{
 			g_bCanAttack[client] = false;
 			return MRES_Ignored;
 		}
-		
+
 		if(g_bCanAttack[client])
 		{
 			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
@@ -6185,13 +6185,13 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					if(Math_GetRandomInt(1,100) <= 45)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
-						
+
 						if(iBone < 0)
-							return MRES_Ignored;
-							
+						return MRES_Ignored;
+
 						float fBody[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
+
 						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
@@ -6206,13 +6206,13 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					if(Math_GetRandomInt(1,100) <= 45)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
-						
+
 						if(iBone < 0)
-							return MRES_Ignored;
-							
+						return MRES_Ignored;
+
 						float fBody[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
+
 						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
@@ -6227,13 +6227,13 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					if(Math_GetRandomInt(1,100) <= 35)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
-						
+
 						if(iBone < 0)
-							return MRES_Ignored;
-							
+						return MRES_Ignored;
+
 						float fBody[3], fBad[3];
 						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
+
 						if(BotIsVisible(client, fBody, false, -1))
 						{
 							fTargetEyes = fBody;
@@ -6242,16 +6242,16 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 				}
 			}
 			else if(iDefIndex == 9)
-			{			
+			{
 				if(g_bIsHeadVisible[client])
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					if(iBone < 0)
-						return MRES_Ignored;
-						
+					return MRES_Ignored;
+
 					float fBody[3], fBad[3];
 					GetBonePosition(iEnt, iBone, fBody, fBad);
-					
+
 					if(BotIsVisible(client, fBody, false, -1))
 					{
 						fTargetEyes = fBody;
@@ -6262,114 +6262,114 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				return MRES_Ignored;
 			}
-			
+
 			SetEntDataFloat(client, g_iBotTargetSpotXOffset, fTargetEyes[0]);
 			SetEntDataFloat(client, g_iBotTargetSpotYOffset, fTargetEyes[1]);
 			SetEntDataFloat(client, g_iBotTargetSpotZOffset, fTargetEyes[2]);
 		}
 	}
-	
+
 	return MRES_Ignored;
 }
 
 public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 {
 	char szDesc[64];
-	
+
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
-	
-	if(strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0 
-	|| strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Avoid Flashbang") == 0)
+
+	if(strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
+		|| strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
 		return MRES_Ignored;
 	}
 	else if(strcmp(szDesc, "GrenadeThrowBend") == 0)
 	{
 		float fPos[3];
-		
+
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += Math_GetRandomFloat(25.0, 100.0);
 		DHookSetParamVector(hParams, 2, fPos);
-		
+
 		return MRES_ChangedHandled;
 	}
 	else
 	{
 		float fPos[3];
-		
+
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 30.0;
 		DHookSetParamVector(hParams, 2, fPos);
-		
+
 		return MRES_ChangedHandled;
 	}
 }
 
 public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
-{		
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+{
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	if (iActiveWeapon == -1)  return MRES_Ignored;
-	
+
 	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	
+
 	if((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex))
 	{
 		FakeClientCommandEx(client, "use weapon_knife");
 	}
-	
+
 	char szBotName[MAX_NAME_LENGTH];
 	GetClientName(client, szBotName, sizeof(szBotName));
-	
+
 	for(int i = 0; i <= sizeof(g_szBotName) - 1; i++)
 	{
 		if(strcmp(szBotName, g_szBotName[i]) == 0)
 		{
 			int iPlantedC4 = GetNearestEntity(client, "planted_c4");
-			
+
 			if(IsValidEntity(iPlantedC4) && GetClientTeam(client) == CS_TEAM_CT)
 			{
 				float fPlantedC4Location[3];
 				GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
-				
+
 				float fClientLocation[3];
 				GetClientAbsOrigin(client, fClientLocation);
 
-				float fPlantedC4Distance;					
-				
+				float fPlantedC4Distance;
+
 				fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
-				
+
 				if(fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 				{
 					FakeClientCommandEx(client, "use weapon_knife");
 				}
 			}
-			
+
 			int iHostage = GetNearestEntity(client, "hostage_entity");
 			float fHostageDistance;
-			
+
 			if(IsValidEntity(iHostage) && GetClientTeam(client) == CS_TEAM_CT)
 			{
 				float fHostageLocation[3];
 				GetEntPropVector(iHostage, Prop_Send, "m_vecOrigin", fHostageLocation);
-				
+
 				float fClientLocation[3];
-				GetClientAbsOrigin(client, fClientLocation);		
-				
+				GetClientAbsOrigin(client, fClientLocation);
+
 				fHostageDistance = GetVectorDistance(fClientLocation, fHostageLocation);
 			}
-			
+
 			if(g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && !BotIsHiding(client) && (fHostageDistance > 100.0 || !IsValidEntity(iHostage)))
 			{
 				//Rifles
-				int iAK47 = GetNearestEntity(client, "weapon_ak47"); 
-				int iM4A1 = GetNearestEntity(client, "weapon_m4a1"); 
+				int iAK47 = GetNearestEntity(client, "weapon_ak47");
+				int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 				int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 				int iPrimaryDefIndex;
-				
+
 				if(IsValidEntity(iAK47))
 				{
 					float fAK47Location[3];
-					
+
 					if(iPrimary != -1)
 					{
 						iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
@@ -6378,7 +6378,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 					if(iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9)
 					{
 						GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
-						
+
 						if(fAK47Location[0] != 0.0 && fAK47Location[1] != 0.0 && fAK47Location[2] != 0.0)
 						{
 							float fClientLocation[3];
@@ -6392,12 +6392,12 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 					}
 					else if(iPrimary == -1)
 					{
-						GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);		
-						
+						GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
+
 						if(fAK47Location[0] != 0.0 && fAK47Location[1] != 0.0 && fAK47Location[2] != 0.0)
 						{
 							float fClientLocation[3];
-							GetClientAbsOrigin(client, fClientLocation);		
+							GetClientAbsOrigin(client, fClientLocation);
 
 							if(GetVectorDistance(fClientLocation, fAK47Location) < 500.0)
 							{
@@ -6406,11 +6406,11 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				if(IsValidEntity(iM4A1))
 				{
 					float fM4A1Location[3];
-					
+
 					if(iPrimary != -1)
 					{
 						iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
@@ -6419,7 +6419,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 					if(iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9 && iPrimaryDefIndex != 16 && iPrimaryDefIndex != 60)
 					{
 						GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
-						
+
 						if(fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
 						{
 							float fClientLocation[3];
@@ -6428,7 +6428,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 							if(GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
 							{
 								BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fM4A1Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
@@ -6438,8 +6438,8 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 					}
 					else if(iPrimary == -1)
 					{
-						GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);		
-						
+						GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
+
 						if(fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
 						{
 							float fClientLocation[3];
@@ -6452,38 +6452,38 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				//Pistols
-				int iUSP = GetNearestEntity(client, "weapon_hkp2000"); 
-				int iP250 = GetNearestEntity(client, "weapon_p250"); 
-				int iFiveSeven = GetNearestEntity(client, "weapon_fiveseven"); 
-				int iTec9 = GetNearestEntity(client, "weapon_tec9"); 
-				int iDeagle = GetNearestEntity(client, "weapon_deagle"); 
+				int iUSP = GetNearestEntity(client, "weapon_hkp2000");
+				int iP250 = GetNearestEntity(client, "weapon_p250");
+				int iFiveSeven = GetNearestEntity(client, "weapon_fiveseven");
+				int iTec9 = GetNearestEntity(client, "weapon_tec9");
+				int iDeagle = GetNearestEntity(client, "weapon_deagle");
 				int iSecondary = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 				int iSecondaryDefIndex;
-				
+
 				if(IsValidEntity(iDeagle))
 				{
 					float fDeagleLocation[3];
-					
+
 					if(iSecondary != -1)
 					{
 						iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-					}	
-					
+					}
+
 					if(iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36 || iSecondaryDefIndex == 30 || iSecondaryDefIndex == 3 || iSecondaryDefIndex == 63)
 					{
-						GetEntPropVector(iDeagle, Prop_Send, "m_vecOrigin", fDeagleLocation);	
-						
+						GetEntPropVector(iDeagle, Prop_Send, "m_vecOrigin", fDeagleLocation);
+
 						if(fDeagleLocation[0] != 0.0 && fDeagleLocation[1] != 0.0 && fDeagleLocation[2] != 0.0)
 						{
 							float fClientLocation[3];
-							GetClientAbsOrigin(client, fClientLocation);	
-							
+							GetClientAbsOrigin(client, fClientLocation);
+
 							if(GetVectorDistance(fClientLocation, fDeagleLocation) < 500.0)
 							{
 								BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fDeagleLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
@@ -6492,29 +6492,29 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				if(IsValidEntity(iTec9))
 				{
 					float fTec9Location[3];
-					
+
 					if(iSecondary != -1)
 					{
 						iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-					}	
-					
+					}
+
 					if(iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 					{
-						GetEntPropVector(iTec9, Prop_Send, "m_vecOrigin", fTec9Location);	
-						
+						GetEntPropVector(iTec9, Prop_Send, "m_vecOrigin", fTec9Location);
+
 						if(fTec9Location[0] != 0.0 && fTec9Location[1] != 0.0 && fTec9Location[2] != 0.0)
 						{
 							float fClientLocation[3];
 							GetClientAbsOrigin(client, fClientLocation);
-							
+
 							if(GetVectorDistance(fClientLocation, fTec9Location) < 500.0)
 							{
 								BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fTec9Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
@@ -6523,29 +6523,29 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				if(IsValidEntity(iFiveSeven))
 				{
 					float fFiveSevenLocation[3];
-					
+
 					if(iSecondary != -1)
 					{
 						iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-					}	
-					
+					}
+
 					if(iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 					{
-						GetEntPropVector(iFiveSeven, Prop_Send, "m_vecOrigin", fFiveSevenLocation);	
-						
+						GetEntPropVector(iFiveSeven, Prop_Send, "m_vecOrigin", fFiveSevenLocation);
+
 						if(fFiveSevenLocation[0] != 0.0 && fFiveSevenLocation[1] != 0.0 && fFiveSevenLocation[2] != 0.0)
 						{
 							float fClientLocation[3];
-							GetClientAbsOrigin(client, fClientLocation);	
-							
+							GetClientAbsOrigin(client, fClientLocation);
+
 							if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 500.0)
 							{
 								BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fFiveSevenLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
@@ -6554,29 +6554,29 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				if(IsValidEntity(iP250))
 				{
 					float fP250Location[3];
-					
+
 					if(iSecondary != -1)
 					{
 						iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-					}	
-					
+					}
+
 					if(iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61)
 					{
-						GetEntPropVector(iP250, Prop_Send, "m_vecOrigin", fP250Location);	
-						
+						GetEntPropVector(iP250, Prop_Send, "m_vecOrigin", fP250Location);
+
 						if(fP250Location[0] != 0.0 && fP250Location[1] != 0.0 && fP250Location[2] != 0.0)
 						{
 							float fClientLocation[3];
 							GetClientAbsOrigin(client, fClientLocation);
-							
+
 							if(GetVectorDistance(fClientLocation, fP250Location) < 500.0)
 							{
 								BotMoveTo(client, fP250Location, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fP250Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
@@ -6585,29 +6585,29 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 						}
 					}
 				}
-				
+
 				if(IsValidEntity(iUSP))
 				{
 					float fUSPLocation[3];
-					
+
 					if(iSecondary != -1)
 					{
 						iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-					}	
-					
+					}
+
 					if(iSecondaryDefIndex == 4)
 					{
-						GetEntPropVector(iUSP, Prop_Send, "m_vecOrigin", fUSPLocation);	
-						
+						GetEntPropVector(iUSP, Prop_Send, "m_vecOrigin", fUSPLocation);
+
 						if(fUSPLocation[0] != 0.0 && fUSPLocation[1] != 0.0 && fUSPLocation[2] != 0.0)
 						{
 							float fClientLocation[3];
-							GetClientAbsOrigin(client, fClientLocation);	
-							
+							GetClientAbsOrigin(client, fClientLocation);
+
 							if(GetVectorDistance(fClientLocation, fUSPLocation) < 500.0)
 							{
 								BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
-								
+
 								if(GetVectorDistance(fClientLocation, fUSPLocation) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 								{
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false, false);
@@ -6617,9 +6617,9 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 					}
 				}
 			}
-			
+
 			if (g_bFreezetimeEnd && !g_bBombPlanted && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3)
-			{					
+			{
 				if(strcmp(g_szMap, "de_mirage") == 0)
 				{
 					DoMirageSmokes(client);
@@ -6635,59 +6635,59 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 			}
 		}
 	}
-	
+
 	return MRES_Ignored;
 }
 
 public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVel[3], float fAngles[3], int& iWeapon, int& iSubtype, int& iCmdNum, int& iTickCount, int& iSeed, int iMouse[2])
 {
 	if (!IsFakeClient(client)) return Plugin_Continue;
-	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	if (iActiveWeapon == -1)  return Plugin_Continue;
-	
+
 	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	
+
 	if(IsValidClient(client) && IsPlayerAlive(client))
-	{		
+	{
 		float fClientLoc[3];
-		
+
 		GetClientAbsOrigin(client, fClientLoc);
-		
+
 		CNavArea currAea = NavMesh_GetNearestArea(fClientLoc);
-		
+
 		if(currAea.Attributes & NAV_MESH_WALK)
 		{
 			iButtons |= IN_SPEED;
 			return Plugin_Changed;
 		}
-		
+
 		if(currAea.Attributes & NAV_MESH_RUN)
 		{
 			iButtons &= ~IN_SPEED;
 			return Plugin_Changed;
 		}
-		
+
 		if(g_bIsProBot[client])
-		{				
+		{
 			float fClientEyes[3], fTargetEyes[3];
-			GetClientEyePosition(client, fClientEyes);			
+			GetClientEyePosition(client, fClientEyes);
 			int iEnt = -1;
 			fTargetEyes = SelectBestTargetPos(client, iEnt);
-			
+
 			if(iEnt == -1 || fTargetEyes[2] == 0)
 			{
 				g_bCanAttack[client] = false;
 				return Plugin_Continue;
 			}
-			
+
 			if(g_bFreezetimeEnd && g_bCanAttack[client])
 			{
 				if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
 					BotEquipBestWeapon(client, true);
 				}
-				
+
 				if(IsPlayerReloading(client))
 				{
 					if(Math_GetRandomInt(1,100) <= 50)
@@ -6699,24 +6699,24 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						moveSide2(fVel, 250.0);
 					}
 				}
-				
+
 				if(GetEntityMoveType(client) == MOVETYPE_LADDER)
 				{
 					return Plugin_Continue;
 				}
-				
+
 				if(!(GetEntityFlags(client) & FL_ONGROUND))
 				{
 					return Plugin_Continue;
 				}
-				
+
 				if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 				{
 					if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
 					{
 						iButtons |= IN_ATTACK;
 					}
-					
+
 					if(IsTargetInSightRange(client, iEnt, 10.0) && !(GetEntityFlags(client) & FL_DUCKING))
 					{
 						fVel[0] = 0.0;
@@ -6748,18 +6748,18 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				{
 					return Plugin_Continue;
 				}
-				
+
 				BotAttack(client, iEnt);
-				
+
 				if (IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 					return Plugin_Changed;
 				}
-				
+
 				return Plugin_Changed;
 			}
-			
+
 			if(BotIsHiding(client) && g_iUncrouchChance[client] <= 50)
 			{
 				iButtons &= ~IN_DUCK;
@@ -6780,20 +6780,20 @@ public void CSU_OnThrowGrenade(int client, int iEntity, GrenadeType grenadeType,
 	}
 }
 
-public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcast) 
+public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcast)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
-			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(i)); 
-			
+			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(i));
+
 			if(g_iUSPChance[i] >= 25)
 			{
 				if(GetClientTeam(i) == CS_TEAM_CT)
 				{
 					char szUSP[32];
-					
+
 					GetClientWeapon(i, szUSP, sizeof(szUSP));
 
 					if(strcmp(szUSP, "weapon_hkp2000") == 0)
@@ -6806,7 +6806,7 @@ public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcas
 	}
 }
 
-public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial) 
+public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 {
 	int client = GetClientFromSerial(iSerial);
 
@@ -6815,20 +6815,20 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	if (iTeam < 2) return Plugin_Stop;
 
 	int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
-	
+
 	bool bInBuyZone = view_as<bool>(GetEntProp(client, Prop_Send, "m_bInBuyZone"));
-	
+
 	if (!bInBuyZone) return Plugin_Stop;
-	
+
 	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-	
+
 	char szDefaultPrimary[64];
 	GetClientWeapon(client, szDefaultPrimary, sizeof(szDefaultPrimary));
 
 	if((iAccount > 2000) && (iAccount < 3000) && iPrimary == -1 && (strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0))
-	{		
+	{
 		int iRndPistol = Math_GetRandomInt(1,3);
-		
+
 		switch(iRndPistol)
 		{
 			case 1:
@@ -6837,36 +6837,17 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 			}
 			case 2:
 			{
-				if(iTeam == CS_TEAM_CT)
+				int iCZ = Math_GetRandomInt(1,2);
+
+				switch(iCZ)
 				{
-					int iCZ = Math_GetRandomInt(1,2);
-					
-					switch(iCZ)
+					case 1:
 					{
-						case 1:
-						{
-							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_fiveseven");
-						}
-						case 2:
-						{
-							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
-						}
+						CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, (iTeam == CS_TEAM_CT) ? "weapon_fiveseven" : "weapon_tec9");
 					}
-				}
-				else if(iTeam == CS_TEAM_T)
-				{
-					int iCZ = Math_GetRandomInt(1,2);
-					
-					switch(iCZ)
+					case 2:
 					{
-						case 1:
-						{
-							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_tec9");
-						}
-						case 2:
-						{
-							CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
-						}
+						CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
 					}
 				}
 			}
@@ -6889,7 +6870,7 @@ public void OnClientDisconnect(int client)
 }
 
 public void eItems_OnItemsSynced()
-{	
+{
 	ServerCommand("changelevel %s", g_szMap);
 }
 
@@ -6897,53 +6878,53 @@ public void LoadSDK()
 {
 	Handle hGameConfig = LoadGameConfigFile("botstuff.games");
 	if (hGameConfig == INVALID_HANDLE)
-		SetFailState("Failed to find botstuff.games game config.");
-	
+	SetFailState("Failed to find botstuff.games game config.");
+
 	if((g_iBotTargetSpotXOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.x")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_targetSpot.x offset.");
 	}
-	
+
 	if((g_iBotTargetSpotYOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.y")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_targetSpot.y offset.");
 	}
-	
+
 	if((g_iBotTargetSpotZOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.z")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_targetSpot.z offset.");
 	}
-	
+
 	if((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
 	}
-	
-	
+
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
-	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");	
-	
+	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");
+
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 	if ((g_hLookupBone = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
 	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
 	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
@@ -6951,22 +6932,22 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsHiding = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
@@ -6977,7 +6958,7 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
-	
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::BendLineOfSight");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
@@ -6985,7 +6966,7 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == INVALID_HANDLE) SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
-	
+
 	delete hGameConfig;
 }
 
@@ -6997,30 +6978,30 @@ public void LoadDetours()
 		SetFailState("Failed to load botstuff gamedata.");
 		return;
 	}
-	
+
 	//CCSBot::Blind Detour
 	g_hBotBlindDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_Ignore);
 	if (!g_hBotBlindDetour)
-		SetFailState("Failed to setup detour for CCSBot::Blind");
+	SetFailState("Failed to setup detour for CCSBot::Blind");
 
 	if (!DHookSetFromConf(g_hBotBlindDetour, hGameData, SDKConf_Signature, "CCSBot::Blind"))
-		SetFailState("Failed to load CCSBot::Blind signature from gamedata");
+	SetFailState("Failed to load CCSBot::Blind signature from gamedata");
 
 	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // holdTime
 	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // fadeTime
 	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // startingAlpha
-	
+
 	if (!DHookEnableDetour(g_hBotBlindDetour, false, Detour_OnBOTBlind))
-		SetFailState("Failed to detour CCSBot::Blind.");
-	
+	SetFailState("Failed to detour CCSBot::Blind.");
+
 	//CCSBot::SetLookAt Detour
 	g_hBotSetLookAtDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
 	if (!g_hBotSetLookAtDetour)
-		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
+	SetFailState("Failed to setup detour for CCSBot::SetLookAt");
 
 	if (!DHookSetFromConf(g_hBotSetLookAtDetour, hGameData, SDKConf_Signature, "CCSBot::SetLookAt"))
-		SetFailState("Failed to load CCSBot::SetLookAt signature from gamedata");
-		
+	SetFailState("Failed to load CCSBot::SetLookAt signature from gamedata");
+
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_CharPtr); // desc
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_VectorPtr); // pos
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Int); // pri
@@ -7028,32 +7009,32 @@ public void LoadDetours()
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Bool); // clearIfClose
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Float); // angleTolerance
 	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Bool); // attack
-	
+
 	if (!DHookEnableDetour(g_hBotSetLookAtDetour, false, Detour_OnBOTSetLookAt))
-		SetFailState("Failed to detour CCSBot::SetLookAt.");
-		
+	SetFailState("Failed to detour CCSBot::SetLookAt.");
+
 	//CCSBot:Update Detour
 	g_hBotUpdateDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
 	if (!g_hBotUpdateDetour)
-		SetFailState("Failed to setup detour for CCSBot::Update");
+	SetFailState("Failed to setup detour for CCSBot::Update");
 
 	if (!DHookSetFromConf(g_hBotUpdateDetour, hGameData, SDKConf_Signature, "CCSBot::Update"))
-		SetFailState("Failed to load CCSBot::Update signature from gamedata");
-		
+	SetFailState("Failed to load CCSBot::Update signature from gamedata");
+
 	if (!DHookEnableDetour(g_hBotUpdateDetour, false, Detour_OnBOTUpdate))
-		SetFailState("Failed to detour CCSBot::Update.");
-		
+	SetFailState("Failed to detour CCSBot::Update.");
+
 	//CCSBot::PickNewAimSpot Detour
 	g_hBotPickNewAimSpotDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
 	if (!g_hBotPickNewAimSpotDetour)
-		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
+	SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
 
 	if (!DHookSetFromConf(g_hBotPickNewAimSpotDetour, hGameData, SDKConf_Signature, "CCSBot::PickNewAimSpot"))
-		SetFailState("Failed to load CCSBot::PickNewAimSpot signature from gamedata");
-		
+	SetFailState("Failed to load CCSBot::PickNewAimSpot signature from gamedata");
+
 	if (!DHookEnableDetour(g_hBotPickNewAimSpotDetour, true, Detour_OnBOTPickNewAimSpot))
-		SetFailState("Failed to detour CCSBot::PickNewAimSpot.");
-		
+	SetFailState("Failed to detour CCSBot::PickNewAimSpot.");
+
 	delete hGameData;
 }
 
@@ -7109,29 +7090,29 @@ public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAng
 
 public int GetNearestEntity(int client, char[] szClassname)
 {
-    int iNearestEntity = -1;
-    float fClientOrigin[3], fEntityOrigin[3];
-    
-    GetEntPropVector(client, Prop_Data, "m_vecOrigin", fClientOrigin); // Line 2607
-    
+	int iNearestEntity = -1;
+	float fClientOrigin[3], fEntityOrigin[3];
+
+	GetEntPropVector(client, Prop_Data, "m_vecOrigin", fClientOrigin); // Line 2607
+
     //Get the distance between the first entity and client
-    float fDistance, fNearestDistance = -1.0;
-    
+	float fDistance, fNearestDistance = -1.0;
+
     //Find all the entity and compare the distances
-    int iEntity = -1;
-    while ((iEntity = FindEntityByClassname(iEntity, szClassname)) != -1)
-    {
-        GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin); // Line 2610
-        fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
-        
-        if (fDistance < fNearestDistance || fNearestDistance == -1.0)
-        {
-            iNearestEntity = iEntity;
-            fNearestDistance = fDistance;
-        }
-    }
-    
-    return iNearestEntity;
+	int iEntity = -1;
+	while ((iEntity = FindEntityByClassname(iEntity, szClassname)) != -1)
+	{
+		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin); // Line 2610
+		fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
+
+		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
+		{
+			iNearestEntity = iEntity;
+			fNearestDistance = fDistance;
+		}
+	}
+
+	return iNearestEntity;
 }
 
 float moveSide(float fVel[3], float fMaxSpeed)
@@ -7149,13 +7130,13 @@ float moveSide2(float fVel[3],float fMaxSpeed)
 stock void CSGO_SetMoney(int client, int iAmount)
 {
 	if (iAmount < 0)
-		iAmount = 0;
-	
+	iAmount = 0;
+
 	int iMax = FindConVar("mp_maxmoney").IntValue;
-	
+
 	if (iAmount > iMax)
-		iAmount = iMax;
-	
+	iAmount = iMax;
+
 	SetEntProp(client, Prop_Send, "m_iAccount", iAmount);
 }
 
@@ -7166,7 +7147,7 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 	if (IsValidEntity(iWeapon))
 	{
 		if (GetEntPropEnt(iWeapon, Prop_Send, "m_hOwnerEntity") != client)
-			SetEntPropEnt(iWeapon, Prop_Send, "m_hOwnerEntity", client);
+		SetEntPropEnt(iWeapon, Prop_Send, "m_hOwnerEntity", client);
 
 		CS_DropWeapon(client, iWeapon, false, true);
 		AcceptEntityInput(iWeapon, "Kill");
@@ -7175,7 +7156,7 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 	iWeapon = GivePlayerItem(client, szClass);
 
 	if (IsValidEntity(iWeapon))
-		EquipPlayerWeapon(client, iWeapon);
+	EquipPlayerWeapon(client, iWeapon);
 
 	return iWeapon;
 }
@@ -7185,20 +7166,20 @@ bool IsPlayerReloading(int client)
 	int iPlayerWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 
 	if(!IsValidEntity(iPlayerWeapon))
-		return false;
-	
+	return false;
+
 	//Out of ammo?
 	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_iClip1") == 0)
-		return true;
-	
+	return true;
+
 	//Reloading?
 	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload"))
-		return true;
-	
+	return true;
+
 	//Ready to fire?
 	if(GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
-		return false;
-	
+	return false;
+
 	return true;
 }
 
@@ -7207,7 +7188,7 @@ stock int GetTotalRoundTime()
 	return GameRules_GetProp("m_iRoundTime");
 }
 
-stock int GetCurrentRoundTime() 
+stock int GetCurrentRoundTime()
 {
 	Handle hFreezeTime = FindConVar("mp_freezetime"); // Freezetime Handle
 	int iFreezeTime = GetConVarInt(hFreezeTime); // Freezetime in seconds (5 by default)
@@ -7236,203 +7217,203 @@ public Action Timer_FreezetimeEnd(Handle hTimer)
 
 float[] SelectBestTargetPos(int client, int &iBestEnemy)
 {
-	float fMyPos[3]; 
+	float fMyPos[3];
 	GetClientAbsOrigin(client, fMyPos);
 
 	float fTargetPos[3];
 	float fClosestDistance = 999999999999999.0;
-	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon"); 
+
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	int iDefIndex;
 	if (iActiveWeapon != -1)
 	{
 		iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	}
-	
+
 	char szClanTag[MAX_NAME_LENGTH];
-	
+
 	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if(i == client)
-			continue;
-		
+		continue;
+
 		if(!IsClientInGame(i))
-			continue;
-		
+		continue;
+
 		if(!IsPlayerAlive(i))
-			continue;
-		
+		continue;
+
 		if (GetEntProp(i, Prop_Send, "m_bGunGameImmunity"))
-			continue;
-		
+		continue;
+
 		if(GetClientTeam(i) == GetClientTeam(client))
-			continue;
-		
+		continue;
+
 		if(strcmp(szClanTag, "Gen.G") == 0) //30th
 		{
 			if (!IsTargetInSightRange(client, i, 50.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Endpoint") == 0) //29th
 		{
 			if (!IsTargetInSightRange(client, i, 60.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "NEW") == 0) //28th
 		{
 			if (!IsTargetInSightRange(client, i, 70.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "sAw") == 0) //27th
 		{
 			if (!IsTargetInSightRange(client, i, 80.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "ENCE") == 0) //26th
 		{
 			if (!IsTargetInSightRange(client, i, 90.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "forZe") == 0) //25th
 		{
 			if (!IsTargetInSightRange(client, i, 100.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "One") == 0) //24th
 		{
 			if (!IsTargetInSightRange(client, i, 110.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "North") == 0) //23rd
 		{
 			if (!IsTargetInSightRange(client, i, 120.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Nemiga") == 0) //22nd
 		{
 			if (!IsTargetInSightRange(client, i, 130.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Gambit") == 0) //21st
 		{
 			if (!IsTargetInSightRange(client, i, 140.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "GODSENT") == 0) //20th
 		{
 			if (!IsTargetInSightRange(client, i, 150.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Chaos") == 0) //19th
 		{
 			if (!IsTargetInSightRange(client, i, 160.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Spirit") == 0) //18th
 		{
 			if (!IsTargetInSightRange(client, i, 170.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Sprout") == 0) //17th
 		{
 			if (!IsTargetInSightRange(client, i, 180.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "mouz") == 0) //16th
 		{
 			if (!IsTargetInSightRange(client, i, 190.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "VP") == 0) //15th
 		{
 			if (!IsTargetInSightRange(client, i, 200.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "coL") == 0) //14th
 		{
 			if (!IsTargetInSightRange(client, i, 210.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "fnatic") == 0) //13th
 		{
 			if (!IsTargetInSightRange(client, i, 220.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Liquid") == 0) //12th
 		{
 			if (!IsTargetInSightRange(client, i, 230.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "NiP") == 0) //11th
 		{
 			if (!IsTargetInSightRange(client, i, 240.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "G2") == 0) //10th
 		{
 			if (!IsTargetInSightRange(client, i, 250.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "FaZe") == 0) //9th
 		{
 			if (!IsTargetInSightRange(client, i, 260.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "EG") == 0) //8th
 		{
 			if (!IsTargetInSightRange(client, i, 270.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "FURIA") == 0) //7th
 		{
 			if (!IsTargetInSightRange(client, i, 280.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "OG") == 0) //6th
 		{
 			if (!IsTargetInSightRange(client, i, 290.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "BIG") == 0) //5th
 		{
 			if (!IsTargetInSightRange(client, i, 300.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Na´Vi") == 0) //4th
 		{
 			if (!IsTargetInSightRange(client, i, 310.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Astralis") == 0) //3rd
 		{
 			if (!IsTargetInSightRange(client, i, 320.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Heroic") == 0) //2nd
 		{
 			if (!IsTargetInSightRange(client, i, 330.0))
-				continue;	
+			continue;
 		}
 		else if(strcmp(szClanTag, "Vitality") == 0) //1st
 		{
 			if (!IsTargetInSightRange(client, i, 340.0))
-				continue;	
+			continue;
 		}
 		else
 		{
 			if (!IsTargetInSightRange(client, i))
-				continue;
+			continue;
 		}
-		
+
 		int iBone = LookupBone(i, "head_0");
 		if(iBone < 0)
-			continue;
-			
+		continue;
+
 		float fHead[3], fBad[3];
 		GetBonePosition(i, iBone, fHead, fBad);
-		
+
 		if(BotIsVisible(client, fHead, false, -1))
 		{
 			g_bIsHeadVisible[client] = true;
@@ -7440,16 +7421,16 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 		else
 		{
 			bool bVisibleOther = false;
-		
+
 			//Head wasn't visible, check other bones.
 			for(int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
 			{
 				iBone = LookupBone(i, g_szBoneNames[b]);
 				if(iBone < 0)
-					continue;
-				
+				continue;
+
 				GetBonePosition(i, iBone, fHead, fBad);
-				
+
 				if(BotIsVisible(client, fHead, false, -1))
 				{
 					g_bIsHeadVisible[client] = false;
@@ -7457,22 +7438,22 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 					break;
 				}
 			}
-			
+
 			if(!bVisibleOther)
-				continue;
+			continue;
 		}
 
 		float fEnemyPos[3];
 		GetClientAbsOrigin(i, fEnemyPos);
-			
+
 		float fDistance = GetVectorDistance(fEnemyPos, fMyPos, true);
 		if(fDistance < fClosestDistance)
 		{
 			fClosestDistance = fDistance;
 			fTargetPos = fHead;
-			
+
 			iBestEnemy = i;
-			
+
 			if(iDefIndex == 9 || iDefIndex == 11 || iDefIndex == 38 || iDefIndex == 40)
 			{
 				g_bCanAttack[client] = true;
@@ -7483,70 +7464,70 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			}
 		}
 	}
-	
+
 	return fTargetPos;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
 {
 	if (fAngle > 360.0)
-		fAngle = 360.0;
-	
+	fAngle = 360.0;
+
 	if (fAngle < 0.0)
-		return false;
-	
+	return false;
+
 	float fClientPos[3];
 	float fTargetPos[3];
 	float fAngleVector[3];
 	float fTargetVector[3];
 	float fResultAngle;
 	float fResultDistance;
-	
+
 	GetClientEyeAngles(client, fAngleVector);
 	fAngleVector[0] = fAngleVector[2] = 0.0;
 	GetAngleVectors(fAngleVector, fAngleVector, NULL_VECTOR, NULL_VECTOR);
 	NormalizeVector(fAngleVector, fAngleVector);
 	if (bNegativeangle)
-		NegateVector(fAngleVector);
-	
+	NegateVector(fAngleVector);
+
 	GetClientAbsOrigin(client, fClientPos);
 	GetClientAbsOrigin(iTarget, fTargetPos);
-	
+
 	if (bHeightcheck && fDistance > 0)
-		fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-	
+	fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
+
 	fClientPos[2] = fTargetPos[2] = 0.0;
 	MakeVectorFromPoints(fClientPos, fTargetPos, fTargetVector);
 	NormalizeVector(fTargetVector, fTargetVector);
-	
+
 	fResultAngle = RadToDeg(ArcCosine(GetVectorDotProduct(fTargetVector, fAngleVector)));
-	
+
 	if (fResultAngle <= fAngle / 2)
 	{
 		if (fDistance > 0)
 		{
 			if (!bHeightcheck)
-				fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-			
+			fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
+
 			if (fDistance >= fResultDistance)
-				return true;
+			return true;
 			else return false;
 		}
 		else return true;
 	}
-	
+
 	return false;
 }
 
 stock int GetAliveTeamCount(int iTeam)
 {
-    int iNumber = 0;
-    for (int i=1; i<=MaxClients; i++)
-    {
-        if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == iTeam) 
-            iNumber++;
-    }
-    return iNumber;
+	int iNumber = 0;
+	for (int i=1; i<=MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == iTeam)
+		iNumber++;
+	}
+	return iNumber;
 }
 
 stock bool IsValidClient(int client)
@@ -7562,895 +7543,895 @@ public void Pro_Players(char[] szBotName, int client)
 	{
 		CS_SetClientClanTag(client, "MIBR");
 	}
-	
+
 	//FaZe Players
 	if((StrEqual(szBotName, "Kjaerbye")) || (StrEqual(szBotName, "broky")) || (StrEqual(szBotName, "olofmeister")) || (StrEqual(szBotName, "rain")) || (StrEqual(szBotName, "coldzera")))
 	{
 		CS_SetClientClanTag(client, "FaZe");
 	}
-	
+
 	//Astralis Players
 	if((StrEqual(szBotName, "gla1ve")) || (StrEqual(szBotName, "device")) || (StrEqual(szBotName, "Xyp9x")) || (StrEqual(szBotName, "Magisk")) || (StrEqual(szBotName, "dupreeh")))
 	{
 		CS_SetClientClanTag(client, "Astralis");
 	}
-	
+
 	//NiP Players
 	if((StrEqual(szBotName, "twist")) || (StrEqual(szBotName, "Plopski")) || (StrEqual(szBotName, "nawwk")) || (StrEqual(szBotName, "hampus")) || (StrEqual(szBotName, "REZ")))
 	{
 		CS_SetClientClanTag(client, "NiP");
 	}
-	
+
 	//C9 Players
 	if((StrEqual(szBotName, "ALEX")) || (StrEqual(szBotName, "es3tag")) || (StrEqual(szBotName, "mezii")) || (StrEqual(szBotName, "woxic")) || (StrEqual(szBotName, "floppy")))
 	{
 		CS_SetClientClanTag(client, "C9");
 	}
-	
+
 	//G2 Players
 	if((StrEqual(szBotName, "huNter-")) || (StrEqual(szBotName, "kennyS")) || (StrEqual(szBotName, "nexa")) || (StrEqual(szBotName, "NiKo")) || (StrEqual(szBotName, "AmaNEk")))
 	{
 		CS_SetClientClanTag(client, "G2");
 	}
-	
+
 	//fnatic Players
 	if((StrEqual(szBotName, "flusha")) || (StrEqual(szBotName, "JW")) || (StrEqual(szBotName, "KRIMZ")) || (StrEqual(szBotName, "Brollan")) || (StrEqual(szBotName, "Golden")))
 	{
 		CS_SetClientClanTag(client, "fnatic");
 	}
-	
+
 	//North Players
 	if((StrEqual(szBotName, "MSL")) || (StrEqual(szBotName, "Lekr0")) || (StrEqual(szBotName, "aizy")) || (StrEqual(szBotName, "cajunb")) || (StrEqual(szBotName, "gade")))
 	{
 		CS_SetClientClanTag(client, "North");
 	}
-	
+
 	//mouz Players
 	if((StrEqual(szBotName, "karrigan")) || (StrEqual(szBotName, "chrisJ")) || (StrEqual(szBotName, "Bymas")) || (StrEqual(szBotName, "frozen")) || (StrEqual(szBotName, "ropz")))
 	{
 		CS_SetClientClanTag(client, "mouz");
 	}
-	
+
 	//TYLOO Players
 	if((StrEqual(szBotName, "Summer")) || (StrEqual(szBotName, "Attacker")) || (StrEqual(szBotName, "SLOWLY")) || (StrEqual(szBotName, "somebody")) || (StrEqual(szBotName, "DANK1NG")))
 	{
 		CS_SetClientClanTag(client, "TYLOO");
 	}
-	
+
 	//EG Players
 	if((StrEqual(szBotName, "stanislaw")) || (StrEqual(szBotName, "tarik")) || (StrEqual(szBotName, "Brehze")) || (StrEqual(szBotName, "Ethan")) || (StrEqual(szBotName, "CeRq")))
 	{
 		CS_SetClientClanTag(client, "EG");
 	}
-	
+
 	//Vireo.Pro Players
 	if((StrEqual(szBotName, "Hendy")) || (StrEqual(szBotName, "armen")) || (StrEqual(szBotName, "vein")) || (StrEqual(szBotName, "walker")) || (StrEqual(szBotName, "Ryze")))
 	{
 		CS_SetClientClanTag(client, "Vireo.Pro");
 	}
-	
+
 	//Na´Vi Players
 	if((StrEqual(szBotName, "electronic")) || (StrEqual(szBotName, "s1mple")) || (StrEqual(szBotName, "flamie")) || (StrEqual(szBotName, "Boombl4")) || (StrEqual(szBotName, "Perfecto")))
 	{
 		CS_SetClientClanTag(client, "Na´Vi");
 	}
-	
+
 	//Liquid Players
 	if((StrEqual(szBotName, "Stewie2K")) || (StrEqual(szBotName, "NAF")) || (StrEqual(szBotName, "Grim")) || (StrEqual(szBotName, "ELiGE")) || (StrEqual(szBotName, "Twistzz")))
 	{
 		CS_SetClientClanTag(client, "Liquid");
 	}
-	
+
 	//AGO Players
 	if((StrEqual(szBotName, "Furlan")) || (StrEqual(szBotName, "GruBy")) || (StrEqual(szBotName, "dgl")) || (StrEqual(szBotName, "F1KU")) || (StrEqual(szBotName, "leman")))
 	{
 		CS_SetClientClanTag(client, "AGO");
 	}
-	
+
 	//ENCE Players
 	if((StrEqual(szBotName, "suNny")) || (StrEqual(szBotName, "Aerial")) || (StrEqual(szBotName, "allu")) || (StrEqual(szBotName, "sergej")) || (StrEqual(szBotName, "Jamppi")))
 	{
 		CS_SetClientClanTag(client, "ENCE");
 	}
-	
+
 	//Vitality Players
 	if((StrEqual(szBotName, "shox")) || (StrEqual(szBotName, "ZywOo")) || (StrEqual(szBotName, "apEX")) || (StrEqual(szBotName, "RpK")) || (StrEqual(szBotName, "Misutaaa")))
 	{
 		CS_SetClientClanTag(client, "Vitality");
 	}
-	
+
 	//BIG Players
 	if((StrEqual(szBotName, "tiziaN")) || (StrEqual(szBotName, "syrsoN")) || (StrEqual(szBotName, "XANTARES")) || (StrEqual(szBotName, "tabseN")) || (StrEqual(szBotName, "k1to")))
 	{
 		CS_SetClientClanTag(client, "BIG");
 	}
-	
+
 	//FURIA Players
 	if((StrEqual(szBotName, "yuurih")) || (StrEqual(szBotName, "arT")) || (StrEqual(szBotName, "VINI")) || (StrEqual(szBotName, "KSCERATO")) || (StrEqual(szBotName, "HEN1")))
 	{
 		CS_SetClientClanTag(client, "FURIA");
 	}
-	
+
 	//c0ntact Players
 	if((StrEqual(szBotName, "Snappi")) || (StrEqual(szBotName, "ottoNd")) || (StrEqual(szBotName, "rigoN")) || (StrEqual(szBotName, "Spinx")) || (StrEqual(szBotName, "EspiranTo")))
 	{
 		CS_SetClientClanTag(client, "c0ntact");
 	}
-	
+
 	//coL Players
 	if((StrEqual(szBotName, "k0nfig")) || (StrEqual(szBotName, "poizon")) || (StrEqual(szBotName, "jks")) || (StrEqual(szBotName, "RUSH")) || (StrEqual(szBotName, "blameF")))
 	{
 		CS_SetClientClanTag(client, "coL");
 	}
-	
+
 	//ViCi Players
 	if((StrEqual(szBotName, "zhokiNg")) || (StrEqual(szBotName, "kaze")) || (StrEqual(szBotName, "aumaN")) || (StrEqual(szBotName, "JamYoung")) || (StrEqual(szBotName, "advent")))
 	{
 		CS_SetClientClanTag(client, "ViCi");
 	}
-	
+
 	//forZe Players
 	if((StrEqual(szBotName, "facecrack")) || (StrEqual(szBotName, "xsepower")) || (StrEqual(szBotName, "FL1T")) || (StrEqual(szBotName, "almazer")) || (StrEqual(szBotName, "Jerry")))
 	{
 		CS_SetClientClanTag(client, "forZe");
 	}
-	
+
 	//Winstrike Players
 	if((StrEqual(szBotName, "Lack1")) || (StrEqual(szBotName, "KrizzeN")) || (StrEqual(szBotName, "NickelBack")) || (StrEqual(szBotName, "El1an")) || (StrEqual(szBotName, "bondik")))
 	{
 		CS_SetClientClanTag(client, "Winstrike");
 	}
-	
+
 	//Sprout Players
 	if((StrEqual(szBotName, "snatchie")) || (StrEqual(szBotName, "dycha")) || (StrEqual(szBotName, "Spiidi")) || (StrEqual(szBotName, "faveN")) || (StrEqual(szBotName, "denis")))
 	{
 		CS_SetClientClanTag(client, "Sprout");
 	}
-	
+
 	//Heroic Players
 	if((StrEqual(szBotName, "TeSeS")) || (StrEqual(szBotName, "b0RUP")) || (StrEqual(szBotName, "nikozan")) || (StrEqual(szBotName, "cadiaN")) || (StrEqual(szBotName, "stavn")))
 	{
 		CS_SetClientClanTag(client, "Heroic");
 	}
-	
+
 	//INTZ Players
 	if((StrEqual(szBotName, "guZERA")) || (StrEqual(szBotName, "BALEROSTYLE")) || (StrEqual(szBotName, "dukka")) || (StrEqual(szBotName, "paredao")) || (StrEqual(szBotName, "chara")))
 	{
 		CS_SetClientClanTag(client, "INTZ");
 	}
-	
+
 	//VP Players
 	if((StrEqual(szBotName, "YEKINDAR")) || (StrEqual(szBotName, "Jame")) || (StrEqual(szBotName, "qikert")) || (StrEqual(szBotName, "SANJI")) || (StrEqual(szBotName, "buster")))
 	{
 		CS_SetClientClanTag(client, "VP");
 	}
-	
+
 	//Apeks Players
 	if((StrEqual(szBotName, "Marcelious")) || (StrEqual(szBotName, "jkaem")) || (StrEqual(szBotName, "Grusarn")) || (StrEqual(szBotName, "Nasty")) || (StrEqual(szBotName, "dennis")))
 	{
 		CS_SetClientClanTag(client, "Apeks");
 	}
-	
+
 	//aTTaX Players
 	if((StrEqual(szBotName, "stfN")) || (StrEqual(szBotName, "slaxz")) || (StrEqual(szBotName, "ScrunK")) || (StrEqual(szBotName, "kressy")) || (StrEqual(szBotName, "mirbit")))
 	{
 		CS_SetClientClanTag(client, "aTTaX");
 	}
-	
+
 	//RNG Players
 	if((StrEqual(szBotName, "INS")) || (StrEqual(szBotName, "sico")) || (StrEqual(szBotName, "dexter")) || (StrEqual(szBotName, "Hatz")) || (StrEqual(szBotName, "malta")))
 	{
 		CS_SetClientClanTag(client, "RNG");
 	}
-	
+
 	//Envy Players
 	if((StrEqual(szBotName, "Nifty")) || (StrEqual(szBotName, "Thomas")) || (StrEqual(szBotName, "Calyx")) || (StrEqual(szBotName, "MICHU")) || (StrEqual(szBotName, "LEGIJA")))
 	{
 		CS_SetClientClanTag(client, "Envy");
 	}
-	
+
 	//Spirit Players
 	if((StrEqual(szBotName, "mir")) || (StrEqual(szBotName, "iDISBALANCE")) || (StrEqual(szBotName, "somedieyoung")) || (StrEqual(szBotName, "chopper")) || (StrEqual(szBotName, "magixx")))
 	{
 		CS_SetClientClanTag(client, "Spirit");
 	}
-	
+
 	//LDLC Players
 	if((StrEqual(szBotName, "afroo")) || (StrEqual(szBotName, "Lambert")) || (StrEqual(szBotName, "hAdji")) || (StrEqual(szBotName, "bodyy")) || (StrEqual(szBotName, "SIXER")))
 	{
 		CS_SetClientClanTag(client, "LDLC");
 	}
-	
+
 	//GamerLegion Players
 	if((StrEqual(szBotName, "dobbo")) || (StrEqual(szBotName, "eraa")) || (StrEqual(szBotName, "Zero")) || (StrEqual(szBotName, "RuStY")) || (StrEqual(szBotName, "Adam9130")))
 	{
 		CS_SetClientClanTag(client, "GamerLegion");
 	}
-	
+
 	//DIVIZON Players
 	if((StrEqual(szBotName, "devus")) || (StrEqual(szBotName, "akay")) || (StrEqual(szBotName, "striNg")) || (StrEqual(szBotName, "kryptoN")) || (StrEqual(szBotName, "bLooDyyY")))
 	{
 		CS_SetClientClanTag(client, "DIVIZON");
 	}
-	
+
 	//Wolsung Players
 	if((StrEqual(szBotName, "hyskeee")) || (StrEqual(szBotName, "rAW")) || (StrEqual(szBotName, "Gekons")) || (StrEqual(szBotName, "keen")) || (StrEqual(szBotName, "shield")))
 	{
 		CS_SetClientClanTag(client, "Wolsung");
 	}
-	
+
 	//PDucks Players
 	if((StrEqual(szBotName, "ChLo")) || (StrEqual(szBotName, "sTaR")) || (StrEqual(szBotName, "wizzem")) || (StrEqual(szBotName, "maxz")) || (StrEqual(szBotName, "Cl34v3rs")))
 	{
 		CS_SetClientClanTag(client, "PDucks");
 	}
-	
+
 	//HAVU Players
 	if((StrEqual(szBotName, "ZOREE")) || (StrEqual(szBotName, "sLowi")) || (StrEqual(szBotName, "doto")) || (StrEqual(szBotName, "xseveN")) || (StrEqual(szBotName, "sAw")))
 	{
 		CS_SetClientClanTag(client, "HAVU");
 	}
-	
+
 	//Lyngby Players
 	if((StrEqual(szBotName, "birdfromsky")) || (StrEqual(szBotName, "Twinx")) || (StrEqual(szBotName, "Maccen")) || (StrEqual(szBotName, "Raalz")) || (StrEqual(szBotName, "Cabbi")))
 	{
 		CS_SetClientClanTag(client, "Lyngby");
 	}
-	
+
 	//GODSENT Players
 	if((StrEqual(szBotName, "maden")) || (StrEqual(szBotName, "farlig")) || (StrEqual(szBotName, "kRYSTAL")) || (StrEqual(szBotName, "zehN")) || (StrEqual(szBotName, "STYKO")))
 	{
 		CS_SetClientClanTag(client, "GODSENT");
 	}
-	
+
 	//Nordavind Players
 	if((StrEqual(szBotName, "tenzki")) || (StrEqual(szBotName, "NaToSaphiX")) || (StrEqual(szBotName, "sense")) || (StrEqual(szBotName, "HS")) || (StrEqual(szBotName, "cromen")))
 	{
 		CS_SetClientClanTag(client, "Nordavind");
 	}
-	
+
 	//SJ Players
 	if((StrEqual(szBotName, "arvid")) || (StrEqual(szBotName, "LYNXi")) || (StrEqual(szBotName, "SADDYX")) || (StrEqual(szBotName, "KHRN")) || (StrEqual(szBotName, "jemi")))
 	{
 		CS_SetClientClanTag(client, "SJ");
 	}
-	
+
 	//Bren Players
 	if((StrEqual(szBotName, "Papichulo")) || (StrEqual(szBotName, "witz")) || (StrEqual(szBotName, "Pro.")) || (StrEqual(szBotName, "JA")) || (StrEqual(szBotName, "Derek")))
 	{
 		CS_SetClientClanTag(client, "Bren");
 	}
-	
+
 	//Giants Players
 	if((StrEqual(szBotName, "NOPEEj")) || (StrEqual(szBotName, "fox")) || (StrEqual(szBotName, "pr")) || (StrEqual(szBotName, "obj")) || (StrEqual(szBotName, "RIZZ")))
 	{
 		CS_SetClientClanTag(client, "Giants");
 	}
-	
+
 	//Lions Players
 	if((StrEqual(szBotName, "HooXi")) || (StrEqual(szBotName, "acoR")) || (StrEqual(szBotName, "Sjuush")) || (StrEqual(szBotName, "refrezh")) || (StrEqual(szBotName, "roeJ")))
 	{
 		CS_SetClientClanTag(client, "Lions");
 	}
-	
+
 	//Riders Players
 	if((StrEqual(szBotName, "mopoz")) || (StrEqual(szBotName, "shokz")) || (StrEqual(szBotName, "steel")) || (StrEqual(szBotName, "alex*")) || (StrEqual(szBotName, "larsen")))
 	{
 		CS_SetClientClanTag(client, "Riders");
 	}
-	
+
 	//OFFSET Players
 	if((StrEqual(szBotName, "rafaxF")) || (StrEqual(szBotName, "KILLDREAM")) || (StrEqual(szBotName, "EasTor")) || (StrEqual(szBotName, "ZELIN")) || (StrEqual(szBotName, "drifking")))
 	{
 		CS_SetClientClanTag(client, "OFFSET");
 	}
-	
+
 	//eSuba Players
 	if((StrEqual(szBotName, "NIO")) || (StrEqual(szBotName, "Levi")) || (StrEqual(szBotName, "luko")) || (StrEqual(szBotName, "Blogg1s")) || (StrEqual(szBotName, "The eLiVe")))
 	{
 		CS_SetClientClanTag(client, "eSuba");
 	}
-	
+
 	//Nexus Players
 	if((StrEqual(szBotName, "BTN")) || (StrEqual(szBotName, "XELLOW")) || (StrEqual(szBotName, "SEMINTE")) || (StrEqual(szBotName, "iM")) || (StrEqual(szBotName, "sXe")))
 	{
 		CS_SetClientClanTag(client, "Nexus");
 	}
-	
+
 	//PACT Players
 	if((StrEqual(szBotName, "darko")) || (StrEqual(szBotName, "lunAtic")) || (StrEqual(szBotName, "Goofy")) || (StrEqual(szBotName, "MINISE")) || (StrEqual(szBotName, "Sobol")))
 	{
 		CS_SetClientClanTag(client, "PACT");
 	}
-	
+
 	//Heretics Players
 	if((StrEqual(szBotName, "Python")) || (StrEqual(szBotName, "Maka")) || (StrEqual(szBotName, "xms")) || (StrEqual(szBotName, "kioShiMa")) || (StrEqual(szBotName, "Lucky")))
 	{
 		CS_SetClientClanTag(client, "Heretics");
 	}
-	
+
 	//Nemiga Players
 	if((StrEqual(szBotName, "speed4k")) || (StrEqual(szBotName, "mds")) || (StrEqual(szBotName, "lollipop21k")) || (StrEqual(szBotName, "Jyo")) || (StrEqual(szBotName, "boX")))
 	{
 		CS_SetClientClanTag(client, "Nemiga");
 	}
-	
+
 	//pro100 Players
 	if((StrEqual(szBotName, "dimasick")) || (StrEqual(szBotName, "WorldEdit")) || (StrEqual(szBotName, "pipsoN")) || (StrEqual(szBotName, "wayLander")) || (StrEqual(szBotName, "AiyvaN")))
 	{
 		CS_SetClientClanTag(client, "pro100");
 	}
-	
+
 	//YaLLa Players
 	if((StrEqual(szBotName, "Remind")) || (StrEqual(szBotName, "eku")) || (StrEqual(szBotName, "Kheops")) || (StrEqual(szBotName, "Senpai")) || (StrEqual(szBotName, "Lyhn")))
 	{
 		CS_SetClientClanTag(client, "YaLLa");
 	}
-	
+
 	//Yeah Players
 	if((StrEqual(szBotName, "bew")) || (StrEqual(szBotName, "RCF")) || (StrEqual(szBotName, "f4stzin")) || (StrEqual(szBotName, "Swisher")) || (StrEqual(szBotName, "dumau")))
 	{
 		CS_SetClientClanTag(client, "Yeah");
 	}
-	
+
 	//Singularity Players
 	if((StrEqual(szBotName, "Casle")) || (StrEqual(szBotName, "notaN")) || (StrEqual(szBotName, "Remoy")) || (StrEqual(szBotName, "TOBIZ")) || (StrEqual(szBotName, "Celrate")))
 	{
 		CS_SetClientClanTag(client, "Singularity");
 	}
-	
+
 	//DETONA Players
 	if((StrEqual(szBotName, "nak")) || (StrEqual(szBotName, "piria")) || (StrEqual(szBotName, "rikz")) || (StrEqual(szBotName, "tiburci0")) || (StrEqual(szBotName, "zevy")))
 	{
 		CS_SetClientClanTag(client, "DETONA");
 	}
-	
+
 	//Infinity Players
 	if((StrEqual(szBotName, "k1Nky")) || (StrEqual(szBotName, "tor1towOw")) || (StrEqual(szBotName, "spamzzy")) || (StrEqual(szBotName, "chuti")) || (StrEqual(szBotName, "points")))
 	{
 		CS_SetClientClanTag(client, "Infinity");
 	}
-	
+
 	//Isurus Players
 	if((StrEqual(szBotName, "JonY BoY")) || (StrEqual(szBotName, "Noktse")) || (StrEqual(szBotName, "Reversive")) || (StrEqual(szBotName, "decov9jse")) || (StrEqual(szBotName, "caike")))
 	{
 		CS_SetClientClanTag(client, "Isurus");
 	}
-	
+
 	//paiN Players
 	if((StrEqual(szBotName, "PKL")) || (StrEqual(szBotName, "saffee")) || (StrEqual(szBotName, "NEKIZ")) || (StrEqual(szBotName, "biguzera")) || (StrEqual(szBotName, "hardzao")))
 	{
 		CS_SetClientClanTag(client, "paiN");
 	}
-	
+
 	//Sharks Players
 	if((StrEqual(szBotName, "pancc")) || (StrEqual(szBotName, "jnt")) || (StrEqual(szBotName, "Lucaozy")) || (StrEqual(szBotName, "exit")) || (StrEqual(szBotName, "Luken")))
 	{
 		CS_SetClientClanTag(client, "Sharks");
 	}
-	
+
 	//One Players
 	if((StrEqual(szBotName, "prt")) || (StrEqual(szBotName, "Maluk3")) || (StrEqual(szBotName, "malbsMd")) || (StrEqual(szBotName, "pesadelo")) || (StrEqual(szBotName, "b4rtiN")))
 	{
 		CS_SetClientClanTag(client, "One");
 	}
-	
+
 	//W7M Players
 	if((StrEqual(szBotName, "skullz")) || (StrEqual(szBotName, "raafa")) || (StrEqual(szBotName, "Tuurtle")) || (StrEqual(szBotName, "tatazin")) || (StrEqual(szBotName, "realziN")))
 	{
 		CS_SetClientClanTag(client, "W7M");
 	}
-	
+
 	//Avant Players
 	if((StrEqual(szBotName, "BL1TZ")) || (StrEqual(szBotName, "sterling")) || (StrEqual(szBotName, "apoc")) || (StrEqual(szBotName, "ofnu")) || (StrEqual(szBotName, "HaZR")))
 	{
 		CS_SetClientClanTag(client, "Avant");
 	}
-	
+
 	//Chiefs Players
 	if((StrEqual(szBotName, "HUGHMUNGUS")) || (StrEqual(szBotName, "Vexite")) || (StrEqual(szBotName, "apocdud")) || (StrEqual(szBotName, "zeph")) || (StrEqual(szBotName, "soju_j")))
 	{
 		CS_SetClientClanTag(client, "Chiefs");
 	}
-	
+
 	//ORDER Players
 	if((StrEqual(szBotName, "J1rah")) || (StrEqual(szBotName, "aliStair")) || (StrEqual(szBotName, "Rickeh")) || (StrEqual(szBotName, "USTILO")) || (StrEqual(szBotName, "Valiance")))
 	{
 		CS_SetClientClanTag(client, "ORDER");
 	}
-	
+
 	//SKADE Players
 	if((StrEqual(szBotName, "Duplicate")) || (StrEqual(szBotName, "dennyslaw")) || (StrEqual(szBotName, "Oxygen")) || (StrEqual(szBotName, "Rainwaker")) || (StrEqual(szBotName, "SPELLAN")))
 	{
 		CS_SetClientClanTag(client, "SKADE");
 	}
-	
+
 	//Paradox Players
 	if((StrEqual(szBotName, "rbz")) || (StrEqual(szBotName, "Versa")) || (StrEqual(szBotName, "ekul")) || (StrEqual(szBotName, "bedonka")) || (StrEqual(szBotName, "dangeR")))
 	{
 		CS_SetClientClanTag(client, "Paradox");
 	}
-	
+
 	//Beyond Players
 	if((StrEqual(szBotName, "MAIROLLS")) || (StrEqual(szBotName, "Olivia")) || (StrEqual(szBotName, "Kntz")) || (StrEqual(szBotName, "stk")) || (StrEqual(szBotName, "Geniuss")))
 	{
 		CS_SetClientClanTag(client, "Beyond");
 	}
-	
+
 	//BOOM Players
 	if((StrEqual(szBotName, "chelo")) || (StrEqual(szBotName, "yeL")) || (StrEqual(szBotName, "shz")) || (StrEqual(szBotName, "boltz")) || (StrEqual(szBotName, "felps")))
 	{
 		CS_SetClientClanTag(client, "BOOM");
 	}
-	
+
 	//NASR Players
 	if((StrEqual(szBotName, "proxyyb")) || (StrEqual(szBotName, "Real1ze")) || (StrEqual(szBotName, "BOROS")) || (StrEqual(szBotName, "Dementor")) || (StrEqual(szBotName, "Just1ce")))
 	{
 		CS_SetClientClanTag(client, "NASR");
 	}
-	
+
 	//TTT Players
 	if((StrEqual(szBotName, "dukiiii")) || (StrEqual(szBotName, "powerYY")) || (StrEqual(szBotName, "KrowNii")) || (StrEqual(szBotName, "pulzG")) || (StrEqual(szBotName, "syncD")))
 	{
 		CS_SetClientClanTag(client, "TTT");
 	}
-	
+
 	//SHIFT Players
 	if((StrEqual(szBotName, "Young KillerS")) || (StrEqual(szBotName, "Kishi")) || (StrEqual(szBotName, "tozz")) || (StrEqual(szBotName, "huyhart")) || (StrEqual(szBotName, "Imcarnus")))
 	{
 		CS_SetClientClanTag(client, "SHIFT");
 	}
-	
+
 	//nxl Players
 	if((StrEqual(szBotName, "soifong")) || (StrEqual(szBotName, "Foscmorc")) || (StrEqual(szBotName, "frgd[ibtJ]")) || (StrEqual(szBotName, "Lmemore")) || (StrEqual(szBotName, "xera")))
 	{
 		CS_SetClientClanTag(client, "nxl");
 	}
-	
+
 	//LLL Players
 	if((StrEqual(szBotName, "simix")) || (StrEqual(szBotName, "Stev0se")) || (StrEqual(szBotName, "ritchiEE")) || (StrEqual(szBotName, "rilax")) || (StrEqual(szBotName, "FASHR")))
 	{
 		CS_SetClientClanTag(client, "LLL");
 	}
-	
+
 	//Energy Players
 	if((StrEqual(szBotName, "pnd")) || (StrEqual(szBotName, "disTroiT")) || (StrEqual(szBotName, "Lichl0rd")) || (StrEqual(szBotName, "Tiaantije")) || (StrEqual(szBotName, "mango")))
 	{
 		CS_SetClientClanTag(client, "Energy");
 	}
-	
+
 	//GroundZero Players
 	if((StrEqual(szBotName, "BURNRUOk")) || (StrEqual(szBotName, "Laes")) || (StrEqual(szBotName, "Llamas")) || (StrEqual(szBotName, "Noobster")) || (StrEqual(szBotName, "Mayker")))
 	{
 		CS_SetClientClanTag(client, "GroundZero");
 	}
-	
+
 	//AVEZ Players
 	if((StrEqual(szBotName, "Riczi")) || (StrEqual(szBotName, "Markoś")) || (StrEqual(szBotName, "KEi")) || (StrEqual(szBotName, "Kylar")) || (StrEqual(szBotName, "nawrot")))
 	{
 		CS_SetClientClanTag(client, "AVEZ");
 	}
-	
+
 	//Furious Players
 	if((StrEqual(szBotName, "nbl")) || (StrEqual(szBotName, "tom1")) || (StrEqual(szBotName, "Owensinho")) || (StrEqual(szBotName, "iKrystal")) || (StrEqual(szBotName, "pablek")))
 	{
 		CS_SetClientClanTag(client, "Furious");
 	}
-	
+
 	//GTZ Players
 	if((StrEqual(szBotName, "StepA")) || (StrEqual(szBotName, "snapy")) || (StrEqual(szBotName, "slaxx")) || (StrEqual(szBotName, "Dante")) || (StrEqual(szBotName, "fakes2")))
 	{
 		CS_SetClientClanTag(client, "GTZ");
 	}
-	
+
 	//x6tence Players
 	if((StrEqual(szBotName, "Queenix")) || (StrEqual(szBotName, "zEVES")) || (StrEqual(szBotName, "maNkz")) || (StrEqual(szBotName, "mertz")) || (StrEqual(szBotName, "Nodios")))
 	{
 		CS_SetClientClanTag(client, "x6tence");
 	}
-	
+
 	//K23 Players
 	if((StrEqual(szBotName, "neaLaN")) || (StrEqual(szBotName, "mou")) || (StrEqual(szBotName, "n0rb3r7")) || (StrEqual(szBotName, "kade0")) || (StrEqual(szBotName, "Keoz")))
 	{
 		CS_SetClientClanTag(client, "K23");
 	}
-	
+
 	//Goliath Players
 	if((StrEqual(szBotName, "massacRe")) || (StrEqual(szBotName, "Dweezil")) || (StrEqual(szBotName, "adM")) || (StrEqual(szBotName, "ELUSIVE")) || (StrEqual(szBotName, "ZipZip")))
 	{
 		CS_SetClientClanTag(client, "Goliath");
 	}
-	
+
 	//Secret Players
 	if((StrEqual(szBotName, "juanflatroo")) || (StrEqual(szBotName, "smF")) || (StrEqual(szBotName, "PERCY")) || (StrEqual(szBotName, "sinnopsyy")) || (StrEqual(szBotName, "anarkez")))
 	{
 		CS_SetClientClanTag(client, "Secret");
 	}
-	
+
 	//UOL Players
 	if((StrEqual(szBotName, "crisby")) || (StrEqual(szBotName, "kzy")) || (StrEqual(szBotName, "Andyy")) || (StrEqual(szBotName, "JDC")) || (StrEqual(szBotName, "P4TriCK")))
 	{
 		CS_SetClientClanTag(client, "UOL");
 	}
-	
+
 	//RADIX Players
 	if((StrEqual(szBotName, "mrhui")) || (StrEqual(szBotName, "joss")) || (StrEqual(szBotName, "brky")) || (StrEqual(szBotName, "entz")) || (StrEqual(szBotName, "eZo")))
 	{
 		CS_SetClientClanTag(client, "RADIX");
 	}
-	
+
 	//Illuminar Players
 	if((StrEqual(szBotName, "Vegi")) || (StrEqual(szBotName, "Snax")) || (StrEqual(szBotName, "mouz")) || (StrEqual(szBotName, "reatz")) || (StrEqual(szBotName, "phr")))
 	{
 		CS_SetClientClanTag(client, "Illuminar");
 	}
-	
+
 	//Queso Players
 	if((StrEqual(szBotName, "TheClaran")) || (StrEqual(szBotName, "thinkii")) || (StrEqual(szBotName, "HUMANZ")) || (StrEqual(szBotName, "mik")) || (StrEqual(szBotName, "Yaba")))
 	{
 		CS_SetClientClanTag(client, "Queso");
 	}
-	
+
 	//IG Players
 	if((StrEqual(szBotName, "bottle")) || (StrEqual(szBotName, "DeStRoYeR")) || (StrEqual(szBotName, "flying")) || (StrEqual(szBotName, "Viva")) || (StrEqual(szBotName, "XiaosaGe")))
 	{
 		CS_SetClientClanTag(client, "IG");
 	}
-	
+
 	//HR Players
 	if((StrEqual(szBotName, "kAliNkA")) || (StrEqual(szBotName, "jR")) || (StrEqual(szBotName, "Flarich")) || (StrEqual(szBotName, "ProbLeM")) || (StrEqual(szBotName, "JIaYm")))
 	{
 		CS_SetClientClanTag(client, "HR");
 	}
-	
+
 	//Dice Players
 	if((StrEqual(szBotName, "XpG")) || (StrEqual(szBotName, "nonick")) || (StrEqual(szBotName, "Kan4")) || (StrEqual(szBotName, "Polox")) || (StrEqual(szBotName, "Djoko")))
 	{
 		CS_SetClientClanTag(client, "Dice");
 	}
-	
+
 	//PlanetKey Players
 	if((StrEqual(szBotName, "LapeX")) || (StrEqual(szBotName, "Printek")) || (StrEqual(szBotName, "glaVed")) || (StrEqual(szBotName, "ND")) || (StrEqual(szBotName, "impulsG")))
 	{
 		CS_SetClientClanTag(client, "PlanetKey");
 	}
-	
+
 	//Vexed Players
 	if((StrEqual(szBotName, "dox")) || (StrEqual(szBotName, "shyyne")) || (StrEqual(szBotName, "leafy")) || (StrEqual(szBotName, "EIZA")) || (StrEqual(szBotName, "volt")))
 	{
 		CS_SetClientClanTag(client, "Vexed");
 	}
-	
+
 	//HLE Players
 	if((strcmp(szBotName, "d1Ledez") == 0) || (strcmp(szBotName, "DrobnY") == 0) || (strcmp(szBotName, "Raijin") == 0) || (strcmp(szBotName, "Forester") == 0) || (strcmp(szBotName, "svyat") == 0))
 	{
 		CS_SetClientClanTag(client, "HLE");
 	}
-	
+
 	//Gambit Players
 	if((strcmp(szBotName, "nafany") == 0) || (strcmp(szBotName, "sh1ro") == 0) || (strcmp(szBotName, "interz") == 0) || (strcmp(szBotName, "Ax1Le") == 0) || (strcmp(szBotName, "Hobbit") == 0))
 	{
 		CS_SetClientClanTag(client, "Gambit");
 	}
-	
+
 	//Wisla Players
 	if((StrEqual(szBotName, "hades")) || (StrEqual(szBotName, "SZPERO")) || (StrEqual(szBotName, "mynio")) || (StrEqual(szBotName, "ponczek")) || (StrEqual(szBotName, "jedqr")))
 	{
 		CS_SetClientClanTag(client, "Wisla");
 	}
-	
+
 	//Imperial Players
 	if((StrEqual(szBotName, "fnx")) || (StrEqual(szBotName, "zqk")) || (StrEqual(szBotName, "togs")) || (StrEqual(szBotName, "iDk")) || (StrEqual(szBotName, "SHOOWTiME")))
 	{
 		CS_SetClientClanTag(client, "Imperial");
 	}
-	
+
 	//Pompa Players
 	if((StrEqual(szBotName, "bnox")) || (StrEqual(szBotName, "Grashog")) || (StrEqual(szBotName, "fr3nd")) || (StrEqual(szBotName, "Miki Z Afryki")) || (StrEqual(szBotName, "koyot")))
 	{
 		CS_SetClientClanTag(client, "Pompa");
 	}
-	
+
 	//Unique Players
 	if((StrEqual(szBotName, "crush")) || (StrEqual(szBotName, "H1te")) || (StrEqual(szBotName, "shalfey")) || (StrEqual(szBotName, "SELLTER")) || (StrEqual(szBotName, "fenvicious")))
 	{
 		CS_SetClientClanTag(client, "Unique");
 	}
-	
+
 	//Izako Players
 	if((StrEqual(szBotName, "Siuhy")) || (StrEqual(szBotName, "szejn")) || (StrEqual(szBotName, "EXUS")) || (StrEqual(szBotName, "avis")) || (StrEqual(szBotName, "TOAO")))
 	{
 		CS_SetClientClanTag(client, "Izako");
 	}
-	
+
 	//ATK Players
 	if((StrEqual(szBotName, "bLazE")) || (StrEqual(szBotName, "MisteM")) || (StrEqual(szBotName, "SloWye")) || (StrEqual(szBotName, "Fadey")) || (StrEqual(szBotName, "Doru")))
 	{
 		CS_SetClientClanTag(client, "ATK");
 	}
-	
+
 	//Chaos Players
 	if((StrEqual(szBotName, "Xeppaa")) || (StrEqual(szBotName, "vanity")) || (StrEqual(szBotName, "leaf")) || (StrEqual(szBotName, "MarKE")) || (StrEqual(szBotName, "Jonji")))
 	{
 		CS_SetClientClanTag(client, "Chaos");
 	}
-	
+
 	//Wings Players
 	if((strcmp(szBotName, "ChildKing") == 0) || (strcmp(szBotName, "lan") == 0) || (strcmp(szBotName, "MarT1n") == 0) || (strcmp(szBotName, "DD") == 0) || (strcmp(szBotName, "gas") == 0))
 	{
 		CS_SetClientClanTag(client, "Wings");
 	}
-	
+
 	//Lynn Players
 	if((StrEqual(szBotName, "XG")) || (StrEqual(szBotName, "mitsuha")) || (StrEqual(szBotName, "Aree")) || (StrEqual(szBotName, "EXPRO")) || (StrEqual(szBotName, "XinKoiNg")))
 	{
 		CS_SetClientClanTag(client, "Lynn");
 	}
-	
+
 	//Triumph Players
 	if((StrEqual(szBotName, "Shakezullah")) || (StrEqual(szBotName, "Junior")) || (StrEqual(szBotName, "ryann")) || (StrEqual(szBotName, "penny")) || (StrEqual(szBotName, "moose")))
 	{
 		CS_SetClientClanTag(client, "Triumph");
 	}
-	
+
 	//FATE Players
 	if((StrEqual(szBotName, "blocker")) || (StrEqual(szBotName, "Patrick")) || (StrEqual(szBotName, "harn")) || (StrEqual(szBotName, "Mar")) || (StrEqual(szBotName, "niki1")))
 	{
 		CS_SetClientClanTag(client, "FATE");
 	}
-	
+
 	//Canids Players
 	if((StrEqual(szBotName, "DeStiNy")) || (StrEqual(szBotName, "nythonzinho")) || (StrEqual(szBotName, "dav1d")) || (StrEqual(szBotName, "latto")) || (StrEqual(szBotName, "KHTEX")))
 	{
 		CS_SetClientClanTag(client, "Canids");
 	}
-	
+
 	//ESPADA Players
 	if((StrEqual(szBotName, "Patsanchick")) || (StrEqual(szBotName, "degster")) || (StrEqual(szBotName, "FinigaN")) || (StrEqual(szBotName, "S0tF1k")) || (StrEqual(szBotName, "Dima")))
 	{
 		CS_SetClientClanTag(client, "ESPADA");
 	}
-	
+
 	//OG Players
 	if((StrEqual(szBotName, "NBK-")) || (StrEqual(szBotName, "mantuu")) || (StrEqual(szBotName, "Aleksib")) || (StrEqual(szBotName, "valde")) || (StrEqual(szBotName, "ISSAA")))
 	{
 		CS_SetClientClanTag(client, "OG");
 	}
-	
+
 	//Wizards Players
 	if((StrEqual(szBotName, "Bernard")) || (StrEqual(szBotName, "blackie")) || (StrEqual(szBotName, "kzealos")) || (StrEqual(szBotName, "eneshan")) || (StrEqual(szBotName, "dreez")))
 	{
 		CS_SetClientClanTag(client, "Wizards");
 	}
-	
+
 	//Tricked Players
 	if((StrEqual(szBotName, "kiR")) || (StrEqual(szBotName, "kwezz")) || (StrEqual(szBotName, "Luckyv1")) || (StrEqual(szBotName, "sycrone")) || (StrEqual(szBotName, "PR1mE")))
 	{
 		CS_SetClientClanTag(client, "Tricked");
 	}
-	
+
 	//Gen.G Players
 	if((StrEqual(szBotName, "autimatic")) || (StrEqual(szBotName, "koosta")) || (StrEqual(szBotName, "daps")) || (StrEqual(szBotName, "s0m")) || (StrEqual(szBotName, "BnTeT")))
 	{
 		CS_SetClientClanTag(client, "Gen.G");
 	}
-	
+
 	//Endpoint Players
 	if((strcmp(szBotName, "Surreal") == 0) || (strcmp(szBotName, "CRUC1AL") == 0) || (strcmp(szBotName, "MiGHTYMAX") == 0) || (strcmp(szBotName, "robiin") == 0) || (strcmp(szBotName, "flameZ") == 0))
 	{
 		CS_SetClientClanTag(client, "Endpoint");
 	}
-	
+
 	//sAw Players
 	if((StrEqual(szBotName, "arki")) || (StrEqual(szBotName, "stadodo")) || (StrEqual(szBotName, "JUST")) || (StrEqual(szBotName, "MUTiRiS")) || (StrEqual(szBotName, "rmn")))
 	{
 		CS_SetClientClanTag(client, "sAw");
 	}
-	
+
 	//DIG Players
 	if((StrEqual(szBotName, "H4RR3")) || (StrEqual(szBotName, "hallzerk")) || (StrEqual(szBotName, "f0rest")) || (StrEqual(szBotName, "friberg")) || (StrEqual(szBotName, "HEAP")))
 	{
 		CS_SetClientClanTag(client, "DIG");
 	}
-	
+
 	//D13 Players
 	if((StrEqual(szBotName, "Tamiraarita")) || (StrEqual(szBotName, "hasteka")) || (StrEqual(szBotName, "shinobi")) || (StrEqual(szBotName, "sK0R")) || (StrEqual(szBotName, "ANNIHILATION")))
 	{
 		CS_SetClientClanTag(client, "D13");
 	}
-	
+
 	//ZIGMA Players
 	if((StrEqual(szBotName, "NIFFY")) || (StrEqual(szBotName, "Reality")) || (StrEqual(szBotName, "JUSTCAUSE")) || (StrEqual(szBotName, "PPOverdose")) || (StrEqual(szBotName, "RoLEX")))
 	{
 		CS_SetClientClanTag(client, "ZIGMA");
 	}
-	
+
 	//Ambush Players
 	if((StrEqual(szBotName, "Inzta")) || (StrEqual(szBotName, "Ryxxo")) || (StrEqual(szBotName, "zeq")) || (StrEqual(szBotName, "Typos")) || (StrEqual(szBotName, "IceBerg")))
 	{
 		CS_SetClientClanTag(client, "Ambush");
 	}
-	
+
 	//KOVA Players
 	if((StrEqual(szBotName, "pietola")) || (StrEqual(szBotName, "spargo")) || (StrEqual(szBotName, "uli")) || (StrEqual(szBotName, "peku")) || (StrEqual(szBotName, "Twixie")))
 	{
 		CS_SetClientClanTag(client, "KOVA");
 	}
-	
+
 	//eXploit Players
 	if((StrEqual(szBotName, "pizituh")) || (StrEqual(szBotName, "BuJ")) || (StrEqual(szBotName, "sark")) || (StrEqual(szBotName, "renatoohaxx")) || (StrEqual(szBotName, "BLOODZ")))
 	{
 		CS_SetClientClanTag(client, "eXploit");
 	}
-	
+
 	//AGF Players
 	if((StrEqual(szBotName, "fr0slev")) || (StrEqual(szBotName, "Kristou")) || (StrEqual(szBotName, "netrick")) || (StrEqual(szBotName, "TMB")) || (StrEqual(szBotName, "Lukki")))
 	{
 		CS_SetClientClanTag(client, "AGF");
 	}
-	
+
 	//GameAgents Players
 	if((StrEqual(szBotName, "markk")) || (StrEqual(szBotName, "renne")) || (StrEqual(szBotName, "s0und")) || (StrEqual(szBotName, "regali")) || (StrEqual(szBotName, "smekk-")))
 	{
 		CS_SetClientClanTag(client, "GameAgents");
 	}
-	
+
 	//Keyd Players
 	if((StrEqual(szBotName, "bnc")) || (StrEqual(szBotName, "mawth")) || (StrEqual(szBotName, "tifa")) || (StrEqual(szBotName, "jota")) || (StrEqual(szBotName, "puni")))
 	{
 		CS_SetClientClanTag(client, "Keyd");
 	}
-	
+
 	//Epsilon Players
 	if((StrEqual(szBotName, "ALEXJ")) || (StrEqual(szBotName, "smogger")) || (StrEqual(szBotName, "Celebrations")) || (StrEqual(szBotName, "Masti")) || (StrEqual(szBotName, "Blytz")))
 	{
 		CS_SetClientClanTag(client, "Epsilon");
 	}
-	
+
 	//TIGER Players
 	if((StrEqual(szBotName, "erkaSt")) || (StrEqual(szBotName, "nin9")) || (StrEqual(szBotName, "dobu")) || (StrEqual(szBotName, "kabal")) || (StrEqual(szBotName, "rate")))
 	{
 		CS_SetClientClanTag(client, "TIGER");
 	}
-	
+
 	//LEISURE Players
 	if((StrEqual(szBotName, "stefank0k0")) || (StrEqual(szBotName, "BischeR")) || (StrEqual(szBotName, "farmaG")) || (StrEqual(szBotName, "FabeeN")) || (StrEqual(szBotName, "bustrex")))
 	{
 		CS_SetClientClanTag(client, "LEISURE");
 	}
-	
+
 	//PENTA Players
 	if((StrEqual(szBotName, "pdy")) || (StrEqual(szBotName, "red")) || (StrEqual(szBotName, "s1n")) || (StrEqual(szBotName, "xenn")) || (StrEqual(szBotName, "skyye")))
 	{
 		CS_SetClientClanTag(client, "PENTA");
 	}
-	
+
 	//PENTA Players
 	if((StrEqual(szBotName, "NABOWOW")) || (StrEqual(szBotName, "Jaepe")) || (StrEqual(szBotName, "brA")) || (StrEqual(szBotName, "plat")) || (StrEqual(szBotName, "Cunha")))
 	{
 		CS_SetClientClanTag(client, "FTW");
 	}
-	
+
 	//NEW Players
 	if((StrEqual(szBotName, "PwnAlone")) || (StrEqual(szBotName, "djay")) || (StrEqual(szBotName, "Rampage")) || (StrEqual(szBotName, "ben1337")) || (StrEqual(szBotName, "Bwills")))
 	{
 		CS_SetClientClanTag(client, "NEW");
 	}
-	
+
 	//9INE Players
 	if((StrEqual(szBotName, "CyderX")) || (StrEqual(szBotName, "xfl0ud")) || (StrEqual(szBotName, "qRaxs")) || (StrEqual(szBotName, "Izzy")) || (StrEqual(szBotName, "QutionerX")))
 	{
 		CS_SetClientClanTag(client, "9INE");
 	}
-	
+
 	//QBF Players
 	if((StrEqual(szBotName, "JACKPOT")) || (StrEqual(szBotName, "Quantium")) || (StrEqual(szBotName, "Kas9k")) || (StrEqual(szBotName, "hiji")) || (StrEqual(szBotName, "lesswill")))
 	{
 		CS_SetClientClanTag(client, "QBF");
 	}
-	
+
 	//Tigers Players
 	if((StrEqual(szBotName, "MAXX")) || (StrEqual(szBotName, "Lastík")) || (StrEqual(szBotName, "zyored")) || (StrEqual(szBotName, "wEAMO")) || (StrEqual(szBotName, "manguss")))
 	{
 		CS_SetClientClanTag(client, "Tigers");
 	}
-	
+
 	//9z Players
 	if((StrEqual(szBotName, "dgt")) || (StrEqual(szBotName, "try")) || (StrEqual(szBotName, "maxujas")) || (StrEqual(szBotName, "bit")) || (StrEqual(szBotName, "meyern")))
 	{
 		CS_SetClientClanTag(client, "9z");
 	}
-	
+
 	//Malvinas Players
 	if((StrEqual(szBotName, "ABM")) || (StrEqual(szBotName, "fakzwall")) || (StrEqual(szBotName, "minimal")) || (StrEqual(szBotName, "kary")) || (StrEqual(szBotName, "rushardo")))
 	{
 		CS_SetClientClanTag(client, "Malvinas");
 	}
-	
+
 	//Sinister5 Players
 	if((StrEqual(szBotName, "zerOchaNce")) || (StrEqual(szBotName, "FreakY")) || (StrEqual(szBotName, "deviaNt")) || (StrEqual(szBotName, "Lately")) || (StrEqual(szBotName, "slayeRyEyE")))
 	{
 		CS_SetClientClanTag(client, "Sinister5");
 	}
-	
+
 	//SINNERS Players
 	if((StrEqual(szBotName, "ZEDKO")) || (StrEqual(szBotName, "CaNNiE")) || (StrEqual(szBotName, "SHOCK")) || (StrEqual(szBotName, "beastik")) || (StrEqual(szBotName, "NEOFRAG")))
 	{
 		CS_SetClientClanTag(client, "SINNERS");
 	}
-	
+
 	//Impact Players
 	if((StrEqual(szBotName, "DaneJoris")) || (StrEqual(szBotName, "JoJo")) || (StrEqual(szBotName, "ERIC")) || (StrEqual(szBotName, "Koalanoob")) || (StrEqual(szBotName, "insane")))
 	{
 		CS_SetClientClanTag(client, "Impact");
 	}
-	
+
 	//ERN Players
 	if((strcmp(szBotName, "j1NZO") == 0) || (strcmp(szBotName, "preet") == 0) || (strcmp(szBotName, "ReacTioNNN") == 0) || (strcmp(szBotName, "FreeZe") == 0) || (strcmp(szBotName, "S3NSEY") == 0))
 	{
 		CS_SetClientClanTag(client, "ERN");
 	}
-	
+
 	//BL4ZE Players
 	if((strcmp(szBotName, "Rossi") == 0) || (strcmp(szBotName, "Marzil") == 0) || (strcmp(szBotName, "SkRossi") == 0) || (strcmp(szBotName, "Raph") == 0) || (strcmp(szBotName, "cara") == 0))
 	{
 		CS_SetClientClanTag(client, "BL4ZE");
 	}
-	
+
 	//Global Players
 	if((strcmp(szBotName, "HellrangeR") == 0) || (strcmp(szBotName, "Karam1L") == 0) || (strcmp(szBotName, "hellff") == 0) || (strcmp(szBotName, "DEATHMAKER") == 0) || (strcmp(szBotName, "Lightningfast") == 0))
 	{
 		CS_SetClientClanTag(client, "Global");
 	}
-	
+
 	//Conquer Players
 	if((strcmp(szBotName, "NiNLeX") == 0) || (strcmp(szBotName, "RONDE") == 0) || (strcmp(szBotName, "S1rva") == 0) || (strcmp(szBotName, "jelo") == 0) || (strcmp(szBotName, "KonZero") == 0))
 	{
 		CS_SetClientClanTag(client, "Conquer");
 	}
-	
+
 	//Rooster Players
 	if((strcmp(szBotName, "DannyG") == 0) || (strcmp(szBotName, "nettik") == 0) || (strcmp(szBotName, "chelleos") == 0) || (strcmp(szBotName, "ADK") == 0) || (strcmp(szBotName, "asap") == 0))
 	{
 		CS_SetClientClanTag(client, "Rooster");
 	}
-	
+
 	//Flames Players
 	if((strcmp(szBotName, "nicoodoz") == 0) || (strcmp(szBotName, "AcilioN") == 0) || (strcmp(szBotName, "Basso") == 0) || (strcmp(szBotName, "Jabbi") == 0) || (strcmp(szBotName, "Daffu") == 0))
 	{
 		CS_SetClientClanTag(client, "Flames");
 	}
-	
+
 	//Baecon Players
 	if((strcmp(szBotName, "emp") == 0) || (strcmp(szBotName, "vts") == 0) || (strcmp(szBotName, "kst") == 0) || (strcmp(szBotName, "whatz") == 0) || (strcmp(szBotName, "shellzi") == 0))
 	{
 		CS_SetClientClanTag(client, "Baecon");
 	}
-	
+
 	//KPI Players
 	if((strcmp(szBotName, "pounh") == 0) || (strcmp(szBotName, "SAYN") == 0) || (strcmp(szBotName, "Aaron") == 0) || (strcmp(szBotName, "Butters") == 0) || (strcmp(szBotName, "ztr") == 0))
 	{
 		CS_SetClientClanTag(client, "KPI");
 	}
-	
+
 	//hREDS Players
 	if((strcmp(szBotName, "eDi") == 0) || (strcmp(szBotName, "oopee") == 0) || (strcmp(szBotName, "VORMISTO") == 0) || (strcmp(szBotName, "Samppa") == 0) || (strcmp(szBotName, "xartE") == 0))
 	{
 		CS_SetClientClanTag(client, "hREDS");
 	}
-	
+
 	//Lemondogs Players
 	if((strcmp(szBotName, "xelos") == 0) || (strcmp(szBotName, "kaktus") == 0) || (strcmp(szBotName, "hemzk9") == 0) || (strcmp(szBotName, "Mann3n") == 0) || (strcmp(szBotName, "gamersdont") == 0))
 	{
 		CS_SetClientClanTag(client, "Lemondogs");
 	}
-	
+
 	//Alpha Players
 	if((strcmp(szBotName, "Medi") == 0) || (strcmp(szBotName, "dez1per") == 0) || (strcmp(szBotName, "LeguliaS") == 0) || (strcmp(szBotName, "NolderN") == 0) || (strcmp(szBotName, "fakeZ") == 0))
 	{
 		CS_SetClientClanTag(client, "Alpha");
 	}
-	
+
 	//CeX Players
 	if((strcmp(szBotName, "JackB") == 0) || (strcmp(szBotName, "Impact") == 0) || (strcmp(szBotName, "RezzeD") == 0) || (strcmp(szBotName, "fluFFS") == 0) || (strcmp(szBotName, "ifan") == 0))
 	{
@@ -8461,754 +8442,754 @@ public void Pro_Players(char[] szBotName, int client)
 public void SetCustomPrivateRank(int client)
 {
 	char szClan[64];
-	
+
 	CS_GetClientClanTag(client, szClan, sizeof(szClan));
-	
+
 	if (StrEqual(szClan, "NiP"))
 	{
 		g_iProfileRank[client] = 41;
 	}
-	
+
 	if (StrEqual(szClan, "MIBR"))
 	{
 		g_iProfileRank[client] = 42;
 	}
-	
+
 	if (StrEqual(szClan, "FaZe"))
 	{
 		g_iProfileRank[client] = 43;
 	}
-	
+
 	if (StrEqual(szClan, "Astralis"))
 	{
 		g_iProfileRank[client] = 44;
 	}
-	
+
 	if (StrEqual(szClan, "C9"))
 	{
 		g_iProfileRank[client] = 45;
 	}
-	
+
 	if (StrEqual(szClan, "G2"))
 	{
 		g_iProfileRank[client] = 46;
 	}
-	
+
 	if (StrEqual(szClan, "fnatic"))
 	{
 		g_iProfileRank[client] = 47;
 	}
-	
+
 	if (StrEqual(szClan, "North"))
 	{
 		g_iProfileRank[client] = 48;
 	}
-	
+
 	if (StrEqual(szClan, "mouz"))
 	{
 		g_iProfileRank[client] = 49;
 	}
-	
+
 	if (StrEqual(szClan, "TYLOO"))
 	{
 		g_iProfileRank[client] = 50;
 	}
-	
+
 	if (StrEqual(szClan, "EG"))
 	{
 		g_iProfileRank[client] = 51;
 	}
-	
+
 	if (strcmp(szClan, "Vireo.Pro") == 0)
 	{
 		g_iProfileRank[client] = 52;
 	}
-	
+
 	if (StrEqual(szClan, "Na´Vi"))
 	{
 		g_iProfileRank[client] = 53;
 	}
-	
+
 	if (StrEqual(szClan, "Liquid"))
 	{
 		g_iProfileRank[client] = 54;
 	}
-	
+
 	if (StrEqual(szClan, "AGO"))
 	{
 		g_iProfileRank[client] = 55;
 	}
-	
+
 	if (StrEqual(szClan, "ENCE"))
 	{
 		g_iProfileRank[client] = 56;
 	}
-	
+
 	if (StrEqual(szClan, "Vitality"))
 	{
 		g_iProfileRank[client] = 57;
 	}
-	
+
 	if (StrEqual(szClan, "BIG"))
 	{
 		g_iProfileRank[client] = 58;
 	}
-	
+
 	if (StrEqual(szClan, "Triumph"))
 	{
 		g_iProfileRank[client] = 59;
 	}
-	
+
 	if (strcmp(szClan, "Rooster") == 0)
 	{
 		g_iProfileRank[client] = 60;
 	}
-	
+
 	if (StrEqual(szClan, "FURIA"))
 	{
 		g_iProfileRank[client] = 61;
 	}
-	
+
 	if (StrEqual(szClan, "c0ntact"))
 	{
 		g_iProfileRank[client] = 62;
 	}
-	
+
 	if (StrEqual(szClan, "coL"))
 	{
 		g_iProfileRank[client] = 63;
 	}
-	
+
 	if (StrEqual(szClan, "ViCi"))
 	{
 		g_iProfileRank[client] = 64;
 	}
-	
+
 	if (StrEqual(szClan, "forZe"))
 	{
 		g_iProfileRank[client] = 65;
 	}
-	
+
 	if (StrEqual(szClan, "Winstrike"))
 	{
 		g_iProfileRank[client] = 66;
 	}
-	
+
 	if (StrEqual(szClan, "Sprout"))
 	{
 		g_iProfileRank[client] = 67;
 	}
-	
+
 	if (StrEqual(szClan, "Heroic"))
 	{
 		g_iProfileRank[client] = 68;
 	}
-	
+
 	if (StrEqual(szClan, "INTZ"))
 	{
 		g_iProfileRank[client] = 69;
 	}
-	
+
 	if (StrEqual(szClan, "VP"))
 	{
 		g_iProfileRank[client] = 70;
 	}
-	
+
 	if (StrEqual(szClan, "Apeks"))
 	{
 		g_iProfileRank[client] = 71;
 	}
-	
+
 	if (StrEqual(szClan, "aTTaX"))
 	{
 		g_iProfileRank[client] = 72;
 	}
-	
+
 	if (StrEqual(szClan, "RNG"))
 	{
 		g_iProfileRank[client] = 73;
 	}
-	
+
 	if (strcmp(szClan, "BL4ZE") == 0)
 	{
 		g_iProfileRank[client] = 74;
 	}
-	
+
 	if (StrEqual(szClan, "Envy"))
 	{
 		g_iProfileRank[client] = 75;
 	}
-	
+
 	if (StrEqual(szClan, "Spirit"))
 	{
 		g_iProfileRank[client] = 76;
 	}
-	
+
 	if (strcmp(szClan, "ERN") == 0)
 	{
 		g_iProfileRank[client] = 77;
 	}
-	
+
 	if (StrEqual(szClan, "LDLC"))
 	{
 		g_iProfileRank[client] = 78;
 	}
-	
+
 	if (StrEqual(szClan, "Impact"))
 	{
 		g_iProfileRank[client] = 79;
 	}
-	
+
 	if (StrEqual(szClan, "GamerLegion"))
 	{
 		g_iProfileRank[client] = 80;
 	}
-	
+
 	if (StrEqual(szClan, "DIVIZON"))
 	{
 		g_iProfileRank[client] = 81;
 	}
-	
+
 	if (strcmp(szClan, "CeX") == 0)
 	{
 		g_iProfileRank[client] = 82;
 	}
-	
+
 	if (StrEqual(szClan, "Tricked"))
 	{
 		g_iProfileRank[client] = 83;
 	}
-	
+
 	if (StrEqual(szClan, "Wolsung"))
 	{
 		g_iProfileRank[client] = 84;
 	}
-	
+
 	if (StrEqual(szClan, "PDucks"))
 	{
 		g_iProfileRank[client] = 85;
 	}
-	
+
 	if (StrEqual(szClan, "HAVU"))
 	{
 		g_iProfileRank[client] = 86;
 	}
-	
+
 	if (StrEqual(szClan, "Lyngby"))
 	{
 		g_iProfileRank[client] = 87;
 	}
-	
+
 	if (StrEqual(szClan, "GODSENT"))
 	{
 		g_iProfileRank[client] = 88;
 	}
-	
+
 	if (StrEqual(szClan, "Nordavind"))
 	{
 		g_iProfileRank[client] = 89;
 	}
-	
+
 	if (StrEqual(szClan, "SJ"))
 	{
 		g_iProfileRank[client] = 90;
 	}
-	
+
 	if (StrEqual(szClan, "Bren"))
 	{
 		g_iProfileRank[client] = 91;
 	}
-	
+
 	if (StrEqual(szClan, "SINNERS"))
 	{
 		g_iProfileRank[client] = 92;
 	}
-	
+
 	if (StrEqual(szClan, "Giants"))
 	{
 		g_iProfileRank[client] = 93;
 	}
-	
+
 	if (StrEqual(szClan, "Lions"))
 	{
 		g_iProfileRank[client] = 94;
 	}
-	
+
 	if (StrEqual(szClan, "Riders"))
 	{
 		g_iProfileRank[client] = 95;
 	}
-	
+
 	if (StrEqual(szClan, "OFFSET"))
 	{
 		g_iProfileRank[client] = 96;
 	}
-	
+
 	if (StrEqual(szClan, "Sinister5"))
 	{
 		g_iProfileRank[client] = 97;
 	}
-	
+
 	if (StrEqual(szClan, "eSuba"))
 	{
 		g_iProfileRank[client] = 98;
 	}
-	
+
 	if (StrEqual(szClan, "Nexus"))
 	{
 		g_iProfileRank[client] = 99;
 	}
-	
+
 	if (StrEqual(szClan, "PACT"))
 	{
 		g_iProfileRank[client] = 100;
 	}
-	
+
 	if (StrEqual(szClan, "Heretics"))
 	{
 		g_iProfileRank[client] = 101;
 	}
-	
+
 	if (StrEqual(szClan, "Lynn"))
 	{
 		g_iProfileRank[client] = 102;
 	}
-	
+
 	if (StrEqual(szClan, "Nemiga"))
 	{
 		g_iProfileRank[client] = 103;
 	}
-	
+
 	if (StrEqual(szClan, "pro100"))
 	{
 		g_iProfileRank[client] = 104;
 	}
-	
+
 	if (StrEqual(szClan, "YaLLa"))
 	{
 		g_iProfileRank[client] = 105;
 	}
-	
+
 	if (StrEqual(szClan, "Yeah"))
 	{
 		g_iProfileRank[client] = 106;
 	}
-	
+
 	if (StrEqual(szClan, "Singularity"))
 	{
 		g_iProfileRank[client] = 107;
 	}
-	
+
 	if (StrEqual(szClan, "DETONA"))
 	{
 		g_iProfileRank[client] = 108;
 	}
-	
+
 	if (StrEqual(szClan, "Infinity"))
 	{
 		g_iProfileRank[client] = 109;
 	}
-	
+
 	if (StrEqual(szClan, "Isurus"))
 	{
 		g_iProfileRank[client] = 110;
 	}
-	
+
 	if (StrEqual(szClan, "paiN"))
 	{
 		g_iProfileRank[client] = 111;
 	}
-	
+
 	if (StrEqual(szClan, "Sharks"))
 	{
 		g_iProfileRank[client] = 112;
 	}
-	
+
 	if (StrEqual(szClan, "One"))
 	{
 		g_iProfileRank[client] = 113;
 	}
-	
+
 	if (StrEqual(szClan, "W7M"))
 	{
 		g_iProfileRank[client] = 114;
 	}
-	
+
 	if (StrEqual(szClan, "Avant"))
 	{
 		g_iProfileRank[client] = 115;
 	}
-	
+
 	if (StrEqual(szClan, "Chiefs"))
 	{
 		g_iProfileRank[client] = 116;
 	}
-	
+
 	if (StrEqual(szClan, "DIG"))
 	{
 		g_iProfileRank[client] = 117;
 	}
-	
+
 	if (StrEqual(szClan, "ORDER"))
 	{
 		g_iProfileRank[client] = 118;
 	}
-	
+
 	if (StrEqual(szClan, "SKADE"))
 	{
 		g_iProfileRank[client] = 120;
 	}
-	
+
 	if (StrEqual(szClan, "Paradox"))
 	{
 		g_iProfileRank[client] = 121;
 	}
-	
+
 	if (StrEqual(szClan, "PENTA"))
 	{
 		g_iProfileRank[client] = 122;
 	}
-	
+
 	if (StrEqual(szClan, "FTW"))
 	{
 		g_iProfileRank[client] = 123;
 	}
-	
+
 	if (StrEqual(szClan, "Beyond"))
 	{
 		g_iProfileRank[client] = 124;
 	}
-	
+
 	if (StrEqual(szClan, "BOOM"))
 	{
 		g_iProfileRank[client] = 125;
 	}
-	
+
 	if (StrEqual(szClan, "sAw"))
 	{
 		g_iProfileRank[client] = 126;
 	}
-	
+
 	if (strcmp(szClan, "Wings") == 0)
 	{
 		g_iProfileRank[client] = 128;
 	}
-	
+
 	if (strcmp(szClan, "Global") == 0)
 	{
 		g_iProfileRank[client] = 129;
 	}
-	
+
 	if (StrEqual(szClan, "NASR"))
 	{
 		g_iProfileRank[client] = 130;
 	}
-	
+
 	if (StrEqual(szClan, "LEISURE"))
 	{
 		g_iProfileRank[client] = 131;
 	}
-	
+
 	if (StrEqual(szClan, "TTT"))
 	{
 		g_iProfileRank[client] = 132;
 	}
-	
+
 	if (StrEqual(szClan, "SHIFT"))
 	{
 		g_iProfileRank[client] = 133;
 	}
-	
+
 	if (StrEqual(szClan, "nxl"))
 	{
 		g_iProfileRank[client] = 134;
 	}
-	
+
 	if (strcmp(szClan, "LLL") == 0)
 	{
 		g_iProfileRank[client] = 135;
 	}
-	
+
 	if (StrEqual(szClan, "Energy"))
 	{
 		g_iProfileRank[client] = 136;
 	}
-	
+
 	if (StrEqual(szClan, "NEW"))
 	{
 		g_iProfileRank[client] = 137;
 	}
-	
+
 	if (strcmp(szClan, "Conquer") == 0)
 	{
 		g_iProfileRank[client] = 138;
 	}
-	
+
 	if (StrEqual(szClan, "TIGER"))
 	{
 		g_iProfileRank[client] = 139;
 	}
-	
+
 	if (StrEqual(szClan, "GroundZero"))
 	{
 		g_iProfileRank[client] = 140;
 	}
-	
+
 	if (StrEqual(szClan, "AVEZ"))
 	{
 		g_iProfileRank[client] = 141;
 	}
-	
+
 	if (StrEqual(szClan, "Gen.G"))
 	{
 		g_iProfileRank[client] = 143;
 	}
-	
+
 	if (StrEqual(szClan, "Furious"))
 	{
 		g_iProfileRank[client] = 144;
 	}
-	
+
 	if (StrEqual(szClan, "GTZ"))
 	{
 		g_iProfileRank[client] = 145;
 	}
-	
+
 	if (StrEqual(szClan, "x6tence"))
 	{
 		g_iProfileRank[client] = 146;
 	}
-	
+
 	if (StrEqual(szClan, "Epsilon"))
 	{
 		g_iProfileRank[client] = 147;
 	}
-	
+
 	if (StrEqual(szClan, "9INE"))
 	{
 		g_iProfileRank[client] = 149;
 	}
-	
+
 	if (StrEqual(szClan, "K23"))
 	{
 		g_iProfileRank[client] = 150;
 	}
-	
+
 	if (StrEqual(szClan, "QBF"))
 	{
 		g_iProfileRank[client] = 151;
 	}
-	
+
 	if (StrEqual(szClan, "Goliath"))
 	{
 		g_iProfileRank[client] = 152;
 	}
-	
+
 	if (StrEqual(szClan, "Secret"))
 	{
 		g_iProfileRank[client] = 153;
 	}
-	
+
 	if (strcmp(szClan, "hREDS") == 0)
 	{
 		g_iProfileRank[client] = 154;
 	}
-	
+
 	if (strcmp(szClan, "Endpoint") == 0)
 	{
 		g_iProfileRank[client] = 155;
 	}
-	
+
 	if (StrEqual(szClan, "UOL"))
 	{
 		g_iProfileRank[client] = 156;
 	}
-	
+
 	if (StrEqual(szClan, "GameAgents"))
 	{
 		g_iProfileRank[client] = 157;
 	}
-	
+
 	if (StrEqual(szClan, "RADIX"))
 	{
 		g_iProfileRank[client] = 158;
 	}
-	
+
 	if (strcmp(szClan, "KPI") == 0)
 	{
 		g_iProfileRank[client] = 159;
 	}
-	
+
 	if (StrEqual(szClan, "Keyd"))
 	{
 		g_iProfileRank[client] = 160;
 	}
-	
+
 	if (StrEqual(szClan, "Illuminar"))
 	{
 		g_iProfileRank[client] = 161;
 	}
-	
+
 	if (StrEqual(szClan, "Queso"))
 	{
 		g_iProfileRank[client] = 162;
 	}
-	
+
 	if (strcmp(szClan, "Wizards") == 0)
 	{
 		g_iProfileRank[client] = 163;
 	}
-	
+
 	if (StrEqual(szClan, "AGF"))
 	{
 		g_iProfileRank[client] = 164;
 	}
-	
+
 	if (StrEqual(szClan, "eXploit"))
 	{
 		g_iProfileRank[client] = 165;
 	}
-	
+
 	if (StrEqual(szClan, "IG"))
 	{
 		g_iProfileRank[client] = 166;
 	}
-	
+
 	if (StrEqual(szClan, "HR"))
 	{
 		g_iProfileRank[client] = 167;
 	}
-	
+
 	if (StrEqual(szClan, "Dice"))
 	{
 		g_iProfileRank[client] = 168;
 	}
-	
+
 	if (StrEqual(szClan, "Tigers"))
 	{
 		g_iProfileRank[client] = 169;
 	}
-	
+
 	if (StrEqual(szClan, "9z"))
 	{
 		g_iProfileRank[client] = 170;
 	}
-	
+
 	if (StrEqual(szClan, "PlanetKey"))
 	{
 		g_iProfileRank[client] = 171;
 	}
-	
+
 	if (strcmp(szClan, "Vexed") == 0)
 	{
 		g_iProfileRank[client] = 172;
 	}
-	
+
 	if (StrEqual(szClan, "Malvinas"))
 	{
 		g_iProfileRank[client] = 173;
 	}
-	
+
 	if (strcmp(szClan, "HLE") == 0)
 	{
 		g_iProfileRank[client] = 174;
 	}
-	
+
 	if (strcmp(szClan, "Gambit") == 0)
 	{
 		g_iProfileRank[client] = 175;
 	}
-	
+
 	if (StrEqual(szClan, "Wisla"))
 	{
 		g_iProfileRank[client] = 176;
 	}
-	
+
 	if (StrEqual(szClan, "Imperial"))
 	{
 		g_iProfileRank[client] = 177;
 	}
-	
+
 	if (StrEqual(szClan, "Pompa"))
 	{
 		g_iProfileRank[client] = 178;
 	}
-	
+
 	if (StrEqual(szClan, "Unique"))
 	{
 		g_iProfileRank[client] = 179;
 	}
-	
+
 	if (StrEqual(szClan, "D13"))
 	{
 		g_iProfileRank[client] = 180;
 	}
-	
+
 	if (StrEqual(szClan, "Izako"))
 	{
 		g_iProfileRank[client] = 181;
 	}
-	
+
 	if (StrEqual(szClan, "ATK"))
 	{
 		g_iProfileRank[client] = 182;
 	}
-	
+
 	if (StrEqual(szClan, "Chaos"))
 	{
 		g_iProfileRank[client] = 183;
 	}
-	
+
 	if (StrEqual(szClan, "FATE"))
 	{
 		g_iProfileRank[client] = 184;
 	}
-	
+
 	if (StrEqual(szClan, "Canids"))
 	{
 		g_iProfileRank[client] = 185;
 	}
-	
+
 	if (StrEqual(szClan, "ESPADA"))
 	{
 		g_iProfileRank[client] = 186;
 	}
-	
+
 	if (StrEqual(szClan, "OG"))
 	{
 		g_iProfileRank[client] = 187;
 	}
-	
+
 	if (StrEqual(szClan, "ZIGMA"))
 	{
 		g_iProfileRank[client] = 188;
 	}
-	
+
 	if (StrEqual(szClan, "Ambush"))
 	{
 		g_iProfileRank[client] = 189;
 	}
-	
+
 	if (StrEqual(szClan, "KOVA"))
 	{
 		g_iProfileRank[client] = 190;
 	}
-	
+
 	if (strcmp(szClan, "Flames") == 0)
 	{
 		g_iProfileRank[client] = 191;
 	}
-	
+
 	if (strcmp(szClan, "Baecon") == 0)
 	{
 		g_iProfileRank[client] = 192;
 	}
-	
+
 	if (strcmp(szClan, "Lemondogs") == 0)
 	{
 		g_iProfileRank[client] = 193;
 	}
-	
+
 	if (strcmp(szClan, "Alpha") == 0)
 	{
 		g_iProfileRank[client] = 194;

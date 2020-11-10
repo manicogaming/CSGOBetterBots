@@ -40,7 +40,7 @@ Default
 	LookAngleMaxAccelAttacking = 2000.0
 	LookAngleStiffnessAttacking = 1200.0
 	LookAngleDampingAttacking = 75.0
-End 
+End
 
 //----------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ End
 
 Template Shotgun
         WeaponPreference = xm1014
-		WeaponPreference = mag7 
+		WeaponPreference = mag7
 		WeaponPreference = sawedoff
 		WeaponPreference = nova
 End
@@ -3741,19 +3741,19 @@ EliteAwp+SniperPro "XD | ryu"
         VoicePitch = 101
 End
 
-EliteAwp+SniperPro "dDeath of the ART" 
+EliteAwp+SniperPro "dDeath of the ART"
         VoicePitch = 87
 End
 
-EliteAwp+SniperPro "[[MxD]]X the Driplet"      
+EliteAwp+SniperPro "[[MxD]]X the Driplet"
         VoicePitch = 109
 End
 
-EliteAwp+SniperPro "-FaK- Phakkle of War"      
+EliteAwp+SniperPro "-FaK- Phakkle of War"
         VoicePitch = 115
 End
 
-EliteAwp+SniperPro [SPI]Zed-Len      
+EliteAwp+SniperPro [SPI]Zed-Len
         VoicePitch = 99
 End
 
@@ -3765,7 +3765,7 @@ EliteAwp+AutoSniper [[MxD]]ConTour
         VoicePitch = 82
 End
 
-ElitePassive+Rifle "[[MxD]] ChampLamp"      
+ElitePassive+Rifle "[[MxD]] ChampLamp"
         VoicePitch = 73
 End
 
@@ -3777,7 +3777,7 @@ ElitePassive+Rifle [[MxD]]Azimuth
         VoicePitch = 93
 End
 
-Elite+Rifle "-FaK- The Slow Red_Fox"       
+Elite+Rifle "-FaK- The Slow Red_Fox"
         VoicePitch = 82
 End
 
@@ -3789,7 +3789,7 @@ Elite+Rifle [[MxD]]xb9manina
         VoicePitch = 109
 End
 
-Elite+Rifle [[tiMmaH!]]RamboGunther1337     
+Elite+Rifle [[tiMmaH!]]RamboGunther1337
         VoicePitch = 103
 End
 
@@ -3797,15 +3797,15 @@ Elite+Rifle [[tiMaH!]]Furious_DC
         VoicePitch = 74
 End
 
-ElitePassive+Rifle "[[tiMaH!]]wolf-fang"    
+ElitePassive+Rifle "[[tiMaH!]]wolf-fang"
         VoicePitch = 88
 End
 
-Elite+Rifle [[MxD]]DaZZerMAXX       
+Elite+Rifle [[MxD]]DaZZerMAXX
         VoicePitch = 103
 End
 
-Elite+Rifle [SPI]itchetrigr     
+Elite+Rifle [SPI]itchetrigr
         VoicePitch = 74
 End
 
@@ -3833,7 +3833,7 @@ ElitePassive+Rifle "-FaK- JuZak"
         VoicePitch = 79
 End
 
-EliteAwp+SniperPro [[tiMaH!]]hula      
+EliteAwp+SniperPro [[tiMaH!]]hula
         VoicePitch = 76
 End
 
@@ -5427,7 +5427,7 @@ ToughARG+Rifle "Tongue of the Fatman"
         VoicePitch = 98
 End
 
-ToughARG+Rifle [XeT]X-Tender  
+ToughARG+Rifle [XeT]X-Tender
         VoicePitch = 99
 End
 
@@ -5435,19 +5435,19 @@ Tough+Rifle [XeT]CorTeX
         VoicePitch = 73
 End
 
-Tough+Rifle [XeT]MeaN 
+Tough+Rifle [XeT]MeaN
         VoicePitch = 85
 End
 
-ToughARG+Shotgun [XeT]Steeefan   
+ToughARG+Shotgun [XeT]Steeefan
         VoicePitch = 77
 End
 
-Tough+Rifle Warbeast  
+Tough+Rifle Warbeast
         VoicePitch = 78
 End
 
-Tough+Rifle [[tiMmaH!]]iPooN!  
+Tough+Rifle [[tiMmaH!]]iPooN!
         VoicePitch = 109
 End
 
@@ -5773,7 +5773,7 @@ End
 
 //----------------------------------------
 
-Normal+Rifle "Crouching Camper Hidden Noob"    
+Normal+Rifle "Crouching Camper Hidden Noob"
         VoicePitch = 91
 End
 
@@ -5781,31 +5781,31 @@ NormalARG+Rifle "Love Blister"
         VoicePitch = 96
 End
 
-Normal+Rifle [BiE]WormEateR 
+Normal+Rifle [BiE]WormEateR
         VoicePitch = 103
 End
 
-Normal+Rifle "[BiE]El Terrible"     
+Normal+Rifle "[BiE]El Terrible"
         VoicePitch = 95
 End
 
-Normal+Spray "Serial killer"   
+Normal+Spray "Serial killer"
         VoicePitch = 72
 End
 
-NormalSNIPER+AutoSniper Selcuk87     
+NormalSNIPER+AutoSniper Selcuk87
         VoicePitch = 93
 End
 
-NormalSNIPER+AutoSniper Shader_90   
+NormalSNIPER+AutoSniper Shader_90
         VoicePitch = 107
 End
 
-NormalARG+Rifle WerX  
+NormalARG+Rifle WerX
         VoicePitch = 106
 End
 
-NormalARG+Rifle "Sidewinder(29)"       
+NormalARG+Rifle "Sidewinder(29)"
         VoicePitch = 108
 End
 
@@ -5813,119 +5813,119 @@ NormalARG+AutoSniper Outbacks
         VoicePitch = 107
 End
 
-NormalSNIPER+AutoSniper Tennistar   
+NormalSNIPER+AutoSniper Tennistar
         VoicePitch = 93
 End
 
-NormalSNIPER+Sniper "Tetra DemoN"    
+NormalSNIPER+Sniper "Tetra DemoN"
         VoicePitch = 88
 End
 
-Normal+Rifle "Tony Vercity"    
+Normal+Rifle "Tony Vercity"
         VoicePitch = 113
 End
 
-Normal+Rifle "WarFare - fire of the land"      
+Normal+Rifle "WarFare - fire of the land"
         VoicePitch = 109
 End
 
-Normal+Rifle Bruder_D       
+Normal+Rifle Bruder_D
         VoicePitch = 96
 End
 
-NormalARG+Rifle "http//DOINGGOHEREEVERNEVEN.COM/IHATEYOU"      
+NormalARG+Rifle "http//DOINGGOHEREEVERNEVEN.COM/IHATEYOU"
         VoicePitch = 108
 End
 
-NormalSNIPER+AutoSniper "Meister Roehrich"  
+NormalSNIPER+AutoSniper "Meister Roehrich"
         VoicePitch = 85
 End
 
-Normal+Shotgun "SoMa(NO_SOUND)"    
+Normal+Shotgun "SoMa(NO_SOUND)"
         VoicePitch = 75
 End
 
-NormalARG+Spray "FoSSmy teeth now you" 
+NormalARG+Spray "FoSSmy teeth now you"
         VoicePitch = 96
 End
 
-Normal+Rifle FUzIOn    
+Normal+Rifle FUzIOn
         VoicePitch = 112
 End
 
-Normal+Rifle IcEWolF  
+Normal+Rifle IcEWolF
         VoicePitch = 89
 End
 
-Normal+Spray GurU1859  
+Normal+Spray GurU1859
         VoicePitch = 105
 End
 
-Normal+Rifle "KaNe normal orly?"      
+Normal+Rifle "KaNe normal orly?"
         VoicePitch = 112
 End
 
-NormalARG+Rifle RUMBLE  
+NormalARG+Rifle RUMBLE
         VoicePitch = 90
 End
 
-Normal+Rifle didou  
+Normal+Rifle didou
         VoicePitch = 95
 End
 
-Normal+Rifle Dydy  
+Normal+Rifle Dydy
         VoicePitch = 87
 End
 
-Normal+Rifle "!?Chris?!"  
+Normal+Rifle "!?Chris?!"
         VoicePitch = 87
 End
 
-Normal+Rifle coco  
+Normal+Rifle coco
         VoicePitch = 76
 End
 
-Normal+Rifle Den  
+Normal+Rifle Den
         VoicePitch = 92
 End
 
-Normal+Rifle "doug the rug"  
+Normal+Rifle "doug the rug"
         VoicePitch = 70
 End
 
-NormalSNIPER+Sniper Duffy  
+NormalSNIPER+Sniper Duffy
         VoicePitch = 88
 End
 
-Normal+Rifle Garebear  
+Normal+Rifle Garebear
         VoicePitch = 75
 End
 
-Normal+Rifle Grompo  
+Normal+Rifle Grompo
         VoicePitch = 109
 End
 
-Normal+Rifle Egg  
+Normal+Rifle Egg
         VoicePitch = 79
 End
 
-NormalSNIPER+Sniper Yan  
+NormalSNIPER+Sniper Yan
         VoicePitch = 98
 End
 
-Normal+Rifle Jerbear  
+Normal+Rifle Jerbear
         VoicePitch = 105
 End
 
-Normal+Rifle "Jon-Jon"  
+Normal+Rifle "Jon-Jon"
         VoicePitch = 107
 End
 
-Normal+Rifle "Lances boyfriend"  
+Normal+Rifle "Lances boyfriend"
         VoicePitch = 108
 End
 
-Normal+Rifle Markie  
+Normal+Rifle Markie
         VoicePitch = 96
 End
 
@@ -6108,63 +6108,63 @@ Fair+Spray "[MAIM]y4eelt"
         VoicePitch = 105
 End
 
-Fair+Rifle TheMetr0 
+Fair+Rifle TheMetr0
         VoicePitch = 115
 End
 
-Fair+Rifle harmonies85 
+Fair+Rifle harmonies85
         VoicePitch = 114
 End
 
-Fair+Spray omydarling  
+Fair+Spray omydarling
         VoicePitch = 80
 End
 
-Fair+Power "Veteran:)"    
+Fair+Power "Veteran:)"
         VoicePitch = 100
 End
 
-FairSNIPER+Sniper slppers      
+FairSNIPER+Sniper slppers
         VoicePitch = 84
 End
 
-FairSNIPER+Sniper Curtmigle  
+FairSNIPER+Sniper Curtmigle
         VoicePitch = 94
 End
 
-Fair+Rifle Halfmylife       
+Fair+Rifle Halfmylife
         VoicePitch = 88
 End
 
-Fair+Rifle "[MAIM]Benadic"     
+Fair+Rifle "[MAIM]Benadic"
         VoicePitch = 83
 End
 
-Fair+Shotgun 9417573154799     
+Fair+Shotgun 9417573154799
         VoicePitch = 86
 End
 
-Fair+Shotgun Med     
+Fair+Shotgun Med
         VoicePitch = 115
 End
 
-Fair+Rifle CORN75ORN   
+Fair+Rifle CORN75ORN
         VoicePitch = 82
 End
 
-Fair+Rifle FIE   
+Fair+Rifle FIE
         VoicePitch = 87
 End
 
-Fair+Rifle OEIe   
+Fair+Rifle OEIe
         VoicePitch = 113
 End
 
-Fair+Rifle RIPBLOW  
+Fair+Rifle RIPBLOW
         VoicePitch = 92
 End
 
-Fair+Rifle MartinFromOUttaSPACE       
+Fair+Rifle MartinFromOUttaSPACE
         VoicePitch = 107
 End
 
@@ -6172,15 +6172,15 @@ Fair+Rifle "[MAIM]Scape"
         VoicePitch = 106
 End
 
-Fair+Rifle Spybotter   
+Fair+Rifle Spybotter
         VoicePitch = 101
 End
 
-Fair+AutoSniper LAZZERS       
+Fair+AutoSniper LAZZERS
         VoicePitch = 114
 End
 
-Fair+Spray "Sim City 2013"     
+Fair+Spray "Sim City 2013"
         VoicePitch = 111
 End
 
@@ -6196,15 +6196,15 @@ Fair+Rifle Quen
         VoicePitch = 79
 End
 
-Fair+Power "YMe!!"     
+Fair+Power "YMe!!"
         VoicePitch = 97
 End
 
-Fair+Rifle "[MAIM]ZeusBeard"  
+Fair+Rifle "[MAIM]ZeusBeard"
         VoicePitch = 79
 End
 
-Fair+Rifle "HeadShot==>"       
+Fair+Rifle "HeadShot==>"
         VoicePitch = 85
 End
 
@@ -6308,7 +6308,7 @@ FairSNIPER+AutoSniper "Y@"
         VoicePitch = 79
 End
 
-Fair+Rifle "@what.com" 
+Fair+Rifle "@what.com"
         VoicePitch = 91
 End
 
@@ -6316,47 +6316,47 @@ Fair+Spray Death
         VoicePitch = 84
 End
 
-Fair+Spray killer      
+Fair+Spray killer
         VoicePitch = 104
 End
 
-Fair+Spray Opange      
+Fair+Spray Opange
         VoicePitch = 78
 End
 
-Fair+Rifle concelal    
+Fair+Rifle concelal
         VoicePitch = 102
 End
 
-Fair+Rifle outcourge  
+Fair+Rifle outcourge
         VoicePitch = 103
 End
 
-Fair+Rifle importedBEER      
+Fair+Rifle importedBEER
         VoicePitch = 103
 End
 
-Fair+Rifle crag       
+Fair+Rifle crag
         VoicePitch = 95
 End
 
-Fair+Rifle yap 
+Fair+Rifle yap
         VoicePitch = 102
 End
 
-Fair+Power killplz      
+Fair+Power killplz
         VoicePitch = 86
 End
 
-Fair+Spray nofood4you  
+Fair+Spray nofood4you
         VoicePitch = 91
 End
 
-FairSNIPER+AutoSniper useeme       
+FairSNIPER+AutoSniper useeme
         VoicePitch = 94
 End
 
-FairSNIPER+Sniper jajajjjajjaj       
+FairSNIPER+Sniper jajajjjajjaj
         VoicePitch = 79
 End
 
@@ -6380,23 +6380,23 @@ Fair+Power Opire
         VoicePitch = 102
 End
 
-Fair+Rifle "LoVe ME"   
+Fair+Rifle "LoVe ME"
         VoicePitch = 91
 End
 
-Fair+Rifle Curage     
+Fair+Rifle Curage
         VoicePitch = 82
 End
 
-Fair+Shotgun simster   
+Fair+Shotgun simster
         VoicePitch = 103
 End
 
-Fair+Spray easymeat    
+Fair+Spray easymeat
         VoicePitch = 115
 End
 
-Fair+Spray 570293847502983     
+Fair+Spray 570293847502983
         VoicePitch = 71
 End
 
@@ -6408,11 +6408,11 @@ Fair+Rifle [MAIM]knifer
         VoicePitch = 94
 End
 
-Fair+Power "Life 3"    
+Fair+Power "Life 3"
         VoicePitch = 90
 End
 
-Fair+Power Dinner     
+Fair+Power Dinner
         VoicePitch = 79
 End
 
@@ -6420,7 +6420,7 @@ Fair+Rifle Pimp
         VoicePitch = 73
 End
 
-Fair+Spray Aqua 
+Fair+Spray Aqua
         VoicePitch = 104
 End
 
@@ -6428,19 +6428,19 @@ Fair+Rifle Mousepad
         VoicePitch = 107
 End
 
-Fair+Rifle [MAIM]Dire   
+Fair+Rifle [MAIM]Dire
         VoicePitch = 77
 End
 
-Fair+Rifle GCFfile    
+Fair+Rifle GCFfile
         VoicePitch = 89
 End
 
-Fair+Rifle VCA    
+Fair+Rifle VCA
         VoicePitch = 101
 End
 
-Fair+Rifle Inofo    
+Fair+Rifle Inofo
         VoicePitch = 98
 End
 
@@ -6448,11 +6448,11 @@ Fair+Rifle Tool527
         VoicePitch = 71
 End
 
-Fair+Rifle NIght      
+Fair+Rifle NIght
         VoicePitch = 96
 End
 
-FairSNIPER+AutoSniper Data   
+FairSNIPER+AutoSniper Data
         VoicePitch = 79
 End
 
@@ -6633,7 +6633,7 @@ Fair+Rifle Stan
 End
 
 FairSNIPER+Sniper Vern
-        VoicePitch = 
+        VoicePitch =
 End
 
 Fair+Shotgun Quince
