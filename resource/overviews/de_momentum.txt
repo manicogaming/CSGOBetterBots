@@ -1,0 +1,10 @@
+"de_momentum"
+{
+	"material"	"overviews/de_momentum_radar"	// texture file
+	"pos_x"		"-2331"				// X coordinate
+	"pos_y"		"1974"				// Y coordinate
+	"scale"		"4.75" 				// scale used when taking the screenshot
+	"rotate"	"0"				// map was rotated by 90 degrees in image editor
+	"zoom"		".9"				// optimal zoom factor if map is shown in full size
+
+}

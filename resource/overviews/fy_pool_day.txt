@@ -1,0 +1,7 @@
+"fy_pool_day"
+{
+"material" "overviews/fy_pool_day"
+"pos_x" "-1326"
+"pos_y" "1569"
+"scale" "2" 
+}

@@ -1,0 +1,7 @@
+"fy_iceworld_gc"
+{
+	"material" "overviews/fy_iceworld_gc"
+	"pos_x" "-992.000000"
+	"pos_y" "1012.000000"
+	"scale" "1.940000"
+}

@@ -1,0 +1,20 @@
+// HLTV overview description file for de_institut.bsp
+
+"de_institut"
+{
+	"material"	"overviews/de_institut_radar"	// texture file
+	"pos_x"		"-2272"				// X coordinate
+	"pos_y"		"1250"				// Y coordinate
+	"scale"		"4.00" 				// scale used when taking the screenshot
+	
+
+	"CTSpawn_x"	"0.55"
+	"CTSpawn_y"	"0.24"
+	"TSpawn_x"	"0.65"
+	"TSpawn_y"	"0.84"
+
+	"bombA_x"	"0.77"
+	"bombA_y"	"0.35"
+	"bombB_x"	"0.55"
+	"bombB_y"	"0.15"
+}

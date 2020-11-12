@@ -1,0 +1,9 @@
+"de_rush"
+{
+	"material"	"overviews/de_rush_radar"	// texture file
+	"pos_x"		"-2948"	// X coordinate,
+	"pos_y"		"845"	// Y coordinate,
+	"scale"		"6.0" 	// and used scale used when taking the screenshot
+	"rotate"	"0"	// map was rotated by 90 degress in image editor
+	"zoom"		"1.2"	// optimal zoom factor if map is shown in full size
+}

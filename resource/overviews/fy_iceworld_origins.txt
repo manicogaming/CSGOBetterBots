@@ -1,0 +1,7 @@
+"fy_iceworld_origins"
+{
+"material" "overviews/fy_iceworld_origins"
+"pos_x" "-649"
+"pos_y" "383"
+"scale" "2"
+}

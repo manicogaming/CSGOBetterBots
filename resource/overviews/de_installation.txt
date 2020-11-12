@@ -1,0 +1,7 @@
+"Installation"
+{
+	"material" "overviews/de_atrium"
+	"pos_x" "-2432"
+	"pos_y" "1792"
+	"scale" "4"
+}

@@ -1,0 +1,7 @@
+"de_3rdstrike_b1"
+{
+"material" "overviews/de_3rdstrike_b1_radar"
+"pos_x"	 "-4372" //MAP X COORDS
+"pos_y"	 "3884" //MAP Y COORDS
+"scale"	 "7.5"	 //MAP SCALE
+}

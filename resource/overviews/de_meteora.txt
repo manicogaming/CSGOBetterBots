@@ -1,0 +1,11 @@
+
+"de_meteora"
+{
+	"material"	"overviews/de_meteora"	// texture file
+	"pos_x"		"-2966"	// upper left world coordinate
+	"pos_y"		"2954"
+	"scale"		"6"
+	"rotate"	"0"
+	"zoom"		"1.5"
+}
+

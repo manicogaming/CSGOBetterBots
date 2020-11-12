@@ -1,0 +1,43 @@
+// 
+
+"de_Codewise2"
+{
+	"material"	"overviews/de_Codewise2_radar"	// texture file
+	"pos_x"		"-2069"	// upper left world coordinate
+	"pos_y"		"935"
+
+	"scale"		"3"
+	
+		
+
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.50"
+	"CTSpawn_y"	"0.28"
+	"TSpawn_x"	"0.60"
+	"TSpawn_y"	"0.54"
+
+	"bombA_x"	"0.60"
+	"bombA_y"	"0.18"
+	"bombB_x"	"0.48"
+	"bombB_y"	"0.75"
+
+
+"verticalsections"
+{
+	"default" // use the primary radar image
+	{
+		"AltitudeMax" "600"
+		"AltitudeMin" "-94"
+	}
+	"lower" // lower radar file
+	{
+		"AltitudeMax" "-94"
+		"AltitudeMin" "-10000"
+	}
+	"higher" // higher radar file
+	{
+		"AltitudeMax" "10000"
+		"AltitudeMin" "600"
+	}
+}
+}
