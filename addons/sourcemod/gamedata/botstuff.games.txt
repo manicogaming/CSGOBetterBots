@@ -58,12 +58,6 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::Blind"
-			{
-				// Has 'Blinded: holdTime = %3.2f, fadeTime = %3.2f, alpha = %3.2f\n' string
-				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x83\xE4\xC0\xF3\x0F\x10\x45\x10"
-			}
 			"CCSBot::BendLineOfSight"
 			{
 				// Has 'CCSBot::BendLineOfSight' string

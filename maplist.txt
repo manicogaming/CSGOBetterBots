@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Nov 12 03:56:57 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat Nov 14 02:35:28 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -145,6 +145,7 @@ cs_hostage_taking
 cs_isku
 cs_italy
 cs_italy_d
+cs_ivory
 cs_lanpartymayhem
 cs_mari
 cs_militia
@@ -246,6 +247,9 @@ de_infernohr_night
 de_installation
 de_institut
 de_iris
+de_island
+de_jingshen
+de_kabul_b3
 de_lake
 de_livehouse
 de_maya

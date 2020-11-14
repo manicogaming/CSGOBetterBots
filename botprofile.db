@@ -489,6 +489,9 @@ End
 
 ProAwp+SniperPro "device"
 	VoicePitch = 104
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Xyp9x"
@@ -497,6 +500,9 @@ End
 
 ProP+Rifle "Magisk"
 	VoicePitch = 73
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "dupreeh"
@@ -709,6 +715,9 @@ End
 
 ProAwp+SniperPro "s1mple"
 	VoicePitch = 71
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "flamie"
@@ -739,6 +748,9 @@ End
 
 ProP+Rifle "ELiGE"
 	VoicePitch = 93
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Twistzz"
@@ -797,6 +809,9 @@ End
 
 ProAwp+SniperPro "ZywOo"
 	VoicePitch = 115
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "apEX"

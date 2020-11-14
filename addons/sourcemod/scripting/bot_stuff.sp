@@ -14,7 +14,7 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bIsProBot[MAXPLAYERS+1] = false;
-bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 float g_fHoldPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS+1];
@@ -29,7 +29,6 @@ Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
 Handle g_hBotBendLineOfSight;
-Handle g_hBotBlindDetour;
 Handle g_hBotSetLookAtDetour;
 Handle g_hBotUpdateDetour;
 Handle g_hBotPickNewAimSpotDetour;
@@ -57,18 +56,18 @@ char g_szBoneNames[][] = {
 	"spine_1",
 	"spine_2",
 	"spine_3",
-	"leg_upper_L",
-	"leg_upper_R",
-	"leg_lower_L",
-	"leg_lower_R",
-	"ankle_L",
-	"ankle_R",
-	"hand_L",
-	"hand_R",
 	"arm_upper_L",
 	"arm_lower_L",
+	"hand_L",
 	"arm_upper_R",
-	"arm_lower_R"
+	"arm_lower_R",
+	"hand_R",
+	"leg_upper_L",
+	"ankle_L",
+	"leg_lower_L",
+	"leg_upper_R",
+	"ankle_R",
+	"leg_lower_R"
 };
 
 static char g_szBotName[][] = {
@@ -995,6 +994,7 @@ public void OnPluginStart()
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("bomb_defused", OnBombDefusedOrExploded);
 	HookEventEx("bomb_exploded", OnBombDefusedOrExploded);
+	HookEventEx("weapon_zoom", OnWeaponZoom);
 
 	LoadSDK();
 	LoadDetours();
@@ -5756,7 +5756,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	CreateTimer(0.1, Timer_FreezetimeEnd);
+	g_bFreezetimeEnd = true;
 
 	if(strcmp(g_szMap, "de_mirage") == 0)
 	{
@@ -6049,6 +6049,16 @@ public void OnBombDefusedOrExploded(Event eEvent, const char[] szName, bool bDon
 	g_bBombPlanted = false;
 }
 
+public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	
+	if(IsValidClient(client) && IsFakeClient(client))
+	{
+		CreateTimer(0.25, Timer_Zoomed, client);
+	}
+}
+
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS+1);
@@ -6148,15 +6158,6 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	return Plugin_Continue;
 }
 
-public MRESReturn Detour_OnBOTBlind(Handle hParams)
-{
-	if(DHookGetParam(hParams, 1) < 1.0)
-	{
-		return MRES_Supercede;
-	}
-	return MRES_Ignored;
-}
-
 public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 {
 	if(g_bIsProBot[client])
@@ -6178,7 +6179,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 
 		if(g_bCanAttack[client])
 		{
-			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
+			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 			{
 				if(g_bIsHeadVisible[client])
 				{
@@ -6220,7 +6221,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					}
 				}
 			}
-			else if(iDefIndex == 40 || iDefIndex == 11 || iDefIndex == 38)
+			else if(iDefIndex == 11 || iDefIndex == 38)
 			{
 				if(g_bIsHeadVisible[client])
 				{
@@ -6680,6 +6681,11 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				g_bCanAttack[client] = false;
 				return Plugin_Continue;
 			}
+			
+			if(GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
+			{
+				g_bZoomed[client] = false;
+			}
 
 			if(g_bFreezetimeEnd && g_bCanAttack[client])
 			{
@@ -6711,7 +6717,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				}
 
 				if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
-				{
+				{					
 					if(IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client))
 					{
 						iButtons |= IN_ATTACK;
@@ -6744,9 +6750,16 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 						fVel[2] = 0.0;
 					}
 				}
-				else
+				else if(iDefIndex == 9 || iDefIndex == 40)
 				{
-					return Plugin_Continue;
+					if(GetClientAimTarget(client, true) == iEnt && g_bZoomed[client])
+					{
+						iButtons |= IN_ATTACK;
+						
+						fVel[0] = 0.0;
+						fVel[1] = 0.0;
+						fVel[2] = 0.0;
+					}
 				}
 
 				BotAttack(client, iEnt);
@@ -6979,21 +6992,6 @@ public void LoadDetours()
 		return;
 	}
 
-	//CCSBot::Blind Detour
-	g_hBotBlindDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_Ignore);
-	if (!g_hBotBlindDetour)
-	SetFailState("Failed to setup detour for CCSBot::Blind");
-
-	if (!DHookSetFromConf(g_hBotBlindDetour, hGameData, SDKConf_Signature, "CCSBot::Blind"))
-	SetFailState("Failed to load CCSBot::Blind signature from gamedata");
-
-	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // holdTime
-	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // fadeTime
-	DHookAddParam(g_hBotBlindDetour, HookParamType_Float); // startingAlpha
-
-	if (!DHookEnableDetour(g_hBotBlindDetour, false, Detour_OnBOTBlind))
-	SetFailState("Failed to detour CCSBot::Blind.");
-
 	//CCSBot::SetLookAt Detour
 	g_hBotSetLookAtDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
 	if (!g_hBotSetLookAtDetour)
@@ -7210,9 +7208,9 @@ public Action Timer_ThrowFlash(Handle hTimer, int client)
 	g_bCanThrowFlash[client] = true;
 }
 
-public Action Timer_FreezetimeEnd(Handle hTimer)
+public Action Timer_Zoomed(Handle hTimer, int client)
 {
-	g_bFreezetimeEnd = true;
+	g_bZoomed[client] = true;
 }
 
 float[] SelectBestTargetPos(int client, int &iBestEnemy)

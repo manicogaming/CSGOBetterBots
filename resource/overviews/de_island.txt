@@ -1,0 +1,11 @@
+// HLTV overview description file for de_island.bsp
+
+"de_island"
+{
+	"material"	"overviews/de_island"	// texture file
+	"pos_x"		"-2441"	// upper left world coordinate
+	"pos_y"		"2338"
+	"scale"		"4.0" 
+	"rotate"	"1"
+	"zoom"		"1.5"
+}

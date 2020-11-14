@@ -1,0 +1,18 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"cs_ivory"
+{
+	"CTSpawn_x" "2.180000"
+	"CTSpawn_y" "0.840000"
+	"Hostage1_x" "2.020000"
+	"Hostage1_y" "0.330000"
+	"Hostage2_x" "1.630000"
+	"Hostage2_y" "0.320000"
+	"Hostage3_x" "2.020000"
+	"Hostage3_y" "0.190000"
+	"TSpawn_x" "2.040000"
+	"TSpawn_y" "0.120000"
+	"material" "overviews/cs_ivory"
+	"pos_x" "-5792.000000"
+	"pos_y" "3088.000000"
+	"scale" "4.530000"
+}
