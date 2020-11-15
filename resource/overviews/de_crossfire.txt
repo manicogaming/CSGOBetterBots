@@ -1,0 +1,9 @@
+// HLTV overview description file for de_crossfire.bsp
+
+"de_crossfire"
+{
+	"material"	"overviews/de_crossfire"	// texture file
+	"pos_x"		"-9861"	// upper left world coordinate
+	"pos_y"		"10647"
+	"scale"		"4.00" 
+}

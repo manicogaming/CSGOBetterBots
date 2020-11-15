@@ -1,0 +1,9 @@
+// HLTV overview description file for McDonalds-MDS-CSGO.bsp
+
+"McDonalds-MDS-CSGO"
+ {
+ "material" "overviews/McDonalds-MDS-CSGO_radar"
+ "pos_x" "-1830" //MAP X COORDS
+ "pos_y" "1552" //MAP Y COORDS
+ "scale" "3" //MAP SCALE
+ }

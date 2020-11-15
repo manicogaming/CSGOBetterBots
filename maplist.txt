@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Nov 14 02:35:28 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sun Nov 15 02:17:24 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -61,7 +61,6 @@ aim_neon_handel
 aim_notsocrazyjump
 aim_poolparty_crashz
 aim_pro
-aim_redline
 aim_scopearena
 aim_scoutz
 aim_shotgun3
@@ -152,6 +151,7 @@ cs_militia
 cs_museum
 cs_office
 cs_office_d
+cs_siege
 cs_warmblow_beta01
 cs_winternights
 de_1_6_vertigo
@@ -209,6 +209,7 @@ de_coredump
 de_cotroceni
 de_cpl_strike_cs16_kp
 de_cpt
+de_crossfire
 de_crown
 de_cypress
 de_dahshur
@@ -224,8 +225,12 @@ de_dust2_winter_2019
 de_dust_cso2
 de_dust_new
 de_dynasty
+de_empire
+de_engage
+de_facade
 de_fallgarden_9
 de_favela
+de_fire
 de_forlorn
 de_fortress
 de_garrison
@@ -252,9 +257,12 @@ de_jingshen
 de_kabul_b3
 de_lake
 de_livehouse
+de_log
+de_lumber
 de_maya
 de_mentalhospital_beta
 de_meteora
+de_mill_ce
 de_minimetzel_hslan
 de_mirage
 de_momentum
@@ -263,6 +271,7 @@ de_nocredit
 de_nuke
 de_nuke_ramps
 de_ore
+de_overgrown
 de_overpass
 de_parthenon_royal
 de_portugal_rc1
@@ -270,6 +279,7 @@ de_pripyat
 de_prodigy_d
 de_rails
 de_rats_1337_v2
+de_region
 de_rotterdam
 de_ruins
 de_rush
@@ -278,6 +288,8 @@ de_rust_b3
 de_safehouse
 de_saint
 de_santorini
+de_seaside
+de_season
 de_shortdust
 de_shortnuke
 de_snowcapped_csgo
@@ -289,10 +301,12 @@ de_stolen
 de_storehouse
 de_swamp
 de_train
+de_tulip
 de_tuscan
 de_vacant
 de_vertigo
 de_waterfall
+de_westwood
 de_xmas_hotel
 de_zen
 deagle_ultra
@@ -382,6 +396,7 @@ knas_speedcastle_css
 knife_fight_v1
 m_maze
 mcdonalds-mds
+mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1
 nyaarena

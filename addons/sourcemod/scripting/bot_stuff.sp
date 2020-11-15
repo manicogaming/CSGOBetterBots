@@ -6055,7 +6055,7 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 	
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		CreateTimer(0.25, Timer_Zoomed, client);
+		CreateTimer(0.3, Timer_Zoomed, client);
 	}
 }
 
@@ -6179,11 +6179,11 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 
 		if(g_bCanAttack[client])
 		{
-			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
+			if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35 && iDefIndex != 40) || iDefIndex == 63)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 45)
+					if(Math_GetRandomInt(1,100) <= 40)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 
@@ -6204,7 +6204,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 45)
+					if(Math_GetRandomInt(1,100) <= 40)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 
@@ -6225,7 +6225,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if(g_bIsHeadVisible[client])
 				{
-					if(Math_GetRandomInt(1,100) <= 35)
+					if(Math_GetRandomInt(1,100) <= 40)
 					{
 						int iBone = LookupBone(iEnt, "spine_2");
 
