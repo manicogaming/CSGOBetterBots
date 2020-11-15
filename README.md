@@ -26,9 +26,6 @@ I edited the following plugins.
 - Added all Official CS:GO ranks from every gamemode
 - Replaced Overlays with end game rank up animation
 
-# [[CS:GO] Weapon Stickers (!stickers)](https://forums.alliedmods.net/showthread.php?t=327078)
-- Added a native to set any attribute value
-
 # Other Files
 
 There's an improved BotProfile.db I've edited that is a mix of the one made by [tNzxX](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497) and the other made by [lolznoboz](https://gamebanana.com/scripts/10308).
