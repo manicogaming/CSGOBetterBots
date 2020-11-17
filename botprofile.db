@@ -1562,7 +1562,7 @@ ProAwp+SniperPro "Maka"
 	VoicePitch = 92
 End
 
-ProP+Rifle "xms"
+ProP+Rifle "DEVIL"
 	VoicePitch = 108
 End
 
@@ -2036,25 +2036,25 @@ ProP+Rifle "syncD"
 	VoicePitch = 79
 End
 
-//SHIFT Players
+//PX Players
 
-ProP+Rifle "Young KillerS"
+ProP+Rifle "mindfreak"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "Kishi"
+ProAwp+SniperPro "d4v41"
 	VoicePitch = 108
 End
 
-ProP+Rifle "tozz"
+ProP+Rifle "Benkai"
 	VoicePitch = 111
 End
 
-ProP+Rifle "huyhart"
+ProP+Rifle "Tommy"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Imcarnus"
+ProP+Rifle "f0rsakeN"
 	VoicePitch = 84
 End
 
@@ -2080,25 +2080,25 @@ ProP+Rifle "xera"
 	VoicePitch = 97
 End
 
-//LLL Players
+//DV Players
 
-ProP+Rifle "simix"
+ProP+Rifle "TTyke"
 	VoicePitch = 100
 End
 
-ProAwp+SniperPro "Stev0se"
+ProAwp+SniperPro "DVDOV"
 	VoicePitch = 112
 End
 
-ProP+Rifle "ritchiEE"
+ProP+Rifle "PokemoN"
 	VoicePitch = 82
 End
 
-ProP+Rifle "rilax"
+ProP+Rifle "Ejram"
 	VoicePitch = 109
 End
 
-ProP+Rifle "FASHR"
+ProP+Rifle "Pogba"
 	VoicePitch = 75
 End
 
@@ -5966,10 +5966,6 @@ End
 
 Normal+Rifle STEVE
         VoicePitch = 73
-End
-
-Normal+Rifle tommy
-        VoicePitch = 80
 End
 
 Normal+Rifle Yahn

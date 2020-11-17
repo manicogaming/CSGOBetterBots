@@ -992,9 +992,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 71624387;
 	}
-	else if(strcmp(szBotName, "xms") == 0)
+	else if(strcmp(szBotName, "DEVIL") == 0)
 	{
-		iAccountID = 38509481;
+		iAccountID = 44238623;
 	}
 	//Nemiga Players
 	else if(strcmp(szBotName, "mds") == 0)
@@ -1357,10 +1357,18 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 232621986;
 	}
-	//SHIFT Players
-	else if(strcmp(szBotName, "Kishi") == 0)
+	//PX Players
+	else if(strcmp(szBotName, "d4v41") == 0)
 	{
-		iAccountID = 141118399;
+		iAccountID = 108906255;
+	}
+	else if(strcmp(szBotName, "Benkai") == 0)
+	{
+		iAccountID = 55219557;
+	}
+	else if(strcmp(szBotName, "Tommy") == 0)
+	{
+		iAccountID = 43664519;
 	}
 	//nxl Players
 	else if(strcmp(szBotName, "soifong") == 0)
@@ -1371,26 +1379,22 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 41830668;
 	}
-	//LLL Players
-	else if(strcmp(szBotName, "simix") == 0)
+	//DV Players
+	else if(strcmp(szBotName, "TTyke") == 0)
 	{
-		iAccountID = 11657532;
+		iAccountID = 413625684;
 	}
-	else if(strcmp(szBotName, "ritchiEE") == 0)
+	else if(strcmp(szBotName, "PokemoN") == 0)
 	{
-		iAccountID = 9173024;
+		iAccountID = 137998735;
 	}
-	else if(strcmp(szBotName, "Stev0se") == 0)
+	else if(strcmp(szBotName, "DVDOV") == 0)
 	{
-		iAccountID = 180588172;
+		iAccountID = 40379175;
 	}
-	else if(strcmp(szBotName, "rilax") == 0)
+	else if(strcmp(szBotName, "Ejram") == 0)
 	{
-		iAccountID = 74315848;
-	}
-	else if(strcmp(szBotName, "FASHR") == 0)
-	{
-		iAccountID = 3238867;
+		iAccountID = 152164497;
 	}
 	//energy Players
 	//Furious Players
