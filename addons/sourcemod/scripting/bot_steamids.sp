@@ -2105,11 +2105,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 28405622;
 	}
-	//Epsilon Players
-	else if(strcmp(szBotName, "Celebrations") == 0)
-	{
-		iAccountID = 23315665;
-	}
 	//TIGER Players
 	else if(strcmp(szBotName, "erkaSt") == 0)
 	{

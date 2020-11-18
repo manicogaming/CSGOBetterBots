@@ -815,12 +815,6 @@ static char g_szBotName[][] = {
 	"tifa",
 	"jota",
 	"puni",
-	//Epsilon Players
-	"ALEXJ",
-	"smogger",
-	"Celebrations",
-	"Masti",
-	"Blytz",
 	//TIGER Players
 	"erkaSt",
 	"nin9",
@@ -1123,7 +1117,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_keyd", Team_Keyd);
-	RegConsoleCmd("team_epsilon", Team_Epsilon);
 	RegConsoleCmd("team_tiger", Team_TIGER);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_penta", Team_PENTA);
@@ -4871,36 +4864,6 @@ public Action Team_Keyd(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Epsilon(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-
-	if(StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "ALEXJ");
-		ServerCommand("bot_add_ct %s", "smogger");
-		ServerCommand("bot_add_ct %s", "Celebrations");
-		ServerCommand("bot_add_ct %s", "Masti");
-		ServerCommand("bot_add_ct %s", "Blytz");
-		ServerCommand("mp_teamlogo_1 eps");
-	}
-
-	if(StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "ALEXJ");
-		ServerCommand("bot_add_t %s", "smogger");
-		ServerCommand("bot_add_t %s", "Celebrations");
-		ServerCommand("bot_add_t %s", "Masti");
-		ServerCommand("bot_add_t %s", "Blytz");
-		ServerCommand("mp_teamlogo_2 eps");
-	}
-
-	return Plugin_Handled;
-}
-
 public Action Team_TIGER(int client, int iArgs)
 {
 	char arg[12];
@@ -8280,12 +8243,6 @@ public void Pro_Players(char[] szBotName, int client)
 		CS_SetClientClanTag(client, "Keyd");
 	}
 
-	//Epsilon Players
-	if((StrEqual(szBotName, "ALEXJ")) || (StrEqual(szBotName, "smogger")) || (StrEqual(szBotName, "Celebrations")) || (StrEqual(szBotName, "Masti")) || (StrEqual(szBotName, "Blytz")))
-	{
-		CS_SetClientClanTag(client, "Epsilon");
-	}
-
 	//TIGER Players
 	if((StrEqual(szBotName, "erkaSt")) || (StrEqual(szBotName, "nin9")) || (StrEqual(szBotName, "dobu")) || (StrEqual(szBotName, "kabal")) || (StrEqual(szBotName, "rate")))
 	{
@@ -8956,11 +8913,6 @@ public void SetCustomPrivateRank(int client)
 	if (StrEqual(szClan, "x6tence"))
 	{
 		g_iProfileRank[client] = 146;
-	}
-
-	if (StrEqual(szClan, "Epsilon"))
-	{
-		g_iProfileRank[client] = 147;
 	}
 
 	if (StrEqual(szClan, "9INE"))

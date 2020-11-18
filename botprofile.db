@@ -3180,28 +3180,6 @@ ProP+Rifle "puni"
 	VoicePitch = 115
 End
 
-//Epsilon Players
-
-ProP+Rifle "ALEXJ"
-	VoicePitch = 113
-End
-
-ProAwp+SniperPro "smogger"
-	VoicePitch = 92
-End
-
-ProP+Rifle "Celebrations"
-	VoicePitch = 84
-End
-
-ProP+Rifle "Masti"
-	VoicePitch = 105
-End
-
-ProP+Rifle "Blytz"
-	VoicePitch = 93
-End
-
 //TIGER Players
 
 ProP+Rifle "erkaSt"
