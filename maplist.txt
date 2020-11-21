@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Wed Nov 18 02:42:13 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat Nov 21 03:05:54 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -195,7 +195,6 @@ de_cbble
 de_cbble_clangame
 de_cbble_csgo_final
 de_cbble_small_v2
-de_central_castle
 de_chateau_turzo
 de_chinatown
 de_chlore

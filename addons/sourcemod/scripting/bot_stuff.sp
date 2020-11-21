@@ -2922,7 +2922,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if(StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "JonY BoY");
+		ServerCommand("bot_add_ct %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "Reversive");
 		ServerCommand("bot_add_ct %s", "decov9jse");
@@ -2933,7 +2933,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if(StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "JonY BoY");
+		ServerCommand("bot_add_t %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "Reversive");
 		ServerCommand("bot_add_t %s", "decov9jse");
