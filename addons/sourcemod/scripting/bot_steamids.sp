@@ -2202,11 +2202,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 235377137;
 	}
-	//Malvinas Players
-	else if(strcmp(szBotName, "minimal") == 0)
-	{
-		iAccountID = 81466127;
-	}
 	//Sinister5 Players
 	else if(strcmp(szBotName, "minimal") == 0)
 	{

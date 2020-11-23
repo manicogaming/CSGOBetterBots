@@ -3378,28 +3378,6 @@ ProP+Rifle "meyern"
 	VoicePitch = 104
 End
 
-//Malvinas Players
-
-ProP+Rifle "ABM"
-	VoicePitch = 82
-End
-
-ProAwp+SniperPro "fakzwall"
-	VoicePitch = 88
-End
-
-ProP+Rifle "minimal"
-	VoicePitch = 94
-End
-
-ProP+Rifle "kary"
-	VoicePitch = 75
-End
-
-ProP+Rifle "rushardo"
-	VoicePitch = 109
-End
-
 //Sinister5 Players
 
 ProP+Rifle "zerOchaNce"
