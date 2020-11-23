@@ -3664,28 +3664,6 @@ ProP+Rifle "gamersdont"
 	VoicePitch = 107
 End
 
-//Alpha Players
-
-ProP+Rifle "Medi"
-	VoicePitch = 105
-End
-
-ProAwp+SniperPro "dez1per"
-	VoicePitch = 88
-End
-
-ProP+Rifle "LeguliaS"
-	VoicePitch = 95
-End
-
-ProP+Rifle "NolderN"
-	VoicePitch = 87
-End
-
-ProP+Rifle "fakeZ"
-	VoicePitch = 112
-End
-
 //CeX Players
 
 ProP+Rifle "JackB"

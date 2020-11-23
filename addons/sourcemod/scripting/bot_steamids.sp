@@ -2360,7 +2360,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 153319644;
 	}
-	//Alpha Players
 	//CeX Players
 	else
 	{

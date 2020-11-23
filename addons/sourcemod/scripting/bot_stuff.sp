@@ -33,21 +33,22 @@ Handle g_hBotBendLineOfSight;
 Handle g_hBotSetLookAtDetour;
 Handle g_hBotUpdateDetour;
 Handle g_hBotPickNewAimSpotDetour;
+Handle g_hBotThrowGrenadeDetour;
 
 enum RouteType
 {
 	DEFAULT_ROUTE = 0,
-	FASTEST_ROUTE = 1,
-	SAFEST_ROUTE = 2,
-	RETREAT_ROUTE = 3,
+	FASTEST_ROUTE,
+	SAFEST_ROUTE,
+	RETREAT_ROUTE
 }
 
 enum PriorityType
 {
 	PRIORITY_LOW = 0,
-	PRIORITY_MEDIUM = 1,
-	PRIORITY_HIGH = 2,
-	PRIORITY_UNINTERRUPTABLE = 3,
+	PRIORITY_MEDIUM,
+	PRIORITY_HIGH,
+	PRIORITY_UNINTERRUPTABLE
 }
 
 char g_szBoneNames[][] = {
@@ -948,12 +949,6 @@ static char g_szBotName[][] = {
 	"hemzk9",
 	"Mann3n",
 	"gamersdont",
-	//Alpha Players
-	"Medi",
-	"dez1per",
-	"LeguliaS",
-	"NolderN",
-	"fakeZ",
 	//CeX Players
 	"JackB",
 	"Impact",
@@ -1134,7 +1129,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_kpi", Team_KPI);
 	RegConsoleCmd("team_hreds", Team_hREDS);
 	RegConsoleCmd("team_lemondogs", Team_Lemondogs);
-	RegConsoleCmd("team_alpha", Team_Alpha);
 	RegConsoleCmd("team_cex", Team_CeX);
 }
 
@@ -5518,36 +5512,6 @@ public Action Team_Lemondogs(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Alpha(int client, int iArgs)
-{
-	char szArg[12];
-	GetCmdArg(1, szArg, sizeof(szArg));
-
-	if(strcmp(szArg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Medi");
-		ServerCommand("bot_add_ct %s", "dez1per");
-		ServerCommand("bot_add_ct %s", "LeguliaS");
-		ServerCommand("bot_add_ct %s", "NolderN");
-		ServerCommand("bot_add_ct %s", "fakeZ");
-		ServerCommand("mp_teamlogo_1 alpha");
-	}
-
-	if(strcmp(szArg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Medi");
-		ServerCommand("bot_add_t %s", "dez1per");
-		ServerCommand("bot_add_t %s", "LeguliaS");
-		ServerCommand("bot_add_t %s", "NolderN");
-		ServerCommand("bot_add_t %s", "fakeZ");
-		ServerCommand("mp_teamlogo_2 alpha");
-	}
-
-	return Plugin_Handled;
-}
-
 public Action Team_CeX(int client, int iArgs)
 {
 	char szArg[12];
@@ -5692,7 +5656,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	}
 	else if(strcmp(g_szMap, "de_dust2") == 0)
 	{
-		g_iRndExecute = Math_GetRandomInt(1,4);
+		g_iRndExecute = Math_GetRandomInt(1,3);
 	}
 	else if(strcmp(g_szMap, "de_inferno") == 0)
 	{
@@ -5853,48 +5817,27 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 					navArea[clients[4]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
 					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
+					&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						FakeClientCommandEx(clients[1], "buy flashbang");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						FakeClientCommandEx(clients[2], "buy flashbang");
+						
+						g_bDoExecute = true;
+					}
 				}
 				case 2:
 				{
-					g_iSmoke[clients[0]] = 4; //Mid to B Execute
-					g_iSmoke[clients[1]] = 5; //Mid to B Execute
-					g_iSmoke[clients[2]] = 0; //Mid to B Execute
-					g_iSmoke[clients[3]] = 0; //Mid to B Execute
-					g_iSmoke[clients[4]] = 0; //Mid to B Execute
-	
-					g_iPositionToHold[clients[0]] = 0; //Mid to B Execute
-					g_iPositionToHold[clients[1]] = 0; //Mid to B Execute
-					g_iPositionToHold[clients[2]] = 3; //Mid to B Execute
-					g_iPositionToHold[clients[3]] = 4; //Mid to B Execute
-					g_iPositionToHold[clients[4]] = 5; //Mid to B Execute
-	
-					int iLongPushAreaIDs[] = {
-						7789, 7788, 7791, 7801, 7790
-					};
-	
-					int iShortPushAreaIDs[] = {
-						8776, 9127, 9126, 317, 8112, 8113
-					};
-	
-					int iMidAreaIDs[] = {
-						8020, 5241, 5319, 5268
-					};
-	
-					navArea[clients[2]] = NavMesh_FindAreaByID(iLongPushAreaIDs[Math_GetRandomInt(0, sizeof(iLongPushAreaIDs) - 1)]);
-					navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
-	
-					navArea[clients[3]] = NavMesh_FindAreaByID(iShortPushAreaIDs[Math_GetRandomInt(0, sizeof(iShortPushAreaIDs) - 1)]);
-					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-	
-					navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
-					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-				}
-				case 3:
-				{
-					g_iSmoke[clients[0]] = 6; //Short A Execute
-					g_iSmoke[clients[1]] = 7; //Short A Execute
-					g_iSmoke[clients[2]] = 8; //Short A Execute
-					g_iSmoke[clients[3]] = 9; //Short A Execute
+					g_iSmoke[clients[0]] = 4; //Short A Execute
+					g_iSmoke[clients[1]] = 5; //Short A Execute
+					g_iSmoke[clients[2]] = 6; //Short A Execute
+					g_iSmoke[clients[3]] = 7; //Short A Execute
 					g_iSmoke[clients[4]] = 0; //Short A Execute
 	
 					g_iPositionToHold[clients[0]] = 0; //Short A Execute
@@ -5909,12 +5852,27 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 					navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
 					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1
+					&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 300)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						FakeClientCommandEx(clients[0], "buy flashbang");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[3], "buy smokegrenade");
+						
+						g_bDoExecute = true;
+					}
 				}
 				case 4:
 				{
-					g_iSmoke[clients[0]] = 10; //Long A Execute
-					g_iSmoke[clients[1]] = 11; //Long A Execute
-					g_iSmoke[clients[2]] = 12; //Long A Execute
+					g_iSmoke[clients[0]] = 8; //Long A Execute
+					g_iSmoke[clients[1]] = 9; //Long A Execute
+					g_iSmoke[clients[2]] = 10; //Long A Execute
 					g_iSmoke[clients[3]] = 0; //Long A Execute
 					g_iSmoke[clients[4]] = 0; //Long A Execute
 	
@@ -5937,6 +5895,19 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 					navArea[clients[4]] = NavMesh_FindAreaByID(iLongAreaIDs[Math_GetRandomInt(0, sizeof(iLongAreaIDs) - 1)]);
 					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
+					&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						FakeClientCommandEx(clients[0], "buy flashbang");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						
+						g_bDoExecute = true;
+					}
 				}
 			}
 		}
@@ -6135,6 +6106,16 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 	}
 	return Plugin_Continue;
+}
+
+public MRESReturn Detour_OnBOTThrowGrenade(int client, Handle hParams)
+{
+	if(g_bIsProBot[client] && GetClientTeam(client) == CS_TEAM_T && g_bDoExecute)
+	{
+		return MRES_Supercede;
+	}
+	
+	return MRES_Ignored;
 }
 
 public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
@@ -6644,7 +6625,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				return Plugin_Changed;
 			}
 			
-			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3)
+			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0)
 			{
 				if(strcmp(g_szMap, "de_mirage") == 0)
 				{
@@ -6652,7 +6633,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				}
 				else if(strcmp(g_szMap, "de_dust2") == 0)
 				{
-					DoDust2Smokes(client);
+					DoDust2Smokes(client, iButtons);
 				}
 				else if(strcmp(g_szMap, "de_inferno") == 0)
 				{
@@ -7005,6 +6986,19 @@ public void LoadDetours()
 
 	if (!DHookEnableDetour(g_hBotPickNewAimSpotDetour, true, Detour_OnBOTPickNewAimSpot))
 	SetFailState("Failed to detour CCSBot::PickNewAimSpot.");
+
+	//CCSBot::ThrowGrenade Detour
+	g_hBotThrowGrenadeDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
+	if (!g_hBotThrowGrenadeDetour)
+	SetFailState("Failed to setup detour for CCSBot::ThrowGrenade");
+
+	if (!DHookSetFromConf(g_hBotThrowGrenadeDetour, hGameData, SDKConf_Signature, "CCSBot::ThrowGrenade"))
+	SetFailState("Failed to load CCSBot::ThrowGrenade signature from gamedata");
+	
+	DHookAddParam(g_hBotThrowGrenadeDetour, HookParamType_VectorPtr); // target
+
+	if (!DHookEnableDetour(g_hBotThrowGrenadeDetour, false, Detour_OnBOTThrowGrenade))
+	SetFailState("Failed to detour CCSBot::ThrowGrenade.");
 
 	delete hGameData;
 }
@@ -8395,12 +8389,6 @@ public void Pro_Players(char[] szBotName, int client)
 		CS_SetClientClanTag(client, "Lemondogs");
 	}
 
-	//Alpha Players
-	if((strcmp(szBotName, "Medi") == 0) || (strcmp(szBotName, "dez1per") == 0) || (strcmp(szBotName, "LeguliaS") == 0) || (strcmp(szBotName, "NolderN") == 0) || (strcmp(szBotName, "fakeZ") == 0))
-	{
-		CS_SetClientClanTag(client, "Alpha");
-	}
-
 	//CeX Players
 	if((strcmp(szBotName, "JackB") == 0) || (strcmp(szBotName, "Impact") == 0) || (strcmp(szBotName, "RezzeD") == 0) || (strcmp(szBotName, "fluFFS") == 0) || (strcmp(szBotName, "ifan") == 0))
 	{
@@ -9147,10 +9135,5 @@ public void SetCustomPrivateRank(int client)
 	if (strcmp(szClan, "Lemondogs") == 0)
 	{
 		g_iProfileRank[client] = 193;
-	}
-
-	if (strcmp(szClan, "Alpha") == 0)
-	{
-		g_iProfileRank[client] = 194;
 	}
 }
