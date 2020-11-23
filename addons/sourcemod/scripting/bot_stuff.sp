@@ -13,6 +13,7 @@
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
+bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS+1] = false;
 bool g_bHasThrownNade[MAXPLAYERS+1], g_bHasThrownSmoke[MAXPLAYERS+1], g_bCanAttack[MAXPLAYERS+1], g_bCanThrowSmoke[MAXPLAYERS+1], g_bCanThrowFlash[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iSmoke[MAXPLAYERS+1], g_iPositionToHold[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
@@ -5663,6 +5664,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = false;
 	g_bBombPlanted = false;
+	g_bDoExecute = false;
 	g_iRoundStartedTime = GetTime();
 
 
@@ -5700,297 +5702,317 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	int[] clients = new int[MaxClients];
 
 	Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
-
-	if(strcmp(g_szMap, "de_mirage") == 0)
+	
+	if(IsValidClient(clients[0]) && IsValidClient(clients[1]) && IsValidClient(clients[2]) && IsValidClient(clients[3]) && IsValidClient(clients[4]))
 	{
-		switch(g_iRndExecute)
+		if(strcmp(g_szMap, "de_mirage") == 0)
 		{
-			case 1:
+			switch(g_iRndExecute)
 			{
-				g_iSmoke[clients[0]] = 1; //A Execute
-				g_iSmoke[clients[1]] = 2; //A Execute
-				g_iSmoke[clients[2]] = 3; //A Execute
-				g_iSmoke[clients[3]] = 0; //A Execute
-				g_iSmoke[clients[4]] = 0; //A Execute
-
-				g_iPositionToHold[clients[0]] = 0; //A Execute
-				g_iPositionToHold[clients[1]] = 0; //A Execute
-				g_iPositionToHold[clients[2]] = 0; //A Execute
-				g_iPositionToHold[clients[3]] = 1; //A Execute
-				g_iPositionToHold[clients[4]] = 2; //A Execute
-
-				int iRampAreaIDs[] = {
-					2805, 341, 3507, 2854
-				};
-
-				int iPalaceAreaIDs[] = {
-					3468, 203, 3465, 96, 3475, 3476, 3463, 147, 146, 3484
-				};
-
-				navArea[clients[3]] = NavMesh_FindAreaByID(iRampAreaIDs[Math_GetRandomInt(0, sizeof(iRampAreaIDs) - 1)]);
-				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iPalaceAreaIDs[Math_GetRandomInt(0, sizeof(iPalaceAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-				
-				GivePlayerItem(clients[0], "weapon_smokegrenade");
-				GivePlayerItem(clients[0], "weapon_flashbang");
-				
-				GivePlayerItem(clients[1], "weapon_smokegrenade");
-				
-				GivePlayerItem(clients[2], "weapon_smokegrenade");
-				GivePlayerItem(clients[2], "weapon_flashbang");
-			}
-			case 2:
-			{
-				g_iSmoke[clients[0]] = 4; //Mid Execute
-				g_iSmoke[clients[1]] = 5; //Mid Execute
-				g_iSmoke[clients[2]] = 6; //Mid Execute
-				g_iSmoke[clients[3]] = 7; //Mid Execute
-				g_iSmoke[clients[4]] = 8; //Mid Execute
-
-				g_iPositionToHold[clients[0]] = 0; //Mid Execute
-				g_iPositionToHold[clients[1]] = 0; //Mid Execute
-				g_iPositionToHold[clients[2]] = 0; //Mid Execute
-				g_iPositionToHold[clients[3]] = 0; //Mid Execute
-				g_iPositionToHold[clients[4]] = 0; //Mid Execute
-				
-				GivePlayerItem(clients[0], "weapon_smokegrenade");
-				GivePlayerItem(clients[0], "weapon_flashbang");
-				
-				GivePlayerItem(clients[1], "weapon_smokegrenade");
-				
-				GivePlayerItem(clients[2], "weapon_smokegrenade");
-				
-				GivePlayerItem(clients[3], "weapon_smokegrenade");
-				GivePlayerItem(clients[3], "weapon_flashbang");
-				
-				GivePlayerItem(clients[4], "weapon_smokegrenade");
-			}
-			case 3:
-			{
-				g_iSmoke[clients[0]] = 9; //B Execute
-				g_iSmoke[clients[1]] = 10; //B Execute
-				g_iSmoke[clients[2]] = 11; //B Execute
-				g_iSmoke[clients[3]] = 12; //B Execute
-				g_iSmoke[clients[4]] = 0; //B Execute
-
-				g_iPositionToHold[clients[0]] = 0; //B Execute
-				g_iPositionToHold[clients[1]] = 0; //B Execute
-				g_iPositionToHold[clients[2]] = 0; //B Execute
-				g_iPositionToHold[clients[3]] = 0; //B Execute
-				g_iPositionToHold[clients[4]] = 3; //B Execute
-
-				int iUnderpassAreaIDs[] = {
-					921, 270, 885
-				};
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iUnderpassAreaIDs[Math_GetRandomInt(0, sizeof(iUnderpassAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-				
-				GivePlayerItem(clients[0], "weapon_smokegrenade");
-				GivePlayerItem(clients[0], "weapon_flashbang");
-				
-				GivePlayerItem(clients[1], "weapon_smokegrenade");
-				GivePlayerItem(clients[1], "weapon_flashbang");
-				
-				GivePlayerItem(clients[2], "weapon_smokegrenade");
-				GivePlayerItem(clients[2], "weapon_flashbang");
-				
-				GivePlayerItem(clients[3], "weapon_smokegrenade");
+				case 1:
+				{
+					g_iSmoke[clients[0]] = 1; //A Execute
+					g_iSmoke[clients[1]] = 2; //A Execute
+					g_iSmoke[clients[2]] = 3; //A Execute
+					g_iSmoke[clients[3]] = 0; //A Execute
+					g_iSmoke[clients[4]] = 0; //A Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //A Execute
+					g_iPositionToHold[clients[1]] = 0; //A Execute
+					g_iPositionToHold[clients[2]] = 0; //A Execute
+					g_iPositionToHold[clients[3]] = 1; //A Execute
+					g_iPositionToHold[clients[4]] = 2; //A Execute
+	
+					int iRampAreaIDs[] = {
+						2805, 341, 3507, 2854
+					};
+	
+					int iPalaceAreaIDs[] = {
+						3468, 203, 3465, 96, 3475, 3476, 3463, 147, 146, 3484
+					};
+	
+					navArea[clients[3]] = NavMesh_FindAreaByID(iRampAreaIDs[Math_GetRandomInt(0, sizeof(iRampAreaIDs) - 1)]);
+					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iPalaceAreaIDs[Math_GetRandomInt(0, sizeof(iPalaceAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						FakeClientCommandEx(clients[0], "buy flashbang");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						FakeClientCommandEx(clients[2], "buy flashbang");
+						
+						g_bDoExecute = true;
+					}
+				}
+				case 2:
+				{
+					g_iSmoke[clients[0]] = 4; //Mid Execute
+					g_iSmoke[clients[1]] = 5; //Mid Execute
+					g_iSmoke[clients[2]] = 6; //Mid Execute
+					g_iSmoke[clients[3]] = 7; //Mid Execute
+					g_iSmoke[clients[4]] = 8; //Mid Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //Mid Execute
+					g_iPositionToHold[clients[1]] = 0; //Mid Execute
+					g_iPositionToHold[clients[2]] = 0; //Mid Execute
+					g_iPositionToHold[clients[3]] = 0; //Mid Execute
+					g_iPositionToHold[clients[4]] = 0; //Mid Execute
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[4], CS_SLOT_PRIMARY) != -1
+					&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[4], Prop_Send, "m_iAccount") >= 300)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						FakeClientCommandEx(clients[0], "buy flashbang");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						
+						FakeClientCommandEx(clients[3], "buy smokegrenade");
+						FakeClientCommandEx(clients[3], "buy flashbang");
+						
+						FakeClientCommandEx(clients[4], "buy smokegrenade");
+						
+						g_bDoExecute = true;
+					}
+				}
+				case 3:
+				{
+					g_iSmoke[clients[0]] = 9; //B Execute
+					g_iSmoke[clients[1]] = 10; //B Execute
+					g_iSmoke[clients[2]] = 11; //B Execute
+					g_iSmoke[clients[3]] = 12; //B Execute
+					g_iSmoke[clients[4]] = 0; //B Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //B Execute
+					g_iPositionToHold[clients[1]] = 0; //B Execute
+					g_iPositionToHold[clients[2]] = 0; //B Execute
+					g_iPositionToHold[clients[3]] = 0; //B Execute
+					g_iPositionToHold[clients[4]] = 3; //B Execute
+	
+					int iUnderpassAreaIDs[] = {
+						921, 270, 885
+					};
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iUnderpassAreaIDs[Math_GetRandomInt(0, sizeof(iUnderpassAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+					
+					if(GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1
+					&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 300)
+					{
+						FakeClientCommandEx(clients[0], "buy smokegrenade");
+						FakeClientCommandEx(clients[0], "buy flashbang");
+						
+						FakeClientCommandEx(clients[1], "buy smokegrenade");
+						FakeClientCommandEx(clients[1], "buy flashbang");
+						
+						FakeClientCommandEx(clients[2], "buy smokegrenade");
+						FakeClientCommandEx(clients[2], "buy flashbang");
+						
+						FakeClientCommandEx(clients[3], "buy smokegrenade");
+						
+						g_bDoExecute = true;
+					}
+				}
 			}
 		}
-	}
-	else if(strcmp(g_szMap, "de_dust2") == 0)
-	{
-		switch(g_iRndExecute)
+		else if(strcmp(g_szMap, "de_dust2") == 0)
 		{
-			case 1:
+			switch(g_iRndExecute)
 			{
-				g_iSmoke[clients[0]] = 1; //B Execute
-				g_iSmoke[clients[1]] = 2; //B Execute
-				g_iSmoke[clients[2]] = 3; //B Execute
-				g_iSmoke[clients[3]] = 0; //B Execute
-				g_iSmoke[clients[4]] = 0; //B Execute
-
-				g_iPositionToHold[clients[0]] = 0; //B Execute
-				g_iPositionToHold[clients[1]] = 0; //B Execute
-				g_iPositionToHold[clients[2]] = 0; //B Execute
-				g_iPositionToHold[clients[3]] = 1; //B Execute
-				g_iPositionToHold[clients[4]] = 2; //B Execute
-
-				int iLowerTunnelAreaIDs[] = {
-					7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641, 6669, 6625, 6618, 6653, 6635, 1373, 6649, 6623, 505, 521, 558
-				};
-
-				int iBAreaIDs[] = {
-					8224, 1230, 7957
-				};
-
-				navArea[clients[3]] = NavMesh_FindAreaByID(iLowerTunnelAreaIDs[Math_GetRandomInt(0, sizeof(iLowerTunnelAreaIDs) - 1)]);
-				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-			}
-			case 2:
-			{
-				g_iSmoke[clients[0]] = 4; //Mid to B Execute
-				g_iSmoke[clients[1]] = 5; //Mid to B Execute
-				g_iSmoke[clients[2]] = 0; //Mid to B Execute
-				g_iSmoke[clients[3]] = 0; //Mid to B Execute
-				g_iSmoke[clients[4]] = 0; //Mid to B Execute
-
-				g_iPositionToHold[clients[0]] = 0; //Mid to B Execute
-				g_iPositionToHold[clients[1]] = 0; //Mid to B Execute
-				g_iPositionToHold[clients[2]] = 3; //Mid to B Execute
-				g_iPositionToHold[clients[3]] = 4; //Mid to B Execute
-				g_iPositionToHold[clients[4]] = 5; //Mid to B Execute
-
-				int iLongPushAreaIDs[] = {
-					7789, 7788, 7791, 7801, 7790
-				};
-
-				int iShortPushAreaIDs[] = {
-					8776, 9127, 9126, 317, 8112, 8113
-				};
-
-				int iMidAreaIDs[] = {
-					8020, 5241, 5319, 5268
-				};
-
-				navArea[clients[2]] = NavMesh_FindAreaByID(iLongPushAreaIDs[Math_GetRandomInt(0, sizeof(iLongPushAreaIDs) - 1)]);
-				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
-
-				navArea[clients[3]] = NavMesh_FindAreaByID(iShortPushAreaIDs[Math_GetRandomInt(0, sizeof(iShortPushAreaIDs) - 1)]);
-				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-			}
-			case 3:
-			{
-				g_iSmoke[clients[0]] = 6; //Short A Execute
-				g_iSmoke[clients[1]] = 7; //Short A Execute
-				g_iSmoke[clients[2]] = 8; //Short A Execute
-				g_iSmoke[clients[3]] = 9; //Short A Execute
-				g_iSmoke[clients[4]] = 0; //Short A Execute
-
-				g_iPositionToHold[clients[0]] = 0; //Short A Execute
-				g_iPositionToHold[clients[1]] = 0; //Short A Execute
-				g_iPositionToHold[clients[2]] = 0; //Short A Execute
-				g_iPositionToHold[clients[3]] = 0; //Short A Execute
-				g_iPositionToHold[clients[4]] = 6; //Short A Execute
-
-				int iMidAreaIDs[] = {
-					7566, 7558, 4051, 7581, 4139
-				};
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-			}
-			case 4:
-			{
-				g_iSmoke[clients[0]] = 10; //Long A Execute
-				g_iSmoke[clients[1]] = 11; //Long A Execute
-				g_iSmoke[clients[2]] = 12; //Long A Execute
-				g_iSmoke[clients[3]] = 0; //Long A Execute
-				g_iSmoke[clients[4]] = 0; //Long A Execute
-
-				g_iPositionToHold[clients[0]] = 0; //Long A Execute
-				g_iPositionToHold[clients[1]] = 0; //Long A Execute
-				g_iPositionToHold[clients[2]] = 0; //Long A Execute
-				g_iPositionToHold[clients[3]] = 7; //Long A Execute
-				g_iPositionToHold[clients[4]] = 8; //Long A Execute
-
-				int iMidPushAreaIDs[] = {
-					7342, 7343, 7348, 5370
-				};
-
-				int iLongAreaIDs[] = {
-					3661, 9156, 9155, 3698, 9154, 9153, 3659
-				};
-
-				navArea[clients[3]] = NavMesh_FindAreaByID(iMidPushAreaIDs[Math_GetRandomInt(0, sizeof(iMidPushAreaIDs) - 1)]);
-				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iLongAreaIDs[Math_GetRandomInt(0, sizeof(iLongAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				case 1:
+				{
+					g_iSmoke[clients[0]] = 1; //B Execute
+					g_iSmoke[clients[1]] = 2; //B Execute
+					g_iSmoke[clients[2]] = 3; //B Execute
+					g_iSmoke[clients[3]] = 0; //B Execute
+					g_iSmoke[clients[4]] = 0; //B Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //B Execute
+					g_iPositionToHold[clients[1]] = 0; //B Execute
+					g_iPositionToHold[clients[2]] = 0; //B Execute
+					g_iPositionToHold[clients[3]] = 1; //B Execute
+					g_iPositionToHold[clients[4]] = 2; //B Execute
+	
+					int iLowerTunnelAreaIDs[] = {
+						7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641, 6669, 6625, 6618, 6653, 6635, 1373, 6649, 6623, 505, 521, 558
+					};
+	
+					int iBAreaIDs[] = {
+						8224, 1230, 7957
+					};
+	
+					navArea[clients[3]] = NavMesh_FindAreaByID(iLowerTunnelAreaIDs[Math_GetRandomInt(0, sizeof(iLowerTunnelAreaIDs) - 1)]);
+					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
+				case 2:
+				{
+					g_iSmoke[clients[0]] = 4; //Mid to B Execute
+					g_iSmoke[clients[1]] = 5; //Mid to B Execute
+					g_iSmoke[clients[2]] = 0; //Mid to B Execute
+					g_iSmoke[clients[3]] = 0; //Mid to B Execute
+					g_iSmoke[clients[4]] = 0; //Mid to B Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //Mid to B Execute
+					g_iPositionToHold[clients[1]] = 0; //Mid to B Execute
+					g_iPositionToHold[clients[2]] = 3; //Mid to B Execute
+					g_iPositionToHold[clients[3]] = 4; //Mid to B Execute
+					g_iPositionToHold[clients[4]] = 5; //Mid to B Execute
+	
+					int iLongPushAreaIDs[] = {
+						7789, 7788, 7791, 7801, 7790
+					};
+	
+					int iShortPushAreaIDs[] = {
+						8776, 9127, 9126, 317, 8112, 8113
+					};
+	
+					int iMidAreaIDs[] = {
+						8020, 5241, 5319, 5268
+					};
+	
+					navArea[clients[2]] = NavMesh_FindAreaByID(iLongPushAreaIDs[Math_GetRandomInt(0, sizeof(iLongPushAreaIDs) - 1)]);
+					navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
+	
+					navArea[clients[3]] = NavMesh_FindAreaByID(iShortPushAreaIDs[Math_GetRandomInt(0, sizeof(iShortPushAreaIDs) - 1)]);
+					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
+				case 3:
+				{
+					g_iSmoke[clients[0]] = 6; //Short A Execute
+					g_iSmoke[clients[1]] = 7; //Short A Execute
+					g_iSmoke[clients[2]] = 8; //Short A Execute
+					g_iSmoke[clients[3]] = 9; //Short A Execute
+					g_iSmoke[clients[4]] = 0; //Short A Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //Short A Execute
+					g_iPositionToHold[clients[1]] = 0; //Short A Execute
+					g_iPositionToHold[clients[2]] = 0; //Short A Execute
+					g_iPositionToHold[clients[3]] = 0; //Short A Execute
+					g_iPositionToHold[clients[4]] = 6; //Short A Execute
+	
+					int iMidAreaIDs[] = {
+						7566, 7558, 4051, 7581, 4139
+					};
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
+				case 4:
+				{
+					g_iSmoke[clients[0]] = 10; //Long A Execute
+					g_iSmoke[clients[1]] = 11; //Long A Execute
+					g_iSmoke[clients[2]] = 12; //Long A Execute
+					g_iSmoke[clients[3]] = 0; //Long A Execute
+					g_iSmoke[clients[4]] = 0; //Long A Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //Long A Execute
+					g_iPositionToHold[clients[1]] = 0; //Long A Execute
+					g_iPositionToHold[clients[2]] = 0; //Long A Execute
+					g_iPositionToHold[clients[3]] = 7; //Long A Execute
+					g_iPositionToHold[clients[4]] = 8; //Long A Execute
+	
+					int iMidPushAreaIDs[] = {
+						7342, 7343, 7348, 5370
+					};
+	
+					int iLongAreaIDs[] = {
+						3661, 9156, 9155, 3698, 9154, 9153, 3659
+					};
+	
+					navArea[clients[3]] = NavMesh_FindAreaByID(iMidPushAreaIDs[Math_GetRandomInt(0, sizeof(iMidPushAreaIDs) - 1)]);
+					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iLongAreaIDs[Math_GetRandomInt(0, sizeof(iLongAreaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
 			}
 		}
-	}
-	else if(strcmp(g_szMap, "de_inferno") == 0)
-	{
-		switch(g_iRndExecute)
+		else if(strcmp(g_szMap, "de_inferno") == 0)
 		{
-			case 1:
+			switch(g_iRndExecute)
 			{
-				g_iSmoke[clients[0]] = 1; //B Execute
-				g_iSmoke[clients[1]] = 2; //B Execute
-				g_iSmoke[clients[2]] = 0; //B Execute
-				g_iSmoke[clients[3]] = 0; //B Execute
-				g_iSmoke[clients[4]] = 0; //B Execute
-
-				g_iPositionToHold[clients[0]] = 0; //B Execute
-				g_iPositionToHold[clients[1]] = 0; //B Execute
-				g_iPositionToHold[clients[2]] = 1; //B Execute
-				g_iPositionToHold[clients[3]] = 2; //B Execute
-				g_iPositionToHold[clients[4]] = 3; //B Execute
-
-				int iCTIDs[] = {
-					9, 3214, 3212, 507, 1823
-				};
-
-				int iCTPushIDs[] = {
-					118, 1824, 367, 1820, 1256
-				};
-
-				int iBottomBananaIDs[] = {
-					975, 313, 3353, 973, 56
-				};
-
-				navArea[clients[2]] = NavMesh_FindAreaByID(iCTIDs[Math_GetRandomInt(0, sizeof(iCTIDs) - 1)]);
-				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
-
-				navArea[clients[3]] = NavMesh_FindAreaByID(iCTPushIDs[Math_GetRandomInt(0, sizeof(iCTPushIDs) - 1)]);
-				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(iBottomBananaIDs[Math_GetRandomInt(0, sizeof(iBottomBananaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-			}
-			case 2:
-			{
-				g_iSmoke[clients[0]] = 3; //A Short/Apps Execute
-				g_iSmoke[clients[1]] = 4; //A Short/Apps Execute
-				g_iSmoke[clients[2]] = 5; //A Short/Apps Execute
-				g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
-				g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
-
-				g_iPositionToHold[clients[0]] = 0; //A Short/Apps Execute
-				g_iPositionToHold[clients[1]] = 0; //A Short/Apps Execute
-				g_iPositionToHold[clients[2]] = 0; //A Short/Apps Execute
-				g_iPositionToHold[clients[3]] = 0; //A Short/Apps Execute
-				g_iPositionToHold[clients[4]] = 4; //A Short/Apps Execute
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-			}
-			case 3:
-			{
-				g_iSmoke[clients[0]] = 7; //A Long Execute
-				g_iSmoke[clients[1]] = 8; //A Long Execute
-				g_iSmoke[clients[2]] = 9; //A Long Execute
-				g_iSmoke[clients[3]] = 10; //A Long Execute
-				g_iSmoke[clients[4]] = 0; //A Long Execute
-
-				g_iPositionToHold[clients[0]] = 0; //A Long Execute
-				g_iPositionToHold[clients[1]] = 0; //A Long Execute
-				g_iPositionToHold[clients[2]] = 0; //A Long Execute
-				g_iPositionToHold[clients[3]] = 0; //A Long Execute
-				g_iPositionToHold[clients[4]] = 4; //A Long Execute
-
-				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				case 1:
+				{
+					g_iSmoke[clients[0]] = 1; //B Execute
+					g_iSmoke[clients[1]] = 2; //B Execute
+					g_iSmoke[clients[2]] = 0; //B Execute
+					g_iSmoke[clients[3]] = 0; //B Execute
+					g_iSmoke[clients[4]] = 0; //B Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //B Execute
+					g_iPositionToHold[clients[1]] = 0; //B Execute
+					g_iPositionToHold[clients[2]] = 1; //B Execute
+					g_iPositionToHold[clients[3]] = 2; //B Execute
+					g_iPositionToHold[clients[4]] = 3; //B Execute
+	
+					int iCTIDs[] = {
+						9, 3214, 3212, 507, 1823
+					};
+	
+					int iCTPushIDs[] = {
+						118, 1824, 367, 1820, 1256
+					};
+	
+					int iBottomBananaIDs[] = {
+						975, 313, 3353, 973, 56
+					};
+	
+					navArea[clients[2]] = NavMesh_FindAreaByID(iCTIDs[Math_GetRandomInt(0, sizeof(iCTIDs) - 1)]);
+					navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
+	
+					navArea[clients[3]] = NavMesh_FindAreaByID(iCTPushIDs[Math_GetRandomInt(0, sizeof(iCTPushIDs) - 1)]);
+					navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(iBottomBananaIDs[Math_GetRandomInt(0, sizeof(iBottomBananaIDs) - 1)]);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
+				case 2:
+				{
+					g_iSmoke[clients[0]] = 3; //A Short/Apps Execute
+					g_iSmoke[clients[1]] = 4; //A Short/Apps Execute
+					g_iSmoke[clients[2]] = 5; //A Short/Apps Execute
+					g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
+					g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //A Short/Apps Execute
+					g_iPositionToHold[clients[1]] = 0; //A Short/Apps Execute
+					g_iPositionToHold[clients[2]] = 0; //A Short/Apps Execute
+					g_iPositionToHold[clients[3]] = 0; //A Short/Apps Execute
+					g_iPositionToHold[clients[4]] = 4; //A Short/Apps Execute
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
+				case 3:
+				{
+					g_iSmoke[clients[0]] = 7; //A Long Execute
+					g_iSmoke[clients[1]] = 8; //A Long Execute
+					g_iSmoke[clients[2]] = 9; //A Long Execute
+					g_iSmoke[clients[3]] = 10; //A Long Execute
+					g_iSmoke[clients[4]] = 0; //A Long Execute
+	
+					g_iPositionToHold[clients[0]] = 0; //A Long Execute
+					g_iPositionToHold[clients[1]] = 0; //A Long Execute
+					g_iPositionToHold[clients[2]] = 0; //A Long Execute
+					g_iPositionToHold[clients[3]] = 0; //A Long Execute
+					g_iPositionToHold[clients[4]] = 4; //A Long Execute
+	
+					navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+					navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				}
 			}
 		}
 	}
@@ -6622,7 +6644,7 @@ public Action OnPlayerRunCmd(int client, int& iButtons, int& iImpulse, float fVe
 				return Plugin_Changed;
 			}
 			
-			if (g_bFreezetimeEnd && !g_bBombPlanted && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3)
+			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3)
 			{
 				if(strcmp(g_szMap, "de_mirage") == 0)
 				{
