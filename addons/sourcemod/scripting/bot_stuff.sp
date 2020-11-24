@@ -5868,7 +5868,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 						g_bDoExecute = true;
 					}
 				}
-				case 4:
+				case 3:
 				{
 					g_iSmoke[clients[0]] = 8; //Long A Execute
 					g_iSmoke[clients[1]] = 9; //Long A Execute
@@ -6005,7 +6005,7 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 	
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
-		CreateTimer(0.3, Timer_Zoomed, client);
+		CreateTimer(0.3, Timer_Zoomed, GetClientUserId(client));
 	}
 }
 
@@ -6738,15 +6738,6 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 	return Plugin_Changed;
 }
 
-public void CSU_OnThrowGrenade(int client, int iEntity, GrenadeType grenadeType, const float fOrigin[3], const float fVelocity[3])
-{
-	if (IsValidClient(client))
-	{
-		PrintToChat(client, "float fOrigin[3] = { %f, %f, %f };", fOrigin[0], fOrigin[1], fOrigin[2]);
-		PrintToChat(client, "float fVelocity[3] = { %f, %f, %f };", fVelocity[0], fVelocity[1], fVelocity[2]);
-	}
-}
-
 public void OnPlayerSpawn(Handle hEvent, const char[] szName, bool bDontBroadcast)
 {
 	for (int i = 1; i <= MaxClients; i++)
@@ -6841,34 +6832,43 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
-bool GetNadePosition(const char[] szNade, float fPos[3])
+bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3])
 {
-	char path[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, path, sizeof(path), "configs/bot_smokes.txt");
+	char szPath[PLATFORM_MAX_PATH];
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
 	
-	if (!FileExists(path))
+	if (!FileExists(szPath))
 	{
-		SetFailState("Configuration file %s is not found.", path);
+		SetFailState("Configuration file %s is not found.", szPath);
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues(g_szMap);
+	KeyValues kv = new KeyValues("Nades");
 	
-	if (!kv.ImportFromFile(path))
+	if (!kv.ImportFromFile(szPath))
 	{
-		SetFailState("Unable to parse Key Values file %s.", path);
 		delete kv;
+		SetFailState("Unable to parse Key Values file %s.", szPath);
+		return false;
+	}
+	
+	if (!kv.JumpToKey(g_szMap))
+	{
+		delete kv;
+		SetFailState("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
 	if (!kv.JumpToKey(szNade))
 	{
-		SetFailState("Unable to find %s section in file %s.", szNade, path);
 		delete kv;
+		SetFailState("Unable to find %s section in file %s.", szNade, szPath);
 		return false;
 	}
 	
 	kv.GetVector("position", fPos);
+	kv.GetVector("lookpos", fLookAt);
+	kv.GetVector("angles", fAng);
 	delete kv;
 	
 	return true;
@@ -7193,34 +7193,76 @@ stock int GetCurrentRoundTime()
 	return (GetTime() - g_iRoundStartedTime) - iFreezeTime;
 }
 
-public Action Timer_Attack(Handle hTimer, int client)
+public Action Timer_Attack(Handle hTimer, any client)
 {
-	g_bCanAttack[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bCanAttack[client] = true;
+	}
+	
+	return Plugin_Stop;
 }
 
-public Action Timer_ThrowSmoke(Handle hTimer, int client)
+public Action Timer_ThrowSmoke(Handle hTimer, any client)
 {
-	g_bCanThrowSmoke[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bCanThrowSmoke[client] = true;
+	}
+	
+	return Plugin_Stop;
 }
 
-public Action Timer_ThrowFlash(Handle hTimer, int client)
+public Action Timer_ThrowFlash(Handle hTimer, any client)
 {
-	g_bCanThrowFlash[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bCanThrowFlash[client] = true;
+	}
+	
+	return Plugin_Stop;
 }
 
-public Action Timer_SmokeDelay(Handle hTimer, int client)
+public Action Timer_SmokeDelay(Handle hTimer, any client)
 {
-	g_bHasThrownSmoke[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bHasThrownSmoke[client] = true;
+	}
+	
+	return Plugin_Stop;
 }
 
-public Action Timer_NadeDelay(Handle hTimer, int client)
+public Action Timer_NadeDelay(Handle hTimer, any client)
 {
-	g_bHasThrownNade[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bHasThrownNade[client] = true;
+	}
+	
+	return Plugin_Stop;
 }
 
-public Action Timer_Zoomed(Handle hTimer, int client)
+public Action Timer_Zoomed(Handle hTimer, any client)
 {
-	g_bZoomed[client] = true;
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bZoomed[client] = true;	
+	}
+	
+	return Plugin_Stop;
 }
 
 float[] SelectBestTargetPos(int client, int &iBestEnemy)
@@ -7468,7 +7510,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			}
 			else
 			{
-				CreateTimer(0.19, Timer_Attack, client);
+				CreateTimer(0.19, Timer_Attack, GetClientUserId(client));
 			}
 		}
 	}
