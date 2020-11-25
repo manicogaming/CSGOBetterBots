@@ -234,9 +234,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 116509497;
 	}
 	//North Players
-	else if(strcmp(szBotName, "aizy") == 0)
+	else if(strcmp(szBotName, "kristou") == 0)
 	{
-		iAccountID = 90685224;
+		iAccountID = 147274330;
 	}
 	else if(strcmp(szBotName, "gade") == 0)
 	{
@@ -246,9 +246,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 18062315;
 	}
-	else if(strcmp(szBotName, "MSL") == 0)
+	else if(strcmp(szBotName, "kreaz") == 0)
 	{
-		iAccountID = 24134891;
+		iAccountID = 116979891;
 	}
 	else if(strcmp(szBotName, "Lekr0") == 0)
 	{
@@ -806,10 +806,6 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 63982401;
 	}
 	//Nordavind Players
-	else if(strcmp(szBotName, "tenzki") == 0)
-	{
-		iAccountID = 37214922;
-	}
 	else if(strcmp(szBotName, "cromen") == 0)
 	{
 		iAccountID = 21397689;
@@ -818,9 +814,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 41330524;
 	}
-	else if(strcmp(szBotName, "HS") == 0)
+	else if(strcmp(szBotName, "Rytter") == 0)
 	{
-		iAccountID = 3417033;
+		iAccountID = 30954725;
 	}
 	//SJ Players
 	else if(strcmp(szBotName, "arvid") == 0)
@@ -1458,9 +1454,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 70280269;
 	}
-	else if(strcmp(szBotName, "zEVES") == 0)
+	else if(strcmp(szBotName, "tenzki") == 0)
 	{
-		iAccountID = 82890714;
+		iAccountID = 37214922;
 	}
 	//K23 Players
 	else if(strcmp(szBotName, "neaLaN") == 0)
@@ -1503,27 +1499,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "Dweezil") == 0)
 	{
 		iAccountID = 79904271;
-	}
-	//Secret Players
-	else if(strcmp(szBotName, "sinnopsyy") == 0)
-	{
-		iAccountID = 205062167;
-	}
-	else if(strcmp(szBotName, "anarkez") == 0)
-	{
-		iAccountID = 73126768;
-	}
-	else if(strcmp(szBotName, "PERCY") == 0)
-	{
-		iAccountID = 36210122;
-	}
-	else if(strcmp(szBotName, "smF") == 0)
-	{
-		iAccountID = 11160541;
-	}
-	else if(strcmp(szBotName, "juanflatroo") == 0)
-	{
-		iAccountID = 135528227;
 	}
 	//UOL Players
 	else if(strcmp(szBotName, "crisby") == 0)
@@ -2091,9 +2066,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 53001420;
 	}
-	else if(strcmp(szBotName, "kristou") == 0)
+	else if(strcmp(szBotName, "FaagaN") == 0)
 	{
-		iAccountID = 147274330;
+		iAccountID = 31897708;
 	}
 	//GameAgents Players
 	//Keyd Players
@@ -2361,6 +2336,11 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 153319644;
 	}
 	//CeX Players
+	//Havan Players
+	else if(strcmp(szBotName, "ALLE") == 0)
+	{
+		iAccountID = 1194990;
+	}
 	else
 	{
 		iAccountID = Math_GetRandomInt(3, 1091249497);

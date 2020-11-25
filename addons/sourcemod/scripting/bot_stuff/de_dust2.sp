@@ -1,15 +1,8 @@
-public void DoDust2Smokes(int client, int& iButtons)
+public void DoDust2Smokes(int client, int& iButtons, int iDefIndex)
 {
 	float fClientLocation[3];
 	
 	GetClientAbsOrigin(client, fClientLocation);
-	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-	if (iActiveWeapon == -1)return;
-	
-	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	
-	//T Side Flashes
 	
 	switch (g_iSmoke[client])
 	{
@@ -569,73 +562,7 @@ public void DoDust2Smokes(int client, int& iButtons)
 				}
 			}
 		}
-		case 3: //Long Push Position
-		{
-			if (!g_bCanThrowSmoke[client])
-			{
-				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
-				
-				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
-				
-				if (fHoldSpotDis < 25.0)
-				{
-					float fLookAt[3] =  { 176.276123, 353.036530, 63.525383 };
-					float fBentLook[3], fEyePos[3];
-					
-					GetClientEyePosition(client, fEyePos);
-					
-					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
-					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
-					
-					CreateTimer(7.0, Timer_ThrowSmoke, GetClientUserId(client));
-				}
-			}
-		}
-		case 4: //Short Push Position
-		{
-			if (!g_bCanThrowSmoke[client])
-			{
-				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
-				
-				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
-				
-				if (fHoldSpotDis < 25.0)
-				{
-					float fLookAt[3] =  { 342.916260, 1485.740845, 65.328796 };
-					float fBentLook[3], fEyePos[3];
-					
-					GetClientEyePosition(client, fEyePos);
-					
-					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
-					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-				}
-			}
-		}
-		case 5: //Mid Position
-		{
-			if (!g_bCanThrowSmoke[client])
-			{
-				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
-				
-				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
-				
-				if (fHoldSpotDis < 25.0)
-				{
-					float fLookAt[3] =  { -462.108734, 2058.169922, -61.744308 };
-					float fBentLook[3], fEyePos[3];
-					
-					GetClientEyePosition(client, fEyePos);
-					
-					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
-					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, 1.0, true, 5.0, false);
-					
-					CreateTimer(5.0, Timer_ThrowSmoke, GetClientUserId(client));
-				}
-			}
-		}
-		case 6: //A Position
+		case 3: //A Position
 		{
 			if (!g_bCanThrowSmoke[client])
 			{
@@ -657,7 +584,7 @@ public void DoDust2Smokes(int client, int& iButtons)
 				}
 			}
 		}
-		case 7: //Mid Push Position
+		case 4: //Mid Push Position
 		{
 			if (!g_bCanThrowSmoke[client])
 			{
@@ -679,7 +606,7 @@ public void DoDust2Smokes(int client, int& iButtons)
 				}
 			}
 		}
-		case 8: //Long Position
+		case 5: //Long Position
 		{
 			if (!g_bCanThrowSmoke[client])
 			{

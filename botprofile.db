@@ -603,11 +603,11 @@ ProP+Rifle "Lekr0"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "MSL"
+ProAwp+SniperPro "kreaz"
 	VoicePitch = 85
 End
 
-ProP+Rifle "aizy"
+ProP+Rifle "kristou"
 	VoicePitch = 108
 End
 
@@ -1334,7 +1334,7 @@ End
 
 //Nordavind Players
 
-ProP+Rifle "tenzki"
+ProP+Rifle "bfr"
 	VoicePitch = 105
 End
 
@@ -1346,7 +1346,7 @@ ProP+Rifle "sense"
 	VoicePitch = 76
 End
 
-ProP+Rifle "HS"
+ProP+Rifle "Rytter"
 	VoicePitch = 100
 End
 
@@ -2218,7 +2218,7 @@ ProP+Rifle "Queenix"
 	VoicePitch = 99
 End
 
-ProAwp+SniperPro "zEVES"
+ProAwp+SniperPro "mertz"
 	VoicePitch = 71
 End
 
@@ -2226,7 +2226,7 @@ ProP+Rifle "maNkz"
 	VoicePitch = 99
 End
 
-ProP+Rifle "mertz"
+ProP+Rifle "tenzki"
 	VoicePitch = 96
 End
 
@@ -2276,28 +2276,6 @@ End
 
 ProP+Rifle "ZipZip"
 	VoicePitch = 81
-End
-
-//Secret Players
-
-ProP+Rifle "juanflatroo"
-	VoicePitch = 91
-End
-
-ProAwp+SniperPro "smF"
-	VoicePitch = 95
-End
-
-ProP+Rifle "PERCY"
-	VoicePitch = 84
-End
-
-ProP+Rifle "sinnopsyy"
-	VoicePitch = 101
-End
-
-ProP+Rifle "anarkez"
-	VoicePitch = 80
 End
 
 //UOL Players
@@ -3120,7 +3098,7 @@ ProP+Rifle "fr0slev"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "Kristou"
+ProAwp+SniperPro "FaagaN"
 	VoicePitch = 95
 End
 
@@ -3683,6 +3661,28 @@ ProP+Rifle "fluFFS"
 End
 
 ProP+Rifle "ifan"
+	VoicePitch = 86
+End
+
+//Havan Players
+
+ProP+Rifle "ALLE"
+	VoicePitch = 90
+End
+
+ProAwp+SniperPro "drg"
+	VoicePitch = 89
+End
+
+ProP+Rifle "remix"
+	VoicePitch = 77
+End
+
+ProP+Rifle "dok"
+	VoicePitch = 96
+End
+
+ProP+Rifle "w1"
 	VoicePitch = 86
 End
 

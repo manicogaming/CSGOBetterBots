@@ -1,13 +1,12 @@
-public void DoMirageSmokes(int client, int & iButtons)
+public void DoMirageSmokes(int client, int& iButtons, int iDefIndex)
 {
 	float fClientLocation[3];
 	
 	GetClientAbsOrigin(client, fClientLocation);
 	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-	if (iActiveWeapon == -1)return;
+	int[] clients = new int[MaxClients];
 	
-	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
 	
 	switch (g_iSmoke[client])
 	{
@@ -662,7 +661,6 @@ public void DoMirageSmokes(int client, int & iButtons)
 						{
 							TeleportEntity(client, fBShortFlash, fAng, NULL_VECTOR);
 							iButtons &= ~IN_ATTACK;
-							iButtons |= IN_JUMP;
 							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
 						}
 					}
