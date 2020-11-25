@@ -1327,7 +1327,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 107498100;
 	}
-	else if(strcmp(szBotName, "yel") == 0)
+	else if(strcmp(szBotName, "yeL") == 0)
 	{
 		iAccountID = 90069456;
 	}
