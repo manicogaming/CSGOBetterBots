@@ -5,7 +5,6 @@
 #include <sdktools>
 #include <cstrike>
 #include <eItems>
-#include <csutils>
 #include <smlib>
 #include <navmesh>
 #include <dhooks>
@@ -5602,18 +5601,27 @@ public void OnClientPostAdminCheck(int client)
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
 		char szBotName[MAX_NAME_LENGTH];
+		char szClanTag[MAX_NAME_LENGTH];
+		
 		GetClientName(client, szBotName, sizeof(szBotName));
 		g_bIsProBot[client] = false;
 		
-		for (int i = 0; i <= sizeof(g_szBotName) - 1; i++)
+		if(IsProBot(szBotName, szClanTag))
+		{
+			g_bIsProBot[client] = true;
+		}
+		
+		/*for (int i = 0; i <= sizeof(g_szBotName) - 1; i++)
 		{
 			if (strcmp(szBotName, g_szBotName[i]) == 0)
 			{
 				g_bIsProBot[client] = true;
 			}
-		}
+		}*/
 		
-		Pro_Players(szBotName, client);
+		//Pro_Players(szBotName, client);
+		
+		CS_SetClientClanTag(client, szClanTag);
 		
 		SetCustomPrivateRank(client);
 		
@@ -6880,7 +6888,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	
 	if (!FileExists(szPath))
 	{
-		SetFailState("Configuration file %s is not found.", szPath);
+		PrintToServer("Configuration file %s is not found.", szPath);
 		return false;
 	}
 	
@@ -6889,27 +6897,64 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
-		SetFailState("Unable to parse Key Values file %s.", szPath);
+		PrintToServer("Unable to parse Key Values file %s.", szPath);
 		return false;
 	}
 	
 	if (!kv.JumpToKey(g_szMap))
 	{
 		delete kv;
-		SetFailState("Unable to find %s section in file %s.", g_szMap, szPath);
+		PrintToServer("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
 	if (!kv.JumpToKey(szNade))
 	{
 		delete kv;
-		SetFailState("Unable to find %s section in file %s.", szNade, szPath);
+		PrintToServer("Unable to find %s section in file %s.", szNade, szPath);
 		return false;
 	}
 	
 	kv.GetVector("position", fPos);
 	kv.GetVector("lookpos", fLookAt);
 	kv.GetVector("angles", fAng);
+	delete kv;
+	
+	return true;
+}
+
+bool IsProBot(const char[] szName, char[] szClanTag)
+{
+	char szPath[PLATFORM_MAX_PATH];
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_names.txt");
+	
+	if (!FileExists(szPath))
+	{
+		PrintToServer("Configuration file %s is not found.", szPath);
+		return false;
+	}
+	
+	KeyValues kv = new KeyValues("Names");
+	
+	if (!kv.ImportFromFile(szPath))
+	{
+		delete kv;
+		PrintToServer("Unable to parse Key Values file %s.", szPath);
+		return false;
+	}
+	
+	if(!kv.GetString(szName, szClanTag, MAX_NAME_LENGTH))
+	{
+		delete kv;
+		return false;
+	}
+	
+	if(strcmp(szClanTag, "") == 0)
+	{
+		delete kv;
+		return false;
+	}
+	
 	delete kv;
 	
 	return true;
