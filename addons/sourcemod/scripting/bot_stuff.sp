@@ -6353,21 +6353,23 @@ bool IsPlayerReloading(int client)
 	int iPlayerWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	
 	if (!IsValidEntity(iPlayerWeapon))
-		return false;
-	
-	//Out of ammo?
-	if (GetEntProp(iPlayerWeapon, Prop_Data, "m_iClip1") == 0)
 		return true;
 	
-	//Reloading?
-	if (GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload"))
-		return true;
+	bool bReloading = true;
 	
-	//Ready to fire?
-	if (GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
-		return false;
+	float flNextPrimaryAttack = GetGameTime() - GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack");
 	
-	return true;
+	bool m_bInReload = !!GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload");
+	
+	//Can fire?
+	if (flNextPrimaryAttack > 0)
+		bReloading = false;
+	
+	//Has ammo and is not reloading
+	if (GetEntProp(iPlayerWeapon, Prop_Send, "m_iClip1") <= 0 && m_bInReload)
+		bReloading = true;
+	
+	return bReloading;
 }
 
 stock int GetTotalRoundTime()
@@ -6699,7 +6701,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			}
 			else
 			{
-				CreateTimer(0.19, Timer_Attack, GetClientUserId(client));
+				CreateTimer(0.18, Timer_Attack, GetClientUserId(client));
 			}
 		}
 	}
