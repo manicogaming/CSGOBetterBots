@@ -5876,7 +5876,11 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				
 				BotAttack(client, iEnt);
 				
-				if (IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				float fClientPos[3];
+				GetClientAbsOrigin(client, fClientPos);
+				fClientPos[2] += 20.0;
+				
+				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 					return Plugin_Changed;
@@ -6758,6 +6762,17 @@ stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, fl
 	}
 	
 	return false;
+}
+
+stock bool IsPointVisible(float fStart[3], float fEnd[3])
+{
+	TR_TraceRayFilter(fStart, fEnd, MASK_PLAYERSOLID, RayType_EndPoint, TraceEntityFilterStuff);
+	return TR_GetFraction() >= 0.9;
+}
+
+public bool TraceEntityFilterStuff(int iEntity, int iMask)
+{
+	return iEntity > MaxClients;
 }
 
 stock int GetAliveTeamCount(int iTeam)
