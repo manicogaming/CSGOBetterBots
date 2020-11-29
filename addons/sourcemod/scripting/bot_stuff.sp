@@ -5878,7 +5878,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				
 				float fClientPos[3];
 				GetClientAbsOrigin(client, fClientPos);
-				fClientPos[2] += 20.0;
+				fClientPos[2] += 35.5;
 				
 				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
@@ -6766,7 +6766,7 @@ stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, fl
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
-	TR_TraceRayFilter(fStart, fEnd, MASK_PLAYERSOLID, RayType_EndPoint, TraceEntityFilterStuff);
+	TR_TraceRayFilter(fStart, fEnd, MASK_SHOT, RayType_EndPoint, TraceEntityFilterStuff);
 	return TR_GetFraction() >= 0.9;
 }
 
