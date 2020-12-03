@@ -1158,7 +1158,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 43326019;
 	}
-	else if(strcmp(szBotName, "Luken") == 0)
+	else if(strcmp(szBotName, "danoco") == 0)
 	{
 		iAccountID = 46114258;
 	}
@@ -1203,10 +1203,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "skullz") == 0)
 	{
 		iAccountID = 158380916;
-	}
-	else if(strcmp(szBotName, "Tuurtle") == 0)
-	{
-		iAccountID = 34114868;
 	}
 	//Avant Players
 	else if(strcmp(szBotName, "apoc") == 0)
@@ -2188,9 +2184,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 16704419;
 	}
 	//SINNERS Players
-	else if(strcmp(szBotName, "CaNNiE") == 0)
+	else if(strcmp(szBotName, "oskar") == 0)
 	{
-		iAccountID = 161157255;
+		iAccountID = 171425088;
 	}
 	else if(strcmp(szBotName, "ZEDKO") == 0)
 	{

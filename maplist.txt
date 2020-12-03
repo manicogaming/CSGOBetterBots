@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sun Nov 29 03:02:42 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Dec 03 04:22:07 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -392,7 +392,6 @@ kills_ct
 knas_bunker_css
 knas_speedcastle_css
 knife_fight_v1
-m_maze
 mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1

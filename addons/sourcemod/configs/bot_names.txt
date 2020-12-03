@@ -371,7 +371,7 @@
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
 	"exit" 				"Sharks"
-	"Luken" 			"Sharks"
+	"danoco" 			"Sharks"
 	//One Players
 	"prt" 				"One"
 	"Maluk3" 			"One"
@@ -381,7 +381,7 @@
 	//W7M Players
 	"skullz"			"W7M" 
 	"raafa" 			"W7M"	
-	"Tuurtle" 			"W7M"
+	"cass1n" 			"W7M"
 	"tatazin" 			"W7M"
 	"realziN" 			"W7M"
 	//Avant Players
@@ -800,7 +800,7 @@
 	"slayeRyEyE" 		"Sinister5"	
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
-	"CaNNiE" 			"SINNERS"
+	"oskar" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
 	"NEOFRAG" 			"SINNERS"

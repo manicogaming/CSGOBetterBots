@@ -1790,7 +1790,7 @@ ProP+Rifle "exit"
 	VoicePitch = 98
 End
 
-ProP+Rifle "Luken"
+ProP+Rifle "danoco"
 	VoicePitch = 103
 End
 
@@ -1826,7 +1826,7 @@ ProAwp+SniperPro "raafa"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Tuurtle"
+ProP+Rifle "cass1n"
 	VoicePitch = 101
 End
 
@@ -3384,7 +3384,7 @@ ProP+Rifle "ZEDKO"
 	VoicePitch = 104
 End
 
-ProAwp+SniperPro "CaNNiE"
+ProAwp+SniperPro "oskar"
 	VoicePitch = 83
 End
 
