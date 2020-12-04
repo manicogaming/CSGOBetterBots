@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri Dec 04 01:49:46 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Fri Dec 04 04:12:59 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -162,6 +162,7 @@ de_aldebaran
 de_alexandra
 de_ali
 de_amalia
+de_ancient
 de_anubis
 de_aqueduct
 de_asia_csgo
@@ -223,6 +224,7 @@ de_dust2_winter_2019
 de_dust_cso2
 de_dust_new
 de_dynasty
+de_elysion
 de_empire
 de_engage
 de_facade
@@ -237,6 +239,7 @@ de_graveyard
 de_grind
 de_grit
 de_grotto
+de_guard
 de_hardrock
 de_heat_new
 de_icarus
@@ -264,7 +267,6 @@ de_mill_ce
 de_minimetzel_hslan
 de_mirage
 de_momentum
-de_mutiny
 de_nocredit
 de_nuke
 de_nuke_ramps
@@ -297,7 +299,6 @@ de_star
 de_stmarc
 de_stolen
 de_storehouse
-de_swamp
 de_train
 de_tulip
 de_tuscan
@@ -351,7 +352,6 @@ fy_simpsons_h
 fy_snow_07
 fy_towelie
 fy_twotowers
-gd_rialto
 genx_brickworld3
 gg_aim_shotty_csgo
 gg_arena_brazil
