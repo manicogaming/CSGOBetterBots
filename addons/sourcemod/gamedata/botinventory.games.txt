@@ -8,7 +8,7 @@
 			"CCSPlayer::SetRank" // MedalCategory_t category, MedalRank_t rank
 			{
 				"library"		"server"
-				"windows"		"\x55\x8B\xEC\x81\xC1\xCC\x15\x00\x00"
+				"windows"		"\x55\x8B\xEC\x81\xC1\xD4\x15\x00\x00"
 			}
 		}
 		"Offsets"

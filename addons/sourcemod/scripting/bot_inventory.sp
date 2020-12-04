@@ -79,7 +79,15 @@ static char g_szCTModels[][] =  {
 	"models/player/custom_player/legacy/ctm_fbi_varianth.mdl", 
 	"models/player/custom_player/legacy/ctm_st6_variantm.mdl", 
 	"models/player/custom_player/legacy/ctm_st6_varianti.mdl", 
-	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl"
+	"models/player/custom_player/legacy/ctm_fbi_variantb.mdl",
+	"models/player/custom_player/legacy/ctm_swat_variante.mdl",
+	"models/player/custom_player/legacy/ctm_swat_variantf.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variantl.mdl",
+	"models/player/custom_player/legacy/ctm_st6_variantj.mdl",
+	"models/player/custom_player/legacy/ctm_swat_variantg.mdl",
+	"models/player/custom_player/legacy/ctm_swat_varianti.mdl",
+	"models/player/custom_player/legacy/ctm_swat_variantj.mdl",
+	"models/player/custom_player/legacy/ctm_swat_varianth.mdl"
 };
 
 static char g_szTModels[][] =  {
@@ -94,7 +102,19 @@ static char g_szTModels[][] =  {
 	"models/player/custom_player/legacy/tm_leet_varianti.mdl", 
 	"models/player/custom_player/legacy/tm_balkan_variantg.mdl", 
 	"models/player/custom_player/legacy/tm_balkan_varianth.mdl", 
-	"models/player/custom_player/legacy/tm_leet_variantf.mdl"
+	"models/player/custom_player/legacy/tm_leet_variantf.mdl",
+	"models/player/custom_player/legacy/tm_professional_varf.mdl",
+	"models/player/custom_player/legacy/tm_professional_varf1.mdl",
+	"models/player/custom_player/legacy/tm_professional_varf2.mdl",
+	"models/player/custom_player/legacy/tm_professional_varf3.mdl",
+	"models/player/custom_player/legacy/tm_professional_varf4.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variantk.mdl",
+	"models/player/custom_player/legacy/tm_professional_varg.mdl",
+	"models/player/custom_player/legacy/tm_professional_vari.mdl",
+	"models/player/custom_player/legacy/tm_professional_varj.mdl",
+	"models/player/custom_player/legacy/tm_professional_varh.mdl",
+	"models/player/custom_player/legacy/tm_balkan_variantl.mdl",
+	"models/player/custom_player/legacy/tm_phoenix_varianti.mdl"
 };
 
 public Plugin myinfo = 
