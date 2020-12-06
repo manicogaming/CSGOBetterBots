@@ -714,12 +714,6 @@
 	"uli" 				"KOVA"
 	"peku" 				"KOVA"
 	"Twixie" 			"KOVA"
-	//eXploit Players
-	"pizituh" 			"eXploit"
-	"BuJ" 				"eXploit"
-	"sark" 				"eXploit"
-	"renatoohaxx" 		"eXploit"	
-	"BLOODZ" 			"eXploit"
 	//AGF Players
 	"fr0slev" 			"AGF"
 	"FaagaN" 			"AGF"
@@ -882,4 +876,10 @@
 	"remix" 			"Havan"
 	"dok" 				"Havan"
 	"w1"				"Havan"
+	//Sangal Players
+	"MAJ3R" 			"Sangal"
+	"paz" 				"Sangal"
+	"ngiN" 				"Sangal"
+	"l0gicman" 			"Sangal"
+	"imoRR"				"Sangal"
 }

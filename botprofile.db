@@ -3048,28 +3048,6 @@ ProP+Rifle "Twixie"
 	VoicePitch = 76
 End
 
-//eXploit Players
-
-ProP+Rifle "pizituh"
-	VoicePitch = 91
-End
-
-ProAwp+SniperPro "BuJ"
-	VoicePitch = 93
-End
-
-ProP+Rifle "sark"
-	VoicePitch = 114
-End
-
-ProP+Rifle "renatoohaxx"
-	VoicePitch = 97
-End
-
-ProP+Rifle "BLOODZ"
-	VoicePitch = 88
-End
-
 //Wolsung Players
 
 ProP+Rifle "hyskeee"
@@ -3684,6 +3662,28 @@ End
 
 ProP+Rifle "w1"
 	VoicePitch = 86
+End
+
+//Sangal Players
+
+ProP+Rifle "MAJ3R"
+	VoicePitch = 113
+End
+
+ProAwp+SniperPro "ngiN"
+	VoicePitch = 88
+End
+
+ProP+Rifle "paz"
+	VoicePitch = 84
+End
+
+ProP+Rifle "l0gicman"
+	VoicePitch = 99
+End
+
+ProP+Rifle "imoRR"
+	VoicePitch = 111
 End
 
 EliteAwp+SniperPro "XD | ryu"

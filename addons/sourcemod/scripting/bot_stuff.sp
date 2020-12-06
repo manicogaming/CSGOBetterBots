@@ -216,7 +216,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_zigma", Team_ZIGMA);
 	RegConsoleCmd("team_ambush", Team_Ambush);
 	RegConsoleCmd("team_kova", Team_KOVA);
-	RegConsoleCmd("team_exploit", Team_eXploit);
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
 	RegConsoleCmd("team_keyd", Team_Keyd);
@@ -244,6 +243,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lemondogs", Team_Lemondogs);
 	RegConsoleCmd("team_cex", Team_CeX);
 	RegConsoleCmd("team_havan", Team_Havan);
+	RegConsoleCmd("team_sangal", Team_Sangal);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -3816,36 +3816,6 @@ public Action Team_KOVA(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_eXploit(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "pizituh");
-		ServerCommand("bot_add_ct %s", "BuJ");
-		ServerCommand("bot_add_ct %s", "sark");
-		ServerCommand("bot_add_ct %s", "renatoohaxx");
-		ServerCommand("bot_add_ct %s", "BLOODZ");
-		ServerCommand("mp_teamlogo_1 expl");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "pizituh");
-		ServerCommand("bot_add_t %s", "BuJ");
-		ServerCommand("bot_add_t %s", "sark");
-		ServerCommand("bot_add_t %s", "renatoohaxx");
-		ServerCommand("bot_add_t %s", "BLOODZ");
-		ServerCommand("mp_teamlogo_2 expl");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_AGF(int client, int iArgs)
 {
 	char arg[12];
@@ -4651,6 +4621,36 @@ public Action Team_Havan(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dok");
 		ServerCommand("bot_add_t %s", "w1");
 		ServerCommand("mp_teamlogo_2 havan");
+	}
+	
+	return Plugin_Handled;
+}
+
+public Action Team_Sangal(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "MAJ3R");
+		ServerCommand("bot_add_ct %s", "ngiN");
+		ServerCommand("bot_add_ct %s", "paz");
+		ServerCommand("bot_add_ct %s", "l0gicman");
+		ServerCommand("bot_add_ct %s", "imoRR");
+		ServerCommand("mp_teamlogo_1 sang");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "MAJ3R");
+		ServerCommand("bot_add_t %s", "ngiN");
+		ServerCommand("bot_add_t %s", "paz");
+		ServerCommand("bot_add_t %s", "l0gicman");
+		ServerCommand("bot_add_t %s", "imoRR");
+		ServerCommand("mp_teamlogo_2 sang");
 	}
 	
 	return Plugin_Handled;

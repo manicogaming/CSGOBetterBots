@@ -2019,27 +2019,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 109596532;
 	}
-	//eXploit Players
-	else if(strcmp(szBotName, "pizituh") == 0)
-	{
-		iAccountID = 25514716;
-	}
-	else if(strcmp(szBotName, "BuJ") == 0)
-	{
-		iAccountID = 264471;
-	}
-	else if(strcmp(szBotName, "sark") == 0)
-	{
-		iAccountID = 76263371;
-	}
-	else if(strcmp(szBotName, "renatoohaxx") == 0)
-	{
-		iAccountID = 39166438;
-	}
-	else if(strcmp(szBotName, "BLOODZ") == 0)
-	{
-		iAccountID = 1004703971;
-	}
 	//Wolsung Players
 	//AGF Players
 	else if(strcmp(szBotName, "fr0slev") == 0)
@@ -2332,6 +2311,27 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "ALLE") == 0)
 	{
 		iAccountID = 1194990;
+	}
+	//Sangal Players
+	else if(strcmp(szBotName, "MAJ3R") == 0)
+	{
+		iAccountID = 7167161;
+	}
+	else if(strcmp(szBotName, "paz") == 0)
+	{
+		iAccountID = 68524615;
+	}
+	else if(strcmp(szBotName, "ngiN") == 0)
+	{
+		iAccountID = 17887362;
+	}
+	else if(strcmp(szBotName, "l0gicman") == 0)
+	{
+		iAccountID = 164139337;
+	}
+	else if(strcmp(szBotName, "imoRR") == 0)
+	{
+		iAccountID = 107082440;
 	}
 	else
 	{
