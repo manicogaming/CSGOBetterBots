@@ -1,3 +1,127 @@
+public void PrepareInfernoExecutes()
+{
+	int[] clients = new int[MaxClients];
+	
+	Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
+	
+	if (IsValidClient(clients[0]) && IsValidClient(clients[1]) && IsValidClient(clients[2]) && IsValidClient(clients[3]) && IsValidClient(clients[4]))
+	{
+		switch (g_iRndExecute)
+		{
+			case 1:
+			{
+				g_iSmoke[clients[0]] = 1; //B Execute
+				g_iSmoke[clients[1]] = 2; //B Execute
+				g_iSmoke[clients[2]] = 0; //B Execute
+				g_iSmoke[clients[3]] = 0; //B Execute
+				g_iSmoke[clients[4]] = 0; //B Execute
+				
+				g_iPositionToHold[clients[0]] = 0; //B Execute
+				g_iPositionToHold[clients[1]] = 0; //B Execute
+				g_iPositionToHold[clients[2]] = 1; //B Execute
+				g_iPositionToHold[clients[3]] = 2; //B Execute
+				g_iPositionToHold[clients[4]] = 3; //B Execute
+				
+				int iCTIDs[] =  {
+					9, 3214, 3212, 507, 1823
+				};
+				
+				int iCTPushIDs[] =  {
+					118, 1824, 367, 1820, 1256
+				};
+				
+				int iBottomBananaIDs[] =  {
+					975, 313, 3353, 973, 56
+				};
+				
+				navArea[clients[2]] = NavMesh_FindAreaByID(iCTIDs[Math_GetRandomInt(0, sizeof(iCTIDs) - 1)]);
+				navArea[clients[2]].GetRandomPoint(g_fHoldPos[clients[2]]);
+				
+				navArea[clients[3]] = NavMesh_FindAreaByID(iCTPushIDs[Math_GetRandomInt(0, sizeof(iCTPushIDs) - 1)]);
+				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(iBottomBananaIDs[Math_GetRandomInt(0, sizeof(iBottomBananaIDs) - 1)]);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				
+				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500)
+				{
+					FakeClientCommandEx(clients[0], "buy smokegrenade");
+					FakeClientCommandEx(clients[0], "buy flashbang");
+					
+					FakeClientCommandEx(clients[1], "buy smokegrenade");
+					FakeClientCommandEx(clients[1], "buy flashbang");
+					
+					g_bDoExecute = true;
+				}
+			}
+			case 2:
+			{
+				g_iSmoke[clients[0]] = 3; //A Short/Apps Execute
+				g_iSmoke[clients[1]] = 4; //A Short/Apps Execute
+				g_iSmoke[clients[2]] = 5; //A Short/Apps Execute
+				g_iSmoke[clients[3]] = 6; //A Short/Apps Execute
+				g_iSmoke[clients[4]] = 0; //A Short/Apps Execute
+				
+				g_iPositionToHold[clients[0]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[1]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[2]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[3]] = 0; //A Short/Apps Execute
+				g_iPositionToHold[clients[4]] = 4; //A Short/Apps Execute
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				
+				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1
+					 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 500)
+				{
+					FakeClientCommandEx(clients[0], "buy smokegrenade");
+					
+					FakeClientCommandEx(clients[1], "buy smokegrenade");
+					FakeClientCommandEx(clients[1], "buy flashbang");
+					
+					FakeClientCommandEx(clients[2], "buy smokegrenade");
+					
+					FakeClientCommandEx(clients[3], "buy smokegrenade");
+					FakeClientCommandEx(clients[3], "buy flashbang");
+					
+					g_bDoExecute = true;
+				}
+			}
+			case 3:
+			{
+				g_iSmoke[clients[0]] = 7; //A Long Execute
+				g_iSmoke[clients[1]] = 8; //A Long Execute
+				g_iSmoke[clients[2]] = 9; //A Long Execute
+				g_iSmoke[clients[3]] = 10; //A Long Execute
+				g_iSmoke[clients[4]] = 0; //A Long Execute
+				
+				g_iPositionToHold[clients[0]] = 0; //A Long Execute
+				g_iPositionToHold[clients[1]] = 0; //A Long Execute
+				g_iPositionToHold[clients[2]] = 0; //A Long Execute
+				g_iPositionToHold[clients[3]] = 0; //A Long Execute
+				g_iPositionToHold[clients[4]] = 4; //A Long Execute
+				
+				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
+				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
+				
+				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1
+					 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 300)
+				{
+					FakeClientCommandEx(clients[0], "buy smokegrenade");
+					
+					FakeClientCommandEx(clients[1], "buy smokegrenade");
+					
+					FakeClientCommandEx(clients[2], "buy smokegrenade");
+					
+					FakeClientCommandEx(clients[3], "buy smokegrenade");
+					
+					g_bDoExecute = true;
+				}
+			}
+		}
+	}
+}
+
 public void DoInfernoSmokes(int client, int& iButtons, int iDefIndex)
 {
 	float fClientLocation[3];
