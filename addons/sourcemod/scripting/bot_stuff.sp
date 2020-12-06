@@ -10,12 +10,14 @@
 #include <dhooks>
 
 char g_szMap[128];
+char g_szSmoke[64][MAXPLAYERS + 1];
+char g_szFlashbang[64][MAXPLAYERS + 1];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1];
-int g_iProfileRank[MAXPLAYERS + 1], g_iSmoke[MAXPLAYERS + 1], g_iPositionToHold[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iProfileRank[MAXPLAYERS + 1], g_iPositionToHold[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 float g_fHoldPos[MAXPLAYERS + 1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
@@ -5382,18 +5384,21 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 		
 		GetClientAbsOrigin(client, fClientLoc);
 		
-		CNavArea currAea = NavMesh_GetNearestArea(fClientLoc);
+		CNavArea currArea = NavMesh_GetNearestArea(fClientLoc);
 		
-		if (currAea.Attributes & NAV_MESH_WALK)
+		if(currArea != INVALID_NAV_AREA)
 		{
-			iButtons |= IN_SPEED;
-			return Plugin_Changed;
-		}
-		
-		if (currAea.Attributes & NAV_MESH_RUN)
-		{
-			iButtons &= ~IN_SPEED;
-			return Plugin_Changed;
+			if (currArea.Attributes & NAV_MESH_WALK)
+			{
+				iButtons |= IN_SPEED;
+				return Plugin_Changed;
+			}
+			
+			if (currArea.Attributes & NAV_MESH_RUN)
+			{
+				iButtons &= ~IN_SPEED;
+				return Plugin_Changed;
+			}	
 		}
 		
 		if (g_bIsProBot[client])
@@ -5414,7 +5419,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				return Plugin_Changed;
 			}
 			
-			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0)
+			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (iEnt == -1 || fTargetEyes[2] == 0))
 			{
 				if (strcmp(g_szMap, "de_mirage") == 0)
 				{
@@ -5448,7 +5453,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 					return Plugin_Continue;
 				}
 				
-				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE && g_bDoExecute))
+				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 				{
 					BotEquipBestWeapon(client, true);
 				}
@@ -5625,7 +5630,7 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
-bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3])
+bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch)
 {
 	char szPath[PLATFORM_MAX_PATH];
 	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
@@ -5662,6 +5667,9 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	kv.GetVector("position", fPos);
 	kv.GetVector("lookpos", fLookAt);
 	kv.GetVector("angles", fAng);
+	fWaitTime = kv.GetFloat("waittime");
+	bJumpthrow = !!kv.GetNum("jumpthrow");
+	bCrouch = !!kv.GetNum("crouch");	
 	delete kv;
 	
 	return true;

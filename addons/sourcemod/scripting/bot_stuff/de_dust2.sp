@@ -10,11 +10,17 @@ public void PrepareDust2Executes()
 		{
 			case 1:
 			{
-				g_iSmoke[clients[0]] = 1; //B Execute
-				g_iSmoke[clients[1]] = 2; //B Execute
-				g_iSmoke[clients[2]] = 3; //B Execute
-				g_iSmoke[clients[3]] = 0; //B Execute
-				g_iSmoke[clients[4]] = 0; //B Execute
+				g_szSmoke[clients[0]] = "B Doors Smoke"; //B Execute
+				g_szSmoke[clients[1]] = "B Plat Smoke"; //B Execute
+				g_szSmoke[clients[2]] = "B Site Smoke"; //B Execute
+				g_szSmoke[clients[3]] = ""; //B Execute
+				g_szSmoke[clients[4]] = ""; //B Execute
+				
+				g_szFlashbang[clients[0]] = ""; //B Execute
+				g_szFlashbang[clients[1]] = "B PopFlash"; //B Execute
+				g_szFlashbang[clients[2]] = "B Site Flash"; //B Execute
+				g_szFlashbang[clients[3]] = ""; //B Execute
+				g_szFlashbang[clients[4]] = ""; //B Execute
 				
 				g_iPositionToHold[clients[0]] = 0; //B Execute
 				g_iPositionToHold[clients[1]] = 0; //B Execute
@@ -52,11 +58,17 @@ public void PrepareDust2Executes()
 			}
 			case 2:
 			{
-				g_iSmoke[clients[0]] = 4; //Short A Execute
-				g_iSmoke[clients[1]] = 5; //Short A Execute
-				g_iSmoke[clients[2]] = 6; //Short A Execute
-				g_iSmoke[clients[3]] = 7; //Short A Execute
-				g_iSmoke[clients[4]] = 0; //Short A Execute
+				g_szSmoke[clients[0]] = "XBOX Smoke"; //Short A Execute
+				g_szSmoke[clients[1]] = "Short A Smoke"; //Short A Execute
+				g_szSmoke[clients[2]] = "Short-Boost Smoke"; //Short A Execute
+				g_szSmoke[clients[3]] = "A Site Smoke"; //Short A Execute
+				g_szSmoke[clients[4]] = ""; //Short A Execute
+				
+				g_szFlashbang[clients[0]] = "A Site Flash"; //Short A Execute
+				g_szFlashbang[clients[1]] = ""; //Short A Execute
+				g_szFlashbang[clients[2]] = ""; //Short A Execute
+				g_szFlashbang[clients[3]] = ""; //Short A Execute
+				g_szFlashbang[clients[4]] = ""; //Short A Execute
 				
 				g_iPositionToHold[clients[0]] = 0; //Short A Execute
 				g_iPositionToHold[clients[1]] = 0; //Short A Execute
@@ -88,11 +100,17 @@ public void PrepareDust2Executes()
 			}
 			case 3:
 			{
-				g_iSmoke[clients[0]] = 8; //Long A Execute
-				g_iSmoke[clients[1]] = 9; //Long A Execute
-				g_iSmoke[clients[2]] = 10; //Long A Execute
-				g_iSmoke[clients[3]] = 0; //Long A Execute
-				g_iSmoke[clients[4]] = 0; //Long A Execute
+				g_szSmoke[clients[0]] = "Long Corner Smoke"; //Short A Execute
+				g_szSmoke[clients[1]] = "A Car Smoke"; //Short A Execute
+				g_szSmoke[clients[2]] = "CT Smoke"; //Short A Execute
+				g_szSmoke[clients[3]] = ""; //Short A Execute
+				g_szSmoke[clients[4]] = ""; //Short A Execute
+				
+				g_szFlashbang[clients[0]] = "Long Flash"; //Short A Execute
+				g_szFlashbang[clients[1]] = ""; //Short A Execute
+				g_szFlashbang[clients[2]] = ""; //Short A Execute
+				g_szFlashbang[clients[3]] = ""; //Short A Execute
+				g_szFlashbang[clients[4]] = ""; //Short A Execute
 				
 				g_iPositionToHold[clients[0]] = 0; //Long A Execute
 				g_iPositionToHold[clients[1]] = 0; //Long A Execute
@@ -137,19 +155,20 @@ public void DoDust2Smokes(int client, int& iButtons, int iDefIndex)
 	
 	GetClientAbsOrigin(client, fClientLocation);
 	
-	switch (g_iSmoke[client])
+	if(strcmp(g_szSmoke[client], "") != 0)
 	{
-		case 1: //B Doors Smoke
+		if (!g_bHasThrownSmoke[client])
 		{
-			float fBDoorsSmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("B Doors Smoke", fBDoorsSmoke, fLookAt, fAng))
-			{
-				float fBDoorsSmokeDis = GetVectorDistance(fClientLocation, fBDoorsSmoke);
+			float fSmoke[3], fLookAt[3], fAng[3], fWaitTime;
+			bool bJumpthrow, bCrouch;
 			
-				BotMoveTo(client, fBDoorsSmoke, FASTEST_ROUTE);
+			if (GetNade(g_szSmoke[client], fSmoke, fLookAt, fAng, fWaitTime, bJumpthrow, bCrouch))
+			{
+				float fSmokeDis = GetVectorDistance(fClientLocation, fSmoke);
+			
+				BotMoveTo(client, fSmoke, FASTEST_ROUTE);
 				
-				if (fBDoorsSmokeDis < 150.0)
+				if (fSmokeDis < 150.0)
 				{
 					if (iDefIndex != 45)
 					{
@@ -157,493 +176,96 @@ public void DoDust2Smokes(int client, int& iButtons, int iDefIndex)
 					}
 				}
 				
-				if (fBDoorsSmokeDis < 25.0)
-				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
+				if (fSmokeDis < 25.0)
+				{					
+					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, fWaitTime, true, 5.0, false);
 					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
+					CreateTimer(fWaitTime, Timer_ThrowSmoke, GetClientUserId(client));
 					
 					iButtons |= IN_ATTACK;
 					
+					if(bCrouch)
+					{
+						iButtons |= IN_DUCK;
+					}
+					
 					if (g_bCanThrowSmoke[client])
 					{
-						TeleportEntity(client, fBDoorsSmoke, fAng, NULL_VECTOR);
+						TeleportEntity(client, fSmoke, fAng, NULL_VECTOR);
 						iButtons &= ~IN_ATTACK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
-				}
-			}
-		}
-		case 2: //B Plat Smoke
-		{
-			if (!g_bHasThrownSmoke[client])
-			{
-				float fBPlatSmoke[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("B Plat Smoke", fBPlatSmoke, fLookAt, fAng))
-				{
-					float fBPlatSmokeDis = GetVectorDistance(fClientLocation, fBPlatSmoke);
-				
-					BotMoveTo(client, fBPlatSmoke, FASTEST_ROUTE);
-					
-					if (fBPlatSmokeDis < 150.0)
-					{
-						if (iDefIndex != 45)
+						
+						if(bJumpthrow)
 						{
-							FakeClientCommandEx(client, "use weapon_smokegrenade");
+							iButtons |= IN_JUMP;
 						}
-					}
-					
-					if (fBPlatSmokeDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
 						
-						CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowSmoke[client])
+						if(bCrouch)
 						{
-							TeleportEntity(client, fBPlatSmoke, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-			else
-			{
-				float fBPopFlash[3], fLookAt[3], fAng[3];
-			
-				if (GetNade("B PopFlash", fBPopFlash, fLookAt, fAng))
-				{
-					float fBPopFlashDis = GetVectorDistance(fClientLocation, fBPopFlash);
-				
-					BotMoveTo(client, fBPopFlash, FASTEST_ROUTE);
-					
-					if (fBPopFlashDis < 150.0)
-					{
-						if (iDefIndex != 43)
-						{
-							FakeClientCommandEx(client, "use weapon_flashbang");
-						}
-					}
-					
-					if (fBPopFlashDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 2.0, true, 5.0, false);
-						
-						CreateTimer(1.0, Timer_ThrowFlash, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowFlash[client])
-						{
-							TeleportEntity(client, fBPopFlash, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-		}
-		case 3: //B Site Smoke
-		{
-			if (!g_bHasThrownSmoke[client])
-			{
-				float fBSiteSmoke[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("B Site Smoke", fBSiteSmoke, fLookAt, fAng))
-				{
-					float fBSiteSmokeDis = GetVectorDistance(fClientLocation, fBSiteSmoke);
-				
-					BotMoveTo(client, fBSiteSmoke, FASTEST_ROUTE);
-					
-					if (fBSiteSmokeDis < 150.0)
-					{
-						if (iDefIndex != 45)
-						{
-							FakeClientCommandEx(client, "use weapon_smokegrenade");
-						}
-					}
-					
-					if (fBSiteSmokeDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-						
-						CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowSmoke[client])
-						{
-							TeleportEntity(client, fBSiteSmoke, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-			else
-			{
-				float fBSiteFlash[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("B Site Flash", fBSiteFlash, fLookAt, fAng))
-				{
-					float fBSiteFlashDis = GetVectorDistance(fClientLocation, fBSiteFlash);
-				
-					BotMoveTo(client, fBSiteFlash, FASTEST_ROUTE);
-					
-					if (fBSiteFlashDis < 150.0)
-					{
-						if (iDefIndex != 43)
-						{
-							FakeClientCommandEx(client, "use weapon_flashbang");
-						}
-					}
-					
-					if (fBSiteFlashDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 2.0, true, 5.0, false);
-						
-						CreateTimer(1.0, Timer_ThrowFlash, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						iButtons |= IN_DUCK;
-						
-						if (g_bCanThrowFlash[client])
-						{
-							TeleportEntity(client, fBSiteFlash, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
 							iButtons |= IN_DUCK;
+						}
+						
+						if(strcmp(g_szFlashbang[client], "") != 0)
+						{
+							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));	
+						}
+						else
+						{
 							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
 						}
 					}
 				}
 			}
 		}
-		case 4: //XBOX Smoke
+	}
+	
+	if(strcmp(g_szFlashbang[client], "") != 0 && g_bHasThrownSmoke[client])
+	{
+		float fFlash[3], fLookAt[3], fAng[3], fWaitTime;
+		bool bJumpthrow, bCrouch;
+		
+		if (GetNade(g_szFlashbang[client], fFlash, fLookAt, fAng, fWaitTime, bJumpthrow, bCrouch))
 		{
-			if (!g_bHasThrownSmoke[client])
-			{
-				float fXBOXSmoke[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("XBOX Smoke", fXBOXSmoke, fLookAt, fAng))
-				{
-					float fXBOXSmokeDis = GetVectorDistance(fClientLocation, fXBOXSmoke);
-				
-					BotMoveTo(client, fXBOXSmoke, FASTEST_ROUTE);
-					
-					if (fXBOXSmokeDis < 150.0)
-					{
-						if (iDefIndex != 45)
-						{
-							FakeClientCommandEx(client, "use weapon_smokegrenade");
-						}
-					}
-					
-					if (fXBOXSmokeDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 2.0, true, 5.0, false);
-						
-						CreateTimer(1.0, Timer_ThrowSmoke, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowSmoke[client])
-						{
-							TeleportEntity(client, fXBOXSmoke, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							iButtons |= IN_JUMP;
-							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-			else
-			{
-				float fASiteFlash[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("A Site Flash", fASiteFlash, fLookAt, fAng))
-				{
-					float fASiteFlashDis = GetVectorDistance(fClientLocation, fASiteFlash);
-				
-					BotMoveTo(client, fASiteFlash, FASTEST_ROUTE);
-					
-					if (fASiteFlashDis < 150.0)
-					{
-						if (iDefIndex != 43)
-						{
-							FakeClientCommandEx(client, "use weapon_flashbang");
-						}
-					}
-					
-					if (fASiteFlashDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
-						
-						CreateTimer(0.5, Timer_ThrowFlash, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowFlash[client])
-						{
-							TeleportEntity(client, fASiteFlash, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-		}
-		case 5: //Short A Smoke
-		{
-			float fShortASmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("Short A Smoke", fShortASmoke, fLookAt, fAng))
-			{
-				float fShortASmokeDis = GetVectorDistance(fClientLocation, fShortASmoke);
+			float fFlashDis = GetVectorDistance(fClientLocation, fFlash);
+		
+			BotMoveTo(client, fFlash, FASTEST_ROUTE);
 			
-				BotMoveTo(client, fShortASmoke, FASTEST_ROUTE);
-				
-				if (fShortASmokeDis < 150.0)
+			if (fFlashDis < 150.0)
+			{
+				if (iDefIndex != 43)
 				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
-				
-				if (fShortASmokeDis < 25.0)
-				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
-					
-					if (g_bCanThrowSmoke[client])
-					{
-						TeleportEntity(client, fShortASmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
+					FakeClientCommandEx(client, "use weapon_flashbang");
 				}
 			}
-		}
-		case 6: //Short-Boost Smoke
-		{
-			float fShortBoostSmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("Short-Boost Smoke", fShortBoostSmoke, fLookAt, fAng))
-			{
-				float fShortBoostSmokeDis = GetVectorDistance(fClientLocation, fShortBoostSmoke);
 			
-				BotMoveTo(client, fShortBoostSmoke, FASTEST_ROUTE);
-				
-				if (fShortBoostSmokeDis < 150.0)
-				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
-				
-				if (fShortBoostSmokeDis < 25.0)
-				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
-					
-					if (g_bCanThrowSmoke[client])
-					{
-						TeleportEntity(client, fShortBoostSmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
-				}
-			}
-		}
-		case 7: //A Site Smoke
-		{
-			float fASiteSmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("A Site Smoke", fASiteSmoke, fLookAt, fAng))
+			if (fFlashDis < 25.0)
 			{
-				float fASiteSmokeDis = GetVectorDistance(fClientLocation, fASiteSmoke);
-			
-				BotMoveTo(client, fASiteSmoke, FASTEST_ROUTE);
+				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, fWaitTime, true, 5.0, false);
 				
-				if (fASiteSmokeDis < 150.0)
-				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
+				CreateTimer(fWaitTime, Timer_ThrowFlash, GetClientUserId(client));
 				
-				if (fASiteSmokeDis < 25.0)
+				iButtons |= IN_ATTACK;
+				
+				if(bCrouch)
 				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
 					iButtons |= IN_DUCK;
+				}
+				
+				if (g_bCanThrowFlash[client])
+				{
+					TeleportEntity(client, fFlash, fAng, NULL_VECTOR);
+					iButtons &= ~IN_ATTACK;
 					
-					if (g_bCanThrowSmoke[client])
+					if(bJumpthrow)
 					{
-						TeleportEntity(client, fASiteSmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
+						iButtons |= IN_JUMP;
+					}
+					
+					if(bCrouch)
+					{
 						iButtons |= IN_DUCK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
-				}
-			}
-		}
-		case 8: //Long Corner Smoke
-		{
-			if (!g_bHasThrownSmoke[client])
-			{
-				float fLongCornerSmoke[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("Long Corner Smoke", fLongCornerSmoke, fLookAt, fAng))
-				{
-					float fLongCornerSmokeDis = GetVectorDistance(fClientLocation, fLongCornerSmoke);
-				
-					BotMoveTo(client, fLongCornerSmoke, FASTEST_ROUTE);
-					
-					if (fLongCornerSmokeDis < 150.0)
-					{
-						if (iDefIndex != 45)
-						{
-							FakeClientCommandEx(client, "use weapon_smokegrenade");
-						}
 					}
 					
-					if (fLongCornerSmokeDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 2.0, true, 5.0, false);
-						
-						CreateTimer(1.0, Timer_ThrowSmoke, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowSmoke[client])
-						{
-							TeleportEntity(client, fLongCornerSmoke, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-			else
-			{
-				float fLongFlash[3], fLookAt[3], fAng[3];
-				
-				if (GetNade("Long Flash", fLongFlash, fLookAt, fAng))
-				{
-					float fLongFlashDis = GetVectorDistance(fClientLocation, fLongFlash);
-				
-					BotMoveTo(client, fLongFlash, FASTEST_ROUTE);
-					
-					if (fLongFlashDis < 150.0)
-					{
-						if (iDefIndex != 43)
-						{
-							FakeClientCommandEx(client, "use weapon_flashbang");
-						}
-					}
-					
-					if (fLongFlashDis < 25.0)
-					{
-						BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 1.0, true, 5.0, false);
-						
-						CreateTimer(0.8, Timer_ThrowFlash, GetClientUserId(client));
-						
-						iButtons |= IN_ATTACK;
-						
-						if (g_bCanThrowFlash[client])
-						{
-							TeleportEntity(client, fLongFlash, fAng, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							iButtons |= IN_JUMP;
-							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-		}
-		case 9: //A Car Smoke
-		{
-			float fACarSmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("A Car Smoke", fACarSmoke, fLookAt, fAng))
-			{
-				float fACarSmokeDis = GetVectorDistance(fClientLocation, fACarSmoke);
-			
-				BotMoveTo(client, fACarSmoke, FASTEST_ROUTE);
-				
-				if (fACarSmokeDis < 150.0)
-				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
-				
-				if (fACarSmokeDis < 25.0)
-				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
-					
-					if (g_bCanThrowSmoke[client])
-					{
-						TeleportEntity(client, fACarSmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
-				}
-			}
-		}
-		case 10: //CT Smoke
-		{
-			float fCTSmoke[3], fLookAt[3], fAng[3];
-				
-			if (GetNade("CT Smoke", fCTSmoke, fLookAt, fAng))
-			{
-				float fCTSmokeDis = GetVectorDistance(fClientLocation, fCTSmoke);
-			
-				BotMoveTo(client, fCTSmoke, FASTEST_ROUTE);
-				
-				if (fCTSmokeDis < 150.0)
-				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
-				
-				if (fCTSmokeDis < 25.0)
-				{
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, 4.0, true, 5.0, false);
-					
-					CreateTimer(3.0, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
-					
-					if (g_bCanThrowSmoke[client])
-					{
-						TeleportEntity(client, fCTSmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-					}
+					CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
 				}
 			}
 		}
