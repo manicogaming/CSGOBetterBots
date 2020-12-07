@@ -4838,7 +4838,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		{
 			if (g_iM4A1SChance[client] <= 30)
 			{
-				CSGO_SetMoney(client, iAccount - 2900);
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
 				
 				return Plugin_Changed;
@@ -4846,7 +4846,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			
 			if (Math_GetRandomInt(1, 100) <= 5)
 			{
-				CSGO_SetMoney(client, iAccount - 3300);
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_AUG));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
 				
 				return Plugin_Changed;
@@ -4858,7 +4858,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		{
 			if (Math_GetRandomInt(1, 100) <= 5)
 			{
-				CSGO_SetMoney(client, iAccount - 3000);
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_SG556));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_sg556");
 				
 				return Plugin_Changed;
@@ -4868,7 +4868,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		{
 			if (Math_GetRandomInt(1, 100) <= 40)
 			{
-				CSGO_SetMoney(client, iAccount - 1800);
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_GALILAR));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
 				
 				return Plugin_Changed;
@@ -4882,7 +4882,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		{
 			if (Math_GetRandomInt(1, 100) <= 40)
 			{
-				CSGO_SetMoney(client, iAccount - 2050);
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_FAMAS));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
 				
 				return Plugin_Changed;
