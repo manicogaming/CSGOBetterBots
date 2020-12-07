@@ -173,6 +173,21 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 		}
+		"Ramp Position"
+		{
+			"lookpos"		"-63.982632 -1674.684204 -103.906189"
+			"waittime"		"3.0"
+		}
+		"Palace Position"
+		{
+			"lookpos"		"164.354736 -2315.041016 24.093811"
+			"waittime"		"1.5"
+		}
+		"Underpass Position"
+		{
+			"lookpos"		"-1012.153503 387.799988 -303.906189"
+			"waittime"		"5.0"
+		}
 	}
 	"de_dust2"
 	{
@@ -302,6 +317,31 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 		}
+		"Lower Tunnel Position"
+		{
+			"lookpos"		"-1085.206177 1362.727051 -48.119759"
+			"waittime"		"5.0"
+		}
+		"B Position"
+		{
+			"lookpos"		"-1975.937500 1821.490356 96.745338"
+			"waittime"		"5.0"
+		}
+		"A Position"
+		{
+			"lookpos"		"776.948059 2607.570801 158.780182"
+			"waittime"		"3.0"
+		}
+		"Mid Push Position"
+		{
+			"lookpos"		"-161.266556 398.383514 62.534039"
+			"waittime"		"5.0"
+		}
+		"Long Position"
+		{
+			"lookpos"		"1328.326050 1216.048950 62.165554"
+			"waittime"		"3.0"
+		}
 	}
 	"de_inferno"
 	{
@@ -430,6 +470,26 @@
 			"waittime"		"1.0"
 			"jumpthrow"		"0"
 			"crouch"		"1"
+		}
+		"CT Position"
+		{
+			"lookpos"		"921.785706 2720.304443 192.554459"
+			"waittime"		"3.0"
+		}
+		"CT Push Position"
+		{
+			"lookpos"		"921.785706 2720.304443 192.554459"
+			"waittime"		"5.0"
+		}
+		"Bottom Banana Position"
+		{
+			"lookpos"		"111.965370 699.592651 138.017456"
+			"waittime"		"5.0"
+		}
+		"Balcony Position"
+		{
+			"lookpos"		"2252.379395 149.045380 193.250992"
+			"waittime"		"3.0"
 		}
 	}
 }
