@@ -3224,28 +3224,6 @@ ProP+Rifle "Cunha"
 	VoicePitch = 103
 End
 
-//NEW Players
-
-ProP+Rifle "djay"
-	VoicePitch = 91
-End
-
-ProAwp+SniperPro "PwnAlone"
-	VoicePitch = 107
-End
-
-ProP+Rifle "Rampage"
-	VoicePitch = 109
-End
-
-ProP+Rifle "ben1337"
-	VoicePitch = 103
-End
-
-ProP+Rifle "Bwills"
-	VoicePitch = 81
-End
-
 //9INE Players
 
 ProP+Rifle "CyderX"
@@ -3384,11 +3362,11 @@ ProP+Rifle "DaneJoris"
 	VoicePitch = 82
 End
 
-ProAwp+SniperPro "JoJo"
+ProAwp+SniperPro "walker"
 	VoicePitch = 115
 End
 
-ProP+Rifle "ERIC"
+ProP+Rifle "brett"
 	VoicePitch = 111
 End
 

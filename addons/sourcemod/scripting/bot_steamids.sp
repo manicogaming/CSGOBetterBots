@@ -2099,27 +2099,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 283730928;
 	}
-	//NEW Players
-	else if(strcmp(szBotName, "ben1337") == 0)
-	{
-		iAccountID = 131461662;
-	}
-	else if(strcmp(szBotName, "PwnAlone") == 0)
-	{
-		iAccountID = 24000649;
-	}
-	else if(strcmp(szBotName, "djay") == 0)
-	{
-		iAccountID = 3935898;
-	}
-	else if(strcmp(szBotName, "Rampage") == 0)
-	{
-		iAccountID = 118220738;
-	}
-	else if(strcmp(szBotName, "Bwills") == 0)
-	{
-		iAccountID = 119308817;
-	}
 	//9INE Players
 	//QBF Players
 	else if(strcmp(szBotName, "JACKPOT") == 0)

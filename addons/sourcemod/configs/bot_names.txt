@@ -756,12 +756,6 @@
 	"brA" 				"FTW"
 	"plat" 				"FTW"
 	"Cunha" 			"FTW"
-	//NEW Players
-	"PwnAlone" 			"NEW"
-	"djay" 				"NEW"	
-	"Rampage" 			"NEW"
-	"ben1337" 			"NEW"
-	"Bwills" 			"NEW"
 	//9INE Players
 	"CyderX" 			"9INE"
 	"xfl0ud" 			"9INE"
@@ -800,8 +794,8 @@
 	"NEOFRAG" 			"SINNERS"
 	//Impact Players
 	"DaneJoris" 		"Impact"	
-	"JoJo" 				"Impact"
-	"ERIC" 				"Impact"
+	"walker" 				"Impact"
+	"brett" 				"Impact"
 	"Koalanoob" 		"Impact"	
 	"insane" 			"Impact"
 	//ERN Players

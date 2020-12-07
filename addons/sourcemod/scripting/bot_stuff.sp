@@ -226,7 +226,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_penta", Team_PENTA);
 	RegConsoleCmd("team_ftw", Team_FTW);
-	RegConsoleCmd("team_new", Team_NEW);
 	RegConsoleCmd("team_9ine", Team_9INE);
 	RegConsoleCmd("team_qbf", Team_QBF);
 	RegConsoleCmd("team_tigers", Team_Tigers);
@@ -4029,36 +4028,6 @@ public Action Team_FTW(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_NEW(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "PwnAlone");
-		ServerCommand("bot_add_ct %s", "djay");
-		ServerCommand("bot_add_ct %s", "Rampage");
-		ServerCommand("bot_add_ct %s", "ben1337");
-		ServerCommand("bot_add_ct %s", "Bwills");
-		ServerCommand("mp_teamlogo_1 new");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "PwnAlone");
-		ServerCommand("bot_add_t %s", "djay");
-		ServerCommand("bot_add_t %s", "Rampage");
-		ServerCommand("bot_add_t %s", "ben1337");
-		ServerCommand("bot_add_t %s", "Bwills");
-		ServerCommand("mp_teamlogo_2 new");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_9INE(int client, int iArgs)
 {
 	char arg[12];
@@ -4248,8 +4217,8 @@ public Action Team_Impact(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DaneJoris");
-		ServerCommand("bot_add_ct %s", "JoJo");
-		ServerCommand("bot_add_ct %s", "ERIC");
+		ServerCommand("bot_add_ct %s", "walker");
+		ServerCommand("bot_add_ct %s", "brett");
 		ServerCommand("bot_add_ct %s", "Koalanoob");
 		ServerCommand("bot_add_ct %s", "insane");
 		ServerCommand("mp_teamlogo_1 impa");
@@ -4259,8 +4228,8 @@ public Action Team_Impact(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DaneJoris");
-		ServerCommand("bot_add_t %s", "JoJo");
-		ServerCommand("bot_add_t %s", "ERIC");
+		ServerCommand("bot_add_t %s", "walker");
+		ServerCommand("bot_add_t %s", "brett");
 		ServerCommand("bot_add_t %s", "Koalanoob");
 		ServerCommand("bot_add_t %s", "insane");
 		ServerCommand("mp_teamlogo_2 impa");
@@ -6327,112 +6296,112 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 50.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "ESPADA") == 0) //29th
+		else if (strcmp(szClanTag, "Triumph") == 0) //29th
 		{
 			if (!IsTargetInSightRange(client, i, 60.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "forZe") == 0) //28th
+		else if (strcmp(szClanTag, "Sprout") == 0) //28th
 		{
 			if (!IsTargetInSightRange(client, i, 70.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "C9") == 0) //27th
+		else if (strcmp(szClanTag, "ESPADA") == 0) //27th
 		{
 			if (!IsTargetInSightRange(client, i, 80.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Triumph") == 0) //26th
+		else if (strcmp(szClanTag, "North") == 0) //26th
 		{
 			if (!IsTargetInSightRange(client, i, 90.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "MIBR") == 0) //25th
+		else if (strcmp(szClanTag, "Nemiga") == 0) //25th
 		{
 			if (!IsTargetInSightRange(client, i, 100.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Lions") == 0) //24th
+		else if (strcmp(szClanTag, "One") == 0) //24th
 		{
 			if (!IsTargetInSightRange(client, i, 110.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "GODSENT") == 0) //23rd
+		else if (strcmp(szClanTag, "C9") == 0) //23rd
 		{
 			if (!IsTargetInSightRange(client, i, 120.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "One") == 0) //22nd
+		else if (strcmp(szClanTag, "Lions") == 0) //22nd
 		{
 			if (!IsTargetInSightRange(client, i, 130.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Nemiga") == 0) //21st
+		else if (strcmp(szClanTag, "MIBR") == 0) //21st
 		{
 			if (!IsTargetInSightRange(client, i, 140.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Sprout") == 0) //20th
+		else if (strcmp(szClanTag, "Chaos") == 0) //20th
 		{
 			if (!IsTargetInSightRange(client, i, 150.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Gambit") == 0) //19th
+		else if (strcmp(szClanTag, "GODSENT") == 0) //19th
 		{
 			if (!IsTargetInSightRange(client, i, 160.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Chaos") == 0) //18th
+		else if (strcmp(szClanTag, "Spirit") == 0) //18th
 		{
 			if (!IsTargetInSightRange(client, i, 170.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Spirit") == 0) //17th
+		else if (strcmp(szClanTag, "Gambit") == 0) //17th
 		{
 			if (!IsTargetInSightRange(client, i, 180.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "VP") == 0) //16th
+		else if (strcmp(szClanTag, "Liquid") == 0) //16th
 		{
 			if (!IsTargetInSightRange(client, i, 190.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Liquid") == 0) //15th
+		else if (strcmp(szClanTag, "EG") == 0) //15th
 		{
 			if (!IsTargetInSightRange(client, i, 200.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "fnatic") == 0) //14th
+		else if (strcmp(szClanTag, "NiP") == 0) //14th
 		{
 			if (!IsTargetInSightRange(client, i, 210.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "mouz") == 0) //13th
+		else if (strcmp(szClanTag, "fnatic") == 0) //13th
 		{
 			if (!IsTargetInSightRange(client, i, 220.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "EG") == 0) //12th
+		else if (strcmp(szClanTag, "FaZe") == 0) //12th
 		{
 			if (!IsTargetInSightRange(client, i, 230.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "NiP") == 0) //11th
+		else if (strcmp(szClanTag, "VP") == 0) //11th
 		{
 			if (!IsTargetInSightRange(client, i, 240.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "FaZe") == 0) //10th
+		else if (strcmp(szClanTag, "coL") == 0) //10th
 		{
 			if (!IsTargetInSightRange(client, i, 250.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "coL") == 0) //9th
+		else if (strcmp(szClanTag, "G2") == 0) //9th
 		{
 			if (!IsTargetInSightRange(client, i, 260.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "G2") == 0) //8th
+		else if (strcmp(szClanTag, "mouz") == 0) //8th
 		{
 			if (!IsTargetInSightRange(client, i, 270.0))
 				continue;
@@ -6452,17 +6421,17 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 300.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Astralis") == 0) //4th
+		else if (strcmp(szClanTag, "Na´Vi") == 0) //4th
 		{
 			if (!IsTargetInSightRange(client, i, 310.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Na´Vi") == 0) //3rd
+		else if (strcmp(szClanTag, "Heroic") == 0) //3rd
 		{
 			if (!IsTargetInSightRange(client, i, 320.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Heroic") == 0) //2nd
+		else if (strcmp(szClanTag, "Astralis") == 0) //2nd
 		{
 			if (!IsTargetInSightRange(client, i, 330.0))
 				continue;
