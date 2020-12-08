@@ -288,7 +288,7 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						items.SetInt("paintwear", 1000000000 + RoundFloat(g_fGloveWear[client] * 100000000.0));
 						items.SetInt("paintseed", g_iGloveSeed[client]);
 					}
-					else if (iDefIndex < 4711)
+					else if (iDefIndex < 4619)
 					{
 						if (IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
 						{

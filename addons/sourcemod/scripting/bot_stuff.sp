@@ -6165,7 +6165,7 @@ bool IsPlayerReloading(int client)
 		bReloading = false;
 	
 	//Has ammo and is not reloading
-	if (GetEntProp(iPlayerWeapon, Prop_Send, "m_iClip1") <= 0 && m_bInReload)
+	if (GetEntProp(iPlayerWeapon, Prop_Send, "m_iClip1") <= 0 || m_bInReload)
 		bReloading = true;
 	
 	return bReloading;
