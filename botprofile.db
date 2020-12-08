@@ -639,9 +639,9 @@ End
 
 ProP+Rifle "ropz"
 	VoicePitch = 89
-	LookAngleMaxAccelAttacking = 3000.0
-	LookAngleStiffnessAttacking = 500.0
-	LookAngleDampingAttacking = 30.0 
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //TyLoo Players
@@ -678,9 +678,9 @@ End
 
 ProP+Rifle "Brehze"
 	VoicePitch = 111
-	LookAngleMaxAccelAttacking = 3000.0
-	LookAngleStiffnessAttacking = 500.0
-	LookAngleDampingAttacking = 30.0 
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Ethan"
@@ -717,9 +717,9 @@ End
 
 ProP+Rifle "electronic"
 	VoicePitch = 85
-	LookAngleMaxAccelAttacking = 3000.0
-	LookAngleStiffnessAttacking = 500.0
-	LookAngleDampingAttacking = 30.0 
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProAwp+SniperPro "s1mple"
@@ -749,9 +749,9 @@ End
 
 ProAwp+SniperPro "NAF"
 	VoicePitch = 90
-	LookAngleMaxAccelAttacking = 3000.0
-	LookAngleStiffnessAttacking = 500.0
-	LookAngleDampingAttacking = 30.0 
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Grim"
@@ -767,9 +767,9 @@ End
 
 ProP+Rifle "Twistzz"
 	VoicePitch = 102
-	LookAngleMaxAccelAttacking = 3000.0
-	LookAngleStiffnessAttacking = 500.0
-	LookAngleDampingAttacking = 30.0 
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //AGO Players
