@@ -5407,11 +5407,6 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 					return Plugin_Continue;
 				}
 				
-				if (!(GetEntityFlags(client) & FL_ONGROUND))
-				{
-					return Plugin_Continue;
-				}
-				
 				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 				{
 					BotEquipBestWeapon(client, true);
@@ -5481,7 +5476,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				GetClientAbsOrigin(client, fClientPos);
 				fClientPos[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client) && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 					return Plugin_Changed;
