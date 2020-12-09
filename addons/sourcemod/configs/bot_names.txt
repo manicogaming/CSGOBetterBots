@@ -744,12 +744,12 @@
 	"farmaG" 			"LEISURE"
 	"FabeeN" 			"LEISURE"
 	"bustrex" 			"LEISURE"
-	//PENTA Players
-	"pdy" 				"PENTA"
-	"red" 				"PENTA"
-	"s1n" 				"PENTA"
-	"xenn" 				"PENTA"
-	"skyye" 			"PENTA"
+	//Lilmix Players
+	"quix" 				"Lilmix"
+	"b0denmaster" 		"Lilmix"
+	"bq" 				"Lilmix"
+	"Svedjehed" 		"Lilmix"
+	"isak" 				"Lilmix"
 	//FTW Players
 	"NABOWOW" 			"FTW"
 	"Jaepe" 			"FTW"

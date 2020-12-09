@@ -2069,18 +2069,26 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 168197870;
 	}
 	//LEISURE Players
-	//PENTA Players
-	else if(strcmp(szBotName, "red") == 0)
+	//Lilmix Players
+	else if(strcmp(szBotName, "b0denmaster") == 0)
 	{
-		iAccountID = 204660292;
+		iAccountID = 316269116;
 	}
-	else if(strcmp(szBotName, "pdy") == 0)
+	else if(strcmp(szBotName, "quix") == 0)
 	{
-		iAccountID = 199029474;
+		iAccountID = 18704555;
 	}
-	else if(strcmp(szBotName, "xenn") == 0)
+	else if(strcmp(szBotName, "Svedjehed") == 0)
 	{
-		iAccountID = 167173287;
+		iAccountID = 170174906;
+	}
+	else if(strcmp(szBotName, "bq") == 0)
+	{
+		iAccountID = 240233870;
+	}
+	else if(strcmp(szBotName, "isak") == 0)
+	{
+		iAccountID = 111644637;
 	}
 	//FTW Players
 	else if(strcmp(szBotName, "plat") == 0)

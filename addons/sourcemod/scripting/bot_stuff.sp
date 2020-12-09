@@ -224,7 +224,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_keyd", Team_Keyd);
 	RegConsoleCmd("team_tiger", Team_TIGER);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
-	RegConsoleCmd("team_penta", Team_PENTA);
+	RegConsoleCmd("team_lilmix", Team_Lilmix);
 	RegConsoleCmd("team_ftw", Team_FTW);
 	RegConsoleCmd("team_9ine", Team_9INE);
 	RegConsoleCmd("team_qbf", Team_QBF);
@@ -3968,7 +3968,7 @@ public Action Team_LEISURE(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_PENTA(int client, int iArgs)
+public Action Team_Lilmix(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3976,23 +3976,23 @@ public Action Team_PENTA(int client, int iArgs)
 	if (StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "pdy");
-		ServerCommand("bot_add_ct %s", "red");
-		ServerCommand("bot_add_ct %s", "s1n");
-		ServerCommand("bot_add_ct %s", "xenn");
-		ServerCommand("bot_add_ct %s", "skyye");
-		ServerCommand("mp_teamlogo_1 penta");
+		ServerCommand("bot_add_ct %s", "quix");
+		ServerCommand("bot_add_ct %s", "b0denmaster");
+		ServerCommand("bot_add_ct %s", "bq");
+		ServerCommand("bot_add_ct %s", "Svedjehed");
+		ServerCommand("bot_add_ct %s", "isak");
+		ServerCommand("mp_teamlogo_1 lil");
 	}
 	
 	if (StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "pdy");
-		ServerCommand("bot_add_t %s", "red");
-		ServerCommand("bot_add_t %s", "s1n");
-		ServerCommand("bot_add_t %s", "xenn");
-		ServerCommand("bot_add_t %s", "skyye");
-		ServerCommand("mp_teamlogo_2 penta");
+		ServerCommand("bot_add_t %s", "quix");
+		ServerCommand("bot_add_t %s", "b0denmaster");
+		ServerCommand("bot_add_t %s", "bq");
+		ServerCommand("bot_add_t %s", "Svedjehed");
+		ServerCommand("bot_add_t %s", "isak");
+		ServerCommand("mp_teamlogo_2 lil");
 	}
 	
 	return Plugin_Handled;
@@ -4906,7 +4906,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 				{
 					if (Math_GetRandomInt(1, 100) <= 40)
 					{
-						int iBone = LookupBone(iEnt, "spine_2");
+						int iBone = LookupBone(iEnt, "spine_3");
 						
 						if (iBone < 0)
 							return MRES_Ignored;
@@ -4927,7 +4927,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 				{
 					if (Math_GetRandomInt(1, 100) <= 40)
 					{
-						int iBone = LookupBone(iEnt, "spine_2");
+						int iBone = LookupBone(iEnt, "spine_3");
 						
 						if (iBone < 0)
 							return MRES_Ignored;
@@ -4948,7 +4948,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 				{
 					if (Math_GetRandomInt(1, 100) <= 40)
 					{
-						int iBone = LookupBone(iEnt, "spine_2");
+						int iBone = LookupBone(iEnt, "spine_3");
 						
 						if (iBone < 0)
 							return MRES_Ignored;

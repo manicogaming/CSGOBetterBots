@@ -3198,25 +3198,25 @@ ProP+Rifle "bustrex"
 	VoicePitch = 82
 End
 
-//PENTA Players
+//Lilmix Players
 
-ProP+Rifle "pdy"
+ProP+Rifle "quix"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "red"
+ProAwp+SniperPro "b0denmaster"
 	VoicePitch = 101
 End
 
-ProP+Rifle "s1n"
+ProP+Rifle "bq"
 	VoicePitch = 114
 End
 
-ProP+Rifle "xenn"
+ProP+Rifle "Svedjehed"
 	VoicePitch = 102
 End
 
-ProP+Rifle "skyye"
+ProP+Rifle "isak"
 	VoicePitch = 91
 End
 
