@@ -500,9 +500,6 @@ End
 
 ProP+Rifle "Magisk"
 	VoicePitch = 73
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "dupreeh"
@@ -569,6 +566,9 @@ End
 
 ProP+Rifle "NiKo"
 	VoicePitch = 111
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "AmaNEk"
@@ -678,9 +678,6 @@ End
 
 ProP+Rifle "Brehze"
 	VoicePitch = 111
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Ethan"
@@ -749,9 +746,6 @@ End
 
 ProAwp+SniperPro "NAF"
 	VoicePitch = 90
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Grim"
@@ -760,16 +754,13 @@ End
 
 ProP+Rifle "ELiGE"
 	VoicePitch = 93
-	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleMaxAccelAttacking = 10000.0 
 	LookAngleStiffnessAttacking = 900.0
 	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Twistzz"
 	VoicePitch = 102
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 //AGO Players
@@ -849,6 +840,9 @@ End
 
 ProAwp+SniperPro "syrsoN"
 	VoicePitch = 81
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "XANTARES"
@@ -927,6 +921,9 @@ End
 
 ProP+Rifle "blameF"
 	VoicePitch = 102
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //ViCi Players
@@ -1175,6 +1172,9 @@ End
 
 ProP+Rifle "mir"
 	VoicePitch = 97
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProAwp+SniperPro "iDISBALANCE"
@@ -2829,6 +2829,9 @@ End
 
 ProAwp+SniperPro "mantuu"
 	VoicePitch = 91
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Aleksib"
