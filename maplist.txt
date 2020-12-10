@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Dec 10 02:58:29 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Dec 10 22:16:05 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -68,7 +68,6 @@ aim_shyam
 aim_speedgaming
 aim_stashhouse
 aim_tmp
-aim_tmp_mac10_v2
 aim_treearena
 aim_warehouse
 aim_warmup
@@ -311,7 +310,6 @@ de_zen
 deagle_ultra
 deathzone
 dm_bloodsport
-dz_frostbite
 fun_pacman_v1
 fy_aztec_fire_csgo
 fy_back_street

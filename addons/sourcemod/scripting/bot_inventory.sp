@@ -36,11 +36,15 @@ int g_iStickerComboChance[MAXPLAYERS + 1][1024];
 int g_iRndStickerCombo[MAXPLAYERS + 1][1024];
 int g_iRndSticker[MAXPLAYERS + 1][1024][4];
 int g_iRndSameSticker[MAXPLAYERS + 1][1024];
+int g_iItemIDLow[MAXPLAYERS + 1][1024];
+int g_iItemIDHigh[MAXPLAYERS + 1][1024];
 
 int g_iStoredGlove[MAXPLAYERS + 1];
 int g_iGloveSkin[MAXPLAYERS + 1];
 float g_fGloveWear[MAXPLAYERS + 1];
 int g_iGloveSeed[MAXPLAYERS + 1];
+int g_iGloveItemIDLow[MAXPLAYERS + 1];
+int g_iGloveItemIDHigh[MAXPLAYERS + 1];
 
 int g_iStatTrakKills[MAXPLAYERS + 1][1024];
 bool g_bKnifeHasStatTrak[MAXPLAYERS + 1][1024];
@@ -285,29 +289,181 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 					{
 						items.SetInt("defindex", g_iStoredGlove[client]);
 						items.SetInt("paintindex", g_iGloveSkin[client]);
-						items.SetInt("paintwear", 1000000000 + RoundFloat(g_fGloveWear[client] * 100000000.0));
+						items.SetInt("paintwear", FloatToInt("%d", g_fGloveWear[client]));
 						items.SetInt("paintseed", g_iGloveSeed[client]);
+						
+						int itemID[2];
+						itemID[0] = g_iGloveItemIDHigh[client];
+						itemID[1] = g_iGloveItemIDLow[client];
+						
+						items.SetInt64("itemid", itemID);
 					}
 					else if (iDefIndex < 4619)
 					{
 						if (IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
 						{
 							items.SetInt("paintindex", g_iSkinDefIndex[client][iDefIndex]);
-							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][iDefIndex] * 100000000.0));
+							items.SetInt("paintwear", FloatToInt("%d", g_fWeaponSkinWear[client][iDefIndex]));
 							items.SetInt("paintseed", g_iWeaponSkinSeed[client][iDefIndex]);
 						}
 						else
 						{
 							items.SetInt("defindex", g_iStoredKnife[client]);
 							items.SetInt("paintindex", g_iSkinDefIndex[client][g_iStoredKnife[client]]);
-							items.SetInt("paintwear", 1000000000 + RoundFloat(g_fWeaponSkinWear[client][g_iStoredKnife[client]] * 100000000.0));
+							items.SetInt("paintwear", FloatToInt("%d", g_fWeaponSkinWear[client][g_iStoredKnife[client]]));
 							items.SetInt("paintseed", g_iWeaponSkinSeed[client][g_iStoredKnife[client]]);
+						}
+						
+						int itemID[2];
+						itemID[0] = g_iItemIDLow[client][iDefIndex];
+						itemID[1] = g_iItemIDHigh[client][iDefIndex];
+						
+						items.SetInt64("itemid", itemID);
+						
+						Protobuf stickers = items.AddMessage("stickers");
+						Protobuf stickers1 = items.AddMessage("stickers");
+						Protobuf stickers2 = items.AddMessage("stickers");
+						Protobuf stickers3 = items.AddMessage("stickers");
+						
+						if (g_iStickerChance[client][iDefIndex] <= 30)
+						{
+							if (g_iStickerComboChance[client][iDefIndex] <= 65)
+							{
+								switch (g_iRndStickerCombo[client][iDefIndex])
+								{
+									case 1:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+									}
+									case 2:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+									}
+									case 3:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+									}
+									case 4:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 5:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+									}
+									case 6:
+									{
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+									}
+									case 7:
+									{
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+									}
+									case 8:
+									{
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 9:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 10:
+									{
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+									}
+									case 11:
+									{
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 12:
+									{
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 13:
+									{
+										stickers.SetInt("slot", 3);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 14:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+								}
+							}
+							else
+							{
+								switch (g_iRndStickerCombo[client][iDefIndex])
+								{
+									case 1:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][0]);
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][1]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][2]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSticker[client][iDefIndex][3]);
+									}
+									case 2:
+									{
+										stickers.SetInt("slot", 0);
+										stickers.SetInt("sticker_id", g_iRndSameSticker[client][iDefIndex]);
+										stickers1.SetInt("slot", 1);
+										stickers1.SetInt("sticker_id", g_iRndSameSticker[client][iDefIndex]);
+										stickers2.SetInt("slot", 2);
+										stickers2.SetInt("sticker_id", g_iRndSameSticker[client][iDefIndex]);
+										stickers3.SetInt("slot", 3);
+										stickers3.SetInt("sticker_id", g_iRndSameSticker[client][iDefIndex]);
+									}
+								}
+							}
 						}
 					}
 				}
 			}
 		}
-		SDKCall(g_hForceUpdate, client, -1);
 	}
 	return Plugin_Changed;
 }
@@ -318,6 +474,9 @@ public void OnClientPutInServer(int client)
 	{
 		if (eItems_AreItemsSynced())
 		{
+			static int IDLow = 2048;
+			static int IDHigh = 16384;
+		
 			g_iMusicKit[client] = eItems_GetMusicKitDefIndexByMusicKitNum(Math_GetRandomInt(0, eItems_GetMusicKitsCount() - 1));
 			
 			if (Math_GetRandomInt(1, 2) == 1)
@@ -354,6 +513,8 @@ public void OnClientPutInServer(int client)
 			g_iRndSamePatch[client] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() - 1));
 			
 			g_iStoredGlove[client] = eItems_GetGlovesDefIndexByGlovesNum(Math_GetRandomInt(0, g_iGloveCount - 1));
+			g_iGloveItemIDLow[client] = IDLow++;
+			g_iGloveItemIDHigh[client] = IDHigh++;
 			
 			int iGloveNum = eItems_GetGlovesNumByDefIndex(g_iStoredGlove[client]);
 			int iRandomGloveSkin = Math_GetRandomInt(0, g_ArrayGloves[iGloveNum].Length - 1);
@@ -376,6 +537,9 @@ public void OnClientPutInServer(int client)
 				{
 					g_iSkinDefIndex[client][iWeaponDefIndex] = g_ArrayWeapons[iWeapon].Get(iRandomWeaponSkin);
 				}
+				
+				g_iItemIDHigh[client][iWeaponDefIndex] = IDHigh++;
+				g_iItemIDLow[client][iWeaponDefIndex] = IDLow++;
 				
 				g_iWeaponSkinSeed[client][iWeaponDefIndex] = Math_GetRandomInt(1, 1000);
 				g_iStatTrakOrSouvenirChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
@@ -1350,10 +1514,8 @@ void SetWeaponProps(int client, int iEntity)
 	
 	if (iDefIndex > -1)
 	{
-		static int IDLow = 2048;
-		static int IDHigh = 16384;
-		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", IDLow++);
-		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", IDHigh++);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", g_iItemIDLow[client][iDefIndex]);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", g_iItemIDHigh[client][iDefIndex]);
 		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
 		SetEntProp(iEntity, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
 		
@@ -1680,14 +1842,11 @@ public void GivePlayerGloves(int client)
 	iEntity = CreateEntityByName("wearable_item");
 	if (iEntity != -1 && eItems_AreItemsSynced())
 	{
-		static int IDLow = 2048;
-		static int IDHigh = 16384;
-		
 		CEconItemView pItem = PTaH_GetEconItemViewFromEconEntity(iEntity);
 		CAttributeList pDynamicAttributes = pItem.NetworkedDynamicAttributesForDemos;
 		
-		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", IDLow++);
-		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", IDHigh++);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDLow", g_iGloveItemIDLow[client]);
+		SetEntProp(iEntity, Prop_Send, "m_iItemIDHigh", g_iGloveItemIDHigh[client]);
 		
 		SetEntProp(iEntity, Prop_Send, "m_iItemDefinitionIndex", g_iStoredGlove[client]);
 		
@@ -1732,3 +1891,12 @@ stock bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && IsFakeClient(client) && !IsClientSourceTV(client);
 } 
+
+stock int FloatToInt(const char[] szValue, any ...)
+{
+	int len = strlen(szValue) + 255;
+	char[] myFormattedString = new char[len];
+	VFormat(myFormattedString, len, szValue, 2);
+ 
+	return StringToInt(myFormattedString);
+}
