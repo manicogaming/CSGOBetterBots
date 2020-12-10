@@ -317,7 +317,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 21583315;
 	}
-	//Vireo.Pro Players
 	//Na´Vi Players
 	else if(strcmp(szBotName, "flamie") == 0)
 	{

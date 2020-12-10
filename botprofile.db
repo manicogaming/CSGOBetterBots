@@ -688,28 +688,6 @@ ProP+Rifle "tarik"
 	VoicePitch = 98
 End
 
-//Vireo.Pro Players
-
-ProP+Rifle "Hendy"
-	VoicePitch = 113
-End
-
-ProAwp+SniperPro "walker"
-	VoicePitch = 110
-End
-
-ProP+Rifle "vein"
-	VoicePitch = 97
-End
-
-ProP+Rifle "armen"
-	VoicePitch = 80
-End
-
-ProP+Rifle "Ryze"
-	VoicePitch = 82
-End
-
 //Na´Vi Players
 
 ProP+Rifle "electronic"

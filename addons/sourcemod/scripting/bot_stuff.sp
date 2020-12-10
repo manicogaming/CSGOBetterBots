@@ -111,7 +111,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_mouz", Team_mouz);
 	RegConsoleCmd("team_tyloo", Team_TYLOO);
 	RegConsoleCmd("team_eg", Team_EG);
-	RegConsoleCmd("team_vireopro", Team_VireoPro);
 	RegConsoleCmd("team_navi", Team_NaVi);
 	RegConsoleCmd("team_liquid", Team_Liquid);
 	RegConsoleCmd("team_ago", Team_AGO);
@@ -573,36 +572,6 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Ethan");
 		ServerCommand("bot_add_t %s", "CeRq");
 		ServerCommand("mp_teamlogo_2 eg");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_VireoPro(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Hendy");
-		ServerCommand("bot_add_ct %s", "armen");
-		ServerCommand("bot_add_ct %s", "vein");
-		ServerCommand("bot_add_ct %s", "walker");
-		ServerCommand("bot_add_ct %s", "Ryze");
-		ServerCommand("mp_teamlogo_1 vireo");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Hendy");
-		ServerCommand("bot_add_t %s", "armen");
-		ServerCommand("bot_add_t %s", "vein");
-		ServerCommand("bot_add_t %s", "walker");
-		ServerCommand("bot_add_t %s", "Ryze");
-		ServerCommand("mp_teamlogo_2 vireo");
 	}
 	
 	return Plugin_Handled;
@@ -5476,7 +5445,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				GetClientAbsOrigin(client, fClientPos);
 				fClientPos[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && !IsPlayerReloading(client) && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && GetVectorDistance(fClientEyes, fTargetEyes) < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 					return Plugin_Changed;

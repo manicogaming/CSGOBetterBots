@@ -66,12 +66,6 @@
 	"Brehze" 			"EG"
 	"Ethan" 			"EG"
 	"CeRq" 				"EG"
-	//Vireo.Pro Players
-	"Hendy" 			"Vireo.Pro"
-	"armen" 			"Vireo.Pro"
-	"vein" 				"Vireo.Pro"
-	"walker" 			"Vireo.Pro"	
-	"Ryze" 				"Vireo.Pro"
 	//Na´Vi Players
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"
