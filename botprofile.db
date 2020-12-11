@@ -2585,7 +2585,7 @@ ProP+Rifle "crush"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "H1te"
+ProAwp+SniperPro "Kre1N"
 	VoicePitch = 102
 End
 
@@ -2597,7 +2597,7 @@ ProP+Rifle "SELLTER"
 	VoicePitch = 100
 End
 
-ProP+Rifle "fenvicious"
+ProP+Rifle "floweaN"
 	VoicePitch = 72
 End
 

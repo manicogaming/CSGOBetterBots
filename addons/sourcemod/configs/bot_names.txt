@@ -584,10 +584,10 @@
 	"koyot" 			"Pompa"
 	//Unique Players
 	"crush" 			"Unique"
-	"H1te" 				"Unique"
+	"Kre1N" 			"Unique"
 	"shalfey" 			"Unique"
 	"SELLTER" 			"Unique"
-	"fenvicious" 		"Unique"	
+	"floweaN" 			"Unique"	
 	//Izako Players
 	"Siuhy" 			"Izako"
 	"szejn" 			"Izako"

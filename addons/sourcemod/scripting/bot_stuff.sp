@@ -3166,10 +3166,10 @@ public Action Team_Unique(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "crush");
-		ServerCommand("bot_add_ct %s", "H1te");
+		ServerCommand("bot_add_ct %s", "Kre1N");
 		ServerCommand("bot_add_ct %s", "shalfey");
 		ServerCommand("bot_add_ct %s", "SELLTER");
-		ServerCommand("bot_add_ct %s", "fenvicious");
+		ServerCommand("bot_add_ct %s", "floweaN");
 		ServerCommand("mp_teamlogo_1 uniq");
 	}
 	
@@ -3177,10 +3177,10 @@ public Action Team_Unique(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "crush");
-		ServerCommand("bot_add_t %s", "H1te");
+		ServerCommand("bot_add_t %s", "Kre1N");
 		ServerCommand("bot_add_t %s", "shalfey");
 		ServerCommand("bot_add_t %s", "SELLTER");
-		ServerCommand("bot_add_t %s", "fenvicious");
+		ServerCommand("bot_add_t %s", "floweaN");
 		ServerCommand("mp_teamlogo_2 uniq");
 	}
 	
@@ -4873,7 +4873,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 40)
+					if (Math_GetRandomInt(1, 100) <= 50)
 					{
 						int iBone = LookupBone(iEnt, "spine_3");
 						
@@ -4894,7 +4894,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 40)
+					if (Math_GetRandomInt(1, 100) <= 50)
 					{
 						int iBone = LookupBone(iEnt, "spine_3");
 						
@@ -4915,7 +4915,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 40)
+					if (Math_GetRandomInt(1, 100) <= 50)
 					{
 						int iBone = LookupBone(iEnt, "spine_3");
 						

@@ -1674,10 +1674,6 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 174135918;
 	}
 	//Unique Players
-	else if(strcmp(szBotName, "fenvicious") == 0)
-	{
-		iAccountID = 72984;
-	}
 	else if(strcmp(szBotName, "crush") == 0)
 	{
 		iAccountID = 36981424;
