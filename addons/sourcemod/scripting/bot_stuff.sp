@@ -134,7 +134,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_spirit", Team_Spirit);
 	RegConsoleCmd("team_ldlc", Team_LDLC);
 	RegConsoleCmd("team_gamerlegion", Team_GamerLegion);
-	RegConsoleCmd("team_divizon", Team_DIVIZON);
 	RegConsoleCmd("team_wolsung", Team_Wolsung);
 	RegConsoleCmd("team_pducks", Team_PDucks);
 	RegConsoleCmd("team_havu", Team_HAVU);
@@ -1262,36 +1261,6 @@ public Action Team_GamerLegion(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "RuStY");
 		ServerCommand("bot_add_t %s", "Adam9130");
 		ServerCommand("mp_teamlogo_2 glegion");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_DIVIZON(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "devus");
-		ServerCommand("bot_add_ct %s", "akay");
-		ServerCommand("bot_add_ct %s", "striNg");
-		ServerCommand("bot_add_ct %s", "kryptoN");
-		ServerCommand("bot_add_ct %s", "bLooDyyY");
-		ServerCommand("mp_teamlogo_1 divi");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "devus");
-		ServerCommand("bot_add_t %s", "akay");
-		ServerCommand("bot_add_t %s", "striNg");
-		ServerCommand("bot_add_t %s", "kryptoN");
-		ServerCommand("bot_add_t %s", "bLooDyyY");
-		ServerCommand("mp_teamlogo_2 divi");
 	}
 	
 	return Plugin_Handled;
@@ -4867,76 +4836,14 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			return MRES_Ignored;
 		}
 		
-		if (g_bCanAttack[client])
+		if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35 && iDefIndex != 40) || iDefIndex == 63)
 		{
-			if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35 && iDefIndex != 40) || iDefIndex == 63)
+			if (g_bIsHeadVisible[client])
 			{
-				if (g_bIsHeadVisible[client])
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						int iBone = LookupBone(iEnt, "spine_3");
-						
-						if (iBone < 0)
-							return MRES_Ignored;
-						
-						float fBody[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
-						if (BotIsVisible(client, fBody, false, -1))
-						{
-							fTargetEyes = fBody;
-						}
-					}
-				}
-			}
-			else if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
-			{
-				if (g_bIsHeadVisible[client])
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						int iBone = LookupBone(iEnt, "spine_3");
-						
-						if (iBone < 0)
-							return MRES_Ignored;
-						
-						float fBody[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
-						if (BotIsVisible(client, fBody, false, -1))
-						{
-							fTargetEyes = fBody;
-						}
-					}
-				}
-			}
-			else if (iDefIndex == 11 || iDefIndex == 38)
-			{
-				if (g_bIsHeadVisible[client])
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						int iBone = LookupBone(iEnt, "spine_3");
-						
-						if (iBone < 0)
-							return MRES_Ignored;
-						
-						float fBody[3], fBad[3];
-						GetBonePosition(iEnt, iBone, fBody, fBad);
-						
-						if (BotIsVisible(client, fBody, false, -1))
-						{
-							fTargetEyes = fBody;
-						}
-					}
-				}
-			}
-			else if (iDefIndex == 9)
-			{
-				if (g_bIsHeadVisible[client])
+				if (Math_GetRandomInt(1, 100) <= 50)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
+					
 					if (iBone < 0)
 						return MRES_Ignored;
 					
@@ -4949,15 +4856,74 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 					}
 				}
 			}
-			else if (eItems_IsDefIndexKnife(iDefIndex))
-			{
-				return MRES_Ignored;
-			}
-			
-			SetEntDataFloat(client, g_iBotTargetSpotXOffset, fTargetEyes[0]);
-			SetEntDataFloat(client, g_iBotTargetSpotYOffset, fTargetEyes[1]);
-			SetEntDataFloat(client, g_iBotTargetSpotZOffset, fTargetEyes[2]);
 		}
+		else if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
+		{
+			if (g_bIsHeadVisible[client])
+			{
+				if (Math_GetRandomInt(1, 100) <= 50)
+				{
+					int iBone = LookupBone(iEnt, "spine_3");
+					
+					if (iBone < 0)
+						return MRES_Ignored;
+					
+					float fBody[3], fBad[3];
+					GetBonePosition(iEnt, iBone, fBody, fBad);
+					
+					if (BotIsVisible(client, fBody, false, -1))
+					{
+						fTargetEyes = fBody;
+					}
+				}
+			}
+		}
+		else if (iDefIndex == 11 || iDefIndex == 38)
+		{
+			if (g_bIsHeadVisible[client])
+			{
+				if (Math_GetRandomInt(1, 100) <= 50)
+				{
+					int iBone = LookupBone(iEnt, "spine_3");
+					
+					if (iBone < 0)
+						return MRES_Ignored;
+					
+					float fBody[3], fBad[3];
+					GetBonePosition(iEnt, iBone, fBody, fBad);
+					
+					if (BotIsVisible(client, fBody, false, -1))
+					{
+						fTargetEyes = fBody;
+					}
+				}
+			}
+		}
+		else if (iDefIndex == 9)
+		{
+			if (g_bIsHeadVisible[client])
+			{
+				int iBone = LookupBone(iEnt, "spine_3");
+				if (iBone < 0)
+					return MRES_Ignored;
+				
+				float fBody[3], fBad[3];
+				GetBonePosition(iEnt, iBone, fBody, fBad);
+				
+				if (BotIsVisible(client, fBody, false, -1))
+				{
+					fTargetEyes = fBody;
+				}
+			}
+		}
+		else if (eItems_IsDefIndexKnife(iDefIndex))
+		{
+			return MRES_Ignored;
+		}
+		
+		SetEntDataFloat(client, g_iBotTargetSpotXOffset, fTargetEyes[0]);
+		SetEntDataFloat(client, g_iBotTargetSpotYOffset, fTargetEyes[1]);
+		SetEntDataFloat(client, g_iBotTargetSpotZOffset, fTargetEyes[2]);
 	}
 	
 	return MRES_Ignored;

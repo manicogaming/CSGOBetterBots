@@ -204,12 +204,6 @@
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
 	"Adam9130" 			"GamerLegion"
-	//DIVIZON Players
-	"devus" 			"DIVIZON"
-	"akay" 				"DIVIZON"
-	"striNg" 			"DIVIZON"
-	"kryptoN" 			"DIVIZON"
-	"bLooDyyY" 			"DIVIZON"
 	//Wolsung Players
 	"hyskeee" 			"Wolsung"
 	"rAW" 				"Wolsung"

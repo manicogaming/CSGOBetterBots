@@ -1215,28 +1215,6 @@ ProP+Rifle "Adam9130"
 	VoicePitch = 77
 End
 
-//DIVIZON Players
-
-ProP+Rifle "devus"
-	VoicePitch = 75
-End
-
-ProAwp+SniperPro "akay"
-	VoicePitch = 107
-End
-
-ProP+Rifle "striNg"
-	VoicePitch = 97
-End
-
-ProP+Rifle "kryptoN"
-	VoicePitch = 89
-End
-
-ProP+Rifle "bLooDyyY"
-	VoicePitch = 114
-End
-
 //PDucks Players
 
 ProP+Rifle "ChLo"

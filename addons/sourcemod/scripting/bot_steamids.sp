@@ -743,7 +743,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 80281757;
 	}
-	//DIVIZON Players
 	//PDucks Players
 	//HAVU Players
 	else if(strcmp(szBotName, "sLowi") == 0)
