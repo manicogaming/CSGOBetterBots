@@ -77,6 +77,7 @@ char g_szBoneNames[][] =  {
 #include "bot_stuff/de_mirage.sp"
 #include "bot_stuff/de_dust2.sp"
 #include "bot_stuff/de_inferno.sp"
+#include "bot_stuff/de_overpass.sp"
 
 public Plugin myinfo = 
 {
@@ -4684,6 +4685,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		g_iRndExecute = Math_GetRandomInt(1, 3);
 		PrepareInfernoExecutes();
 	}
+	else if (strcmp(g_szMap, "de_overpass") == 0)
+	{
+		g_iRndExecute = Math_GetRandomInt(1, 2);
+		PrepareOverpassExecutes();
+	}
 }
 
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -5522,7 +5528,7 @@ public void eItems_OnItemsSynced()
 bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch)
 {
 	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/%s.txt", g_szMap);
 	
 	if (!FileExists(szPath))
 	{
@@ -5530,19 +5536,12 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues("Nades");
+	KeyValues kv = new KeyValues(g_szMap);
 	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
 		PrintToServer("Unable to parse Key Values file %s.", szPath);
-		return false;
-	}
-	
-	if (!kv.JumpToKey(g_szMap))
-	{
-		delete kv;
-		PrintToServer("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
@@ -5567,7 +5566,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
 {
 	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/%s.txt", g_szMap);
 	
 	if (!FileExists(szPath))
 	{
@@ -5575,19 +5574,12 @@ bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues("Nades");
+	KeyValues kv = new KeyValues(g_szMap);
 	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
 		PrintToServer("Unable to parse Key Values file %s.", szPath);
-		return false;
-	}
-	
-	if (!kv.JumpToKey(g_szMap))
-	{
-		delete kv;
-		PrintToServer("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
