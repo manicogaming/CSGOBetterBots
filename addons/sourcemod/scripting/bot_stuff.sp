@@ -93,8 +93,6 @@ public void OnPluginStart()
 	HookEventEx("round_start", OnRoundStart);
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
 	HookEventEx("bomb_planted", OnBombPlanted);
-	HookEventEx("bomb_defused", OnBombDefusedOrExploded);
-	HookEventEx("bomb_exploded", OnBombDefusedOrExploded);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	
 	LoadSDK();
@@ -4693,9 +4691,11 @@ public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast
 	g_bBombPlanted = true;
 }
 
-public void OnBombDefusedOrExploded(Event eEvent, const char[] szName, bool bDontBroadcast)
+public Action CS_OnTerminateRound(float& fDelay, CSRoundEndReason& pReason)
 {
 	g_bBombPlanted = false;
+	
+	return Plugin_Continue;
 }
 
 public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)

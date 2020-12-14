@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Dec 12 03:16:23 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Dec 14 00:19:23 GMT 2020 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -324,7 +324,6 @@ fy_dustdm
 fy_dustworld_go
 fy_faceover_wb
 fy_fight_tunnel_sr
-fy_highway_s
 fy_hot_dust_war
 fy_iceworld_09_v2
 fy_iceworld_beta
