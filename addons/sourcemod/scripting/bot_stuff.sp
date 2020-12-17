@@ -19,9 +19,9 @@ bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
+int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
 float g_fHoldPos[MAXPLAYERS + 1][3];
 CNavArea navArea[MAXPLAYERS + 1];
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
 Handle g_hGetBonePosition;
@@ -4846,7 +4846,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 50)
+				if (Math_GetRandomInt(1, 100) <= 55)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -4867,7 +4867,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 50)
+				if (Math_GetRandomInt(1, 100) <= 55)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -4888,7 +4888,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 50)
+				if (Math_GetRandomInt(1, 100) <= 55)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -5327,7 +5327,6 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 			if (BotIsHiding(client) && g_iUncrouchChance[client] <= 50)
 			{
 				iButtons &= ~IN_DUCK;
-				return Plugin_Changed;
 			}
 			
 			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (iEnt == -1 || fTargetEyes[2] == 0))
@@ -5343,7 +5342,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 			
 			GetClientAbsOrigin(iEnt, fTargetPos);
 			
-			fTargetDistance = GetVectorDistance(fTargetPos, fTargetPos);
+			fTargetDistance = GetVectorDistance(fClientPos, fTargetPos);
 			
 			if (g_bFreezetimeEnd && g_bCanAttack[client])
 			{
@@ -5422,7 +5421,6 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				if (IsPointVisible(fClientPos, fTargetEyes) && IsTargetInSightRange(client, iEnt, 10.0) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
-					return Plugin_Changed;
 				}
 				
 				return Plugin_Changed;
