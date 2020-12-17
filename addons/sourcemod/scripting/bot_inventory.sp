@@ -461,6 +461,155 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 							}
 						}
 					}
+					else
+					{
+						int itemID[2];
+						itemID[0] = Math_GetRandomInt(1, 2048);
+						itemID[1] = Math_GetRandomInt(1, 16384);
+						
+						items.SetInt64("itemid", itemID);
+						
+						Protobuf patch = items.AddMessage("stickers");
+						Protobuf patch1 = items.AddMessage("stickers");
+						Protobuf patch2 = items.AddMessage("stickers");
+						Protobuf patch3 = items.AddMessage("stickers");
+						
+						if (g_iPatchChance[client] <= 30)
+						{
+							if (g_iPatchComboChance[client] <= 65)
+							{
+								switch (g_iRndPatchCombo[client])
+								{
+									case 1:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+									}
+									case 2:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+									}
+									case 3:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+									}
+									case 4:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 5:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+									}
+									case 6:
+									{
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+									}
+									case 7:
+									{
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+									}
+									case 8:
+									{
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 9:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 10:
+									{
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+									}
+									case 11:
+									{
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 12:
+									{
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 13:
+									{
+										patch.SetInt("slot", 3);
+										patch.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 14:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+								}
+							}
+							else
+							{
+								switch (g_iRndPatchCombo[client])
+								{
+									case 1:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndPatch[client][0]);
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndPatch[client][1]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndPatch[client][2]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndPatch[client][3]);
+									}
+									case 2:
+									{
+										patch.SetInt("slot", 0);
+										patch.SetInt("sticker_id", g_iRndSamePatch[client]);
+										patch1.SetInt("slot", 1);
+										patch1.SetInt("sticker_id", g_iRndSamePatch[client]);
+										patch2.SetInt("slot", 2);
+										patch2.SetInt("sticker_id", g_iRndSamePatch[client]);
+										patch3.SetInt("slot", 3);
+										patch3.SetInt("sticker_id", g_iRndSamePatch[client]);
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
