@@ -8,25 +8,20 @@ public void PrepareOverpassExecutes()
 	{
 		switch (g_iRndExecute)
 		{
-			case 1:
+			case 1: //A Execute
 			{
-				g_szSmoke[clients[0]] = "Truck Smoke"; //A Execute
-				g_szSmoke[clients[1]] = "Van Smoke"; //A Execute
-				g_szSmoke[clients[2]] = "Box Smoke"; //A Execute
-				g_szSmoke[clients[3]] = ""; //A Execute
-				g_szSmoke[clients[4]] = ""; //A Execute
+				GetNade("Truck Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Van Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Box Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
 				
-				g_szFlashbang[clients[0]] = "A Site Flash"; //A Execute
-				g_szFlashbang[clients[1]] = ""; //A Execute
-				g_szFlashbang[clients[2]] = "Long Flash"; //A Execute
-				g_szFlashbang[clients[3]] = ""; //A Execute
-				g_szFlashbang[clients[4]] = ""; //A Execute
+				GetNade("A Site Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_fFlashWaitTime[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Long Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_fFlashWaitTime[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
 				
-				g_szPosition[clients[0]] = ""; //A Execute
-				g_szPosition[clients[1]] = ""; //A Execute
-				g_szPosition[clients[2]] = ""; //A Execute
-				g_szPosition[clients[3]] = "Bathroom Position"; //A Execute
-				g_szPosition[clients[4]] = "A Short Position"; //A Execute
+				g_bDoNothing[clients[3]] = true;
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("Bathroom Position", g_fHoldLookPos[clients[3]], g_fPosWaitTime[clients[3]]);
+				GetPosition("A Short Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				int iBathroomAreaIDs[] =  {
 					2349, 320, 1074, 2348, 455, 144, 4016, 2319, 12590, 81, 12587
@@ -55,25 +50,19 @@ public void PrepareOverpassExecutes()
 					g_bDoExecute = true;
 				}
 			}
-			case 2:
+			case 2: //B Execute
 			{
-				g_szSmoke[clients[0]] = "Pit Smoke"; //B Execute
-				g_szSmoke[clients[1]] = "Balcony Smoke"; //B Execute
-				g_szSmoke[clients[2]] = "Bridge Smoke"; //B Execute
-				g_szSmoke[clients[3]] = "B Site Smoke"; //B Execute
-				g_szSmoke[clients[4]] = ""; //B Execute
+				GetNade("Pit Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Balcony Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Bridge Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
+				GetNade("B Site Smoke", g_fSmokePos[clients[3]], g_fSmokeLookAt[clients[3]], g_fSmokeAngles[clients[3]], g_fSmokeWaitTime[clients[3]], g_bSmokeJumpthrow[clients[3]], g_bSmokeCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szFlashbang[clients[0]] = ""; //B Execute
-				g_szFlashbang[clients[1]] = "B Site Flash"; //B Execute
-				g_szFlashbang[clients[2]] = ""; //B Execute
-				g_szFlashbang[clients[3]] = "Monster Flash"; //B Execute
-				g_szFlashbang[clients[4]] = ""; //B Execute
+				GetNade("B Site Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_fFlashWaitTime[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Monster Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_fFlashWaitTime[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szPosition[clients[0]] = ""; //B Execute
-				g_szPosition[clients[1]] = ""; //B Execute
-				g_szPosition[clients[2]] = ""; //B Execute
-				g_szPosition[clients[3]] = ""; //B Execute
-				g_szPosition[clients[4]] = "Monster Position"; //B Execute
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("Monster Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				int iMonsterAreaIDs[] =  {
 					9897, 3532, 10433, 10273, 10108, 10103, 9953, 7587

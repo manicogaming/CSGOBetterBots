@@ -8,25 +8,21 @@ public void PrepareInfernoExecutes()
 	{
 		switch (g_iRndExecute)
 		{
-			case 1:
+			case 1: //B Execute
 			{
-				g_szSmoke[clients[0]] = "CT Smoke"; //B Execute
-				g_szSmoke[clients[1]] = "Coffin Smoke"; //B Execute
-				g_szSmoke[clients[2]] = ""; //B Execute
-				g_szSmoke[clients[3]] = ""; //B Execute
-				g_szSmoke[clients[4]] = ""; //B Execute
+				GetNade("CT Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Coffin Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
 				
-				g_szFlashbang[clients[0]] = "B PopFlash"; //B Execute
-				g_szFlashbang[clients[1]] = "B Site Flash"; //B Execute
-				g_szFlashbang[clients[2]] = ""; //B Execute
-				g_szFlashbang[clients[3]] = ""; //B Execute
-				g_szFlashbang[clients[4]] = ""; //B Execute
+				GetNade("B PopFlash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_fFlashWaitTime[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("B Site Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_fFlashWaitTime[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
 				
-				g_szPosition[clients[0]] = ""; //B Execute
-				g_szPosition[clients[1]] = ""; //B Execute
-				g_szPosition[clients[2]] = "CT Position"; //B Execute
-				g_szPosition[clients[3]] = "CT Push Position"; //B Execute
-				g_szPosition[clients[4]] = "Bottom Banana Position"; //B Execute
+				g_bDoNothing[clients[2]] = true;
+				g_bDoNothing[clients[3]] = true;
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("CT Position", g_fHoldLookPos[clients[2]], g_fPosWaitTime[clients[2]]);
+				GetPosition("CT Push Position", g_fHoldLookPos[clients[3]], g_fPosWaitTime[clients[3]]);
+				GetPosition("Bottom Banana Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				int iCTIDs[] =  {
 					9, 3214, 3212, 507, 1823
@@ -60,25 +56,19 @@ public void PrepareInfernoExecutes()
 					g_bDoExecute = true;
 				}
 			}
-			case 2:
+			case 2: //A Short/Apps Execute
 			{
-				g_szSmoke[clients[0]] = "Long A Smoke"; //A Short/Apps Execute
-				g_szSmoke[clients[1]] = "Site-Library Smoke"; //A Short/Apps Execute
-				g_szSmoke[clients[2]] = "Pit Smoke"; //A Short/Apps Execute
-				g_szSmoke[clients[3]] = "Balcony Smoke"; //A Short/Apps Execute
-				g_szSmoke[clients[4]] = ""; //A Short/Apps Execute
+				GetNade("Long A Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Site-Library Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Pit Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
+				GetNade("Balcony Smoke", g_fSmokePos[clients[3]], g_fSmokeLookAt[clients[3]], g_fSmokeAngles[clients[3]], g_fSmokeWaitTime[clients[3]], g_bSmokeJumpthrow[clients[3]], g_bSmokeCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szFlashbang[clients[0]] = ""; //A Short/Apps Execute
-				g_szFlashbang[clients[1]] = "Pit Flash"; //A Short/Apps Execute
-				g_szFlashbang[clients[2]] = ""; //A Short/Apps Execute
-				g_szFlashbang[clients[3]] = "Balcony Flash"; //A Short/Apps Execute
-				g_szFlashbang[clients[4]] = ""; //A Short/Apps Execute
+				GetNade("Pit Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_fFlashWaitTime[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Balcony Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_fFlashWaitTime[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szPosition[clients[0]] = ""; //A Short/Apps Execute
-				g_szPosition[clients[1]] = ""; //A Short/Apps Execute
-				g_szPosition[clients[2]] = ""; //A Short/Apps Execute
-				g_szPosition[clients[3]] = ""; //A Short/Apps Execute
-				g_szPosition[clients[4]] = "Balcony Position"; //A Short/Apps Execute
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("Balcony Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
@@ -99,25 +89,16 @@ public void PrepareInfernoExecutes()
 					g_bDoExecute = true;
 				}
 			}
-			case 3:
+			case 3: //A Long Execute
 			{
-				g_szSmoke[clients[0]] = "Short A Smoke"; //A Long Execute
-				g_szSmoke[clients[1]] = "Arch Smoke"; //A Long Execute
-				g_szSmoke[clients[2]] = "Graveyard Smoke"; //A Long Execute
-				g_szSmoke[clients[3]] = "Library Smoke"; //A Long Execute
-				g_szSmoke[clients[4]] = ""; //A Long Execute
+				GetNade("Short A Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Arch Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Graveyard Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
+				GetNade("Library Smoke", g_fSmokePos[clients[3]], g_fSmokeLookAt[clients[3]], g_fSmokeAngles[clients[3]], g_fSmokeWaitTime[clients[3]], g_bSmokeJumpthrow[clients[3]], g_bSmokeCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szFlashbang[clients[0]] = ""; //A Long Execute
-				g_szFlashbang[clients[1]] = ""; //A Long Execute
-				g_szFlashbang[clients[2]] = ""; //A Long Execute
-				g_szFlashbang[clients[3]] = ""; //A Long Execute
-				g_szFlashbang[clients[4]] = ""; //A Long Execute
+				g_bDoNothing[clients[4]] = true;
 				
-				g_szPosition[clients[0]] = ""; //A Long Execute
-				g_szPosition[clients[1]] = ""; //A Long Execute
-				g_szPosition[clients[2]] = ""; //A Long Execute
-				g_szPosition[clients[3]] = ""; //A Long Execute
-				g_szPosition[clients[4]] = "Balcony Position"; //A Long Execute
+				GetPosition("Balcony Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				navArea[clients[4]] = NavMesh_FindAreaByID(3048);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);

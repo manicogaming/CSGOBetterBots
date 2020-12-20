@@ -10,17 +10,15 @@
 #include <dhooks>
 
 char g_szMap[128];
-char g_szSmoke[64][MAXPLAYERS + 1];
-char g_szFlashbang[64][MAXPLAYERS + 1];
-char g_szPosition[64][MAXPLAYERS + 1];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
-bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1];
+bool g_bDoNothing[MAXPLAYERS + 1] = false;
+bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
-float g_fHoldPos[MAXPLAYERS + 1][3];
+float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
 CNavArea navArea[MAXPLAYERS + 1];
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -4631,6 +4629,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bCanAttack[i] = false;
 			g_bCanThrowSmoke[i] = false;
 			g_bCanThrowFlash[i] = false;
+			g_bDoNothing[i] = false;
 		}
 	}
 }
@@ -5499,10 +5498,10 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
-bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch)
+bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch, bool &bIsFlasbang)
 {
 	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/%s.txt", g_szMap);
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
 	
 	if (!FileExists(szPath))
 	{
@@ -5510,12 +5509,19 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues(g_szMap);
+	KeyValues kv = new KeyValues("Nades");
 	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
 		PrintToServer("Unable to parse Key Values file %s.", szPath);
+		return false;
+	}
+	
+	if (!kv.JumpToKey(g_szMap))
+	{
+		delete kv;
+		PrintToServer("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
@@ -5532,6 +5538,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	fWaitTime = kv.GetFloat("waittime");
 	bJumpthrow = !!kv.GetNum("jumpthrow");
 	bCrouch = !!kv.GetNum("crouch");	
+	bIsFlasbang = !!kv.GetNum("isflasbang");	
 	delete kv;
 	
 	return true;
@@ -5540,7 +5547,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
 {
 	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/%s.txt", g_szMap);
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
 	
 	if (!FileExists(szPath))
 	{
@@ -5548,12 +5555,19 @@ bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues(g_szMap);
+	KeyValues kv = new KeyValues("Nades");
 	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
 		PrintToServer("Unable to parse Key Values file %s.", szPath);
+		return false;
+	}
+	
+	if (!kv.JumpToKey(g_szMap))
+	{
+		delete kv;
+		PrintToServer("Unable to find %s section in file %s.", g_szMap, szPath);
 		return false;
 	}
 	
@@ -5577,147 +5591,130 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 	
 	GetClientAbsOrigin(client, fClientLocation);
 	
-	if(strcmp(g_szSmoke[client], "") != 0)
+	if(!g_bDoNothing[client])
 	{
 		if (!g_bHasThrownSmoke[client])
-		{
-			float fSmoke[3], fLookAt[3], fAng[3], fWaitTime;
-			bool bJumpthrow, bCrouch;
-			
-			if (GetNade(g_szSmoke[client], fSmoke, fLookAt, fAng, fWaitTime, bJumpthrow, bCrouch))
-			{
-				float fSmokeDis = GetVectorDistance(fClientLocation, fSmoke);
-			
-				BotMoveTo(client, fSmoke, FASTEST_ROUTE);
-				
-				if (fSmokeDis < 150.0)
-				{
-					if (iDefIndex != 45)
-					{
-						FakeClientCommandEx(client, "use weapon_smokegrenade");
-					}
-				}
-				
-				if (fSmokeDis < 25.0)
-				{					
-					BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, fWaitTime, true, 5.0, false);
-					
-					CreateTimer(fWaitTime, Timer_ThrowSmoke, GetClientUserId(client));
-					
-					iButtons |= IN_ATTACK;
-					
-					if(bCrouch)
-					{
-						iButtons |= IN_DUCK;
-					}
-					
-					if (g_bCanThrowSmoke[client])
-					{
-						TeleportEntity(client, fSmoke, fAng, NULL_VECTOR);
-						iButtons &= ~IN_ATTACK;
-						
-						if(bJumpthrow)
-						{
-							iButtons |= IN_JUMP;
-						}
-						
-						if(bCrouch)
-						{
-							iButtons |= IN_DUCK;
-						}
-						
-						if(strcmp(g_szFlashbang[client], "") != 0)
-						{
-							CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));	
-						}
-						else
-						{
-							CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	if(strcmp(g_szFlashbang[client], "") != 0 && g_bHasThrownSmoke[client])
-	{
-		float fFlash[3], fLookAt[3], fAng[3], fWaitTime;
-		bool bJumpthrow, bCrouch;
+		{			
+			float fSmokeDis = GetVectorDistance(fClientLocation, g_fSmokePos[client]);
 		
-		if (GetNade(g_szFlashbang[client], fFlash, fLookAt, fAng, fWaitTime, bJumpthrow, bCrouch))
-		{
-			float fFlashDis = GetVectorDistance(fClientLocation, fFlash);
-		
-			BotMoveTo(client, fFlash, FASTEST_ROUTE);
+			BotMoveTo(client, g_fSmokePos[client], FASTEST_ROUTE);
 			
-			if (fFlashDis < 150.0)
+			if (fSmokeDis < 150.0)
 			{
-				if (iDefIndex != 43)
+				if (iDefIndex != 45)
 				{
-					FakeClientCommandEx(client, "use weapon_flashbang");
+					FakeClientCommandEx(client, "use weapon_smokegrenade");
 				}
 			}
 			
-			if (fFlashDis < 25.0)
-			{
-				BotSetLookAt(client, "Use entity", fLookAt, PRIORITY_HIGH, fWaitTime, true, 5.0, false);
+			if (fSmokeDis < 25.0)
+			{					
+				BotSetLookAt(client, "Use entity", g_fSmokeLookAt[client], PRIORITY_HIGH, g_fSmokeWaitTime[client], true, 5.0, false);
 				
-				CreateTimer(fWaitTime, Timer_ThrowFlash, GetClientUserId(client));
+				CreateTimer(g_fSmokeWaitTime[client], Timer_ThrowSmoke, GetClientUserId(client));
 				
 				iButtons |= IN_ATTACK;
 				
-				if(bCrouch)
+				if(g_bSmokeCrouch[client])
 				{
 					iButtons |= IN_DUCK;
 				}
 				
-				if (g_bCanThrowFlash[client])
+				if (g_bCanThrowSmoke[client])
 				{
-					TeleportEntity(client, fFlash, fAng, NULL_VECTOR);
+					TeleportEntity(client, g_fSmokePos[client], g_fSmokeAngles[client], NULL_VECTOR);
 					iButtons &= ~IN_ATTACK;
 					
-					if(bJumpthrow)
+					if(g_bSmokeJumpthrow[client])
 					{
 						iButtons |= IN_JUMP;
 					}
 					
-					if(bCrouch)
+					if(g_bSmokeCrouch[client])
 					{
 						iButtons |= IN_DUCK;
 					}
 					
-					CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
+					if(g_bIsFlashbang[client])
+					{
+						CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));	
+					}
+					else
+					{
+						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
+					}
 				}
 			}
 		}
 	}
 	
-	if(strcmp(g_szPosition[client], "") != 0)
+	if(!g_bDoNothing[client] && g_bIsFlashbang[client] && g_bHasThrownSmoke[client])
 	{
-		float fLookAt[3], fWaitTime;
+		float fFlashDis = GetVectorDistance(fClientLocation, g_fFlashPos[client]);
+	
+		BotMoveTo(client, g_fFlashPos[client], FASTEST_ROUTE);
 		
-		if (GetPosition(g_szPosition[client], fLookAt, fWaitTime))
+		if (fFlashDis < 150.0)
 		{
-			if (!g_bCanThrowSmoke[client])
-			{				
-				float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
-				
-				BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
-				
-				if (fHoldSpotDis < 25.0)
-				{
-					float fBentLook[3], fEyePos[3];
-					
-					GetClientEyePosition(client, fEyePos);
-					
-					BotBendLineOfSight(client, fEyePos, fLookAt, fBentLook, 135.0);
-					BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, fWaitTime, true, 5.0, false);
-					
-					CreateTimer(fWaitTime, Timer_ThrowSmoke, GetClientUserId(client));
-				}
+			if (iDefIndex != 43)
+			{
+				FakeClientCommandEx(client, "use weapon_flashbang");
 			}
-		}	
+		}
+		
+		if (fFlashDis < 25.0)
+		{
+			BotSetLookAt(client, "Use entity", g_fFlashLookAt[client], PRIORITY_HIGH, g_fFlashWaitTime[client], true, 5.0, false);
+			
+			CreateTimer(g_fFlashWaitTime[client], Timer_ThrowFlash, GetClientUserId(client));
+			
+			iButtons |= IN_ATTACK;
+			
+			if(g_bFlashCrouch[client])
+			{
+				iButtons |= IN_DUCK;
+			}
+			
+			if (g_bCanThrowFlash[client])
+			{
+				TeleportEntity(client, g_fFlashPos[client], g_fFlashAngles[client], NULL_VECTOR);
+				iButtons &= ~IN_ATTACK;
+				
+				if(g_bFlashJumpthrow[client])
+				{
+					iButtons |= IN_JUMP;
+				}
+				
+				if(g_bFlashCrouch[client])
+				{
+					iButtons |= IN_DUCK;
+				}
+				
+				CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
+			}
+		}
+	}
+	
+	if(g_bDoNothing[client])
+	{
+		if (!g_bCanThrowSmoke[client])
+		{				
+			float fHoldSpotDis = GetVectorDistance(fClientLocation, g_fHoldPos[client]);
+			
+			BotMoveTo(client, g_fHoldPos[client], FASTEST_ROUTE);
+			
+			if (fHoldSpotDis < 25.0)
+			{
+				float fBentLook[3], fEyePos[3];
+				
+				GetClientEyePosition(client, fEyePos);
+				
+				BotBendLineOfSight(client, fEyePos, g_fHoldLookPos[client], fBentLook, 135.0);
+				BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, g_fPosWaitTime[client], true, 5.0, false);
+				
+				CreateTimer(g_fPosWaitTime[client], Timer_ThrowSmoke, GetClientUserId(client));
+			}
+		}
 	}
 }
 

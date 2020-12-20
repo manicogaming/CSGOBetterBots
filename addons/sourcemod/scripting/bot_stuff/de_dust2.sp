@@ -8,25 +8,21 @@ public void PrepareDust2Executes()
 	{
 		switch (g_iRndExecute)
 		{
-			case 1:
+			case 1: //B Execute
 			{
-				g_szSmoke[clients[0]] = "B Doors Smoke"; //B Execute
-				g_szSmoke[clients[1]] = "B Plat Smoke"; //B Execute
-				g_szSmoke[clients[2]] = "B Site Smoke"; //B Execute
-				g_szSmoke[clients[3]] = ""; //B Execute
-				g_szSmoke[clients[4]] = ""; //B Execute
+				GetNade("B Doors Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("B Plat Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("B Site Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
 				
-				g_szFlashbang[clients[0]] = ""; //B Execute
-				g_szFlashbang[clients[1]] = "B PopFlash"; //B Execute
-				g_szFlashbang[clients[2]] = "B Site Flash"; //B Execute
-				g_szFlashbang[clients[3]] = ""; //B Execute
-				g_szFlashbang[clients[4]] = ""; //B Execute
+				GetNade("B PopFlash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_fFlashWaitTime[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("B Site Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_fFlashWaitTime[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
 				
-				g_szPosition[clients[0]] = ""; //B Execute
-				g_szPosition[clients[1]] = ""; //B Execute
-				g_szPosition[clients[2]] = ""; //B Execute
-				g_szPosition[clients[3]] = "Lower Tunnel Position"; //B Execute
-				g_szPosition[clients[4]] = "B Position"; //B Execute
+				g_bDoNothing[clients[3]] = true;
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("Lower Tunnel Position", g_fHoldLookPos[clients[3]], g_fPosWaitTime[clients[3]]);
+				GetPosition("B Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
+				
 				
 				int iLowerTunnelAreaIDs[] =  {
 					7998, 8002, 6617, 6659, 8001, 6616, 6668, 6641, 6669, 6625, 6618, 6653, 6635, 1373, 6649, 6623, 505, 521, 558
@@ -56,25 +52,18 @@ public void PrepareDust2Executes()
 					g_bDoExecute = true;
 				}
 			}
-			case 2:
+			case 2: //Short A Execute
 			{
-				g_szSmoke[clients[0]] = "XBOX Smoke"; //Short A Execute
-				g_szSmoke[clients[1]] = "Short A Smoke"; //Short A Execute
-				g_szSmoke[clients[2]] = "Short-Boost Smoke"; //Short A Execute
-				g_szSmoke[clients[3]] = "A Site Smoke"; //Short A Execute
-				g_szSmoke[clients[4]] = ""; //Short A Execute
+				GetNade("XBOX Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("Short A Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("Short-Boost Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
+				GetNade("A Site Smoke", g_fSmokePos[clients[3]], g_fSmokeLookAt[clients[3]], g_fSmokeAngles[clients[3]], g_fSmokeWaitTime[clients[3]], g_bSmokeJumpthrow[clients[3]], g_bSmokeCrouch[clients[3]], g_bIsFlashbang[clients[3]]);
 				
-				g_szFlashbang[clients[0]] = "A Site Flash"; //Short A Execute
-				g_szFlashbang[clients[1]] = ""; //Short A Execute
-				g_szFlashbang[clients[2]] = ""; //Short A Execute
-				g_szFlashbang[clients[3]] = ""; //Short A Execute
-				g_szFlashbang[clients[4]] = ""; //Short A Execute
+				GetNade("A Site Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_fFlashWaitTime[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
 				
-				g_szPosition[clients[0]] = ""; //Short A Execute
-				g_szPosition[clients[1]] = ""; //Short A Execute
-				g_szPosition[clients[2]] = ""; //Short A Execute
-				g_szPosition[clients[3]] = ""; //Short A Execute
-				g_szPosition[clients[4]] = "A Position"; //Short A Execute
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("A Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				int iMidAreaIDs[] =  {
 					7566, 7558, 4051, 7581, 4139
@@ -98,25 +87,19 @@ public void PrepareDust2Executes()
 					g_bDoExecute = true;
 				}
 			}
-			case 3:
+			case 3: //Long A Execute
 			{
-				g_szSmoke[clients[0]] = "Long Corner Smoke"; //Short A Execute
-				g_szSmoke[clients[1]] = "A Car Smoke"; //Short A Execute
-				g_szSmoke[clients[2]] = "CT Smoke"; //Short A Execute
-				g_szSmoke[clients[3]] = ""; //Short A Execute
-				g_szSmoke[clients[4]] = ""; //Short A Execute
+				GetNade("Long Corner Smoke", g_fSmokePos[clients[0]], g_fSmokeLookAt[clients[0]], g_fSmokeAngles[clients[0]], g_fSmokeWaitTime[clients[0]], g_bSmokeJumpthrow[clients[0]], g_bSmokeCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
+				GetNade("A Car Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_fSmokeWaitTime[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]]);
+				GetNade("CT Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_fSmokeWaitTime[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
 				
-				g_szFlashbang[clients[0]] = "Long Flash"; //Short A Execute
-				g_szFlashbang[clients[1]] = ""; //Short A Execute
-				g_szFlashbang[clients[2]] = ""; //Short A Execute
-				g_szFlashbang[clients[3]] = ""; //Short A Execute
-				g_szFlashbang[clients[4]] = ""; //Short A Execute
+				GetNade("Long Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_fFlashWaitTime[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
 				
-				g_szPosition[clients[0]] = ""; //Long A Execute
-				g_szPosition[clients[1]] = ""; //Long A Execute
-				g_szPosition[clients[2]] = ""; //Long A Execute
-				g_szPosition[clients[3]] = "Mid Push Position"; //Long A Execute
-				g_szPosition[clients[4]] = "Long Position"; //Long A Execute
+				g_bDoNothing[clients[3]] = true;
+				g_bDoNothing[clients[4]] = true;
+				
+				GetPosition("Mid Push Position", g_fHoldLookPos[clients[3]], g_fPosWaitTime[clients[3]]);
+				GetPosition("Long Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);	
 				
 				int iMidPushAreaIDs[] =  {
 					7342, 7343, 7348, 5370
