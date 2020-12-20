@@ -2271,28 +2271,6 @@ ProP+Rifle "P4TriCK"
 	VoicePitch = 114
 End
 
-//RADIX Players
-
-ProP+Rifle "joss"
-	VoicePitch = 103
-End
-
-ProAwp+SniperPro "mrhui"
-	VoicePitch = 86
-End
-
-ProP+Rifle "brky"
-	VoicePitch = 94
-End
-
-ProP+Rifle "entz"
-	VoicePitch = 88
-End
-
-ProP+Rifle "eZo"
-	VoicePitch = 74
-End
-
 //Illuminar Players
 
 ProP+Rifle "Vegi"
@@ -3574,7 +3552,7 @@ End
 
 //CeX Players
 
-ProP+Rifle "JackB"
+ProP+Rifle "znx"
 	VoicePitch = 92
 End
 
@@ -3582,11 +3560,11 @@ ProAwp+SniperPro "Impact"
 	VoicePitch = 84
 End
 
-ProP+Rifle "RezzeD"
+ProP+Rifle "Jsav"
 	VoicePitch = 86
 End
 
-ProP+Rifle "fluFFS"
+ProP+Rifle "mrhui"
 	VoicePitch = 99
 End
 

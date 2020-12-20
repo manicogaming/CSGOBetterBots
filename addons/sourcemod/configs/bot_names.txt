@@ -498,12 +498,6 @@
 	"Andyy" 			"UOL"	
 	"JDC" 				"UOL"
 	"P4TriCK" 			"UOL"
-	//RADIX Players
-	"mrhui" 			"RADIX"
-	"joss" 				"RADIX"
-	"brky" 				"RADIX"
-	"entz" 				"RADIX"
-	"eZo" 				"RADIX"
 	//Illuminar Players
 	"Vegi" 				"Illuminar"
 	"Snax" 				"Illuminar"
@@ -847,10 +841,10 @@
 	"Mann3n" 			"Lemondogs"
 	"gamersdont" 		"Lemondogs"	
 	//CeX Players
-	"JackB" 			"CeX"
+	"znx" 				"CeX"
 	"Impact" 			"CeX"
-	"RezzeD" 			"CeX"
-	"fluFFS" 			"CeX"
+	"Jsav" 				"CeX"
+	"mrhui" 			"CeX"
 	"ifan"				"CeX"
 	//Havan Players
 	"ALLE" 				"Havan"

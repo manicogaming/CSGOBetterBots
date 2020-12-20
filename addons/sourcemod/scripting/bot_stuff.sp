@@ -182,7 +182,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_k23", Team_K23);
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_uol", Team_UOL);
-	RegConsoleCmd("team_radix", Team_RADIX);
 	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_queso", Team_Queso);
 	RegConsoleCmd("team_ig", Team_IG);
@@ -2735,36 +2734,6 @@ public Action Team_UOL(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_RADIX(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "mrhui");
-		ServerCommand("bot_add_ct %s", "joss");
-		ServerCommand("bot_add_ct %s", "brky");
-		ServerCommand("bot_add_ct %s", "entz");
-		ServerCommand("bot_add_ct %s", "eZo");
-		ServerCommand("mp_teamlogo_1 radix");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "mrhui");
-		ServerCommand("bot_add_t %s", "joss");
-		ServerCommand("bot_add_t %s", "brky");
-		ServerCommand("bot_add_t %s", "entz");
-		ServerCommand("bot_add_t %s", "eZo");
-		ServerCommand("mp_teamlogo_2 radix");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Illuminar(int client, int iArgs)
 {
 	char arg[12];
@@ -4483,10 +4452,10 @@ public Action Team_CeX(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "JackB");
+		ServerCommand("bot_add_ct %s", "znx");
 		ServerCommand("bot_add_ct %s", "Impact");
-		ServerCommand("bot_add_ct %s", "RezzeD");
-		ServerCommand("bot_add_ct %s", "fluFFS");
+		ServerCommand("bot_add_ct %s", "Jsav");
+		ServerCommand("bot_add_ct %s", "mrhui");
 		ServerCommand("bot_add_ct %s", "ifan");
 		ServerCommand("mp_teamlogo_1 cex");
 	}
@@ -4494,10 +4463,10 @@ public Action Team_CeX(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "JackB");
+		ServerCommand("bot_add_t %s", "znx");
 		ServerCommand("bot_add_t %s", "Impact");
-		ServerCommand("bot_add_t %s", "RezzeD");
-		ServerCommand("bot_add_t %s", "fluFFS");
+		ServerCommand("bot_add_t %s", "Jsav");
+		ServerCommand("bot_add_t %s", "mrhui");
 		ServerCommand("bot_add_t %s", "ifan");
 		ServerCommand("mp_teamlogo_2 cex");
 	}
@@ -5347,6 +5316,11 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 			if (g_bFreezetimeEnd && g_bCanAttack[client])
 			{
 				if (GetEntityMoveType(client) == MOVETYPE_LADDER)
+				{
+					return Plugin_Continue;
+				}
+				
+				if (!(GetEntityFlags(client) & FL_ONGROUND))
 				{
 					return Plugin_Continue;
 				}

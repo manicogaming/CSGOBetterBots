@@ -1515,7 +1515,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 60152488;
 	}
-	//RADIX Players
 	//Illuminar Players
 	else if(strcmp(szBotName, "reatz") == 0)
 	{
@@ -2288,6 +2287,10 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 153319644;
 	}
 	//CeX Players
+	else if(strcmp(szBotName, "znx") == 0)
+	{
+		iAccountID = 59501298;
+	}
 	//Havan Players
 	else if(strcmp(szBotName, "ALLE") == 0)
 	{
