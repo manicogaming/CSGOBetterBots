@@ -1369,28 +1369,6 @@ ProP+Rifle "Derek"
 	VoicePitch = 90
 End
 
-//Giants Players
-
-ProP+Rifle "NOPEEj"
-	VoicePitch = 95
-End
-
-ProAwp+SniperPro "fox"
-	VoicePitch = 82
-End
-
-ProP+Rifle "pr"
-	VoicePitch = 104
-End
-
-ProP+Rifle "obj"
-	VoicePitch = 77
-End
-
-ProP+Rifle "RIZZ"
-	VoicePitch = 73
-End
-
 //Lions Players
 
 ProP+Rifle "HooXi"

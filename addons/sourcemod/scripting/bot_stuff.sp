@@ -139,7 +139,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_nordavind", Team_Nordavind);
 	RegConsoleCmd("team_sj", Team_SJ);
 	RegConsoleCmd("team_bren", Team_Bren);
-	RegConsoleCmd("team_giants", Team_Giants);
 	RegConsoleCmd("team_lions", Team_Lions);
 	RegConsoleCmd("team_riders", Team_Riders);
 	RegConsoleCmd("team_offset", Team_OFFSET);
@@ -1497,36 +1496,6 @@ public Action Team_Bren(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "JA");
 		ServerCommand("bot_add_t %s", "Derek");
 		ServerCommand("mp_teamlogo_2 bren");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Giants(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "NOPEEj");
-		ServerCommand("bot_add_ct %s", "fox");
-		ServerCommand("bot_add_ct %s", "pr");
-		ServerCommand("bot_add_ct %s", "obj");
-		ServerCommand("bot_add_ct %s", "RIZZ");
-		ServerCommand("mp_teamlogo_1 giant");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "NOPEEj");
-		ServerCommand("bot_add_t %s", "fox");
-		ServerCommand("bot_add_t %s", "pr");
-		ServerCommand("bot_add_t %s", "obj");
-		ServerCommand("bot_add_t %s", "RIZZ");
-		ServerCommand("mp_teamlogo_2 giant");
 	}
 	
 	return Plugin_Handled;

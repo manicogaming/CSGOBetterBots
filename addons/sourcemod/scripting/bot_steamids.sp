@@ -846,27 +846,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 115108105;
 	}
-	//Giants Players
-	else if(strcmp(szBotName, "fox") == 0)
-	{
-		iAccountID = 1939536;
-	}
-	else if(strcmp(szBotName, "NOPEEj") == 0)
-	{
-		iAccountID = 200528981;
-	}
-	else if(strcmp(szBotName, "pr") == 0)
-	{
-		iAccountID = 149329940;
-	}
-	else if(strcmp(szBotName, "obj") == 0)
-	{
-		iAccountID = 42675741;
-	}
-	else if(strcmp(szBotName, "RIZZ") == 0)
-	{
-		iAccountID = 31830670;
-	}
 	//Lions Players
 	else if(strcmp(szBotName, "acoR") == 0)
 	{
