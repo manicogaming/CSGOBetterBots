@@ -16,28 +16,23 @@ public void PrepareMirageExecutes()
 				
 				GetNade("Lamp Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_fFlashWaitTime[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]]);
 				GetNade("A Site Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_fFlashWaitTime[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]]);
+				GetNade("Palace Flash", g_fFlashPos[clients[4]], g_fFlashLookAt[clients[4]], g_fFlashAngles[clients[4]], g_fFlashWaitTime[clients[4]], g_bFlashJumpthrow[clients[4]], g_bFlashCrouch[clients[4]], g_bIsFlashbang[clients[4]]);
 				
 				g_bDoNothing[clients[3]] = true;
-				g_bDoNothing[clients[4]] = true;
+				g_bHasThrownSmoke[clients[4]] = true;
 				
 				GetPosition("Ramp Position", g_fHoldLookPos[clients[3]], g_fPosWaitTime[clients[3]]);
-				GetPosition("Palace Position", g_fHoldLookPos[clients[4]], g_fPosWaitTime[clients[4]]);
 				
 				int iRampAreaIDs[] =  {
 					2805, 341, 3507, 2854
 				};
 				
-				int iPalaceAreaIDs[] =  {
-					3468, 203, 3465, 96, 3475, 3476, 3463, 147, 146, 3484
-				};
-				
 				navArea[clients[3]] = NavMesh_FindAreaByID(iRampAreaIDs[Math_GetRandomInt(0, sizeof(iRampAreaIDs) - 1)]);
 				navArea[clients[3]].GetRandomPoint(g_fHoldPos[clients[3]]);
 				
-				navArea[clients[4]] = NavMesh_FindAreaByID(iPalaceAreaIDs[Math_GetRandomInt(0, sizeof(iPalaceAreaIDs) - 1)]);
-				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
-				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
+				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
+				&& GetPlayerWeaponSlot(clients[4], CS_SLOT_PRIMARY) != -1 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300
+				&& GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[4], Prop_Send, "m_iAccount") >= 200)
 				{
 					FakeClientCommandEx(clients[0], "buy smokegrenade");
 					FakeClientCommandEx(clients[0], "buy flashbang");
@@ -46,6 +41,8 @@ public void PrepareMirageExecutes()
 					
 					FakeClientCommandEx(clients[2], "buy smokegrenade");
 					FakeClientCommandEx(clients[2], "buy flashbang");
+					
+					FakeClientCommandEx(clients[4], "buy flashbang");
 					
 					g_bDoExecute = true;
 				}

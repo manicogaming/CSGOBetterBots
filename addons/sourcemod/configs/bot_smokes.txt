@@ -135,8 +135,18 @@
 		"A Site Flash"
 		{
 			"position"    	"760.967041 -1211.969727 -108.968750"
-			"lookpos"		"-1363.686279 -2822.454589 1247.968750"
-			"angles"		"-25.871719 -142.837921 0.000000"
+			"lookpos"		"544.031250 -1301.472290 3.722095"
+			"angles"		"-11.721586 -157.580109 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"1"
+		}
+		"Palace Flash"
+		{
+			"position"    	"367.997437 -2157.531494 -39.968750"
+			"lookpos"		"187.182846 -2391.968750 69.064987"
+			"angles"		"-8.648815 -127.641953 0.000000"
 			"waittime"		"1.0"
 			"jumpthrow"		"0"
 			"crouch"		"0"
@@ -195,12 +205,7 @@
 		"Ramp Position"
 		{
 			"lookpos"		"-63.982632 -1674.684204 -103.906189"
-			"waittime"		"3.0"
-		}
-		"Palace Position"
-		{
-			"lookpos"		"164.354736 -2315.041016 24.093811"
-			"waittime"		"1.5"
+			"waittime"		"2.5"
 		}
 		"Underpass Position"
 		{

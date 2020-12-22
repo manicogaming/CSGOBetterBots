@@ -5312,7 +5312,11 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 				
 				if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 				{
-					if (IsTargetInSightRange(client, iEnt, 10.0) && fTargetDistance < 2000.0 && !IsPlayerReloading(client))
+					if(IsPlayerReloading(client)) 
+					{
+						iButtons &= ~IN_ATTACK;
+					}
+					else if (IsTargetInSightRange(client, iEnt, 10.0) && fTargetDistance < 2000.0 && !IsPlayerReloading(client))
 					{
 						iButtons |= IN_ATTACK;
 					}
@@ -6153,17 +6157,17 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 		if (GetClientTeam(i) == GetClientTeam(client))
 			continue;
 		
-		if (strcmp(szClanTag, "ESPADA") == 0) //30th
+		if (strcmp(szClanTag, "Sprout") == 0) //30th
 		{
 			if (!IsTargetInSightRange(client, i, 50.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Sprout") == 0) //29th
+		else if (strcmp(szClanTag, "ESPADA") == 0) //29th
 		{
 			if (!IsTargetInSightRange(client, i, 60.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "forZe") == 0) //28th
+		else if (strcmp(szClanTag, "Nemiga") == 0) //28th
 		{
 			if (!IsTargetInSightRange(client, i, 70.0))
 				continue;
@@ -6173,7 +6177,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 80.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Nemiga") == 0) //26th
+		else if (strcmp(szClanTag, "forZe") == 0) //26th
 		{
 			if (!IsTargetInSightRange(client, i, 90.0))
 				continue;
@@ -6218,32 +6222,32 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 170.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Liquid") == 0) //17th
+		else if (strcmp(szClanTag, "NiP") == 0) //17th
 		{
 			if (!IsTargetInSightRange(client, i, 180.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Gambit") == 0) //16th
+		else if (strcmp(szClanTag, "EG") == 0) //16th
 		{
 			if (!IsTargetInSightRange(client, i, 190.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "EG") == 0) //15th
+		else if (strcmp(szClanTag, "Gambit") == 0) //15th
 		{
 			if (!IsTargetInSightRange(client, i, 200.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "NiP") == 0) //14th
+		else if (strcmp(szClanTag, "fnatic") == 0) //14th
 		{
 			if (!IsTargetInSightRange(client, i, 210.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "fnatic") == 0) //13th
+		else if (strcmp(szClanTag, "FaZe") == 0) //13th
 		{
 			if (!IsTargetInSightRange(client, i, 220.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "FaZe") == 0) //12th
+		else if (strcmp(szClanTag, "VP") == 0) //12th
 		{
 			if (!IsTargetInSightRange(client, i, 230.0))
 				continue;
@@ -6253,7 +6257,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 240.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "VP") == 0) //10th
+		else if (strcmp(szClanTag, "Liquid") == 0) //10th
 		{
 			if (!IsTargetInSightRange(client, i, 250.0))
 				continue;
@@ -6278,12 +6282,12 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 290.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "BIG") == 0) //5th
+		else if (strcmp(szClanTag, "Heroic") == 0) //5th
 		{
 			if (!IsTargetInSightRange(client, i, 300.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Heroic") == 0) //4th
+		else if (strcmp(szClanTag, "BIG") == 0) //4th
 		{
 			if (!IsTargetInSightRange(client, i, 310.0))
 				continue;
@@ -6293,12 +6297,12 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 320.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Astralis") == 0) //2nd
+		else if (strcmp(szClanTag, "Vitality") == 0) //2nd
 		{
 			if (!IsTargetInSightRange(client, i, 330.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Vitality") == 0) //1st
+		else if (strcmp(szClanTag, "Astralis") == 0) //1st
 		{
 			if (!IsTargetInSightRange(client, i, 340.0))
 				continue;
