@@ -51,6 +51,7 @@ bool g_bKnifeHasStatTrak[MAXPLAYERS + 1][1024];
 
 ArrayList g_ArrayWeapons[128] =  { null, ... };
 ArrayList g_ArrayGloves[128] =  { null, ... };
+ArrayList g_ArrayMapWeapons;
 
 int g_iKnifeDefIndex[] =  {
 	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525
@@ -164,6 +165,7 @@ public void OnPluginStart()
 	}
 	
 	HookEvent("player_spawn", Event_PlayerSpawn, EventHookMode_Pre);
+	HookEvent("round_start", Event_OnRoundStart);
 	
 	PTaH(PTaH_GiveNamedItemPre, Hook, GiveNamedItemPre);
 	PTaH(PTaH_GiveNamedItemPost, Hook, GiveNamedItemPost);
@@ -615,6 +617,17 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 		}
 	}
 	return Plugin_Changed;
+}
+
+public void OnMapStart()
+{
+	if(g_ArrayMapWeapons != null)
+	{
+		delete g_ArrayMapWeapons;
+		g_ArrayMapWeapons = null;
+	}
+
+	g_ArrayMapWeapons = new ArrayList();
 }
 
 public void OnClientPutInServer(int client)
@@ -1161,6 +1174,7 @@ public void OnClientPutInServer(int client)
 		}
 		
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+		SDKHook(client, SDKHook_WeaponEquip, SDK_OnWeaponEquip);
 	}
 }
 
@@ -1407,6 +1421,104 @@ Action WeaponCanUsePre(int client, int iWeapon, bool & bPickup)
 		bPickup = true;
 		return Plugin_Changed;
 	}
+	return Plugin_Continue;
+}
+
+public Action SDK_OnWeaponEquip(int client, int iWeapon)
+{
+    if(!IsValidClient(client))
+    {
+        return Plugin_Continue;
+    }
+
+    if(!eItems_IsValidWeapon(iWeapon))
+    {
+        return Plugin_Continue;
+    }
+
+    int iPrevOwner = GetEntProp(iWeapon, Prop_Send, "m_hPrevOwner");
+    if(iPrevOwner > 0)
+    {
+        return Plugin_Continue;
+    }
+
+    if(IsMapWeapon(iWeapon, true))
+    {
+        DataPack datapack = new DataPack();
+        datapack.WriteCell(client);
+        datapack.WriteCell(iWeapon);
+
+        CreateTimer(0.1, Timer_MapWeaponEquipped, datapack);
+    }
+    return Plugin_Continue;
+}
+
+public Action Timer_MapWeaponEquipped(Handle timer, DataPack datapack)
+{
+	ResetPack(datapack);
+	int client = ReadPackCell(datapack);
+	int iWeapon = ReadPackCell(datapack);
+	delete datapack;
+
+	if(!IsValidClient(client))
+	{
+		return Plugin_Continue;
+	}
+
+	if(!eItems_IsValidWeapon(iWeapon))
+	{
+		return Plugin_Continue;
+	}
+
+	int iWeaponSlot = eItems_GetWeaponSlotByWeapon(iWeapon);
+	if (iWeaponSlot == CS_SLOT_C4)
+	{
+		return Plugin_Continue;
+	}
+
+	SetEntProp(iWeapon, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
+	SetEntProp(iWeapon, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
+	
+	SDKCall(g_hForceUpdate, client, -1);
+	
+	return Plugin_Stop;
+}
+
+public Action Event_OnRoundStart(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	char szWeaponClassname[64];
+	for(int i = MaxClients; i < GetMaxEntities(); i++)
+	{
+		if(!IsValidEntity(i))
+		{
+			continue;
+		}
+
+		GetEntityClassname(i, szWeaponClassname, sizeof(szWeaponClassname));
+		if((StrContains(szWeaponClassname, "weapon_")) == -1)
+		{
+			continue;
+		}
+
+		if(GetEntProp(i, Prop_Send, "m_hOwnerEntity") != -1)
+		{
+			continue;
+		}
+		
+		int iDefIndex;
+		if((iDefIndex = eItems_GetWeaponDefIndexByClassName(szWeaponClassname)) == -1)
+		{
+			continue;
+		}
+
+		if(eItems_IsDefIndexKnife(iDefIndex))
+		{
+			continue;
+		}
+
+		g_ArrayMapWeapons.Push(i);
+	}
+
 	return Plugin_Continue;
 }
 
@@ -2022,6 +2134,7 @@ public void OnClientDisconnect(int client)
 	if (IsValidClient(client))
 	{
 		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+		SDKUnhook(client, SDKHook_WeaponEquip, SDK_OnWeaponEquip);
 	}
 }
 
@@ -2048,4 +2161,26 @@ stock int FloatToInt(const char[] szValue, any ...)
 	VFormat(myFormattedString, len, szValue, 2);
  
 	return StringToInt(myFormattedString);
+}
+
+stock bool IsMapWeapon(int iWeapon, bool bRemove = false)
+{
+	if(g_ArrayMapWeapons == null)
+	{
+		return false;
+	}
+	for(int i = 0; i < g_ArrayMapWeapons.Length; i++)
+	{
+		if(g_ArrayMapWeapons.Get(i) != iWeapon)
+		{
+			continue;
+		}
+
+		if(bRemove)
+		{
+			g_ArrayMapWeapons.Erase(i);
+		}
+		return true;
+	}
+	return false;
 }
