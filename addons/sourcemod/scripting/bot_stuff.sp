@@ -144,11 +144,9 @@ public void OnPluginStart()
 	RegConsoleCmd("team_bren", Team_Bren);
 	RegConsoleCmd("team_lions", Team_Lions);
 	RegConsoleCmd("team_riders", Team_Riders);
-	RegConsoleCmd("team_offset", Team_OFFSET);
 	RegConsoleCmd("team_esuba", Team_eSuba);
 	RegConsoleCmd("team_nexus", Team_Nexus);
 	RegConsoleCmd("team_pact", Team_PACT);
-	RegConsoleCmd("team_heretics", Team_Heretics);
 	RegConsoleCmd("team_nemiga", Team_Nemiga);
 	RegConsoleCmd("team_pro100", Team_pro100);
 	RegConsoleCmd("team_yalla", Team_YaLLa);
@@ -1564,36 +1562,6 @@ public Action Team_Riders(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_OFFSET(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "rafaxF");
-		ServerCommand("bot_add_ct %s", "KILLDREAM");
-		ServerCommand("bot_add_ct %s", "EasTor");
-		ServerCommand("bot_add_ct %s", "ZELIN");
-		ServerCommand("bot_add_ct %s", "drifking");
-		ServerCommand("mp_teamlogo_1 offs");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "rafaxF");
-		ServerCommand("bot_add_t %s", "KILLDREAM");
-		ServerCommand("bot_add_t %s", "EasTor");
-		ServerCommand("bot_add_t %s", "ZELIN");
-		ServerCommand("bot_add_t %s", "drifking");
-		ServerCommand("mp_teamlogo_2 offs");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_eSuba(int client, int iArgs)
 {
 	char arg[12];
@@ -1679,36 +1647,6 @@ public Action Team_PACT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "MINISE");
 		ServerCommand("bot_add_t %s", "Sobol");
 		ServerCommand("mp_teamlogo_2 pact");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Heretics(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (StrEqual(arg, "ct"))
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Python");
-		ServerCommand("bot_add_ct %s", "Maka");
-		ServerCommand("bot_add_ct %s", "DEVIL");
-		ServerCommand("bot_add_ct %s", "kioShiMa");
-		ServerCommand("bot_add_ct %s", "Lucky");
-		ServerCommand("mp_teamlogo_1 here");
-	}
-	
-	if (StrEqual(arg, "t"))
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Python");
-		ServerCommand("bot_add_t %s", "Maka");
-		ServerCommand("bot_add_t %s", "DEVIL");
-		ServerCommand("bot_add_t %s", "kioShiMa");
-		ServerCommand("bot_add_t %s", "Lucky");
-		ServerCommand("mp_teamlogo_2 here");
 	}
 	
 	return Plugin_Handled;

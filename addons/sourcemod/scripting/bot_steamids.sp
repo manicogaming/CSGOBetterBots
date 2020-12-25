@@ -888,23 +888,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 39590183;
 	}
-	//OFFSET Players
-	else if(strcmp(szBotName, "ZELIN") == 0)
-	{
-		iAccountID = 20906101;
-	}
-	else if(strcmp(szBotName, "drifking") == 0)
-	{
-		iAccountID = 2526923;
-	}
-	else if(strcmp(szBotName, "KILLDREAM") == 0)
-	{
-		iAccountID = 109013755;
-	}
-	else if(strcmp(szBotName, "EasTor") == 0)
-	{
-		iAccountID = 3460360;
-	}
 	//eSuba Players
 	else if(strcmp(szBotName, "NIO") == 0)
 	{
@@ -951,23 +934,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "MINISE") == 0)
 	{
 		iAccountID = 29354726;
-	}
-	//Heretics Players
-	else if(strcmp(szBotName, "Maka") == 0)
-	{
-		iAccountID = 85474033;
-	}
-	else if(strcmp(szBotName, "kioShiMa") == 0)
-	{
-		iAccountID = 40517167;
-	}
-	else if(strcmp(szBotName, "Lucky") == 0)
-	{
-		iAccountID = 71624387;
-	}
-	else if(strcmp(szBotName, "DEVIL") == 0)
-	{
-		iAccountID = 44238623;
 	}
 	//Nemiga Players
 	else if(strcmp(szBotName, "mds") == 0)

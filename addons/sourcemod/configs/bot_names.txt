@@ -264,12 +264,6 @@
 	"steel" 			"Riders"
 	"alex*" 			"Riders"
 	"larsen" 			"Riders"
-	//OFFSET Players
-	"rafaxF"			"OFFSET" 
-	"KILLDREAM" 		"OFFSET"	
-	"EasTor" 			"OFFSET"
-	"ZELIN" 			"OFFSET"
-	"drifking" 			"OFFSET"
 	//eSuba Players
 	"NIO" 				"eSuba"
 	"Levi" 				"eSuba"
@@ -288,12 +282,6 @@
 	"Goofy" 			"PACT"
 	"MINISE" 			"PACT"
 	"Sobol" 			"PACT"
-	//Heretics Players
-	"Python" 			"Heretics"
-	"Maka" 				"Heretics"
-	"DEVIL" 			"Heretics"
-	"kioShiMa" 			"Heretics"
-	"Lucky" 			"Heretics"
 	//Nemiga Players
 	"speed4k" 			"Nemiga"
 	"mds" 				"Nemiga"

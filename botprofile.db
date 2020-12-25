@@ -1413,28 +1413,6 @@ ProP+Rifle "shokz"
 	VoicePitch = 98
 End
 
-//OFFSET Players
-
-ProP+Rifle "rafaxF"
-	VoicePitch = 94
-End
-
-ProAwp+SniperPro "KILLDREAM"
-	VoicePitch = 108
-End
-
-ProP+Rifle "EasTor"
-	VoicePitch = 114
-End
-
-ProP+Rifle "ZELIN"
-	VoicePitch = 77
-End
-
-ProP+Rifle "drifking"
-	VoicePitch = 110
-End
-
 //eSuba Players
 
 ProP+Rifle "NIO"
@@ -1499,28 +1477,6 @@ End
 
 ProP+Rifle "Sobol"
 	VoicePitch = 112
-End
-
-//Heretics Players
-
-ProP+Rifle "Python"
-	VoicePitch = 114
-End
-
-ProAwp+SniperPro "Maka"
-	VoicePitch = 92
-End
-
-ProP+Rifle "DEVIL"
-	VoicePitch = 108
-End
-
-ProP+Rifle "kioShiMa"
-	VoicePitch = 98
-End
-
-ProP+Rifle "Lucky"
-	VoicePitch = 72
 End
 
 //Nemiga Players
