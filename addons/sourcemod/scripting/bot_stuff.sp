@@ -5236,21 +5236,9 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 					BotEquipBestWeapon(client, true);
 				}
 				
-				if (IsPlayerReloading(client))
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						moveSide(fVel, 250.0);
-					}
-					else
-					{
-						moveSide2(fVel, 250.0);
-					}
-				}
-				
 				if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY && iDefIndex != 40 && iDefIndex != 11 && iDefIndex != 38 && iDefIndex != 9 && iDefIndex != 27 && iDefIndex != 29 && iDefIndex != 35) || iDefIndex == 63)
 				{
-					if(IsPlayerReloading(client)) 
+					if(IsPlayerReloading(client) && (!(iButtons & IN_ATTACK))) 
 					{
 						iButtons &= ~IN_ATTACK;
 					}
@@ -5955,24 +5943,22 @@ bool IsPlayerReloading(int client)
 {
 	int iPlayerWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	
-	if (!IsValidEntity(iPlayerWeapon))
+	if(!IsValidEntity(iPlayerWeapon))
+		return false;
+	
+	//Out of ammo?
+	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_iClip1") == 0)
 		return true;
 	
-	bool bReloading = true;
+	//Reloading?
+	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload"))
+		return true;
 	
-	float flNextPrimaryAttack = GetGameTime() - GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack");
+	//Ready to fire?
+	if(GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
+		return false;
 	
-	bool m_bInReload = !!GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload");
-	
-	//Can fire?
-	if (flNextPrimaryAttack > 0)
-		bReloading = false;
-	
-	//Has ammo and is not reloading
-	if (GetEntProp(iPlayerWeapon, Prop_Send, "m_iClip1") <= 0 || m_bInReload)
-		bReloading = true;
-	
-	return bReloading;
+	return true;
 }
 
 stock int GetTotalRoundTime()
@@ -6095,27 +6081,27 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 		if (GetClientTeam(i) == GetClientTeam(client))
 			continue;
 		
-		if (strcmp(szClanTag, "Sprout") == 0) //30th
+		if (strcmp(szClanTag, "Triumph") == 0) //30th
 		{
 			if (!IsTargetInSightRange(client, i, 50.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "ESPADA") == 0) //29th
+		else if (strcmp(szClanTag, "North") == 0) //29th
 		{
 			if (!IsTargetInSightRange(client, i, 60.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Nemiga") == 0) //28th
+		else if (strcmp(szClanTag, "ESPADA") == 0) //28th
 		{
 			if (!IsTargetInSightRange(client, i, 70.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "North") == 0) //27th
+		else if (strcmp(szClanTag, "forZe") == 0) //27th
 		{
 			if (!IsTargetInSightRange(client, i, 80.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "forZe") == 0) //26th
+		else if (strcmp(szClanTag, "Nemiga") == 0) //26th
 		{
 			if (!IsTargetInSightRange(client, i, 90.0))
 				continue;
@@ -6130,12 +6116,12 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (!IsTargetInSightRange(client, i, 110.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "C9") == 0) //23rd
+		else if (strcmp(szClanTag, "Lions") == 0) //23rd
 		{
 			if (!IsTargetInSightRange(client, i, 120.0))
 				continue;
 		}
-		else if (strcmp(szClanTag, "Lions") == 0) //22nd
+		else if (strcmp(szClanTag, "C9") == 0) //22nd
 		{
 			if (!IsTargetInSightRange(client, i, 130.0))
 				continue;
