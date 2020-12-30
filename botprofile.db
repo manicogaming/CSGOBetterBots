@@ -123,7 +123,7 @@ End
 // skill templates
 
 Template ProP
-		Skill = 120
+		Skill = 100
 		Rank = 500
 		Teamwork = 100
 		Aggression = 55
@@ -139,7 +139,7 @@ Template ProP
 End
 
 Template ProAwp
-        Skill = 120
+        Skill = 100
 		Rank = 2001
 		Cost = 3000
 		Aggression = 100
