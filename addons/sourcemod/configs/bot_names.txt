@@ -758,9 +758,9 @@
 	"NEOFRAG" 			"SINNERS"
 	//Impact Players
 	"DaneJoris" 		"Impact"	
-	"walker" 				"Impact"
-	"brett" 				"Impact"
-	"Koalanoob" 		"Impact"	
+	"walker" 			"Impact"
+	"brett" 			"Impact"
+	"grape" 			"Impact"	
 	"insane" 			"Impact"
 	//ERN Players
 	"j1NZO" 			"ERN"

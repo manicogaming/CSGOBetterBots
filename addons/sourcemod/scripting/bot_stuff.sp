@@ -4033,7 +4033,7 @@ public Action Team_Impact(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "DaneJoris");
 		ServerCommand("bot_add_ct %s", "walker");
 		ServerCommand("bot_add_ct %s", "brett");
-		ServerCommand("bot_add_ct %s", "Koalanoob");
+		ServerCommand("bot_add_ct %s", "grape");
 		ServerCommand("bot_add_ct %s", "insane");
 		ServerCommand("mp_teamlogo_1 impa");
 	}
@@ -4044,7 +4044,7 @@ public Action Team_Impact(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "DaneJoris");
 		ServerCommand("bot_add_t %s", "walker");
 		ServerCommand("bot_add_t %s", "brett");
-		ServerCommand("bot_add_t %s", "Koalanoob");
+		ServerCommand("bot_add_t %s", "grape");
 		ServerCommand("bot_add_t %s", "insane");
 		ServerCommand("mp_teamlogo_2 impa");
 	}
