@@ -1721,28 +1721,6 @@ ProP+Rifle "b4rtiN"
 	VoicePitch = 79
 End
 
-//W7M Players
-
-ProP+Rifle "skullz"
-	VoicePitch = 82
-End
-
-ProAwp+SniperPro "raafa"
-	VoicePitch = 72
-End
-
-ProP+Rifle "cass1n"
-	VoicePitch = 101
-End
-
-ProP+Rifle "tatazin"
-	VoicePitch = 114
-End
-
-ProP+Rifle "realziN"
-	VoicePitch = 99
-End
-
 //Avant Players
 
 ProP+Rifle "BL1TZ"
@@ -2535,25 +2513,25 @@ ProP+Rifle "Doru"
 	VoicePitch = 102
 End
 
-//Chaos Players
+//TSG Players
 
-ProP+Rifle "Xeppaa"
+ProP+Rifle "captainMo"
 	VoicePitch = 93
 End
 
-ProAwp+SniperPro "leaf"
+ProAwp+SniperPro "AE"
 	VoicePitch = 97
 End
 
-ProP+Rifle "vanity"
+ProP+Rifle "LOVEYY"
 	VoicePitch = 100
 End
 
-ProP+Rifle "MarKE"
+ProP+Rifle "Karsa"
 	VoicePitch = 102
 End
 
-ProP+Rifle "Jonji"
+ProP+Rifle "Roninbaby"
 	VoicePitch = 111
 End
 
@@ -2890,25 +2868,25 @@ ProP+Rifle "RoLEX"
 	VoicePitch = 72
 End
 
-//Ambush Players
+//mCon Players
 
-ProP+Rifle "Inzta"
+ProP+Rifle "Monu"
 	VoicePitch = 115
 End
 
-ProAwp+SniperPro "Ryxxo"
+ProAwp+SniperPro "G1DO"
 	VoicePitch = 91
 End
 
-ProP+Rifle "zeq"
+ProP+Rifle "lucky"
 	VoicePitch = 108
 End
 
-ProP+Rifle "Typos"
+ProP+Rifle "v1N"
 	VoicePitch = 113
 End
 
-ProP+Rifle "IceBerg"
+ProP+Rifle "MaximN"
 	VoicePitch = 85
 End
 
@@ -3044,25 +3022,25 @@ ProP+Rifle "rate"
 	VoicePitch = 104
 End
 
-//LEISURE Players
+//NLG Players
 
-ProP+Rifle "stefank0k0"
+ProP+Rifle "pdy"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "BischeR"
+ProAwp+SniperPro "red"
 	VoicePitch = 97
 End
 
-ProP+Rifle "farmaG"
+ProP+Rifle "xenn"
 	VoicePitch = 95
 End
 
-ProP+Rifle "FabeeN"
+ProP+Rifle "s1n"
 	VoicePitch = 95
 End
 
-ProP+Rifle "bustrex"
+ProP+Rifle "skyye"
 	VoicePitch = 82
 End
 

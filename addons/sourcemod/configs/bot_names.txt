@@ -348,12 +348,6 @@
 	"malbsMd" 			"One"	
 	"pesadelo" 			"One"
 	"b4rtiN" 			"One"
-	//W7M Players
-	"skullz"			"W7M" 
-	"raafa" 			"W7M"	
-	"cass1n" 			"W7M"
-	"tatazin" 			"W7M"
-	"realziN" 			"W7M"
 	//Avant Players
 	"BL1TZ" 			"Avant"
 	"sterling" 			"Avant"
@@ -570,12 +564,12 @@
 	"SloWye" 			"ATK"
 	"Fadey" 			"ATK"
 	"Doru" 				"ATK"
-	//Chaos Players
-	"Xeppaa" 			"Chaos"
-	"vanity" 			"Chaos"
-	"leaf" 				"Chaos"
-	"MarKE" 			"Chaos"
-	"Jonji" 			"Chaos"
+	//TSG Players
+	"captainMo" 		"TSG"
+	"LOVEYY" 			"TSG"
+	"AE" 				"TSG"
+	"Karsa" 			"TSG"
+	"Roninbaby" 		"TSG"
 	//Wings Players
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
@@ -666,12 +660,12 @@
 	"JUSTCAUSE" 		"ZIGMA"
 	"PPOverdose" 		"ZIGMA"	
 	"RoLEX" 			"ZIGMA"
-	//Ambush Players
-	"Inzta" 			"Ambush"
-	"Ryxxo" 			"Ambush"
-	"zeq" 				"Ambush"
-	"Typos" 			"Ambush"
-	"IceBerg" 			"Ambush"
+	//mCon Players
+	"Monu" 				"mCon"
+	"G1DO" 				"mCon"
+	"lucky" 			"mCon"
+	"v1N" 				"mCon"
+	"MaximN" 			"mCon"
 	//KOVA Players
 	"pietola" 			"KOVA"
 	"spargo" 			"KOVA"
@@ -702,12 +696,12 @@
 	"dobu" 				"TIGER"
 	"kabal" 			"TIGER"
 	"rate" 				"TIGER"
-	//LEISURE Players
-	"stefank0k0" 		"LEISURE"	
-	"BischeR" 			"LEISURE"
-	"farmaG" 			"LEISURE"
-	"FabeeN" 			"LEISURE"
-	"bustrex" 			"LEISURE"
+	//NLG Players
+	"pdy" 				"NLG"	
+	"red" 				"NLG"
+	"xenn" 				"NLG"
+	"s1n" 				"NLG"
+	"skyye" 			"NLG"
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"b0denmaster" 		"Lilmix"
