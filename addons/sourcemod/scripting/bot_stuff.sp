@@ -4786,7 +4786,7 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
-		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Avoid Flashbang") == 0)
+		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Ignored;
 	}
@@ -4799,6 +4799,16 @@ public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
 		DHookSetParamVector(hParams, 2, fPos);
 		
 		return MRES_ChangedHandled;
+	}
+	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
+	{
+		DHookSetParam(hParams, 3, PRIORITY_HIGH);
+		
+		return MRES_ChangedHandled;
+	}
+	else if (strcmp(szDesc, "Blind") == 0)
+	{
+		return MRES_Supercede;
 	}
 	else
 	{
@@ -5216,7 +5226,7 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 						iButtons |= IN_ATTACK;
 					}
 					
-					if (IsTargetInSightRange(client, iEnt, 10.0) && !(GetEntityFlags(client) & FL_DUCKING) && !IsPlayerReloading(client))
+					if (IsTargetInSightRange(client, iEnt, 10.0) && !(GetEntityFlags(client) & FL_DUCKING))
 					{
 						fVel[0] = 0.0;
 						fVel[1] = 0.0;
