@@ -630,17 +630,17 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 47322750;
 	}
-	else if(strcmp(szBotName, "kressy") == 0)
+	else if(strcmp(szBotName, "Krimbo") == 0)
 	{
-		iAccountID = 50709599;
+		iAccountID = 210365363;
 	}
 	else if(strcmp(szBotName, "slaxz") == 0)
 	{
 		iAccountID = 104087441;
 	}
-	else if(strcmp(szBotName, "mirbit") == 0)
+	else if(strcmp(szBotName, "PANIX") == 0)
 	{
-		iAccountID = 183980241;
+		iAccountID = 241868664;
 	}
 	else if(strcmp(szBotName, "ScrunK") == 0)
 	{
@@ -1427,9 +1427,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 13127256;
 	}
-	else if(strcmp(szBotName, "kzy") == 0)
+	else if(strcmp(szBotName, "Anhuin") == 0)
 	{
-		iAccountID = 6367027;
+		iAccountID = 95774258;
 	}
 	else if(strcmp(szBotName, "Andyy") == 0)
 	{
@@ -1528,7 +1528,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 63995864;
 	}
-	//PlanetKey Players
 	//Vexed Players
 	//HLE Players
 	else if(strcmp(szBotName, "svyat") == 0)
@@ -2048,7 +2047,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 283730928;
 	}
-	//9INE Players
 	//QBF Players
 	else if(strcmp(szBotName, "JACKPOT") == 0)
 	{
@@ -2147,7 +2145,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 364178390;
 	}
-	//Conquer Players
 	//Rooster Players
 	else if(strcmp(szBotName, "DannyG") == 0)
 	{
@@ -2170,10 +2167,10 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 70645401;
 	}
-	//Baecon Players
-	else if(strcmp(szBotName, "emp") == 0)
+	//eXploit Players
+	else if(strcmp(szBotName, "BLOODZ") == 0)
 	{
-		iAccountID = 646249586;
+		iAccountID = 1004703971;
 	}
 	else if(strcmp(szBotName, "kst") == 0)
 	{
@@ -2183,13 +2180,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 31318693;
 	}
-	else if(strcmp(szBotName, "shellzi") == 0)
+	else if(strcmp(szBotName, "renatoohaxx") == 0)
 	{
-		iAccountID = 243140003;
+		iAccountID = 39166438;
 	}
-	else if(strcmp(szBotName, "vts") == 0)
+	else if(strcmp(szBotName, "obj") == 0)
 	{
-		iAccountID = 41960703;
+		iAccountID = 42675741;
 	}
 	//KPI Players
 	else if(strcmp(szBotName, "Aaron") == 0)
@@ -2212,10 +2209,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "eDi") == 0)
 	{
 		iAccountID = 57731578;
-	}
-	else if(strcmp(szBotName, "VORMISTO") == 0)
-	{
-		iAccountID = 18354065;
 	}
 	else if(strcmp(szBotName, "Samppa") == 0)
 	{

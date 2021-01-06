@@ -1094,11 +1094,11 @@ ProP+Rifle "ScrunK"
 	VoicePitch = 95
 End
 
-ProP+Rifle "kressy"
+ProP+Rifle "Krimbo"
 	VoicePitch = 91
 End
 
-ProP+Rifle "mirbit"
+ProP+Rifle "PANIX"
 	VoicePitch = 87
 End
 
@@ -2167,11 +2167,11 @@ ProP+Rifle "crisby"
 	VoicePitch = 105
 End
 
-ProAwp+SniperPro "kzy"
+ProAwp+SniperPro "Andyy"
 	VoicePitch = 101
 End
 
-ProP+Rifle "Andyy"
+ProP+Rifle "Anhuin"
 	VoicePitch = 79
 End
 
@@ -2291,28 +2291,6 @@ End
 
 ProP+Rifle "Djoko"
 	VoicePitch = 78
-End
-
-//PlanetKey Players
-
-ProP+Rifle "LapeX"
-	VoicePitch = 106
-End
-
-ProAwp+SniperPro "Printek"
-	VoicePitch = 78
-End
-
-ProP+Rifle "glaVed"
-	VoicePitch = 78
-End
-
-ProP+Rifle "ND"
-	VoicePitch = 78
-End
-
-ProP+Rifle "impulsG"
-	VoicePitch = 100
 End
 
 //Vexed Players
@@ -2974,7 +2952,7 @@ ProP+Rifle "regali"
 	VoicePitch = 87
 End
 
-ProP+Rifle "smekk-"
+ProP+Rifle "CHANKY"
 	VoicePitch = 79
 End
 
@@ -3086,28 +3064,6 @@ End
 
 ProP+Rifle "Cunha"
 	VoicePitch = 103
-End
-
-//9INE Players
-
-ProP+Rifle "CyderX"
-	VoicePitch = 78
-End
-
-ProAwp+SniperPro "xfl0ud"
-	VoicePitch = 90
-End
-
-ProP+Rifle "qRaxs"
-	VoicePitch = 89
-End
-
-ProP+Rifle "Izzy"
-	VoicePitch = 106
-End
-
-ProP+Rifle "QutionerX"
-	VoicePitch = 97
 End
 
 //QBF Players
@@ -3308,27 +3264,6 @@ ProP+Rifle "Lightningfast"
 	VoicePitch = 81
 End
 
-//Conquer Players
-
-ProP+Rifle "NiNLeX"
-	VoicePitch = 86
-End
-
-ProAwp+SniperPro "RONDE"
-	VoicePitch = 92
-End
-
-ProP+Rifle "S1rva"
-	VoicePitch = 91
-End
-
-ProP+Rifle "jelo"
-	VoicePitch = 94
-End
-
-ProP+Rifle "KonZero"
-	VoicePitch = 92
-End
 
 //Rooster Players
 
@@ -3374,13 +3309,13 @@ ProP+Rifle "Daffu"
 	VoicePitch = 103
 End
 
-//Baecon Players
+//eXploit Players
 
-ProP+Rifle "emp"
+ProP+Rifle "BLOODZ"
 	VoicePitch = 91
 End
 
-ProAwp+SniperPro "vts"
+ProAwp+SniperPro "obj"
 	VoicePitch = 105
 End
 
@@ -3392,7 +3327,7 @@ ProP+Rifle "whatz"
 	VoicePitch = 105
 End
 
-ProP+Rifle "shellzi"
+ProP+Rifle "renatoohaxx"
 	VoicePitch = 79
 End
 
@@ -3428,7 +3363,7 @@ ProAwp+SniperPro "oopee"
 	VoicePitch = 80
 End
 
-ProP+Rifle "VORMISTO"
+ProP+Rifle "Sm1llee"
 	VoicePitch = 99
 End
 

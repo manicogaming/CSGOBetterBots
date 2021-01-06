@@ -172,8 +172,8 @@
 	"stfN" 				"aTTaX"
 	"slaxz" 			"aTTaX"
 	"ScrunK" 			"aTTaX"
-	"kressy" 			"aTTaX"
-	"mirbit" 			"aTTaX"
+	"Krimbo" 			"aTTaX"
+	"PANIX" 			"aTTaX"
 	//RNG Players
 	"INS" 				"RNG"
 	"sico" 				"RNG"
@@ -470,7 +470,7 @@
 	"ZipZip"			"Goliath"
 	//UOL Players
 	"crisby" 			"UOL"
-	"kzy" 				"UOL"
+	"Anhuin" 			"UOL"
 	"Andyy" 			"UOL"	
 	"JDC" 				"UOL"
 	"P4TriCK" 			"UOL"
@@ -504,12 +504,6 @@
 	"Kan4" 				"Dice"
 	"Polox" 			"Dice"
 	"Djoko" 			"Dice"
-	//PlanetKey Players
-	"LapeX" 			"PlanetKey"
-	"Printek" 			"PlanetKey"
-	"glaVed" 			"PlanetKey"
-	"ND" 				"PlanetKey"
-	"impulsG" 			"PlanetKey"
 	//Vexed Players
 	"dox" 				"Vexed"
 	"shyyne" 			"Vexed"
@@ -683,7 +677,7 @@
 	"renne" 			"GameAgents"
 	"s0und" 			"GameAgents"
 	"regali" 			"GameAgents"
-	"smekk-" 			"GameAgents"
+	"CHANKY" 			"GameAgents"
 	//Keyd Players
 	"bnc" 				"Keyd"
 	"mawth" 			"Keyd"
@@ -714,12 +708,6 @@
 	"brA" 				"FTW"
 	"plat" 				"FTW"
 	"Cunha" 			"FTW"
-	//9INE Players
-	"CyderX" 			"9INE"
-	"xfl0ud" 			"9INE"
-	"qRaxs" 			"9INE"	
-	"Izzy" 				"9INE"
-	"QutionerX" 		"9INE"	
 	//QBF Players
 	"JACKPOT" 			"QBF"
 	"Quantium" 			"QBF"
@@ -774,12 +762,6 @@
 	"hellff" 			"Global"
 	"DEATHMAKER" 		"Global"	
 	"Lightningfast" 	"Global"	
-	//Conquer Players
-	"NiNLeX" 			"Conquer"
-	"RONDE" 			"Conquer"
-	"S1rva" 			"Conquer"
-	"jelo" 				"Conquer"
-	"KonZero" 			"Conquer"
 	//Rooster Players
 	"DannyG"			"Rooster" 
 	"nettik" 			"Rooster"
@@ -792,12 +774,12 @@
 	"Basso" 			"Flames"
 	"Jabbi" 			"Flames"
 	"Daffu" 			"Flames"
-	//Baecon Players
-	"emp" 				"Baecon"
-	"vts" 				"Baecon"	
-	"kst" 				"Baecon"
-	"whatz" 			"Baecon"
-	"shellzi" 			"Baecon"
+	//eXploit Players
+	"BLOODZ" 			"eXploit"
+	"obj" 				"eXploit"	
+	"kst" 				"eXploit"
+	"whatz" 			"eXploit"
+	"renatoohaxx" 		"eXploit"
 	//KPI Players
 	"pounh" 			"KPI"
 	"SAYN" 				"KPI"
@@ -807,7 +789,7 @@
 	//hREDS Players
 	"eDi" 				"hREDS"
 	"oopee" 			"hREDS"
-	"VORMISTO" 			"hREDS"
+	"Sm1llee" 			"hREDS"
 	"Samppa" 			"hREDS"
 	"xartE" 			"hREDS"
 	//Lemondogs Players
