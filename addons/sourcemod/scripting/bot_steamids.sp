@@ -557,13 +557,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 31185376;
 	}
-	else if(strcmp(szBotName, "dycha") == 0)
+	else if(strcmp(szBotName, "slaxz") == 0)
 	{
-		iAccountID = 81151265;
+		iAccountID = 104087441;
 	}
-	else if(strcmp(szBotName, "snatchie") == 0)
+	else if(strcmp(szBotName, "kressy") == 0)
 	{
-		iAccountID = 111436809;
+		iAccountID = 50709599;
 	}
 	//Heroic Players
 	else if(strcmp(szBotName, "stavn") == 0)
@@ -1336,23 +1336,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "Mayker") == 0)
 	{
 		iAccountID = 88236677;
-	}
-	//AVEZ Players
-	else if(strcmp(szBotName, "Kylar") == 0)
-	{
-		iAccountID = 116431013;
-	}
-	else if(strcmp(szBotName, "nawrot") == 0)
-	{
-		iAccountID = 74178566;
-	}
-	else if(strcmp(szBotName, "Markoś") == 0)
-	{
-		iAccountID = 68256934;
-	}
-	else if(strcmp(szBotName, "KEi") == 0)
-	{
-		iAccountID = 121422001;
 	}
 	//GTZ Players
 	else if(strcmp(szBotName, "fakes2") == 0)

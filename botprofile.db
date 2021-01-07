@@ -972,11 +972,11 @@ End
 
 //Sprout Players
 
-ProP+Rifle "snatchie"
+ProP+Rifle "kressy"
 	VoicePitch = 86
 End
 
-ProAwp+SniperPro "dycha"
+ProAwp+SniperPro "slaxz"
 	VoicePitch = 81
 End
 
@@ -1225,7 +1225,7 @@ ProAwp+SniperPro "sTaR"
 	VoicePitch = 95
 End
 
-ProP+Rifle "wizzem"
+ProP+Rifle "farmaG"
 	VoicePitch = 84
 End
 
@@ -2049,28 +2049,6 @@ End
 
 ProP+Rifle "Mayker"
 	VoicePitch = 108
-End
-
-//AVEZ Players
-
-ProP+Rifle "Riczi"
-	VoicePitch = 92
-End
-
-ProAwp+SniperPro "Markoś"
-	VoicePitch = 93
-End
-
-ProP+Rifle "KEi"
-	VoicePitch = 96
-End
-
-ProP+Rifle "Kylar"
-	VoicePitch = 83
-End
-
-ProP+Rifle "nawrot"
-	VoicePitch = 104
 End
 
 //GTZ Players

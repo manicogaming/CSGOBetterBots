@@ -139,8 +139,8 @@
 	"El1an" 			"Winstrike"
 	"bondik" 			"Winstrike"
 	//Sprout Players
-	"snatchie" 			"Sprout"
-	"dycha" 			"Sprout"
+	"kressy" 			"Sprout"
+	"slaxz" 			"Sprout"
 	"Spiidi" 			"Sprout"
 	"faveN" 			"Sprout"
 	"denis" 			"Sprout"
@@ -213,7 +213,7 @@
 	//PDucks Players
 	"ChLo" 				"PDucks"
 	"sTaR" 				"PDucks"
-	"wizzem" 			"PDucks"
+	"farmaG" 			"PDucks"
 	"maxz" 				"PDucks"
 	"Cl34v3rs" 			"PDucks"
 	//HAVU Players
@@ -438,12 +438,6 @@
 	"Llamas" 			"GroundZero"
 	"Noobster" 			"GroundZero"
 	"Mayker" 			"GroundZero"
-	//AVEZ Players
-	"Riczi" 			"AVEZ"
-	"Markoś" 			"AVEZ"
-	"KEi" 				"AVEZ"
-	"Kylar" 			"AVEZ"
-	"nawrot" 			"AVEZ"
 	//GTZ Players
 	"StepA" 			"GTZ"
 	"snapy" 			"GTZ"
