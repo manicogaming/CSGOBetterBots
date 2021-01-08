@@ -427,7 +427,7 @@
 	"Tiaantije" 		"Energy"	
 	"mango" 			"Energy"
 	//Furious Players
-	"nbl" 				"Furious"
+	"abizz" 			"Furious"
 	"tom1" 				"Furious"
 	"Owensinho" 		"Furious"	
 	"iKrystal" 			"Furious"
@@ -439,10 +439,10 @@
 	"Noobster" 			"GroundZero"
 	"Mayker" 			"GroundZero"
 	//GTZ Players
-	"StepA" 			"GTZ"
+	"rafaxF" 			"GTZ"
 	"snapy" 			"GTZ"
 	"slaxx" 			"GTZ"
-	"Dante" 			"GTZ"
+	"dead" 				"GTZ"
 	"fakes2" 			"GTZ"
 	//x6tence Players
 	"Queenix" 			"x6tence"
@@ -810,4 +810,10 @@
 	"ngiN" 				"Sangal"
 	"l0gicman" 			"Sangal"
 	"imoRR"				"Sangal"
+	//PkD Players
+	"LapeX" 			"PkD"
+	"sesL" 				"PkD"
+	"pr1metapz" 		"PkD"
+	"cello" 			"PkD"
+	"florento"			"PkD"
 }

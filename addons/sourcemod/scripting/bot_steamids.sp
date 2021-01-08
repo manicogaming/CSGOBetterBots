@@ -1316,10 +1316,6 @@ public void OnClientSettingsChanged(int client)
 	}
 	//energy Players
 	//Furious Players
-	else if(strcmp(szBotName, "nbl") == 0)
-	{
-		iAccountID = 132456979;
-	}
 	//GroundZero Players
 	else if(strcmp(szBotName, "BURNRUOk") == 0)
 	{
@@ -2240,6 +2236,11 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "imoRR") == 0)
 	{
 		iAccountID = 107082440;
+	}
+	//PkD Players
+	else if(strcmp(szBotName, "cello") == 0)
+	{
+		iAccountID = 18118733;
 	}
 	else
 	{

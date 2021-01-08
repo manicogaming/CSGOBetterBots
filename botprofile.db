@@ -2009,7 +2009,7 @@ End
 
 //Furious Players
 
-ProP+Rifle "nbl"
+ProP+Rifle "abizz"
 	VoicePitch = 81
 End
 
@@ -2053,7 +2053,7 @@ End
 
 //GTZ Players
 
-ProP+Rifle "StepA"
+ProP+Rifle "rafaxF"
 	VoicePitch = 76
 End
 
@@ -2065,7 +2065,7 @@ ProP+Rifle "slaxx"
 	VoicePitch = 115
 End
 
-ProP+Rifle "Dante"
+ProP+Rifle "dead"
 	VoicePitch = 90
 End
 
@@ -3439,6 +3439,28 @@ End
 
 ProP+Rifle "imoRR"
 	VoicePitch = 111
+End
+
+//PkD Players
+
+ProP+Rifle "LapeX"
+	VoicePitch = 89
+End
+
+ProAwp+SniperPro "sesL"
+	VoicePitch = 96
+End
+
+ProP+Rifle "pr1metapz"
+	VoicePitch = 72
+End
+
+ProP+Rifle "cello"
+	VoicePitch = 100
+End
+
+ProP+Rifle "florento"
+	VoicePitch = 95
 End
 
 EliteAwp+SniperPro "XD | ryu"
