@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri Jan 08 04:58:35 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat Jan 09 05:10:06 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -110,7 +110,6 @@ awp_roost
 awp_roost_2020
 awp_rp94
 awp_source
-awp_subzero
 awp_war
 awp_zeecore
 ba_winterforest_b1
@@ -342,7 +341,6 @@ fy_pools
 fy_rainbow
 fy_rocks
 fy_sandstone_t0
-fy_showdown
 fy_simpsons_h
 fy_snow_07
 fy_towelie

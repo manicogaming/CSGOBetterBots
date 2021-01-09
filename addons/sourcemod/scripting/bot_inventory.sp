@@ -30,7 +30,8 @@ int g_iStoredKnife[MAXPLAYERS + 1];
 int g_iSkinDefIndex[MAXPLAYERS + 1][1024];
 float g_fWeaponSkinWear[MAXPLAYERS + 1][1024];
 int g_iWeaponSkinSeed[MAXPLAYERS + 1][1024];
-int g_iStatTrakOrSouvenirChance[MAXPLAYERS + 1][1024];
+int g_iStatTrakChance[MAXPLAYERS + 1][1024];
+int g_iSouvenirChance[MAXPLAYERS + 1][1024];
 int g_iStickerChance[MAXPLAYERS + 1][1024];
 int g_iStickerComboChance[MAXPLAYERS + 1][1024];
 int g_iRndStickerCombo[MAXPLAYERS + 1][1024];
@@ -704,9 +705,28 @@ public void OnClientPutInServer(int client)
 				g_iItemIDLow[client][iWeaponDefIndex] = IDLow++;
 				
 				g_iWeaponSkinSeed[client][iWeaponDefIndex] = Math_GetRandomInt(1, 1000);
-				g_iStatTrakOrSouvenirChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
 				g_iStickerChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
 				g_iStickerComboChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+				
+				g_iStatTrakChance[client][iWeaponDefIndex] = 100;
+				g_iSouvenirChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+				
+				for (int iCrateNum = 0; iCrateNum < eItems_GetCratesCount(); iCrateNum++)
+				{
+					int iCrateDefIndex = eItems_GetCrateDefIndexByCrateNum(iCrateNum);
+					int iCrateItemsCount = eItems_GetCrateItemsCountByDefIndex(iCrateDefIndex);
+					for(int iItem = 0; iItem < iCrateItemsCount; iItem++)
+					{
+						eItems_CrateItem CrateItem;
+						eItems_GetCrateItemByDefIndex(iCrateDefIndex, iItem, CrateItem, sizeof(eItems_CrateItem));
+						
+						if((CrateItem.SkinDefIndex == g_iSkinDefIndex[client][iWeaponDefIndex] && CrateItem.WeaponDefIndex == iWeaponDefIndex) || eItems_IsDefIndexKnife(iWeaponDefIndex))
+						{
+							g_iStatTrakChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+							g_iSouvenirChance[client][iWeaponDefIndex] = 100;
+						}
+			        }
+			    }
 				
 				if (g_iStickerComboChance[client][iWeaponDefIndex] <= 65)
 				{
@@ -1933,7 +1953,7 @@ void SetWeaponProps(int client, int iEntity)
 		
 		if (eItems_IsDefIndexKnife(iDefIndex))
 		{
-			if (g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
+			if (g_iStatTrakChance[client][iDefIndex] <= 30)
 			{
 				pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
 				pDynamicAttributes.SetOrAddAttributeValue(81, 0);
@@ -1943,39 +1963,22 @@ void SetWeaponProps(int client, int iEntity)
 		}
 		else
 		{
+			if (g_iStatTrakChance[client][iDefIndex] <= 30)
+			{
+				pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
+				pDynamicAttributes.SetOrAddAttributeValue(81, 0);
+				
+				SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
+			}
+			
 			switch (g_iSkinDefIndex[client][iDefIndex])
 			{
-				case 125, 255, 256, 259, 257, 258, 262, 260, 261, 263, 267, 264, 265, 266, 675, 678, 681, 683, 676, 686, 687, 688, 679, 689, 680, 674, 682, 673, 684, 677, 685, 504, 
-				497, 490, 493, 503, 494, 501, 496, 500, 491, 495, 492, 498, 505, 499, 502, 639, 653, 644, 640, 643, 647, 652, 654, 648, 651, 645, 646, 650, 655, 642, 649, 641, 512, 
-				522, 506, 511, 516, 519, 514, 510, 508, 521, 520, 509, 507, 515, 517, 518, 524, 533, 527, 525, 537, 529, 532, 535, 536, 530, 540, 538, 526, 528, 534, 539, 279, 280, 
-				282, 286, 283, 287, 290, 284, 288, 285, 291, 281, 289, 380, 389, 391, 393, 388, 384, 383, 381, 390, 385, 386, 392, 387, 382, 662, 660, 664, 661, 658, 656, 669, 670, 
-				667, 668, 657, 663, 666, 671, 659, 672, 665, 359, 360, 353, 351, 352, 358, 350, 356, 349, 361, 357, 362, 354, 355, 180, 185, 211, 212, 182, 183, 188, 187, 189, 186, 
-				192, 191, 195, 193, 190, 309, 313, 310, 315, 307, 311, 336, 302, 339, 312, 301, 337, 314, 305, 306, 335, 334, 338, 303, 304, 308, 632, 624, 626, 636, 638, 637, 631, 
-				634, 625, 628, 623, 627, 629, 635, 630, 633, 622, 600, 604, 601, 609, 614, 603, 607, 613, 608, 612, 611, 602, 610, 615, 616, 606, 605, 587, 586, 588, 591, 597, 584, 
-				595, 583, 593, 596, 598, 585, 592, 589, 590, 599, 594, 475, 474, 487, 481, 476, 480, 483, 485, 482, 477, 478, 489, 486, 479, 488, 484, 316, 155, 9, 181, 62, 184, 13, 
-				213, 20, 317, 320, 156, 14, 174, 83, 162, 176, 177, 178, 215, 231, 227, 154, 226, 228, 225, 223, 224, 230, 229, 548, 542, 551, 541, 556, 554, 557, 546, 543, 555, 553, 
-				549, 550, 544, 547, 545, 552, 398, 395, 400, 394, 404, 397, 402, 405, 396, 399, 403, 401, 406, 407, 430, 433, 428, 427, 429, 424, 431, 435, 436, 422, 425, 426, 432, 
-				434, 423, 222, 67, 221, 214, 220, 232, 217, 218, 216, 219, 270, 269, 271, 273, 274, 272, 268, 277, 278, 276, 275, 73, 11, 51, 61, 48, 60, 695, 696, 705, 691, 690, 
-				694, 703, 704, 699, 698, 702, 701, 693, 697, 700, 706, 692, 707, 711, 714, 720, 723, 718, 709, 716, 719, 712, 713, 717, 708, 715, 722, 721, 710, 808, 816, 804, 814, 
-				809, 803, 805, 810, 802, 817, 813, 807, 812, 806, 811, 815, 917, 919, 910, 913, 911, 915, 916, 907, 906, 902, 918, 904, 908, 909, 903, 905, 914, 844, 837, 845, 850, 
-				843, 838, 841, 851, 846, 839, 836, 849, 848, 842, 840, 835, 847, 801, 12, 44, 887, 898, 897, 889, 98, 899, 885, 886, 894, 893, 884, 888, 895, 896, 900, 891, 892, 890, 
-				946, 957, 941, 947, 948, 956, 955, 951, 954, 953, 943, 945, 942, 949, 944, 950, 952, 958, 960, 967, 968, 973, 969, 966, 974, 965, 964, 972, 961, 963, 970, 971, 962, 959,
-				984, 988, 985, 991, 979, 975, 978, 989, 990, 987, 981, 983, 980, 977, 986, 982, 976:
-				{
-					if (g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
-					{
-						pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
-						pDynamicAttributes.SetOrAddAttributeValue(81, 0);
-						
-						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
-					}
-				}
 				case 254, 253, 252, 110, 25, 242, 245, 249, 236, 244, 92, 147, 136, 96, 251, 250, 21, 800, 28, 101, 158, 344, 326, 328, 325, 327, 329, 332, 32, 294, 323, 333, 330, 
 				179, 168, 167, 169, 171, 379, 371, 367, 368, 372, 370, 374, 378, 375, 377, 373, 369, 376, 750, 747, 795, 749, 752, 793, 796, 751, 797, 799, 798, 748, 753, 794, 755, 
 				90, 754, 39, 37, 33, 2, 233, 243, 240, 46, 27, 241, 523, 30, 141, 157, 99, 8, 148, 124, 170, 116, 247, 235, 159, 321, 84, 318, 322, 319, 238, 15, 95, 100, 22, 119, 
 				248, 237, 246, 3, 34, 234, 74, 78, 47, 107, 149, 792, 791, 789, 779, 787, 788, 781, 776, 786, 780, 790, 783, 782, 777, 784, 778, 775, 785, 153, 172, 111, 70, 17, 135:
 				{
-					if (g_iStatTrakOrSouvenirChance[client][iDefIndex] <= 30)
+					if (g_iSouvenirChance[client][iDefIndex] <= 30)
 					{
 						pDynamicAttributes.RemoveAttributeByDefIndex(80);
 						pDynamicAttributes.RemoveAttributeByDefIndex(81);
