@@ -1,0 +1,19 @@
+35hp_kodiak_arena
+{
+	//r.man MMXV
+	material	"overviews/35hp_kodiak_arena_radar"
+	pos_x		-3085
+	pos_y		3081
+	scale		6.0
+	rotate		0
+	zoom		0
+
+
+	//loading screen icons and positions
+
+	CTSpawn_x	0.502
+	CTSpawn_y	0.275
+	TSpawn_x	0.502
+	TSpawn_y	0.730
+
+}

@@ -6,7 +6,6 @@
 #include <eItems>
 #include <PTaH>
 #include <bot_steamids>
-#include <csgo_weaponstickers>
 #include <kento_rankme/rankme>
 #include <smlib>
 
@@ -737,12 +736,12 @@ public void OnClientPutInServer(int client)
 					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1, 2);
 				}
 				
-				g_iRndSticker[client][iWeaponDefIndex][0] = CS_GetRandomSticker();
-				g_iRndSticker[client][iWeaponDefIndex][1] = CS_GetRandomSticker();
-				g_iRndSticker[client][iWeaponDefIndex][2] = CS_GetRandomSticker();
-				g_iRndSticker[client][iWeaponDefIndex][3] = CS_GetRandomSticker();
+				g_iRndSticker[client][iWeaponDefIndex][0] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
+				g_iRndSticker[client][iWeaponDefIndex][1] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
+				g_iRndSticker[client][iWeaponDefIndex][2] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
+				g_iRndSticker[client][iWeaponDefIndex][3] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
 				
-				g_iRndSameSticker[client][iWeaponDefIndex] = CS_GetRandomSticker();
+				g_iRndSameSticker[client][iWeaponDefIndex] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
 				
 				switch (g_iSkinDefIndex[client][iWeaponDefIndex])
 				{
@@ -1996,73 +1995,73 @@ void SetWeaponProps(int client, int iEntity)
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
 					}
 					case 2:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
 					}
 					case 3:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
 					}
 					case 4:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 5:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
 					}
 					case 6:
 					{
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
 					}
 					case 7:
 					{
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
 					}
 					case 8:
 					{
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 9:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 10:
 					{
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
 					}
 					case 11:
 					{
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 12:
 					{
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 13:
 					{
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 14:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 				}
 			}
@@ -2072,17 +2071,17 @@ void SetWeaponProps(int client, int iEntity)
 				{
 					case 1:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSticker[client][iDefIndex][0], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSticker[client][iDefIndex][1], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSticker[client][iDefIndex][2], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSticker[client][iDefIndex][3], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSticker[client][iDefIndex][0]);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSticker[client][iDefIndex][1]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSticker[client][iDefIndex][2]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSticker[client][iDefIndex][3]);
 					}
 					case 2:
 					{
-						CS_SetWeaponSticker(client, iEntity, 0, g_iRndSameSticker[client][iDefIndex], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 1, g_iRndSameSticker[client][iDefIndex], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 2, g_iRndSameSticker[client][iDefIndex], 0.0);
-						CS_SetWeaponSticker(client, iEntity, 3, g_iRndSameSticker[client][iDefIndex], 0.0);
+						pDynamicAttributes.SetOrAddAttributeValue(113, g_iRndSameSticker[client][iDefIndex]);
+						pDynamicAttributes.SetOrAddAttributeValue(117, g_iRndSameSticker[client][iDefIndex]);
+						pDynamicAttributes.SetOrAddAttributeValue(121, g_iRndSameSticker[client][iDefIndex]);
+						pDynamicAttributes.SetOrAddAttributeValue(125, g_iRndSameSticker[client][iDefIndex]);
 					}
 				}
 			}

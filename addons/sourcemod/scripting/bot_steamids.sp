@@ -343,9 +343,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 106428011;
 	}
-	else if(strcmp(szBotName, "Twistzz") == 0)
+	else if(strcmp(szBotName, "FalleN") == 0)
 	{
-		iAccountID = 55989477;
+		iAccountID = 424467;
 	}
 	else if(strcmp(szBotName, "NAF") == 0)
 	{
@@ -1685,25 +1685,17 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 108181457;
 	}
 	//FATE Players
-	else if(strcmp(szBotName, "Mar") == 0)
+	else if(strcmp(szBotName, "Rock1nG") == 0)
 	{
-		iAccountID = 158849219;
+		iAccountID = 246843704;
 	}
 	else if(strcmp(szBotName, "niki1") == 0)
 	{
 		iAccountID = 932616892;
 	}
-	else if(strcmp(szBotName, "blocker") == 0)
-	{
-		iAccountID = 104330322;
-	}
 	else if(strcmp(szBotName, "Patrick") == 0)
 	{
 		iAccountID = 98715951;
-	}
-	else if(strcmp(szBotName, "h4rn") == 0)
-	{
-		iAccountID = 88360844;
 	}
 	//Canids Players
 	else if(strcmp(szBotName, "nython") == 0)
@@ -2049,10 +2041,6 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 9224396;
 	}
-	else if(strcmp(szBotName, "meyern") == 0)
-	{
-		iAccountID = 235377137;
-	}
 	//Sinister5 Players
 	else if(strcmp(szBotName, "minimal") == 0)
 	{
@@ -2090,13 +2078,21 @@ public void OnClientSettingsChanged(int client)
 	}
 	//Impact Players
 	//ERN Players
-	else if(strcmp(szBotName, "ReacTioNNN") == 0)
+	else if(strcmp(szBotName, "Knoxville") == 0)
 	{
-		iAccountID = 85434976;
+		iAccountID = 107802167;
 	}
 	else if(strcmp(szBotName, "preet") == 0)
 	{
 		iAccountID = 34228517;
+	}
+	else if(strcmp(szBotName, "FreeZe") == 0)
+	{
+		iAccountID = 259251039;
+	}
+	else if(strcmp(szBotName, "j1NZO") == 0)
+	{
+		iAccountID = 220770109;
 	}
 	//BL4ZE Players
 	else if(strcmp(szBotName, "Marzil") == 0)

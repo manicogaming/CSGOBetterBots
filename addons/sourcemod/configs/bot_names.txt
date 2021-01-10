@@ -77,7 +77,7 @@
 	"NAF" 				"Liquid"
 	"Grim" 				"Liquid"
 	"ELiGE" 			"Liquid"
-	"Twistzz" 			"Liquid"
+	"FalleN" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
 	"GruBy" 			"AGO"
@@ -577,10 +577,10 @@
 	"penny" 			"Triumph"
 	"moose" 			"Triumph"
 	//FATE Players
-	"blocker"			"FATE" 
+	"milky"				"FATE" 
 	"Patrick" 			"FATE"
-	"harn" 				"FATE"
-	"Mar" 				"FATE"	
+	"Rock1nG" 			"FATE"
+	"shaiK" 			"FATE"	
 	"niki1" 			"FATE"
 	//Canids Players
 	"DeStiNy" 			"Canids"
@@ -719,7 +719,7 @@
 	"try" 				"9z"
 	"maxujas" 			"9z"
 	"bit" 				"9z"
-	"meyern" 			"9z"
+	"rox" 				"9z"
 	//Sinister5 Players
 	"zerOchaNce" 		"Sinister5"
 	"FreakY" 			"Sinister5"
@@ -741,9 +741,9 @@
 	//ERN Players
 	"j1NZO" 			"ERN"
 	"preet" 			"ERN"
-	"ReacTioNNN" 		"ERN"	
+	"impulsG" 			"ERN"	
 	"FreeZe" 			"ERN"
-	"S3NSEY" 			"ERN"
+	"Knoxville" 		"ERN"
 	//BL4ZE Players
 	"Rossi" 			"BL4ZE"
 	"Marzil" 			"BL4ZE"

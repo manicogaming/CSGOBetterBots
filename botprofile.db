@@ -737,7 +737,7 @@ ProP+Rifle "ELiGE"
 	LookAngleDampingAttacking = 40.100
 End
 
-ProP+Rifle "Twistzz"
+ProP+Rifle "FalleN"
 	VoicePitch = 102
 End
 
@@ -2559,7 +2559,7 @@ End
 
 //FATE Players
 
-ProP+Rifle "blocker"
+ProP+Rifle "milky"
 	VoicePitch = 87
 End
 
@@ -2567,11 +2567,11 @@ ProAwp+SniperPro "Patrick"
 	VoicePitch = 90
 End
 
-ProP+Rifle "harn"
+ProP+Rifle "Rock1nG"
 	VoicePitch = 99
 End
 
-ProP+Rifle "Mar"
+ProP+Rifle "shaiK"
 	VoicePitch = 103
 End
 
@@ -3106,7 +3106,7 @@ ProP+Rifle "bit"
 	VoicePitch = 87
 End
 
-ProP+Rifle "meyern"
+ProP+Rifle "rox"
 	VoicePitch = 104
 End
 
@@ -3182,11 +3182,11 @@ ProP+Rifle "j1NZO"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "S3NSEY"
+ProAwp+SniperPro "Knoxville"
 	VoicePitch = 109
 End
 
-ProP+Rifle "ReacTioNNN"
+ProP+Rifle "impulsG"
 	VoicePitch = 75
 End
 
