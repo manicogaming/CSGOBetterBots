@@ -34,12 +34,6 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x6C\x53\x56\x8B\xF1\x8B\x0D\x2A\x2A\x2A\x2A\x57\x8B\x81\x0C\x10\x00\x00"
 			}
-			"CCSBot::IsBusy"
-			{
-				// Is second result in a function that uses the 'CoveringFriend' string
-				"library"	"server"
-				"windows"	"\x80\xB9\x70\x3E\x00\x00\x00\x75\x2A"
-			}
 			"CCSBot::IsAtHidingSpot"
 			{
 				// Is in the if statement after the if statement with the number '0.33000001' inside CCSBot::Update
@@ -104,6 +98,11 @@
 			{
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
 				"windows"       "24080"
+			}
+			"CCSBot::m_task"
+			{
+				//Is inside CCSBot::DebugDisplay near 'Task: %s' string
+				"windows"       "15988"
 			}
 		}
 	}

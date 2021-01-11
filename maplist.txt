@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Jan 09 05:51:35 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Jan 11 03:48:56 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -14,6 +14,7 @@ $400$_lite_4s
 35hp_dust_2012
 35hp_gladiators_go
 35hp_iceworld
+35hp_kodiak_arena
 35hp_lego_go
 35hp_minecraft_go
 35hp_orange_box_handel
@@ -251,6 +252,7 @@ de_iris
 de_island
 de_jingshen
 de_kabul_b3
+de_kaizen_rc1
 de_lake
 de_livehouse
 de_log

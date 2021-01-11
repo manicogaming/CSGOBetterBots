@@ -17,7 +17,7 @@ bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset;
+int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
@@ -26,7 +26,6 @@ Handle g_hLookupBone;
 Handle g_hGetBonePosition;
 Handle g_hBotAttack;
 Handle g_hBotIsVisible;
-Handle g_hBotIsBusy;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
@@ -50,6 +49,32 @@ enum PriorityType
 	PRIORITY_MEDIUM, 
 	PRIORITY_HIGH, 
 	PRIORITY_UNINTERRUPTABLE
+}
+
+enum TaskType
+{
+	SEEK_AND_DESTROY = 0,
+	PLANT_BOMB,
+	FIND_TICKING_BOMB,
+	DEFUSE_BOMB,
+	GUARD_TICKING_BOMB,
+	GUARD_BOMB_DEFUSER,
+	GUARD_LOOSE_BOMB,
+	GUARD_BOMB_ZONE,
+	GUARD_INITIAL_ENCOUNTER,
+	ESCAPE_FROM_BOMB,
+	HOLD_POSITION,
+	FOLLOW,
+	VIP_ESCAPE,
+	GUARD_VIP_ESCAPE_ZONE,
+	COLLECT_HOSTAGES,
+	RESCUE_HOSTAGES,
+	GUARD_HOSTAGES,
+	GUARD_HOSTAGE_RESCUE_ZONE,
+	MOVE_TO_LAST_KNOWN_ENEMY_POSITION,
+	MOVE_TO_SNIPER_SPOT,
+	SNIPING,
+	ESCAPE_FROM_FLAMES,
 }
 
 char g_szBoneNames[][] =  {
@@ -4597,7 +4622,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 55)
+				if (Math_GetRandomInt(1, 100) <= 60)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -4618,7 +4643,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 55)
+				if (Math_GetRandomInt(1, 100) <= 60)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -4639,7 +4664,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		{
 			if (g_bIsHeadVisible[client])
 			{
-				if (Math_GetRandomInt(1, 100) <= 55)
+				if (Math_GetRandomInt(1, 100) <= 60)
 				{
 					int iBone = LookupBone(iEnt, "spine_3");
 					
@@ -5133,22 +5158,11 @@ public Action OnPlayerRunCmd(int client, int & iButtons, int & iImpulse, float f
 						iButtons |= IN_ATTACK;
 					}
 					
-					if (IsTargetInSightRange(client, iEnt, 10.0) && !(GetEntityFlags(client) & FL_DUCKING) && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+					if (IsTargetInSightRange(client, iEnt, 10.0) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 					{
 						fVel[0] = 0.0;
 						fVel[1] = 0.0;
 						fVel[2] = 0.0;
-					}
-				}
-				else if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY && iDefIndex != 63 && iDefIndex != 1) || iDefIndex == 27 || iDefIndex == 29 || iDefIndex == 35)
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						moveSide(fVel, 250.0);
-					}
-					else
-					{
-						moveSide2(fVel, 250.0);
 					}
 				}
 				else if (iDefIndex == 1)
@@ -5566,6 +5580,10 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
 	}
 	
+	if ((g_iBotTaskOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_task")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_task offset.");
+	}	
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -5598,11 +5616,6 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsVisible = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsBusy");
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsBusy = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::IsBusy signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
@@ -5717,11 +5730,6 @@ public bool BotIsVisible(int client, float fPos[3], bool bTestFOV, int iIgnore)
 	return SDKCall(g_hBotIsVisible, client, fPos, bTestFOV, iIgnore);
 }
 
-public bool BotIsBusy(int client)
-{
-	return SDKCall(g_hBotIsBusy, client);
-}
-
 public bool BotIsHiding(int client)
 {
 	return SDKCall(g_hBotIsHiding, client);
@@ -5752,6 +5760,13 @@ public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAng
 	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
 }
 
+stock bool BotIsBusy(int client)
+{
+	TaskType iBotTask = view_as<TaskType>(GetEntData(client, g_iBotTaskOffset));
+	
+	return iBotTask == PLANT_BOMB || iBotTask == RESCUE_HOSTAGES || iBotTask == GUARD_LOOSE_BOMB || iBotTask == GUARD_BOMB_ZONE || iBotTask == GUARD_HOSTAGES || iBotTask == GUARD_HOSTAGE_RESCUE_ZONE || iBotTask == ESCAPE_FROM_FLAMES;
+}
+
 public int GetNearestEntity(int client, char[] szClassname)
 {
 	int iNearestEntity = -1;
@@ -5777,18 +5792,6 @@ public int GetNearestEntity(int client, char[] szClassname)
 	}
 	
 	return iNearestEntity;
-}
-
-float moveSide(float fVel[3], float fMaxSpeed)
-{
-	fVel[1] = fMaxSpeed;
-	return fVel;
-}
-
-float moveSide2(float fVel[3], float fMaxSpeed)
-{
-	fVel[1] = -fMaxSpeed;
-	return fVel;
 }
 
 stock void CSGO_SetMoney(int client, int iAmount)
