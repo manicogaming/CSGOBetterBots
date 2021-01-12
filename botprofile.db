@@ -1086,7 +1086,7 @@ ProP+Rifle "stfN"
 	VoicePitch = 77
 End
 
-ProAwp+SniperPro "slaxz"
+ProAwp+SniperPro "PANIX"
 	VoicePitch = 106
 End
 
@@ -1098,7 +1098,7 @@ ProP+Rifle "Krimbo"
 	VoicePitch = 91
 End
 
-ProP+Rifle "PANIX"
+ProP+Rifle "kRYSTAL"
 	VoicePitch = 87
 End
 
@@ -1173,7 +1173,7 @@ End
 
 //LDLC Players
 
-ProP+Rifle "afroo"
+ProP+Rifle "Maka"
 	VoicePitch = 90
 End
 
@@ -1185,7 +1185,7 @@ ProP+Rifle "hAdji"
 	VoicePitch = 102
 End
 
-ProP+Rifle "bodyy"
+ProP+Rifle "Keoz"
 	VoicePitch = 96
 End
 
@@ -1467,7 +1467,7 @@ ProAwp+SniperPro "lunAtic"
 	VoicePitch = 79
 End
 
-ProP+Rifle "Goofy"
+ProP+Rifle "Vegi"
 	VoicePitch = 71
 End
 
@@ -1713,11 +1713,11 @@ ProP+Rifle "malbsMd"
 	VoicePitch = 81
 End
 
-ProP+Rifle "pesadelo"
+ProP+Rifle "cass1n"
 	VoicePitch = 85
 End
 
-ProP+Rifle "b4rtiN"
+ProP+Rifle "skullz"
 	VoicePitch = 79
 End
 
@@ -1831,25 +1831,25 @@ ProP+Rifle "dangeR"
 	VoicePitch = 78
 End
 
-//Beyond Players
+//OFFSET Players
 
-ProP+Rifle "MAIROLLS"
+ProP+Rifle "NOPEEj"
 	VoicePitch = 90
 End
 
-ProAwp+SniperPro "Olivia"
+ProAwp+SniperPro "fox"
 	VoicePitch = 96
 End
 
-ProP+Rifle "Kntz"
+ProP+Rifle "pr"
 	VoicePitch = 102
 End
 
-ProP+Rifle "stk"
+ProP+Rifle "RIZZ"
 	VoicePitch = 89
 End
 
-ProP+Rifle "Geniuss"
+ProP+Rifle "shellzi"
 	VoicePitch = 79
 End
 
@@ -2113,7 +2113,7 @@ ProP+Rifle "kade0"
 	VoicePitch = 100
 End
 
-ProP+Rifle "Keoz"
+ProP+Rifle "Ramz1kBO$$"
 	VoicePitch = 111
 End
 
@@ -2145,7 +2145,7 @@ ProP+Rifle "crisby"
 	VoicePitch = 105
 End
 
-ProAwp+SniperPro "Andyy"
+ProAwp+SniperPro "Python"
 	VoicePitch = 101
 End
 
@@ -2153,34 +2153,12 @@ ProP+Rifle "Anhuin"
 	VoicePitch = 79
 End
 
-ProP+Rifle "JDC"
+ProP+Rifle "HadeZ"
 	VoicePitch = 74
 End
 
 ProP+Rifle "P4TriCK"
 	VoicePitch = 114
-End
-
-//Illuminar Players
-
-ProP+Rifle "Vegi"
-	VoicePitch = 88
-End
-
-ProAwp+SniperPro "Snax"
-	VoicePitch = 90
-End
-
-ProP+Rifle "mouz"
-	VoicePitch = 111
-End
-
-ProP+Rifle "reatz"
-	VoicePitch = 112
-End
-
-ProP+Rifle "phr"
-	VoicePitch = 73
 End
 
 //Queso Players
@@ -2431,15 +2409,15 @@ ProP+Rifle "Siuhy"
 	VoicePitch = 98
 End
 
-ProAwp+SniperPro "szejn"
+ProAwp+SniperPro "STOMP"
 	VoicePitch = 97
 End
 
-ProP+Rifle "EXUS"
+ProP+Rifle "szejn"
 	VoicePitch = 106
 End
 
-ProP+Rifle "avis"
+ProP+Rifle "mono"
 	VoicePitch = 115
 End
 
@@ -2599,28 +2577,6 @@ End
 
 ProP+Rifle "KHTEX"
 	VoicePitch = 91
-End
-
-//ESPADA Players
-
-ProP+Rifle "Patsanchick"
-	VoicePitch = 101
-End
-
-ProAwp+SniperPro "degster"
-	VoicePitch = 100
-End
-
-ProP+Rifle "FinigaN"
-	VoicePitch = 89
-End
-
-ProP+Rifle "S0tF1k"
-	VoicePitch = 92
-End
-
-ProP+Rifle "Dima"
-	VoicePitch = 92
 End
 
 //OG Players
@@ -2896,11 +2852,11 @@ ProP+Rifle "fr0slev"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "FaagaN"
+ProAwp+SniperPro "Ryxxo"
 	VoicePitch = 95
 End
 
-ProP+Rifle "netrick"
+ProP+Rifle "PERCY"
 	VoicePitch = 81
 End
 

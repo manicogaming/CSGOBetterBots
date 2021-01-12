@@ -170,7 +170,7 @@
 	"dennis" 			"Apeks"
 	//aTTaX Players
 	"stfN" 				"aTTaX"
-	"slaxz" 			"aTTaX"
+	"kRYSTAL" 			"aTTaX"
 	"ScrunK" 			"aTTaX"
 	"Krimbo" 			"aTTaX"
 	"PANIX" 			"aTTaX"
@@ -193,10 +193,10 @@
 	"chopper" 			"Spirit"
 	"magixx" 			"Spirit"
 	//LDLC Players
-	"afroo" 			"LDLC"
+	"Maka" 				"LDLC"
 	"Lambert" 			"LDLC"
 	"hAdji" 			"LDLC"
-	"bodyy" 			"LDLC"
+	"Keoz" 				"LDLC"
 	"SIXER" 			"LDLC"
 	//GamerLegion Players
 	"dobbo" 			"GamerLegion"
@@ -279,7 +279,7 @@
 	//PACT Players
 	"darko" 			"PACT"
 	"lunAtic" 			"PACT"
-	"Goofy" 			"PACT"
+	"Vegi" 				"PACT"
 	"MINISE" 			"PACT"
 	"Sobol" 			"PACT"
 	//Nemiga Players
@@ -346,8 +346,8 @@
 	"prt" 				"One"
 	"Maluk3" 			"One"
 	"malbsMd" 			"One"	
-	"pesadelo" 			"One"
-	"b4rtiN" 			"One"
+	"cass1n" 			"One"
+	"skullz" 			"One"
 	//Avant Players
 	"BL1TZ" 			"Avant"
 	"sterling" 			"Avant"
@@ -378,12 +378,12 @@
 	"ekul" 				"Paradox"
 	"bedonka" 			"Paradox"
 	"dangeR" 			"Paradox"
-	//Beyond Players
-	"MAIROLLS" 			"Beyond"
-	"Olivia" 			"Beyond"
-	"Kntz" 				"Beyond"
-	"stk" 				"Beyond"
-	"Geniuss" 			"Beyond"
+	//OFFSET Players
+	"NOPEEj" 			"OFFSET"
+	"fox" 				"OFFSET"
+	"pr" 				"OFFSET"
+	"RIZZ" 				"OFFSET"
+	"shellzi" 			"OFFSET"
 	//BOOM Players
 	"chelo"				"BOOM" 
 	"yeL" 				"BOOM"
@@ -455,7 +455,7 @@
 	"mou" 				"K23"
 	"n0rb3r7" 			"K23"
 	"kade0" 			"K23"
-	"Keoz" 				"K23"
+	"Ramz1kBO$$" 		"K23"
 	//Goliath Players
 	"massacRe" 			"Goliath"
 	"Dweezil" 			"Goliath"
@@ -465,15 +465,9 @@
 	//UOL Players
 	"crisby" 			"UOL"
 	"Anhuin" 			"UOL"
-	"Andyy" 			"UOL"	
-	"JDC" 				"UOL"
+	"HadeZ" 			"UOL"	
+	"Python" 			"UOL"
 	"P4TriCK" 			"UOL"
-	//Illuminar Players
-	"Vegi" 				"Illuminar"
-	"Snax" 				"Illuminar"
-	"mouz" 				"Illuminar"
-	"reatz" 			"Illuminar"
-	"phr" 				"Illuminar"
 	//Queso Players
 	"TheClaran" 		"Queso"
 	"thinkii" 			"Queso"
@@ -543,8 +537,8 @@
 	//Izako Players
 	"Siuhy" 			"Izako"
 	"szejn" 			"Izako"
-	"EXUS" 				"Izako"
-	"avis" 				"Izako"
+	"STOMP" 			"Izako"
+	"mono" 				"Izako"
 	"TOAO" 				"Izako"
 	//ATK Players
 	"bLazE" 			"ATK"
@@ -588,12 +582,6 @@
 	"dav1d" 			"Canids"
 	"latto" 			"Canids"
 	"KHTEX" 			"Canids"
-	//ESPADA Players
-	"Patsanchick"		"ESPADA" 
-	"degster" 			"ESPADA"
-	"FinigaN" 			"ESPADA"
-	"S0tF1k" 			"ESPADA"
-	"Dima" 				"ESPADA"
 	//OG Players
 	"NBK-" 				"OG"
 	"mantuu" 			"OG"
@@ -662,8 +650,8 @@
 	"Twixie" 			"KOVA"
 	//AGF Players
 	"fr0slev" 			"AGF"
-	"FaagaN" 			"AGF"
-	"netrick" 			"AGF"
+	"Ryxxo" 			"AGF"
+	"PERCY" 			"AGF"
 	"TMB" 				"AGF"
 	"Lukki" 			"AGF"
 	//GameAgents Players
