@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Tue Jan 12 03:39:35 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Wed Jan 13 05:26:34 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -68,7 +68,6 @@ aim_shotgun3
 aim_shyam
 aim_speedgaming
 aim_stashhouse
-aim_tmp
 aim_treearena
 aim_warehouse
 aim_warmup
@@ -76,6 +75,7 @@ aim_winter_deagle_up2010
 ar_cbq
 ar_dizzy
 ar_fjord
+ar_shoots
 awp_1337
 awp_arena
 awp_backgammon_b1

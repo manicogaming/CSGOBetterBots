@@ -577,7 +577,7 @@ End
 
 //fnatic Players
 
-ProP+Rifle "flusha"
+ProP+Rifle "Jackinho"
 	VoicePitch = 93
 End
 
@@ -747,11 +747,11 @@ ProP+Rifle "Furlan"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "GruBy"
+ProAwp+SniperPro "mhL"
 	VoicePitch = 106
 End
 
-ProP+Rifle "dgl"
+ProP+Rifle "snatchie"
 	VoicePitch = 86
 End
 
@@ -777,7 +777,7 @@ ProP+Rifle "sergej"
 	VoicePitch = 78
 End
 
-ProP+Rifle "Aerial"
+ProP+Rifle "doto"
 	VoicePitch = 110
 End
 
@@ -1247,7 +1247,7 @@ ProAwp+SniperPro "sLowi"
 	VoicePitch = 87
 End
 
-ProP+Rifle "doto"
+ProP+Rifle "Aerial"
 	VoicePitch = 73
 End
 
@@ -1255,7 +1255,7 @@ ProP+Rifle "xseveN"
 	VoicePitch = 89
 End
 
-ProP+Rifle "sAw"
+ProP+Rifle "jemi"
 	VoicePitch = 100
 End
 
@@ -1339,11 +1339,11 @@ ProP+Rifle "SADDYX"
 	VoicePitch = 103
 End
 
-ProP+Rifle "KHRN"
+ProP+Rifle "zks"
 	VoicePitch = 94
 End
 
-ProP+Rifle "jemi"
+ProP+Rifle "BONA"
 	VoicePitch = 108
 End
 

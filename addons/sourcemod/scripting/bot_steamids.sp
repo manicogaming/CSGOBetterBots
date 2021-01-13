@@ -225,9 +225,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 178562747;
 	}
-	else if(strcmp(szBotName, "flusha") == 0)
+	else if(strcmp(szBotName, "Jackinho") == 0)
 	{
-		iAccountID = 31082355;
+		iAccountID = 111823952;
 	}
 	else if(strcmp(szBotName, "Golden") == 0)
 	{
@@ -364,9 +364,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 177495873;
 	}
-	else if(strcmp(szBotName, "GruBy") == 0)
+	else if(strcmp(szBotName, "mhL") == 0)
 	{
-		iAccountID = 44752530;
+		iAccountID = 180124403;
 	}
 	else if(strcmp(szBotName, "F1KU") == 0)
 	{
@@ -375,6 +375,10 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "leman") == 0)
 	{
 		iAccountID = 40398517;
+	}
+	else if(strcmp(szBotName, "snatchie") == 0)
+	{
+		iAccountID = 111436809;
 	}
 	//ENCE Players
 	else if(strcmp(szBotName, "allu") == 0)
@@ -385,9 +389,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 67574097;
 	}
-	else if(strcmp(szBotName, "Aerial") == 0)
+	else if(strcmp(szBotName, "doto") == 0)
 	{
-		iAccountID = 2445180;
+		iAccountID = 39318615;
 	}
 	else if(strcmp(szBotName, "suNny") == 0)
 	{
@@ -757,13 +761,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 41867139;
 	}
-	else if(strcmp(szBotName, "sAw") == 0)
+	else if(strcmp(szBotName, "jemi") == 0)
 	{
-		iAccountID = 11999475;
+		iAccountID = 932767;
 	}
-	else if(strcmp(szBotName, "doto") == 0)
+	else if(strcmp(szBotName, "Aerial") == 0)
 	{
-		iAccountID = 39318615;
+		iAccountID = 2445180;
 	}
 	else if(strcmp(szBotName, "xseveN") == 0)
 	{
@@ -829,9 +833,13 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 135594020;
 	}
-	else if(strcmp(szBotName, "KHRN") == 0)
+	else if(strcmp(szBotName, "LYNXi") == 0)
 	{
-		iAccountID = 3069751;
+		iAccountID = 123308829;
+	}
+	else if(strcmp(szBotName, "BONA") == 0)
+	{
+		iAccountID = 201490896;
 	}
 	//Bren Players
 	else if(strcmp(szBotName, "Papichulo") == 0)

@@ -37,7 +37,7 @@
 	"NiKo" 				"G2"
 	"AmaNEk" 			"G2"
 	//fnatic Players
-	"flusha" 			"fnatic"
+	"Jackinho" 			"fnatic"
 	"JW" 				"fnatic"
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
@@ -80,15 +80,15 @@
 	"FalleN" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"GruBy" 			"AGO"
-	"dgl" 				"AGO"
+	"mhL" 				"AGO"
+	"snatchie" 			"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
 	"suNny" 			"ENCE"
 	"allu" 				"ENCE"
 	"sergej" 			"ENCE"
-	"Aerial" 			"ENCE"
+	"doto" 				"ENCE"
 	"Jamppi" 			"ENCE"
 	//Vitality Players
 	"shox" 				"Vitality"
@@ -219,9 +219,9 @@
 	//HAVU Players
 	"ZOREE" 			"HAVU"
 	"sLowi" 			"HAVU"
-	"doto" 				"HAVU"
+	"Aerial" 			"HAVU"
 	"xseveN" 			"HAVU"
-	"sAw" 				"HAVU"
+	"jemi" 				"HAVU"
 	//Lyngby Players
 	"birdfromsky"		"Lyngby" 
 	"Twinx" 			"Lyngby"
@@ -244,8 +244,8 @@
 	"arvid" 			"SJ"
 	"LYNXi" 			"SJ"
 	"SADDYX" 			"SJ"
-	"KHRN" 				"SJ"
-	"jemi" 				"SJ"
+	"zks" 				"SJ"
+	"BONA" 				"SJ"
 	//Bren Players
 	"Papichulo" 		"Bren"	
 	"witz" 				"Bren"

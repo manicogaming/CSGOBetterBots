@@ -113,6 +113,11 @@
 				//Is inside CCSBot::SetLookAt
 				"windows"       "23060"
 			}
+			"CCSBot::m_lookAtDesc"
+			{
+				//Is inside CCSBot::SetLookAt
+				"windows"       "23084"
+			}
 		}
 	}
 }
