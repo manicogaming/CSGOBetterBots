@@ -841,7 +841,7 @@ ProP+Rifle "yuurih"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "HEN1"
+ProAwp+SniperPro "Junior"
 	VoicePitch = 100
 End
 
@@ -1291,7 +1291,7 @@ ProAwp+SniperPro "farlig"
 	VoicePitch = 78
 End
 
-ProP+Rifle "kRYSTAL"
+ProP+Rifle "Devilwalk"
 	VoicePitch = 84
 End
 
@@ -1331,11 +1331,11 @@ ProP+Rifle "arvid"
 	VoicePitch = 71
 End
 
-ProAwp+SniperPro "LYNXi"
+ProAwp+SniperPro "jelo"
 	VoicePitch = 110
 End
 
-ProP+Rifle "SADDYX"
+ProP+Rifle "AKE"
 	VoicePitch = 103
 End
 
@@ -1679,7 +1679,7 @@ End
 
 //Sharks Players
 
-ProP+Rifle "pancc"
+ProP+Rifle "realziN"
 	VoicePitch = 108
 End
 
@@ -2519,7 +2519,7 @@ ProP+Rifle "Shakezullah"
 	VoicePitch = 109
 End
 
-ProAwp+SniperPro "Junior"
+ProAwp+SniperPro "Bwills"
 	VoicePitch = 93
 End
 
@@ -2541,7 +2541,7 @@ ProP+Rifle "milky"
 	VoicePitch = 87
 End
 
-ProAwp+SniperPro "Patrick"
+ProAwp+SniperPro "Patrick--"
 	VoicePitch = 90
 End
 
@@ -2824,25 +2824,25 @@ ProP+Rifle "Twixie"
 	VoicePitch = 76
 End
 
-//Wolsung Players
+//DIVIZON Players
 
-ProP+Rifle "hyskeee"
+ProP+Rifle "Patrick"
 	VoicePitch = 96
 End
 
-ProAwp+SniperPro "rAW"
+ProAwp+SniperPro "polzerm"
 	VoicePitch = 112
 End
 
-ProP+Rifle "Gekons"
+ProP+Rifle "hyped"
 	VoicePitch = 104
 End
 
-ProP+Rifle "keen"
+ProP+Rifle "akay"
 	VoicePitch = 96
 End
 
-ProP+Rifle "shield"
+ProP+Rifle "sKahx"
 	VoicePitch = 86
 End
 

@@ -423,9 +423,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 222196859;
 	}
 	//FURIA Players
-	else if(strcmp(szBotName, "HEN1") == 0)
+	else if(strcmp(szBotName, "Junior") == 0)
 	{
-		iAccountID = 57761535;
+		iAccountID = 103793230;
 	}
 	else if(strcmp(szBotName, "yuurih") == 0)
 	{
@@ -791,9 +791,9 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 35794427;
 	}
 	//GODSENT Players
-	else if(strcmp(szBotName, "kRYSTAL") == 0)
+	else if(strcmp(szBotName, "Devilwalk") == 0)
 	{
-		iAccountID = 17526007;
+		iAccountID = 5096217;
 	}
 	else if(strcmp(szBotName, "STYKO") == 0)
 	{
@@ -828,14 +828,6 @@ public void OnClientSettingsChanged(int client)
 	else if(strcmp(szBotName, "arvid") == 0)
 	{
 		iAccountID = 66355043;
-	}
-	else if(strcmp(szBotName, "SADDYX") == 0)
-	{
-		iAccountID = 135594020;
-	}
-	else if(strcmp(szBotName, "LYNXi") == 0)
-	{
-		iAccountID = 123308829;
 	}
 	else if(strcmp(szBotName, "BONA") == 0)
 	{
@@ -1117,9 +1109,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 46114258;
 	}
-	else if(strcmp(szBotName, "pancc") == 0)
+	else if(strcmp(szBotName, "realziN") == 0)
 	{
-		iAccountID = 85456730;
+		iAccountID = 44664741;
 	}
 	//One Players
 	else if(strcmp(szBotName, "Maluk3") == 0)
@@ -1663,9 +1655,9 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 68248927;
 	}
-	else if(strcmp(szBotName, "Junior") == 0)
+	else if(strcmp(szBotName, "Bwills") == 0)
 	{
-		iAccountID = 103793230;
+		iAccountID = 119308817;
 	}
 	else if(strcmp(szBotName, "penny") == 0)
 	{
@@ -1688,7 +1680,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 932616892;
 	}
-	else if(strcmp(szBotName, "Patrick") == 0)
+	else if(strcmp(szBotName, "Patrick--") == 0)
 	{
 		iAccountID = 98715951;
 	}
@@ -1884,7 +1876,7 @@ public void OnClientSettingsChanged(int client)
 	{
 		iAccountID = 109596532;
 	}
-	//Wolsung Players
+	//DIVIZON Players
 	//AGF Players
 	else if(strcmp(szBotName, "fr0slev") == 0)
 	{

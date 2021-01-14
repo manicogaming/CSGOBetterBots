@@ -107,7 +107,7 @@
 	"arT" 				"FURIA"
 	"VINI" 				"FURIA"
 	"KSCERATO" 			"FURIA"
-	"HEN1" 				"FURIA"
+	"Junior" 			"FURIA"
 	//c0ntact Players
 	"Snappi" 			"c0ntact"
 	"ottoNd" 			"c0ntact"
@@ -204,12 +204,12 @@
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
 	"Adam9130" 			"GamerLegion"
-	//Wolsung Players
-	"hyskeee" 			"Wolsung"
-	"rAW" 				"Wolsung"
-	"Gekons" 			"Wolsung"
-	"keen" 				"Wolsung"
-	"shield" 			"Wolsung"
+	//DIVIZON Players
+	"Patrick" 			"DIVIZON"
+	"polzerm" 			"DIVIZON"
+	"hyped" 			"DIVIZON"
+	"akay" 				"DIVIZON"
+	"sKahx" 			"DIVIZON"
 	//PDucks Players
 	"ChLo" 				"PDucks"
 	"sTaR" 				"PDucks"
@@ -231,7 +231,7 @@
 	//GODSENT Players
 	"maden" 			"GODSENT"
 	"farlig" 			"GODSENT"
-	"kRYSTAL" 			"GODSENT"
+	"Devilwalk" 		"GODSENT"
 	"zehN" 				"GODSENT"
 	"STYKO" 			"GODSENT"
 	//Nordavind Players
@@ -242,8 +242,8 @@
 	"cromen" 			"Nordavind"
 	//SJ Players
 	"arvid" 			"SJ"
-	"LYNXi" 			"SJ"
-	"SADDYX" 			"SJ"
+	"jelo" 				"SJ"
+	"AKE" 				"SJ"
 	"zks" 				"SJ"
 	"BONA" 				"SJ"
 	//Bren Players
@@ -337,7 +337,7 @@
 	"biguzera" 			"paiN"
 	"hardzao" 			"paiN"
 	//Sharks Players
-	"pancc"				"Sharks" 
+	"realziN"			"Sharks" 
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
 	"exit" 				"Sharks"
@@ -566,13 +566,13 @@
 	"XinKoiNg" 			"Lynn"
 	//Triumph Players
 	"Shakezullah" 		"Triumph"
-	"Junior" 			"Triumph"
+	"Bwills" 			"Triumph"
 	"ryann" 			"Triumph"
 	"penny" 			"Triumph"
 	"moose" 			"Triumph"
 	//FATE Players
 	"milky"				"FATE" 
-	"Patrick" 			"FATE"
+	"Patrick--" 		"FATE"
 	"Rock1nG" 			"FATE"
 	"shaiK" 			"FATE"	
 	"niki1" 			"FATE"
