@@ -19,6 +19,7 @@ bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCan
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iBotLookAtPosXOffset, g_iBotLookAtPosYOffset, g_iBotLookAtPosZOffset, g_iBotLookAtDescOffset;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
+float g_flNextCommand[MAXPLAYERS + 1];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -3388,22 +3389,22 @@ public Action Team_D13(int client, int iArgs)
 	if (StrEqual(arg, "ct"))
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Tamiraarita");
-		ServerCommand("bot_add_ct %s", "hasteka");
+		ServerCommand("bot_add_ct %s", "tamir");
+		ServerCommand("bot_add_ct %s", "Mistercap");
 		ServerCommand("bot_add_ct %s", "shinobi");
-		ServerCommand("bot_add_ct %s", "sK0R");
-		ServerCommand("bot_add_ct %s", "ANNIHILATION");
+		ServerCommand("bot_add_ct %s", "sk0R");
+		ServerCommand("bot_add_ct %s", "Annihilation");
 		ServerCommand("mp_teamlogo_1 d13");
 	}
 	
 	if (StrEqual(arg, "t"))
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Tamiraarita");
-		ServerCommand("bot_add_t %s", "hasteka");
+		ServerCommand("bot_add_t %s", "tamir");
+		ServerCommand("bot_add_t %s", "Mistercap");
 		ServerCommand("bot_add_t %s", "shinobi");
-		ServerCommand("bot_add_t %s", "sK0R");
-		ServerCommand("bot_add_t %s", "ANNIHILATION");
+		ServerCommand("bot_add_t %s", "sk0R");
+		ServerCommand("bot_add_t %s", "Annihilation");
 		ServerCommand("mp_teamlogo_2 d13");
 	}
 	
@@ -4328,6 +4329,14 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 public void OnMapEnd()
 {
 	SDKUnhook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsFakeClient(i))
+		{
+			g_flNextCommand[i] = 0.0;
+		}
+	}
 }
 
 public void OnClientPostAdminCheck(int client)
@@ -4704,7 +4713,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 	
 	if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex))
 	{
-		FakeClientCommandEx(client, "use weapon_knife");
+		FakeClientCommandThrottled(client, "use weapon_knife");
 	}
 	
 	GetEntDataString(client, g_iBotLookAtDescOffset, szLookAtDesc, sizeof(szLookAtDesc));
@@ -4745,7 +4754,7 @@ public MRESReturn Detour_OnBOTUpdate(int client, Handle hParams)
 			
 			if (fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 			{
-				FakeClientCommandEx(client, "use weapon_knife");
+				FakeClientCommandThrottled(client, "use weapon_knife");
 			}
 		}
 		
@@ -5363,7 +5372,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			{
 				if (iDefIndex != 45)
 				{
-					FakeClientCommandEx(client, "use weapon_smokegrenade");
+					FakeClientCommandThrottled(client, "use weapon_smokegrenade");
 				}
 			}
 			
@@ -5418,7 +5427,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 		{
 			if (iDefIndex != 43)
 			{
-				FakeClientCommandEx(client, "use weapon_flashbang");
+				FakeClientCommandThrottled(client, "use weapon_flashbang");
 			}
 		}
 		
@@ -5901,6 +5910,18 @@ public Action Timer_Zoomed(Handle hTimer, any client)
 	}
 	
 	return Plugin_Stop;
+}
+
+stock bool FakeClientCommandThrottled(int client, const char[] command)
+{
+	if(g_flNextCommand[client] > GetGameTime())
+		return false;
+	
+	FakeClientCommand(client, command);
+	
+	g_flNextCommand[client] = GetGameTime() + 0.4;
+	
+	return true;
 }
 
 float[] SelectBestTargetPos(int client, int &iBestEnemy)

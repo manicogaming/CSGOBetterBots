@@ -2738,11 +2738,11 @@ End
 
 //D13 Players
 
-ProP+Rifle "Tamiraarita"
+ProP+Rifle "tamir"
 	VoicePitch = 86
 End
 
-ProAwp+SniperPro "hasteka"
+ProAwp+SniperPro "Mistercap"
 	VoicePitch = 105
 End
 
@@ -2750,11 +2750,11 @@ ProP+Rifle "shinobi"
 	VoicePitch = 100
 End
 
-ProP+Rifle "sK0R"
+ProP+Rifle "sk0R"
 	VoicePitch = 107
 End
 
-ProP+Rifle "ANNIHILATION"
+ProP+Rifle "Annihilation"
 	VoicePitch = 95
 End
 

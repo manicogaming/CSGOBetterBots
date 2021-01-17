@@ -625,11 +625,11 @@
 	"friberg" 			"DIG"
 	"HEAP" 				"DIG"
 	//D13 Players
-	"Tamiraarita"		"D13" 
-	"hasteka" 			"D13"
+	"tamir"				"D13" 
+	"Mistercap" 		"D13"
 	"shinobi" 			"D13"
-	"sK0R" 				"D13"
-	"ANNIHILATION" 		"D13"	
+	"sk0R" 				"D13"
+	"Annihilation" 		"D13"	
 	//ZIGMA Players
 	"NIFFY" 			"ZIGMA"
 	"Reality" 			"ZIGMA"

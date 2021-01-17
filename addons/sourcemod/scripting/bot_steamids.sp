@@ -1821,6 +1821,26 @@ public void OnClientSettingsChanged(int client)
 		iAccountID = 181546146;
 	}
 	//D13 Players
+	else if(strcmp(szBotName, "tamir") == 0)
+	{
+		iAccountID = 103695333;
+	}
+	else if(strcmp(szBotName, "shinobi") == 0)
+	{
+		iAccountID = 488680911;
+	}
+	else if(strcmp(szBotName, "sk0R") == 0)
+	{
+		iAccountID = 863160115;
+	}
+	else if(strcmp(szBotName, "Annihilation") == 0)
+	{
+		iAccountID = 315821474;
+	}
+	else if(strcmp(szBotName, "Mistercap") == 0)
+	{
+		iAccountID = 375775905;
+	}
 	//ZIGMA Players
 	else if(strcmp(szBotName, "NIFFY") == 0)
 	{
