@@ -616,7 +616,7 @@ public void OnMapStart()
 	g_ArrayMapWeapons = new ArrayList();
 }
 
-public void OnClientPutInServer(int client)
+public void OnClientPostAdminCheck(int client)
 {
 	if (IsValidClient(client))
 	{

@@ -80,7 +80,7 @@
 	"FalleN" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"mhL" 				"AGO"
+	"reatz" 			"AGO"
 	"snatchie" 			"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
@@ -134,10 +134,10 @@
 	"Jerry" 			"forZe"
 	//Winstrike Players
 	"Lack1" 			"Winstrike"
-	"KrizzeN" 			"Winstrike"
+	"Forester" 			"Winstrike"
 	"NickelBack"		"Winstrike"	 
 	"El1an" 			"Winstrike"
-	"bondik" 			"Winstrike"
+	"Krad" 				"Winstrike"
 	//Sprout Players
 	"kressy" 			"Sprout"
 	"slaxz" 			"Sprout"
@@ -165,7 +165,7 @@
 	//Apeks Players
 	"Marcelious" 		"Apeks"
 	"jkaem" 			"Apeks"
-	"Grusarn" 			"Apeks"
+	"Grus" 				"Apeks"
 	"Nasty" 			"Apeks"
 	"dennis" 			"Apeks"
 	//aTTaX Players
@@ -226,7 +226,7 @@
 	"birdfromsky"		"Lyngby" 
 	"Twinx" 			"Lyngby"
 	"Maccen" 			"Lyngby"
-	"Raalz" 			"Lyngby"
+	"raalz" 			"Lyngby"
 	"Cabbi" 			"Lyngby"
 	//GODSENT Players
 	"maden" 			"GODSENT"
@@ -248,7 +248,7 @@
 	"BONA" 				"SJ"
 	//Bren Players
 	"Papichulo" 		"Bren"	
-	"witz" 				"Bren"
+	"micr0" 			"Bren"
 	"Pro." 				"Bren"
 	"JA" 				"Bren"
 	"Derek" 			"Bren"
@@ -266,16 +266,16 @@
 	"larsen" 			"Riders"
 	//eSuba Players
 	"NIO" 				"eSuba"
-	"Levi" 				"eSuba"
-	"The eLiVe" 		"eSuba"	
-	"Blogg1s" 			"eSuba"
+	"twistP" 			"eSuba"
+	"jaro" 				"eSuba"	
+	"blogg1s" 			"eSuba"
 	"luko" 				"eSuba"
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	"iM" 				"Nexus"
-	"sXe" 				"Nexus"
+	"ragga" 			"Nexus"
 	//PACT Players
 	"darko" 			"PACT"
 	"lunAtic" 			"PACT"
@@ -288,18 +288,12 @@
 	"lollipop21k" 		"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
-	//pro100 Players
-	"dimasick" 			"pro100"
-	"WorldEdit" 		"pro100"	
-	"pipsoN" 			"pro100"
-	"wayLander" 		"pro100"	
-	"AiyvaN" 			"pro100"
 	//YaLLa Players
 	"Remind" 			"YaLLa"
 	"eku" 				"YaLLa"
-	"Kheops" 			"YaLLa"
-	"Senpai" 			"YaLLa"
-	"Lyhn" 				"YaLLa"
+	"Empera" 			"YaLLa"
+	"m1N1" 				"YaLLa"
+	"gaB" 				"YaLLa"
 	//Yeah Players
 	"bew" 				"Yeah"
 	"RCF" 				"Yeah"
@@ -307,17 +301,17 @@
 	"Swisher" 			"Yeah"
 	"dumau" 			"Yeah"
 	//Singularity Players
-	"Casle" 			"Singularity"
+	"IceBerg" 			"Singularity"
 	"notaN" 			"Singularity"
 	"Remoy" 			"Singularity"
 	"TOBIZ" 			"Singularity"	
 	"Celrate" 			"Singularity"
 	//DETONA Players
-	"nak" 				"DETONA"
-	"piria" 			"DETONA"
-	"rikz" 				"DETONA"
-	"tiburci0" 			"DETONA"
-	"zevy" 				"DETONA"
+	"lub" 				"DETONA"
+	"kauez" 			"DETONA"
+	"frostezoR" 		"DETONA"
+	"nqz" 				"DETONA"
+	"card" 				"DETONA"
 	//Infinity Players
 	"k1Nky" 			"Infinity"
 	"tor1towOw" 		"Infinity"	
@@ -341,7 +335,7 @@
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
 	"exit" 				"Sharks"
-	"danoco" 			"Sharks"
+	"coachi" 			"Sharks"
 	//One Players
 	"prt" 				"One"
 	"Maluk3" 			"One"
@@ -352,14 +346,14 @@
 	"BL1TZ" 			"Avant"
 	"sterling" 			"Avant"
 	"apoc" 				"Avant"
-	"ofnu" 				"Avant"
+	"HUGHMUNGUS" 		"Avant"
 	"HaZR" 				"Avant"
 	//Chiefs Players
-	"HUGHMUNGUS" 		"Chiefs"
+	"ofnu" 				"Chiefs"
 	"Vexite" 			"Chiefs"
 	"apocdud" 			"Chiefs"
 	"zeph" 				"Chiefs"
-	"soju_j" 			"Chiefs"
+	"yam" 				"Chiefs"
 	//ORDER Players
 	"J1rah" 			"ORDER"
 	"aliStair" 			"ORDER"
@@ -371,7 +365,7 @@
 	"dennyslaw" 		"SKADE"	
 	"Oxygen" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
-	"SPELLAN" 			"SKADE"
+	"pNshr" 			"SKADE"
 	//Paradox Players
 	"rbz" 				"Paradox"
 	"Versa" 			"Paradox"
@@ -401,7 +395,7 @@
 	"powerYY" 			"TTT"
 	"KrowNii" 			"TTT"
 	"pulzG" 			"TTT"
-	"syncD" 			"TTT"
+	"AceCommander" 		"TTT"
 	//PX Players
 	"mindfreak" 		"PX"
 	"d4v41" 			"PX"
@@ -412,8 +406,8 @@
 	"soifong" 			"nxl"
 	"Foscmorc" 			"nxl"
 	"frgd[ibtJ]" 		"nxl"	
-	"Lmemore" 			"nxl"
-	"xera" 				"nxl"
+	"recz" 				"nxl"
+	"StevenH" 			"nxl"
 	//DV Players
 	"TTyke" 			"DV"
 	"DVDOV" 			"DV"
@@ -423,15 +417,15 @@
 	//Energy Players
 	"pnd" 				"Energy"
 	"disTroiT" 			"Energy"
-	"Lichl0rd" 			"Energy"
-	"Tiaantije" 		"Energy"	
+	"Wip3ouT" 			"Energy"
+	"flexeeee" 			"Energy"	
 	"mango" 			"Energy"
 	//Furious Players
 	"abizz" 			"Furious"
 	"tom1" 				"Furious"
-	"Owensinho" 		"Furious"	
-	"iKrystal" 			"Furious"
-	"pablek" 			"Furious"
+	"Owen$inhoM" 		"Furious"	
+	"Gooden" 			"Furious"
+	"nacho" 			"Furious"
 	//GroundZero Players
 	"BURNRUOk" 			"GroundZero"
 	"Laes" 				"GroundZero"
@@ -519,8 +513,8 @@
 	//Imperial Players
 	"fnx" 				"Imperial"
 	"zqk" 				"Imperial"
-	"togs" 				"Imperial"
-	"iDk" 				"Imperial"
+	"ckzao" 			"Imperial"
+	"piria" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
 	//Pompa Players
 	"bnox" 				"Pompa"
@@ -559,11 +553,11 @@
 	"DD" 				"Wings"
 	"gas" 				"Wings"
 	//Lynn Players
-	"XG" 				"Lynn"
+	"westmelon" 		"Lynn"
 	"mitsuha" 			"Lynn"
 	"Aree" 				"Lynn"
 	"EXPRO" 			"Lynn"
-	"XinKoiNg" 			"Lynn"
+	"Mr.mao" 			"Lynn"
 	//Triumph Players
 	"Shakezullah" 		"Triumph"
 	"Bwills" 			"Triumph"
@@ -578,10 +572,10 @@
 	"niki1" 			"FATE"
 	//Canids Players
 	"DeStiNy" 			"Canids"
-	"nythonzinho" 		"Canids"
+	"nython" 			"Canids"
 	"dav1d" 			"Canids"
 	"latto" 			"Canids"
-	"KHTEX" 			"Canids"
+	"tatazin" 			"Canids"
 	//OG Players
 	"NBK-" 				"OG"
 	"mantuu" 			"OG"
@@ -667,7 +661,7 @@
 	"jota" 				"Keyd"
 	"puni" 				"Keyd"
 	//TIGER Players
-	"erkaSt" 			"TIGER"
+	"cool4st" 			"TIGER"
 	"nin9" 				"TIGER"
 	"dobu" 				"TIGER"
 	"kabal" 			"TIGER"
@@ -700,7 +694,7 @@
 	"MAXX" 				"Tigers"
 	"Lastík" 			"Tigers"
 	"zyored" 			"Tigers"
-	"wEAMO" 			"Tigers"
+	"hones" 			"Tigers"
 	"manguss" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
@@ -735,7 +729,7 @@
 	//BL4ZE Players
 	"Rossi" 			"BL4ZE"
 	"Marzil" 			"BL4ZE"
-	"SkRossi" 			"BL4ZE"
+	"RvK" 				"BL4ZE"
 	"Raph" 				"BL4ZE"
 	"cara" 				"BL4ZE"
 	//Global Players
