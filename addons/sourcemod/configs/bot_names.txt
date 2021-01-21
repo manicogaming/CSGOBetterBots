@@ -1,11 +1,11 @@
 "Names"
 {
 	//MIBR Players
-	"kNgV-"				"MIBR"
-	"leo_drk" 			"MIBR"
-	"v$m" 				"MIBR"
-	"LUCAS1" 			"MIBR"
-	"trk" 				"MIBR"
+	"yel"				"MIBR"
+	"chelo" 			"MIBR"
+	"shz" 				"MIBR"
+	"boltz" 			"MIBR"
+	"danoco" 			"MIBR"
 	//FaZe Players
 	"Kjaerbye" 			"FaZe"
 	"broky"  			"FaZe"
@@ -43,7 +43,7 @@
 	"Brollan" 			"fnatic"
 	"Golden" 			"fnatic"
 	//North Players
-	"kreaz" 			"North"
+	"grux" 				"North"
 	"Lekr0" 			"North"
 	"kristou" 			"North"
 	"cajunb" 			"North"
@@ -378,12 +378,6 @@
 	"pr" 				"OFFSET"
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
-	//BOOM Players
-	"chelo"				"BOOM" 
-	"yeL" 				"BOOM"
-	"shz" 				"BOOM"
-	"boltz" 			"BOOM"
-	"felps" 			"BOOM"
 	//NASR Players
 	"proxyyb" 			"NASR"
 	"Real1ze" 			"NASR"
@@ -449,7 +443,7 @@
 	"mou" 				"K23"
 	"n0rb3r7" 			"K23"
 	"kade0" 			"K23"
-	"Ramz1kBO$$" 		"K23"
+	"AdreN" 			"K23"
 	//Goliath Players
 	"massacRe" 			"Goliath"
 	"Dweezil" 			"Goliath"
@@ -476,7 +470,7 @@
 	"XiaosaGe" 			"IG"
 	//HR Players
 	"kAliNkA" 			"HR"
-	"jR" 				"HR"
+	"anarkez" 			"HR"
 	"Flarich" 			"HR"
 	"ProbLeM" 			"HR"
 	"JIaYm" 			"HR"
@@ -561,9 +555,9 @@
 	//Triumph Players
 	"Shakezullah" 		"Triumph"
 	"Bwills" 			"Triumph"
-	"ryann" 			"Triumph"
-	"penny" 			"Triumph"
-	"moose" 			"Triumph"
+	"Cooper-" 			"Triumph"
+	"cxzi" 				"Triumph"
+	"viz" 				"Triumph"
 	//FATE Players
 	"milky"				"FATE" 
 	"Patrick--" 		"FATE"
@@ -654,12 +648,6 @@
 	"s0und" 			"GameAgents"
 	"regali" 			"GameAgents"
 	"CHANKY" 			"GameAgents"
-	//Keyd Players
-	"bnc" 				"Keyd"
-	"mawth" 			"Keyd"
-	"tifa" 				"Keyd"
-	"jota" 				"Keyd"
-	"puni" 				"Keyd"
 	//TIGER Players
 	"cool4st" 			"TIGER"
 	"nin9" 				"TIGER"
@@ -756,12 +744,12 @@
 	"kst" 				"eXploit"
 	"whatz" 			"eXploit"
 	"renatoohaxx" 		"eXploit"
-	//KPI Players
-	"pounh" 			"KPI"
-	"SAYN" 				"KPI"
-	"Aaron" 			"KPI"	
-	"Butters" 			"KPI"
-	"ztr" 				"KPI"
+	//Ambush Players
+	"SBT" 				"Ambush"
+	"wasiNk" 			"Ambush"
+	"DrqkoN" 			"Ambush"	
+	"SoneSb" 			"Ambush"
+	"Gringo" 			"Ambush"
 	//hREDS Players
 	"eDi" 				"hREDS"
 	"oopee" 			"hREDS"

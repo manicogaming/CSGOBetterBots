@@ -439,23 +439,23 @@ End
 
 //MIBR Players
 
-ProP+Rifle "leo_drk"
+ProP+Rifle "chelo"
 	VoicePitch = 73
 End
 
-ProAwp+SniperPro "kNgV-"
+ProAwp+SniperPro "yel"
 	VoicePitch = 80
 End
 
-ProP+Rifle "v$m"
+ProP+Rifle "shz"
 	VoicePitch = 88
 End
 
-ProP+Rifle "LUCAS1"
+ProP+Rifle "boltz"
 	VoicePitch = 96
 End
 
-ProP+Rifle "trk"
+ProP+Rifle "danoco"
 	VoicePitch = 100
 End
 
@@ -603,11 +603,11 @@ ProP+Rifle "Lekr0"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "kreaz"
+ProAwp+SniperPro "kristou"
 	VoicePitch = 85
 End
 
-ProP+Rifle "kristou"
+ProP+Rifle "grux"
 	VoicePitch = 108
 End
 
@@ -1831,28 +1831,6 @@ ProP+Rifle "shellzi"
 	VoicePitch = 79
 End
 
-//BOOM Players
-
-ProP+Rifle "chelo"
-	VoicePitch = 90
-End
-
-ProAwp+SniperPro "yeL"
-	VoicePitch = 76
-End
-
-ProP+Rifle "shz"
-	VoicePitch = 80
-End
-
-ProP+Rifle "boltz"
-	VoicePitch = 90
-End
-
-ProP+Rifle "felps"
-	VoicePitch = 94
-End
-
 //NASR Players
 
 ProP+Rifle "proxyyb"
@@ -2091,7 +2069,7 @@ ProP+Rifle "kade0"
 	VoicePitch = 100
 End
 
-ProP+Rifle "Ramz1kBO$$"
+ProP+Rifle "AdreN"
 	VoicePitch = 111
 End
 
@@ -2189,7 +2167,7 @@ ProP+Rifle "kAliNkA"
 	VoicePitch = 74
 End
 
-ProAwp+SniperPro "jR"
+ProAwp+SniperPro "anarkez"
 	VoicePitch = 86
 End
 
@@ -2497,19 +2475,19 @@ ProP+Rifle "Shakezullah"
 	VoicePitch = 109
 End
 
-ProAwp+SniperPro "Bwills"
+ProAwp+SniperPro "Cooper-"
 	VoicePitch = 93
 End
 
-ProP+Rifle "ryann"
+ProP+Rifle "Bwills"
 	VoicePitch = 100
 End
 
-ProP+Rifle "penny"
+ProP+Rifle "cxzi"
 	VoicePitch = 79
 End
 
-ProP+Rifle "moose"
+ProP+Rifle "viz"
 	VoicePitch = 87
 End
 
@@ -2868,28 +2846,6 @@ ProP+Rifle "CHANKY"
 	VoicePitch = 79
 End
 
-//Keyd Players
-
-ProP+Rifle "bnc"
-	VoicePitch = 85
-End
-
-ProAwp+SniperPro "mawth"
-	VoicePitch = 108
-End
-
-ProP+Rifle "tifa"
-	VoicePitch = 100
-End
-
-ProP+Rifle "jota"
-	VoicePitch = 98
-End
-
-ProP+Rifle "puni"
-	VoicePitch = 115
-End
-
 //TIGER Players
 
 ProP+Rifle "cool4st"
@@ -3243,25 +3199,25 @@ ProP+Rifle "renatoohaxx"
 	VoicePitch = 79
 End
 
-//KPI Players
+//Ambush Players
 
-ProP+Rifle "pounh"
+ProP+Rifle "SBT"
 	VoicePitch = 82
 End
 
-ProAwp+SniperPro "SAYN"
+ProAwp+SniperPro "wasiNk"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Aaron"
+ProP+Rifle "DrqkoN"
 	VoicePitch = 101
 End
 
-ProP+Rifle "Butters"
+ProP+Rifle "SoneSb"
 	VoicePitch = 90
 End
 
-ProP+Rifle "ztr"
+ProP+Rifle "Gringo"
 	VoicePitch = 92
 End
 
