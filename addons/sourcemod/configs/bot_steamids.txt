@@ -28,7 +28,7 @@
 	"ALEX" 				"44605706"
 	"es3tag" 			"1859646"
 	"mezii"				"12874964"
-	"woxic" 			"123219778"
+	"Xeppaa" 			"282149574"
 	"floppy" 			"346253535"
 	//G2 Players
 	"huNter-" 			"52606325"
@@ -85,11 +85,11 @@
 	"F1KU" 				"292168772"
 	"leman" 			"40398517"
 	//ENCE Players
-	"suNny" 			"57405333"
+	"Snappi" 			"29157337"
 	"allu" 				"1345246"
-	"sergej" 			"67574097"
+	"Spinx" 			"1298797256"
 	"doto" 				"39318615"
-	"Jamppi" 			"206686473"
+	"dycha" 			"81151265"
 	//Vitality Players
 	"shox" 				"46654567"
 	"ZywOo" 			"153400465"
@@ -108,12 +108,7 @@
 	"VINI" 				"36104456"
 	"KSCERATO" 			"98234764"
 	"Junior" 			"103793230"
-	//c0ntact Players
-	"Snappi" 			"29157337"
-	"ottoNd" 			"75069143"
-	"rigoN" 			"212571293"
-	"Spinx" 			"1298797256"
-	"EspiranTo" 		"84772046"	
+	//Santos Players
 	//coL Players
 	"k0nfig" 			"19403447"
 	"poizon" 			"117537138"
@@ -182,7 +177,7 @@
 	"LEGIJA" 			"21242287"
 	//Spirit Players
 	"mir" 				"40562076"
-	"iDISBALANCE" 		"210384169"
+	"degster" 			"839074394"
 	"somedieyoung" 		"80311472"
 	"chopper" 			"85633136"
 	"magixx" 			"868554"
@@ -211,11 +206,11 @@
 	"raalz" 			"35794427"
 	"Cabbi" 			"230664742"
 	//GODSENT Players
-	"maden" 			"205186299"
-	"farlig" 			"63982401"
-	"Devilwalk" 		"5096217"
-	"zehN" 				"16308501"
-	"STYKO" 			"55928431"
+	"TACO" 				"52876568"
+	"b4rtiN" 			"169818854"
+	"felps" 			"22765766"
+	"latto" 			"889754458"
+	"dumau" 			"234059589"
 	//Nordavind Players
 	"NaToSaphiX" 		"41330524"
 	"Rytter" 			"30954725"
@@ -269,7 +264,7 @@
 	"RCF" 				"206261197"
 	"f4stzin" 			"476343738"
 	"Swisher" 			"222737943"
-	"dumau" 			"234059589"
+	"mza" 				"70229171"
 	//Singularity Players
 	"notaN" 			"70656220"
 	"Remoy" 			"68675449"
@@ -480,7 +475,7 @@
 	//Canids Players
 	"DeStiNy" 			"89528706"
 	"nython" 			"170224923"
-	"latto" 			"889754458"
+	"prd" 				"27903842"
 	"tatazin" 			"34836484"
 	//OG Players
 	"NBK-" 				"444845"
@@ -569,9 +564,6 @@
 	"brA" 				"8661121"
 	"plat" 				"300562274"
 	"Cunha" 			"203400597"
-	//QBF Players
-	"JACKPOT" 			"147382385"
-	"hiji" 				"46433989"
 	//Tigers Players
 	//9z Players
 	"dgt" 				"256625848"

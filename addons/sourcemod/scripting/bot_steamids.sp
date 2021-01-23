@@ -67,7 +67,7 @@ public void OnClientSettingsChanged(int client)
 
 	if(!GetAccountID(szBotName, iAccountID))
 	{
-		iAccountID = Math_GetRandomInt(3, 1091249497);
+		iAccountID = Math_GetRandomInt(3, 2147483647);
 	}
 
 	int iSteamIdHigh = 16781313;

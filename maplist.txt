@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Jan 21 04:28:19 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Fri Jan 22 23:03:20 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -130,7 +130,6 @@ cs_bloodstrike_old
 cs_camouflage_csgo
 cs_cappa
 cs_compound
-cs_compound_d
 cs_concert
 cs_cruise
 cs_deadhouse
@@ -140,14 +139,12 @@ cs_hijack
 cs_hostage_taking
 cs_isku
 cs_italy
-cs_italy_d
 cs_ivory
 cs_lanpartymayhem
 cs_mari
 cs_militia
 cs_museum
 cs_office
-cs_office_d
 cs_siege
 cs_warmblow_beta01
 cs_winternights
@@ -274,7 +271,6 @@ de_overpass
 de_parthenon_royal
 de_portugal_rc1
 de_pripyat
-de_prodigy_d
 de_rails
 de_rats_1337_v2
 de_region
@@ -309,6 +305,7 @@ de_zen
 deagle_ultra
 deathzone
 dm_bloodsport
+dm_lair
 fun_pacman_v1
 fy_aztec_fire_csgo
 fy_back_street

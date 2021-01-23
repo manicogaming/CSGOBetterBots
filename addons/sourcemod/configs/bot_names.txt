@@ -28,7 +28,7 @@
 	"ALEX" 				"C9"
 	"es3tag" 			"C9"
 	"mezii"				"C9"
-	"woxic" 			"C9"
+	"Xeppaa" 			"C9"
 	"floppy" 			"C9"
 	//G2 Players
 	"huNter-" 			"G2"
@@ -85,11 +85,11 @@
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
-	"suNny" 			"ENCE"
+	"Snappi" 			"ENCE"
 	"allu" 				"ENCE"
-	"sergej" 			"ENCE"
+	"Spinx" 			"ENCE"
 	"doto" 				"ENCE"
-	"Jamppi" 			"ENCE"
+	"dycha" 			"ENCE"
 	//Vitality Players
 	"shox" 				"Vitality"
 	"ZywOo" 			"Vitality"
@@ -108,12 +108,12 @@
 	"VINI" 				"FURIA"
 	"KSCERATO" 			"FURIA"
 	"Junior" 			"FURIA"
-	//c0ntact Players
-	"Snappi" 			"c0ntact"
-	"ottoNd" 			"c0ntact"
-	"rigoN" 			"c0ntact"
-	"Spinx" 			"c0ntact"
-	"EspiranTo" 		"c0ntact"	
+	//Santos Players
+	"xns" 				"Santos"
+	"keiz" 				"Santos"
+	"voltera" 			"Santos"
+	"MaLLby" 			"Santos"
+	"BobZ" 				"Santos"	
 	//coL Players
 	"k0nfig" 			"coL"
 	"poizon" 			"coL"
@@ -188,7 +188,7 @@
 	"LEGIJA" 			"Envy"
 	//Spirit Players
 	"mir" 				"Spirit"
-	"iDISBALANCE" 		"Spirit"
+	"degster" 			"Spirit"
 	"somedieyoung" 		"Spirit"
 	"chopper" 			"Spirit"
 	"magixx" 			"Spirit"
@@ -229,11 +229,11 @@
 	"raalz" 			"Lyngby"
 	"Cabbi" 			"Lyngby"
 	//GODSENT Players
-	"maden" 			"GODSENT"
-	"farlig" 			"GODSENT"
-	"Devilwalk" 		"GODSENT"
-	"zehN" 				"GODSENT"
-	"STYKO" 			"GODSENT"
+	"TACO" 				"GODSENT"
+	"b4rtiN" 			"GODSENT"
+	"felps" 			"GODSENT"
+	"latto" 			"GODSENT"
+	"dumau" 			"GODSENT"
 	//Nordavind Players
 	"bfr" 				"Nordavind"
 	"NaToSaphiX" 		"Nordavind"
@@ -299,7 +299,7 @@
 	"RCF" 				"Yeah"
 	"f4stzin" 			"Yeah"
 	"Swisher" 			"Yeah"
-	"dumau" 			"Yeah"
+	"mza" 				"Yeah"
 	//Singularity Players
 	"IceBerg" 			"Singularity"
 	"notaN" 			"Singularity"
@@ -568,7 +568,7 @@
 	"DeStiNy" 			"Canids"
 	"nython" 			"Canids"
 	"dav1d" 			"Canids"
-	"latto" 			"Canids"
+	"prd" 				"Canids"
 	"tatazin" 			"Canids"
 	//OG Players
 	"NBK-" 				"OG"
@@ -672,12 +672,6 @@
 	"brA" 				"FTW"
 	"plat" 				"FTW"
 	"Cunha" 			"FTW"
-	//QBF Players
-	"JACKPOT" 			"QBF"
-	"Quantium" 			"QBF"
-	"Kas9k"				"QBF"
-	"hiji" 				"QBF"
-	"lesswill" 			"QBF"
 	//Tigers Players
 	"MAXX" 				"Tigers"
 	"Lastík" 			"Tigers"

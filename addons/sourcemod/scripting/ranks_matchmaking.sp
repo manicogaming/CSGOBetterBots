@@ -21,16 +21,10 @@ ConVar g_CVAR_RanksPoints[51];
 ConVar g_CVAR_RankPoints_Type;
 ConVar g_CVAR_RankPoints_Flag;
 ConVar g_CVAR_RankPoints_Prefix;
-ConVar g_CVAR_RankPoints_SoundEnable;
-ConVar g_CVAR_RankPoints_SoundRankUp;
-ConVar g_CVAR_RankPoints_SoundRankDown;
 
 // Variables to store ConVar values;
 int g_RankPoints_Type;
 int g_RankPoints_Flag;
-int g_RankPoints_SoundEnable;
-char g_RankPoints_SoundRankUp[PLATFORM_MAX_PATH];
-char g_RankPoints_SoundRankDown[PLATFORM_MAX_PATH];
 char g_RankPoints_Prefix[40];
 int RankPoints[51];
 
@@ -60,9 +54,6 @@ public void OnPluginStart()
 	g_CVAR_RankPoints_Type = CreateConVar("ranks_matchmaking_typeofrank", "0", "Type of Rank that you want to use for this plugin (0 for Kento Rankme, 1 for GameMe, 2 for ZR Rank, 3 for HLStatsX)", _, true, 0.0, true, 3.0);
 	g_CVAR_RankPoints_Prefix = CreateConVar("ranks_matchmaking_prefix", "[{purple}Fake Ranks{default}]", "Chat Prefix");
 	g_CVAR_RankPoints_Flag = CreateConVar("ranks_matchmaking_flag", "", "Flag to restrict the ranks to certain players (leave it empty to enable for everyone)");
-	g_CVAR_RankPoints_SoundEnable = CreateConVar("ranks_matchmaking_soundenable", "1", "Enable sounds when a player ranks up or deranks", _, true, 0.0, true, 1.0);
-	g_CVAR_RankPoints_SoundRankUp = CreateConVar("ranks_matchmaking_soundrankup", "levels_ranks/levelup.mp3", "Path to the sound which will play on Rank Up (needs \"ranks_matchmaking_soundenable\" set to 1)");
-	g_CVAR_RankPoints_SoundRankDown = CreateConVar("ranks_matchmaking_soundrankdown", "levels_ranks/leveldown.mp3", "Path to the sound which will play on Derank (needs \"ranks_matchmaking_soundenable\" set to 1)");
 	
 	// Rank Points ConVars;
 	g_CVAR_RanksPoints[0] = CreateConVar("ranks_matchmaking_point_rat1", "100", "Number of Points to reach Lab Rat I", _, true, 0.0, false);
@@ -158,11 +149,6 @@ public void OnMapStart()
 	
 	g_CVAR_RankPoints_Prefix.GetString(g_RankPoints_Prefix, sizeof(g_RankPoints_Prefix));
 	
-	g_RankPoints_SoundEnable = g_CVAR_RankPoints_SoundEnable.IntValue;
-	
-	g_CVAR_RankPoints_SoundRankUp.GetString(g_RankPoints_SoundRankUp, sizeof(g_RankPoints_SoundRankUp));
-	g_CVAR_RankPoints_SoundRankDown.GetString(g_RankPoints_SoundRankDown, sizeof(g_RankPoints_SoundRankDown));
-	
 	char buffer[10];
 	g_CVAR_RankPoints_Flag.GetString(buffer, sizeof(buffer));
 	
@@ -181,20 +167,6 @@ public void OnMapStart()
 	SDKHook(iIndex, SDKHook_ThinkPost, Hook_OnThinkPost);
 	
 	GetRanksNames();
-	
-	if(g_RankPoints_SoundEnable)
-		GetRanksGradesSounds();
-}
-
-public void GetRanksGradesSounds()
-{
-	char buffer[PLATFORM_MAX_PATH];
-	Format(buffer, sizeof(buffer), "sound/%s", g_RankPoints_SoundRankUp);
-	AddFileToDownloadsTable(buffer);
-	Format(buffer, sizeof(buffer), "*/%s", g_RankPoints_SoundRankUp);
-	Format(buffer, sizeof(buffer), "sound/%s", g_RankPoints_SoundRankDown);
-	AddFileToDownloadsTable(buffer);
-	Format(buffer, sizeof(buffer), "*/%s", g_RankPoints_SoundRankDown);
 }
 
 public void GetRanksNames()
@@ -439,24 +411,8 @@ public void CheckRanks(int client, int points)
 		rank[client] = 18;
 	
 	if(rank[client] > oldrank[client] && rank[client] > 0)
-	{		
-		if(g_RankPoints_SoundEnable)
-		{
-			ClientCommand(client, "playgamesound Music.StopAllMusic");
-			EmitSoundToClient(client, g_RankPoints_SoundRankUp, SOUND_FROM_PLAYER, SNDCHAN_STATIC, SNDLEVEL_NONE, _, 0.75);
-		}
-		
+	{	
 		RankUpdate(client, oldrank[client], rank[client]);
-	}
-	
-	if(rank[client] < oldrank[client] && rank[client] > 0)
-	{
-		
-		if(g_RankPoints_SoundEnable)
-		{
-			ClientCommand(client, "playgamesound Music.StopAllMusic");
-			EmitSoundToClient(client, g_RankPoints_SoundRankDown, SOUND_FROM_PLAYER, SNDCHAN_STATIC, SNDLEVEL_NONE, _, 0.75);
-		}
 	}
 	
 	oldrank[client] = rank[client];

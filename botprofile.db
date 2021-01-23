@@ -504,6 +504,9 @@ End
 
 ProP+Rifle "dupreeh"
 	VoicePitch = 73
+	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //NiP Players
@@ -534,7 +537,7 @@ ProP+Rifle "ALEX"
 	VoicePitch = 80
 End
 
-ProAwp+SniperPro "woxic"
+ProAwp+SniperPro "Xeppaa"
 	VoicePitch = 105
 End
 
@@ -692,7 +695,7 @@ End
 
 ProP+Rifle "electronic"
 	VoicePitch = 85
-	LookAngleMaxAccelAttacking = 10000.0 
+	LookAngleMaxAccelAttacking = 20000.0 
 	LookAngleStiffnessAttacking = 900.0
 	LookAngleDampingAttacking = 40.100
 End
@@ -765,7 +768,7 @@ End
 
 //ENCE Players
 
-ProP+Rifle "suNny"
+ProP+Rifle "Snappi"
 	VoicePitch = 100
 End
 
@@ -773,7 +776,7 @@ ProAwp+SniperPro "allu"
 	VoicePitch = 95
 End
 
-ProP+Rifle "sergej"
+ProP+Rifle "Spinx"
 	VoicePitch = 78
 End
 
@@ -781,7 +784,7 @@ ProP+Rifle "doto"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Jamppi"
+ProP+Rifle "dycha"
 	VoicePitch = 91
 End
 
@@ -857,25 +860,25 @@ ProP+Rifle "arT"
 	VoicePitch = 86
 End
 
-//c0ntact Players
+//Santos Players
 
-ProP+Rifle "Snappi"
+ProP+Rifle "xns"
 	VoicePitch = 74
 End
 
-ProAwp+SniperPro "ottoNd"
+ProAwp+SniperPro "keiz"
 	VoicePitch = 105
 End
 
-ProP+Rifle "rigoN"
+ProP+Rifle "voltera"
 	VoicePitch = 115
 End
 
-ProP+Rifle "Spinx"
+ProP+Rifle "MaLLby"
 	VoicePitch = 73
 End
 
-ProP+Rifle "EspiranTo"
+ProP+Rifle "BobZ"
 	VoicePitch = 89
 End
 
@@ -899,7 +902,7 @@ End
 
 ProP+Rifle "blameF"
 	VoicePitch = 102
-	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleMaxAccelAttacking = 10000.0 
 	LookAngleStiffnessAttacking = 900.0
 	LookAngleDampingAttacking = 40.100
 End
@@ -1150,12 +1153,9 @@ End
 
 ProP+Rifle "mir"
 	VoicePitch = 97
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
-ProAwp+SniperPro "iDISBALANCE"
+ProAwp+SniperPro "degster"
 	VoicePitch = 106
 End
 
@@ -1283,23 +1283,23 @@ End
 
 //GODSENT Players
 
-ProP+Rifle "maden"
+ProP+Rifle "TACO"
 	VoicePitch = 88
 End
 
-ProAwp+SniperPro "farlig"
+ProAwp+SniperPro "b4rtiN"
 	VoicePitch = 78
 End
 
-ProP+Rifle "Devilwalk"
+ProP+Rifle "felps"
 	VoicePitch = 84
 End
 
-ProP+Rifle "zehN"
+ProP+Rifle "latto"
 	VoicePitch = 95
 End
 
-ProP+Rifle "STYKO"
+ProP+Rifle "dumau"
 	VoicePitch = 103
 End
 
@@ -1541,7 +1541,7 @@ ProP+Rifle "Swisher"
 	VoicePitch = 93
 End
 
-ProP+Rifle "dumau"
+ProP+Rifle "mza"
 	VoicePitch = 91
 End
 
@@ -2527,7 +2527,7 @@ ProP+Rifle "dav1d"
 	VoicePitch = 104
 End
 
-ProP+Rifle "latto"
+ProP+Rifle "prd"
 	VoicePitch = 75
 End
 
@@ -2543,9 +2543,6 @@ End
 
 ProAwp+SniperPro "mantuu"
 	VoicePitch = 91
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Aleksib"
@@ -2932,28 +2929,6 @@ End
 
 ProP+Rifle "Cunha"
 	VoicePitch = 103
-End
-
-//QBF Players
-
-ProP+Rifle "JACKPOT"
-	VoicePitch = 87
-End
-
-ProAwp+SniperPro "Quantium"
-	VoicePitch = 89
-End
-
-ProP+Rifle "Kas9k"
-	VoicePitch = 100
-End
-
-ProP+Rifle "hiji"
-	VoicePitch = 110
-End
-
-ProP+Rifle "lesswill"
-	VoicePitch = 86
 End
 
 //Tigers Players
