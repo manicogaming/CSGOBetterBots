@@ -514,7 +514,6 @@
 	"HEAP" 				"181546146"
 	//D13 Players
 	"tamir"				"103695333" 
-	"Mistercap" 		"375775905"
 	"shinobi" 			"488680911"
 	"sk0R" 				"863160115"
 	"Annihilation" 		"315821474"	

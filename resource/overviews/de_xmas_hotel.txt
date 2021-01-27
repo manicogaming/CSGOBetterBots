@@ -1,9 +1,0 @@
-"de_xmas_hotel"
-{
-	"material"	"overviews/de_xmas_hotel"	// texture file
-	"pos_x"		"-1856"	// X coordinate,
-	"pos_y"		"1596"	// Y coordinate,
-	"scale"		"4.0" 	// and used scale used when taking the screenshot
-	"rotate"	"0"	// map was rotated by 90 degress in image editor
-	"zoom"		"1.3"	
-}

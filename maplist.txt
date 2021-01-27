@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri Jan 22 23:03:20 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Wed Jan 27 14:06:52 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -272,7 +272,6 @@ de_parthenon_royal
 de_portugal_rc1
 de_pripyat
 de_rails
-de_rats_1337_v2
 de_region
 de_rotterdam
 de_ruins
@@ -300,7 +299,6 @@ de_vacant
 de_vertigo
 de_waterfall
 de_westwood
-de_xmas_hotel
 de_zen
 deagle_ultra
 deathzone

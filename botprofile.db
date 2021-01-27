@@ -725,7 +725,7 @@ ProP+Rifle "Stewie2K"
 	VoicePitch = 101
 End
 
-ProAwp+SniperPro "NAF"
+ProAwp+SniperPro "FalleN"
 	VoicePitch = 90
 End
 
@@ -740,7 +740,7 @@ ProP+Rifle "ELiGE"
 	LookAngleDampingAttacking = 40.100
 End
 
-ProP+Rifle "FalleN"
+ProP+Rifle "NAF"
 	VoicePitch = 102
 End
 
@@ -2695,7 +2695,7 @@ ProP+Rifle "tamir"
 	VoicePitch = 86
 End
 
-ProAwp+SniperPro "Mistercap"
+ProAwp+SniperPro "xerolte"
 	VoicePitch = 105
 End
 

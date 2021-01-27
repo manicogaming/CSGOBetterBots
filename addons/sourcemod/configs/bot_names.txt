@@ -614,7 +614,7 @@
 	"HEAP" 				"DIG"
 	//D13 Players
 	"tamir"				"D13" 
-	"Mistercap" 		"D13"
+	"xerolte" 			"D13"
 	"shinobi" 			"D13"
 	"sk0R" 				"D13"
 	"Annihilation" 		"D13"	
