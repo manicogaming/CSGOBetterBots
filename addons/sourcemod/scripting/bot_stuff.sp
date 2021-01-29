@@ -4740,7 +4740,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 65)
+					if (Math_GetRandomInt(1, 100) <= 75)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
