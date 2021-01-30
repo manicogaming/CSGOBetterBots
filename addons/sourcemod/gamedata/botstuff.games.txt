@@ -118,6 +118,11 @@
 				//Is inside CCSBot::SetLookAt
 				"windows"       "23108"
 			}
+			"CCSBot::m_fireWeaponTimestamp"
+			{
+				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
+				"windows"       "24692"
+			}
 		}
 		"MemPatches"
 		{

@@ -17,7 +17,7 @@ bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iBotLookAtPosXOffset, g_iBotLookAtPosYOffset, g_iBotLookAtPosZOffset, g_iBotLookAtDescOffset;
+int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iBotLookAtPosXOffset, g_iBotLookAtPosYOffset, g_iBotLookAtPosZOffset, g_iBotLookAtDescOffset, g_iFireWeaponOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
@@ -119,6 +119,7 @@ public void OnPluginStart()
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
+	HookEventEx("weapon_fire", OnWeaponFire);
 	
 	LoadSDK();
 	LoadDetours();
@@ -4591,9 +4592,30 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
 	
-	if (IsValidClient(client) && IsFakeClient(client))
+	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 	{
 		CreateTimer(0.3, Timer_Zoomed, GetClientUserId(client));
+	}
+}
+
+public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && IsValidClient(g_iTarget[client]))
+	{
+		char szWeaponName[64];
+		float fClientLoc[3], fTargetLoc[3];
+		
+		GetClientAbsOrigin(client, fClientLoc);
+		GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
+		
+		float fRangeToEnemy = GetVectorDistance(fClientLoc, fTargetLoc);
+		eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
+		
+		if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 360.0)
+		{
+			SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.4, 0.70));
+		}
 	}
 }
 
@@ -5343,6 +5365,11 @@ public void LoadSDK()
 	if ((g_iBotLookAtDescOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtDesc")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_lookAtDesc offset.");
+	}
+	
+	if ((g_iFireWeaponOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_fireWeaponTimestamp offset.");
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);
