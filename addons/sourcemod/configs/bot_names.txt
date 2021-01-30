@@ -50,7 +50,7 @@
 	"gade" 				"North"
 	//mouz Players
 	"karrigan"			"mouz" 
-	"chrisJ" 			"mouz"
+	"acoR" 				"mouz"
 	"Bymas" 			"mouz"
 	"frozen" 			"mouz"
 	"ropz" 				"mouz"
@@ -163,10 +163,10 @@
 	"SANJI" 			"VP"
 	"buster" 			"VP"
 	//Apeks Players
-	"Marcelious" 		"Apeks"
-	"jkaem" 			"Apeks"
+	"kreaz" 			"Apeks"
+	"FREDDyFROG" 		"Apeks"
 	"Grus" 				"Apeks"
-	"Nasty" 			"Apeks"
+	"Relaxa" 			"Apeks"
 	"dennis" 			"Apeks"
 	//aTTaX Players
 	"stfN" 				"aTTaX"
@@ -227,19 +227,13 @@
 	"Twinx" 			"Lyngby"
 	"Maccen" 			"Lyngby"
 	"raalz" 			"Lyngby"
-	"Cabbi" 			"Lyngby"
+	"FeTiSh" 			"Lyngby"
 	//GODSENT Players
 	"TACO" 				"GODSENT"
 	"b4rtiN" 			"GODSENT"
 	"felps" 			"GODSENT"
 	"latto" 			"GODSENT"
 	"dumau" 			"GODSENT"
-	//Nordavind Players
-	"bfr" 				"Nordavind"
-	"NaToSaphiX" 		"Nordavind"
-	"sense" 			"Nordavind"
-	"Rytter" 			"Nordavind"
-	"cromen" 			"Nordavind"
 	//SJ Players
 	"arvid" 			"SJ"
 	"jelo" 				"SJ"
@@ -254,7 +248,7 @@
 	"Derek" 			"Bren"
 	//Lions Players
 	"HooXi" 			"Lions"
-	"acoR" 				"Lions"
+	"TMB" 				"Lions"
 	"Sjuush" 			"Lions"	
 	"refrezh" 			"Lions"
 	"roeJ" 				"Lions"
@@ -350,13 +344,13 @@
 	"HaZR" 				"Avant"
 	//Chiefs Players
 	"ofnu" 				"Chiefs"
-	"Vexite" 			"Chiefs"
+	"aliStair" 			"Chiefs"
 	"apocdud" 			"Chiefs"
 	"zeph" 				"Chiefs"
 	"yam" 				"Chiefs"
 	//ORDER Players
 	"J1rah" 			"ORDER"
-	"aliStair" 			"ORDER"
+	"Vexite" 			"ORDER"
 	"Rickeh" 			"ORDER"
 	"USTILO" 			"ORDER"
 	"Valiance" 			"ORDER"
@@ -432,12 +426,12 @@
 	"slaxx" 			"GTZ"
 	"dead" 				"GTZ"
 	"fakes2" 			"GTZ"
-	//x6tence Players
-	"Queenix" 			"x6tence"
-	"tenzki" 			"x6tence"
-	"maNkz" 			"x6tence"
-	"mertz" 			"x6tence"
-	"Nodios" 			"x6tence"
+	//EXTREMUM Players
+	"AZR" 				"EXTREMUM"
+	"Liazz" 			"EXTREMUM"
+	"jkaem" 			"EXTREMUM"
+	"Gratisfaction" 	"EXTREMUM"
+	"BnTeT" 			"EXTREMUM"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"mou" 				"K23"
@@ -456,12 +450,12 @@
 	"HadeZ" 			"UOL"	
 	"Python" 			"UOL"
 	"P4TriCK" 			"UOL"
-	//Queso Players
-	"TheClaran" 		"Queso"
-	"thinkii" 			"Queso"
-	"HUMANZ" 			"Queso"
-	"mik" 				"Queso"
-	"Yaba" 				"Queso"
+	//FPX Players
+	"zehN" 				"FPX"
+	"STYKO" 			"FPX"
+	"farlig" 			"FPX"
+	"maden" 			"FPX"
+	"chrisJ" 			"FPX"
 	//IG Players
 	"bottle" 			"IG"
 	"DeStRoYeR" 		"IG"	
@@ -487,7 +481,7 @@
 	"EIZA" 				"Vexed"
 	"volt" 				"Vexed"
 	//HLE Players
-	"d1Ledez" 			"HLE"
+	"BELCHONOKK" 		"HLE"
 	"DrobnY" 			"HLE"	
 	"Raijin" 			"HLE"
 	"dekzz" 			"HLE"
@@ -593,7 +587,7 @@
 	"koosta" 			"Gen.G"
 	"daps" 				"Gen.G"
 	"s0m" 				"Gen.G"
-	"BnTeT" 			"Gen.G"	
+	"Elmapuddy" 		"Gen.G"	
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
@@ -622,7 +616,7 @@
 	"NIFFY" 			"ZIGMA"
 	"Reality" 			"ZIGMA"
 	"JUSTCAUSE" 		"ZIGMA"
-	"PPOverdose" 		"ZIGMA"	
+	"Geniuss" 			"ZIGMA"	
 	"RoLEX" 			"ZIGMA"
 	//mCon Players
 	"Monu" 				"mCon"
@@ -640,16 +634,16 @@
 	"fr0slev" 			"AGF"
 	"Ryxxo" 			"AGF"
 	"PERCY" 			"AGF"
-	"TMB" 				"AGF"
+	"Cabbi" 			"AGF"
 	"Lukki" 			"AGF"
 	//GameAgents Players
-	"markk" 			"GameAgents"
+	"mhN1" 				"GameAgents"
 	"renne" 			"GameAgents"
 	"s0und" 			"GameAgents"
 	"regali" 			"GameAgents"
 	"CHANKY" 			"GameAgents"
 	//TIGER Players
-	"cool4st" 			"TIGER"
+	"neuz" 				"TIGER"
 	"nin9" 				"TIGER"
 	"dobu" 				"TIGER"
 	"kabal" 			"TIGER"
@@ -674,10 +668,10 @@
 	"Cunha" 			"FTW"
 	//Tigers Players
 	"MAXX" 				"Tigers"
-	"Lastík" 			"Tigers"
+	"ZEDc" 				"Tigers"
 	"zyored" 			"Tigers"
-	"hones" 			"Tigers"
-	"manguss" 			"Tigers"
+	"fino" 				"Tigers"
+	"system" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
 	"try" 				"9z"

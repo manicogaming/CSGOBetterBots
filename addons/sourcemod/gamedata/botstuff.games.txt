@@ -121,7 +121,6 @@
 		}
 		"MemPatches"
 		{
-			// this patch makes buildings solid to TFBots
 			"CCSBot::Update::ClearMovement"
 			{
 				"signature" "CCSBot::Update"

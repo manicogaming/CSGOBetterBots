@@ -50,7 +50,7 @@
 	"gade" 				"21355604"
 	//mouz Players
 	"karrigan"			"29164525" 
-	"chrisJ" 			"28273376"
+	"acoR" 				"42677035"
 	"Bymas" 			"133120627"
 	"frozen" 			"108157034"
 	"ropz" 				"31006590"
@@ -153,10 +153,11 @@
 	"SANJI" 			"357361556"
 	"buster" 			"212936195"
 	//Apeks Players
-	"Marcelious" 		"158860221"
-	"jkaem" 			"42442914"
+	"kreaz" 			"116979891"
+	"FREDDyFROG" 		"25537199"
 	"Grus" 				"34633571"
 	"dennis" 			"108076825"
+	"Relaxa" 			"169700429"
 	//aTTaX Players
 	"stfN" 				"47322750"
 	"kRYSTAL" 			"17526007"
@@ -204,17 +205,13 @@
 	"birdfromsky"		"4338476" 
 	"Twinx" 			"114782035"
 	"raalz" 			"35794427"
-	"Cabbi" 			"230664742"
+	"FeTiSh" 			"11212652"
 	//GODSENT Players
 	"TACO" 				"52876568"
 	"b4rtiN" 			"169818854"
 	"felps" 			"22765766"
 	"latto" 			"889754458"
 	"dumau" 			"234059589"
-	//Nordavind Players
-	"NaToSaphiX" 		"41330524"
-	"Rytter" 			"30954725"
-	"cromen" 			"21397689"
 	//SJ Players
 	"arvid" 			"66355043"
 	"BONA" 				"201490896"
@@ -224,7 +221,7 @@
 	"Derek" 			"115108105"
 	//Lions Players
 	"HooXi" 			"38661042"
-	"acoR" 				"42677035"
+	"TMB" 				"124341526"
 	"Sjuush" 			"200443857"	
 	"refrezh" 			"104598470"
 	"roeJ" 				"30968963"
@@ -309,13 +306,13 @@
 	"HaZR" 				"64081874"
 	//Chiefs Players
 	"HUGHMUNGUS" 		"104743037"
-	"Vexite" 			"92622415"
+	"aliStair" 			"138080982"
 	"apocdud" 			"58325300"
 	"zeph" 				"177441352"
 	"yam" 				"30659"
 	//ORDER Players
 	"J1rah" 			"82535956"
-	"aliStair" 			"138080982"
+	"Vexite" 			"92622415"
 	"Rickeh" 			"3215921"
 	"USTILO" 			"18903255"
 	"Valiance" 			"236090787"
@@ -367,12 +364,12 @@
 	"Mayker" 			"88236677"
 	//GTZ Players
 	"fakes2" 			"96848867"
-	//x6tence Players
-	"Queenix" 			"70280269"
-	"tenzki" 			"37214922"
-	"maNkz" 			"81805084"
-	"mertz" 			"119498324"
-	"Nodios" 			"110610542"
+	//EXTREMUM Players
+	"AZR" 				"24832266"
+	"Liazz" 			"112055988"
+	"jkaem" 			"42442914"
+	"Gratisfaction" 	"5543683"
+	"BnTeT" 			"111817512"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"mou" 				"52678767"
@@ -390,9 +387,12 @@
 	"Anhuin" 			"95774258"
 	"HadeZ" 			"242589771"	
 	"P4TriCK" 			"60152488"
-	//Queso Players
-	"thinkii" 			"66876997"
-	"HUMANZ" 			"163171683"
+	//FPX Players
+	"STYKO" 			"55928431"
+	"farlig" 			"63982401"
+	"zehN" 				"16308501"
+	"maden" 			"205186299"
+	"chrisJ" 			"28273376"
 	//IG Players
 	"bottle" 			"86991268"
 	"DeStRoYeR" 		"85113804"	
@@ -493,7 +493,7 @@
 	"koosta" 			"161590"
 	"daps" 				"19892353"
 	"s0m" 				"287288432"
-	"BnTeT" 			"111817512"	
+	"Elmapuddy" 		"123918542"	
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
@@ -521,7 +521,7 @@
 	"NIFFY" 			"167797237"
 	"Reality" 			"101927360"
 	"JUSTCAUSE" 		"106292739"
-	"PPOverdose" 		"173729018"	
+	"Geniuss" 			"119384281"	
 	"RoLEX" 			"160401860"
 	//mCon Players
 	"Monu" 				"17643220"
@@ -537,11 +537,11 @@
 	"fr0slev" 			"75073497"
 	"Ryxxo" 			"66562222"
 	"PERCY" 			"36210122"
-	"TMB" 				"124341526"
+	"Cabbi" 			"230664742"
 	"Lukki" 			"53001420"
 	//GameAgents Players
 	//TIGER Players
-	"cool4st" 			"882582488"
+	"neuz" 				"114122809"
 	"nin9" 				"168197870"
 	"dobu" 				"159891913"
 	"kabal" 			"161246388"
