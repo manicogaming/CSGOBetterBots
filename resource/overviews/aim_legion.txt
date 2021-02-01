@@ -1,0 +1,19 @@
+aim_legion
+{
+	//r.man MMXVIII
+	material	"overviews/aim_legion"
+	pos_x		-1019
+	pos_y		906
+	scale		2.0
+	rotate		0
+	zoom		0
+
+
+	//loading screen icons and positions
+
+	CTSpawn_x	0.2
+	CTSpawn_y	0.495
+	TSpawn_x	0.797
+	TSpawn_y	0.495
+
+}

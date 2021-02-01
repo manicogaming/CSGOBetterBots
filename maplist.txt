@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Jan 30 00:26:36 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Feb 01 04:56:28 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -54,6 +54,7 @@ aim_dust
 aim_glass_handel_v2_fix
 aim_headshot2_csgo
 aim_junkyard
+aim_legion
 aim_map
 aim_map2
 aim_map_duelies
@@ -80,7 +81,6 @@ awp_1337
 awp_arena
 awp_backgammon_b1
 awp_crash_eq
-awp_crashz_bandicoot
 awp_crashz_v14
 awp_crashz_v4
 awp_crashz_v5
@@ -101,6 +101,7 @@ awp_lego_2_winter
 awp_lego_4b
 awp_lego_8
 awp_lego_9
+awp_legominiindia
 awp_metro
 awp_minecraft
 awp_minecraft_pete_v1
@@ -243,7 +244,6 @@ de_inferno_night
 de_inferno_pondsite
 de_infernohr_night
 de_installation
-de_institut
 de_iris
 de_island
 de_jingshen

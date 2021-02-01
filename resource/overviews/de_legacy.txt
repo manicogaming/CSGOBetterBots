@@ -1,0 +1,21 @@
+// HLTV overview description file for de_legacy.bsp
+
+"de_legacy"
+{
+	"material"	"overviews/de_legacy"
+	"pos_x"		"-233"
+	"pos_y"		"1012"
+	"scale"		"5.5"
+	"rotate"	"0"
+	"zoom"		"1"
+
+	"CTSpawn_x"	"0.58"
+ 	"CTSpawn_y"	"0.08"
+	"TSpawn_x"	"0.63"
+	"TSpawn_y"	"0.88"
+
+	"bombA_x"	"0.76"
+	"bombA_y"	"0.22"
+	"bombB_x"	"0.13"
+	"bombB_y"	"0.45"
+}

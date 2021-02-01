@@ -15,7 +15,7 @@ bool g_bBombPlanted = false;
 bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
-bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanAttack[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iBotLookAtPosXOffset, g_iBotLookAtPosYOffset, g_iBotLookAtPosZOffset, g_iBotLookAtDescOffset, g_iFireWeaponOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
@@ -26,11 +26,11 @@ ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
 Handle g_hGetBonePosition;
-Handle g_hBotAttack;
 Handle g_hBotIsVisible;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
+Handle g_hBotGetEnemy;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotSetLookAtDetour;
 Handle g_hBotPickNewAimSpotDetour;
@@ -4706,10 +4706,8 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		float fClientEyes[3], fSpot[3], fBentSpot[3];
 		
-		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_iTarget[client] == -1 || g_fTargetPos[client][2] == 0)
+		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 		{
-			g_bCanAttack[client] = false;
-			
 			GetClientEyePosition(client, fClientEyes);
 			fSpot[0] = GetEntDataFloat(client, g_iBotTargetSpotXOffset);
 			fSpot[1] = GetEntDataFloat(client, g_iBotTargetSpotYOffset);
@@ -4854,7 +4852,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		{
 			float fClientPos[3], fTargetPos[3], fTargetDistance;
 			GetClientAbsOrigin(client, fClientPos);
-			g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
+			g_iTarget[client] = BotGetEnemy(client);
+			SelectBestTargetPos(client, g_fTargetPos[client]);
 			
 			if (GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
 			{
@@ -4875,14 +4874,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_DUCK;
 			}
 			
-			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (g_iTarget[client] == -1 || g_fTargetPos[client][2] == 0))
+			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0))
 			{
 				DoExecute(client, iButtons, iDefIndex);
 			}
 			
-			if (g_iTarget[client] == -1 || g_fTargetPos[client][2] == 0)
+			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 			{
-				g_bCanAttack[client] = false;
 				return Plugin_Continue;
 			}
 			
@@ -4890,7 +4888,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			fTargetDistance = GetVectorDistance(fClientPos, fTargetPos);
 			
-			if (g_bFreezetimeEnd && g_bCanAttack[client])
+			if (g_bFreezetimeEnd)
 			{
 				if (GetEntityMoveType(client) == MOVETYPE_LADDER)
 				{
@@ -4948,8 +4946,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 					}
 				}
-				
-				BotAttack(client, g_iTarget[client]);
 				
 				fClientPos[2] += 35.5;
 				
@@ -5392,11 +5388,6 @@ public void LoadSDK()
 	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
-	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
-	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
-	
-	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
@@ -5433,6 +5424,11 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::GetBotEnemy");
+	PrepSDKCall_SetReturnInfo(SDKType_CBasePlayer, SDKPass_Pointer);
+	if ((g_hBotGetEnemy = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::GetBotEnemy signature!");
 	
 	delete hGameConfig;
 }
@@ -5484,11 +5480,6 @@ public void BotMoveTo(int client, float fOrigin[3], RouteType routeType)
 	SDKCall(g_hBotMoveTo, client, fOrigin, routeType);
 }
 
-public void BotAttack(int client, int iEnemy)
-{
-	SDKCall(g_hBotAttack, client, iEnemy);
-}
-
 public bool BotIsVisible(int client, float fPos[3], bool bTestFOV, int iIgnore)
 {
 	return SDKCall(g_hBotIsVisible, client, fPos, bTestFOV, iIgnore);
@@ -5512,6 +5503,11 @@ public void BotSetLookAt(int client, const char[] szDesc, const float fPos[3], P
 public bool BotBendLineOfSight(int client, const float fEye[3], const float fTarget[3], float fBend[3], float fAngleLimit)
 {
 	return SDKCall(g_hBotBendLineOfSight, client, fEye, fTarget, fBend, fAngleLimit);
+}
+
+public int BotGetEnemy(int client)
+{
+	return SDKCall(g_hBotGetEnemy, client);
 }
 
 public int LookupBone(int iEntity, const char[] szName)
@@ -5626,18 +5622,6 @@ stock int GetCurrentRoundTime()
 	return (GetTime() - g_iRoundStartedTime) - iFreezeTime;
 }
 
-public Action Timer_Attack(Handle hTimer, any client)
-{
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-	{
-		g_bCanAttack[client] = true;
-	}
-	
-	return Plugin_Stop;
-}
-
 public Action Timer_ThrowSmoke(Handle hTimer, any client)
 {
 	client = GetClientOfUserId(client);
@@ -5710,204 +5694,16 @@ stock bool FakeClientCommandThrottled(int client, const char[] command)
 	return true;
 }
 
-float[] SelectBestTargetPos(int client, int &iBestEnemy)
+public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
-	float fMyPos[3];
-	GetClientAbsOrigin(client, fMyPos);
-	
-	float fTargetPos[3];
-	float fClosestDistance = 999999999999999.0;
-	
-	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-	int iDefIndex;
-	if (iActiveWeapon != -1)
+	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 	{
-		iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-	}
-	
-	char szClanTag[MAX_NAME_LENGTH];
-	
-	CS_GetClientClanTag(client, szClanTag, sizeof(szClanTag));
-	
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (i == client)
-			continue;
-		
-		if (!IsClientInGame(i))
-			continue;
-		
-		if (!IsPlayerAlive(i))
-			continue;
-		
-		if (GetEntProp(i, Prop_Send, "m_bGunGameImmunity"))
-			continue;
-		
-		if (GetClientTeam(i) == GetClientTeam(client))
-			continue;
-		
-		if (strcmp(szClanTag, "Endpoint") == 0) //30th
-		{
-			if (!IsTargetInSightRange(client, i, 50.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "DIG") == 0) //29th
-		{
-			if (!IsTargetInSightRange(client, i, 60.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Sprout") == 0) //28th
-		{
-			if (!IsTargetInSightRange(client, i, 70.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "EXTREMUM") == 0) //27th
-		{
-			if (!IsTargetInSightRange(client, i, 80.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Nemiga") == 0) //26th
-		{
-			if (!IsTargetInSightRange(client, i, 90.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "North") == 0) //25th
-		{
-			if (!IsTargetInSightRange(client, i, 100.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "One") == 0) //24th
-		{
-			if (!IsTargetInSightRange(client, i, 110.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Lions") == 0) //23rd
-		{
-			if (!IsTargetInSightRange(client, i, 120.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "forZe") == 0) //22nd
-		{
-			if (!IsTargetInSightRange(client, i, 130.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "sAw") == 0) //21st
-		{
-			if (!IsTargetInSightRange(client, i, 140.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Spirit") == 0) //20th
-		{
-			if (!IsTargetInSightRange(client, i, 150.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "C9") == 0) //19th
-		{
-			if (!IsTargetInSightRange(client, i, 160.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "NiP") == 0) //18th
-		{
-			if (!IsTargetInSightRange(client, i, 170.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "FPX") == 0) //17th
-		{
-			if (!IsTargetInSightRange(client, i, 180.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "fnatic") == 0) //16th
-		{
-			if (!IsTargetInSightRange(client, i, 190.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "FaZe") == 0) //15th
-		{
-			if (!IsTargetInSightRange(client, i, 200.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "EG") == 0) //14th
-		{
-			if (!IsTargetInSightRange(client, i, 210.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Gambit") == 0) //13th
-		{
-			if (!IsTargetInSightRange(client, i, 220.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "coL") == 0) //12th
-		{
-			if (!IsTargetInSightRange(client, i, 230.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "mouz") == 0) //11th
-		{
-			if (!IsTargetInSightRange(client, i, 240.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "VP") == 0) //10th
-		{
-			if (!IsTargetInSightRange(client, i, 250.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "FURIA") == 0) //9th
-		{
-			if (!IsTargetInSightRange(client, i, 260.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "G2") == 0) //8th
-		{
-			if (!IsTargetInSightRange(client, i, 270.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "OG") == 0) //7th
-		{
-			if (!IsTargetInSightRange(client, i, 280.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Heroic") == 0) //6th
-		{
-			if (!IsTargetInSightRange(client, i, 290.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Liquid") == 0) //5th
-		{
-			if (!IsTargetInSightRange(client, i, 300.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "BIG") == 0) //4th
-		{
-			if (!IsTargetInSightRange(client, i, 310.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Na´Vi") == 0) //3rd
-		{
-			if (!IsTargetInSightRange(client, i, 320.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Vitality") == 0) //2nd
-		{
-			if (!IsTargetInSightRange(client, i, 330.0))
-				continue;
-		}
-		else if (strcmp(szClanTag, "Astralis") == 0) //1st
-		{
-			if (!IsTargetInSightRange(client, i, 340.0))
-				continue;
-		}
-		else
-		{
-			if (!IsTargetInSightRange(client, i))
-				continue;
-		}
-		
-		int iBone = LookupBone(i, "head_0");
+		int iBone = LookupBone(g_iTarget[client], "head_0");
 		if (iBone < 0)
-			continue;
+			return;
 		
 		float fHead[3], fBad[3];
-		GetBonePosition(i, iBone, fHead, fBad);
+		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
 		
 		fHead[2] += 2.0;
 		
@@ -5922,11 +5718,11 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			//Head wasn't visible, check other bones.
 			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
 			{
-				iBone = LookupBone(i, g_szBoneNames[b]);
+				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
 				if (iBone < 0)
-					continue;
+					return;
 				
-				GetBonePosition(i, iBone, fHead, fBad);
+				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
 				
 				if (BotIsVisible(client, fHead, false, -1))
 				{
@@ -5937,32 +5733,11 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			}
 			
 			if (!bVisibleOther)
-				continue;
+				return;
 		}
 		
-		float fEnemyPos[3];
-		GetClientAbsOrigin(i, fEnemyPos);
-		
-		float fDistance = GetVectorDistance(fEnemyPos, fMyPos, true);
-		if (fDistance < fClosestDistance)
-		{
-			fClosestDistance = fDistance;
-			fTargetPos = fHead;
-			
-			iBestEnemy = i;
-			
-			if (iDefIndex == 9 || iDefIndex == 11 || iDefIndex == 38 || iDefIndex == 40)
-			{
-				g_bCanAttack[client] = true;
-			}
-			else
-			{
-				CreateTimer(0.18, Timer_Attack, GetClientUserId(client));
-			}
-		}
+		fTargetPos = fHead;
 	}
-	
-	return fTargetPos;
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
