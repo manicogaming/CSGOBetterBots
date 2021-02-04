@@ -462,7 +462,7 @@ End
 
 //FaZe Players
 
-ProP+Rifle "Kjaerbye"
+ProP+Rifle "Twistzz"
 	VoicePitch = 113
 End
 
@@ -1128,25 +1128,25 @@ ProP+Rifle "malta"
 	VoicePitch = 89
 End
 
-//Envy Players
+//Coast Players
 
-ProP+Rifle "Thomas"
+ProP+Rifle "ben1337"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "Nifty"
+ProAwp+SniperPro "PwnAlone"
 	VoicePitch = 71
 End
 
-ProP+Rifle "Calyx"
+ProP+Rifle "Rampage"
 	VoicePitch = 74
 End
 
-ProP+Rifle "MICHU"
+ProP+Rifle "djay"
 	VoicePitch = 73
 End
 
-ProP+Rifle "LEGIJA"
+ProP+Rifle "bew"
 	VoicePitch = 105
 End
 
@@ -1376,7 +1376,7 @@ ProP+Rifle "mopoz"
 	VoicePitch = 99
 End
 
-ProAwp+SniperPro "larsen"
+ProAwp+SniperPro "smooya"
 	VoicePitch = 109
 End
 
@@ -1504,7 +1504,7 @@ End
 
 //Yeah Players
 
-ProP+Rifle "bew"
+ProP+Rifle "iDk"
 	VoicePitch = 91
 End
 
@@ -2190,11 +2190,11 @@ ProP+Rifle "dox"
 	VoicePitch = 111
 End
 
-ProAwp+SniperPro "shyyne"
+ProAwp+SniperPro "isk"
 	VoicePitch = 103
 End
 
-ProP+Rifle "leafy"
+ProP+Rifle "leaf"
 	VoicePitch = 113
 End
 
@@ -2902,7 +2902,7 @@ ProP+Rifle "brA"
 	VoicePitch = 77
 End
 
-ProP+Rifle "plat"
+ProP+Rifle "Juve"
 	VoicePitch = 114
 End
 
@@ -3141,7 +3141,7 @@ ProAwp+SniperPro "obj"
 	VoicePitch = 105
 End
 
-ProP+Rifle "kst"
+ProP+Rifle "plat"
 	VoicePitch = 111
 End
 
@@ -3305,6 +3305,50 @@ End
 
 ProP+Rifle "florento"
 	VoicePitch = 95
+End
+
+//BLUEJAYS Players
+
+ProP+Rifle "sarenii"
+	VoicePitch = 85
+End
+
+ProAwp+SniperPro "h4rn"
+	VoicePitch = 99
+End
+
+ProP+Rifle "Fessor"
+	VoicePitch = 100
+End
+
+ProP+Rifle "Kvik"
+	VoicePitch = 90
+End
+
+ProP+Rifle "NENO"
+	VoicePitch = 94
+End
+
+//Nordavind Players
+
+ProP+Rifle "tenzki"
+	VoicePitch = 84
+End
+
+ProAwp+SniperPro "mertz"
+	VoicePitch = 100
+End
+
+ProP+Rifle "HS"
+	VoicePitch = 85
+End
+
+ProP+Rifle "supra"
+	VoicePitch = 97
+End
+
+ProP+Rifle "mirbit"
+	VoicePitch = 107
 End
 
 EliteAwp+SniperPro "XD | ryu"

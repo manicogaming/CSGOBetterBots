@@ -7,7 +7,7 @@
 	"boltz" 			"MIBR"
 	"danoco" 			"MIBR"
 	//FaZe Players
-	"Kjaerbye" 			"FaZe"
+	"Twistzz" 			"FaZe"
 	"broky"  			"FaZe"
 	"olofmeister" 		"FaZe"
 	"rain" 				"FaZe"
@@ -180,12 +180,12 @@
 	"dexter" 			"RNG"
 	"Hatz" 				"RNG"
 	"malta" 			"RNG"
-	//Envy Players
-	"Nifty" 			"Envy"
-	"Thomas" 			"Envy"
-	"Calyx" 			"Envy"
-	"MICHU" 			"Envy"
-	"LEGIJA" 			"Envy"
+	//Coast Players
+	"PwnAlone" 			"Coast"
+	"ben1337" 			"Coast"
+	"Rampage" 			"Coast"
+	"djay" 				"Coast"
+	"bew" 				"Coast"
 	//Spirit Players
 	"mir" 				"Spirit"
 	"degster" 			"Spirit"
@@ -257,7 +257,7 @@
 	"shokz" 			"Riders"
 	"steel" 			"Riders"
 	"alex*" 			"Riders"
-	"larsen" 			"Riders"
+	"smooya" 			"Riders"
 	//eSuba Players
 	"NIO" 				"eSuba"
 	"twistP" 			"eSuba"
@@ -289,7 +289,7 @@
 	"m1N1" 				"YaLLa"
 	"gaB" 				"YaLLa"
 	//Yeah Players
-	"bew" 				"Yeah"
+	"iDk" 				"Yeah"
 	"RCF" 				"Yeah"
 	"f4stzin" 			"Yeah"
 	"Swisher" 			"Yeah"
@@ -476,7 +476,7 @@
 	"Djoko" 			"Dice"
 	//Vexed Players
 	"dox" 				"Vexed"
-	"shyyne" 			"Vexed"
+	"isk" 				"Vexed"
 	"leafy" 			"Vexed"
 	"EIZA" 				"Vexed"
 	"volt" 				"Vexed"
@@ -664,7 +664,7 @@
 	"NABOWOW" 			"FTW"
 	"Jaepe" 			"FTW"
 	"brA" 				"FTW"
-	"plat" 				"FTW"
+	"Juve" 				"FTW"
 	"Cunha" 			"FTW"
 	//Tigers Players
 	"MAXX" 				"Tigers"
@@ -729,7 +729,7 @@
 	//eXploit Players
 	"BLOODZ" 			"eXploit"
 	"obj" 				"eXploit"	
-	"kst" 				"eXploit"
+	"plat" 				"eXploit"
 	"whatz" 			"eXploit"
 	"renatoohaxx" 		"eXploit"
 	//Ambush Players
@@ -774,4 +774,16 @@
 	"pr1metapz" 		"PkD"
 	"cello" 			"PkD"
 	"florento"			"PkD"
+	//BLUEJAYS Players
+	"sarenii" 			"BLUEJAYS"
+	"h4rn" 				"BLUEJAYS"
+	"Fessor" 			"BLUEJAYS"
+	"Kvik" 				"BLUEJAYS"
+	"NENO"				"BLUEJAYS"
+	//Nordavind Players
+	"tenzki" 			"Nordavind"
+	"mertz" 			"Nordavind"
+	"HS" 				"Nordavind"
+	"supra" 			"Nordavind"
+	"mirbit"			"Nordavind"
 }

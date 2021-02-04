@@ -7,7 +7,7 @@
 	"boltz" 			"58113672"
 	"danoco" 			"34622275"
 	//FaZe Players
-	"Kjaerbye" 			"59614824"
+	"Twistzz" 			"55989477"
 	"broky"  			"241354762"
 	"olofmeister" 		"28361465"
 	"rain" 				"37085479"
@@ -170,12 +170,12 @@
 	"dexter" 			"101535513"
 	"Hatz" 				"64662058"
 	"malta" 			"181905573"
-	//Envy Players
-	"Nifty" 			"163358521"
-	"Thomas" 			"65182402"
-	"Calyx" 			"92280537"
-	"MICHU" 			"60359075"
-	"LEGIJA" 			"21242287"
+	//Coast Players
+	"PwnAlone" 			"24000649"
+	"ben1337" 			"131461662"
+	"Rampage" 			"118220738"
+	"djay" 				"3935898"
+	"bew" 				"3250945"
 	//Spirit Players
 	"mir" 				"40562076"
 	"degster" 			"839074394"
@@ -230,7 +230,7 @@
 	"shokz" 			"39590183"
 	"steel" 			"54512474"
 	"alex*" 			"40718819"
-	"larsen" 			"60274028"
+	"smooya" 			"211423593"
 	//eSuba Players
 	"NIO" 				"170307600"
 	"blogg1s" 			"115938594"	
@@ -257,7 +257,7 @@
 	"Remind" 			"121767731"
 	"Empera" 			"241919387"
 	//Yeah Players
-	"bew" 				"3250945"
+	"iDk" 				"106435802"
 	"RCF" 				"206261197"
 	"f4stzin" 			"476343738"
 	"Swisher" 			"222737943"
@@ -412,6 +412,7 @@
 	"Polox" 			"109597705"
 	"Djoko" 			"87611242"
 	//Vexed Players
+	"leaf"				"178080989"
 	//HLE Players
 	"svyat" 			"35632848"
 	//Gambit Players
@@ -561,7 +562,6 @@
 	//FTW Players
 	"NABOWOW" 			"283730928"
 	"brA" 				"8661121"
-	"plat" 				"300562274"
 	"Cunha" 			"203400597"
 	//Tigers Players
 	//9z Players
@@ -606,7 +606,7 @@
 	//eXploit Players
 	"BLOODZ" 			"1004703971"
 	"obj" 				"42675741"	
-	"kst" 				"83276408"
+	"plat" 				"300562274"
 	"whatz" 			"31318693"
 	"renatoohaxx" 		"39166438"
 	//Ambush Players
@@ -633,4 +633,15 @@
 	"imoRR"				"107082440"
 	//PkD Players
 	"cello" 			"18118733"
+	//BLUEJAYS Players
+	"sarenii" 			"114087818"
+	"h4rn" 				"88360844"
+	"Kvik" 				"40982505"
+	"NENO"				"60091224"
+	//Nordavind Players
+	"tenzki" 			"37214922"
+	"mertz" 			"119498324"
+	"HS" 				"3417033"
+	"supra" 			"164802191"
+	"mirbit"			"183980241"
 }
