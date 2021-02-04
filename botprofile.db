@@ -68,6 +68,7 @@ Template Rifle
         WeaponPreference = ak47
 		WeaponPreference = m4a1
 		WeaponPreference = sg556
+		WeaponPreference = aug
 		WeaponPreference = mp9
 		WeaponPreference = mac10
 		WeaponPreference = famas

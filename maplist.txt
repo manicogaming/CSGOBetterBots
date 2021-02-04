@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Mon Feb 01 04:56:28 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Feb 04 18:11:12 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -153,6 +153,7 @@ de_1_6_vertigo
 de_3rdstrike
 de_abbey
 de_abyss
+de_aerospace
 de_aldebaran
 de_alexandra
 de_ali
@@ -174,6 +175,7 @@ de_bastion2
 de_bazaar
 de_belukha
 de_berth
+de_bikinibottom
 de_biome
 de_bombspot_bitcoin
 de_boohouse_go
@@ -252,6 +254,8 @@ de_kaizen_rc1
 de_kowloon
 de_lake
 de_legacy
+de_lite
+de_lite_classic
 de_livehouse
 de_log
 de_lumber

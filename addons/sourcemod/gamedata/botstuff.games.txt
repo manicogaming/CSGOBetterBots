@@ -4,11 +4,11 @@
 	{
 		"Signatures"
 		{
-			"CCSBot::MoveTo"
+			"CCSBot::ComputePath"
 			{
-				// Below 'Checking out where our friend was killed'
+				// Has the string 'CCSBot::ComputePath'
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x8B\x2A\x2A\x8B\x02\x2A\x2A\x2A\x2A\x00\x00\x8B\x42\x04\x2A\x2A\x2A\x2A\x00\x00\x8B\x42\x08\x2A\x2A\x2A\x2A\x00\x00\x8B\x45\x0C"
+				"windows"	"\x55\x8B\xEC\x81\xEC\xB8\x00\x00\x00\x53\x56\x57\x8B\xF9"
 			}
 			"CBaseAnimating::LookupBone"
 			{
@@ -122,6 +122,16 @@
 			{
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
 				"windows"       "24692"
+			}
+			"CCSBot::m_isEnemyVisible"
+			{
+				//Is in the if statement where CCSBot::ThrowGrenade is used
+				"windows"       "24064"
+			}
+			"CCSBot::m_pLocalProfile"
+			{
+				//Is inside CCSBot::DebugDisplay right next to the string 'Skill: %d%%'
+				"windows"       "15156"
 			}
 		}
 		"MemPatches"
