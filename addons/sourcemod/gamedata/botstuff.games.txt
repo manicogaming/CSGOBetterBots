@@ -181,6 +181,13 @@
                 "return" "void"
                 "this" "entity"
             }
+			"CCSBot::Update"
+			{
+                "signature" "CCSBot::Update"
+                "callconv" "thiscall"
+                "return" "void"
+                "this" "entity"
+            }
 		}
 		"MemPatches"
 		{
