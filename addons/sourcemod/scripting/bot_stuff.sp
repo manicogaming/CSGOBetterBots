@@ -32,8 +32,6 @@ Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
 Handle g_hBotGetEnemy;
 Handle g_hBotBendLineOfSight;
-Handle g_hBotSetLookAtDetour;
-Handle g_hBotPickNewAimSpotDetour;
 
 enum RouteType
 {
@@ -4195,7 +4193,7 @@ public void OnMapStart()
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	
-	GameRules_SetProp("m_nQueuedMatchmakingMode", 1);
+	//GameRules_SetProp("m_nQueuedMatchmakingMode", 1);
 	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
@@ -4741,7 +4739,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	return Plugin_Continue;
 }
 
-public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
+public MRESReturn Detour_OnBOTPickNewAimSpot(int client, DHookReturn hReturn, DHookParam hParams)
 {
 	if (g_bIsProBot[client])
 	{
@@ -4750,6 +4748,8 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 		
 		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 		float fClientEyes[3], fSpot[3], fBentSpot[3];
+		
+		SelectBestTargetPos(client, g_fTargetPos[client]);
 		
 		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 		{
@@ -4822,7 +4822,7 @@ public MRESReturn Detour_OnBOTPickNewAimSpot(int client, Handle hParams)
 	return MRES_Ignored;
 }
 
-public MRESReturn Detour_OnBOTSetLookAt(int pThis, Handle hParams)
+public MRESReturn Detour_OnBOTSetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
 	
@@ -4899,7 +4899,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			GetClientAbsOrigin(client, fClientPos);
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			g_iTarget[client] = BotGetEnemy(client);
-			SelectBestTargetPos(client, g_fTargetPos[client]);
 			
 			if (GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
 			{
@@ -5503,42 +5502,26 @@ public void LoadSDK()
 
 public void LoadDetours()
 {
-	Handle hGameData = LoadGameConfigFile("botstuff.games");
-	if (!hGameData)
+	GameData hGameData = new GameData("botstuff.games");   
+	if (hGameData == null)
 	{
 		SetFailState("Failed to load botstuff gamedata.");
 		return;
 	}
 	
 	//CCSBot::SetLookAt Detour
-	g_hBotSetLookAtDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
-	if (!g_hBotSetLookAtDetour)
+	DynamicDetour hBotSetLookAtDetour = DynamicDetour.FromConf(hGameData, "CCSBot::SetLookAt");
+	if(!hBotSetLookAtDetour.Enable(Hook_Pre, Detour_OnBOTSetLookAt))
+	{
 		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
-	
-	if (!DHookSetFromConf(g_hBotSetLookAtDetour, hGameData, SDKConf_Signature, "CCSBot::SetLookAt"))
-		SetFailState("Failed to load CCSBot::SetLookAt signature from gamedata");
-	
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_CharPtr); // desc
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_VectorPtr); // pos
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Int); // pri
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Float); // duration
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Bool); // clearIfClose
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Float); // angleTolerance
-	DHookAddParam(g_hBotSetLookAtDetour, HookParamType_Bool); // attack
-	
-	if (!DHookEnableDetour(g_hBotSetLookAtDetour, false, Detour_OnBOTSetLookAt))
-		SetFailState("Failed to detour CCSBot::SetLookAt.");
+	}
 	
 	//CCSBot::PickNewAimSpot Detour
-	g_hBotPickNewAimSpotDetour = DHookCreateDetour(Address_Null, CallConv_THISCALL, ReturnType_Void, ThisPointer_CBaseEntity);
-	if (!g_hBotPickNewAimSpotDetour)
+	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
+	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, Detour_OnBOTPickNewAimSpot))
+	{
 		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
-	
-	if (!DHookSetFromConf(g_hBotPickNewAimSpotDetour, hGameData, SDKConf_Signature, "CCSBot::PickNewAimSpot"))
-		SetFailState("Failed to load CCSBot::PickNewAimSpot signature from gamedata");
-	
-	if (!DHookEnableDetour(g_hBotPickNewAimSpotDetour, true, Detour_OnBOTPickNewAimSpot))
-		SetFailState("Failed to detour CCSBot::PickNewAimSpot.");
+	}
 	
 	delete hGameData;
 }

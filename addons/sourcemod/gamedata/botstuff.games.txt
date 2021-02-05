@@ -134,6 +134,54 @@
 				"windows"       "15156"
 			}
 		}
+		"Functions"
+		{
+			"CCSBot::SetLookAt"
+			{
+                "signature" "CCSBot::SetLookAt"
+                "callconv" "thiscall"
+                "return" "void"
+                "this" "entity"
+                "arguments"
+                {
+                    "desc"
+                    {
+                        "type" "charptr"
+                    }
+                    "pos"
+                    {
+                        "type" "vectorptr"
+                    }
+                    "pri"
+                    {
+                        "type" "int"
+                    }
+                    "duration"
+                    {
+                        "type" "float"
+                    }
+                    "clearIfClose"
+                    {
+                        "type" "bool"
+                    }
+                    "angleTolerance"
+                    {
+                        "type" "float"
+                    }
+                    "attack"
+                    {
+                        "type" "bool"
+                    }
+                }
+            }
+			"CCSBot::PickNewAimSpot"
+			{
+                "signature" "CCSBot::PickNewAimSpot"
+                "callconv" "thiscall"
+                "return" "void"
+                "this" "entity"
+            }
+		}
 		"MemPatches"
 		{
 			"CCSBot::Update::ClearMovement"
