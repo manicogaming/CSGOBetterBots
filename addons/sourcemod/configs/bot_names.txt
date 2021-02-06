@@ -42,12 +42,12 @@
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
 	"Golden" 			"fnatic"
-	//North Players
-	"grux" 				"North"
-	"Lekr0" 			"North"
-	"kristou" 			"North"
-	"cajunb" 			"North"
-	"gade" 				"North"
+	//Alpha Players
+	"lund" 				"Alpha"
+	"hug" 				"Alpha"
+	"wAGNR" 			"Alpha"
+	"zyp" 				"Alpha"
+	"scott" 			"Alpha"
 	//mouz Players
 	"karrigan"			"mouz" 
 	"acoR" 				"mouz"
@@ -582,12 +582,12 @@
 	"Luckyv1" 			"Tricked"
 	"sycrone" 			"Tricked"
 	"PR1mE" 			"Tricked"
-	//Gen.G Players
-	"autimatic" 		"Gen.G"
-	"koosta" 			"Gen.G"
-	"daps" 				"Gen.G"
-	"s0m" 				"Gen.G"
-	"Elmapuddy" 		"Gen.G"	
+	//Baecon Players
+	"met" 				"Baecon"
+	"pocos" 			"Baecon"
+	"sp1kz" 			"Baecon"
+	"dronzz" 			"Baecon"
+	"SYDOX" 			"Baecon"	
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
@@ -663,8 +663,8 @@
 	//FTW Players
 	"NABOWOW" 			"FTW"
 	"Jaepe" 			"FTW"
-	"brA" 				"FTW"
-	"Juve" 				"FTW"
+	"Icarus" 			"FTW"
+	"story" 			"FTW"
 	"Cunha" 			"FTW"
 	//Tigers Players
 	"MAXX" 				"Tigers"
@@ -786,4 +786,16 @@
 	"HS" 				"Nordavind"
 	"supra" 			"Nordavind"
 	"mirbit"			"Nordavind"
+	//Begrip Players
+	"krypt" 			"Begrip"
+	"KarleyG" 			"Begrip"
+	"MistFire" 			"Begrip"
+	"jma" 				"Begrip"
+	"hns"				"Begrip"
+	//Supremacy Players
+	"pacman^v^" 		"Supremacy"
+	"GuepaRd" 			"Supremacy"
+	"zockie" 			"Supremacy"
+	"LKN" 				"Supremacy"
+	"Knight"			"Supremacy"
 }

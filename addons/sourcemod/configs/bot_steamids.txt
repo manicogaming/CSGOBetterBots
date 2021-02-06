@@ -42,12 +42,8 @@
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
 	"Golden" 			"116509497"
-	//North Players
-	"grux" 				"18827308"
-	"Lekr0" 			"1093135"
-	"kristou" 			"147274330"
-	"cajunb" 			"18062315"
-	"gade" 				"21355604"
+	//Alpha Players
+	"zyp" 				"190975326"
 	//mouz Players
 	"karrigan"			"29164525" 
 	"acoR" 				"42677035"
@@ -489,12 +485,7 @@
 	//Tricked Players
 	"kwezz" 			"110193409"
 	"sycrone" 			"49161935"
-	//Gen.G Players
-	"autimatic" 		"94605121"
-	"koosta" 			"161590"
-	"daps" 				"19892353"
-	"s0m" 				"287288432"
-	"Elmapuddy" 		"123918542"	
+	//Baecon Players
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
@@ -561,7 +552,6 @@
 	"isak" 				"111644637"
 	//FTW Players
 	"NABOWOW" 			"283730928"
-	"brA" 				"8661121"
 	"Cunha" 			"203400597"
 	//Tigers Players
 	//9z Players
@@ -644,4 +634,10 @@
 	"HS" 				"3417033"
 	"supra" 			"164802191"
 	"mirbit"			"183980241"
+	//Begrip Players
+	"hns"				"192826402"
+	//Supremacy Players
+	"pacman^v^" 		"486643146"
+	"GuepaRd" 			"21286400"
+	"zockie" 			"107349646"
 }

@@ -601,25 +601,25 @@ ProP+Rifle "Golden"
 	VoicePitch = 103
 End
 
-//North Players
+//Alpha Players
 
-ProP+Rifle "Lekr0"
+ProP+Rifle "hug"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "kristou"
+ProAwp+SniperPro "wAGNR"
 	VoicePitch = 85
 End
 
-ProP+Rifle "grux"
+ProP+Rifle "lund"
 	VoicePitch = 108
 End
 
-ProP+Rifle "cajunb"
+ProP+Rifle "zyp"
 	VoicePitch = 90
 End
 
-ProP+Rifle "gade"
+ProP+Rifle "scott"
 	VoicePitch = 108
 End
 
@@ -2580,25 +2580,25 @@ ProP+Rifle "PR1mE"
 	VoicePitch = 112
 End
 
-//Gen.G Players
+//Baecon Players
 
-ProP+Rifle "autimatic"
+ProP+Rifle "met"
 	VoicePitch = 85
 End
 
-ProAwp+SniperPro "koosta"
+ProAwp+SniperPro "pocos"
 	VoicePitch = 108
 End
 
-ProP+Rifle "daps"
+ProP+Rifle "sp1kz"
 	VoicePitch = 115
 End
 
-ProP+Rifle "s0m"
+ProP+Rifle "dronzz"
 	VoicePitch = 92
 End
 
-ProP+Rifle "Elmapuddy"
+ProP+Rifle "SYDOX"
 	VoicePitch = 103
 End
 
@@ -2898,11 +2898,11 @@ ProAwp+SniperPro "Jaepe"
 	VoicePitch = 93
 End
 
-ProP+Rifle "brA"
+ProP+Rifle "Icarus"
 	VoicePitch = 77
 End
 
-ProP+Rifle "Juve"
+ProP+Rifle "story"
 	VoicePitch = 114
 End
 
@@ -3348,6 +3348,50 @@ ProP+Rifle "supra"
 End
 
 ProP+Rifle "mirbit"
+	VoicePitch = 107
+End
+
+//Begrip Players
+
+ProP+Rifle "krypt"
+	VoicePitch = 112
+End
+
+ProAwp+SniperPro "KarleyG"
+	VoicePitch = 81
+End
+
+ProP+Rifle "MistFire"
+	VoicePitch = 79
+End
+
+ProP+Rifle "jma"
+	VoicePitch = 97
+End
+
+ProP+Rifle "hns"
+	VoicePitch = 90
+End
+
+//Supremacy Players
+
+ProP+Rifle "pacman^v^"
+	VoicePitch = 89
+End
+
+ProAwp+SniperPro "GuepaRd"
+	VoicePitch = 100
+End
+
+ProP+Rifle "zockie"
+	VoicePitch = 112
+End
+
+ProP+Rifle "LKN"
+	VoicePitch = 103
+End
+
+ProP+Rifle "Knight"
 	VoicePitch = 107
 End
 
