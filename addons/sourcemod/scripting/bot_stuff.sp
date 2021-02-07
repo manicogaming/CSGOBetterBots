@@ -9,6 +9,12 @@
 #include <navmesh>
 #include <dhooks>
 
+#define Pointer Address
+#define nullptr Address_Null
+
+#define Address(%1) view_as<Address>(%1)
+#define int(%1) view_as<int>(%1)
+
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
@@ -30,7 +36,7 @@ Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
 Handle g_hBotGetEnemy;
 Handle g_hBotBendLineOfSight;
-Handle g_hBotGetPartPosition;
+Handle g_hGetBonePosition;
 
 enum RouteType
 {
@@ -73,10 +79,6 @@ enum TaskType
 	SNIPING,
 	ESCAPE_FROM_FLAMES,
 }
-
-int g_iPartIDs[][] = {
-	1, 4, 8, 16
-};
 
 #include "bot_stuff/de_mirage.sp"
 #include "bot_stuff/de_dust2.sp"
@@ -4810,14 +4812,12 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 				{
 					if (Math_GetRandomInt(1, 100) <= 65)
 					{
-						float fBody[3];
-						BotGetPartPosition(client, fBody, g_iTarget[client], 1);
+						float fPosition[3], fAngles[3];
+						GetBonePosition(g_iTarget[client], 6, fPosition, fAngles);
 						
-						fBody[2] += 12.5;
-						
-						if (BotIsVisible(client, fBody, false))
+						if (BotIsVisible(client, fPosition, false))
 						{
-							g_fTargetPos[client] = fBody;
+							g_fTargetPos[client] = fPosition;
 						}
 					}
 				}
@@ -4826,14 +4826,12 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					float fBody[3];
-					BotGetPartPosition(client, fBody, g_iTarget[client], 1);
-						
-					fBody[2] += 12.5;
+					float fPosition[3], fAngles[3];
+					GetBonePosition(g_iTarget[client], 6, fPosition, fAngles);
 					
-					if (BotIsVisible(client, fBody, false))
+					if (BotIsVisible(client, fPosition, false))
 					{
-						g_fTargetPos[client] = fBody;
+						g_fTargetPos[client] = fPosition;
 					}
 				}
 			}
@@ -5513,12 +5511,12 @@ public void LoadSDK()
 	PrepSDKCall_SetReturnInfo(SDKType_CBasePlayer, SDKPass_Pointer);
 	if ((g_hBotGetEnemy = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::GetBotEnemy signature!");
 	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::GetPartPosition");
-	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_SetReturnInfo(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hBotGetPartPosition = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::GetPartPosition signature!");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
 	
 	delete hGameConfig;
 }
@@ -5584,9 +5582,9 @@ public int BotGetEnemy(int client)
 	return SDKCall(g_hBotGetEnemy, client);
 }
 
-public void BotGetPartPosition(int client, float fPos[3], int iTarget, int part)
+public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAngles[3])
 {
-	SDKCall(g_hBotGetPartPosition, client, fPos, iTarget, part);
+	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
 }
 
 public bool BotIsBusy(int client)
@@ -5767,41 +5765,68 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
 	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 	{
-		float fHead[3];
-		BotGetPartPosition(client, fHead, g_iTarget[client], 2);
+		Address pStudioHdr = view_as<Address>(GetEntData(g_iTarget[client], 1216));
+		if(pStudioHdr == Address_Null)
+			return;
 		
-		if (BotIsVisible(client, fHead, false))
+		pStudioHdr = Address(Dereference(pStudioHdr));
+		
+		int iHitboxSetIndex = ReadInt(pStudioHdr + Address(0xB0));
+		Address pStudioHitboxSet = pStudioHdr + Address(iHitboxSetIndex);
+		if(pStudioHitboxSet == Address_Null)
+			return;
+		
+		int iNumHitboxes = ReadInt(pStudioHitboxSet + Address(0x4));
+		
+		pStudioHitboxSet += Address(0xC);
+
+		for (int i = 0; i < iNumHitboxes; i++)
 		{
-			g_bIsHeadVisible[client] = true;
-		}
-		else
-		{
-			bool bVisibleOther = false;
+			float fPosition[3], fAngles[3];
 			
-			//Head wasn't visible, check other bones.
-			for (int b = 0; b <= sizeof(g_iPartIDs) - 1; b++)
+			//mstudiobbox_t 
+			Pointer pBox = Address(pStudioHitboxSet + Address(i * 68));
+			
+			int iBone = ReadInt(pBox);
+			
+			GetBonePosition(g_iTarget[client], iBone, fPosition, fAngles);
+			g_bIsHeadVisible[client] = false;
+			
+			if (BotIsVisible(client, fPosition, false))
 			{
-				BotGetPartPosition(client, fHead, g_iTarget[client], b);
+				fTargetPos = fPosition;
 				
-				if(b == 1)
+				if(iBone == 8)
 				{
-					fHead[2] += 12.5;
+					g_bIsHeadVisible[client] = true;
 				}
-				
-				if (BotIsVisible(client, fHead, false))
-				{
-					g_bIsHeadVisible[client] = false;
-					bVisibleOther = true;
-					break;
-				}
+				break;
 			}
-			
-			if (!bVisibleOther)
-				return;
 		}
-		
-		fTargetPos = fHead;
 	}
+}
+
+stock Pointer Transpose(Pointer pAddr, int iOffset)		
+{
+	return Address(int(pAddr) + iOffset);		
+}
+stock int Dereference(Pointer pAddr, int iOffset = 0)		
+{
+	if(pAddr == nullptr)		
+	{
+		return -1;
+	}
+	
+	return ReadInt(Transpose(pAddr, iOffset));
+} 
+stock int ReadInt(Pointer pAddr)
+{
+	if(pAddr == nullptr)
+	{
+		return -1;
+	}
+	
+	return LoadFromAddress(pAddr, NumberType_Int32);
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
