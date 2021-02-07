@@ -2713,7 +2713,7 @@ public Action Team_Wisla(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "hades");
 		ServerCommand("bot_add_ct %s", "SZPERO");
-		ServerCommand("bot_add_ct %s", "mynio");
+		ServerCommand("bot_add_ct %s", "Goofy");
 		ServerCommand("bot_add_ct %s", "ponczek");
 		ServerCommand("bot_add_ct %s", "jedqr");
 		ServerCommand("mp_teamlogo_1 wisla");
@@ -2724,7 +2724,7 @@ public Action Team_Wisla(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "hades");
 		ServerCommand("bot_add_t %s", "SZPERO");
-		ServerCommand("bot_add_t %s", "mynio");
+		ServerCommand("bot_add_t %s", "Goofy");
 		ServerCommand("bot_add_t %s", "ponczek");
 		ServerCommand("bot_add_t %s", "jedqr");
 		ServerCommand("mp_teamlogo_2 wisla");
@@ -4979,7 +4979,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				switch(iDefIndex)
 				{
-					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60, 63:
+					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
 						if(IsPlayerReloading(client) && (!(iButtons & IN_ATTACK))) 
 						{

@@ -495,7 +495,7 @@
 	//Wisla Players
 	"hades"				"Wisla" 
 	"SZPERO" 			"Wisla"
-	"mynio" 			"Wisla"
+	"Goofy" 			"Wisla"
 	"ponczek" 			"Wisla"
 	"jedqr" 			"Wisla"
 	//Imperial Players

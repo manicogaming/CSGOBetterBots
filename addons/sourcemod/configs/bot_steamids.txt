@@ -420,7 +420,7 @@
 	//Wisla Players
 	"hades"				"90656280" 
 	"SZPERO" 			"19554985"
-	"mynio" 			"24981058"
+	"Goofy" 			"300617878"
 	"ponczek" 			"150374922"
 	"jedqr" 			"125090121"
 	//Imperial Players
