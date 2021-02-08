@@ -172,7 +172,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_offset", Team_OFFSET);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_ttt", Team_TTT);
-	RegConsoleCmd("team_px", Team_PX);
 	RegConsoleCmd("team_nxl", Team_nxl);
 	RegConsoleCmd("team_dv", Team_DV);
 	RegConsoleCmd("team_energy", Team_energy);
@@ -241,6 +240,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_nordavind", Team_Nordavind);
 	RegConsoleCmd("team_begrip", Team_Begrip);
 	RegConsoleCmd("team_supremacy", Team_Supremacy);
+	RegConsoleCmd("team_rebirth", Team_Rebirth);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -2158,36 +2158,6 @@ public Action Team_TTT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "pulzG");
 		ServerCommand("bot_add_t %s", "AceCommander");
 		ServerCommand("mp_teamlogo_2 ttt");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_PX(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (strcmp(arg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "mindfreak");
-		ServerCommand("bot_add_ct %s", "d4v41");
-		ServerCommand("bot_add_ct %s", "Benkai");
-		ServerCommand("bot_add_ct %s", "Tommy");
-		ServerCommand("bot_add_ct %s", "f0rsakeN");
-		ServerCommand("mp_teamlogo_1 px");
-	}
-	
-	if (strcmp(arg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "mindfreak");
-		ServerCommand("bot_add_t %s", "d4v41");
-		ServerCommand("bot_add_t %s", "Benkai");
-		ServerCommand("bot_add_t %s", "Tommy");
-		ServerCommand("bot_add_t %s", "f0rsakeN");
-		ServerCommand("mp_teamlogo_2 px");
 	}
 	
 	return Plugin_Handled;
@@ -4233,6 +4203,36 @@ public Action Team_Supremacy(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_Rebirth(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "retchy");
+		ServerCommand("bot_add_ct %s", "XotiC");
+		ServerCommand("bot_add_ct %s", "nosraC");
+		ServerCommand("bot_add_ct %s", "wrath");
+		ServerCommand("bot_add_ct %s", "wippie");
+		ServerCommand("mp_teamlogo_1 reb");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "retchy");
+		ServerCommand("bot_add_t %s", "XotiC");
+		ServerCommand("bot_add_t %s", "nosraC");
+		ServerCommand("bot_add_t %s", "wrath");
+		ServerCommand("bot_add_t %s", "wippie");
+		ServerCommand("mp_teamlogo_2 reb");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -4320,6 +4320,8 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			if (g_bIsProBot[client])
 			{
+				g_iTarget[client] = BotGetEnemy(client);
+				
 				int iPlantedC4 = GetNearestEntity(client, "planted_c4");
 				
 				if (IsValidEntity(iPlantedC4) && GetClientTeam(client) == CS_TEAM_CT)
@@ -4925,7 +4927,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			float fClientPos[3], fTargetPos[3], fTargetDistance;
 			GetClientAbsOrigin(client, fClientPos);
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
-			g_iTarget[client] = BotGetEnemy(client);
 			
 			if (GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
 			{
@@ -4985,12 +4986,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							iButtons &= ~IN_ATTACK;
 						}
-						else if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 99999.9) && fTargetDistance < 2000.0 && !IsPlayerReloading(client))
+						else if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && !IsPlayerReloading(client))
 						{
 							iButtons |= IN_ATTACK;
 						}
 						
-						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 99999.9) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -4999,7 +5000,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 99999.9) && !(GetEntityFlags(client) & FL_DUCKING))
+						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && !(GetEntityFlags(client) & FL_DUCKING))
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -5021,7 +5022,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientPos[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && IsTargetInSightRange(client, g_iTarget[client], 10.0, 99999.9) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}

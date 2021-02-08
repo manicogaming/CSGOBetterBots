@@ -1854,28 +1854,6 @@ ProP+Rifle "AceCommander"
 	VoicePitch = 79
 End
 
-//PX Players
-
-ProP+Rifle "mindfreak"
-	VoicePitch = 108
-End
-
-ProAwp+SniperPro "d4v41"
-	VoicePitch = 108
-End
-
-ProP+Rifle "Benkai"
-	VoicePitch = 111
-End
-
-ProP+Rifle "Tommy"
-	VoicePitch = 93
-End
-
-ProP+Rifle "f0rsakeN"
-	VoicePitch = 84
-End
-
 //nxl Players
 
 ProP+Rifle "soifong"
@@ -3393,6 +3371,28 @@ End
 
 ProP+Rifle "Knight"
 	VoicePitch = 107
+End
+
+//Rebirth Players
+
+ProP+Rifle "retchy"
+	VoicePitch = 81
+End
+
+ProAwp+SniperPro "XotiC"
+	VoicePitch = 78
+End
+
+ProP+Rifle "nosraC"
+	VoicePitch = 85
+End
+
+ProP+Rifle "wrath"
+	VoicePitch = 76
+End
+
+ProP+Rifle "wippie"
+	VoicePitch = 87
 End
 
 EliteAwp+SniperPro "XD | ryu"

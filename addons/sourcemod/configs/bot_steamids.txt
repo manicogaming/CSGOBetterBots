@@ -334,12 +334,6 @@
 	"powerYY" 			"193302990"
 	"KrowNii" 			"225305859"
 	"pulzG" 			"4110176"
-	//PX Players
-	"mindfreak" 		"118788737"
-	"d4v41" 			"108906255"
-	"Benkai" 			"55219557"
-	"Tommy" 			"43664519"
-	"f0rsakeN" 			"181121911"
 	//nxl Players
 	"soifong" 			"113144130"
 	"frgd[ibtJ]" 		"41830668"	
@@ -640,4 +634,8 @@
 	"pacman^v^" 		"486643146"
 	"GuepaRd" 			"21286400"
 	"zockie" 			"107349646"
+	//Rebirth Players
+	"XotiC" 			"233525417"
+	"wrath" 			"86188776"
+	"wippie"			"55950766"
 }

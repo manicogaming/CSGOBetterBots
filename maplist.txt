@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sun Feb 07 01:05:15 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Feb 08 02:30:18 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -28,7 +28,6 @@ $400$_lite_4s
 828_dust
 [2stoned]xxl_cs
 aim_100hp
-aim_advance
 aim_ag_texture
 aim_ak-47_go
 aim_ak-colt_v2

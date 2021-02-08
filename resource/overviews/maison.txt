@@ -1,0 +1,10 @@
+//Overview: scale 3.00, pos_x -1518, pos_y 1589
+
+"maison"
+
+{
+	"material"	"overviews/maison"
+	"pos_x"		"-1518"
+	"pos_y"		"1589"
+	"scale"		"3.0"
+}

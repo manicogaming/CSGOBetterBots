@@ -384,12 +384,6 @@
 	"KrowNii" 			"TTT"
 	"pulzG" 			"TTT"
 	"AceCommander" 		"TTT"
-	//PX Players
-	"mindfreak" 		"PX"
-	"d4v41" 			"PX"
-	"Benkai" 			"PX"
-	"Tommy" 			"PX"
-	"f0rsakeN" 			"PX"
 	//nxl Players
 	"soifong" 			"nxl"
 	"Foscmorc" 			"nxl"
@@ -798,4 +792,10 @@
 	"zockie" 			"Supremacy"
 	"LKN" 				"Supremacy"
 	"Knight"			"Supremacy"
+	//Rebirth Players
+	"retchy" 			"Rebirth"
+	"XotiC" 			"Rebirth"
+	"nosraC" 			"Rebirth"
+	"wrath" 			"Rebirth"
+	"wippie"			"Rebirth"
 }
