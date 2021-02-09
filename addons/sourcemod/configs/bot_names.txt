@@ -329,7 +329,7 @@
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
 	"exit" 				"Sharks"
-	"coachi" 			"Sharks"
+	"zevy" 				"Sharks"
 	//One Players
 	"prt" 				"One"
 	"Maluk3" 			"One"

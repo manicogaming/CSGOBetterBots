@@ -1875,7 +1875,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "jnt");
 		ServerCommand("bot_add_ct %s", "Lucaozy");
 		ServerCommand("bot_add_ct %s", "exit");
-		ServerCommand("bot_add_ct %s", "coachi");
+		ServerCommand("bot_add_ct %s", "zevy");
 		ServerCommand("mp_teamlogo_1 shark");
 	}
 	
@@ -1886,7 +1886,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "jnt");
 		ServerCommand("bot_add_t %s", "Lucaozy");
 		ServerCommand("bot_add_t %s", "exit");
-		ServerCommand("bot_add_t %s", "coachi");
+		ServerCommand("bot_add_t %s", "zevy");
 		ServerCommand("mp_teamlogo_2 shark");
 	}
 	
@@ -4238,8 +4238,6 @@ public void OnMapStart()
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
-	
-	//GameRules_SetProp("m_nQueuedMatchmakingMode", 1);
 	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);

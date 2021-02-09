@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Mon Feb 08 02:30:18 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Tue Feb 09 02:14:55 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -111,7 +111,6 @@ awp_roost
 awp_roost_2020
 awp_rp94
 awp_source
-awp_war
 awp_zeecore
 ba_winterforest_b1
 blood_gulch
@@ -140,7 +139,8 @@ cs_isku
 cs_italy
 cs_ivory
 cs_lanpartymayhem
-cs_mari
+cs_mall_shootout
+cs_mansion
 cs_militia
 cs_museum
 cs_office
@@ -257,6 +257,7 @@ de_lite_classic
 de_livehouse
 de_log
 de_lumber
+de_manor
 de_maya
 de_mentalhospital_beta
 de_meteora
@@ -384,6 +385,7 @@ kills_ct
 knas_bunker_css
 knas_speedcastle_css
 knife_fight_v1
+maison
 mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1
