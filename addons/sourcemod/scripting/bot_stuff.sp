@@ -21,9 +21,9 @@ bool g_bBombPlanted = false;
 bool g_bDoExecute = false;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
-bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iBotLookAtPosXOffset, g_iBotLookAtPosYOffset, g_iBotLookAtPosZOffset, g_iBotLookAtDescOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset;
+int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
@@ -200,7 +200,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lynn", Team_Lynn);
 	RegConsoleCmd("team_triumph", Team_Triumph);
 	RegConsoleCmd("team_fate", Team_FATE);
-	RegConsoleCmd("team_canids", Team_Canids);
 	RegConsoleCmd("team_og", Team_OG);
 	RegConsoleCmd("team_wizards", Team_Wizards);
 	RegConsoleCmd("team_tricked", Team_Tricked);
@@ -881,7 +880,7 @@ public Action Team_forZe(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "facecrack");
+		ServerCommand("bot_add_ct %s", "KENSI");
 		ServerCommand("bot_add_ct %s", "xsepower");
 		ServerCommand("bot_add_ct %s", "FL1T");
 		ServerCommand("bot_add_ct %s", "almazer");
@@ -892,7 +891,7 @@ public Action Team_forZe(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "facecrack");
+		ServerCommand("bot_add_t %s", "KENSI");
 		ServerCommand("bot_add_t %s", "xsepower");
 		ServerCommand("bot_add_t %s", "FL1T");
 		ServerCommand("bot_add_t %s", "almazer");
@@ -3003,36 +3002,6 @@ public Action Team_FATE(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Canids(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (strcmp(arg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "DeStiNy");
-		ServerCommand("bot_add_ct %s", "nython");
-		ServerCommand("bot_add_ct %s", "dav1d");
-		ServerCommand("bot_add_ct %s", "prd");
-		ServerCommand("bot_add_ct %s", "tatazin");
-		ServerCommand("mp_teamlogo_1 red");
-	}
-	
-	if (strcmp(arg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "DeStiNy");
-		ServerCommand("bot_add_t %s", "nython");
-		ServerCommand("bot_add_t %s", "dav1d");
-		ServerCommand("bot_add_t %s", "prd");
-		ServerCommand("bot_add_t %s", "tatazin");
-		ServerCommand("mp_teamlogo_2 red");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_OG(int client, int iArgs)
 {
 	char arg[12];
@@ -4289,31 +4258,10 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			if (iActiveWeapon == -1) return Plugin_Continue;
 			
 			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-			char szLookAtDesc[64];
 			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex))
 			{
 				FakeClientCommandThrottled(client, "use weapon_knife");
-			}
-			
-			GetEntDataString(client, g_iBotLookAtDescOffset, szLookAtDesc, sizeof(szLookAtDesc));
-					
-			if(strcmp(szLookAtDesc, "Breakable") != 0 && strcmp(szLookAtDesc, "Panic") != 0 && strcmp(szLookAtDesc, "GrenadeThrowBend") != 0 && strcmp(szLookAtDesc, "Avoid Flashbang") != 0 && strcmp(szLookAtDesc, "Defuse bomb") != 0
-			&& strcmp(szLookAtDesc, "Face outward") != 0 && strcmp(szLookAtDesc, "Hostage") != 0 && strcmp(szLookAtDesc, "Open door") != 0 && strcmp(szLookAtDesc, "Use entity") != 0 && strcmp(szLookAtDesc, "Plant bomb on floor") != 0)
-			{
-				float fLookAt[3], fClientEyes[3], fBentLookAt[3];
-			
-				GetClientEyePosition(client, fClientEyes);
-				fLookAt[0] = GetEntDataFloat(client, g_iBotLookAtPosXOffset);
-				fLookAt[1] = GetEntDataFloat(client, g_iBotLookAtPosYOffset);
-				fLookAt[2] = GetEntDataFloat(client, g_iBotLookAtPosZOffset);
-				
-				if(BotBendLineOfSight(client, fClientEyes, fLookAt, fBentLookAt, 135.0))
-				{
-					SetEntDataFloat(client, g_iBotLookAtPosXOffset, fBentLookAt[0]);
-					SetEntDataFloat(client, g_iBotLookAtPosYOffset, fBentLookAt[1]);
-					SetEntDataFloat(client, g_iBotLookAtPosZOffset, fBentLookAt[2]);
-				}
 			}
 			
 			if (g_bIsProBot[client])
@@ -4980,13 +4928,16 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
-						if(IsPlayerReloading(client) && (!(iButtons & IN_ATTACK))) 
+						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
 						{
-							iButtons &= ~IN_ATTACK;
-						}
-						else if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && !IsPlayerReloading(client))
-						{
-							iButtons |= IN_ATTACK;
+							if(IsPlayerReloading(client)) 
+							{
+								iButtons &= ~IN_ATTACK;
+							}
+							else
+							{
+								iButtons |= IN_ATTACK;
+							}
 						}
 						
 						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
@@ -5126,7 +5077,7 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
-bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch, bool &bIsFlasbang)
+bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch, bool &bIsFlasbang, bool &bIsMolotov)
 {
 	char szPath[PLATFORM_MAX_PATH];
 	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
@@ -5167,6 +5118,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	bJumpthrow = !!kv.GetNum("jumpthrow");
 	bCrouch = !!kv.GetNum("crouch");	
 	bIsFlasbang = !!kv.GetNum("isflasbang");	
+	bIsMolotov = !!kv.GetNum("ismolotov");	
 	delete kv;
 	
 	return true;
@@ -5232,15 +5184,28 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				BotEquipBestWeapon(client, true);
 			}
 			
-			if (fSmokeDis < 150.0)
+			if(g_bIsMolotov[client])
 			{
-				if (iDefIndex != 45)
+				if (fSmokeDis < 150.0)
 				{
-					FakeClientCommandThrottled(client, "use weapon_smokegrenade");
+					if (iDefIndex != 45)
+					{
+						FakeClientCommandThrottled(client, "use weapon_molotov");
+					}
 				}
-			}
+			}	
+			else
+			{
+				if (fSmokeDis < 150.0)
+				{
+					if (iDefIndex != 45)
+					{
+						FakeClientCommandThrottled(client, "use weapon_smokegrenade");
+					}
+				}
+			}			
 			
-			if (fSmokeDis < 25.0)
+			if (fSmokeDis < 25.0 || g_bCanThrowSmoke[client])
 			{					
 				BotSetLookAt(client, "Use entity", g_fSmokeLookAt[client], PRIORITY_HIGH, g_fSmokeWaitTime[client], true, 5.0, false);
 				
@@ -5255,8 +5220,12 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				
 				if (g_bCanThrowSmoke[client])
 				{
-					TeleportEntity(client, g_fSmokePos[client], g_fSmokeAngles[client], NULL_VECTOR);
-					iButtons &= ~IN_ATTACK;
+					if ((GetEntityFlags(client) & FL_ONGROUND))
+					{
+						TeleportEntity(client, g_fSmokePos[client], NULL_VECTOR, NULL_VECTOR);
+					}
+					
+					TeleportEntity(client, NULL_VECTOR, g_fSmokeAngles[client], NULL_VECTOR);
 					
 					if(g_bSmokeJumpthrow[client])
 					{
@@ -5268,13 +5237,15 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 						iButtons |= IN_DUCK;
 					}
 					
+					iButtons &= ~IN_ATTACK;
+					
 					if(g_bIsFlashbang[client])
 					{
-						CreateTimer(0.2, Timer_SmokeDelay, GetClientUserId(client));	
+						CreateTimer(0.5, Timer_SmokeDelay, GetClientUserId(client));	
 					}
 					else
 					{
-						CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
+						CreateTimer(0.5, Timer_NadeDelay, GetClientUserId(client));
 					}
 				}
 			}
@@ -5315,8 +5286,12 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			
 			if (g_bCanThrowFlash[client])
 			{
-				TeleportEntity(client, g_fFlashPos[client], g_fFlashAngles[client], NULL_VECTOR);
-				iButtons &= ~IN_ATTACK;
+				if ((GetEntityFlags(client) & FL_ONGROUND))
+				{
+					TeleportEntity(client, g_fFlashPos[client], NULL_VECTOR, NULL_VECTOR);
+				}
+				
+				TeleportEntity(client, NULL_VECTOR, g_fFlashAngles[client], NULL_VECTOR);
 				
 				if(g_bFlashJumpthrow[client])
 				{
@@ -5328,7 +5303,9 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 					iButtons |= IN_DUCK;
 				}
 				
-				CreateTimer(0.2, Timer_NadeDelay, GetClientUserId(client));
+				iButtons &= ~IN_ATTACK;
+				
+				CreateTimer(0.5, Timer_NadeDelay, GetClientUserId(client));
 			}
 		}
 	}
@@ -5423,26 +5400,6 @@ public void LoadSDK()
 	{
 		SetFailState("Failed to get CCSBot::m_task offset.");
 	}	
-	
-	if ((g_iBotLookAtPosXOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpot.x")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookAtSpot.x offset.");
-	}
-	
-	if ((g_iBotLookAtPosYOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpot.y")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookAtSpot.y offset.");
-	}
-	
-	if ((g_iBotLookAtPosZOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpot.z")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookAtSpot.z offset.");
-	}
-	
-	if ((g_iBotLookAtDescOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtDesc")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookAtDesc offset.");
-	}
 	
 	if ((g_iFireWeaponOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp")) == -1)
 	{

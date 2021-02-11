@@ -932,7 +932,7 @@ End
 
 //forZe Players
 
-ProP+Rifle "facecrack"
+ProP+Rifle "KENSI"
 	VoicePitch = 75
 End
 
@@ -2468,28 +2468,6 @@ End
 
 ProP+Rifle "niki1"
 	VoicePitch = 114
-End
-
-//Canids Players
-
-ProP+Rifle "DeStiNy"
-	VoicePitch = 98
-End
-
-ProAwp+SniperPro "nython"
-	VoicePitch = 79
-End
-
-ProP+Rifle "dav1d"
-	VoicePitch = 104
-End
-
-ProP+Rifle "prd"
-	VoicePitch = 75
-End
-
-ProP+Rifle "tatazin"
-	VoicePitch = 91
 End
 
 //OG Players

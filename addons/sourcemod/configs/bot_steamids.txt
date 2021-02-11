@@ -118,7 +118,7 @@
 	"JamYoung" 			"404671310"	
 	"advent" 			"41786057"
 	//forZe Players
-	"facecrack" 		"115742145"	
+	"KENSI" 			"440380554"	
 	"xsepower" 			"112014226"
 	"FL1T" 				"35551773"
 	"almazer" 			"83782305"
@@ -462,11 +462,6 @@
 	"Patrick--" 		"98715951"
 	"Rock1nG" 			"246843704"
 	"niki1" 			"932616892"
-	//Canids Players
-	"DeStiNy" 			"89528706"
-	"nython" 			"170224923"
-	"prd" 				"27903842"
-	"tatazin" 			"34836484"
 	//OG Players
 	"NBK-" 				"444845"
 	"mantuu" 			"56166832"

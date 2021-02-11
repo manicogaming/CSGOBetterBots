@@ -11,6 +11,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Stairs Smoke"
 		{
@@ -21,6 +22,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Jungle Smoke"
 		{
@@ -31,6 +33,18 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Sandwich Molotov"
+		{
+			"position"    	"832.028748 -1255.186768 -108.968750"
+			"lookpos"		"544.031250 -1332.396484 62.378494"
+			"angles"		"-19.800056 -164.992386 0.000000"
+			"waittime"		"1.5"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
 		}
 		"Top-Mid Smoke"
 		{
@@ -41,6 +55,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Mid-Short Smoke"
 		{
@@ -51,6 +66,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Window Smoke"
 		{
@@ -61,6 +77,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Bottom Con Smoke"
 		{
@@ -71,6 +88,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Top Con Smoke"
 		{
@@ -81,6 +99,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Short-Left Smoke"
 		{
@@ -91,6 +110,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Short-Right Smoke"
 		{
@@ -101,6 +121,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Market Door Smoke"
 		{
@@ -111,6 +132,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Market Window Smoke"
 		{
@@ -121,6 +143,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Lamp Flash"
 		{
@@ -131,6 +154,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"A Site Flash"
 		{
@@ -141,6 +165,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Palace Flash"
 		{
@@ -151,6 +176,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Connector Flash"
 		{
@@ -161,6 +187,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Mid Flash"
 		{
@@ -171,6 +198,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"B Corner Flash"
 		{
@@ -181,6 +209,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Car Flash"
 		{
@@ -191,6 +220,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"B Short Flash"
 		{
@@ -201,11 +231,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
-		}
-		"Ramp Position"
-		{
-			"lookpos"		"-63.982632 -1674.684204 -103.906189"
-			"waittime"		"2.5"
+			"ismolotov"		"0"
 		}
 		"Underpass Position"
 		{
@@ -224,6 +250,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"B Plat Smoke"
 		{
@@ -234,6 +261,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"B Site Smoke"
 		{
@@ -244,6 +272,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"XBOX Smoke"
 		{
@@ -254,6 +283,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Short A Smoke"
 		{
@@ -264,6 +294,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Short-Boost Smoke"
 		{
@@ -274,6 +305,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"A Site Smoke"
 		{
@@ -284,6 +316,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"1"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Long Corner Smoke"
 		{
@@ -294,6 +327,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"A Car Smoke"
 		{
@@ -304,6 +338,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"CT Smoke"
 		{
@@ -314,6 +349,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"B PopFlash"
 		{
@@ -324,6 +360,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"B Site Flash"
 		{
@@ -334,6 +371,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"1"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"A Site Flash"
 		{
@@ -344,6 +382,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Long Flash"
 		{
@@ -354,6 +393,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Lower Tunnel Position"
 		{
@@ -392,6 +432,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Coffin Smoke"
 		{
@@ -402,6 +443,40 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"1st Box Molotov"
+		{
+			"position"		"339.975311 2027.880859 128.031250"
+			"lookpos"		"508.439605 2499.108642 703.968750"
+			"angles"		"-45.650921 70.327995 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"2nd Box Molotov"
+		{
+			"position"		"479.276855 2017.978516 128.405289"
+			"lookpos"		"381.557312 2143.000000 256.516357"
+			"angles"		"-22.000000 128.011963 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"Dark Molotov"
+		{
+			"position"		"460.446716 1828.490845 136.113953"
+			"lookpos"		"375.675659 2143.020263 191.906921"
+			"angles"		"1.443207 105.083778 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
 		}
 		"Long A Smoke"
 		{
@@ -412,6 +487,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Site-Library Smoke"
 		{
@@ -422,6 +498,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Pit Smoke"
 		{
@@ -432,6 +509,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Balcony Smoke"
 		{
@@ -442,6 +520,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Short A Smoke"
 		{
@@ -452,6 +531,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Arch Smoke"
 		{
@@ -462,16 +542,18 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Graveyard Smoke"
 		{
 			"position"		"716.031250 692.481201 95.031250"
-			"lookpos"		"959.000000 648.151123 202.580429"
-			"angles"		"-10.000000 -10.339989 0.000000"
+			"lookpos"		"959.342651 621.147583 261.473144"
+			"angles"		"-22.000000 -16.339989 0.000000"
 			"waittime"		"3.0"
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Library Smoke"
 		{
@@ -482,6 +564,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"B PopFlash"
 		{
@@ -492,6 +575,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"B Site Flash"
 		{
@@ -502,6 +586,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Pit Flash"
 		{
@@ -512,6 +597,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Balcony Flash"
 		{
@@ -522,21 +608,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"1"
 			"isflasbang"	"1"
-		}
-		"CT Position"
-		{
-			"lookpos"		"921.785706 2720.304443 192.554459"
-			"waittime"		"3.0"
-		}
-		"CT Push Position"
-		{
-			"lookpos"		"921.785706 2720.304443 192.554459"
-			"waittime"		"5.0"
-		}
-		"Bottom Banana Position"
-		{
-			"lookpos"		"111.965370 699.592651 138.017456"
-			"waittime"		"5.0"
+			"ismolotov"		"0"
 		}
 		"Balcony Position"
 		{
@@ -555,6 +627,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Van Smoke"
 		{
@@ -565,6 +638,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Box Smoke"
 		{
@@ -575,6 +649,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"A Site Flash"
 		{
@@ -585,6 +660,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Long Flash"
 		{
@@ -595,6 +671,7 @@
 			"jumpthrow"		"1"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Bathroom Position"
 		{
@@ -615,6 +692,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Balcony Smoke"
 		{
@@ -625,6 +703,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Bridge Smoke"
 		{
@@ -635,6 +714,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"B Site Smoke"
 		{
@@ -645,6 +725,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"0"
+			"ismolotov"		"0"
 		}
 		"Monster Position"
 		{
@@ -660,6 +741,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 		"Monster Flash"
 		{
@@ -670,6 +752,7 @@
 			"jumpthrow"		"0"
 			"crouch"		"0"
 			"isflasbang"	"1"
+			"ismolotov"		"0"
 		}
 	}
 }

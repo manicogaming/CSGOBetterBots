@@ -92,26 +92,6 @@
 				//Is inside CCSBot::DebugDisplay near 'Task: %s' string
 				"windows"       "16012"
 			}
-			"CCSBot::m_lookAtSpot.x"
-			{
-				//Is inside CCSBot::SetLookAt
-				"windows"       "23076"
-			}
-			"CCSBot::m_lookAtSpot.y"
-			{
-				//Is inside CCSBot::SetLookAt
-				"windows"       "23080"
-			}
-			"CCSBot::m_lookAtSpot.z"
-			{
-				//Is inside CCSBot::SetLookAt
-				"windows"       "23084"
-			}
-			"CCSBot::m_lookAtDesc"
-			{
-				//Is inside CCSBot::SetLookAt
-				"windows"       "23108"
-			}
 			"CCSBot::m_fireWeaponTimestamp"
 			{
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function

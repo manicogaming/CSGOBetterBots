@@ -127,7 +127,7 @@
 	"JamYoung" 			"ViCi"	
 	"advent" 			"ViCi"
 	//forZe Players
-	"facecrack" 		"forZe"	
+	"KENSI" 			"forZe"	
 	"xsepower" 			"forZe"
 	"FL1T" 				"forZe"
 	"almazer" 			"forZe"
@@ -552,12 +552,6 @@
 	"Rock1nG" 			"FATE"
 	"shaiK" 			"FATE"	
 	"niki1" 			"FATE"
-	//Canids Players
-	"DeStiNy" 			"Canids"
-	"nython" 			"Canids"
-	"dav1d" 			"Canids"
-	"prd" 				"Canids"
-	"tatazin" 			"Canids"
 	//OG Players
 	"NBK-" 				"OG"
 	"mantuu" 			"OG"
