@@ -727,10 +727,16 @@
 			"isflasbang"	"0"
 			"ismolotov"		"0"
 		}
-		"Monster Position"
+		"Toxic Molotov"
 		{
-			"lookpos"		"-555.003418 -160.039139 67.357529"
-			"waittime"		"15.0"
+			"position"		"-1743.968750 -541.999023 96.031250"
+			"lookpos"		"-1250.305908 -14.881835 436.852203"
+			"angles"		"-20.972263 46.877098 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
 		}
 		"B Site Flash"
 		{

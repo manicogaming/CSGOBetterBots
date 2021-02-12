@@ -9,12 +9,6 @@
 #include <navmesh>
 #include <dhooks>
 
-#define Pointer Address
-#define nullptr Address_Null
-
-#define Address(%1) view_as<Address>(%1)
-#define int(%1) view_as<int>(%1)
-
 char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
@@ -23,20 +17,41 @@ bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset;
+int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
+Handle g_hLookupBone;
+Handle g_hGetBonePosition;
 Handle g_hBotIsVisible;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
-Handle g_hBotGetEnemy;
 Handle g_hBotBendLineOfSight;
-Handle g_hGetBonePosition;
+
+char g_szBoneNames[][] =  {
+	"neck_0", 
+	"pelvis", 
+	"spine_0", 
+	"spine_1", 
+	"spine_2", 
+	"spine_3", 
+	"arm_upper_L", 
+	"arm_lower_L", 
+	"hand_L", 
+	"arm_upper_R", 
+	"arm_lower_R", 
+	"hand_R", 
+	"leg_upper_L", 
+	"ankle_L", 
+	"leg_lower_L", 
+	"leg_upper_R", 
+	"ankle_R", 
+	"leg_lower_R"
+};
 
 enum RouteType
 {
@@ -176,7 +191,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_dv", Team_DV);
 	RegConsoleCmd("team_energy", Team_energy);
 	RegConsoleCmd("team_furious", Team_Furious);
-	RegConsoleCmd("team_groundzero", Team_GroundZero);
+	RegConsoleCmd("team_illuminar", Team_Illuminar);
 	RegConsoleCmd("team_gtz", Team_GTZ);
 	RegConsoleCmd("team_extremum", Team_EXTREMUM);
 	RegConsoleCmd("team_k23", Team_K23);
@@ -2282,7 +2297,7 @@ public Action Team_Furious(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_GroundZero(int client, int iArgs)
+public Action Team_Illuminar(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2290,23 +2305,23 @@ public Action Team_GroundZero(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "BURNRUOk");
-		ServerCommand("bot_add_ct %s", "Laes");
-		ServerCommand("bot_add_ct %s", "Llamas");
-		ServerCommand("bot_add_ct %s", "Noobster");
-		ServerCommand("bot_add_ct %s", "Mayker");
-		ServerCommand("mp_teamlogo_1 ground");
+		ServerCommand("bot_add_ct %s", "mouz");
+		ServerCommand("bot_add_ct %s", "Markoś");
+		ServerCommand("bot_add_ct %s", "GruBy");
+		ServerCommand("bot_add_ct %s", "Sidney");
+		ServerCommand("bot_add_ct %s", "morelz");
+		ServerCommand("mp_teamlogo_1 illu");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "BURNRUOk");
-		ServerCommand("bot_add_t %s", "Laes");
-		ServerCommand("bot_add_t %s", "Llamas");
-		ServerCommand("bot_add_t %s", "Noobster");
-		ServerCommand("bot_add_t %s", "Mayker");
-		ServerCommand("mp_teamlogo_2 ground");
+		ServerCommand("bot_add_t %s", "mouz");
+		ServerCommand("bot_add_t %s", "Markoś");
+		ServerCommand("bot_add_t %s", "GruBy");
+		ServerCommand("bot_add_t %s", "Sidney");
+		ServerCommand("bot_add_t %s", "morelz");
+		ServerCommand("mp_teamlogo_2 illu");
 	}
 	
 	return Plugin_Handled;
@@ -4268,24 +4283,27 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			{
 				g_iTarget[client] = BotGetEnemy(client);
 				
-				int iPlantedC4 = GetNearestEntity(client, "planted_c4");
-				
-				if (IsValidEntity(iPlantedC4) && GetClientTeam(client) == CS_TEAM_CT)
+				if(g_bBombPlanted)
 				{
-					float fPlantedC4Location[3];
-					GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
+					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
 					
-					float fClientLocation[3];
-					GetClientAbsOrigin(client, fClientLocation);
-					
-					float fPlantedC4Distance;
-					
-					fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
-					
-					if (fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
+					if (IsValidEntity(iPlantedC4) && GetClientTeam(client) == CS_TEAM_CT)
 					{
-						FakeClientCommandThrottled(client, "use weapon_knife");
-						BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
+						float fPlantedC4Location[3];
+						GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
+						
+						float fClientLocation[3];
+						GetClientAbsOrigin(client, fClientLocation);
+						
+						float fPlantedC4Distance;
+						
+						fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
+						
+						if (fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
+						{
+							FakeClientCommandThrottled(client, "use weapon_knife");
+							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
+						}
 					}
 				}
 				
@@ -4760,12 +4778,17 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 				{
 					if (Math_GetRandomInt(1, 100) <= 65)
 					{
-						float fPosition[3], fAngles[3];
-						GetBonePosition(g_iTarget[client], 6, fPosition, fAngles);
+						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
-						if (BotIsVisible(client, fPosition, false))
+						if (iBone < 0)
+							return MRES_Ignored;
+						
+						float fBody[3], fBad[3];
+						GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
+						
+						if (BotIsVisible(client, fBody, false, -1))
 						{
-							g_fTargetPos[client] = fPosition;
+							g_fTargetPos[client] = fBody;
 						}
 					}
 				}
@@ -4774,12 +4797,16 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					float fPosition[3], fAngles[3];
-					GetBonePosition(g_iTarget[client], 6, fPosition, fAngles);
+					int iBone = LookupBone(g_iTarget[client], "spine_3");
+					if (iBone < 0)
+						return MRES_Ignored;
 					
-					if (BotIsVisible(client, fPosition, false))
+					float fBody[3], fBad[3];
+					GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
+					
+					if (BotIsVisible(client, fBody, false, -1))
 					{
-						g_fTargetPos[client] = fPosition;
+						g_fTargetPos[client] = fBody;
 					}
 				}
 			}
@@ -5271,7 +5298,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			}
 		}
 		
-		if (fFlashDis < 25.0)
+		if (fFlashDis < 25.0 || g_bCanThrowSmoke[client])
 		{
 			BotSetLookAt(client, "Use entity", g_fFlashLookAt[client], PRIORITY_HIGH, g_fFlashWaitTime[client], true, 5.0, false);
 			
@@ -5416,6 +5443,11 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_pLocalProfile offset.");
 	}
 	
+	if ((g_iBotEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_enemy offset.");
+	}
+	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::ComputePath");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
@@ -5423,6 +5455,19 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::ComputePath signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
+	if ((g_hLookupBone = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
+	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
@@ -5462,18 +5507,6 @@ public void LoadSDK()
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
 	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::GetBotEnemy");
-	PrepSDKCall_SetReturnInfo(SDKType_CBasePlayer, SDKPass_Pointer);
-	if ((g_hBotGetEnemy = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::GetBotEnemy signature!");
-	
-	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	if ((g_hGetBonePosition = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
-	
 	delete hGameConfig;
 }
 
@@ -5501,6 +5534,16 @@ public void LoadDetours()
 	}
 	
 	delete hGameData;
+}
+
+public int LookupBone(int iEntity, const char[] szName)
+{
+	return SDKCall(g_hLookupBone, iEntity, szName);
+}
+
+public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAngles[3])
+{
+	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
 }
 
 bool BotMoveTo(int client, float fOrigin[3], RouteType routeType, float fSomething = 0.0)
@@ -5535,12 +5578,7 @@ public bool BotBendLineOfSight(int client, const float fEye[3], const float fTar
 
 public int BotGetEnemy(int client)
 {
-	return SDKCall(g_hBotGetEnemy, client);
-}
-
-public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAngles[3])
-{
-	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
+	return GetEntDataEnt2(client, g_iBotEnemyOffset);
 }
 
 public bool BotIsBusy(int client)
@@ -5721,68 +5759,46 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
 	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 	{
-		Address pStudioHdr = view_as<Address>(GetEntData(g_iTarget[client], 1216));
-		if(pStudioHdr == Address_Null)
+		int iBone = LookupBone(g_iTarget[client], "head_0");
+		if (iBone < 0)
 			return;
 		
-		pStudioHdr = Address(Dereference(pStudioHdr));
+		float fHead[3], fBad[3];
+		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
 		
-		int iHitboxSetIndex = ReadInt(pStudioHdr + Address(0xB0));
-		Address pStudioHitboxSet = pStudioHdr + Address(iHitboxSetIndex);
-		if(pStudioHitboxSet == Address_Null)
-			return;
+		fHead[2] += 2.0;
 		
-		int iNumHitboxes = ReadInt(pStudioHitboxSet + Address(0x4));
-		
-		pStudioHitboxSet += Address(0xC);
-
-		for (int i = 0; i < iNumHitboxes; i++)
+		if (BotIsVisible(client, fHead, false, -1))
 		{
-			float fPosition[3], fAngles[3];
-			
-			//mstudiobbox_t 
-			Pointer pBox = Address(pStudioHitboxSet + Address(i * 68));
-			
-			int iBone = ReadInt(pBox);
-			
-			GetBonePosition(g_iTarget[client], iBone, fPosition, fAngles);
-			g_bIsHeadVisible[client] = false;
-			
-			if (BotIsVisible(client, fPosition, false))
-			{
-				fTargetPos = fPosition;
-				
-				if(iBone == 8)
-				{
-					g_bIsHeadVisible[client] = true;
-				}
-				break;
-			}
+			g_bIsHeadVisible[client] = true;
 		}
+		else
+		{
+			bool bVisibleOther = false;
+			
+			//Head wasn't visible, check other bones.
+			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
+			{
+				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
+				if (iBone < 0)
+					return;
+				
+				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
+				
+				if (BotIsVisible(client, fHead, false, -1))
+				{
+					g_bIsHeadVisible[client] = false;
+					bVisibleOther = true;
+					break;
+				}
+			}
+			
+			if (!bVisibleOther)
+				return;
+		}
+		
+		fTargetPos = fHead;
 	}
-}
-
-stock Pointer Transpose(Pointer pAddr, int iOffset)		
-{
-	return Address(int(pAddr) + iOffset);		
-}
-stock int Dereference(Pointer pAddr, int iOffset = 0)		
-{
-	if(pAddr == nullptr)		
-	{
-		return -1;
-	}
-	
-	return ReadInt(Transpose(pAddr, iOffset));
-} 
-stock int ReadInt(Pointer pAddr)
-{
-	if(pAddr == nullptr)
-	{
-		return -1;
-	}
-	
-	return LoadFromAddress(pAddr, NumberType_Int32);
 }
 
 stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)

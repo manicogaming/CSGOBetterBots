@@ -346,11 +346,12 @@
 	"mango" 			"183429246"
 	//Furious Players
 	"Owen$inhoM" 		"398043785"	
-	//GroundZero Players
-	"BURNRUOk" 			"40368480"
-	"Llamas" 			"112275273"
-	"Noobster" 			"48794627"
-	"Mayker" 			"88236677"
+	//Illuminar Players
+	"mouz" 				"38464805"
+	"GruBy" 			"44752530"
+	"Sidney" 			"70091835"
+	"morelz" 			"122208414"
+	"Markoś" 			"68256934"
 	//GTZ Players
 	"fakes2" 			"96848867"
 	//EXTREMUM Players

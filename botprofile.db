@@ -1942,25 +1942,25 @@ ProP+Rifle "nacho"
 	VoicePitch = 96
 End
 
-//GroundZero Players
+//Illuminar Players
 
-ProP+Rifle "BURNRUOk"
+ProP+Rifle "mouz"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "Laes"
+ProAwp+SniperPro "Markoś"
 	VoicePitch = 110
 End
 
-ProP+Rifle "Llamas"
+ProP+Rifle "GruBy"
 	VoicePitch = 108
 End
 
-ProP+Rifle "Noobster"
+ProP+Rifle "Sidney"
 	VoicePitch = 75
 End
 
-ProP+Rifle "Mayker"
+ProP+Rifle "morelz"
 	VoicePitch = 108
 End
 

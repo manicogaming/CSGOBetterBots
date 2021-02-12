@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Feb 11 04:22:37 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Fri Feb 12 01:08:39 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -254,6 +254,7 @@ de_legacy
 de_lite
 de_lite_classic
 de_livehouse
+de_lodge
 de_log
 de_lumber
 de_manor

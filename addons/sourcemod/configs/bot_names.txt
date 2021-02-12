@@ -408,12 +408,12 @@
 	"Owen$inhoM" 		"Furious"	
 	"Gooden" 			"Furious"
 	"nacho" 			"Furious"
-	//GroundZero Players
-	"BURNRUOk" 			"GroundZero"
-	"Laes" 				"GroundZero"
-	"Llamas" 			"GroundZero"
-	"Noobster" 			"GroundZero"
-	"Mayker" 			"GroundZero"
+	//Illuminar Players
+	"mouz" 				"Illuminar"
+	"Markoś" 			"Illuminar"
+	"GruBy" 			"Illuminar"
+	"Sidney" 			"Illuminar"
+	"morelz" 			"Illuminar"
 	//GTZ Players
 	"rafaxF" 			"GTZ"
 	"snapy" 			"GTZ"
