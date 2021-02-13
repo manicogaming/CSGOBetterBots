@@ -64,6 +64,12 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x44\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\x81\x0C\x10\x00\x00"
 			}
+			"CCSBot::ThrowGrenade"
+			{
+				// Has '%3.2f: Grenade: START_THROW\n' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xC0\x83\xEC\x3C\x56\x8B\xF1\xE8\x2A\x2A\x2A\x2A"
+			}
 		}
 		"Offsets"
 		{
@@ -159,6 +165,20 @@
                 "callconv" "thiscall"
                 "return" "void"
                 "this" "entity"
+            }
+			"CCSBot::ThrowGrenade"
+			{
+                "signature" "CCSBot::ThrowGrenade"
+                "callconv" "thiscall"
+                "return" "void"
+                "this" "entity"
+				"arguments"
+                {
+                    "target"
+                    {
+                        "type" "vectorptr"
+                    }
+                }
             }
 		}
 		"MemPatches"

@@ -37,7 +37,8 @@ public void PrepareOverpassExecutes()
 				navArea[clients[4]] = NavMesh_FindAreaByID(iShortAAreaIDs[Math_GetRandomInt(0, sizeof(iShortAAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
+				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
+				&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
 				{
 					FakeClientCommandEx(clients[0], "buy smokegrenade");
 					FakeClientCommandEx(clients[0], "buy flashbang");

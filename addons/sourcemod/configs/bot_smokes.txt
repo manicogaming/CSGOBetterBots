@@ -761,4 +761,127 @@
 			"ismolotov"		"0"
 		}
 	}
+	"de_train"
+	{
+		"Olof Smoke"
+		{
+			"position"		"-811.976379 1166.860352 -218.177780"
+			"lookpos"		"155.912109 650.364990 863.968811"
+			"angles"		"-42.863003 -28.085764 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Sandwich Smoke"
+		{
+			"position"		"-827.408264 1268.040405 -222.968750"
+			"lookpos"		"-524.562683 985.556518 171.098327"
+			"angles"		"-38.554581 -43.007671 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Train 1st Smoke"
+		{
+			"position"		"-453.358459 1286.284668 -86.553314"
+			"lookpos"		"527.593505 -329.093017 863.968750"
+			"angles"		"-25.130558 -58.731426 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Train 2nd Smoke"
+		{
+			"position"		"-537.950317 1396.680664 -86.902039"
+			"lookpos"		"443.545837 -237.162841 863.968750"
+			"angles"		"-24.952953 -59.005566 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Train 3rd Smoke"
+		{
+			"position"		"-625.311584 1260.723999 -216.321198"
+			"lookpos"		"-33.618530 443.000793 863.968627"
+			"angles"		"-45.196518 -54.111027 0.000000"
+			"waittime"		"3.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Main Flash"
+		{
+			"position"		"-827.991455 1268.031250 -222.968750"
+			"lookpos"		"-528.568237 979.940063 172.814941"
+			"angles"		"-38.607098 -43.895012 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"B Lower Smoke"
+		{
+			"position"		"-1159.978027 -1088.112549 -95.968750"
+			"lookpos"		"9.137451 -811.574096 111.968750"
+			"angles"		"-6.832071 13.307947 0.000000"
+			"waittime"		"2.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Summit Smoke"
+		{
+			"position"		"-1145.564453 -1043.269287 -95.968750"
+			"lookpos"		"564.968505 -1149.416137 185.869567"
+			"angles"		"-7.243830 -3.550928 0.000000"
+			"waittime"		"1.5"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"B Upper Smoke"
+		{
+			"position"		"-1055.968750 -1607.969116 -151.968750"
+			"lookpos"		"-577.345581 -1791.968750 -6.055313"
+			"angles"		"-9.076089 -21.028521 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"B Site Flash"
+		{
+			"position"		"-1155.987793 -1301.504517 -95.968750"
+			"lookpos"		"-545.498962 -833.208862 147.968734"
+			"angles"		"-13.162806 37.491207 0.000000"
+			"waittime"		"1.0"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"B Lower Position"
+		{
+			"lookpos"		"-330.800232 -883.572632 -255.906189"
+			"waittime"		"5.0"
+		}
+		"B Upper Position"
+		{
+			"lookpos"		"-531.842651 -1725.483398 -39.906189"
+			"waittime"		"5.0"
+		}
+	}
 }

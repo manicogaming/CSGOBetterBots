@@ -99,6 +99,7 @@ enum TaskType
 #include "bot_stuff/de_dust2.sp"
 #include "bot_stuff/de_inferno.sp"
 #include "bot_stuff/de_overpass.sp"
+#include "bot_stuff/de_train.sp"
 
 public Plugin myinfo = 
 {
@@ -4625,6 +4626,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		g_iRndExecute = Math_GetRandomInt(1, 2);
 		PrepareOverpassExecutes();
 	}
+	else if (strcmp(g_szMap, "de_train") == 0)
+	{
+		g_iRndExecute = Math_GetRandomInt(1, 2);
+		PrepareTrainExecutes();
+	}
 }
 
 Action Timer_FreezetimeEndDelay(Handle hTimer)
@@ -4754,6 +4760,59 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	return Plugin_Continue;
 }
 
+public MRESReturn CCSBot_ThrowGrenade(int client, DHookParam hParams)
+{
+	if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0))
+	{
+		return MRES_Supercede;
+	}
+	
+	return MRES_Ignored;
+}
+
+public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
+{
+	char szDesc[64];
+	
+	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
+	
+	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
+		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+	{
+		return MRES_Ignored;
+	}
+	else if (strcmp(szDesc, "GrenadeThrowBend") == 0)
+	{
+		float fPos[3];
+		
+		DHookGetParamVector(hParams, 2, fPos);
+		fPos[2] += Math_GetRandomFloat(25.0, 100.0);
+		DHookSetParamVector(hParams, 2, fPos);
+		
+		return MRES_ChangedHandled;
+	}
+	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
+	{
+		DHookSetParam(hParams, 3, PRIORITY_HIGH);
+		
+		return MRES_ChangedHandled;
+	}
+	else if (strcmp(szDesc, "Blind") == 0)
+	{
+		return MRES_Supercede;
+	}
+	else
+	{
+		float fPos[3];
+		
+		DHookGetParamVector(hParams, 2, fPos);
+		fPos[2] += 25.0;
+		DHookSetParamVector(hParams, 2, fPos);
+		
+		return MRES_ChangedHandled;
+	}
+}
+
 public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
 	if (g_bIsProBot[client])
@@ -4822,49 +4881,6 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 	}
 	
 	return MRES_Ignored;
-}
-
-public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
-{
-	char szDesc[64];
-	
-	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
-	
-	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
-		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
-	{
-		return MRES_Ignored;
-	}
-	else if (strcmp(szDesc, "GrenadeThrowBend") == 0)
-	{
-		float fPos[3];
-		
-		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += Math_GetRandomFloat(25.0, 100.0);
-		DHookSetParamVector(hParams, 2, fPos);
-		
-		return MRES_ChangedHandled;
-	}
-	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
-	{
-		DHookSetParam(hParams, 3, PRIORITY_HIGH);
-		
-		return MRES_ChangedHandled;
-	}
-	else if (strcmp(szDesc, "Blind") == 0)
-	{
-		return MRES_Supercede;
-	}
-	else
-	{
-		float fPos[3];
-		
-		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += 25.0;
-		DHookSetParamVector(hParams, 2, fPos);
-		
-		return MRES_ChangedHandled;
-	}
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
@@ -5298,7 +5314,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			}
 		}
 		
-		if (fFlashDis < 25.0 || g_bCanThrowSmoke[client])
+		if (fFlashDis < 25.0 || g_bCanThrowFlash[client])
 		{
 			BotSetLookAt(client, "Use entity", g_fFlashLookAt[client], PRIORITY_HIGH, g_fFlashWaitTime[client], true, 5.0, false);
 			
@@ -5531,6 +5547,13 @@ public void LoadDetours()
 	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
 	{
 		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
+	}
+	
+	//CCSBot::ThrowGrenade Detour
+	DynamicDetour hBotThrowGrenadeDetour = DynamicDetour.FromConf(hGameData, "CCSBot::ThrowGrenade");
+	if(!hBotThrowGrenadeDetour.Enable(Hook_Pre, CCSBot_ThrowGrenade))
+	{
+		SetFailState("Failed to setup detour for CCSBot::ThrowGrenade");
 	}
 	
 	delete hGameData;
