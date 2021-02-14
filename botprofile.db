@@ -2580,7 +2580,7 @@ ProP+Rifle "flameZ"
 	VoicePitch = 96
 End
 
-//sAw Players
+//SAW Players
 
 ProP+Rifle "arki"
 	VoicePitch = 112

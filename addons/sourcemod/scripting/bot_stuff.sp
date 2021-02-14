@@ -20,7 +20,7 @@ int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPCha
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
-float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
+float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3], g_fBulletPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -118,6 +118,7 @@ public void OnPluginStart()
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
+	HookEventEx("bullet_impact", OnBulletImpact);
 	
 	LoadSDK();
 	LoadDetours();
@@ -4683,6 +4684,17 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 	}
 }
 
+public void OnBulletImpact(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+	{
+		g_fBulletPos[client][0] = eEvent.GetFloat("x");
+		g_fBulletPos[client][1] = eEvent.GetFloat("y");
+		g_fBulletPos[client][2] = eEvent.GetFloat("z");
+	}
+}
+
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
@@ -4967,11 +4979,20 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					BotEquipBestWeapon(client, true);
 				}
 				
+				float fClientEyes[3], fToAimSpot[3], fToAimSpotNormalized[3], fAimDir[3];
+				
+				GetClientEyePosition(client, fClientEyes);
+				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
+				
+				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpotNormalized);
+				float fOnTarget = GetVectorDotProduct(fToAimSpotNormalized, g_fBulletPos[client]);
+				float fAimTolerance = Cosine(ArcTangent(48.0 / fRangeToEnemy));
+				
 				switch(iDefIndex)
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
-						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
+						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
 						{
 							if(IsPlayerReloading(client)) 
 							{
@@ -4983,7 +5004,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							}
 						}
 						
-						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -4992,7 +5013,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						if (IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && !(GetEntityFlags(client) & FL_DUCKING))
+						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && !(GetEntityFlags(client) & FL_DUCKING))
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -5014,7 +5035,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientPos[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && IsTargetInSightRange(client, g_iTarget[client], 10.0, 8000.0) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && (GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
@@ -5822,57 +5843,6 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 		
 		fTargetPos = fHead;
 	}
-}
-
-stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 40.0, float fDistance = 0.0, bool bHeightcheck = true, bool bNegativeangle = false)
-{
-	if (fAngle > 360.0)
-		fAngle = 360.0;
-	
-	if (fAngle < 0.0)
-		return false;
-	
-	float fClientPos[3];
-	float fTargetPos[3];
-	float fAngleVector[3];
-	float fTargetVector[3];
-	float fResultAngle;
-	float fResultDistance;
-	
-	GetClientEyeAngles(client, fAngleVector);
-	fAngleVector[0] = fAngleVector[2] = 0.0;
-	GetAngleVectors(fAngleVector, fAngleVector, NULL_VECTOR, NULL_VECTOR);
-	NormalizeVector(fAngleVector, fAngleVector);
-	if (bNegativeangle)
-		NegateVector(fAngleVector);
-	
-	GetClientAbsOrigin(client, fClientPos);
-	GetClientAbsOrigin(iTarget, fTargetPos);
-	
-	if (bHeightcheck && fDistance > 0)
-		fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-	
-	fClientPos[2] = fTargetPos[2] = 0.0;
-	MakeVectorFromPoints(fClientPos, fTargetPos, fTargetVector);
-	NormalizeVector(fTargetVector, fTargetVector);
-	
-	fResultAngle = RadToDeg(ArcCosine(GetVectorDotProduct(fTargetVector, fAngleVector)));
-	
-	if (fResultAngle <= fAngle / 2)
-	{
-		if (fDistance > 0)
-		{
-			if (!bHeightcheck)
-				fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-			
-			if (fDistance >= fResultDistance)
-				return true;
-			else return false;
-		}
-		else return true;
-	}
-	
-	return false;
 }
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])

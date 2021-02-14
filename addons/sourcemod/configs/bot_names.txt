@@ -582,12 +582,12 @@
 	"MiGHTYMAX" 		"Endpoint"
 	"robiin" 			"Endpoint"
 	"flameZ" 			"Endpoint"
-	//sAw Players
-	"arki"				"sAw" 
-	"stadodo" 			"sAw"
-	"JUST" 				"sAw"
-	"MUTiRiS" 			"sAw"	
-	"rmn" 				"sAw"
+	//SAW Players
+	"arki"				"SAW" 
+	"stadodo" 			"SAW"
+	"JUST" 				"SAW"
+	"MUTiRiS" 			"SAW"	
+	"rmn" 				"SAW"
 	//DIG Players
 	"H4RR3" 			"DIG"
 	"hallzerk" 			"DIG"

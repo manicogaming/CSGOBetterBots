@@ -481,7 +481,7 @@
 	"MiGHTYMAX" 		"15522824"
 	"robiin" 			"41292034"
 	"flameZ" 			"18569432"
-	//sAw Players
+	//SAW Players
 	"arki"				"18055753" 
 	"stadodo" 			"87137134"
 	"JUST" 				"52722111"
