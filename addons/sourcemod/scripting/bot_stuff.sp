@@ -20,7 +20,7 @@ int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPCha
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
-float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3], g_fBulletPos[MAXPLAYERS+1][3];
+float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -118,7 +118,6 @@ public void OnPluginStart()
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
-	HookEventEx("bullet_impact", OnBulletImpact);
 	
 	LoadSDK();
 	LoadDetours();
@@ -329,7 +328,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Twistzz");
 		ServerCommand("bot_add_ct %s", "broky");
-		ServerCommand("bot_add_ct %s", "olofmeister");
+		ServerCommand("bot_add_ct %s", "karrigan");
 		ServerCommand("bot_add_ct %s", "rain");
 		ServerCommand("bot_add_ct %s", "coldzera");
 		ServerCommand("mp_teamlogo_1 faze");
@@ -340,7 +339,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Twistzz");
 		ServerCommand("bot_add_t %s", "broky");
-		ServerCommand("bot_add_t %s", "olofmeister");
+		ServerCommand("bot_add_t %s", "karrigan");
 		ServerCommand("bot_add_t %s", "rain");
 		ServerCommand("bot_add_t %s", "coldzera");
 		ServerCommand("mp_teamlogo_2 faze");
@@ -507,7 +506,7 @@ public Action Team_mouz(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "karrigan");
+		ServerCommand("bot_add_ct %s", "dexter");
 		ServerCommand("bot_add_ct %s", "acoR");
 		ServerCommand("bot_add_ct %s", "Bymas");
 		ServerCommand("bot_add_ct %s", "frozen");
@@ -518,7 +517,7 @@ public Action Team_mouz(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "karrigan");
+		ServerCommand("bot_add_t %s", "dexter");
 		ServerCommand("bot_add_t %s", "acoR");
 		ServerCommand("bot_add_t %s", "Bymas");
 		ServerCommand("bot_add_t %s", "frozen");
@@ -1139,7 +1138,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "INS");
 		ServerCommand("bot_add_ct %s", "sico");
-		ServerCommand("bot_add_ct %s", "dexter");
+		ServerCommand("bot_add_ct %s", "aliStair");
 		ServerCommand("bot_add_ct %s", "Hatz");
 		ServerCommand("bot_add_ct %s", "malta");
 		ServerCommand("mp_teamlogo_1 ren");
@@ -1150,7 +1149,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "INS");
 		ServerCommand("bot_add_t %s", "sico");
-		ServerCommand("bot_add_t %s", "dexter");
+		ServerCommand("bot_add_t %s", "aliStair");
 		ServerCommand("bot_add_t %s", "Hatz");
 		ServerCommand("bot_add_t %s", "malta");
 		ServerCommand("mp_teamlogo_2 ren");
@@ -1951,7 +1950,7 @@ public Action Team_Avant(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sterling");
 		ServerCommand("bot_add_ct %s", "apoc");
 		ServerCommand("bot_add_ct %s", "HUGHMUNGUS");
-		ServerCommand("bot_add_ct %s", "HaZR");
+		ServerCommand("bot_add_ct %s", "SaVage");
 		ServerCommand("mp_teamlogo_1 avant");
 	}
 	
@@ -1962,7 +1961,7 @@ public Action Team_Avant(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sterling");
 		ServerCommand("bot_add_t %s", "apoc");
 		ServerCommand("bot_add_t %s", "HUGHMUNGUS");
-		ServerCommand("bot_add_t %s", "HaZR");
+		ServerCommand("bot_add_t %s", "SaVage");
 		ServerCommand("mp_teamlogo_2 avant");
 	}
 	
@@ -1977,22 +1976,22 @@ public Action Team_Chiefs(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "ofnu");
-		ServerCommand("bot_add_ct %s", "aliStair");
+		ServerCommand("bot_add_ct %s", "Liki");
+		ServerCommand("bot_add_ct %s", "gump");
 		ServerCommand("bot_add_ct %s", "apocdud");
 		ServerCommand("bot_add_ct %s", "zeph");
-		ServerCommand("bot_add_ct %s", "yam");
+		ServerCommand("bot_add_ct %s", "val");
 		ServerCommand("mp_teamlogo_1 chief");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "ofnu");
-		ServerCommand("bot_add_t %s", "aliStair");
+		ServerCommand("bot_add_t %s", "Liki");
+		ServerCommand("bot_add_t %s", "gump");
 		ServerCommand("bot_add_t %s", "apocdud");
 		ServerCommand("bot_add_t %s", "zeph");
-		ServerCommand("bot_add_t %s", "yam");
+		ServerCommand("bot_add_t %s", "val");
 		ServerCommand("mp_teamlogo_2 chief");
 	}
 	
@@ -4605,7 +4604,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	CreateTimer(0.1, Timer_FreezetimeEndDelay);
+	g_bFreezetimeEnd = true;
 	
 	if (strcmp(g_szMap, "de_mirage") == 0)
 	{
@@ -4632,13 +4631,6 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		g_iRndExecute = Math_GetRandomInt(1, 2);
 		PrepareTrainExecutes();
 	}
-}
-
-Action Timer_FreezetimeEndDelay(Handle hTimer)
-{
-	g_bFreezetimeEnd = true;
-	
-	return Plugin_Stop;
 }
 
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -4684,17 +4676,6 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 	}
 }
 
-public void OnBulletImpact(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
-		g_fBulletPos[client][0] = eEvent.GetFloat("x");
-		g_fBulletPos[client][1] = eEvent.GetFloat("y");
-		g_fBulletPos[client][2] = eEvent.GetFloat("z");
-	}
-}
-
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
@@ -4734,16 +4715,6 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_AUG));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "ak47") == 0)
-		{
-			if (Math_GetRandomInt(1, 100) <= 5)
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_SG556));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_sg556");
 				
 				return Plugin_Changed;
 			}
@@ -4847,7 +4818,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 65)
+					if (Math_GetRandomInt(1, 100) <= 75)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
@@ -4979,20 +4950,25 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					BotEquipBestWeapon(client, true);
 				}
 				
-				float fClientEyes[3], fToAimSpot[3], fToAimSpotNormalized[3], fAimDir[3];
+				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
 				
 				GetClientEyePosition(client, fClientEyes);
 				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
+				GetClientEyeAngles(client, fClientAngles);
+				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
+				fClientAngles[0] += fAimPunchAngle[0] * 2.0;
+				fClientAngles[1] += fAimPunchAngle[1] * 2.0;
+				GetViewVector(fClientAngles, fAimDir);
 				
-				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpotNormalized);
-				float fOnTarget = GetVectorDotProduct(fToAimSpotNormalized, g_fBulletPos[client]);
-				float fAimTolerance = Cosine(ArcTangent(48.0 / fRangeToEnemy));
+				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
+				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
+				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
 				
 				switch(iDefIndex)
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
-						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
+						if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
 						{
 							if(IsPlayerReloading(client)) 
 							{
@@ -5004,7 +4980,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							}
 						}
 						
-						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -5013,7 +4989,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						if ((GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && !(GetEntityFlags(client) & FL_DUCKING))
+						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING))
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
@@ -5035,7 +5011,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientPos[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && (GetClientAimTarget(client, true) == g_iTarget[client] || fOnTarget > fAimTolerance) && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
@@ -5486,12 +5462,10 @@ public void LoadSDK()
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::ComputePath");
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
-	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::ComputePath signature!");
+	if ((g_hBotMoveTo = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
@@ -5590,9 +5564,9 @@ public void GetBonePosition(int iEntity, int iBone, float fOrigin[3], float fAng
 	SDKCall(g_hGetBonePosition, iEntity, iBone, fOrigin, fAngles);
 }
 
-bool BotMoveTo(int client, float fOrigin[3], RouteType routeType, float fSomething = 0.0)
+public void BotMoveTo(int client, float fOrigin[3], RouteType routeType)
 {
-	return SDKCall(g_hBotMoveTo, client, fOrigin, routeType, fSomething);
+	SDKCall(g_hBotMoveTo, client, fOrigin, routeType);
 }
 
 bool BotIsVisible(int client, float fPos[3], bool bTestFOV, int iIgnore = -1)
@@ -5843,6 +5817,13 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 		
 		fTargetPos = fHead;
 	}
+}
+
+stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
+{
+	fOutPut[0] = Cosine(fVecAngle[1] / (180 / FLOAT_PI));
+	fOutPut[1] = Sine(fVecAngle[1] / (180 / FLOAT_PI));
+	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
 }
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])

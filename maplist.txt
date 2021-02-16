@@ -1,11 +1,10 @@
-// csgosl 2.9.3 config 1 at Sun Feb 14 04:22:00 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Tue Feb 16 01:36:21 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
 $2000$_japan
 $2000$_pro_b2
 $2011$_csgo
-$400$_lite_4s
 10th_mythic_roofcube_v1
 14th_mythic_house_v1
 2000_classic_b2
@@ -258,6 +257,7 @@ de_lodge
 de_log
 de_lumber
 de_manor
+de_marine
 de_maya
 de_mentalhospital_beta
 de_meteora

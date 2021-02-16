@@ -67,7 +67,6 @@ End
 Template Rifle
         WeaponPreference = ak47
 		WeaponPreference = m4a1
-		WeaponPreference = sg556
 		WeaponPreference = aug
 		WeaponPreference = mp9
 		WeaponPreference = mac10
@@ -470,7 +469,7 @@ ProAwp+SniperPro "broky"
 	VoicePitch = 100
 End
 
-ProP+Rifle "olofmeister"
+ProP+Rifle "karrigan"
 	VoicePitch = 70
 End
 
@@ -625,7 +624,7 @@ End
 
 //mouz Players
 
-ProP+Rifle "karrigan"
+ProP+Rifle "dexter"
 	VoicePitch = 103
 End
 
@@ -1116,7 +1115,7 @@ ProAwp+SniperPro "sico"
 	VoicePitch = 92
 End
 
-ProP+Rifle "dexter"
+ProP+Rifle "aliStair"
 	VoicePitch = 92
 End
 
@@ -1692,11 +1691,11 @@ ProP+Rifle "apoc"
 	VoicePitch = 114
 End
 
-ProP+Rifle "ofnu"
+ProP+Rifle "Liki"
 	VoicePitch = 88
 End
 
-ProP+Rifle "HaZR"
+ProP+Rifle "SaVage"
 	VoicePitch = 88
 End
 
@@ -1706,7 +1705,7 @@ ProP+Rifle "HUGHMUNGUS"
 	VoicePitch = 91
 End
 
-ProAwp+SniperPro "aliStair"
+ProAwp+SniperPro "gump"
 	VoicePitch = 77
 End
 
@@ -1718,7 +1717,7 @@ ProP+Rifle "zeph"
 	VoicePitch = 94
 End
 
-ProP+Rifle "yam"
+ProP+Rifle "val"
 	VoicePitch = 90
 End
 

@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_marine"
+{
+	"CTSpawn_x" "-2.630000"
+	"CTSpawn_y" "0.650000"
+	"TSpawn_x" "-1.960000"
+	"TSpawn_y" "0.250000"
+	"material" "overviews/de_marine"
+	"pos_x" "3560.000000"
+	"pos_y" "7092.000000"
+	"scale" "3.960000"
+}

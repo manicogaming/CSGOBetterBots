@@ -9,7 +9,7 @@
 	//FaZe Players
 	"Twistzz" 			"FaZe"
 	"broky"  			"FaZe"
-	"olofmeister" 		"FaZe"
+	"karrigan" 			"FaZe"
 	"rain" 				"FaZe"
 	"coldzera" 			"FaZe"
 	//Astralis Players
@@ -49,7 +49,7 @@
 	"zyp" 				"Alpha"
 	"scott" 			"Alpha"
 	//mouz Players
-	"karrigan"			"mouz" 
+	"dexter"			"mouz" 
 	"acoR" 				"mouz"
 	"Bymas" 			"mouz"
 	"frozen" 			"mouz"
@@ -177,7 +177,7 @@
 	//RNG Players
 	"INS" 				"RNG"
 	"sico" 				"RNG"
-	"dexter" 			"RNG"
+	"aliStair" 			"RNG"
 	"Hatz" 				"RNG"
 	"malta" 			"RNG"
 	//Coast Players
@@ -341,13 +341,13 @@
 	"sterling" 			"Avant"
 	"apoc" 				"Avant"
 	"HUGHMUNGUS" 		"Avant"
-	"HaZR" 				"Avant"
+	"SaVage" 			"Avant"
 	//Chiefs Players
-	"ofnu" 				"Chiefs"
-	"aliStair" 			"Chiefs"
+	"Liki" 				"Chiefs"
+	"gump" 				"Chiefs"
 	"apocdud" 			"Chiefs"
 	"zeph" 				"Chiefs"
-	"yam" 				"Chiefs"
+	"val" 				"Chiefs"
 	//ORDER Players
 	"J1rah" 			"ORDER"
 	"Vexite" 			"ORDER"

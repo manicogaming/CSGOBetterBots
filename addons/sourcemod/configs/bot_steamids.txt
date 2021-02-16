@@ -9,7 +9,7 @@
 	//FaZe Players
 	"Twistzz" 			"55989477"
 	"broky"  			"241354762"
-	"olofmeister" 		"28361465"
+	"karrigan" 			"29164525"
 	"rain" 				"37085479"
 	"coldzera" 			"79720871"
 	//Astralis Players
@@ -45,7 +45,7 @@
 	//Alpha Players
 	"zyp" 				"190975326"
 	//mouz Players
-	"karrigan"			"29164525" 
+	"dexter"			"101535513" 
 	"acoR" 				"42677035"
 	"Bymas" 			"133120627"
 	"frozen" 			"108157034"
@@ -163,7 +163,7 @@
 	//RNG Players
 	"INS" 				"26946895"
 	"sico" 				"39266546"
-	"dexter" 			"101535513"
+	"aliStair" 			"138080982"
 	"Hatz" 				"64662058"
 	"malta" 			"181905573"
 	//Coast Players
@@ -297,14 +297,10 @@
 	"BL1TZ" 			"21572661"
 	"sterling" 			"100224621"
 	"apoc" 				"45914082"
-	"ofnu" 				"23343104"
-	"HaZR" 				"64081874"
 	//Chiefs Players
 	"HUGHMUNGUS" 		"104743037"
-	"aliStair" 			"138080982"
 	"apocdud" 			"58325300"
 	"zeph" 				"177441352"
-	"yam" 				"30659"
 	//ORDER Players
 	"J1rah" 			"82535956"
 	"Vexite" 			"92622415"
