@@ -93,7 +93,7 @@
 	//Vitality Players
 	"shox" 				"Vitality"
 	"ZywOo" 			"Vitality"
-	"apEX" 				"Vitality"
+	"Nivera" 			"Vitality"
 	"RpK" 				"Vitality"
 	"Misutaaa" 			"Vitality"
 	//BIG Players
@@ -313,11 +313,11 @@
 	"chuti" 			"Infinity"
 	"points" 			"Infinity"
 	//Isurus Players
-	"JonY BoY" 			"Isurus"
+	"tom1" 				"Isurus"
 	"Noktse" 			"Isurus"
 	"Reversive" 		"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"caike" 			"Isurus"
+	"NikoM" 			"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
 	"saffee" 			"paiN"
@@ -404,7 +404,7 @@
 	"mango" 			"Energy"
 	//Furious Players
 	"abizz" 			"Furious"
-	"tom1" 				"Furious"
+	"Xiguinilster" 		"Furious"
 	"Owen$inhoM" 		"Furious"	
 	"Gooden" 			"Furious"
 	"nacho" 			"Furious"
@@ -776,7 +776,7 @@
 	"mirbit"			"Nordavind"
 	//Begrip Players
 	"krypt" 			"Begrip"
-	"KarleyG" 			"Begrip"
+	"Per0N" 			"Begrip"
 	"MistFire" 			"Begrip"
 	"jma" 				"Begrip"
 	"hns"				"Begrip"

@@ -89,7 +89,7 @@
 	//Vitality Players
 	"shox" 				"46654567"
 	"ZywOo" 			"153400465"
-	"apEX" 				"29478439"
+	"Nivera" 			"200530203"
 	"RpK" 				"53985773"
 	"Misutaaa" 			"121263183"
 	//BIG Players
@@ -271,11 +271,11 @@
 	"chuti" 			"27511954"
 	"points" 			"79878687"
 	//Isurus Players
-	"JonY BoY" 			"77140654"
+	"tom1" 				"1021035676"
 	"Noktse" 			"54233223"
 	"Reversive" 		"229334739"	
 	"decov9jse" 		"311766666"	
-	"caike" 			"28130755"
+	"NikoM" 			"429170127"
 	//paiN Players
 	"PKL" 				"65313136"
 	"saffee" 			"25299957"
@@ -621,6 +621,7 @@
 	"mirbit"			"183980241"
 	//Begrip Players
 	"hns"				"192826402"
+	"Per0N"				"186414851"
 	//Supremacy Players
 	"pacman^v^" 		"486643146"
 	"GuepaRd" 			"21286400"

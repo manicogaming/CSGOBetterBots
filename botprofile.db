@@ -801,7 +801,7 @@ ProAwp+SniperPro "ZywOo"
 	LookAngleDampingAttacking = 40.100
 End
 
-ProP+Rifle "apEX"
+ProP+Rifle "Nivera"
 	VoicePitch = 73
 End
 
@@ -1591,7 +1591,7 @@ End
 
 //Isurus Players
 
-ProP+Rifle "JonY BoY"
+ProP+Rifle "tom1"
 	VoicePitch = 115
 End
 
@@ -1607,7 +1607,7 @@ ProP+Rifle "decov9jse"
 	VoicePitch = 81
 End
 
-ProP+Rifle "caike"
+ProP+Rifle "NikoM"
 	VoicePitch = 109
 End
 
@@ -1929,7 +1929,7 @@ ProAwp+SniperPro "Owen$inhoM"
 	VoicePitch = 112
 End
 
-ProP+Rifle "tom1"
+ProP+Rifle "Xiguinilster"
 	VoicePitch = 100
 End
 
@@ -3312,7 +3312,7 @@ ProP+Rifle "krypt"
 	VoicePitch = 112
 End
 
-ProAwp+SniperPro "KarleyG"
+ProAwp+SniperPro "jma"
 	VoicePitch = 81
 End
 
@@ -3320,7 +3320,7 @@ ProP+Rifle "MistFire"
 	VoicePitch = 79
 End
 
-ProP+Rifle "jma"
+ProP+Rifle "Per0N"
 	VoicePitch = 97
 End
 
