@@ -93,7 +93,7 @@
 	//Vitality Players
 	"shox" 				"Vitality"
 	"ZywOo" 			"Vitality"
-	"Nivera" 			"Vitality"
+	"apEX" 				"Vitality"
 	"RpK" 				"Vitality"
 	"Misutaaa" 			"Vitality"
 	//BIG Players

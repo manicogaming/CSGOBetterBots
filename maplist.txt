@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Wed Feb 17 03:53:21 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat Feb 20 00:44:58 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -114,7 +114,6 @@ ba_winterforest_b1
 blood_gulch
 c19_tilante
 carparkm1
-clue
 cs_1337_assault_b2
 cs_agency
 cs_apollo

@@ -718,7 +718,7 @@ public Action Team_Vitality(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "shox");
 		ServerCommand("bot_add_ct %s", "ZywOo");
-		ServerCommand("bot_add_ct %s", "Nivera");
+		ServerCommand("bot_add_ct %s", "apEX");
 		ServerCommand("bot_add_ct %s", "RpK");
 		ServerCommand("bot_add_ct %s", "Misutaaa");
 		ServerCommand("mp_teamlogo_1 vita");
@@ -729,7 +729,7 @@ public Action Team_Vitality(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "shox");
 		ServerCommand("bot_add_t %s", "ZywOo");
-		ServerCommand("bot_add_t %s", "Nivera");
+		ServerCommand("bot_add_t %s", "apEX");
 		ServerCommand("bot_add_t %s", "RpK");
 		ServerCommand("bot_add_t %s", "Misutaaa");
 		ServerCommand("mp_teamlogo_2 vita");
@@ -4310,70 +4310,139 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				
 				if (g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && !BotIsHiding(client))
 				{
-					char szWeaponPrefClassName[3][64];
 					Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
-					
-					int iWeaponPrefDefIndex[3], iWeapon[3];
-					int iEntity = -1;
-					
-					iWeaponPrefDefIndex[0] = LoadFromAddress(pLocalProfile + view_as<Address>(32), NumberType_Int16);
-					iWeaponPrefDefIndex[1] = LoadFromAddress(pLocalProfile + view_as<Address>(34), NumberType_Int16);
-					iWeaponPrefDefIndex[2] = LoadFromAddress(pLocalProfile + view_as<Address>(36), NumberType_Int16);
-					
-					for(int i = 0; i < sizeof(iWeaponPrefDefIndex); i++)
-					{
-						eItems_GetWeaponClassNameByDefIndex(iWeaponPrefDefIndex[i], szWeaponPrefClassName[i], 64);
-						iWeapon[i] = GetNearestEntity(client, szWeaponPrefClassName[i]);
-						if(IsValidEntity(iWeapon[i]))
-						{
-							iEntity = iWeapon[i];
-							break;
-						}
-					}
+					int iWeaponPrefDefIndex = LoadFromAddress(pLocalProfile + view_as<Address>(32), NumberType_Int16);
 					
 					//Rifles
+					int iAWP = GetNearestEntity(client, "weapon_awp");
+					int iAK47 = GetNearestEntity(client, "weapon_ak47");
+					int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 					int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 					int iPrimaryDefIndex;
-					
-					if (IsValidEntity(iEntity))
+
+					if (IsValidEntity(iAWP) && iWeaponPrefDefIndex == 9)
 					{
-						float fWeaponLocation[3];
-						int iEntDefIndex = eItems_GetWeaponDefIndexByWeapon(iEntity);
-						
+						float fAWPLocation[3];
+
 						if (iPrimary != -1)
 						{
 							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
 						}
-						
-						if(iPrimaryDefIndex == 60 && iEntDefIndex == 16) return Plugin_Continue;
-						
-						if (iPrimaryDefIndex != iWeaponPrefDefIndex[0] && iPrimaryDefIndex != iWeaponPrefDefIndex[1] && iPrimaryDefIndex != iWeaponPrefDefIndex[2])
+
+						if (iPrimaryDefIndex != 9)
 						{
-							GetEntPropVector(iEntity, Prop_Send, "m_vecOrigin", fWeaponLocation);
-							
-							if (fWeaponLocation[0] != 0.0 && fWeaponLocation[1] != 0.0 && fWeaponLocation[2] != 0.0)
+							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
+
+							if (fAWPLocation[0] != 0.0 && fAWPLocation[1] != 0.0 && fAWPLocation[2] != 0.0)
 							{
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);
-								
-								if (GetVectorDistance(fClientLocation, fWeaponLocation) < 500.0)
+
+								if (GetVectorDistance(fClientLocation, fAWPLocation) < 500.0)
 								{
-									BotMoveTo(client, fWeaponLocation, FASTEST_ROUTE);
+									BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
 								}
 							}
 						}
 						else if (iPrimary == -1)
 						{
-							GetEntPropVector(iEntity, Prop_Send, "m_vecOrigin", fWeaponLocation);
-							
-							if (fWeaponLocation[0] != 0.0 && fWeaponLocation[1] != 0.0 && fWeaponLocation[2] != 0.0)
+							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
+
+							if (fAWPLocation[0] != 0.0 && fAWPLocation[1] != 0.0 && fAWPLocation[2] != 0.0)
 							{
 								float fClientLocation[3];
 								GetClientAbsOrigin(client, fClientLocation);
-								
-								if (GetVectorDistance(fClientLocation, fWeaponLocation) < 500.0)
+
+								if (GetVectorDistance(fClientLocation, fAWPLocation) < 500.0)
 								{
-									BotMoveTo(client, fWeaponLocation, FASTEST_ROUTE);
+									BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
+								}
+							}
+						}
+					}
+					
+					if (IsValidEntity(iAK47))
+					{
+						float fAK47Location[3];
+
+						if (iPrimary != -1)
+						{
+							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+						}
+
+						if (iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9)
+						{
+							GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
+
+							if (fAK47Location[0] != 0.0 && fAK47Location[1] != 0.0 && fAK47Location[2] != 0.0)
+							{
+								float fClientLocation[3];
+								GetClientAbsOrigin(client, fClientLocation);
+
+								if (GetVectorDistance(fClientLocation, fAK47Location) < 500.0)
+								{
+									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
+								}
+							}
+						}
+						else if (iPrimary == -1)
+						{
+							GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
+
+							if (fAK47Location[0] != 0.0 && fAK47Location[1] != 0.0 && fAK47Location[2] != 0.0)
+							{
+								float fClientLocation[3];
+								GetClientAbsOrigin(client, fClientLocation);
+
+								if (GetVectorDistance(fClientLocation, fAK47Location) < 500.0)
+								{
+									BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
+								}
+							}
+						}
+					}
+
+					if (IsValidEntity(iM4A1))
+					{
+						float fM4A1Location[3];
+
+						if (iPrimary != -1)
+						{
+							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+						}
+
+						if (iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9 && iPrimaryDefIndex != 16 && iPrimaryDefIndex != 60)
+						{
+							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
+
+							if (fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
+							{
+								float fClientLocation[3];
+								GetClientAbsOrigin(client, fClientLocation);
+
+								if (GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
+								{
+									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
+
+									if (GetVectorDistance(fClientLocation, fM4A1Location) < 25.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+									{
+										CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false, false);
+									}
+								}
+							}
+						}
+						else if (iPrimary == -1)
+						{
+							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
+
+							if (fM4A1Location[0] != 0.0 && fM4A1Location[1] != 0.0 && fM4A1Location[2] != 0.0)
+							{
+								float fClientLocation[3];
+								GetClientAbsOrigin(client, fClientLocation);
+
+								if (GetVectorDistance(fClientLocation, fM4A1Location) < 500.0)
+								{
+									BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 								}
 							}
 						}
