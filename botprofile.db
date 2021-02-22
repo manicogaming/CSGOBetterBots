@@ -1269,7 +1269,7 @@ ProAwp+SniperPro "Twinx"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Maccen"
+ProP+Rifle "Typos"
 	VoicePitch = 83
 End
 
@@ -1529,7 +1529,7 @@ ProP+Rifle "IceBerg"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "TOBIZ"
+ProAwp+SniperPro "larsen"
 	VoicePitch = 75
 End
 
@@ -1541,7 +1541,7 @@ ProP+Rifle "notaN"
 	VoicePitch = 113
 End
 
-ProP+Rifle "Celrate"
+ProP+Rifle "smF"
 	VoicePitch = 107
 End
 
@@ -1677,9 +1677,9 @@ ProP+Rifle "skullz"
 	VoicePitch = 79
 End
 
-//Avant Players
+//Dire Players
 
-ProP+Rifle "BL1TZ"
+ProP+Rifle "HaZR"
 	VoicePitch = 74
 End
 
@@ -2541,7 +2541,7 @@ ProP+Rifle "met"
 	VoicePitch = 85
 End
 
-ProAwp+SniperPro "pocos"
+ProAwp+SniperPro "P3R3IIRA"
 	VoicePitch = 108
 End
 
@@ -3019,25 +3019,25 @@ ProP+Rifle "cara"
 	VoicePitch = 108
 End
 
-//Global Players
+//QBF Players
 
-ProP+Rifle "HellrangeR"
+ProP+Rifle "Maccen"
 	VoicePitch = 82
 End
 
-ProAwp+SniperPro "Karam1L"
+ProAwp+SniperPro "J3nsyy"
 	VoicePitch = 84
 End
 
-ProP+Rifle "hellff"
+ProP+Rifle "BERRY"
 	VoicePitch = 80
 End
 
-ProP+Rifle "DEATHMAKER"
+ProP+Rifle "Staehr"
 	VoicePitch = 109
 End
 
-ProP+Rifle "Lightningfast"
+ProP+Rifle "JarKo"
 	VoicePitch = 81
 End
 
@@ -3368,8 +3368,140 @@ ProP+Rifle "wrath"
 	VoicePitch = 76
 End
 
-ProP+Rifle "wippie"
+ProP+Rifle "reck"
 	VoicePitch = 87
+End
+
+//AVEZ Players
+
+ProP+Rifle "Zefir"
+	VoicePitch = 80
+End
+
+ProAwp+SniperPro "Fazorek"
+	VoicePitch = 85
+End
+
+ProP+Rifle "Pokemob"
+	VoicePitch = 83
+End
+
+ProP+Rifle "MrObvious"
+	VoicePitch = 89
+End
+
+ProP+Rifle "kulioo"
+	VoicePitch = 103
+End
+
+//BP Players
+
+ProP+Rifle "coolio"
+	VoicePitch = 87
+End
+
+ProAwp+SniperPro "torzsi"
+	VoicePitch = 85
+End
+
+ProP+Rifle "kory"
+	VoicePitch = 97
+End
+
+ProP+Rifle "fleav"
+	VoicePitch = 82
+End
+
+ProP+Rifle "kolor"
+	VoicePitch = 103
+End
+
+//Anonymo Players
+
+ProP+Rifle "KEi"
+	VoicePitch = 97
+End
+
+ProAwp+SniperPro "Snax"
+	VoicePitch = 100
+End
+
+ProP+Rifle "Kylar"
+	VoicePitch = 102
+End
+
+ProP+Rifle "mynio"
+	VoicePitch = 102
+End
+
+ProP+Rifle "innocent"
+	VoicePitch = 77
+End
+
+//HONORIS Players
+
+ProP+Rifle "TaZ"
+	VoicePitch = 103
+End
+
+ProAwp+SniperPro "azizz"
+	VoicePitch = 83
+End
+
+ProP+Rifle "NEO"
+	VoicePitch = 89
+End
+
+ProP+Rifle "reiko"
+	VoicePitch = 109
+End
+
+ProP+Rifle "gRuChA"
+	VoicePitch = 93
+End
+
+//EX Players
+
+ProP+Rifle "JT"
+	VoicePitch = 110
+End
+
+ProAwp+SniperPro "oSee"
+	VoicePitch = 96
+End
+
+ProP+Rifle "motm"
+	VoicePitch = 101
+End
+
+ProP+Rifle "Sonic"
+	VoicePitch = 115
+End
+
+ProP+Rifle "FaNg"
+	VoicePitch = 101
+End
+
+//RBG Players
+
+ProP+Rifle "Walco"
+	VoicePitch = 104
+End
+
+ProAwp+SniperPro "HexT"
+	VoicePitch = 84
+End
+
+ProP+Rifle "wiz"
+	VoicePitch = 97
+End
+
+ProP+Rifle "chop"
+	VoicePitch = 87
+End
+
+ProP+Rifle "Wolffe"
+	VoicePitch = 111
 End
 
 EliteAwp+SniperPro "XD | ryu"

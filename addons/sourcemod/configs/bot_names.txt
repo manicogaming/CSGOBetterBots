@@ -225,7 +225,7 @@
 	//Lyngby Players
 	"birdfromsky"		"Lyngby" 
 	"Twinx" 			"Lyngby"
-	"Maccen" 			"Lyngby"
+	"Typos" 			"Lyngby"
 	"raalz" 			"Lyngby"
 	"FeTiSh" 			"Lyngby"
 	//GODSENT Players
@@ -298,8 +298,8 @@
 	"IceBerg" 			"Singularity"
 	"notaN" 			"Singularity"
 	"Remoy" 			"Singularity"
-	"TOBIZ" 			"Singularity"	
-	"Celrate" 			"Singularity"
+	"larsen" 			"Singularity"	
+	"smF" 				"Singularity"
 	//DETONA Players
 	"lub" 				"DETONA"
 	"kauez" 			"DETONA"
@@ -336,12 +336,12 @@
 	"malbsMd" 			"One"	
 	"cass1n" 			"One"
 	"skullz" 			"One"
-	//Avant Players
-	"BL1TZ" 			"Avant"
-	"sterling" 			"Avant"
-	"apoc" 				"Avant"
-	"HUGHMUNGUS" 		"Avant"
-	"SaVage" 			"Avant"
+	//Dire Players
+	"HaZR" 				"Dire"
+	"sterling" 			"Dire"
+	"apoc" 				"Dire"
+	"Liki" 				"Dire"
+	"SaVage" 			"Dire"
 	//Chiefs Players
 	"Liki" 				"Chiefs"
 	"gump" 				"Chiefs"
@@ -572,7 +572,7 @@
 	"PR1mE" 			"Tricked"
 	//Baecon Players
 	"met" 				"Baecon"
-	"pocos" 			"Baecon"
+	"P3R3IIRA" 			"Baecon"
 	"sp1kz" 			"Baecon"
 	"dronzz" 			"Baecon"
 	"SYDOX" 			"Baecon"	
@@ -696,12 +696,12 @@
 	"RvK" 				"BL4ZE"
 	"Raph" 				"BL4ZE"
 	"cara" 				"BL4ZE"
-	//Global Players
-	"HellrangeR" 		"Global"
-	"Karam1L" 			"Global"
-	"hellff" 			"Global"
-	"DEATHMAKER" 		"Global"	
-	"Lightningfast" 	"Global"	
+	//QBF Players
+	"Maccen" 			"QBF"
+	"J3nsyy" 			"QBF"
+	"BERRY" 			"QBF"
+	"Staehr" 			"QBF"	
+	"JarKo" 			"QBF"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
 	"nettik" 			"Rooster"
@@ -791,5 +791,41 @@
 	"XotiC" 			"Rebirth"
 	"nosraC" 			"Rebirth"
 	"wrath" 			"Rebirth"
-	"wippie"			"Rebirth"
+	"reck"				"Rebirth"
+	//AVEZ Players
+	"Zefir" 			"AVEZ"
+	"Fazorek" 			"AVEZ"
+	"Pokemob" 			"AVEZ"
+	"MrObvious" 		"AVEZ"
+	"kulioo"			"AVEZ"
+	//BP Players
+	"coolio" 			"BP"
+	"torzsi" 			"BP"
+	"kory" 				"BP"
+	"fleav" 			"BP"
+	"kolor"				"BP"
+	//Anonymo Players
+	"KEi" 				"Anonymo"
+	"Snax" 				"Anonymo"
+	"Kylar" 			"Anonymo"
+	"mynio" 			"Anonymo"
+	"innocent"			"Anonymo"
+	//HONORIS Players
+	"TaZ" 				"HONORIS"
+	"azizz" 			"HONORIS"
+	"NEO" 				"HONORIS"
+	"reiko" 			"HONORIS"
+	"gRuChA"			"HONORIS"
+	//EX Players
+	"JT" 				"EX"
+	"oSee" 				"EX"
+	"motm" 				"EX"
+	"Sonic" 			"EX"
+	"FaNg"				"EX"
+	//RBG Players
+	"Walco" 			"RBG"
+	"HexT" 				"RBG"
+	"wiz" 				"RBG"
+	"chop" 				"RBG"
+	"Wolffe"			"RBG"
 }

@@ -261,7 +261,8 @@
 	//Singularity Players
 	"notaN" 			"70656220"
 	"Remoy" 			"68675449"
-	"Celrate" 			"32535180"
+	"smF" 				"11160541"
+	"larsen" 			"60274028"
 	//DETONA Players
 	"frostezoR" 		"194205853"
 	//Infinity Players
@@ -293,8 +294,8 @@
 	"malbsMd" 			"120437415"	
 	"cass1n" 			"188295781"
 	"skullz" 			"158380916"
-	//Avant Players
-	"BL1TZ" 			"21572661"
+	//Dire Players
+	"HaZR" 				"64081874"
 	"sterling" 			"100224621"
 	"apoc" 				"45914082"
 	//Chiefs Players
@@ -562,11 +563,8 @@
 	//BL4ZE Players
 	"Rossi" 			"433932660"
 	"Marzil" 			"141417673"
-	//Global Players
-	"HellrangeR" 		"69467185"
-	"Karam1L" 			"916558403"
-	"hellff" 			"337045725"
-	"DEATHMAKER" 		"364178390"	
+	//QBF Players
+	"BERRY" 			"9876226"
 	//Rooster Players
 	"DannyG"			"193412411" 
 	"nettik" 			"372579523"
@@ -629,5 +627,28 @@
 	//Rebirth Players
 	"XotiC" 			"233525417"
 	"wrath" 			"86188776"
-	"wippie"			"55950766"
+	//AVEZ Players
+	//BP Players
+	"coolio" 			"119009553"
+	"torzsi" 			"395473484"
+	"kory" 				"67382466"
+	"fleav" 			"189640934"
+	"kolor" 			"159382791"
+	//Anonymo Players
+	"KEi" 				"121422001"
+	"Snax" 				"21875845"
+	"Kylar" 			"116431013"
+	"mynio" 			"24981058"
+	"innocent"			"26563533"
+	//HONORIS Players
+	"TaZ" 				"234052"
+	"azizz" 			"43580835"
+	"NEO" 				"460206"
+	//EX Players
+	"JT" 				"61449372"
+	"oSee" 				"87206806"
+	"motm" 				"60208330"
+	"Sonic" 			"14864123"
+	"FaNg"				"312457591"
+	//RBG Players
 }
