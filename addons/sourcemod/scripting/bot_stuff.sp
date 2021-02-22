@@ -4849,7 +4849,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
 	{
 		return MRES_Supercede;
 	}
@@ -4887,7 +4887,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 75)
+					if (Math_GetRandomInt(1, 100) <= 70)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
@@ -5039,11 +5039,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					{
 						if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (!(iButtons & IN_ATTACK)))
 						{
-							if(IsPlayerReloading(client)) 
-							{
-								iButtons &= ~IN_ATTACK;
-							}
-							else
+							if(!IsPlayerReloading(client)) 
 							{
 								iButtons |= IN_ATTACK;
 							}
@@ -5743,19 +5739,14 @@ bool IsPlayerReloading(int client)
 	if(!IsValidEntity(iPlayerWeapon))
 		return false;
 	
-	//Out of ammo?
-	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_iClip1") == 0)
+	//Out of ammo? or Reloading? or Finishing Weapon Switch?
+	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload") || GetEntProp(iPlayerWeapon, Prop_Send, "m_iClip1") <= 0 || GetEntProp(iPlayerWeapon, Prop_Send, "m_iIronSightMode") == 2)
 		return true;
 	
-	//Reloading?
-	if(GetEntProp(iPlayerWeapon, Prop_Data, "m_bInReload"))
+	if(GetEntPropFloat(client, Prop_Send, "m_flNextAttack") > GetGameTime())
 		return true;
 	
-	//Ready to fire?
-	if(GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
-		return false;
-	
-	return true;
+	return GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") >= GetGameTime();
 }
 
 stock int GetTotalRoundTime()

@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Feb 20 00:44:58 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon Feb 22 00:43:08 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -99,7 +99,7 @@ awp_lego_4b
 awp_lego_8
 awp_lego_9
 awp_legominiindia
-awp_metro
+awp_metro_cso2
 awp_minecraft
 awp_minecraft_pete_v1
 awp_newmap_beta
@@ -263,6 +263,8 @@ de_meteora
 de_mill_ce
 de_minimetzel_hslan
 de_mirage
+de_mirage_winter
+de_mocha
 de_momentum
 de_nocredit
 de_nuke
