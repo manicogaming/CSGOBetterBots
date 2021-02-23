@@ -19,7 +19,7 @@
 	"Magisk" 			"23690923"
 	"dupreeh" 			"44589228"
 	//NiP Players
-	"twist" 			"19979131"
+	"ztr" 				"120175482"
 	"Plopski" 			"175613070"
 	"nawwk" 			"193386133"
 	"hampus" 			"126680222"
@@ -466,8 +466,9 @@
 	"Aleksib" 			"52977598"
 	"valde" 			"154664140"
 	"ISSAA" 			"77546728"
-	//Wizards Players
-	"Bernard" 			"77012567"
+	//BLINK Players
+	"juanflatroo" 		"135528227"
+	"sinnopsyy" 		"205062167"
 	//Tricked Players
 	"kwezz" 			"110193409"
 	"sycrone" 			"49161935"

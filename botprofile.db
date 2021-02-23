@@ -519,7 +519,7 @@ ProAwp+SniperPro "nawwk"
 	VoicePitch = 110
 End
 
-ProP+Rifle "twist"
+ProP+Rifle "ztr"
 	VoicePitch = 99
 End
 
@@ -537,7 +537,7 @@ ProP+Rifle "ALEX"
 	VoicePitch = 80
 End
 
-ProAwp+SniperPro "Xeppaa"
+ProAwp+SniperPro "es3tag"
 	VoicePitch = 105
 End
 
@@ -545,7 +545,7 @@ ProP+Rifle "mezii"
 	VoicePitch = 93
 End
 
-ProP+Rifle "es3tag"
+ProP+Rifle "Xeppaa"
 	VoicePitch = 88
 End
 
@@ -1811,11 +1811,11 @@ End
 
 //NASR Players
 
-ProP+Rifle "proxyyb"
+ProP+Rifle "gejmzilla"
 	VoicePitch = 73
 End
 
-ProAwp+SniperPro "Real1ze"
+ProAwp+SniperPro "REAL1ZE"
 	VoicePitch = 96
 End
 
@@ -1827,7 +1827,7 @@ ProP+Rifle "Dementor"
 	VoicePitch = 72
 End
 
-ProP+Rifle "Just1ce"
+ProP+Rifle "bibu"
 	VoicePitch = 71
 End
 
@@ -2491,25 +2491,25 @@ ProP+Rifle "ISSAA"
 	VoicePitch = 103
 End
 
-//Wizards Players
+//BLINK Players
 
-ProP+Rifle "Bernard"
+ProP+Rifle "juanflatroo"
 	VoicePitch = 94
 End
 
-ProAwp+SniperPro "blackie"
+ProAwp+SniperPro "SENER1"
 	VoicePitch = 79
 End
 
-ProP+Rifle "kzealos"
+ProP+Rifle "sinnopsyy"
 	VoicePitch = 82
 End
 
-ProP+Rifle "eneshan"
+ProP+Rifle "gxx-"
 	VoicePitch = 92
 End
 
-ProP+Rifle "dreez"
+ProP+Rifle "xhoci"
 	VoicePitch = 88
 End
 

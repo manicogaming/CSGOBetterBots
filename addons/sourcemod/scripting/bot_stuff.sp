@@ -217,7 +217,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_triumph", Team_Triumph);
 	RegConsoleCmd("team_fate", Team_FATE);
 	RegConsoleCmd("team_og", Team_OG);
-	RegConsoleCmd("team_wizards", Team_Wizards);
+	RegConsoleCmd("team_blink", Team_BLINK);
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_baecon", Team_Baecon);
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
@@ -272,7 +272,7 @@ public Action Team_NiP(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "twist");
+		ServerCommand("bot_add_ct %s", "ztr");
 		ServerCommand("bot_add_ct %s", "hampus");
 		ServerCommand("bot_add_ct %s", "nawwk");
 		ServerCommand("bot_add_ct %s", "Plopski");
@@ -283,7 +283,7 @@ public Action Team_NiP(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "twist");
+		ServerCommand("bot_add_t %s", "ztr");
 		ServerCommand("bot_add_t %s", "hampus");
 		ServerCommand("bot_add_t %s", "nawwk");
 		ServerCommand("bot_add_t %s", "Plopski");
@@ -2132,22 +2132,22 @@ public Action Team_NASR(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "proxyyb");
-		ServerCommand("bot_add_ct %s", "Real1ze");
+		ServerCommand("bot_add_ct %s", "gejmzilla");
+		ServerCommand("bot_add_ct %s", "REAL1ZE");
 		ServerCommand("bot_add_ct %s", "BOROS");
 		ServerCommand("bot_add_ct %s", "Dementor");
-		ServerCommand("bot_add_ct %s", "Just1ce");
+		ServerCommand("bot_add_ct %s", "bibu");
 		ServerCommand("mp_teamlogo_1 nasr");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "proxyyb");
-		ServerCommand("bot_add_t %s", "Real1ze");
+		ServerCommand("bot_add_t %s", "gejmzilla");
+		ServerCommand("bot_add_t %s", "REAL1ZE");
 		ServerCommand("bot_add_t %s", "BOROS");
 		ServerCommand("bot_add_t %s", "Dementor");
-		ServerCommand("bot_add_t %s", "Just1ce");
+		ServerCommand("bot_add_t %s", "bibu");
 		ServerCommand("mp_teamlogo_2 nasr");
 	}
 	
@@ -3054,7 +3054,7 @@ public Action Team_OG(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Wizards(int client, int iArgs)
+public Action Team_BLINK(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -3062,23 +3062,23 @@ public Action Team_Wizards(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Bernard");
-		ServerCommand("bot_add_ct %s", "blackie");
-		ServerCommand("bot_add_ct %s", "kzealos");
-		ServerCommand("bot_add_ct %s", "eneshan");
-		ServerCommand("bot_add_ct %s", "dreez");
-		ServerCommand("mp_teamlogo_1 wiz");
+		ServerCommand("bot_add_ct %s", "juanflatroo");
+		ServerCommand("bot_add_ct %s", "SENER1");
+		ServerCommand("bot_add_ct %s", "sinnopsyy");
+		ServerCommand("bot_add_ct %s", "gxx-");
+		ServerCommand("bot_add_ct %s", "xhoci");
+		ServerCommand("mp_teamlogo_1 blink");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Bernard");
-		ServerCommand("bot_add_t %s", "blackie");
-		ServerCommand("bot_add_t %s", "kzealos");
-		ServerCommand("bot_add_t %s", "eneshan");
-		ServerCommand("bot_add_t %s", "dreez");
-		ServerCommand("mp_teamlogo_2 wiz");
+		ServerCommand("bot_add_t %s", "juanflatroo");
+		ServerCommand("bot_add_t %s", "SENER1");
+		ServerCommand("bot_add_t %s", "sinnopsyy");
+		ServerCommand("bot_add_t %s", "gxx-");
+		ServerCommand("bot_add_t %s", "xhoci");
+		ServerCommand("mp_teamlogo_2 blink");
 	}
 	
 	return Plugin_Handled;
@@ -5015,7 +5015,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
-		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Face outward") == 0)
 	{
 		return MRES_Ignored;
 	}
@@ -5035,7 +5035,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
+	else if (strcmp(szDesc, "Blind") == 0)
 	{
 		return MRES_Supercede;
 	}

@@ -19,7 +19,7 @@
 	"Magisk" 			"Astralis"
 	"dupreeh" 			"Astralis"
 	//NiP Players
-	"twist" 			"NiP"
+	"ztr" 				"NiP"
 	"Plopski" 			"NiP"
 	"nawwk" 			"NiP"
 	"hampus" 			"NiP"
@@ -373,11 +373,11 @@
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
 	//NASR Players
-	"proxyyb" 			"NASR"
-	"Real1ze" 			"NASR"
+	"gejmzilla" 		"NASR"
+	"REAL1ZE" 			"NASR"
 	"BOROS" 			"NASR"
 	"Dementor" 			"NASR"
-	"Just1ce" 			"NASR"
+	"bibu" 				"NASR"
 	//TTT Players
 	"dukiiii" 			"TTT"
 	"powerYY" 			"TTT"
@@ -558,12 +558,12 @@
 	"Aleksib" 			"OG"
 	"valde" 			"OG"
 	"ISSAA" 			"OG"
-	//Wizards Players
-	"Bernard" 			"Wizards"
-	"blackie" 			"Wizards"
-	"kzealos" 			"Wizards"
-	"eneshan" 			"Wizards"
-	"dreez" 			"Wizards"
+	//BLINK Players
+	"juanflatroo" 		"BLINK"
+	"SENER1" 			"BLINK"
+	"sinnopsyy" 		"BLINK"
+	"gxx-" 				"BLINK"
+	"xhoci" 			"BLINK"
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"

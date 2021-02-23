@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Mon Feb 22 00:43:08 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Tue Feb 23 01:21:22 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -139,6 +139,7 @@ cs_lanpartymayhem
 cs_mall_shootout
 cs_mansion
 cs_militia
+cs_motel
 cs_museum
 cs_office
 cs_siege
