@@ -2777,28 +2777,6 @@ ProP+Rifle "CHANKY"
 	VoicePitch = 79
 End
 
-//TIGER Players
-
-ProP+Rifle "neuz"
-	VoicePitch = 107
-End
-
-ProAwp+SniperPro "nin9"
-	VoicePitch = 100
-End
-
-ProP+Rifle "dobu"
-	VoicePitch = 115
-End
-
-ProP+Rifle "kabal"
-	VoicePitch = 87
-End
-
-ProP+Rifle "rate"
-	VoicePitch = 104
-End
-
 //NLG Players
 
 ProP+Rifle "pdy"
@@ -3158,7 +3136,7 @@ ProP+Rifle "xelos"
 	VoicePitch = 110
 End
 
-ProAwp+SniperPro "kaktus"
+ProAwp+SniperPro "twist"
 	VoicePitch = 107
 End
 
@@ -3166,11 +3144,11 @@ ProP+Rifle "hemzk9"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Mann3n"
+ProP+Rifle "znajder"
 	VoicePitch = 110
 End
 
-ProP+Rifle "gamersdont"
+ProP+Rifle "MODDII"
 	VoicePitch = 107
 End
 
@@ -3470,7 +3448,7 @@ ProAwp+SniperPro "oSee"
 	VoicePitch = 96
 End
 
-ProP+Rifle "motm"
+ProP+Rifle "MarKE"
 	VoicePitch = 101
 End
 

@@ -630,12 +630,6 @@
 	"s0und" 			"GameAgents"
 	"regali" 			"GameAgents"
 	"CHANKY" 			"GameAgents"
-	//TIGER Players
-	"neuz" 				"TIGER"
-	"nin9" 				"TIGER"
-	"dobu" 				"TIGER"
-	"kabal" 			"TIGER"
-	"rate" 				"TIGER"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -734,10 +728,10 @@
 	"xartE" 			"hREDS"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
-	"kaktus" 			"Lemondogs"
+	"twist" 			"Lemondogs"
 	"hemzk9" 			"Lemondogs"
-	"Mann3n" 			"Lemondogs"
-	"gamersdont" 		"Lemondogs"	
+	"znajder" 			"Lemondogs"
+	"MODDII" 			"Lemondogs"	
 	//CeX Players
 	"znx" 				"CeX"
 	"Impact" 			"CeX"
@@ -819,7 +813,7 @@
 	//EX Players
 	"JT" 				"EX"
 	"oSee" 				"EX"
-	"motm" 				"EX"
+	"MarKE" 			"EX"
 	"Sonic" 			"EX"
 	"FaNg"				"EX"
 	//RBG Players

@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Tue Feb 23 01:21:22 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Feb 25 00:50:09 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -267,6 +267,8 @@ de_mirage
 de_mirage_winter
 de_mocha
 de_momentum
+de_mustang
+de_mutiny
 de_nocredit
 de_nuke
 de_nuke_ramps
@@ -386,7 +388,6 @@ ka_swim_pool
 kills_ct
 knas_bunker_css
 knas_speedcastle_css
-knife_fight_v1
 maison
 mcdonalds-mds-csgo
 moziz_walzor

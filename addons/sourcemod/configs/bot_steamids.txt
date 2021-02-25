@@ -427,6 +427,7 @@
 	"STOMP" 			"51242187"
 	"mono" 				"154163682"
 	"TOAO" 				"196107432"
+	"Siuhy" 			"190407632"
 	//ATK Players
 	"bLazE" 			"209701855"
 	"MisteM" 			"175149890"
@@ -519,12 +520,6 @@
 	"Cabbi" 			"230664742"
 	"Lukki" 			"53001420"
 	//GameAgents Players
-	//TIGER Players
-	"neuz" 				"114122809"
-	"nin9" 				"168197870"
-	"dobu" 				"159891913"
-	"kabal" 			"161246388"
-	"rate" 				"442056424"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -590,7 +585,9 @@
 	"xartE" 			"26565773"
 	//Lemondogs Players
 	"xelos" 			"28004721"
-	"gamersdont" 		"153319644"	
+	"twist" 			"19979131"
+	"znajder" 			"97816050"
+	"MODDII" 			"858728"	
 	//CeX Players
 	"znx" 				"59501298"
 	//Havan Players
@@ -648,7 +645,7 @@
 	//EX Players
 	"JT" 				"61449372"
 	"oSee" 				"87206806"
-	"motm" 				"60208330"
+	"MarKE" 			"2637435"
 	"Sonic" 			"14864123"
 	"FaNg"				"312457591"
 	//RBG Players

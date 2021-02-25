@@ -229,7 +229,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_kova", Team_KOVA);
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_gameagents", Team_GameAgents);
-	RegConsoleCmd("team_tiger", Team_TIGER);
 	RegConsoleCmd("team_nlg", Team_NLG);
 	RegConsoleCmd("team_lilmix", Team_Lilmix);
 	RegConsoleCmd("team_ftw", Team_FTW);
@@ -3414,36 +3413,6 @@ public Action Team_GameAgents(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_TIGER(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (strcmp(arg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "neuz");
-		ServerCommand("bot_add_ct %s", "nin9");
-		ServerCommand("bot_add_ct %s", "dobu");
-		ServerCommand("bot_add_ct %s", "kabal");
-		ServerCommand("bot_add_ct %s", "rate");
-		ServerCommand("mp_teamlogo_1 tiger");
-	}
-	
-	if (strcmp(arg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "neuz");
-		ServerCommand("bot_add_t %s", "nin9");
-		ServerCommand("bot_add_t %s", "dobu");
-		ServerCommand("bot_add_t %s", "kabal");
-		ServerCommand("bot_add_t %s", "rate");
-		ServerCommand("mp_teamlogo_2 tiger");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_NLG(int client, int iArgs)
 {
 	char arg[12];
@@ -3933,10 +3902,10 @@ public Action Team_Lemondogs(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "xelos");
-		ServerCommand("bot_add_ct %s", "kaktus");
+		ServerCommand("bot_add_ct %s", "twist");
 		ServerCommand("bot_add_ct %s", "hemzk9");
-		ServerCommand("bot_add_ct %s", "Mann3n");
-		ServerCommand("bot_add_ct %s", "gamersdont");
+		ServerCommand("bot_add_ct %s", "znajder");
+		ServerCommand("bot_add_ct %s", "MODDII");
 		ServerCommand("mp_teamlogo_1 lemon");
 	}
 	
@@ -3944,10 +3913,10 @@ public Action Team_Lemondogs(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "xelos");
-		ServerCommand("bot_add_t %s", "kaktus");
+		ServerCommand("bot_add_t %s", "twist");
 		ServerCommand("bot_add_t %s", "hemzk9");
-		ServerCommand("bot_add_t %s", "Mann3n");
-		ServerCommand("bot_add_t %s", "gamersdont");
+		ServerCommand("bot_add_t %s", "znajder");
+		ServerCommand("bot_add_t %s", "MODDII");
 		ServerCommand("mp_teamlogo_2 lemon");
 	}
 	
@@ -4354,7 +4323,7 @@ public Action Team_EX(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "JT");
 		ServerCommand("bot_add_ct %s", "oSee");
-		ServerCommand("bot_add_ct %s", "motm");
+		ServerCommand("bot_add_ct %s", "MarKE");
 		ServerCommand("bot_add_ct %s", "Sonic");
 		ServerCommand("bot_add_ct %s", "FaNg");
 		ServerCommand("mp_teamlogo_1 ex");
@@ -4365,7 +4334,7 @@ public Action Team_EX(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "JT");
 		ServerCommand("bot_add_t %s", "oSee");
-		ServerCommand("bot_add_t %s", "motm");
+		ServerCommand("bot_add_t %s", "MarKE");
 		ServerCommand("bot_add_t %s", "Sonic");
 		ServerCommand("bot_add_t %s", "FaNg");
 		ServerCommand("mp_teamlogo_2 ex");
@@ -5069,11 +5038,32 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 		
 		switch(iDefIndex)
 		{
-			case 2, 3, 4, 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 39, 60, 61, 63, 64:
+			case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 			{
 				if (g_bIsHeadVisible[client])
 				{
 					if (Math_GetRandomInt(1, 100) <= 70)
+					{
+						int iBone = LookupBone(g_iTarget[client], "spine_3");
+						
+						if (iBone < 0)
+							return MRES_Ignored;
+						
+						float fBody[3], fBad[3];
+						GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
+						
+						if (BotIsVisible(client, fBody, false, -1))
+						{
+							g_fTargetPos[client] = fBody;
+						}
+					}
+				}
+			}
+			case 2, 3, 4, 30, 32, 36, 61, 63:
+			{
+				if (g_bIsHeadVisible[client])
+				{
+					if (Math_GetRandomInt(1, 100) <= 50)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
@@ -5235,7 +5225,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
-							fVel[2] = 0.0;
 						}
 					}
 					case 1:
@@ -5244,7 +5233,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
-							fVel[2] = 0.0;
 						}
 					}
 					case 9, 40:
@@ -5255,7 +5243,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							
 							fVel[0] = 0.0;
 							fVel[1] = 0.0;
-							fVel[2] = 0.0;
 						}
 					}
 				}
