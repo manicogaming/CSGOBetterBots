@@ -1,0 +1,20 @@
+// HLTV overview description file for de_nadir.bsp
+
+"de_nadir3"
+{
+	"material"	"overviews/de_nadir3"	// texture file
+	"pos_x"		"-1484"	// upper left world coordinate
+	"pos_y"		"4170"
+	"scale"		"5" 
+
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.576"
+	"CTSpawn_y"	"0.122"
+	"TSpawn_x"	"0.438"
+	"TSpawn_y"	"0.932"
+
+	"bombA_x"	"0.379"
+	"bombA_y"	"0.40"
+	"bombB_x"	"0.62"
+	"bombB_y"	"0.24"
+}

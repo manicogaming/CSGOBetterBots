@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_neighbors_v8"
+{
+	"CTSpawn_x" "-0.830000"
+	"CTSpawn_y" "0.140000"
+	"TSpawn_x" "-0.520000"
+	"TSpawn_y" "0.900000"
+	"material" "overviews/de_neighbors_v8"
+	"pos_x" "608.000000"
+	"pos_y" "5184.000000"
+	"scale" "5.190000"
+}

@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Feb 25 00:50:09 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Mar 04 21:21:54 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -258,6 +258,7 @@ de_log
 de_lumber
 de_manor
 de_marine
+de_marquis
 de_maya
 de_mentalhospital_beta
 de_meteora
@@ -269,6 +270,8 @@ de_mocha
 de_momentum
 de_mustang
 de_mutiny
+de_nadir
+de_neighbors_v8
 de_nocredit
 de_nuke
 de_nuke_ramps
@@ -310,7 +313,7 @@ de_zen
 deagle_ultra
 deathzone
 dm_bloodsport
-dm_lair
+dm_lair_updated
 fun_pacman_v1
 fy_aztec_fire_csgo
 fy_back_street

@@ -1,7 +1,0 @@
-"dm_lair"
-{
-"material" "overviews/dm_lair"
-"pos_x" "-635"
-"pos_y" "2322"
-"scale" "4.0"
-}

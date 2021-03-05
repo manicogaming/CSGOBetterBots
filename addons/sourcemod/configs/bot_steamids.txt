@@ -32,7 +32,7 @@
 	"floppy" 			"346253535"
 	//G2 Players
 	"huNter-" 			"52606325"
-	"kennyS" 			"64640068"
+	"JaCkz" 			"11977189"
 	"nexa" 				"39559694"	
 	"NiKo" 				"81417650"
 	"AmaNEk" 			"108679223"
@@ -211,10 +211,9 @@
 	//SJ Players
 	"arvid" 			"66355043"
 	"BONA" 				"201490896"
-	//Bren Players
-	"Papichulo" 		"141015515"	
-	"Pro." 				"103948760"
-	"Derek" 			"115108105"
+	//Recon Players
+	"JazzPimp" 			"101706163"
+	"Infinite" 			"149493497"
 	//Lions Players
 	"HooXi" 			"38661042"
 	"TMB" 				"124341526"
@@ -338,9 +337,9 @@
 	"DVDOV" 			"40379175"
 	"PokemoN" 			"137998735"
 	"Ejram" 			"152164497"
-	//Energy Players
+	//Bravado Players
 	"flexeeee" 			"177739017"	
-	"mango" 			"183429246"
+	"Detrony" 			"27120041"
 	//Furious Players
 	"Owen$inhoM" 		"398043785"	
 	//Illuminar Players
@@ -398,8 +397,8 @@
 	"Kan4" 				"142410641"
 	"Polox" 			"109597705"
 	"Djoko" 			"87611242"
-	//Vexed Players
-	"leaf"				"178080989"
+	//XENEX Players
+	"addi"				"3212674"
 	//HLE Players
 	"svyat" 			"35632848"
 	//Gambit Players
@@ -456,7 +455,7 @@
 	"Shakezullah" 		"68248927"
 	"Bwills" 			"119308817"
 	"Cooper-" 			"7251259"
-	"cxzi" 				"211453961"
+	"cynic" 			"106932238"
 	//FATE Players
 	"Patrick--" 		"98715951"
 	"Rock1nG" 			"246843704"
@@ -588,8 +587,6 @@
 	"twist" 			"19979131"
 	"znajder" 			"97816050"
 	"MODDII" 			"858728"	
-	//CeX Players
-	"znx" 				"59501298"
 	//Havan Players
 	"ALLE" 				"1194990"
 	"drg" 				"193829435"
@@ -624,14 +621,14 @@
 	"zockie" 			"107349646"
 	//Rebirth Players
 	"XotiC" 			"233525417"
-	"wrath" 			"86188776"
+	"cxzi" 				"211453961"
 	//AVEZ Players
 	//BP Players
 	"coolio" 			"119009553"
 	"torzsi" 			"395473484"
 	"kory" 				"67382466"
 	"fleav" 			"189640934"
-	"kolor" 			"159382791"
+	"bodito" 			"114907460"
 	//Anonymo Players
 	"KEi" 				"121422001"
 	"Snax" 				"21875845"

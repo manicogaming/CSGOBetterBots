@@ -559,19 +559,19 @@ ProP+Rifle "huNter-"
 	VoicePitch = 94
 End
 
-ProAwp+SniperPro "kennyS"
+ProAwp+SniperPro "NiKo"
+	VoicePitch = 111
+	LookAngleMaxAccelAttacking = 20000.0 
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 40.100
+End
+
+ProP+Rifle "JaCkz"
 	VoicePitch = 89
 End
 
 ProP+Rifle "nexa"
 	VoicePitch = 99
-End
-
-ProP+Rifle "NiKo"
-	VoicePitch = 111
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "AmaNEk"
@@ -1325,25 +1325,25 @@ ProP+Rifle "BONA"
 	VoicePitch = 108
 End
 
-//Bren Players
+//Recon Players
 
-ProP+Rifle "Papichulo"
+ProP+Rifle "kobruh"
 	VoicePitch = 89
 End
 
-ProAwp+SniperPro "micr0"
+ProAwp+SniperPro "tweiss"
 	VoicePitch = 97
 End
 
-ProP+Rifle "Pro."
+ProP+Rifle "JazzPimp"
 	VoicePitch = 111
 End
 
-ProP+Rifle "JA"
+ProP+Rifle "AAustiN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Derek"
+ProP+Rifle "Infinite"
 	VoicePitch = 90
 End
 
@@ -1897,13 +1897,13 @@ ProP+Rifle "Pogba"
 	VoicePitch = 75
 End
 
-//energy Players
+//Bravado Players
 
-ProP+Rifle "pnd"
+ProP+Rifle "TheM4N"
 	VoicePitch = 84
 End
 
-ProAwp+SniperPro "disTroiT"
+ProAwp+SniperPro "Detrony"
 	VoicePitch = 76
 End
 
@@ -1915,7 +1915,7 @@ ProP+Rifle "flexeeee"
 	VoicePitch = 93
 End
 
-ProP+Rifle "mango"
+ProP+Rifle ".exe"
 	VoicePitch = 78
 End
 
@@ -2161,25 +2161,25 @@ ProP+Rifle "Djoko"
 	VoicePitch = 78
 End
 
-//Vexed Players
+//XENEX Players
 
-ProP+Rifle "dox"
+ProP+Rifle "Magic"
 	VoicePitch = 111
 End
 
-ProAwp+SniperPro "isk"
+ProAwp+SniperPro "bevve"
 	VoicePitch = 103
 End
 
-ProP+Rifle "leaf"
+ProP+Rifle "addi"
 	VoicePitch = 113
 End
 
-ProP+Rifle "EIZA"
+ProP+Rifle "crit"
 	VoicePitch = 107
 End
 
-ProP+Rifle "volt"
+ProP+Rifle "Zulu"
 	VoicePitch = 104
 End
 
@@ -2439,7 +2439,7 @@ ProP+Rifle "Bwills"
 	VoicePitch = 100
 End
 
-ProP+Rifle "cxzi"
+ProP+Rifle "cynic"
 	VoicePitch = 79
 End
 
@@ -2717,7 +2717,7 @@ ProP+Rifle "Patrick"
 	VoicePitch = 96
 End
 
-ProAwp+SniperPro "polzerm"
+ProAwp+SniperPro "ykyli"
 	VoicePitch = 112
 End
 
@@ -3152,28 +3152,6 @@ ProP+Rifle "MODDII"
 	VoicePitch = 107
 End
 
-//CeX Players
-
-ProP+Rifle "znx"
-	VoicePitch = 92
-End
-
-ProAwp+SniperPro "Impact"
-	VoicePitch = 84
-End
-
-ProP+Rifle "Jsav"
-	VoicePitch = 86
-End
-
-ProP+Rifle "mrhui"
-	VoicePitch = 99
-End
-
-ProP+Rifle "ifan"
-	VoicePitch = 86
-End
-
 //Havan Players
 
 ProP+Rifle "ALLE"
@@ -3342,7 +3320,7 @@ ProP+Rifle "nosraC"
 	VoicePitch = 85
 End
 
-ProP+Rifle "wrath"
+ProP+Rifle "cxzi"
 	VoicePitch = 76
 End
 
@@ -3390,7 +3368,7 @@ ProP+Rifle "fleav"
 	VoicePitch = 82
 End
 
-ProP+Rifle "kolor"
+ProP+Rifle "bodito"
 	VoicePitch = 103
 End
 

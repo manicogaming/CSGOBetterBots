@@ -32,7 +32,7 @@
 	"floppy" 			"C9"
 	//G2 Players
 	"huNter-" 			"G2"
-	"kennyS" 			"G2"
+	"JaCkz" 			"G2"
 	"nexa" 				"G2"	
 	"NiKo" 				"G2"
 	"AmaNEk" 			"G2"
@@ -206,7 +206,7 @@
 	"Adam9130" 			"GamerLegion"
 	//DIVIZON Players
 	"Patrick" 			"DIVIZON"
-	"polzerm" 			"DIVIZON"
+	"ykyli" 			"DIVIZON"
 	"hyped" 			"DIVIZON"
 	"akay" 				"DIVIZON"
 	"sKahx" 			"DIVIZON"
@@ -240,12 +240,12 @@
 	"AKE" 				"SJ"
 	"zks" 				"SJ"
 	"BONA" 				"SJ"
-	//Bren Players
-	"Papichulo" 		"Bren"	
-	"micr0" 			"Bren"
-	"Pro." 				"Bren"
-	"JA" 				"Bren"
-	"Derek" 			"Bren"
+	//Recon Players
+	"kobruh" 			"Recon"	
+	"tweiss" 			"Recon"
+	"JazzPimp" 			"Recon"
+	"AAustiN" 			"Recon"
+	"Infinite" 			"Recon"
 	//Lions Players
 	"HooXi" 			"Lions"
 	"TMB" 				"Lions"
@@ -396,12 +396,12 @@
 	"PokemoN" 			"DV"
 	"Ejram" 			"DV"
 	"Pogba" 			"DV"
-	//Energy Players
-	"pnd" 				"Energy"
-	"disTroiT" 			"Energy"
-	"Wip3ouT" 			"Energy"
-	"flexeeee" 			"Energy"	
-	"mango" 			"Energy"
+	//Bravado Players
+	"TheM4N" 			"Bravado"
+	"Detrony" 			"Bravado"
+	"Wip3ouT" 			"Bravado"
+	"flexeeee" 			"Bravado"	
+	".exe" 				"Bravado"
 	//Furious Players
 	"abizz" 			"Furious"
 	"Xiguinilster" 		"Furious"
@@ -468,12 +468,12 @@
 	"Kan4" 				"Dice"
 	"Polox" 			"Dice"
 	"Djoko" 			"Dice"
-	//Vexed Players
-	"dox" 				"Vexed"
-	"isk" 				"Vexed"
-	"leafy" 			"Vexed"
-	"EIZA" 				"Vexed"
-	"volt" 				"Vexed"
+	//XENEX Players
+	"Magic" 			"XENEX"
+	"bevve" 			"XENEX"
+	"addi" 				"XENEX"
+	"crit" 				"XENEX"
+	"Zulu" 				"XENEX"
 	//HLE Players
 	"BELCHONOKK" 		"HLE"
 	"DrobnY" 			"HLE"	
@@ -544,7 +544,7 @@
 	"Shakezullah" 		"Triumph"
 	"Bwills" 			"Triumph"
 	"Cooper-" 			"Triumph"
-	"cxzi" 				"Triumph"
+	"cynic" 			"Triumph"
 	"viz" 				"Triumph"
 	//FATE Players
 	"milky"				"FATE" 
@@ -732,12 +732,6 @@
 	"hemzk9" 			"Lemondogs"
 	"znajder" 			"Lemondogs"
 	"MODDII" 			"Lemondogs"	
-	//CeX Players
-	"znx" 				"CeX"
-	"Impact" 			"CeX"
-	"Jsav" 				"CeX"
-	"mrhui" 			"CeX"
-	"ifan"				"CeX"
 	//Havan Players
 	"ALLE" 				"Havan"
 	"drg" 				"Havan"
@@ -784,7 +778,7 @@
 	"retchy" 			"Rebirth"
 	"XotiC" 			"Rebirth"
 	"nosraC" 			"Rebirth"
-	"wrath" 			"Rebirth"
+	"cxzi" 				"Rebirth"
 	"reck"				"Rebirth"
 	//AVEZ Players
 	"Zefir" 			"AVEZ"
@@ -797,7 +791,7 @@
 	"torzsi" 			"BP"
 	"kory" 				"BP"
 	"fleav" 			"BP"
-	"kolor"				"BP"
+	"bodito"			"BP"
 	//Anonymo Players
 	"KEi" 				"Anonymo"
 	"Snax" 				"Anonymo"
