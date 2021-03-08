@@ -60,7 +60,7 @@
 	"stanislaw" 		"21583315"
 	"tarik" 			"18216247"
 	"Brehze" 			"94595411"
-	"Ethan" 			"169177802"
+	"oBo" 				"138156260"
 	"CeRq" 				"196088155"
 	//Na´Vi Players
 	"electronic" 		"83779379"	
@@ -213,7 +213,6 @@
 	"BONA" 				"201490896"
 	//Recon Players
 	"JazzPimp" 			"101706163"
-	"Infinite" 			"149493497"
 	//Lions Players
 	"HooXi" 			"38661042"
 	"TMB" 				"124341526"
@@ -350,6 +349,7 @@
 	"Markoś" 			"68256934"
 	//GTZ Players
 	"fakes2" 			"96848867"
+	"horvy" 			"11050533"
 	//EXTREMUM Players
 	"AZR" 				"24832266"
 	"Liazz" 			"112055988"
@@ -486,7 +486,7 @@
 	"MUTiRiS" 			"37715442"	
 	"rmn" 				"34129763"
 	//DIG Players
-	"H4RR3" 			"195566724"
+	"Lekr0" 			"1093135"
 	"hallzerk" 			"100101582"
 	"f0rest" 			"93724"
 	"friberg" 			"24295201"

@@ -64,7 +64,7 @@
 	"stanislaw" 		"EG"
 	"tarik" 			"EG"
 	"Brehze" 			"EG"
-	"Ethan" 			"EG"
+	"oBo" 				"EG"
 	"CeRq" 				"EG"
 	//Na´Vi Players
 	"electronic" 		"Na´Vi"	
@@ -245,7 +245,7 @@
 	"tweiss" 			"Recon"
 	"JazzPimp" 			"Recon"
 	"AAustiN" 			"Recon"
-	"Infinite" 			"Recon"
+	"Saturn" 			"Recon"
 	//Lions Players
 	"HooXi" 			"Lions"
 	"TMB" 				"Lions"
@@ -418,7 +418,7 @@
 	"rafaxF" 			"GTZ"
 	"snapy" 			"GTZ"
 	"slaxx" 			"GTZ"
-	"dead" 				"GTZ"
+	"horvy" 			"GTZ"
 	"fakes2" 			"GTZ"
 	//EXTREMUM Players
 	"AZR" 				"EXTREMUM"
@@ -589,7 +589,7 @@
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
 	//DIG Players
-	"H4RR3" 			"DIG"
+	"Lekr0" 			"DIG"
 	"hallzerk" 			"DIG"
 	"f0rest" 			"DIG"
 	"friberg" 			"DIG"

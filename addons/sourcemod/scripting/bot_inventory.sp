@@ -134,6 +134,7 @@ public void OnPluginStart()
 	}
 	
 	HookUserMessage(GetUserMessageId("EndOfMatchAllPlayersData"), OnEndOfMatchAllPlayersData, true);
+	HookUserMessage(GetUserMessageId("RoundImpactScoreData"), OnRoundImpactScoreData, true);
 	
 	GameData hGameData = new GameData("botinventory.games");
 	
@@ -242,6 +243,31 @@ public void BuildSkinsArrayList()
 		{
 			int iAgentDefIndex = eItems_GetAgentDefIndexByAgentNum(iAgent);
 			g_ArrayCTAgents.Push(iAgentDefIndex);
+		}
+	}
+}
+
+Action OnRoundImpactScoreData(UserMsg iMsgId, Protobuf hMessage, const int[] iPlayers, int iPlayersNum, bool bReliable, bool bInit)
+{
+	if (bReliable)
+	{
+		int client;
+		for (int i = 0; i < hMessage.GetRepeatedFieldCount("all_ris_event_data"); i++)
+		{
+			Protobuf all_ris_event_data = hMessage.ReadRepeatedMessage("all_ris_event_data", i);
+			Protobuf victim_data = all_ris_event_data.ReadMessage("victim_data");
+			client = victim_data.ReadInt("entindex");
+			
+			if (IsValidClient(client))
+			{
+				int iXuid[2];
+			
+				iXuid[1] = 17825793;
+				iXuid[0] = GetBotAccountID(client);
+				
+				victim_data.SetBool("is_bot", false);
+				victim_data.SetInt64("xuid", iXuid);
+			}	
 		}
 	}
 }

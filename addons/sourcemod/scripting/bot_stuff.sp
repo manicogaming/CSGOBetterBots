@@ -573,7 +573,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "stanislaw");
 		ServerCommand("bot_add_ct %s", "tarik");
 		ServerCommand("bot_add_ct %s", "Brehze");
-		ServerCommand("bot_add_ct %s", "Ethan");
+		ServerCommand("bot_add_ct %s", "oBo");
 		ServerCommand("bot_add_ct %s", "CeRq");
 		ServerCommand("mp_teamlogo_1 eg");
 	}
@@ -584,7 +584,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "stanislaw");
 		ServerCommand("bot_add_t %s", "tarik");
 		ServerCommand("bot_add_t %s", "Brehze");
-		ServerCommand("bot_add_t %s", "Ethan");
+		ServerCommand("bot_add_t %s", "oBo");
 		ServerCommand("bot_add_t %s", "CeRq");
 		ServerCommand("mp_teamlogo_2 eg");
 	}
@@ -1474,7 +1474,7 @@ public Action Team_Recon(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "tweiss");
 		ServerCommand("bot_add_ct %s", "JazzPimp");
 		ServerCommand("bot_add_ct %s", "AAustiN");
-		ServerCommand("bot_add_ct %s", "Infinite");
+		ServerCommand("bot_add_ct %s", "Saturn");
 		ServerCommand("mp_teamlogo_1 recon");
 	}
 	
@@ -1485,7 +1485,7 @@ public Action Team_Recon(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "tweiss");
 		ServerCommand("bot_add_t %s", "JazzPimp");
 		ServerCommand("bot_add_t %s", "AAustiN");
-		ServerCommand("bot_add_t %s", "Infinite");
+		ServerCommand("bot_add_t %s", "Saturn");
 		ServerCommand("mp_teamlogo_2 recon");
 	}
 	
@@ -2343,7 +2343,7 @@ public Action Team_GTZ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "rafaxF");
 		ServerCommand("bot_add_ct %s", "snapy");
 		ServerCommand("bot_add_ct %s", "slaxx");
-		ServerCommand("bot_add_ct %s", "dead");
+		ServerCommand("bot_add_ct %s", "horvy");
 		ServerCommand("bot_add_ct %s", "fakes2");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
@@ -2354,7 +2354,7 @@ public Action Team_GTZ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "rafaxF");
 		ServerCommand("bot_add_t %s", "snapy");
 		ServerCommand("bot_add_t %s", "slaxx");
-		ServerCommand("bot_add_t %s", "dead");
+		ServerCommand("bot_add_t %s", "horvy");
 		ServerCommand("bot_add_t %s", "fakes2");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
@@ -3210,7 +3210,7 @@ public Action Team_DIG(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "H4RR3");
+		ServerCommand("bot_add_ct %s", "Lekr0");
 		ServerCommand("bot_add_ct %s", "hallzerk");
 		ServerCommand("bot_add_ct %s", "f0rest");
 		ServerCommand("bot_add_ct %s", "friberg");
@@ -3221,7 +3221,7 @@ public Action Team_DIG(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "H4RR3");
+		ServerCommand("bot_add_t %s", "Lekr0");
 		ServerCommand("bot_add_t %s", "hallzerk");
 		ServerCommand("bot_add_t %s", "f0rest");
 		ServerCommand("bot_add_t %s", "friberg");
@@ -4348,6 +4348,8 @@ public void OnMapStart()
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	
+	GameRules_SetProp("m_nQueuedMatchmakingMode", 1);
+	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
@@ -5023,7 +5025,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 70)
+					if (Math_GetRandomInt(1, 100) <= 75)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						

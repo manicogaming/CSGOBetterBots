@@ -683,7 +683,7 @@ ProP+Rifle "Brehze"
 	VoicePitch = 111
 End
 
-ProP+Rifle "Ethan"
+ProP+Rifle "oBo"
 	VoicePitch = 109
 End
 
@@ -1343,7 +1343,7 @@ ProP+Rifle "AAustiN"
 	VoicePitch = 95
 End
 
-ProP+Rifle "Infinite"
+ProP+Rifle "Saturn"
 	VoicePitch = 90
 End
 
@@ -1977,7 +1977,7 @@ ProP+Rifle "slaxx"
 	VoicePitch = 115
 End
 
-ProP+Rifle "dead"
+ProP+Rifle "horvy"
 	VoicePitch = 90
 End
 
@@ -2603,7 +2603,7 @@ End
 
 //DIG Players
 
-ProP+Rifle "H4RR3"
+ProP+Rifle "Lekr0"
 	VoicePitch = 109
 End
 
