@@ -4348,8 +4348,6 @@ public void OnMapStart()
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	
-	GameRules_SetProp("m_nQueuedMatchmakingMode", 1);
-	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
