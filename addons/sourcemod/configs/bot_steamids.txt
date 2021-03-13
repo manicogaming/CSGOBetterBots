@@ -155,7 +155,7 @@
 	"dennis" 			"108076825"
 	"Relaxa" 			"169700429"
 	//aTTaX Players
-	"stfN" 				"47322750"
+	"prosus" 			"218535303"
 	"kRYSTAL" 			"17526007"
 	"ScrunK" 			"13840460"
 	"Krimbo" 			"210365363"
@@ -295,7 +295,7 @@
 	//Dire Players
 	"HaZR" 				"64081874"
 	"sterling" 			"100224621"
-	"apoc" 				"45914082"
+	"soju_j" 			"86871337"
 	//Chiefs Players
 	"HUGHMUNGUS" 		"104743037"
 	"apocdud" 			"58325300"
@@ -311,7 +311,7 @@
 	"dennyslaw" 		"300693622"	
 	"Oxygen" 			"124914887"
 	"Rainwaker" 		"177848062"	
-	"pNshr" 			"70058172"
+	"SHiPZ" 			"254948893"
 	//Paradox Players
 	"rbz" 				"6510851"
 	"ekul" 				"38901108"
@@ -460,6 +460,8 @@
 	"Patrick--" 		"98715951"
 	"Rock1nG" 			"246843704"
 	"niki1" 			"932616892"
+	"rafftu" 			"78588859"
+	"KalubeR" 			"132424531"
 	//OG Players
 	"NBK-" 				"444845"
 	"mantuu" 			"56166832"
@@ -553,7 +555,6 @@
 	//ERN Players
 	"j1NZO" 			"220770109"
 	"preet" 			"34228517"
-	"FreeZe" 			"259251039"
 	"Knoxville" 		"107802167"
 	//BL4ZE Players
 	"Rossi" 			"433932660"
@@ -599,8 +600,9 @@
 	"ngiN" 				"17887362"
 	"l0gicman" 			"164139337"
 	"imoRR"				"107082440"
-	//PkD Players
+	//PENTA Players
 	"cello" 			"18118733"
+	"FreeZe" 			"76968"
 	//BLUEJAYS Players
 	"sarenii" 			"114087818"
 	"h4rn" 				"88360844"
@@ -622,6 +624,7 @@
 	//Rebirth Players
 	"XotiC" 			"233525417"
 	"cxzi" 				"211453961"
+	"cJ" 				"40562365"
 	//AVEZ Players
 	//BP Players
 	"coolio" 			"119009553"
@@ -646,4 +649,9 @@
 	"Sonic" 			"14864123"
 	"FaNg"				"312457591"
 	//RBG Players
+	//DC Players
+	"Explicit"			"1074781"
+	//Big5 Players
+	//LEISURE Players
+	"get"				"28333977"
 }

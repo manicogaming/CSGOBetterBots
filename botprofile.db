@@ -1085,7 +1085,7 @@ End
 
 //aTTaX Players
 
-ProP+Rifle "stfN"
+ProP+Rifle "prosus"
 	VoicePitch = 77
 End
 
@@ -1221,7 +1221,7 @@ ProP+Rifle "ChLo"
 	VoicePitch = 72
 End
 
-ProAwp+SniperPro "sTaR"
+ProAwp+SniperPro "Mikelos"
 	VoicePitch = 95
 End
 
@@ -1687,7 +1687,7 @@ ProAwp+SniperPro "sterling"
 	VoicePitch = 87
 End
 
-ProP+Rifle "apoc"
+ProP+Rifle "soju_j"
 	VoicePitch = 114
 End
 
@@ -1761,7 +1761,7 @@ ProP+Rifle "Rainwaker"
 	VoicePitch = 100
 End
 
-ProP+Rifle "pNshr"
+ProP+Rifle "SHiPZ"
 	VoicePitch = 78
 End
 
@@ -2449,7 +2449,7 @@ End
 
 //FATE Players
 
-ProP+Rifle "milky"
+ProP+Rifle "rafftu"
 	VoicePitch = 87
 End
 
@@ -2461,7 +2461,7 @@ ProP+Rifle "Rock1nG"
 	VoicePitch = 99
 End
 
-ProP+Rifle "shaiK"
+ProP+Rifle "KalubeR"
 	VoicePitch = 103
 End
 
@@ -2967,7 +2967,7 @@ ProP+Rifle "impulsG"
 	VoicePitch = 75
 End
 
-ProP+Rifle "FreeZe"
+ProP+Rifle "mvN"
 	VoicePitch = 100
 End
 
@@ -3196,17 +3196,17 @@ ProP+Rifle "imoRR"
 	VoicePitch = 111
 End
 
-//PkD Players
+//PENTA Players
 
-ProP+Rifle "LapeX"
+ProP+Rifle "awzek"
 	VoicePitch = 89
 End
 
-ProAwp+SniperPro "sesL"
+ProAwp+SniperPro "mave"
 	VoicePitch = 96
 End
 
-ProP+Rifle "pr1metapz"
+ProP+Rifle "FreeZe"
 	VoicePitch = 72
 End
 
@@ -3324,7 +3324,7 @@ ProP+Rifle "cxzi"
 	VoicePitch = 76
 End
 
-ProP+Rifle "reck"
+ProP+Rifle "cJ"
 	VoicePitch = 87
 End
 
@@ -3458,6 +3458,72 @@ End
 
 ProP+Rifle "Wolffe"
 	VoicePitch = 111
+End
+
+//DC Players
+
+ProP+Rifle "Hellhound"
+	VoicePitch = 108
+End
+
+ProAwp+SniperPro "stYle"
+	VoicePitch = 100
+End
+
+ProP+Rifle "Explicit"
+	VoicePitch = 97
+End
+
+ProP+Rifle "inciN"
+	VoicePitch = 107
+End
+
+ProP+Rifle "Wounded"
+	VoicePitch = 108
+End
+
+//Big5 Players
+
+ProP+Rifle "Dubee"
+	VoicePitch = 113
+End
+
+ProAwp+SniperPro "God's Not Dead"
+	VoicePitch = 93
+End
+
+ProP+Rifle "Leggy"
+	VoicePitch = 104
+End
+
+ProP+Rifle "Ninjask"
+	VoicePitch = 102
+End
+
+ProP+Rifle "Mogmat"
+	VoicePitch = 96
+End
+
+//LEISURE Players
+
+ProP+Rifle "get"
+	VoicePitch = 109
+End
+
+ProAwp+SniperPro "rome"
+	VoicePitch = 114
+End
+
+ProP+Rifle "raveN"
+	VoicePitch = 90
+End
+
+ProP+Rifle "d1cer"
+	VoicePitch = 100
+End
+
+ProP+Rifle "cal1mero"
+	VoicePitch = 75
 End
 
 EliteAwp+SniperPro "XD | ryu"

@@ -169,7 +169,7 @@
 	"Relaxa" 			"Apeks"
 	"dennis" 			"Apeks"
 	//aTTaX Players
-	"stfN" 				"aTTaX"
+	"prosus" 			"aTTaX"
 	"kRYSTAL" 			"aTTaX"
 	"ScrunK" 			"aTTaX"
 	"Krimbo" 			"aTTaX"
@@ -212,7 +212,7 @@
 	"sKahx" 			"DIVIZON"
 	//PDucks Players
 	"ChLo" 				"PDucks"
-	"sTaR" 				"PDucks"
+	"Mikelos" 			"PDucks"
 	"farmaG" 			"PDucks"
 	"maxz" 				"PDucks"
 	"Cl34v3rs" 			"PDucks"
@@ -339,7 +339,7 @@
 	//Dire Players
 	"HaZR" 				"Dire"
 	"sterling" 			"Dire"
-	"apoc" 				"Dire"
+	"soju_j" 			"Dire"
 	"Liki" 				"Dire"
 	"SaVage" 			"Dire"
 	//Chiefs Players
@@ -359,7 +359,7 @@
 	"dennyslaw" 		"SKADE"	
 	"Oxygen" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
-	"pNshr" 			"SKADE"
+	"SHiPZ" 			"SKADE"
 	//Paradox Players
 	"rbz" 				"Paradox"
 	"Versa" 			"Paradox"
@@ -547,10 +547,10 @@
 	"cynic" 			"Triumph"
 	"viz" 				"Triumph"
 	//FATE Players
-	"milky"				"FATE" 
+	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
 	"Rock1nG" 			"FATE"
-	"shaiK" 			"FATE"	
+	"KalubeR" 			"FATE"	
 	"niki1" 			"FATE"
 	//OG Players
 	"NBK-" 				"OG"
@@ -682,7 +682,7 @@
 	"j1NZO" 			"ERN"
 	"preet" 			"ERN"
 	"impulsG" 			"ERN"	
-	"FreeZe" 			"ERN"
+	"mvN" 				"ERN"
 	"Knoxville" 		"ERN"
 	//BL4ZE Players
 	"Rossi" 			"BL4ZE"
@@ -744,12 +744,12 @@
 	"ngiN" 				"Sangal"
 	"l0gicman" 			"Sangal"
 	"imoRR"				"Sangal"
-	//PkD Players
-	"LapeX" 			"PkD"
-	"sesL" 				"PkD"
-	"pr1metapz" 		"PkD"
-	"cello" 			"PkD"
-	"florento"			"PkD"
+	//PENTA Players
+	"awzek" 			"PENTA"
+	"mave" 				"PENTA"
+	"FreeZe" 			"PENTA"
+	"cello" 			"PENTA"
+	"florento"			"PENTA"
 	//BLUEJAYS Players
 	"sarenii" 			"BLUEJAYS"
 	"h4rn" 				"BLUEJAYS"
@@ -779,7 +779,7 @@
 	"XotiC" 			"Rebirth"
 	"nosraC" 			"Rebirth"
 	"cxzi" 				"Rebirth"
-	"reck"				"Rebirth"
+	"cJ"				"Rebirth"
 	//AVEZ Players
 	"Zefir" 			"AVEZ"
 	"Fazorek" 			"AVEZ"
@@ -816,4 +816,22 @@
 	"wiz" 				"RBG"
 	"chop" 				"RBG"
 	"Wolffe"			"RBG"
+	//DC Players
+	"Hellhound" 		"DC"
+	"stYle" 			"DC"
+	"Explicit" 			"DC"
+	"inciN" 			"DC"
+	"Wounded"			"DC"
+	//Big5 Players
+	"Dubee" 			"Big5"
+	"God's Not Dead" 	"Big5"
+	"Leggy" 			"Big5"
+	"Ninjask" 			"Big5"
+	"Mogmat"			"Big5"
+	//LEISURE Players
+	"get" 				"LEISURE"
+	"rome" 				"LEISURE"
+	"raveN" 			"LEISURE"
+	"d1cer" 			"LEISURE"
+	"cal1mero"			"LEISURE"
 }
