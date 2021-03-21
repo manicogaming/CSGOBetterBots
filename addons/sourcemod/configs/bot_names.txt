@@ -46,8 +46,8 @@
 	"lund" 				"Alpha"
 	"hug" 				"Alpha"
 	"wAGNR" 			"Alpha"
-	"zyp" 				"Alpha"
-	"scott" 			"Alpha"
+	"TOBIZ" 			"Alpha"
+	"LUMSEN" 			"Alpha"
 	//mouz Players
 	"dexter"			"mouz" 
 	"acoR" 				"mouz"
@@ -260,7 +260,7 @@
 	"smooya" 			"Riders"
 	//eSuba Players
 	"NIO" 				"eSuba"
-	"twistP" 			"eSuba"
+	"twistqt" 			"eSuba"
 	"jaro" 				"eSuba"	
 	"blogg1s" 			"eSuba"
 	"luko" 				"eSuba"
@@ -383,7 +383,7 @@
 	"powerYY" 			"TTT"
 	"KrowNii" 			"TTT"
 	"pulzG" 			"TTT"
-	"AceCommander" 		"TTT"
+	"nixeed" 			"TTT"
 	//nxl Players
 	"soifong" 			"nxl"
 	"Foscmorc" 			"nxl"
@@ -410,7 +410,7 @@
 	"nacho" 			"Furious"
 	//Illuminar Players
 	"mouz" 				"Illuminar"
-	"Markoś" 			"Illuminar"
+	"Markos" 			"Illuminar"
 	"GruBy" 			"Illuminar"
 	"Sidney" 			"Illuminar"
 	"morelz" 			"Illuminar"
@@ -473,7 +473,7 @@
 	"bevve" 			"XENEX"
 	"addi" 				"XENEX"
 	"crit" 				"XENEX"
-	"Zulu" 				"XENEX"
+	"Mixann" 			"XENEX"
 	//HLE Players
 	"BELCHONOKK" 		"HLE"
 	"DrobnY" 			"HLE"	
@@ -661,11 +661,11 @@
 	"bit" 				"9z"
 	"rox" 				"9z"
 	//Sinister5 Players
-	"zerOchaNce" 		"Sinister5"
-	"FreakY" 			"Sinister5"
-	"deviaNt" 			"Sinister5"
+	"Chappy" 			"Sinister5"
+	"JumpOlot" 			"Sinister5"
+	"scheeR" 			"Sinister5"
 	"Lately" 			"Sinister5"
-	"slayeRyEyE" 		"Sinister5"	
+	"Ruben" 			"Sinister5"	
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
 	"oskar" 			"SINNERS"
@@ -683,9 +683,9 @@
 	"preet" 			"ERN"
 	"impulsG" 			"ERN"	
 	"mvN" 				"ERN"
-	"Knoxville" 		"ERN"
+	"sesL" 				"ERN"
 	//BL4ZE Players
-	"Rossi" 			"BL4ZE"
+	"dzii" 				"BL4ZE"
 	"Marzil" 			"BL4ZE"
 	"RvK" 				"BL4ZE"
 	"Raph" 				"BL4ZE"
@@ -781,11 +781,11 @@
 	"cxzi" 				"Rebirth"
 	"cJ"				"Rebirth"
 	//AVEZ Players
-	"Zefir" 			"AVEZ"
-	"Fazorek" 			"AVEZ"
-	"Pokemob" 			"AVEZ"
-	"MrObvious" 		"AVEZ"
-	"kulioo"			"AVEZ"
+	"sNx" 				"AVEZ"
+	"pawkoem" 			"AVEZ"
+	"Warp" 				"AVEZ"
+	"SaMey" 			"AVEZ"
+	"RiseL"				"AVEZ"
 	//BP Players
 	"coolio" 			"BP"
 	"torzsi" 			"BP"
@@ -834,4 +834,10 @@
 	"raveN" 			"LEISURE"
 	"d1cer" 			"LEISURE"
 	"cal1mero"			"LEISURE"
+	//Malvinas Players
+	"fakzwall" 			"Malvinas"
+	"jotti" 			"Malvinas"
+	"PREDI" 			"Malvinas"
+	"BerSeCkaZo" 		"Malvinas"
+	"bichop"			"Malvinas"
 }

@@ -614,11 +614,11 @@ ProP+Rifle "lund"
 	VoicePitch = 108
 End
 
-ProP+Rifle "zyp"
+ProP+Rifle "TOBIZ"
 	VoicePitch = 90
 End
 
-ProP+Rifle "scott"
+ProP+Rifle "LUMSEN"
 	VoicePitch = 108
 End
 
@@ -1397,7 +1397,7 @@ ProP+Rifle "NIO"
 	VoicePitch = 110
 End
 
-ProAwp+SniperPro "twistP"
+ProAwp+SniperPro "twistqt"
 	VoicePitch = 77
 End
 
@@ -1849,7 +1849,7 @@ ProP+Rifle "pulzG"
 	VoicePitch = 113
 End
 
-ProP+Rifle "AceCommander"
+ProP+Rifle "nixeed"
 	VoicePitch = 79
 End
 
@@ -1947,7 +1947,7 @@ ProP+Rifle "mouz"
 	VoicePitch = 76
 End
 
-ProAwp+SniperPro "Markoś"
+ProAwp+SniperPro "Markos"
 	VoicePitch = 110
 End
 
@@ -2179,7 +2179,7 @@ ProP+Rifle "crit"
 	VoicePitch = 107
 End
 
-ProP+Rifle "Zulu"
+ProP+Rifle "Mixann"
 	VoicePitch = 104
 End
 
@@ -2889,15 +2889,15 @@ End
 
 //Sinister5 Players
 
-ProP+Rifle "zerOchaNce"
+ProP+Rifle "Chappy"
 	VoicePitch = 93
 End
 
-ProAwp+SniperPro "FreakY"
+ProAwp+SniperPro "JumpOlot"
 	VoicePitch = 88
 End
 
-ProP+Rifle "deviaNt"
+ProP+Rifle "scheeR"
 	VoicePitch = 100
 End
 
@@ -2905,7 +2905,7 @@ ProP+Rifle "Lately"
 	VoicePitch = 112
 End
 
-ProP+Rifle "slayeRyEyE"
+ProP+Rifle "Ruben"
 	VoicePitch = 94
 End
 
@@ -2959,7 +2959,7 @@ ProP+Rifle "j1NZO"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "Knoxville"
+ProAwp+SniperPro "sesL"
 	VoicePitch = 109
 End
 
@@ -2977,7 +2977,7 @@ End
 
 //BL4ZE Players
 
-ProP+Rifle "Rossi"
+ProP+Rifle "dzii"
 	VoicePitch = 78
 End
 
@@ -3330,23 +3330,23 @@ End
 
 //AVEZ Players
 
-ProP+Rifle "Zefir"
+ProP+Rifle "sNx"
 	VoicePitch = 80
 End
 
-ProAwp+SniperPro "Fazorek"
+ProAwp+SniperPro "pawkoem"
 	VoicePitch = 85
 End
 
-ProP+Rifle "Pokemob"
+ProP+Rifle "Warp"
 	VoicePitch = 83
 End
 
-ProP+Rifle "MrObvious"
+ProP+Rifle "SaMey"
 	VoicePitch = 89
 End
 
-ProP+Rifle "kulioo"
+ProP+Rifle "RiseL"
 	VoicePitch = 103
 End
 
@@ -3488,11 +3488,11 @@ ProP+Rifle "Dubee"
 	VoicePitch = 113
 End
 
-ProAwp+SniperPro "God's Not Dead"
+ProAwp+SniperPro "Leggy"
 	VoicePitch = 93
 End
 
-ProP+Rifle "Leggy"
+ProP+Rifle "God's Not Dead"
 	VoicePitch = 104
 End
 
@@ -3524,6 +3524,28 @@ End
 
 ProP+Rifle "cal1mero"
 	VoicePitch = 75
+End
+
+//Malvinas Players
+
+ProP+Rifle "fakzwall"
+	VoicePitch = 112
+End
+
+ProAwp+SniperPro "jotti"
+	VoicePitch = 98
+End
+
+ProP+Rifle "PREDI"
+	VoicePitch = 82
+End
+
+ProP+Rifle "BerSeCkaZo"
+	VoicePitch = 106
+End
+
+ProP+Rifle "bichop"
+	VoicePitch = 91
 End
 
 EliteAwp+SniperPro "XD | ryu"

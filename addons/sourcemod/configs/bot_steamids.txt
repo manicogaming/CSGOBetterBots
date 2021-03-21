@@ -43,7 +43,11 @@
 	"Brollan" 			"178562747"
 	"Golden" 			"116509497"
 	//Alpha Players
-	"zyp" 				"190975326"
+	"lund" 				"120778841"
+	"hug" 				"103219669"
+	"wAGNR" 			"47175311"
+	"TOBIZ" 			"151717795"
+	"LUMSEN" 			"105569983"
 	//mouz Players
 	"dexter"			"101535513" 
 	"acoR" 				"42677035"
@@ -190,7 +194,17 @@
 	"RuStY" 			"122394166"	
 	"Adam9130" 			"80281757"
 	//DIVIZON Players
+	"Patrick"			"64484395"
+	"ykyli" 			"271973456"
+	"hyped" 			"179338600"	
+	"akay" 				"74012219"
+	"sKahx" 			"276080220"
 	//PDucks Players
+	"ChLo" 				"75777535"
+	"Mikelos" 			"74484182"
+	"farmaG" 			"32002596"
+	"maxz" 				"14586249"
+	"Cl34v3rs" 			"98939532"
 	//HAVU Players
 	"ZOREE" 			"41867139"
 	"sLowi" 			"15932016"
@@ -229,6 +243,8 @@
 	"NIO" 				"170307600"
 	"blogg1s" 			"115938594"	
 	"luko" 				"90161747"	
+	"twistqt" 			"186939709"	
+	"jaro" 				"161264339"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -323,11 +339,17 @@
 	"RIZZ" 				"31830670"
 	"shellzi" 			"243140003"
 	//NASR Players
+	"gejmzilla" 		"181022384"
+	"REAL1ZE" 			"86316485"
+	"BOROS" 			"178773495"
+	"Dementor" 			"143656100"
+	"bibu" 				"150573885"
 	//TTT Players
 	"dukiiii" 			"114449"
 	"powerYY" 			"193302990"
 	"KrowNii" 			"225305859"
 	"pulzG" 			"4110176"
+	"nixeed" 			"247022056"
 	//nxl Players
 	"soifong" 			"113144130"
 	"frgd[ibtJ]" 		"41830668"	
@@ -336,6 +358,7 @@
 	"DVDOV" 			"40379175"
 	"PokemoN" 			"137998735"
 	"Ejram" 			"152164497"
+	"Pogba" 			"91876475"
 	//Bravado Players
 	"flexeeee" 			"177739017"	
 	"Detrony" 			"27120041"
@@ -346,7 +369,7 @@
 	"GruBy" 			"44752530"
 	"Sidney" 			"70091835"
 	"morelz" 			"122208414"
-	"Markoś" 			"68256934"
+	"Markos" 			"68256934"
 	//GTZ Players
 	"fakes2" 			"96848867"
 	"horvy" 			"11050533"
@@ -373,6 +396,7 @@
 	"Anhuin" 			"95774258"
 	"HadeZ" 			"242589771"	
 	"P4TriCK" 			"60152488"
+	"Python" 			"231605562"
 	//FPX Players
 	"STYKO" 			"55928431"
 	"farlig" 			"63982401"
@@ -399,6 +423,10 @@
 	"Djoko" 			"87611242"
 	//XENEX Players
 	"addi"				"3212674"
+	"Magic"				"178318203"
+	"bevve"				"1143637371"
+	"crit"				"132758600"
+	"Mixann"			"40701211"
 	//HLE Players
 	"svyat" 			"35632848"
 	//Gambit Players
@@ -498,6 +526,7 @@
 	"shinobi" 			"488680911"
 	"sk0R" 				"863160115"
 	"Annihilation" 		"315821474"	
+	"xerolte" 			"368881420"	
 	//ZIGMA Players
 	"NIFFY" 			"167797237"
 	"Reality" 			"101927360"
@@ -507,7 +536,9 @@
 	//mCon Players
 	"Monu" 				"17643220"
 	"G1DO" 				"3491078"
+	"MaximN" 			"67085219"
 	"v1N" 				"158888822"
+	"kzealos" 			"85556724"
 	//KOVA Players
 	"pietola" 			"78197987"
 	"spargo" 			"109596532"
@@ -537,14 +568,22 @@
 	"NABOWOW" 			"283730928"
 	"Cunha" 			"203400597"
 	//Tigers Players
+	"MAXX" 				"119229654"
+	"ZEDc" 				"108732327"
+	"zyored" 			"159353688"
+	"fino" 				"840357190"
+	"system" 			"72886704"
 	//9z Players
 	"dgt" 				"256625848"
 	"try" 				"404852560"
 	"maxujas" 			"282684656"
 	"bit" 				"9224396"
 	//Sinister5 Players
-	"zerOchaNce" 		"982445"
-	"deviaNt" 			"7077099"
+	"Chappy" 			"86296457"
+	"JumpOlot" 			"84870179"
+	"scheeR" 			"136912625"
+	"Lately" 			"290361460"
+	"Ruben" 			"132160849"	
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
 	"oskar" 			"171425088"
@@ -555,10 +594,15 @@
 	//ERN Players
 	"j1NZO" 			"220770109"
 	"preet" 			"34228517"
-	"Knoxville" 		"107802167"
+	"sesL" 				"127191279"
+	"impulsG" 			"242288017"
+	"mvN" 				"165741598"
 	//BL4ZE Players
-	"Rossi" 			"433932660"
+	"dzii" 				"433932660"
 	"Marzil" 			"141417673"
+	"RvK" 				"272159688"
+	"Raph" 				"76862977"
+	"cara" 				"205783147"
 	//QBF Players
 	"BERRY" 			"9876226"
 	//Rooster Players
@@ -579,6 +623,11 @@
 	"whatz" 			"31318693"
 	"renatoohaxx" 		"39166438"
 	//Ambush Players
+	"SBT"				"94663345"
+	"wasiNk"			"164618316"
+	"Gringo"			"202395754"
+	"DrqkoN"			"245929"
+	"SoneSb"			"98116312"
 	//hREDS Players
 	"eDi" 				"57731578"
 	"Samppa" 			"37105524"
@@ -603,11 +652,15 @@
 	//PENTA Players
 	"cello" 			"18118733"
 	"FreeZe" 			"76968"
+	"mave" 				"219806941"
+	"awzek" 			"238305245"
+	"florento" 			"178159309"
 	//BLUEJAYS Players
 	"sarenii" 			"114087818"
 	"h4rn" 				"88360844"
 	"Kvik" 				"40982505"
 	"NENO"				"60091224"
+	"Fessor"			"311417941"
 	//Nordavind Players
 	"tenzki" 			"37214922"
 	"mertz" 			"119498324"
@@ -651,7 +704,26 @@
 	//RBG Players
 	//DC Players
 	"Explicit"			"1074781"
+	"Hellhound" 		"427548"
+	"stYle" 			"445926"
+	"inciN" 			"1524775"
+	"Wounded" 			"2649678"
 	//Big5 Players
+	"Dubee" 			"162968873"
+	"God's Not Dead" 	"187510732"
+	"Leggy" 			"19776816"
+	"Ninjask" 			"111581085"
+	"Mogmat"			"76179652"
 	//LEISURE Players
 	"get"				"28333977"
+	"rome"				"41470786"
+	"raveN"				"799911956"
+	"d1cer"				"158737140"
+	"cal1mero"			"67203969"
+	//Malvinas Players
+	"fakzwall" 			"100101626"
+	"jotti" 			"70423187"
+	"PREDI" 			"89256326"
+	"BerSeCkaZo" 		"132874323"
+	"bichop"			"460382035"
 }
