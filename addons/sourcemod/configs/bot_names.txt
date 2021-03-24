@@ -146,8 +146,8 @@
 	"denis" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
-	"b0RUP" 			"Heroic"
-	"nikozan" 			"Heroic"
+	"refrezh" 			"Heroic"
+	"sjuush" 			"Heroic"
 	"cadiaN" 			"Heroic"
 	"stavn" 			"Heroic"
 	//INTZ Players
@@ -247,11 +247,11 @@
 	"AAustiN" 			"Recon"
 	"Saturn" 			"Recon"
 	//Lions Players
-	"HooXi" 			"Lions"
+	"tudsoN" 			"Lions"
 	"TMB" 				"Lions"
-	"Sjuush" 			"Lions"	
-	"refrezh" 			"Lions"
-	"roeJ" 				"Lions"
+	"Woro2k" 			"Lions"	
+	"sausol" 			"Lions"
+	"jL" 				"Lions"
 	//Riders Players
 	"mopoz"				"Riders" 
 	"shokz" 			"Riders"
@@ -283,9 +283,9 @@
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
 	//YaLLa Players
-	"Remind" 			"YaLLa"
+	"Senpai" 			"YaLLa"
 	"eku" 				"YaLLa"
-	"Empera" 			"YaLLa"
+	"Joker" 			"YaLLa"
 	"m1N1" 				"YaLLa"
 	"gaB" 				"YaLLa"
 	//Yeah Players
@@ -404,7 +404,7 @@
 	".exe" 				"Bravado"
 	//Furious Players
 	"abizz" 			"Furious"
-	"Xiguinilster" 		"Furious"
+	"JonY BoY" 			"Furious"
 	"Owen$inhoM" 		"Furious"	
 	"Gooden" 			"Furious"
 	"nacho" 			"Furious"
@@ -553,7 +553,7 @@
 	"KalubeR" 			"FATE"	
 	"niki1" 			"FATE"
 	//OG Players
-	"NBK-" 				"OG"
+	"nikozan" 			"OG"
 	"mantuu" 			"OG"
 	"Aleksib" 			"OG"
 	"valde" 			"OG"

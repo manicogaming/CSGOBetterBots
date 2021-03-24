@@ -1005,11 +1005,11 @@ ProAwp+SniperPro "cadiaN"
 	VoicePitch = 96
 End
 
-ProP+Rifle "nikozan"
+ProP+Rifle "sjuush"
 	VoicePitch = 112
 End
 
-ProP+Rifle "b0RUP"
+ProP+Rifle "refrezh"
 	VoicePitch = 96
 End
 
@@ -1349,7 +1349,7 @@ End
 
 //Lions Players
 
-ProP+Rifle "HooXi"
+ProP+Rifle "tudsoN"
 	VoicePitch = 76
 End
 
@@ -1357,15 +1357,15 @@ ProAwp+SniperPro "TMB"
 	VoicePitch = 96
 End
 
-ProP+Rifle "Sjuush"
+ProP+Rifle "Woro2k"
 	VoicePitch = 90
 End
 
-ProP+Rifle "refrezh"
+ProP+Rifle "sausol"
 	VoicePitch = 112
 End
 
-ProP+Rifle "roeJ"
+ProP+Rifle "jL"
 	VoicePitch = 101
 End
 
@@ -1481,7 +1481,7 @@ End
 
 //YaLLa Players
 
-ProP+Rifle "Remind"
+ProP+Rifle "Senpai"
 	VoicePitch = 113
 End
 
@@ -1489,7 +1489,7 @@ ProAwp+SniperPro "eku"
 	VoicePitch = 77
 End
 
-ProP+Rifle "Empera"
+ProP+Rifle "Joker"
 	VoicePitch = 73
 End
 
@@ -1929,7 +1929,7 @@ ProAwp+SniperPro "Owen$inhoM"
 	VoicePitch = 112
 End
 
-ProP+Rifle "Xiguinilster"
+ProP+Rifle "JonY BoY"
 	VoicePitch = 100
 End
 
@@ -2471,7 +2471,7 @@ End
 
 //OG Players
 
-ProP+Rifle "NBK-"
+ProP+Rifle "nikozan"
 	VoicePitch = 95
 End
 

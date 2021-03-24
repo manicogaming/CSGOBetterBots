@@ -141,8 +141,8 @@
 	"denis" 			"31185376"
 	//Heroic Players
 	"TeSeS" 			"36412550"
-	"b0RUP" 			"146876280"
-	"nikozan" 			"29470855"
+	"refrezh" 			"104598470"
+	"sjuush" 			"200443857"
 	"cadiaN" 			"43849788"
 	"stavn" 			"62099910"
 	//INTZ Players
@@ -193,6 +193,7 @@
 	"Zero" 				"34322135"
 	"RuStY" 			"122394166"	
 	"Adam9130" 			"80281757"
+	"dobbo" 			"288859378"
 	//DIVIZON Players
 	"Patrick"			"64484395"
 	"ykyli" 			"271973456"
@@ -228,11 +229,11 @@
 	//Recon Players
 	"JazzPimp" 			"101706163"
 	//Lions Players
-	"HooXi" 			"38661042"
+	"tudsoN" 			"58354081"
 	"TMB" 				"124341526"
-	"Sjuush" 			"200443857"	
-	"refrezh" 			"104598470"
-	"roeJ" 				"30968963"
+	"Woro2k" 			"1015186932"	
+	"sausol" 			"31327539"
+	"jL" 				"216612575"
 	//Riders Players
 	"mopoz"				"37931638" 
 	"shokz" 			"39590183"
@@ -264,8 +265,11 @@
 	"Jyo" 				"43255799"
 	"boX" 				"127393261"
 	//YaLLa Players
-	"Remind" 			"121767731"
-	"Empera" 			"241919387"
+	"Senpai" 			"348984664"
+	"Joker" 			"422012846"
+	"eku" 				"89792022"
+	"m1N1" 				"462123965"
+	"gaB" 				"76623486"
 	//Yeah Players
 	"iDk" 				"106435802"
 	"RCF" 				"206261197"
@@ -447,6 +451,10 @@
 	"SHOOWTiME" 		"97938914"	
 	//Pompa Players
 	"koyot" 			"174135918"
+	"Grashog" 			"78941188"
+	"fr3nd" 			"177768668"
+	"bnox" 				"400417045"
+	"Miki Z Afryki" 	"128730948"
 	//Unique Players
 	"crush" 			"36981424"
 	//Izako Players
@@ -491,7 +499,7 @@
 	"rafftu" 			"78588859"
 	"KalubeR" 			"132424531"
 	//OG Players
-	"NBK-" 				"444845"
+	"nikozan" 			"29470855"
 	"mantuu" 			"56166832"
 	"Aleksib" 			"52977598"
 	"valde" 			"154664140"
@@ -503,6 +511,11 @@
 	"kwezz" 			"110193409"
 	"sycrone" 			"49161935"
 	//Baecon Players
+	"met" 				"323999582"
+	"P3R3IIRA" 			"364310941"
+	"sp1kz" 			"53720461"
+	"dronzz" 			"73732214"
+	"SYDOX" 			"2634634"
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
@@ -605,6 +618,10 @@
 	"cara" 				"205783147"
 	//QBF Players
 	"BERRY" 			"9876226"
+	"Maccen" 			"244998424"
+	"J3nsyy" 			"192137384"
+	"Staehr" 			"44842089"
+	"JarKo" 			"226304357"
 	//Rooster Players
 	"DannyG"			"193412411" 
 	"nettik" 			"372579523"
