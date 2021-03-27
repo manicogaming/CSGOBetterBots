@@ -228,6 +228,10 @@
 	"BONA" 				"201490896"
 	//Recon Players
 	"JazzPimp" 			"101706163"
+	"kobruh" 			"19661515"
+	"tweiss" 			"56828966"
+	"AAustiN" 			"161243497"
+	"Saturn" 			"228178031"
 	//Lions Players
 	"tudsoN" 			"58354081"
 	"TMB" 				"124341526"
@@ -316,10 +320,14 @@
 	"HaZR" 				"64081874"
 	"sterling" 			"100224621"
 	"soju_j" 			"86871337"
+	"SaVage" 			"203399460"
+	"Liki" 				"196492302"
 	//Chiefs Players
 	"HUGHMUNGUS" 		"104743037"
 	"apocdud" 			"58325300"
 	"zeph" 				"177441352"
+	"gump" 				"365906515"
+	"val" 				"75443185"
 	//ORDER Players
 	"J1rah" 			"82535956"
 	"Vexite" 			"92622415"
@@ -507,6 +515,9 @@
 	//BLINK Players
 	"juanflatroo" 		"135528227"
 	"sinnopsyy" 		"205062167"
+	"gxx-" 				"274569724"
+	"gulito" 			"420615598"
+	"SENER1" 			"192112459"
 	//Tricked Players
 	"kwezz" 			"110193409"
 	"sycrone" 			"49161935"

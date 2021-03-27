@@ -3306,7 +3306,7 @@ public Action Team_mCon(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Monu");
 		ServerCommand("bot_add_ct %s", "G1DO");
-		ServerCommand("bot_add_ct %s", "lucky");
+		ServerCommand("bot_add_ct %s", "kzealos");
 		ServerCommand("bot_add_ct %s", "v1N");
 		ServerCommand("bot_add_ct %s", "MaximN");
 		ServerCommand("mp_teamlogo_1 mcon");
@@ -3317,7 +3317,7 @@ public Action Team_mCon(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Monu");
 		ServerCommand("bot_add_t %s", "G1DO");
-		ServerCommand("bot_add_t %s", "lucky");
+		ServerCommand("bot_add_t %s", "kzealos");
 		ServerCommand("bot_add_t %s", "v1N");
 		ServerCommand("bot_add_t %s", "MaximN");
 		ServerCommand("mp_teamlogo_2 mcon");
@@ -4988,7 +4988,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 		
 		if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
 		{
-			SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.4, 0.70));
+			SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.2, 0.40));
 		}
 	}
 }

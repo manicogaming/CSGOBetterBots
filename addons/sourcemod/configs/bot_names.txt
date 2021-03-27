@@ -609,7 +609,7 @@
 	//mCon Players
 	"Monu" 				"mCon"
 	"G1DO" 				"mCon"
-	"lucky" 			"mCon"
+	"kzealos" 			"mCon"
 	"v1N" 				"mCon"
 	"MaximN" 			"mCon"
 	//KOVA Players
