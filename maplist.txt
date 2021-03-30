@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat Mar 27 01:35:19 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Tue Mar 30 01:06:53 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -318,7 +318,6 @@ fy_back_street
 fy_buball
 fy_buzzkill_sh
 fy_concrete
-fy_conflict
 fy_deagle5
 fy_december_v2
 fy_dust_css

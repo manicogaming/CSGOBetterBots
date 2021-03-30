@@ -521,7 +521,7 @@
 	"MisteM" 			"ATK"
 	"SloWye" 			"ATK"
 	"Fadey" 			"ATK"
-	"Doru" 				"ATK"
+	"mango" 			"ATK"
 	//TSG Players
 	"captainMo" 		"TSG"
 	"LOVEYY" 			"TSG"
@@ -763,7 +763,7 @@
 	"supra" 			"Nordavind"
 	"mirbit"			"Nordavind"
 	//Begrip Players
-	"krypt" 			"Begrip"
+	"tease" 			"Begrip"
 	"Per0N" 			"Begrip"
 	"MistFire" 			"Begrip"
 	"jma" 				"Begrip"

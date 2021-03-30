@@ -2355,7 +2355,7 @@ ProP+Rifle "Fadey"
 	VoicePitch = 77
 End
 
-ProP+Rifle "Doru"
+ProP+Rifle "mango"
 	VoicePitch = 102
 End
 
@@ -2509,7 +2509,7 @@ ProP+Rifle "gxx-"
 	VoicePitch = 92
 End
 
-ProP+Rifle "xhoci"
+ProP+Rifle "gulito"
 	VoicePitch = 88
 End
 
@@ -3264,7 +3264,7 @@ End
 
 //Begrip Players
 
-ProP+Rifle "krypt"
+ProP+Rifle "tease"
 	VoicePitch = 112
 End
 

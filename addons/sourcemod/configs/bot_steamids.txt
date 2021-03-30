@@ -87,7 +87,7 @@
 	//ENCE Players
 	"Snappi" 			"29157337"
 	"allu" 				"1345246"
-	"Spinx" 			"1298797256"
+	"Spinx" 			"103070679"
 	"doto" 				"39318615"
 	"dycha" 			"81151265"
 	//Vitality Players
@@ -146,6 +146,11 @@
 	"cadiaN" 			"43849788"
 	"stavn" 			"62099910"
 	//INTZ Players
+	"guZERA" 			"318109544"
+	"BALEROSTYLE" 		"123141727"
+	"dukka" 			"34634558"
+	"paredao" 			"2889473"
+	"chara" 			"310877571"
 	//VP Players
 	"YEKINDAR" 			"174136197"
 	"Jame" 				"75859856"
@@ -217,6 +222,7 @@
 	"Twinx" 			"114782035"
 	"raalz" 			"35794427"
 	"FeTiSh" 			"11212652"
+	"Typos" 			"174271068"
 	//GODSENT Players
 	"TACO" 				"52876568"
 	"b4rtiN" 			"169818854"
@@ -226,6 +232,9 @@
 	//SJ Players
 	"arvid" 			"66355043"
 	"BONA" 				"201490896"
+	"jelo" 				"147699201"
+	"AKE" 				"95046586"
+	"zks" 				"368233531"
 	//Recon Players
 	"JazzPimp" 			"101706163"
 	"kobruh" 			"19661515"
@@ -285,6 +294,7 @@
 	"Remoy" 			"68675449"
 	"smF" 				"11160541"
 	"larsen" 			"60274028"
+	"IceBerg" 			"30735103"
 	//DETONA Players
 	"frostezoR" 		"194205853"
 	//Infinity Players
@@ -310,6 +320,7 @@
 	"jnt" 				"43326019"
 	"Lucaozy" 			"197122745"
 	"exit" 				"50230614"
+	"zevy" 				"911593093"
 	//One Players
 	"prt" 				"92304643"
 	"Maluk3" 			"36056013"
@@ -344,6 +355,8 @@
 	"rbz" 				"6510851"
 	"ekul" 				"38901108"
 	"bedonka" 			"90046852"
+	"Versa" 			"328572044"
+	"dangeR" 			"307032635"
 	//OFFSET Players
 	"NOPEEj" 			"200528981"
 	"fox" 				"1939536"
@@ -365,6 +378,9 @@
 	//nxl Players
 	"soifong" 			"113144130"
 	"frgd[ibtJ]" 		"41830668"	
+	"Foscmorc" 			"107615798"	
+	"recz" 				"139102164"	
+	"StevenH" 			"413478803"	
 	//DV Players
 	"TTyke" 			"413625684"
 	"DVDOV" 			"40379175"
@@ -374,8 +390,15 @@
 	//Bravado Players
 	"flexeeee" 			"177739017"	
 	"Detrony" 			"27120041"
+	"TheM4N" 			"84708704"
+	"Wip3ouT" 			"208829044"
+	".exe" 				"302798328"
 	//Furious Players
 	"Owen$inhoM" 		"398043785"	
+	"abizz" 			"401347484"	
+	"JonY BoY" 			"77140654"	
+	"Gooden" 			"324241630"	
+	"nacho" 			"979595590"	
 	//Illuminar Players
 	"mouz" 				"38464805"
 	"GruBy" 			"44752530"
@@ -385,6 +408,9 @@
 	//GTZ Players
 	"fakes2" 			"96848867"
 	"horvy" 			"11050533"
+	"rafaxF" 			"134941478"
+	"snapy" 			"268698824"
+	"slaxx" 			"118792535"
 	//EXTREMUM Players
 	"AZR" 				"24832266"
 	"Liazz" 			"112055988"
@@ -476,7 +502,7 @@
 	"MisteM" 			"175149890"
 	"SloWye" 			"50695439"
 	"Fadey" 			"181493840"
-	"Doru" 				"135905209"
+	"mango" 			"183429246"
 	//TSG Players
 	"captainMo" 		"109036162"
 	"LOVEYY" 			"48886373"
@@ -500,6 +526,7 @@
 	"Bwills" 			"119308817"
 	"Cooper-" 			"7251259"
 	"cynic" 			"106932238"
+	"viz" 				"433892634"
 	//FATE Players
 	"Patrick--" 		"98715951"
 	"Rock1nG" 			"246843704"
@@ -698,6 +725,9 @@
 	//Begrip Players
 	"hns"				"192826402"
 	"Per0N"				"186414851"
+	"tease"				"39332936"
+	"jma"				"904297709"
+	"MistFire"			"187214724"
 	//Supremacy Players
 	"pacman^v^" 		"486643146"
 	"GuepaRd" 			"21286400"
@@ -706,7 +736,14 @@
 	"XotiC" 			"233525417"
 	"cxzi" 				"211453961"
 	"cJ" 				"40562365"
+	"retchy" 			"29305507"
+	"nosraC" 			"101522203"
 	//AVEZ Players
+	"sNx" 				"420057857"
+	"pawkoem" 			"225045287"
+	"Warp" 				"56308825"
+	"SaMey" 			"150540966"
+	"RiseL"				"386334758"
 	//BP Players
 	"coolio" 			"119009553"
 	"torzsi" 			"395473484"
@@ -723,6 +760,8 @@
 	"TaZ" 				"234052"
 	"azizz" 			"43580835"
 	"NEO" 				"460206"
+	"reiko" 			"190436529"
+	"gRuChA" 			"66926846"
 	//EX Players
 	"JT" 				"61449372"
 	"oSee" 				"87206806"
@@ -730,6 +769,11 @@
 	"Sonic" 			"14864123"
 	"FaNg"				"312457591"
 	//RBG Players
+	"Walco" 			"129639458"
+	"HexT" 				"250668735"
+	"wiz" 				"172119781"
+	"chop" 				"242973479"
+	"Wolffe"			"162402653"
 	//DC Players
 	"Explicit"			"1074781"
 	"Hellhound" 		"427548"
