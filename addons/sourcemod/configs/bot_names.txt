@@ -476,7 +476,7 @@
 	"Mixann" 			"XENEX"
 	//HLE Players
 	"BELCHONOKK" 		"HLE"
-	"DrobnY" 			"HLE"	
+	"waterfaLLZ" 		"HLE"	
 	"Raijin" 			"HLE"
 	"dekzz" 			"HLE"
 	"svyat" 			"HLE"
@@ -568,7 +568,7 @@
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"
 	"Luckyv1" 			"Tricked"
-	"sycrone" 			"Tricked"
+	"zyp" 				"Tricked"
 	"PR1mE" 			"Tricked"
 	//Baecon Players
 	"met" 				"Baecon"
@@ -629,7 +629,7 @@
 	"renne" 			"GameAgents"
 	"s0und" 			"GameAgents"
 	"regali" 			"GameAgents"
-	"CHANKY" 			"GameAgents"
+	"fNk" 				"GameAgents"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -698,10 +698,10 @@
 	"JarKo" 			"QBF"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
-	"nettik" 			"Rooster"
+	"touch_my_body" 	"Rooster"
 	"chelleos" 			"Rooster"
-	"ADK" 				"Rooster"
-	"asap" 				"Rooster"
+	"cappa" 			"Rooster"
+	"JohnnyK" 			"Rooster"
 	//Flames Players
 	"nicoodoz" 			"Flames"
 	"AcilioN" 			"Flames"
@@ -804,12 +804,12 @@
 	"NEO" 				"HONORIS"
 	"reiko" 			"HONORIS"
 	"gRuChA"			"HONORIS"
-	//EX Players
-	"JT" 				"EX"
-	"oSee" 				"EX"
-	"MarKE" 			"EX"
-	"Sonic" 			"EX"
-	"FaNg"				"EX"
+	//ES Players
+	"JT" 				"ES"
+	"oSee" 				"ES"
+	"MarKE" 			"ES"
+	"Sonic" 			"ES"
+	"FaNg"				"ES"
 	//RBG Players
 	"Walco" 			"RBG"
 	"HexT" 				"RBG"

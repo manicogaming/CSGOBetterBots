@@ -297,6 +297,10 @@
 	"IceBerg" 			"30735103"
 	//DETONA Players
 	"frostezoR" 		"194205853"
+	"lub" 				"882284871"
+	"kauez" 			"425391947"
+	"nqz" 				"390076777"
+	"card" 				"388322007"
 	//Infinity Players
 	"k1Nky" 			"4645867"
 	"tor1towOw" 		"112244062"	
@@ -467,6 +471,10 @@
 	"Mixann"			"40701211"
 	//HLE Players
 	"svyat" 			"35632848"
+	"waterfaLLZ" 		"12720124"
+	"BELCHONOKK" 		"293404789"
+	"Raijin" 			"216190295"
+	"dekzz" 			"234768934"
 	//Gambit Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
@@ -483,6 +491,8 @@
 	"fnx" 				"170178574"
 	"zqk" 				"4032008"
 	"SHOOWTiME" 		"97938914"	
+	"ckzao" 			"56540556"	
+	"piria" 			"436072455"	
 	//Pompa Players
 	"koyot" 			"174135918"
 	"Grashog" 			"78941188"
@@ -491,6 +501,10 @@
 	"Miki Z Afryki" 	"128730948"
 	//Unique Players
 	"crush" 			"36981424"
+	"Kre1N" 			"221691969"
+	"shalfey" 			"247206904"
+	"SELLTER" 			"158822313"
+	"floweaN" 			"873608962"	
 	//Izako Players
 	"szejn" 			"69226768"
 	"STOMP" 			"51242187"
@@ -547,7 +561,10 @@
 	"SENER1" 			"192112459"
 	//Tricked Players
 	"kwezz" 			"110193409"
-	"sycrone" 			"49161935"
+	"zyp" 				"190975326"
+	"kiR" 				"258258243"
+	"Luckyv1" 			"150297431"
+	"PR1mE" 			"26772868"
 	//Baecon Players
 	"met" 				"323999582"
 	"P3R3IIRA" 			"364310941"
@@ -603,6 +620,11 @@
 	"Cabbi" 			"230664742"
 	"Lukki" 			"53001420"
 	//GameAgents Players
+	"mhN1" 				"195697267"
+	"renne" 			"172130207"
+	"s0und" 			"195932239"
+	"regali" 			"138197501"
+	"fNk" 				"215438719"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -618,6 +640,9 @@
 	//FTW Players
 	"NABOWOW" 			"283730928"
 	"Cunha" 			"203400597"
+	"Jaepe" 			"251441860"
+	"Icarus" 			"291309752"
+	"story" 			"105182632"
 	//Tigers Players
 	"MAXX" 				"119229654"
 	"ZEDc" 				"108732327"
@@ -642,6 +667,11 @@
 	"beastik" 			"73173022"
 	"NEOFRAG" 			"255168957"
 	//Impact Players
+	"DaneJoris" 		"116329706"	
+	"walker" 			"229061351"
+	"brett" 			"180071719"
+	"grape" 			"130164677"	
+	"insane" 			"176668134"
 	//ERN Players
 	"j1NZO" 			"220770109"
 	"preet" 			"34228517"
@@ -662,9 +692,10 @@
 	"JarKo" 			"226304357"
 	//Rooster Players
 	"DannyG"			"193412411" 
-	"nettik" 			"372579523"
+	"touch_my_body" 	"99822120"
 	"chelleos" 			"198705922"
-	"ADK" 				"121436427"
+	"cappa" 			"970978896"
+	"JohnnyK" 			"923732491"
 	//Flames Players
 	"nicoodoz" 			"112851399"
 	"AcilioN" 			"56749436"
@@ -732,6 +763,8 @@
 	"pacman^v^" 		"486643146"
 	"GuepaRd" 			"21286400"
 	"zockie" 			"107349646"
+	"LKN" 				"1020728718"
+	"Knight" 			"244769897"
 	//Rebirth Players
 	"XotiC" 			"233525417"
 	"cxzi" 				"211453961"
@@ -762,7 +795,7 @@
 	"NEO" 				"460206"
 	"reiko" 			"190436529"
 	"gRuChA" 			"66926846"
-	//EX Players
+	//ES Players
 	"JT" 				"61449372"
 	"oSee" 				"87206806"
 	"MarKE" 			"2637435"

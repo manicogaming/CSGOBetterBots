@@ -2189,7 +2189,7 @@ ProP+Rifle "BELCHONOKK"
 	VoicePitch = 108
 End
 
-ProAwp+SniperPro "DrobnY"
+ProAwp+SniperPro "waterfaLLZ"
 	VoicePitch = 89
 End
 
@@ -2527,7 +2527,7 @@ ProP+Rifle "Luckyv1"
 	VoicePitch = 83
 End
 
-ProP+Rifle "sycrone"
+ProP+Rifle "zyp"
 	VoicePitch = 110
 End
 
@@ -2773,7 +2773,7 @@ ProP+Rifle "regali"
 	VoicePitch = 87
 End
 
-ProP+Rifle "CHANKY"
+ProP+Rifle "fNk"
 	VoicePitch = 79
 End
 
@@ -3019,14 +3019,13 @@ ProP+Rifle "JarKo"
 	VoicePitch = 81
 End
 
-
 //Rooster Players
 
 ProP+Rifle "DannyG"
 	VoicePitch = 94
 End
 
-ProAwp+SniperPro "nettik"
+ProAwp+SniperPro "touch_my_body"
 	VoicePitch = 91
 End
 
@@ -3034,11 +3033,11 @@ ProP+Rifle "chelleos"
 	VoicePitch = 88
 End
 
-ProP+Rifle "ADK"
+ProP+Rifle "cappa"
 	VoicePitch = 78
 End
 
-ProP+Rifle "asap"
+ProP+Rifle "JohnnyK"
 	VoicePitch = 81
 End
 
@@ -3416,7 +3415,7 @@ ProP+Rifle "gRuChA"
 	VoicePitch = 93
 End
 
-//EX Players
+//ES Players
 
 ProP+Rifle "JT"
 	VoicePitch = 110
