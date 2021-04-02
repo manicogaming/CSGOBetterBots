@@ -38,19 +38,18 @@ public void PrepareDust2Executes()
 				navArea[clients[4]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
-					 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
-				{
-					FakeClientCommandEx(clients[0], "buy smokegrenade");
+				StripPlayerGrenades(clients[0]);
+				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[1]);
+				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				GivePlayerItem(clients[1], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[2]);
+				GivePlayerItem(clients[2], "weapon_smokegrenade");
+				GivePlayerItem(clients[2], "weapon_flashbang");
 					
-					FakeClientCommandEx(clients[1], "buy smokegrenade");
-					FakeClientCommandEx(clients[1], "buy flashbang");
-					
-					FakeClientCommandEx(clients[2], "buy smokegrenade");
-					FakeClientCommandEx(clients[2], "buy flashbang");
-					
-					g_bDoExecute = true;
-				}
+				g_bDoExecute = true;
 			}
 			case 2: //Short A Execute
 			{
@@ -72,20 +71,20 @@ public void PrepareDust2Executes()
 				navArea[clients[4]] = NavMesh_FindAreaByID(iMidAreaIDs[Math_GetRandomInt(0, sizeof(iMidAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1
-					 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 300)
-				{
-					FakeClientCommandEx(clients[0], "buy smokegrenade");
-					FakeClientCommandEx(clients[0], "buy flashbang");
-					
-					FakeClientCommandEx(clients[1], "buy smokegrenade");
-					
-					FakeClientCommandEx(clients[2], "buy smokegrenade");
-					
-					FakeClientCommandEx(clients[3], "buy smokegrenade");
-					
-					g_bDoExecute = true;
-				}
+				StripPlayerGrenades(clients[0]);
+				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				GivePlayerItem(clients[0], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[1]);
+				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[2]);
+				GivePlayerItem(clients[2], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[3]);
+				GivePlayerItem(clients[3], "weapon_smokegrenade");
+				
+				g_bDoExecute = true;
 			}
 			case 3: //Long A Execute
 			{
@@ -115,18 +114,17 @@ public void PrepareDust2Executes()
 				navArea[clients[4]] = NavMesh_FindAreaByID(iLongAreaIDs[Math_GetRandomInt(0, sizeof(iLongAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
-					 && GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300)
-				{
-					FakeClientCommandEx(clients[0], "buy smokegrenade");
-					FakeClientCommandEx(clients[0], "buy flashbang");
-					
-					FakeClientCommandEx(clients[1], "buy smokegrenade");
-					
-					FakeClientCommandEx(clients[2], "buy smokegrenade");
-					
-					g_bDoExecute = true;
-				}
+				StripPlayerGrenades(clients[0]);
+				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				GivePlayerItem(clients[0], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[1]);
+				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[2]);
+				GivePlayerItem(clients[2], "weapon_smokegrenade");
+				
+				g_bDoExecute = true;
 			}
 		}
 	}

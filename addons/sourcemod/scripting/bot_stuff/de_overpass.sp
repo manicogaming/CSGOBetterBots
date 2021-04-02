@@ -37,19 +37,18 @@ public void PrepareOverpassExecutes()
 				navArea[clients[4]] = NavMesh_FindAreaByID(iShortAAreaIDs[Math_GetRandomInt(0, sizeof(iShortAAreaIDs) - 1)]);
 				navArea[clients[4]].GetRandomPoint(g_fHoldPos[clients[4]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1
-				&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 500)
-				{
-					FakeClientCommandEx(clients[0], "buy smokegrenade");
-					FakeClientCommandEx(clients[0], "buy flashbang");
+				StripPlayerGrenades(clients[0]);
+				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				GivePlayerItem(clients[0], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[1]);
+				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[2]);
+				GivePlayerItem(clients[2], "weapon_smokegrenade");
+				GivePlayerItem(clients[2], "weapon_flashbang");
 					
-					FakeClientCommandEx(clients[1], "buy smokegrenade");
-					
-					FakeClientCommandEx(clients[2], "buy smokegrenade");
-					FakeClientCommandEx(clients[2], "buy flashbang");
-					
-					g_bDoExecute = true;
-				}
+				g_bDoExecute = true;
 			}
 			case 2: //B Execute
 			{
@@ -62,23 +61,24 @@ public void PrepareOverpassExecutes()
 				GetNade("B Site Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_fFlashWaitTime[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]], g_bIsMolotov[clients[1]]);
 				GetNade("Monster Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_fFlashWaitTime[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]], g_bIsMolotov[clients[3]]);
 				
-				if (GetPlayerWeaponSlot(clients[0], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[1], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[2], CS_SLOT_PRIMARY) != -1 && GetPlayerWeaponSlot(clients[3], CS_SLOT_PRIMARY) != -1  && GetPlayerWeaponSlot(clients[4], CS_SLOT_PRIMARY) != -1 
-				&& GetEntProp(clients[0], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[1], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[2], Prop_Send, "m_iAccount") >= 300 && GetEntProp(clients[3], Prop_Send, "m_iAccount") >= 500 && GetEntProp(clients[4], Prop_Send, "m_iAccount") >= 400)
-				{
-					FakeClientCommandEx(clients[0], "buy smokegrenade");
+				StripPlayerGrenades(clients[0]);
+				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[1]);
+				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				GivePlayerItem(clients[1], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[2]);
+				GivePlayerItem(clients[2], "weapon_smokegrenade");
+				
+				StripPlayerGrenades(clients[3]);
+				GivePlayerItem(clients[3], "weapon_smokegrenade");
+				GivePlayerItem(clients[3], "weapon_flashbang");
+				
+				StripPlayerGrenades(clients[4]);
+				GivePlayerItem(clients[4], "weapon_molotov");
 					
-					FakeClientCommandEx(clients[1], "buy smokegrenade");
-					FakeClientCommandEx(clients[1], "buy flashbang");
-					
-					FakeClientCommandEx(clients[2], "buy smokegrenade");
-					
-					FakeClientCommandEx(clients[3], "buy smokegrenade");
-					FakeClientCommandEx(clients[3], "buy flashbang");
-					
-					FakeClientCommandEx(clients[4], "buy molotov");
-					
-					g_bDoExecute = true;
-				}
+				g_bDoExecute = true;
 			}
 		}
 	}

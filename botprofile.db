@@ -36,7 +36,7 @@ Default
 	Skin = 0
 	LookAngleMaxAccelNormal = 2800.0
 	LookAngleStiffnessNormal = 350.0
-	LookAngleDampingNormal = 45.0
+	LookAngleDampingNormal = 75.0
 	LookAngleMaxAccelAttacking = 2000.0
 	LookAngleStiffnessAttacking = 1200.0
 	LookAngleDampingAttacking = 75.0
@@ -489,9 +489,6 @@ End
 
 ProAwp+SniperPro "device"
 	VoicePitch = 104
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "Xyp9x"
@@ -504,9 +501,6 @@ End
 
 ProP+Rifle "dupreeh"
 	VoicePitch = 73
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 //NiP Players
@@ -561,9 +555,6 @@ End
 
 ProAwp+SniperPro "NiKo"
 	VoicePitch = 111
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "JaCkz"
@@ -642,9 +633,6 @@ End
 
 ProP+Rifle "ropz"
 	VoicePitch = 89
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 //TyLoo Players
@@ -695,16 +683,10 @@ End
 
 ProP+Rifle "electronic"
 	VoicePitch = 85
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProAwp+SniperPro "s1mple"
 	VoicePitch = 71
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "flamie"
@@ -735,9 +717,6 @@ End
 
 ProP+Rifle "ELiGE"
 	VoicePitch = 93
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "NAF"
@@ -796,9 +775,6 @@ End
 
 ProAwp+SniperPro "ZywOo"
 	VoicePitch = 115
-	LookAngleMaxAccelAttacking = 20000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "apEX"
@@ -821,9 +797,6 @@ End
 
 ProAwp+SniperPro "syrsoN"
 	VoicePitch = 81
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle "XANTARES"
@@ -902,9 +875,6 @@ End
 
 ProP+Rifle "blameF"
 	VoicePitch = 102
-	LookAngleMaxAccelAttacking = 10000.0 
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
 End
 
 //ViCi Players

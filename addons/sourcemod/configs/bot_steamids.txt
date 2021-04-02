@@ -109,6 +109,11 @@
 	"KSCERATO" 			"98234764"
 	"Junior" 			"103793230"
 	//Santos Players
+	"xns" 				"138141272"
+	"keiz" 				"183028724"
+	"voltera" 			"168539111"
+	"MaLLby" 			"209668291"
+	"BobZ" 				"171090863"	
 	//coL Players
 	"k0nfig" 			"19403447"
 	"poizon" 			"117537138"
