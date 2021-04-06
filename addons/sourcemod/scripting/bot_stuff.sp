@@ -1985,7 +1985,7 @@ public Action Team_Chiefs(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Liki");
+		ServerCommand("bot_add_ct %s", "HUGHMUNGUS");
 		ServerCommand("bot_add_ct %s", "gump");
 		ServerCommand("bot_add_ct %s", "apocdud");
 		ServerCommand("bot_add_ct %s", "zeph");
@@ -1996,7 +1996,7 @@ public Action Team_Chiefs(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Liki");
+		ServerCommand("bot_add_t %s", "HUGHMUNGUS");
 		ServerCommand("bot_add_t %s", "gump");
 		ServerCommand("bot_add_t %s", "apocdud");
 		ServerCommand("bot_add_t %s", "zeph");

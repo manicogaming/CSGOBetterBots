@@ -343,7 +343,7 @@
 	"Liki" 				"Dire"
 	"SaVage" 			"Dire"
 	//Chiefs Players
-	"Liki" 				"Chiefs"
+	"HUGHMUNGUS" 		"Chiefs"
 	"gump" 				"Chiefs"
 	"apocdud" 			"Chiefs"
 	"zeph" 				"Chiefs"
