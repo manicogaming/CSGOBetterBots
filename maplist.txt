@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Tue Apr 06 16:04:00 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Wed Apr 14 14:52:33 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -39,6 +39,7 @@ aim_aztecplace_kuli
 aim_badneighbors
 aim_badsiblings
 aim_bazaar_wingman
+aim_catalyst
 aim_cbble
 aim_container_autosniper
 aim_crazyjump_go
@@ -208,11 +209,11 @@ de_desert
 de_dust0_csgo
 de_dust2
 de_dust2_2006_accy
-de_dust2_cso2
 de_dust2_night
+de_dust2_original
 de_dust2_winter_2019
-de_dust_cso2
 de_dust_new
+de_dust_pcg_3k
 de_dynasty
 de_elysion
 de_empire

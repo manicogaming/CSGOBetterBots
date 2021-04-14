@@ -19,8 +19,7 @@ bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCan
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
-float g_fLookAngleStiffnessAttacking[MAXPLAYERS+1], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
-float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1];
+float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
@@ -4888,8 +4887,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleStiffnessAttacking[client] = Math_GetRandomFloat(350.0, 1200.0);
-			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(1000.0, 6000.0);
+			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(2000.0, 20000.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -5398,9 +5396,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 				Address pLocalProfile = view_as<Address>(GetEntData(i, g_iBotProfileOffset));
 				
 				//All these offsets are inside BotProfileManager::Init
-				StoreToAddress(pLocalProfile + view_as<Address>(120), view_as<int>(g_fLookAngleStiffnessAttacking[i]),NumberType_Int32);
 				StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
-				StoreToAddress(pLocalProfile + view_as<Address>(108), view_as<int>(g_fLookAngleStiffnessAttacking[i]), NumberType_Int32);
 				StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
 			}
 			
