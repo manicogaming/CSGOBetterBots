@@ -1,8 +1,10 @@
 # Edited Plugins
 
-In here there are some plugins that I personality edited to add the features of those plugins to the BOTs. I'm using these edited plugins on a Local Server because on a public server I'll get a Token ban.
+In here there are some plugins that I personally edited to add the features of those plugins to the BOTs. I'm using these edited plugins on a Local Server because on a public server I'll get a Token ban.
 
 I edited the following plugins.
+
+**PLUGINS ONLY COMPATIBLE WITH WINDOWS**
 
 # [SQL Matches](https://forums.alliedmods.net/showthread.php?t=312488)
 - The following is now added to the database
