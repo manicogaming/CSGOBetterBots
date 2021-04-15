@@ -13,13 +13,14 @@ char g_szMap[128];
 bool g_bFreezetimeEnd = false;
 bool g_bBombPlanted = false;
 bool g_bDoExecute = false;
+bool g_bNeedCoordination = true;
 bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
-bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1];
+bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1], g_bInPosition[MAXPLAYERS+1], g_bSkipPosition[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
 int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset;
 int g_iTarget[MAXPLAYERS+1] = -1;
-float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fPosWaitTime[MAXPLAYERS+1], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fSmokeWaitTime[MAXPLAYERS+1], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fFlashWaitTime[MAXPLAYERS+1], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
 CNavArea navArea[MAXPLAYERS + 1];
 ConVar g_cvBotEcoLimit;
@@ -113,6 +114,7 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	HookEventEx("player_spawn", OnPlayerSpawn);
+	HookEventEx("player_death", OnPlayerDeath);
 	HookEventEx("round_start", OnRoundStart);
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
 	HookEventEx("bomb_planted", OnBombPlanted);
@@ -4887,7 +4889,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(2000.0, 20000.0);
+			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(2000.0, 10000.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -4905,6 +4907,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bFreezetimeEnd = false;
 	g_bBombPlanted = false;
 	g_bDoExecute = false;
+	g_bNeedCoordination = true;
 	g_iRoundStartedTime = GetTime();
 	
 	
@@ -4918,6 +4921,8 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bCanThrowSmoke[i] = false;
 			g_bCanThrowFlash[i] = false;
 			g_bDoNothing[i] = false;
+			g_bInPosition[i] = false;
+			g_bSkipPosition[i] = false;
 		}
 	}
 }
@@ -5420,6 +5425,16 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 	}
 }
 
+public void OnPlayerDeath(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	
+	if (IsValidClient(client) && IsFakeClient(client) && g_bIsProBot[client] && g_bDoExecute && !g_bInPosition[client])
+	{
+		g_bInPosition[client] = true;
+	}
+}
+
 public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 {
 	int client = GetClientFromSerial(iSerial);
@@ -5488,7 +5503,7 @@ public void eItems_OnItemsSynced()
 	ServerCommand("changelevel %s", g_szMap);
 }
 
-bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], float &fWaitTime, bool &bJumpthrow, bool &bCrouch, bool &bIsFlasbang, bool &bIsMolotov)
+bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3], bool &bJumpthrow, bool &bCrouch, bool &bIsFlasbang, bool &bIsMolotov)
 {
 	char szPath[PLATFORM_MAX_PATH];
 	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
@@ -5525,7 +5540,6 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	kv.GetVector("position", fPos);
 	kv.GetVector("lookpos", fLookAt);
 	kv.GetVector("angles", fAng);
-	fWaitTime = kv.GetFloat("waittime");
 	bJumpthrow = !!kv.GetNum("jumpthrow");
 	bCrouch = !!kv.GetNum("crouch");	
 	bIsFlasbang = !!kv.GetNum("isflasbang");	
@@ -5535,7 +5549,7 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	return true;
 }
 
-bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
+bool GetPosition(const char[] szPos, float fLookAt[3])
 {
 	char szPath[PLATFORM_MAX_PATH];
 	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_smokes.txt");
@@ -5570,7 +5584,6 @@ bool GetPosition(const char[] szPos, float fLookAt[3], float &fWaitTime)
 	}
 	
 	kv.GetVector("lookpos", fLookAt);
-	fWaitTime = kv.GetFloat("waittime");
 	delete kv;
 	
 	return true;
@@ -5589,11 +5602,6 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			float fSmokeDis = GetVectorDistance(fClientLocation, g_fSmokePos[client]);
 		
 			BotMoveTo(client, g_fSmokePos[client], FASTEST_ROUTE);
-			
-			if(fSmokeDis > 150.0)
-			{
-				BotEquipBestWeapon(client, true);
-			}
 			
 			if(g_bIsMolotov[client])
 			{
@@ -5618,9 +5626,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			
 			if (fSmokeDis < 25.0 || g_bCanThrowSmoke[client])
 			{					
-				BotSetLookAt(client, "Use entity", g_fSmokeLookAt[client], PRIORITY_HIGH, g_fSmokeWaitTime[client], true, 5.0, false);
-				
-				CreateTimer(g_fSmokeWaitTime[client], Timer_ThrowSmoke, GetClientUserId(client));
+				BotSetLookAt(client, "Use entity", g_fSmokeLookAt[client], PRIORITY_HIGH, 2.0, true, 5.0, false);
 				
 				iButtons |= IN_ATTACK;
 				
@@ -5629,11 +5635,30 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 					iButtons |= IN_DUCK;
 				}
 				
+				g_bInPosition[client] = true;
+				
+				if(g_bNeedCoordination && !g_bSkipPosition[client])
+				{
+					int[] clients = new int[MaxClients];
+		
+					Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
+					
+					for (int i = 0; i < 5; i++)
+					{
+						if(!g_bInPosition[clients[i]])
+						{
+							return;
+						}
+					}
+				}
+				
+				CreateTimer(2.0, Timer_ThrowSmoke, GetClientUserId(client));
+				
 				if (g_bCanThrowSmoke[client])
 				{
 					if ((GetEntityFlags(client) & FL_ONGROUND))
 					{
-						TeleportEntity(client, g_fSmokePos[client], NULL_VECTOR, NULL_VECTOR);
+						TeleportEntity(client, g_fSmokePos[client], NULL_VECTOR, {0.0, 0.0, 0.0});
 					}
 					
 					TeleportEntity(client, NULL_VECTOR, g_fSmokeAngles[client], NULL_VECTOR);
@@ -5668,11 +5693,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 		float fFlashDis = GetVectorDistance(fClientLocation, g_fFlashPos[client]);
 	
 		BotMoveTo(client, g_fFlashPos[client], FASTEST_ROUTE);
-		
-		if(fFlashDis > 150.0)
-		{
-			BotEquipBestWeapon(client, true);
-		}
+		BotMoveTo(client, g_fFlashPos[client], FASTEST_ROUTE);
 		
 		if (fFlashDis < 150.0)
 		{
@@ -5684,9 +5705,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 		
 		if (fFlashDis < 25.0 || g_bCanThrowFlash[client])
 		{
-			BotSetLookAt(client, "Use entity", g_fFlashLookAt[client], PRIORITY_HIGH, g_fFlashWaitTime[client], true, 5.0, false);
-			
-			CreateTimer(g_fFlashWaitTime[client], Timer_ThrowFlash, GetClientUserId(client));
+			BotSetLookAt(client, "Use entity", g_fFlashLookAt[client], PRIORITY_HIGH, 2.0, true, 5.0, false);
 			
 			iButtons |= IN_ATTACK;
 			
@@ -5695,11 +5714,30 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				iButtons |= IN_DUCK;
 			}
 			
+			g_bInPosition[client] = true;
+			
+			if(g_bNeedCoordination && !g_bSkipPosition[client])
+			{				
+				int[] clients = new int[MaxClients];
+	
+				Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
+				
+				for (int i = 0; i < 5; i++)
+				{
+					if(!g_bInPosition[clients[i]])
+					{
+						return;
+					}
+				}
+			}
+			
+			CreateTimer(2.0, Timer_ThrowFlash, GetClientUserId(client));
+			
 			if (g_bCanThrowFlash[client])
 			{
 				if ((GetEntityFlags(client) & FL_ONGROUND))
 				{
-					TeleportEntity(client, g_fFlashPos[client], NULL_VECTOR, NULL_VECTOR);
+					TeleportEntity(client, g_fFlashPos[client], NULL_VECTOR, {0.0, 0.0, 0.0});
 				}
 				
 				TeleportEntity(client, NULL_VECTOR, g_fFlashAngles[client], NULL_VECTOR);
@@ -5736,9 +5774,26 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				GetClientEyePosition(client, fEyePos);
 				
 				BotBendLineOfSight(client, fEyePos, g_fHoldLookPos[client], fBentLook, 135.0);
-				BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_HIGH, g_fPosWaitTime[client], true, 5.0, false);
+				BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_MEDIUM, 2.0, true, 5.0, false);
 				
-				CreateTimer(g_fPosWaitTime[client], Timer_ThrowSmoke, GetClientUserId(client));
+				if(g_bNeedCoordination)
+				{
+					g_bInPosition[client] = true;
+					
+					int[] clients = new int[MaxClients];
+		
+					Client_Get(clients, CLIENTFILTER_TEAMONE | CLIENTFILTER_BOTS);
+					
+					for (int i = 0; i < 5; i++)
+					{
+						if(!g_bInPosition[clients[i]])
+						{
+							return;
+						}
+					}
+				}
+				
+				CreateTimer(2.0, Timer_ThrowSmoke, GetClientUserId(client));
 			}
 		}
 	}

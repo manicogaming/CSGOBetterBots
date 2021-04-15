@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Wed Apr 14 14:52:33 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Thu Apr 15 19:53:08 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -247,6 +247,7 @@ de_jingshen
 de_kabul_b3
 de_kaizen_rc1
 de_kowloon
+de_kyrenia
 de_lake
 de_legacy
 de_lite
