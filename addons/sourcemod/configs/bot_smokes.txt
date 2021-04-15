@@ -789,4 +789,109 @@
 			"lookpos"		"-531.842651 -1725.483398 -39.906189"
 		}
 	}
+	"de_nuke"
+	{
+		"T Red Smoke"
+		{
+			"position"		"-496.047485 -1644.162231 -415.968750"
+			"lookpos"		"-119.003692 -1847.213134 707.968750"
+			"angles"		"-68.000000 -28.303976 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"1st Outside Smoke"
+		{
+			"position"		"-567.916626 -1216.114136 -415.968750"
+			"lookpos"		"501.695556 -1970.557739 707.968750"
+			"angles"		"-39.000000 -35.196964 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"2nd Outside Smoke"
+		{
+			"position"		"-727.331787 -1322.324219 -407.968750"
+			"lookpos"		"-471.884399 -1429.473754 -294.996765"
+			"angles"		"-10.025611 -22.756023 0.000000"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Secret Molotov"
+		{
+			"position"		"29.157877 -2006.687866 -415.968750"
+			"lookpos"		"193.763397 -2045.275268 -380.215026"
+			"angles"		"9.484841 -13.193228 0.000000"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"Outside Flash"
+		{
+			"position"		"29.405214 -2006.688721 -415.968750"
+			"lookpos"		"3071.968750 -1338.885986 562.917724"
+			"angles"		"-16.367758 12.379374 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"Outside Position"
+		{
+			"lookpos"		"246.705063 -2160.762207 -351.906219"
+		}
+		"Main Smoke"
+		{
+			"position"		"4.031250 -280.031250 -171.968750"
+			"lookpos"		"732.774597 -1777.356811 707.968750"
+			"angles"		"-26.103910 -64.047966 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Site Smoke"
+		{
+			"position"		"-512.976257 -767.838989 -154.968750"
+			"lookpos"		"584.617614 -700.733642 707.968750"
+			"angles"		"-36.000000 3.498629 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Above Hut Molotov"
+		{
+			"position"		"-14.725086 -994.386108 -415.968750"
+			"lookpos"		"205.079940 -973.771728 -112.031234"
+			"angles"		"-47.382442 5.357811 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"A Site Flash"
+		{
+			"position"		"176.982773 -892.232239 -415.968750"
+			"lookpos"		"295.334289 -1127.968750 -334.711303"
+			"angles"		"-3.743196 -63.341061 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"Ramp Position"
+		{
+			"lookpos"		"236.409012 87.353310 -351.906189"
+		}
+		"Squeaky Position"
+		{
+			"lookpos"		"239.965530 -1278.629517 -351.906189"
+		}
+	}
 }

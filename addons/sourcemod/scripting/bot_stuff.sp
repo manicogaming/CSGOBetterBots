@@ -101,6 +101,7 @@ enum TaskType
 #include "bot_stuff/de_inferno.sp"
 #include "bot_stuff/de_overpass.sp"
 #include "bot_stuff/de_train.sp"
+#include "bot_stuff/de_nuke.sp"
 
 public Plugin myinfo = 
 {
@@ -4931,7 +4932,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
 	
-	if(Math_GetRandomInt(1,100) <= 50)
+	if(Math_GetRandomInt(1,100) <= 100)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -4957,6 +4958,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
 			PrepareTrainExecutes();
+		}
+		else if (strcmp(g_szMap, "de_nuke") == 0)
+		{
+			g_iRndExecute = Math_GetRandomInt(1, 2);
+			PrepareNukeExecutes();
 		}
 	}
 }
@@ -5542,8 +5548,13 @@ bool GetNade(const char[] szNade, float fPos[3], float fLookAt[3], float fAng[3]
 	kv.GetVector("angles", fAng);
 	bJumpthrow = !!kv.GetNum("jumpthrow");
 	bCrouch = !!kv.GetNum("crouch");	
-	bIsFlasbang = !!kv.GetNum("isflasbang");	
-	bIsMolotov = !!kv.GetNum("ismolotov");	
+	bIsFlasbang = !!kv.GetNum("isflasbang");
+	
+	if(!bIsFlasbang)
+	{
+		bIsMolotov = !!kv.GetNum("ismolotov");	
+	}
+	
 	delete kv;
 	
 	return true;
@@ -5607,7 +5618,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 			{
 				if (fSmokeDis < 150.0)
 				{
-					if (iDefIndex != 45)
+					if (iDefIndex != 46)
 					{
 						FakeClientCommandThrottled(client, "use weapon_molotov");
 					}
@@ -5652,7 +5663,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 					}
 				}
 				
-				CreateTimer(2.0, Timer_ThrowSmoke, GetClientUserId(client));
+				CreateTimer(1.0, Timer_ThrowSmoke, GetClientUserId(client));
 				
 				if (g_bCanThrowSmoke[client])
 				{
@@ -5731,7 +5742,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				}
 			}
 			
-			CreateTimer(2.0, Timer_ThrowFlash, GetClientUserId(client));
+			CreateTimer(1.0, Timer_ThrowFlash, GetClientUserId(client));
 			
 			if (g_bCanThrowFlash[client])
 			{
@@ -5793,7 +5804,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 					}
 				}
 				
-				CreateTimer(2.0, Timer_ThrowSmoke, GetClientUserId(client));
+				CreateTimer(1.0, Timer_ThrowSmoke, GetClientUserId(client));
 			}
 		}
 	}
