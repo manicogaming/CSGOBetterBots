@@ -26,8 +26,18 @@ I edited the following plugins.
 - Added all Official CS:GO ranks from every gamemode
 - Replaced Overlays with end game rank up animation
 
+# Dependencies
+If you are going to use this you will need to download the following:
+- **[SourceMod Dev Build](https://www.sourcemod.net/downloads.php?branch=dev)**
+- [RankMe Kento Edition](https://forums.alliedmods.net/showthread.php?p=2467665)
+- [eItems Semi-Private Version](https://discord.gg/FNByp8s)
+- [SMLib](https://github.com/bcserv/smlib/tree/transitional_syntax)
+- [DHooks (with Detour Support)](https://forums.alliedmods.net/showpost.php?p=2588686&postcount=589)
+- [SourcePawn NavMesh](https://github.com/KitRifty/sourcepawn-navmesh)
+- [PTaH](https://ptah.zizt.ru/)
+
 # Other Files
 
-There's an improved BotProfile.db I've edited that is a mix of the one made by [tNzxX](https://steamcommunity.com/groups/Bots-release#announcements/detail/1805285903706432497) and the other made by [lolznoboz](https://gamebanana.com/scripts/10308).
+The BotProfile.db has it's values taken from [this BotProfile](https://gamebanana.com/scripts/9293) made by [Bezimienny!](https://gamebanana.com/members/1398309).
 
-I also added all the NavMeshes of my maps and all the team logos I currently have.
+This repo also has all the team logos I use with my BOTs, but the NavMeshes I have are in [this repo](https://github.com/manicogaming/NavMeshes).
