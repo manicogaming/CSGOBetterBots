@@ -1,0 +1,16 @@
+// Overview description file for awp_old_civ.bsp
+"awp_old_civ"
+{
+	"material"	"overviews/awp_old_civ_radar"	// texture file
+	"pos_x"		"-4093"							// X coordinate
+	"pos_y"		"3308"							// Y coordinate
+	"scale"		"8.0" 							// scale used when taking the screenshot
+	"rotate"	"0"								// map was rotated by 90 degrees in image editor
+	"zoom"		"1.0"							// optimal zoom factor if map is shown in full size
+	
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.75"
+	"CTSpawn_y"	"0.55"
+	"TSpawn_x"	"0.25"
+	"TSpawn_y"	"0.55"
+}

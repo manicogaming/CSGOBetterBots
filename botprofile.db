@@ -55,12 +55,12 @@ End
 //
 Template SniperPersonality
         Teamwork = 85
-        Aggression = 70
+        Aggression = 55
 End
 
 Template RiflePersonality
         Teamwork = 100
-        Aggression = 80
+        Aggression = 55
 End
 // used after AUG/SG556 scope patch, to reduce camping for Punch bots
 Template PunchPersonality

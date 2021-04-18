@@ -102,6 +102,7 @@ enum TaskType
 #include "bot_stuff/de_overpass.sp"
 #include "bot_stuff/de_train.sp"
 #include "bot_stuff/de_nuke.sp"
+#include "bot_stuff/de_vertigo.sp"
 
 public Plugin myinfo = 
 {
@@ -4932,7 +4933,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
 	
-	if(Math_GetRandomInt(1,100) <= 100)
+	if(Math_GetRandomInt(1,100) <= 50)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -4963,6 +4964,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
 			PrepareNukeExecutes();
+		}
+		else if (strcmp(g_szMap, "de_vertigo") == 0)
+		{
+			g_iRndExecute = Math_GetRandomInt(1, 2);
+			PrepareVertigoExecutes();
 		}
 	}
 }
@@ -5409,6 +5415,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 				//All these offsets are inside BotProfileManager::Init
 				StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
 				StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
+				StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(Math_GetRandomFloat(0.0, 1.0)), NumberType_Int32);
 			}
 			
 			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(i));

@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Thu Apr 15 21:39:34 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sun Apr 18 01:37:41 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -32,7 +32,6 @@ aim_ak-colt_v2
 aim_ak-colt_v4
 aim_ak47_colt
 aim_ak_colt_subway
-aim_akm4ruins2
 aim_awp
 aim_aztec_go
 aim_aztecplace_kuli
@@ -104,6 +103,7 @@ awp_metro_cso2
 awp_minecraft
 awp_minecraft_pete_v1
 awp_newmap_beta
+awp_old_civ
 awp_pro
 awp_rainbow
 awp_roost
