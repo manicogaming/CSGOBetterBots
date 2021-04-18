@@ -24,12 +24,12 @@
 	"nawwk" 			"NiP"
 	"hampus" 			"NiP"
 	"REZ" 				"NiP"
-	//C9 Players
-	"ALEX" 				"C9"
-	"es3tag" 			"C9"
-	"mezii"				"C9"
-	"Xeppaa" 			"C9"
-	"floppy" 			"C9"
+	//1win Players
+	"propleh" 			"1win"
+	"DavCost" 			"1win"
+	"TRAVIS"			"1win"
+	"Polt" 				"1win"
+	"deko" 				"1win"
 	//G2 Players
 	"huNter-" 			"G2"
 	"JaCkz" 			"G2"
@@ -62,7 +62,7 @@
 	"DANK1NG" 			"TYLOO"
 	//EG Players
 	"stanislaw" 		"EG"
-	"tarik" 			"EG"
+	"MICHU" 			"EG"
 	"Brehze" 			"EG"
 	"oBo" 				"EG"
 	"CeRq" 				"EG"
@@ -94,7 +94,7 @@
 	"shox" 				"Vitality"
 	"ZywOo" 			"Vitality"
 	"apEX" 				"Vitality"
-	"RpK" 				"Vitality"
+	"Kyojin" 			"Vitality"
 	"Misutaaa" 			"Vitality"
 	//BIG Players
 	"tiziaN" 			"BIG"
@@ -183,8 +183,8 @@
 	//Coast Players
 	"PwnAlone" 			"Coast"
 	"ben1337" 			"Coast"
-	"Rampage" 			"Coast"
-	"djay" 				"Coast"
+	"RCF" 				"Coast"
+	"motm" 				"Coast"
 	"bew" 				"Coast"
 	//Spirit Players
 	"mir" 				"Spirit"
@@ -199,17 +199,17 @@
 	"Keoz" 				"LDLC"
 	"SIXER" 			"LDLC"
 	//GamerLegion Players
-	"dobbo" 			"GamerLegion"
+	"iM" 				"GamerLegion"
 	"eraa" 				"GamerLegion"
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
-	"Adam9130" 			"GamerLegion"
+	"ashhh" 			"GamerLegion"
 	//DIVIZON Players
 	"Patrick" 			"DIVIZON"
 	"ykyli" 			"DIVIZON"
 	"hyped" 			"DIVIZON"
 	"akay" 				"DIVIZON"
-	"sKahx" 			"DIVIZON"
+	"striNg" 			"DIVIZON"
 	//PDucks Players
 	"ChLo" 				"PDucks"
 	"Mikelos" 			"PDucks"
@@ -267,8 +267,8 @@
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
-	"SEMINTE" 			"Nexus"
-	"iM" 				"Nexus"
+	"Blytz" 			"Nexus"
+	"s0und" 			"Nexus"
 	"ragga" 			"Nexus"
 	//PACT Players
 	"darko" 			"PACT"
@@ -277,23 +277,23 @@
 	"MINISE" 			"PACT"
 	"Sobol" 			"PACT"
 	//Nemiga Players
-	"speed4k" 			"Nemiga"
+	"iDISBALANCE" 		"Nemiga"
 	"mds" 				"Nemiga"
 	"lollipop21k" 		"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
 	//YaLLa Players
 	"Senpai" 			"YaLLa"
-	"eku" 				"YaLLa"
+	"ValaK" 			"YaLLa"
 	"Joker" 			"YaLLa"
 	"m1N1" 				"YaLLa"
 	"gaB" 				"YaLLa"
-	//Yeah Players
-	"iDk" 				"Yeah"
-	"RCF" 				"Yeah"
-	"f4stzin" 			"Yeah"
-	"Swisher" 			"Yeah"
-	"mza" 				"Yeah"
+	//9INE Players
+	"eddeman" 			"9INE"
+	"heavy" 			"9INE"
+	"anjou" 			"9INE"
+	"debo" 				"9INE"
+	"bobeksde" 			"9INE"
 	//Singularity Players
 	"IceBerg" 			"Singularity"
 	"notaN" 			"Singularity"
@@ -301,11 +301,11 @@
 	"larsen" 			"Singularity"	
 	"smF" 				"Singularity"
 	//DETONA Players
-	"lub" 				"DETONA"
+	"lux" 				"DETONA"
 	"kauez" 			"DETONA"
 	"frostezoR" 		"DETONA"
 	"nqz" 				"DETONA"
-	"card" 				"DETONA"
+	"NikoM" 			"DETONA"
 	//Infinity Players
 	"k1Nky" 			"Infinity"
 	"tor1towOw" 		"Infinity"	
@@ -317,7 +317,7 @@
 	"Noktse" 			"Isurus"
 	"Reversive" 		"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"NikoM" 			"Isurus"
+	"lokomotioN" 		"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
 	"saffee" 			"paiN"
@@ -328,7 +328,7 @@
 	"realziN"			"Sharks" 
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
-	"exit" 				"Sharks"
+	"pancc" 			"Sharks"
 	"zevy" 				"Sharks"
 	//One Players
 	"prt" 				"One"
@@ -369,7 +369,7 @@
 	//OFFSET Players
 	"NOPEEj" 			"OFFSET"
 	"fox" 				"OFFSET"
-	"pr" 				"OFFSET"
+	"snapy" 			"OFFSET"
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
 	//NASR Players
@@ -416,10 +416,10 @@
 	"morelz" 			"Illuminar"
 	//GTZ Players
 	"rafaxF" 			"GTZ"
-	"snapy" 			"GTZ"
+	"Linko" 			"GTZ"
 	"slaxx" 			"GTZ"
 	"horvy" 			"GTZ"
-	"fakes2" 			"GTZ"
+	"NaOw" 				"GTZ"
 	//EXTREMUM Players
 	"AZR" 				"EXTREMUM"
 	"Liazz" 			"EXTREMUM"
@@ -455,13 +455,13 @@
 	"DeStRoYeR" 		"IG"	
 	"flying" 			"IG"
 	"Viva" 				"IG"
-	"XiaosaGe" 			"IG"
-	//HR Players
-	"kAliNkA" 			"HR"
-	"anarkez" 			"HR"
-	"Flarich" 			"HR"
-	"ProbLeM" 			"HR"
-	"JIaYm" 			"HR"
+	"Starry" 			"IG"
+	//Elevate Players
+	"CutzMeretz" 		"Elevate"
+	"bruno_x" 			"Elevate"
+	"HPS" 				"Elevate"
+	"Demonos" 			"Elevate"
+	"history" 			"Elevate"
 	//Dice Players
 	"XpG" 				"Dice"
 	"nonick" 			"Dice"
@@ -471,7 +471,7 @@
 	//XENEX Players
 	"Magic" 			"XENEX"
 	"bevve" 			"XENEX"
-	"addi" 				"XENEX"
+	"haiqu" 			"XENEX"
 	"crit" 				"XENEX"
 	"Mixann" 			"XENEX"
 	//HLE Players
@@ -557,7 +557,7 @@
 	"mantuu" 			"OG"
 	"Aleksib" 			"OG"
 	"valde" 			"OG"
-	"ISSAA" 			"OG"
+	"flameZ" 			"OG"
 	//BLINK Players
 	"juanflatroo" 		"BLINK"
 	"SENER1" 			"BLINK"
@@ -573,15 +573,15 @@
 	//Baecon Players
 	"met" 				"Baecon"
 	"P3R3IIRA" 			"Baecon"
-	"sp1kz" 			"Baecon"
-	"dronzz" 			"Baecon"
+	"f0rz" 				"Baecon"
+	"Lr0" 				"Baecon"
 	"SYDOX" 			"Baecon"	
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"robiin" 			"Endpoint"
-	"flameZ" 			"Endpoint"
+	"RossR" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
 	"stadodo" 			"SAW"
@@ -616,7 +616,7 @@
 	"pietola" 			"KOVA"
 	"spargo" 			"KOVA"
 	"uli" 				"KOVA"
-	"peku" 				"KOVA"
+	"airax" 			"KOVA"
 	"Twixie" 			"KOVA"
 	//AGF Players
 	"fr0slev" 			"AGF"
@@ -627,7 +627,7 @@
 	//GameAgents Players
 	"mhN1" 				"GameAgents"
 	"renne" 			"GameAgents"
-	"s0und" 			"GameAgents"
+	"vts" 				"GameAgents"
 	"regali" 			"GameAgents"
 	"fNk" 				"GameAgents"
 	//NLG Players
@@ -762,24 +762,24 @@
 	"HS" 				"Nordavind"
 	"supra" 			"Nordavind"
 	"mirbit"			"Nordavind"
-	//Begrip Players
-	"tease" 			"Begrip"
-	"Per0N" 			"Begrip"
-	"MistFire" 			"Begrip"
-	"jma" 				"Begrip"
-	"hns"				"Begrip"
+	//Keyd Players
+	"YJ" 				"Keyd"
+	"abr" 				"Keyd"
+	"ponter" 			"Keyd"
+	"raafa" 			"Keyd"
+	"kye"				"Keyd"
 	//Supremacy Players
 	"pacman^v^" 		"Supremacy"
 	"GuepaRd" 			"Supremacy"
 	"zockie" 			"Supremacy"
 	"LKN" 				"Supremacy"
 	"Knight"			"Supremacy"
-	//Rebirth Players
-	"retchy" 			"Rebirth"
-	"XotiC" 			"Rebirth"
-	"nosraC" 			"Rebirth"
-	"cxzi" 				"Rebirth"
-	"cJ"				"Rebirth"
+	//x6tence Players
+	"SOKER" 			"x6tence"
+	"Vaircuss" 			"x6tence"
+	"PreSs" 			"x6tence"
+	"hadess" 			"x6tence"
+	"roGerzz"			"x6tence"
 	//AVEZ Players
 	"sNx" 				"AVEZ"
 	"pawkoem" 			"AVEZ"
