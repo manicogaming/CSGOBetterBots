@@ -193,6 +193,8 @@ public void BuildSkinsArrayList()
 				}
 			}
 		}
+		
+		g_ArrayWeapons[iWeapon].Push(0);
 	}
 	
 	for (int iGlove = 0; iGlove < g_iGloveCount; iGlove++)
