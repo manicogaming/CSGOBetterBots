@@ -416,10 +416,10 @@
 	"Markos" 			"68256934"
 	//GTZ Players
 	"NaOw" 				"34955497"
-	"horvy" 			"11050533"
+	"zyored" 			"159353688"
 	"rafaxF" 			"134941478"
 	"Linko" 			"186797108"
-	"slaxx" 			"118792535"
+	"MAXX" 				"119229654"
 	//EXTREMUM Players
 	"AZR" 				"24832266"
 	"Liazz" 			"112055988"
@@ -449,7 +449,7 @@
 	"farlig" 			"63982401"
 	"zehN" 				"16308501"
 	"maden" 			"205186299"
-	"chrisJ" 			"28273376"
+	"emi" 				"43348704"
 	//IG Players
 	"bottle" 			"86991268"
 	"DeStRoYeR" 		"85113804"	
@@ -581,7 +581,7 @@
 	"CRUC1AL" 			"158832564"
 	"MiGHTYMAX" 		"15522824"
 	"robiin" 			"41292034"
-	"RossR" 			"23680357"
+	"Thomas" 			"65182402"
 	//SAW Players
 	"arki"				"18055753" 
 	"stadodo" 			"87137134"
@@ -649,9 +649,9 @@
 	"Icarus" 			"291309752"
 	"story" 			"105182632"
 	//Tigers Players
-	"MAXX" 				"119229654"
+	"Aralio" 			"79809520"
 	"ZEDc" 				"108732327"
-	"zyored" 			"159353688"
+	"outex" 			"387989655"
 	"fino" 				"840357190"
 	"system" 			"72886704"
 	//9z Players
@@ -739,7 +739,7 @@
 	"paz" 				"68524615"
 	"ngiN" 				"17887362"
 	"l0gicman" 			"164139337"
-	"imoRR"				"107082440"
+	"S3NSEY"			"103744637"
 	//PENTA Players
 	"cello" 			"18118733"
 	"FreeZe" 			"76968"

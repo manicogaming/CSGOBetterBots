@@ -1800,11 +1800,11 @@ ProP+SniperPro+SniperPersonality "Linko"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "slaxx"
+ProP+Rifle+RiflePersonality "MAXX"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "horvy"
+ProP+Rifle+RiflePersonality "zyored"
 	VoicePitch = 90
 End
 
@@ -1918,7 +1918,7 @@ ProP+Rifle+RiflePersonality "maden"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "chrisJ"
+ProP+Rifle+RiflePersonality "emi"
 	VoicePitch = 108
 End
 
@@ -2402,7 +2402,7 @@ ProP+Rifle+RiflePersonality "robiin"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "RossR"
+ProP+Rifle+RiflePersonality "Thomas"
 	VoicePitch = 96
 End
 
@@ -2672,7 +2672,7 @@ End
 
 //Tigers Players
 
-ProP+Rifle+RiflePersonality "MAXX"
+ProP+Rifle+RiflePersonality "Aralio"
 	VoicePitch = 77
 End
 
@@ -2680,7 +2680,7 @@ ProP+SniperPro+SniperPersonality "ZEDc"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "zyored"
+ProP+Rifle+RiflePersonality "outex"
 	VoicePitch = 110
 End
 
@@ -3018,7 +3018,7 @@ ProP+Rifle+RiflePersonality "l0gicman"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "imoRR"
+ProP+Rifle+RiflePersonality "S3NSEY"
 	VoicePitch = 111
 End
 

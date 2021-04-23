@@ -417,8 +417,8 @@
 	//GTZ Players
 	"rafaxF" 			"GTZ"
 	"Linko" 			"GTZ"
-	"slaxx" 			"GTZ"
-	"horvy" 			"GTZ"
+	"MAXX" 				"GTZ"
+	"zyored" 			"GTZ"
 	"NaOw" 				"GTZ"
 	//EXTREMUM Players
 	"AZR" 				"EXTREMUM"
@@ -449,7 +449,7 @@
 	"STYKO" 			"FPX"
 	"farlig" 			"FPX"
 	"maden" 			"FPX"
-	"chrisJ" 			"FPX"
+	"emi" 				"FPX"
 	//IG Players
 	"bottle" 			"IG"
 	"DeStRoYeR" 		"IG"	
@@ -581,7 +581,7 @@
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"robiin" 			"Endpoint"
-	"RossR" 			"Endpoint"
+	"Thomas" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
 	"stadodo" 			"SAW"
@@ -649,9 +649,9 @@
 	"story" 			"FTW"
 	"Cunha" 			"FTW"
 	//Tigers Players
-	"MAXX" 				"Tigers"
+	"Aralio" 			"Tigers"
 	"ZEDc" 				"Tigers"
-	"zyored" 			"Tigers"
+	"outex" 			"Tigers"
 	"fino" 				"Tigers"
 	"system" 			"Tigers"
 	//9z Players
@@ -743,7 +743,7 @@
 	"paz" 				"Sangal"
 	"ngiN" 				"Sangal"
 	"l0gicman" 			"Sangal"
-	"imoRR"				"Sangal"
+	"S3NSEY"			"Sangal"
 	//PENTA Players
 	"awzek" 			"PENTA"
 	"mave" 				"PENTA"
