@@ -14,14 +14,14 @@
 	"coldzera" 			"FaZe"
 	//Astralis Players
 	"gla1ve" 			"Astralis"
-	"device" 			"Astralis"
+	"Bubzkji" 			"Astralis"
 	"Xyp9x" 			"Astralis"
 	"Magisk" 			"Astralis"
 	"dupreeh" 			"Astralis"
 	//NiP Players
 	"ztr" 				"NiP"
 	"Plopski" 			"NiP"
-	"nawwk" 			"NiP"
+	"device" 			"NiP"
 	"hampus" 			"NiP"
 	"REZ" 				"NiP"
 	//1win Players
@@ -109,7 +109,7 @@
 	"KSCERATO" 			"FURIA"
 	"Junior" 			"FURIA"
 	//Santos Players
-	"xns" 				"Santos"
+	"cass1n" 			"Santos"
 	"keiz" 				"Santos"
 	"voltera" 			"Santos"
 	"MaLLby" 			"Santos"
@@ -132,12 +132,12 @@
 	"FL1T" 				"forZe"
 	"almazer" 			"forZe"
 	"Jerry" 			"forZe"
-	//Winstrike Players
-	"Lack1" 			"Winstrike"
-	"Forester" 			"Winstrike"
-	"NickelBack"		"Winstrike"	 
-	"El1an" 			"Winstrike"
-	"Krad" 				"Winstrike"
+	//UMX Players
+	"Maza" 				"UMX"
+	"arTisT" 			"UMX"
+	"Girafffe"			"UMX"	 
+	"Extinct" 			"UMX"
+	"Tadpole" 			"UMX"
 	//Sprout Players
 	"kressy" 			"Sprout"
 	"slaxz" 			"Sprout"
@@ -180,12 +180,6 @@
 	"aliStair" 			"RNG"
 	"Hatz" 				"RNG"
 	"malta" 			"RNG"
-	//Coast Players
-	"PwnAlone" 			"Coast"
-	"ben1337" 			"Coast"
-	"RCF" 				"Coast"
-	"motm" 				"Coast"
-	"bew" 				"Coast"
 	//Spirit Players
 	"mir" 				"Spirit"
 	"degster" 			"Spirit"
@@ -238,14 +232,8 @@
 	"arvid" 			"SJ"
 	"jelo" 				"SJ"
 	"AKE" 				"SJ"
-	"zks" 				"SJ"
+	"SADDYX" 			"SJ"
 	"BONA" 				"SJ"
-	//Recon Players
-	"kobruh" 			"Recon"	
-	"tweiss" 			"Recon"
-	"JazzPimp" 			"Recon"
-	"AAustiN" 			"Recon"
-	"Saturn" 			"Recon"
 	//Lions Players
 	"tudsoN" 			"Lions"
 	"TMB" 				"Lions"
@@ -282,12 +270,6 @@
 	"lollipop21k" 		"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
-	//YaLLa Players
-	"Senpai" 			"YaLLa"
-	"ValaK" 			"YaLLa"
-	"Joker" 			"YaLLa"
-	"m1N1" 				"YaLLa"
-	"gaB" 				"YaLLa"
 	//9INE Players
 	"eddeman" 			"9INE"
 	"heavy" 			"9INE"
@@ -334,7 +316,7 @@
 	"prt" 				"One"
 	"Maluk3" 			"One"
 	"malbsMd" 			"One"	
-	"cass1n" 			"One"
+	"xns" 				"One"
 	"skullz" 			"One"
 	//Dire Players
 	"HaZR" 				"Dire"
@@ -474,12 +456,12 @@
 	"haiqu" 			"XENEX"
 	"crit" 				"XENEX"
 	"Mixann" 			"XENEX"
-	//HLE Players
-	"BELCHONOKK" 		"HLE"
-	"waterfaLLZ" 		"HLE"	
-	"Raijin" 			"HLE"
-	"dekzz" 			"HLE"
-	"svyat" 			"HLE"
+	//TC Players
+	"tricky" 			"TC"
+	"glowiing" 			"TC"	
+	"seized" 			"TC"
+	"clax" 				"TC"
+	"Norwi" 			"TC"
 	//Gambit Players
 	"nafany" 			"Gambit"
 	"sh1ro" 			"Gambit"
@@ -537,7 +519,7 @@
 	//Lynn Players
 	"westmelon" 		"Lynn"
 	"mitsuha" 			"Lynn"
-	"Aree" 				"Lynn"
+	"Kayo" 				"Lynn"
 	"EXPRO" 			"Lynn"
 	"Mr.mao" 			"Lynn"
 	//Triumph Players
@@ -580,7 +562,7 @@
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
-	"robiin" 			"Endpoint"
+	"mezii" 			"Endpoint"
 	"Thomas" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
@@ -717,7 +699,7 @@
 	//Ambush Players
 	"SBT" 				"Ambush"
 	"wasiNk" 			"Ambush"
-	"DrqkoN" 			"Ambush"	
+	"EMZ" 				"Ambush"	
 	"SoneSb" 			"Ambush"
 	"Gringo" 			"Ambush"
 	//hREDS Players

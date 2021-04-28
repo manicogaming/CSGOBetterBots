@@ -14,14 +14,14 @@
 	"coldzera" 			"79720871"
 	//Astralis Players
 	"gla1ve" 			"50245293"
-	"device" 			"27447936"
+	"Bubzkji" 			"171103459"
 	"Xyp9x" 			"30416534"
 	"Magisk" 			"23690923"
 	"dupreeh" 			"44589228"
 	//NiP Players
 	"ztr" 				"120175482"
 	"Plopski" 			"175613070"
-	"nawwk" 			"193386133"
+	"device" 			"27447936"
 	"hampus" 			"126680222"
 	"REZ" 				"73906687"
 	//1win Players
@@ -109,7 +109,7 @@
 	"KSCERATO" 			"98234764"
 	"Junior" 			"103793230"
 	//Santos Players
-	"xns" 				"138141272"
+	"cass1n" 			"188295781"
 	"keiz" 				"183028724"
 	"voltera" 			"168539111"
 	"MaLLby" 			"209668291"
@@ -132,12 +132,12 @@
 	"FL1T" 				"35551773"
 	"almazer" 			"83782305"
 	"Jerry" 			"65822428"
-	//Winstrike Players
-	"Lack1" 			"185937269"
-	"Forester" 			"67083025"
-	"NickelBack"		"1882779"	 
-	"El1an" 			"250498109"
-	"Krad" 				"71642904"
+	//UMX Players
+	"Maza" 				"296102658"
+	"arTisT" 			"128640602"
+	"Girafffe"			"338231248"	 
+	"Extinct" 			"136442715"
+	"Tadpole" 			"121133939"
 	//Sprout Players
 	"kressy" 			"50709599"
 	"slaxz" 			"104087441"
@@ -180,12 +180,6 @@
 	"aliStair" 			"138080982"
 	"Hatz" 				"64662058"
 	"malta" 			"181905573"
-	//Coast Players
-	"PwnAlone" 			"24000649"
-	"ben1337" 			"131461662"
-	"RCF" 				"206261197"
-	"motm" 				"60208330"
-	"bew" 				"3250945"
 	//Spirit Players
 	"mir" 				"40562076"
 	"degster" 			"839074394"
@@ -239,13 +233,7 @@
 	"BONA" 				"201490896"
 	"jelo" 				"147699201"
 	"AKE" 				"95046586"
-	"zks" 				"368233531"
-	//Recon Players
-	"JazzPimp" 			"101706163"
-	"kobruh" 			"19661515"
-	"tweiss" 			"56828966"
-	"AAustiN" 			"161243497"
-	"Saturn" 			"228178031"
+	"SADDYX" 			"135594020"
 	//Lions Players
 	"tudsoN" 			"58354081"
 	"TMB" 				"124341526"
@@ -282,12 +270,6 @@
 	"lollipop21k" 		"54552870"	
 	"Jyo" 				"43255799"
 	"boX" 				"127393261"
-	//YaLLa Players
-	"Senpai" 			"348984664"
-	"Joker" 			"422012846"
-	"ValaK" 			"334975971"
-	"m1N1" 				"462123965"
-	"gaB" 				"76623486"
 	//9INE Players
 	"eddeman" 			"9142319"
 	"heavy" 			"204067080"
@@ -333,8 +315,8 @@
 	//One Players
 	"prt" 				"92304643"
 	"Maluk3" 			"36056013"
-	"malbsMd" 			"120437415"	
-	"cass1n" 			"188295781"
+	"malbsMd" 			"120437415"
+	"xns" 				"138141272"
 	"skullz" 			"158380916"
 	//Dire Players
 	"HaZR" 				"64081874"
@@ -474,12 +456,12 @@
 	"bevve"				"1143637371"
 	"crit"				"132758600"
 	"Mixann"			"40701211"
-	//HLE Players
-	"svyat" 			"35632848"
-	"waterfaLLZ" 		"12720124"
-	"BELCHONOKK" 		"293404789"
-	"Raijin" 			"216190295"
-	"dekzz" 			"234768934"
+	//TC Players
+	"Norwi" 			"194638879"
+	"glowiing" 			"213998181"
+	"tricky" 			"291038798"
+	"seized" 			"3648428"
+	"clax" 				"168818887"
 	//Gambit Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
@@ -537,7 +519,7 @@
 	//Lynn Players
 	"westmelon" 		"146974312"
 	"mitsuha" 			"177517735"
-	"Aree" 				"164785320"
+	"Kayo" 				"161991176"
 	"EXPRO" 			"219759475"
 	"Mr.mao" 			"222733515"
 	//Triumph Players
@@ -580,7 +562,7 @@
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
 	"MiGHTYMAX" 		"15522824"
-	"robiin" 			"41292034"
+	"mezii" 			"12874964"
 	"Thomas" 			"65182402"
 	//SAW Players
 	"arki"				"18055753" 
@@ -717,7 +699,7 @@
 	"SBT"				"94663345"
 	"wasiNk"			"164618316"
 	"Gringo"			"202395754"
-	"DrqkoN"			"245929"
+	"EMZ"				"4916041"
 	"SoneSb"			"98116312"
 	//hREDS Players
 	"eDi" 				"57731578"

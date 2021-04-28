@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri Apr 23 01:10:03 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Wed Apr 28 14:03:34 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -73,7 +73,6 @@ aim_winter_deagle_up2010
 ar_cbq
 ar_dizzy
 ar_fjord
-ar_shoots
 awp_1337
 awp_arena
 awp_backgammon_b1
