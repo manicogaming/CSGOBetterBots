@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Wed Apr 28 14:03:34 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat May 01 22:51:58 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -170,7 +170,6 @@ de_bastion2
 de_bazaar
 de_belukha
 de_berth
-de_bikinibottom
 de_biome
 de_bombspot_bitcoin
 de_boohouse_go

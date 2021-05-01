@@ -4798,7 +4798,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(2000.0, 20000.0);
+			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 50000.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -5010,6 +5010,18 @@ public MRESReturn CCSBot_ThrowGrenade(int client, DHookParam hParams)
 	}
 	
 	return MRES_Ignored;
+}
+
+public MRESReturn BotCOS(DHookReturn hReturn)
+{
+	hReturn.Value = 0;
+	return MRES_Supercede;
+}
+
+public MRESReturn BotSIN(DHookReturn hReturn)
+{
+	hReturn.Value = 0;
+	return MRES_Supercede;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
@@ -5905,6 +5917,20 @@ public void LoadDetours()
 	if(!hBotThrowGrenadeDetour.Enable(Hook_Pre, CCSBot_ThrowGrenade))
 	{
 		SetFailState("Failed to setup detour for CCSBot::ThrowGrenade");
+	}
+	
+	//BotCOS Detour
+	DynamicDetour hBotCOSDetour = DynamicDetour.FromConf(hGameData, "BotCOS");
+	if(!hBotCOSDetour.Enable(Hook_Pre, BotCOS))
+	{
+		SetFailState("Failed to setup detour for BotCOS");
+	}
+	
+	//BotSIN Detour
+	DynamicDetour hBotSINDetour = DynamicDetour.FromConf(hGameData, "BotSIN");
+	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
+	{
+		SetFailState("Failed to setup detour for BotSIN");
 	}
 	
 	delete hGameData;

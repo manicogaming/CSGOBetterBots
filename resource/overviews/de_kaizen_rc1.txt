@@ -1,24 +1,17 @@
 "de_kaizen_rc1"
 {
-	"TSpawn_x" "0.37"
-	"TSpawn_y" "0.10"
-	
-	"CTSpawn_x"	"0.66"
-	"CTSpawn_y"	"0.86"
-	
 	"material" "overviews/de_kaizen_rc1"
 	"pos_x" "-2160.000000"
 	"pos_y" "1100.000000"
+	"scale" "4.94"
 	
-	"scale" "4.940000"
+	"CTSpawn_x"	"0.66"
+	"CTSpawn_y"	"0.86"
+	"TSpawn_x" "0.37"
+	"TSpawn_y" "0.10"
 	
-	"bombA_x"	"0.891"
-	"bombA_y"	"0.74"
-	
-	"bombB_x"	"0.281"
+	"bombA_x"	"0.89"
+	"bombA_y"	"0.74"	
+	"bombB_x"	"0.28"
 	"bombB_y"	"0.77"
 }
-
-//made with
-// TAVR - AUTO RADAR. v 2.5.0a
-

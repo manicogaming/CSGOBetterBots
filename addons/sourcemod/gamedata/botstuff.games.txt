@@ -8,7 +8,7 @@
 			{
 				// 'Checking out where our friend was killed' > 2
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x8B\x2A\x2A\x8B\x02\x2A\x2A\x2A\x2A\x00\x00\x8B\x42\x04\x2A\x2A\x2A\x2A\x00\x00\x8B\x42\x08\x2A\x2A\x2A\x2A\x00\x00\x8B\x45\x0C"
+				"windows"	"\x55\x8B\xEC\x8B\x55\x08\x8B\x02\x89\x81\x38\x3D\x00\x00"
 			}
 			"CBaseAnimating::LookupBone"
 			{
@@ -50,7 +50,7 @@
 			{
 				// Has 'CCSBot::BendLineOfSight' string
 				"library"	"server"
-				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1\x8B\x0D\x2A\x2A\x2A\x2A"
+				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
 			}
 			"CCSBot::PickNewAimSpot"
 			{
@@ -62,13 +62,25 @@
 			{
 				// Has 'CCSBot::Update' string
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x44\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\x81\x0C\x10\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x4C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
 			"CCSBot::ThrowGrenade"
 			{
 				// Has '%3.2f: Grenade: START_THROW\n' string
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xC0\x83\xEC\x3C\x56\x8B\xF1\xE8\x2A\x2A\x2A\x2A"
+			}
+			"BotCOS"
+			{
+				// Is inside CCSBot::Upkeep which has 'CCSBot::Upkeep' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x08\xF3\x0F\x11\x44\x24\x04\xD9\x44\x24\x04\xD9\x05\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\xD9\x5C\x24\x04\xF3\x0F\x10\x4C\x24\x04"
+			}
+			"BotSIN"
+			{
+				// Is inside CCSBot::Upkeep which has 'CCSBot::Upkeep' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x08\xF3\x0F\x5C\x05\x2A\x2A\x2A\x2A"
 			}
 		}
 		"Offsets"
@@ -185,6 +197,20 @@
                     }
                 }
             }
+			"BotCOS"
+			{
+                "signature" "BotCOS"
+                "callconv" "fastcall"
+                "return" "float"
+                "this" "ignore"
+            }
+			"BotSIN"
+			{
+                "signature" "BotSIN"
+                "callconv" "fastcall"
+                "return" "float"
+                "this" "ignore"
+            }
 		}
 		"MemPatches"
 		{
@@ -193,7 +219,7 @@
 				"signature" "CCSBot::Update"
 				"windows"
 				{
-					"offset"	"1321h"
+					"offset"	"1326h"
 					"verify"	"\x8B\x03\x8B\xCB\xFF\x90\xC8\x08\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
