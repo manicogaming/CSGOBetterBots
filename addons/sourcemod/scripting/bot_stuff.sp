@@ -4405,7 +4405,14 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			
 			if (iAccount == 800 && bInBuyZone)
 			{
-				FakeClientCommand(i, "buy vest");
+				if(Math_GetRandomInt(1,100) <= 75)
+				{
+					FakeClientCommand(i, "buy vest");
+				}
+				else if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0)
+				{
+					FakeClientCommand(i, "buy defuser");
+				}
 			}
 			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
 			{
@@ -4417,6 +4424,20 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0)
 				{
 					FakeClientCommand(i, "buy defuser");
+				}
+			}
+			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0 && bInBuyZone)
+			{
+				switch (Math_GetRandomInt(1,10))
+				{
+					case 1: FakeClientCommand(i, "buy vest");
+					case 5:
+					{
+						if (GetClientTeam(i) == CS_TEAM_CT)
+							FakeClientCommand(i, "buy defuser");
+						else
+							FakeClientCommand(i, "buy vest");
+					}
 				}
 			}
 		}
@@ -4459,9 +4480,14 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						fPlantedC4Distance = GetVectorDistance(fClientLocation, fPlantedC4Location);
 						
-						if (fPlantedC4Distance > 1500.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
+						if (fPlantedC4Distance > 2000.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 						{
 							FakeClientCommandThrottled(client, "use weapon_knife");
+							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
+						}
+						if (fPlantedC4Distance < 2000.0 && fPlantedC4Distance > 200.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
+						{
+							BotEquipBestWeapon(client, true);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
 						}
 					}

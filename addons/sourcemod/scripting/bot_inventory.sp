@@ -739,7 +739,7 @@ public void OnClientPostAdminCheck(int client)
 				
 				switch (g_iSkinDefIndex[client][iWeaponDefIndex])
 				{
-					case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941, 996, 997, 998, 994, 1006, 1012, 1024, 1023:
+					case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941, 996, 997, 998, 994, 1006, 1012, 1024, 1023, 1043:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.65);
 					}
@@ -748,7 +748,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.08);
 					}
-					case 577, 576, 575, 574, 573, 808, 644:
+					case 577, 576, 575, 574, 573, 808, 644, 1044:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.85);
 					}
@@ -759,7 +759,7 @@ public void OnClientPostAdminCheck(int client)
 					case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782, 
 					781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305, 
 					280, 263, 257, 238, 237, 228, 224, 223, 919, 759, 757, 758, 760, 761, 862, 742, 867, 746, 743, 744, 739, 741, 868, 727, 728, 729, 730, 726, 733, 871, 870, 873, 970, 1027,
-					1015, 1021, 1019, 1020:
+					1015, 1021, 1019, 1020, 1051, 1049:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.50);
 					}
@@ -788,7 +788,7 @@ public void OnClientPostAdminCheck(int client)
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.75);
 					}
 					case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905, 
-					886, 859, 864, 734, 732, 950, 959, 966, 991, 990, 982, 993, 1013, 1005, 1025, 1022:
+					886, 859, 864, 734, 732, 950, 959, 966, 991, 990, 982, 993, 1013, 1005, 1025, 1022, 1042:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.70);
 					}
@@ -809,7 +809,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.25, 0.80);
 					}
-					case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301:
+					case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301, 1036, 1046:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.90);
 					}
@@ -1166,7 +1166,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.73);
 					}
-					case 958:
+					case 958, 1041:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.79);
 					}
@@ -1177,6 +1177,10 @@ public void OnClientPostAdminCheck(int client)
 					case 979:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.90);
+					}
+					case 1050:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.97);
 					}
 					default:
 					{
