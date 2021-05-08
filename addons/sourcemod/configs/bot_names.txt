@@ -69,7 +69,7 @@
 	//Na´Vi Players
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"
-	"flamie" 			"Na´Vi"
+	"B1T" 				"Na´Vi"
 	"Boombl4" 			"Na´Vi"
 	"Perfecto" 			"Na´Vi"
 	//Liquid Players
@@ -197,7 +197,7 @@
 	"eraa" 				"GamerLegion"
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
-	"ashhh" 			"GamerLegion"
+	"isak" 				"GamerLegion"
 	//DIVIZON Players
 	"Patrick" 			"DIVIZON"
 	"ykyli" 			"DIVIZON"
@@ -218,8 +218,8 @@
 	"jemi" 				"HAVU"
 	//Lyngby Players
 	"birdfromsky"		"Lyngby" 
-	"Twinx" 			"Lyngby"
-	"Typos" 			"Lyngby"
+	"Daffu" 			"Lyngby"
+	"maNkz" 			"Lyngby"
 	"raalz" 			"Lyngby"
 	"FeTiSh" 			"Lyngby"
 	//GODSENT Players
@@ -390,12 +390,12 @@
 	"Owen$inhoM" 		"Furious"	
 	"Gooden" 			"Furious"
 	"nacho" 			"Furious"
-	//Illuminar Players
-	"mouz" 				"Illuminar"
-	"Markos" 			"Illuminar"
-	"GruBy" 			"Illuminar"
-	"Sidney" 			"Illuminar"
-	"morelz" 			"Illuminar"
+	//Recon Players
+	"tweiss" 			"Recon"
+	"AAustiN" 			"Recon"
+	"SATURN" 			"Recon"
+	"Wilky" 			"Recon"
+	"SLIGHT" 			"Recon"
 	//GTZ Players
 	"rafaxF" 			"GTZ"
 	"Linko" 			"GTZ"
@@ -527,7 +527,7 @@
 	"Bwills" 			"Triumph"
 	"Cooper-" 			"Triumph"
 	"cynic" 			"Triumph"
-	"viz" 				"Triumph"
+	"motm" 				"Triumph"
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
@@ -623,7 +623,7 @@
 	"b0denmaster" 		"Lilmix"
 	"bq" 				"Lilmix"
 	"Svedjehed" 		"Lilmix"
-	"isak" 				"Lilmix"
+	"downie" 			"Lilmix"
 	//FTW Players
 	"NABOWOW" 			"FTW"
 	"Jaepe" 			"FTW"
@@ -666,12 +666,6 @@
 	"impulsG" 			"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
-	//BL4ZE Players
-	"dzii" 				"BL4ZE"
-	"Marzil" 			"BL4ZE"
-	"RvK" 				"BL4ZE"
-	"Raph" 				"BL4ZE"
-	"cara" 				"BL4ZE"
 	//QBF Players
 	"Maccen" 			"QBF"
 	"J3nsyy" 			"QBF"
@@ -689,7 +683,7 @@
 	"AcilioN" 			"Flames"
 	"Basso" 			"Flames"
 	"Jabbi" 			"Flames"
-	"Daffu" 			"Flames"
+	"djL" 				"Flames"
 	//eXploit Players
 	"BLOODZ" 			"eXploit"
 	"obj" 				"eXploit"	
@@ -797,7 +791,7 @@
 	"HexT" 				"RBG"
 	"wiz" 				"RBG"
 	"chop" 				"RBG"
-	"Wolffe"			"RBG"
+	"CLASIA"			"RBG"
 	//DC Players
 	"Hellhound" 		"DC"
 	"stYle" 			"DC"

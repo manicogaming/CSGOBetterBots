@@ -69,7 +69,7 @@
 	//Na´Vi Players
 	"electronic" 		"83779379"	
 	"s1mple" 			"73936547"
-	"flamie" 			"156257548"
+	"B1T" 				"286341748"
 	"Boombl4" 			"185941338"
 	"Perfecto" 			"160954758"
 	//Liquid Players
@@ -196,7 +196,7 @@
 	"eraa" 				"413888723"
 	"Zero" 				"34322135"
 	"RuStY" 			"122394166"	
-	"ashhh" 			"22474328"
+	"isak" 				"111644637"
 	"iM" 				"413888723"
 	//DIVIZON Players
 	"Patrick"			"64484395"
@@ -218,10 +218,10 @@
 	"jemi" 				"932767"
 	//Lyngby Players
 	"birdfromsky"		"4338476" 
-	"Twinx" 			"114782035"
+	"Daffu" 			"70645401"
 	"raalz" 			"35794427"
 	"FeTiSh" 			"11212652"
-	"Typos" 			"174271068"
+	"maNkz" 			"81805084"
 	//GODSENT Players
 	"TACO" 				"52876568"
 	"b4rtiN" 			"169818854"
@@ -390,12 +390,12 @@
 	"JonY BoY" 			"77140654"	
 	"Gooden" 			"324241630"	
 	"nacho" 			"979595590"	
-	//Illuminar Players
-	"mouz" 				"38464805"
-	"GruBy" 			"44752530"
-	"Sidney" 			"70091835"
-	"morelz" 			"122208414"
-	"Markos" 			"68256934"
+	//Recon Players
+	"tweiss" 			"56828966"
+	"SATURN" 			"228178031"
+	"Wilky" 			"142641032"
+	"SLIGHT" 			"193314309"
+	"AAustiN" 			"161243497"
 	//GTZ Players
 	"NaOw" 				"34955497"
 	"zyored" 			"159353688"
@@ -527,7 +527,7 @@
 	"Bwills" 			"119308817"
 	"Cooper-" 			"7251259"
 	"cynic" 			"106932238"
-	"viz" 				"433892634"
+	"motm" 				"60208330"
 	//FATE Players
 	"Patrick--" 		"98715951"
 	"Rock1nG" 			"246843704"
@@ -623,7 +623,7 @@
 	"b0denmaster" 		"316269116"
 	"bq" 				"240233870"
 	"Svedjehed" 		"170174906"
-	"isak" 				"111644637"
+	"downie" 			"34593381"
 	//FTW Players
 	"NABOWOW" 			"283730928"
 	"Cunha" 			"203400597"
@@ -665,12 +665,6 @@
 	"sesL" 				"127191279"
 	"impulsG" 			"242288017"
 	"mvN" 				"165741598"
-	//BL4ZE Players
-	"dzii" 				"433932660"
-	"Marzil" 			"141417673"
-	"RvK" 				"272159688"
-	"Raph" 				"76862977"
-	"cara" 				"205783147"
 	//QBF Players
 	"BERRY" 			"9876226"
 	"Maccen" 			"244998424"
@@ -688,7 +682,7 @@
 	"AcilioN" 			"56749436"
 	"Basso" 			"152862"
 	"Jabbi" 			"160291620"
-	"Daffu" 			"70645401"
+	"djL" 				"20837931"
 	//eXploit Players
 	"BLOODZ" 			"1004703971"
 	"obj" 				"42675741"	
@@ -793,7 +787,7 @@
 	"HexT" 				"250668735"
 	"wiz" 				"172119781"
 	"chop" 				"242973479"
-	"Wolffe"			"162402653"
+	"CLASIA"			"415811354"
 	//DC Players
 	"Explicit"			"1074781"
 	"Hellhound" 		"427548"

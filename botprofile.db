@@ -546,7 +546,7 @@ ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "flamie"
+ProP+Rifle+RiflePersonality "B1T"
 	VoicePitch = 101
 End
 
@@ -1016,7 +1016,7 @@ ProP+Rifle+RiflePersonality "RuStY"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "ashhh"
+ProP+Rifle+RiflePersonality "isak"
 	VoicePitch = 77
 End
 
@@ -1070,11 +1070,11 @@ ProP+Rifle+RiflePersonality "birdfromsky"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "Twinx"
+ProP+SniperPro+SniperPersonality "FeTiSh"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "Typos"
+ProP+Rifle+RiflePersonality "maNkz"
 	VoicePitch = 83
 End
 
@@ -1082,7 +1082,7 @@ ProP+Rifle+RiflePersonality "raalz"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "FeTiSh"
+ProP+Rifle+RiflePersonality "Daffu"
 	VoicePitch = 96
 End
 
@@ -1702,25 +1702,25 @@ ProP+Rifle+RiflePersonality "nacho"
 	VoicePitch = 96
 End
 
-//Illuminar Players
+//Recon Players
 
-ProP+Rifle+RiflePersonality "mouz"
+ProP+Rifle+RiflePersonality "tweiss"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "Markos"
+ProP+SniperPro+SniperPersonality "AAustiN"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "GruBy"
+ProP+Rifle+RiflePersonality "SATURN"
 	VoicePitch = 108
 End
 
-ProP+Rifle+RiflePersonality "Sidney"
+ProP+Rifle+RiflePersonality "Wilky"
 	VoicePitch = 75
 End
 
-ProP+Rifle+RiflePersonality "morelz"
+ProP+Rifle+RiflePersonality "SLIGHT"
 	VoicePitch = 108
 End
 
@@ -2204,7 +2204,7 @@ ProP+Rifle+RiflePersonality "cynic"
 	VoicePitch = 79
 End
 
-ProP+Rifle+RiflePersonality "viz"
+ProP+Rifle+RiflePersonality "motm"
 	VoicePitch = 87
 End
 
@@ -2578,7 +2578,7 @@ ProP+Rifle+RiflePersonality "Svedjehed"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "isak"
+ProP+Rifle+RiflePersonality "downie"
 	VoicePitch = 91
 End
 
@@ -2736,28 +2736,6 @@ ProP+Rifle+RiflePersonality "preet"
 	VoicePitch = 81
 End
 
-//BL4ZE Players
-
-ProP+Rifle+RiflePersonality "dzii"
-	VoicePitch = 78
-End
-
-ProP+SniperPro+SniperPersonality "Marzil"
-	VoicePitch = 101
-End
-
-ProP+Rifle+RiflePersonality "RvK"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "Raph"
-	VoicePitch = 84
-End
-
-ProP+Rifle+RiflePersonality "cara"
-	VoicePitch = 108
-End
-
 //QBF Players
 
 ProP+Rifle+RiflePersonality "Maccen"
@@ -2820,7 +2798,7 @@ ProP+Rifle+RiflePersonality "Jabbi"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "Daffu"
+ProP+Rifle+RiflePersonality "djL"
 	VoicePitch = 103
 End
 
@@ -3216,7 +3194,7 @@ ProP+Rifle+RiflePersonality "chop"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "Wolffe"
+ProP+Rifle+RiflePersonality "CLASIA"
 	VoicePitch = 111
 End
 

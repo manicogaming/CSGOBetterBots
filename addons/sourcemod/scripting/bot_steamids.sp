@@ -41,7 +41,7 @@ public int Native_GetBotAccountID(Handle plugins, int numParams)
 	if (!client || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Invalid client index [%i]", client);
-		return false;
+		return -1;
 	}
 
 	return g_iAccountID[client];
@@ -53,7 +53,7 @@ public int Native_GetBotSteamID64(Handle plugins, int numParams)
 	if (!client || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Invalid client index [%i]", client);
-		return false;
+		return -1;
 	}
 	
 	return SetNativeString(2, g_szSteamID64[client], GetNativeCell(3)) == SP_ERROR_NONE;

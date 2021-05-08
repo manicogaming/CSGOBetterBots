@@ -117,8 +117,8 @@
 			}
 			"CCSBot::m_isEnemyVisible"
 			{
-				//Is in the if statement where CCSBot::ThrowGrenade is used
-				"windows"       "24088"
+				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
+				"windows"       "24072"
 			}
 			"CCSBot::m_pLocalProfile"
 			{
