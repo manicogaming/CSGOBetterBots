@@ -133,11 +133,11 @@
 	"almazer" 			"83782305"
 	"Jerry" 			"65822428"
 	//UMX Players
-	"Maza" 				"296102658"
+	"volt" 				"195488719"
 	"arTisT" 			"128640602"
 	"Girafffe"			"338231248"	 
 	"Extinct" 			"136442715"
-	"Tadpole" 			"121133939"
+	"Atrox" 			"395343196"
 	//Sprout Players
 	"kressy" 			"50709599"
 	"slaxz" 			"104087441"
@@ -366,12 +366,6 @@
 	"KrowNii" 			"225305859"
 	"pulzG" 			"4110176"
 	"nixeed" 			"247022056"
-	//nxl Players
-	"soifong" 			"113144130"
-	"frgd[ibtJ]" 		"41830668"	
-	"Foscmorc" 			"107615798"	
-	"recz" 				"139102164"	
-	"StevenH" 			"413478803"	
 	//DV Players
 	"TTyke" 			"413625684"
 	"DVDOV" 			"40379175"
@@ -504,12 +498,12 @@
 	"SloWye" 			"50695439"
 	"Fadey" 			"181493840"
 	"mango" 			"183429246"
-	//TSG Players
-	"captainMo" 		"109036162"
-	"LOVEYY" 			"48886373"
-	"AE" 				"187743214"
-	"Karsa" 			"85358333"
-	"Roninbaby" 		"460930168"
+	//Fiend Players
+	"dream3r" 			"194789935"
+	"v1c7oR" 			"46016299"
+	"bubble" 			"40702377"
+	"mar" 				"158849219"
+	"REDSTAR" 			"88455007"
 	//Wings Players
 	"ChildKing"			"392390376" 
 	"lan" 				"183602582"

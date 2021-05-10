@@ -133,11 +133,11 @@
 	"almazer" 			"forZe"
 	"Jerry" 			"forZe"
 	//UMX Players
-	"Maza" 				"UMX"
+	"volt" 				"UMX"
 	"arTisT" 			"UMX"
 	"Girafffe"			"UMX"	 
 	"Extinct" 			"UMX"
-	"Tadpole" 			"UMX"
+	"Atrox" 			"UMX"
 	//Sprout Players
 	"kressy" 			"Sprout"
 	"slaxz" 			"Sprout"
@@ -366,12 +366,6 @@
 	"KrowNii" 			"TTT"
 	"pulzG" 			"TTT"
 	"nixeed" 			"TTT"
-	//nxl Players
-	"soifong" 			"nxl"
-	"Foscmorc" 			"nxl"
-	"frgd[ibtJ]" 		"nxl"	
-	"recz" 				"nxl"
-	"StevenH" 			"nxl"
 	//DV Players
 	"TTyke" 			"DV"
 	"DVDOV" 			"DV"
@@ -504,12 +498,12 @@
 	"SloWye" 			"ATK"
 	"Fadey" 			"ATK"
 	"mango" 			"ATK"
-	//TSG Players
-	"captainMo" 		"TSG"
-	"LOVEYY" 			"TSG"
-	"AE" 				"TSG"
-	"Karsa" 			"TSG"
-	"Roninbaby" 		"TSG"
+	//Fiend Players
+	"dream3r" 			"Fiend"
+	"v1c7oR" 			"Fiend"
+	"bubble" 			"Fiend"
+	"mar" 				"Fiend"
+	"REDSTAR" 			"Fiend"
 	//Wings Players
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"

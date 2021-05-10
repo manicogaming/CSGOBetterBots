@@ -189,7 +189,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_offset", Team_OFFSET);
 	RegConsoleCmd("team_nasr", Team_NASR);
 	RegConsoleCmd("team_ttt", Team_TTT);
-	RegConsoleCmd("team_nxl", Team_nxl);
 	RegConsoleCmd("team_dv", Team_DV);
 	RegConsoleCmd("team_bravado", Team_Bravado);
 	RegConsoleCmd("team_furious", Team_Furious);
@@ -212,7 +211,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_Unique", Team_Unique);
 	RegConsoleCmd("team_izako", Team_Izako);
 	RegConsoleCmd("team_atk", Team_ATK);
-	RegConsoleCmd("team_tsg", Team_TSG);
+	RegConsoleCmd("team_fiend", Team_Fiend);
 	RegConsoleCmd("team_wings", Team_Wings);
 	RegConsoleCmd("team_lynn", Team_Lynn);
 	RegConsoleCmd("team_triumph", Team_Triumph);
@@ -934,22 +933,22 @@ public Action Team_UMX(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Maza");
+		ServerCommand("bot_add_ct %s", "volt");
 		ServerCommand("bot_add_ct %s", "arTisT");
 		ServerCommand("bot_add_ct %s", "Girafffe");
 		ServerCommand("bot_add_ct %s", "Extinct");
-		ServerCommand("bot_add_ct %s", "Tadpole");
+		ServerCommand("bot_add_ct %s", "Atrox");
 		ServerCommand("mp_teamlogo_1 umx");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Maza");
+		ServerCommand("bot_add_t %s", "volt");
 		ServerCommand("bot_add_t %s", "arTisT");
 		ServerCommand("bot_add_t %s", "Girafffe");
 		ServerCommand("bot_add_t %s", "Extinct");
-		ServerCommand("bot_add_t %s", "Tadpole");
+		ServerCommand("bot_add_t %s", "Atrox");
 		ServerCommand("mp_teamlogo_2 umx");
 	}
 	
@@ -2096,36 +2095,6 @@ public Action Team_TTT(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_nxl(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (strcmp(arg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "soifong");
-		ServerCommand("bot_add_ct %s", "Foscmorc");
-		ServerCommand("bot_add_ct %s", "frgd[ibtJ]");
-		ServerCommand("bot_add_ct %s", "recz");
-		ServerCommand("bot_add_ct %s", "StevenH");
-		ServerCommand("mp_teamlogo_1 nxl");
-	}
-	
-	if (strcmp(arg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "soifong");
-		ServerCommand("bot_add_t %s", "Foscmorc");
-		ServerCommand("bot_add_t %s", "frgd[ibtJ]");
-		ServerCommand("bot_add_t %s", "recz");
-		ServerCommand("bot_add_t %s", "StevenH");
-		ServerCommand("mp_teamlogo_2 nxl");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_DV(int client, int iArgs)
 {
 	char arg[12];
@@ -2786,7 +2755,7 @@ public Action Team_ATK(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_TSG(int client, int iArgs)
+public Action Team_Fiend(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2794,23 +2763,23 @@ public Action Team_TSG(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "captainMo");
-		ServerCommand("bot_add_ct %s", "LOVEYY");
-		ServerCommand("bot_add_ct %s", "AE");
+		ServerCommand("bot_add_ct %s", "dream3r");
+		ServerCommand("bot_add_ct %s", "v1c7oR");
+		ServerCommand("bot_add_ct %s", "bubble");
 		ServerCommand("bot_add_ct %s", "MarKE");
-		ServerCommand("bot_add_ct %s", "Roninbaby");
-		ServerCommand("mp_teamlogo_1 tsg");
+		ServerCommand("bot_add_ct %s", "REDSTAR");
+		ServerCommand("mp_teamlogo_1 fiend");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "captainMo");
-		ServerCommand("bot_add_t %s", "LOVEYY");
-		ServerCommand("bot_add_t %s", "AE");
+		ServerCommand("bot_add_t %s", "dream3r");
+		ServerCommand("bot_add_t %s", "v1c7oR");
+		ServerCommand("bot_add_t %s", "bubble");
 		ServerCommand("bot_add_t %s", "MarKE");
-		ServerCommand("bot_add_t %s", "Roninbaby");
-		ServerCommand("mp_teamlogo_2 tsg");
+		ServerCommand("bot_add_t %s", "REDSTAR");
+		ServerCommand("mp_teamlogo_2 fiend");
 	}
 	
 	return Plugin_Handled;
@@ -5322,34 +5291,33 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 
 public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	for (int i = 1; i <= MaxClients; i++)
+	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+
+	if (IsValidClient(client) && IsFakeClient(client))
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
+		if(g_bIsProBot[client])
 		{
-			if(g_bIsProBot[i])
+			Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
+			
+			//All these offsets are inside BotProfileManager::Init
+			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
+			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
+			StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(Math_GetRandomFloat(0.0, 1.0)), NumberType_Int32);
+		}
+		
+		CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
+		
+		if (g_iUSPChance[client] >= 25)
+		{
+			if (GetClientTeam(client) == CS_TEAM_CT)
 			{
-				Address pLocalProfile = view_as<Address>(GetEntData(i, g_iBotProfileOffset));
+				char szUSP[32];
 				
-				//All these offsets are inside BotProfileManager::Init
-				StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
-				StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[i]), NumberType_Int32);
-				StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(Math_GetRandomFloat(0.0, 1.0)), NumberType_Int32);
-			}
-			
-			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(i));
-			
-			if (g_iUSPChance[i] >= 25)
-			{
-				if (GetClientTeam(i) == CS_TEAM_CT)
+				GetClientWeapon(client, szUSP, sizeof(szUSP));
+				
+				if (strcmp(szUSP, "weapon_hkp2000") == 0)
 				{
-					char szUSP[32];
-					
-					GetClientWeapon(i, szUSP, sizeof(szUSP));
-					
-					if (strcmp(szUSP, "weapon_hkp2000") == 0)
-					{
-						CSGO_ReplaceWeapon(i, CS_SLOT_SECONDARY, "weapon_usp_silencer");
-					}
+					CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 				}
 			}
 		}

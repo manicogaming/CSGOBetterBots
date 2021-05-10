@@ -784,7 +784,7 @@ ProP+Rifle+RiflePersonality "arTisT"
 	VoicePitch = 73
 End
 
-ProP+SniperPro+SniperPersonality "Maza"
+ProP+SniperPro+SniperPersonality "volt"
 	VoicePitch = 114
 End
 
@@ -796,7 +796,7 @@ ProP+Rifle+RiflePersonality "Extinct"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "Tadpole"
+ProP+Rifle+RiflePersonality "Atrox"
 	VoicePitch = 104
 End
 
@@ -1614,28 +1614,6 @@ ProP+Rifle+RiflePersonality "nixeed"
 	VoicePitch = 79
 End
 
-//nxl Players
-
-ProP+Rifle+RiflePersonality "soifong"
-	VoicePitch = 93
-End
-
-ProP+SniperPro+SniperPersonality "Foscmorc"
-	VoicePitch = 82
-End
-
-ProP+Rifle+RiflePersonality "frgd[ibtJ]"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "recz"
-	VoicePitch = 74
-End
-
-ProP+Rifle+RiflePersonality "StevenH"
-	VoicePitch = 97
-End
-
 //DV Players
 
 ProP+Rifle+RiflePersonality "TTyke"
@@ -2120,25 +2098,25 @@ ProP+Rifle+RiflePersonality "mango"
 	VoicePitch = 102
 End
 
-//TSG Players
+//Fiend Players
 
-ProP+Rifle+RiflePersonality "captainMo"
+ProP+Rifle+RiflePersonality "dream3r"
 	VoicePitch = 93
 End
 
-ProP+SniperPro+SniperPersonality "AE"
+ProP+SniperPro+SniperPersonality "bubble"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "LOVEYY"
+ProP+Rifle+RiflePersonality "v1c7oR"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Karsa"
+ProP+Rifle+RiflePersonality "mar"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "Roninbaby"
+ProP+Rifle+RiflePersonality "REDSTAR"
 	VoicePitch = 111
 End
 

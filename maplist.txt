@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Fri May 07 23:08:18 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Mon May 10 01:21:05 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -111,6 +111,7 @@ awp_rp94
 awp_source
 awp_zeecore
 ba_winterforest_b1
+bgt_vegas
 c19_tilante
 carparkm1
 cs_1337_assault_b2

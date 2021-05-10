@@ -1,0 +1,29 @@
+"bgt_vegas"
+{
+	"material"	"overviews/bgt_vegas"	// texture file
+	"pos_x"		"-2375"	// upper left world coordinate
+	"pos_y"		"1725"
+	"scale"		"5"
+	"zoom"		"0" 
+
+	"verticalsections"
+	{
+		"default"
+		{
+			"AltitudeMax" "10000"
+			"AltitudeMin" "-100"
+		}
+		"lower"
+		{
+			"AltitudeMax" "-100"
+			"AltitudeMin" "-10000"
+		}
+	}
+	
+	"CTSpawn_x"	"0.465"
+	"CTSpawn_y"	"0.9"
+	"TSpawn_x"	"0.465"
+	"TSpawn_y"	"0.29"
+
+}
+
