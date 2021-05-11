@@ -2766,7 +2766,7 @@ public Action Team_Fiend(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "dream3r");
 		ServerCommand("bot_add_ct %s", "v1c7oR");
 		ServerCommand("bot_add_ct %s", "bubble");
-		ServerCommand("bot_add_ct %s", "MarKE");
+		ServerCommand("bot_add_ct %s", "mar");
 		ServerCommand("bot_add_ct %s", "REDSTAR");
 		ServerCommand("mp_teamlogo_1 fiend");
 	}
@@ -2777,7 +2777,7 @@ public Action Team_Fiend(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "dream3r");
 		ServerCommand("bot_add_t %s", "v1c7oR");
 		ServerCommand("bot_add_t %s", "bubble");
-		ServerCommand("bot_add_t %s", "MarKE");
+		ServerCommand("bot_add_t %s", "mar");
 		ServerCommand("bot_add_t %s", "REDSTAR");
 		ServerCommand("mp_teamlogo_2 fiend");
 	}
