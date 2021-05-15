@@ -18,7 +18,7 @@ bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1], g_bInPosition[MAXPLAYERS+1], g_bSkipPosition[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotXOffset, g_iBotTargetSpotYOffset, g_iBotTargetSpotZOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset;
+int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset, g_iBotGoalPos;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
@@ -64,7 +64,8 @@ enum RouteType
 
 enum PriorityType
 {
-	PRIORITY_LOW = 0, 
+	PRIORITY_LOWEST = -1,
+	PRIORITY_LOW, 
 	PRIORITY_MEDIUM, 
 	PRIORITY_HIGH, 
 	PRIORITY_UNINTERRUPTABLE
@@ -4351,6 +4352,10 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				{
 					FakeClientCommand(i, "buy defuser");
 				}
+				else if(GetClientTeam(i) == CS_TEAM_T)
+				{
+					FakeClientCommand(i, "buy p250");
+				}
 			}
 			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
 			{
@@ -4997,7 +5002,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
-		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+		 || strcmp(szDesc, "Hostage") == 0)
 	{
 		return MRES_Ignored;
 	}
@@ -5017,7 +5022,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Supercede;
 	}
@@ -5128,9 +5133,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			}
 		}
 		
-		SetEntDataFloat(client, g_iBotTargetSpotXOffset, g_fTargetPos[client][0]);
-		SetEntDataFloat(client, g_iBotTargetSpotYOffset, g_fTargetPos[client][1]);
-		SetEntDataFloat(client, g_iBotTargetSpotZOffset, g_fTargetPos[client][2]);
+		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
 	
 	return MRES_Ignored;
@@ -5163,6 +5166,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_SPEED;
 			}	
 		}
+		
+		float fGoalPos[3];
+		
+		GetEntDataVector(client, g_iBotGoalPos, fGoalPos);
+		fGoalPos[2] += 64.0;
+		
+		BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.5, true, 5.0, false);
 		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
 		{
@@ -5746,19 +5756,9 @@ public void LoadSDK()
 	if (hGameConfig == INVALID_HANDLE)
 		SetFailState("Failed to find botstuff.games game config.");
 	
-	if ((g_iBotTargetSpotXOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.x")) == -1)
+	if ((g_iBotTargetSpotOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot")) == -1)
 	{
-		SetFailState("Failed to get CCSBot::m_targetSpot.x offset.");
-	}
-	
-	if ((g_iBotTargetSpotYOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.y")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_targetSpot.y offset.");
-	}
-	
-	if ((g_iBotTargetSpotZOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot.z")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_targetSpot.z offset.");
+		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
 	}
 	
 	if ((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
@@ -5794,6 +5794,11 @@ public void LoadSDK()
 	if ((g_iBotSawEnemyTimestampOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lastSawEnemyTimestamp")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_lastSawEnemyTimestamp offset.");
+	}
+	
+	if ((g_iBotGoalPos = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);

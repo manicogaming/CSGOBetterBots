@@ -186,10 +186,10 @@ Template ProP
         Cost = 4
         Difficulty = EXPERT+HARD+NORMAL+EASY
         VoicePitch = 85
-        AimFocusInitial = 0.01
-        AimFocusDecay = 0.01
-        AimFocusOffsetScale = 0.01
-        AimfocusInterval = 0.01
+        AimFocusInitial = 0.00001
+		AimFocusDecay = 0.0000001
+		AimFocusOffsetScale = 0.0000000000000000000000001
+		AimfocusInterval = 0.0000000000001
 End
 
 Template Elite

@@ -85,20 +85,10 @@
 		}
 		"Offsets"
 		{
-			"CCSBot::m_targetSpot.x"
+			"CCSBot::m_targetSpot"
 			{
 				//Is inside CCSBot::PickNewAimSpot
 				"windows"       "23976"
-			}
-			"CCSBot::m_targetSpot.y"
-			{
-				//Is inside CCSBot::PickNewAimSpot
-				"windows"       "23980"
-			}
-			"CCSBot::m_targetSpot.z"
-			{
-				//Is inside CCSBot::PickNewAimSpot
-				"windows"       "23984"
 			}
 			"CCSBot::m_nearbyEnemyCount"
 			{
@@ -134,6 +124,11 @@
 			{
 				//Is inside an if statement right below the string 'CCSBot::UpdateLookAround'
 				"windows"       "24088"
+			}
+			"CCSBot::m_goalPosition"
+			{
+				//Is right below the string 'APPROACH_ASCENDING_LADDER\n'
+				"windows"       "16036"
 			}
 		}
 		"Functions"

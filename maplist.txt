@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Tue May 11 19:22:17 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Sat May 15 19:53:32 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -317,6 +317,7 @@ deagle_ultra
 deathzone
 dm_bloodsport
 dm_lair_updated
+dz_frostbite
 fun_pacman_v1
 fy_aztec_fire_csgo
 fy_back_street
