@@ -43,7 +43,7 @@
 	"Brollan" 			"178562747"
 	"Golden" 			"116509497"
 	//Alpha Players
-	"lund" 				"120778841"
+	"jekuzih" 			"1046346483"
 	"hug" 				"103219669"
 	"wAGNR" 			"47175311"
 	"TOBIZ" 			"151717795"
@@ -86,7 +86,7 @@
 	"leman" 			"40398517"
 	//ENCE Players
 	"Snappi" 			"29157337"
-	"allu" 				"1345246"
+	"hades" 			"90656280"
 	"Spinx" 			"103070679"
 	"doto" 				"39318615"
 	"dycha" 			"81151265"
@@ -152,7 +152,7 @@
 	"stavn" 			"62099910"
 	//INTZ Players
 	"guZERA" 			"318109544"
-	"BALEROSTYLE" 		"123141727"
+	"paiva" 			"923500560"
 	"dukka" 			"34634558"
 	"paredao" 			"2889473"
 	"chara" 			"310877571"
@@ -220,7 +220,7 @@
 	"birdfromsky"		"4338476" 
 	"Daffu" 			"70645401"
 	"raalz" 			"35794427"
-	"FeTiSh" 			"11212652"
+	"J3nsyy" 			"192137384"
 	"maNkz" 			"81805084"
 	//GODSENT Players
 	"TACO" 				"52876568"
@@ -261,7 +261,7 @@
 	//PACT Players
 	"darko" 			"31199105"
 	"lunAtic" 			"27202715"
-	"Vegi" 				"90369423"
+	"bnox" 				"400417045"
 	"MINISE" 			"29354726"
 	"Sobol" 			"190359589"
 	//Nemiga Players
@@ -299,7 +299,7 @@
 	"Noktse" 			"54233223"
 	"Reversive" 		"229334739"	
 	"decov9jse" 		"311766666"	
-	"lokomotioN" 		"429170127"
+	"Gooden" 			"324241630"
 	//paiN Players
 	"PKL" 				"65313136"
 	"saffee" 			"25299957"
@@ -383,7 +383,7 @@
 	"abizz" 			"401347484"	
 	"JonY BoY" 			"77140654"	
 	"Gooden" 			"324241630"	
-	"nacho" 			"979595590"	
+	"meyern" 			"235377137"	
 	//Recon Players
 	"tweiss" 			"56828966"
 	"SATURN" 			"228178031"
@@ -478,7 +478,7 @@
 	"koyot" 			"174135918"
 	"Grashog" 			"78941188"
 	"fr3nd" 			"177768668"
-	"bnox" 				"400417045"
+	"mouz" 				"38464805"
 	"Miki Z Afryki" 	"128730948"
 	//Unique Players
 	"crush" 			"36981424"
@@ -515,7 +515,7 @@
 	"mitsuha" 			"177517735"
 	"Kayo" 				"161991176"
 	"EXPRO" 			"219759475"
-	"Mr.mao" 			"222733515"
+	"B1NGO" 			"149673357"
 	//Triumph Players
 	"Shakezullah" 		"68248927"
 	"Bwills" 			"119308817"
@@ -577,7 +577,7 @@
 	"Annihilation" 		"315821474"	
 	"xerolte" 			"368881420"	
 	//ZIGMA Players
-	"NIFFY" 			"167797237"
+	"CigaretteS" 		"100742817"
 	"Reality" 			"101927360"
 	"JUSTCAUSE" 		"106292739"
 	"Geniuss" 			"119384281"	
@@ -603,7 +603,7 @@
 	//GameAgents Players
 	"mhN1" 				"195697267"
 	"renne" 			"172130207"
-	"vts" 				"41960703"
+	"lauNX" 			"1012530125"
 	"regali" 			"138197501"
 	"fNk" 				"215438719"
 	//NLG Players
@@ -662,21 +662,21 @@
 	//QBF Players
 	"BERRY" 			"9876226"
 	"Maccen" 			"244998424"
-	"J3nsyy" 			"192137384"
+	"telstar" 			"415611065"
 	"Staehr" 			"44842089"
-	"JarKo" 			"226304357"
+	"Tauson" 			"356440446"
 	//Rooster Players
 	"DannyG"			"193412411" 
-	"touch_my_body" 	"99822120"
+	"seaf" 				"1057961331"
 	"chelleos" 			"198705922"
-	"cappa" 			"970978896"
-	"JohnnyK" 			"923732491"
+	"Spudwrecker" 		"47084033"
+	"deqny" 			"113091620"
 	//Flames Players
 	"nicoodoz" 			"112851399"
-	"AcilioN" 			"56749436"
-	"Basso" 			"152862"
+	"roeJ" 				"30968963"
+	"HooXi" 			"38661042"
 	"Jabbi" 			"160291620"
-	"djL" 				"20837931"
+	"Zyphon" 			"198111516"
 	//eXploit Players
 	"BLOODZ" 			"1004703971"
 	"obj" 				"42675741"	
@@ -744,7 +744,7 @@
 	"Vaircuss" 			"417969743"
 	"hadess" 			"851739564"
 	"roGerzz" 			"213606813"
-	"SOKER" 			"28441993"
+	"flowX" 			"228626739"
 	"PreSs" 			"396848612"
 	//AVEZ Players
 	"sNx" 				"420057857"
@@ -757,7 +757,7 @@
 	"torzsi" 			"395473484"
 	"kory" 				"67382466"
 	"fleav" 			"189640934"
-	"bodito" 			"114907460"
+	"kamion" 			"220609306"
 	//Anonymo Players
 	"KEi" 				"121422001"
 	"Snax" 				"21875845"
@@ -789,7 +789,7 @@
 	"inciN" 			"1524775"
 	"Wounded" 			"2649678"
 	//Big5 Players
-	"Dubee" 			"162968873"
+	"melkies" 			"115648045"
 	"God's Not Dead" 	"187510732"
 	"Leggy" 			"19776816"
 	"Ninjask" 			"111581085"

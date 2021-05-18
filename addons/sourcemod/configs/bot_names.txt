@@ -43,7 +43,7 @@
 	"Brollan" 			"fnatic"
 	"Golden" 			"fnatic"
 	//Alpha Players
-	"lund" 				"Alpha"
+	"jekuzih" 			"Alpha"
 	"hug" 				"Alpha"
 	"wAGNR" 			"Alpha"
 	"TOBIZ" 			"Alpha"
@@ -86,7 +86,7 @@
 	"leman" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"
-	"allu" 				"ENCE"
+	"hades" 			"ENCE"
 	"Spinx" 			"ENCE"
 	"doto" 				"ENCE"
 	"dycha" 			"ENCE"
@@ -152,7 +152,7 @@
 	"stavn" 			"Heroic"
 	//INTZ Players
 	"guZERA" 			"INTZ"
-	"BALEROSTYLE" 		"INTZ"
+	"paiva" 			"INTZ"
 	"dukka" 			"INTZ"
 	"paredao" 			"INTZ"
 	"chara" 			"INTZ"
@@ -221,7 +221,7 @@
 	"Daffu" 			"Lyngby"
 	"maNkz" 			"Lyngby"
 	"raalz" 			"Lyngby"
-	"FeTiSh" 			"Lyngby"
+	"J3nsyy" 			"Lyngby"
 	//GODSENT Players
 	"TACO" 				"GODSENT"
 	"b4rtiN" 			"GODSENT"
@@ -261,7 +261,7 @@
 	//PACT Players
 	"darko" 			"PACT"
 	"lunAtic" 			"PACT"
-	"Vegi" 				"PACT"
+	"bnox" 				"PACT"
 	"MINISE" 			"PACT"
 	"Sobol" 			"PACT"
 	//Nemiga Players
@@ -299,7 +299,7 @@
 	"Noktse" 			"Isurus"
 	"Reversive" 		"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"lokomotioN" 		"Isurus"
+	"Gooden" 			"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
 	"saffee" 			"paiN"
@@ -383,7 +383,7 @@
 	"JonY BoY" 			"Furious"
 	"Owen$inhoM" 		"Furious"	
 	"Gooden" 			"Furious"
-	"nacho" 			"Furious"
+	"meyern" 			"Furious"
 	//Recon Players
 	"tweiss" 			"Recon"
 	"AAustiN" 			"Recon"
@@ -475,7 +475,7 @@
 	"piria" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
 	//Pompa Players
-	"bnox" 				"Pompa"
+	"mouz" 				"Pompa"
 	"Grashog" 			"Pompa"
 	"fr3nd" 			"Pompa"
 	"Miki Z Afryki"		"Pompa" 
@@ -515,7 +515,7 @@
 	"mitsuha" 			"Lynn"
 	"Kayo" 				"Lynn"
 	"EXPRO" 			"Lynn"
-	"Mr.mao" 			"Lynn"
+	"B1NGO" 			"Lynn"
 	//Triumph Players
 	"Shakezullah" 		"Triumph"
 	"Bwills" 			"Triumph"
@@ -577,7 +577,7 @@
 	"sk0R" 				"D13"
 	"Annihilation" 		"D13"	
 	//ZIGMA Players
-	"NIFFY" 			"ZIGMA"
+	"CigaretteS" 		"ZIGMA"
 	"Reality" 			"ZIGMA"
 	"JUSTCAUSE" 		"ZIGMA"
 	"Geniuss" 			"ZIGMA"	
@@ -603,7 +603,7 @@
 	//GameAgents Players
 	"mhN1" 				"GameAgents"
 	"renne" 			"GameAgents"
-	"vts" 				"GameAgents"
+	"lauNX" 			"GameAgents"
 	"regali" 			"GameAgents"
 	"fNk" 				"GameAgents"
 	//NLG Players
@@ -662,22 +662,22 @@
 	"sesL" 				"ERN"
 	//QBF Players
 	"Maccen" 			"QBF"
-	"J3nsyy" 			"QBF"
+	"telstar" 			"QBF"
 	"BERRY" 			"QBF"
 	"Staehr" 			"QBF"	
-	"JarKo" 			"QBF"	
+	"Tauson" 			"QBF"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
-	"touch_my_body" 	"Rooster"
+	"seaf" 				"Rooster"
 	"chelleos" 			"Rooster"
-	"cappa" 			"Rooster"
-	"JohnnyK" 			"Rooster"
+	"Spudwrecker" 		"Rooster"
+	"deqny" 			"Rooster"
 	//Flames Players
 	"nicoodoz" 			"Flames"
-	"AcilioN" 			"Flames"
-	"Basso" 			"Flames"
+	"roeJ" 				"Flames"
+	"HooXi" 			"Flames"
 	"Jabbi" 			"Flames"
-	"djL" 				"Flames"
+	"Zyphon" 			"Flames"
 	//eXploit Players
 	"BLOODZ" 			"eXploit"
 	"obj" 				"eXploit"	
@@ -745,7 +745,7 @@
 	"LKN" 				"Supremacy"
 	"Knight"			"Supremacy"
 	//x6tence Players
-	"SOKER" 			"x6tence"
+	"flowX" 			"x6tence"
 	"Vaircuss" 			"x6tence"
 	"PreSs" 			"x6tence"
 	"hadess" 			"x6tence"
@@ -761,7 +761,7 @@
 	"torzsi" 			"BP"
 	"kory" 				"BP"
 	"fleav" 			"BP"
-	"bodito"			"BP"
+	"kamion"			"BP"
 	//Anonymo Players
 	"KEi" 				"Anonymo"
 	"Snax" 				"Anonymo"
@@ -793,7 +793,7 @@
 	"inciN" 			"DC"
 	"Wounded"			"DC"
 	//Big5 Players
-	"Dubee" 			"Big5"
+	"melkies" 			"Big5"
 	"God's Not Dead" 	"Big5"
 	"Leggy" 			"Big5"
 	"Ninjask" 			"Big5"
