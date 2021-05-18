@@ -17,6 +17,7 @@ public void PrepareTrainExecutes()
 				GetNade("A Train 3rd Smoke", g_fSmokePos[clients[4]], g_fSmokeLookAt[clients[4]], g_fSmokeAngles[clients[4]], g_bSmokeJumpthrow[clients[4]], g_bSmokeCrouch[clients[4]], g_bIsFlashbang[clients[4]], g_bIsMolotov[clients[4]]);
 				
 				GetNade("Main Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]], g_bIsMolotov[clients[2]]);
+				GetNade("A Site Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]], g_bIsMolotov[clients[3]]);
 				
 				StripPlayerGrenades(clients[0]);
 				GivePlayerItem(clients[0], "weapon_smokegrenade");
@@ -30,6 +31,7 @@ public void PrepareTrainExecutes()
 				
 				StripPlayerGrenades(clients[3]);
 				GivePlayerItem(clients[3], "weapon_smokegrenade");
+				GivePlayerItem(clients[3], "weapon_flashbang");
 				
 				StripPlayerGrenades(clients[4]);
 				GivePlayerItem(clients[4], "weapon_smokegrenade");
@@ -43,6 +45,7 @@ public void PrepareTrainExecutes()
 				GetNade("Summit Smoke", g_fSmokePos[clients[1]], g_fSmokeLookAt[clients[1]], g_fSmokeAngles[clients[1]], g_bSmokeJumpthrow[clients[1]], g_bSmokeCrouch[clients[1]], g_bIsFlashbang[clients[1]], g_bIsMolotov[clients[1]]);
 				GetNade("B Upper Smoke", g_fSmokePos[clients[2]], g_fSmokeLookAt[clients[2]], g_fSmokeAngles[clients[2]], g_bSmokeJumpthrow[clients[2]], g_bSmokeCrouch[clients[2]], g_bIsFlashbang[clients[2]], g_bIsMolotov[clients[2]]);
 				
+				GetNade("B Upper Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]], g_bIsMolotov[clients[0]]);
 				GetNade("B Site Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]], g_bIsMolotov[clients[1]]);
 				
 				g_bDoNothing[clients[3]] = true;
@@ -63,6 +66,7 @@ public void PrepareTrainExecutes()
 				
 				StripPlayerGrenades(clients[0]);
 				GivePlayerItem(clients[0], "weapon_smokegrenade");
+				GivePlayerItem(clients[0], "weapon_flashbang");
 				
 				StripPlayerGrenades(clients[1]);
 				GivePlayerItem(clients[1], "weapon_smokegrenade");

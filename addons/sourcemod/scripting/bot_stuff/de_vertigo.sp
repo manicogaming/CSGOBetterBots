@@ -17,6 +17,7 @@ public void PrepareVertigoExecutes()
 				GetNade("Short Smoke", g_fSmokePos[clients[4]], g_fSmokeLookAt[clients[4]], g_fSmokeAngles[clients[4]], g_bSmokeJumpthrow[clients[4]], g_bSmokeCrouch[clients[4]], g_bIsFlashbang[clients[4]], g_bIsMolotov[clients[4]]);
 				
 				GetNade("A Site Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]], g_bIsMolotov[clients[2]]);
+				GetNade("A Deep Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]], g_bIsMolotov[clients[3]]);
 				GetNade("A Connector Flash", g_fFlashPos[clients[4]], g_fFlashLookAt[clients[4]], g_fFlashAngles[clients[4]], g_bFlashJumpthrow[clients[4]], g_bFlashCrouch[clients[4]], g_bIsFlashbang[clients[4]], g_bIsMolotov[clients[4]]);
 				
 				g_bSkipPosition[clients[4]] = true;
@@ -33,6 +34,7 @@ public void PrepareVertigoExecutes()
 				
 				StripPlayerGrenades(clients[3]);
 				GivePlayerItem(clients[3], "weapon_molotov");
+				GivePlayerItem(clients[3], "weapon_flashbang");
 				
 				StripPlayerGrenades(clients[4]);
 				GivePlayerItem(clients[4], "weapon_smokegrenade");

@@ -5026,18 +5026,6 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	{
 		return MRES_Supercede;
 	}
-	else if (strcmp(szDesc, "Last Enemy Position") == 0)
-	{
-		float fPos[3], fBentPos[3], fEyes[3];
-		
-		GetClientEyePosition(client, fEyes);
-		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += 25.0;
-		BotBendLineOfSight(client, fEyes, fPos, fBentPos, 135.0);
-		DHookSetParamVector(hParams, 2, fBentPos);
-		
-		return MRES_ChangedHandled;
-	}
 	else
 	{
 		float fPos[3];
@@ -5141,7 +5129,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
 {
-	if (IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
+	if (g_bFreezetimeEnd && IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		if (iActiveWeapon == -1) return Plugin_Continue;
@@ -5167,12 +5155,23 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}	
 		}
 		
-		float fGoalPos[3];
-		
-		GetEntDataVector(client, g_iBotGoalPos, fGoalPos);
-		fGoalPos[2] += 64.0;
-		
-		BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.5, true, 5.0, false);
+		if (GetEntityMoveType(client) != MOVETYPE_LADDER)
+		{
+			float fGoalPos[3], fBentGoal[3], fEyes[3];
+			
+			GetClientEyePosition(client, fEyes);
+			GetEntDataVector(client, g_iBotGoalPos, fGoalPos);
+			fGoalPos[2] += 64.0;
+			
+			if(!BotIsVisible(client, fGoalPos, false) && BotBendLineOfSight(client, fEyes, fGoalPos, fBentGoal, 360.0))
+			{
+				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 0.5, false, 25.0, false);
+			}
+			else
+			{
+				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.5, true, 25.0, false);
+			}
+		}
 		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
 		{
@@ -5181,8 +5180,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (g_bIsProBot[client])
 		{
-			float fClientPos[3], fTargetPos[3], fTargetDistance;
-			GetClientAbsOrigin(client, fClientPos);
+			float fTargetPos[3], fTargetDistance;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			
 			if (GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
@@ -5204,7 +5202,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_DUCK;
 			}
 			
-			if (g_bFreezetimeEnd && !g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0))
+			if (!g_bBombPlanted && g_bDoExecute && (GetTotalRoundTime() - GetCurrentRoundTime() >= 60) && GetClientTeam(client) == CS_TEAM_T && !g_bHasThrownNade[client] && GetAliveTeamCount(CS_TEAM_T) >= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0 && (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0))
 			{
 				DoExecute(client, iButtons, iDefIndex);
 			}
@@ -5216,9 +5214,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			GetClientAbsOrigin(g_iTarget[client], fTargetPos);
 			
-			fTargetDistance = GetVectorDistance(fClientPos, fTargetPos);
+			fTargetDistance = GetVectorDistance(fClientLoc, fTargetPos);
 			
-			if (g_bFreezetimeEnd && bIsEnemyVisible)
+			if (bIsEnemyVisible)
 			{
 				if (GetEntityMoveType(client) == MOVETYPE_LADDER)
 				{
@@ -5284,9 +5282,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 				}
 				
-				fClientPos[2] += 35.5;
+				fClientLoc[2] += 35.5;
 				
-				if (IsPointVisible(fClientPos, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
@@ -5687,7 +5685,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 				
 				GetClientEyePosition(client, fEyePos);
 				
-				BotBendLineOfSight(client, fEyePos, g_fHoldLookPos[client], fBentLook, 135.0);
+				BotBendLineOfSight(client, fEyePos, g_fHoldLookPos[client], fBentLook, 360.0);
 				BotSetLookAt(client, "Use entity", fBentLook, PRIORITY_MEDIUM, 2.0, true, 5.0, false);
 				
 				if(g_bNeedCoordination)

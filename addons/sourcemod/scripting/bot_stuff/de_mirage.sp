@@ -80,6 +80,7 @@ public void PrepareMirageExecutes()
 				GetNade("B Corner Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]], g_bIsMolotov[clients[0]]);
 				GetNade("Car Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]], g_bIsMolotov[clients[1]]);
 				GetNade("B Short Flash", g_fFlashPos[clients[2]], g_fFlashLookAt[clients[2]], g_fFlashAngles[clients[2]], g_bFlashJumpthrow[clients[2]], g_bFlashCrouch[clients[2]], g_bIsFlashbang[clients[2]], g_bIsMolotov[clients[2]]);
+				GetNade("B Flash", g_fFlashPos[clients[3]], g_fFlashLookAt[clients[3]], g_fFlashAngles[clients[3]], g_bFlashJumpthrow[clients[3]], g_bFlashCrouch[clients[3]], g_bIsFlashbang[clients[3]], g_bIsMolotov[clients[3]]);
 				
 				g_bDoNothing[clients[4]] = true;
 				
@@ -106,6 +107,7 @@ public void PrepareMirageExecutes()
 				
 				StripPlayerGrenades(clients[3]);
 				GivePlayerItem(clients[3], "weapon_smokegrenade");
+				GivePlayerItem(clients[3], "weapon_flashbang");
 				
 				g_bDoExecute = true;
 				g_bNeedCoordination = true;

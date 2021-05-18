@@ -60,6 +60,7 @@ public void PrepareDust2Executes()
 				GetNade("A Site Smoke", g_fSmokePos[clients[3]], g_fSmokeLookAt[clients[3]], g_fSmokeAngles[clients[3]], g_bSmokeJumpthrow[clients[3]], g_bSmokeCrouch[clients[3]], g_bIsFlashbang[clients[3]], g_bIsMolotov[clients[3]]);
 				
 				GetNade("A Site Flash", g_fFlashPos[clients[0]], g_fFlashLookAt[clients[0]], g_fFlashAngles[clients[0]], g_bFlashJumpthrow[clients[0]], g_bFlashCrouch[clients[0]], g_bIsFlashbang[clients[0]], g_bIsMolotov[clients[0]]);
+				GetNade("A High Flash", g_fFlashPos[clients[1]], g_fFlashLookAt[clients[1]], g_fFlashAngles[clients[1]], g_bFlashJumpthrow[clients[1]], g_bFlashCrouch[clients[1]], g_bIsFlashbang[clients[1]], g_bIsMolotov[clients[1]]);
 				
 				g_bDoNothing[clients[4]] = true;
 				g_bSkipPosition[clients[0]] = true;
@@ -79,6 +80,7 @@ public void PrepareDust2Executes()
 				
 				StripPlayerGrenades(clients[1]);
 				GivePlayerItem(clients[1], "weapon_smokegrenade");
+				GivePlayerItem(clients[1], "weapon_flashbang");
 				
 				StripPlayerGrenades(clients[2]);
 				GivePlayerItem(clients[2], "weapon_smokegrenade");
