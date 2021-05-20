@@ -130,6 +130,11 @@
 				//Is right below the string 'APPROACH_ASCENDING_LADDER\n'
 				"windows"       "16036"
 			}
+			"CCSBot::m_lookAtSpotState"
+			{
+				//Is right above the string 'LOOK_TOWARDS_SPOT\n'
+				"windows"       "23080"
+			}
 		}
 		"Functions"
 		{

@@ -18,7 +18,7 @@ bool g_bIsProBot[MAXPLAYERS + 1] = false;
 bool g_bDoNothing[MAXPLAYERS + 1] = false;
 bool g_bHasThrownNade[MAXPLAYERS + 1], g_bHasThrownSmoke[MAXPLAYERS + 1], g_bCanThrowSmoke[MAXPLAYERS + 1], g_bCanThrowFlash[MAXPLAYERS + 1], g_bIsHeadVisible[MAXPLAYERS + 1], g_bZoomed[MAXPLAYERS + 1], g_bSmokeJumpthrow[MAXPLAYERS+1], g_bSmokeCrouch[MAXPLAYERS+1], g_bFlashJumpthrow[MAXPLAYERS+1], g_bFlashCrouch[MAXPLAYERS+1], g_bIsFlashbang[MAXPLAYERS+1], g_bIsMolotov[MAXPLAYERS+1], g_bInPosition[MAXPLAYERS+1], g_bSkipPosition[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS + 1], g_iUncrouchChance[MAXPLAYERS + 1], g_iUSPChance[MAXPLAYERS + 1], g_iM4A1SChance[MAXPLAYERS + 1], g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime;
-int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset, g_iBotGoalPos;
+int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset, g_iBotGoalPos, g_iBotLookAtSpotState;
 int g_iTarget[MAXPLAYERS+1] = -1;
 float g_fHoldPos[MAXPLAYERS + 1][3], g_fHoldLookPos[MAXPLAYERS+1][3], g_fSmokePos[MAXPLAYERS+1][3], g_fSmokeLookAt[MAXPLAYERS+1][3], g_fSmokeAngles[MAXPLAYERS+1][3], g_fFlashPos[MAXPLAYERS+1][3], g_fFlashLookAt[MAXPLAYERS+1][3], g_fFlashAngles[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 float g_flNextCommand[MAXPLAYERS + 1], g_fTargetPos[MAXPLAYERS+1][3];
@@ -5155,7 +5155,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}	
 		}
 		
-		if (GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (GetEntData(client, g_iBotLookAtSpotState) == 0 && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			float fGoalPos[3], fBentGoal[3], fEyes[3];
 			
@@ -5165,11 +5165,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if(!BotIsVisible(client, fGoalPos, false) && BotBendLineOfSight(client, fEyes, fGoalPos, fBentGoal, 360.0))
 			{
-				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 0.5, false, 25.0, false);
+				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 1.0, false, 5.0, false);
 			}
 			else
 			{
-				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.5, true, 25.0, false);
+				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 1.0, true, 5.0, false);
 			}
 		}
 		
@@ -5797,6 +5797,11 @@ public void LoadSDK()
 	if ((g_iBotGoalPos = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
+	}
+	
+	if ((g_iBotLookAtSpotState = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpotState")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_lookAtSpotState offset.");
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);
