@@ -5743,7 +5743,7 @@ public void DoExecute(int client, int& iButtons, int iDefIndex)
 					}
 				}
 				
-				CreateTimer(1.0, Timer_ThrowSmoke, GetClientUserId(client));
+				CreateTimer(5.0, Timer_ThrowSmoke, GetClientUserId(client));
 			}
 		}
 	}

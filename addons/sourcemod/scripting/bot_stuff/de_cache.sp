@@ -98,7 +98,7 @@ public void PrepareCacheExecutes()
 				GetPosition("B Position", g_fHoldLookPos[clients[4]]);
 				
 				int iBAreaIDs[] =  {
-					1277, 54, 435, 436
+					1277, 54, 53, 1279
 				};
 				
 				navArea[clients[3]] = NavMesh_FindAreaByID(iBAreaIDs[Math_GetRandomInt(0, sizeof(iBAreaIDs) - 1)]);
