@@ -1087,4 +1087,147 @@
 			"ismolotov"		"0"
 		}
 	}
+	"de_cache"
+	{
+		"A Cross Smoke"
+		{
+			"position"		"1305.187500 1603.991821 1707.031250"
+			"lookpos"		"960.179321 1588.712280 2407.968750"
+			"angles"		"-61.533527 -177.464172 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Default Smoke"
+		{
+			"position"		"1311.954102 1379.031250 1707.031250"
+			"lookpos"		"727.611083 1437.788452 2407.968750"
+			"angles"		"-47.322323 174.258057 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Balcony Smoke"
+		{
+			"position"		"1311.995972 1270.988770 1705.562622"
+			"lookpos"		"999.798828 1293.497802 1942.177978"
+			"angles"		"-28.875565 175.876190 0.000000"
+			"jumpthrow"		"1"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"A Site Flash"
+		{
+			"position"		"758.968750 843.003357 1702.051147"
+			"lookpos"		"568.797790 1521.904296 1924.999755"
+			"angles"		"-12.704838 105.648407 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"A Main Position"
+		{
+			"lookpos"		"498.919739 1682.426514 1766.093750"
+		}
+		"Squeaky Position"
+		{
+			"lookpos"		"234.818268 1970.591675 1751.093750"
+		}
+		"Mid Right Smoke"
+		{
+			"position"		"1737.090942 215.031250 1613.031250"
+			"lookpos"		"818.031188 318.337646 1850.542358"
+			"angles"		"-10.625770 173.586624 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Mid Left Smoke"
+		{
+			"position"		"1737.721802 308.968750 1613.031250"
+			"lookpos"		"818.031311 207.572052 1851.392822"
+			"angles"		"-10.671979 -173.708496 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Mid Flash"
+		{
+			"position"		"1750.184937 261.787079 1613.031250"
+			"lookpos"		"817.999877 261.173980 1854.479858"
+			"angles"		"-10.777746 -179.962311 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+		"Mid Push Position"
+		{
+			"lookpos"		"803.787292 259.915436 1677.093750"
+		}
+		"B Push Position"
+		{
+			"lookpos"		"1164.905518 -303.718781 1676.093750"
+		}
+		"Break Window Molotov"
+		{
+			"position"		"724.778992 -1464.988403 1615.031250"
+			"lookpos"		"463.361450 -1208.031250 1847.614379"
+			"angles"		"-24.698000 135.492996 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"CT Smoke"
+		{
+			"position"		"957.031250 -1464.987915 1648.031250"
+			"lookpos"		"240.000000 -1239.820556 2072.020263"
+			"angles"		"-25.594074 162.566284 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"0"
+		}
+		"Spray Molotov"
+		{
+			"position"		"609.031250 -1464.968750 1615.031250"
+			"lookpos"		"332.619598 -1208.000732 1918.128906"
+			"angles"		"-32.355385 137.087723 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"Headshot Molotov"
+		{
+			"position"		"832.337830 -1464.968750 1615.031250"
+			"lookpos"		"231.158386 -1339.562255 1940.000366"
+			"angles"		"-23.022964 168.217026 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"0"
+			"isflasbang"	"0"
+			"ismolotov"		"1"
+		}
+		"B Position"
+		{
+			"lookpos"		"215.068665 -643.989624 1678.093750"
+		}
+		"B PopFlash"
+		{
+			"position"		"1096.259888 -1227.020752 1614.166626"
+			"lookpos"		"240.000000 -690.968383 1946.600341"
+			"angles"		"-15.830024 147.951813 0.000000"
+			"jumpthrow"		"0"
+			"crouch"		"1"
+			"isflasbang"	"1"
+			"ismolotov"		"0"
+		}
+	}
 }

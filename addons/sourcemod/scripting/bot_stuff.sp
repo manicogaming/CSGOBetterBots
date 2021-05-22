@@ -104,6 +104,7 @@ enum TaskType
 #include "bot_stuff/de_train.sp"
 #include "bot_stuff/de_nuke.sp"
 #include "bot_stuff/de_vertigo.sp"
+#include "bot_stuff/de_cache.sp"
 
 public Plugin myinfo = 
 {
@@ -4848,6 +4849,25 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iRndExecute = Math_GetRandomInt(1, 2);
 			PrepareVertigoExecutes();
 		}
+		else if (strcmp(g_szMap, "de_cache") == 0)
+		{
+			g_iRndExecute = Math_GetRandomInt(1, 3);
+			PrepareCacheExecutes();
+
+			int iEnt = -1;
+			int iGlassHammerIDs[] =  {
+				21876034, 21876042, 21876050, 21876058
+			};
+			
+			for (int i = 0; i <= sizeof(iGlassHammerIDs) - 1; i++)
+			{
+				iEnt = Entity_FindByHammerId(iGlassHammerIDs[i]);
+				if (IsValidEntity(iEnt)) 
+				{
+					AcceptEntityInput(iEnt, "Break");
+				}
+			}
+		}
 	}
 }
 
@@ -5025,6 +5045,24 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Supercede;
+	}
+	else if (strcmp(szDesc, "Last Enemy Position") == 0)
+	{
+		float fPos[3], fBentPos[3], fEyes[3];
+		
+		GetClientEyePosition(client, fEyes);
+		DHookGetParamVector(hParams, 2, fPos);
+		fPos[2] += 25.0;
+		if(BotBendLineOfSight(client, fEyes, fPos, fBentPos, 360.0))
+		{
+			DHookSetParamVector(hParams, 2, fBentPos);
+		}
+		else
+		{
+			DHookSetParamVector(hParams, 2, fPos);
+		}
+		
+		return MRES_ChangedHandled;
 	}
 	else
 	{
