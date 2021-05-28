@@ -111,7 +111,7 @@
 	//Santos Players
 	"cass1n" 			"Santos"
 	"keiz" 				"Santos"
-	"voltera" 			"Santos"
+	"chay" 				"Santos"
 	"MaLLby" 			"Santos"
 	"BobZ" 				"Santos"	
 	//coL Players
@@ -137,7 +137,7 @@
 	"arTisT" 			"UMX"
 	"Girafffe"			"UMX"	 
 	"Extinct" 			"UMX"
-	"Atrox" 			"UMX"
+	"Maza" 				"UMX"
 	//Sprout Players
 	"kressy" 			"Sprout"
 	"slaxz" 			"Sprout"
@@ -278,13 +278,13 @@
 	"bobeksde" 			"9INE"
 	//Singularity Players
 	"IceBerg" 			"Singularity"
-	"notaN" 			"Singularity"
-	"Remoy" 			"Singularity"
+	"trace" 			"Singularity"
+	"holzt" 			"Singularity"
 	"larsen" 			"Singularity"	
 	"smF" 				"Singularity"
 	//DETONA Players
 	"lux" 				"DETONA"
-	"kauez" 			"DETONA"
+	"phx" 				"DETONA"
 	"frostezoR" 		"DETONA"
 	"nqz" 				"DETONA"
 	"NikoM" 			"DETONA"
@@ -366,12 +366,12 @@
 	"KrowNii" 			"TTT"
 	"pulzG" 			"TTT"
 	"nixeed" 			"TTT"
-	//DV Players
-	"TTyke" 			"DV"
-	"DVDOV" 			"DV"
-	"PokemoN" 			"DV"
-	"Ejram" 			"DV"
-	"Pogba" 			"DV"
+	//ECB Players
+	"simix" 			"ECB"
+	"Stev0se" 			"ECB"
+	"ritchiEE" 			"ECB"
+	"Matty" 			"ECB"
+	"n0tice" 			"ECB"
 	//Bravado Players
 	"TheM4N" 			"Bravado"
 	"Detrony" 			"Bravado"
@@ -472,7 +472,7 @@
 	"fnx" 				"Imperial"
 	"zqk" 				"Imperial"
 	"ckzao" 			"Imperial"
-	"piria" 			"Imperial"
+	"f4stzin" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
 	//Pompa Players
 	"mouz" 				"Pompa"
@@ -525,7 +525,7 @@
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
-	"Rock1nG" 			"FATE"
+	"numb" 				"FATE"
 	"KalubeR" 			"FATE"	
 	"niki1" 			"FATE"
 	//OG Players
@@ -547,10 +547,10 @@
 	"zyp" 				"Tricked"
 	"PR1mE" 			"Tricked"
 	//Baecon Players
-	"met" 				"Baecon"
+	"sark" 				"Baecon"
 	"P3R3IIRA" 			"Baecon"
-	"f0rz" 				"Baecon"
-	"Lr0" 				"Baecon"
+	"Dante" 			"Baecon"
+	"kyolka" 			"Baecon"
 	"SYDOX" 			"Baecon"	
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
@@ -603,7 +603,7 @@
 	//GameAgents Players
 	"mhN1" 				"GameAgents"
 	"renne" 			"GameAgents"
-	"lauNX" 			"GameAgents"
+	"zrkk" 				"GameAgents"
 	"regali" 			"GameAgents"
 	"fNk" 				"GameAgents"
 	//NLG Players
@@ -810,4 +810,10 @@
 	"PREDI" 			"Malvinas"
 	"BerSeCkaZo" 		"Malvinas"
 	"bichop"			"Malvinas"
+	//Paquetá Players
+	"DeStiNy" 			"Paquetá"
+	"nython" 			"Paquetá"
+	"dav1d" 			"Paquetá"
+	"KHTEX" 			"Paquetá"
+	"iDk"				"Paquetá"
 }

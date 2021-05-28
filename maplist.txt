@@ -1,4 +1,4 @@
-// csgosl 2.9.3 config 1 at Sat May 22 19:55:47 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.3 config 1 at Fri May 28 03:56:49 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -224,6 +224,7 @@ de_engage
 de_facade
 de_fallgarden_9
 de_favela
+de_fedra_autumn_csgo
 de_fire
 de_forlorn
 de_fortress

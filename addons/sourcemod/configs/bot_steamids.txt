@@ -111,7 +111,7 @@
 	//Santos Players
 	"cass1n" 			"188295781"
 	"keiz" 				"183028724"
-	"voltera" 			"168539111"
+	"chay" 				"291666024"
 	"MaLLby" 			"209668291"
 	"BobZ" 				"171090863"	
 	//coL Players
@@ -137,7 +137,7 @@
 	"arTisT" 			"128640602"
 	"Girafffe"			"338231248"	 
 	"Extinct" 			"136442715"
-	"Atrox" 			"395343196"
+	"Maza" 				"296102658"
 	//Sprout Players
 	"kressy" 			"50709599"
 	"slaxz" 			"104087441"
@@ -277,15 +277,15 @@
 	"debo" 				"1033759674"
 	"bobeksde" 			"100650499"
 	//Singularity Players
-	"notaN" 			"70656220"
-	"Remoy" 			"68675449"
+	"trace" 			"26879084"
+	"holzt" 			"20657303"
 	"smF" 				"11160541"
 	"larsen" 			"60274028"
 	"IceBerg" 			"30735103"
 	//DETONA Players
 	"frostezoR" 		"194205853"
 	"lux" 				"113751940"
-	"kauez" 			"425391947"
+	"phx" 				"90804583"
 	"nqz" 				"390076777"
 	"NikoM" 			"429170127"
 	//Infinity Players
@@ -366,12 +366,12 @@
 	"KrowNii" 			"225305859"
 	"pulzG" 			"4110176"
 	"nixeed" 			"247022056"
-	//DV Players
-	"TTyke" 			"413625684"
-	"DVDOV" 			"40379175"
-	"PokemoN" 			"137998735"
-	"Ejram" 			"152164497"
-	"Pogba" 			"91876475"
+	//ECB Players
+	"simix" 			"11657532"
+	"Stev0se" 			"180588172"
+	"ritchiEE" 			"9173024"
+	"Matty" 			"28184063"
+	"n0tice" 			"71806151"
 	//Bravado Players
 	"flexeeee" 			"177739017"	
 	"Detrony" 			"27120041"
@@ -473,7 +473,7 @@
 	"zqk" 				"4032008"
 	"SHOOWTiME" 		"97938914"	
 	"ckzao" 			"56540556"	
-	"piria" 			"436072455"	
+	"f4stzin" 			"476343738"	
 	//Pompa Players
 	"koyot" 			"174135918"
 	"Grashog" 			"78941188"
@@ -524,7 +524,7 @@
 	"motm" 				"60208330"
 	//FATE Players
 	"Patrick--" 		"98715951"
-	"Rock1nG" 			"246843704"
+	"numb" 				"98486088"
 	"niki1" 			"932616892"
 	"rafftu" 			"78588859"
 	"KalubeR" 			"132424531"
@@ -547,10 +547,10 @@
 	"Luckyv1" 			"150297431"
 	"PR1mE" 			"26772868"
 	//Baecon Players
-	"met" 				"323999582"
+	"sark" 				"76263371"
 	"P3R3IIRA" 			"364310941"
-	"f0rz" 				"225730461"
-	"Lr0" 				"234244633"
+	"Dante" 			"75152844"
+	"kyolka" 			"153346697"
 	"SYDOX" 			"2634634"
 	//Endpoint Players
 	"Surreal" 			"84574729"
@@ -603,7 +603,7 @@
 	//GameAgents Players
 	"mhN1" 				"195697267"
 	"renne" 			"172130207"
-	"lauNX" 			"1012530125"
+	"zrkk" 				"967834156"
 	"regali" 			"138197501"
 	"fNk" 				"215438719"
 	//NLG Players
@@ -806,4 +806,10 @@
 	"PREDI" 			"89256326"
 	"BerSeCkaZo" 		"132874323"
 	"bichop"			"460382035"
+	//Paquetá Players
+	"DeStiNy" 			"89528706"
+	"nython" 			"170224923"
+	"dav1d" 			"160225583"
+	"KHTEX" 			"82196374"
+	"iDk"				"106435802"
 }
