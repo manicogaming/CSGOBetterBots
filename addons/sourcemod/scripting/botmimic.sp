@@ -119,6 +119,7 @@ int g_iBotMimicRecordTickCount[MAXPLAYERS+1] = {0,...};
 int g_iBotActiveWeapon[MAXPLAYERS+1] = {-1,...};
 bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
+bool g_bPausedMimic[MAXPLAYERS+1];
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BookmarkWhileMimicing];
 
 Handle g_hfwdOnStartRecording;
@@ -453,6 +454,16 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon, int &subtype, int &cmdnum, int &tickcount, int &seed, int mouse[2])
 {
+	int iEnemy = GetEntDataEnt2(client, 24068);
+	bool bIsEnemyVisible = !!GetEntData(client, 24072);
+	
+	if(IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null)
+	{
+		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+		g_bPausedMimic[client] = true;
+		return Plugin_Continue;
+	}
+
 	// Bot is mimicing something
 	if(g_hBotMimicsRecord[client] == null)
 		return Plugin_Continue;
@@ -469,13 +480,38 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		return Plugin_Continue;
 	}
 	
+	if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
+	{
+		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
+	}
+	
 	int iFrame[FrameInfo];
 	g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame[0], view_as<int>(FrameInfo));
 	
 	buttons = iFrame[playerButtons];
 	impulse = iFrame[playerImpulse];
 	Array_Copy(iFrame[predictedVelocity], vel, 3);
-	Array_Copy(iFrame[predictedAngles], angles, 2);
+	if(g_bPausedMimic[client])
+	{
+		float flAng[3];
+		GetClientEyeAngles(client, flAng);
+
+		// get normalised direction from target to client
+		float desired_dir[3];
+		Array_Copy(iFrame[predictedAngles], desired_dir, 2);
+
+		float fRandSpeed = Math_GetRandomFloat(0.50, 0.70);
+		// ease the current direction to the target direction
+		flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
+		flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
+
+		TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
+		g_bPausedMimic[client] = false;
+	}
+	else
+	{
+		Array_Copy(iFrame[predictedAngles], angles, 2);
+	}
 	subtype = iFrame[playerSubtype];
 	seed = iFrame[playerSeed];
 	weapon = 0;
@@ -1978,4 +2014,29 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
+}
+
+stock float AngleNormalize(float angle)
+{
+    angle = fmodf(angle, 360.0);
+    if (angle > 180)
+    {
+        angle -= 360;
+    }
+    if (angle < -180)
+    {
+        angle += 360;
+    }
+
+    return angle;
+}
+
+stock float fmodf(float number, float denom)
+{
+    return number - RoundToFloor(number / denom) * denom;
+}
+
+stock bool IsValidClient(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }

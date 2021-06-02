@@ -82,6 +82,12 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x08\xF3\x0F\x5C\x05\x2A\x2A\x2A\x2A"
 			}
+			"SetCrosshairCode"
+			{
+				// Is called in a function that is below the string 'CrosshairCode'
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x56\x8B\x75\x08\x57\x8B\xF9\x83\xBC\xB7\x08\x28\x00\x00\x00"
+			}
 		}
 		"Offsets"
 		{
