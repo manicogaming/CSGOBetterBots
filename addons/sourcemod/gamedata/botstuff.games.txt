@@ -126,11 +126,6 @@
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"       "24068"
 			}
-			"CCSBot::m_lastSawEnemyTimestamp"
-			{
-				//Is inside an if statement right below the string 'CCSBot::UpdateLookAround'
-				"windows"       "24088"
-			}
 			"CCSBot::m_goalPosition"
 			{
 				//Is right below the string 'APPROACH_ASCENDING_LADDER\n'

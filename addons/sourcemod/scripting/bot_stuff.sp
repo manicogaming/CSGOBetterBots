@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSawEnemyTimestampOffset, g_iBotGoalPos, g_iBotLookAtSpotState;
+int g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPos, g_iBotLookAtSpotState;
 float g_flNextCommand[MAXPLAYERS+1], g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -4911,7 +4911,7 @@ public Action OnWeaponCanSwitch(int client, int iWeapon)
 {
 	int iDefIndex = GetEntProp(iWeapon, Prop_Send, "m_iItemDefinitionIndex");
 	
-	if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE && (GetGameTime() - GetEntDataFloat(client, g_iBotSawEnemyTimestampOffset) < 5.0))
+	if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE && IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 	{
 		return Plugin_Handled;
 	}
@@ -5566,11 +5566,6 @@ public void LoadSDK()
 	if ((g_iBotEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_enemy offset.");
-	}
-	
-	if ((g_iBotSawEnemyTimestampOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lastSawEnemyTimestamp")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lastSawEnemyTimestamp offset.");
 	}
 	
 	if ((g_iBotGoalPos = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
