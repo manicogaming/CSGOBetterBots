@@ -120,6 +120,7 @@ int g_iBotActiveWeapon[MAXPLAYERS+1] = {-1,...};
 bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
 bool g_bPausedMimic[MAXPLAYERS+1];
+bool g_bResumeMimic[MAXPLAYERS+1];
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BookmarkWhileMimicing];
 
 Handle g_hfwdOnStartRecording;
@@ -331,6 +332,11 @@ public void OnClientPutInServer(int client)
 {
 	if(g_hTeleport != null)
 		DHookEntity(g_hTeleport, false, client);
+	
+	if(IsValidClient(client) && IsFakeClient(client))
+	{
+		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+	}
 }
 
 public void OnClientDisconnect(int client)
@@ -457,10 +463,11 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	int iEnemy = GetEntDataEnt2(client, 24068);
 	bool bIsEnemyVisible = !!GetEntData(client, 24072);
 	
-	if(IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null)
+	if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
 	{
-		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-		g_bPausedMimic[client] = true;
+		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
+		g_bPausedMimic[client] = false;
+		g_bResumeMimic[client] = true;
 		return Plugin_Continue;
 	}
 
@@ -480,7 +487,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		return Plugin_Continue;
 	}
 	
-	if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
+	if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
 	{
 		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 	}
@@ -491,7 +498,8 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	buttons = iFrame[playerButtons];
 	impulse = iFrame[playerImpulse];
 	Array_Copy(iFrame[predictedVelocity], vel, 3);
-	if(g_bPausedMimic[client])
+	
+	if(g_bResumeMimic[client])
 	{
 		float flAng[3];
 		GetClientEyeAngles(client, flAng);
@@ -500,18 +508,20 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		float desired_dir[3];
 		Array_Copy(iFrame[predictedAngles], desired_dir, 2);
 
-		float fRandSpeed = Math_GetRandomFloat(0.50, 0.70);
+		float fRandSpeed = Math_GetRandomFloat(0.01, 0.20);
 		// ease the current direction to the target direction
 		flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
 		flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
 
-		TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
-		g_bPausedMimic[client] = false;
+		Array_Copy(flAng, angles, 2);
+		g_bResumeMimic[client] = false;
 	}
-	else
+	
+	if(!g_bResumeMimic[client])
 	{
 		Array_Copy(iFrame[predictedAngles], angles, 2);
 	}
+	
 	subtype = iFrame[playerSubtype];
 	seed = iFrame[playerSeed];
 	weapon = 0;
@@ -670,6 +680,22 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	g_iBotMimicTick[client]++;
 	
 	return Plugin_Changed;
+}
+
+public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
+{
+	if (float(GetClientHealth(victim)) - fDamage < 0.0)
+		return Plugin_Continue;
+	
+	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET))
+		return Plugin_Continue;
+	
+	if (!IsValidClient(attacker) && !IsPlayerAlive(attacker))
+		return Plugin_Continue;
+		
+	g_bPausedMimic[victim] = true;
+	
+	return Plugin_Continue;
 }
 
 /**
@@ -2014,6 +2040,21 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
+}
+
+public void SmoothAim(int client, float fDesiredAngles[3]) 
+{
+	float fAngles[3], fTargetAngles[3], fSmoothing;
+	
+	GetClientEyeAngles(client, fAngles);
+	
+	fSmoothing = Math_GetRandomFloat(0.50, 0.80);
+	
+	fTargetAngles[0] = fAngles[0] + AngleNormalize(fDesiredAngles[0] - fAngles[0]) * (1 - fSmoothing);
+	fTargetAngles[1] = fAngles[1] + AngleNormalize(fDesiredAngles[1] - fAngles[1]) * (1 - fSmoothing);
+	fTargetAngles[2] = fAngles[2];
+	
+	TeleportEntity(client, NULL_VECTOR, fTargetAngles, NULL_VECTOR);
 }
 
 stock float AngleNormalize(float angle)

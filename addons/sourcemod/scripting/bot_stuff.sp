@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPos, g_iBotLookAtSpotState;
+int g_iProfileRankOffset, g_iRndExecute, g_iRoundStartedTime, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPos;
 float g_flNextCommand[MAXPLAYERS+1], g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -116,6 +116,7 @@ public void OnPluginStart()
 	HookEventEx("player_death", OnPlayerDeath);
 	HookEventEx("round_start", OnRoundStart);
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
+	HookEventEx("round_end", OnRoundEnd);
 	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
@@ -785,7 +786,7 @@ public Action Team_FURIA(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "arT");
 		ServerCommand("bot_add_ct %s", "VINI");
 		ServerCommand("bot_add_ct %s", "KSCERATO");
-		ServerCommand("bot_add_ct %s", "Junior");
+		ServerCommand("bot_add_ct %s", "honda");
 		ServerCommand("mp_teamlogo_1 furi");
 	}
 	
@@ -796,7 +797,7 @@ public Action Team_FURIA(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "arT");
 		ServerCommand("bot_add_t %s", "VINI");
 		ServerCommand("bot_add_t %s", "KSCERATO");
-		ServerCommand("bot_add_t %s", "Junior");
+		ServerCommand("bot_add_t %s", "honda");
 		ServerCommand("mp_teamlogo_2 furi");
 	}
 	
@@ -1082,10 +1083,10 @@ public Action Team_Apeks(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "FREDDyFROG");
-		ServerCommand("bot_add_ct %s", "kreaz");
+		ServerCommand("bot_add_ct %s", "dennis");
 		ServerCommand("bot_add_ct %s", "Grus");
 		ServerCommand("bot_add_ct %s", "Relaxa");
-		ServerCommand("bot_add_ct %s", "dennis");
+		ServerCommand("bot_add_ct %s", "AcilioN");
 		ServerCommand("mp_teamlogo_1 ape");
 	}
 	
@@ -1093,10 +1094,10 @@ public Action Team_Apeks(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "FREDDyFROG");
-		ServerCommand("bot_add_t %s", "kreaz");
+		ServerCommand("bot_add_t %s", "dennis");
 		ServerCommand("bot_add_t %s", "Grus");
 		ServerCommand("bot_add_t %s", "Relaxa");
-		ServerCommand("bot_add_t %s", "dennis");
+		ServerCommand("bot_add_t %s", "AcilioN");
 		ServerCommand("mp_teamlogo_2 ape");
 	}
 	
@@ -4807,6 +4808,7 @@ public void OnClientPostAdminCheck(int client)
 		g_iM4A1SChance[client] = Math_GetRandomInt(1, 100);
 		
 		SDKHook(client, SDKHook_WeaponCanSwitchTo, OnWeaponCanSwitch);
+		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
@@ -4895,6 +4897,17 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	}
 }
 
+public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
+		{
+			BotMimic_StopPlayerMimic(i);
+		}
+	}
+}
+
 public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	g_bBombPlanted = true;
@@ -4932,22 +4945,49 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && IsValidClient(g_iTarget[client]))
+	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 	{
 		char szWeaponName[64];
-		float fClientLoc[3], fTargetLoc[3];
-		
-		GetClientAbsOrigin(client, fClientLoc);
-		GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
-		
-		float fRangeToEnemy = GetVectorDistance(fClientLoc, fTargetLoc);
-		eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
-		
-		if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
+		if(IsValidClient(g_iTarget[client]))
 		{
-			SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.35, 0.60));
+			float fClientLoc[3], fTargetLoc[3];
+			
+			GetClientAbsOrigin(client, fClientLoc);
+			GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
+			
+			float fRangeToEnemy = GetVectorDistance(fClientLoc, fTargetLoc);
+			eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
+			
+			if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
+			{
+				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.35, 0.60));
+			}
+		}
+		
+		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
+		{
+			g_bZoomed[client] = false;
 		}
 	}
+}
+
+public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
+{
+	if (float(GetClientHealth(victim)) - fDamage < 0.0)
+		return Plugin_Continue;
+	
+	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET))
+		return Plugin_Continue;
+	
+	if (!IsValidClient(attacker) && !IsPlayerAlive(attacker))
+		return Plugin_Continue;
+	
+	float fAttackerEyes[3];
+	GetClientEyePosition(attacker, fAttackerEyes);
+		
+	BotSetLookAt(victim, "Use entity", fAttackerEyes, PRIORITY_HIGH, Math_GetRandomFloat(1.0, 3.0), true, 5.0, false);
+	
+	return Plugin_Continue;
 }
 
 public void OnThinkPost(int iEnt)
@@ -5073,7 +5113,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Panic") == 0)
 	{
 		return MRES_Supercede;
 	}
@@ -5206,7 +5246,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}	
 		}
 		
-		if (GetEntData(client, g_iBotLookAtSpotState) == 0 && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			float fGoalPos[3], fBentGoal[3], fEyes[3], fHeightDiff;
 			
@@ -5218,11 +5258,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if(!BotIsVisible(client, fGoalPos, false) && BotBendLineOfSight(client, fEyes, fGoalPos, fBentGoal, 360.0))
 			{
-				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 0.5, false, 5.0, false);
+				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 0.1, false, 5.0, false);
 			}
 			else if(fHeightDiff < -20.0 || fHeightDiff > 20.0)
 			{
-				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.5, true, 5.0, false);
+				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.1, true, 5.0, false);
 			}
 		}
 		
@@ -5236,7 +5276,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			float fTargetPos[3], fTargetDistance;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			
-			if (GetEntProp(client, Prop_Send, "m_bIsScoped") == 0)
+			if ((iDefIndex == 9 || iDefIndex == 40) && GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel") == 0)
 			{
 				g_bZoomed[client] = false;
 			}
@@ -5455,6 +5495,7 @@ public void OnClientDisconnect(int client)
 	{
 		g_iProfileRank[client] = 0;
 		SDKUnhook(client, SDKHook_WeaponCanSwitchTo, OnWeaponCanSwitch);
+		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
@@ -5571,11 +5612,6 @@ public void LoadSDK()
 	if ((g_iBotGoalPos = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
-	}
-	
-	if ((g_iBotLookAtSpotState = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpotState")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookAtSpotState offset.");
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);

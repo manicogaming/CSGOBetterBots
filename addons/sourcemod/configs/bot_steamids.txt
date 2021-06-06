@@ -107,7 +107,7 @@
 	"arT" 				"83503844"
 	"VINI" 				"36104456"
 	"KSCERATO" 			"98234764"
-	"Junior" 			"103793230"
+	"honda" 			"1027817695"
 	//Santos Players
 	"jAPA" 				"121843505"
 	"keiz" 				"183028724"
@@ -163,7 +163,7 @@
 	"SANJI" 			"357361556"
 	"buster" 			"212936195"
 	//Apeks Players
-	"kreaz" 			"116979891"
+	"AcilioN" 			"56749436"
 	"FREDDyFROG" 		"25537199"
 	"Grus" 				"34633571"
 	"dennis" 			"108076825"

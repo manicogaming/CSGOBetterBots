@@ -13,7 +13,7 @@ public void PrepareDust2Executes()
 				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/B Doors Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/AWP Player.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/Early Flashes & Site Molotov.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/B Window Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/B Hold Player.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/B Execute/Entrance Smoke & Back Plat Molotov.rec");
 			}
 			case 2: //Short A Execute

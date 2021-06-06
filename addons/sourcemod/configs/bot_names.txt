@@ -107,7 +107,7 @@
 	"arT" 				"FURIA"
 	"VINI" 				"FURIA"
 	"KSCERATO" 			"FURIA"
-	"Junior" 			"FURIA"
+	"honda" 			"FURIA"
 	//Santos Players
 	"jAPA" 				"Santos"
 	"keiz" 				"Santos"
@@ -163,7 +163,7 @@
 	"SANJI" 			"VP"
 	"buster" 			"VP"
 	//Apeks Players
-	"kreaz" 			"Apeks"
+	"AcilioN" 			"Apeks"
 	"FREDDyFROG" 		"Apeks"
 	"Grus" 				"Apeks"
 	"Relaxa" 			"Apeks"

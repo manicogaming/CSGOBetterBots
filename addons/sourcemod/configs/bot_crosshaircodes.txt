@@ -107,7 +107,7 @@
 	"arT" 				"CSGO-KYFYs-tNLXD-WXmzG-raZEx-8Er7C"
 	"VINI" 				"CSGO-xkqm6-9CbAd-XzPuM-3b3Wa-h9veM"
 	"KSCERATO" 			"CSGO-4WdMX-jAWv4-8PocV-N7aJN-yopJN"
-	"Junior" 			"CSGO-ac5WE-WxrNj-rixjE-tzKxu-ztHCF"
+	"honda" 			"CSGO-isepW-rmqou-R7fne-FFcDY-5H8nM"
 	//Santos Players
 	"jAPA" 				"CSGO-TpLtD-Jz8H4-Q7z58-CuJAf-LwAkE"
 	"keiz" 				"CSGO-rbbQ4-xqDXR-G9UFi-J4JUn-v5BYN"
@@ -163,7 +163,7 @@
 	"SANJI" 			"CSGO-dNCTU-AEQhq-Lw6xH-YzSaz-3947M"
 	"buster" 			"CSGO-NLiBN-kCC4m-z4vjw-xcowS-KZvaL"
 	//Apeks Players
-	"kreaz" 			"CSGO-w9smx-fYq3H-5KmzL-bjSFA-kMn2H"
+	"AcilioN" 			"CSGO-xzaxv-EGPQm-kjKct-y6LMh-MXkoE"
 	"FREDDyFROG" 		"CSGO-oo429-bDM32-rioeR-6v4m3-Td9GJ"
 	"Grus" 				"CSGO-DAyK9-wewCj-ShFuU-O4FE7-jxSyL"
 	"dennis" 			"CSGO-oo429-bDM32-rioeR-6v4m3-Td9GJ"

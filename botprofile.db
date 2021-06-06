@@ -674,7 +674,7 @@ ProP+Rifle+RiflePersonality "yuurih"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "Junior"
+ProP+SniperPro+SniperPersonality "honda"
 	VoicePitch = 100
 End
 
@@ -894,7 +894,7 @@ ProP+Rifle+RiflePersonality "FREDDyFROG"
 	VoicePitch = 73
 End
 
-ProP+SniperPro+SniperPersonality "kreaz"
+ProP+SniperPro+SniperPersonality "dennis"
 	VoicePitch = 91
 End
 
@@ -906,7 +906,7 @@ ProP+Rifle+RiflePersonality "Relaxa"
 	VoicePitch = 80
 End
 
-ProP+Rifle+RiflePersonality "dennis"
+ProP+Rifle+RiflePersonality "AcilioN"
 	VoicePitch = 71
 End
 
