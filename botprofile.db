@@ -22,10 +22,10 @@
 //
 Default
         Skill = 50
-        Aggression = 50
+        Aggression = 100
         ReactionTime = 0.3
         AttackDelay = 0
-        Teamwork = 75
+        Teamwork = 100
         AimFocusInitial = 20                    // initial focus spread in degrees (from desired center)
         AimFocusDecay = 0.7                             // how much focus shrinks per second (.25 = 25% of size after 1 sec)
         AimFocusOffsetScale = 0.30              // controls accuracy when tracking to target (0 == perfect, should always be < 1)

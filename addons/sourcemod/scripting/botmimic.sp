@@ -87,6 +87,7 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
+float g_flNextCommand[MAXPLAYERS+1];
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -333,6 +334,8 @@ public void OnClientPutInServer(int client)
 	if(g_hTeleport != null)
 		DHookEntity(g_hTeleport, false, client);
 	
+	g_flNextCommand[client] = 0.0;
+	
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
@@ -466,6 +469,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
 	{
 		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
+		EquipWeaponSlot(client, CS_SLOT_PRIMARY);
 		g_bPausedMimic[client] = false;
 		g_bResumeMimic[client] = true;
 		return Plugin_Continue;
@@ -513,7 +517,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
 		flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
 
-		Array_Copy(flAng, angles, 2);
+		TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
 		g_bResumeMimic[client] = false;
 	}
 	
@@ -692,7 +696,10 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	
 	if (!IsValidClient(attacker) && !IsPlayerAlive(attacker))
 		return Plugin_Continue;
-		
+	
+	if(g_hBotMimicsRecord[victim] == null)
+		return Plugin_Continue;
+	
 	g_bPausedMimic[victim] = true;
 	
 	return Plugin_Continue;
@@ -2075,6 +2082,26 @@ stock float AngleNormalize(float angle)
 stock float fmodf(float number, float denom)
 {
     return number - RoundToFloor(number / denom) * denom;
+}
+
+stock void EquipWeaponSlot(int client, int slot)
+{
+	int iWeapon = GetPlayerWeaponSlot(client, slot);
+	if(IsValidEntity(iWeapon))
+		EquipWeapon(client, iWeapon);
+}
+
+stock void EquipWeapon(int client, int weapon)
+{
+	if(g_flNextCommand[client] > GetGameTime())
+		return;
+		
+	char class[64];
+	GetEntityClassname(weapon, class, sizeof(class));
+
+	FakeClientCommand(client, "use %s", class);
+	
+	g_flNextCommand[client] = GetGameTime() + 0.4;
 }
 
 stock bool IsValidClient(int client)

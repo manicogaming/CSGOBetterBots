@@ -783,10 +783,10 @@ public Action Team_FURIA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "yuurih");
-		ServerCommand("bot_add_ct %s", "arT");
+		ServerCommand("bot_add_ct %s", "honda");
 		ServerCommand("bot_add_ct %s", "VINI");
 		ServerCommand("bot_add_ct %s", "KSCERATO");
-		ServerCommand("bot_add_ct %s", "honda");
+		ServerCommand("bot_add_ct %s", "arT");
 		ServerCommand("mp_teamlogo_1 furi");
 	}
 	
@@ -794,10 +794,10 @@ public Action Team_FURIA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "yuurih");
-		ServerCommand("bot_add_t %s", "arT");
+		ServerCommand("bot_add_t %s", "honda");
 		ServerCommand("bot_add_t %s", "VINI");
 		ServerCommand("bot_add_t %s", "KSCERATO");
-		ServerCommand("bot_add_t %s", "honda");
+		ServerCommand("bot_add_t %s", "arT");
 		ServerCommand("mp_teamlogo_2 furi");
 	}
 	
@@ -5032,7 +5032,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				return Plugin_Changed;
 			}
 			
-			if (Math_GetRandomInt(1, 100) <= 5)
+			if (Math_GetRandomInt(1, 100) <= 5 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_AUG));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
@@ -5042,7 +5042,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 		else if (strcmp(szWeapon, "mac10") == 0)
 		{
-			if (Math_GetRandomInt(1, 100) <= 40)
+			if (Math_GetRandomInt(1, 100) <= 40 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_GALILAR));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
@@ -5052,10 +5052,20 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 		else if (strcmp(szWeapon, "mp9") == 0)
 		{
-			if (Math_GetRandomInt(1, 100) <= 40)
+			if (Math_GetRandomInt(1, 100) <= 40 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_FAMAS));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
+				
+				return Plugin_Changed;
+			}
+		}
+		else if (strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0)
+		{
+			if (Math_GetRandomInt(1, 100) <= 50)
+			{
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_CZ75A));
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
 				
 				return Plugin_Changed;
 			}
@@ -5398,7 +5408,6 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			//All these offsets are inside BotProfileManager::Init
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(Math_GetRandomFloat(0.0, 1.0)), NumberType_Int32);
 		}
 		
 		CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
@@ -5462,27 +5471,15 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 		{
 			case 1:
 			{
-				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_p250");
+				FakeClientCommand(client, "buy p250");
 			}
 			case 2:
 			{
-				int iCZ = Math_GetRandomInt(1, 2);
-				
-				switch (iCZ)
-				{
-					case 1:
-					{
-						CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, (iTeam == CS_TEAM_CT) ? "weapon_fiveseven" : "weapon_tec9");
-					}
-					case 2:
-					{
-						CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_cz75a");
-					}
-				}
+				FakeClientCommand(client, "buy %s", (iTeam == CS_TEAM_CT) ? "fiveseven" : "tec9");
 			}
 			case 3:
 			{
-				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_deagle");
+				FakeClientCommand(client, "buy deagle");
 			}
 		}
 	}
