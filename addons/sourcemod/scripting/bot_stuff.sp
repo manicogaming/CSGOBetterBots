@@ -100,6 +100,7 @@ enum TaskType
 #include "bot_stuff/de_nuke.sp"
 #include "bot_stuff/de_vertigo.sp"
 #include "bot_stuff/de_cache.sp"
+#include "bot_stuff/de_ancient.sp"
 
 public Plugin myinfo = 
 {
@@ -4856,7 +4857,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 3);
+			g_iRndExecute = Math_GetRandomInt(1, 4);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
@@ -4893,6 +4894,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
 			PrepareCacheExecutes();
+		}
+		else if (strcmp(g_szMap, "de_ancient") == 0)
+		{
+			g_iRndExecute = Math_GetRandomInt(1, 3);
+			PrepareAncientExecutes();
 		}
 	}
 }

@@ -216,6 +216,7 @@ public void OnPluginStart()
 	
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
 	HookEvent("player_death", Event_OnPlayerDeath);
+	HookEventEx("round_start", OnRoundStart);
 	
 	if(LibraryExists("dhooks"))
 	{
@@ -470,7 +471,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	{
 		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
 		EquipWeaponSlot(client, CS_SLOT_PRIMARY);
-		g_bPausedMimic[client] = false;
 		g_bResumeMimic[client] = true;
 		return Plugin_Continue;
 	}
@@ -701,8 +701,21 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 		return Plugin_Continue;
 	
 	g_bPausedMimic[victim] = true;
+	CreateTimer(1.5, Timer_ResumeMimic, GetClientUserId(victim));
 	
 	return Plugin_Continue;
+}
+
+public Action Timer_ResumeMimic(Handle hTimer, any client)
+{
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bPausedMimic[client] = false;
+	}
+	
+	return Plugin_Stop;
 }
 
 /**
@@ -741,6 +754,19 @@ public void Event_OnPlayerDeath(Event event, const char[] name, bool dontBroadca
 		g_iCurrentAdditionalTeleportIndex[client] = 0;
 		if(g_hCVRespawnOnDeath.BoolValue && GetClientTeam(client) >= CS_TEAM_T)
 			CreateTimer(1.0, Timer_DelayedRespawn, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
+	}
+}
+
+public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsFakeClient(i))
+		{
+			g_bPausedMimic[i] = false;
+			g_bResumeMimic[i] = false;
+			SetEntPropFloat(i, Prop_Send, "m_flMaxspeed", 260.0);
+		}
 	}
 }
 

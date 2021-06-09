@@ -32,6 +32,14 @@ public void PrepareMirageExecutes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/B Execute/Market Door Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/B Execute/Market Window Smoke.rec");
 			}
+			case 4: //99 Win Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Stairs Smoke.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Safe Plant Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Close Triple Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Under Palace Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Close Jungle Smoke.rec");
+			}
 		}
 	}
 }
