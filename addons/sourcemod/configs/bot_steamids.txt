@@ -155,7 +155,7 @@
 	"paiva" 			"923500560"
 	"dukka" 			"34634558"
 	"paredao" 			"2889473"
-	"chara" 			"310877571"
+	"DANVIET" 			"118464022"
 	//VP Players
 	"YEKINDAR" 			"174136197"
 	"Jame" 				"75859856"
@@ -534,12 +534,12 @@
 	"kiR" 				"258258243"
 	"Luckyv1" 			"150297431"
 	"PR1mE" 			"26772868"
-	//Baecon Players
-	"sark" 				"76263371"
-	"P3R3IIRA" 			"364310941"
-	"Dante" 			"75152844"
-	"kyolka" 			"153346697"
-	"SYDOX" 			"2634634"
+	//BRUTE Players
+	"Crazyy" 			"108516311"
+	"KWERTZZ" 			"161005692"
+	"Adejis" 			"125256141"
+	"MATYS" 			"1086212773"
+	"EYO" 				"33505803"
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
@@ -816,4 +816,16 @@
 	"leo_drk" 			"58291277"
 	"LUCAS1" 			"4780624"
 	"v$m"				"51467095"
+	//Eriness Players
+	"replay" 			"298288602"
+	"heikkoL" 			"54468975"
+	"Feki" 				"119610566"
+	"Fizarezi" 			"187290677"
+	"Valencio"			"163134468"
+	//Entropiq Players
+	"Lack1" 			"185937269"
+	"El1an" 			"250498109"
+	"NickelBack" 		"1882779"
+	"Krad" 				"71642904"
+	"Forester"			"67083025"
 }

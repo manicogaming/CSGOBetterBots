@@ -87,7 +87,6 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
-float g_flNextCommand[MAXPLAYERS+1];
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -122,6 +121,9 @@ bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
 bool g_bPausedMimic[MAXPLAYERS+1];
 bool g_bResumeMimic[MAXPLAYERS+1];
+bool g_bTimerExists[MAXPLAYERS+1];
+bool g_bAimSmoothing[MAXPLAYERS+1];
+bool g_bGameEnded;
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BookmarkWhileMimicing];
 
 Handle g_hfwdOnStartRecording;
@@ -217,6 +219,7 @@ public void OnPluginStart()
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
 	HookEvent("player_death", Event_OnPlayerDeath);
 	HookEventEx("round_start", OnRoundStart);
+	HookEventEx("cs_win_panel_match", OnWinPanelMatch);
 	
 	if(LibraryExists("dhooks"))
 	{
@@ -272,6 +275,8 @@ public void OnLibraryRemoved(const char[] name)
 
 public void OnMapStart()
 {
+	g_bGameEnded = false;
+
 	// Clear old records for old map
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
@@ -334,8 +339,6 @@ public void OnClientPutInServer(int client)
 {
 	if(g_hTeleport != null)
 		DHookEntity(g_hTeleport, false, client);
-	
-	g_flNextCommand[client] = 0.0;
 	
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
@@ -464,226 +467,238 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon, int &subtype, int &cmdnum, int &tickcount, int &seed, int mouse[2])
 {
-	int iEnemy = GetEntDataEnt2(client, 24068);
-	bool bIsEnemyVisible = !!GetEntData(client, 24072);
-	
-	if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
+	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
-		EquipWeaponSlot(client, CS_SLOT_PRIMARY);
-		g_bResumeMimic[client] = true;
-		return Plugin_Continue;
-	}
-
-	// Bot is mimicing something
-	if(g_hBotMimicsRecord[client] == null)
-		return Plugin_Continue;
-
-	// Is this a valid living bot?
-	if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
-		return Plugin_Continue;
-	
-	if(g_iBotMimicTick[client] >= g_iBotMimicRecordTickCount[client])
-	{
-		g_iBotMimicTick[client] = 0;
-		g_iCurrentAdditionalTeleportIndex[client] = 0;
-		BotMimic_StopPlayerMimic(client);
-		return Plugin_Continue;
-	}
-	
-	if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
-	{
-		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
-	}
-	
-	int iFrame[FrameInfo];
-	g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame[0], view_as<int>(FrameInfo));
-	
-	buttons = iFrame[playerButtons];
-	impulse = iFrame[playerImpulse];
-	Array_Copy(iFrame[predictedVelocity], vel, 3);
-	
-	if(g_bResumeMimic[client])
-	{
-		float flAng[3];
-		GetClientEyeAngles(client, flAng);
-
-		// get normalised direction from target to client
-		float desired_dir[3];
-		Array_Copy(iFrame[predictedAngles], desired_dir, 2);
-
-		float fRandSpeed = Math_GetRandomFloat(0.01, 0.20);
-		// ease the current direction to the target direction
-		flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
-		flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
-
-		TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
-		g_bResumeMimic[client] = false;
-	}
-	
-	if(!g_bResumeMimic[client])
-	{
-		Array_Copy(iFrame[predictedAngles], angles, 2);
-	}
-	
-	subtype = iFrame[playerSubtype];
-	seed = iFrame[playerSeed];
-	weapon = 0;
-	
-	float fActualVelocity[3];
-	Array_Copy(iFrame[actualVelocity], fActualVelocity, 3);
-	
-	// We're supposed to teleport stuff?
-	if(iFrame[additionalFields] & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
-	{
-		int iAT[AdditionalTeleport];
-		ArrayList hAdditionalTeleport;
-		char sPath[PLATFORM_MAX_PATH];
-		GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
-		g_hLoadedRecordsAdditionalTeleport.GetValue(sPath, hAdditionalTeleport);
-		hAdditionalTeleport.GetArray(g_iCurrentAdditionalTeleportIndex[client], iAT[0], view_as<int>(AdditionalTeleport));
+		int iEnemy = GetEntDataEnt2(client, 24068);
+		bool bIsEnemyVisible = !!GetEntData(client, 24072);
 		
-		float fOrigin[3], fAngles[3], fVelocity[3];
-		Array_Copy(iAT[atOrigin], fOrigin, 3);
-		Array_Copy(iAT[atAngles], fAngles, 3);
-		Array_Copy(iAT[atVelocity], fVelocity, 3);
-		
-		// The next call to Teleport is ok.
-		g_bValidTeleportCall[client] = true;
-		
-		// THATS STUPID!
-		// Only pass the arguments, if they were set..
-		if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
+		if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
 		{
-			if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-			{
-				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, fOrigin, fAngles, fVelocity);
-				else
-					TeleportEntity(client, fOrigin, fAngles, NULL_VECTOR);
-			}
-			else
-			{
-				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, fOrigin, NULL_VECTOR, fVelocity);
-				else
-					TeleportEntity(client, fOrigin, NULL_VECTOR, NULL_VECTOR);
-			}
-		}
-		else
-		{
-			if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-			{
-				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
-				else
-					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
-			}
-			else
-			{
-				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
-			}
+			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
+			g_bResumeMimic[client] = true;
+			return Plugin_Continue;
 		}
 		
-		g_iCurrentAdditionalTeleportIndex[client]++;
-	}
-	
-	// This is the first tick. Teleport him to the initial position
-	if(g_iBotMimicTick[client] == 0)
-	{
-		g_bValidTeleportCall[client] = true;
-		TeleportEntity(client, g_fInitialPosition[client], g_fInitialAngles[client], fActualVelocity);
-		bool bHasC4 = false;
-		
-		if(Client_HasWeapon(client, "weapon_c4"))
+		if(g_bResumeMimic[client] && !g_bTimerExists[client])
 		{
-			bHasC4 = true;
+			g_bAimSmoothing[client] = true;
+			CreateTimer(0.5, Timer_SmoothAim, GetClientUserId(client));
+			g_bTimerExists[client] = true;
+			return Plugin_Continue;
 		}
-		
-		Client_RemoveAllWeapons(client);
-		
-		if(bHasC4)
-		{
-			GivePlayerItem(client, "weapon_c4");
-		}
-		
-		Call_StartForward(g_hfwdOnPlayerMimicLoops);
-		Call_PushCell(client);
-		Call_Finish();
-	}
-	else
-	{
-		g_bValidTeleportCall[client] = true;
-		TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
-	}
-	
-	if(iFrame[newWeapon] != CSWeapon_NONE)
-	{
-		char sAlias[64];
-		CS_WeaponIDToAlias(iFrame[newWeapon], sAlias, sizeof(sAlias));
-		
-		Format(sAlias, sizeof(sAlias), "weapon_%s", sAlias);
-		
-		if(g_iBotMimicTick[client] > 0 && Client_HasWeapon(client, sAlias))
-		{
-			weapon = Client_GetWeapon(client, sAlias);
-			g_iBotActiveWeapon[client] = weapon;
-			g_bBotSwitchedWeapon[client] = true;
-		}
-		else
-		{
-			weapon = GivePlayerItem(client, sAlias);
-			if(weapon != INVALID_ENT_REFERENCE)
-			{
-				g_iBotActiveWeapon[client] = weapon;
-				// Switch to that new weapon on the next frame.
-				g_bBotSwitchedWeapon[client] = true;
 
-				// Grenades shouldn't be equipped.
-				if(StrContains(sAlias, "grenade") == -1 
-				&& StrContains(sAlias, "flashbang") == -1 
-				&& StrContains(sAlias, "decoy") == -1 
-				&& StrContains(sAlias, "molotov") == -1)
+		// Bot is mimicing something
+		if(g_hBotMimicsRecord[client] == null)
+			return Plugin_Continue;
+
+		// Is this a valid living bot?
+		if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
+			return Plugin_Continue;
+		
+		if(g_iBotMimicTick[client] >= g_iBotMimicRecordTickCount[client])
+		{
+			g_iBotMimicTick[client] = 0;
+			g_iCurrentAdditionalTeleportIndex[client] = 0;
+			BotMimic_StopPlayerMimic(client);
+			return Plugin_Continue;
+		}
+		
+		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
+		{
+			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
+		}
+		
+		int iFrame[FrameInfo];
+		g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame[0], view_as<int>(FrameInfo));
+		
+		buttons = iFrame[playerButtons];
+		impulse = iFrame[playerImpulse];
+		Array_Copy(iFrame[predictedVelocity], vel, 3);
+		
+		if(g_bAimSmoothing[client])
+		{
+			float flAng[3];
+			GetClientEyeAngles(client, flAng);
+
+			// get normalised direction from target to client
+			float desired_dir[3];
+			Array_Copy(iFrame[predictedAngles], desired_dir, 2);
+
+			float fRandSpeed = Math_GetRandomFloat(0.01, 0.20);
+			// ease the current direction to the target direction
+			flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
+			flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
+
+			Array_Copy(flAng, angles, 2);
+			g_bResumeMimic[client] = false;
+		}
+		
+		if(!g_bAimSmoothing[client])
+		{
+			Array_Copy(iFrame[predictedAngles], angles, 2);
+		}
+		
+		subtype = iFrame[playerSubtype];
+		seed = iFrame[playerSeed];
+		weapon = 0;
+		
+		float fActualVelocity[3];
+		Array_Copy(iFrame[actualVelocity], fActualVelocity, 3);
+		
+		// We're supposed to teleport stuff?
+		if(iFrame[additionalFields] & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
+		{
+			int iAT[AdditionalTeleport];
+			ArrayList hAdditionalTeleport;
+			char sPath[PLATFORM_MAX_PATH];
+			GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
+			g_hLoadedRecordsAdditionalTeleport.GetValue(sPath, hAdditionalTeleport);
+			hAdditionalTeleport.GetArray(g_iCurrentAdditionalTeleportIndex[client], iAT[0], view_as<int>(AdditionalTeleport));
+			
+			float fOrigin[3], fAngles[3], fVelocity[3];
+			Array_Copy(iAT[atOrigin], fOrigin, 3);
+			Array_Copy(iAT[atAngles], fAngles, 3);
+			Array_Copy(iAT[atVelocity], fVelocity, 3);
+			
+			// The next call to Teleport is ok.
+			g_bValidTeleportCall[client] = true;
+			
+			// THATS STUPID!
+			// Only pass the arguments, if they were set..
+			if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
+			{
+				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
 				{
-					EquipPlayerWeapon(client, weapon);
+					if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+						TeleportEntity(client, fOrigin, fAngles, fVelocity);
+					else
+						TeleportEntity(client, fOrigin, fAngles, NULL_VECTOR);
+				}
+				else
+				{
+					if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+						TeleportEntity(client, fOrigin, NULL_VECTOR, fVelocity);
+					else
+						TeleportEntity(client, fOrigin, NULL_VECTOR, NULL_VECTOR);
+				}
+			}
+			else
+			{
+				if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
+				{
+					if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+						TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
+					else
+						TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
+				}
+				else
+				{
+					if(iAT[atFlags] & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+						TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
+				}
+			}
+			
+			g_iCurrentAdditionalTeleportIndex[client]++;
+		}
+		
+		// This is the first tick. Teleport him to the initial position
+		if(g_iBotMimicTick[client] == 0)
+		{
+			g_bValidTeleportCall[client] = true;
+			TeleportEntity(client, g_fInitialPosition[client], g_fInitialAngles[client], fActualVelocity);
+			bool bHasC4 = false;
+			
+			if(Client_HasWeapon(client, "weapon_c4"))
+			{
+				bHasC4 = true;
+			}
+			
+			Client_RemoveAllWeapons(client);
+			
+			if(bHasC4)
+			{
+				GivePlayerItem(client, "weapon_c4");
+			}
+			
+			Call_StartForward(g_hfwdOnPlayerMimicLoops);
+			Call_PushCell(client);
+			Call_Finish();
+		}
+		else
+		{
+			g_bValidTeleportCall[client] = true;
+			TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
+		}
+		
+		if(iFrame[newWeapon] != CSWeapon_NONE)
+		{
+			char sAlias[64];
+			CS_WeaponIDToAlias(iFrame[newWeapon], sAlias, sizeof(sAlias));
+			
+			Format(sAlias, sizeof(sAlias), "weapon_%s", sAlias);
+			
+			if(g_iBotMimicTick[client] > 0 && Client_HasWeapon(client, sAlias))
+			{
+				weapon = Client_GetWeapon(client, sAlias);
+				g_iBotActiveWeapon[client] = weapon;
+				g_bBotSwitchedWeapon[client] = true;
+			}
+			else
+			{
+				weapon = GivePlayerItem(client, sAlias);
+				if(weapon != INVALID_ENT_REFERENCE)
+				{
+					g_iBotActiveWeapon[client] = weapon;
+					// Switch to that new weapon on the next frame.
+					g_bBotSwitchedWeapon[client] = true;
+
+					// Grenades shouldn't be equipped.
+					if(StrContains(sAlias, "grenade") == -1 
+					&& StrContains(sAlias, "flashbang") == -1 
+					&& StrContains(sAlias, "decoy") == -1 
+					&& StrContains(sAlias, "molotov") == -1)
+					{
+						EquipPlayerWeapon(client, weapon);
+					}
 				}
 			}
 		}
-	}
-	// Switch the weapon on the next frame after it was selected.
-	else if (g_bBotSwitchedWeapon[client])
-	{
-		g_bBotSwitchedWeapon[client] = false;
-		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", g_iBotActiveWeapon[client]);
-		Client_SetActiveWeapon(client, g_iBotActiveWeapon[client]);
-	}
-	
-	// See if there's a bookmark on this tick
-	if(g_iBotMimicTick[client] == g_iBotMimicNextBookmarkTick[client][BWM_frame])
-	{
-		// Get the file header of the current playing record.
-		char sPath[PLATFORM_MAX_PATH];
-		GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
-		int iFileHeader[FileHeader];
-		g_hLoadedRecords.GetArray(sPath, iFileHeader[0], view_as<int>(FileHeader));
+		// Switch the weapon on the next frame after it was selected.
+		else if (g_bBotSwitchedWeapon[client])
+		{
+			g_bBotSwitchedWeapon[client] = false;
+			SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", g_iBotActiveWeapon[client]);
+			Client_SetActiveWeapon(client, g_iBotActiveWeapon[client]);
+		}
+		
+		// See if there's a bookmark on this tick
+		if(g_iBotMimicTick[client] == g_iBotMimicNextBookmarkTick[client][BWM_frame])
+		{
+			// Get the file header of the current playing record.
+			char sPath[PLATFORM_MAX_PATH];
+			GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
+			int iFileHeader[FileHeader];
+			g_hLoadedRecords.GetArray(sPath, iFileHeader[0], view_as<int>(FileHeader));
 
-		int iBookmark[Bookmarks];
-		iFileHeader[FH_bookmarks].GetArray(g_iBotMimicNextBookmarkTick[client][BWM_index], iBookmark[0], view_as<int>(Bookmarks));
+			int iBookmark[Bookmarks];
+			iFileHeader[FH_bookmarks].GetArray(g_iBotMimicNextBookmarkTick[client][BWM_index], iBookmark[0], view_as<int>(Bookmarks));
+			
+			// Cache the next tick in which we should fire the forward.
+			UpdateNextBookmarkTick(client);
+			
+			// Call the forward
+			Call_StartForward(g_hfwdOnPlayerMimicBookmark);
+			Call_PushCell(client);
+			Call_PushString(iBookmark[BKM_name]);
+			Call_Finish();
+		}
 		
-		// Cache the next tick in which we should fire the forward.
-		UpdateNextBookmarkTick(client);
+		g_iBotMimicTick[client]++;
 		
-		// Call the forward
-		Call_StartForward(g_hfwdOnPlayerMimicBookmark);
-		Call_PushCell(client);
-		Call_PushString(iBookmark[BKM_name]);
-		Call_Finish();
+		return Plugin_Changed;
 	}
 	
-	g_iBotMimicTick[client]++;
-	
-	return Plugin_Changed;
+	return Plugin_Continue;
 }
 
 public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
@@ -713,6 +728,18 @@ public Action Timer_ResumeMimic(Handle hTimer, any client)
 	if(client != 0 && IsClientInGame(client))
 	{
 		g_bPausedMimic[client] = false;
+	}
+	
+	return Plugin_Stop;
+}
+
+public Action Timer_SmoothAim(Handle hTimer, any client)
+{
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		g_bAimSmoothing[client] = false;
 	}
 	
 	return Plugin_Stop;
@@ -765,9 +792,16 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_bPausedMimic[i] = false;
 			g_bResumeMimic[i] = false;
+			g_bTimerExists[i] = false;
+			g_bAimSmoothing[i] = false;
 			SetEntPropFloat(i, Prop_Send, "m_flMaxspeed", 260.0);
 		}
 	}
+}
+
+public void OnWinPanelMatch(Event eEvent, char[] szName, bool bDontBroadcast)
+{
+	g_bGameEnded = true;
 }
 
 /**
@@ -795,7 +829,7 @@ public Action Hook_WeaponCanSwitchTo(int client, int weapon)
 	if(g_hBotMimicsRecord[client] == null)
 		return Plugin_Continue;
 	
-	if(g_iBotActiveWeapon[client] != weapon)
+	if(g_iBotActiveWeapon[client] != weapon && !g_bPausedMimic[client])
 	{
 		return Plugin_Stop;
 	}
@@ -1986,7 +2020,7 @@ BMError PlayRecord(int client, const char[] path)
 	SDKHook(client, SDKHook_WeaponCanSwitchTo, Hook_WeaponCanSwitchTo);
 	
 	// Respawn him to get him moving!
-	if(IsClientInGame(client) && !IsPlayerAlive(client) && GetClientTeam(client) >= CS_TEAM_T)
+	if(IsClientInGame(client) && !IsPlayerAlive(client) && GetClientTeam(client) >= CS_TEAM_T && !g_bGameEnded)
 		CS_RespawnPlayer(client);
 	
 	char sCategory[64];
@@ -2108,26 +2142,6 @@ stock float AngleNormalize(float angle)
 stock float fmodf(float number, float denom)
 {
     return number - RoundToFloor(number / denom) * denom;
-}
-
-stock void EquipWeaponSlot(int client, int slot)
-{
-	int iWeapon = GetPlayerWeaponSlot(client, slot);
-	if(IsValidEntity(iWeapon))
-		EquipWeapon(client, iWeapon);
-}
-
-stock void EquipWeapon(int client, int weapon)
-{
-	if(g_flNextCommand[client] > GetGameTime())
-		return;
-		
-	char class[64];
-	GetEntityClassname(weapon, class, sizeof(class));
-
-	FakeClientCommand(client, "use %s", class);
-	
-	g_flNextCommand[client] = GetGameTime() + 0.4;
 }
 
 stock bool IsValidClient(int client)

@@ -155,7 +155,7 @@
 	"paiva" 			"INTZ"
 	"dukka" 			"INTZ"
 	"paredao" 			"INTZ"
-	"chara" 			"INTZ"
+	"DANVIET" 			"INTZ"
 	//VP Players
 	"YEKINDAR" 			"VP"
 	"Jame" 				"VP"
@@ -534,12 +534,12 @@
 	"Luckyv1" 			"Tricked"
 	"jekuzih" 			"Tricked"
 	"PR1mE" 			"Tricked"
-	//Baecon Players
-	"sark" 				"Baecon"
-	"P3R3IIRA" 			"Baecon"
-	"Dante" 			"Baecon"
-	"kyolka" 			"Baecon"
-	"SYDOX" 			"Baecon"	
+	//BRUTE Players
+	"Crazyy" 			"BRUTE"
+	"KWERTZZ" 			"BRUTE"
+	"Adejis" 			"BRUTE"
+	"MATYS" 			"BRUTE"
+	"EYO" 				"BRUTE"	
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
@@ -816,4 +816,16 @@
 	"leo_drk" 			"Plano"
 	"LUCAS1" 			"Plano"
 	"v$m"				"Plano"
+	//Eriness Players
+	"replay" 			"Eriness"
+	"heikkoL" 			"Eriness"
+	"Feki" 				"Eriness"
+	"Fizarezi" 			"Eriness"
+	"Valencio"			"Eriness"
+	//Entropiq Players
+	"Lack1" 			"Entropiq"
+	"El1an" 			"Entropiq"
+	"NickelBack" 		"Entropiq"
+	"Krad" 				"Entropiq"
+	"Forester"			"Entropiq"
 }

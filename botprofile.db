@@ -862,7 +862,7 @@ ProP+Rifle+RiflePersonality "paredao"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "chara"
+ProP+Rifle+RiflePersonality "DANVIET"
 	VoicePitch = 100
 End
 
@@ -2230,25 +2230,25 @@ ProP+Rifle+RiflePersonality "PR1mE"
 	VoicePitch = 112
 End
 
-//Baecon Players
+//BRUTE Players
 
-ProP+Rifle+RiflePersonality "sark"
+ProP+Rifle+RiflePersonality "Crazyy"
 	VoicePitch = 85
 End
 
-ProP+SniperPro+SniperPersonality "P3R3IIRA"
+ProP+SniperPro+SniperPersonality "KWERTZZ"
 	VoicePitch = 108
 End
 
-ProP+Rifle+RiflePersonality "Dante"
+ProP+Rifle+RiflePersonality "Adejis"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "kyolka"
+ProP+Rifle+RiflePersonality "MATYS"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "SYDOX"
+ProP+Rifle+RiflePersonality "EYO"
 	VoicePitch = 103
 End
 
@@ -3284,6 +3284,50 @@ End
 
 ProP+Rifle+RiflePersonality "v$m"
 	VoicePitch = 90
+End
+
+//Eriness Players
+
+ProP+Rifle+RiflePersonality "replay"
+	VoicePitch = 111
+End
+
+ProP+SniperPro+SniperPersonality "heikkoL"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "Feki"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "Fizarezi"
+	VoicePitch = 92
+End
+
+ProP+Rifle+RiflePersonality "Valencio"
+	VoicePitch = 113
+End
+
+//Entropiq Players
+
+ProP+Rifle+RiflePersonality "Lack1"
+	VoicePitch = 108
+End
+
+ProP+SniperPro+SniperPersonality "El1an"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "NickelBack"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "Krad"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "Forester"
+	VoicePitch = 75
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
