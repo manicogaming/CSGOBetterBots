@@ -40,13 +40,13 @@ public void PrepareMirageExecutes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Under Palace Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/99 Win Execute/Close Jungle Smoke.rec");
 			}
-			case 5: //FURIA Fast B Split
+			case 5: //NIP A Execute
 			{
-				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/VINI Role.rec"); 
-				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/yuurih Role.rec");
-				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/arT Role.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/KSCERATO Role.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/HEN1 Role.rec");
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP A Execute/hampus Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP A Execute/nawwk Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP A Execute/twist Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP A Execute/Plopski Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP A Execute/REZ Role.rec");
 			}
 		}
 	}

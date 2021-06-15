@@ -338,7 +338,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "broky");
 		ServerCommand("bot_add_ct %s", "karrigan");
 		ServerCommand("bot_add_ct %s", "rain");
-		ServerCommand("bot_add_ct %s", "coldzera");
+		ServerCommand("bot_add_ct %s", "olofmeister");
 		ServerCommand("mp_teamlogo_1 faze");
 	}
 	
@@ -349,7 +349,7 @@ public Action Team_FaZe(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "broky");
 		ServerCommand("bot_add_t %s", "karrigan");
 		ServerCommand("bot_add_t %s", "rain");
-		ServerCommand("bot_add_t %s", "coldzera");
+		ServerCommand("bot_add_t %s", "olofmeister");
 		ServerCommand("mp_teamlogo_2 faze");
 	}
 	
@@ -1988,7 +1988,7 @@ public Action Team_Paradox(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Versa");
 		ServerCommand("bot_add_ct %s", "ekul");
 		ServerCommand("bot_add_ct %s", "bedonka");
-		ServerCommand("bot_add_ct %s", "dangeR");
+		ServerCommand("bot_add_ct %s", "zeph");
 		ServerCommand("mp_teamlogo_1 para");
 	}
 	
@@ -1999,7 +1999,7 @@ public Action Team_Paradox(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Versa");
 		ServerCommand("bot_add_t %s", "ekul");
 		ServerCommand("bot_add_t %s", "bedonka");
-		ServerCommand("bot_add_t %s", "dangeR");
+		ServerCommand("bot_add_t %s", "zeph");
 		ServerCommand("mp_teamlogo_2 para");
 	}
 	
@@ -2464,8 +2464,8 @@ public Action Team_TC(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "tricky");
 		ServerCommand("bot_add_ct %s", "glowiing");
+		ServerCommand("bot_add_ct %s", "GuardiaN");
 		ServerCommand("bot_add_ct %s", "seized");
 		ServerCommand("bot_add_ct %s", "clax");
 		ServerCommand("bot_add_ct %s", "Norwi");
@@ -2475,8 +2475,8 @@ public Action Team_TC(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "tricky");
 		ServerCommand("bot_add_t %s", "glowiing");
+		ServerCommand("bot_add_t %s", "GuardiaN");
 		ServerCommand("bot_add_t %s", "seized");
 		ServerCommand("bot_add_t %s", "clax");
 		ServerCommand("bot_add_t %s", "Norwi");

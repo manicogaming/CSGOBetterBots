@@ -11,7 +11,7 @@
 	"broky"  			"241354762"
 	"karrigan" 			"29164525"
 	"rain" 				"37085479"
-	"coldzera" 			"79720871"
+	"olofmeister" 		"28361465"
 	//Astralis Players
 	"gla1ve" 			"50245293"
 	"Bubzkji" 			"171103459"
@@ -347,7 +347,7 @@
 	"ekul" 				"38901108"
 	"bedonka" 			"90046852"
 	"Versa" 			"328572044"
-	"dangeR" 			"307032635"
+	"zeph" 				"177441352"
 	//OFFSET Players
 	"NOPEEj" 			"200528981"
 	"fox" 				"1939536"
@@ -441,7 +441,7 @@
 	//TC Players
 	"Norwi" 			"194638879"
 	"glowiing" 			"213998181"
-	"tricky" 			"291038798"
+	"GuardiaN" 			"12065295"
 	"seized" 			"3648428"
 	"clax" 				"168818887"
 	//Gambit Players

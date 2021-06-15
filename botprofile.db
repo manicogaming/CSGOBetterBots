@@ -334,7 +334,7 @@ ProP+Rifle+RiflePersonality "rain"
 	VoicePitch = 85
 End
 
-ProP+Rifle+RiflePersonality "coldzera"
+ProP+Rifle+RiflePersonality "olofmeister"
 	VoicePitch = 108
 End
 
@@ -1544,7 +1544,7 @@ ProP+Rifle+RiflePersonality "bedonka"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "dangeR"
+ProP+Rifle+RiflePersonality "zeph"
 	VoicePitch = 78
 End
 
@@ -1880,11 +1880,11 @@ End
 
 //TC Players
 
-ProP+Rifle+RiflePersonality "tricky"
+ProP+Rifle+RiflePersonality "glowiing"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "glowiing"
+ProP+SniperPro+SniperPersonality "GuardiaN"
 	VoicePitch = 89
 End
 

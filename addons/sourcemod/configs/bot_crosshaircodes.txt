@@ -11,7 +11,7 @@
 	"broky"  			"CSGO-HWMAm-4fFfS-6XeYd-3mpkP-cfq3B"
 	"karrigan" 			"CSGO-uTcAc-u3jT5-AriSX-ti6iT-EnPJM"
 	"rain" 				"CSGO-NBDem-NRkuC-brth7-HJtUG-KCR7B"
-	"coldzera" 			"CSGO-5BmKz-AroxU-QThKJ-tBmit-bFPYE"
+	"olofmeister" 		"CSGO-a2Km3-O2wy8-4YLCt-FALc5-L4hWA"
 	//Astralis Players
 	"gla1ve" 			"CSGO-Mw2Yd-fNDmS-at3jh-Armtx-hif4D"
 	"Bubzkji" 			"CSGO-BSoAV-EDpjL-fKjOa-BCAGE-KCR7B"
@@ -347,7 +347,7 @@
 	"ekul" 				"CSGO-ALDpu-8wra9-d58nM-wtJ6i-A78WB"
 	"bedonka" 			"CSGO-LxM42-H6hxa-VSkUz-jyE3W-4cvvE"
 	"Versa" 			"CSGO-VUik6-VPRxh-LzpWz-FKShv-2NXoN"
-	"dangeR" 			"CSGO-USUhd-qiUou-NDK5M-tzwrt-tDu8O"
+	"zeph" 				"CSGO-DZipa-6eef5-iXW5i-zh2v3-ewHCF"
 	//OFFSET Players
 	"NOPEEj" 			"CSGO-pTZVe-6QTLs-8DaiG-SSatN-3aQ3A"
 	"fox" 				"CSGO-rPGrd-xU8Uj-vj93o-8U3et-fjmwG"
@@ -441,7 +441,7 @@
 	//TC Players
 	"Norwi" 			"CSGO-e3Ycy-2wKYM-Fp863-tWpd7-oYrVQ"
 	"glowiing" 			"CSGO-sr9DJ-C6ECS-nqq7a-UVFOu-Z4OtQ"
-	"tricky" 			"CSGO-9DQuW-VdQpD-x5MbY-rGDJQ-JK5mA"
+	"GuardiaN" 			"CSGO-PD6iP-2acvs-cSpxW-tBx5K-N3n6J"
 	"seized" 			"CSGO-TAOs3-qE2tJ-Oodpt-4sDEJ-OfoUE"
 	"clax" 				"CSGO-QYJ8X-GCCBt-MpEzL-arZc2-tDu8O"
 	//Gambit Players

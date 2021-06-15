@@ -9,7 +9,7 @@
 
 char g_szMap[128];
 bool g_bStartedPlaying[MAXPLAYERS+1];
-int g_iCurrentTick[MAXPLAYERS+1];
+int g_iCurrentTick[MAXPLAYERS+1], g_iSnapshotTick[MAXPLAYERS+1];
 int g_iMaxTick;
 
 char g_szWeapon[65535][64];
@@ -21,9 +21,12 @@ char g_szWeapon_4[65535][64];
 char g_szWeapon_5[65535][64];
 char g_szWeapon_6[65535][64];
 char g_szIsDucked[65535][64];
+char g_szIsDucking[65535][64];
 char g_szIsWalking[65535][64];
 
 int g_iCurDefIndex[65535];
+int g_iHasJumped[65535];
+int g_iThrowStrength[65535];
 
 float g_fPosition[65535][3];
 float g_fAngles[65535][3];
@@ -67,6 +70,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_bStartedPlaying[i] = false;
 			g_iCurrentTick[i] = 0;
+			g_iSnapshotTick[i] = 0;
 		}
 	}
 }
@@ -75,7 +79,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 {
 	if (IsValidClient(client) && IsPlayerAlive(client) && !IsFakeClient(client) && g_bStartedPlaying[client] && g_iCurrentTick[client] <= g_iMaxTick)
 	{
-		char szCommand[128], szUseWeapon[128];
+		char szUseWeapon[128];
 	
 		int iNewWeapon;
 		int iKnifeSlot = GetPlayerWeaponSlot(client, CS_SLOT_KNIFE);
@@ -162,47 +166,67 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
-		
-		SetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", g_fVelocity[g_iCurrentTick[client]]);
-		
-		TF2_MoveTo(client, g_fPosition[g_iCurrentTick[client]], fVel, fAngles);
-		
-		eItems_GetWeaponClassNameByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]], szUseWeapon, sizeof(szUseWeapon));
-		
-		Format(szCommand, sizeof(szCommand), "use %s", (StrContains(szUseWeapon, "weapon_knife") != -1) ? "weapon_knife" : szUseWeapon);
-		
-		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0)
+		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
+		{
 			iButtons |= IN_ATTACK;
-		else
+			iButtons &= ~IN_ATTACK2;
+		}
+		else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
+		{
+			iButtons |= IN_ATTACK2;
 			iButtons &= ~IN_ATTACK;
+		}
 		
-		if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0)
-		{
-			SetEntProp(client, Prop_Send, "m_bDucked", 1);
+		if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0)
 			iButtons |= IN_DUCK;
-		}
-		else
-		{
-			SetEntProp(client, Prop_Send, "m_bDucked", 0);
+		else if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "false") == 0)
 			iButtons &= ~IN_DUCK;
-		}
 		
 		if(strcmp(g_szIsWalking[g_iCurrentTick[client]], "true") == 0)
-		{
-			SetEntProp(client, Prop_Send, "m_bIsWalking", 1);
 			iButtons |= IN_SPEED;
+		else
+			iButtons &= ~IN_SPEED;
+		
+		if(g_iHasJumped[g_iCurrentTick[client]] == 1)
+		{
+			iButtons |= IN_JUMP;
+		}
+		
+		if(g_iSnapshotTick[client] == 64)
+		{
+			SetEntPropVector(client, Prop_Data, "m_vecAbsOrigin", g_fPosition[g_iCurrentTick[client]]);
+			Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
+			g_iSnapshotTick[client] = 0;
 		}
 		else
 		{
-			SetEntProp(client, Prop_Send, "m_bIsWalking", 0);
-			iButtons &= ~IN_SPEED;
+			Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
+			
+			float fLength = GetVectorLength(g_fVelocity[g_iCurrentTick[client]]);
+			if(fLength > 5.0)
+			{
+				TF2_MoveTo(client, g_fPosition[g_iCurrentTick[client]], fVel, fAngles);
+			}
+			
+			SetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		
-		FakeClientCommandThrottled(client, szCommand);
+		if(g_iCurDefIndex[g_iCurrentTick[client]] != 49)
+		{
+			eItems_GetWeaponClassNameByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]], szUseWeapon, sizeof(szUseWeapon));
+			
+			if(StrContains(szUseWeapon, "weapon_knife") != -1)
+			{
+				Client_SetActiveWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE));
+			}
+			else
+			{
+				Client_SetActiveWeapon(client, eItems_FindWeaponByClassName(client, szUseWeapon));
+			}
+		}
 		
 		g_iCurrentTick[client]++;
+		g_iSnapshotTick[client]++;
 		
 		return Plugin_Changed;
 	}
@@ -287,6 +311,7 @@ void ParseTicks()
 		kv.GetString("cur_name", g_szWeapon[StringToInt(szTick)], 64);
 		g_iCurDefIndex[StringToInt(szTick)] = kv.GetNum("cur_itemindex");
 		kv.GetString("pinpulled", g_szPinPulled[StringToInt(szTick)], 64);
+		g_iThrowStrength[StringToInt(szTick)] = kv.GetNum("throwStrength");
 		kv.GetString("weapon_1", g_szWeapon_1[StringToInt(szTick)], 64);
 		kv.GetString("weapon_2", g_szWeapon_2[StringToInt(szTick)], 64);
 		kv.GetString("weapon_3", g_szWeapon_3[StringToInt(szTick)], 64);
@@ -295,6 +320,7 @@ void ParseTicks()
 		kv.GetString("weapon_6", g_szWeapon_6[StringToInt(szTick)], 64);
 		kv.GetString("isducked", g_szIsDucked[StringToInt(szTick)], 64);
 		kv.GetString("iswalking", g_szIsWalking[StringToInt(szTick)], 64);
+		g_iHasJumped[StringToInt(szTick)] = kv.GetNum("hasJumped");
 	} while (kv.GotoNextKey());
 	
 	g_iMaxTick = StringToInt(szTick);
