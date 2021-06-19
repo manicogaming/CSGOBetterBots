@@ -32,6 +32,14 @@ public void PrepareDust2Executes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Long A Execute/CT Smoke & Car Molotov.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Long A Execute/Long Cross Smoke.rec");
 			}
+			case 4: //NAVI B Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/Boombl4 Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/s1mple Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/electronic Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/flamie Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/Perfecto Role.rec");
+			}
 		}
 	}
 }

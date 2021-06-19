@@ -4937,7 +4937,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		return;
 	}
 	
-	if(Math_GetRandomInt(1,100) <= 50)
+	if(Math_GetRandomInt(1,100) <= 100)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -4946,7 +4946,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 3);
+			g_iRndExecute = Math_GetRandomInt(4, 4);
 			PrepareDust2Executes();
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0)

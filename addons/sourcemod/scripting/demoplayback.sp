@@ -28,6 +28,7 @@ char g_szIsWalking[65535][64];
 
 int g_iCurDefIndex[65535];
 int g_iHasJumped[65535];
+int g_iHasZoomed[65535];
 int g_iThrowStrength[65535];
 
 float g_fPosition[65535][3];
@@ -36,11 +37,21 @@ float g_fVelocity[65535][3];
 float g_fAimPunch[65535][3];
 float g_flNextCommand[MAXPLAYERS+1];
 
+Handle g_hSwitchWeaponCall = null;
+
 public void OnPluginStart()
 {
 	HookEventEx("round_start", OnRoundStart);
 
 	RegConsoleCmd("sm_startplayback", Command_StartPlayback);
+	
+	Handle hGameData = LoadGameConfigFile("sdkhooks.games");
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Virtual, "Weapon_Switch");
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	g_hSwitchWeaponCall = EndPrepSDKCall();
+	delete hGameData;
 }
 
 public Action Command_StartPlayback(int client, int iArgs)
@@ -185,18 +196,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
 		{
 			iButtons |= IN_ATTACK;
-			iButtons &= ~IN_ATTACK2;
 		}
 		else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
 		{
 			iButtons |= IN_ATTACK2;
-			iButtons &= ~IN_ATTACK;
-		}
-		
-		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "false") == 0 || strcmp(g_szPinPulled[g_iCurrentTick[client]], "NULL") == 0)
-		{
-			iButtons &= ~IN_ATTACK;
-			iButtons &= ~IN_ATTACK2;
 		}
 		
 		if((strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0) && (GetEntityFlags(client) & FL_ONGROUND))
@@ -210,6 +213,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if(g_iHasJumped[g_iCurrentTick[client]] == 1)
 		{
 			iButtons |= IN_JUMP;
+		}
+		
+		if(g_iHasZoomed[g_iCurrentTick[client]] == 1)
+		{
+			iButtons |= IN_ATTACK2;
 		}
 		
 		static float fTemp[3];
@@ -229,11 +237,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if(eItems_IsDefIndexKnife(g_iCurDefIndex[g_iCurrentTick[client]]))
 			{
-				Client_SetActiveWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE));
+				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
+				SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(client, CS_SLOT_KNIFE));
 			}
 			else
 			{
-				Client_SetActiveWeapon(client, eItems_FindWeaponByClassName(client, szUseWeapon));
+				SDKCall(g_hSwitchWeaponCall, client, eItems_FindWeaponByClassName(client, szUseWeapon), 0);
+				SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", eItems_FindWeaponByClassName(client, szUseWeapon));
 			}
 		}
 		
@@ -314,6 +324,7 @@ void ParseTicks()
 		kv.GetString("isducked", g_szIsDucked[StringToInt(szTick)], 64);
 		kv.GetString("iswalking", g_szIsWalking[StringToInt(szTick)], 64);
 		g_iHasJumped[StringToInt(szTick)] = kv.GetNum("hasJumped");
+		g_iHasZoomed[StringToInt(szTick)] = kv.GetNum("hasZoomed");
 	} while (kv.GotoNextKey());
 	
 	g_iMaxTick = StringToInt(szTick);
