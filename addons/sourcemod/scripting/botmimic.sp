@@ -42,6 +42,7 @@ enum FrameInfo {
 	Float:actualVelocity[3],
 	Float:predictedVelocity[3],
 	Float:predictedAngles[2], // Ignore roll
+	Float:origin[3],
 	CSWeaponID:newWeapon,
 	playerSubtype,
 	playerSeed,
@@ -87,6 +88,7 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
+float g_flTickRate;
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -277,6 +279,8 @@ public void OnMapStart()
 {
 	g_bGameEnded = false;
 
+	g_flTickRate = float(RoundFloat(1.0 / GetTickInterval()));
+
 	// Clear old records for old map
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
@@ -343,6 +347,7 @@ public void OnClientPutInServer(int client)
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
+		SDKHook(client, SDKHook_OnTakeDamage, OnTakeDamage);
 	}
 }
 
@@ -365,10 +370,12 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 	iFrame[playerButtons] = buttons;
 	iFrame[playerImpulse] = impulse;
 	
-	float vVel[3];
+	float vVel[3], vOrigin[3];
 	Entity_GetAbsVelocity(client, vVel);
 	iFrame[actualVelocity] = vVel;
 	iFrame[predictedVelocity] = vel;
+	Entity_GetAbsOrigin(client, vOrigin);
+	iFrame[origin] = vOrigin;
 	Array_Copy(angles, iFrame[predictedAngles], 2);
 	iFrame[newWeapon] = CSWeapon_NONE;
 	iFrame[playerSubtype] = subtype;
@@ -397,9 +404,9 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 		if(iInterval > 0 && g_iOriginSnapshotInterval[client] > iInterval)
 		{
 			int iAT[AdditionalTeleport];
-			float origin[3];
-			GetClientAbsOrigin(client, origin);
-			Array_Copy(origin, iAT[atOrigin], 3);
+			float fOrigin[3];
+			GetClientAbsOrigin(client, fOrigin);
+			Array_Copy(fOrigin, iAT[atOrigin], 3);
 			iAT[atFlags] |= ADDITIONAL_FIELD_TELEPORTED_ORIGIN;
 			g_hRecordingAdditionalTeleport[client].PushArray(iAT[0], view_as<int>(AdditionalTeleport));
 			g_iOriginSnapshotInterval[client] = 0;
@@ -626,8 +633,17 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 		else
 		{
+			static float fTemp[3];
+			GetClientAbsOrigin(client, fTemp);
+			float vOrigin[3];
+			Array_Copy(iFrame[origin], vOrigin, 3);
+			
+			for (int i = 0; i < 3; i++)
+			{
+				fTemp[i] = (vOrigin[i] - fTemp[i]) * g_flTickRate;
+			}
 			g_bValidTeleportCall[client] = true;
-			TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
+			TeleportEntity(client, NULL_VECTOR, angles, fTemp);
 		}
 		
 		if(iFrame[newWeapon] != CSWeapon_NONE)
@@ -717,6 +733,14 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	
 	g_bPausedMimic[victim] = true;
 	CreateTimer(1.5, Timer_ResumeMimic, GetClientUserId(victim));
+	
+	return Plugin_Continue;
+}
+
+public Action OnTakeDamage(int client, int &iAttacker, int &iInflictor, float &iDamage, int &iDamagetype) 
+{
+	if (iDamagetype & DMG_FALL && g_hBotMimicsRecord[client] != null)
+		return Plugin_Handled;
 	
 	return Plugin_Continue;
 }
@@ -855,13 +879,13 @@ public MRESReturn DHooks_OnTeleport(int client, Handle hParams)
 	if(g_hRecording[client] == null)
 		return MRES_Ignored;
 	
-	float origin[3], angles[3], velocity[3];
+	float fOrigin[3], angles[3], velocity[3];
 	bool bOriginNull = DHookIsNullParam(hParams, 1);
 	bool bAnglesNull = DHookIsNullParam(hParams, 2);
 	bool bVelocityNull = DHookIsNullParam(hParams, 3);
 	
 	if(!bOriginNull)
-		DHookGetParamVector(hParams, 1, origin);
+		DHookGetParamVector(hParams, 1, fOrigin);
 	
 	if(!bAnglesNull)
 	{
@@ -876,7 +900,7 @@ public MRESReturn DHooks_OnTeleport(int client, Handle hParams)
 		return MRES_Ignored;
 	
 	int iAT[AdditionalTeleport];
-	Array_Copy(origin, iAT[atOrigin], 3);
+	Array_Copy(fOrigin, iAT[atOrigin], 3);
 	Array_Copy(angles, iAT[atAngles], 3);
 	Array_Copy(velocity, iAT[atVelocity], 3);
 	

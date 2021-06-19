@@ -12,6 +12,8 @@ bool g_bStartedPlaying[MAXPLAYERS+1];
 int g_iCurrentTick[MAXPLAYERS+1], g_iSnapshotTick[MAXPLAYERS+1];
 int g_iMaxTick;
 
+float g_flTickRate;
+
 char g_szWeapon[65535][64];
 char g_szPinPulled[65535][64];
 char g_szWeapon_1[65535][64];
@@ -31,6 +33,7 @@ int g_iThrowStrength[65535];
 float g_fPosition[65535][3];
 float g_fAngles[65535][3];
 float g_fVelocity[65535][3];
+float g_fAimPunch[65535][3];
 float g_flNextCommand[MAXPLAYERS+1];
 
 public void OnPluginStart()
@@ -52,6 +55,8 @@ public Action Command_StartPlayback(int client, int iArgs)
 public void OnMapStart()
 {
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
+	
+	g_flTickRate = float(RoundFloat(1.0 / GetTickInterval()));
 	
 	ParseTicks();
 }
@@ -166,6 +171,17 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
+		if(g_iCurrentTick[client] >= 1)
+		{
+			float fLateLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]-1]);
+			float fCurrentLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]]);
+			
+			if(fLateLength < fCurrentLength)
+			{
+				iButtons |= IN_ATTACK;
+			}
+		}
+		
 		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
 		{
 			iButtons |= IN_ATTACK;
@@ -177,10 +193,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons &= ~IN_ATTACK;
 		}
 		
-		if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0)
+		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "false") == 0 || strcmp(g_szPinPulled[g_iCurrentTick[client]], "NULL") == 0)
+		{
+			iButtons &= ~IN_ATTACK;
+			iButtons &= ~IN_ATTACK2;
+		}
+		
+		if((strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0) && (GetEntityFlags(client) & FL_ONGROUND))
 			iButtons |= IN_DUCK;
-		else if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "false") == 0)
-			iButtons &= ~IN_DUCK;
 		
 		if(strcmp(g_szIsWalking[g_iCurrentTick[client]], "true") == 0)
 			iButtons |= IN_SPEED;
@@ -192,30 +212,22 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons |= IN_JUMP;
 		}
 		
-		if(g_iSnapshotTick[client] == 64)
+		static float fTemp[3];
+		GetClientAbsOrigin(client, fTemp);
+		for (int i = 0; i < 3; i++)
 		{
-			SetEntPropVector(client, Prop_Data, "m_vecAbsOrigin", g_fPosition[g_iCurrentTick[client]]);
-			Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
-			g_iSnapshotTick[client] = 0;
+			fTemp[i] = (g_fPosition[g_iCurrentTick[client]][i] - fTemp[i]) * g_flTickRate;
 		}
-		else
-		{
-			Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
-			
-			float fLength = GetVectorLength(g_fVelocity[g_iCurrentTick[client]]);
-			if(fLength > 5.0)
-			{
-				TF2_MoveTo(client, g_fPosition[g_iCurrentTick[client]], fVel, fAngles);
-			}
-			
-			SetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", g_fVelocity[g_iCurrentTick[client]]);
-		}
+		
+		Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
+		
+		TeleportEntity(client, NULL_VECTOR, fAngles, fTemp);
 		
 		if(g_iCurDefIndex[g_iCurrentTick[client]] != 49)
 		{
 			eItems_GetWeaponClassNameByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]], szUseWeapon, sizeof(szUseWeapon));
 			
-			if(StrContains(szUseWeapon, "weapon_knife") != -1)
+			if(eItems_IsDefIndexKnife(g_iCurDefIndex[g_iCurrentTick[client]]))
 			{
 				Client_SetActiveWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE));
 			}
@@ -232,26 +244,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 	}
 	
 	return Plugin_Changed;
-}
-
-stock void TF2_MoveTo(int client, float flGoal[3], float fVel[3], float fAng[3])
-{
-    float flPos[3];
-    GetClientAbsOrigin(client, flPos);
-
-    float newmove[3];
-    SubtractVectors(flGoal, flPos, newmove);
-    
-    newmove[1] = -newmove[1];
-    
-    float sin = Sine(fAng[1] * FLOAT_PI / 180.0);
-    float cos = Cosine(fAng[1] * FLOAT_PI / 180.0);                        
-    
-    fVel[0] = cos * newmove[0] - sin * newmove[1];
-    fVel[1] = sin * newmove[0] + cos * newmove[1];
-    
-    NormalizeVector(fVel, fVel);
-    ScaleVector(fVel, 450.0);
 }
 
 stock bool FakeClientCommandThrottled(int client, const char[] command)
@@ -308,6 +300,7 @@ void ParseTicks()
 		kv.GetVector("position", g_fPosition[StringToInt(szTick)]);
 		kv.GetVector("angles", g_fAngles[StringToInt(szTick)]);
 		kv.GetVector("velocity", g_fVelocity[StringToInt(szTick)]);
+		kv.GetVector("aimpunch", g_fAimPunch[StringToInt(szTick)]);
 		kv.GetString("cur_name", g_szWeapon[StringToInt(szTick)], 64);
 		g_iCurDefIndex[StringToInt(szTick)] = kv.GetNum("cur_itemindex");
 		kv.GetString("pinpulled", g_szPinPulled[StringToInt(szTick)], 64);

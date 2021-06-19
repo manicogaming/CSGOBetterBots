@@ -11,9 +11,9 @@ public void PrepareTrainExecutes()
 			case 1: //A Execute
 			{
 				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/Olof Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/Sandwich Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/A Train 2nd Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/A Train 1st Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/A Train 2nd Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/Sandwich Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_train/A Execute/A Train 3rd Smoke.rec");
 			}
 			case 2: //B Execute

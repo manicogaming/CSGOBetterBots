@@ -14,14 +14,14 @@ public void PrepareCacheExecutes()
 				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_cache/A Execute/AWP Player.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_cache/A Execute/A Default Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_cache/A Execute/A Balcony Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_cache/A Execute/Squeaky Player.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_cache/A Execute/A Main Player.rec");
 			}
 			case 2: //Mid Execute
 			{
 				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/Mid Left Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/AWP Player.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/Mid Right Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/Mid Flash.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/B Push Player.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_cache/Mid Execute/Mid Push Player.rec");
 			}
 			case 3: //B Execute

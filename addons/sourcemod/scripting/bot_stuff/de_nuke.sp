@@ -14,7 +14,7 @@ public void PrepareNukeExecutes()
 				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_nuke/Outside Execute/AWP Player.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_nuke/Outside Execute/1st Outside Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_nuke/Outside Execute/2nd Outside Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_nuke/Outside Execute/Secret Molotov.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_nuke/Outside Execute/Garage Smoke.rec");
 			}
 			case 2: //A Execute
 			{

@@ -4527,6 +4527,22 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						}
 					}
 				}
+				else
+				{
+					int iDroppedC4 = GetNearestEntity(client, "weapon_c4");
+					
+					if (IsValidEntity(iDroppedC4) && GetClientTeam(client) == CS_TEAM_CT)
+					{
+						float fDroppedC4Location[3];
+						
+						GetEntPropVector(iDroppedC4, Prop_Send, "m_vecOrigin", fDroppedC4Location);
+
+						if (GetVectorLength(fDroppedC4Location) > 0.0)
+						{
+							SetEntData(client, g_iBotTaskOffset, view_as<int>(GUARD_LOOSE_BOMB));
+						}
+					}
+				}
 				
 				if (g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && !BotIsHiding(client) && !BotMimic_IsPlayerMimicing(client))
 				{
@@ -4895,8 +4911,14 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	g_bForcebuy = false;
-	g_cvBotEcoLimit.IntValue = 3000;
+	bool bDontExecute;
+	
+	if(g_cvBotEcoLimit.IntValue == 0)
+	{
+		g_bForcebuy = false;
+		g_cvBotEcoLimit.IntValue = 3000;
+		bDontExecute = true;
+	}
 	
 	g_bFreezetimeEnd = true;
 	
@@ -4910,7 +4932,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 	int iCurrentRound = GameRules_GetProp("m_totalRoundsPlayed");
 	
-	if(iCurrentRound == 0 || iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
+	if(iCurrentRound == 0 || iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0 || bDontExecute)
 	{
 		return;
 	}
@@ -4919,7 +4941,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 5);
+			g_iRndExecute = Math_GetRandomInt(1, 8);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
@@ -5236,7 +5258,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 75)
+					if (Math_GetRandomInt(1, 100) <= 85)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						

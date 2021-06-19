@@ -27,10 +27,10 @@ public void PrepareInfernoExecutes()
 			case 3: //A Long Execute
 			{
 				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Short Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Site Smoke.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Cubby Molotov.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Arch Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Library Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Cubby Molotov.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/A Long Execute/Site Smoke.rec");
 			}
 		}
 	}

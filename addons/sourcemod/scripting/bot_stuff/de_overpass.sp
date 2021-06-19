@@ -14,7 +14,7 @@ public void PrepareOverpassExecutes()
 				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/AWP Player.rec");
 				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Mid Site Smoke.rec");
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Van Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Bathrooms Player.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Long Player.rec");
 			}
 			case 2: //B Execute
 			{
