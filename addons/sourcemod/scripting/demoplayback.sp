@@ -48,7 +48,7 @@ public void OnPluginStart()
 	Handle hGameData = LoadGameConfigFile("sdkhooks.games");
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Virtual, "Weapon_Switch");
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	g_hSwitchWeaponCall = EndPrepSDKCall();
 	delete hGameData;
@@ -58,7 +58,7 @@ public Action Command_StartPlayback(int client, int iArgs)
 {
 	g_bStartedPlaying[client] = true;
 	Client_RemoveAllWeapons(client);
-	ServerCommand("sv_spawn_afk_bomb_drop_time 999");
+	ServerCommand("sv_spawn_afk_bomb_drop_time 9999");
 	
 	return Plugin_Handled;
 }
@@ -193,16 +193,19 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
+		if(eItems_GetWeaponSlotByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]]) == CS_SLOT_GRENADE)
 		{
-			iButtons |= IN_ATTACK;
-		}
-		else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
-		{
-			iButtons |= IN_ATTACK2;
+			if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
+			{
+				iButtons |= IN_ATTACK;
+			}
+			else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
+			{
+				iButtons |= IN_ATTACK2;
+			}
 		}
 		
-		if((strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0) && (GetEntityFlags(client) & FL_ONGROUND))
+		if(strcmp(g_szIsDucked[g_iCurrentTick[client]], "true") == 0 || strcmp(g_szIsDucking[g_iCurrentTick[client]], "true") == 0)
 			iButtons |= IN_DUCK;
 		
 		if(strcmp(g_szIsWalking[g_iCurrentTick[client]], "true") == 0)

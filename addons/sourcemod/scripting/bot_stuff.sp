@@ -262,6 +262,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_malvinas", Team_Malvinas);
 	RegConsoleCmd("team_paqueta", Team_Paqueta);
 	RegConsoleCmd("team_bnb", Team_BNB);
+	RegConsoleCmd("team_plano", Team_Plano);
 	RegConsoleCmd("team_eriness", Team_Eriness);
 	RegConsoleCmd("team_entropiq", Team_Entropiq);
 }
@@ -4537,7 +4538,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						GetEntPropVector(iDroppedC4, Prop_Send, "m_vecOrigin", fDroppedC4Location);
 
-						if (GetVectorLength(fDroppedC4Location) > 0.0)
+						if (fDroppedC4Location[0] != 0.0 && fDroppedC4Location[1] != 0.0 && fDroppedC4Location[2] != 0.0)
 						{
 							SetEntData(client, g_iBotTaskOffset, view_as<int>(GUARD_LOOSE_BOMB));
 						}
@@ -4937,11 +4938,11 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		return;
 	}
 	
-	if(Math_GetRandomInt(1,100) <= 100)
+	if(Math_GetRandomInt(1,100) <= 50)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 8);
+			g_iRndExecute = Math_GetRandomInt(1, 14);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
@@ -5383,7 +5384,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			float fTargetPos[3], fTargetDistance;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			
-			if ((iDefIndex == 9 || iDefIndex == 40) && GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel") == 0)
+			if (!GetEntProp(client, Prop_Send, "m_bIsScoped"))
 			{
 				g_bZoomed[client] = false;
 			}

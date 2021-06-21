@@ -72,6 +72,54 @@ public void PrepareMirageExecutes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/mousesports Fast B Execute/karrigan Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/mousesports Fast B Execute/ropz Role.rec");
 			}
+			case 9: //Vitality A Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/Vitality A Execute/apEX Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/Vitality A Execute/ZywOo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/Vitality A Execute/Kyojin Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/Vitality A Execute/misutaaa Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/Vitality A Execute/shox Role.rec");
+			}
+			case 10: //NAVI B Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/NAVI B Execute/Boombl4 Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/NAVI B Execute/s1mple Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/NAVI B Execute/electronic Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/NAVI B Execute/flamie Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/NAVI B Execute/Perfecto Role.rec");
+			}
+			case 11: //FURIA Fast B Split
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/arT Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/HEN1 Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/KSCERATO Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/VINI Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/FURIA Fast B Split/yuurih Role.rec");
+			}
+			case 12: //VP A Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/buster Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/Jame Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/Qikert Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/SANJI Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/YEKINDAR Role.rec");
+			}
+			case 13: //G2 Connector Pop
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/AmaNEk Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/kennyS Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/huNter- Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/nexa Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/NiKo Role.rec");
+			}
+			case 14: //FaZe Fast B Rush
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/FaZe Fast B Rush/NEO Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/FaZe Fast B Rush/GuardiaN Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/FaZe Fast B Rush/NiKo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/FaZe Fast B Rush/olofmeister Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/FaZe Fast B Rush/rain Role.rec");
+			}
 		}
 	}
 }
