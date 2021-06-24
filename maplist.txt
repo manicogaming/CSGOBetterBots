@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Mon Jun 21 01:43:05 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Jun 24 04:42:37 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -38,6 +38,7 @@ aim_aztecplace_kuli
 aim_badneighbors
 aim_badsiblings
 aim_bazaar_wingman
+workshop/243702660/aim_botz
 aim_catalyst
 aim_cbble
 aim_container_autosniper
@@ -70,9 +71,13 @@ aim_treearena
 aim_warehouse
 aim_warmup
 aim_winter_deagle_up2010
+ar_baggage
 ar_cbq
 ar_dizzy
 ar_fjord
+ar_lunacy
+ar_monastery
+ar_shoots
 awp_1337
 awp_arena
 awp_backgammon_b1
@@ -114,6 +119,7 @@ ba_winterforest_b1
 bgt_vegas
 c19_tilante
 carparkm1
+workshop/2422321624/clutches_cache
 cs_1337_assault_b2
 cs_agency
 cs_apollo
@@ -308,6 +314,7 @@ de_star
 de_stmarc
 de_stolen
 de_storehouse
+de_sugarcane
 de_torntown
 de_train
 de_tulip
@@ -316,12 +323,15 @@ de_vacant
 de_vertigo
 de_waterfall
 de_westwood
+de_winter_village_go
 de_zen
 deagle_ultra
 deathzone
 dm_bloodsport
 dm_lair_updated
+dz_blacksite
 dz_frostbite
+dz_sirocco
 fun_pacman_v1
 fy_aztec_fire_csgo
 fy_back_street
@@ -359,6 +369,7 @@ fy_simpsons_h
 fy_snow_07
 fy_towelie
 fy_twotowers
+gd_cbble
 genx_brickworld3
 gg_aim_shotty_csgo
 gg_arena_brazil
@@ -398,6 +409,7 @@ ka_swim_pool
 kills_ct
 knas_bunker_css
 knas_speedcastle_css
+lobby_mapveto
 maison
 mcdonalds-mds-csgo
 moziz_walzor
@@ -407,8 +419,18 @@ oa_sentinel1
 pet_sematary_final
 playground_x_s
 rox_dust_tower
+workshop/439365028/sensetivityfinder
 sj_dustland
 tk_dustworld_hd
+workshop/467786170/tr_blank
+training1
 ww_skyrail
 xi_rockyaim
 xmas_nipperhouse
+workshop/1234716875/yprac_cache
+workshop/1202643420/yprac_dust2
+workshop/1377592684/yprac_inferno
+workshop/1222094548/yprac_mirage
+workshop/1304331841/yprac_nuke
+workshop/1339439320/yprac_overpass
+workshop/1290304115/yprac_train

@@ -105,7 +105,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			GivePlayerItem(client, "weapon_knife");
 		}
 		
-		if(strcmp(g_szWeapon_1[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_1[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_1[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_1[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_1[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_1[g_iCurrentTick[client]], "grenade") == -1 
@@ -117,7 +117,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szWeapon_2[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_2[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_2[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_2[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_2[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_2[g_iCurrentTick[client]], "grenade") == -1 
@@ -129,7 +129,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szWeapon_3[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_3[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_3[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_3[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_3[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_3[g_iCurrentTick[client]], "grenade") == -1 
@@ -141,7 +141,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szWeapon_4[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_4[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_4[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_4[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_4[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_4[g_iCurrentTick[client]], "grenade") == -1 
@@ -153,7 +153,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szWeapon_5[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_5[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_5[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_5[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_5[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_5[g_iCurrentTick[client]], "grenade") == -1 
@@ -165,7 +165,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}
 		}
 		
-		if(strcmp(g_szWeapon_6[g_iCurrentTick[client]], "NULL") != 0 && !Client_HasWeapon(client, g_szWeapon_6[g_iCurrentTick[client]]))
+		if(strcmp(g_szWeapon_6[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_6[g_iCurrentTick[client]]) == -1)
 		{
 			iNewWeapon = GivePlayerItem(client, g_szWeapon_6[g_iCurrentTick[client]]);
 			if(StrContains(g_szWeapon_6[g_iCurrentTick[client]], "grenade") == -1 
@@ -182,7 +182,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		if(g_iCurrentTick[client] >= 1)
+		if(g_iCurrentTick[client] >= 1 && !(GetEntityFlags(client) & FL_ONGROUND))
 		{
 			float fLateLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]-1]);
 			float fCurrentLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]]);

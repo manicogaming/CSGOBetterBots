@@ -426,12 +426,12 @@
 	"flying" 			"IG"
 	"Viva" 				"IG"
 	"Starry" 			"IG"
-	//Elevate Players
-	"CutzMeretz" 		"Elevate"
-	"t9rnay" 			"Elevate"
-	"HPS" 				"Elevate"
-	"Demonos" 			"Elevate"
-	"history" 			"Elevate"
+	//100PG Players
+	"sorrow" 			"100PG"
+	"smiley" 			"100PG"
+	"icem4N" 			"100PG"
+	"dukefissura" 		"100PG"
+	"w1nt3r" 			"100PG"
 	//Dice Players
 	"XpG" 				"Dice"
 	"nonick" 			"Dice"
@@ -475,7 +475,7 @@
 	"SELLTER" 			"Unique"
 	"aNsavage" 			"Unique"	
 	//Izako Players
-	"Siuhy" 			"Izako"
+	"byali" 			"Izako"
 	"szejn" 			"Izako"
 	"STOMP" 			"Izako"
 	"mono" 				"Izako"
@@ -702,12 +702,12 @@
 	"ngiN" 				"Sangal"
 	"imoRR" 			"Sangal"
 	"S3NSEY"			"Sangal"
-	//PENTA Players
-	"awzek" 			"PENTA"
-	"mave" 				"PENTA"
-	"FreeZe" 			"PENTA"
-	"cello" 			"PENTA"
-	"florento"			"PENTA"
+	//XENEX Players
+	"JackB" 			"XENEX"
+	"eMy" 				"XENEX"
+	"Ziimzey" 			"XENEX"
+	"mrhui" 			"XENEX"
+	"Yoshwa"			"XENEX"
 	//Dragons Players
 	"GYZER" 			"Dragons"
 	"fREQ" 				"Dragons"
@@ -743,7 +743,7 @@
 	"pawkoem" 			"AVEZ"
 	"Warp" 				"AVEZ"
 	"SaMey" 			"AVEZ"
-	"ajyo"				"AVEZ"
+	"pendzel"			"AVEZ"
 	//BP Players
 	"coolio" 			"BP"
 	"mar" 				"BP"
@@ -792,12 +792,6 @@
 	"raveN" 			"LEISURE"
 	"d1cer" 			"LEISURE"
 	"oddo"				"LEISURE"
-	//Malvinas Players
-	"fakzwall" 			"Malvinas"
-	"jotti" 			"Malvinas"
-	"PREDI" 			"Malvinas"
-	"BerSeCkaZo" 		"Malvinas"
-	"bichop"			"Malvinas"
 	//Paquetá Players
 	"DeStiNy" 			"Paquetá"
 	"nython" 			"Paquetá"

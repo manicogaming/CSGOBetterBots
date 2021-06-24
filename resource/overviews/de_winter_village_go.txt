@@ -1,0 +1,9 @@
+"de_winter_village_go"
+{
+	"material"	"overviews/de_winter_village_go"
+	"pos_x"		"-2770"
+	"pos_y"		"3480"
+	"scale"		"5"
+	"rotate"	"0"
+	"zoom"		"1"
+}

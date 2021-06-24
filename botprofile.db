@@ -1834,25 +1834,25 @@ ProP+Rifle+RiflePersonality "Starry"
 	VoicePitch = 111
 End
 
-//Elevate Players
+//100PG Players
 
-ProP+Rifle+RiflePersonality "CutzMeretz"
+ProP+Rifle+RiflePersonality "sorrow"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "t9rnay"
+ProP+SniperPro+SniperPersonality "smiley"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "HPS"
+ProP+Rifle+RiflePersonality "icem4N"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "Demonos"
+ProP+Rifle+RiflePersonality "dukefissura"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "history"
+ProP+Rifle+RiflePersonality "w1nt3r"
 	VoicePitch = 94
 End
 
@@ -2012,7 +2012,7 @@ End
 
 //Izako Players
 
-ProP+Rifle+RiflePersonality "Siuhy"
+ProP+Rifle+RiflePersonality "byali"
 	VoicePitch = 98
 End
 
@@ -2868,25 +2868,25 @@ ProP+Rifle+RiflePersonality "S3NSEY"
 	VoicePitch = 111
 End
 
-//PENTA Players
+//XENEX Players
 
-ProP+Rifle+RiflePersonality "awzek"
+ProP+Rifle+RiflePersonality "JackB"
 	VoicePitch = 89
 End
 
-ProP+SniperPro+SniperPersonality "mave"
+ProP+SniperPro+SniperPersonality "eMy"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "FreeZe"
+ProP+Rifle+RiflePersonality "Ziimzey"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "cello"
+ProP+Rifle+RiflePersonality "mrhui"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "florento"
+ProP+Rifle+RiflePersonality "Yoshwa"
 	VoicePitch = 95
 End
 
@@ -3018,7 +3018,7 @@ ProP+Rifle+RiflePersonality "SaMey"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "ajyo"
+ProP+Rifle+RiflePersonality "pendzel"
 	VoicePitch = 103
 End
 
@@ -3196,28 +3196,6 @@ End
 
 ProP+Rifle+RiflePersonality "oddo"
 	VoicePitch = 75
-End
-
-//Malvinas Players
-
-ProP+Rifle+RiflePersonality "fakzwall"
-	VoicePitch = 112
-End
-
-ProP+SniperPro+SniperPersonality "jotti"
-	VoicePitch = 98
-End
-
-ProP+Rifle+RiflePersonality "PREDI"
-	VoicePitch = 82
-End
-
-ProP+Rifle+RiflePersonality "BerSeCkaZo"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RiflePersonality "bichop"
-	VoicePitch = 91
 End
 
 //Paquetá Players

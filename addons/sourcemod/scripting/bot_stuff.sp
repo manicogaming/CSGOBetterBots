@@ -15,8 +15,8 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bForcebuy;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPos;
-float g_flNextCommand[MAXPLAYERS+1], g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset, g_iBotAimGoalOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -27,6 +27,7 @@ Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
 Handle g_hBotBendLineOfSight;
 Handle g_hSetCrosshairCode;
+Handle g_hSwitchWeaponCall;
 
 char g_szBoneNames[][] =  {
 	"neck_0", 
@@ -198,7 +199,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_uol", Team_UOL);
 	RegConsoleCmd("team_fpx", Team_FPX);
 	RegConsoleCmd("team_ig", Team_IG);
-	RegConsoleCmd("team_elevate", Team_Elevate);
+	RegConsoleCmd("team_100pinggods", Team_100PingGods);
 	RegConsoleCmd("team_dice", Team_Dice);
 	RegConsoleCmd("team_tc", Team_TC);
 	RegConsoleCmd("team_gambit", Team_Gambit);
@@ -244,7 +245,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lemondogs", Team_Lemondogs);
 	RegConsoleCmd("team_havan", Team_Havan);
 	RegConsoleCmd("team_sangal", Team_Sangal);
-	RegConsoleCmd("team_penta", Team_PENTA);
+	RegConsoleCmd("team_xenex", Team_XENEX);
 	RegConsoleCmd("team_dragons", Team_Dragons);
 	RegConsoleCmd("team_nordavind", Team_Nordavind);
 	RegConsoleCmd("team_keyd", Team_Keyd);
@@ -259,7 +260,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_dc", Team_DC);
 	RegConsoleCmd("team_big5", Team_Big5);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
-	RegConsoleCmd("team_malvinas", Team_Malvinas);
 	RegConsoleCmd("team_paqueta", Team_Paqueta);
 	RegConsoleCmd("team_bnb", Team_BNB);
 	RegConsoleCmd("team_plano", Team_Plano);
@@ -2397,7 +2397,7 @@ public Action Team_IG(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Elevate(int client, int iArgs)
+public Action Team_100PingGods(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2405,23 +2405,23 @@ public Action Team_Elevate(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "CutzMeretz");
-		ServerCommand("bot_add_ct %s", "t9rnay");
-		ServerCommand("bot_add_ct %s", "HPS");
-		ServerCommand("bot_add_ct %s", "Demonos");
-		ServerCommand("bot_add_ct %s", "history");
-		ServerCommand("mp_teamlogo_1 ele");
+		ServerCommand("bot_add_ct %s", "sorrow");
+		ServerCommand("bot_add_ct %s", "smiley");
+		ServerCommand("bot_add_ct %s", "icem4N");
+		ServerCommand("bot_add_ct %s", "dukefissura");
+		ServerCommand("bot_add_ct %s", "w1nt3r");
+		ServerCommand("mp_teamlogo_1 ping");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "CutzMeretz");
-		ServerCommand("bot_add_t %s", "t9rnay");
-		ServerCommand("bot_add_t %s", "HPS");
-		ServerCommand("bot_add_t %s", "Demonos");
-		ServerCommand("bot_add_t %s", "history");
-		ServerCommand("mp_teamlogo_2 ele");
+		ServerCommand("bot_add_t %s", "sorrow");
+		ServerCommand("bot_add_t %s", "smiley");
+		ServerCommand("bot_add_t %s", "icem4N");
+		ServerCommand("bot_add_t %s", "dukefissura");
+		ServerCommand("bot_add_t %s", "w1nt3r");
+		ServerCommand("mp_teamlogo_2 ping");
 	}
 	
 	return Plugin_Handled;
@@ -2645,7 +2645,7 @@ public Action Team_Izako(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Siuhy");
+		ServerCommand("bot_add_ct %s", "byali");
 		ServerCommand("bot_add_ct %s", "szejn");
 		ServerCommand("bot_add_ct %s", "STOMP");
 		ServerCommand("bot_add_ct %s", "mono");
@@ -2656,7 +2656,7 @@ public Action Team_Izako(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Siuhy");
+		ServerCommand("bot_add_t %s", "byali");
 		ServerCommand("bot_add_t %s", "szejn");
 		ServerCommand("bot_add_t %s", "STOMP");
 		ServerCommand("bot_add_t %s", "mono");
@@ -3777,7 +3777,7 @@ public Action Team_Sangal(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_PENTA(int client, int iArgs)
+public Action Team_XENEX(int client, int iArgs)
 {
 	char szArg[12];
 	GetCmdArg(1, szArg, sizeof(szArg));
@@ -3785,23 +3785,23 @@ public Action Team_PENTA(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "awzek");
-		ServerCommand("bot_add_ct %s", "mave");
-		ServerCommand("bot_add_ct %s", "FreeZe");
-		ServerCommand("bot_add_ct %s", "cello");
-		ServerCommand("bot_add_ct %s", "florento");
-		ServerCommand("mp_teamlogo_1 penta");
+		ServerCommand("bot_add_ct %s", "JackB");
+		ServerCommand("bot_add_ct %s", "eMy");
+		ServerCommand("bot_add_ct %s", "Ziimzey");
+		ServerCommand("bot_add_ct %s", "mrhui");
+		ServerCommand("bot_add_ct %s", "Yoshwa");
+		ServerCommand("mp_teamlogo_1 xenex");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "awzek");
-		ServerCommand("bot_add_t %s", "mave");
-		ServerCommand("bot_add_t %s", "FreeZe");
-		ServerCommand("bot_add_t %s", "cello");
-		ServerCommand("bot_add_t %s", "florento");
-		ServerCommand("mp_teamlogo_2 penta");
+		ServerCommand("bot_add_t %s", "JackB");
+		ServerCommand("bot_add_t %s", "eMy");
+		ServerCommand("bot_add_t %s", "Ziimzey");
+		ServerCommand("bot_add_t %s", "mrhui");
+		ServerCommand("bot_add_t %s", "Yoshwa");
+		ServerCommand("mp_teamlogo_2 xenex");
 	}
 	
 	return Plugin_Handled;
@@ -3969,7 +3969,7 @@ public Action Team_AVEZ(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "pawkoem");
 		ServerCommand("bot_add_ct %s", "Warp");
 		ServerCommand("bot_add_ct %s", "SaMey");
-		ServerCommand("bot_add_ct %s", "ajyo");
+		ServerCommand("bot_add_ct %s", "pendzel");
 		ServerCommand("mp_teamlogo_1 avez");
 	}
 	
@@ -3980,7 +3980,7 @@ public Action Team_AVEZ(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "pawkoem");
 		ServerCommand("bot_add_t %s", "Warp");
 		ServerCommand("bot_add_t %s", "SaMey");
-		ServerCommand("bot_add_t %s", "ajyo");
+		ServerCommand("bot_add_t %s", "pendzel");
 		ServerCommand("mp_teamlogo_2 avez");
 	}
 	
@@ -4227,36 +4227,6 @@ public Action Team_LEISURE(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Malvinas(int client, int iArgs)
-{
-	char szArg[12];
-	GetCmdArg(1, szArg, sizeof(szArg));
-	
-	if (strcmp(szArg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "fakzwall");
-		ServerCommand("bot_add_ct %s", "jotti");
-		ServerCommand("bot_add_ct %s", "PREDI");
-		ServerCommand("bot_add_ct %s", "BerSeCkaZo");
-		ServerCommand("bot_add_ct %s", "bichop");
-		ServerCommand("mp_teamlogo_1 malv");
-	}
-	
-	if (strcmp(szArg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "fakzwall");
-		ServerCommand("bot_add_t %s", "jotti");
-		ServerCommand("bot_add_t %s", "PREDI");
-		ServerCommand("bot_add_t %s", "BerSeCkaZo");
-		ServerCommand("bot_add_t %s", "bichop");
-		ServerCommand("mp_teamlogo_2 malv");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Paqueta(int client, int iArgs)
 {
 	char szArg[12];
@@ -4492,7 +4462,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex))
 			{
-				FakeClientCommandThrottled(client, "use weapon_knife");
+				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 				bEveryoneDead = true;
 			}
 			
@@ -4518,7 +4488,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						if (fPlantedC4Distance > 2000.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
 						{
-							FakeClientCommandThrottled(client, "use weapon_knife");
+							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
 						}
 						if (!bEveryoneDead && fPlantedC4Distance < 2000.0 && fPlantedC4Distance > 200.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
@@ -4864,7 +4834,6 @@ public void OnMapEnd()
 public void OnClientPostAdminCheck(int client)
 {
 	g_iProfileRank[client] = Math_GetRandomInt(1, 40);
-	g_flNextCommand[client] = 0.0;
 	
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
@@ -4912,15 +4881,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	bool bDontExecute;
-	
-	if(g_cvBotEcoLimit.IntValue == 0)
-	{
-		g_bForcebuy = false;
-		g_cvBotEcoLimit.IntValue = 3000;
-		bDontExecute = true;
-	}
-	
 	g_bFreezetimeEnd = true;
 	
 	for (int i = 1; i <= MaxClients; i++)
@@ -4933,7 +4893,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 	int iCurrentRound = GameRules_GetProp("m_totalRoundsPlayed");
 	
-	if(iCurrentRound == 0 || iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0 || bDontExecute)
+	if(iCurrentRound == 0 || iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
 	{
 		return;
 	}
@@ -4942,7 +4902,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 14);
+			g_iRndExecute = Math_GetRandomInt(1, 16);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
@@ -4990,12 +4950,6 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	if(Math_GetRandomInt(1,100) <= 40)
-	{
-		g_cvBotEcoLimit.IntValue = 0;
-		g_bForcebuy = true;
-	}
-
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
@@ -5065,7 +5019,19 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
 		{
 			g_bZoomed[client] = false;
+			RequestFrame(Frame_SwitchBack, GetClientUserId(client));
 		}
+	}
+}
+
+public void Frame_SwitchBack(any client)
+{
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+	{
+		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
+		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
 	}
 }
 
@@ -5192,6 +5158,35 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 {
 	hReturn.Value = 0;
 	return MRES_Supercede;
+}
+
+public MRESReturn CCSBot_UpdateAimPrediction(int client)
+{
+	if(IsValidClient(g_iTarget[client]) && g_bIsProBot[client])
+	{
+		float fToTarget[3], fEyePos[3], fAimPunch[3];
+		
+		GetClientEyePosition(client, fEyePos);
+		GetEntPropVector(client, Prop_Data, "m_aimPunchAngle", fAimPunch);
+		
+		SubtractVectors(VelocityExtrapolate(g_iTarget[client], g_fTargetPos[client]), VelocityExtrapolate(client, fEyePos), fToTarget);
+						
+		GetVectorAngles(fToTarget, fToTarget);
+		
+		fToTarget[0] = AngleNormalize(fToTarget[0]);
+		fToTarget[1] = AngleNormalize(fToTarget[1]);
+		fToTarget[2] = 0.0;
+
+		ScaleVector(fAimPunch, -(FindConVar("weapon_recoil_scale").FloatValue));
+		
+		AddVectors(fToTarget, fAimPunch, fToTarget);
+
+		SetEntDataVector(client, g_iBotAimGoalOffset, fToTarget);
+		
+		return MRES_Supercede;
+	}
+	
+	return MRES_Ignored;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
@@ -5359,7 +5354,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			float fGoalPos[3], fBentGoal[3], fEyes[3], fHeightDiff;
 			
 			GetClientEyePosition(client, fEyes);
-			GetEntDataVector(client, g_iBotGoalPos, fGoalPos);
+			GetEntDataVector(client, g_iBotGoalPosOffset, fGoalPos);
 			fGoalPos[2] += 64.0;
 			
 			fHeightDiff = fGoalPos[2] - fEyes[2];
@@ -5434,19 +5429,33 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					return Plugin_Continue;
 				}
 				
-				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
+				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3], fCorrectAngles[3];
 				
 				GetClientEyePosition(client, fClientEyes);
 				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
 				GetClientEyeAngles(client, fClientAngles);
 				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
-				fClientAngles[0] += fAimPunchAngle[0] * 2.0;
-				fClientAngles[1] += fAimPunchAngle[1] * 2.0;
+				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
+				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
 				GetViewVector(fClientAngles, fAimDir);
 				
 				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
 				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
 				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
+				
+				GetClientEyeAngles(client, fCorrectAngles);
+				float fYawDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookYawOffset) - fCorrectAngles[1]);
+				float fPitchDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookPitchOffset) - fCorrectAngles[0]);
+				
+				if (fYawDiff < 1.0 && fYawDiff > -1.0)
+				{
+					fCorrectAngles[1] = GetEntDataFloat(client, g_iBotLookYawOffset);
+				}
+				
+				if (fPitchDiff < 1.0 && fPitchDiff > -1.0)
+				{
+					fCorrectAngles[0] = GetEntDataFloat(client, g_iBotLookPitchOffset);
+				}
 				
 				switch(iDefIndex)
 				{
@@ -5467,13 +5476,17 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
+						TeleportEntity(client, NULL_VECTOR, fCorrectAngles, NULL_VECTOR);
+					
 						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING))
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 					}
 					case 9, 40:
-					{
+					{						
+						TeleportEntity(client, NULL_VECTOR, fCorrectAngles, NULL_VECTOR);
+					
 						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client])
 						{
 							iButtons |= IN_ATTACK;
@@ -5712,9 +5725,24 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_enemy offset.");
 	}
 	
-	if ((g_iBotGoalPos = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
+	if ((g_iBotGoalPosOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
+	}
+	
+	if ((g_iBotAimGoalOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_aimGoal")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_aimGoal offset.");
+	}
+	
+	if ((g_iBotLookPitchOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookPitch")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_lookPitch offset.");
+	}
+	
+	if ((g_iBotLookYawOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookYaw")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_lookYaw offset.");
 	}
 	
 	StartPrepSDKCall(SDKCall_Player);
@@ -5780,6 +5808,12 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	if ((g_hSetCrosshairCode = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for SetCrosshairCode signature!");
 	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Virtual, "Weapon_Switch");
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+	
 	delete hGameConfig;
 }
 
@@ -5825,6 +5859,13 @@ public void LoadDetours()
 	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
 	{
 		SetFailState("Failed to setup detour for BotSIN");
+	}
+	
+	//CCSBot::UpdateAimPrediction Detour
+	DynamicDetour hBotAimPredictionDetour = DynamicDetour.FromConf(hGameData, "CCSBot::UpdateAimPrediction");
+	if(!hBotAimPredictionDetour.Enable(Hook_Pre, CCSBot_UpdateAimPrediction))
+	{
+		SetFailState("Failed to setup detour for CCSBot::UpdateAimPrediction");
 	}
 	
 	delete hGameData;
@@ -5987,18 +6028,6 @@ public Action Timer_Zoomed(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-stock bool FakeClientCommandThrottled(int client, const char[] command)
-{
-	if(g_flNextCommand[client] > GetGameTime())
-		return false;
-	
-	FakeClientCommand(client, command);
-	
-	g_flNextCommand[client] = GetGameTime() + 0.4;
-	
-	return true;
-}
-
 public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
 	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
@@ -6056,6 +6085,28 @@ stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
 	TR_TraceRayFilter(fStart, fEnd, MASK_SHOT, RayType_EndPoint, TraceEntityFilterStuff);
 	return TR_GetFraction() >= 0.9;
+}
+
+float[] VelocityExtrapolate(int client, float fEyePos[3])
+{
+	float fAbsVel[3];
+	GetEntPropVector(client, Prop_Data, "m_vecVelocity", fAbsVel);
+	
+	float fV[3];
+	
+	fV[0] = fEyePos[0] + (fAbsVel[0] * GetTickInterval());
+	fV[1] = fEyePos[1] + (fAbsVel[1] * GetTickInterval());
+	fV[2] = fEyePos[2] + (fAbsVel[2] * GetTickInterval());
+	
+	return fV;
+}
+
+stock float AngleNormalize(float fAngle)
+{
+	fAngle = fAngle - 360.0 * RoundToFloor(fAngle / 360.0);
+	while (fAngle > 180.0) fAngle -= 360.0;
+	while (fAngle < -180.0) fAngle += 360.0;
+	return fAngle;
 }
 
 public bool TraceEntityFilterStuff(int iEntity, int iMask)
