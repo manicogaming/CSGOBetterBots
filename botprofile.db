@@ -1352,7 +1352,7 @@ End
 
 //Isurus Players
 
-ProP+Rifle+RiflePersonality "tom1"
+ProP+Rifle+RiflePersonality "fakzwall"
 	VoicePitch = 115
 End
 
@@ -2522,11 +2522,11 @@ ProP+Rifle+RiflePersonality "NABOWOW"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "Jaepe"
+ProP+SniperPro+SniperPersonality "ewjerkz"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "Icarus"
+ProP+Rifle+RiflePersonality "DDias"
 	VoicePitch = 77
 End
 
@@ -2534,7 +2534,7 @@ ProP+Rifle+RiflePersonality "story"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "Cunha"
+ProP+Rifle+RiflePersonality "arrozdoce"
 	VoicePitch = 103
 End
 
@@ -3306,6 +3306,28 @@ End
 
 ProP+Rifle+RiflePersonality "Forester"
 	VoicePitch = 75
+End
+
+//GGPR Players
+
+ProP+Rifle+RiflePersonality "lowrider"
+	VoicePitch = 103
+End
+
+ProP+SniperPro+SniperPersonality "Inseaniac"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "BeaKie"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "Sharkie"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "Jmp"
+	VoicePitch = 87
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

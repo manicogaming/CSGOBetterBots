@@ -16,7 +16,7 @@ bool g_bFreezetimeEnd, g_bBombPlanted, g_bForcebuy;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
 int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset, g_iBotAimGoalOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fLookAngleStiffnessAttacking[MAXPLAYERS+1], g_fLookAngleDampingAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -265,6 +265,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_plano", Team_Plano);
 	RegConsoleCmd("team_eriness", Team_Eriness);
 	RegConsoleCmd("team_entropiq", Team_Entropiq);
+	RegConsoleCmd("team_ggpr", Team_GGPR);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -1745,7 +1746,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "tom1");
+		ServerCommand("bot_add_ct %s", "fakzwall");
 		ServerCommand("bot_add_ct %s", "Noktse");
 		ServerCommand("bot_add_ct %s", "BK1");
 		ServerCommand("bot_add_ct %s", "decov9jse");
@@ -1756,7 +1757,7 @@ public Action Team_Isurus(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "tom1");
+		ServerCommand("bot_add_t %s", "fakzwall");
 		ServerCommand("bot_add_t %s", "Noktse");
 		ServerCommand("bot_add_t %s", "BK1");
 		ServerCommand("bot_add_t %s", "decov9jse");
@@ -2646,8 +2647,8 @@ public Action Team_Izako(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "byali");
-		ServerCommand("bot_add_ct %s", "szejn");
 		ServerCommand("bot_add_ct %s", "STOMP");
+		ServerCommand("bot_add_ct %s", "szejn");
 		ServerCommand("bot_add_ct %s", "mono");
 		ServerCommand("bot_add_ct %s", "TOAO");
 		ServerCommand("mp_teamlogo_1 izak");
@@ -2657,8 +2658,8 @@ public Action Team_Izako(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "byali");
-		ServerCommand("bot_add_t %s", "szejn");
 		ServerCommand("bot_add_t %s", "STOMP");
+		ServerCommand("bot_add_t %s", "szejn");
 		ServerCommand("bot_add_t %s", "mono");
 		ServerCommand("bot_add_t %s", "TOAO");
 		ServerCommand("mp_teamlogo_2 izak");
@@ -2706,8 +2707,8 @@ public Action Team_Fiend(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "dream3r");
-		ServerCommand("bot_add_ct %s", "v1c7oR");
 		ServerCommand("bot_add_ct %s", "bubble");
+		ServerCommand("bot_add_ct %s", "v1c7oR");
 		ServerCommand("bot_add_ct %s", "h4rn");
 		ServerCommand("bot_add_ct %s", "REDSTAR");
 		ServerCommand("mp_teamlogo_1 fiend");
@@ -2717,8 +2718,8 @@ public Action Team_Fiend(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "dream3r");
-		ServerCommand("bot_add_t %s", "v1c7oR");
 		ServerCommand("bot_add_t %s", "bubble");
+		ServerCommand("bot_add_t %s", "v1c7oR");
 		ServerCommand("bot_add_t %s", "h4rn");
 		ServerCommand("bot_add_t %s", "REDSTAR");
 		ServerCommand("mp_teamlogo_2 fiend");
@@ -3306,10 +3307,10 @@ public Action Team_FTW(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "NABOWOW");
-		ServerCommand("bot_add_ct %s", "Jaepe");
-		ServerCommand("bot_add_ct %s", "Icarus");
+		ServerCommand("bot_add_ct %s", "ewjerkz");
+		ServerCommand("bot_add_ct %s", "DDias");
 		ServerCommand("bot_add_ct %s", "story");
-		ServerCommand("bot_add_ct %s", "Cunha");
+		ServerCommand("bot_add_ct %s", "arrozdoce");
 		ServerCommand("mp_teamlogo_1 ftw");
 	}
 	
@@ -3317,10 +3318,10 @@ public Action Team_FTW(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "NABOWOW");
-		ServerCommand("bot_add_t %s", "Jaepe");
-		ServerCommand("bot_add_t %s", "Icarus");
+		ServerCommand("bot_add_t %s", "ewjerkz");
+		ServerCommand("bot_add_t %s", "DDias");
 		ServerCommand("bot_add_t %s", "story");
-		ServerCommand("bot_add_t %s", "Cunha");
+		ServerCommand("bot_add_t %s", "arrozdoce");
 		ServerCommand("mp_teamlogo_2 ftw");
 	}
 	
@@ -4377,6 +4378,36 @@ public Action Team_Entropiq(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_GGPR(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "lowrider");
+		ServerCommand("bot_add_ct %s", "Inseaniac");
+		ServerCommand("bot_add_ct %s", "BeaKie");
+		ServerCommand("bot_add_ct %s", "Sharkie");
+		ServerCommand("bot_add_ct %s", "Jmp");
+		ServerCommand("mp_teamlogo_1 ggpr");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "lowrider");
+		ServerCommand("bot_add_t %s", "Inseaniac");
+		ServerCommand("bot_add_t %s", "BeaKie");
+		ServerCommand("bot_add_t %s", "Sharkie");
+		ServerCommand("bot_add_t %s", "Jmp");
+		ServerCommand("mp_teamlogo_2 ggpr");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -4845,7 +4876,23 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 100000.0);
+			int iRndAim = Math_GetRandomInt(1,7);
+			switch(iRndAim)
+			{
+				case 1:
+				{
+					g_fLookAngleMaxAccelAttacking[client] = 20000.0;
+					g_fLookAngleStiffnessAttacking[client] = 900.0;
+					g_fLookAngleDampingAttacking[client] = 50.0;
+				}
+				default:
+				{
+					g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 100000.0);
+					g_fLookAngleStiffnessAttacking[client] = 300.0;
+					g_fLookAngleDampingAttacking[client] = 30.0;
+				}
+			}
+			
 			g_bIsProBot[client] = true;
 		}
 		
@@ -4907,10 +4954,10 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(4, 4);
+			g_iRndExecute = Math_GetRandomInt(1, 4);
 			PrepareDust2Executes();
 		}
-		else if (strcmp(g_szMap, "de_inferno") == 0)
+		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
 			PrepareInfernoExecutes();
@@ -5189,6 +5236,20 @@ public MRESReturn CCSBot_UpdateAimPrediction(int client)
 	return MRES_Ignored;
 }
 
+public MRESReturn CCSBot_IsVisiblePos(int pThis, DHookReturn hReturn, DHookParam hParams)
+{
+	hParams.Set(2, 0);
+	
+	return MRES_ChangedHandled;
+}
+
+public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookParam hParams)
+{
+	hParams.Set(2, 0);
+	
+	return MRES_ChangedHandled;
+}
+
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
@@ -5196,19 +5257,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Breakable") == 0
-		 || strcmp(szDesc, "Hostage") == 0)
+		 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "GrenadeThrowBend") == 0)
 	{
 		return MRES_Ignored;
-	}
-	else if (strcmp(szDesc, "GrenadeThrowBend") == 0)
-	{
-		float fPos[3];
-		
-		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += Math_GetRandomFloat(25.0, 100.0);
-		DHookSetParamVector(hParams, 2, fPos);
-		
-		return MRES_ChangedHandled;
 	}
 	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
@@ -5523,7 +5574,8 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			
 			//All these offsets are inside BotProfileManager::Init
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
+			StoreToAddress(pLocalProfile + view_as<Address>(120), view_as<int>(g_fLookAngleStiffnessAttacking[client]), NumberType_Int32);
+			StoreToAddress(pLocalProfile + view_as<Address>(124), view_as<int>(g_fLookAngleDampingAttacking[client]), NumberType_Int32);
 		}
 		
 		if(!g_bForcebuy)
@@ -5866,6 +5918,20 @@ public void LoadDetours()
 	if(!hBotAimPredictionDetour.Enable(Hook_Pre, CCSBot_UpdateAimPrediction))
 	{
 		SetFailState("Failed to setup detour for CCSBot::UpdateAimPrediction");
+	}
+	
+	//CCSBot::IsVisible(pos) Detour
+	DynamicDetour hBotVisiblePosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(pos)");
+	if(!hBotVisiblePosDetour.Enable(Hook_Pre, CCSBot_IsVisiblePos))
+	{
+		SetFailState("Failed to setup detour for CCSBot::IsVisible(pos)");
+	}
+	
+	//CCSBot::IsVisible(player) Detour
+	DynamicDetour hBotVisiblePlayerDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(player)");
+	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
+	{
+		SetFailState("Failed to setup detour for CCSBot::IsVisible(player)");
 	}
 	
 	delete hGameData;

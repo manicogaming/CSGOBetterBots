@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Thu Jun 24 04:42:37 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Jun 27 23:57:33 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -148,6 +148,7 @@ cs_militia
 cs_motel
 cs_museum
 cs_office
+cs_renovation
 cs_siege
 cs_warmblow_beta01
 cs_winternights
@@ -179,6 +180,7 @@ de_bazaar
 de_belukha
 de_berth
 de_biome
+de_blackgold
 de_bombspot_bitcoin
 de_boohouse_go
 de_boston_csgo
@@ -294,6 +296,7 @@ de_portugal_rc1
 de_pripyat
 de_rails
 de_region
+de_republic
 de_resort
 de_rotterdam
 de_ruins
@@ -322,6 +325,7 @@ de_tuscan
 de_vacant
 de_vertigo
 de_waterfall
+de_waterland
 de_westwood
 de_winter_village_go
 de_zen
@@ -427,6 +431,7 @@ training1
 ww_skyrail
 xi_rockyaim
 xmas_nipperhouse
+workshop/1104441138/yprac_arena
 workshop/1234716875/yprac_cache
 workshop/1202643420/yprac_dust2
 workshop/1377592684/yprac_inferno

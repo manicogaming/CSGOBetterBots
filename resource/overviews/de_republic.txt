@@ -1,0 +1,17 @@
+"de_republic"
+{
+	"material" "overviews/de_republic"
+	"pos_x" "-3857.000000"
+	"pos_y" "2498.000000"
+	"scale" "4.560000"
+
+        "CTSpawn_x"	"0.49"
+ 	"CTSpawn_y"	"0.87"
+	"TSpawn_x"	"0.59"
+	"TSpawn_y"	"0.1"
+
+	"bombA_x"	"0.19"
+	"bombA_y"	"0.49"
+	"bombB_x"	"0.81"
+	"bombB_y"	"0.69"
+}

@@ -295,7 +295,7 @@
 	"pacman^v^" 		"CSGO-obLR7-tax37-E93E8-aHR7G-OA26A"
 	"points" 			"CSGO-ZCtHy-jX2vt-aVkQQ-bNJPu-hOxoO"
 	//Isurus Players
-	"tom1" 				"CSGO-iQQ9A-UXVLi-ymA6Q-cpsMR-udBAA"
+	"fakzwall" 			"CSGO-4hU9K-rUOXu-KC2Cu-CModG-qmTiA"
 	"Noktse" 			"CSGO-JNv6R-oO9CX-FRMUD-Aq3er-GB26A"
 	"BK1" 				"CSGO-ARRfw-fiKQe-hfHUu-6pu3r-QQSFE"	
 	"decov9jse" 		"CSGO-sjfW3-fBNbF-M7tnL-4Mspq-msAkE"	
@@ -608,9 +608,9 @@
 	"freddyyyw" 		"CSGO-i4Krz-pnaTM-mVmG8-fLwmk-NCweM"
 	//FTW Players
 	"NABOWOW" 			"CSGO-XLRO5-nXAmX-Uh8aM-764BH-WbxTC"
-	"Cunha" 			"CSGO-RFTbX-J3GXb-X92bu-SGtda-udMbM"
-	"Jaepe" 			"CSGO-oMu4H-Ah5B5-o9xfc-5Vmo6-7xAkE"
-	"Icarus" 			"CSGO-QELyr-q54Ce-6LiMt-jFcUS-YJeFO"
+	"arrozdoce" 		"CSGO-wD7Fd-3G3uR-W9mvb-UOaix-KSaYO"
+	"ewjerkz" 			"CSGO-7RUBV-OzcAw-KZLpA-GhrvF-2e7iL"
+	"DDias" 			"CSGO-7vHs4-HUWGm-uFa5T-i8WsN-dOSFE"
 	"story" 			"CSGO-byaXy-FinRr-pwXbc-L5x2i-vfrVQ"
 	//Tigers Players
 	"Aralio" 			"CSGO-Mqf5Q-mkymH-zAqne-mW2jp-wO8WB"
@@ -822,4 +822,10 @@
 	"NickelBack" 		"CSGO-wv4rZ-B7Uec-TyJc7-2iGcM-HzQRO"
 	"Krad" 				"CSGO-oCq4Q-AyLHV-ZCuDc-ydSko-xnA6Q"
 	"Forester"			"CSGO-iJqMh-MBrKb-RP6Zr-XnvNj-2mdVG"
+	//GGPR Players
+	"lowrider" 			"CSGO-SR5ad-X9cfa-nBiBu-ELzyW-Rx6KQ"
+	"Inseaniac" 		"CSGO-KTZB3-CZQRK-swJCj-pzeTu-cqybE"
+	"BeaKie" 			"CSGO-SR5ad-X9cfa-nBiBu-ELzyW-Rx6KQ"
+	"Sharkie" 			"CSGO-23mcY-qJU8X-fa5iz-SaD2q-68izO"
+	"Jmp"				"CSGO-DtwB9-2CfSp-Y6rPV-SR9EE-pnYbD"
 }

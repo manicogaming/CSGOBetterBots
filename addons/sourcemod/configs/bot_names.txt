@@ -295,7 +295,7 @@
 	"pacman^v^" 		"Infinity"
 	"points" 			"Infinity"
 	//Isurus Players
-	"tom1" 				"Isurus"
+	"fakzwall" 			"Isurus"
 	"Noktse" 			"Isurus"
 	"BK1" 				"Isurus"	
 	"decov9jse" 		"Isurus"	
@@ -608,10 +608,10 @@
 	"freddyyyw" 		"Lilmix"
 	//FTW Players
 	"NABOWOW" 			"FTW"
-	"Jaepe" 			"FTW"
-	"Icarus" 			"FTW"
+	"ewjerkz" 			"FTW"
+	"DDias" 			"FTW"
 	"story" 			"FTW"
-	"Cunha" 			"FTW"
+	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"Aralio" 			"Tigers"
 	"ZEDc" 				"Tigers"
@@ -822,4 +822,10 @@
 	"NickelBack" 		"Entropiq"
 	"Krad" 				"Entropiq"
 	"Forester"			"Entropiq"
+	//GGPR Players
+	"lowrider" 			"GGPR"
+	"Inseaniac" 		"GGPR"
+	"BeaKie" 			"GGPR"
+	"Sharkie" 			"GGPR"
+	"Jmp"				"GGPR"
 }

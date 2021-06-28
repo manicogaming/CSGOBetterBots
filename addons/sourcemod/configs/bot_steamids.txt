@@ -295,7 +295,7 @@
 	"pacman^v^" 		"486643146"
 	"points" 			"79878687"
 	//Isurus Players
-	"tom1" 				"1021035676"
+	"fakzwall" 			"100101626"
 	"Noktse" 			"54233223"
 	"BK1" 				"221869734"	
 	"decov9jse" 		"311766666"	
@@ -608,9 +608,9 @@
 	"freddyyyw" 		"41677010"
 	//FTW Players
 	"NABOWOW" 			"283730928"
-	"Cunha" 			"203400597"
-	"Jaepe" 			"251441860"
-	"Icarus" 			"291309752"
+	"arrozdoce" 		"13492074"
+	"ewjerkz" 			"302194534"
+	"DDias" 			"67343840"
 	"story" 			"105182632"
 	//Tigers Players
 	"Aralio" 			"79809520"
@@ -822,4 +822,10 @@
 	"NickelBack" 		"1882779"
 	"Krad" 				"71642904"
 	"Forester"			"67083025"
+	//GGPR Players
+	"lowrider" 			"16402572"
+	"Inseaniac" 		"303757892"
+	"BeaKie" 			"95366213"
+	"Sharkie" 			"126944965"
+	"Jmp"				"276861790"
 }
