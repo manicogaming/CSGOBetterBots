@@ -489,7 +489,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		if(g_bResumeMimic[client] && !g_bTimerExists[client])
 		{
 			g_bAimSmoothing[client] = true;
-			CreateTimer(0.5, Timer_SmoothAim, GetClientUserId(client));
+			CreateTimer(1.0, Timer_SmoothAim, GetClientUserId(client));
 			g_bTimerExists[client] = true;
 			return Plugin_Continue;
 		}
@@ -531,7 +531,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 			float desired_dir[3];
 			Array_Copy(iFrame[predictedAngles], desired_dir, 2);
 
-			float fRandSpeed = Math_GetRandomFloat(0.01, 0.20);
+			float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
 			// ease the current direction to the target direction
 			flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
 			flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;

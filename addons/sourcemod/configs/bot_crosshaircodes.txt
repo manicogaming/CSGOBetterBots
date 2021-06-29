@@ -451,7 +451,7 @@
 	"Ax1Le" 			"CSGO-3RMdZ-zztkw-odkjJ-AGdVi-kSVGQ"
 	"Hobbit" 			"CSGO-i8JOd-tjHPY-ArWuO-SJcEx-FZQ3A"
 	//Wisla Players
-	"Markoś"			"CSGO-7c9Ev-rL4p5-ZFxYW-kamUy-dMh8E" 
+	"Markos"			"CSGO-7c9Ev-rL4p5-ZFxYW-kamUy-dMh8E" 
 	"SZPERO" 			"CSGO-uEaYS-X6eUx-iQa2i-tLeMN-ykEVF"
 	"Goofy" 			"CSGO-yFfMm-BULjV-NMACJ-DyvhX-G5SKF"
 	"ponczek" 			"CSGO-BBT76-cCzJE-rUBxy-VPtUG-KCR7B"

@@ -451,7 +451,7 @@
 	"Ax1Le" 			"Gambit"
 	"Hobbit" 			"Gambit"
 	//Wisla Players
-	"Markoś"			"Wisla" 
+	"Markos"			"Wisla" 
 	"SZPERO" 			"Wisla"
 	"Goofy" 			"Wisla"
 	"ponczek" 			"Wisla"

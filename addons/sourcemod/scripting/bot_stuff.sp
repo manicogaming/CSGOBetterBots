@@ -15,8 +15,8 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bForcebuy;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset, g_iBotAimGoalOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fLookAngleStiffnessAttacking[MAXPLAYERS+1], g_fLookAngleDampingAttacking[MAXPLAYERS+1];
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -2526,7 +2526,7 @@ public Action Team_Wisla(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Markoś");
+		ServerCommand("bot_add_ct %s", "Markos");
 		ServerCommand("bot_add_ct %s", "SZPERO");
 		ServerCommand("bot_add_ct %s", "Goofy");
 		ServerCommand("bot_add_ct %s", "ponczek");
@@ -2537,7 +2537,7 @@ public Action Team_Wisla(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Markoś");
+		ServerCommand("bot_add_t %s", "Markos");
 		ServerCommand("bot_add_t %s", "SZPERO");
 		ServerCommand("bot_add_t %s", "Goofy");
 		ServerCommand("bot_add_t %s", "ponczek");
@@ -4499,8 +4499,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			if (g_bIsProBot[client])
 			{
-				g_iTarget[client] = BotGetEnemy(client);
-				
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
@@ -4526,22 +4524,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						{
 							BotEquipBestWeapon(client, true);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
-						}
-					}
-				}
-				else
-				{
-					int iDroppedC4 = GetNearestEntity(client, "weapon_c4");
-					
-					if (IsValidEntity(iDroppedC4) && GetClientTeam(client) == CS_TEAM_CT)
-					{
-						float fDroppedC4Location[3];
-						
-						GetEntPropVector(iDroppedC4, Prop_Send, "m_vecOrigin", fDroppedC4Location);
-
-						if (fDroppedC4Location[0] != 0.0 && fDroppedC4Location[1] != 0.0 && fDroppedC4Location[2] != 0.0)
-						{
-							SetEntData(client, g_iBotTaskOffset, view_as<int>(GUARD_LOOSE_BOMB));
 						}
 					}
 				}
@@ -4876,23 +4858,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			int iRndAim = Math_GetRandomInt(1,7);
-			switch(iRndAim)
-			{
-				case 1:
-				{
-					g_fLookAngleMaxAccelAttacking[client] = 20000.0;
-					g_fLookAngleStiffnessAttacking[client] = 900.0;
-					g_fLookAngleDampingAttacking[client] = 50.0;
-				}
-				default:
-				{
-					g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 100000.0);
-					g_fLookAngleStiffnessAttacking[client] = 300.0;
-					g_fLookAngleDampingAttacking[client] = 30.0;
-				}
-			}
-			
+			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 100000.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -5207,35 +5173,6 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 	return MRES_Supercede;
 }
 
-public MRESReturn CCSBot_UpdateAimPrediction(int client)
-{
-	if(IsValidClient(g_iTarget[client]) && g_bIsProBot[client])
-	{
-		float fToTarget[3], fEyePos[3], fAimPunch[3];
-		
-		GetClientEyePosition(client, fEyePos);
-		GetEntPropVector(client, Prop_Data, "m_aimPunchAngle", fAimPunch);
-		
-		SubtractVectors(VelocityExtrapolate(g_iTarget[client], g_fTargetPos[client]), VelocityExtrapolate(client, fEyePos), fToTarget);
-						
-		GetVectorAngles(fToTarget, fToTarget);
-		
-		fToTarget[0] = AngleNormalize(fToTarget[0]);
-		fToTarget[1] = AngleNormalize(fToTarget[1]);
-		fToTarget[2] = 0.0;
-
-		ScaleVector(fAimPunch, -(FindConVar("weapon_recoil_scale").FloatValue));
-		
-		AddVectors(fToTarget, fAimPunch, fToTarget);
-
-		SetEntDataVector(client, g_iBotAimGoalOffset, fToTarget);
-		
-		return MRES_Supercede;
-	}
-	
-	return MRES_Ignored;
-}
-
 public MRESReturn CCSBot_IsVisiblePos(int pThis, DHookReturn hReturn, DHookParam hParams)
 {
 	hParams.Set(2, 0);
@@ -5402,7 +5339,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
-			float fGoalPos[3], fBentGoal[3], fEyes[3], fHeightDiff;
+			float fGoalPos[3], fEyes[3], fHeightDiff;
 			
 			GetClientEyePosition(client, fEyes);
 			GetEntDataVector(client, g_iBotGoalPosOffset, fGoalPos);
@@ -5410,11 +5347,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			fHeightDiff = fGoalPos[2] - fEyes[2];
 			
-			if(!BotIsVisible(client, fGoalPos, false) && BotBendLineOfSight(client, fEyes, fGoalPos, fBentGoal, 360.0))
-			{
-				BotSetLookAt(client, "Use entity", fBentGoal, PRIORITY_LOWEST, 0.1, false, 5.0, false);
-			}
-			else if(fHeightDiff < -20.0 || fHeightDiff > 20.0)
+			if(fHeightDiff < -20.0 || fHeightDiff > 20.0)
 			{
 				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.1, true, 5.0, false);
 			}
@@ -5427,6 +5360,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (g_bIsProBot[client])
 		{
+			g_iTarget[client] = BotGetEnemy(client);
+			
 			float fTargetPos[3], fTargetDistance;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			
@@ -5480,7 +5415,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					return Plugin_Continue;
 				}
 				
-				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3], fCorrectAngles[3];
+				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
 				
 				GetClientEyePosition(client, fClientEyes);
 				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
@@ -5493,20 +5428,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
 				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
 				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-				
-				GetClientEyeAngles(client, fCorrectAngles);
-				float fYawDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookYawOffset) - fCorrectAngles[1]);
-				float fPitchDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookPitchOffset) - fCorrectAngles[0]);
-				
-				if (fYawDiff < 1.0 && fYawDiff > -1.0)
-				{
-					fCorrectAngles[1] = GetEntDataFloat(client, g_iBotLookYawOffset);
-				}
-				
-				if (fPitchDiff < 1.0 && fPitchDiff > -1.0)
-				{
-					fCorrectAngles[0] = GetEntDataFloat(client, g_iBotLookPitchOffset);
-				}
 				
 				switch(iDefIndex)
 				{
@@ -5527,17 +5448,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						TeleportEntity(client, NULL_VECTOR, fCorrectAngles, NULL_VECTOR);
-					
 						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING))
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 					}
 					case 9, 40:
-					{						
-						TeleportEntity(client, NULL_VECTOR, fCorrectAngles, NULL_VECTOR);
-					
+					{
 						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client])
 						{
 							iButtons |= IN_ATTACK;
@@ -5573,9 +5490,8 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
 			
 			//All these offsets are inside BotProfileManager::Init
+			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(120), view_as<int>(g_fLookAngleStiffnessAttacking[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(124), view_as<int>(g_fLookAngleDampingAttacking[client]), NumberType_Int32);
 		}
 		
 		if(!g_bForcebuy)
@@ -5782,21 +5698,6 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
 	}
 	
-	if ((g_iBotAimGoalOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_aimGoal")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_aimGoal offset.");
-	}
-	
-	if ((g_iBotLookPitchOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookPitch")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookPitch offset.");
-	}
-	
-	if ((g_iBotLookYawOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookYaw")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_lookYaw offset.");
-	}
-	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
@@ -5911,13 +5812,6 @@ public void LoadDetours()
 	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
 	{
 		SetFailState("Failed to setup detour for BotSIN");
-	}
-	
-	//CCSBot::UpdateAimPrediction Detour
-	DynamicDetour hBotAimPredictionDetour = DynamicDetour.FromConf(hGameData, "CCSBot::UpdateAimPrediction");
-	if(!hBotAimPredictionDetour.Enable(Hook_Pre, CCSBot_UpdateAimPrediction))
-	{
-		SetFailState("Failed to setup detour for CCSBot::UpdateAimPrediction");
 	}
 	
 	//CCSBot::IsVisible(pos) Detour
@@ -6151,28 +6045,6 @@ stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
 	TR_TraceRayFilter(fStart, fEnd, MASK_SHOT, RayType_EndPoint, TraceEntityFilterStuff);
 	return TR_GetFraction() >= 0.9;
-}
-
-float[] VelocityExtrapolate(int client, float fEyePos[3])
-{
-	float fAbsVel[3];
-	GetEntPropVector(client, Prop_Data, "m_vecVelocity", fAbsVel);
-	
-	float fV[3];
-	
-	fV[0] = fEyePos[0] + (fAbsVel[0] * GetTickInterval());
-	fV[1] = fEyePos[1] + (fAbsVel[1] * GetTickInterval());
-	fV[2] = fEyePos[2] + (fAbsVel[2] * GetTickInterval());
-	
-	return fV;
-}
-
-stock float AngleNormalize(float fAngle)
-{
-	fAngle = fAngle - 360.0 * RoundToFloor(fAngle / 360.0);
-	while (fAngle > 180.0) fAngle -= 360.0;
-	while (fAngle < -180.0) fAngle += 360.0;
-	return fAngle;
 }
 
 public bool TraceEntityFilterStuff(int iEntity, int iMask)

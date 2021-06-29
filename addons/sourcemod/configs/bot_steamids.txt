@@ -451,7 +451,7 @@
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//Wisla Players
-	"Markoś"			"68256934" 
+	"Markos"			"68256934" 
 	"SZPERO" 			"19554985"
 	"Goofy" 			"300617878"
 	"ponczek" 			"150374922"

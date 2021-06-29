@@ -88,12 +88,6 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x56\x8B\x75\x08\x57\x8B\xF9\x83\xBC\xB7\x08\x28\x00\x00\x00"
 			}
-			"CCSBot::UpdateAimPrediction"
-			{
-				// Is inside 3 if statements on CCSBot::Upkeep which has the string 'CCSBot::Upkeep'
-				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\xA1\x2A\x2A\x2A\x2A"
-			}
 			"CCSBot::IsVisible(player)"
 			{
 				// Uses 'CCSBot::IsVisible( player )' string
@@ -142,21 +136,6 @@
 			{
 				//Is right below the string 'APPROACH_ASCENDING_LADDER\n'
 				"windows"       "16036"
-			}
-			"CCSBot::m_aimGoal"
-			{
-				//Is inside CCSBot::UpdateAimPrediction
-				"windows"       "24024"
-			}
-			"CCSBot::m_lookPitch"
-			{
-				//Is inside CCSBot::UpdateLookAngles which has the string 'CCSBot::UpdateLookAngles'
-				"windows"       "23960"
-			}
-			"CCSBot::m_lookYaw"
-			{
-				//Is inside CCSBot::UpdateLookAngles which has the string 'CCSBot::UpdateLookAngles'
-				"windows"       "23968"
 			}
 			"Weapon_Switch"
 			{
@@ -238,13 +217,6 @@
                 "callconv" "fastcall"
                 "return" "float"
                 "this" "ignore"
-            }
-			"CCSBot::UpdateAimPrediction"
-			{
-                "signature" "CCSBot::UpdateAimPrediction"
-                "callconv" "thiscall"
-                "return" "void"
-                "this" "entity"
             }
 			"CCSBot::IsVisible(pos)"
 			{

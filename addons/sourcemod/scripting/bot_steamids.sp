@@ -117,7 +117,7 @@ public void OnClientSettingsChanged(int client)
 	g_iAccountID[client] = iAccountID;
 }
 
-stock bool:GetCommunityIDString(const char[] szSteamID, char[] szCommunityID, int iCommunityIDSize)
+stock bool GetCommunityIDString(const char[] szSteamID, char[] szCommunityID, int iCommunityIDSize)
 {
     char szSteamIDParts[3][11];
     char szIdentifier[MAX_COMMUNITYID_LENGTH] = "76561197960265728";
