@@ -25,8 +25,8 @@
 	"hampus" 			"126680222"
 	"REZ" 				"73906687"
 	//1win Players
-	"propleh" 			"202265030"
-	"DavCost" 			"20273529"
+	"glowiing" 			"213998181"
+	"Ravenlot" 			"322698509"
 	"TRAVIS"			"402704995"
 	"Polt" 				"85836453"
 	"deko" 				"327280463"
@@ -110,9 +110,9 @@
 	"honda" 			"1027817695"
 	//Santos Players
 	"jAPA" 				"121843505"
-	"keiz" 				"183028724"
+	"begod" 			"155269319"
 	"chay" 				"291666024"
-	"MaLLby" 			"209668291"
+	"bsd" 				"213740099"
 	"BobZ" 				"171090863"	
 	//coL Players
 	"k0nfig" 			"19403447"
@@ -440,7 +440,7 @@
 	"CamZ" 				"198983256"
 	//TC Players
 	"Norwi" 			"194638879"
-	"glowiing" 			"213998181"
+	"tricky" 			"291038798"
 	"GuardiaN" 			"12065295"
 	"seized" 			"3648428"
 	"clax" 				"168818887"
@@ -475,9 +475,9 @@
 	"SELLTER" 			"158822313"
 	"aNsavage" 			"95906595"	
 	//Izako Players
-	"szejn" 			"69226768"
+	"Vegi" 				"90369423"
 	"STOMP" 			"51242187"
-	"mono" 				"154163682"
+	"Enzo" 				"71273322"
 	"TOAO" 				"196107432"
 	"byali" 			"18860354"
 	//ATK Players
@@ -507,7 +507,7 @@
 	//Triumph Players
 	"RZU" 				"170869120"
 	"Bwills" 			"119308817"
-	"Cooper-" 			"7251259"
+	"3ARK00Z" 			"170784237"
 	"cynic" 			"106932238"
 	"tweiss" 			"56828966"
 	//FATE Players
@@ -648,12 +648,12 @@
 	"sesL" 				"127191279"
 	"sany" 				"82023677"
 	"mvN" 				"165741598"
-	//QBF Players
-	"BERRY" 			"9876226"
-	"Maccen" 			"244998424"
-	"hezy" 				"34899242"
-	"Staehr" 			"44842089"
-	"Tauson" 			"356440446"
+	//Vireo Players
+	"nicx" 				"449819483"
+	"ethex" 			"233128855"
+	"kirai" 			"395057334"
+	"max" 				"403957259"
+	"seziwana" 			"8544011"
 	//Rooster Players
 	"DannyG"			"193412411" 
 	"asap" 				"1057961331"
@@ -680,7 +680,7 @@
 	"SoneSb"			"98116312"
 	//hREDS Players
 	"eDi" 				"57731578"
-	"Samppa" 			"37105524"
+	"LYNXi" 			"123308829"
 	"xartE" 			"26565773"
 	"oopee" 			"262391008"
 	"Sm1llee" 			"297922013"
@@ -812,9 +812,9 @@
 	"v$m"				"51467095"
 	//Eriness Players
 	"replay" 			"298288602"
-	"heikkoL" 			"54468975"
-	"Feki" 				"119610566"
-	"Fizarezi" 			"187290677"
+	"stinx" 			"122206039"
+	"Lueg" 				"118079651"
+	"DOCKSTAR" 			"150182795"
 	"Valencio"			"163134468"
 	//Entropiq Players
 	"Lack1" 			"185937269"

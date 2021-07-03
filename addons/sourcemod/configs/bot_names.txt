@@ -25,8 +25,8 @@
 	"hampus" 			"NiP"
 	"REZ" 				"NiP"
 	//1win Players
-	"propleh" 			"1win"
-	"DavCost" 			"1win"
+	"glowiing" 			"1win"
+	"Ravenlot" 			"1win"
 	"TRAVIS"			"1win"
 	"Polt" 				"1win"
 	"deko" 				"1win"
@@ -110,9 +110,9 @@
 	"honda" 			"FURIA"
 	//Santos Players
 	"jAPA" 				"Santos"
-	"keiz" 				"Santos"
+	"begod" 			"Santos"
 	"chay" 				"Santos"
-	"MaLLby" 			"Santos"
+	"bsd" 				"Santos"
 	"BobZ" 				"Santos"	
 	//coL Players
 	"k0nfig" 			"coL"
@@ -440,7 +440,7 @@
 	"CamZ" 				"Dice"
 	//TC Players
 	"GuardiaN" 			"TC"
-	"glowiing" 			"TC"	
+	"tricky" 			"TC"	
 	"seized" 			"TC"
 	"clax" 				"TC"
 	"Norwi" 			"TC"
@@ -476,9 +476,9 @@
 	"aNsavage" 			"Unique"	
 	//Izako Players
 	"byali" 			"Izako"
-	"szejn" 			"Izako"
+	"Vegi" 				"Izako"
 	"STOMP" 			"Izako"
-	"mono" 				"Izako"
+	"Enzo" 				"Izako"
 	"TOAO" 				"Izako"
 	//ATK Players
 	"bLazE" 			"ATK"
@@ -507,7 +507,7 @@
 	//Triumph Players
 	"RZU" 				"Triumph"
 	"Bwills" 			"Triumph"
-	"Cooper-" 			"Triumph"
+	"3ARK00Z" 			"Triumph"
 	"cynic" 			"Triumph"
 	"tweiss" 			"Triumph"
 	//FATE Players
@@ -648,12 +648,12 @@
 	"sany" 				"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
-	//QBF Players
-	"Maccen" 			"QBF"
-	"hezy" 				"QBF"
-	"BERRY" 			"QBF"
-	"Staehr" 			"QBF"	
-	"Tauson" 			"QBF"	
+	//Vireo Players
+	"ethex" 			"Vireo"
+	"kirai" 			"Vireo"
+	"nicx" 				"Vireo"
+	"max" 				"Vireo"	
+	"seziwana" 			"Vireo"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
 	"asap" 				"Rooster"
@@ -682,7 +682,7 @@
 	"eDi" 				"hREDS"
 	"oopee" 			"hREDS"
 	"Sm1llee" 			"hREDS"
-	"Samppa" 			"hREDS"
+	"LYNXi" 			"hREDS"
 	"xartE" 			"hREDS"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
@@ -812,9 +812,9 @@
 	"v$m"				"Plano"
 	//Eriness Players
 	"replay" 			"Eriness"
-	"heikkoL" 			"Eriness"
-	"Feki" 				"Eriness"
-	"Fizarezi" 			"Eriness"
+	"stinx" 			"Eriness"
+	"Lueg" 				"Eriness"
+	"DOCKSTAR" 			"Eriness"
 	"Valencio"			"Eriness"
 	//Entropiq Players
 	"Lack1" 			"Entropiq"

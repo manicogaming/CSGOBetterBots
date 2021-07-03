@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Jun 29 00:59:56 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Jul 03 04:09:41 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -61,6 +61,7 @@ aim_neon_handel
 aim_notsocrazyjump
 aim_poolparty_crashz
 aim_pro
+aim_redline
 aim_scopearena
 aim_scoutz
 aim_shotgun3
@@ -439,3 +440,4 @@ workshop/1222094548/yprac_mirage
 workshop/1304331841/yprac_nuke
 workshop/1339439320/yprac_overpass
 workshop/1290304115/yprac_train
+workshop/1713463555/yprac_vertigo
