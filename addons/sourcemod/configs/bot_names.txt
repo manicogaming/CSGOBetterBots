@@ -80,7 +80,7 @@
 	"FalleN" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"reatz" 			"AGO"
+	"rallen" 			"AGO"
 	"snatchie" 			"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
@@ -198,18 +198,12 @@
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
 	"isak" 				"GamerLegion"
-	//DIVIZON Players
-	"Patrick" 			"DIVIZON"
-	"ykyli" 			"DIVIZON"
-	"hyped" 			"DIVIZON"
-	"akay" 				"DIVIZON"
-	"striNg" 			"DIVIZON"
 	//PDucks Players
-	"ChLo" 				"PDucks"
-	"Mikelos" 			"PDucks"
-	"farmaG" 			"PDucks"
-	"maxz" 				"PDucks"
-	"Cl34v3rs" 			"PDucks"
+	"Patrick" 			"PDucks"
+	"striNg" 			"PDucks"
+	"polzerm" 			"PDucks"
+	"bLooDyyY" 			"PDucks"
+	"nipam" 			"PDucks"
 	//HAVU Players
 	"ZOREE" 			"HAVU"
 	"sLowi" 			"HAVU"
@@ -828,4 +822,22 @@
 	"BeaKie" 			"GGPR"
 	"Sharkie" 			"GGPR"
 	"Jmp"				"GGPR"
+	//Huat Players
+	"nephh" 			"Huat"
+	"splashske" 		"Huat"
+	"spielz" 			"Huat"
+	"moxie" 			"Huat"
+	"Retla"				"Huat"
+	//Checkmate Players
+	"bLitz" 			"Checkmate"
+	"kaz" 				"Checkmate"
+	"H4wK" 				"Checkmate"
+	"Techno4K" 			"Checkmate"
+	"Bart4k"			"Checkmate"
+	//Renewal Players
+	"dobu" 				"Renewal"
+	"kabal" 			"Renewal"
+	"nin9" 				"Renewal"
+	"rate" 				"Renewal"
+	"NEUZ"				"Renewal"
 }

@@ -80,7 +80,7 @@
 	"FalleN" 			"424467"
 	//AGO Players
 	"Furlan" 			"177495873"
-	"reatz" 			"58300666"
+	"rallen" 			"31166738"
 	"snatchie" 			"111436809"
 	"F1KU" 				"292168772"
 	"leman" 			"40398517"
@@ -198,18 +198,12 @@
 	"RuStY" 			"122394166"	
 	"isak" 				"111644637"
 	"iM" 				"413888723"
-	//DIVIZON Players
-	"Patrick"			"64484395"
-	"ykyli" 			"271973456"
-	"hyped" 			"179338600"	
-	"akay" 				"74012219"
-	"striNg" 			"4189613"
 	//PDucks Players
-	"ChLo" 				"75777535"
-	"Mikelos" 			"74484182"
-	"farmaG" 			"32002596"
-	"maxz" 				"14586249"
-	"Cl34v3rs" 			"98939532"
+	"Patrick"			"64484395"
+	"polzerm" 			"184567823"
+	"bLooDyyY" 			"76024642"
+	"nipam" 			"34646057"
+	"striNg" 			"4189613"
 	//HAVU Players
 	"ZOREE" 			"41867139"
 	"sLowi" 			"15932016"
@@ -828,4 +822,22 @@
 	"BeaKie" 			"95366213"
 	"Sharkie" 			"126944965"
 	"Jmp"				"276861790"
+	//Huat Players
+	"nephh" 			"257859284"
+	"splashske" 		"43600"
+	"spielz" 			"249211876"
+	"moxie" 			"5267863"
+	"Retla"				"220159189"
+	//Checkmate Players
+	"bLitz" 			"999558360"
+	"kaz" 				"492836320"
+	"H4wK" 				"310815503"
+	"Techno4K" 			"1006074432"
+	"Bart4k"			"481096602"
+	//Renewal Players
+	"dobu" 				"159891913"
+	"kabal" 			"161246388"
+	"nin9" 				"168197870"
+	"rate" 				"442056424"
+	"NEUZ"				"114122809"
 }

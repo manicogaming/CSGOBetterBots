@@ -590,7 +590,7 @@ ProP+SniperPro+SniperPersonality "snatchie"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "reatz"
+ProP+Rifle+RiflePersonality "rallen"
 	VoicePitch = 86
 End
 
@@ -1022,23 +1022,23 @@ End
 
 //PDucks Players
 
-ProP+Rifle+RiflePersonality "ChLo"
+ProP+Rifle+RiflePersonality "Patrick"
 	VoicePitch = 72
 End
 
-ProP+SniperPro+SniperPersonality "Mikelos"
+ProP+SniperPro+SniperPersonality "striNg"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "farmaG"
+ProP+Rifle+RiflePersonality "polzerm"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "maxz"
+ProP+Rifle+RiflePersonality "bLooDyyY"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "Cl34v3rs"
+ProP+Rifle+RiflePersonality "nipam"
 	VoicePitch = 71
 End
 
@@ -2406,28 +2406,6 @@ ProP+Rifle+RiflePersonality "Twixie"
 	VoicePitch = 76
 End
 
-//DIVIZON Players
-
-ProP+Rifle+RiflePersonality "Patrick"
-	VoicePitch = 96
-End
-
-ProP+SniperPro+SniperPersonality "ykyli"
-	VoicePitch = 112
-End
-
-ProP+Rifle+RiflePersonality "hyped"
-	VoicePitch = 104
-End
-
-ProP+Rifle+RiflePersonality "akay"
-	VoicePitch = 96
-End
-
-ProP+Rifle+RiflePersonality "striNg"
-	VoicePitch = 86
-End
-
 //AGF Players
 
 ProP+Rifle+RiflePersonality "fr0slev"
@@ -3328,6 +3306,72 @@ End
 
 ProP+Rifle+RiflePersonality "Jmp"
 	VoicePitch = 87
+End
+
+//Huat Players
+
+ProP+Rifle+RiflePersonality "nephh"
+	VoicePitch = 113
+End
+
+ProP+SniperPro+SniperPersonality "splashske"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "spielz"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "moxie"
+	VoicePitch = 92
+End
+
+ProP+Rifle+RiflePersonality "Retla"
+	VoicePitch = 109
+End
+
+//Checkmate Players
+
+ProP+Rifle+RiflePersonality "bLitz"
+	VoicePitch = 115
+End
+
+ProP+SniperPro+SniperPersonality "kaz"
+	VoicePitch = 104
+End
+
+ProP+Rifle+RiflePersonality "H4wK"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "Techno4K"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "Bart4k"
+	VoicePitch = 105
+End
+
+//Renewal Players
+
+ProP+Rifle+RiflePersonality "dobu"
+	VoicePitch = 84
+End
+
+ProP+SniperPro+SniperPersonality "nin9"
+	VoicePitch = 76
+End
+
+ProP+Rifle+RiflePersonality "kabal"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "rate"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "NEUZ"
+	VoicePitch = 107
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

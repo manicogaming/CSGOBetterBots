@@ -80,7 +80,7 @@
 	"FalleN" 			"CSGO-FJxAC-OAamJ-oZ9bO-2W4BT-YiG4C"
 	//AGO Players
 	"Furlan" 			"CSGO-ksEXA-2tJ58-JCDkn-ymDOf-DbapG"
-	"reatz" 			"CSGO-YKsrM-eXAWf-VnCry-A39qy-GEbtH"
+	"rallen" 			"CSGO-uCzjK-eGMKr-jYfMB-WkFYd-Q38CH"
 	"snatchie" 			"CSGO-dvUMD-iqRuB-rXtZF-ZNm73-mD5RG"
 	"F1KU" 				"CSGO-CemUb-n37DY-RrHZB-YwLeJ-kj74E"
 	"leman" 			"CSGO-r3FsK-n45sR-foJUo-nr46P-nysyM"
@@ -198,18 +198,12 @@
 	"RuStY" 			"CSGO-pv32y-PBLYy-HpRca-7VxbP-ERNMB"	
 	"isak" 				"CSGO-AHa2z-N6EUD-uJQn6-EfkbM-AerVQ"
 	"iM" 				"CSGO-WL2wT-qYsrs-ab6Km-v3rkn-of2pH"
-	//DIVIZON Players
-	"Patrick"			"CSGO-Mie2w-YE2CS-d4NAw-Y7oqN-nysyM"
-	"ykyli" 			"CSGO-nWvrq-AQoQJ-JASue-GaRr7-6NZfE"
-	"hyped" 			"CSGO-b5xO3-bkf6w-zJBQh-o8SLm-3kYbD"	
-	"akay" 				"CSGO-YwTQG-bdvHe-3VaUY-BQyxL-5HQRO"
-	"striNg" 			"CSGO-GbPmZ-TF7AQ-8cUxS-AZqCc-zB5RG"
 	//PDucks Players
-	"ChLo" 				"CSGO-VzP6o-5rE7p-dusfR-kbhZM-qp5VH"
-	"Mikelos" 			"CSGO-8BNDD-GVNPp-F7ZHO-TZ2KN-bkWjM"
-	"farmaG" 			"CSGO-BBfxM-2qwXj-ZGfPB-vCWH6-uWXTB"
-	"maxz" 				"CSGO-GeGAw-fhb8s-Dsyfs-oTRUr-FFhnL"
-	"Cl34v3rs" 			"CSGO-cnndT-db8Xj-OGScz-rfn6u-wjf4D"
+	"Patrick"			"CSGO-Mie2w-YE2CS-d4NAw-Y7oqN-nysyM"
+	"polzerm" 			"CSGO-9HThA-Fvjkj-MzADB-Hmx48-7xAkE"
+	"bLooDyyY" 			"CSGO-6sYdm-5dHkV-PXWCY-kkDab-P4D7K"
+	"nipam" 			"CSGO-Eyjv7-rNs9X-4s2Re-YfBd2-9s3xK"
+	"striNg" 			"CSGO-GbPmZ-TF7AQ-8cUxS-AZqCc-zB5RG"
 	//HAVU Players
 	"ZOREE" 			"CSGO-wpHzm-v4Si2-CHLPk-mNqCN-5tbJD"
 	"sLowi" 			"CSGO-EbADE-9Jsfy-GNBDR-vb44z-b2VjM"
@@ -828,4 +822,22 @@
 	"BeaKie" 			"CSGO-SR5ad-X9cfa-nBiBu-ELzyW-Rx6KQ"
 	"Sharkie" 			"CSGO-23mcY-qJU8X-fa5iz-SaD2q-68izO"
 	"Jmp"				"CSGO-DtwB9-2CfSp-Y6rPV-SR9EE-pnYbD"
+	//Huat Players
+	"nephh" 			"CSGO-SdEYR-QPzxN-AHMWp-S8Hmt-bFPYE"
+	"splashske" 		"CSGO-i62Tk-EQiSK-aW93R-XO5cv-hif4D"
+	"spielz" 			"CSGO-GMvin-drujC-5VxHE-dFSvZ-9mUCP"
+	"moxie" 			"CSGO-ANEtH-h5nV2-5EbC6-wu4rY-fxwPB"
+	"Retla"				"CSGO-vyyVq-NnN3x-YMy5y-QF9EE-CrrBE"
+	//Checkmate Players
+	"bLitz" 			"CSGO-KVB8d-CZMyT-fR3Ub-YN2Lm-A78WB"
+	"kaz" 				"CSGO-NKXqS-LAWBZ-ds9pX-WWYce-mRFuA"
+	"H4wK" 				"CSGO-hbThp-KyC9N-CzEyX-24Gb5-ZmRBD"
+	"Techno4K" 			"CSGO-rpChw-cz4c6-K2A2O-GqQ48-MhtOH"
+	"Bart4k"			"CSGO-QmS5L-9RXSe-iurLG-pdsPO-6UDND"
+	//Renewal Players
+	"dobu" 				"CSGO-dK5XY-Qv6kL-CKPqG-toofV-4cvvE"
+	"kabal" 			"CSGO-QXOOy-RfbMD-TeX8x-hr5Zy-ApMHA"
+	"nin9" 				"CSGO-zyGOH-h2hG7-mphsO-cJWtO-rwSyL"
+	"rate" 				"CSGO-GfmnY-hWjk8-MbJ2T-caSFb-OSc3K"
+	"NEUZ"				"CSGO-WQRLz-B9bh8-DwdH7-xweYP-rTGOP"
 }
