@@ -1298,13 +1298,13 @@ public void OnEntityCreated(int entity, const char[] className) {
     return;
   }
 
-  SDKHook(entity, SDKHook_SpawnPost, OnEntitySpawned);
+  SDKHook(entity, SDKHook_SpawnPost, OnEntitySpawnPost);
 }
 
 // We artifically delay the work here in OnEntitySpawned because the csutils
 // plugin will spawn grenades and set the owner on spawn, and we want to be sure
 // the owner is set by the time practicemode gets to the grenade.
-public int OnEntitySpawned(int entity) {
+public int OnEntitySpawnPost(int entity) {
   RequestFrame(DelayedOnEntitySpawned, entity);
 }
 

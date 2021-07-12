@@ -15,15 +15,15 @@ enum BMError {
 	BM_NewerBinaryVersion // The record was recorded with a newer version of Bot Mimic and can't be played.
 };
 
-/*enum BMFileHeader {
-	BMFH_binaryFormatVersion = 0,
-	BMFH_recordEndTime,
-	String:BMFH_recordName[MAX_RECORD_NAME_LENGTH],
-	BMFH_tickCount,
-	Float:BMFH_initialPosition[3],
-	Float:BMFH_initialAngles[3],
-	BMFH_bookmarkCount
-};*/
+enum struct BMFileHeader {
+	int BMFH_binaryFormatVersion;
+	int BMFH_recordEndTime;
+	char BMFH_recordName[MAX_RECORD_NAME_LENGTH];
+	int BMFH_tickCount;
+	float BMFH_initialPosition[3];
+	float BMFH_initialAngles[3];
+	int BMFH_bookmarkCount;
+}
 
 /**
  * Start to record the movements of a player.
@@ -182,7 +182,7 @@ native ArrayList BotMimic_GetLoadedRecordCategoryList();
  * @param iFileHeader	An array to store the file header in.
  * @return			BM_NoError if all went smooth, see BMError definition.
  */
-//native BMError BotMimic_GetFileHeaders(const char[] path, int iFileHeader[BMFileHeader], int size = view_as<int>(BMFileHeader));
+native BMError BotMimic_GetFileHeaders(const char[] path, any iFileHeader[sizeof(BMFileHeader)], int size = sizeof(BMFileHeader));
 
 /**
  * Get the category of a record.

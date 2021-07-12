@@ -111,7 +111,7 @@
 	//Santos Players
 	"jAPA" 				"Santos"
 	"begod" 			"Santos"
-	"chay" 				"Santos"
+	"zdr" 				"Santos"
 	"bsd" 				"Santos"
 	"BobZ" 				"Santos"	
 	//coL Players
@@ -168,12 +168,12 @@
 	"Grus" 				"Apeks"
 	"Relaxa" 			"Apeks"
 	"dennis" 			"Apeks"
-	//aTTaX Players
-	"prosus" 			"aTTaX"
-	"kRYSTAL" 			"aTTaX"
-	"ScrunK" 			"aTTaX"
-	"Krimbo" 			"aTTaX"
-	"PANIX" 			"aTTaX"
+	//Bravos Players
+	"WOOD7" 			"Bravos"
+	"Tuurtle" 			"Bravos"
+	"kaiG" 				"Bravos"
+	"JOTA" 				"Bravos"
+	"Leomonster" 		"Bravos"
 	//RNG Players
 	"INS" 				"RNG"
 	"sico" 				"RNG"
@@ -257,7 +257,7 @@
 	"lunAtic" 			"PACT"
 	"bnox" 				"PACT"
 	"MINISE" 			"PACT"
-	"Sobol" 			"PACT"
+	"Bielany" 			"PACT"
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
 	"mds" 				"Nemiga"
@@ -357,7 +357,7 @@
 	//ECB Players
 	"simix" 			"ECB"
 	"Stev0se" 			"ECB"
-	"ritchiEE" 			"ECB"
+	"CrePoW" 			"ECB"
 	"Matty" 			"ECB"
 	"n0tice" 			"ECB"
 	//Bravado Players
@@ -419,7 +419,7 @@
 	"DeStRoYeR" 		"IG"	
 	"flying" 			"IG"
 	"Viva" 				"IG"
-	"Starry" 			"IG"
+	"rage" 				"IG"
 	//100PG Players
 	"sorrow" 			"100PG"
 	"smiley" 			"100PG"
@@ -689,7 +689,7 @@
 	"drg" 				"Havan"
 	"remix" 			"Havan"
 	"dok" 				"Havan"
-	"w1"				"Havan"
+	"skullz"			"Havan"
 	//Sangal Players
 	"MAJ3R" 			"Sangal"
 	"paz" 				"Sangal"
@@ -840,4 +840,10 @@
 	"nin9" 				"Renewal"
 	"rate" 				"Renewal"
 	"NEUZ"				"Renewal"
+	//Party Players
+	"ben1337" 			"Party"
+	"PwnAlone" 			"Party"
+	"djay" 				"Party"
+	"Infinite" 			"Party"
+	"viz"				"Party"
 }

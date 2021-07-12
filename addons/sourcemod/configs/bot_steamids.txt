@@ -111,7 +111,7 @@
 	//Santos Players
 	"jAPA" 				"121843505"
 	"begod" 			"155269319"
-	"chay" 				"291666024"
+	"zdr" 				"352842169"
 	"bsd" 				"213740099"
 	"BobZ" 				"171090863"	
 	//coL Players
@@ -168,12 +168,12 @@
 	"Grus" 				"34633571"
 	"dennis" 			"108076825"
 	"Relaxa" 			"169700429"
-	//aTTaX Players
-	"prosus" 			"218535303"
-	"kRYSTAL" 			"17526007"
-	"ScrunK" 			"13840460"
-	"Krimbo" 			"210365363"
-	"PANIX" 			"241868664"
+	//Bravos Players
+	"WOOD7" 			"42876435"
+	"Tuurtle" 			"34114868"
+	"kaiG" 				"45654536"
+	"JOTA" 				"94554756"
+	"Leomonster" 		"318176128"
 	//RNG Players
 	"INS" 				"26946895"
 	"sico" 				"39266546"
@@ -257,7 +257,7 @@
 	"lunAtic" 			"27202715"
 	"bnox" 				"400417045"
 	"MINISE" 			"29354726"
-	"Sobol" 			"190359589"
+	"Bielany" 			"251942476"
 	//Nemiga Players
 	"iDISBALANCE" 		"210384169"
 	"mds" 				"114045115"
@@ -357,7 +357,7 @@
 	//ECB Players
 	"simix" 			"11657532"
 	"Stev0se" 			"180588172"
-	"ritchiEE" 			"9173024"
+	"CrePoW" 			"236708549"
 	"Matty" 			"28184063"
 	"n0tice" 			"71806151"
 	//Bravado Players
@@ -419,7 +419,7 @@
 	"DeStRoYeR" 		"85113804"	
 	"flying" 			"441964070"
 	"Viva" 				"191787089"
-	"Starry" 			"920033815"
+	"rage" 				"398159133"
 	//100PG Players
 	"sorrow" 			"169527908"
 	"smiley" 			"169887982"
@@ -689,7 +689,7 @@
 	"drg" 				"193829435"
 	"remix" 			"33494235"
 	"dok" 				"143357008"
-	"w1"				"456548842"
+	"skullz"			"158380916"
 	//Sangal Players
 	"MAJ3R" 			"7167161"
 	"paz" 				"68524615"
@@ -840,4 +840,10 @@
 	"nin9" 				"168197870"
 	"rate" 				"442056424"
 	"NEUZ"				"114122809"
+	//Party Players
+	"ben1337" 			"131461662"
+	"PwnAlone" 			"24000649"
+	"djay" 				"3935898"
+	"Infinite" 			"149493497"
+	"viz"				"433892634"
 }
