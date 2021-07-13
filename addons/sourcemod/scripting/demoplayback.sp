@@ -29,6 +29,7 @@ char g_szIsWalking[65535][64];
 int g_iCurDefIndex[65535];
 int g_iHasJumped[65535];
 int g_iHasZoomed[65535];
+int g_iIsReloading[65535];
 int g_iThrowStrength[65535];
 
 float g_fPosition[65535][3];
@@ -182,7 +183,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		if(g_iCurrentTick[client] >= 1 && !(GetEntityFlags(client) & FL_ONGROUND))
+		if(g_iCurrentTick[client] >= 1 && (GetEntityFlags(client) & FL_ONGROUND))
 		{
 			float fLateLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]-1]);
 			float fCurrentLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]]);
@@ -210,8 +211,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if(strcmp(g_szIsWalking[g_iCurrentTick[client]], "true") == 0)
 			iButtons |= IN_SPEED;
-		else
-			iButtons &= ~IN_SPEED;
 		
 		if(g_iHasJumped[g_iCurrentTick[client]] == 1)
 		{
@@ -221,6 +220,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if(g_iHasZoomed[g_iCurrentTick[client]] == 1)
 		{
 			iButtons |= IN_ATTACK2;
+		}
+		
+		if(g_iIsReloading[g_iCurrentTick[client]] == 1)
+		{
+			iButtons |= IN_RELOAD;
 		}
 		
 		static float fTemp[3];
@@ -328,6 +332,7 @@ void ParseTicks()
 		kv.GetString("iswalking", g_szIsWalking[StringToInt(szTick)], 64);
 		g_iHasJumped[StringToInt(szTick)] = kv.GetNum("hasJumped");
 		g_iHasZoomed[StringToInt(szTick)] = kv.GetNum("hasZoomed");
+		g_iIsReloading[StringToInt(szTick)] = kv.GetNum("isReloading");
 	} while (kv.GotoNextKey());
 	
 	g_iMaxTick = StringToInt(szTick);

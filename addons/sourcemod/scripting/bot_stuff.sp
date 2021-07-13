@@ -5013,7 +5013,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 4);
+			g_iRndExecute = Math_GetRandomInt(1, 7);
 			PrepareDust2Executes();
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)

@@ -40,6 +40,30 @@ public void PrepareDust2Executes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/flamie Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI B Execute/Perfecto Role.rec");
 			}
+			case 5: //Astralis A Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis A Execute/gla1ve Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis A Execute/device Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis A Execute/Magisk Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis A Execute/dupreeh Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis A Execute/es3tag Role.rec");
+			}
+			case 6: //Vitality A Split
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality A Split/Nivera Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality A Split/ZywOo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality A Split/apEX Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality A Split/RpK Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality A Split/shox Role.rec");
+			}
+			case 7: //Vitality B Split
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/Nivera Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/ZywOo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/apEX Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/RpK Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/shox Role.rec");
+			}
 		}
 	}
 }
