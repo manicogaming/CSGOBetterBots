@@ -64,6 +64,22 @@ public void PrepareDust2Executes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/RpK Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality B Split/shox Role.rec");
 			}
+			case 8: //Astralis B Rush
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis B Rush/gla1ve Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis B Rush/device Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis B Rush/dupreeh Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis B Rush/Magisk Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Astralis B Rush/Xyp9x Role.rec");
+			}
+			case 9: //Vitality Long Execute
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/misutaaa Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/ZywOo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/apEX Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/RpK Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/shox Role.rec");
+			}
 		}
 	}
 }

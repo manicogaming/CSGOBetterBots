@@ -60,6 +60,8 @@ int g_iKnifeDefIndex[] =  {
 	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525
 };
 
+ConVar g_cvEnableCustomSkins;
+
 Handle g_hSetRank;
 Handle g_hForceUpdate;
 
@@ -127,6 +129,7 @@ public void OnPluginStart()
 	
 	ConVar g_cvGameType = FindConVar("game_type");
 	ConVar g_cvGameMode = FindConVar("game_mode");
+	g_cvEnableCustomSkins = CreateConVar("bot_customskins", "1", "1 = Enable Custom Weapon Skins to BOTs , 0 = Disable Custom Weapon Skins to BOTs", _, true, 0.0, true, 1.0);
 	
 	if (g_cvGameType.IntValue == 1 && g_cvGameMode.IntValue == 2)
 	{
@@ -195,6 +198,22 @@ public void BuildSkinsArrayList()
 		}
 		
 		g_ArrayWeapons[iWeapon].Push(0);
+		
+		if(g_cvEnableCustomSkins.IntValue == 1)
+		{
+			char szCustomSkinDefIndex[128];
+
+			if(GetSkinID(iWeaponDefIndex, szCustomSkinDefIndex))
+			{
+				char szSplit[8][128];
+
+				int iSkins = ExplodeString(szCustomSkinDefIndex, ";", szSplit, sizeof(szSplit), sizeof(szSplit[]));
+				for(int i = 0; i < iSkins - 1; i++)
+				{
+					g_ArrayWeapons[iWeapon].Push(StringToInt(szSplit[i]));
+				}
+			}	
+		}
 	}
 	
 	for (int iGlove = 0; iGlove < g_iGloveCount; iGlove++)
@@ -213,6 +232,23 @@ public void BuildSkinsArrayList()
 			{
 				int iGloveSkinDefIndex = eItems_GetSkinDefIndexBySkinNum(iGloveSkin);
 				g_ArrayGloves[iGlove].Push(iGloveSkinDefIndex);
+			}
+		}
+		
+		if(g_cvEnableCustomSkins.IntValue == 1)
+		{
+			int iGloveDefIndex = eItems_GetGlovesDefIndexByGlovesNum(iGlove);
+			char szCustomSkinDefIndex[128];
+
+			if(GetSkinID(iGloveDefIndex, szCustomSkinDefIndex))
+			{
+				char szSplit[8][128];
+
+				int iSkins = ExplodeString(szCustomSkinDefIndex, ";", szSplit, sizeof(szSplit), sizeof(szSplit[]));
+				for(int i = 0; i < iSkins - 1; i++)
+				{
+					g_ArrayGloves[iGlove].Push(StringToInt(szSplit[i]));
+				}
 			}
 		}
 	}
@@ -720,6 +756,12 @@ public void OnClientPostAdminCheck(int client)
 						}
 			        }
 			    }
+				
+				if(g_cvEnableCustomSkins.IntValue == 1 && g_iSkinDefIndex[client][iWeaponDefIndex] >= 1200)
+				{
+					g_iStatTrakChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+					g_iSouvenirChance[client][iWeaponDefIndex] = 100;
+				}
 				
 				if (g_iStickerComboChance[client][iWeaponDefIndex] <= 65)
 				{
@@ -1812,7 +1854,7 @@ void SetWeaponProps(int client, int iEntity)
 		
 		pDynamicAttributes.SetOrAddAttributeValue(6, float(g_iSkinDefIndex[client][iDefIndex]));
 		pDynamicAttributes.SetOrAddAttributeValue(7, float(g_iWeaponSkinSeed[client][iDefIndex]));
-		pDynamicAttributes.SetOrAddAttributeValue(8, 0.15);
+		pDynamicAttributes.SetOrAddAttributeValue(8, g_fWeaponSkinWear[client][iDefIndex]);
 		
 		int iWeaponsReturn[42];
 		
@@ -2162,6 +2204,41 @@ public void OnPluginEnd()
 stock bool IsValidClient(int client)
 {
 	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && IsFakeClient(client) && !IsClientSourceTV(client);
+}
+
+bool GetSkinID(int iDefIndex, char szSkinIDs[128])
+{
+	char szPath[PLATFORM_MAX_PATH], szDefIndex[128];
+	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/custom_skins.txt");
+
+	IntToString(iDefIndex, szDefIndex, sizeof(szDefIndex));
+
+	if (!FileExists(szPath))
+	{
+		PrintToServer("Configuration file %s is not found.", szPath);
+		return false;
+	}
+
+	KeyValues kv = new KeyValues("Custom Skins");
+
+	if (!kv.ImportFromFile(szPath))
+	{
+		delete kv;
+		PrintToServer("Unable to parse Key Values file %s.", szPath);
+		return false;
+	}
+
+	if (!kv.JumpToKey(szDefIndex))
+	{
+		delete kv;
+		return false;
+	}
+
+	kv.GetString("Skin IDs", szSkinIDs, sizeof(szSkinIDs));
+
+	delete kv;
+
+	return true;
 }
 
 stock int FloatToInt(const char[] szValue, any ...)
