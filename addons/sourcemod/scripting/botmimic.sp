@@ -644,7 +644,15 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 				fTemp[i] = (vOrigin[i] - fTemp[i]) * g_flTickRate;
 			}
 			g_bValidTeleportCall[client] = true;
-			TeleportEntity(client, NULL_VECTOR, angles, fTemp);
+			
+			if((iFrame.playerButtons & IN_ATTACK) || (iFrame.playerButtons & IN_ATTACK2))
+			{
+				TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
+			}
+			else
+			{
+				TeleportEntity(client, NULL_VECTOR, angles, fTemp);
+			}
 		}
 		
 		if(iFrame.newWeapon != CSWeapon_NONE)

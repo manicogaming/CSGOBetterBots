@@ -58,6 +58,7 @@ public void OnPluginStart()
 public Action Command_StartPlayback(int client, int iArgs)
 {
 	g_bStartedPlaying[client] = true;
+	g_iSnapshotTick[client] = 0;
 	Client_RemoveAllWeapons(client);
 	ServerCommand("sv_spawn_afk_bomb_drop_time 9999");
 	
@@ -87,7 +88,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		{
 			g_bStartedPlaying[i] = false;
 			g_iCurrentTick[i] = 0;
-			g_iSnapshotTick[i] = 0;
 		}
 	}
 }
@@ -199,10 +199,20 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
 			{
 				iButtons |= IN_ATTACK;
+				
+				if(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0)
+				{
+					g_iSnapshotTick[client] = g_iCurrentTick[client] + 15;
+				}
 			}
 			else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
 			{
 				iButtons |= IN_ATTACK2;
+				
+				if(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0)
+				{
+					g_iSnapshotTick[client] = g_iCurrentTick[client] + 15;
+				}
 			}
 		}
 		
@@ -235,8 +245,15 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		}
 		
 		Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
-		
-		TeleportEntity(client, NULL_VECTOR, fAngles, fTemp);
+
+		if(g_iCurrentTick[client] < g_iSnapshotTick[client])
+		{
+			TeleportEntity(client, NULL_VECTOR, fAngles, g_fVelocity[g_iCurrentTick[client]]);
+		}
+		else
+		{
+			TeleportEntity(client, NULL_VECTOR, fAngles, fTemp);
+		}
 		
 		if(g_iCurDefIndex[g_iCurrentTick[client]] != 49)
 		{
@@ -255,7 +272,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		}
 		
 		g_iCurrentTick[client]++;
-		g_iSnapshotTick[client]++;
 		
 		return Plugin_Changed;
 	}

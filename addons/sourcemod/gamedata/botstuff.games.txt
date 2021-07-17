@@ -94,6 +94,12 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x1C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
+			"CCSBot::MoveTowardsPosition"
+			{
+				// Uses 'CCSBot::IsVisible( player )' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x81\xEC\x98\x00\x00\x00\x56\x8B\xF1\x57\x8B\x86\xD4\x00\x00\x00"
+			}
 		}
 		"Offsets"
 		{
@@ -141,6 +147,11 @@
 			{
 				//From sdkhooks gamedata
 				"windows"	"288"
+			}
+			"CBasePlayer::UpdateStepSound"
+			{
+				"windows"   "408"
+				"linux"     "409"
 			}
 		}
 		"Functions"

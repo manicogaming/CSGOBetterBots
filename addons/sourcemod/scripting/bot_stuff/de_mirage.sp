@@ -144,6 +144,14 @@ public void PrepareMirageExecutes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/mousesports A Split Rush/karrigan Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/mousesports A Split Rush/ropz Role.rec");
 			}
+			case 18: //G2 Mirage A Split
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Mirage A Split/nexa Role.rec"); 
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Mirage A Split/NiKo Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Mirage A Split/AmaNEk Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Mirage A Split/huNter- Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Mirage A Split/JACKZ Role.rec");
+			}
 		}
 	}
 }

@@ -5008,7 +5008,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 16);
+			g_iRndExecute = Math_GetRandomInt(1, 18);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
@@ -5018,7 +5018,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 3);
+			g_iRndExecute = Math_GetRandomInt(1, 4);
 			PrepareInfernoExecutes();
 		}
 		else if (strcmp(g_szMap, "de_overpass") == 0)
@@ -5335,7 +5335,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 			{
 				if (g_bIsHeadVisible[client])
 				{
-					if (Math_GetRandomInt(1, 100) <= 85)
+					if (Math_GetRandomInt(1, 100) <= 90)
 					{
 						int iBone = LookupBone(g_iTarget[client], "spine_3");
 						
@@ -5505,7 +5505,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				if (!(GetEntityFlags(client) & FL_ONGROUND))
 				{
-					return Plugin_Continue;
+					iButtons &= ~IN_ATTACK;
+					return Plugin_Changed;
 				}
 				
 				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
