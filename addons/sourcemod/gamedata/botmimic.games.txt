@@ -1,0 +1,22 @@
+"Games"
+{
+	"csgo"
+	{	
+		"Signatures"
+		{
+			"CBaseEntity::SetLocalOrigin"
+			{
+				// Has string 'Bad SetLocalOrigin(%f,%f,%f) on %s\n'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xC0\x83\xEC\x34\x53\x8B\x5D\x08\x56\x8B\xF1"
+			}
+		}
+		"Offsets"
+		{
+			"Teleport"
+			{
+				"windows"	"114"
+			}
+		}
+	}
+}

@@ -89,7 +89,6 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
-float g_flTickRate;
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -126,7 +125,6 @@ bool g_bPausedMimic[MAXPLAYERS+1];
 bool g_bResumeMimic[MAXPLAYERS+1];
 bool g_bTimerExists[MAXPLAYERS+1];
 bool g_bAimSmoothing[MAXPLAYERS+1];
-bool g_bGameEnded;
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BWM_max];
 
 Handle g_hfwdOnStartRecording;
@@ -142,6 +140,7 @@ Handle g_hfwdOnPlayerMimicBookmark;
 
 // DHooks
 Handle g_hTeleport;
+Handle g_hSetOrigin;
 
 ConVar g_hCVOriginSnapshotInterval;
 ConVar g_hCVRespawnOnDeath;
@@ -221,13 +220,22 @@ public void OnPluginStart()
 	
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
 	HookEvent("player_death", Event_OnPlayerDeath);
-	HookEventEx("round_start", OnRoundStart);
-	HookEventEx("cs_win_panel_match", OnWinPanelMatch);
 	
 	if(LibraryExists("dhooks"))
 	{
 		OnLibraryAdded("dhooks");
 	}
+	
+	Handle hGameConfig = LoadGameConfigFile("botmimic.games");
+	if (hGameConfig == INVALID_HANDLE)
+		SetFailState("Failed to find botstuff.games game config.");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	
+	delete hGameConfig;
 }
 
 public void ConVar_VersionChanged(ConVar convar, const char[] oldValue, const char[] newValue)
@@ -243,11 +251,10 @@ public void OnLibraryAdded(const char[] name)
 	if(StrEqual(name, "dhooks") && g_hTeleport == null)
 	{
 		// Optionally setup a hook on CBaseEntity::Teleport to keep track of sudden place changes
-		Handle hGameData = LoadGameConfigFile("sdktools.games");
+		Handle hGameData = LoadGameConfigFile("botmimic.games");
 		if(hGameData == null)
 			return;
 		int iOffset = GameConfGetOffset(hGameData, "Teleport");
-		delete hGameData;
 		if(iOffset == -1)
 			return;
 		
@@ -278,10 +285,6 @@ public void OnLibraryRemoved(const char[] name)
 
 public void OnMapStart()
 {
-	g_bGameEnded = false;
-
-	g_flTickRate = float(RoundFloat(1.0 / GetTickInterval()));
-
 	// Clear old records for old map
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
@@ -348,7 +351,6 @@ public void OnClientPutInServer(int client)
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
-		SDKHook(client, SDKHook_OnTakeDamage, OnTakeDamage);
 	}
 }
 
@@ -554,7 +556,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		Array_Copy(iFrame.actualVelocity, fActualVelocity, 3);
 		
 		// We're supposed to teleport stuff?
-		if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
+		/*if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
 		{
 			AdditionalTeleport iAT;
 			ArrayList hAdditionalTeleport;
@@ -607,7 +609,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 			}
 			
 			g_iCurrentAdditionalTeleportIndex[client]++;
-		}
+		}*/
 		
 		// This is the first tick. Teleport him to the initial position
 		if(g_iBotMimicTick[client] == 0)
@@ -634,25 +636,10 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 		else
 		{
-			static float fTemp[3];
-			GetClientAbsOrigin(client, fTemp);
-			float vOrigin[3];
-			Array_Copy(iFrame.origin, vOrigin, 3);
-			
-			for (int i = 0; i < 3; i++)
-			{
-				fTemp[i] = (vOrigin[i] - fTemp[i]) * g_flTickRate;
-			}
 			g_bValidTeleportCall[client] = true;
 			
-			if((iFrame.playerButtons & IN_ATTACK) || (iFrame.playerButtons & IN_ATTACK2))
-			{
-				TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
-			}
-			else
-			{
-				TeleportEntity(client, NULL_VECTOR, angles, fTemp);
-			}
+			SDKCall(g_hSetOrigin, client, iFrame.origin);
+			TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
 		}
 		
 		if(iFrame.newWeapon != CSWeapon_NONE)
@@ -746,14 +733,6 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	return Plugin_Continue;
 }
 
-public Action OnTakeDamage(int client, int &iAttacker, int &iInflictor, float &iDamage, int &iDamagetype) 
-{
-	if (iDamagetype & DMG_FALL && g_hBotMimicsRecord[client] != null)
-		return Plugin_Handled;
-	
-	return Plugin_Continue;
-}
-
 public Action Timer_ResumeMimic(Handle hTimer, any client)
 {
 	client = GetClientOfUserId(client);
@@ -787,6 +766,12 @@ public void Event_OnPlayerSpawn(Event event, const char[] name, bool dontBroadca
 	if(!client)
 		return;
 	
+	g_bPausedMimic[client] = false;
+	g_bResumeMimic[client] = false;
+	g_bTimerExists[client] = false;
+	g_bAimSmoothing[client] = false;
+	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
+	
 	// Restart moving on spawn!
 	if(g_hBotMimicsRecord[client] != null)
 	{
@@ -815,26 +800,6 @@ public void Event_OnPlayerDeath(Event event, const char[] name, bool dontBroadca
 		if(g_hCVRespawnOnDeath.BoolValue && GetClientTeam(client) >= CS_TEAM_T)
 			CreateTimer(1.0, Timer_DelayedRespawn, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
 	}
-}
-
-public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
-{
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i))
-		{
-			g_bPausedMimic[i] = false;
-			g_bResumeMimic[i] = false;
-			g_bTimerExists[i] = false;
-			g_bAimSmoothing[i] = false;
-			SetEntPropFloat(i, Prop_Send, "m_flMaxspeed", 260.0);
-		}
-	}
-}
-
-public void OnWinPanelMatch(Event eEvent, char[] szName, bool bDontBroadcast)
-{
-	g_bGameEnded = true;
 }
 
 /**
@@ -2053,10 +2018,6 @@ BMError PlayRecord(int client, const char[] path)
 	Array_Copy(iFileHeader.FH_initialAngles, g_fInitialAngles[client], 3);
 	
 	SDKHook(client, SDKHook_WeaponCanSwitchTo, Hook_WeaponCanSwitchTo);
-	
-	// Respawn him to get him moving!
-	if(IsClientInGame(client) && !IsPlayerAlive(client) && GetClientTeam(client) >= CS_TEAM_T && !g_bGameEnded)
-		CS_RespawnPlayer(client);
 	
 	char sCategory[64];
 	g_hLoadedRecordsCategory.GetString(path, sCategory, sizeof(sCategory));

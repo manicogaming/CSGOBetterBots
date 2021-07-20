@@ -12,8 +12,6 @@ bool g_bStartedPlaying[MAXPLAYERS+1];
 int g_iCurrentTick[MAXPLAYERS+1], g_iSnapshotTick[MAXPLAYERS+1];
 int g_iMaxTick;
 
-float g_flTickRate;
-
 char g_szWeapon[65535][64];
 char g_szPinPulled[65535][64];
 char g_szWeapon_1[65535][64];
@@ -68,8 +66,6 @@ public Action Command_StartPlayback(int client, int iArgs)
 public void OnMapStart()
 {
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
-	
-	g_flTickRate = float(RoundFloat(1.0 / GetTickInterval()));
 	
 	ParseTicks();
 }
@@ -198,20 +194,16 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		{
 			if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
 			{
-				iButtons |= IN_ATTACK;
-				
-				if(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0)
+				if(!(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0))
 				{
-					g_iSnapshotTick[client] = g_iCurrentTick[client] + 15;
+					iButtons |= IN_ATTACK;
 				}
 			}
 			else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
 			{
-				iButtons |= IN_ATTACK2;
-				
-				if(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0)
+				if(!(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0))
 				{
-					g_iSnapshotTick[client] = g_iCurrentTick[client] + 15;
+					iButtons |= IN_ATTACK2;
 				}
 			}
 		}
@@ -237,23 +229,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons |= IN_RELOAD;
 		}
 		
-		static float fTemp[3];
-		GetClientAbsOrigin(client, fTemp);
-		for (int i = 0; i < 3; i++)
-		{
-			fTemp[i] = (g_fPosition[g_iCurrentTick[client]][i] - fTemp[i]) * g_flTickRate;
-		}
-		
 		Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
-
-		if(g_iCurrentTick[client] < g_iSnapshotTick[client])
-		{
-			TeleportEntity(client, NULL_VECTOR, fAngles, g_fVelocity[g_iCurrentTick[client]]);
-		}
-		else
-		{
-			TeleportEntity(client, NULL_VECTOR, fAngles, fTemp);
-		}
+		
+		TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], fAngles, g_fVelocity[g_iCurrentTick[client]]);
 		
 		if(g_iCurDefIndex[g_iCurrentTick[client]] != 49)
 		{
