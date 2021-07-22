@@ -20,6 +20,9 @@
 #undef REQUIRE_EXTENSIONS
 #include <dhooks>
 
+#undef REQUIRE_PLUGIN
+#include <demoplayback>
+
 #pragma newdecls required
 
 #define PLUGIN_VERSION "2.1"
@@ -373,16 +376,34 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 	iFrame.playerButtons = buttons;
 	iFrame.playerImpulse = impulse;
 	
-	float vVel[3], vOrigin[3];
-	Entity_GetAbsVelocity(client, vVel);
-	iFrame.actualVelocity = vVel;
 	iFrame.predictedVelocity = vel;
-	Entity_GetAbsOrigin(client, vOrigin);
-	iFrame.origin = vOrigin;
-	Array_Copy(angles, iFrame.predictedAngles, 2);
 	iFrame.newWeapon = CSWeapon_NONE;
 	iFrame.playerSubtype = subtype;
 	iFrame.playerSeed = seed;
+	
+	if(Demo_IsPlaying(client))
+	{
+		float fDemoPos[3], fDemoVel[3], fDemoAng[3];
+		int iTick = Demo_GetTick(client) - 1;
+		
+		Demo_GetPosition(client, iTick, fDemoPos);
+		Demo_GetVelocity(client, iTick, fDemoVel);
+		Demo_GetAngles(client, iTick, fDemoAng);
+		
+		iFrame.origin = fDemoPos;
+		iFrame.actualVelocity = fDemoVel;
+		Array_Copy(fDemoAng, iFrame.predictedAngles, 2);
+	}
+	else
+	{
+		float vVel[3], vOrigin[3];
+		
+		Entity_GetAbsOrigin(client, vOrigin);
+		iFrame.origin = vOrigin;
+		Entity_GetAbsVelocity(client, vVel);
+		iFrame.actualVelocity = vVel;
+		Array_Copy(angles, iFrame.predictedAngles, 2);
+	}
 	
 	// Save the origin, angles and velocity in this frame.
 	if(g_bSaveFullSnapshot[client])

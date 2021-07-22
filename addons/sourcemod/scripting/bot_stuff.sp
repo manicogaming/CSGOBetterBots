@@ -5004,7 +5004,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		return;
 	}
 	
-	if(Math_GetRandomInt(1,100) <= 100)
+	if(Math_GetRandomInt(1,100) <= 50)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
