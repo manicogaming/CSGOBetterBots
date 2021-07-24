@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Thu Jul 22 03:19:30 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Jul 24 02:15:58 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -326,6 +326,7 @@ de_train
 de_tulip
 de_tuscan
 de_vacant
+de_vandal
 de_vertigo
 de_waterfall
 de_waterland

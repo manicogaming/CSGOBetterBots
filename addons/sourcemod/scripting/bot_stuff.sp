@@ -12,10 +12,10 @@
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
-bool g_bFreezetimeEnd, g_bBombPlanted, g_bForcebuy;
+bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset;
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -280,8 +280,8 @@ public Action Team_NiP(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "LNZ");
-		ServerCommand("bot_add_ct %s", "hampus");
 		ServerCommand("bot_add_ct %s", "device");
+		ServerCommand("bot_add_ct %s", "hampus");
 		ServerCommand("bot_add_ct %s", "Plopski");
 		ServerCommand("bot_add_ct %s", "REZ");
 		ServerCommand("mp_teamlogo_1 ninjas");
@@ -291,8 +291,8 @@ public Action Team_NiP(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "LNZ");
-		ServerCommand("bot_add_t %s", "hampus");
 		ServerCommand("bot_add_t %s", "device");
+		ServerCommand("bot_add_t %s", "hampus");
 		ServerCommand("bot_add_t %s", "Plopski");
 		ServerCommand("bot_add_t %s", "REZ");
 		ServerCommand("mp_teamlogo_2 ninjas");
@@ -4542,7 +4542,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 					FakeClientCommand(i, "buy p250");
 				}
 			}
-			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone && !g_bForcebuy)
+			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
 			{
 				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
 				{
@@ -4554,7 +4554,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 					FakeClientCommand(i, "buy defuser");
 				}
 			}
-			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0 && bInBuyZone && !g_bForcebuy)
+			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0 && bInBuyZone)
 			{
 				switch (Math_GetRandomInt(1,10))
 				{
@@ -5280,6 +5280,46 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 	return MRES_ChangedHandled;
 }
 
+public MRESReturn CCSBot_UpdateLookAngles(int client)
+{
+	bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
+	
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+	if (iActiveWeapon == -1) return MRES_Ignored;
+	
+	int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	
+	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]) && bIsEnemyVisible)
+	{
+		switch(iDefIndex)
+		{
+			case 1, 9, 11, 38, 40:
+			{
+				float fNewAngles[3];
+			
+				GetClientEyeAngles(client, fNewAngles);
+				
+				float fYawDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookYawOffset) - fNewAngles[1]);
+				float fPitchDiff = AngleNormalize(GetEntDataFloat(client, g_iBotLookPitchOffset) - fNewAngles[0]);
+				
+				if(FloatAbs(fYawDiff) < 1.0)
+				{
+					fNewAngles[1] = GetEntDataFloat(client, g_iBotLookYawOffset);
+				}
+				
+				if(FloatAbs(fPitchDiff) < 1.0)
+				{
+					fNewAngles[0] = GetEntDataFloat(client, g_iBotLookPitchOffset);
+				}
+				
+				TeleportEntity(client, NULL_VECTOR, fNewAngles, NULL_VECTOR);
+			}
+		}
+	}
+	
+	return MRES_Ignored;
+}
+
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
@@ -5590,10 +5630,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
 		}
 		
-		if(!g_bForcebuy)
-		{
-			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
-		}
+		CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
 		
 		if (g_iUSPChance[client] >= 25)
 		{
@@ -5641,13 +5678,16 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	char szDefaultPrimary[64];
 	GetClientWeapon(client, szDefaultPrimary, sizeof(szDefaultPrimary));
 	
-	if ((iAccount > 2000) && (iAccount < g_cvBotEcoLimit.IntValue) && iPrimary == -1 && (strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0))
+	if (iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue))
 	{
 		if(GetClientTeam(client) == CS_TEAM_T)
 		{
 			g_bTerroristEco[client] = true;
 		}
+	}
 	
+	if ((iAccount > 2000) && (iAccount < g_cvBotEcoLimit.IntValue) && iPrimary == -1 && (strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0))
+	{
 		int iRndPistol = Math_GetRandomInt(1, 3);
 		
 		switch (iRndPistol)
@@ -5794,6 +5834,16 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
 	}
 	
+	if ((g_iBotLookPitchOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookPitch")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_lookPitch offset.");
+	}
+	
+	if ((g_iBotLookYawOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookYaw")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_lookYaw offset.");
+	}
+	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
@@ -5922,6 +5972,13 @@ public void LoadDetours()
 	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
 	{
 		SetFailState("Failed to setup detour for CCSBot::IsVisible(player)");
+	}
+	
+	//CCSBot::UpdateLookAngles Detour
+	DynamicDetour hBotUpdateAnglesDetour = DynamicDetour.FromConf(hGameData, "CCSBot::UpdateLookAngles");
+	if(!hBotUpdateAnglesDetour.Enable(Hook_Post, CCSBot_UpdateLookAngles))
+	{
+		SetFailState("Failed to setup detour for CCSBot::UpdateLookAngles");
 	}
 	
 	delete hGameData;
@@ -6135,6 +6192,26 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 	fOutPut[0] = Cosine(fVecAngle[1] / (180 / FLOAT_PI));
 	fOutPut[1] = Sine(fVecAngle[1] / (180 / FLOAT_PI));
 	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
+}
+
+stock float AngleNormalize(float angle)
+{
+    angle = fmodf(angle, 360.0);
+    if (angle > 180)
+    {
+        angle -= 360;
+    }
+    if (angle < -180)
+    {
+        angle += 360;
+    }
+
+    return angle;
+}
+
+stock float fmodf(float number, float denom)
+{
+    return number - RoundToFloor(number / denom) * denom;
 }
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])

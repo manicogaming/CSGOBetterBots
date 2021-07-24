@@ -70,6 +70,8 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errMax)
 	CreateNative("Demo_GetAngles", Native_GetAngles);
 	CreateNative("Demo_GetTick", Native_GetTick);
 	CreateNative("Demo_IsPlaying", Native_IsPlaying);
+	
+	RegPluginLibrary("demoplayback");
 }
 
 public int Native_GetPosition(Handle plugins, int numParams)

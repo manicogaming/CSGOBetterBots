@@ -1,7 +1,24 @@
-#if defined _demoplayback_included
- #endinput
+public SharedPlugin __pl_demoplayback = 
+{
+    name = "demoplayback",
+    file = "demoplayback.smx",
+#if defined REQUIRE_PLUGIN
+    required = 1,
+#else
+    required = 0,
 #endif
-#define _demoplayback_included
+};
+ 
+#if !defined REQUIRE_PLUGIN
+public void __pl_demoplayback_SetNTVOptional()
+{
+    MarkNativeAsOptional("Demo_GetPosition");
+    MarkNativeAsOptional("Demo_GetVelocity");
+    MarkNativeAsOptional("Demo_GetAngles");
+    MarkNativeAsOptional("Demo_GetTick");
+    MarkNativeAsOptional("Demo_IsPlaying");
+}
+#endif
 
 native int Demo_GetPosition(int client, int iTick, const float fPosition[3]);
 
