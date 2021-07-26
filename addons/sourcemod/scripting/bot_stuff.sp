@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotGoalPosOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotLookYawOffset, g_iBotLookPitchOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -5470,22 +5470,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}	
 		}
 		
-		if (GetEntityMoveType(client) != MOVETYPE_LADDER)
-		{
-			float fGoalPos[3], fEyes[3], fHeightDiff;
-			
-			GetClientEyePosition(client, fEyes);
-			GetEntDataVector(client, g_iBotGoalPosOffset, fGoalPos);
-			fGoalPos[2] += 64.0;
-			
-			fHeightDiff = fGoalPos[2] - fEyes[2];
-			
-			if(fHeightDiff < -20.0 || fHeightDiff > 20.0)
-			{
-				BotSetLookAt(client, "Use entity", fGoalPos, PRIORITY_LOWEST, 0.1, true, 5.0, false);
-			}
-		}
-		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
@@ -5678,7 +5662,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	char szDefaultPrimary[64];
 	GetClientWeapon(client, szDefaultPrimary, sizeof(szDefaultPrimary));
 	
-	if (iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue))
+	if ((iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue)) && iPrimary == -1)
 	{
 		if(GetClientTeam(client) == CS_TEAM_T)
 		{
@@ -5829,11 +5813,6 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_enemy offset.");
 	}
 	
-	if ((g_iBotGoalPosOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_goalPosition")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_goalPosition offset.");
-	}
-	
 	if ((g_iBotLookPitchOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookPitch")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_lookPitch offset.");
@@ -5976,7 +5955,7 @@ public void LoadDetours()
 	
 	//CCSBot::UpdateLookAngles Detour
 	DynamicDetour hBotUpdateAnglesDetour = DynamicDetour.FromConf(hGameData, "CCSBot::UpdateLookAngles");
-	if(!hBotUpdateAnglesDetour.Enable(Hook_Post, CCSBot_UpdateLookAngles))
+	if(!hBotUpdateAnglesDetour.Enable(Hook_Pre, CCSBot_UpdateLookAngles))
 	{
 		SetFailState("Failed to setup detour for CCSBot::UpdateLookAngles");
 	}
@@ -6194,24 +6173,24 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
 }
 
-stock float AngleNormalize(float angle)
+stock float AngleNormalize(float fAngle)
 {
-    angle = fmodf(angle, 360.0);
-    if (angle > 180)
+    fAngle = fmodf(fAngle, 360.0);
+    if (fAngle > 180)
     {
-        angle -= 360;
+        fAngle -= 360;
     }
-    if (angle < -180)
+    if (fAngle < -180)
     {
-        angle += 360;
+        fAngle += 360;
     }
 
-    return angle;
+    return fAngle;
 }
 
-stock float fmodf(float number, float denom)
+stock float fmodf(float fNumber, float fDenom)
 {
-    return number - RoundToFloor(number / denom) * denom;
+    return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
 }
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
