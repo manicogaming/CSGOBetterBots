@@ -118,7 +118,7 @@
 	"k0nfig" 			"19403447"
 	"poizon" 			"117537138"
 	"jks" 				"16839456"
-	"RUSH" 				"63326592"
+	"es3tag" 			"1859646"
 	"blameF" 			"68193075"	
 	//ViCi Players
 	"zhokiNg" 			"99494192"
@@ -241,11 +241,11 @@
 	"alex*" 			"40718819"
 	"smooya" 			"211423593"
 	//eSuba Players
-	"NIO" 				"170307600"
+	"Pechyn" 			"93527213"
 	"blogg1s" 			"115938594"	
 	"luko" 				"90161747"	
 	"twistqt" 			"186939709"	
-	"jaro" 				"161264339"	
+	"sAvana1" 			"69270002"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -315,7 +315,7 @@
 	//Dire Players
 	"HaZR" 				"64081874"
 	"sterling" 			"100224621"
-	"soju_j" 			"86871337"
+	"apoc" 				"58325300"
 	"SaVage" 			"203399460"
 	"Liki" 				"196492302"
 	//Chiefs Players
@@ -349,9 +349,9 @@
 	"RIZZ" 				"31830670"
 	"shellzi" 			"243140003"
 	//NASR Players
-	"gejmzilla" 		"181022384"
+	"Remind" 			"121767731"
 	"REAL1ZE" 			"86316485"
-	"BOROS" 			"178773495"
+	"keen" 				"54646804"
 	"EiZAA" 			"852927919"
 	"bibu" 				"150573885"
 	//ECB Players
@@ -377,7 +377,7 @@
 	"SATURN" 			"228178031"
 	"Wilky" 			"142641032"
 	"SLIGHT" 			"193314309"
-	"AAustiN" 			"161243497"
+	"jeorgesnorts" 		"393603607"
 	//GTZ Players
 	"NaOw" 				"34955497"
 	"zyored" 			"159353688"
@@ -432,12 +432,12 @@
 	"Malzera" 			"101614032"
 	"Polox" 			"109597705"
 	"CamZ" 				"198983256"
-	//TC Players
-	"Norwi" 			"194638879"
-	"tricky" 			"291038798"
-	"GuardiaN" 			"12065295"
-	"seized" 			"3648428"
-	"clax" 				"168818887"
+	//planB Players
+	"rabtus" 			"66429969"
+	"TWEEZY" 			"230582686"
+	"Knoxville" 		"107802167"
+	"xTreMe" 			"69837499"
+	"Lefty" 			"109379465"
 	//Gambit Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
@@ -456,12 +456,6 @@
 	"SHOOWTiME" 		"97938914"	
 	"ckzao" 			"56540556"	
 	"f4stzin" 			"476343738"	
-	//Pompa Players
-	"baljs" 			"233766110"
-	"Grashog" 			"78941188"
-	"fr3nd" 			"177768668"
-	"mouz" 				"38464805"
-	"mhL" 				"180124403"
 	//Unique Players
 	"crush" 			"36981424"
 	"Kre1N" 			"221691969"
@@ -558,12 +552,12 @@
 	"sk0R" 				"863160115"
 	"Annihilation" 		"315821474"	
 	"xerolte" 			"368881420"	
-	//ZIGMA Players
-	"CigaretteS" 		"100742817"
-	"Reality" 			"101927360"
-	"JUSTCAUSE" 		"106292739"
-	"Geniuss" 			"119384281"	
-	"RoLEX" 			"160401860"
+	//DIVIZON Players
+	"UN1TY" 			"272768036"
+	"nihlus" 			"95013565"
+	"delkore" 			"84845830"
+	"Mikelos" 			"74484182"	
+	"pa1n" 				"177215723"
 	//mCon Players
 	"Monu" 				"17643220"
 	"G1DO" 				"3491078"
@@ -666,12 +660,12 @@
 	"plat" 				"300562274"
 	"whatz" 			"31318693"
 	"renatoohaxx" 		"39166438"
-	//Ambush Players
-	"SBT"				"94663345"
-	"wasiNk"			"164618316"
-	"Gringo"			"202395754"
-	"EMZ"				"4916041"
-	"SoneSb"			"98116312"
+	//EP Players
+	"The eLiVe"			"111025647"
+	"forsyy"			"105029167"
+	"lucasp"			"40296010"
+	"manguss"			"75244785"
+	"Levi"				"64235109"
 	//hREDS Players
 	"eDi" 				"57731578"
 	"LYNXi" 			"123308829"
@@ -734,7 +728,7 @@
 	"PreSs" 			"396848612"
 	//AVEZ Players
 	"sNx" 				"420057857"
-	"pawkoem" 			"225045287"
+	"fanatyk" 			"321895076"
 	"Warp" 				"56308825"
 	"SaMey" 			"150540966"
 	"pendzel"			"102726701"
@@ -752,10 +746,10 @@
 	"innocent"			"26563533"
 	//HONORIS Players
 	"TaZ" 				"234052"
-	"azizz" 			"43580835"
 	"NEO" 				"460206"
 	"reiko" 			"190436529"
-	"gRuChA" 			"66926846"
+	"fr3nd" 			"177768668"
+	"mouz" 				"38464805"
 	//ES Players
 	"JT" 				"61449372"
 	"oSee" 				"87206806"
@@ -820,8 +814,8 @@
 	"lowrider" 			"16402572"
 	"Inseaniac" 		"303757892"
 	"BeaKie" 			"95366213"
-	"Sharkie" 			"126944965"
-	"Jmp"				"276861790"
+	"xCeeD" 			"180524431"
+	"jtmythic"			"182274423"
 	//Huat Players
 	"nephh" 			"257859284"
 	"splashske" 		"43600"

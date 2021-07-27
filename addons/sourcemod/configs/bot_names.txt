@@ -118,7 +118,7 @@
 	"k0nfig" 			"coL"
 	"poizon" 			"coL"
 	"jks" 				"coL"
-	"RUSH" 				"coL"
+	"es3tag" 			"coL"
 	"blameF" 			"coL"	
 	//ViCi Players
 	"zhokiNg" 			"ViCi"
@@ -241,9 +241,9 @@
 	"alex*" 			"Riders"
 	"smooya" 			"Riders"
 	//eSuba Players
-	"NIO" 				"eSuba"
+	"Pechyn" 			"eSuba"
 	"twistqt" 			"eSuba"
-	"jaro" 				"eSuba"	
+	"sAvana1" 			"eSuba"	
 	"blogg1s" 			"eSuba"
 	"luko" 				"eSuba"
 	//Nexus Players
@@ -315,7 +315,7 @@
 	//Dire Players
 	"HaZR" 				"Dire"
 	"sterling" 			"Dire"
-	"soju_j" 			"Dire"
+	"apoc" 				"Dire"
 	"Liki" 				"Dire"
 	"SaVage" 			"Dire"
 	//Chiefs Players
@@ -349,9 +349,9 @@
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
 	//NASR Players
-	"gejmzilla" 		"NASR"
+	"Remind" 			"NASR"
 	"REAL1ZE" 			"NASR"
-	"BOROS" 			"NASR"
+	"keen" 				"NASR"
 	"EiZAA" 			"NASR"
 	"bibu" 				"NASR"
 	//ECB Players
@@ -374,7 +374,7 @@
 	"meyern" 			"Furious"
 	//Recon Players
 	"desi" 				"Recon"
-	"AAustiN" 			"Recon"
+	"jeorgesnorts" 		"Recon"
 	"SATURN" 			"Recon"
 	"Wilky" 			"Recon"
 	"SLIGHT" 			"Recon"
@@ -432,12 +432,12 @@
 	"Malzera" 			"Dice"
 	"Polox" 			"Dice"
 	"CamZ" 				"Dice"
-	//TC Players
-	"GuardiaN" 			"TC"
-	"tricky" 			"TC"	
-	"seized" 			"TC"
-	"clax" 				"TC"
-	"Norwi" 			"TC"
+	//planB Players
+	"Knoxville" 		"planB"
+	"TWEEZY" 			"planB"	
+	"xTreMe" 			"planB"
+	"Lefty" 			"planB"
+	"rabtus" 			"planB"
 	//Gambit Players
 	"nafany" 			"Gambit"
 	"sh1ro" 			"Gambit"
@@ -456,12 +456,6 @@
 	"ckzao" 			"Imperial"
 	"f4stzin" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
-	//Pompa Players
-	"mouz" 				"Pompa"
-	"Grashog" 			"Pompa"
-	"fr3nd" 			"Pompa"
-	"mhL"				"Pompa" 
-	"baljs" 			"Pompa"
 	//Unique Players
 	"crush" 			"Unique"
 	"Kre1N" 			"Unique"
@@ -558,12 +552,12 @@
 	"shinobi" 			"D13"
 	"sk0R" 				"D13"
 	"Annihilation" 		"D13"	
-	//ZIGMA Players
-	"CigaretteS" 		"ZIGMA"
-	"Reality" 			"ZIGMA"
-	"JUSTCAUSE" 		"ZIGMA"
-	"Geniuss" 			"ZIGMA"	
-	"RoLEX" 			"ZIGMA"
+	//DIVIZON Players
+	"UN1TY" 			"DIVIZON"
+	"nihlus" 			"DIVIZON"
+	"delkore" 			"DIVIZON"
+	"Mikelos" 			"DIVIZON"	
+	"pa1n" 				"DIVIZON"
 	//mCon Players
 	"Monu" 				"mCon"
 	"G1DO" 				"mCon"
@@ -666,12 +660,12 @@
 	"plat" 				"eXploit"
 	"whatz" 			"eXploit"
 	"renatoohaxx" 		"eXploit"
-	//Ambush Players
-	"SBT" 				"Ambush"
-	"wasiNk" 			"Ambush"
-	"EMZ" 				"Ambush"	
-	"SoneSb" 			"Ambush"
-	"Gringo" 			"Ambush"
+	//EP Players
+	"The eLiVe" 		"EP"
+	"forsyy" 			"EP"
+	"manguss" 			"EP"	
+	"Levi" 				"EP"
+	"lucasp" 			"EP"
 	//hREDS Players
 	"eDi" 				"hREDS"
 	"oopee" 			"hREDS"
@@ -734,7 +728,7 @@
 	"roGerzz"			"x6tence"
 	//AVEZ Players
 	"sNx" 				"AVEZ"
-	"pawkoem" 			"AVEZ"
+	"fanatyk" 			"AVEZ"
 	"Warp" 				"AVEZ"
 	"SaMey" 			"AVEZ"
 	"pendzel"			"AVEZ"
@@ -752,10 +746,10 @@
 	"innocent"			"Anonymo"
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
-	"azizz" 			"HONORIS"
+	"fr3nd" 			"HONORIS"
 	"NEO" 				"HONORIS"
 	"reiko" 			"HONORIS"
-	"gRuChA"			"HONORIS"
+	"mouz"				"HONORIS"
 	//ES Players
 	"JT" 				"ES"
 	"oSee" 				"ES"
@@ -820,8 +814,8 @@
 	"lowrider" 			"GGPR"
 	"Inseaniac" 		"GGPR"
 	"BeaKie" 			"GGPR"
-	"Sharkie" 			"GGPR"
-	"Jmp"				"GGPR"
+	"xCeeD" 			"GGPR"
+	"jtmythic"			"GGPR"
 	//Huat Players
 	"nephh" 			"Huat"
 	"splashske" 		"Huat"
