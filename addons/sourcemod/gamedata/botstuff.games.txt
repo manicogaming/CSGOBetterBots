@@ -94,12 +94,6 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x1C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::UpdateLookAngles"
-			{
-				// Uses 'CCSBot::UpdateLookAngles' string
-				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x38\x56\x8B\xF1"
-			}
 		}
 		"Offsets"
 		{
@@ -142,16 +136,6 @@
 			{
 				//From sdkhooks gamedata
 				"windows"	"288"
-			}
-			"CCSBot::m_lookPitch"
-			{
-				//Is inside CCSBot::UpdateLookAngles which has the string 'CCSBot::UpdateLookAngles'
-				"windows"       "23960"
-			}
-			"CCSBot::m_lookYaw"
-			{
-				//Is inside CCSBot::UpdateLookAngles which has the string 'CCSBot::UpdateLookAngles'
-				"windows"       "23968"
 			}
 		}
 		"Functions"
@@ -272,13 +256,6 @@
                         "type" "charptr"
                     }
                 }
-            }
-			"CCSBot::UpdateLookAngles"
-			{
-                "signature" "CCSBot::UpdateLookAngles"
-                "callconv" "thiscall"
-                "return" "void"
-                "this" "entity"
             }
 		}
 		"MemPatches"

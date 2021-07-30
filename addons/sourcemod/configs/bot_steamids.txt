@@ -251,7 +251,7 @@
 	"XELLOW" 			"92089093"
 	"Blytz" 			"101848953"
 	"lauNX" 			"1012530125"
-	"sXe" 				"105516300"
+	"mhN1" 				"195697267"
 	//PACT Players
 	"darko" 			"31199105"
 	"lunAtic" 			"27202715"
@@ -270,12 +270,12 @@
 	"LBNS" 				"77291008"
 	"debo" 				"1033759674"
 	"bobeksde" 			"100650499"
-	//Singularity Players
-	"Vster" 			"40903828"
-	"holzt" 			"20657303"
-	"smF" 				"11160541"
-	"larsen" 			"60274028"
-	"IceBerg" 			"30735103"
+	//GZG Players
+	"mizzy" 			"37507985"
+	"2D" 				"78483370"
+	"nexar" 			"415307294"
+	"rekonz" 			"90514122"
+	"guag" 				"90933857"
 	//DETONA Players
 	"frostezoR" 		"194205853"
 	"lux" 				"113751940"
@@ -344,7 +344,7 @@
 	"zeph" 				"177441352"
 	//OFFSET Players
 	"NOPEEj" 			"200528981"
-	"fox" 				"1939536"
+	"EasTor" 			"3460360"
 	"snapy" 			"268698824"
 	"RIZZ" 				"31830670"
 	"shellzi" 			"243140003"
@@ -373,9 +373,9 @@
 	"nacho" 			"979595590"	
 	"meyern" 			"235377137"	
 	//Recon Players
-	"desi" 				"411818"
+	"AAustiN" 			"161243497"
 	"SATURN" 			"228178031"
-	"Wilky" 			"142641032"
+	"J0LZ" 				"163875307"
 	"SLIGHT" 			"193314309"
 	"jeorgesnorts" 		"393603607"
 	//GTZ Players
@@ -576,12 +576,6 @@
 	"PERCY" 			"36210122"
 	"Cabbi" 			"230664742"
 	"Lukki" 			"53001420"
-	//GameAgents Players
-	"mhN1" 				"195697267"
-	"renne" 			"172130207"
-	"zrkk" 				"967834156"
-	"regali" 			"138197501"
-	"fNk" 				"215438719"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -636,8 +630,8 @@
 	"sesL" 				"127191279"
 	"sany" 				"82023677"
 	"mvN" 				"165741598"
-	//Vireo Players
-	"nicx" 				"449819483"
+	//Rebirth Players
+	"jsfeltner" 		"92128532"
 	"ethex" 			"233128855"
 	"kirai" 			"395057334"
 	"max" 				"403957259"
@@ -729,7 +723,7 @@
 	//AVEZ Players
 	"sNx" 				"420057857"
 	"fanatyk" 			"321895076"
-	"Warp" 				"56308825"
+	"gRuChA" 			"66926846"
 	"SaMey" 			"150540966"
 	"pendzel"			"102726701"
 	//BP Players
@@ -800,10 +794,10 @@
 	"v$m"				"51467095"
 	//Eriness Players
 	"replay" 			"298288602"
-	"stinx" 			"122206039"
+	"desty" 			"86172483"
 	"Lueg" 				"118079651"
 	"DOCKSTAR" 			"150182795"
-	"Valencio"			"163134468"
+	"Lastiik"			"204856690"
 	//Entropiq Players
 	"Lack1" 			"185937269"
 	"El1an" 			"250498109"

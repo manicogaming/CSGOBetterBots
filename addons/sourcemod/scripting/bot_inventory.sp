@@ -120,6 +120,7 @@ public void OnPluginStart()
 	}
 	
 	HookEvent("player_spawn", Event_PlayerSpawn, EventHookMode_Pre);
+	HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
 	HookEvent("round_start", Event_OnRoundStart);
 	
 	PTaH(PTaH_GiveNamedItemPre, Hook, GiveNamedItemPre);
@@ -1565,6 +1566,36 @@ public void Event_PlayerSpawn(Event eEvent, const char[] szName, bool bDontBroad
 			CreateTimer(1.3, Timer_ApplyAgent, GetClientUserId(client));
 		}
 	}
+}
+
+public Action Event_PlayerDeath(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int client = GetClientOfUserId(eEvent.GetInt("attacker"));
+	if (IsValidClient(client))
+	{
+		char szWeaponName[128];
+	
+		eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
+		
+		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+		
+		if(IsValidEntity(iActiveWeapon))
+		{
+			int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iActiveWeapon);
+			
+			char szItemID[128];
+			int iItemID[2];
+			
+			iItemID[0] = g_iItemIDLow[client][iDefIndex];
+			iItemID[1] = g_iItemIDHigh[client][iDefIndex];
+			
+			Int64ToString(iItemID, szItemID, sizeof(szItemID));
+			
+			eEvent.SetString("weapon_itemid", szItemID);
+		}
+	}
+	
+	return Plugin_Continue;
 }
 
 public Action Timer_ApplyAgent(Handle hTimer, any client)

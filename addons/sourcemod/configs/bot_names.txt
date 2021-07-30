@@ -251,7 +251,7 @@
 	"XELLOW" 			"Nexus"
 	"Blytz" 			"Nexus"
 	"lauNX" 			"Nexus"
-	"sXe" 				"Nexus"
+	"mhN1" 				"Nexus"
 	//PACT Players
 	"darko" 			"PACT"
 	"lunAtic" 			"PACT"
@@ -270,12 +270,12 @@
 	"LBNS" 				"9INE"
 	"debo" 				"9INE"
 	"bobeksde" 			"9INE"
-	//Singularity Players
-	"IceBerg" 			"Singularity"
-	"Vster" 			"Singularity"
-	"holzt" 			"Singularity"
-	"larsen" 			"Singularity"	
-	"smF" 				"Singularity"
+	//GZG Players
+	"guag" 				"GZG"
+	"mizzy" 			"GZG"
+	"2D" 				"GZG"
+	"rekonz" 			"GZG"	
+	"nexar" 			"GZG"
 	//DETONA Players
 	"lux" 				"DETONA"
 	"phx" 				"DETONA"
@@ -344,7 +344,7 @@
 	"zeph" 				"Paradox"
 	//OFFSET Players
 	"NOPEEj" 			"OFFSET"
-	"fox" 				"OFFSET"
+	"EasTor" 			"OFFSET"
 	"snapy" 			"OFFSET"
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
@@ -373,10 +373,10 @@
 	"nacho" 			"Furious"
 	"meyern" 			"Furious"
 	//Recon Players
-	"desi" 				"Recon"
+	"AAustiN" 			"Recon"
 	"jeorgesnorts" 		"Recon"
 	"SATURN" 			"Recon"
-	"Wilky" 			"Recon"
+	"J0LZ" 				"Recon"
 	"SLIGHT" 			"Recon"
 	//GTZ Players
 	"rafaxF" 			"GTZ"
@@ -576,12 +576,6 @@
 	"PERCY" 			"AGF"
 	"Cabbi" 			"AGF"
 	"Lukki" 			"AGF"
-	//GameAgents Players
-	"mhN1" 				"GameAgents"
-	"renne" 			"GameAgents"
-	"zrkk" 				"GameAgents"
-	"regali" 			"GameAgents"
-	"fNk" 				"GameAgents"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -636,12 +630,12 @@
 	"sany" 				"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
-	//Vireo Players
-	"ethex" 			"Vireo"
-	"kirai" 			"Vireo"
-	"nicx" 				"Vireo"
-	"max" 				"Vireo"	
-	"seziwana" 			"Vireo"	
+	//Rebirth Players
+	"ethex" 			"Rebirth"
+	"kirai" 			"Rebirth"
+	"jsfeltner" 		"Rebirth"
+	"max" 				"Rebirth"	
+	"seziwana" 			"Rebirth"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
 	"asap" 				"Rooster"
@@ -729,7 +723,7 @@
 	//AVEZ Players
 	"sNx" 				"AVEZ"
 	"fanatyk" 			"AVEZ"
-	"Warp" 				"AVEZ"
+	"gRuChA" 			"AVEZ"
 	"SaMey" 			"AVEZ"
 	"pendzel"			"AVEZ"
 	//BP Players
@@ -800,10 +794,10 @@
 	"v$m"				"Plano"
 	//Eriness Players
 	"replay" 			"Eriness"
-	"stinx" 			"Eriness"
+	"desty" 			"Eriness"
 	"Lueg" 				"Eriness"
 	"DOCKSTAR" 			"Eriness"
-	"Valencio"			"Eriness"
+	"Lastiik"			"Eriness"
 	//Entropiq Players
 	"Lack1" 			"Entropiq"
 	"El1an" 			"Entropiq"
