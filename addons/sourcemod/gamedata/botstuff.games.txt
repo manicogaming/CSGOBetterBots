@@ -46,12 +46,6 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::BendLineOfSight"
-			{
-				// Has 'CCSBot::BendLineOfSight' string
-				"library"	"server"
-				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
-			}
 			"CCSBot::PickNewAimSpot"
 			{
 				// Has 'mp_damage_headshot_only' string
@@ -93,6 +87,16 @@
 				// Uses 'CCSBot::IsVisible( player )' string
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x1C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
+			}
+			"CheckAreaAgainstAllZoneAreas" //Area #%d is disconnected from goal area #%d
+			{
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x14\x8B\x15\x2A\x2A\x2A\x2A\x33\xC0"
+			}
+			"CBotManager::IsLineBlockedBySmoke" //CBotManager::IsLineBlockedBySmoke
+			{
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\xA1\x2A\x2A\x2A\x2A\x53\x56\x57\x8B\xF9\x8B\x88\x0C\x10\x00\x00"
 			}
 		}
 		"Offsets"
@@ -136,6 +140,18 @@
 			{
 				//From sdkhooks gamedata
 				"windows"	"288"
+			}
+		}
+		"Addresses"
+		{
+			"TheBots"
+			{
+				"windows"
+				{
+					"signature"	"CheckAreaAgainstAllZoneAreas"
+					"read"		"8"
+				}
+				"read"		"0"
 			}
 		}
 		"Functions"

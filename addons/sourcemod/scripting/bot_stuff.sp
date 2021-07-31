@@ -25,9 +25,10 @@ Handle g_hBotIsVisible;
 Handle g_hBotIsHiding;
 Handle g_hBotEquipBestWeapon;
 Handle g_hBotSetLookAt;
-Handle g_hBotBendLineOfSight;
 Handle g_hSetCrosshairCode;
 Handle g_hSwitchWeaponCall;
+Handle g_hIsLineBlockedBySmoke;
+Address g_pTheBots;
 
 char g_szBoneNames[][] =  {
 	"neck_0", 
@@ -5091,10 +5092,15 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	if (!IsValidClient(attacker) && !IsPlayerAlive(attacker))
 		return Plugin_Continue;
 	
-	float fAttackerEyes[3];
-	GetClientEyePosition(attacker, fAttackerEyes);
-		
-	BotSetLookAt(victim, "Use entity", fAttackerEyes, PRIORITY_HIGH, Math_GetRandomFloat(1.0, 3.0), true, 5.0, false);
+	float fVictimEyes[3], fAttackerPos[3];
+	GetClientEyePosition(victim, fVictimEyes);
+	GetClientAbsOrigin(attacker, fAttackerPos);
+	fAttackerPos[2] += 35.5;
+	
+	if(IsPointVisible(fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
+	{
+		BotSetLookAt(victim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
+	}
 	
 	return Plugin_Continue;
 }
@@ -5552,7 +5558,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 {
 	int client = GetClientFromSerial(iSerial);
 	
-	if (!client || !IsClientInGame(client) || !IsPlayerAlive(client))return Plugin_Stop;
+	if (!IsValidClient(client) || !IsPlayerAlive(client))return Plugin_Stop;
 	int iTeam = GetClientTeam(client);
 	if (iTeam < 2)return Plugin_Stop;
 	
@@ -5683,6 +5689,11 @@ public void LoadSDK()
 	if (hGameConfig == INVALID_HANDLE)
 		SetFailState("Failed to find botstuff.games game config.");
 	
+	if(!(g_pTheBots = GameConfGetAddress(hGameConfig, "TheBots")))
+	{
+		SetFailState("Failed to get TheBots address.");
+	}
+	
 	if ((g_iBotTargetSpotOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
@@ -5766,15 +5777,6 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
 	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::BendLineOfSight");
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
-	
 	StartPrepSDKCall(SDKCall_Raw);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "SetCrosshairCode");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
@@ -5786,6 +5788,13 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+	
+	StartPrepSDKCall(SDKCall_Raw);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
+	if ((g_hIsLineBlockedBySmoke = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBotManager::IsLineBlockedBySmoke offset!");
 	
 	delete hGameConfig;
 }
@@ -5886,11 +5895,6 @@ public void BotSetLookAt(int client, const char[] szDesc, const float fPos[3], P
 	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
 }
 
-public bool BotBendLineOfSight(int client, const float fEye[3], const float fTarget[3], float fBend[3], float fAngleLimit)
-{
-	return SDKCall(g_hBotBendLineOfSight, client, fEye, fTarget, fBend, fAngleLimit);
-}
-
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
 {
 	SDKCall(g_hSetCrosshairCode, pCCSPlayerResource, client, szCode);
@@ -5933,16 +5937,6 @@ public int GetNearestEntity(int client, char[] szClassname)
 	}
 	
 	return iNearestEntity;
-}
-
-stock void StripPlayerGrenades(int client)
-{
-	int iWeapon;
-	while ((iWeapon = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) != -1)   // strip all the nades
-	{
-		RemovePlayerItem(client, iWeapon);
-		AcceptEntityInput(iWeapon, "Kill");
-	}
 }
 
 stock void CSGO_SetMoney(int client, int iAmount)
@@ -6073,26 +6067,6 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
 }
 
-stock float AngleNormalize(float fAngle)
-{
-    fAngle = fmodf(fAngle, 360.0);
-    if (fAngle > 180)
-    {
-        fAngle -= 360;
-    }
-    if (fAngle < -180)
-    {
-        fAngle += 360;
-    }
-
-    return fAngle;
-}
-
-stock float fmodf(float fNumber, float fDenom)
-{
-    return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
-}
-
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
 	TR_TraceRayFilter(fStart, fEnd, MASK_SHOT, RayType_EndPoint, TraceEntityFilterStuff);
@@ -6103,6 +6077,11 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 {
 	return iEntity > MaxClients;
 }
+
+stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
+{	
+	return SDKCall(g_hIsLineBlockedBySmoke, g_pTheBots, fFrom, fTo);
+} 
 
 stock int GetAliveTeamCount(int iTeam)
 {
@@ -6115,7 +6094,7 @@ stock int GetAliveTeamCount(int iTeam)
 	return iNumber;
 }
 
-stock int HumansOnTeam(int iTeam, bool bIsAlive = false )
+stock int HumansOnTeam(int iTeam, bool bIsAlive = false)
 {
 	int iCount = 0;
 
