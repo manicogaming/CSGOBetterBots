@@ -13,10 +13,10 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
-bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
 int g_iProfileRankOffset, g_iRndExecute, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+float g_fTargetPos[MAXPLAYERS+1][3], g_fAimTolerance[MAXPLAYERS+1], g_fOnTarget[MAXPLAYERS+1], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -30,7 +30,7 @@ Handle g_hSwitchWeaponCall;
 Handle g_hIsLineBlockedBySmoke;
 Address g_pTheBots;
 
-char g_szBoneNames[][] =  {
+static char g_szBoneNames[][] =  {
 	"neck_0", 
 	"pelvis", 
 	"spine_0", 
@@ -4529,8 +4529,27 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				bEveryoneDead = true;
 			}
 			
+			if (BotMimic_IsPlayerMimicing(client) && GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0)
+			{
+				BotMimic_StopPlayerMimic(client);
+			}
+			
 			if (g_bIsProBot[client])
 			{
+				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
+				
+				GetClientEyePosition(client, fClientEyes);
+				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
+				GetClientEyeAngles(client, fClientAngles);
+				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
+				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
+				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
+				GetViewVector(fClientAngles, fAimDir);
+				
+				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
+				g_fOnTarget[client] = GetVectorDotProduct(fToAimSpot, fAimDir);
+				g_fAimTolerance[client] = Cosine(ArcTangent(32.0 / fRangeToEnemy));
+			
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
@@ -5228,117 +5247,88 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
+	int iPart = hParams.Get(2);
 	
-	for (int client = 1; client <= MaxClients; client++)
+	if(iPart == 1)
 	{
-		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
+		for (int client = 1; client <= MaxClients; client++)
 		{
-			int iBone = LookupBone(iPlayer, "head_0");
-			if (iBone < 0)
-				return MRES_Ignored;
-			
-			bool bVisibleOther;
-			float fHead[3], fBody[3], fBad[3];
-			GetBonePosition(iPlayer, iBone, fHead, fBad);
-			
-			fHead[2] += 4.0;
-			
-			if (BotIsVisible(client, fHead, false, -1))
+			if (g_bIsProBot[client] && BotGetEnemy(client) == iPlayer && IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 			{
-				g_bIsHeadVisible[client] = true;
-			}
-			else
-			{
-				//Head wasn't visible, check other bones.
-				for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
-				{
-					iBone = LookupBone(iPlayer, g_szBoneNames[b]);
-					if (iBone < 0)
-						return MRES_Ignored;
+				int iBone = LookupBone(iPlayer, "head_0");
+				if (iBone < 0)
+					return MRES_Ignored;
 					
-					GetBonePosition(iPlayer, iBone, fHead, fBad);
-					
-					if (BotIsVisible(client, fHead, false, -1))
-					{
-						g_bIsHeadVisible[client] = false;
-						break;
-					}
-				}
-			}
-			
-			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-			if (iActiveWeapon == -1) return MRES_Ignored;
-			
-			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-			
-			switch(iDefIndex)
-			{
-				case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
+				int iSpineBone = LookupBone(iPlayer, "spine_3");
+				if (iSpineBone < 0)
+					return MRES_Ignored;
+				
+				bool bShootSpine;
+				float fHead[3], fBody[3], fBad[3];
+				GetBonePosition(iPlayer, iBone, fHead, fBad);
+				GetBonePosition(iPlayer, iSpineBone, fBody, fBad);
+				
+				fHead[2] += 4.0;
+				
+				if (BotIsVisible(client, fHead, false, -1))
 				{
-					if (g_bIsHeadVisible[client])
+					if(BotIsVisible(client, fBody, false, -1))
 					{
-						if (Math_GetRandomInt(1, 100) <= 90)
+						int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+						if (iActiveWeapon == -1) return MRES_Ignored;
+						
+						int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+						
+						switch(iDefIndex)
 						{
-							iBone = LookupBone(iPlayer, "spine_3");
-							
-							if (iBone < 0)
-								return MRES_Ignored;
-							
-							GetBonePosition(iPlayer, iBone, fBody, fBad);
-							
-							if (BotIsVisible(client, fBody, false, -1))
+							case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 							{
-								bVisibleOther = true;
+								if (Math_GetRandomInt(1, 100) <= 90)
+								{
+									bShootSpine = true;
+								}
+							}
+							case 2, 3, 4, 30, 32, 36, 61, 63:
+							{
+								if (Math_GetRandomInt(1, 100) <= 50)
+								{
+									bShootSpine = true;
+								}
+							}
+							case 9, 11, 38:
+							{
+								bShootSpine = true;
 							}
 						}
 					}
 				}
-				case 2, 3, 4, 30, 32, 36, 61, 63:
+				else
 				{
-					if (g_bIsHeadVisible[client])
+					//Head wasn't visible, check other bones.
+					for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
 					{
-						if (Math_GetRandomInt(1, 100) <= 50)
-						{
-							iBone = LookupBone(iPlayer, "spine_3");
-							
-							if (iBone < 0)
-								return MRES_Ignored;
-							
-							GetBonePosition(iPlayer, iBone, fBody, fBad);
-							
-							if (BotIsVisible(client, fBody, false, -1))
-							{
-								bVisibleOther = true;
-							}
-						}
-					}
-				}
-				case 9, 11, 38:
-				{
-					if (g_bIsHeadVisible[client])
-					{
-						iBone = LookupBone(iPlayer, "spine_3");
+						iBone = LookupBone(iPlayer, g_szBoneNames[b]);
 						if (iBone < 0)
 							return MRES_Ignored;
 						
-						GetBonePosition(iPlayer, iBone, fBody, fBad);
+						GetBonePosition(iPlayer, iBone, fHead, fBad);
 						
-						if (BotIsVisible(client, fBody, false, -1))
+						if (BotIsVisible(client, fHead, false, -1))
 						{
-							bVisibleOther = true;
+							break;
 						}
 					}
 				}
+				
+				if(bShootSpine)
+					g_fTargetPos[client] = fBody;
+				else
+					g_fTargetPos[client] = fHead;
+				
+				hReturn.SetVector(g_fTargetPos[client]);
+				
+				return MRES_Supercede;
 			}
-			
-			if(bVisibleOther)
-				g_fTargetPos[client] = fBody;
-			else
-				g_fTargetPos[client] = fHead;
-			
-			hReturn.SetVector(g_fTargetPos[client]);
-			
-			return MRES_Supercede;
 		}
 	}
 	
@@ -5422,30 +5412,33 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			g_iTarget[client] = BotGetEnemy(client);
 			
 			float fTargetPos[3], fTargetDistance;
+			int iZoomLevel;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
+			bool bIsHiding = BotIsHiding(client);
+			bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
+			
+			if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
+			{
+				iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
+			}
 			
 			if (!GetEntProp(client, Prop_Send, "m_bIsScoped"))
 			{
 				g_bZoomed[client] = false;
 			}
 			
-			if(BotIsHiding(client) && (iDefIndex == 8 || iDefIndex == 39) && GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel") == 0)
+			if(bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
 			{
 				iButtons |= IN_ATTACK2;
 			}
-			else if(!BotIsHiding(client) && (iDefIndex == 8 || iDefIndex == 39) && GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel") == 1)
+			else if(!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
 			{
 				iButtons |= IN_ATTACK2;
 			}
 			
-			if (BotIsHiding(client) && g_iUncrouchChance[client] <= 50)
+			if (bIsHiding && g_iUncrouchChance[client] <= 50)
 			{
 				iButtons &= ~IN_DUCK;
-			}
-			
-			if (BotMimic_IsPlayerMimicing(client) && GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0)
-			{
-				BotMimic_StopPlayerMimic(client);
 			}
 			
 			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
@@ -5475,25 +5468,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					return Plugin_Changed;
 				}
 				
-				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
-				
-				GetClientEyePosition(client, fClientEyes);
-				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
-				GetClientEyeAngles(client, fClientAngles);
-				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
-				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
-				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
-				GetViewVector(fClientAngles, fAimDir);
-				
-				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
-				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
-				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-				
 				switch(iDefIndex)
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
-						if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
+						if (g_fOnTarget[client] > g_fAimTolerance[client] && fTargetDistance < 2000.0)
 						{
 							iButtons &= ~IN_ATTACK;
 						
@@ -5503,14 +5482,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							}
 						}
 						
-						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING) && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (g_fOnTarget[client] > g_fAimTolerance[client] && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 					}
 					case 1:
 					{
-						if (fOnTarget > fAimTolerance && !(GetEntityFlags(client) & FL_DUCKING))
+						if (g_fOnTarget[client] > g_fAimTolerance[client] && !bIsDucking)
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
@@ -5528,7 +5507,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientLoc[2] += 35.5;
 				
-				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && g_fOnTarget[client] > g_fAimTolerance[client] && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
