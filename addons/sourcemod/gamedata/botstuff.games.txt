@@ -46,12 +46,6 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::PickNewAimSpot"
-			{
-				// Has 'mp_damage_headshot_only' string
-				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\x56\x8B\xF1\x57\x8B\x8E\x04\x5E\x00\x00"
-			}
 			"CCSBot::Update"
 			{
 				// Has 'CCSBot::Update' string
@@ -88,24 +82,27 @@
 				"library" 	"server"
 				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x1C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
-			"CheckAreaAgainstAllZoneAreas" //Area #%d is disconnected from goal area #%d
+			"CheckAreaAgainstAllZoneAreas"
 			{
+				//Has the string 'Area #%d is disconnected from goal area #%d'
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xEC\x14\x8B\x15\x2A\x2A\x2A\x2A\x33\xC0"
 			}
-			"CBotManager::IsLineBlockedBySmoke" //CBotManager::IsLineBlockedBySmoke
+			"CBotManager::IsLineBlockedBySmoke"
 			{
+				//Has the string 'CBotManager::IsLineBlockedBySmoke'
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\xA1\x2A\x2A\x2A\x2A\x53\x56\x57\x8B\xF9\x8B\x88\x0C\x10\x00\x00"
+			}
+			"CCSBot::GetPartPosition"
+			{
+				//Has the string 'CCSBot::GetPartPosition'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\xB9\x0C\x10\x00\x00\x85\xFF\x74\x2A\x6A\x04\x6A\x00\x68\x2A\x2A\x2A\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A\xFF\x15\x2A\x2A\x2A\x2A\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
 		}
 		"Offsets"
 		{
-			"CCSBot::m_targetSpot"
-			{
-				//Is inside CCSBot::PickNewAimSpot
-				"windows"       "23976"
-			}
 			"CCSBot::m_nearbyEnemyCount"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
@@ -194,13 +191,6 @@
                     }
                 }
             }
-			"CCSBot::PickNewAimSpot"
-			{
-                "signature" "CCSBot::PickNewAimSpot"
-                "callconv" "thiscall"
-                "return" "void"
-                "this" "entity"
-            }
 			"CCSBot::ThrowGrenade"
 			{
                 "signature" "CCSBot::ThrowGrenade"
@@ -270,6 +260,24 @@
                     "visParts"
                     {
                         "type" "charptr"
+                    }
+                }
+            }
+			"CCSBot::GetPartPosition"
+			{
+                "signature" "CCSBot::GetPartPosition"
+                "callconv" "stdcall"
+                "return" "vectorptr"
+                "this" "ignore"
+                "arguments"
+                {
+                    "player"
+                    {
+                        "type" "cbaseentity"
+                    }
+                    "part"
+                    {
+                        "type" "int"
                     }
                 }
             }

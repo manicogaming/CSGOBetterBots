@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bIsHeadVisible[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
+int g_iProfileRankOffset, g_iRndExecute, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -429,9 +429,9 @@ public Action Team_G2(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "huNter-");
-		ServerCommand("bot_add_ct %s", "JaCkz");
-		ServerCommand("bot_add_ct %s", "nexa");
 		ServerCommand("bot_add_ct %s", "NiKo");
+		ServerCommand("bot_add_ct %s", "nexa");
+		ServerCommand("bot_add_ct %s", "JaCkz");
 		ServerCommand("bot_add_ct %s", "AmaNEk");
 		ServerCommand("mp_teamlogo_1 g2");
 	}
@@ -440,9 +440,9 @@ public Action Team_G2(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "huNter-");
-		ServerCommand("bot_add_t %s", "JaCkz");
-		ServerCommand("bot_add_t %s", "nexa");
 		ServerCommand("bot_add_t %s", "NiKo");
+		ServerCommand("bot_add_t %s", "nexa");
+		ServerCommand("bot_add_t %s", "JaCkz");
 		ServerCommand("bot_add_t %s", "AmaNEk");
 		ServerCommand("mp_teamlogo_2 g2");
 	}
@@ -5225,6 +5225,126 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 	return MRES_ChangedHandled;
 }
 
+public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
+{
+	int iPlayer = hParams.Get(1);
+	
+	for (int client = 1; client <= MaxClients; client++)
+	{
+		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
+		{
+			int iBone = LookupBone(iPlayer, "head_0");
+			if (iBone < 0)
+				return MRES_Ignored;
+			
+			bool bVisibleOther;
+			float fHead[3], fBody[3], fBad[3];
+			GetBonePosition(iPlayer, iBone, fHead, fBad);
+			
+			fHead[2] += 4.0;
+			
+			if (BotIsVisible(client, fHead, false, -1))
+			{
+				g_bIsHeadVisible[client] = true;
+			}
+			else
+			{
+				//Head wasn't visible, check other bones.
+				for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
+				{
+					iBone = LookupBone(iPlayer, g_szBoneNames[b]);
+					if (iBone < 0)
+						return MRES_Ignored;
+					
+					GetBonePosition(iPlayer, iBone, fHead, fBad);
+					
+					if (BotIsVisible(client, fHead, false, -1))
+					{
+						g_bIsHeadVisible[client] = false;
+						break;
+					}
+				}
+			}
+			
+			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+			if (iActiveWeapon == -1) return MRES_Ignored;
+			
+			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+			
+			switch(iDefIndex)
+			{
+				case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
+				{
+					if (g_bIsHeadVisible[client])
+					{
+						if (Math_GetRandomInt(1, 100) <= 90)
+						{
+							iBone = LookupBone(iPlayer, "spine_3");
+							
+							if (iBone < 0)
+								return MRES_Ignored;
+							
+							GetBonePosition(iPlayer, iBone, fBody, fBad);
+							
+							if (BotIsVisible(client, fBody, false, -1))
+							{
+								bVisibleOther = true;
+							}
+						}
+					}
+				}
+				case 2, 3, 4, 30, 32, 36, 61, 63:
+				{
+					if (g_bIsHeadVisible[client])
+					{
+						if (Math_GetRandomInt(1, 100) <= 50)
+						{
+							iBone = LookupBone(iPlayer, "spine_3");
+							
+							if (iBone < 0)
+								return MRES_Ignored;
+							
+							GetBonePosition(iPlayer, iBone, fBody, fBad);
+							
+							if (BotIsVisible(client, fBody, false, -1))
+							{
+								bVisibleOther = true;
+							}
+						}
+					}
+				}
+				case 9, 11, 38:
+				{
+					if (g_bIsHeadVisible[client])
+					{
+						iBone = LookupBone(iPlayer, "spine_3");
+						if (iBone < 0)
+							return MRES_Ignored;
+						
+						GetBonePosition(iPlayer, iBone, fBody, fBad);
+						
+						if (BotIsVisible(client, fBody, false, -1))
+						{
+							bVisibleOther = true;
+						}
+					}
+				}
+			}
+			
+			if(bVisibleOther)
+				g_fTargetPos[client] = fBody;
+			else
+				g_fTargetPos[client] = fHead;
+			
+			hReturn.SetVector(g_fTargetPos[client]);
+			
+			return MRES_Supercede;
+		}
+	}
+	
+	return MRES_Ignored;
+}
+
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
@@ -5262,95 +5382,6 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-}
-
-public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
-{
-	if (g_bIsProBot[client])
-	{
-		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-		if (iActiveWeapon == -1) return MRES_Ignored;
-		
-		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		
-		SelectBestTargetPos(client, g_fTargetPos[client]);
-		
-		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
-		{
-			return MRES_Ignored;
-		}
-		
-		switch(iDefIndex)
-		{
-			case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
-			{
-				if (g_bIsHeadVisible[client])
-				{
-					if (Math_GetRandomInt(1, 100) <= 90)
-					{
-						int iBone = LookupBone(g_iTarget[client], "spine_3");
-						
-						if (iBone < 0)
-							return MRES_Ignored;
-						
-						float fBody[3], fBad[3];
-						GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
-						
-						if (BotIsVisible(client, fBody, false, -1))
-						{
-							g_fTargetPos[client] = fBody;
-						}
-					}
-				}
-			}
-			case 2, 3, 4, 30, 32, 36, 61, 63:
-			{
-				if (g_bIsHeadVisible[client])
-				{
-					if (Math_GetRandomInt(1, 100) <= 50)
-					{
-						int iBone = LookupBone(g_iTarget[client], "spine_3");
-						
-						if (iBone < 0)
-							return MRES_Ignored;
-						
-						float fBody[3], fBad[3];
-						GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
-						
-						if (BotIsVisible(client, fBody, false, -1))
-						{
-							g_fTargetPos[client] = fBody;
-						}
-					}
-				}
-			}
-			case 9, 11, 38:
-			{
-				if (g_bIsHeadVisible[client])
-				{
-					int iBone = LookupBone(g_iTarget[client], "spine_3");
-					if (iBone < 0)
-						return MRES_Ignored;
-					
-					float fBody[3], fBad[3];
-					GetBonePosition(g_iTarget[client], iBone, fBody, fBad);
-					
-					if (BotIsVisible(client, fBody, false, -1))
-					{
-						g_fTargetPos[client] = fBody;
-					}
-				}
-			}
-			case 41, 42, 59, 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
-			{
-				return MRES_Ignored;
-			}
-		}
-		
-		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
-	}
-	
-	return MRES_Ignored;
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
@@ -5694,11 +5725,6 @@ public void LoadSDK()
 		SetFailState("Failed to get TheBots address.");
 	}
 	
-	if ((g_iBotTargetSpotOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
-	}
-	
 	if ((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
@@ -5815,13 +5841,6 @@ public void LoadDetours()
 		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
 	}
 	
-	//CCSBot::PickNewAimSpot Detour
-	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
-	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
-	{
-		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
-	}
-	
 	//CCSBot::ThrowGrenade Detour
 	DynamicDetour hBotThrowGrenadeDetour = DynamicDetour.FromConf(hGameData, "CCSBot::ThrowGrenade");
 	if(!hBotThrowGrenadeDetour.Enable(Hook_Pre, CCSBot_ThrowGrenade))
@@ -5855,6 +5874,13 @@ public void LoadDetours()
 	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
 	{
 		SetFailState("Failed to setup detour for CCSBot::IsVisible(player)");
+	}
+	
+	//CCSBot::GetPartPosition Detour
+	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");
+	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
+	{
+		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
 	}
 	
 	delete hGameData;
@@ -6012,52 +6038,6 @@ public Action Timer_Breakable(Handle hTimer, any client)
 	}
 	
 	return Plugin_Stop;
-}
-
-public void SelectBestTargetPos(int client, float fTargetPos[3])
-{
-	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
-	{
-		int iBone = LookupBone(g_iTarget[client], "head_0");
-		if (iBone < 0)
-			return;
-		
-		float fHead[3], fBad[3];
-		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
-		
-		fHead[2] += 2.0;
-		
-		if (BotIsVisible(client, fHead, false, -1))
-		{
-			g_bIsHeadVisible[client] = true;
-		}
-		else
-		{
-			bool bVisibleOther = false;
-			
-			//Head wasn't visible, check other bones.
-			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
-			{
-				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
-				if (iBone < 0)
-					return;
-				
-				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
-				
-				if (BotIsVisible(client, fHead, false, -1))
-				{
-					g_bIsHeadVisible[client] = false;
-					bVisibleOther = true;
-					break;
-				}
-			}
-			
-			if (!bVisibleOther)
-				return;
-		}
-		
-		fTargetPos = fHead;
-	}
 }
 
 stock void GetViewVector(float fVecAngle[3], float fOutPut[3])

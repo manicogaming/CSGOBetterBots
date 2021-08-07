@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun Aug 01 02:36:53 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Aug 07 03:47:25 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -293,6 +293,7 @@ de_ore
 de_overgrown
 de_overpass
 de_parthenon_royal
+de_pit
 de_pitstop
 de_portugal_rc1
 de_pripyat
@@ -417,7 +418,6 @@ kills_ct
 knas_bunker_css
 knas_speedcastle_css
 lobby_mapveto
-maison
 mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1
