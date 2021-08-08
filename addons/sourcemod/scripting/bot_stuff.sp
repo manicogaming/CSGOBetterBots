@@ -266,6 +266,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_checkmate", Team_Checkmate);
 	RegConsoleCmd("team_renewal", Team_Renewal);
 	RegConsoleCmd("team_party", Team_Party);
+	RegConsoleCmd("team_777", Team_777);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -4378,6 +4379,36 @@ public Action Team_Party(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_777(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "ruyter");
+		ServerCommand("bot_add_ct %s", "Marcelious");
+		ServerCommand("bot_add_ct %s", "mikki");
+		ServerCommand("bot_add_ct %s", "akEz");
+		ServerCommand("bot_add_ct %s", "H4RR3");
+		ServerCommand("mp_teamlogo_1 777");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "ruyter");
+		ServerCommand("bot_add_t %s", "Marcelious");
+		ServerCommand("bot_add_t %s", "mikki");
+		ServerCommand("bot_add_t %s", "akEz");
+		ServerCommand("bot_add_t %s", "H4RR3");
+		ServerCommand("mp_teamlogo_2 777");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -5190,7 +5221,7 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	
 	for (int client = 1; client <= MaxClients; client++)
 	{
-		if (g_bIsProBot[client] && BotGetEnemy(client) == iPlayer && IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
 		{
 			g_iTarget[client] = iPlayer;
 			

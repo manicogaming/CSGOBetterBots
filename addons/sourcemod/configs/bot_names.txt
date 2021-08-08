@@ -822,4 +822,10 @@
 	"djay" 				"Party"
 	"Infinite" 			"Party"
 	"viz"				"Party"
+	//777 Players
+	"ruyter" 			"777"
+	"Marcelious" 		"777"
+	"mikki" 			"777"
+	"akEz" 				"777"
+	"H4RR3"				"777"
 }

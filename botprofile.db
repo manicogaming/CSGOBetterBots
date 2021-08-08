@@ -3308,6 +3308,28 @@ ProP+Rifle+RiflePersonality "viz"
 	VoicePitch = 92
 End
 
+//777 Players
+
+ProP+Rifle+RiflePersonality "ruyter"
+	VoicePitch = 88
+End
+
+ProP+SniperPro+SniperPersonality "Marcelious"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "mikki"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "akEz"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "H4RR3"
+	VoicePitch = 91
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End
