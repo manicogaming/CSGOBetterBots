@@ -38,10 +38,10 @@
 	"AmaNEk" 			"G2"
 	//fnatic Players
 	"Jackinho" 			"fnatic"
-	"JW" 				"fnatic"
+	"ALEX" 				"fnatic"
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
-	"Golden" 			"fnatic"
+	"mezii" 			"fnatic"
 	//Alpha Players
 	"zyp" 				"Alpha"
 	"hug" 				"Alpha"
@@ -99,7 +99,7 @@
 	//BIG Players
 	"tiziaN" 			"BIG"
 	"syrsoN" 			"BIG"
-	"XANTARES" 			"BIG"
+	"gade" 				"BIG"
 	"tabseN" 			"BIG"
 	"k1to" 				"BIG"
 	//FURIA Players
@@ -132,12 +132,6 @@
 	"FL1T" 				"forZe"
 	"almazer" 			"forZe"
 	"Jerry" 			"forZe"
-	//UMX Players
-	"volt" 				"UMX"
-	"arTisT" 			"UMX"
-	"Girafffe"			"UMX"	 
-	"Extinct" 			"UMX"
-	"Maza" 				"UMX"
 	//Sprout Players
 	"kressy" 			"Sprout"
 	"slaxz" 			"Sprout"
@@ -532,7 +526,7 @@
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
-	"mezii" 			"Endpoint"
+	"BOROS" 			"Endpoint"
 	"Thomas" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
@@ -550,7 +544,7 @@
 	"tamir"				"D13" 
 	"xerolte" 			"D13"
 	"shinobi" 			"D13"
-	"sk0R" 				"D13"
+	"yAmi" 				"D13"
 	"Annihilation" 		"D13"	
 	//DIVIZON Players
 	"UN1TY" 			"DIVIZON"
@@ -572,10 +566,10 @@
 	"Twixie" 			"KOVA"
 	//AGF Players
 	"fr0slev" 			"AGF"
-	"Ryxxo" 			"AGF"
-	"PERCY" 			"AGF"
+	"kristou" 			"AGF"
+	"cajunb" 			"AGF"
 	"Cabbi" 			"AGF"
-	"Lukki" 			"AGF"
+	"Nodios" 			"AGF"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -626,8 +620,8 @@
 	"insane" 			"Impact"
 	//ERN Players
 	"j1NZO" 			"ERN"
-	"horvy" 			"ERN"
-	"sany" 				"ERN"	
+	"sehza" 			"ERN"
+	"ADR1AN" 			"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
 	//Rebirth Players
@@ -696,12 +690,6 @@
 	"KNCERATO" 			"Dragons"
 	"detr0it" 			"Dragons"
 	"r4ul"				"Dragons"
-	//Nordavind Players
-	"tenzki" 			"Nordavind"
-	"mertz" 			"Nordavind"
-	"HS" 				"Nordavind"
-	"supra" 			"Nordavind"
-	"mirbit"			"Nordavind"
 	//Keyd Players
 	"YJ" 				"Keyd"
 	"abr" 				"Keyd"
@@ -782,7 +770,7 @@
 	"iDk"				"Paquetá"
 	//BNB Players
 	"Jonji" 			"BNB"
-	"ptr" 				"BNB"
+	"Junior" 			"BNB"
 	"Swisher" 			"BNB"
 	"Spongey" 			"BNB"
 	"Shakezullah"		"BNB"

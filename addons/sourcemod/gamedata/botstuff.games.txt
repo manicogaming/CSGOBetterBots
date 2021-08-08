@@ -106,32 +106,32 @@
 			"CCSBot::m_nearbyEnemyCount"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
-				"windows"       "24112"
+				"windows"	   "24112"
 			}
 			"CCSBot::m_task"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Task: %s' string
-				"windows"       "16020"
+				"windows"	   "16020"
 			}
 			"CCSBot::m_fireWeaponTimestamp"
 			{
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
-				"windows"       "24700"
+				"windows"	   "24700"
 			}
 			"CCSBot::m_isEnemyVisible"
 			{
 				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
-				"windows"       "24072"
+				"windows"	   "24072"
 			}
 			"CCSBot::m_pLocalProfile"
 			{
 				//Is inside CCSBot::DebugDisplay right next to the string 'Skill: %d%%'
-				"windows"       "15164"
+				"windows"	   "15164"
 			}
 			"CCSBot::m_enemy"
 			{
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
-				"windows"       "24068"
+				"windows"	   "24068"
 			}
 			"Weapon_Switch"
 			{
@@ -155,132 +155,132 @@
 		{
 			"CCSBot::SetLookAt"
 			{
-                "signature" "CCSBot::SetLookAt"
-                "callconv" "thiscall"
-                "return" "void"
-                "this" "entity"
-                "arguments"
-                {
-                    "desc"
-                    {
-                        "type" "charptr"
-                    }
-                    "pos"
-                    {
-                        "type" "vectorptr"
-                    }
-                    "pri"
-                    {
-                        "type" "int"
-                    }
-                    "duration"
-                    {
-                        "type" "float"
-                    }
-                    "clearIfClose"
-                    {
-                        "type" "bool"
-                    }
-                    "angleTolerance"
-                    {
-                        "type" "float"
-                    }
-                    "attack"
-                    {
-                        "type" "bool"
-                    }
-                }
-            }
+				"signature" "CCSBot::SetLookAt"
+				"callconv" "thiscall"
+				"return" "void"
+				"this" "entity"
+				"arguments"
+				{
+					"desc"
+					{
+						"type" "charptr"
+					}
+					"pos"
+					{
+						"type" "vectorptr"
+					}
+					"pri"
+					{
+						"type" "int"
+					}
+					"duration"
+					{
+						"type" "float"
+					}
+					"clearIfClose"
+					{
+						"type" "bool"
+					}
+					"angleTolerance"
+					{
+						"type" "float"
+					}
+					"attack"
+					{
+						"type" "bool"
+					}
+				}
+			}
 			"CCSBot::ThrowGrenade"
 			{
-                "signature" "CCSBot::ThrowGrenade"
-                "callconv" "thiscall"
-                "return" "void"
-                "this" "entity"
+				"signature" "CCSBot::ThrowGrenade"
+				"callconv" "thiscall"
+				"return" "void"
+				"this" "entity"
 				"arguments"
-                {
-                    "target"
-                    {
-                        "type" "vectorptr"
-                    }
-                }
-            }
+				{
+					"target"
+					{
+						"type" "vectorptr"
+					}
+				}
+			}
 			"BotCOS"
 			{
-                "signature" "BotCOS"
-                "callconv" "fastcall"
-                "return" "float"
-                "this" "ignore"
-            }
+				"signature" "BotCOS"
+				"callconv" "fastcall"
+				"return" "float"
+				"this" "ignore"
+			}
 			"BotSIN"
 			{
-                "signature" "BotSIN"
-                "callconv" "fastcall"
-                "return" "float"
-                "this" "ignore"
-            }
+				"signature" "BotSIN"
+				"callconv" "fastcall"
+				"return" "float"
+				"this" "ignore"
+			}
 			"CCSBot::IsVisible(pos)"
 			{
-                "signature" "CCSBot::IsVisible"
-                "callconv" "thiscall"
-                "return" "bool"
-                "this" "entity"
-                "arguments"
-                {
-                    "pos"
-                    {
-                        "type" "vectorptr"
-                    }
-                    "testFOV"
-                    {
-                        "type" "bool"
-                    }
-                    "ignore"
-                    {
-                        "type" "int"
-                    }
-                }
-            }
+				"signature" "CCSBot::IsVisible"
+				"callconv" "thiscall"
+				"return" "bool"
+				"this" "entity"
+				"arguments"
+				{
+					"pos"
+					{
+						"type" "vectorptr"
+					}
+					"testFOV"
+					{
+						"type" "bool"
+					}
+					"ignore"
+					{
+						"type" "int"
+					}
+				}
+			}
 			"CCSBot::IsVisible(player)"
 			{
-                "signature" "CCSBot::IsVisible(player)"
-                "callconv" "thiscall"
-                "return" "bool"
-                "this" "entity"
-                "arguments"
-                {
-                    "player"
-                    {
-                        "type" "int"
-                    }
-                    "testFOV"
-                    {
-                        "type" "bool"
-                    }
-                    "visParts"
-                    {
-                        "type" "charptr"
-                    }
-                }
-            }
+				"signature" "CCSBot::IsVisible(player)"
+				"callconv" "thiscall"
+				"return" "bool"
+				"this" "entity"
+				"arguments"
+				{
+					"player"
+					{
+						"type" "int"
+					}
+					"testFOV"
+					{
+						"type" "bool"
+					}
+					"visParts"
+					{
+						"type" "charptr"
+					}
+				}
+			}
 			"CCSBot::GetPartPosition"
 			{
-                "signature" "CCSBot::GetPartPosition"
-                "callconv" "stdcall"
-                "return" "vectorptr"
-                "this" "ignore"
-                "arguments"
-                {
-                    "player"
-                    {
-                        "type" "cbaseentity"
-                    }
-                    "part"
-                    {
-                        "type" "int"
-                    }
-                }
-            }
+				"signature" "CCSBot::GetPartPosition"
+				"callconv" "stdcall"
+				"return" "vectorptr"
+				"this" "ignore"
+				"arguments"
+				{
+					"player"
+					{
+						"type" "cbaseentity"
+					}
+					"part"
+					{
+						"type" "int"
+					}
+				}
+			}
 		}
 		"MemPatches"
 		{

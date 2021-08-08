@@ -38,10 +38,10 @@
 	"AmaNEk" 			"108679223"
 	//fnatic Players
 	"Jackinho" 			"111823952"
-	"JW" 				"71288472"
+	"ALEX" 				"71288472"
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
-	"Golden" 			"116509497"
+	"mezii" 			"12874964"
 	//Alpha Players
 	"zyp" 				"190975326"
 	"hug" 				"103219669"
@@ -99,7 +99,7 @@
 	//BIG Players
 	"tiziaN" 			"37291208"
 	"syrsoN" 			"19857269"
-	"XANTARES" 			"83853068"
+	"gade" 				"21355604"
 	"tabseN" 			"1225952"
 	"k1to" 				"222196859"
 	//FURIA Players
@@ -132,12 +132,6 @@
 	"FL1T" 				"35551773"
 	"almazer" 			"83782305"
 	"Jerry" 			"65822428"
-	//UMX Players
-	"volt" 				"195488719"
-	"arTisT" 			"128640602"
-	"Girafffe"			"338231248"	 
-	"Extinct" 			"136442715"
-	"Maza" 				"296102658"
 	//Sprout Players
 	"kressy" 			"50709599"
 	"slaxz" 			"104087441"
@@ -532,7 +526,7 @@
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
 	"MiGHTYMAX" 		"15522824"
-	"mezii" 			"12874964"
+	"BOROS" 			"178773495"
 	"Thomas" 			"65182402"
 	//SAW Players
 	"arki"				"18055753" 
@@ -549,7 +543,7 @@
 	//D13 Players
 	"tamir"				"103695333" 
 	"shinobi" 			"488680911"
-	"sk0R" 				"863160115"
+	"yAmi" 				"175732643"
 	"Annihilation" 		"315821474"	
 	"xerolte" 			"368881420"	
 	//DIVIZON Players
@@ -572,10 +566,10 @@
 	"Twixie" 			"187781829"
 	//AGF Players
 	"fr0slev" 			"75073497"
-	"Ryxxo" 			"66562222"
-	"PERCY" 			"36210122"
+	"kristou" 			"147274330"
+	"cajunb" 			"18062315"
 	"Cabbi" 			"230664742"
-	"Lukki" 			"53001420"
+	"Nodios" 			"53001420"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -626,9 +620,9 @@
 	"insane" 			"176668134"
 	//ERN Players
 	"j1NZO" 			"220770109"
-	"horvy" 			"11050533"
+	"sehza" 			"246207065"
 	"sesL" 				"127191279"
-	"sany" 				"82023677"
+	"ADR1AN" 			"182076116"
 	"mvN" 				"165741598"
 	//Rebirth Players
 	"jsfeltner" 		"92128532"
@@ -696,12 +690,6 @@
 	"detr0it" 			"282335538"
 	"r4ul"				"66963508"
 	"KNCERATO"			"78281468"
-	//Nordavind Players
-	"tenzki" 			"37214922"
-	"mertz" 			"119498324"
-	"HS" 				"3417033"
-	"supra" 			"164802191"
-	"mirbit"			"183980241"
 	//Keyd Players
 	"ph1"				"208072899"
 	"abr"				"92920272"
@@ -782,7 +770,7 @@
 	"iDk"				"106435802"
 	//BNB Players
 	"Jonji" 			"114675386"
-	"ptr" 				"13847828"
+	"Junior" 			"103793230"
 	"Swisher" 			"222737943"
 	"Spongey" 			"85216555"
 	"Shakezullah"		"68248927"
