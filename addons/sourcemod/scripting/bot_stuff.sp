@@ -5190,7 +5190,7 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	
 	for (int client = 1; client <= MaxClients; client++)
 	{
-		if (g_bIsProBot[client] && BotGetEnemy(client) == iPlayer && IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
 		{
 			g_iTarget[client] = iPlayer;
 			
