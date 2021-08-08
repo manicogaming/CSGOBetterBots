@@ -824,7 +824,7 @@
 	"viz"				"CSGO-GeNc2-sXWJq-66V2r-FfdjA-Dq5uC"
 	//777 Players
 	"ruyter" 			"CSGO-tNKL3-nvYRR-MyrEa-Ds9kN-bkWjM"
-	"Marcelious" 		"CSGO-6uXzH-T36SH-BBSuO-UK2vq-SHu8O"
+	"Marcelious"		"CSGO-6uXzH-T36SH-BBSuO-UK2vq-SHu8O"
 	"mikki" 			"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
 	"akEz" 				"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
 	"H4RR3"				"CSGO-SBXs7-YRuVv-TiF7a-TNJ4n-jCdRF"
