@@ -46,6 +46,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
 			}
+			"CCSBot::PickNewAimSpot"
+			{
+				// Has 'mp_damage_headshot_only' string
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\x56\x8B\xF1\x57\x8B\x8E\x04\x5E\x00\x00"
+			}
 			"CCSBot::Update"
 			{
 				// Has 'CCSBot::Update' string
@@ -103,6 +109,11 @@
 		}
 		"Offsets"
 		{
+			"CCSBot::m_targetSpot"
+			{
+				//Is inside CCSBot::PickNewAimSpot
+				"windows"       "23976"
+			}
 			"CCSBot::m_nearbyEnemyCount"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
@@ -190,6 +201,13 @@
 						"type" "bool"
 					}
 				}
+			}
+			"CCSBot::PickNewAimSpot"
+			{
+				"signature" "CCSBot::PickNewAimSpot"
+				"callconv" "thiscall"
+				"return" "void"
+				"this" "entity"
 			}
 			"CCSBot::ThrowGrenade"
 			{

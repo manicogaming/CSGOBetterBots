@@ -819,7 +819,7 @@
 	//Party Players
 	"ben1337" 			"Party"
 	"PwnAlone" 			"Party"
-	"djay" 				"Party"
+	"djay"				"Party"
 	"Infinite" 			"Party"
 	"viz"				"Party"
 	//777 Players

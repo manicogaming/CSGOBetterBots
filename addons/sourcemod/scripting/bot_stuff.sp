@@ -15,8 +15,8 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fAimTolerance[MAXPLAYERS+1], g_fOnTarget[MAXPLAYERS+1], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -29,6 +29,7 @@ Handle g_hSetCrosshairCode;
 Handle g_hSwitchWeaponCall;
 Handle g_hIsLineBlockedBySmoke;
 Address g_pTheBots;
+CNavArea g_pCurrArea[MAXPLAYERS+1];
 
 static char g_szBoneNames[][] =  {
 	"neck_0", 
@@ -4492,6 +4493,10 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 			bool bEveryoneDead = false;
 			
+			float fClientLoc[3];
+			GetClientAbsOrigin(client, fClientLoc);
+			g_pCurrArea[client] = NavMesh_GetNearestArea(fClientLoc);
+			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex) && !g_bDontSwitch[client])
 			{
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
@@ -4504,23 +4509,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			}
 			
 			if (g_bIsProBot[client])
-			{
-				SelectBestTargetPos(client, g_fTargetPos[client]);
-				
-				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
-				
-				GetClientEyePosition(client, fClientEyes);
-				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
-				GetClientEyeAngles(client, fClientAngles);
-				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
-				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
-				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
-				GetViewVector(fClientAngles, fAimDir);
-				
-				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
-				g_fOnTarget[client] = GetVectorDotProduct(fToAimSpot, fAimDir);
-				g_fAimTolerance[client] = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-			
+			{				
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
@@ -4907,6 +4896,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
 			g_bTerroristEco[i] = false;
 			g_bDontSwitch[i] = false;
+			g_pCurrArea[i] = INVALID_NAV_AREA;
 			if(BotMimic_IsPlayerMimicing(i))
 			{
 				BotMimic_StopPlayerMimic(i);
@@ -5218,17 +5208,48 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
+	int iPart = hParams.Get(2);
 	
-	for (int client = 1; client <= MaxClients; client++)
+	if(iPart == 2)
 	{
-		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
-		{
-			g_iTarget[client] = iPlayer;
-			
-			hReturn.SetVector(g_fTargetPos[client]);
-			
-			return MRES_Supercede;
-		}
+		int iBone = LookupBone(iPlayer, "head_0");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fHead[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fHead, fBad);
+		
+		fHead[2] += 4.0;
+		
+		hReturn.SetVector(fHead);
+		
+		return MRES_Supercede;
+	}
+	else if(iPart == 4)
+	{
+		int iBone = LookupBone(iPlayer, "arm_upper_L");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fArm[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fArm, fBad);
+		
+		hReturn.SetVector(fArm);
+		
+		return MRES_Supercede;
+	}
+	else if(iPart == 8)
+	{
+		int iBone = LookupBone(iPlayer, "arm_upper_R");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fArm[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fArm, fBad);
+		
+		hReturn.SetVector(fArm);
+		
+		return MRES_Supercede;
 	}
 	
 	return MRES_Ignored;
@@ -5273,6 +5294,23 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	}
 }
 
+public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
+{
+	if (g_bIsProBot[client])
+	{
+		SelectBestTargetPos(client, g_fTargetPos[client]);
+		
+		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+		{
+			return MRES_Ignored;
+		}
+		
+		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
+	}
+	
+	return MRES_Ignored;
+}
+
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
 {
 	if (g_bFreezetimeEnd && IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
@@ -5286,16 +5324,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		GetClientAbsOrigin(client, fClientLoc);
 		
-		CNavArea currArea = NavMesh_GetNearestArea(fClientLoc);
-		
-		if(currArea != INVALID_NAV_AREA)
+		if(g_pCurrArea[client] != INVALID_NAV_AREA)
 		{
-			if (currArea.Attributes & NAV_MESH_WALK)
+			if (g_pCurrArea[client].Attributes & NAV_MESH_WALK)
 			{
 				iButtons |= IN_SPEED;
 			}
 			
-			if (currArea.Attributes & NAV_MESH_RUN)
+			if (g_pCurrArea[client].Attributes & NAV_MESH_RUN)
 			{
 				iButtons &= ~IN_SPEED;
 			}	
@@ -5367,11 +5403,25 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					return Plugin_Changed;
 				}
 				
+				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
+					
+				GetClientEyePosition(client, fClientEyes);
+				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
+				GetClientEyeAngles(client, fClientAngles);
+				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
+				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
+				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
+				GetViewVector(fClientAngles, fAimDir);
+				
+				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
+				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
+				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
+				
 				switch(iDefIndex)
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 					{
-						if (g_fOnTarget[client] > g_fAimTolerance[client] && fTargetDistance < 2000.0)
+						if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
 						{
 							iButtons &= ~IN_ATTACK;
 						
@@ -5381,14 +5431,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							}
 						}
 						
-						if (g_fOnTarget[client] > g_fAimTolerance[client] && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 					}
 					case 1:
 					{
-						if (g_fOnTarget[client] > g_fAimTolerance[client] && !bIsDucking)
+						if (fOnTarget > fAimTolerance && !bIsDucking)
 						{
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
@@ -5406,7 +5456,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientLoc[2] += 35.5;
 				
-				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && g_fOnTarget[client] > g_fAimTolerance[client] && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
@@ -5603,6 +5653,11 @@ public void LoadSDK()
 		SetFailState("Failed to get TheBots address.");
 	}
 	
+	if ((g_iBotTargetSpotOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
+	}
+	
 	if ((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
@@ -5717,6 +5772,13 @@ public void LoadDetours()
 	if(!hBotSetLookAtDetour.Enable(Hook_Pre, CCSBot_SetLookAt))
 	{
 		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
+	}
+	
+	//CCSBot::PickNewAimSpot Detour
+	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
+	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
+	{
+		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
 	}
 	
 	//CCSBot::ThrowGrenade Detour
