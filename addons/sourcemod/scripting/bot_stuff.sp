@@ -5211,7 +5211,7 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	
 	for (int client = 1; client <= MaxClients; client++)
 	{
-		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
+		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer && !IsNullVector(g_fTargetPos[client]))
 		{
 			hReturn.SetVector(g_fTargetPos[client]);
 			return MRES_Supercede;
@@ -5264,12 +5264,10 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
 	if (g_bIsProBot[client])
 	{
-		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+		if (!IsNullVector(g_fTargetPos[client]))
 		{
-			return MRES_Ignored;
+			SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 		}
-		
-		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
 	
 	return MRES_Ignored;
@@ -5341,7 +5339,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_DUCK;
 			}
 			
-			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || IsNullVector(g_fTargetPos[client]))
 			{
 				return Plugin_Continue;
 			}
@@ -5952,7 +5950,7 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 		if (iBone < 0 || iSpineBone < 0)
 			return;
 		
-		bool bShootSpine;
+		bool bShootSpine, bVisible;
 		float fHead[3], fBody[3], fBad[3];
 		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
 		GetBonePosition(g_iTarget[client], iSpineBone, fBody, fBad);
@@ -5990,6 +5988,8 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 					}
 				}
 			}
+			
+			bVisible = true;
 		}
 		else
 		{
@@ -6004,15 +6004,18 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 				
 				if (BotIsVisible(client, fHead, false, -1))
 				{
+					bVisible = true;
 					break;
 				}
 			}
 		}
 		
-		if(bShootSpine)
+		if(bVisible && bShootSpine)
 			fTargetPos = fBody;
-		else
+		else if(bVisible)
 			fTargetPos = fHead;
+		else
+			fTargetPos = NULL_VECTOR;
 	}
 }
 
