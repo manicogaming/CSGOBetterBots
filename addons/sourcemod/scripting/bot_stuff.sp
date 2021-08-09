@@ -4509,7 +4509,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			}
 			
 			if (g_bIsProBot[client])
-			{				
+			{
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
@@ -5208,48 +5208,14 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
-	int iPart = hParams.Get(2);
 	
-	if(iPart == 2)
+	for (int client = 1; client <= MaxClients; client++)
 	{
-		int iBone = LookupBone(iPlayer, "head_0");
-		if (iBone < 0)
-			return MRES_Ignored;
-		
-		float fHead[3], fBad[3];
-		GetBonePosition(iPlayer, iBone, fHead, fBad);
-		
-		fHead[2] += 4.0;
-		
-		hReturn.SetVector(fHead);
-		
-		return MRES_Supercede;
-	}
-	else if(iPart == 4)
-	{
-		int iBone = LookupBone(iPlayer, "arm_upper_L");
-		if (iBone < 0)
-			return MRES_Ignored;
-		
-		float fArm[3], fBad[3];
-		GetBonePosition(iPlayer, iBone, fArm, fBad);
-		
-		hReturn.SetVector(fArm);
-		
-		return MRES_Supercede;
-	}
-	else if(iPart == 8)
-	{
-		int iBone = LookupBone(iPlayer, "arm_upper_R");
-		if (iBone < 0)
-			return MRES_Ignored;
-		
-		float fArm[3], fBad[3];
-		GetBonePosition(iPlayer, iBone, fArm, fBad);
-		
-		hReturn.SetVector(fArm);
-		
-		return MRES_Supercede;
+		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
+		{
+			hReturn.SetVector(g_fTargetPos[client]);
+			return MRES_Supercede;
+		}
 	}
 	
 	return MRES_Ignored;
@@ -5298,8 +5264,6 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
 	if (g_bIsProBot[client])
 	{
-		SelectBestTargetPos(client, g_fTargetPos[client]);
-		
 		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 		{
 			return MRES_Ignored;
@@ -5345,8 +5309,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if (g_bIsProBot[client])
 		{
 			g_iTarget[client] = BotGetEnemy(client);
+			SelectBestTargetPos(client, g_fTargetPos[client]);
 		
-			float fTargetPos[3], fTargetDistance;
+			float fTargetDistance;
 			int iZoomLevel;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			bool bIsHiding = BotIsHiding(client);
@@ -5381,9 +5346,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				return Plugin_Continue;
 			}
 			
-			GetClientAbsOrigin(g_iTarget[client], fTargetPos);
-			
-			fTargetDistance = GetVectorDistance(fClientLoc, fTargetPos);
+			fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 			
 			if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 			{
