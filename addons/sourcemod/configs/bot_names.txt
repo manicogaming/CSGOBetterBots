@@ -247,11 +247,11 @@
 	"lauNX" 			"Nexus"
 	"mhN1" 				"Nexus"
 	//PACT Players
-	"darko" 			"PACT"
+	"Sobol" 			"PACT"
 	"lunAtic" 			"PACT"
 	"bnox" 				"PACT"
 	"MINISE" 			"PACT"
-	"Bielany" 			"PACT"
+	"reatz" 			"PACT"
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
 	"mds" 				"Nemiga"
@@ -509,7 +509,7 @@
 	"SENER1" 			"BLINK"
 	"sinnopsyy" 		"BLINK"
 	"gxx-" 				"BLINK"
-	"xhoci" 			"BLINK"
+	"gulito" 			"BLINK"
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"

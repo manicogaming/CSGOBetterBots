@@ -247,11 +247,11 @@
 	"lauNX" 			"1012530125"
 	"mhN1" 				"195697267"
 	//PACT Players
-	"darko" 			"31199105"
+	"Sobol" 			"190359589"
 	"lunAtic" 			"27202715"
 	"bnox" 				"400417045"
 	"MINISE" 			"29354726"
-	"Bielany" 			"251942476"
+	"reatz" 			"58300666"
 	//Nemiga Players
 	"iDISBALANCE" 		"210384169"
 	"mds" 				"114045115"

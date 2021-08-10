@@ -1198,7 +1198,7 @@ End
 
 //PACT Players
 
-ProP+Rifle+RiflePersonality "darko"
+ProP+Rifle+RiflePersonality "Sobol"
 	VoicePitch = 96
 End
 
@@ -1214,7 +1214,7 @@ ProP+Rifle+RiflePersonality "MINISE"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "Bielany"
+ProP+Rifle+RiflePersonality "reatz"
 	VoicePitch = 112
 End
 

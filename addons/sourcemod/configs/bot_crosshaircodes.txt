@@ -247,11 +247,11 @@
 	"lauNX" 			"CSGO-3rFZb-fmJOO-EpvXO-ZadL7-PX6uC"
 	"mhN1" 				"CSGO-wGBOu-6Zj6t-j5wiG-6vBAW-aGn6J"
 	//PACT Players
-	"darko" 			"CSGO-dVmwy-jiQBy-WRXYC-Ua7hK-kScRF"
+	"Sobol" 			"CSGO-GpSGq-96eUY-Nvvrj-qJq4n-EaVvD"
 	"lunAtic" 			"CSGO-EsyRq-663FU-2iqKy-yqjzi-n6QmH"
 	"bnox" 				"CSGO-Omci3-SwzVf-mk5m8-KaMX4-7xAkE"
 	"MINISE" 			"CSGO-rQAJi-XzLAb-8Jqjd-LChiN-nKbEC"
-	"Bielany" 			"CSGO-HPoTJ-XtUz6-QxccN-tBUqh-3QqNO"
+	"reatz" 			"CSGO-RTVk9-nUKLO-KoYBp-dQpdb-LbRVP"
 	//Nemiga Players
 	"iDISBALANCE" 		"CSGO-GH6ia-t2R2U-k935o-TRPzh-CxZQM"
 	"mds" 				"CSGO-FwvBp-HzxOG-F2Rnt-CEcz3-48xDK"
