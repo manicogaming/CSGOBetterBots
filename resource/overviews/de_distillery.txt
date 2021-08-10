@@ -1,0 +1,19 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_distillery"
+{
+	"CTSpawn_x" "0.14500"
+	"CTSpawn_y" "0.640000"
+	"TSpawn_x" "0.89200"
+	"TSpawn_y" "0.48500"
+	
+	"bombA_x"	"0.51000"
+	"bombA_y"	"0.84000"
+	"bombB_x"	"0.32500"
+	"bombB_y"	"0.24500"
+	
+	"material" "overviews/de_distillery"
+	
+	"pos_x" "-1572.000000"
+	"pos_y" "2936.000000"
+	"scale" "4.570000"
+}
