@@ -123,7 +123,6 @@ public void OnPluginStart()
 	HookEventEx("round_end", OnRoundEnd);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
-	HookEventEx("player_blind", OnPlayerBlind, EventHookMode_Pre);
 	
 	LoadSDK();
 	LoadDetours();
