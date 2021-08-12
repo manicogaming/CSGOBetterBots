@@ -368,7 +368,7 @@
 	"meyern" 			"Furious"
 	//Recon Players
 	"AAustiN" 			"Recon"
-	"jeorgesnorts" 		"Recon"
+	"stamina" 			"Recon"
 	"SATURN" 			"Recon"
 	"J0LZ" 				"Recon"
 	"SLIGHT" 			"Recon"
@@ -442,7 +442,7 @@
 	"Markos"			"Wisla" 
 	"SZPERO" 			"Wisla"
 	"Goofy" 			"Wisla"
-	"ponczek" 			"Wisla"
+	"phr" 				"Wisla"
 	"jedqr" 			"Wisla"
 	//Imperial Players
 	"fer" 				"Imperial"
@@ -465,7 +465,7 @@
 	//ATK Players
 	"bLazE" 			"ATK"
 	"MisteM" 			"ATK"
-	"SloWye" 			"ATK"
+	"motm" 				"ATK"
 	"Fadey" 			"ATK"
 	"mango" 			"ATK"
 	//Fiend Players
@@ -489,9 +489,9 @@
 	//Triumph Players
 	"RZU" 				"Triumph"
 	"Bwills" 			"Triumph"
-	"3ARK00Z" 			"Triumph"
+	"cxzi" 				"Triumph"
 	"cynic" 			"Triumph"
-	"tweiss" 			"Triumph"
+	"jeorgesnorts" 		"Triumph"
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
@@ -701,7 +701,7 @@
 	"GuepaRd" 			"Supremacy"
 	"zockie" 			"Supremacy"
 	"LKN" 				"Supremacy"
-	"Knight"			"Supremacy"
+	"ALONZO"			"Supremacy"
 	//x6tence Players
 	"flowX" 			"x6tence"
 	"Vaircuss" 			"x6tence"
@@ -721,7 +721,7 @@
 	"fleav" 			"BP"
 	"FASHR"				"BP"
 	//Anonymo Players
-	"KEi" 				"Anonymo"
+	"blacktear5" 		"Anonymo"
 	"Snax" 				"Anonymo"
 	"Kylar" 			"Anonymo"
 	"mynio" 			"Anonymo"

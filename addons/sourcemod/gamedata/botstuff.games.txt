@@ -144,6 +144,11 @@
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"	   "24068"
 			}
+			"CCSBot::m_safeTime"
+			{
+				//Is inside CCSBot::DebugDisplay near the string 'SafeTime: %3.2f'
+				"windows"	   "15448"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
@@ -269,7 +274,7 @@
 				{
 					"player"
 					{
-						"type" "int"
+						"type" "cbaseentity"
 					}
 					"testFOV"
 					{

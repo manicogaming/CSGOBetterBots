@@ -371,7 +371,7 @@
 	"SATURN" 			"228178031"
 	"J0LZ" 				"163875307"
 	"SLIGHT" 			"193314309"
-	"jeorgesnorts" 		"393603607"
+	"stamina" 			"272809432"
 	//GTZ Players
 	"NaOw" 				"34955497"
 	"zyored" 			"159353688"
@@ -442,7 +442,7 @@
 	"Markos"			"68256934" 
 	"SZPERO" 			"19554985"
 	"Goofy" 			"300617878"
-	"ponczek" 			"150374922"
+	"phr" 				"19304486"
 	"jedqr" 			"125090121"
 	//Imperial Players
 	"fer" 				"38921219"
@@ -465,7 +465,7 @@
 	//ATK Players
 	"bLazE" 			"209701855"
 	"MisteM" 			"175149890"
-	"SloWye" 			"50695439"
+	"motm" 				"60208330"
 	"Fadey" 			"181493840"
 	"mango" 			"183429246"
 	//Fiend Players
@@ -489,9 +489,9 @@
 	//Triumph Players
 	"RZU" 				"170869120"
 	"Bwills" 			"119308817"
-	"3ARK00Z" 			"170784237"
+	"cxzi" 				"211453961"
 	"cynic" 			"106932238"
-	"tweiss" 			"56828966"
+	"jeorgesnorts" 		"393603607"
 	//FATE Players
 	"Patrick--" 		"98715951"
 	"numb" 				"98486088"
@@ -701,7 +701,7 @@
 	"GuepaRd" 			"21286400"
 	"zockie" 			"107349646"
 	"LKN" 				"1020728718"
-	"Knight" 			"244769897"
+	"ALONZO" 			"393298220"
 	//x6tence Players
 	"Vaircuss" 			"417969743"
 	"hadess" 			"851739564"
@@ -721,7 +721,7 @@
 	"fleav" 			"189640934"
 	"FASHR" 			"3238867"
 	//Anonymo Players
-	"KEi" 				"121422001"
+	"blacktear5" 		"142443051"
 	"Snax" 				"21875845"
 	"Kylar" 			"116431013"
 	"mynio" 			"24981058"

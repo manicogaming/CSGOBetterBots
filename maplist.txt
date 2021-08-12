@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Aug 10 00:57:44 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Aug 12 04:38:12 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -217,6 +217,7 @@ de_cypress
 de_dahshur
 de_deadblock
 de_desert
+de_distillery
 de_dust0_csgo
 de_dust2
 de_dust2_2006_accy
@@ -231,6 +232,7 @@ de_elysion
 de_empire
 de_engage
 de_facade
+de_factory
 de_fallgarden_9
 de_favela
 de_fedra_autumn_csgo
@@ -337,6 +339,7 @@ deagle_ultra
 deathzone
 dm_bloodsport
 dm_lair_updated
+dust2_halloweenlastversion
 dz_blacksite
 dz_frostbite
 dz_sirocco

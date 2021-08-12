@@ -1642,7 +1642,7 @@ ProP+Rifle+RiflePersonality "AAustiN"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "jeorgesnorts"
+ProP+SniperPro+SniperPersonality "stamina"
 	VoicePitch = 110
 End
 
@@ -1914,7 +1914,7 @@ ProP+Rifle+RiflePersonality "Goofy"
 	VoicePitch = 74
 End
 
-ProP+Rifle+RiflePersonality "ponczek"
+ProP+Rifle+RiflePersonality "phr"
 	VoicePitch = 101
 End
 
@@ -1998,7 +1998,7 @@ ProP+SniperPro+SniperPersonality "MisteM"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "SloWye"
+ProP+Rifle+RiflePersonality "motm"
 	VoicePitch = 79
 End
 
@@ -2082,7 +2082,7 @@ ProP+Rifle+RiflePersonality "RZU"
 	VoicePitch = 109
 End
 
-ProP+SniperPro+SniperPersonality "3ARK00Z"
+ProP+SniperPro+SniperPersonality "jeorgesnorts"
 	VoicePitch = 93
 End
 
@@ -2094,7 +2094,7 @@ ProP+Rifle+RiflePersonality "cynic"
 	VoicePitch = 79
 End
 
-ProP+Rifle+RiflePersonality "tweiss"
+ProP+Rifle+RiflePersonality "cxzi"
 	VoicePitch = 87
 End
 
@@ -2864,7 +2864,7 @@ ProP+Rifle+RiflePersonality "LKN"
 	VoicePitch = 103
 End
 
-ProP+Rifle+RiflePersonality "Knight"
+ProP+Rifle+RiflePersonality "ALONZO"
 	VoicePitch = 107
 End
 
@@ -2936,7 +2936,7 @@ End
 
 //Anonymo Players
 
-ProP+Rifle+RiflePersonality "KEi"
+ProP+Rifle+RiflePersonality "blacktear5"
 	VoicePitch = 97
 End
 

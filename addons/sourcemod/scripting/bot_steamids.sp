@@ -3,9 +3,9 @@
 #include <sourcemod>
 #include <sdktools>
 #include <smlib>
+#include <SteamIDConverter>
 
 #define PLAYER_INFO_LEN 344
-#define MAX_STEAMID_LENGTH 21
 #define MAX_COMMUNITYID_LENGTH 18
 
 enum
@@ -96,7 +96,11 @@ public void OnClientSettingsChanged(int client)
 	szUserInfo[PlayerInfo_XUID + 5] = iAccountID >> 16;
 	szUserInfo[PlayerInfo_XUID + 4] = iAccountID >> 24;
 
-	Format(szUserInfo[PlayerInfo_SteamID], 32, "STEAM_1:%d:%d", iAccountID & 1, iAccountID >>> 1);
+	char szSteamID3[32], szSteamID32[32];
+	Format(szSteamID3, sizeof(szSteamID3), "[U:1:%i]", iAccountID);
+	SteamIDConverter(szSteamID3, szSteamID32, sizeof(szSteamID32), STEAM32);
+	Format(szUserInfo[PlayerInfo_SteamID], 32, szSteamID32);
+	SteamIDConverter(szSteamID3, g_szSteamID64[client], MAX_COMMUNITYID_LENGTH, STEAM64);
 
 	szUserInfo[PlayerInfo_AccountID] = iAccountID;
 	szUserInfo[PlayerInfo_AccountID + 1] = iAccountID >> 8;
@@ -104,11 +108,6 @@ public void OnClientSettingsChanged(int client)
 	szUserInfo[PlayerInfo_AccountID + 3] = iAccountID >> 24;
 
 	szUserInfo[PlayerInfo_IsFakePlayer] = 0;
-	
-	char SteamID[MAX_STEAMID_LENGTH];
-	
-	Format(SteamID, 32, "STEAM_1:%d:%d", iAccountID & 1, iAccountID >>> 1);
-	GetCommunityIDString(SteamID, g_szSteamID64[client], MAX_COMMUNITYID_LENGTH);
 
 	bool lockTable = LockStringTables(false);
 	SetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN);
@@ -116,29 +115,6 @@ public void OnClientSettingsChanged(int client)
 
 	g_iAccountID[client] = iAccountID;
 }
-
-stock bool GetCommunityIDString(const char[] szSteamID, char[] szCommunityID, int iCommunityIDSize)
-{
-    char szSteamIDParts[3][11];
-    char szIdentifier[MAX_COMMUNITYID_LENGTH] = "76561197960265728";
-    
-    if ((iCommunityIDSize < 1) || (ExplodeString(szSteamID, ":", szSteamIDParts, sizeof(szSteamIDParts), sizeof(szSteamIDParts[])) != 3))
-    {
-        szCommunityID[0] = '\0';
-        return false;
-    }
-
-    int iCurrent, iCarryOver = (szSteamIDParts[1][0] == '1');
-    for (int i = (iCommunityIDSize - 2), j = (strlen(szSteamIDParts[2]) - 1), k = (strlen(szIdentifier) - 1); i >= 0; i--, j--, k--)
-    {
-        iCurrent = (j >= 0 ? (2 * (szSteamIDParts[2][j] - '0')) : 0) + iCarryOver + (k >= 0 ? ((szIdentifier[k] - '0') * 1) : 0);
-        iCarryOver = iCurrent / 10;
-        szCommunityID[i] = (iCurrent % 10) + '0';
-    }
-
-    szCommunityID[iCommunityIDSize - 1] = '\0';
-    return true;
-} 
 
 bool GetAccountID(const char[] szName, int &iAccountID)
 {

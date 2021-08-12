@@ -371,7 +371,7 @@
 	"SATURN" 			"CSGO-fjiTc-Wqd5W-ABaub-fjDPa-pbywQ"
 	"J0LZ" 				"CSGO-qG9Jq-4oZRP-fWcGc-AcCGU-sPZfE"
 	"SLIGHT" 			"CSGO-SajFx-V49XU-2V2Ws-WhFHk-v2ZkF"
-	"jeorgesnorts" 		"CSGO-OveFo-anw3N-VM77d-i5Ws7-L4hWA"
+	"stamina" 			"CSGO-aNo8j-4muMy-RL6FY-xBdCH-dwWPA"
 	//GTZ Players
 	"NaOw" 				"CSGO-qBud4-PQbLT-Bb8hB-qWMF7-ycapG"
 	"zyored" 			"CSGO-meYHS-y8Hzp-QzP6a-yJZnU-ByUrC"
@@ -442,7 +442,7 @@
 	"Markos"			"CSGO-7c9Ev-rL4p5-ZFxYW-kamUy-dMh8E" 
 	"SZPERO" 			"CSGO-uEaYS-X6eUx-iQa2i-tLeMN-ykEVF"
 	"Goofy" 			"CSGO-yFfMm-BULjV-NMACJ-DyvhX-G5SKF"
-	"ponczek" 			"CSGO-BBT76-cCzJE-rUBxy-VPtUG-KCR7B"
+	"phr" 				"CSGO-dtLjy-KA6GH-5a3rF-TE77Z-H4NQC"
 	"jedqr" 			"CSGO-Zn8w8-kw9xQ-8DHbC-omY7e-iGL9P"
 	//Imperial Players
 	"fer" 				"CSGO-nuW3t-uPLZa-BhWtt-yrtCM-2zpxA"
@@ -465,7 +465,7 @@
 	//ATK Players
 	"bLazE" 			"CSGO-xNVrE-4S6m5-emv2C-Ebo8G-naYwP"
 	"MisteM" 			"CSGO-StjZ7-fJNPH-r7h9d-eTT48-T3SKF"
-	"SloWye" 			"CSGO-tJ4wu-nQWB4-nw2pH-dtPZz-HsnkP"
+	"motm" 				"CSGO-yQLMM-YbURs-8MT9P-e4ypx-adywQ"
 	"Fadey" 			"CSGO-HNDHG-m8dab-39fdj-mqHTV-sntiB"
 	"mango" 			"CSGO-vJZqp-jUUy9-wEjk7-EsDjs-sV8SA"
 	//Fiend Players
@@ -489,9 +489,9 @@
 	//Triumph Players
 	"RZU" 				"CSGO-ZypKj-ctwMP-kdmdx-SEYwq-wembN"
 	"Bwills" 			"CSGO-OvJoR-wEEQQ-32TOf-2DL9w-VY2UO"
-	"3ARK00Z" 			"CSGO-nfomR-EuzPu-5RRyT-LKkMN-aUeuB"
+	"cxzi" 				"CSGO-uWqcA-A7Ncu-yu6Ox-hUR3i-42QRO"
 	"cynic" 			"CSGO-n4yeD-QxTKS-OTzio-uaOnt-ruWPA"
-	"tweiss" 			"CSGO-6HYsA-xZDLW-LoznR-OV5QF-xmKPJ"
+	"jeorgesnorts" 		"CSGO-OveFo-anw3N-VM77d-i5Ws7-L4hWA"
 	//FATE Players
 	"Patrick--" 		"CSGO-h5xXx-pnwvs-ohnHB-zHx8e-iDjLJ"
 	"numb" 				"CSGO-jEivf-V2NTm-b4Azc-EwbtT-CcfiK"
@@ -701,7 +701,7 @@
 	"GuepaRd" 			"CSGO-PXzjp-oxFOS-G38wD-WfN7F-nvHCF"
 	"zockie" 			"CSGO-ptBE4-VtQiU-FCHTw-pLvyu-sV8SA"
 	"LKN" 				"CSGO-ouLPJ-8GZXq-R2DN7-PBhGU-sPZfE"
-	"Knight" 			"CSGO-U4Mzx-JHrZP-BfVG5-EcQLm-XNh8E"
+	"ALONZO" 			"CSGO-hjfmG-LF5Yz-A4qax-iZ9W8-Jo74E"
 	//x6tence Players
 	"Vaircuss" 			"CSGO-Nd2UG-qs7sG-RtqN9-mFFba-xvSyL"
 	"hadess" 			"CSGO-mokWA-GjoRA-WbeJV-UX5wW-jrjjD"
@@ -721,7 +721,7 @@
 	"fleav" 			"CSGO-wQTQp-F72Aw-RGmAk-QdmVi-rZoAL"
 	"FASHR" 			"CSGO-dAJm2-NMG3D-3Lmiv-jZqrZ-DEHnK"
 	//Anonymo Players
-	"KEi" 				"CSGO-GKiUA-Jhwzn-2be2C-JijCC-pqAQL"
+	"blacktear5" 		"CSGO-jJo5r-3AuXa-nRvUw-AhDBM-qmTiA"
 	"Snax" 				"CSGO-qiZ9k-Ukk4v-FGUYf-3f3Jd-TXaUN"
 	"Kylar" 			"CSGO-pZRbP-aOvHV-dQuXZ-HXNTA-c2D7K"
 	"mynio" 			"CSGO-8jQVT-Dm9pt-F77xa-ZLjZe-X3xsP"

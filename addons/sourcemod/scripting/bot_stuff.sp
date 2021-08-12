@@ -13,10 +13,10 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
-bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bTargetVisible[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1];
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSafeTimeOffset;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -121,7 +121,6 @@ public void OnPluginStart()
 	HookEventEx("round_start", OnRoundStart);
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
 	HookEventEx("round_end", OnRoundEnd);
-	HookEventEx("bomb_planted", OnBombPlanted);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
 	
@@ -2109,7 +2108,7 @@ public Action Team_Recon(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "AAustiN");
-		ServerCommand("bot_add_ct %s", "jeorgesnorts");
+		ServerCommand("bot_add_ct %s", "stamina");
 		ServerCommand("bot_add_ct %s", "SATURN");
 		ServerCommand("bot_add_ct %s", "J0LZ");
 		ServerCommand("bot_add_ct %s", "SLIGHT");
@@ -2120,7 +2119,7 @@ public Action Team_Recon(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "AAustiN");
-		ServerCommand("bot_add_t %s", "jeorgesnorts");
+		ServerCommand("bot_add_t %s", "stamina");
 		ServerCommand("bot_add_t %s", "SATURN");
 		ServerCommand("bot_add_t %s", "J0LZ");
 		ServerCommand("bot_add_t %s", "SLIGHT");
@@ -2471,7 +2470,7 @@ public Action Team_Wisla(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Markos");
 		ServerCommand("bot_add_ct %s", "SZPERO");
 		ServerCommand("bot_add_ct %s", "Goofy");
-		ServerCommand("bot_add_ct %s", "ponczek");
+		ServerCommand("bot_add_ct %s", "phr");
 		ServerCommand("bot_add_ct %s", "jedqr");
 		ServerCommand("mp_teamlogo_1 wisla");
 	}
@@ -2482,7 +2481,7 @@ public Action Team_Wisla(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Markos");
 		ServerCommand("bot_add_t %s", "SZPERO");
 		ServerCommand("bot_add_t %s", "Goofy");
-		ServerCommand("bot_add_t %s", "ponczek");
+		ServerCommand("bot_add_t %s", "phr");
 		ServerCommand("bot_add_t %s", "jedqr");
 		ServerCommand("mp_teamlogo_2 wisla");
 	}
@@ -2590,7 +2589,7 @@ public Action Team_ATK(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "bLazE");
 		ServerCommand("bot_add_ct %s", "MisteM");
-		ServerCommand("bot_add_ct %s", "SloWye");
+		ServerCommand("bot_add_ct %s", "motm");
 		ServerCommand("bot_add_ct %s", "Fadey");
 		ServerCommand("bot_add_ct %s", "mango");
 		ServerCommand("mp_teamlogo_1 atk");
@@ -2601,7 +2600,7 @@ public Action Team_ATK(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "bLazE");
 		ServerCommand("bot_add_t %s", "MisteM");
-		ServerCommand("bot_add_t %s", "SloWye");
+		ServerCommand("bot_add_t %s", "motm");
 		ServerCommand("bot_add_t %s", "Fadey");
 		ServerCommand("bot_add_t %s", "mango");
 		ServerCommand("mp_teamlogo_2 atk");
@@ -2709,10 +2708,10 @@ public Action Team_Triumph(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "RZU");
-		ServerCommand("bot_add_ct %s", "Bwills");
-		ServerCommand("bot_add_ct %s", "3ARK00Z");
+		ServerCommand("bot_add_ct %s", "jeorgesnorts");
+		ServerCommand("bot_add_ct %s", "cxzi");
 		ServerCommand("bot_add_ct %s", "cynic");
-		ServerCommand("bot_add_ct %s", "tweiss");
+		ServerCommand("bot_add_ct %s", "Bwills");
 		ServerCommand("mp_teamlogo_1 tri");
 	}
 	
@@ -2720,10 +2719,10 @@ public Action Team_Triumph(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "RZU");
-		ServerCommand("bot_add_t %s", "Bwills");
-		ServerCommand("bot_add_t %s", "3ARK00Z");
+		ServerCommand("bot_add_t %s", "jeorgesnorts");
+		ServerCommand("bot_add_t %s", "cxzi");
 		ServerCommand("bot_add_t %s", "cynic");
-		ServerCommand("bot_add_t %s", "tweiss");
+		ServerCommand("bot_add_t %s", "Bwills");
 		ServerCommand("mp_teamlogo_2 tri");
 	}
 	
@@ -3762,7 +3761,7 @@ public Action Team_Supremacy(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "GuepaRd");
 		ServerCommand("bot_add_ct %s", "zockie");
 		ServerCommand("bot_add_ct %s", "LKN");
-		ServerCommand("bot_add_ct %s", "Knight");
+		ServerCommand("bot_add_ct %s", "ALONZO");
 		ServerCommand("mp_teamlogo_1 sup");
 	}
 	
@@ -3773,7 +3772,7 @@ public Action Team_Supremacy(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "GuepaRd");
 		ServerCommand("bot_add_t %s", "zockie");
 		ServerCommand("bot_add_t %s", "LKN");
-		ServerCommand("bot_add_t %s", "Knight");
+		ServerCommand("bot_add_t %s", "ALONZO");
 		ServerCommand("mp_teamlogo_2 sup");
 	}
 	
@@ -3878,7 +3877,7 @@ public Action Team_Anonymo(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "KEi");
+		ServerCommand("bot_add_ct %s", "blacktear5");
 		ServerCommand("bot_add_ct %s", "Snax");
 		ServerCommand("bot_add_ct %s", "Kylar");
 		ServerCommand("bot_add_ct %s", "mynio");
@@ -3889,7 +3888,7 @@ public Action Team_Anonymo(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "KEi");
+		ServerCommand("bot_add_t %s", "blacktear5");
 		ServerCommand("bot_add_t %s", "Snax");
 		ServerCommand("bot_add_t %s", "Kylar");
 		ServerCommand("bot_add_t %s", "mynio");
@@ -3909,10 +3908,10 @@ public Action Team_HONORIS(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "TaZ");
-		ServerCommand("bot_add_ct %s", "NEO");
+		ServerCommand("bot_add_ct %s", "fr3nd");
 		ServerCommand("bot_add_ct %s", "reiko");
 		ServerCommand("bot_add_ct %s", "mouz");
-		ServerCommand("bot_add_ct %s", "fr3nd");
+		ServerCommand("bot_add_ct %s", "NEO");
 		ServerCommand("mp_teamlogo_1 hono");
 	}
 	
@@ -3920,10 +3919,10 @@ public Action Team_HONORIS(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "TaZ");
-		ServerCommand("bot_add_t %s", "NEO");
+		ServerCommand("bot_add_t %s", "fr3nd");
 		ServerCommand("bot_add_t %s", "reiko");
 		ServerCommand("bot_add_t %s", "mouz");
-		ServerCommand("bot_add_t %s", "fr3nd");
+		ServerCommand("bot_add_t %s", "NEO");
 		ServerCommand("mp_teamlogo_2 hono");
 	}
 	
@@ -4426,7 +4425,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
-		{	
+		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
 			
@@ -4483,6 +4482,8 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 
 public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 {
+	g_bBombPlanted = !!GameRules_GetProp("m_bBombPlanted");
+
 	for (int client = 1; client <= MaxClients; client++)
 	{
 		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
@@ -4888,7 +4889,7 @@ public void OnClientPostAdminCheck(int client)
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = false;
-	g_bBombPlanted = false;	
+	g_fRoundStartTimeStamp = GetGameTime();
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -4897,6 +4898,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
 			g_bTerroristEco[i] = false;
 			g_bDontSwitch[i] = false;
+			g_bTargetVisible[i] = false;
 			if(BotMimic_IsPlayerMimicing(i))
 			{
 				BotMimic_StopPlayerMimic(i);
@@ -4983,18 +4985,6 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			BotMimic_StopPlayerMimic(i);
 		}
 	}
-}
-
-public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	g_bBombPlanted = true;
-}
-
-public Action CS_OnTerminateRound(float& fDelay, CSRoundEndReason& pReason)
-{
-	g_bBombPlanted = false;
-	
-	return Plugin_Continue;
 }
 
 public Action OnWeaponCanSwitch(int client, int iWeapon)
@@ -5193,14 +5183,14 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 
 public MRESReturn CCSBot_IsVisiblePos(int pThis, DHookReturn hReturn, DHookParam hParams)
 {
-	hParams.Set(2, 0);
+	hParams.Set(2, false);
 	
 	return MRES_ChangedHandled;
 }
 
 public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookParam hParams)
 {
-	hParams.Set(2, 0);
+	hParams.Set(2, false);
 	
 	return MRES_ChangedHandled;
 }
@@ -5208,14 +5198,48 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
+	int iPart = hParams.Get(2);
 	
-	for (int client = 1; client <= MaxClients; client++)
+	if(iPart == 2)
 	{
-		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && BotGetEnemy(client) == iPlayer)
-		{
-			hReturn.SetVector(g_fTargetPos[client]);
-			return MRES_Supercede;
-		}
+		int iBone = LookupBone(iPlayer, "head_0");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fHead[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fHead, fBad);
+		
+		fHead[2] += 4.0;
+		
+		hReturn.SetVector(fHead);
+		
+		return MRES_Supercede;
+	}
+	else if(iPart == 4)
+	{
+		int iBone = LookupBone(iPlayer, "arm_upper_L");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fArm[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fArm, fBad);
+		
+		hReturn.SetVector(fArm);
+		
+		return MRES_Supercede;
+	}
+	else if(iPart == 8)
+	{
+		int iBone = LookupBone(iPlayer, "arm_upper_R");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fArm[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fArm, fBad);
+		
+		hReturn.SetVector(fArm);
+		
+		return MRES_Supercede;
 	}
 	
 	return MRES_Ignored;
@@ -5262,7 +5286,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
-	if (g_bIsProBot[client] && BotIsVisible(client, g_fTargetPos[client], false, -1))
+	if (g_bIsProBot[client] && g_bTargetVisible[client])
 	{
 		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
@@ -5296,6 +5320,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			}	
 		}
 		
+		if((GetGameTime() - g_fRoundStartTimeStamp) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client))
+		{
+			iButtons &= ~IN_SPEED;
+		}
+		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
@@ -5304,7 +5333,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if (g_bIsProBot[client])
 		{
 			g_iTarget[client] = BotGetEnemy(client);
-			SelectBestTargetPos(client, g_fTargetPos[client]);
+			g_bTargetVisible[client] = SelectBestTargetPos(client, g_iTarget[client], g_fTargetPos[client]);
 			
 			float fTargetDistance;
 			int iZoomLevel;
@@ -5336,7 +5365,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_DUCK;
 			}
 			
-			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || !BotIsVisible(client, g_fTargetPos[client], false, -1))
+			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || !g_bTargetVisible[client])
 			{
 				return Plugin_Continue;
 			}
@@ -5646,6 +5675,11 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_enemy offset.");
 	}
 	
+	if ((g_iBotSafeTimeOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_safeTime")) == -1)
+	{
+		SetFailState("Failed to get CCSBot::m_safeTime offset.");
+	}
+	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
@@ -5938,19 +5972,19 @@ public Action Timer_Breakable(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-public void SelectBestTargetPos(int client, float fTargetPos[3])
+public bool SelectBestTargetPos(int client, int iTarget, float fTargetPos[3])
 {
-	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
+	if(IsValidClient(iTarget) && IsPlayerAlive(iTarget))
 	{
-		int iBone = LookupBone(g_iTarget[client], "head_0");
-		int iSpineBone = LookupBone(g_iTarget[client], "spine_3");
+		int iBone = LookupBone(iTarget, "head_0");
+		int iSpineBone = LookupBone(iTarget, "spine_3");
 		if (iBone < 0 || iSpineBone < 0)
-			return;
+			return false;
 		
-		bool bShootSpine;
+		bool bShootSpine, bVisible;
 		float fHead[3], fBody[3], fBad[3];
-		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
-		GetBonePosition(g_iTarget[client], iSpineBone, fBody, fBad);
+		GetBonePosition(iTarget, iBone, fHead, fBad);
+		GetBonePosition(iTarget, iSpineBone, fBody, fBad);
 		
 		fHead[2] += 4.0;
 		
@@ -5959,7 +5993,7 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 			if (BotIsVisible(client, fBody, false, -1))
 			{
 				int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-				if (iActiveWeapon == -1) return;
+				if (iActiveWeapon == -1) return false;
 				
 				int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 				
@@ -5985,30 +6019,45 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 					}
 				}
 			}
+			
+			bVisible = true;
 		}
 		else
 		{
 			//Head wasn't visible, check other bones.
 			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
 			{
-				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
+				iBone = LookupBone(iTarget, g_szBoneNames[b]);
 				if (iBone < 0)
-					return;
+					return false;
 				
-				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
+				GetBonePosition(iTarget, iBone, fHead, fBad);
 				
 				if (BotIsVisible(client, fHead, false, -1))
 				{
+					bVisible = true;
 					break;
 				}
 			}
 		}
 		
-		if(bShootSpine)
+		if(bVisible && bShootSpine)
+		{
 			fTargetPos = fBody;
-		else
+			return true;
+		}
+		else if(!bShootSpine)
+		{
 			fTargetPos = fHead;
+			return true;
+		}
+		else if(!bVisible && !bShootSpine)
+		{
+			return false;
+		}
 	}
+	
+	return false;
 }
 
 stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
