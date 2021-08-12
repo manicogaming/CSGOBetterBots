@@ -37,6 +37,7 @@ If you are going to use this you will need to download the following:
 - [DHooks (with Detour Support)](https://forums.alliedmods.net/showpost.php?p=2588686&postcount=589)
 - [SourcePawn NavMesh](https://github.com/KitRifty/sourcepawn-navmesh)
 - [PTaH](https://ptah.zizt.ru/)
+- [SteamIDConverter](https://forums.alliedmods.net/showthread.php?t=333459)
 
 # Other Files
 
