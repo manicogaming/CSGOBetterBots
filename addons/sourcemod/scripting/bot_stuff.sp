@@ -4511,11 +4511,12 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			if (g_bIsProBot[client])
 			{
-				if(g_bFreezetimeEnd)
-				{
-					g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
+				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
+
+				if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 					SetEntDataEnt2(client, g_iBotEnemyOffset, g_iTarget[client]);
-				}
+				else
+					SetEntDataEnt2(client, g_iBotEnemyOffset, -1);
 			
 				if(g_bBombPlanted)
 				{
@@ -4904,6 +4905,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
 			g_bTerroristEco[i] = false;
 			g_bDontSwitch[i] = false;
+			SetEntDataEnt2(i, g_iBotEnemyOffset, -1);
 			if(BotMimic_IsPlayerMimicing(i))
 			{
 				BotMimic_StopPlayerMimic(i);
@@ -5260,9 +5262,11 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 	if (g_bIsProBot[client] && g_fTargetPos[client][2] != 0)
 	{
 		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
+		
+		return MRES_Ignored;
 	}
 	
-	return MRES_Ignored;
+	return MRES_Supercede;
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
