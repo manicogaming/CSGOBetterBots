@@ -13,7 +13,7 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
-bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bFlashed[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
 int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSafeTimeOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fRoundStartTimeStamp;
@@ -5057,26 +5057,6 @@ public void Frame_SwitchBack(any client)
 	}
 }
 
-public Action OnPlayerBlind(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	
-	if (GetEntPropFloat(client, Prop_Send, "m_flFlashMaxAlpha") >= 180.0)
-	{
-		float fDuration = GetEntPropFloat(client, Prop_Send, "m_flFlashDuration");
-		if (fDuration >= 1.5)
-		{
-			g_bFlashed[client] = true;
-			CreateTimer(fDuration, UnFlashed_Timer, client);
-		}
-	}
-}
-
-public Action UnFlashed_Timer(Handle timer, int client)
-{
-	g_bFlashed[client] = false;
-}
-
 public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
 {
 	if (float(GetClientHealth(iVictim)) - fDamage < 0.0)
@@ -5093,7 +5073,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	GetClientAbsOrigin(iAttacker, fAttackerPos);
 	fAttackerPos[2] += 35.5;
 	
-	if(IsPointVisible(iVictim, iAttacker, fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
+	if(IsPointVisible(fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
 	{
 		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 	}
@@ -5430,7 +5410,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientLoc[2] += 35.5;
 				
-				if (IsPointVisible(client, g_iTarget[client], fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 				{
 					iButtons |= IN_DUCK;
 				}
@@ -6069,30 +6049,15 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
 }
 
-stock bool IsPointVisible(int iLooker, int iTarget, float fStart[3], float fPoint[3])
+stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
-	if(g_bFlashed[iLooker])
-		return false;
-
-	if(LineGoesThroughSmoke(fStart, fPoint))
-		return false;
-
-	TR_TraceRayFilter(fStart, fPoint, MASK_SHOT|CONTENTS_GRATE, RayType_EndPoint, AimTargetFilter, iLooker);
-	if(!TR_DidHit() || TR_GetEntityIndex() == iTarget)
-		return true;
-	
-	return false;
+	TR_TraceRayFilter(fStart, fEnd, MASK_SHOT, RayType_EndPoint, TraceEntityFilterStuff);
+	return TR_GetFraction() >= 0.9;
 }
 
-public bool AimTargetFilter(int iEntity, int iContentsMask, any iExclude)
+public bool TraceEntityFilterStuff(int iEntity, int iMask)
 {
-	char szClass[64];
-	GetEntityClassname(iEntity, szClass, sizeof(szClass));
-	
-	if(StrEqual(szClass, "player"))
-		return false;
-	
-	return !(iEntity == iExclude);
+	return iEntity > MaxClients;
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
