@@ -135,10 +135,10 @@
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
 				"windows"	   "24700"
 			}
-			"CCSBot::m_isEnemyVisible"
+			"CCSBot::m_isAttacking"
 			{
-				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
-				"windows"	   "24072"
+				//Is right below the string '%s: SetState: %s -> %s\n'
+				"windows"	   "16016"
 			}
 			"CCSBot::m_pLocalProfile"
 			{

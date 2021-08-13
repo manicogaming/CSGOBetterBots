@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset;
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iAttackingOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -5324,7 +5324,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 			float fTargetDistance;
 			int iZoomLevel;
-			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
+			bool bIsAttacking = !!GetEntData(client, g_iAttackingOffset);
 			bool bIsHiding = BotIsHiding(client);
 			bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
 			
@@ -5350,30 +5350,21 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if (bIsHiding && g_iUncrouchChance[client] <= 50)
 			{
 				iButtons &= ~IN_DUCK;
-			}
-			
-			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
-				return Plugin_Changed;
-			
-			fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
-			
-			if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
-			{
-				BotEquipBestWeapon(client, true);
-			}
-			
-			if (bIsEnemyVisible)
-			{
-				if (GetEntityMoveType(client) == MOVETYPE_LADDER)
-				{
-					return Plugin_Continue;
-				}
+			}			
 				
-				if (!(GetEntityFlags(client) & FL_ONGROUND))
+			if (!(GetEntityFlags(client) & FL_ONGROUND))
+			{
+				iButtons &= ~IN_ATTACK;
+			}
+			
+			if (bIsAttacking && IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]) && g_fTargetPos[client][2] != 0 && GetEntityMoveType(client) != MOVETYPE_LADDER)
+			{
+				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 				{
-					iButtons &= ~IN_ATTACK;
-					return Plugin_Changed;
+					BotEquipBestWeapon(client, true);
 				}
+			
+				fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 				
 				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
 					
@@ -5645,9 +5636,9 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_fireWeaponTimestamp offset.");
 	}
 	
-	if ((g_iEnemyVisibleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isEnemyVisible")) == -1)
+	if ((g_iAttackingOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isAttacking")) == -1)
 	{
-		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
+		SetFailState("Failed to get CCSBot::m_isAttacking offset.");
 	}
 	
 	if ((g_iBotProfileOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_pLocalProfile")) == -1)
