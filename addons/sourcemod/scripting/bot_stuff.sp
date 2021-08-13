@@ -14,8 +14,8 @@ char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted;
 bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1] = -1;
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotEnemyOffset, g_iBotSafeTimeOffset;
+int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
+int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -4511,12 +4511,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			if (g_bIsProBot[client])
 			{
-				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
-
-				if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
-					SetEntDataEnt2(client, g_iBotEnemyOffset, g_iTarget[client]);
-				else
-					SetEntDataEnt2(client, g_iBotEnemyOffset, -1);
 			
 				if(g_bBombPlanted)
 				{
@@ -4905,7 +4899,8 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
 			g_bTerroristEco[i] = false;
 			g_bDontSwitch[i] = false;
-			SetEntDataEnt2(i, g_iBotEnemyOffset, -1);
+			g_iNewTargetTime[i] = 0;
+			g_iTarget[i] = -1;
 			if(BotMimic_IsPlayerMimicing(i))
 			{
 				BotMimic_StopPlayerMimic(i);
@@ -5218,6 +5213,18 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	return MRES_Ignored;
 }
 
+public MRESReturn CCSBot_FindMostDangerousThreat(int pThis, DHookReturn hReturn)
+{
+	if(IsValidClient(g_iTarget[pThis]) && IsPlayerAlive(g_iTarget[pThis]))
+	{
+		hReturn.Value = g_iTarget[pThis];
+		
+		return MRES_ChangedHandled;
+	}
+	
+	return MRES_Ignored;
+}
+
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
@@ -5307,6 +5314,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (g_bIsProBot[client])
 		{
+			if(g_iNewTargetTime[client] == 5)
+			{
+				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
+				g_iNewTargetTime[client] = 0;
+			}
+			
+			g_iNewTargetTime[client]++;
+		
 			float fTargetDistance;
 			int iZoomLevel;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
@@ -5351,7 +5366,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			{
 				if (GetEntityMoveType(client) == MOVETYPE_LADDER)
 				{
-					return Plugin_Changed;
+					return Plugin_Continue;
 				}
 				
 				if (!(GetEntityFlags(client) & FL_ONGROUND))
@@ -5640,11 +5655,6 @@ public void LoadSDK()
 		SetFailState("Failed to get CCSBot::m_pLocalProfile offset.");
 	}
 	
-	if ((g_iBotEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
-	{
-		SetFailState("Failed to get CCSBot::m_enemy offset.");
-	}
-	
 	if ((g_iBotSafeTimeOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_safeTime")) == -1)
 	{
 		SetFailState("Failed to get CCSBot::m_safeTime offset.");
@@ -5776,6 +5786,13 @@ public void LoadDetours()
 	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
 	{
 		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
+	}
+	
+	//CCSBot::FindMostDangerousThreat Detour
+	DynamicDetour hBotFindThreatDetour = DynamicDetour.FromConf(hGameData, "CCSBot::FindMostDangerousThreat");
+	if(!hBotFindThreatDetour.Enable(Hook_Pre, CCSBot_FindMostDangerousThreat))
+	{
+		SetFailState("Failed to setup detour for CCSBot::FindMostDangerousThreat");
 	}
 	
 	delete hGameData;

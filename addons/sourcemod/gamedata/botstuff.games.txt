@@ -106,6 +106,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\xB9\x0C\x10\x00\x00\x85\xFF\x74\x2A\x6A\x04\x6A\x00\x68\x2A\x2A\x2A\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A\xFF\x15\x2A\x2A\x2A\x2A\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
+			"CCSBot::FindMostDangerousThreat"
+			{
+				//Has string 'CCSBot::FindMostDangerousThreat'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x81\xEC\xEC\x00\x00\x00"
+			}
 		}
 		"Offsets"
 		{
@@ -138,11 +144,6 @@
 			{
 				//Is inside CCSBot::DebugDisplay right next to the string 'Skill: %d%%'
 				"windows"	   "15164"
-			}
-			"CCSBot::m_enemy"
-			{
-				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
-				"windows"	   "24068"
 			}
 			"CCSBot::m_safeTime"
 			{
@@ -303,6 +304,13 @@
 						"type" "int"
 					}
 				}
+			}
+			"CCSBot::FindMostDangerousThreat"
+			{
+				"signature" "CCSBot::FindMostDangerousThreat"
+				"callconv" "thiscall"
+				"return" "cbaseentity"
+				"this" "entity"
 			}
 		}
 		"MemPatches"
