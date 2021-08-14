@@ -137,7 +137,7 @@
 	"slaxz" 			"Sprout"
 	"Spiidi" 			"Sprout"
 	"faveN" 			"Sprout"
-	"denis" 			"Sprout"
+	"raalz" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"refrezh" 			"Heroic"
@@ -208,8 +208,8 @@
 	"birdfromsky"		"Lyngby" 
 	"Daffu" 			"Lyngby"
 	"maNkz" 			"Lyngby"
-	"raalz" 			"Lyngby"
-	"J3nsyy" 			"Lyngby"
+	"FASHR" 			"Lyngby"
+	"WolfY" 			"Lyngby"
 	//GODSENT Players
 	"TACO" 				"GODSENT"
 	"b4rtiN" 			"GODSENT"
@@ -230,10 +230,10 @@
 	"jL" 				"Lions"
 	//Riders Players
 	"mopoz"				"Riders" 
-	"shokz" 			"Riders"
-	"steel" 			"Riders"
+	"dav1g" 			"Riders"
+	"DeathZz" 			"Riders"
 	"alex*" 			"Riders"
-	"smooya" 			"Riders"
+	"SunPayus" 			"Riders"
 	//eSuba Players
 	"Pechyn" 			"eSuba"
 	"twistqt" 			"eSuba"
@@ -645,8 +645,8 @@
 	//eXploit Players
 	"BLOODZ" 			"eXploit"
 	"obj" 				"eXploit"	
-	"plat" 				"eXploit"
-	"whatz" 			"eXploit"
+	"Ag1l" 				"eXploit"
+	"pr" 				"eXploit"
 	"renatoohaxx" 		"eXploit"
 	//EP Players
 	"The eLiVe" 		"EP"
@@ -719,7 +719,7 @@
 	"mar" 				"BP"
 	"kory" 				"BP"
 	"fleav" 			"BP"
-	"FASHR"				"BP"
+	"Cr0n0s"			"BP"
 	//Anonymo Players
 	"blacktear5" 		"Anonymo"
 	"Snax" 				"Anonymo"

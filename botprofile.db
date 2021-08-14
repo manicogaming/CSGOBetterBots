@@ -796,7 +796,7 @@ ProP+Rifle+RiflePersonality "faveN"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "denis"
+ProP+Rifle+RiflePersonality "raalz"
 	VoicePitch = 72
 End
 
@@ -1048,7 +1048,7 @@ ProP+Rifle+RiflePersonality "birdfromsky"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "J3nsyy"
+ProP+SniperPro+SniperPersonality "WolfY"
 	VoicePitch = 72
 End
 
@@ -1056,7 +1056,7 @@ ProP+Rifle+RiflePersonality "maNkz"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "raalz"
+ProP+Rifle+RiflePersonality "FASHR"
 	VoicePitch = 104
 End
 
@@ -1136,11 +1136,11 @@ ProP+Rifle+RiflePersonality "mopoz"
 	VoicePitch = 99
 End
 
-ProP+SniperPro+SniperPersonality "smooya"
+ProP+SniperPro+SniperPersonality "SunPayus"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "steel"
+ProP+Rifle+RiflePersonality "DeathZz"
 	VoicePitch = 111
 End
 
@@ -1148,7 +1148,7 @@ ProP+Rifle+RiflePersonality "alex*"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "shokz"
+ProP+Rifle+RiflePersonality "dav1g"
 	VoicePitch = 98
 End
 
@@ -2658,11 +2658,11 @@ ProP+SniperPro+SniperPersonality "obj"
 	VoicePitch = 105
 End
 
-ProP+Rifle+RiflePersonality "plat"
+ProP+Rifle+RiflePersonality "Ag1l"
 	VoicePitch = 111
 End
 
-ProP+Rifle+RiflePersonality "whatz"
+ProP+Rifle+RiflePersonality "pr"
 	VoicePitch = 105
 End
 
@@ -2930,7 +2930,7 @@ ProP+Rifle+RiflePersonality "fleav"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "FASHR"
+ProP+Rifle+RiflePersonality "Cr0n0s"
 	VoicePitch = 103
 End
 

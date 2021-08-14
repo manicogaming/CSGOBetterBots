@@ -137,7 +137,7 @@
 	"slaxz" 			"104087441"
 	"Spiidi" 			"13465075"
 	"faveN" 			"157930364"
-	"denis" 			"31185376"
+	"raalz" 			"35794427"
 	//Heroic Players
 	"TeSeS" 			"36412550"
 	"refrezh" 			"104598470"
@@ -207,8 +207,8 @@
 	//Lyngby Players
 	"birdfromsky"		"4338476" 
 	"Daffu" 			"70645401"
-	"raalz" 			"35794427"
-	"J3nsyy" 			"192137384"
+	"FASHR" 			"3238867"
+	"WolfY" 			"47524263"
 	"maNkz" 			"81805084"
 	//GODSENT Players
 	"TACO" 				"52876568"
@@ -230,10 +230,10 @@
 	"jL" 				"216612575"
 	//Riders Players
 	"mopoz"				"37931638" 
-	"shokz" 			"39590183"
-	"steel" 			"54512474"
+	"dav1g" 			"457082328"
+	"DeathZz" 			"58127911"
 	"alex*" 			"40718819"
-	"smooya" 			"211423593"
+	"SunPayus" 			"349573813"
 	//eSuba Players
 	"Pechyn" 			"93527213"
 	"blogg1s" 			"115938594"	
@@ -645,8 +645,8 @@
 	//eXploit Players
 	"BLOODZ" 			"1004703971"
 	"obj" 				"42675741"	
-	"plat" 				"300562274"
-	"whatz" 			"31318693"
+	"Ag1l" 				"226613145"
+	"pr" 				"149329940"
 	"renatoohaxx" 		"39166438"
 	//EP Players
 	"The eLiVe"			"111025647"
@@ -719,7 +719,7 @@
 	"mar" 				"158849219"
 	"kory" 				"67382466"
 	"fleav" 			"189640934"
-	"FASHR" 			"3238867"
+	"Cr0n0s" 			"39395361"
 	//Anonymo Players
 	"blacktear5" 		"142443051"
 	"Snax" 				"21875845"

@@ -137,7 +137,7 @@
 	"slaxz" 			"CSGO-ZAO3T-a5oVy-TathG-Y9jmL-RrtiB"
 	"Spiidi" 			"CSGO-uQU2v-Kb46u-YN9V9-euhiw-xBU8N"
 	"faveN" 			"CSGO-5rnvF-RbSKn-SUmFb-LTYbz-HpCxH"
-	"denis" 			"CSGO-Kudxi-GAmuU-CDTzm-M2kNN-rN5mA"
+	"raalz" 			"CSGO-LqCpm-Cbbzx-sAK5z-75jhw-K5nQD"
 	//Heroic Players
 	"TeSeS" 			"CSGO-hTUVh-TPyqF-ZXOf4-64A6a-45qRP"
 	"refrezh" 			"CSGO-6VJVs-DssoZ-SifjF-MrJz7-Uc4NF"
@@ -207,8 +207,8 @@
 	//Lyngby Players
 	"birdfromsky"		"CSGO-tE4sM-DJeuQ-pdzcO-5HaEU-znjPK" 
 	"Daffu" 			"CSGO-qtF2N-iDDvW-wTwxe-yCN6o-qyD7K"
-	"raalz" 			"CSGO-LqCpm-Cbbzx-sAK5z-75jhw-K5nQD"
-	"J3nsyy" 			"CSGO-XbFXK-ndHbV-Xnaaw-wsvMM-aAweM"
+	"FASHR" 			"CSGO-dAJm2-NMG3D-3Lmiv-jZqrZ-DEHnK"
+	"WolfY" 			"CSGO-D4dsD-cBtJA-MxaHP-hz5k2-t2pxA"
 	"maNkz" 			"CSGO-K2YXS-7sKY2-j3ENd-cKSkm-ekrqK"
 	//GODSENT Players
 	"TACO" 				"CSGO-rjQwd-A96MM-vzZrQ-n4sbM-dz8CH"
@@ -230,10 +230,10 @@
 	"jL" 				"CSGO-9hRpC-3nhac-scmpU-HHv4n-qKwLA"
 	//Riders Players
 	"mopoz"				"CSGO-t4MUb-w9coV-458tw-DkDjN-jWq3B" 
-	"shokz" 			"CSGO-8MzCT-aQ32X-XpNtX-38Qkk-7JXoN"
-	"steel" 			"CSGO-cVwSQ-aA3BE-eijXY-ssREc-sntiB"
+	"dav1g" 			"CSGO-fqqUq-odsRT-pKATA-mPJsL-uGr7C"
+	"DeathZz" 			"CSGO-huREM-fPm2W-UBHm6-kcekA-KrhrM"
 	"alex*" 			"CSGO-PWz82-9wUo5-tV5P6-Fk8eF-ZVkoE"
-	"smooya" 			"CSGO-fUXqs-zU9Rf-Swqj7-7LQ2S-F99zP"
+	"SunPayus" 			"CSGO-9WVNQ-EtMkf-poUAi-5PJ9P-PeiaB"
 	//eSuba Players
 	"Pechyn" 			"CSGO-iWRa3-DqFUz-bGwRx-mKUA2-hif4D"
 	"blogg1s" 			"CSGO-QJcDc-CRoKp-vM33a-2EA8P-3d2pH"	
@@ -645,8 +645,8 @@
 	//eXploit Players
 	"BLOODZ" 			"CSGO-OrO7b-ursDP-fmnqR-hsMxS-RuUWJ"
 	"obj" 				"CSGO-h2Uo2-i42cU-7KTv4-XP35O-BaBpF"	
-	"plat" 				"CSGO-NVVuL-L9xOM-ZGKKY-RDtbv-TGpEM"
-	"whatz" 			"CSGO-WZxfn-AdOvz-nQteA-Gt3ny-2yDRE"
+	"Ag1l" 				"CSGO-qvfFY-iRiUK-UkNAW-wkqDn-jCdRF"
+	"pr" 				"CSGO-SvvYU-Pvwfq-URcDx-trdRa-pbywQ"
 	"renatoohaxx" 		"CSGO-dSpKi-tGcpf-cbQpJ-Hj7uY-OnMHA"
 	//EP Players
 	"The eLiVe"			"CSGO-hTVjj-fP5mc-yhMFt-2Gjz8-rMchQ"
@@ -719,7 +719,7 @@
 	"mar" 				"CSGO-ARG8Q-LQ6t5-B8Eh6-emY7e-iGL9P"
 	"kory" 				"CSGO-cauGS-j2n5f-Fs3T7-cGs4L-eaiGH"
 	"fleav" 			"CSGO-wQTQp-F72Aw-RGmAk-QdmVi-rZoAL"
-	"FASHR" 			"CSGO-dAJm2-NMG3D-3Lmiv-jZqrZ-DEHnK"
+	"Cr0n0s" 			"CSGO-Ofe58-fsEkO-93SkD-JdHQr-CMuSJ"
 	//Anonymo Players
 	"blacktear5" 		"CSGO-jJo5r-3AuXa-nRvUw-AhDBM-qmTiA"
 	"Snax" 				"CSGO-qiZ9k-Ukk4v-FGUYf-3f3Jd-TXaUN"

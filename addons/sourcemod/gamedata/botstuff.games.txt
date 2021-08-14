@@ -106,11 +106,11 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\xB9\x0C\x10\x00\x00\x85\xFF\x74\x2A\x6A\x04\x6A\x00\x68\x2A\x2A\x2A\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A\xFF\x15\x2A\x2A\x2A\x2A\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::FindMostDangerousThreat"
+			"CCSBot::SetBotEnemy"
 			{
-				//Has string 'CCSBot::FindMostDangerousThreat'
+				//Has string 'SetBotEnemy: %s\n'
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x81\xEC\xEC\x00\x00\x00"
+				"windows"	"\x55\x8B\xEC\x51\x56\x57\x8B\xF9\x8B\x8F\x04\x5E\x00\x00"
 			}
 		}
 		"Offsets"
@@ -135,10 +135,10 @@
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
 				"windows"	   "24700"
 			}
-			"CCSBot::m_isAttacking"
+			"CCSBot::m_isEnemyVisible"
 			{
-				//Is right below the string '%s: SetState: %s -> %s\n'
-				"windows"	   "16016"
+				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
+				"windows"	   "24072"
 			}
 			"CCSBot::m_pLocalProfile"
 			{
