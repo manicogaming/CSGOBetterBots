@@ -17,6 +17,7 @@
 			"Teleport"
 			{
 				"windows"	"114"
+				"linux"		"115"
 			}
 		}
 	}
