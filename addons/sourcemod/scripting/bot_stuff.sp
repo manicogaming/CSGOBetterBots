@@ -489,8 +489,8 @@ public Action Team_Alpha(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "zyp");
-		ServerCommand("bot_add_ct %s", "hug");
 		ServerCommand("bot_add_ct %s", "wAGNR");
+		ServerCommand("bot_add_ct %s", "hug");
 		ServerCommand("bot_add_ct %s", "TOBIZ");
 		ServerCommand("bot_add_ct %s", "LUMSEN");
 		ServerCommand("mp_teamlogo_1 alpha");
@@ -500,8 +500,8 @@ public Action Team_Alpha(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "zyp");
-		ServerCommand("bot_add_t %s", "hug");
 		ServerCommand("bot_add_t %s", "wAGNR");
+		ServerCommand("bot_add_t %s", "hug");
 		ServerCommand("bot_add_t %s", "TOBIZ");
 		ServerCommand("bot_add_t %s", "LUMSEN");
 		ServerCommand("mp_teamlogo_2 alpha");
@@ -1419,10 +1419,10 @@ public Action Team_Riders(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "mopoz");
-		ServerCommand("bot_add_ct %s", "dav1g");
+		ServerCommand("bot_add_ct %s", "SunPayus");
 		ServerCommand("bot_add_ct %s", "DeathZz");
 		ServerCommand("bot_add_ct %s", "\"alex*\"");
-		ServerCommand("bot_add_ct %s", "SunPayus");
+		ServerCommand("bot_add_ct %s", "dav1g");
 		ServerCommand("mp_teamlogo_1 movis");
 	}
 	
@@ -1430,10 +1430,10 @@ public Action Team_Riders(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "mopoz");
-		ServerCommand("bot_add_t %s", "dav1g");
+		ServerCommand("bot_add_t %s", "SunPayus");
 		ServerCommand("bot_add_t %s", "DeathZz");
 		ServerCommand("bot_add_t %s", "\"alex*\"");
-		ServerCommand("bot_add_t %s", "SunPayus");
+		ServerCommand("bot_add_t %s", "dav1g");
 		ServerCommand("mp_teamlogo_2 movis");
 	}
 	
@@ -1659,9 +1659,9 @@ public Action Team_Infinity(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "k1Nky");
-		ServerCommand("bot_add_ct %s", "tor1towOw");
-		ServerCommand("bot_add_ct %s", "spamzzy");
 		ServerCommand("bot_add_ct %s", "pacman^v^");
+		ServerCommand("bot_add_ct %s", "spamzzy");
+		ServerCommand("bot_add_ct %s", "tor1towOw");
 		ServerCommand("bot_add_ct %s", "points");
 		ServerCommand("mp_teamlogo_1 infi");
 	}
@@ -1670,9 +1670,9 @@ public Action Team_Infinity(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "k1Nky");
-		ServerCommand("bot_add_t %s", "tor1towOw");
-		ServerCommand("bot_add_t %s", "spamzzy");
 		ServerCommand("bot_add_t %s", "pacman^v^");
+		ServerCommand("bot_add_t %s", "spamzzy");
+		ServerCommand("bot_add_t %s", "tor1towOw");
 		ServerCommand("bot_add_t %s", "points");
 		ServerCommand("mp_teamlogo_2 infi");
 	}
@@ -3518,7 +3518,7 @@ public Action Team_EP(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "The eLiVe");
+		ServerCommand("bot_add_ct %s", "\"The eLiVe\"");
 		ServerCommand("bot_add_ct %s", "forsyy");
 		ServerCommand("bot_add_ct %s", "manguss");
 		ServerCommand("bot_add_ct %s", "Levi");
@@ -3529,7 +3529,7 @@ public Action Team_EP(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "The eLiVe");
+		ServerCommand("bot_add_t %s", "\"The eLiVe\"");
 		ServerCommand("bot_add_t %s", "forsyy");
 		ServerCommand("bot_add_t %s", "manguss");
 		ServerCommand("bot_add_t %s", "Levi");
@@ -4891,7 +4891,6 @@ public void OnClientPostAdminCheck(int client)
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = false;
-	g_fRoundStartTimeStamp = GetGameTime();
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -4913,6 +4912,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
+	g_fRoundStartTimeStamp = GetGameTime();
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -5070,7 +5070,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	GetClientAbsOrigin(iAttacker, fAttackerPos);
 	fAttackerPos[2] += 35.5;
 	
-	if(IsPointVisible(fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
+	if(LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
 	{
 		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 	}
@@ -5364,12 +5364,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						if (fOnTarget > fAimTolerance && !bIsDucking)
+						if (fOnTarget > fAimTolerance && !bIsDucking && !IsPlayerReloading(client))
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 					}
 					case 9, 40:
 					{
-						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client])
+						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client] && !IsPlayerReloading(client))
 						{
 							iButtons |= IN_ATTACK;
 							
