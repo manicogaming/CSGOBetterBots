@@ -218,9 +218,9 @@
 	"dumau" 			"CSGO-pu3cN-y6haN-mK255-5NuXi-EaVvD"
 	//SJ Players
 	"arvid" 			"CSGO-YbBsr-htiJO-scSOK-Bzcef-97DRE"
-	"BONA" 				"CSGO-AqkVE-efmeX-ZsFbb-Y4LUG-CrrBE"
+	"HENU" 				"CSGO-6PyYE-tivwU-UmAXn-iAfYP-UQxoO"
 	"jelo" 				"CSGO-w3EGt-Wy5DO-HofNj-3k4Pi-pL3ED"
-	"AKE" 				"CSGO-ZFrcM-8wZzd-RjAxL-Uj4DW-yCAMK"
+	"Jimpphat" 			"CSGO-CnDv3-kyiYh-Usyvb-nPnFp-cSeZH"
 	"SADDYX" 			"CSGO-w9Y5A-yEwhQ-RwABH-CH3k6-UJL9P"
 	//Lions Players
 	"tudsoN" 			"CSGO-rJxYt-dpFwy-RD8iJ-jCQbP-TA7yD"
@@ -514,7 +514,7 @@
 	"kwezz" 			"CSGO-YJnxa-eEqZ8-ZWJqw-9wGBb-GSnMC"
 	"jekuzih" 			"CSGO-zOvFa-zhMMT-WT7yR-TJeUv-o5LsE"
 	"kiR" 				"CSGO-3dKru-jAtfr-r4Gib-NELc5-L4hWA"
-	"Luckyv1" 			"CSGO-rOUBc-SkqF4-oHDaK-Cr4xF-9w5qB"
+	"larsen" 			"CSGO-tHFpq-rNX5M-LBAPp-8apb5-L4hWA"
 	"PR1mE" 			"CSGO-z324O-COXvN-iwyPj-aXx2S-NTivN"
 	//BRUTE Players
 	"Crazyy" 			"CSGO-PWUrk-7ZF8d-iEQ7Y-HrXpT-CFNfN"

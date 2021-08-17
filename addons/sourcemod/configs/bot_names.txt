@@ -219,9 +219,9 @@
 	//SJ Players
 	"arvid" 			"SJ"
 	"jelo" 				"SJ"
-	"AKE" 				"SJ"
+	"Jimpphat" 			"SJ"
 	"SADDYX" 			"SJ"
-	"BONA" 				"SJ"
+	"HENU" 				"SJ"
 	//Lions Players
 	"tudsoN" 			"Lions"
 	"TMB" 				"Lions"
@@ -513,7 +513,7 @@
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"
-	"Luckyv1" 			"Tricked"
+	"larsen" 			"Tricked"
 	"jekuzih" 			"Tricked"
 	"PR1mE" 			"Tricked"
 	//BRUTE Players

@@ -218,9 +218,9 @@
 	"dumau" 			"234059589"
 	//SJ Players
 	"arvid" 			"66355043"
-	"BONA" 				"201490896"
+	"HENU" 				"105340846"
 	"jelo" 				"147699201"
-	"AKE" 				"95046586"
+	"Jimpphat" 			"895109597"
 	"SADDYX" 			"135594020"
 	//Lions Players
 	"tudsoN" 			"58354081"
@@ -514,7 +514,7 @@
 	"kwezz" 			"110193409"
 	"jekuzih" 			"1046346483"
 	"kiR" 				"258258243"
-	"Luckyv1" 			"150297431"
+	"larsen" 			"60274028"
 	"PR1mE" 			"26772868"
 	//BRUTE Players
 	"Crazyy" 			"108516311"

@@ -112,6 +112,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x51\x56\x57\x8B\xF9\x8B\x8F\x04\x5E\x00\x00"
 			}
+			"CCSBot::BendLineOfSight"
+			{
+				//Has string 'CCSBot::BendLineOfSight'
+				"library"	"server"
+				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
+			}
 		}
 		"Offsets"
 		{
@@ -243,28 +249,6 @@
 				"return" "float"
 				"this" "ignore"
 			}
-			"CCSBot::IsVisible(pos)"
-			{
-				"signature" "CCSBot::IsVisible"
-				"callconv" "thiscall"
-				"return" "bool"
-				"this" "entity"
-				"arguments"
-				{
-					"pos"
-					{
-						"type" "vectorptr"
-					}
-					"testFOV"
-					{
-						"type" "bool"
-					}
-					"ignore"
-					{
-						"type" "int"
-					}
-				}
-			}
 			"CCSBot::IsVisible(player)"
 			{
 				"signature" "CCSBot::IsVisible(player)"
@@ -323,6 +307,16 @@
 					"offset"	"1326h"
 					"verify"	"\x8B\x03\x8B\xCB\xFF\x90\xC8\x08\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
+				}
+			}
+			"CCSBot::Update::ThrowGrenade"
+			{
+				"signature" "CCSBot::Update"
+				"windows"
+				{
+					"offset"	"942h"
+					"verify"	"\xE8\x09\x16\xF5\xFF\x84\xC0"
+					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
 		}

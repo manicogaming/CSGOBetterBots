@@ -1096,7 +1096,7 @@ ProP+SniperPro+SniperPersonality "jelo"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "AKE"
+ProP+Rifle+RiflePersonality "Jimpphat"
 	VoicePitch = 103
 End
 
@@ -1104,7 +1104,7 @@ ProP+Rifle+RiflePersonality "SADDYX"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "BONA"
+ProP+Rifle+RiflePersonality "HENU"
 	VoicePitch = 108
 End
 
@@ -2174,7 +2174,7 @@ ProP+SniperPro+SniperPersonality "kwezz"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "Luckyv1"
+ProP+Rifle+RiflePersonality "larsen"
 	VoicePitch = 83
 End
 
