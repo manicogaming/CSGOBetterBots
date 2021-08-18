@@ -126,8 +126,6 @@ bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
 bool g_bPausedMimic[MAXPLAYERS+1];
 bool g_bResumeMimic[MAXPLAYERS+1];
-bool g_bTimerExists[MAXPLAYERS+1];
-bool g_bAimSmoothing[MAXPLAYERS+1];
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BWM_max];
 
 Handle g_hfwdOnStartRecording;
@@ -141,9 +139,10 @@ Handle g_hfwdOnPlayerStopsMimicing;
 Handle g_hfwdOnPlayerMimicLoops;
 Handle g_hfwdOnPlayerMimicBookmark;
 
-// DHooks
+// DHooks/SDK
 Handle g_hTeleport;
 Handle g_hSetOrigin;
+int g_iEnemyOffset, g_iEnemyVisibleOffset;
 
 ConVar g_hCVOriginSnapshotInterval;
 ConVar g_hCVRespawnOnDeath;
@@ -237,6 +236,12 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	
+	if ((g_iEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
+		SetFailState("Failed to get CCSBot::m_enemy offset.");
+	
+	if ((g_iEnemyVisibleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isEnemyVisible")) == -1)
+		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
 	
 	delete hGameConfig;
 }
@@ -500,23 +505,13 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		int iEnemy = GetEntDataEnt2(client, 24068);
-		bool bIsEnemyVisible = !!GetEntData(client, 24072);
+		int iEnemy = GetEntDataEnt2(client, g_iEnemyOffset);
+		bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 		
 		if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
 			g_bResumeMimic[client] = true;
-			g_iBotMimicTick[client]++;
-			return Plugin_Continue;
-		}
-		
-		if(g_bResumeMimic[client] && !g_bTimerExists[client])
-		{
-			g_bAimSmoothing[client] = true;
-			CreateTimer(1.0, Timer_SmoothAim, GetClientUserId(client));
-			g_bTimerExists[client] = true;
-			return Plugin_Continue;
 		}
 
 		// Bot is mimicing something
@@ -535,41 +530,37 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 			return Plugin_Continue;
 		}
 		
+		FrameInfo iFrame;
+		g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
+		
+		float flAng[3];
+		GetClientEyeAngles(client, flAng);
+		float fDesiredDirection[3];
+		Array_Copy(iFrame.predictedAngles, fDesiredDirection, 2);
+		
+		if(g_bResumeMimic[client] && GetVectorDistance(flAng, fDesiredDirection) > 5.0)
+		{
+			float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
+			// ease the current direction to the target direction
+			flAng[0] += AngleNormalize(fDesiredDirection[0] - flAng[0]) * fRandSpeed;
+			flAng[1] += AngleNormalize(fDesiredDirection[1] - flAng[1]) * fRandSpeed;
+
+			Array_Copy(flAng, angles, 2);
+			return Plugin_Continue;
+		}
+		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 		}
 		
-		FrameInfo iFrame;
-		g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
+		g_bResumeMimic[client] = false;
 		
 		buttons = iFrame.playerButtons;
 		impulse = iFrame.playerImpulse;
 		Array_Copy(iFrame.predictedVelocity, vel, 3);
 		
-		if(g_bAimSmoothing[client])
-		{
-			float flAng[3];
-			GetClientEyeAngles(client, flAng);
-
-			// get normalised direction from target to client
-			float desired_dir[3];
-			Array_Copy(iFrame.predictedAngles, desired_dir, 2);
-
-			float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
-			// ease the current direction to the target direction
-			flAng[0] += AngleNormalize(desired_dir[0] - flAng[0]) * fRandSpeed;
-			flAng[1] += AngleNormalize(desired_dir[1] - flAng[1]) * fRandSpeed;
-
-			Array_Copy(flAng, angles, 2);
-			g_bResumeMimic[client] = false;
-		}
-		
-		if(!g_bAimSmoothing[client])
-		{
-			Array_Copy(iFrame.predictedAngles, angles, 2);
-		}
-		
+		Array_Copy(iFrame.predictedAngles, angles, 2);
 		subtype = iFrame.playerSubtype;
 		seed = iFrame.playerSeed;
 		weapon = 0;
@@ -767,18 +758,6 @@ public Action Timer_ResumeMimic(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-public Action Timer_SmoothAim(Handle hTimer, any client)
-{
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-	{
-		g_bAimSmoothing[client] = false;
-	}
-	
-	return Plugin_Stop;
-}
-
 /**
  * Event Callbacks
  */
@@ -790,8 +769,6 @@ public void Event_OnPlayerSpawn(Event event, const char[] name, bool dontBroadca
 	
 	g_bPausedMimic[client] = false;
 	g_bResumeMimic[client] = false;
-	g_bTimerExists[client] = false;
-	g_bAimSmoothing[client] = false;
 	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 	
 	// Restart moving on spawn!

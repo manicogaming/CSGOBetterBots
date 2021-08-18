@@ -4432,6 +4432,8 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 		{
 			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
 			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
+			int iTeam = GetClientTeam(i);
+			bool bHasDefuser = !!GetEntProp(i, Prop_Send, "m_bHasDefuser");
 			
 			if (Math_GetRandomInt(1, 100) <= 5)
 			{
@@ -4445,13 +4447,13 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				{
 					FakeClientCommand(i, "buy vest");
 				}
-				else if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0)
+				else if (iTeam == CS_TEAM_CT && !bHasDefuser)
 				{
 					FakeClientCommand(i, "buy defuser");
 				}
-				else if(GetClientTeam(i) == CS_TEAM_T)
+				else
 				{
-					FakeClientCommand(i, "buy p250");
+					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "p250");
 				}
 			}
 			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
@@ -4461,19 +4463,19 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 					FakeClientCommand(i, "buy vesthelm");
 				}
 				
-				if (GetClientTeam(i) == CS_TEAM_CT && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0)
+				if (iTeam == CS_TEAM_CT && !bHasDefuser)
 				{
 					FakeClientCommand(i, "buy defuser");
 				}
 			}
-			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && GetEntProp(i, Prop_Send, "m_bHasDefuser") == 0 && bInBuyZone)
+			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !bHasDefuser && bInBuyZone)
 			{
 				switch (Math_GetRandomInt(1,10))
 				{
 					case 1: FakeClientCommand(i, "buy vest");
 					case 5:
 					{
-						if (GetClientTeam(i) == CS_TEAM_CT)
+						if (iTeam == CS_TEAM_CT)
 							FakeClientCommand(i, "buy defuser");
 						else
 							FakeClientCommand(i, "buy vest");
@@ -5177,7 +5179,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
-{
+{	
 	if (g_bFreezetimeEnd && IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");

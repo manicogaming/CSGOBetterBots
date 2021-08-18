@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Wed Aug 18 05:06:57 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Aug 19 00:01:58 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -446,3 +446,4 @@ workshop/1304331841/yprac_nuke
 workshop/1339439320/yprac_overpass
 workshop/1290304115/yprac_train
 workshop/1713463555/yprac_vertigo
+workshop/612291525/{$2000$_classics
