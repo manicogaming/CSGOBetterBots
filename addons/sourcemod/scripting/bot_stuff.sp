@@ -40,18 +40,20 @@ static char g_szBoneNames[][] =  {
 	"spine_1", 
 	"spine_2", 
 	"spine_3", 
+	"clavicle_l",
+	"clavicle_r",
 	"arm_upper_L", 
 	"arm_lower_L", 
 	"hand_L", 
 	"arm_upper_R", 
 	"arm_lower_R", 
 	"hand_R", 
-	"leg_upper_L", 
-	"ankle_L", 
+	"leg_upper_L",  
 	"leg_lower_L", 
+	"ankle_L",
 	"leg_upper_R", 
-	"ankle_R", 
-	"leg_lower_R"
+	"leg_lower_R",
+	"ankle_R"
 };
 
 enum RouteType
@@ -5130,7 +5132,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0 || strcmp(szDesc, "Panic") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Supercede;
 	}
@@ -5204,7 +5206,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (g_bIsProBot[client])
 		{
-			if(g_iNewTargetTime[client] == 10)
+			if(g_iNewTargetTime[client] == 15)
 			{
 				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
 				g_iNewTargetTime[client] = 0;

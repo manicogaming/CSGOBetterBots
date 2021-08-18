@@ -507,6 +507,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
 			g_bResumeMimic[client] = true;
+			g_iBotMimicTick[client]++;
 			return Plugin_Continue;
 		}
 		
