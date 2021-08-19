@@ -1,0 +1,7 @@
+"aim_headshot_imb"
+{
+	"material"	"overviews/aim_headshot_imb"	// texture file 
+	"pos_x"		"-1780"	
+	"pos_y"		"1112"   
+	"scale"		"3.50" 
+}

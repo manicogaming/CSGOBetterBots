@@ -590,10 +590,10 @@
 	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"Aralio" 			"Tigers"
-	"ZEDc" 				"Tigers"
+	"Feki" 				"Tigers"
 	"outex" 			"Tigers"
-	"fino" 				"Tigers"
-	"system" 			"Tigers"
+	"heikkoL" 			"Tigers"
+	"creZe" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
 	"try" 				"9z"

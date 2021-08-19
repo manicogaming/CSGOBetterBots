@@ -92,6 +92,7 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
+float g_fAngBeforeEnemy[MAXPLAYERS+1][3];
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -512,6 +513,31 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		{
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
 			g_bResumeMimic[client] = true;
+			return Plugin_Continue;
+		}
+		
+		if(g_bResumeMimic[client])
+		{
+			float flAng[3];
+			GetClientEyeAngles(client, flAng);
+			
+			if(GetVectorDistance(flAng, g_fAngBeforeEnemy[client]) > 5.0)
+			{
+				float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
+				// ease the current direction to the target direction
+				flAng[0] += AngleNormalize(g_fAngBeforeEnemy[client][0] - flAng[0]) * fRandSpeed;
+				flAng[1] += AngleNormalize(g_fAngBeforeEnemy[client][1] - flAng[1]) * fRandSpeed;
+
+				TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
+				return Plugin_Continue;
+			}
+			else
+				g_bResumeMimic[client] = false;
+		}
+		
+		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
+		{
+			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 		}
 
 		// Bot is mimicing something
@@ -533,34 +559,12 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		FrameInfo iFrame;
 		g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
 		
-		float flAng[3];
-		GetClientEyeAngles(client, flAng);
-		float fDesiredDirection[3];
-		Array_Copy(iFrame.predictedAngles, fDesiredDirection, 2);
-		
-		if(g_bResumeMimic[client] && GetVectorDistance(flAng, fDesiredDirection) > 5.0)
-		{
-			float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
-			// ease the current direction to the target direction
-			flAng[0] += AngleNormalize(fDesiredDirection[0] - flAng[0]) * fRandSpeed;
-			flAng[1] += AngleNormalize(fDesiredDirection[1] - flAng[1]) * fRandSpeed;
-
-			Array_Copy(flAng, angles, 2);
-			return Plugin_Continue;
-		}
-		
-		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
-		{
-			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
-		}
-		
-		g_bResumeMimic[client] = false;
-		
 		buttons = iFrame.playerButtons;
 		impulse = iFrame.playerImpulse;
 		Array_Copy(iFrame.predictedVelocity, vel, 3);
 		
 		Array_Copy(iFrame.predictedAngles, angles, 2);
+		Array_Copy(iFrame.predictedAngles, g_fAngBeforeEnemy[client], 2);
 		subtype = iFrame.playerSubtype;
 		seed = iFrame.playerSeed;
 		weapon = 0;

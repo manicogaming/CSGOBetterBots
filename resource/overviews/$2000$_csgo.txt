@@ -1,12 +1,9 @@
-// TAVR - AUTO RADAR. v 2.5.0a
+// HLTV overview description file for $2000$_csgo.bsp
+
 "$2000$_csgo"
 {
-	"CTSpawn_x" "1.270000"
-	"CTSpawn_y" "0.820000"
-	"TSpawn_x" "1.270000"
-	"TSpawn_y" "0.190000"
-	"material" "overviews/$2000$_csgo"
-	"pos_x" "-1769.500000"
-	"pos_y" "1760.000000"
-	"scale" "1.950000"
+	"material"	"overviews/$2000$_csgo"	// texture file
+	"pos_x"		"-1688"	// upper left world coordinate
+	"pos_y"		"1682"
+	"scale"		"1.80"
 }

@@ -590,10 +590,10 @@
 	"story" 			"105182632"
 	//Tigers Players
 	"Aralio" 			"79809520"
-	"ZEDc" 				"108732327"
+	"Feki" 				"119610566"
 	"outex" 			"387989655"
-	"fino" 				"840357190"
-	"system" 			"72886704"
+	"heikkoL" 			"54468975"
+	"creZe" 			"41700991"
 	//9z Players
 	"dgt" 				"256625848"
 	"try" 				"404852560"

@@ -1,7 +1,0 @@
-"aim_aztec_go"
-{
- "material" "overviews/aim_aztec_go"
- "pos_x"  "-2336"
- "pos_y"  "1983"
- "scale"  "4.00"
-}

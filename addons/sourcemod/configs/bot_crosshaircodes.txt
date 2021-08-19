@@ -590,10 +590,10 @@
 	"story" 			"CSGO-byaXy-FinRr-pwXbc-L5x2i-vfrVQ"
 	//Tigers Players
 	"Aralio" 			"CSGO-Mqf5Q-mkymH-zAqne-mW2jp-wO8WB"
-	"ZEDc" 				"CSGO-LPaVH-W7aY9-tdVOa-hCEZP-yopJN"
+	"Feki" 				"CSGO-qLR9Z-kTEkG-JPvC7-DuzT9-ENLTK"
 	"outex" 			"CSGO-Zq2K7-CdNQE-bFRsi-FwnVj-Q38CH"
-	"fino" 				"CSGO-WEjCG-s7MXC-S8po6-X9c5j-u6GSQ"
-	"system" 			"CSGO-8sci4-R3LnQ-9jd9G-GUGDt-Kj5BO"
+	"heikkoL" 			"CSGO-2JvJF-8AzfY-9Bp4i-hw9Fu-uoKjC"
+	"creZe" 			"CSGO-ZrAjp-hu46n-vnB7F-oHfJB-U3SKF"
 	//9z Players
 	"dgt" 				"CSGO-ouYJa-ZOkXy-QexwH-dk8m6-jxSyL"
 	"try" 				"CSGO-z68M9-yhtG4-U2WfE-JuTda-ZbJaA"

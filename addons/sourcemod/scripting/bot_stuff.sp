@@ -3222,10 +3222,10 @@ public Action Team_Tigers(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Aralio");
-		ServerCommand("bot_add_ct %s", "ZEDc");
+		ServerCommand("bot_add_ct %s", "Feki");
 		ServerCommand("bot_add_ct %s", "outex");
-		ServerCommand("bot_add_ct %s", "fino");
-		ServerCommand("bot_add_ct %s", "system");
+		ServerCommand("bot_add_ct %s", "heikkoL");
+		ServerCommand("bot_add_ct %s", "creZe");
 		ServerCommand("mp_teamlogo_1 tigers");
 	}
 	
@@ -3233,10 +3233,10 @@ public Action Team_Tigers(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Aralio");
-		ServerCommand("bot_add_t %s", "ZEDc");
+		ServerCommand("bot_add_t %s", "Feki");
 		ServerCommand("bot_add_t %s", "outex");
-		ServerCommand("bot_add_t %s", "fino");
-		ServerCommand("bot_add_t %s", "system");
+		ServerCommand("bot_add_t %s", "heikkoL");
+		ServerCommand("bot_add_t %s", "creZe");
 		ServerCommand("mp_teamlogo_2 tigers");
 	}
 	
@@ -4443,30 +4443,22 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			
 			if (iAccount == 800 && bInBuyZone)
 			{
-				if(Math_GetRandomInt(1,100) <= 75)
+				switch (Math_GetRandomInt(1,5))
 				{
-					FakeClientCommand(i, "buy vest");
-				}
-				else if (iTeam == CS_TEAM_CT && !bHasDefuser)
-				{
-					FakeClientCommand(i, "buy defuser");
-				}
-				else
-				{
-					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "p250");
+					case 1: FakeClientCommand(i, "buy vest");
+					case 3:
+						FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
+					case 5:
+						FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "p250");
 				}
 			}
 			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
 			{
 				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
-				{
 					FakeClientCommand(i, "buy vesthelm");
-				}
 				
 				if (iTeam == CS_TEAM_CT && !bHasDefuser)
-				{
 					FakeClientCommand(i, "buy defuser");
-				}
 			}
 			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !bHasDefuser && bInBuyZone)
 			{
@@ -5046,6 +5038,13 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_FAMAS));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
+				
+				return Plugin_Changed;
+			}
+			else if (Math_GetRandomInt(1, 100) <= 15 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
+			{
+				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_UMP45));
+				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
 				
 				return Plugin_Changed;
 			}
