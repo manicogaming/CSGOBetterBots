@@ -1,12 +1,12 @@
 // TAVR - AUTO RADAR. v 2.5.0a
 "awp_lego_2"
 {
-	"CTSpawn_x" "0.490000"
-	"CTSpawn_y" "0.870000"
-	"TSpawn_x" "0.490000"
-	"TSpawn_y" "0.130000"
+	"CTSpawn_x" "0.710000"
+	"CTSpawn_y" "0.840000"
+	"TSpawn_x" "0.710000"
+	"TSpawn_y" "0.160000"
 	"material" "overviews/awp_lego_2"
-	"pos_x" "-1361.000000"
-	"pos_y" "1407.000000"
-	"scale" "2.690000"
+	"pos_x" "-2144.000000"
+	"pos_y" "1533.500000"
+	"scale" "2.940000"
 }

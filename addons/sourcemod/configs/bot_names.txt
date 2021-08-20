@@ -111,9 +111,9 @@
 	//Santos Players
 	"jAPA" 				"Santos"
 	"begod" 			"Santos"
-	"zdr" 				"Santos"
+	"STRIKER" 			"Santos"
 	"bsd" 				"Santos"
-	"BobZ" 				"Santos"	
+	"DebornY" 			"Santos"	
 	//coL Players
 	"k0nfig" 			"coL"
 	"poizon" 			"coL"
@@ -273,7 +273,7 @@
 	//DETONA Players
 	"lux" 				"DETONA"
 	"phx" 				"DETONA"
-	"frostezoR" 		"DETONA"
+	"BobZ" 				"DETONA"
 	"nqz" 				"DETONA"
 	"NikoM" 			"DETONA"
 	//Infinity Players
@@ -806,8 +806,8 @@
 	"Retla"				"Huat"
 	//Checkmate Players
 	"bLitz" 			"Checkmate"
-	"kaz" 				"Checkmate"
-	"H4wK" 				"Checkmate"
+	"cool4st" 			"Checkmate"
+	"hasteka" 			"Checkmate"
 	"Techno4K" 			"Checkmate"
 	"Bart4k"			"Checkmate"
 	//Renewal Players

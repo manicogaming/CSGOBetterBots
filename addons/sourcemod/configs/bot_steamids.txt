@@ -111,9 +111,9 @@
 	//Santos Players
 	"jAPA" 				"121843505"
 	"begod" 			"155269319"
-	"zdr" 				"352842169"
+	"STRIKER" 			"171443295"
 	"bsd" 				"213740099"
-	"BobZ" 				"171090863"	
+	"DebornY" 			"125902681"	
 	//coL Players
 	"k0nfig" 			"19403447"
 	"poizon" 			"117537138"
@@ -271,7 +271,7 @@
 	"rekonz" 			"90514122"
 	"guag" 				"90933857"
 	//DETONA Players
-	"frostezoR" 		"194205853"
+	"BobZ" 				"171090863"
 	"lux" 				"113751940"
 	"phx" 				"90804583"
 	"nqz" 				"390076777"
@@ -806,8 +806,8 @@
 	"Retla"				"220159189"
 	//Checkmate Players
 	"bLitz" 			"999558360"
-	"kaz" 				"492836320"
-	"H4wK" 				"310815503"
+	"cool4st" 			"882582488"
+	"hasteka" 			"432097992"
 	"Techno4K" 			"1006074432"
 	"Bart4k"			"481096602"
 	//Renewal Players

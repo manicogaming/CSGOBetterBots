@@ -700,7 +700,7 @@ ProP+SniperPro+SniperPersonality "bsd"
 	VoicePitch = 105
 End
 
-ProP+Rifle+RiflePersonality "zdr"
+ProP+Rifle+RiflePersonality "STRIKER"
 	VoicePitch = 115
 End
 
@@ -708,7 +708,7 @@ ProP+Rifle+RiflePersonality "begod"
 	VoicePitch = 73
 End
 
-ProP+Rifle+RiflePersonality "BobZ"
+ProP+Rifle+RiflePersonality "DebornY"
 	VoicePitch = 89
 End
 
@@ -1294,7 +1294,7 @@ ProP+SniperPro+SniperPersonality "phx"
 	VoicePitch = 73
 End
 
-ProP+Rifle+RiflePersonality "frostezoR"
+ProP+Rifle+RiflePersonality "BobZ"
 	VoicePitch = 83
 End
 
@@ -3248,11 +3248,11 @@ ProP+Rifle+RiflePersonality "bLitz"
 	VoicePitch = 115
 End
 
-ProP+SniperPro+SniperPersonality "kaz"
+ProP+SniperPro+SniperPersonality "cool4st"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "H4wK"
+ProP+Rifle+RiflePersonality "hasteka"
 	VoicePitch = 82
 End
 

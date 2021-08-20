@@ -823,9 +823,9 @@ public Action Team_Santos(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "jAPA");
 		ServerCommand("bot_add_ct %s", "bsd");
-		ServerCommand("bot_add_ct %s", "zdr");
+		ServerCommand("bot_add_ct %s", "STRIKER");
 		ServerCommand("bot_add_ct %s", "begod");
-		ServerCommand("bot_add_ct %s", "BobZ");
+		ServerCommand("bot_add_ct %s", "DebornY");
 		ServerCommand("mp_teamlogo_1 sant");
 	}
 	
@@ -834,9 +834,9 @@ public Action Team_Santos(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "jAPA");
 		ServerCommand("bot_add_t %s", "bsd");
-		ServerCommand("bot_add_t %s", "zdr");
+		ServerCommand("bot_add_t %s", "STRIKER");
 		ServerCommand("bot_add_t %s", "begod");
-		ServerCommand("bot_add_t %s", "BobZ");
+		ServerCommand("bot_add_t %s", "DebornY");
 		ServerCommand("mp_teamlogo_2 sant");
 	}
 	
@@ -1633,7 +1633,7 @@ public Action Team_DETONA(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "lux");
 		ServerCommand("bot_add_ct %s", "phx");
-		ServerCommand("bot_add_ct %s", "frostezoR");
+		ServerCommand("bot_add_ct %s", "BobZ");
 		ServerCommand("bot_add_ct %s", "nqz");
 		ServerCommand("bot_add_ct %s", "NikoM");
 		ServerCommand("mp_teamlogo_1 deto");
@@ -1644,7 +1644,7 @@ public Action Team_DETONA(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "lux");
 		ServerCommand("bot_add_t %s", "phx");
-		ServerCommand("bot_add_t %s", "frostezoR");
+		ServerCommand("bot_add_t %s", "BobZ");
 		ServerCommand("bot_add_t %s", "nqz");
 		ServerCommand("bot_add_t %s", "NikoM");
 		ServerCommand("mp_teamlogo_2 deto");
@@ -4302,8 +4302,8 @@ public Action Team_Checkmate(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "bLitz");
-		ServerCommand("bot_add_ct %s", "kaz");
-		ServerCommand("bot_add_ct %s", "H4wK");
+		ServerCommand("bot_add_ct %s", "cool4st");
+		ServerCommand("bot_add_ct %s", "hasteka");
 		ServerCommand("bot_add_ct %s", "Techno4K");
 		ServerCommand("bot_add_ct %s", "Bart4k");
 		ServerCommand("mp_teamlogo_1 check");
@@ -4313,8 +4313,8 @@ public Action Team_Checkmate(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "bLitz");
-		ServerCommand("bot_add_t %s", "kaz");
-		ServerCommand("bot_add_t %s", "H4wK");
+		ServerCommand("bot_add_t %s", "cool4st");
+		ServerCommand("bot_add_t %s", "hasteka");
 		ServerCommand("bot_add_t %s", "Techno4K");
 		ServerCommand("bot_add_t %s", "Bart4k");
 		ServerCommand("mp_teamlogo_2 check");

@@ -1,7 +1,0 @@
-"cs_hostage_taking"
-{
-	"material"	"overviews/cs_hostage_taking"	// texture file
-	"pos_x"		"-207"	// upper left world coordinate
-	"pos_y"		"1202"
-	"scale"		"3.00" 
-}

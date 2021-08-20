@@ -1,12 +1,10 @@
-// TAVR - AUTO RADAR. v 2.5.0a
+// HLTV overview description file for awp_india.bsp
+
 "awp_india"
 {
-	"CTSpawn_x" "0.130000"
-	"CTSpawn_y" "0.500000"
-	"TSpawn_x" "0.860000"
-	"TSpawn_y" "0.500000"
-	"material" "overviews/awp_india"
-	"pos_x" "-1040.000000"
-	"pos_y" "1040.000000"
-	"scale" "2.030000"
+	"material"	"overviews/awp_india_radar"	// texture file
+	"pos_x"		"-984"	// upper left world coordinate
+	"pos_y"		"866"
+	"scale"		"1.80" 
 }
+

@@ -1,9 +1,0 @@
-"de_mentalhospital_beta"
-{
-	"material" "overviews/de_mentalhospital_beta"
-	"pos_x" "-3448"
-	"pos_y" "2034"
-	"scale" "5.60"
-	"rotate" "0"
-	"zoom" "1"
-}

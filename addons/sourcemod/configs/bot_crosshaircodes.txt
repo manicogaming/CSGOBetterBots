@@ -111,9 +111,9 @@
 	//Santos Players
 	"jAPA" 				"CSGO-TpLtD-Jz8H4-Q7z58-CuJAf-LwAkE"
 	"begod" 			"CSGO-76x2W-h8FNw-WpOk3-N6PbP-TA7yD"
-	"zdr" 				"CSGO-RY2mw-hGH8Q-zciQP-bxhJi-H7xDK"
+	"STRIKER" 			"CSGO-OJpSK-OL2TE-yRMQ9-4BRQd-97DRE"
 	"bsd" 				"CSGO-GYvPe-JdQPz-WSU4m-kbhMN-TA7yD"
-	"BobZ" 				"CSGO-fQhyz-SStVV-sJpPy-PHbvY-OnMHA"	
+	"DebornY" 			"CSGO-TXuqs-Tofi2-vNaT9-dQUqh-eNXoN"	
 	//coL Players
 	"k0nfig" 			"CSGO-Oa34q-kPJJR-CT8Uc-tssQ8-f8GSQ"
 	"poizon" 			"CSGO-foZjD-3ZwwW-XWb9m-WiDBM-qmTiA"
@@ -271,7 +271,7 @@
 	"rekonz" 			"CSGO-O4k5i-929eO-LWzTn-zzMa9-PX6uC"
 	"guag" 				"CSGO-BOWer-huhMa-nmGsp-cY5W9-eWfOQ"
 	//DETONA Players
-	"frostezoR" 		"CSGO-nkbrj-Q8D3T-sJjz9-d6Uaj-aGUSH"
+	"BobZ" 				"CSGO-fQhyz-SStVV-sJpPy-PHbvY-OnMHA"
 	"lux" 				"CSGO-Udb6U-mDn2O-5czRm-6DmqR-2xXsO"
 	"phx" 				"CSGO-6b2Li-9OG4d-yz2UB-JpwoQ-Ukf4D"
 	"nqz" 				"CSGO-pWrmz-yjLzZ-xdjjZ-O3Chw-pevvE"
@@ -806,8 +806,8 @@
 	"Retla"				"CSGO-vyyVq-NnN3x-YMy5y-QF9EE-CrrBE"
 	//Checkmate Players
 	"bLitz" 			"CSGO-KVB8d-CZMyT-fR3Ub-YN2Lm-A78WB"
-	"kaz" 				"CSGO-NKXqS-LAWBZ-ds9pX-WWYce-mRFuA"
-	"H4wK" 				"CSGO-hbThp-KyC9N-CzEyX-24Gb5-ZmRBD"
+	"cool4st" 			"CSGO-48QHA-XEuFD-7cFEd-oF5YN-EUx9H"
+	"hasteka" 			"CSGO-7sxdY-6LGtD-Baq8K-whYcK-PLzMM"
 	"Techno4K" 			"CSGO-rpChw-cz4c6-K2A2O-GqQ48-MhtOH"
 	"Bart4k"			"CSGO-QmS5L-9RXSe-iurLG-pdsPO-6UDND"
 	//Renewal Players
