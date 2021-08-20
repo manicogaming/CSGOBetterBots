@@ -1,0 +1,8 @@
+"awp_india_csgo"
+{
+	"material"	"overviews/awp_india_csgo_radar"	// texture file
+	"pos_x"		"-1015"	// upper left world coordinate
+	"pos_y"		"1265"
+	"scale"		"3.20" 
+}
+

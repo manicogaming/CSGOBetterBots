@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"awp_ice"
+{
+	"CTSpawn_x" "0.910000"
+	"CTSpawn_y" "0.480000"
+	"TSpawn_x" "0.090000"
+	"TSpawn_y" "0.520000"
+	"material" "overviews/awp_ice"
+	"pos_x" "-2120.000000"
+	"pos_y" "1816.000000"
+	"scale" "4.140000"
+}
