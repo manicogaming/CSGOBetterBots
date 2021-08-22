@@ -1660,23 +1660,23 @@ End
 
 //GTZ Players
 
-ProP+Rifle+RiflePersonality "rafaxF"
+ProP+Rifle+RiflePersonality "slaxx"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "Linko"
+ProP+SniperPro+SniperPersonality "Blastinho"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "MAXX"
+ProP+Rifle+RiflePersonality "StepA"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "zyored"
+ProP+Rifle+RiflePersonality "adamS"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "NaOw"
+ProP+Rifle+RiflePersonality "mik"
 	VoicePitch = 102
 End
 

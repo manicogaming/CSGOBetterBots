@@ -373,11 +373,11 @@
 	"SLIGHT" 			"CSGO-SajFx-V49XU-2V2Ws-WhFHk-v2ZkF"
 	"stamina" 			"CSGO-aNo8j-4muMy-RL6FY-xBdCH-dwWPA"
 	//GTZ Players
-	"NaOw" 				"CSGO-qBud4-PQbLT-Bb8hB-qWMF7-ycapG"
-	"zyored" 			"CSGO-meYHS-y8Hzp-QzP6a-yJZnU-ByUrC"
-	"rafaxF" 			"CSGO-F72U9-w6KsM-4ZWTC-Sc4h6-erPcF"
-	"Linko" 			"CSGO-GMvin-drujC-5VxHE-dFSvZ-9mUCP"
-	"MAXX" 				"CSGO-h2Yax-zj9jp-XFadN-6dGUn-RfK5O"
+	"mik" 				"CSGO-r3FsK-n45sR-foJUo-nr46P-nysyM"
+	"adamS" 			"CSGO-YUwjG-LRfWb-rkGAq-Pr2H6-uWXTB"
+	"slaxx" 			"CSGO-wpoSd-ByMNB-2HoD9-xpNfe-GSnMC"
+	"Blastinho" 		"CSGO-R2LjQ-NGGsq-pQEuo-Zo3wu-i2pxA"
+	"StepA" 			"CSGO-52FnM-L8XH8-yxLMi-qiT3i-vfrVQ"
 	//EXTREMUM Players
 	"AZR" 				"CSGO-98sq5-za3NV-YaQcc-n7JZ9-HDWzE"
 	"Liazz" 			"CSGO-WU6VW-4ZWVO-xN5qR-QBSqf-JdxTC"

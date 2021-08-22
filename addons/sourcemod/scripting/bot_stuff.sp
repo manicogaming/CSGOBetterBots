@@ -2141,22 +2141,22 @@ public Action Team_GTZ(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "rafaxF");
-		ServerCommand("bot_add_ct %s", "Linko");
-		ServerCommand("bot_add_ct %s", "MAXX");
-		ServerCommand("bot_add_ct %s", "zyored");
-		ServerCommand("bot_add_ct %s", "NaOw");
+		ServerCommand("bot_add_ct %s", "slaxx");
+		ServerCommand("bot_add_ct %s", "Blastinho");
+		ServerCommand("bot_add_ct %s", "StepA");
+		ServerCommand("bot_add_ct %s", "adamS");
+		ServerCommand("bot_add_ct %s", "mik");
 		ServerCommand("mp_teamlogo_1 gtz");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "rafaxF");
-		ServerCommand("bot_add_t %s", "Linko");
-		ServerCommand("bot_add_t %s", "MAXX");
-		ServerCommand("bot_add_t %s", "zyored");
-		ServerCommand("bot_add_t %s", "NaOw");
+		ServerCommand("bot_add_t %s", "slaxx");
+		ServerCommand("bot_add_t %s", "Blastinho");
+		ServerCommand("bot_add_t %s", "StepA");
+		ServerCommand("bot_add_t %s", "adamS");
+		ServerCommand("bot_add_t %s", "mik");
 		ServerCommand("mp_teamlogo_2 gtz");
 	}
 	

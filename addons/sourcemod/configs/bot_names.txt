@@ -373,11 +373,11 @@
 	"J0LZ" 				"Recon"
 	"SLIGHT" 			"Recon"
 	//GTZ Players
-	"rafaxF" 			"GTZ"
-	"Linko" 			"GTZ"
-	"MAXX" 				"GTZ"
-	"zyored" 			"GTZ"
-	"NaOw" 				"GTZ"
+	"slaxx" 			"GTZ"
+	"Blastinho" 		"GTZ"
+	"StepA" 			"GTZ"
+	"adamS" 			"GTZ"
+	"mik" 				"GTZ"
 	//EXTREMUM Players
 	"AZR" 				"EXTREMUM"
 	"Liazz" 			"EXTREMUM"

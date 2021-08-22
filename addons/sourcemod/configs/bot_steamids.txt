@@ -373,11 +373,11 @@
 	"SLIGHT" 			"193314309"
 	"stamina" 			"272809432"
 	//GTZ Players
-	"NaOw" 				"34955497"
-	"zyored" 			"159353688"
-	"rafaxF" 			"134941478"
-	"Linko" 			"186797108"
-	"MAXX" 				"119229654"
+	"mik" 				"162025476"
+	"adamS" 			"8124135"
+	"slaxx" 			"118792535"
+	"Blastinho" 		"107737970"
+	"StepA" 			"208115597"
 	//EXTREMUM Players
 	"AZR" 				"24832266"
 	"Liazz" 			"112055988"
