@@ -13,16 +13,6 @@
 		}
 		"Offsets"
 		{
-			"CCSBot::m_enemy"
-			{
-				//Is CCSBot::DebugDisplay
-				"windows"	   "24068"
-			}
-			"CCSBot::m_isEnemyVisible"
-			{
-				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
-				"windows"	   "24072"
-			}
 			"Teleport"
 			{
 				"windows"	"114"

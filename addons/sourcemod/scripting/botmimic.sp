@@ -92,7 +92,6 @@ enum BookmarkWhileMimicing {
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
-float g_fAngBeforeEnemy[MAXPLAYERS+1][3];
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -125,8 +124,6 @@ int g_iBotMimicRecordTickCount[MAXPLAYERS+1] = {0,...};
 int g_iBotActiveWeapon[MAXPLAYERS+1] = {-1,...};
 bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
-bool g_bPausedMimic[MAXPLAYERS+1];
-bool g_bResumeMimic[MAXPLAYERS+1];
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BWM_max];
 
 Handle g_hfwdOnStartRecording;
@@ -143,7 +140,6 @@ Handle g_hfwdOnPlayerMimicBookmark;
 // DHooks/SDK
 Handle g_hTeleport;
 Handle g_hSetOrigin;
-int g_iEnemyOffset, g_iEnemyVisibleOffset;
 
 ConVar g_hCVOriginSnapshotInterval;
 ConVar g_hCVRespawnOnDeath;
@@ -237,12 +233,6 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
-	
-	if ((g_iEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
-		SetFailState("Failed to get CCSBot::m_enemy offset.");
-	
-	if ((g_iEnemyVisibleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isEnemyVisible")) == -1)
-		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
 	
 	delete hGameConfig;
 }
@@ -356,11 +346,6 @@ public void OnClientPutInServer(int client)
 {
 	if(g_hTeleport != null)
 		DHookEntity(g_hTeleport, false, client);
-	
-	if(IsValidClient(client) && IsFakeClient(client))
-	{
-		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
-	}
 }
 
 public void OnClientDisconnect(int client)
@@ -506,40 +491,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
 	if(IsValidClient(client) && IsFakeClient(client))
 	{
-		int iEnemy = GetEntDataEnt2(client, g_iEnemyOffset);
-		bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
-		
-		if((IsValidClient(iEnemy) && bIsEnemyVisible && g_hBotMimicsRecord[client] != null) || g_bPausedMimic[client])
-		{
-			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 2.0);
-			g_bResumeMimic[client] = true;
-			return Plugin_Continue;
-		}
-		
-		if(g_bResumeMimic[client])
-		{
-			float flAng[3];
-			GetClientEyeAngles(client, flAng);
-			
-			if(GetVectorDistance(flAng, g_fAngBeforeEnemy[client]) > 5.0)
-			{
-				float fRandSpeed = Math_GetRandomFloat(0.01, 0.05);
-				// ease the current direction to the target direction
-				flAng[0] += AngleNormalize(g_fAngBeforeEnemy[client][0] - flAng[0]) * fRandSpeed;
-				flAng[1] += AngleNormalize(g_fAngBeforeEnemy[client][1] - flAng[1]) * fRandSpeed;
-
-				TeleportEntity(client, NULL_VECTOR, flAng, NULL_VECTOR);
-				return Plugin_Continue;
-			}
-			else
-				g_bResumeMimic[client] = false;
-		}
-		
-		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 2.0)
-		{
-			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
-		}
-
 		// Bot is mimicing something
 		if(g_hBotMimicsRecord[client] == null)
 			return Plugin_Continue;
@@ -564,7 +515,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		Array_Copy(iFrame.predictedVelocity, vel, 3);
 		
 		Array_Copy(iFrame.predictedAngles, angles, 2);
-		Array_Copy(iFrame.predictedAngles, g_fAngBeforeEnemy[client], 2);
 		subtype = iFrame.playerSubtype;
 		seed = iFrame.playerSeed;
 		weapon = 0;
@@ -730,38 +680,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	return Plugin_Continue;
 }
 
-public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
-{
-	if (float(GetClientHealth(victim)) - fDamage < 0.0)
-		return Plugin_Continue;
-	
-	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET))
-		return Plugin_Continue;
-	
-	if (!IsValidClient(attacker) && !IsPlayerAlive(attacker))
-		return Plugin_Continue;
-	
-	if(g_hBotMimicsRecord[victim] == null)
-		return Plugin_Continue;
-	
-	g_bPausedMimic[victim] = true;
-	CreateTimer(1.5, Timer_ResumeMimic, GetClientUserId(victim));
-	
-	return Plugin_Continue;
-}
-
-public Action Timer_ResumeMimic(Handle hTimer, any client)
-{
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-	{
-		g_bPausedMimic[client] = false;
-	}
-	
-	return Plugin_Stop;
-}
-
 /**
  * Event Callbacks
  */
@@ -770,10 +688,6 @@ public void Event_OnPlayerSpawn(Event event, const char[] name, bool dontBroadca
 	int client = GetClientOfUserId(event.GetInt("userid"));
 	if(!client)
 		return;
-	
-	g_bPausedMimic[client] = false;
-	g_bResumeMimic[client] = false;
-	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 	
 	// Restart moving on spawn!
 	if(g_hBotMimicsRecord[client] != null)
@@ -830,7 +744,7 @@ public Action Hook_WeaponCanSwitchTo(int client, int weapon)
 	if(g_hBotMimicsRecord[client] == null)
 		return Plugin_Continue;
 	
-	if(g_iBotActiveWeapon[client] != weapon && !g_bPausedMimic[client])
+	if(g_iBotActiveWeapon[client] != weapon)
 	{
 		return Plugin_Stop;
 	}

@@ -38,7 +38,7 @@
 	"AmaNEk" 			"108679223"
 	//fnatic Players
 	"Jackinho" 			"111823952"
-	"ALEX" 				"71288472"
+	"ALEX" 				"44605706"
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
 	"mezii" 			"12874964"

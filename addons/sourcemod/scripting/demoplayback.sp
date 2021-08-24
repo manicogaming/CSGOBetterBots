@@ -250,7 +250,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		if(g_iCurrentTick[client] >= 1)
+		if(g_iCurrentTick[client] >= 1 && (GetEntityFlags(client) & FL_ONGROUND))
 		{
 			float fLateLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]-1]);
 			float fCurrentLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]]);

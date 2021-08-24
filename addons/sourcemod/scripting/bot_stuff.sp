@@ -12,10 +12,10 @@
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
-bool g_bFreezetimeEnd, g_bBombPlanted;
-bool g_bIsProBot[MAXPLAYERS+1], g_bTerroristEco[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
+bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute;
+bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
-int g_iProfileRankOffset, g_iRndExecute, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset;
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -432,10 +432,10 @@ public Action Team_G2(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "huNter-");
-		ServerCommand("bot_add_ct %s", "NiKo");
+		ServerCommand("bot_add_ct %s", "AmaNEk");
 		ServerCommand("bot_add_ct %s", "nexa");
 		ServerCommand("bot_add_ct %s", "JaCkz");
-		ServerCommand("bot_add_ct %s", "AmaNEk");
+		ServerCommand("bot_add_ct %s", "NiKo");
 		ServerCommand("mp_teamlogo_1 g2");
 	}
 	
@@ -443,10 +443,10 @@ public Action Team_G2(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "huNter-");
-		ServerCommand("bot_add_t %s", "NiKo");
+		ServerCommand("bot_add_t %s", "AmaNEk");
 		ServerCommand("bot_add_t %s", "nexa");
 		ServerCommand("bot_add_t %s", "JaCkz");
-		ServerCommand("bot_add_t %s", "AmaNEk");
+		ServerCommand("bot_add_t %s", "NiKo");
 		ServerCommand("mp_teamlogo_2 g2");
 	}
 	
@@ -3792,8 +3792,8 @@ public Action Team_x6tence(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "flowX");
-		ServerCommand("bot_add_ct %s", "Vaircuss");
 		ServerCommand("bot_add_ct %s", "PreSs");
+		ServerCommand("bot_add_ct %s", "Vaircuss");
 		ServerCommand("bot_add_ct %s", "hadess");
 		ServerCommand("bot_add_ct %s", "roGerzz");
 		ServerCommand("mp_teamlogo_1 x6t");
@@ -3803,8 +3803,8 @@ public Action Team_x6tence(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "flowX");
-		ServerCommand("bot_add_t %s", "Vaircuss");
 		ServerCommand("bot_add_t %s", "PreSs");
+		ServerCommand("bot_add_t %s", "Vaircuss");
 		ServerCommand("bot_add_t %s", "hadess");
 		ServerCommand("bot_add_t %s", "roGerzz");
 		ServerCommand("mp_teamlogo_2 x6t");
@@ -4441,7 +4441,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				FakeClientCommand(i, "-lookatweapon");
 			}
 			
-			if (iAccount == 800 && bInBuyZone)
+			if ((g_iCurrentRound == 0 || g_iCurrentRound == 15) && bInBuyZone)
 			{
 				switch (Math_GetRandomInt(1,5))
 				{
@@ -4503,7 +4503,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				bEveryoneDead = true;
 			}
 			
-			if (BotMimic_IsPlayerMimicing(client) && GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0)
+			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
 			{
 				BotMimic_StopPlayerMimic(client);
 			}
@@ -4796,14 +4796,16 @@ public void OnClientPostAdminCheck(int client)
 
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
+	g_iCurrentRound = GameRules_GetProp("m_totalRoundsPlayed");
 	g_bFreezetimeEnd = false;
+	g_bAbortExecute = false;
+	g_bTerroristEco = false;
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{
 			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
-			g_bTerroristEco[i] = false;
 			g_bDontSwitch[i] = false;
 			g_iNewTargetTime[i] = 0;
 			g_iTarget[i] = -1;
@@ -4820,20 +4822,8 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bFreezetimeEnd = true;
 	g_fRoundStartTimeStamp = GetGameTime();
 	
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i) && g_bTerroristEco[i])
-		{
-			return;
-		}
-	}
-	
-	int iCurrentRound = GameRules_GetProp("m_totalRoundsPlayed");
-	
-	if(iCurrentRound == 0 || iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
-	{
+	if(g_bTerroristEco || g_iCurrentRound == 0 || g_iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
-	}
 	
 	if(Math_GetRandomInt(1,100) <= 50)
 	{
@@ -4953,11 +4943,13 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	if (float(GetClientHealth(iVictim)) - fDamage < 0.0)
 		return Plugin_Continue;
 	
-	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET))
+	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET) && !(iDamageType & DMG_BURN))
 		return Plugin_Continue;
 	
 	if (!IsValidClient(iAttacker) && !IsPlayerAlive(iAttacker))
 		return Plugin_Continue;
+		
+	g_bAbortExecute = true;
 	
 	float fVictimEyes[3], fAttackerPos[3];
 	GetClientEyePosition(iVictim, fVictimEyes);
@@ -5373,7 +5365,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	{
 		if(GetClientTeam(client) == CS_TEAM_T)
 		{
-			g_bTerroristEco[client] = true;
+			g_bTerroristEco = true;
 		}
 	}
 	
@@ -5885,7 +5877,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 						}
 						case 2, 3, 4, 30, 32, 36, 61, 63:
 						{
-							if (Math_GetRandomInt(1, 100) <= 50)
+							if (Math_GetRandomInt(1, 100) <= 40)
 							{
 								bShootSpine = true;
 							}
