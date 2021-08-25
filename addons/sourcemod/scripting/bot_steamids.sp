@@ -61,59 +61,59 @@ public int Native_GetBotSteamID64(Handle plugins, int numParams)
 
 public void OnClientSettingsChanged(int client)
 {
-	if (!IsFakeClient(client))
-	return;
-
-	int iTableIdx = FindStringTable("userinfo");
-
-	if (iTableIdx == INVALID_STRING_TABLE)
-	return;
-
-	char szUserInfo[PLAYER_INFO_LEN];
-
-	if (!GetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN))
-	return;
-
-	int iAccountID;
-
-	char szBotName[MAX_NAME_LENGTH];
-	GetClientName(client, szBotName, sizeof(szBotName));
-
-	if(!GetAccountID(szBotName, iAccountID))
+	if (IsValidClient(client) && IsFakeClient(client))
 	{
-		iAccountID = Math_GetRandomInt(3, 2147483647);
+		int iTableIdx = FindStringTable("userinfo");
+
+		if (iTableIdx == INVALID_STRING_TABLE)
+		return;
+
+		char szUserInfo[PLAYER_INFO_LEN];
+
+		if (!GetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN))
+		return;
+
+		int iAccountID;
+
+		char szBotName[MAX_NAME_LENGTH];
+		GetClientName(client, szBotName, sizeof(szBotName));
+
+		if(!GetAccountID(szBotName, iAccountID))
+		{
+			iAccountID = Math_GetRandomInt(3, 2147483647);
+		}
+
+		int iSteamIdHigh = 16781313;
+
+		szUserInfo[PlayerInfo_XUID] = iSteamIdHigh;
+		szUserInfo[PlayerInfo_XUID + 1] = iSteamIdHigh >> 8;
+		szUserInfo[PlayerInfo_XUID + 2] = iSteamIdHigh >> 16;
+		szUserInfo[PlayerInfo_XUID + 3] = iSteamIdHigh >> 24;
+
+		szUserInfo[PlayerInfo_XUID + 7] = iAccountID;
+		szUserInfo[PlayerInfo_XUID + 6] = iAccountID >> 8;
+		szUserInfo[PlayerInfo_XUID + 5] = iAccountID >> 16;
+		szUserInfo[PlayerInfo_XUID + 4] = iAccountID >> 24;
+
+		char szSteamID3[32], szSteamID32[32];
+		Format(szSteamID3, sizeof(szSteamID3), "[U:1:%i]", iAccountID);
+		SteamIDConverter(szSteamID3, szSteamID32, sizeof(szSteamID32), STEAM32);
+		Format(szUserInfo[PlayerInfo_SteamID], 32, szSteamID32);
+		SteamIDConverter(szSteamID3, g_szSteamID64[client], MAX_COMMUNITYID_LENGTH, STEAM64);
+
+		szUserInfo[PlayerInfo_AccountID] = iAccountID;
+		szUserInfo[PlayerInfo_AccountID + 1] = iAccountID >> 8;
+		szUserInfo[PlayerInfo_AccountID + 2] = iAccountID >> 16;
+		szUserInfo[PlayerInfo_AccountID + 3] = iAccountID >> 24;
+
+		szUserInfo[PlayerInfo_IsFakePlayer] = 0;
+
+		bool lockTable = LockStringTables(false);
+		SetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN);
+		LockStringTables(lockTable);
+
+		g_iAccountID[client] = iAccountID;
 	}
-
-	int iSteamIdHigh = 16781313;
-
-	szUserInfo[PlayerInfo_XUID] = iSteamIdHigh;
-	szUserInfo[PlayerInfo_XUID + 1] = iSteamIdHigh >> 8;
-	szUserInfo[PlayerInfo_XUID + 2] = iSteamIdHigh >> 16;
-	szUserInfo[PlayerInfo_XUID + 3] = iSteamIdHigh >> 24;
-
-	szUserInfo[PlayerInfo_XUID + 7] = iAccountID;
-	szUserInfo[PlayerInfo_XUID + 6] = iAccountID >> 8;
-	szUserInfo[PlayerInfo_XUID + 5] = iAccountID >> 16;
-	szUserInfo[PlayerInfo_XUID + 4] = iAccountID >> 24;
-
-	char szSteamID3[32], szSteamID32[32];
-	Format(szSteamID3, sizeof(szSteamID3), "[U:1:%i]", iAccountID);
-	SteamIDConverter(szSteamID3, szSteamID32, sizeof(szSteamID32), STEAM32);
-	Format(szUserInfo[PlayerInfo_SteamID], 32, szSteamID32);
-	SteamIDConverter(szSteamID3, g_szSteamID64[client], MAX_COMMUNITYID_LENGTH, STEAM64);
-
-	szUserInfo[PlayerInfo_AccountID] = iAccountID;
-	szUserInfo[PlayerInfo_AccountID + 1] = iAccountID >> 8;
-	szUserInfo[PlayerInfo_AccountID + 2] = iAccountID >> 16;
-	szUserInfo[PlayerInfo_AccountID + 3] = iAccountID >> 24;
-
-	szUserInfo[PlayerInfo_IsFakePlayer] = 0;
-
-	bool lockTable = LockStringTables(false);
-	SetStringTableData(iTableIdx, client - 1, szUserInfo, PLAYER_INFO_LEN);
-	LockStringTables(lockTable);
-
-	g_iAccountID[client] = iAccountID;
 }
 
 bool GetAccountID(const char[] szName, int &iAccountID)
@@ -147,4 +147,9 @@ bool GetAccountID(const char[] szName, int &iAccountID)
 	delete kv;
 	
 	return true;
+}
+
+stock bool IsValidClient(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }

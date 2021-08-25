@@ -107,7 +107,7 @@
 	"arT" 				"FURIA"
 	"VINI" 				"FURIA"
 	"KSCERATO" 			"FURIA"
-	"honda" 			"FURIA"
+	"drop" 				"FURIA"
 	//Santos Players
 	"jAPA" 				"Santos"
 	"begod" 			"Santos"
@@ -414,12 +414,12 @@
 	"flying" 			"IG"
 	"Viva" 				"IG"
 	"rage" 				"IG"
-	//100PG Players
-	"sorrow" 			"100PG"
-	"smiley" 			"100PG"
-	"icem4N" 			"100PG"
-	"dukefissura" 		"100PG"
-	"w1nt3r" 			"100PG"
+	//GameAgents Players
+	"jeje" 				"GameAgents"
+	"sl3nd" 			"GameAgents"
+	"ps1cho" 			"GameAgents"
+	"N0R1" 				"GameAgents"
+	"habibi" 			"GameAgents"
 	//Dice Players
 	"XpG" 				"Dice"
 	"nonick" 			"Dice"
@@ -743,7 +743,7 @@
 	"HexT" 				"RBG"
 	"wiz" 				"RBG"
 	"chop" 				"RBG"
-	"CLASIA"			"RBG"
+	"jitter"			"RBG"
 	//DC Players
 	"Hellhound" 		"DC"
 	"stYle" 			"DC"

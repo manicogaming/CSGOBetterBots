@@ -107,7 +107,7 @@
 	"arT" 				"83503844"
 	"VINI" 				"36104456"
 	"KSCERATO" 			"98234764"
-	"honda" 			"1027817695"
+	"drop" 				"427790854"
 	//Santos Players
 	"jAPA" 				"121843505"
 	"begod" 			"155269319"
@@ -414,12 +414,12 @@
 	"flying" 			"441964070"
 	"Viva" 				"191787089"
 	"rage" 				"398159133"
-	//100PG Players
-	"sorrow" 			"169527908"
-	"smiley" 			"169887982"
-	"icem4N" 			"355948252"
-	"dukefissura" 		"141892565"
-	"w1nt3r" 			"57945273"
+	//GameAgents Players
+	"jeje" 				"911744904"
+	"sl3nd" 			"137805965"
+	"ps1cho" 			"194481853"
+	"N0R1" 				"120338342"
+	"habibi" 			"894074012"
 	//Dice Players
 	"XpG" 				"30253348"
 	"nonick" 			"63995864"
@@ -743,7 +743,7 @@
 	"HexT" 				"250668735"
 	"wiz" 				"172119781"
 	"chop" 				"242973479"
-	"CLASIA"			"415811354"
+	"jitter"			"875669473"
 	//DC Players
 	"Explicit"			"1074781"
 	"Hellhound" 		"427548"

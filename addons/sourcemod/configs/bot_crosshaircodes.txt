@@ -107,7 +107,7 @@
 	"arT" 				"CSGO-KYFYs-tNLXD-WXmzG-raZEx-8Er7C"
 	"VINI" 				"CSGO-xkqm6-9CbAd-XzPuM-3b3Wa-h9veM"
 	"KSCERATO" 			"CSGO-4WdMX-jAWv4-8PocV-N7aJN-yopJN"
-	"honda" 			"CSGO-isepW-rmqou-R7fne-FFcDY-5H8nM"
+	"drop" 				"CSGO-Obeqj-f2jFF-FPxAp-R5kVC-z2urD"
 	//Santos Players
 	"jAPA" 				"CSGO-TpLtD-Jz8H4-Q7z58-CuJAf-LwAkE"
 	"begod" 			"CSGO-76x2W-h8FNw-WpOk3-N6PbP-TA7yD"
@@ -414,12 +414,12 @@
 	"flying" 			"CSGO-SKwcZ-bbhFQ-CdS5s-36YQy-2UsFF"
 	"Viva" 				"CSGO-sKq8Z-f6Ote-yVNvB-Oj6Qm-pLDhP"
 	"rage" 				"CSGO-LGjpm-5oMKn-92dZL-kwYQm-kxAkE"
-	//100PG Players
-	"sorrow" 			"CSGO-HZHjS-V3H9n-zjqbG-WBrvy-RSx9H"
-	"smiley" 			"CSGO-qPtJQ-SNLAv-fZ7Kt-Jv6it-UxQRO"
-	"icem4N" 			"CSGO-qFRTB-FU2jC-5VxHE-dFSvZ-9mUCP"
-	"dukefissura" 		"CSGO-xGusK-wKyGz-AZEan-R5kVC-z2urD"
-	"w1nt3r" 			"CSGO-TPytL-aAcEA-6kpdT-pRG27-NJUSH"
+	//GameAgents Players
+	"jeje" 				"CSGO-SnDOK-d8yfR-WqjNe-n7bQO-3d2pH"
+	"sl3nd" 			"CSGO-COFcm-hKNfh-WCZrs-Wtuf6-TBweM"
+	"ps1cho" 			"CSGO-5J4bn-vuk8m-yZpiY-sszsc-iDjLJ"
+	"N0R1" 				"CSGO-2ihBa-xWFBD-KJJnP-McZc2-GHDhP"
+	"habibi" 			"CSGO-huRzy-WH88i-4Q7by-N3WVr-UupcG"
 	//Dice Players
 	"XpG" 				"CSGO-cHVf4-wzWyf-fetxr-uW68r-LLeFO"
 	"nonick" 			"CSGO-TELNZ-K25Mp-zvYiY-AyEb5-iKH8D"
@@ -743,7 +743,7 @@
 	"HexT" 				"CSGO-CabCw-X5F72-NHB5u-FCk7z-63qRP"
 	"wiz" 				"CSGO-AdVFx-C548A-KVjeG-BOCyZ-kSLoD"
 	"chop" 				"CSGO-PCnhG-t7BtL-EzBhK-5ebfT-SYfOQ"
-	"CLASIA"			"CSGO-PiMnT-n2iLR-6J758-k5J2W-JK5mA"
+	"jitter"			"CSGO-wJTBP-5BbTh-RnXOu-ahPa9-WsdqA"
 	//DC Players
 	"Explicit"			"CSGO-j86Vc-xrMjS-Dy3qh-yuBVS-wVc3K"
 	"Hellhound" 		"CSGO-ejo7J-EVJc5-hcUSa-tPDsF-xmKPJ"

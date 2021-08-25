@@ -674,7 +674,7 @@ ProP+Rifle+RiflePersonality "yuurih"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "honda"
+ProP+SniperPro+SniperPersonality "drop"
 	VoicePitch = 100
 End
 
@@ -1812,25 +1812,25 @@ ProP+Rifle+RiflePersonality "rage"
 	VoicePitch = 111
 End
 
-//100PG Players
+//GameAgents Players
 
-ProP+Rifle+RiflePersonality "sorrow"
+ProP+Rifle+RiflePersonality "jeje"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "smiley"
+ProP+SniperPro+SniperPersonality "sl3nd"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "icem4N"
+ProP+Rifle+RiflePersonality "ps1cho"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "dukefissura"
+ProP+Rifle+RiflePersonality "N0R1"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "w1nt3r"
+ProP+Rifle+RiflePersonality "habibi"
 	VoicePitch = 94
 End
 
@@ -3018,7 +3018,7 @@ ProP+Rifle+RiflePersonality "chop"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "CLASIA"
+ProP+Rifle+RiflePersonality "jitter"
 	VoicePitch = 111
 End
 
