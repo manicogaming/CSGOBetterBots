@@ -724,7 +724,7 @@
 	"blacktear5" 		"142443051"
 	"Snax" 				"21875845"
 	"Kylar" 			"116431013"
-	"mynio" 			"24981058"
+	"Demho" 			"146746760"
 	"innocent"			"26563533"
 	//HONORIS Players
 	"TaZ" 				"234052"
@@ -828,4 +828,10 @@
 	"mikki" 			"80276147"
 	"akEz" 				"25850155"
 	"H4RR3"				"195566724"
+	//TC Players
+	"fabi" 				"24995103"
+	"tricky"			"291038798"
+	"la3euka" 			"127245065"
+	"Xant3r" 			"879040137"
+	"kissinho"			"63950749"
 }

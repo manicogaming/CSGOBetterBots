@@ -724,7 +724,7 @@
 	"blacktear5" 		"CSGO-jJo5r-3AuXa-nRvUw-AhDBM-qmTiA"
 	"Snax" 				"CSGO-qiZ9k-Ukk4v-FGUYf-3f3Jd-TXaUN"
 	"Kylar" 			"CSGO-pZRbP-aOvHV-dQuXZ-HXNTA-c2D7K"
-	"mynio" 			"CSGO-8jQVT-Dm9pt-F77xa-ZLjZe-X3xsP"
+	"Demho" 			"CSGO-p2tzD-qvm5f-xuvL5-96mBs-pevvE"
 	"innocent"			"CSGO-pZRbP-aOvHV-dQuXZ-HXNTA-c2D7K"
 	//HONORIS Players
 	"TaZ" 				"CSGO-KTmGX-th6ev-akjCb-GsnfX-t4kXM"
@@ -828,4 +828,10 @@
 	"mikki" 			"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
 	"akEz" 				"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
 	"H4RR3"				"CSGO-SBXs7-YRuVv-TiF7a-TNJ4n-jCdRF"
+	//TC Players
+	"fabi" 				"CSGO-unZo2-XJhRp-6mbLK-xR5tc-xsrBE"
+	"tricky"			"CSGO-WdZhL-XwJd6-ddana-Qw6c5-NRxoO"
+	"la3euka" 			"CSGO-BXrQW-DHQC2-dCTzX-MZ3tu-HDpcG"
+	"Xant3r" 			"CSGO-RwVnv-HRCMu-NeN9r-mD5om-EGnfO"
+	"kissinho"			"CSGO-2LtOr-fsBRx-8NOqe-BhL7J-7QBUM"
 }

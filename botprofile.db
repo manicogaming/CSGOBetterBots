@@ -2948,7 +2948,7 @@ ProP+Rifle+RiflePersonality "Kylar"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "mynio"
+ProP+Rifle+RiflePersonality "Demho"
 	VoicePitch = 102
 End
 
@@ -3328,6 +3328,28 @@ End
 
 ProP+Rifle+RiflePersonality "H4RR3"
 	VoicePitch = 91
+End
+
+//TC Players
+
+ProP+Rifle+RiflePersonality "fabi"
+	VoicePitch = 83
+End
+
+ProP+SniperPro+SniperPersonality "tricky"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "la3euka"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "Xant3r"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "kissinho"
+	VoicePitch = 75
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

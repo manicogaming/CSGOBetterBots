@@ -271,6 +271,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_renewal", Team_Renewal);
 	RegConsoleCmd("team_party", Team_Party);
 	RegConsoleCmd("team_777", Team_777);
+	RegConsoleCmd("team_tc", Team_TC);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -3884,7 +3885,7 @@ public Action Team_Anonymo(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "blacktear5");
 		ServerCommand("bot_add_ct %s", "Snax");
 		ServerCommand("bot_add_ct %s", "Kylar");
-		ServerCommand("bot_add_ct %s", "mynio");
+		ServerCommand("bot_add_ct %s", "Demho");
 		ServerCommand("bot_add_ct %s", "innocent");
 		ServerCommand("mp_teamlogo_1 anon");
 	}
@@ -3895,7 +3896,7 @@ public Action Team_Anonymo(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "blacktear5");
 		ServerCommand("bot_add_t %s", "Snax");
 		ServerCommand("bot_add_t %s", "Kylar");
-		ServerCommand("bot_add_t %s", "mynio");
+		ServerCommand("bot_add_t %s", "Demho");
 		ServerCommand("bot_add_t %s", "innocent");
 		ServerCommand("mp_teamlogo_2 anon");
 	}
@@ -4408,6 +4409,36 @@ public Action Team_777(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "akEz");
 		ServerCommand("bot_add_t %s", "H4RR3");
 		ServerCommand("mp_teamlogo_2 777");
+	}
+	
+	return Plugin_Handled;
+}
+
+public Action Team_TC(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "fabi");
+		ServerCommand("bot_add_ct %s", "tricky");
+		ServerCommand("bot_add_ct %s", "la3euka");
+		ServerCommand("bot_add_ct %s", "Xant3r");
+		ServerCommand("bot_add_ct %s", "kissinho");
+		ServerCommand("mp_teamlogo_1 tc");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "fabi");
+		ServerCommand("bot_add_t %s", "tricky");
+		ServerCommand("bot_add_t %s", "la3euka");
+		ServerCommand("bot_add_t %s", "Xant3r");
+		ServerCommand("bot_add_t %s", "kissinho");
+		ServerCommand("mp_teamlogo_2 tc");
 	}
 	
 	return Plugin_Handled;

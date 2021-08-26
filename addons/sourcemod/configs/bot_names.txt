@@ -724,7 +724,7 @@
 	"blacktear5" 		"Anonymo"
 	"Snax" 				"Anonymo"
 	"Kylar" 			"Anonymo"
-	"mynio" 			"Anonymo"
+	"Demho" 			"Anonymo"
 	"innocent"			"Anonymo"
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
@@ -828,4 +828,10 @@
 	"mikki" 			"777"
 	"akEz" 				"777"
 	"H4RR3"				"777"
+	//TC Players
+	"fabi" 				"TC"
+	"tricky"			"TC"
+	"la3euka" 			"TC"
+	"Xant3r" 			"TC"
+	"kissinho"			"TC"
 }
