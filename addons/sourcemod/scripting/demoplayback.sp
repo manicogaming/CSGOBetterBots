@@ -67,7 +67,6 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errMax)
 {
 	CreateNative("Demo_GetPosition", Native_GetPosition);
 	CreateNative("Demo_GetVelocity", Native_GetVelocity);
-	CreateNative("Demo_GetAngles", Native_GetAngles);
 	CreateNative("Demo_GetTick", Native_GetTick);
 	CreateNative("Demo_IsPlaying", Native_IsPlaying);
 	
@@ -84,18 +83,6 @@ public int Native_GetPosition(Handle plugins, int numParams)
 	}
 
 	return SetNativeArray(3, g_fPosition[GetNativeCell(2)], 3) == SP_ERROR_NONE;
-}
-
-public int Native_GetAngles(Handle plugins, int numParams)
-{
-	int client = GetNativeCell(1);
-	if (!client || !IsClientInGame(client))
-	{
-		ThrowNativeError(SP_ERROR_NATIVE, "Invalid client index [%i]", client);
-		return -1;
-	}
-	
-	return SetNativeArray(3, g_fAngles[GetNativeCell(2)], 3) == SP_ERROR_NONE;
 }
 
 public int Native_GetVelocity(Handle plugins, int numParams)
@@ -300,7 +287,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons |= IN_RELOAD;
 		}
 		
-		Array_Copy(g_fAngles[g_iCurrentTick[client]], fAngles, 2);
+		float fNormalizedAngles[3];
+		fNormalizedAngles[0] = AngleNormalize(g_fAngles[g_iCurrentTick[client]][0]);
+		fNormalizedAngles[1] = AngleNormalize(g_fAngles[g_iCurrentTick[client]][1]);
+		
+		Array_Copy(fNormalizedAngles, fAngles, 2);
 		
 		TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], fAngles, g_fVelocity[g_iCurrentTick[client]]);
 		
@@ -403,6 +394,26 @@ void ParseTicks()
 	g_iMaxTick = StringToInt(szTick);
 	
 	delete kv;
+}
+
+stock float AngleNormalize(float fAngle)
+{
+	fAngle = fmodf(fAngle, 360.0);
+	if (fAngle > 180) 
+	{
+		fAngle -= 360;
+	}
+	if (fAngle < -180)
+	{
+		fAngle += 360;
+	}
+	
+	return fAngle;
+}
+
+stock float fmodf(float fNumber, float fDenom)
+{
+	return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
 }
 
 stock bool IsValidClient(int client)

@@ -5294,7 +5294,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 								iButtons |= IN_ATTACK;
 						}
 						
-						if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (fOnTarget > fAimTolerance && !bIsDucking && (fTargetDistance < 2000.0 || GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime()) && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 					}
 					case 1:

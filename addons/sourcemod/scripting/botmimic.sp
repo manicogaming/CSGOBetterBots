@@ -371,19 +371,18 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 	iFrame.newWeapon = CSWeapon_NONE;
 	iFrame.playerSubtype = subtype;
 	iFrame.playerSeed = seed;
+	Array_Copy(angles, iFrame.predictedAngles, 2);
 	
 	if(Demo_IsPlaying(client))
 	{
-		float fDemoPos[3], fDemoVel[3], fDemoAng[3];
+		float fDemoPos[3], fDemoVel[3];
 		int iTick = Demo_GetTick(client) - 1;
 		
 		Demo_GetPosition(client, iTick, fDemoPos);
 		Demo_GetVelocity(client, iTick, fDemoVel);
-		Demo_GetAngles(client, iTick, fDemoAng);
 		
 		iFrame.origin = fDemoPos;
 		iFrame.actualVelocity = fDemoVel;
-		Array_Copy(fDemoAng, iFrame.predictedAngles, 2);
 	}
 	else
 	{
@@ -393,7 +392,6 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 		iFrame.origin = vOrigin;
 		Entity_GetAbsVelocity(client, vVel);
 		iFrame.actualVelocity = vVel;
-		Array_Copy(angles, iFrame.predictedAngles, 2);
 	}
 	
 	// Save the origin, angles and velocity in this frame.
@@ -2020,41 +2018,6 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
-}
-
-public void SmoothAim(int client, float fDesiredAngles[3]) 
-{
-	float fAngles[3], fTargetAngles[3], fSmoothing;
-	
-	GetClientEyeAngles(client, fAngles);
-	
-	fSmoothing = Math_GetRandomFloat(0.50, 0.80);
-	
-	fTargetAngles[0] = fAngles[0] + AngleNormalize(fDesiredAngles[0] - fAngles[0]) * (1 - fSmoothing);
-	fTargetAngles[1] = fAngles[1] + AngleNormalize(fDesiredAngles[1] - fAngles[1]) * (1 - fSmoothing);
-	fTargetAngles[2] = fAngles[2];
-	
-	TeleportEntity(client, NULL_VECTOR, fTargetAngles, NULL_VECTOR);
-}
-
-stock float AngleNormalize(float angle)
-{
-    angle = fmodf(angle, 360.0);
-    if (angle > 180)
-    {
-        angle -= 360;
-    }
-    if (angle < -180)
-    {
-        angle += 360;
-    }
-
-    return angle;
-}
-
-stock float fmodf(float number, float denom)
-{
-    return number - RoundToFloor(number / denom) * denom;
 }
 
 stock bool IsValidClient(int client)
