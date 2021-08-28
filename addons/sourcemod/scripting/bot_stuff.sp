@@ -4474,13 +4474,10 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			
 			if ((g_iCurrentRound == 0 || g_iCurrentRound == 15) && bInBuyZone)
 			{
-				switch (Math_GetRandomInt(1,5))
+				switch (Math_GetRandomInt(1,3))
 				{
 					case 1: FakeClientCommand(i, "buy vest");
-					case 3:
-						FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
-					case 5:
-						FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "p250");
+					case 3:	FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
 				}
 			}
 			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
@@ -4496,13 +4493,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				switch (Math_GetRandomInt(1,10))
 				{
 					case 1: FakeClientCommand(i, "buy vest");
-					case 5:
-					{
-						if (iTeam == CS_TEAM_CT)
-							FakeClientCommand(i, "buy defuser");
-						else
-							FakeClientCommand(i, "buy vest");
-					}
+					case 5:	FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
 				}
 			}
 		}
@@ -4861,46 +4852,55 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 18);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 9);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareDust2Executes();
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 10);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareInfernoExecutes();
 		}
 		else if (strcmp(g_szMap, "de_overpass") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareOverpassExecutes();
 		}
 		else if (strcmp(g_szMap, "de_train") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareTrainExecutes();
 		}
 		else if (strcmp(g_szMap, "de_nuke") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareNukeExecutes();
 		}
 		else if (strcmp(g_szMap, "de_vertigo") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareVertigoExecutes();
 		}
 		else if (strcmp(g_szMap, "de_cache") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareCacheExecutes();
 		}
 		else if (strcmp(g_szMap, "de_ancient") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
+			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareAncientExecutes();
 		}
 	}

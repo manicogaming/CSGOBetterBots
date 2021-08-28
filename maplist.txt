@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Fri Aug 27 18:53:35 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Aug 28 18:05:08 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -347,7 +347,6 @@ gg_lego_bunker
 gg_lego_rgb_ggn
 gg_mr_max
 gg_neonlight
-gg_office
 gg_orange_arena_trx
 gg_simple_v1
 gg_simpsons_japanz_v2
@@ -371,7 +370,6 @@ mx_tree_b1
 nyaarena
 oa_sentinel1
 pet_sematary_final
-playground_x_s
 sj_dustland
 workshop/467786170/tr_blank
 training1
