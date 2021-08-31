@@ -2083,8 +2083,8 @@ public Action Team_Furious(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "abizz");
-		ServerCommand("bot_add_ct %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_ct %s", "Owen$inhoM");
+		ServerCommand("bot_add_ct %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_ct %s", "nacho");
 		ServerCommand("bot_add_ct %s", "meyern");
 		ServerCommand("mp_teamlogo_1 furio");
@@ -2094,8 +2094,8 @@ public Action Team_Furious(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "abizz");
-		ServerCommand("bot_add_t %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_t %s", "Owen$inhoM");
+		ServerCommand("bot_add_t %s", "\"JonY BoY\"");
 		ServerCommand("bot_add_t %s", "nacho");
 		ServerCommand("bot_add_t %s", "meyern");
 		ServerCommand("mp_teamlogo_2 furio");
@@ -5146,7 +5146,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
-	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0)
+	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Face outward") == 0)
 	{
 		return MRES_Ignored;
 	}
@@ -5156,7 +5156,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		return MRES_Supercede;
 	}
@@ -5246,6 +5246,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
 			bool bIsHiding = BotIsHiding(client);
 			bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
+			bool bIsReloading = IsPlayerReloading(client);
 			
 			if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
 				iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
@@ -5290,7 +5291,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							iButtons &= ~IN_ATTACK;
 						
-							if(!IsPlayerReloading(client)) 
+							if(!bIsReloading) 
 								iButtons |= IN_ATTACK;
 						}
 						
@@ -5299,12 +5300,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 					case 1:
 					{
-						if (fOnTarget > fAimTolerance && !bIsDucking && !IsPlayerReloading(client))
+						if (fOnTarget > fAimTolerance && !bIsDucking && !bIsReloading)
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 					}
 					case 9, 40:
 					{
-						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client] && !IsPlayerReloading(client))
+						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client] && !bIsReloading)
 						{
 							iButtons |= IN_ATTACK;
 							
@@ -5315,7 +5316,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				fClientLoc[2] += 35.5;
 				
-				if (IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+				if (!GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 					iButtons |= IN_DUCK;
 				
 				if (!(GetEntityFlags(client) & FL_ONGROUND))
@@ -5908,7 +5909,7 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 						}
 						case 2, 3, 4, 30, 32, 36, 61, 63:
 						{
-							if (Math_GetRandomInt(1, 100) <= 40)
+							if (Math_GetRandomInt(1, 100) <= 30)
 							{
 								bShootSpine = true;
 							}
@@ -5974,7 +5975,7 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
-	TR_TraceRayFilter(fStart, fEnd, MASK_VISIBLE_AND_NPCS|CONTENTS_GRATE, RayType_EndPoint, TraceEntityFilterStuff);
+	TR_TraceRayFilter(fStart, fEnd, MASK_VISIBLE_AND_NPCS, RayType_EndPoint, TraceEntityFilterStuff);
 	return TR_GetFraction() >= 0.9;
 }
 

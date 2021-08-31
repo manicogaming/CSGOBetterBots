@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Aug 28 18:05:08 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Wed Sep 01 00:04:37 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -37,7 +37,6 @@ aim_depot_beta01
 aim_dust
 aim_glass_handel_v2_fix
 aim_headshot_imb
-aim_junkyard
 aim_map
 aim_map2
 aim_map_duelies
@@ -239,7 +238,6 @@ de_marquis
 de_maya
 de_meteora
 de_mill_ce
-de_minimetzel_hslan
 de_mirage
 de_mocha
 de_momentum
