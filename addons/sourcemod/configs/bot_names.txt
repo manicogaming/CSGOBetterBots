@@ -431,7 +431,7 @@
 	"TWEEZY" 			"planB"	
 	"xTreMe" 			"planB"
 	"Lefty" 			"planB"
-	"rabtus" 			"planB"
+	"pony-san" 			"planB"
 	//Gambit Players
 	"nafany" 			"Gambit"
 	"sh1ro" 			"Gambit"
@@ -490,7 +490,7 @@
 	"RZU" 				"Triumph"
 	"Bwills" 			"Triumph"
 	"cxzi" 				"Triumph"
-	"cynic" 			"Triumph"
+	"hate" 				"Triumph"
 	"jeorgesnorts" 		"Triumph"
 	//FATE Players
 	"rafftu"			"FATE" 
@@ -509,7 +509,7 @@
 	"SENER1" 			"BLINK"
 	"sinnopsyy" 		"BLINK"
 	"gxx-" 				"BLINK"
-	"gulito" 			"BLINK"
+	"rigoN" 			"BLINK"
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"
@@ -676,14 +676,14 @@
 	"MAJ3R" 			"Sangal"
 	"paz" 				"Sangal"
 	"ngiN" 				"Sangal"
-	"imoRR" 			"Sangal"
+	"Soulfly" 			"Sangal"
 	"S3NSEY"			"Sangal"
-	//XENEX Players
-	"JackB" 			"XENEX"
-	"eMy" 				"XENEX"
-	"Ziimzey" 			"XENEX"
-	"mrhui" 			"XENEX"
-	"Yoshwa"			"XENEX"
+	//Ambush Players
+	"Maze" 				"Ambush"
+	"Gnoffe" 			"Ambush"
+	"milky" 			"Ambush"
+	"Rock1nG" 			"Ambush"
+	"k0lty"				"Ambush"
 	//Dragons Players
 	"GYZER" 			"Dragons"
 	"fREQ" 				"Dragons"
@@ -821,7 +821,7 @@
 	"PwnAlone" 			"Party"
 	"djay"				"Party"
 	"Infinite" 			"Party"
-	"viz"				"Party"
+	"cynic"				"Party"
 	//777 Players
 	"ruyter" 			"777"
 	"Marcelious"		"777"

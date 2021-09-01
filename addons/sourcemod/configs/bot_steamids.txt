@@ -427,7 +427,7 @@
 	"Polox" 			"109597705"
 	"CamZ" 				"198983256"
 	//planB Players
-	"rabtus" 			"66429969"
+	"pony-san" 			"76320241"
 	"TWEEZY" 			"230582686"
 	"Knoxville" 		"107802167"
 	"xTreMe" 			"69837499"
@@ -490,7 +490,7 @@
 	"RZU" 				"170869120"
 	"Bwills" 			"119308817"
 	"cxzi" 				"211453961"
-	"cynic" 			"106932238"
+	"hate" 				"187864801"
 	"jeorgesnorts" 		"393603607"
 	//FATE Players
 	"Patrick--" 		"98715951"
@@ -508,7 +508,7 @@
 	"juanflatroo" 		"135528227"
 	"sinnopsyy" 		"205062167"
 	"gxx-" 				"274569724"
-	"gulito" 			"420615598"
+	"rigoN" 			"212571293"
 	"SENER1" 			"192112459"
 	//Tricked Players
 	"kwezz" 			"110193409"
@@ -676,14 +676,14 @@
 	"MAJ3R" 			"7167161"
 	"paz" 				"68524615"
 	"ngiN" 				"17887362"
-	"imoRR" 			"107082440"
+	"Soulfly" 			"366802450"
 	"S3NSEY"			"103744637"
-	//XENEX Players
-	"mrhui" 			"130550190"
-	"Ziimzey" 			"322658834"
-	"eMy" 				"118767770"
-	"JackB" 			"200180519"
-	"Yoshwa" 			"90756625"
+	//Ambush Players
+	"Rock1nG" 			"246843704"
+	"milky" 			"236009457"
+	"Gnoffe" 			"33756208"
+	"Maze" 				"252147045"
+	"k0lty" 			"321425701"
 	//Dragons Players
 	"GYZER" 			"67236086"
 	"fREQ" 				"169848605"
@@ -821,7 +821,7 @@
 	"PwnAlone" 			"24000649"
 	"djay" 				"3935898"
 	"Infinite" 			"149493497"
-	"viz"				"433892634"
+	"cynic" 			"106932238"
 	//777 Players
 	"ruyter" 			"851805954"
 	"Marcelious"		"158860221"

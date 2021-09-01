@@ -1874,7 +1874,7 @@ ProP+Rifle+RiflePersonality "Lefty"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "rabtus"
+ProP+Rifle+RiflePersonality "pony-san"
 	VoicePitch = 91
 End
 
@@ -2090,7 +2090,7 @@ ProP+Rifle+RiflePersonality "Bwills"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "cynic"
+ProP+Rifle+RiflePersonality "hate"
 	VoicePitch = 79
 End
 
@@ -2160,7 +2160,7 @@ ProP+Rifle+RiflePersonality "gxx-"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "gulito"
+ProP+Rifle+RiflePersonality "rigoN"
 	VoicePitch = 88
 End
 
@@ -2772,7 +2772,7 @@ ProP+Rifle+RiflePersonality "paz"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "imoRR"
+ProP+Rifle+RiflePersonality "Soulfly"
 	VoicePitch = 99
 End
 
@@ -2780,25 +2780,25 @@ ProP+Rifle+RiflePersonality "S3NSEY"
 	VoicePitch = 111
 End
 
-//XENEX Players
+//Ambush Players
 
-ProP+Rifle+RiflePersonality "JackB"
+ProP+Rifle+RiflePersonality "Maze"
 	VoicePitch = 89
 End
 
-ProP+SniperPro+SniperPersonality "eMy"
+ProP+SniperPro+SniperPersonality "Gnoffe"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "Ziimzey"
+ProP+Rifle+RiflePersonality "milky"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "mrhui"
+ProP+Rifle+RiflePersonality "Rock1nG"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Yoshwa"
+ProP+Rifle+RiflePersonality "k0lty"
 	VoicePitch = 95
 End
 
@@ -3304,7 +3304,7 @@ ProP+Rifle+RiflePersonality "Infinite"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "viz"
+ProP+Rifle+RiflePersonality "cynic"
 	VoicePitch = 92
 End
 

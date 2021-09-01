@@ -427,7 +427,7 @@
 	"Polox" 			"CSGO-ys8Ba-OxGp5-6QnWi-KGxmD-A6SKF"
 	"CamZ" 				"CSGO-5vfEL-GXyON-CXnBm-UKU64-WsdqA"
 	//planB Players
-	"rabtus" 			"CSGO-kc8Mn-29HVA-fafei-E6NDB-RCHnK"
+	"pony-san" 			"CSGO-Nan2e-yK6Rm-yVuDk-WqpTV-9eJaA"
 	"TWEEZY" 			"CSGO-mPfjZ-kxE7v-Mwi6o-GHJcL-nvHCF"
 	"Knoxville" 		"CSGO-QHBC9-w5Axy-OYTMf-uN5kp-4PkTL"
 	"xTreMe" 			"CSGO-h6snZ-NpGGm-niO6p-yZeUC-kMn2H"
@@ -490,7 +490,7 @@
 	"RZU" 				"CSGO-ZypKj-ctwMP-kdmdx-SEYwq-wembN"
 	"Bwills" 			"CSGO-OvJoR-wEEQQ-32TOf-2DL9w-VY2UO"
 	"cxzi" 				"CSGO-uWqcA-A7Ncu-yu6Ox-hUR3i-42QRO"
-	"cynic" 			"CSGO-n4yeD-QxTKS-OTzio-uaOnt-ruWPA"
+	"hate" 				"CSGO-22k7H-oxF2Z-Hi6uv-hLi8v-77c7L"
 	"jeorgesnorts" 		"CSGO-OveFo-anw3N-VM77d-i5Ws7-L4hWA"
 	//FATE Players
 	"Patrick--" 		"CSGO-h5xXx-pnwvs-ohnHB-zHx8e-iDjLJ"
@@ -508,7 +508,7 @@
 	"juanflatroo" 		"CSGO-zUzwA-89p2c-OMtSm-mwOVG-KCR7B"
 	"sinnopsyy" 		"CSGO-uicer-mBTCB-SZEO4-ZEw7W-KRSFE"
 	"gxx-" 				"CSGO-edZ3r-zwobi-FN2Tt-FCk7z-63qRP"
-	"gulito" 			"CSGO-GjJ2j-Vfkqz-dYWos-QevLY-MD3YP"
+	"rigoN" 			"CSGO-SXPoQ-5DtAq-24L5v-DK8Yb-AO6FP"
 	"SENER1" 			"CSGO-5aLO6-46syT-nGjQ9-NM6uu-OESZQ"
 	//Tricked Players
 	"kwezz" 			"CSGO-YJnxa-eEqZ8-ZWJqw-9wGBb-GSnMC"
@@ -676,14 +676,14 @@
 	"MAJ3R" 			"CSGO-srunX-nFMXo-53GSQ-JM9uB-TAPcF"
 	"paz" 				"CSGO-CZ6XL-Oc4ZH-OXpsS-qj7W8-Jo74E"
 	"ngiN" 				"CSGO-zu5BY-sEDY9-4OLGO-jVZud-SwzQN"
-	"imoRR" 			"CSGO-KzDEJ-2DeY8-EJxbb-HTPA2-hif4D"
+	"Soulfly" 			"CSGO-EWci2-8aOnN-YuQ6i-C8Jc2-VtjjD"
 	"S3NSEY"			"CSGO-2NdVa-TcHeq-XinWh-yrWUr-UupcG"
-	//XENEX Players
-	"mrhui" 			"CSGO-Tthfk-3563s-4Db5f-75uKm-XNh8E"
-	"Ziimzey" 			"CSGO-TwmOO-hExMP-6t5sQ-nmish-d7eyC"
-	"eMy" 				"CSGO-HaYQA-9zVWz-EQBZZ-qyZ7X-rt3xK"
-	"JackB" 			"CSGO-O7DTp-YOyBT-PGhDZ-yoBfU-VPsuL"
-	"Yoshwa" 			"CSGO-keEuU-suySf-wcyjw-uTv5n-qKwLA"
+	//Ambush Players
+	"Rock1nG" 			"CSGO-226Eu-TWCqn-Chott-wT2Gu-XobxJ"
+	"milky" 			"CSGO-yQDOv-e8McE-YpQOQ-BqXN4-nLSuK"
+	"Gnoffe" 			"CSGO-6mGLB-yz7SX-PTZNT-EjOkP-4vCJC"
+	"Maze" 				"CSGO-FZPqD-4bkRi-7URPZ-ezixi-hOGSQ"
+	"k0lty" 			"CSGO-UDpWi-YnTK5-9Phkp-KVhiQ-CCmsF"
 	//Dragons Players
 	"GYZER" 			"CSGO-hcuOi-K34BQ-JpXMP-8i2ph-tszQN"
 	"fREQ" 				"CSGO-z68M9-yhtG4-U2WfE-JuTda-ZbJaA"
@@ -821,7 +821,7 @@
 	"PwnAlone" 			"CSGO-kJCeS-dPTGX-pSPEh-hXQ7Y-OYdBN"
 	"djay" 				"CSGO-OOYaX-GxWGO-OQMwk-earYj-rCU8N"
 	"Infinite" 			"CSGO-B22Vm-qqNXH-NUqk7-W4xhH-pBtdA"
-	"viz"				"CSGO-GeNc2-sXWJq-66V2r-FfdjA-Dq5uC"
+	"cynic" 			"CSGO-n4yeD-QxTKS-OTzio-uaOnt-ruWPA"
 	//777 Players
 	"ruyter" 			"CSGO-tNKL3-nvYRR-MyrEa-Ds9kN-bkWjM"
 	"Marcelious"		"CSGO-6uXzH-T36SH-BBSuO-UK2vq-SHu8O"
