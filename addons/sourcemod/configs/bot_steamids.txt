@@ -274,7 +274,7 @@
 	"BobZ" 				"171090863"
 	"lux" 				"113751940"
 	"phx" 				"90804583"
-	"nqz" 				"390076777"
+	"keiz" 				"183028724"
 	"NikoM" 			"429170127"
 	//Infinity Players
 	"k1Nky" 			"4645867"
@@ -306,18 +306,6 @@
 	"malbsMd" 			"120437415"
 	"xns" 				"138141272"
 	"pesadelo" 			"295715770"
-	//Dire Players
-	"HaZR" 				"64081874"
-	"sterling" 			"100224621"
-	"apoc" 				"58325300"
-	"SaVage" 			"203399460"
-	"Liki" 				"196492302"
-	//Chiefs Players
-	"HUGHMUNGUS" 		"104743037"
-	"BL1TZ" 			"21572661"
-	"Mayker" 			"88236677"
-	"gump" 				"365906515"
-	"motion" 			"169238954"
 	//ORDER Players
 	"J1rah" 			"82535956"
 	"Vexite" 			"92622415"
@@ -366,12 +354,12 @@
 	"JonY BoY" 			"77140654"	
 	"nacho" 			"979595590"	
 	"meyern" 			"235377137"	
-	//Recon Players
-	"AAustiN" 			"161243497"
-	"SATURN" 			"228178031"
-	"J0LZ" 				"163875307"
-	"SLIGHT" 			"193314309"
-	"stamina" 			"272809432"
+	//Rhyno Players
+	"DiTrip" 			"181969788"
+	"Icarus" 			"291309752"
+	"sark" 				"76263371"
+	"Jaepe" 			"251441860"
+	"psh" 				"27720795"
 	//GTZ Players
 	"mik" 				"162025476"
 	"adamS" 			"8124135"
@@ -744,12 +732,12 @@
 	"wiz" 				"172119781"
 	"chop" 				"242973479"
 	"jitter"			"875669473"
-	//DC Players
-	"Explicit"			"1074781"
-	"Hellhound" 		"427548"
-	"stYle" 			"445926"
-	"inciN" 			"1524775"
-	"Wounded" 			"2649678"
+	//DNMK Players
+	"dyvo"				"172602391"
+	"Heartbreak" 		"418837922"
+	"kaNibalistic" 		"32730121"
+	"Doru" 				"135905209"
+	"Dubee" 			"162968873"
 	//Big5 Players
 	"Lately" 			"290361460"
 	"kustoM" 			"22240693"
@@ -774,7 +762,7 @@
 	"Swisher" 			"222737943"
 	"Spongey" 			"85216555"
 	"Shakezullah"		"68248927"
-	//Plano Players
+	//Nation Players
 	"kNgV-" 			"6732863"
 	"HEN1" 				"57761535"
 	"leo_drk" 			"58291277"
@@ -834,4 +822,10 @@
 	"la3euka" 			"127245065"
 	"Xant3r" 			"879040137"
 	"kissinho"			"63950749"
+	//Illuminar Players
+	"oskarish" 			"286156964"
+	"MWLKY"				"206859955"
+	"maaryy" 			"188721128"
+	"zaNNN" 			"154807226"
+	"tomiko"			"258331727"
 }

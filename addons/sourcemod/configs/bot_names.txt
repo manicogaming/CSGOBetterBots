@@ -274,7 +274,7 @@
 	"lux" 				"DETONA"
 	"phx" 				"DETONA"
 	"BobZ" 				"DETONA"
-	"nqz" 				"DETONA"
+	"keiz" 				"DETONA"
 	"NikoM" 			"DETONA"
 	//Infinity Players
 	"k1Nky" 			"Infinity"
@@ -306,18 +306,6 @@
 	"malbsMd" 			"One"	
 	"xns" 				"One"
 	"pesadelo" 			"One"
-	//Dire Players
-	"HaZR" 				"Dire"
-	"sterling" 			"Dire"
-	"apoc" 				"Dire"
-	"Liki" 				"Dire"
-	"SaVage" 			"Dire"
-	//Chiefs Players
-	"HUGHMUNGUS" 		"Chiefs"
-	"gump" 				"Chiefs"
-	"BL1TZ" 			"Chiefs"
-	"Mayker" 			"Chiefs"
-	"motion" 			"Chiefs"
 	//ORDER Players
 	"J1rah" 			"ORDER"
 	"Vexite" 			"ORDER"
@@ -366,12 +354,12 @@
 	"Owen$inhoM" 		"Furious"	
 	"nacho" 			"Furious"
 	"meyern" 			"Furious"
-	//Recon Players
-	"AAustiN" 			"Recon"
-	"stamina" 			"Recon"
-	"SATURN" 			"Recon"
-	"J0LZ" 				"Recon"
-	"SLIGHT" 			"Recon"
+	//Rhyno Players
+	"DiTrip" 			"Rhyno"
+	"psh" 				"Rhyno"
+	"Icarus" 			"Rhyno"
+	"sark" 				"Rhyno"
+	"Jaepe" 			"Rhyno"
 	//GTZ Players
 	"slaxx" 			"GTZ"
 	"Blastinho" 		"GTZ"
@@ -744,12 +732,12 @@
 	"wiz" 				"RBG"
 	"chop" 				"RBG"
 	"jitter"			"RBG"
-	//DC Players
-	"Hellhound" 		"DC"
-	"stYle" 			"DC"
-	"Explicit" 			"DC"
-	"inciN" 			"DC"
-	"Wounded"			"DC"
+	//DNMK Players
+	"Heartbreak" 		"DNMK"
+	"kaNibalistic" 		"DNMK"
+	"dyvo" 				"DNMK"
+	"Doru" 				"DNMK"
+	"Dubee"				"DNMK"
 	//Big5 Players
 	"Lately" 			"Big5"
 	"kustoM" 			"Big5"
@@ -774,12 +762,12 @@
 	"Swisher" 			"BNB"
 	"Spongey" 			"BNB"
 	"Shakezullah"		"BNB"
-	//Plano Players
-	"kNgV-" 			"Plano"
-	"HEN1" 				"Plano"
-	"leo_drk" 			"Plano"
-	"LUCAS1" 			"Plano"
-	"v$m"				"Plano"
+	//Nation Players
+	"kNgV-" 			"Nation"
+	"HEN1" 				"Nation"
+	"leo_drk" 			"Nation"
+	"LUCAS1" 			"Nation"
+	"v$m"				"Nation"
 	//Eriness Players
 	"replay" 			"Eriness"
 	"desty" 			"Eriness"
@@ -834,4 +822,10 @@
 	"la3euka" 			"TC"
 	"Xant3r" 			"TC"
 	"kissinho"			"TC"
+	//Illuminar Players
+	"oskarish" 			"Illuminar"
+	"MWLKY"				"Illuminar"
+	"maaryy" 			"Illuminar"
+	"zaNNN" 			"Illuminar"
+	"tomiko"			"Illuminar"
 }

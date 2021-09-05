@@ -1298,7 +1298,7 @@ ProP+Rifle+RiflePersonality "BobZ"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "nqz"
+ProP+Rifle+RiflePersonality "keiz"
 	VoicePitch = 84
 End
 
@@ -1414,50 +1414,6 @@ End
 
 ProP+Rifle+RiflePersonality "pesadelo"
 	VoicePitch = 79
-End
-
-//Dire Players
-
-ProP+Rifle+RiflePersonality "HaZR"
-	VoicePitch = 74
-End
-
-ProP+SniperPro+SniperPersonality "sterling"
-	VoicePitch = 87
-End
-
-ProP+Rifle+RiflePersonality "apoc"
-	VoicePitch = 114
-End
-
-ProP+Rifle+RiflePersonality "Liki"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "SaVage"
-	VoicePitch = 88
-End
-
-//Chiefs Players
-
-ProP+Rifle+RiflePersonality "HUGHMUNGUS"
-	VoicePitch = 91
-End
-
-ProP+SniperPro+SniperPersonality "BL1TZ"
-	VoicePitch = 77
-End
-
-ProP+Rifle+RiflePersonality "gump"
-	VoicePitch = 114
-End
-
-ProP+Rifle+RiflePersonality "Mayker"
-	VoicePitch = 94
-End
-
-ProP+Rifle+RiflePersonality "motion"
-	VoicePitch = 90
 End
 
 //ORDER Players
@@ -1636,25 +1592,25 @@ ProP+Rifle+RiflePersonality "meyern"
 	VoicePitch = 96
 End
 
-//Recon Players
+//Rhyno Players
 
-ProP+Rifle+RiflePersonality "AAustiN"
+ProP+Rifle+RiflePersonality "DiTrip"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "stamina"
+ProP+SniperPro+SniperPersonality "psh"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "SATURN"
+ProP+Rifle+RiflePersonality "Icarus"
 	VoicePitch = 108
 End
 
-ProP+Rifle+RiflePersonality "J0LZ"
+ProP+Rifle+RiflePersonality "sark"
 	VoicePitch = 75
 End
 
-ProP+Rifle+RiflePersonality "SLIGHT"
+ProP+Rifle+RiflePersonality "Jaepe"
 	VoicePitch = 108
 End
 
@@ -3022,25 +2978,25 @@ ProP+Rifle+RiflePersonality "jitter"
 	VoicePitch = 111
 End
 
-//DC Players
+//DNMK Players
 
-ProP+Rifle+RiflePersonality "Hellhound"
+ProP+Rifle+RiflePersonality "Heartbreak"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "stYle"
+ProP+SniperPro+SniperPersonality "kaNibalistic"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Explicit"
+ProP+Rifle+RiflePersonality "dyvo"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "inciN"
+ProP+Rifle+RiflePersonality "Doru"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "Wounded"
+ProP+Rifle+RiflePersonality "Dubee"
 	VoicePitch = 108
 End
 
@@ -3132,7 +3088,7 @@ ProP+Rifle+RiflePersonality "Shakezullah"
 	VoicePitch = 108
 End
 
-//Plano Players
+//Nation Players
 
 ProP+Rifle+RiflePersonality "kNgV-"
 	VoicePitch = 105
@@ -3350,6 +3306,28 @@ End
 
 ProP+Rifle+RiflePersonality "kissinho"
 	VoicePitch = 75
+End
+
+//Illuminar Players
+
+ProP+Rifle+RiflePersonality "oskarish"
+	VoicePitch = 113
+End
+
+ProP+SniperPro+SniperPersonality "MWLKY"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "maaryy"
+	VoicePitch = 75
+End
+
+ProP+Rifle+RiflePersonality "zaNNN"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "tomiko"
+	VoicePitch = 76
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
