@@ -115,7 +115,7 @@
 	"bsd" 				"Santos"
 	"DebornY" 			"Santos"	
 	//coL Players
-	"k0nfig" 			"coL"
+	"coldzera" 			"coL"
 	"poizon" 			"coL"
 	"jks" 				"coL"
 	"es3tag" 			"coL"
@@ -165,7 +165,7 @@
 	//Bravos Players
 	"WOOD7" 			"Bravos"
 	"Tuurtle" 			"Bravos"
-	"kaiG" 				"Bravos"
+	"danoco" 			"Bravos"
 	"JOTA" 				"Bravos"
 	"Leomonster" 		"Bravos"
 	//RNG Players
@@ -196,7 +196,7 @@
 	"Patrick" 			"PDucks"
 	"striNg" 			"PDucks"
 	"polzerm" 			"PDucks"
-	"bLooDyyY" 			"PDucks"
+	"AHEAD-" 			"PDucks"
 	"nipam" 			"PDucks"
 	//HAVU Players
 	"ZOREE" 			"HAVU"
@@ -318,12 +318,12 @@
 	"Oxygen" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
 	"SHiPZ" 			"SKADE"
-	//Paradox Players
-	"rbz" 				"Paradox"
-	"Versa" 			"Paradox"
-	"ekul" 				"Paradox"
-	"bedonka" 			"Paradox"
-	"zeph" 				"Paradox"
+	//Singularity Players
+	"seized" 			"Singularity"
+	"GuardiaN" 			"Singularity"
+	"clax" 				"Singularity"
+	"Norwi" 			"Singularity"
+	"d1Ledez" 			"Singularity"
 	//OFFSET Players
 	"NOPEEj" 			"OFFSET"
 	"EasTor" 			"OFFSET"
@@ -337,9 +337,9 @@
 	"EiZAA" 			"NASR"
 	"bibu" 				"NASR"
 	//ECB Players
-	"simix" 			"ECB"
+	"KaiR0N-" 			"ECB"
 	"Stev0se" 			"ECB"
-	"CrePoW" 			"ECB"
+	"xicoz" 			"ECB"
 	"Matty" 			"ECB"
 	"n0tice" 			"ECB"
 	//Bravado Players
@@ -403,7 +403,7 @@
 	"Viva" 				"IG"
 	"rage" 				"IG"
 	//GameAgents Players
-	"jeje" 				"GameAgents"
+	"flow" 				"GameAgents"
 	"sl3nd" 			"GameAgents"
 	"ps1cho" 			"GameAgents"
 	"N0R1" 				"GameAgents"
@@ -439,11 +439,11 @@
 	"f4stzin" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
 	//Unique Players
-	"crush" 			"Unique"
-	"Kre1N" 			"Unique"
-	"shalfey" 			"Unique"
-	"SELLTER" 			"Unique"
-	"aNsavage" 			"Unique"	
+	"sorrow" 			"Unique"
+	"smiley" 			"Unique"
+	"w1nt3r" 			"Unique"
+	"icem4N" 			"Unique"
+	"dukefissura" 		"Unique"	
 	//Izako Players
 	"byali" 			"Izako"
 	"Vegi" 				"Izako"
@@ -568,7 +568,7 @@
 	"quix" 				"Lilmix"
 	"b0denmaster" 		"Lilmix"
 	"bq" 				"Lilmix"
-	"Svedjehed" 		"Lilmix"
+	"hns" 				"Lilmix"
 	"freddyyyw" 		"Lilmix"
 	//FTW Players
 	"NABOWOW" 			"FTW"
@@ -652,8 +652,8 @@
 	"xelos" 			"Lemondogs"
 	"twist" 			"Lemondogs"
 	"hemzk9" 			"Lemondogs"
-	"znajder" 			"Lemondogs"
-	"MODDII" 			"Lemondogs"	
+	"ZER" 				"Lemondogs"
+	"Svedjehed" 		"Lemondogs"	
 	//Havan Players
 	"ALLE" 				"Havan"
 	"drg" 				"Havan"
@@ -697,7 +697,7 @@
 	"hadess" 			"x6tence"
 	"roGerzz"			"x6tence"
 	//AVEZ Players
-	"sNx" 				"AVEZ"
+	"LeS" 				"AVEZ"
 	"fanatyk" 			"AVEZ"
 	"gRuChA" 			"AVEZ"
 	"SaMey" 			"AVEZ"
@@ -828,4 +828,16 @@
 	"maaryy" 			"Illuminar"
 	"zaNNN" 			"Illuminar"
 	"tomiko"			"Illuminar"
+	//BLUEJAYS Players
+	"aidKiT" 			"BLUEJAYS"
+	"kyxsan"			"BLUEJAYS"
+	"stYleEeZ" 			"BLUEJAYS"
+	"dan1" 				"BLUEJAYS"
+	"Cryveng"			"BLUEJAYS"
+	//ECK Players
+	"byr9" 				"ECK"
+	"uQlutzavr"			"ECK"
+	"Smash" 			"ECK"
+	"s4" 				"ECK"
+	"amster"			"ECK"
 }

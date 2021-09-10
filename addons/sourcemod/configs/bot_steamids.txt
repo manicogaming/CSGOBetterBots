@@ -115,7 +115,7 @@
 	"bsd" 				"213740099"
 	"DebornY" 			"125902681"	
 	//coL Players
-	"k0nfig" 			"19403447"
+	"coldzera" 			"79720871"
 	"poizon" 			"117537138"
 	"jks" 				"16839456"
 	"es3tag" 			"1859646"
@@ -165,7 +165,7 @@
 	//Bravos Players
 	"WOOD7" 			"42876435"
 	"Tuurtle" 			"34114868"
-	"kaiG" 				"45654536"
+	"danoco" 			"34622275"
 	"JOTA" 				"94554756"
 	"Leomonster" 		"318176128"
 	//RNG Players
@@ -195,7 +195,7 @@
 	//PDucks Players
 	"Patrick"			"64484395"
 	"polzerm" 			"184567823"
-	"bLooDyyY" 			"76024642"
+	"AHEAD-" 			"163667056"
 	"nipam" 			"34646057"
 	"striNg" 			"4189613"
 	//HAVU Players
@@ -318,12 +318,12 @@
 	"Oxygen" 			"124914887"
 	"Rainwaker" 		"177848062"	
 	"SHiPZ" 			"254948893"
-	//Paradox Players
-	"rbz" 				"6510851"
-	"ekul" 				"38901108"
-	"bedonka" 			"90046852"
-	"Versa" 			"328572044"
-	"zeph" 				"177441352"
+	//Singularity Players
+	"seized" 			"3648428"
+	"clax" 				"168818887"
+	"Norwi" 			"194638879"
+	"GuardiaN" 			"12065295"
+	"d1Ledez" 			"899162551"
 	//OFFSET Players
 	"NOPEEj" 			"200528981"
 	"EasTor" 			"3460360"
@@ -337,9 +337,9 @@
 	"EiZAA" 			"852927919"
 	"bibu" 				"150573885"
 	//ECB Players
-	"simix" 			"11657532"
+	"KaiR0N-" 			"196885990"
 	"Stev0se" 			"180588172"
-	"CrePoW" 			"236708549"
+	"xicoz" 			"325344975"
 	"Matty" 			"28184063"
 	"n0tice" 			"71806151"
 	//Bravado Players
@@ -403,7 +403,7 @@
 	"Viva" 				"191787089"
 	"rage" 				"398159133"
 	//GameAgents Players
-	"jeje" 				"911744904"
+	"flow" 				"221929439"
 	"sl3nd" 			"137805965"
 	"ps1cho" 			"194481853"
 	"N0R1" 				"120338342"
@@ -439,11 +439,11 @@
 	"ckzao" 			"56540556"	
 	"f4stzin" 			"476343738"	
 	//Unique Players
-	"crush" 			"36981424"
-	"Kre1N" 			"221691969"
-	"shalfey" 			"247206904"
-	"SELLTER" 			"158822313"
-	"aNsavage" 			"95906595"	
+	"sorrow" 			"169527908"
+	"smiley" 			"169887982"
+	"w1nt3r" 			"57945273"
+	"icem4N" 			"355948252"
+	"dukefissura" 		"141892565"	
 	//Izako Players
 	"Vegi" 				"90369423"
 	"STOMP" 			"51242187"
@@ -568,7 +568,7 @@
 	"quix" 				"18704555"
 	"b0denmaster" 		"316269116"
 	"bq" 				"240233870"
-	"Svedjehed" 		"170174906"
+	"hns" 				"192826402"
 	"freddyyyw" 		"41677010"
 	//FTW Players
 	"NABOWOW" 			"283730928"
@@ -651,8 +651,8 @@
 	//Lemondogs Players
 	"xelos" 			"28004721"
 	"twist" 			"19979131"
-	"znajder" 			"97816050"
-	"MODDII" 			"858728"	
+	"ZER" 				"170532553"
+	"Svedjehed" 		"170174906"
 	"hemzk9" 			"83597297"	
 	//Havan Players
 	"ALLE" 				"1194990"
@@ -697,7 +697,7 @@
 	"flowX" 			"228626739"
 	"PreSs" 			"396848612"
 	//AVEZ Players
-	"sNx" 				"420057857"
+	"LeS" 				"174749173"
 	"fanatyk" 			"321895076"
 	"gRuChA" 			"66926846"
 	"SaMey" 			"150540966"
@@ -828,4 +828,16 @@
 	"maaryy" 			"188721128"
 	"zaNNN" 			"154807226"
 	"tomiko"			"258331727"
+	//BLUEJAYS Players
+	"aidKiT" 			"241656151"
+	"kyxsan"			"97016704"
+	"stYleEeZ" 			"83880966"
+	"dan1" 				"283022264"
+	"Cryveng"			"149961284"
+	//ECK Players
+	"byr9" 				"124733563"
+	"uQlutzavr"			"311902739"
+	"Smash" 			"214027585"
+	"s4" 				"125957336"
+	"amster"			"121728571"
 }
