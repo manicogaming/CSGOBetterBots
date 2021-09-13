@@ -1304,10 +1304,10 @@ public Action Team_Lyngby(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "birdfromsky");
-		ServerCommand("bot_add_ct %s", "Daffu");
+		ServerCommand("bot_add_ct %s", "WolfY");
 		ServerCommand("bot_add_ct %s", "maNkz");
 		ServerCommand("bot_add_ct %s", "FASHR");
-		ServerCommand("bot_add_ct %s", "WolfY");
+		ServerCommand("bot_add_ct %s", "Daffu");
 		ServerCommand("mp_teamlogo_1 lyng");
 	}
 	
@@ -1315,10 +1315,10 @@ public Action Team_Lyngby(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "birdfromsky");
-		ServerCommand("bot_add_t %s", "Daffu");
+		ServerCommand("bot_add_t %s", "WolfY");
 		ServerCommand("bot_add_t %s", "maNkz");
 		ServerCommand("bot_add_t %s", "FASHR");
-		ServerCommand("bot_add_t %s", "WolfY");
+		ServerCommand("bot_add_t %s", "Daffu");
 		ServerCommand("mp_teamlogo_2 lyng");
 	}
 	
@@ -4557,13 +4557,10 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			}
 			
 			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
-			{
 				BotMimic_StopPlayerMimic(client);
-			}
 			
 			if (g_bIsProBot[client])
 			{
-			
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = GetNearestEntity(client, "planted_c4");
@@ -4577,16 +4574,13 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						fPlantedC4Distance = GetVectorDistance(fClientLoc, fPlantedC4Location);
 						
-						if (fPlantedC4Distance > 2000.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
+						if (fPlantedC4Distance > 2000.0 && !BotIsBusy(client) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
 						{
 							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
 						}
-						if (!bEveryoneDead && fPlantedC4Distance < 2000.0 && fPlantedC4Distance > 200.0 && !BotIsBusy(client) && !eItems_IsDefIndexKnife(iDefIndex) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0)
-						{
+						else if (!bEveryoneDead && fPlantedC4Distance < 2000.0)
 							BotEquipBestWeapon(client, true);
-							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
-						}
 					}
 				}
 				
@@ -4603,8 +4597,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fAWPLocation[3];
 
-						if (IsValidEntity(iPrimary))
-							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 
 						if (iPrimaryDefIndex != 9)
 						{
@@ -4626,13 +4619,11 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
 						}
 					}
-					
-					if (IsValidEntity(iAK47))
+					else if (IsValidEntity(iAK47))
 					{
 						float fAK47Location[3];
 
-						if (IsValidEntity(iPrimary))
-							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 
 						if ((iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9) || iPrimary == -1)
 						{
@@ -4642,13 +4633,11 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 								BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 						}
 					}
-
-					if (IsValidEntity(iM4A1))
+					else if (IsValidEntity(iM4A1))
 					{
 						float fM4A1Location[3];
 
-						if (IsValidEntity(iPrimary))
-							iPrimaryDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 
 						if (iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9 && iPrimaryDefIndex != 16 && iPrimaryDefIndex != 60)
 						{
@@ -4684,8 +4673,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fDeagleLocation[3];
 						
-						if (IsValidEntity(iSecondary))
-							iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
+						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36 || iSecondaryDefIndex == 30 || iSecondaryDefIndex == 3 || iSecondaryDefIndex == 63)
 						{
@@ -4704,10 +4692,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fTec9Location[3];
 						
-						if (IsValidEntity(iSecondary))
-						{
-							iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
-						}
+						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 						{
@@ -4726,8 +4711,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fFiveSevenLocation[3];
 						
-						if (IsValidEntity(iSecondary))
-							iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
+						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 						{
@@ -4746,8 +4730,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fP250Location[3];
 						
-						if (IsValidEntity(iSecondary))
-							iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
+						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61)
 						{
@@ -4766,8 +4749,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					{
 						float fUSPLocation[3];
 						
-						if (IsValidEntity(iSecondary))
-							iSecondaryDefIndex = GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex");
+						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						
 						if (iSecondaryDefIndex == 4)
 						{
@@ -4840,9 +4822,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iNewTargetTime[i] = 0;
 			g_iTarget[i] = -1;
 			if(BotMimic_IsPlayerMimicing(i))
-			{
 				BotMimic_StopPlayerMimic(i);
-			}
 		}
 	}
 }
@@ -4919,9 +4899,7 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
-		{
 			BotMimic_StopPlayerMimic(i);
-		}
 	}
 }
 
@@ -4930,9 +4908,7 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
 	
 	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
 		CreateTimer(0.3, Timer_Zoomed, GetClientUserId(client));
-	}
 }
 
 public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -4953,9 +4929,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 			float fRangeToEnemy = GetVectorDistance(fClientLoc, fTargetLoc);
 			
 			if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
-			{
 				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.35, 0.60));
-			}
 		}
 		
 		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
@@ -4997,8 +4971,19 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	fAttackerPos[2] += 35.5;
 	
 	if(LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
-	{
 		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
+	
+	return Plugin_Continue;
+}
+
+public Action CS_OnCSWeaponDrop(int client, int iWeapon)
+{
+	if(IsValidEntity(iWeapon))
+	{
+		int iDefIndex = GetEntProp(iWeapon, Prop_Send, "m_iItemDefinitionIndex");
+		
+		if(iDefIndex == 9)
+			return Plugin_Handled;
 	}
 	
 	return Plugin_Continue;
@@ -5010,9 +4995,7 @@ public void OnThinkPost(int iEnt)
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i))
-		{
 			SetCrosshairCode(GetEntityAddress(iEnt), i, g_szCrosshairCode[i]);
-		}
 	}
 }
 
@@ -5022,17 +5005,13 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	{
 		if (strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0
 			 || strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
-		{
 			return Plugin_Continue;
-		}
 		else if (GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0
 				 || strcmp(szWeapon, "m4a1") == 0 || strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
 				 || strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
 				 || strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
 				 || strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
-		{
 			return Plugin_Handled;
-		}
 		
 		int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
 		
@@ -5098,9 +5077,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 public MRESReturn CCSBot_ThrowGrenade(int client, DHookParam hParams)
 {
 	if (BotMimic_IsPlayerMimicing(client))
-	{
 		return MRES_Supercede;
-	}
 	
 	hParams.GetVector(1, g_fNadeTarget[client]);
 	
@@ -5127,7 +5104,6 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 	if(IsValidClient(g_iTarget[pThis]) && IsPlayerAlive(g_iTarget[pThis]) && g_fTargetPos[pThis][2] != 0 && iPlayer == g_iTarget[pThis])
 	{
 		hReturn.Value = true;
-		
 		return MRES_ChangedHandled;
 	}
 	
@@ -5156,23 +5132,19 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Face outward") == 0)
-	{
 		return MRES_Ignored;
-	}
 	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
 		DHookSetParam(hParams, 3, PRIORITY_HIGH);
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
-	{
+	else if (strcmp(szDesc, "Blind") == 0)
 		return MRES_Supercede;
-	}
-	else if (strcmp(szDesc, "Breakable") == 0)
+	else if (strcmp(szDesc, "Breakable") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		g_bDontSwitch[client] = true;
-		CreateTimer(2.0, Timer_Breakable, GetClientUserId(client));
+		CreateTimer(5.0, Timer_Breakable, GetClientUserId(client));
 		
 		return MRES_Ignored;
 	}
@@ -5273,7 +5245,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if (bIsEnemyVisible && IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]) && g_fTargetPos[client][2] != 0 && GetEntityMoveType(client) != MOVETYPE_LADDER)
 			{
-				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
+				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
 					BotEquipBestWeapon(client, true);
 			
 				fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
@@ -5365,9 +5337,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 				GetClientWeapon(client, szUSP, sizeof(szUSP));
 				
 				if (strcmp(szUSP, "weapon_hkp2000") == 0)
-				{
 					CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
-				}
 			}
 		}
 	}
@@ -5378,9 +5348,7 @@ public void OnPlayerDeath(Event eEvent, const char[] szName, bool bDontBroadcast
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
 	
 	if (IsValidClient(client) && IsFakeClient(client) && g_bIsProBot[client] && BotMimic_IsPlayerMimicing(client))
-	{
 		BotMimic_StopPlayerMimic(client);
-	}
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
@@ -5405,9 +5373,7 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	if ((iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue)) && iPrimary == -1)
 	{
 		if(GetClientTeam(client) == CS_TEAM_T)
-		{
 			g_bTerroristEco = true;
-		}
 	}
 	
 	if ((iAccount > 2000) && (iAccount < g_cvBotEcoLimit.IntValue) && iPrimary == -1 && (strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0))
@@ -5416,18 +5382,9 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 		
 		switch (iRndPistol)
 		{
-			case 1:
-			{
-				FakeClientCommand(client, "buy p250");
-			}
-			case 2:
-			{
-				FakeClientCommand(client, "buy %s", (iTeam == CS_TEAM_CT) ? "fiveseven" : "tec9");
-			}
-			case 3:
-			{
-				FakeClientCommand(client, "buy deagle");
-			}
+			case 1: FakeClientCommand(client, "buy p250");
+			case 2: FakeClientCommand(client, "buy %s", (iTeam == CS_TEAM_CT) ? "fiveseven" : "tec9");
+			case 3: FakeClientCommand(client, "buy deagle");
 		}
 	}
 	return Plugin_Stop;
@@ -5518,44 +5475,28 @@ public void LoadSDK()
 		SetFailState("Failed to find botstuff.games game config.");
 	
 	if(!(g_pTheBots = GameConfGetAddress(hGameConfig, "TheBots")))
-	{
 		SetFailState("Failed to get TheBots address.");
-	}
 	
 	if ((g_iBotTargetSpotOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_targetSpot")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
-	}
 	
 	if ((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
-	}
 	
 	if ((g_iBotTaskOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_task")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_task offset.");
-	}	
 	
 	if ((g_iFireWeaponOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_fireWeaponTimestamp offset.");
-	}
 	
 	if ((g_iEnemyVisibleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isEnemyVisible")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
-	}
 	
 	if ((g_iBotProfileOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_pLocalProfile")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_pLocalProfile offset.");
-	}
 	
 	if ((g_iBotSafeTimeOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_safeTime")) == -1)
-	{
 		SetFailState("Failed to get CCSBot::m_safeTime offset.");
-	}
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -5652,51 +5593,37 @@ public void LoadDetours()
 	//CCSBot::SetLookAt Detour
 	DynamicDetour hBotSetLookAtDetour = DynamicDetour.FromConf(hGameData, "CCSBot::SetLookAt");
 	if(!hBotSetLookAtDetour.Enable(Hook_Pre, CCSBot_SetLookAt))
-	{
 		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
-	}
 	
 	//CCSBot::PickNewAimSpot Detour
 	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
 	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
-	{
 		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
-	}
 	
 	//CCSBot::ThrowGrenade Detour
 	DynamicDetour hBotThrowGrenadeDetour = DynamicDetour.FromConf(hGameData, "CCSBot::ThrowGrenade");
 	if(!hBotThrowGrenadeDetour.Enable(Hook_Pre, CCSBot_ThrowGrenade))
-	{
 		SetFailState("Failed to setup detour for CCSBot::ThrowGrenade");
-	}
 	
 	//BotCOS Detour
 	DynamicDetour hBotCOSDetour = DynamicDetour.FromConf(hGameData, "BotCOS");
 	if(!hBotCOSDetour.Enable(Hook_Pre, BotCOS))
-	{
 		SetFailState("Failed to setup detour for BotCOS");
-	}
 	
 	//BotSIN Detour
 	DynamicDetour hBotSINDetour = DynamicDetour.FromConf(hGameData, "BotSIN");
 	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
-	{
 		SetFailState("Failed to setup detour for BotSIN");
-	}
 	
 	//CCSBot::IsVisible(player) Detour
 	DynamicDetour hBotVisiblePlayerDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(player)");
 	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
-	{
 		SetFailState("Failed to setup detour for CCSBot::IsVisible(player)");
-	}
 	
 	//CCSBot::GetPartPosition Detour
 	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");
 	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
-	{
 		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
-	}
 	
 	delete hGameData;
 }
@@ -5841,9 +5768,7 @@ public Action Timer_Zoomed(Handle hTimer, any client)
 	client = GetClientOfUserId(client);
 	
 	if(client != 0 && IsClientInGame(client))
-	{
 		g_bZoomed[client] = true;	
-	}
 	
 	return Plugin_Stop;
 }
@@ -5853,9 +5778,7 @@ public Action Timer_Breakable(Handle hTimer, any client)
 	client = GetClientOfUserId(client);
 	
 	if(client != 0 && IsClientInGame(client))
-	{
 		g_bDontSwitch[client] = false;	
-	}
 	
 	return Plugin_Stop;
 }
@@ -5912,16 +5835,12 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 						{
 							if (Math_GetRandomInt(1, 100) <= 90)
-							{
 								bShootSpine = true;
-							}
 						}
 						case 2, 3, 4, 30, 32, 36, 61, 63:
 						{
 							if (Math_GetRandomInt(1, 100) <= 30)
-							{
 								bShootSpine = true;
-							}
 						}
 						case 9, 11, 38:
 						{
