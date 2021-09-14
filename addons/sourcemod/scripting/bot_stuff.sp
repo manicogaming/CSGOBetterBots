@@ -3403,8 +3403,8 @@ public Action Team_Flames(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "nicoodoz");
 		ServerCommand("bot_add_ct %s", "roeJ");
+		ServerCommand("bot_add_ct %s", "nicoodoz");
 		ServerCommand("bot_add_ct %s", "HooXi");
 		ServerCommand("bot_add_ct %s", "Jabbi");
 		ServerCommand("bot_add_ct %s", "Zyphon");
@@ -3414,8 +3414,8 @@ public Action Team_Flames(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "nicoodoz");
 		ServerCommand("bot_add_t %s", "roeJ");
+		ServerCommand("bot_add_t %s", "nicoodoz");
 		ServerCommand("bot_add_t %s", "HooXi");
 		ServerCommand("bot_add_t %s", "Jabbi");
 		ServerCommand("bot_add_t %s", "Zyphon");
@@ -4542,15 +4542,14 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 			if (iActiveWeapon == -1) return Plugin_Continue;
 			
-			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-			bool bEveryoneDead = false;
+			bool bEveryoneDead;
 			
 			float fClientLoc[3], fClientEyes[3];
 			GetClientAbsOrigin(client, fClientLoc);
 			GetClientEyePosition(client, fClientEyes);
 			g_pCurrArea[client] = NavMesh_GetNearestArea(fClientLoc);
 			
-			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !eItems_IsDefIndexKnife(iDefIndex) && !g_bDontSwitch[client])
+			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 			{
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 				bEveryoneDead = true;
@@ -4579,8 +4578,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
 						}
-						else if (!bEveryoneDead && fPlantedC4Distance < 2000.0)
-							BotEquipBestWeapon(client, true);
 					}
 				}
 				
@@ -4972,19 +4969,6 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	
 	if(LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
 		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
-	
-	return Plugin_Continue;
-}
-
-public Action CS_OnCSWeaponDrop(int client, int iWeapon)
-{
-	if(IsValidEntity(iWeapon))
-	{
-		int iDefIndex = GetEntProp(iWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		
-		if(iDefIndex == 9)
-			return Plugin_Handled;
-	}
 	
 	return Plugin_Continue;
 }
