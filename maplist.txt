@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Sep 14 22:57:17 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Sep 16 23:58:54 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -191,6 +191,7 @@ de_dust2_night
 de_dust2_old
 de_dust2_original
 de_dust2_winter_2019
+de_dust2green
 de_dust_pcg_3k
 de_dynasty
 de_elysion

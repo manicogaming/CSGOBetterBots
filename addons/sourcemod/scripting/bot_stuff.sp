@@ -4836,7 +4836,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 18);
+			g_iRndExecute = Math_GetRandomInt(1, 19);
 			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareMirageExecutes();
 		}
