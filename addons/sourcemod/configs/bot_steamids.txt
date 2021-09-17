@@ -192,7 +192,7 @@
 	"RuStY" 			"122394166"	
 	"isak" 				"111644637"
 	"iM" 				"89984505"
-	//PDucks Players
+	//PD Players
 	"Patrick"			"64484395"
 	"polzerm" 			"184567823"
 	"AHEAD-" 			"163667056"
@@ -315,7 +315,7 @@
 	//SKADE Players
 	"Duplicate" 		"191809961"
 	"dennyslaw" 		"300693622"	
-	"Oxygen" 			"124914887"
+	"KalubeR" 			"132424531"
 	"Rainwaker" 		"177848062"	
 	"SHiPZ" 			"254948893"
 	//Singularity Players
@@ -408,12 +408,6 @@
 	"ps1cho" 			"194481853"
 	"N0R1" 				"120338342"
 	"habibi" 			"894074012"
-	//Dice Players
-	"XpG" 				"30253348"
-	"nonick" 			"63995864"
-	"Malzera" 			"101614032"
-	"Polox" 			"109597705"
-	"CamZ" 				"198983256"
 	//planB Players
 	"pony-san" 			"76320241"
 	"TWEEZY" 			"230582686"
@@ -482,10 +476,10 @@
 	"jeorgesnorts" 		"393603607"
 	//FATE Players
 	"Patrick--" 		"98715951"
-	"numb" 				"98486088"
+	"hybrid" 			"95772199"
 	"niki1" 			"932616892"
 	"rafftu" 			"78588859"
-	"KalubeR" 			"132424531"
+	"shaiK" 			"223291954"
 	//OG Players
 	"nikozan" 			"29470855"
 	"mantuu" 			"56166832"
@@ -517,7 +511,7 @@
 	"BOROS" 			"178773495"
 	"Thomas" 			"65182402"
 	//SAW Players
-	"arki"				"18055753" 
+	"story"				"105182632" 
 	"stadodo" 			"87137134"
 	"JUST" 				"52722111"
 	"MUTiRiS" 			"37715442"	
@@ -575,7 +569,7 @@
 	"arrozdoce" 		"13492074"
 	"ewjerkz" 			"302194534"
 	"DDias" 			"67343840"
-	"story" 			"105182632"
+	"Lr0z1n" 			"234244633"
 	//Tigers Players
 	"Aralio" 			"79809520"
 	"Feki" 				"119610566"
@@ -612,12 +606,6 @@
 	"sesL" 				"127191279"
 	"ADR1AN" 			"182076116"
 	"mvN" 				"165741598"
-	//Rebirth Players
-	"jsfeltner" 		"92128532"
-	"ethex" 			"233128855"
-	"kirai" 			"395057334"
-	"max" 				"403957259"
-	"seziwana" 			"8544011"
 	//Rooster Players
 	"DannyG"			"193412411" 
 	"asap" 				"1057961331"
@@ -816,12 +804,12 @@
 	"mikki" 			"80276147"
 	"akEz" 				"25850155"
 	"H4RR3"				"195566724"
-	//TC Players
-	"fabi" 				"24995103"
-	"tricky"			"291038798"
-	"la3euka" 			"127245065"
-	"Xant3r" 			"879040137"
-	"kissinho"			"63950749"
+	//CG Players
+	"ScrunK" 			"13840460"
+	"PANIX"				"241868664"
+	"Krimbo" 			"210365363"
+	"kRYSTAL" 			"17526007"
+	"stfN"				"47322750"
 	//Illuminar Players
 	"oskarish" 			"286156964"
 	"MWLKY"				"206859955"

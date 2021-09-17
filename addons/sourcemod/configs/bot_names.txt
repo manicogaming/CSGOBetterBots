@@ -192,12 +192,12 @@
 	"Zero" 				"GamerLegion"
 	"RuStY" 			"GamerLegion"	
 	"isak" 				"GamerLegion"
-	//PDucks Players
-	"Patrick" 			"PDucks"
-	"striNg" 			"PDucks"
-	"polzerm" 			"PDucks"
-	"AHEAD-" 			"PDucks"
-	"nipam" 			"PDucks"
+	//PD Players
+	"Patrick" 			"PD"
+	"striNg" 			"PD"
+	"polzerm" 			"PD"
+	"AHEAD-" 			"PD"
+	"nipam" 			"PD"
 	//HAVU Players
 	"ZOREE" 			"HAVU"
 	"sLowi" 			"HAVU"
@@ -315,7 +315,7 @@
 	//SKADE Players
 	"Duplicate" 		"SKADE"
 	"dennyslaw" 		"SKADE"	
-	"Oxygen" 			"SKADE"
+	"KalubeR" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
 	"SHiPZ" 			"SKADE"
 	//Singularity Players
@@ -408,12 +408,6 @@
 	"ps1cho" 			"GameAgents"
 	"N0R1" 				"GameAgents"
 	"habibi" 			"GameAgents"
-	//Dice Players
-	"XpG" 				"Dice"
-	"nonick" 			"Dice"
-	"Malzera" 			"Dice"
-	"Polox" 			"Dice"
-	"CamZ" 				"Dice"
 	//planB Players
 	"Knoxville" 		"planB"
 	"TWEEZY" 			"planB"	
@@ -483,8 +477,8 @@
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
-	"numb" 				"FATE"
-	"KalubeR" 			"FATE"	
+	"hybrid" 			"FATE"
+	"shaiK" 			"FATE"	
 	"niki1" 			"FATE"
 	//OG Players
 	"nikozan" 			"OG"
@@ -517,7 +511,7 @@
 	"BOROS" 			"Endpoint"
 	"Thomas" 			"Endpoint"
 	//SAW Players
-	"arki"				"SAW" 
+	"story"				"SAW" 
 	"stadodo" 			"SAW"
 	"JUST" 				"SAW"
 	"MUTiRiS" 			"SAW"	
@@ -574,7 +568,7 @@
 	"NABOWOW" 			"FTW"
 	"ewjerkz" 			"FTW"
 	"DDias" 			"FTW"
-	"story" 			"FTW"
+	"Lr0z1n" 			"FTW"
 	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"Aralio" 			"Tigers"
@@ -612,12 +606,6 @@
 	"ADR1AN" 			"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
-	//Rebirth Players
-	"ethex" 			"Rebirth"
-	"kirai" 			"Rebirth"
-	"jsfeltner" 		"Rebirth"
-	"max" 				"Rebirth"	
-	"seziwana" 			"Rebirth"	
 	//Rooster Players
 	"DannyG"			"Rooster" 
 	"asap" 				"Rooster"
@@ -816,12 +804,12 @@
 	"mikki" 			"777"
 	"akEz" 				"777"
 	"H4RR3"				"777"
-	//TC Players
-	"fabi" 				"TC"
-	"tricky"			"TC"
-	"la3euka" 			"TC"
-	"Xant3r" 			"TC"
-	"kissinho"			"TC"
+	//CG Players
+	"ScrunK" 			"CG"
+	"PANIX"				"CG"
+	"Krimbo" 			"CG"
+	"kRYSTAL" 			"CG"
+	"stfN"				"CG"
 	//Illuminar Players
 	"oskarish" 			"Illuminar"
 	"MWLKY"				"Illuminar"
