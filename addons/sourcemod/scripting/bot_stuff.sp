@@ -4996,6 +4996,23 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	return Plugin_Continue;
 }
 
+public Action CS_OnCSWeaponDrop(int client, int iWeapon)
+{
+	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+	{
+		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
+		if (IsValidEntity(iPrimary))
+		{
+			int iDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+			
+			if(iDefIndex == 9)
+				return Plugin_Handled;
+		}
+	}
+	
+	return Plugin_Continue;
+}
+
 public MRESReturn CCSBot_ThrowGrenade(int client, DHookParam hParams)
 {
 	if (BotMimic_IsPlayerMimicing(client))

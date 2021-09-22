@@ -20,4 +20,16 @@
 
 	}
 
+
+	"TSpawn_x"	"0.52"
+	"TSpawn_y"	"0.34"
+
+	"Hostage1_x"	"0.595"
+	"Hostage1_y"	"0.25"
+
+	"Hostage2_x"	"0.44"
+	"Hostage2_y"	"0.35"
+
+	"Hostage3_x"	"0.595"
+	"Hostage3_y"	"0.355"
 }

@@ -1,0 +1,25 @@
+//Map Overview for Counter-Strike Global Offensive 
+"de_lumen"
+{
+				"material"		"overviews/de_lumen_radar" 
+
+				"pos_x"			"-1991" 
+				"pos_y"			"1979" 
+				"scale"			"4.00" 
+				"rotate"			"" 
+				"zoom"			"" 
+
+
+// Icon Positions
+				"CTSpawn_x"		"0.27"
+				"CTSpawn_y"		"0.38"
+				"TSpawn_x"		"0.8"
+				"TSpawn_y"		"0.46"
+
+
+				"bombA_x"			"0.67"
+				"bombA_y"			"0.2"
+				"bombB_x"			"0.24"
+				"bombB_y"			"0.78"
+
+}
