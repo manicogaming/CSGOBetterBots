@@ -18,8 +18,7 @@ int g_iAgentCount;
 int g_iMusicKit[MAXPLAYERS + 1];
 int g_iCoin[MAXPLAYERS + 1];
 int g_iCustomPlayerChance[MAXPLAYERS + 1];
-int g_iCTModel[MAXPLAYERS + 1];
-int g_iTModel[MAXPLAYERS + 1];
+int g_iAgent[MAXPLAYERS + 1][4];
 int g_iPatchChance[MAXPLAYERS + 1];
 int g_iPatchComboChance[MAXPLAYERS + 1];
 int g_iRndPatchCombo[MAXPLAYERS + 1];
@@ -49,6 +48,8 @@ int g_iGloveItemIDHigh[MAXPLAYERS + 1];
 
 int g_iStatTrakKills[MAXPLAYERS + 1][1024];
 bool g_bKnifeHasStatTrak[MAXPLAYERS + 1][1024];
+
+char g_szModel[MAXPLAYERS+1][4][128];
 
 ArrayList g_ArrayWeapons[128] =  { null, ... };
 ArrayList g_ArrayGloves[128] =  { null, ... };
@@ -255,11 +256,13 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 	{
 		int iDefIndex;
 		int client;
+		int iTeam;
 		for (int i = 0; i < hMessage.GetRepeatedFieldCount("allplayerdata"); i++)
 		{
 			Protobuf allplayerdata = hMessage.ReadRepeatedMessage("allplayerdata", i);
 			
 			client = allplayerdata.ReadInt("entindex");
+			iTeam = GetClientTeam(client);
 			
 			if (IsValidClient(client))
 			{
@@ -289,7 +292,7 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						
 						items.SetInt64("itemid", itemID);
 					}
-					else if (iDefIndex < 4619)
+					else if (g_iAgent[client][iTeam] != iDefIndex)
 					{
 						if (IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
 						{
@@ -646,8 +649,13 @@ public void OnClientPostAdminCheck(int client)
 			
 			if (iRandomTAgent != -1 && iRandomCTAgent != -1)
 			{
-				g_iTModel[client] = g_ArrayTAgents.Get(iRandomTAgent);
-				g_iCTModel[client] = g_ArrayCTAgents.Get(iRandomCTAgent);
+				g_iAgent[client][CS_TEAM_T] = g_ArrayTAgents.Get(iRandomTAgent);
+				g_iAgent[client][CS_TEAM_CT] = g_ArrayCTAgents.Get(iRandomCTAgent);
+			
+				eItems_GetAgentPlayerModelByDefIndex(g_iAgent[client][CS_TEAM_CT], g_szModel[client][CS_TEAM_CT], 128);
+				PrecacheModel(g_szModel[client][CS_TEAM_CT]);
+				eItems_GetAgentPlayerModelByDefIndex(g_iAgent[client][CS_TEAM_T], g_szModel[client][CS_TEAM_T], 128);
+				PrecacheModel(g_szModel[client][CS_TEAM_T]);
 			}
 			
 			g_iPatchChance[client] = Math_GetRandomInt(1, 100);
@@ -740,31 +748,31 @@ public void OnClientPostAdminCheck(int client)
 				
 				switch (g_iSkinDefIndex[client][iWeaponDefIndex])
 				{
-					case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941, 996, 997, 998, 994, 1006, 1012, 1024, 1023, 1043:
+					case 562, 561, 560, 559, 558, 806, 696, 694, 693, 665, 610, 521, 462, 861, 941, 996, 997, 998, 994, 1006, 1012, 1024, 1023, 1043, 1087, 1106, 1107:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.65);
 					}
 					case 572, 571, 570, 569, 568, 413, 418, 419, 420, 421, 416, 415, 417, 618, 619, 617, 409, 38, 856, 855, 854, 853, 852, 453, 445, 213, 210, 197, 196, 71, 67, 61, 51, 48, 
-					37, 36, 34, 33, 32, 28, 1026, 1017:
+					37, 36, 34, 33, 32, 28, 1026, 1017, 879:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.08);
 					}
-					case 577, 576, 575, 574, 573, 808, 644, 1044:
+					case 577, 576, 575, 574, 573, 808, 644, 1044, 1114, 1115, 1116, 1117, 1118:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.85);
 					}
-					case 582, 581, 580:
+					case 582, 581, 580, 935, 927, 1084:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.48);
 					}
 					case 579, 578, 410, 411, 858, 857, 817, 807, 803, 802, 718, 710, 685, 664, 662, 654, 650, 645, 641, 626, 624, 622, 616, 599, 590, 549, 547, 542, 786, 785, 784, 783, 782, 
 					781, 780, 779, 778, 777, 776, 775, 534, 518, 499, 498, 482, 452, 451, 450, 423, 407, 406, 405, 402, 399, 393, 360, 355, 354, 349, 345, 337, 313, 312, 311, 310, 306, 305, 
 					280, 263, 257, 238, 237, 228, 224, 223, 919, 759, 757, 758, 760, 761, 862, 742, 867, 746, 743, 744, 739, 741, 868, 727, 728, 729, 730, 726, 733, 871, 870, 873, 970, 1027,
-					1015, 1021, 1019, 1020, 1051, 1049:
+					1015, 1021, 1019, 1020, 1051, 1049, 823, 827, 933, 829, 1056, 926, 929, 928, 931, 932, 934, 925, 1077, 1074, 1086, 1066:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.50);
 					}
-					case 98, 12, 40, 143, 5, 77, 72, 175, 735, 755, 753, 621, 620, 333, 332, 322, 297, 277, 101, 866, 151, 798, 147, 78, 1030, 170:
+					case 98, 12, 40, 143, 5, 77, 72, 175, 735, 755, 753, 621, 620, 333, 332, 322, 297, 277, 101, 866, 151, 798, 147, 78, 1030, 170, 1065:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.06, 0.80);
 					}
@@ -776,7 +784,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.01, 0.26);
 					}
-					case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913, 1016:
+					case 851, 813, 584, 793, 536, 523, 522, 438, 369, 362, 358, 339, 309, 295, 291, 269, 260, 256, 252, 249, 248, 246, 227, 225, 218, 913, 1016, 1053:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.40);
 					}
@@ -789,7 +797,7 @@ public void OnClientPostAdminCheck(int client)
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.75);
 					}
 					case 848, 837, 723, 721, 715, 712, 706, 687, 681, 678, 672, 653, 649, 646, 638, 632, 628, 585, 789, 488, 460, 435, 374, 372, 353, 344, 336, 315, 275, 270, 266, 903, 905, 
-					886, 859, 864, 734, 732, 950, 959, 966, 991, 990, 982, 993, 1013, 1005, 1025, 1022, 1042:
+					886, 859, 864, 734, 732, 950, 959, 966, 991, 990, 982, 993, 1013, 1005, 1025, 1022, 1042, 1095, 1064, 921:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.70);
 					}
@@ -802,7 +810,7 @@ public void OnClientPostAdminCheck(int client)
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.05, 1.00);
 					}
 					case 844, 839, 810, 720, 719, 707, 704, 699, 692, 667, 663, 611, 601, 600, 587, 799, 797, 529, 512, 507, 502, 495, 479, 467, 466, 465, 464, 457, 456, 454, 426, 401, 384, 
-					378, 273, 916, 910, 891, 892, 890, 942, 962, 972, 974, 984, 980, 323, 1010:
+					378, 273, 916, 910, 891, 892, 890, 942, 962, 972, 974, 984, 980, 323, 1010, 764, 1052, 1073, 1076:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.80);
 					}
@@ -810,11 +818,11 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.25, 0.80);
 					}
-					case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301, 1036, 1046:
+					case 841, 814, 812, 695, 501, 494, 493, 379, 376, 302, 301, 1036, 1046, 1102:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.90);
 					}
-					case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906, 863, 725, 872, 999:
+					case 835, 708, 702, 698, 688, 661, 656, 647, 640, 637, 444, 442, 434, 375, 906, 863, 725, 872, 999, 1094, 923, 818, 820, 822, 1060, 930, 1071, 1079, 1078:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.55);
 					}
@@ -827,7 +835,7 @@ public void OnClientPostAdminCheck(int client)
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.80);
 					}
 					case 805, 686, 682, 679, 659, 658, 598, 593, 550, 796, 795, 794, 537, 492, 477, 471, 459, 458, 404, 389, 371, 370, 338, 308, 250, 244, 243, 242, 241, 240, 236, 235, 756, 
-					763, 736, 869, 731, 952, 968, 977, 1028, 995, 1029, 1011, 1007, 1008, 1014, 1032:
+					763, 736, 869, 731, 952, 968, 977, 1028, 995, 1029, 1011, 1007, 1008, 1014, 1032, 1101, 1089, 819, 824, 826, 1055, 924, 1075:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.60);
 					}
@@ -883,7 +891,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.30);
 					}
-					case 608, 509:
+					case 608, 509, 825, 1058, 1083:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.44);
 					}
@@ -903,7 +911,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.66);
 					}
-					case 556:
+					case 556, 1099:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.77);
 					}
@@ -931,7 +939,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.61);
 					}
-					case 527, 180, 1034:
+					case 527, 180, 1034, 1088:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.76);
 					}
@@ -947,7 +955,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.67);
 					}
-					case 500, 914:
+					case 500, 914, 1067:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.62);
 					}
@@ -995,7 +1003,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.35, 0.80);
 					}
-					case 396:
+					case 396, 828:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.47);
 					}
@@ -1015,7 +1023,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.25);
 					}
-					case 366, 365, 276:
+					case 366, 365, 276, 1061:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.58);
 					}
@@ -1091,7 +1099,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.28);
 					}
-					case 226, 154:
+					case 226, 154, 1070:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.02, 0.40);
 					}
@@ -1139,7 +1147,7 @@ public void OnClientPostAdminCheck(int client)
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.12, 0.38);
 					}
-					case 911:
+					case 911, 1059:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.57);
 					}
@@ -1182,6 +1190,22 @@ public void OnClientPostAdminCheck(int client)
 					case 1050:
 					{
 						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.97);
+					}
+					case 1093:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.41);
+					}
+					case 821, 922, 1072:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.37);
+					}
+					case 765, 880, 1081, 1080, 1085:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 0.49);
+					}
+					case 1082:
+					{
+						g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.01, 0.52);
 					}
 					default:
 					{
@@ -1606,221 +1630,211 @@ public Action Timer_ApplyAgent(Handle hTimer, any client)
     {
         if (GetClientTeam(i) == CS_TEAM_CT)
 		{
-			char szModel[64];
+			SetEntityModel(i, g_szModel[i][CS_TEAM_CT]);
 			
-			if(eItems_GetAgentPlayerModelByDefIndex(g_iCTModel[i], szModel, sizeof(szModel)))
+			if (g_iPatchChance[i] <= 30)
 			{
-				SetEntityModel(i, szModel);
-				
-				if (g_iPatchChance[i] <= 30)
+				if (g_iPatchComboChance[i] <= 65)
 				{
-					if (g_iPatchComboChance[i] <= 65)
+					switch (g_iRndPatchCombo[i])
 					{
-						switch (g_iRndPatchCombo[i])
+						case 1:
 						{
-							case 1:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							}
-							case 2:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							}
-							case 3:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 4:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 5:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 6:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							}
-							case 7:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 8:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 9:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 10:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 11:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 12:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 13:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 14:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						}
+						case 2:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						}
+						case 3:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 4:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 5:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 6:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						}
+						case 7:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 8:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 9:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 10:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 11:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 12:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 13:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 14:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 						}
 					}
-					else
+				}
+				else
+				{
+					switch (g_iRndPatchCombo[i])
 					{
-						switch (g_iRndPatchCombo[i])
+						case 1:
 						{
-							case 1:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 2:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
-							}
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 2:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
 						}
 					}
-				}	
-			}
+				}
+			}	
 		}
 		else if (GetClientTeam(i) == CS_TEAM_T)
 		{
-			char szModel[64];
+			SetEntityModel(i, g_szModel[i][CS_TEAM_T]);
 			
-			if(eItems_GetAgentPlayerModelByDefIndex(g_iTModel[i], szModel, sizeof(szModel)))
+			if (g_iPatchChance[i] <= 40)
 			{
-				SetEntityModel(i, szModel);
-				
-				if (g_iPatchChance[i] <= 40)
+				if (g_iPatchComboChance[i] <= 65)
 				{
-					if (g_iPatchComboChance[i] <= 65)
+					switch (g_iRndPatchCombo[i])
 					{
-						switch (g_iRndPatchCombo[i])
+						case 1:
 						{
-							case 1:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							}
-							case 2:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							}
-							case 3:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 4:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 5:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 6:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							}
-							case 7:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 8:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 9:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 10:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							}
-							case 11:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 12:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 13:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 14:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+						}
+						case 2:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						}
+						case 3:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 4:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 5:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 6:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+						}
+						case 7:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 8:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 9:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 10:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+						}
+						case 11:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 12:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 13:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 14:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
 						}
 					}
-					else
+				}
+				else
+				{
+					switch (g_iRndPatchCombo[i])
 					{
-						switch (g_iRndPatchCombo[i])
+						case 1:
 						{
-							case 1:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-							}
-							case 2:
-							{
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
-								SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
-							}
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
+						}
+						case 2:
+						{
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
+							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
 						}
 					}
-				}	
-			}
+				}
+			}	
 		}
     }
 	

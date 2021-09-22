@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Wed Sep 22 17:49:31 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Wed Sep 22 23:24:20 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -159,6 +159,7 @@ de_breach
 de_bregov
 de_cache
 de_calamari
+de_calavera
 de_canals
 de_cargo
 de_cartel
@@ -209,6 +210,7 @@ de_fortress
 de_garrison
 de_golden
 de_graveyard
+de_grind
 de_guard
 de_hardrock
 de_heat_new
@@ -245,6 +247,7 @@ de_maya
 de_meteora
 de_mill_ce
 de_mirage
+de_mocha
 de_momentum
 de_mustang
 de_mutiny
@@ -256,6 +259,7 @@ de_ore
 de_overgrown
 de_overpass
 de_pit
+de_pitstop
 de_portugal_rc1
 de_pripyat
 de_rails
