@@ -256,13 +256,11 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 	{
 		int iDefIndex;
 		int client;
-		int iTeam;
 		for (int i = 0; i < hMessage.GetRepeatedFieldCount("allplayerdata"); i++)
 		{
 			Protobuf allplayerdata = hMessage.ReadRepeatedMessage("allplayerdata", i);
 			
 			client = allplayerdata.ReadInt("entindex");
-			iTeam = GetClientTeam(client);
 			
 			if (IsValidClient(client))
 			{
@@ -292,7 +290,7 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						
 						items.SetInt64("itemid", itemID);
 					}
-					else if (g_iAgent[client][iTeam] != iDefIndex)
+					else if (iDefIndex < 4613)
 					{
 						if (IsPlayerAlive(client) && !(iDefIndex == 41 || iDefIndex == 42 || iDefIndex == 59))
 						{

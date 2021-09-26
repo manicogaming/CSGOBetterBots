@@ -606,12 +606,12 @@
 	"sesL" 				"127191279"
 	"ADR1AN" 			"182076116"
 	"mvN" 				"165741598"
-	//Rooster Players
+	//Paradox Players
 	"DannyG"			"193412411" 
-	"asap" 				"1057961331"
+	"jcg" 				"242315956"
 	"chelleos" 			"198705922"
 	"Spudwrecker" 		"47084033"
-	"deqny" 			"113091620"
+	"dangeR" 			"307032635"
 	//Flames Players
 	"nicoodoz" 			"112851399"
 	"roeJ" 				"30968963"

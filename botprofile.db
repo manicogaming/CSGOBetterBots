@@ -410,7 +410,7 @@ ProP+Rifle+RiflePersonality "huNter-"
 	VoicePitch = 94
 End
 
-ProP+SniperPro+SniperPersonality "NiKo"
+ProP+SniperPro+SniperPersonality "AmaNEk"
 	VoicePitch = 111
 End
 
@@ -422,7 +422,7 @@ ProP+Rifle+RiflePersonality "nexa"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "AmaNEk"
+ProP+Rifle+RiflePersonality "NiKo"
 	VoicePitch = 100
 End
 
@@ -2516,13 +2516,13 @@ ProP+Rifle+RiflePersonality "sehza"
 	VoicePitch = 81
 End
 
-//Rooster Players
+//Paradox Players
 
 ProP+Rifle+RiflePersonality "DannyG"
 	VoicePitch = 94
 End
 
-ProP+SniperPro+SniperPersonality "asap"
+ProP+SniperPro+SniperPersonality "jcg"
 	VoicePitch = 91
 End
 
@@ -2534,7 +2534,7 @@ ProP+Rifle+RiflePersonality "Spudwrecker"
 	VoicePitch = 78
 End
 
-ProP+Rifle+RiflePersonality "deqny"
+ProP+Rifle+RiflePersonality "dangeR"
 	VoicePitch = 81
 End
 

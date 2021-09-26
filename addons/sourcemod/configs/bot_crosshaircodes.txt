@@ -606,12 +606,12 @@
 	"sesL" 				"CSGO-xP6vU-YwBOj-z5PaJ-F2NOy-tDu8O"
 	"ADR1AN" 			"CSGO-Xav5B-OtMwt-hny7E-C87XK-oWsFF"
 	"mvN" 				"CSGO-Wixho-qVUk4-yzRei-Zy2ox-KaapG"
-	//Rooster Players
+	//Paradox Players
 	"DannyG"			"CSGO-XS5AW-wOq8u-FQzWO-pUujx-JTDND" 
-	"asap" 				"CSGO-jdFn7-zafcJ-QZVPD-cOho7-Thj5P"
+	"jcg" 				"CSGO-j9LqL-r4meO-9hiMu-VeujT-fxwPB"
 	"chelleos" 			"CSGO-JMOnx-cFmoU-UdWsm-MA4AH-PHPYE"
 	"Spudwrecker" 		"CSGO-WyuDy-V93EZ-BLoi8-esnWP-HiTiA"
-	"deqny" 			"CSGO-Qm58f-6o72j-VEULt-BbqXT-e3c7L"
+	"dangeR" 			"CSGO-Wf7fW-JZWn8-V9Jhh-wCfQq-d7qRP"
 	//Flames Players
 	"nicoodoz" 			"CSGO-eHROm-TtBf4-Hm3vE-cHezV-KudqA"
 	"roeJ" 				"CSGO-wGtmS-77m5n-jr9cz-PXEJm-Q6izO"

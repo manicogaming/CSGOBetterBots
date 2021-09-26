@@ -234,7 +234,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_sinners", Team_SINNERS);
 	RegConsoleCmd("team_impact", Team_Impact);
 	RegConsoleCmd("team_ern", Team_ERN);
-	RegConsoleCmd("team_rooster", Team_Rooster);
+	RegConsoleCmd("team_paradox", Team_Paradox);
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_exploit", Team_eXploit);
 	RegConsoleCmd("team_ep", Team_EP);
@@ -3303,7 +3303,7 @@ public Action Team_ERN(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Rooster(int client, int iArgs)
+public Action Team_Paradox(int client, int iArgs)
 {
 	char szArg[12];
 	GetCmdArg(1, szArg, sizeof(szArg));
@@ -3312,22 +3312,22 @@ public Action Team_Rooster(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DannyG");
-		ServerCommand("bot_add_ct %s", "asap");
+		ServerCommand("bot_add_ct %s", "jcg");
 		ServerCommand("bot_add_ct %s", "chelleos");
 		ServerCommand("bot_add_ct %s", "Spudwrecker");
-		ServerCommand("bot_add_ct %s", "deqny");
-		ServerCommand("mp_teamlogo_1 roos");
+		ServerCommand("bot_add_ct %s", "dangeR");
+		ServerCommand("mp_teamlogo_1 para");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DannyG");
-		ServerCommand("bot_add_t %s", "asap");
+		ServerCommand("bot_add_t %s", "jcg");
 		ServerCommand("bot_add_t %s", "chelleos");
 		ServerCommand("bot_add_t %s", "Spudwrecker");
-		ServerCommand("bot_add_t %s", "deqny");
-		ServerCommand("mp_teamlogo_2 roos");
+		ServerCommand("bot_add_t %s", "dangeR");
+		ServerCommand("mp_teamlogo_2 para");
 	}
 	
 	return Plugin_Handled;
@@ -4522,39 +4522,12 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				if (g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && !BotIsHiding(client) && !BotMimic_IsPlayerMimicing(client))
 				{					
 					//Rifles
-					int iAWP = GetNearestEntity(client, "weapon_awp");
 					int iAK47 = GetNearestEntity(client, "weapon_ak47");
 					int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 					int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 					int iPrimaryDefIndex;
 
-					if (IsValidEntity(iAWP))
-					{
-						float fAWPLocation[3];
-
-						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
-
-						if (iPrimaryDefIndex != 9)
-						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
-
-							if (GetVectorLength(fAWPLocation) > 0.0 && IsPointVisible(fClientEyes, fAWPLocation))
-							{
-								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
-
-								if (GetVectorDistance(fClientLoc, fAWPLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false);
-							}
-						}
-						else if (iPrimary == -1)
-						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
-
-							if (GetVectorLength(fAWPLocation) > 0.0 && IsPointVisible(fClientEyes, fAWPLocation))
-								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
-						}
-					}
-					else if (IsValidEntity(iAK47))
+					if (IsValidEntity(iAK47))
 					{
 						float fAK47Location[3];
 
@@ -4993,23 +4966,6 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 			}
 		}
 	}
-	return Plugin_Continue;
-}
-
-public Action CS_OnCSWeaponDrop(int client, int iWeapon)
-{
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
-		int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-		if (IsValidEntity(iPrimary))
-		{
-			int iDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
-			
-			if(iDefIndex == 9)
-				return Plugin_Handled;
-		}
-	}
-	
 	return Plugin_Continue;
 }
 

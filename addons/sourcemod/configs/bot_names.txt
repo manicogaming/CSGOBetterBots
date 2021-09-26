@@ -606,12 +606,12 @@
 	"ADR1AN" 			"ERN"	
 	"mvN" 				"ERN"
 	"sesL" 				"ERN"
-	//Rooster Players
-	"DannyG"			"Rooster" 
-	"asap" 				"Rooster"
-	"chelleos" 			"Rooster"
-	"Spudwrecker" 		"Rooster"
-	"deqny" 			"Rooster"
+	//Paradox Players
+	"DannyG"			"Paradox" 
+	"jcg" 				"Paradox"
+	"chelleos" 			"Paradox"
+	"Spudwrecker" 		"Paradox"
+	"dangeR" 			"Paradox"
 	//Flames Players
 	"nicoodoz" 			"Flames"
 	"roeJ" 				"Flames"
