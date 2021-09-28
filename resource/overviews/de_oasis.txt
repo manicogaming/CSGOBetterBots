@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_oasis"
+{
+	"CTSpawn_x" "0.550000"
+	"CTSpawn_y" "0.100000"
+	"TSpawn_x" "0.480000"
+	"TSpawn_y" "0.940000"
+	"material" "overviews/de_oasis_radar"
+	"pos_x" "-3130.000000"
+	"pos_y" "1568.000000"
+	"scale" "4.360000"
+}
