@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Sep 28 22:48:14 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Sep 30 23:21:59 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -257,6 +257,7 @@ de_neighbors_v8
 de_nuke
 de_nuke_halloween
 de_nuke_ramps
+de_oasis
 de_ore
 de_overgrown
 de_overpass
