@@ -541,7 +541,7 @@
 	"v1N" 				"mCon"
 	"MaximN" 			"mCon"
 	//KOVA Players
-	"pietola" 			"KOVA"
+	"zks" 				"KOVA"
 	"spargo" 			"KOVA"
 	"uli" 				"KOVA"
 	"airax" 			"KOVA"

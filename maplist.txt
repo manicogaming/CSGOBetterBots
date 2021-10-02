@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Thu Sep 30 23:21:59 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Oct 02 00:17:52 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -121,6 +121,7 @@ cs_militia
 cs_motel
 cs_museum
 cs_office
+cs_office_legacy
 cs_renovation
 cs_siege
 cs_warmblow_beta01

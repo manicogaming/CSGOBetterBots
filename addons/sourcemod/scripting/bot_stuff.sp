@@ -2981,7 +2981,7 @@ public Action Team_KOVA(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "pietola");
+		ServerCommand("bot_add_ct %s", "zks");
 		ServerCommand("bot_add_ct %s", "spargo");
 		ServerCommand("bot_add_ct %s", "uli");
 		ServerCommand("bot_add_ct %s", "airax");
@@ -2992,7 +2992,7 @@ public Action Team_KOVA(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "pietola");
+		ServerCommand("bot_add_t %s", "zks");
 		ServerCommand("bot_add_t %s", "spargo");
 		ServerCommand("bot_add_t %s", "uli");
 		ServerCommand("bot_add_t %s", "airax");

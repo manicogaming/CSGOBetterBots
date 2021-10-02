@@ -541,7 +541,7 @@
 	"v1N" 				"CSGO-kLaps-qtGi5-rxuTV-u62hb-5bq3B"
 	"kzealos" 			"CSGO-wrsFL-CHT73-3Nbu2-DZO3d-7uDmQ"
 	//KOVA Players
-	"pietola" 			"CSGO-eQNae-n4Gfh-ohFBC-jeXEU-sSBUM"
+	"zks" 				"CSGO-Wr2Mo-jApDy-QGWdD-4yCLh-yW43L"
 	"spargo" 			"CSGO-RSyTi-k855k-wKPKM-EFe95-9DmDA"
 	"uli" 				"CSGO-OozuC-Ly8uB-y4Bee-w2DAG-94GSQ"
 	"airax" 			"CSGO-NhjxP-eLSNt-zxCUw-2HmUn-RfK5O"

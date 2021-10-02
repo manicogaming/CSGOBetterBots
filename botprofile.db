@@ -2276,7 +2276,7 @@ End
 
 //KOVA Players
 
-ProP+Rifle+RiflePersonality "pietola"
+ProP+Rifle+RiflePersonality "zks"
 	VoicePitch = 108
 End
 
