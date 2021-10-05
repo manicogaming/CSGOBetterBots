@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Oct 02 00:17:52 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Oct 04 23:36:24 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -60,6 +60,7 @@ ar_dizzy
 ar_fjord
 ar_lunacy
 ar_monastery
+ar_poolstay
 ar_shoots
 awp_1337
 awp_crash_eq
@@ -122,6 +123,7 @@ cs_motel
 cs_museum
 cs_office
 cs_office_legacy
+cs_outpost
 cs_renovation
 cs_siege
 cs_warmblow_beta01
@@ -259,14 +261,18 @@ de_nuke
 de_nuke_halloween
 de_nuke_ramps
 de_oasis
+de_old_monastery
 de_ore
 de_overgrown
 de_overpass
+de_pharaoh
 de_pit
 de_pitstop
 de_portugal_rc1
 de_pripyat
+de_prodigy
 de_rails
+de_ramis
 de_ravine
 de_region
 de_republic
@@ -380,6 +386,7 @@ mx_tree_b1
 nyaarena
 oa_sentinel1
 pet_sematary_final
+quarrel
 sj_dustland
 workshop/467786170/tr_blank
 training1

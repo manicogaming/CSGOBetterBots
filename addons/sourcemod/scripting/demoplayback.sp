@@ -288,8 +288,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		}
 		
 		float fNormalizedAngles[3];
-		fNormalizedAngles[0] = AngleNormalize(g_fAngles[g_iCurrentTick[client]][0]);
-		fNormalizedAngles[1] = AngleNormalize(g_fAngles[g_iCurrentTick[client]][1]);
+		fNormalizedAngles[0] = NormalizeAngle(g_fAngles[g_iCurrentTick[client]][0]);
+		fNormalizedAngles[1] = NormalizeAngle(g_fAngles[g_iCurrentTick[client]][1]);
 		
 		Array_Copy(fNormalizedAngles, fAngles, 2);
 		
@@ -396,24 +396,8 @@ void ParseTicks()
 	delete kv;
 }
 
-stock float AngleNormalize(float fAngle)
-{
-	fAngle = fmodf(fAngle, 360.0);
-	if (fAngle > 180) 
-	{
-		fAngle -= 360;
-	}
-	if (fAngle < -180)
-	{
-		fAngle += 360;
-	}
-	
-	return fAngle;
-}
-
-stock float fmodf(float fNumber, float fDenom)
-{
-	return fNumber - RoundToFloor(fNumber / fDenom) * fDenom;
+stock float NormalizeAngle(float fValue) {
+	return fValue - 360.0 * RoundToFloor((fValue + 180.0) / 360.0);
 }
 
 stock bool IsValidClient(int client)
