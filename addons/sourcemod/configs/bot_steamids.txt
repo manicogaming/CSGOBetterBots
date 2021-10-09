@@ -37,7 +37,7 @@
 	"NiKo" 				"81417650"
 	"AmaNEk" 			"108679223"
 	//fnatic Players
-	"Jackinho" 			"111823952"
+	"smooya" 			"211423593"
 	"ALEX" 				"44605706"
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
@@ -245,7 +245,7 @@
 	"XELLOW" 			"92089093"
 	"Blytz" 			"101848953"
 	"lauNX" 			"1012530125"
-	"mhN1" 				"195697267"
+	"renne" 			"172130207"
 	//PACT Players
 	"Sobol" 			"190359589"
 	"lunAtic" 			"27202715"
@@ -344,7 +344,7 @@
 	"n0tice" 			"71806151"
 	//Bravado Players
 	"flexeeee" 			"177739017"	
-	"Detrony" 			"27120041"
+	"SloWye" 			"50695439"
 	"TheM4N" 			"84708704"
 	"Wip3ouT" 			"208829044"
 	".exe" 				"302798328"
@@ -402,12 +402,12 @@
 	"flying" 			"441964070"
 	"Viva" 				"191787089"
 	"rage" 				"398159133"
-	//GameAgents Players
-	"flow" 				"221929439"
-	"sl3nd" 			"137805965"
-	"ps1cho" 			"194481853"
-	"N0R1" 				"120338342"
-	"habibi" 			"894074012"
+	//Finest Players
+	"mar" 				"158849219"
+	"anarkez" 			"73126768"
+	"kreaz" 			"116979891"
+	"robiin" 			"41292034"
+	"shokz" 			"39590183"
 	//planB Players
 	"pony-san" 			"76320241"
 	"TWEEZY" 			"230582686"
@@ -584,7 +584,7 @@
 	"rox" 				"897065446"
 	//Sinister5 Players
 	"Chappy" 			"86296457"
-	"FROZ3N" 			"110202505"
+	"scheeR" 			"136912625"
 	"Triton" 			"135933575"
 	"uDEADSHOT" 		"235492183"
 	"Ruben" 			"132160849"	
@@ -692,7 +692,7 @@
 	"pendzel"			"102726701"
 	//BP Players
 	"coolio" 			"119009553"
-	"mar" 				"158849219"
+	"torzsi" 			"395473484"
 	"kory" 				"67382466"
 	"fleav" 			"189640934"
 	"Cr0n0s" 			"39395361"
@@ -731,19 +731,13 @@
 	"kustoM" 			"22240693"
 	"Tiaantjie" 		"115831324"
 	"takbok" 			"3026299"
-	"slayeRyEyE"		"74578852"
+	"FROZ3N"			"110202505"
 	//LEISURE Players
 	"get"				"28333977"
 	"rome"				"41470786"
 	"raveN"				"799911956"
 	"d1cer"				"158737140"
 	"oddo"				"39664636"
-	//Paquetá Players
-	"DeStiNy" 			"89528706"
-	"nython" 			"170224923"
-	"dav1d" 			"160225583"
-	"KHTEX" 			"82196374"
-	"iDk"				"106435802"
 	//BNB Players
 	"Jonji" 			"114675386"
 	"Junior" 			"103793230"

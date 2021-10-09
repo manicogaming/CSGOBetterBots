@@ -432,7 +432,7 @@ ProP+Rifle+RiflePersonality "ALEX"
 	VoicePitch = 93
 End
 
-ProP+SniperPro+SniperPersonality "Jackinho"
+ProP+SniperPro+SniperPersonality "smooya"
 	VoicePitch = 76
 End
 
@@ -1192,7 +1192,7 @@ ProP+Rifle+RiflePersonality "lauNX"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "mhN1"
+ProP+Rifle+RiflePersonality "renne"
 	VoicePitch = 88
 End
 
@@ -1554,7 +1554,7 @@ ProP+Rifle+RiflePersonality "TheM4N"
 	VoicePitch = 84
 End
 
-ProP+SniperPro+SniperPersonality "Detrony"
+ProP+SniperPro+SniperPersonality "SloWye"
 	VoicePitch = 76
 End
 
@@ -1768,25 +1768,25 @@ ProP+Rifle+RiflePersonality "rage"
 	VoicePitch = 111
 End
 
-//GameAgents Players
+//Finest Players
 
-ProP+Rifle+RiflePersonality "flow"
+ProP+Rifle+RiflePersonality "mar"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "sl3nd"
+ProP+SniperPro+SniperPersonality "anarkez"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "ps1cho"
+ProP+Rifle+RiflePersonality "kreaz"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "N0R1"
+ProP+Rifle+RiflePersonality "robiin"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "habibi"
+ProP+Rifle+RiflePersonality "shokz"
 	VoicePitch = 94
 End
 
@@ -2434,7 +2434,7 @@ ProP+Rifle+RiflePersonality "Chappy"
 	VoicePitch = 93
 End
 
-ProP+SniperPro+SniperPersonality "FROZ3N"
+ProP+SniperPro+SniperPersonality "scheeR"
 	VoicePitch = 88
 End
 
@@ -2830,7 +2830,7 @@ ProP+Rifle+RiflePersonality "coolio"
 	VoicePitch = 87
 End
 
-ProP+SniperPro+SniperPersonality "mar"
+ProP+SniperPro+SniperPersonality "torzsi"
 	VoicePitch = 85
 End
 
@@ -2974,7 +2974,7 @@ ProP+Rifle+RiflePersonality "takbok"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "slayeRyEyE"
+ProP+Rifle+RiflePersonality "FROZ3N"
 	VoicePitch = 96
 End
 
@@ -2998,28 +2998,6 @@ End
 
 ProP+Rifle+RiflePersonality "oddo"
 	VoicePitch = 75
-End
-
-//Paquetá Players
-
-ProP+Rifle+RiflePersonality "DeStiNy"
-	VoicePitch = 83
-End
-
-ProP+SniperPro+SniperPersonality "nython"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "dav1d"
-	VoicePitch = 103
-End
-
-ProP+Rifle+RiflePersonality "KHTEX"
-	VoicePitch = 93
-End
-
-ProP+Rifle+RiflePersonality "iDk"
-	VoicePitch = 85
 End
 
 //BNB Players

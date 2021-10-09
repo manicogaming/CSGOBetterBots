@@ -37,7 +37,7 @@
 	"NiKo" 				"G2"
 	"AmaNEk" 			"G2"
 	//fnatic Players
-	"Jackinho" 			"fnatic"
+	"smooya" 			"fnatic"
 	"ALEX" 				"fnatic"
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
@@ -245,7 +245,7 @@
 	"XELLOW" 			"Nexus"
 	"Blytz" 			"Nexus"
 	"lauNX" 			"Nexus"
-	"mhN1" 				"Nexus"
+	"renne" 			"Nexus"
 	//PACT Players
 	"Sobol" 			"PACT"
 	"lunAtic" 			"PACT"
@@ -344,7 +344,7 @@
 	"n0tice" 			"ECB"
 	//Bravado Players
 	"TheM4N" 			"Bravado"
-	"Detrony" 			"Bravado"
+	"SloWye" 			"Bravado"
 	"Wip3ouT" 			"Bravado"
 	"flexeeee" 			"Bravado"	
 	".exe" 				"Bravado"
@@ -402,12 +402,12 @@
 	"flying" 			"IG"
 	"Viva" 				"IG"
 	"rage" 				"IG"
-	//GameAgents Players
-	"flow" 				"GameAgents"
-	"sl3nd" 			"GameAgents"
-	"ps1cho" 			"GameAgents"
-	"N0R1" 				"GameAgents"
-	"habibi" 			"GameAgents"
+	//Finest Players
+	"mar" 				"Finest"
+	"anarkez" 			"Finest"
+	"kreaz" 			"Finest"
+	"robiin" 			"Finest"
+	"shokz" 			"Finest"
 	//planB Players
 	"Knoxville" 		"planB"
 	"TWEEZY" 			"planB"	
@@ -584,7 +584,7 @@
 	"rox" 				"9z"
 	//Sinister5 Players
 	"Chappy" 			"Sinister5"
-	"FROZ3N" 			"Sinister5"
+	"scheeR" 			"Sinister5"
 	"Triton" 			"Sinister5"
 	"uDEADSHOT" 		"Sinister5"
 	"Ruben" 			"Sinister5"	
@@ -692,7 +692,7 @@
 	"pendzel"			"AVEZ"
 	//BP Players
 	"coolio" 			"BP"
-	"mar" 				"BP"
+	"torzsi" 			"BP"
 	"kory" 				"BP"
 	"fleav" 			"BP"
 	"Cr0n0s"			"BP"
@@ -731,19 +731,13 @@
 	"kustoM" 			"Big5"
 	"Tiaantjie" 		"Big5"
 	"takbok" 			"Big5"
-	"slayeRyEyE"		"Big5"
+	"FROZ3N"			"Big5"
 	//LEISURE Players
 	"get" 				"LEISURE"
 	"rome" 				"LEISURE"
 	"raveN" 			"LEISURE"
 	"d1cer" 			"LEISURE"
 	"oddo"				"LEISURE"
-	//Paquetá Players
-	"DeStiNy" 			"Paquetá"
-	"nython" 			"Paquetá"
-	"dav1d" 			"Paquetá"
-	"KHTEX" 			"Paquetá"
-	"iDk"				"Paquetá"
 	//BNB Players
 	"Jonji" 			"BNB"
 	"Junior" 			"BNB"

@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Mon Oct 04 23:36:24 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Fri Oct 08 20:41:35 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -18,6 +18,11 @@ $2000$_japan
 7th_mythic_realistic_v2
 828_dust
 [2stoned]xxl_cs
+workshop/172356196/ac_weapons_hostages
+workshop/1098307825/achievement_hostage
+workshop/1864499324/achievement_rampage
+workshop/149742965/achievement_targethardened
+workshop/171991017/achievement_totte_nades
 aim_ak-47_go
 aim_ak-colt_v2
 aim_ak-colt_v4
@@ -41,6 +46,7 @@ aim_map
 aim_map2
 aim_map_duelies
 aim_map_gamma
+workshop/2223117368/aim_map_tiagovski
 aim_notsocrazyjump
 aim_poolparty_crashz
 aim_pro
@@ -54,6 +60,7 @@ aim_treearena
 aim_warehouse
 aim_warmup
 aim_winter_deagle_up2010
+workshop/368026786/aimtraindriving_v3
 ar_baggage
 ar_cbq
 ar_dizzy
@@ -92,8 +99,11 @@ awp_roost_2020
 awp_rp94
 awp_source
 ba_winterforest_b1
+workshop/1941239302/blast_performance
 c19_tilante
 carparkm1
+workshop/2422321624/clutches_cache
+workshop/1325659427/config_generator
 cs_1337_assault_b2
 cs_agency
 cs_apollo
@@ -121,10 +131,11 @@ cs_mansion
 cs_militia
 cs_motel
 cs_museum
-cs_office
+workshop/1528062576/cs_office
 cs_office_legacy
 cs_outpost
 cs_renovation
+cs_residence
 cs_siege
 cs_warmblow_beta01
 de_3rdstrike
@@ -175,6 +186,7 @@ de_chinatown
 de_chlore
 de_chlorine
 de_cluj
+workshop/145572032/de_clusterstruck
 de_coast
 de_codewise2
 de_coldwater
@@ -274,9 +286,11 @@ de_prodigy
 de_rails
 de_ramis
 de_ravine
+de_reberth
 de_region
 de_republic
 de_resort
+de_riverside_rc2
 de_ruins
 de_rush
 de_russka_b2
@@ -288,6 +302,7 @@ de_seaside
 de_season
 de_shortdust
 de_shortnuke
+workshop/416884493/de_shorttrain
 de_snowcapped_csgo
 de_spain
 de_sparity_v41
@@ -386,9 +401,16 @@ mx_tree_b1
 nyaarena
 oa_sentinel1
 pet_sematary_final
+workshop/1310094870/ph_mirage
 quarrel
+workshop/419404847/recoil_master
 sj_dustland
+workshop/771965169/surf_how2surf
+workshop/1974238958/the_clukva_d
 workshop/467786170/tr_blank
 training1
+workshop/143904777/training_aim_csgo
+workshop/213240871/training_aim_csgo2
 ww_skyrail
+workshop/308490450/xhair_v3
 xmas_nipperhouse
