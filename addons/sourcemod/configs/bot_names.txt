@@ -80,8 +80,8 @@
 	"FalleN" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"rallen" 			"AGO"
-	"snatchie" 			"AGO"
+	"kRaSnaL" 			"AGO"
+	"mhL" 				"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
@@ -162,12 +162,6 @@
 	"Grus" 				"Apeks"
 	"Relaxa" 			"Apeks"
 	"dennis" 			"Apeks"
-	//Bravos Players
-	"WOOD7" 			"Bravos"
-	"Tuurtle" 			"Bravos"
-	"danoco" 			"Bravos"
-	"JOTA" 				"Bravos"
-	"Leomonster" 		"Bravos"
 	//RNG Players
 	"INS" 				"RNG"
 	"sico" 				"RNG"
@@ -427,8 +421,8 @@
 	"phr" 				"Wisla"
 	"jedqr" 			"Wisla"
 	//Imperial Players
-	"fer" 				"Imperial"
-	"piria" 			"Imperial"
+	"zqk" 				"Imperial"
+	"horvy" 			"Imperial"
 	"ckzao" 			"Imperial"
 	"f4stzin" 			"Imperial"
 	"SHOOWTiME" 		"Imperial"	
@@ -442,8 +436,8 @@
 	"byali" 			"Izako"
 	"Vegi" 				"Izako"
 	"STOMP" 			"Izako"
-	"Enzo" 				"Izako"
-	"TOAO" 				"Izako"
+	"repo" 				"Izako"
+	"suonko" 			"Izako"
 	//ATK Players
 	"bLazE" 			"ATK"
 	"MisteM" 			"ATK"
@@ -585,8 +579,8 @@
 	//Sinister5 Players
 	"Chappy" 			"Sinister5"
 	"scheeR" 			"Sinister5"
-	"Triton" 			"Sinister5"
-	"uDEADSHOT" 		"Sinister5"
+	"Bam999" 			"Sinister5"
+	"Glitch" 			"Sinister5"
 	"Ruben" 			"Sinister5"	
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
@@ -680,9 +674,9 @@
 	"ALONZO"			"Supremacy"
 	//x6tence Players
 	"flowX" 			"x6tence"
-	"Vaircuss" 			"x6tence"
-	"PreSs" 			"x6tence"
-	"hadess" 			"x6tence"
+	"SOKER" 			"x6tence"
+	"Ezetapsss" 		"x6tence"
+	"GOYO007" 			"x6tence"
 	"roGerzz"			"x6tence"
 	//AVEZ Players
 	"LeS" 				"AVEZ"
@@ -746,9 +740,9 @@
 	"Shakezullah"		"BNB"
 	//Nation Players
 	"kNgV-" 			"Nation"
-	"HEN1" 				"Nation"
+	"fer" 				"Nation"
 	"leo_drk" 			"Nation"
-	"LUCAS1" 			"Nation"
+	"trk" 				"Nation"
 	"v$m"				"Nation"
 	//Eriness Players
 	"replay" 			"Eriness"
@@ -762,18 +756,6 @@
 	"NickelBack" 		"Entropiq"
 	"Krad" 				"Entropiq"
 	"Forester"			"Entropiq"
-	//GGPR Players
-	"lowrider" 			"GGPR"
-	"Inseaniac" 		"GGPR"
-	"BeaKie" 			"GGPR"
-	"xCeeD" 			"GGPR"
-	"jtmythic"			"GGPR"
-	//Huat Players
-	"nephh" 			"Huat"
-	"splashske" 		"Huat"
-	"spielz" 			"Huat"
-	"moxie" 			"Huat"
-	"Retla"				"Huat"
 	//Checkmate Players
 	"bLitz" 			"Checkmate"
 	"cool4st" 			"Checkmate"

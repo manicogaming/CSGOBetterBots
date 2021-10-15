@@ -156,6 +156,11 @@
 				//Is inside CCSBot::DebugDisplay near the string 'SafeTime: %3.2f'
 				"windows"	   "15456"
 			}
+			"CCSBot::m_isAttacking"
+			{
+				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
+				"windows"	   "16024"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
@@ -315,7 +320,7 @@
 				"windows"
 				{
 					"offset"	"942h"
-					"verify"	"\xE8\x99\x08\xF5\xFF\x84\xC0"
+					"verify"	"\xE8\xA9\x08\xF5\xFF\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}

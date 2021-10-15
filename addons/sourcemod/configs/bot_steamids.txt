@@ -80,8 +80,8 @@
 	"FalleN" 			"424467"
 	//AGO Players
 	"Furlan" 			"177495873"
-	"rallen" 			"31166738"
-	"snatchie" 			"111436809"
+	"kRaSnaL" 			"336152206"
+	"mhL" 				"180124403"
 	"F1KU" 				"292168772"
 	"leman" 			"40398517"
 	//ENCE Players
@@ -162,12 +162,6 @@
 	"Grus" 				"34633571"
 	"dennis" 			"108076825"
 	"Relaxa" 			"169700429"
-	//Bravos Players
-	"WOOD7" 			"42876435"
-	"Tuurtle" 			"34114868"
-	"danoco" 			"34622275"
-	"JOTA" 				"94554756"
-	"Leomonster" 		"318176128"
 	//RNG Players
 	"INS" 				"26946895"
 	"sico" 				"39266546"
@@ -427,8 +421,8 @@
 	"phr" 				"19304486"
 	"jedqr" 			"125090121"
 	//Imperial Players
-	"fer" 				"38921219"
-	"piria" 			"436072455"
+	"zqk" 				"4032008"
+	"horvy" 			"11050533"
 	"SHOOWTiME" 		"97938914"	
 	"ckzao" 			"56540556"	
 	"f4stzin" 			"476343738"	
@@ -441,8 +435,8 @@
 	//Izako Players
 	"Vegi" 				"90369423"
 	"STOMP" 			"51242187"
-	"Enzo" 				"71273322"
-	"TOAO" 				"196107432"
+	"repo" 				"79362456"
+	"suonko" 			"259158584"
 	"byali" 			"18860354"
 	//ATK Players
 	"bLazE" 			"209701855"
@@ -585,8 +579,8 @@
 	//Sinister5 Players
 	"Chappy" 			"86296457"
 	"scheeR" 			"136912625"
-	"Triton" 			"135933575"
-	"uDEADSHOT" 		"235492183"
+	"Bam999" 			"243153539"
+	"Glitch" 			"74321321"
 	"Ruben" 			"132160849"	
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
@@ -679,11 +673,11 @@
 	"LKN" 				"1020728718"
 	"ALONZO" 			"393298220"
 	//x6tence Players
-	"Vaircuss" 			"417969743"
-	"hadess" 			"851739564"
+	"SOKER" 			"28441993"
+	"GOYO007" 			"298940585"
 	"roGerzz" 			"213606813"
 	"flowX" 			"228626739"
-	"PreSs" 			"396848612"
+	"Ezetapsss" 		"370300960"
 	//AVEZ Players
 	"LeS" 				"174749173"
 	"fanatyk" 			"321895076"
@@ -746,9 +740,9 @@
 	"Shakezullah"		"68248927"
 	//Nation Players
 	"kNgV-" 			"6732863"
-	"HEN1" 				"57761535"
+	"fer" 				"38921219"
 	"leo_drk" 			"58291277"
-	"LUCAS1" 			"4780624"
+	"trk" 				"74113976"
 	"v$m"				"51467095"
 	//Eriness Players
 	"replay" 			"298288602"
@@ -762,18 +756,6 @@
 	"NickelBack" 		"1882779"
 	"Krad" 				"71642904"
 	"Forester"			"67083025"
-	//GGPR Players
-	"lowrider" 			"16402572"
-	"Inseaniac" 		"303757892"
-	"BeaKie" 			"95366213"
-	"xCeeD" 			"180524431"
-	"jtmythic"			"182274423"
-	//Huat Players
-	"nephh" 			"257859284"
-	"splashske" 		"43600"
-	"spielz" 			"249211876"
-	"moxie" 			"5267863"
-	"Retla"				"220159189"
 	//Checkmate Players
 	"bLitz" 			"999558360"
 	"cool4st" 			"882582488"
