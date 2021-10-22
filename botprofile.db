@@ -1162,7 +1162,7 @@ ProP+SniperPro+SniperPersonality "XELLOW"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "Blytz"
+ProP+Rifle+RiflePersonality "ragga"
 	VoicePitch = 95
 End
 
@@ -1614,25 +1614,25 @@ ProP+Rifle+RiflePersonality "mik"
 	VoicePitch = 102
 End
 
-//EXTREMUM Players
+//Sissi Players
 
-ProP+Rifle+RiflePersonality "AZR"
+ProP+Rifle+RiflePersonality "rapala"
 	VoicePitch = 99
 End
 
-ProP+SniperPro+SniperPersonality "Gratisfaction"
+ProP+SniperPro+SniperPersonality "DreaM-"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "jkaem"
+ProP+Rifle+RiflePersonality "preet"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "Liazz"
+ProP+Rifle+RiflePersonality "hyped"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "BnTeT"
+ProP+Rifle+RiflePersonality "MRC9"
 	VoicePitch = 86
 End
 
@@ -1892,11 +1892,11 @@ ProP+Rifle+RiflePersonality "Vegi"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "repo"
+ProP+Rifle+RiflePersonality "TOAO"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "suonko"
+ProP+Rifle+RiflePersonality "Enzo"
 	VoicePitch = 97
 End
 
@@ -2002,7 +2002,7 @@ ProP+Rifle+RiflePersonality "Bwills"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "hate"
+ProP+Rifle+RiflePersonality "viz"
 	VoicePitch = 79
 End
 
@@ -2210,23 +2210,23 @@ End
 
 //DIVIZON Players
 
-ProP+Rifle+RiflePersonality "UN1TY"
+ProP+Rifle+RiflePersonality "farmaG"
 	VoicePitch = 81
 End
 
-ProP+SniperPro+SniperPersonality "nihlus"
+ProP+SniperPro+SniperPersonality "Sw1ft"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "delkore"
+ProP+Rifle+RiflePersonality "Cl34v3rs"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "Mikelos"
+ProP+Rifle+RiflePersonality "ChLo"
 	VoicePitch = 108
 End
 
-ProP+Rifle+RiflePersonality "pa1n"
+ProP+Rifle+RiflePersonality "Spexy"
 	VoicePitch = 72
 End
 
@@ -2826,7 +2826,7 @@ End
 
 //Anonymo Players
 
-ProP+Rifle+RiflePersonality "blacktear5"
+ProP+Rifle+RiflePersonality "snatchie"
 	VoicePitch = 97
 End
 
@@ -2838,7 +2838,7 @@ ProP+Rifle+RiflePersonality "Kylar"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "Demho"
+ProP+Rifle+RiflePersonality "rallen"
 	VoicePitch = 102
 End
 
@@ -2882,7 +2882,7 @@ ProP+Rifle+RiflePersonality "MarKE"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "Sonic"
+ProP+Rifle+RiflePersonality "floppy"
 	VoicePitch = 115
 End
 

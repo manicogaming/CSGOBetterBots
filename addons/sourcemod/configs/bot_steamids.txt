@@ -237,7 +237,7 @@
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
-	"Blytz" 			"101848953"
+	"ragga" 			"109933575"
 	"lauNX" 			"1012530125"
 	"renne" 			"172130207"
 	//PACT Players
@@ -360,12 +360,12 @@
 	"slaxx" 			"118792535"
 	"Blastinho" 		"107737970"
 	"StepA" 			"208115597"
-	//EXTREMUM Players
-	"AZR" 				"24832266"
-	"Liazz" 			"112055988"
-	"jkaem" 			"42442914"
-	"Gratisfaction" 	"5543683"
-	"BnTeT" 			"111817512"
+	//Sissi Players
+	"rapala" 			"239214601"
+	"hyped" 			"179338600"
+	"preet" 			"34228517"
+	"DreaM-" 			"245251564"
+	"MRC9" 				"58588281"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"mou" 				"52678767"
@@ -435,8 +435,8 @@
 	//Izako Players
 	"Vegi" 				"90369423"
 	"STOMP" 			"51242187"
-	"repo" 				"79362456"
-	"suonko" 			"259158584"
+	"TOAO" 				"196107432"
+	"Enzo" 				"71273322"
 	"byali" 			"18860354"
 	//ATK Players
 	"bLazE" 			"209701855"
@@ -466,7 +466,7 @@
 	"RZU" 				"170869120"
 	"Bwills" 			"119308817"
 	"cxzi" 				"211453961"
-	"hate" 				"187864801"
+	"viz" 				"433892634"
 	"jeorgesnorts" 		"393603607"
 	//FATE Players
 	"Patrick--" 		"98715951"
@@ -523,11 +523,11 @@
 	"Annihilation" 		"315821474"	
 	"xerolte" 			"368881420"	
 	//DIVIZON Players
-	"UN1TY" 			"272768036"
-	"nihlus" 			"95013565"
-	"delkore" 			"84845830"
-	"Mikelos" 			"74484182"	
-	"pa1n" 				"177215723"
+	"farmaG" 			"32002596"
+	"Sw1ft" 			"159221739"
+	"Cl34v3rs" 			"98939532"
+	"ChLo" 				"75777535"	
+	"Spexy" 			"161464594"
 	//mCon Players
 	"Monu" 				"17643220"
 	"G1DO" 				"3491078"
@@ -691,10 +691,10 @@
 	"fleav" 			"189640934"
 	"Cr0n0s" 			"39395361"
 	//Anonymo Players
-	"blacktear5" 		"142443051"
+	"snatchie" 			"111436809"
 	"Snax" 				"21875845"
 	"Kylar" 			"116431013"
-	"Demho" 			"146746760"
+	"rallen" 			"31166738"
 	"innocent"			"26563533"
 	//HONORIS Players
 	"TaZ" 				"234052"
@@ -706,7 +706,7 @@
 	"JT" 				"61449372"
 	"oSee" 				"87206806"
 	"MarKE" 			"2637435"
-	"Sonic" 			"14864123"
+	"floppy" 			"346253535"
 	"FaNg"				"312457591"
 	//RBG Players
 	"Walco" 			"129639458"

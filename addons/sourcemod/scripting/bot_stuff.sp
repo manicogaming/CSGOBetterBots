@@ -193,7 +193,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_furious", Team_Furious);
 	RegConsoleCmd("team_rhyno", Team_Rhyno);
 	RegConsoleCmd("team_gtz", Team_GTZ);
-	RegConsoleCmd("team_extremum", Team_EXTREMUM);
+	RegConsoleCmd("team_sissi", Team_Sissi);
 	RegConsoleCmd("team_k23", Team_K23);
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_uol", Team_UOL);
@@ -282,7 +282,7 @@ public Action Team_NiP(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "hampus");
 		ServerCommand("bot_add_ct %s", "Plopski");
 		ServerCommand("bot_add_ct %s", "REZ");
-		ServerCommand("mp_teamlogo_1 ninjas");
+		ServerCommand("mp_teamlogo_1 nip");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -293,7 +293,7 @@ public Action Team_NiP(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "hampus");
 		ServerCommand("bot_add_t %s", "Plopski");
 		ServerCommand("bot_add_t %s", "REZ");
-		ServerCommand("mp_teamlogo_2 ninjas");
+		ServerCommand("mp_teamlogo_2 nip");
 	}
 	
 	return Plugin_Handled;
@@ -522,7 +522,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Bymas");
 		ServerCommand("bot_add_ct %s", "frozen");
 		ServerCommand("bot_add_ct %s", "ropz");
-		ServerCommand("mp_teamlogo_1 mss");
+		ServerCommand("mp_teamlogo_1 mouz");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -533,7 +533,7 @@ public Action Team_mouz(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Bymas");
 		ServerCommand("bot_add_t %s", "frozen");
 		ServerCommand("bot_add_t %s", "ropz");
-		ServerCommand("mp_teamlogo_2 mss");
+		ServerCommand("mp_teamlogo_2 mouz");
 	}
 	
 	return Plugin_Handled;
@@ -582,7 +582,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Brehze");
 		ServerCommand("bot_add_ct %s", "oBo");
 		ServerCommand("bot_add_ct %s", "MICHU");
-		ServerCommand("mp_teamlogo_1 eg");
+		ServerCommand("mp_teamlogo_1 evl");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -593,7 +593,7 @@ public Action Team_EG(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Brehze");
 		ServerCommand("bot_add_t %s", "oBo");
 		ServerCommand("bot_add_t %s", "MICHU");
-		ServerCommand("mp_teamlogo_2 eg");
+		ServerCommand("mp_teamlogo_2 evl");
 	}
 	
 	return Plugin_Handled;
@@ -972,7 +972,7 @@ public Action Team_Heroic(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sjuush");
 		ServerCommand("bot_add_ct %s", "refrezh");
 		ServerCommand("bot_add_ct %s", "stavn");
-		ServerCommand("mp_teamlogo_1 heroi");
+		ServerCommand("mp_teamlogo_1 hero");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -983,7 +983,7 @@ public Action Team_Heroic(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sjuush");
 		ServerCommand("bot_add_t %s", "refrezh");
 		ServerCommand("bot_add_t %s", "stavn");
-		ServerCommand("mp_teamlogo_2 heroi");
+		ServerCommand("mp_teamlogo_2 hero");
 	}
 	
 	return Plugin_Handled;
@@ -1032,7 +1032,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "qikert");
 		ServerCommand("bot_add_ct %s", "SANJI");
 		ServerCommand("bot_add_ct %s", "buster");
-		ServerCommand("mp_teamlogo_1 virtus");
+		ServerCommand("mp_teamlogo_1 vp");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -1043,7 +1043,7 @@ public Action Team_VP(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "qikert");
 		ServerCommand("bot_add_t %s", "SANJI");
 		ServerCommand("bot_add_t %s", "buster");
-		ServerCommand("mp_teamlogo_2 virtus");
+		ServerCommand("mp_teamlogo_2 vp");
 	}
 	
 	return Plugin_Handled;
@@ -1122,7 +1122,7 @@ public Action Team_Spirit(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "somedieyoung");
 		ServerCommand("bot_add_ct %s", "chopper");
 		ServerCommand("bot_add_ct %s", "magixx");
-		ServerCommand("mp_teamlogo_1 spirit");
+		ServerCommand("mp_teamlogo_1 spir");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -1133,7 +1133,7 @@ public Action Team_Spirit(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "somedieyoung");
 		ServerCommand("bot_add_t %s", "chopper");
 		ServerCommand("bot_add_t %s", "magixx");
-		ServerCommand("mp_teamlogo_2 spirit");
+		ServerCommand("mp_teamlogo_2 spir");
 	}
 	
 	return Plugin_Handled;
@@ -1392,7 +1392,7 @@ public Action Team_Riders(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "DeathZz");
 		ServerCommand("bot_add_ct %s", "\"alex*\"");
 		ServerCommand("bot_add_ct %s", "dav1g");
-		ServerCommand("mp_teamlogo_1 movis");
+		ServerCommand("mp_teamlogo_1 ride");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -1403,7 +1403,7 @@ public Action Team_Riders(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "DeathZz");
 		ServerCommand("bot_add_t %s", "\"alex*\"");
 		ServerCommand("bot_add_t %s", "dav1g");
-		ServerCommand("mp_teamlogo_2 movis");
+		ServerCommand("mp_teamlogo_2 ride");
 	}
 	
 	return Plugin_Handled;
@@ -1449,7 +1449,7 @@ public Action Team_Nexus(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "BTN");
 		ServerCommand("bot_add_ct %s", "XELLOW");
-		ServerCommand("bot_add_ct %s", "Blytz");
+		ServerCommand("bot_add_ct %s", "ragga");
 		ServerCommand("bot_add_ct %s", "lauNX");
 		ServerCommand("bot_add_ct %s", "renne");
 		ServerCommand("mp_teamlogo_1 nex");
@@ -1460,7 +1460,7 @@ public Action Team_Nexus(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "BTN");
 		ServerCommand("bot_add_t %s", "XELLOW");
-		ServerCommand("bot_add_t %s", "Blytz");
+		ServerCommand("bot_add_t %s", "ragga");
 		ServerCommand("bot_add_t %s", "lauNX");
 		ServerCommand("bot_add_t %s", "renne");
 		ServerCommand("mp_teamlogo_2 nex");
@@ -1722,7 +1722,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Lucaozy");
 		ServerCommand("bot_add_ct %s", "pancc");
 		ServerCommand("bot_add_ct %s", "zevy");
-		ServerCommand("mp_teamlogo_1 shark");
+		ServerCommand("mp_teamlogo_1 shrk");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -1733,7 +1733,7 @@ public Action Team_Sharks(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Lucaozy");
 		ServerCommand("bot_add_t %s", "pancc");
 		ServerCommand("bot_add_t %s", "zevy");
-		ServerCommand("mp_teamlogo_2 shark");
+		ServerCommand("mp_teamlogo_2 shrk");
 	}
 	
 	return Plugin_Handled;
@@ -2069,7 +2069,7 @@ public Action Team_GTZ(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_EXTREMUM(int client, int iArgs)
+public Action Team_Sissi(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2077,23 +2077,23 @@ public Action Team_EXTREMUM(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "AZR");
-		ServerCommand("bot_add_ct %s", "Gratisfaction");
-		ServerCommand("bot_add_ct %s", "jkaem");
-		ServerCommand("bot_add_ct %s", "Liazz");
-		ServerCommand("bot_add_ct %s", "BnTeT");
-		ServerCommand("mp_teamlogo_1 ext");
+		ServerCommand("bot_add_ct %s", "rapala");
+		ServerCommand("bot_add_ct %s", "DreaM-");
+		ServerCommand("bot_add_ct %s", "preet");
+		ServerCommand("bot_add_ct %s", "hyped");
+		ServerCommand("bot_add_ct %s", "MRC9");
+		ServerCommand("mp_teamlogo_1 siss");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "AZR");
-		ServerCommand("bot_add_t %s", "Gratisfaction");
-		ServerCommand("bot_add_t %s", "jkaem");
-		ServerCommand("bot_add_t %s", "Liazz");
-		ServerCommand("bot_add_t %s", "BnTeT");
-		ServerCommand("mp_teamlogo_2 ext");
+		ServerCommand("bot_add_t %s", "rapala");
+		ServerCommand("bot_add_t %s", "DreaM-");
+		ServerCommand("bot_add_t %s", "preet");
+		ServerCommand("bot_add_t %s", "hyped");
+		ServerCommand("bot_add_t %s", "MRC9");
+		ServerCommand("mp_teamlogo_2 siss");
 	}
 	
 	return Plugin_Handled;
@@ -2322,7 +2322,7 @@ public Action Team_Gambit(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "interz");
 		ServerCommand("bot_add_ct %s", "Ax1Le");
 		ServerCommand("bot_add_ct %s", "Hobbit");
-		ServerCommand("mp_teamlogo_1 gambit");
+		ServerCommand("mp_teamlogo_1 gamb");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -2333,7 +2333,7 @@ public Action Team_Gambit(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "interz");
 		ServerCommand("bot_add_t %s", "Ax1Le");
 		ServerCommand("bot_add_t %s", "Hobbit");
-		ServerCommand("mp_teamlogo_2 gambit");
+		ServerCommand("mp_teamlogo_2 gamb");
 	}
 	
 	return Plugin_Handled;
@@ -2440,8 +2440,8 @@ public Action Team_Izako(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "byali");
 		ServerCommand("bot_add_ct %s", "STOMP");
 		ServerCommand("bot_add_ct %s", "Vegi");
-		ServerCommand("bot_add_ct %s", "repo");
-		ServerCommand("bot_add_ct %s", "suonko");
+		ServerCommand("bot_add_ct %s", "TOAO");
+		ServerCommand("bot_add_ct %s", "Enzo");
 		ServerCommand("mp_teamlogo_1 izak");
 	}
 	
@@ -2451,8 +2451,8 @@ public Action Team_Izako(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "byali");
 		ServerCommand("bot_add_t %s", "STOMP");
 		ServerCommand("bot_add_t %s", "Vegi");
-		ServerCommand("bot_add_t %s", "repo");
-		ServerCommand("bot_add_t %s", "suonko");
+		ServerCommand("bot_add_t %s", "TOAO");
+		ServerCommand("bot_add_t %s", "Enzo");
 		ServerCommand("mp_teamlogo_2 izak");
 	}
 	
@@ -2590,7 +2590,7 @@ public Action Team_Triumph(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "RZU");
 		ServerCommand("bot_add_ct %s", "jeorgesnorts");
 		ServerCommand("bot_add_ct %s", "cxzi");
-		ServerCommand("bot_add_ct %s", "hate");
+		ServerCommand("bot_add_ct %s", "viz");
 		ServerCommand("bot_add_ct %s", "Bwills");
 		ServerCommand("mp_teamlogo_1 tri");
 	}
@@ -2601,7 +2601,7 @@ public Action Team_Triumph(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "RZU");
 		ServerCommand("bot_add_t %s", "jeorgesnorts");
 		ServerCommand("bot_add_t %s", "cxzi");
-		ServerCommand("bot_add_t %s", "hate");
+		ServerCommand("bot_add_t %s", "viz");
 		ServerCommand("bot_add_t %s", "Bwills");
 		ServerCommand("mp_teamlogo_2 tri");
 	}
@@ -2887,22 +2887,22 @@ public Action Team_DIVIZON(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "UN1TY");
-		ServerCommand("bot_add_ct %s", "nihlus");
-		ServerCommand("bot_add_ct %s", "delkore");
-		ServerCommand("bot_add_ct %s", "Mikelos");
-		ServerCommand("bot_add_ct %s", "pa1n");
+		ServerCommand("bot_add_ct %s", "farmaG");
+		ServerCommand("bot_add_ct %s", "Sw1ft");
+		ServerCommand("bot_add_ct %s", "Cl34v3rs");
+		ServerCommand("bot_add_ct %s", "ChLo");
+		ServerCommand("bot_add_ct %s", "Spexy");
 		ServerCommand("mp_teamlogo_1 divi");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "UN1TY");
-		ServerCommand("bot_add_t %s", "nihlus");
-		ServerCommand("bot_add_t %s", "delkore");
-		ServerCommand("bot_add_t %s", "Mikelos");
-		ServerCommand("bot_add_t %s", "pa1n");
+		ServerCommand("bot_add_t %s", "farmaG");
+		ServerCommand("bot_add_t %s", "Sw1ft");
+		ServerCommand("bot_add_t %s", "Cl34v3rs");
+		ServerCommand("bot_add_t %s", "ChLo");
+		ServerCommand("bot_add_t %s", "Spexy");
 		ServerCommand("mp_teamlogo_2 divi");
 	}
 	
@@ -3312,7 +3312,7 @@ public Action Team_Flames(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "HooXi");
 		ServerCommand("bot_add_ct %s", "Jabbi");
 		ServerCommand("bot_add_ct %s", "Zyphon");
-		ServerCommand("mp_teamlogo_1 flames");
+		ServerCommand("mp_teamlogo_1 cope");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
@@ -3323,7 +3323,7 @@ public Action Team_Flames(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "HooXi");
 		ServerCommand("bot_add_t %s", "Jabbi");
 		ServerCommand("bot_add_t %s", "Zyphon");
-		ServerCommand("mp_teamlogo_2 flames");
+		ServerCommand("mp_teamlogo_2 cope");
 	}
 	
 	return Plugin_Handled;
@@ -3727,10 +3727,10 @@ public Action Team_Anonymo(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "blacktear5");
+		ServerCommand("bot_add_ct %s", "snatchie");
 		ServerCommand("bot_add_ct %s", "Snax");
 		ServerCommand("bot_add_ct %s", "Kylar");
-		ServerCommand("bot_add_ct %s", "Demho");
+		ServerCommand("bot_add_ct %s", "rallen");
 		ServerCommand("bot_add_ct %s", "innocent");
 		ServerCommand("mp_teamlogo_1 anon");
 	}
@@ -3738,10 +3738,10 @@ public Action Team_Anonymo(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "blacktear5");
+		ServerCommand("bot_add_t %s", "snatchie");
 		ServerCommand("bot_add_t %s", "Snax");
 		ServerCommand("bot_add_t %s", "Kylar");
-		ServerCommand("bot_add_t %s", "Demho");
+		ServerCommand("bot_add_t %s", "rallen");
 		ServerCommand("bot_add_t %s", "innocent");
 		ServerCommand("mp_teamlogo_2 anon");
 	}
@@ -3790,7 +3790,7 @@ public Action Team_ES(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "JT");
 		ServerCommand("bot_add_ct %s", "oSee");
 		ServerCommand("bot_add_ct %s", "MarKE");
-		ServerCommand("bot_add_ct %s", "Sonic");
+		ServerCommand("bot_add_ct %s", "floppy");
 		ServerCommand("bot_add_ct %s", "FaNg");
 		ServerCommand("mp_teamlogo_1 es");
 	}
@@ -3801,7 +3801,7 @@ public Action Team_ES(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "JT");
 		ServerCommand("bot_add_t %s", "oSee");
 		ServerCommand("bot_add_t %s", "MarKE");
-		ServerCommand("bot_add_t %s", "Sonic");
+		ServerCommand("bot_add_t %s", "floppy");
 		ServerCommand("bot_add_t %s", "FaNg");
 		ServerCommand("mp_teamlogo_2 es");
 	}

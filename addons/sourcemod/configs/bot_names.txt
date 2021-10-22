@@ -237,7 +237,7 @@
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
-	"Blytz" 			"Nexus"
+	"ragga" 			"Nexus"
 	"lauNX" 			"Nexus"
 	"renne" 			"Nexus"
 	//PACT Players
@@ -360,12 +360,12 @@
 	"StepA" 			"GTZ"
 	"adamS" 			"GTZ"
 	"mik" 				"GTZ"
-	//EXTREMUM Players
-	"AZR" 				"EXTREMUM"
-	"Liazz" 			"EXTREMUM"
-	"jkaem" 			"EXTREMUM"
-	"Gratisfaction" 	"EXTREMUM"
-	"BnTeT" 			"EXTREMUM"
+	//Sissi Players
+	"rapala" 			"Sissi"
+	"hyped" 			"Sissi"
+	"preet" 			"Sissi"
+	"DreaM-" 			"Sissi"
+	"MRC9" 				"Sissi"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"mou" 				"K23"
@@ -436,8 +436,8 @@
 	"byali" 			"Izako"
 	"Vegi" 				"Izako"
 	"STOMP" 			"Izako"
-	"repo" 				"Izako"
-	"suonko" 			"Izako"
+	"TOAO" 				"Izako"
+	"Enzo" 				"Izako"
 	//ATK Players
 	"bLazE" 			"ATK"
 	"MisteM" 			"ATK"
@@ -466,7 +466,7 @@
 	"RZU" 				"Triumph"
 	"Bwills" 			"Triumph"
 	"cxzi" 				"Triumph"
-	"hate" 				"Triumph"
+	"viz" 				"Triumph"
 	"jeorgesnorts" 		"Triumph"
 	//FATE Players
 	"rafftu"			"FATE" 
@@ -523,11 +523,11 @@
 	"yAmi" 				"D13"
 	"Annihilation" 		"D13"	
 	//DIVIZON Players
-	"UN1TY" 			"DIVIZON"
-	"nihlus" 			"DIVIZON"
-	"delkore" 			"DIVIZON"
-	"Mikelos" 			"DIVIZON"	
-	"pa1n" 				"DIVIZON"
+	"farmaG" 			"DIVIZON"
+	"Sw1ft" 			"DIVIZON"
+	"Cl34v3rs" 			"DIVIZON"
+	"ChLo" 				"DIVIZON"	
+	"Spexy" 			"DIVIZON"
 	//mCon Players
 	"Monu" 				"mCon"
 	"G1DO" 				"mCon"
@@ -691,10 +691,10 @@
 	"fleav" 			"BP"
 	"Cr0n0s"			"BP"
 	//Anonymo Players
-	"blacktear5" 		"Anonymo"
+	"snatchie" 			"Anonymo"
 	"Snax" 				"Anonymo"
 	"Kylar" 			"Anonymo"
-	"Demho" 			"Anonymo"
+	"rallen" 			"Anonymo"
 	"innocent"			"Anonymo"
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
@@ -706,7 +706,7 @@
 	"JT" 				"ES"
 	"oSee" 				"ES"
 	"MarKE" 			"ES"
-	"Sonic" 			"ES"
+	"floppy" 			"ES"
 	"FaNg"				"ES"
 	//RBG Players
 	"Walco" 			"RBG"
