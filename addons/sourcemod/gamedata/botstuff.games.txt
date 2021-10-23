@@ -8,7 +8,7 @@
 			{
 				// 'Checking out where our friend was killed' > 2
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x8B\x55\x08\x8B\x02\x89\x81\x48\x3D\x00\x00"
+				"windows"	"\x55\x8B\xEC\x8B\x55\x08\x8B\x02\x89\x81\x40\x3D\x00\x00"
 			}
 			"CBaseAnimating::LookupBone"
 			{
@@ -32,7 +32,7 @@
 			{
 				// Is in the if statement after the if statement with the number '0.33000001' inside CCSBot::Update
 				"library"	"server"
-				"windows"	"\x8D\x81\x70\x3D\x00\x00\x39\x81\x90\x3E\x00\x00\x74\x2A\x32\xC0\xC3"
+				"windows"	"\x8D\x81\x68\x3D\x00\x00\x39\x81\x88\x3E\x00\x00\x74\x2A\x32\xC0\xC3"
 			}
 			"CCSBot::EquipBestWeapon"
 			{
@@ -50,7 +50,7 @@
 			{
 				// Has 'mp_damage_headshot_only' string
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\x56\x8B\xF1\x57\x8B\x8E\x0C\x5E\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x20\x56\x8B\xF1\x57\x8B\x8E\x04\x5E\x00\x00"
 			}
 			"CCSBot::Update"
 			{
@@ -110,7 +110,7 @@
 			{
 				//Has string 'SetBotEnemy: %s\n'
 				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x51\x56\x57\x8B\xF9\x8B\x8F\x0C\x5E\x00\x00"
+				"windows"	"\x55\x8B\xEC\x51\x56\x57\x8B\xF9\x8B\x8F\x04\x5E\x00\x00"
 			}
 			"CCSBot::BendLineOfSight"
 			{
@@ -124,42 +124,42 @@
 			"CCSBot::m_targetSpot"
 			{
 				//Is inside CCSBot::PickNewAimSpot
-				"windows"      "23984"
+				"windows"      "23976"
 			}
 			"CCSBot::m_nearbyEnemyCount"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
-				"windows"	   "24120"
+				"windows"	   "24112"
 			}
 			"CCSBot::m_task"
 			{
 				//Is inside CCSBot::DebugDisplay near 'Task: %s' string
-				"windows"	   "16028"
+				"windows"	   "16020"
 			}
 			"CCSBot::m_fireWeaponTimestamp"
 			{
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function
-				"windows"	   "24708"
+				"windows"	   "24700"
 			}
 			"CCSBot::m_isEnemyVisible"
 			{
 				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
-				"windows"	   "24080"
+				"windows"	   "24072"
 			}
 			"CCSBot::m_pLocalProfile"
 			{
 				//Is inside CCSBot::DebugDisplay right next to the string 'Skill: %d%%'
-				"windows"	   "15172"
+				"windows"	   "15164"
 			}
 			"CCSBot::m_safeTime"
 			{
 				//Is inside CCSBot::DebugDisplay near the string 'SafeTime: %3.2f'
-				"windows"	   "15456"
+				"windows"	   "15448"
 			}
 			"CCSBot::m_isAttacking"
 			{
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
-				"windows"	   "16024"
+				"windows"	   "16016"
 			}
 			"Weapon_Switch"
 			{
@@ -320,7 +320,7 @@
 				"windows"
 				{
 					"offset"	"942h"
-					"verify"	"\xE8\x99\x08\xF5\xFF\x84\xC0"
+					"verify"	"\xE8\x69\x01\xF5\xFF\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
