@@ -462,7 +462,7 @@ public Action Team_fnatic(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "KRIMZ");
 		ServerCommand("bot_add_ct %s", "Brollan");
 		ServerCommand("bot_add_ct %s", "mezii");
-		ServerCommand("mp_teamlogo_1 fnatic");
+		ServerCommand("mp_teamlogo_1 fntc");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -473,7 +473,7 @@ public Action Team_fnatic(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "KRIMZ");
 		ServerCommand("bot_add_t %s", "Brollan");
 		ServerCommand("bot_add_t %s", "mezii");
-		ServerCommand("mp_teamlogo_2 fnatic");
+		ServerCommand("mp_teamlogo_2 fntc");
 	}
 	
 	return Plugin_Handled;
@@ -1152,7 +1152,7 @@ public Action Team_LDLC(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "hAdji");
 		ServerCommand("bot_add_ct %s", "Keoz");
 		ServerCommand("bot_add_ct %s", "SIXER");
-		ServerCommand("mp_teamlogo_1 ldl");
+		ServerCommand("mp_teamlogo_1 ldlc");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -1163,7 +1163,7 @@ public Action Team_LDLC(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "hAdji");
 		ServerCommand("bot_add_t %s", "Keoz");
 		ServerCommand("bot_add_t %s", "SIXER");
-		ServerCommand("mp_teamlogo_2 ldl");
+		ServerCommand("mp_teamlogo_2 ldlc");
 	}
 	
 	return Plugin_Handled;
@@ -5048,6 +5048,15 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if (bIsHiding && g_iUncrouchChance[client] <= 50)
 				iButtons &= ~IN_DUCK;
 			
+			if(GetEntDataFloat(client, g_iFireWeaponOffset) >= GetGameTime() && !bIsDucking && !bIsAttacking)
+			{
+				switch(iDefIndex)
+				{
+					case 1, 7, 8, 10, 13, 14, 16, 28, 39, 60:
+						SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+				}
+			}
+			
 			if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
 			{
 				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
@@ -5081,7 +5090,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 								iButtons |= IN_ATTACK;
 						}
 						
-						if (fOnTarget > fAimTolerance && !bIsDucking && (fTargetDistance < 2000.0 || GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime()) && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+						if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 					}
 					case 1:
