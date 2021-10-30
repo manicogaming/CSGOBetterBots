@@ -770,7 +770,7 @@ ProP+Rifle+RiflePersonality "FL1T"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "almazer"
+ProP+Rifle+RiflePersonality "shalfey"
 	VoicePitch = 89
 End
 
@@ -1088,7 +1088,7 @@ End
 
 //Lions Players
 
-ProP+Rifle+RiflePersonality "tudsoN"
+ProP+Rifle+RiflePersonality "b0RUP"
 	VoicePitch = 76
 End
 
@@ -1308,7 +1308,7 @@ End
 
 //Isurus Players
 
-ProP+Rifle+RiflePersonality "fakzwall"
+ProP+Rifle+RiflePersonality "DeStiNy"
 	VoicePitch = 115
 End
 
@@ -1316,7 +1316,7 @@ ProP+SniperPro+SniperPersonality "Noktse"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "BK1"
+ProP+Rifle+RiflePersonality "nython"
 	VoicePitch = 101
 End
 
@@ -1324,7 +1324,7 @@ ProP+Rifle+RiflePersonality "decov9jse"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "Gooden"
+ProP+Rifle+RiflePersonality "ALLE"
 	VoicePitch = 109
 End
 
@@ -1614,7 +1614,7 @@ ProP+Rifle+RiflePersonality "mik"
 	VoicePitch = 102
 End
 
-//Sissi Players
+//SSB Players
 
 ProP+Rifle+RiflePersonality "rapala"
 	VoicePitch = 99
@@ -1624,7 +1624,7 @@ ProP+SniperPro+SniperPersonality "DreaM-"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "preet"
+ProP+Rifle+RiflePersonality "nixeed"
 	VoicePitch = 99
 End
 
@@ -1766,28 +1766,6 @@ End
 
 ProP+Rifle+RiflePersonality "shokz"
 	VoicePitch = 94
-End
-
-//planB Players
-
-ProP+Rifle+RiflePersonality "TWEEZY"
-	VoicePitch = 108
-End
-
-ProP+SniperPro+SniperPersonality "Knoxville"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "xTreMe"
-	VoicePitch = 83
-End
-
-ProP+Rifle+RiflePersonality "Lefty"
-	VoicePitch = 100
-End
-
-ProP+Rifle+RiflePersonality "pony-san"
-	VoicePitch = 91
 End
 
 //Gambit Players
@@ -1998,7 +1976,7 @@ ProP+SniperPro+SniperPersonality "jeorgesnorts"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "Bwills"
+ProP+Rifle+RiflePersonality "xCeeD"
 	VoicePitch = 100
 End
 
@@ -2456,15 +2434,15 @@ ProP+Rifle+RiflePersonality "DaneJoris"
 	VoicePitch = 82
 End
 
-ProP+SniperPro+SniperPersonality "walker"
+ProP+SniperPro+SniperPersonality "JoJo"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "brett"
+ProP+Rifle+RiflePersonality "hate"
 	VoicePitch = 111
 End
 
-ProP+Rifle+RiflePersonality "grape"
+ProP+Rifle+RiflePersonality "AJaxz"
 	VoicePitch = 113
 End
 
@@ -2628,11 +2606,11 @@ End
 
 //Havan Players
 
-ProP+Rifle+RiflePersonality "ALLE"
+ProP+Rifle+RiflePersonality "cidz"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "drg"
+ProP+SniperPro+SniperPersonality "kye"
 	VoicePitch = 89
 End
 
@@ -2980,7 +2958,7 @@ End
 
 //BNB Players
 
-ProP+Rifle+RiflePersonality "Jonji"
+ProP+Rifle+RiflePersonality "Bwills"
 	VoicePitch = 75
 End
 

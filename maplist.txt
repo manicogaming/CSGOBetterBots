@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Mon Oct 25 22:09:02 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Oct 28 23:24:27 BST 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -319,7 +319,6 @@ dz_county
 dz_sirocco
 fun_pacman_v1
 fy_back_street
-fy_buball
 fy_buzzkill_sh
 fy_concrete
 fy_deagle5

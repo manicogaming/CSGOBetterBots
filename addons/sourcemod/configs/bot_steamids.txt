@@ -130,7 +130,7 @@
 	"KENSI" 			"440380554"	
 	"zorte" 			"99348674"
 	"FL1T" 				"35551773"
-	"almazer" 			"83782305"
+	"shalfey" 			"247206904"
 	"Jerry" 			"65822428"
 	//Sprout Players
 	"kressy" 			"50709599"
@@ -217,7 +217,7 @@
 	"Jimpphat" 			"895109597"
 	"SADDYX" 			"135594020"
 	//Lions Players
-	"tudsoN" 			"58354081"
+	"b0RUP" 			"146876280"
 	"TMB" 				"124341526"
 	"Woro2k" 			"1015186932"	
 	"sausol" 			"31327539"
@@ -277,11 +277,11 @@
 	"pacman^v^" 		"486643146"
 	"points" 			"79878687"
 	//Isurus Players
-	"fakzwall" 			"100101626"
+	"DeStiNy" 			"89528706"
 	"Noktse" 			"54233223"
-	"BK1" 				"221869734"	
+	"nython" 			"170224923"	
 	"decov9jse" 		"311766666"	
-	"Gooden" 			"324241630"
+	"ALLE" 				"1194990"
 	//paiN Players
 	"PKL" 				"65313136"
 	"saffee" 			"25299957"
@@ -360,10 +360,10 @@
 	"slaxx" 			"118792535"
 	"Blastinho" 		"107737970"
 	"StepA" 			"208115597"
-	//Sissi Players
+	//SSB Players
 	"rapala" 			"239214601"
 	"hyped" 			"179338600"
-	"preet" 			"34228517"
+	"nixeed" 			"247022056"
 	"DreaM-" 			"245251564"
 	"MRC9" 				"58588281"
 	//K23 Players
@@ -402,12 +402,6 @@
 	"kreaz" 			"116979891"
 	"robiin" 			"41292034"
 	"shokz" 			"39590183"
-	//planB Players
-	"pony-san" 			"76320241"
-	"TWEEZY" 			"230582686"
-	"Knoxville" 		"107802167"
-	"xTreMe" 			"69837499"
-	"Lefty" 			"109379465"
 	//Gambit Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
@@ -464,7 +458,7 @@
 	"B1NGO" 			"149673357"
 	//Triumph Players
 	"RZU" 				"170869120"
-	"Bwills" 			"119308817"
+	"xCeeD" 			"180524431"
 	"cxzi" 				"211453961"
 	"viz" 				"433892634"
 	"jeorgesnorts" 		"393603607"
@@ -590,9 +584,9 @@
 	"NEOFRAG" 			"255168957"
 	//Impact Players
 	"DaneJoris" 		"116329706"	
-	"walker" 			"229061351"
-	"brett" 			"180071719"
-	"grape" 			"130164677"	
+	"JoJo" 				"185270855"
+	"hate" 				"187864801"
+	"AJaxz" 			"83066300"	
 	"insane" 			"176668134"
 	//ERN Players
 	"j1NZO" 			"220770109"
@@ -637,8 +631,8 @@
 	"Svedjehed" 		"170174906"
 	"hemzk9" 			"83597297"	
 	//Havan Players
-	"ALLE" 				"1194990"
-	"drg" 				"193829435"
+	"cidz" 				"855806044"
+	"kye" 				"1135765413"
 	"remix" 			"33494235"
 	"dok" 				"143357008"
 	"skullz"			"158380916"
@@ -733,7 +727,7 @@
 	"d1cer"				"158737140"
 	"oddo"				"39664636"
 	//BNB Players
-	"Jonji" 			"114675386"
+	"Bwills" 			"119308817"
 	"Junior" 			"103793230"
 	"Swisher" 			"222737943"
 	"Spongey" 			"85216555"

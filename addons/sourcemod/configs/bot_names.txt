@@ -130,7 +130,7 @@
 	"KENSI" 			"forZe"	
 	"zorte" 			"forZe"
 	"FL1T" 				"forZe"
-	"almazer" 			"forZe"
+	"shalfey" 			"forZe"
 	"Jerry" 			"forZe"
 	//Sprout Players
 	"kressy" 			"Sprout"
@@ -217,7 +217,7 @@
 	"SADDYX" 			"SJ"
 	"HENU" 				"SJ"
 	//Lions Players
-	"tudsoN" 			"Lions"
+	"b0RUP" 			"Lions"
 	"TMB" 				"Lions"
 	"Woro2k" 			"Lions"	
 	"sausol" 			"Lions"
@@ -277,11 +277,11 @@
 	"pacman^v^" 		"Infinity"
 	"points" 			"Infinity"
 	//Isurus Players
-	"fakzwall" 			"Isurus"
+	"DeStiNy" 			"Isurus"
 	"Noktse" 			"Isurus"
-	"BK1" 				"Isurus"	
+	"nython" 			"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"Gooden" 			"Isurus"
+	"ALLE" 				"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
 	"saffee" 			"paiN"
@@ -360,12 +360,12 @@
 	"StepA" 			"GTZ"
 	"adamS" 			"GTZ"
 	"mik" 				"GTZ"
-	//Sissi Players
-	"rapala" 			"Sissi"
-	"hyped" 			"Sissi"
-	"preet" 			"Sissi"
-	"DreaM-" 			"Sissi"
-	"MRC9" 				"Sissi"
+	//SSB Players
+	"rapala" 			"SSB"
+	"hyped" 			"SSB"
+	"nixeed" 			"SSB"
+	"DreaM-" 			"SSB"
+	"MRC9" 				"SSB"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"mou" 				"K23"
@@ -402,12 +402,6 @@
 	"kreaz" 			"Finest"
 	"robiin" 			"Finest"
 	"shokz" 			"Finest"
-	//planB Players
-	"Knoxville" 		"planB"
-	"TWEEZY" 			"planB"	
-	"xTreMe" 			"planB"
-	"Lefty" 			"planB"
-	"pony-san" 			"planB"
 	//Gambit Players
 	"nafany" 			"Gambit"
 	"sh1ro" 			"Gambit"
@@ -464,7 +458,7 @@
 	"B1NGO" 			"Lynn"
 	//Triumph Players
 	"RZU" 				"Triumph"
-	"Bwills" 			"Triumph"
+	"xCeeD" 			"Triumph"
 	"cxzi" 				"Triumph"
 	"viz" 				"Triumph"
 	"jeorgesnorts" 		"Triumph"
@@ -590,9 +584,9 @@
 	"NEOFRAG" 			"SINNERS"
 	//Impact Players
 	"DaneJoris" 		"Impact"	
-	"walker" 			"Impact"
-	"brett" 			"Impact"
-	"grape" 			"Impact"	
+	"JoJo" 				"Impact"
+	"hate" 				"Impact"
+	"AJaxz" 			"Impact"	
 	"insane" 			"Impact"
 	//ERN Players
 	"j1NZO" 			"ERN"
@@ -637,8 +631,8 @@
 	"ZER" 				"Lemondogs"
 	"Svedjehed" 		"Lemondogs"	
 	//Havan Players
-	"ALLE" 				"Havan"
-	"drg" 				"Havan"
+	"cidz" 				"Havan"
+	"kye" 				"Havan"
 	"remix" 			"Havan"
 	"dok" 				"Havan"
 	"skullz"			"Havan"
@@ -733,7 +727,7 @@
 	"d1cer" 			"LEISURE"
 	"oddo"				"LEISURE"
 	//BNB Players
-	"Jonji" 			"BNB"
+	"Bwills" 			"BNB"
 	"Junior" 			"BNB"
 	"Swisher" 			"BNB"
 	"Spongey" 			"BNB"
