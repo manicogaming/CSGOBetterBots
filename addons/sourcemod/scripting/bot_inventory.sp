@@ -103,13 +103,9 @@ public void OnPluginStart()
 	if (g_bLateLoaded)
 	{
 		if (eItems_AreItemsSynced())
-		{
 			eItems_OnItemsSynced();
-		}
 		else if (!eItems_AreItemsSyncing())
-		{
 			eItems_ReSync();
-		}
 	}
 	
 	if (PTaH_Version() < 101000)
@@ -131,9 +127,7 @@ public void OnPluginStart()
 	ConVar g_cvGameMode = FindConVar("game_mode");
 	
 	if (g_cvGameType.IntValue == 1 && g_cvGameMode.IntValue == 2)
-	{
 		PTaH(PTaH_WeaponCanUsePre, Hook, WeaponCanUsePre);
-	}
 	
 	HookUserMessage(GetUserMessageId("EndOfMatchAllPlayersData"), OnEndOfMatchAllPlayersData, true);
 	
@@ -175,9 +169,7 @@ public void BuildSkinsArrayList()
 	for (int iWeapon = 0; iWeapon < g_iWeaponCount; iWeapon++)
 	{
 		if (g_ArrayWeapons[iWeapon] == null)
-		{
 			delete g_ArrayWeapons[iWeapon];
-		}
 		
 		g_ArrayWeapons[iWeapon] = new ArrayList();
 		g_ArrayWeapons[iWeapon].Clear();
@@ -189,10 +181,7 @@ public void BuildSkinsArrayList()
 			{
 				int iSkinDefIndex = eItems_GetSkinDefIndexBySkinNum(iSkin);
 				if (iSkinDefIndex > 0 && iSkinDefIndex < 10000)
-				{
-					
 					g_ArrayWeapons[iWeapon].Push(iSkinDefIndex);
-				}
 			}
 		}
 		
@@ -202,9 +191,7 @@ public void BuildSkinsArrayList()
 	for (int iGlove = 0; iGlove < g_iGloveCount; iGlove++)
 	{
 		if (g_ArrayGloves[iGlove] == null)
-		{
 			delete g_ArrayGloves[iGlove];
-		}
 		
 		g_ArrayGloves[iGlove] = new ArrayList();
 		g_ArrayGloves[iGlove].Clear();
@@ -220,17 +207,13 @@ public void BuildSkinsArrayList()
 	}
 	
 	if (g_ArrayTAgents == null)
-	{
 		delete g_ArrayTAgents;
-	}
 	
 	g_ArrayTAgents = new ArrayList();
 	g_ArrayTAgents.Clear();
 	
 	if (g_ArrayCTAgents == null)
-	{
 		delete g_ArrayCTAgents;
-	}
 	
 	g_ArrayCTAgents = new ArrayList();
 	g_ArrayCTAgents.Clear();
@@ -317,9 +300,9 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						Protobuf stickers2 = items.AddMessage("stickers");
 						Protobuf stickers3 = items.AddMessage("stickers");
 						
-						if (g_iStickerChance[client][iDefIndex] <= 30)
+						if (g_iStickerChance[client][iDefIndex] <= 40)
 						{
-							if (g_iStickerComboChance[client][iDefIndex] <= 65)
+							if (g_iStickerComboChance[client][iDefIndex] <= 50)
 							{
 								switch (g_iRndStickerCombo[client][iDefIndex])
 								{
@@ -466,9 +449,9 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						Protobuf patch2 = items.AddMessage("stickers");
 						Protobuf patch3 = items.AddMessage("stickers");
 						
-						if (g_iPatchChance[client] <= 30)
+						if (g_iPatchChance[client] <= 40)
 						{
-							if (g_iPatchComboChance[client] <= 65)
+							if (g_iPatchComboChance[client] <= 50)
 							{
 								switch (g_iRndPatchCombo[client])
 								{
@@ -632,13 +615,9 @@ public void OnClientPostAdminCheck(int client)
 			g_iMusicKit[client] = eItems_GetMusicKitDefIndexByMusicKitNum(Math_GetRandomInt(0, eItems_GetMusicKitsCount() - 1));
 			
 			if (Math_GetRandomInt(1, 2) == 1)
-			{
 				g_iCoin[client] = eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() - 1));
-			}
 			else
-			{
 				g_iCoin[client] = eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() - 1));
-			}
 			
 			g_iCustomPlayerChance[client] = Math_GetRandomInt(1, 100);
 			
@@ -659,14 +638,10 @@ public void OnClientPostAdminCheck(int client)
 			g_iPatchChance[client] = Math_GetRandomInt(1, 100);
 			g_iPatchComboChance[client] = Math_GetRandomInt(1, 100);
 			
-			if (g_iPatchComboChance[client] <= 65)
-			{
+			if (g_iPatchComboChance[client] <= 50)
 				g_iRndPatchCombo[client] = Math_GetRandomInt(1, 14);
-			}
 			else
-			{
 				g_iRndPatchCombo[client] = Math_GetRandomInt(1, 2);
-			}
 			
 			g_iRndPatch[client][0] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() - 1));
 			g_iRndPatch[client][1] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() - 1));
@@ -683,9 +658,7 @@ public void OnClientPostAdminCheck(int client)
 			int iRandomGloveSkin = Math_GetRandomInt(0, g_ArrayGloves[iGloveNum].Length - 1);
 			
 			if (iRandomGloveSkin != -1)
-			{
 				g_iGloveSkin[client] = g_ArrayGloves[iGloveNum].Get(iRandomGloveSkin);
-			}
 			
 			g_fGloveWear[client] = Math_GetRandomFloat(0.06, 0.80);
 			g_iGloveSeed[client] = Math_GetRandomInt(1, 1000);
@@ -697,9 +670,7 @@ public void OnClientPostAdminCheck(int client)
 				int iWeaponDefIndex = eItems_GetWeaponDefIndexByWeaponNum(iWeapon);
 				int iRandomWeaponSkin = Math_GetRandomInt(0, g_ArrayWeapons[iWeapon].Length - 1);
 				if (iRandomWeaponSkin != -1)
-				{
 					g_iSkinDefIndex[client][iWeaponDefIndex] = g_ArrayWeapons[iWeapon].Get(iRandomWeaponSkin);
-				}
 				
 				g_iItemIDHigh[client][iWeaponDefIndex] = IDHigh++;
 				g_iItemIDLow[client][iWeaponDefIndex] = IDLow++;
@@ -741,14 +712,10 @@ public void OnClientPostAdminCheck(int client)
 					}
 			    }
 				
-				if (g_iStickerComboChance[client][iWeaponDefIndex] <= 65)
-				{
+				if (g_iStickerComboChance[client][iWeaponDefIndex] <= 50)
 					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1, 14);
-				}
 				else
-				{
 					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1, 2);
-				}
 				
 				g_iRndSticker[client][iWeaponDefIndex][0] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
 				g_iRndSticker[client][iWeaponDefIndex][1] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
@@ -775,33 +742,23 @@ public void OnClientPostAdminCheck(int client)
 Action GiveNamedItemPre(int client, char szClassname[64], CEconItemView &pItem, bool &bIgnoredCEconItemView, bool &bOriginIsNULL, float fOrigin[3])
 {
 	if (!IsValidClient(client))
-	{
 		return Plugin_Continue;
-	}
 	
 	int clientTeam = GetClientTeam(client);
 	
 	if (clientTeam < CS_TEAM_T)
-	{
 		return Plugin_Handled;
-	}
 	
 	int iDefIndex = eItems_GetWeaponDefIndexByClassName(szClassname);
 	
 	if (iDefIndex <= -1)
-	{
 		return Plugin_Continue;
-	}
 	
 	if (!eItems_IsDefIndexKnife(iDefIndex))
-	{
 		return Plugin_Continue;
-	}
 	
 	if (!eItems_IsDefIndexKnife(g_iStoredKnife[client]))
-	{
 		return Plugin_Continue;
-	}
 	
 	eItems_GetWeaponClassNameByDefIndex(g_iStoredKnife[client], szClassname, sizeof(szClassname));
 	bIgnoredCEconItemView = true;
@@ -814,9 +771,7 @@ void GiveNamedItemPost(int client, const char[] szClassname, const CEconItemView
 	int iDefIndex = eItems_GetWeaponDefIndexByClassName(szClassname);
 	
 	if (iDefIndex <= -1)
-	{
 		return;
-	}
 	
 	if (IsValidClient(client) && eItems_IsValidWeapon(iEntity))
 	{
@@ -856,141 +811,73 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	switch (iDefIndex)
 	{
 		case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[0];
-		}
 		case 4:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[1];
-		}
 		case 32:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[2];
-		}
 		case 61:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[3];
-		}
 		case 36:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[4];
-		}
 		case 1:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[5];
-		}
 		case 2:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[6];
-		}
 		case 3:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[7];
-		}
 		case 30:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[8];
-		}
 		case 63:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[9];
-		}
 		case 64:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[10];
-		}
 		case 35:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[11];
-		}
 		case 25:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[12];
-		}
 		case 27:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[13];
-		}
 		case 29:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[14];
-		}
 		case 26:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[15];
-		}
 		case 17:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[16];
-		}
 		case 34:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[17];
-		}
 		case 33:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[18];
-		}
 		case 24:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[19];
-		}
 		case 19:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[20];
-		}
 		case 13:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[21];
-		}
 		case 7:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[22];
-		}
 		case 38:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[23];
-		}
 		case 10:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[24];
-		}
 		case 16:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[25];
-		}
 		case 60:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[26];
-		}
 		case 8:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[27];
-		}
 		case 40:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[28];
-		}
 		case 39:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[29];
-		}
 		case 9:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[30];
-		}
 		case 11:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[31];
-		}
 		case 14:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[32];
-		}
 		case 28:
-		{
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[33];
-		}
 	}
 	
 	
@@ -1021,20 +908,14 @@ Action WeaponCanUsePre(int client, int iWeapon, bool & bPickup)
 public Action SDK_OnWeaponEquip(int client, int iWeapon)
 {
     if(!IsValidClient(client))
-    {
         return Plugin_Continue;
-    }
 
     if(!eItems_IsValidWeapon(iWeapon))
-    {
         return Plugin_Continue;
-    }
 
     int iPrevOwner = GetEntProp(iWeapon, Prop_Send, "m_hPrevOwner");
     if(iPrevOwner > 0)
-    {
         return Plugin_Continue;
-    }
 
     if(IsMapWeapon(iWeapon, true))
     {
@@ -1055,20 +936,13 @@ public Action Timer_MapWeaponEquipped(Handle timer, DataPack datapack)
 	delete datapack;
 
 	if(!IsValidClient(client))
-	{
 		return Plugin_Continue;
-	}
-
 	if(!eItems_IsValidWeapon(iWeapon))
-	{
 		return Plugin_Continue;
-	}
 
 	int iWeaponSlot = eItems_GetWeaponSlotByWeapon(iWeapon);
 	if (iWeaponSlot == CS_SLOT_C4)
-	{
 		return Plugin_Continue;
-	}
 
 	SetEntProp(iWeapon, Prop_Send, "m_OriginalOwnerXuidLow", GetBotAccountID(client));
 	SetEntProp(iWeapon, Prop_Send, "m_OriginalOwnerXuidHigh", 17825793);
@@ -1084,31 +958,21 @@ public Action Event_OnRoundStart(Event eEvent, const char[] szName, bool bDontBr
 	for(int i = MaxClients; i < GetMaxEntities(); i++)
 	{
 		if(!IsValidEntity(i))
-		{
 			continue;
-		}
 
 		GetEntityClassname(i, szWeaponClassname, sizeof(szWeaponClassname));
 		if((StrContains(szWeaponClassname, "weapon_")) == -1)
-		{
 			continue;
-		}
 
 		if(GetEntProp(i, Prop_Send, "m_hOwnerEntity") != -1)
-		{
 			continue;
-		}
 		
 		int iDefIndex;
 		if((iDefIndex = eItems_GetWeaponDefIndexByClassName(szWeaponClassname)) == -1)
-		{
 			continue;
-		}
 
 		if(eItems_IsDefIndexKnife(iDefIndex))
-		{
 			continue;
-		}
 
 		g_ArrayMapWeapons.Push(i);
 	}
@@ -1128,19 +992,13 @@ public void Event_PlayerSpawn(Event eEvent, const char[] szName, bool bDontBroad
 			SetEntProp(client, Prop_Send, "m_unMusicID", g_iMusicKit[client]);
 			
 			if (Math_GetRandomInt(1, 2) == 1)
-			{
 				SDKCall(g_hSetRank, client, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[client]);
-			}
 			else
-			{
 				SDKCall(g_hSetRank, client, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[client]);
-			}
 		}
 		
 		if (g_iCustomPlayerChance[client] <= 35)
-		{
 			CreateTimer(1.3, Timer_ApplyAgent, GetClientUserId(client));
-		}
 	}
 }
 
@@ -1184,9 +1042,9 @@ public Action Timer_ApplyAgent(Handle hTimer, any client)
 		{
 			SetEntityModel(i, g_szModel[i][CS_TEAM_CT]);
 			
-			if (g_iPatchChance[i] <= 30)
+			if (g_iPatchChance[i] <= 40)
 			{
-				if (g_iPatchComboChance[i] <= 65)
+				if (g_iPatchComboChance[i] <= 50)
 				{
 					switch (g_iRndPatchCombo[i])
 					{
@@ -1290,7 +1148,7 @@ public Action Timer_ApplyAgent(Handle hTimer, any client)
 			
 			if (g_iPatchChance[i] <= 40)
 			{
-				if (g_iPatchComboChance[i] <= 65)
+				if (g_iPatchComboChance[i] <= 50)
 				{
 					switch (g_iRndPatchCombo[i])
 					{
@@ -1418,141 +1276,73 @@ void SetWeaponProps(int client, int iEntity)
 		switch (iDefIndex)
 		{
 			case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[0];
-			}
 			case 4:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[1];
-			}
 			case 32:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[2];
-			}
 			case 61:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[3];
-			}
 			case 36:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[4];
-			}
 			case 1:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[5];
-			}
 			case 2:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[6];
-			}
 			case 3:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[7];
-			}
 			case 30:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[8];
-			}
 			case 63:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[9];
-			}
 			case 64:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[10];
-			}
 			case 35:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[11];
-			}
 			case 25:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[12];
-			}
 			case 27:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[13];
-			}
 			case 29:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[14];
-			}
 			case 26:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[15];
-			}
 			case 17:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[16];
-			}
 			case 34:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[17];
-			}
 			case 33:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[18];
-			}
 			case 24:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[19];
-			}
 			case 19:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[20];
-			}
 			case 13:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[21];
-			}
 			case 7:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[22];
-			}
 			case 38:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[23];
-			}
 			case 10:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[24];
-			}
 			case 16:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[25];
-			}
 			case 60:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[26];
-			}
 			case 8:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[27];
-			}
 			case 40:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[28];
-			}
 			case 39:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[29];
-			}
 			case 9:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[30];
-			}
 			case 11:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[31];
-			}
 			case 14:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[32];
-			}
 			case 28:
-			{
 				g_iStatTrakKills[client][iDefIndex] = iWeaponsReturn[33];
-			}
 		}
 		
 		if (eItems_IsDefIndexKnife(iDefIndex))
@@ -1575,26 +1365,17 @@ void SetWeaponProps(int client, int iEntity)
 				SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
 			}
 			
-			switch (g_iSkinDefIndex[client][iDefIndex])
+			if (g_iSouvenirChance[client][iDefIndex] <= 30)
 			{
-				case 254, 253, 252, 110, 25, 242, 245, 249, 236, 244, 92, 147, 136, 96, 251, 250, 21, 800, 28, 101, 158, 344, 326, 328, 325, 327, 329, 332, 32, 294, 323, 333, 330, 
-				179, 168, 167, 169, 171, 379, 371, 367, 368, 372, 370, 374, 378, 375, 377, 373, 369, 376, 750, 747, 795, 749, 752, 793, 796, 751, 797, 799, 798, 748, 753, 794, 755, 
-				90, 754, 39, 37, 33, 2, 233, 243, 240, 46, 27, 241, 523, 30, 141, 157, 99, 8, 148, 124, 170, 116, 247, 235, 159, 321, 84, 318, 322, 319, 238, 15, 95, 100, 22, 119, 
-				248, 237, 246, 3, 34, 234, 74, 78, 47, 107, 149, 792, 791, 789, 779, 787, 788, 781, 776, 786, 780, 790, 783, 782, 777, 784, 778, 775, 785, 153, 172, 111, 70, 17, 135:
-				{
-					if (g_iSouvenirChance[client][iDefIndex] <= 30)
-					{
-						pDynamicAttributes.RemoveAttributeByDefIndex(80);
-						pDynamicAttributes.RemoveAttributeByDefIndex(81);
-						SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 12);
-					}
-				}
+				pDynamicAttributes.RemoveAttributeByDefIndex(80);
+				pDynamicAttributes.RemoveAttributeByDefIndex(81);
+				SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 12);
 			}
 		}
 		
-		if (g_iStickerChance[client][iDefIndex] <= 30)
+		if (g_iStickerChance[client][iDefIndex] <= 40)
 		{
-			if (g_iStickerComboChance[client][iDefIndex] <= 65)
+			if (g_iStickerComboChance[client][iDefIndex] <= 50)
 			{
 				switch (g_iRndStickerCombo[client][iDefIndex])
 				{
@@ -1704,9 +1485,8 @@ public void GivePlayerGloves(int client)
 {
 	int iEntity = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
 	if (iEntity != -1)
-	{
 		AcceptEntityInput(iEntity, "KillHierarchy");
-	}
+		
 	iEntity = CreateEntityByName("wearable_item");
 	if (iEntity != -1 && eItems_AreItemsSynced())
 	{
@@ -1750,9 +1530,7 @@ public void OnPluginEnd()
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i))
-		{
 			OnClientDisconnect(i);
-		}
 	}
 }
 
@@ -1773,20 +1551,16 @@ stock int FloatToInt(const char[] szValue, any ...)
 stock bool IsMapWeapon(int iWeapon, bool bRemove = false)
 {
 	if(g_ArrayMapWeapons == null)
-	{
 		return false;
-	}
+		
 	for(int i = 0; i < g_ArrayMapWeapons.Length; i++)
 	{
 		if(g_ArrayMapWeapons.Get(i) != iWeapon)
-		{
 			continue;
-		}
 
 		if(bRemove)
-		{
 			g_ArrayMapWeapons.Erase(i);
-		}
+			
 		return true;
 	}
 	return false;

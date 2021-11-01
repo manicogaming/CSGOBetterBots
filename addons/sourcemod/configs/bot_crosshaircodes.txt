@@ -133,7 +133,7 @@
 	"shalfey" 			"CSGO-iUYr7-oCPN7-vZYyt-z9raP-ykEVF"
 	"Jerry" 			"CSGO-DWOXf-kvtff-GtzOK-eD3BY-pbywQ"
 	//Sprout Players
-	"kressy" 			"CSGO-47cny-7DnhX-69Lwe-6ffEp-kqpJN"
+	"KEi" 				"CSGO-G2LnH-X58Zv-pKNqz-2M73C-oCyXD"
 	"slaxz" 			"CSGO-ZAO3T-a5oVy-TathG-Y9jmL-RrtiB"
 	"Spiidi" 			"CSGO-uQU2v-Kb46u-YN9V9-euhiw-xBU8N"
 	"faveN" 			"CSGO-5rnvF-RbSKn-SUmFb-LTYbz-HpCxH"
@@ -499,7 +499,7 @@
 	"BOROS" 			"CSGO-78PT7-mHExG-UGt7C-HAhdB-GxuWK"
 	"Thomas" 			"CSGO-R8z2B-OFvoW-iBchD-E4VUP-oZT4M"
 	//SAW Players
-	"story"				"CSGO-byaXy-FinRr-pwXbc-L5x2i-vfrVQ" 
+	"arki"				"CSGO-ZrAjp-hu46n-vnB7F-oHfJB-U3SKF" 
 	"stadodo" 			"CSGO-ZGwqa-PtafD-cYmwV-GN8p3-HsnkP"
 	"JUST" 				"CSGO-j5dei-LYnWn-rqHMP-NLQtJ-a7LsE"
 	"MUTiRiS" 			"CSGO-KmJ23-cwoBA-8YFir-8oD6i-XNh8E"	

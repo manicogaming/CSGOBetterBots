@@ -780,7 +780,7 @@ End
 
 //Sprout Players
 
-ProP+Rifle+RiflePersonality "kressy"
+ProP+Rifle+RiflePersonality "KEi"
 	VoicePitch = 86
 End
 
@@ -2122,7 +2122,7 @@ End
 
 //SAW Players
 
-ProP+Rifle+RiflePersonality "story"
+ProP+Rifle+RiflePersonality "arki"
 	VoicePitch = 112
 End
 

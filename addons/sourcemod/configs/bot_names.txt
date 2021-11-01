@@ -133,7 +133,7 @@
 	"shalfey" 			"forZe"
 	"Jerry" 			"forZe"
 	//Sprout Players
-	"kressy" 			"Sprout"
+	"KEi" 				"Sprout"
 	"slaxz" 			"Sprout"
 	"Spiidi" 			"Sprout"
 	"faveN" 			"Sprout"
@@ -499,7 +499,7 @@
 	"BOROS" 			"Endpoint"
 	"Thomas" 			"Endpoint"
 	//SAW Players
-	"story"				"SAW" 
+	"arki"				"SAW" 
 	"stadodo" 			"SAW"
 	"JUST" 				"SAW"
 	"MUTiRiS" 			"SAW"	

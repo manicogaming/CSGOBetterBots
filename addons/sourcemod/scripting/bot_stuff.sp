@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
-int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset;
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotNoisePosOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -306,8 +306,8 @@ public Action Team_MIBR(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "yel");
 		ServerCommand("bot_add_ct %s", "chelo");
+		ServerCommand("bot_add_ct %s", "yel");
 		ServerCommand("bot_add_ct %s", "shz");
 		ServerCommand("bot_add_ct %s", "boltz");
 		ServerCommand("bot_add_ct %s", "exit");
@@ -317,8 +317,8 @@ public Action Team_MIBR(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "yel");
 		ServerCommand("bot_add_t %s", "chelo");
+		ServerCommand("bot_add_t %s", "yel");
 		ServerCommand("bot_add_t %s", "shz");
 		ServerCommand("bot_add_t %s", "boltz");
 		ServerCommand("bot_add_t %s", "exit");
@@ -936,7 +936,7 @@ public Action Team_Sprout(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "kressy");
+		ServerCommand("bot_add_ct %s", "KEi");
 		ServerCommand("bot_add_ct %s", "slaxz");
 		ServerCommand("bot_add_ct %s", "Spiidi");
 		ServerCommand("bot_add_ct %s", "faveN");
@@ -947,7 +947,7 @@ public Action Team_Sprout(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "kressy");
+		ServerCommand("bot_add_t %s", "KEi");
 		ServerCommand("bot_add_t %s", "slaxz");
 		ServerCommand("bot_add_t %s", "Spiidi");
 		ServerCommand("bot_add_t %s", "faveN");
@@ -2766,7 +2766,7 @@ public Action Team_sAw(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "story");
+		ServerCommand("bot_add_ct %s", "arki");
 		ServerCommand("bot_add_ct %s", "stadodo");
 		ServerCommand("bot_add_ct %s", "JUST");
 		ServerCommand("bot_add_ct %s", "MUTiRiS");
@@ -2777,7 +2777,7 @@ public Action Team_sAw(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "story");
+		ServerCommand("bot_add_t %s", "arki");
 		ServerCommand("bot_add_t %s", "stadodo");
 		ServerCommand("bot_add_t %s", "JUST");
 		ServerCommand("bot_add_t %s", "MUTiRiS");
@@ -4031,7 +4031,7 @@ public Action Team_Entropiq(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "NickelBack");
 		ServerCommand("bot_add_ct %s", "Krad");
 		ServerCommand("bot_add_ct %s", "Forester");
-		ServerCommand("mp_teamlogo_1 entr");
+		ServerCommand("mp_teamlogo_1 ent");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
@@ -4042,7 +4042,7 @@ public Action Team_Entropiq(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "NickelBack");
 		ServerCommand("bot_add_t %s", "Krad");
 		ServerCommand("bot_add_t %s", "Forester");
-		ServerCommand("mp_teamlogo_2 entr");
+		ServerCommand("mp_teamlogo_2 ent");
 	}
 	
 	return Plugin_Handled;
@@ -4357,10 +4357,14 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			
 			bool bEveryoneDead;
 			
-			float fClientLoc[3], fClientEyes[3];
+			float fClientLoc[3], fClientEyes[3], fNoisePosition[3];
 			GetClientAbsOrigin(client, fClientLoc);
 			GetClientEyePosition(client, fClientEyes);
 			g_pCurrArea[client] = NavMesh_GetNearestArea(fClientLoc);
+			GetEntDataVector(client, g_iBotNoisePosOffset, fNoisePosition);
+			
+			if(LineGoesThroughSmoke(fClientEyes, fNoisePosition))
+				BotSetLookAt(client, "Use entity", fNoisePosition, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 			{
@@ -4616,7 +4620,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bFreezetimeEnd = true;
 	g_fRoundStartTimeStamp = GetGameTime();
 	
-	if(GetTickInterval() != 128.0 || g_bTerroristEco || g_iCurrentRound == 0 || g_iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
+	if(g_bTerroristEco || g_iCurrentRound == 0 || g_iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
 	
 	if(Math_GetRandomInt(1,100) <= 50)
@@ -4861,7 +4865,7 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 	hParams.Set(2, false);
 	int iPlayer = hParams.Get(1);
 	
-	if(IsValidClient(g_iTarget[pThis]) && IsPlayerAlive(g_iTarget[pThis]) && g_fTargetPos[pThis][2] != 0 && iPlayer == g_iTarget[pThis])
+	if(g_bIsProBot[pThis] && IsValidClient(g_iTarget[pThis]) && IsPlayerAlive(g_iTarget[pThis]) && g_fTargetPos[pThis][2] != 0 && iPlayer == g_iTarget[pThis])
 	{
 		hReturn.Value = true;
 		return MRES_ChangedHandled;
@@ -4971,9 +4975,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		if (g_bIsProBot[client])
 		{
-			//For 128 tick == 15, for 64 tick == 8
-			int iDelay = GetTickInterval() == 128.0 ? 15 : 8;
-			if(g_iNewTargetTime[client] == iDelay)
+			if(g_iNewTargetTime[client] == 14)
 			{
 				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
 				g_iNewTargetTime[client] = 0;
@@ -5006,7 +5008,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if (bIsHiding && g_iUncrouchChance[client] <= 50)
 				iButtons &= ~IN_DUCK;
 			
-			if(GetEntDataFloat(client, g_iFireWeaponOffset) >= GetGameTime() && !bIsDucking && !bIsAttacking)
+			float fFireWeaponTimeStamp = GetEntDataFloat(client, g_iFireWeaponOffset);
+			
+			if(GetGameTime() < fFireWeaponTimeStamp && fFireWeaponTimeStamp != 0.0 && !bIsDucking && !bIsAttacking)
 			{
 				switch(iDefIndex)
 				{
@@ -5273,6 +5277,9 @@ public void LoadSDK()
 	
 	if ((g_iBotAttackingOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isAttacking")) == -1)
 		SetFailState("Failed to get CCSBot::m_isAttacking offset.");
+	
+	if ((g_iBotNoisePosOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_noisePosition")) == -1)
+		SetFailState("Failed to get CCSBot::m_noisePosition offset.");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");

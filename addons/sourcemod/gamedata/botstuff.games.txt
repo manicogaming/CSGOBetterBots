@@ -161,6 +161,11 @@
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"	   "16016"
 			}
+			"CCSBot::m_noisePosition"
+			{
+				//Is a little bit above the string '  *** Noise occurred off the nav mesh - ignoring!\n'
+				"windows"	   "23004"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata

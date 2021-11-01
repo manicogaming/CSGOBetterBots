@@ -133,7 +133,7 @@
 	"shalfey" 			"247206904"
 	"Jerry" 			"65822428"
 	//Sprout Players
-	"kressy" 			"50709599"
+	"KEi" 				"121422001"
 	"slaxz" 			"104087441"
 	"Spiidi" 			"13465075"
 	"faveN" 			"157930364"
@@ -499,7 +499,7 @@
 	"BOROS" 			"178773495"
 	"Thomas" 			"65182402"
 	//SAW Players
-	"story"				"105182632" 
+	"arki"				"18055753" 
 	"stadodo" 			"87137134"
 	"JUST" 				"52722111"
 	"MUTiRiS" 			"37715442"	
