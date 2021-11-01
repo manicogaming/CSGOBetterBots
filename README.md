@@ -30,7 +30,7 @@ I edited the following plugins.
 
 # Dependencies
 If you are going to use this you will need to download the following:
-- **[SourceMod Dev Build 6701](https://www.sourcemod.net/downloads.php?branch=dev)**
+- **[SourceMod Dev](https://www.sourcemod.net/downloads.php?branch=dev)**
 - [RankMe Kento Edition](https://forums.alliedmods.net/showthread.php?p=2467665)
 - [eItems Semi-Private Version](https://discord.gg/FNByp8s)
 - [SMLib](https://github.com/bcserv/smlib/tree/transitional_syntax)
