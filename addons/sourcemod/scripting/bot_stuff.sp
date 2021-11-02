@@ -4363,7 +4363,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			g_pCurrArea[client] = NavMesh_GetNearestArea(fClientLoc);
 			GetEntDataVector(client, g_iBotNoisePosOffset, fNoisePosition);
 			
-			if(LineGoesThroughSmoke(fClientEyes, fNoisePosition))
+			if(IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
 				BotSetLookAt(client, "Use entity", fNoisePosition, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
@@ -4747,7 +4747,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	GetClientAbsOrigin(iAttacker, fAttackerPos);
 	fAttackerPos[2] += 35.5;
 	
-	if(LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
+	if(IsPointVisible(fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
 		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 	
 	return Plugin_Continue;
