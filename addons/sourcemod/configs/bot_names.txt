@@ -14,10 +14,10 @@
 	"olofmeister" 		"FaZe"
 	//Astralis Players
 	"gla1ve" 			"Astralis"
-	"Bubzkji" 			"Astralis"
+	"Lucky" 			"Astralis"
 	"Xyp9x" 			"Astralis"
-	"Magisk" 			"Astralis"
-	"dupreeh" 			"Astralis"
+	"k0nfig" 			"Astralis"
+	"blameF" 			"Astralis"
 	//NiP Players
 	"LNZ" 				"NiP"
 	"Plopski" 			"NiP"
@@ -375,21 +375,21 @@
 	//Goliath Players
 	"massacRe" 			"Goliath"
 	"Dweezil" 			"Goliath"
-	"adM" 				"Goliath"
+	"Triton" 			"Goliath"
 	"ELUSIVE" 			"Goliath"
-	"adaro"				"Goliath"
+	"zox"				"Goliath"
 	//UOL Players
 	"crisby" 			"UOL"
 	"Anhuin" 			"UOL"
 	"HadeZ" 			"UOL"	
 	"Python" 			"UOL"
 	"P4TriCK" 			"UOL"
-	//FPX Players
-	"zehN" 				"FPX"
-	"STYKO" 			"FPX"
-	"farlig" 			"FPX"
-	"maden" 			"FPX"
-	"emi" 				"FPX"
+	//VERTEX Players
+	"pz" 				"VERTEX"
+	"BRACE" 			"VERTEX"
+	"apocdud" 			"VERTEX"
+	"ADDICT" 			"VERTEX"
+	"Roflko" 			"VERTEX"
 	//IG Players
 	"bottle" 			"IG"
 	"DeStRoYeR" 		"IG"	
@@ -461,7 +461,7 @@
 	"xCeeD" 			"Triumph"
 	"cxzi" 				"Triumph"
 	"viz" 				"Triumph"
-	"jeorgesnorts" 		"Triumph"
+	"grape" 			"Triumph"
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
@@ -497,7 +497,7 @@
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"BOROS" 			"Endpoint"
-	"Thomas" 			"Endpoint"
+	"Nertz" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
 	"stadodo" 			"SAW"
@@ -535,7 +535,7 @@
 	"airax" 			"KOVA"
 	"Twixie" 			"KOVA"
 	//AGF Players
-	"fr0slev" 			"AGF"
+	"Buzz" 				"AGF"
 	"kristou" 			"AGF"
 	"cajunb" 			"AGF"
 	"Cabbi" 			"AGF"

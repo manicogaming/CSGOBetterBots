@@ -14,10 +14,10 @@
 	"olofmeister" 		"28361465"
 	//Astralis Players
 	"gla1ve" 			"50245293"
-	"Bubzkji" 			"171103459"
+	"Lucky"				"150297431"
 	"Xyp9x" 			"30416534"
-	"Magisk" 			"23690923"
-	"dupreeh" 			"44589228"
+	"k0nfig" 			"19403447"
+	"blameF" 			"68193075"
 	//NiP Players
 	"LNZ" 				"144361165"
 	"Plopski" 			"175613070"
@@ -375,21 +375,21 @@
 	//Goliath Players
 	"massacRe" 			"117421285"
 	"Dweezil" 			"79904271"
-	"adM" 				"119663636"
+	"Triton" 			"135933575"
 	"ELUSIVE" 			"16704419"
-	"adaro"				"165184216"
+	"zox"				"874942183"
 	//UOL Players
 	"crisby" 			"13127256"
 	"Anhuin" 			"95774258"
 	"HadeZ" 			"242589771"	
 	"P4TriCK" 			"60152488"
 	"Python" 			"231605562"
-	//FPX Players
-	"STYKO" 			"55928431"
-	"farlig" 			"63982401"
-	"zehN" 				"16308501"
-	"maden" 			"205186299"
-	"emi" 				"43348704"
+	//VERTEX Players
+	"BRACE" 			"126538012"
+	"apocdud" 			"58325300"
+	"pz" 				"108241121"
+	"ADDICT" 			"107496753"
+	"Roflko" 			"107902647"
 	//IG Players
 	"bottle" 			"86991268"
 	"DeStRoYeR" 		"85113804"	
@@ -461,7 +461,7 @@
 	"xCeeD" 			"180524431"
 	"cxzi" 				"211453961"
 	"viz" 				"433892634"
-	"jeorgesnorts" 		"393603607"
+	"grape" 			"130164677"
 	//FATE Players
 	"Patrick--" 		"98715951"
 	"hybrid" 			"95772199"
@@ -497,7 +497,7 @@
 	"CRUC1AL" 			"158832564"
 	"MiGHTYMAX" 		"15522824"
 	"BOROS" 			"178773495"
-	"Thomas" 			"65182402"
+	"Nertz" 			"92860917"
 	//SAW Players
 	"arki"				"18055753" 
 	"stadodo" 			"87137134"
@@ -535,7 +535,7 @@
 	"airax" 			"50161047"
 	"Twixie" 			"187781829"
 	//AGF Players
-	"fr0slev" 			"75073497"
+	"Buzz" 				"288688034"
 	"kristou" 			"147274330"
 	"cajunb" 			"18062315"
 	"Cabbi" 			"230664742"

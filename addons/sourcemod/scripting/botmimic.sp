@@ -124,6 +124,7 @@ int g_iBotMimicRecordTickCount[MAXPLAYERS+1] = {0,...};
 int g_iBotActiveWeapon[MAXPLAYERS+1] = {-1,...};
 bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
+bool g_bDontMimic;
 int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BWM_max];
 
 Handle g_hfwdOnStartRecording;
@@ -219,6 +220,7 @@ public void OnPluginStart()
 	
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
 	HookEvent("player_death", Event_OnPlayerDeath);
+	HookEventEx("cs_win_panel_match", Event_OnWinPanelMatch);
 	
 	if(LibraryExists("dhooks"))
 	{
@@ -285,6 +287,7 @@ public void OnLibraryRemoved(const char[] name)
 public void OnMapStart()
 {
 	// Clear old records for old map
+	g_bDontMimic = false;
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
 	FileHeader iFileHeader;
@@ -360,7 +363,7 @@ public void OnClientDisconnect(int client)
 public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float vel[3], const float angles[3], int weapon, int subtype, int cmdnum, int tickcount, int seed, const int mouse[2])
 {
 	// Client isn't recording or recording is paused.
-	if(g_hRecording[client] == null || g_bRecordingPaused[client])
+	if(g_bDontMimic || g_hRecording[client] == null || g_bRecordingPaused[client])
 		return;
 
 	FrameInfo iFrame;
@@ -715,6 +718,11 @@ public void Event_OnPlayerDeath(Event event, const char[] name, bool dontBroadca
 		if(g_hCVRespawnOnDeath.BoolValue && GetClientTeam(client) >= CS_TEAM_T)
 			CreateTimer(1.0, Timer_DelayedRespawn, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
 	}
+}
+
+public void Event_OnWinPanelMatch(Event eEvent, char[] szName, bool bDontBroadcast)
+{
+	g_bDontMimic = true;
 }
 
 /**

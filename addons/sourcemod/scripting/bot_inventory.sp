@@ -8,6 +8,7 @@
 #include <bot_steamids>
 #include <kento_rankme/rankme>
 #include <smlib>
+#include <modelch>
 
 bool g_bLateLoaded;
 int g_iWeaponCount;
@@ -996,9 +997,6 @@ public void Event_PlayerSpawn(Event eEvent, const char[] szName, bool bDontBroad
 			else
 				SDKCall(g_hSetRank, client, MEDAL_CATEGORY_SEASON_COIN, g_iCoin[client]);
 		}
-		
-		if (g_iCustomPlayerChance[client] <= 35)
-			CreateTimer(1.3, Timer_ApplyAgent, GetClientUserId(client));
 	}
 }
 
@@ -1032,223 +1030,223 @@ public Action Event_PlayerDeath(Event eEvent, const char[] szName, bool bDontBro
 	return Plugin_Continue;
 }
 
-public Action Timer_ApplyAgent(Handle hTimer, any client)
-{
-	int i = GetClientOfUserId(client);
+public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iModelLength, char[] szVoPrefix, int iPrefixLength)
+{	
+	if (!IsValidClient(client) || g_iCustomPlayerChance[client] > 35)
+		return Plugin_Continue;
 	
-	if(i != 0 && IsClientInGame(i))
-    {
-        if (GetClientTeam(i) == CS_TEAM_CT)
-		{
-			SetEntityModel(i, g_szModel[i][CS_TEAM_CT]);
+	if (GetClientTeam(client) == CS_TEAM_CT)
+	{
+		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_CT]);
+		//strcopy(vo_prefix, prefix_maxlen, "fbihrt_epic");
 			
-			if (g_iPatchChance[i] <= 40)
-			{
-				if (g_iPatchComboChance[i] <= 50)
-				{
-					switch (g_iRndPatchCombo[i])
-					{
-						case 1:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-						}
-						case 2:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-						}
-						case 3:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 4:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 5:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 6:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-						}
-						case 7:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 8:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 9:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 10:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 11:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 12:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 13:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 14:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-					}
-				}
-				else
-				{
-					switch (g_iRndPatchCombo[i])
-					{
-						case 1:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 2:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
-						}
-					}
-				}
-			}	
-		}
-		else if (GetClientTeam(i) == CS_TEAM_T)
+		if (g_iPatchChance[client] <= 40)
 		{
-			SetEntityModel(i, g_szModel[i][CS_TEAM_T]);
-			
-			if (g_iPatchChance[i] <= 40)
+			if (g_iPatchComboChance[client] <= 50)
 			{
-				if (g_iPatchComboChance[i] <= 50)
+				switch (g_iRndPatchCombo[client])
 				{
-					switch (g_iRndPatchCombo[i])
+					case 1:
 					{
-						case 1:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-						}
-						case 2:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-						}
-						case 3:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 4:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 5:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 6:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-						}
-						case 7:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 8:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 9:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 10:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-						}
-						case 11:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 12:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 13:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 14:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+					}
+					case 2:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+					}
+					case 3:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 4:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 5:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 6:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+					}
+					case 7:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 8:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 9:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 10:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 11:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 12:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 13:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 14:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
 					}
 				}
-				else
+			}
+			else
+			{
+				switch (g_iRndPatchCombo[client])
 				{
-					switch (g_iRndPatchCombo[i])
+					case 1:
 					{
-						case 1:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][0], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][1], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][2], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[i][3], 4, 3);
-						}
-						case 2:
-						{
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 0);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 1);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 2);
-							SetEntProp(i, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[i], 4, 3);
-						}
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 2:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 3);
 					}
 				}
-			}	
+			}
 		}
-    }
-	
-	return Plugin_Stop;
+	}
+	else if(GetClientTeam(client) == CS_TEAM_T)
+	{
+		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_T]);
+		//strcopy(vo_prefix, prefix_maxlen, "balkan_epic");
+			
+		if (g_iPatchChance[client] <= 40)
+		{
+			if (g_iPatchComboChance[client] <= 50)
+			{
+				switch (g_iRndPatchCombo[client])
+				{
+					case 1:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+					}
+					case 2:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+					}
+					case 3:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 4:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 5:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 6:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+					}
+					case 7:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 8:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 9:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 10:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+					}
+					case 11:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 12:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 13:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 14:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+				}
+			}
+			else
+			{
+				switch (g_iRndPatchCombo[client])
+				{
+					case 1:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][0], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][1], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][2], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndPatch[client][3], 4, 3);
+					}
+					case 2:
+					{
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 0);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 1);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 2);
+						SetEntProp(client, Prop_Send, "m_vecPlayerPatchEconIndices", g_iRndSamePatch[client], 4, 3);
+					}
+				}
+			}
+		}	
+	}
+
+	return Plugin_Changed;
 }
 
 void SetWeaponProps(int client, int iEntity)

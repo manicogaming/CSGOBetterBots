@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Mon Nov 01 23:46:07 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Nov 13 00:24:00 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -35,7 +35,6 @@ aim_deagle7k_real
 aim_deagle_retrowave
 aim_depot_beta01
 aim_dust
-aim_glass_handel_v2_fix
 aim_headshot_imb
 aim_map
 aim_map2

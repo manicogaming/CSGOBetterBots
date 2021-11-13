@@ -344,7 +344,7 @@ ProP+Rifle+RiflePersonality "gla1ve"
 	VoicePitch = 77
 End
 
-ProP+SniperPro+SniperPersonality "Bubzkji"
+ProP+SniperPro+SniperPersonality "Lucky"
 	VoicePitch = 104
 End
 
@@ -352,11 +352,11 @@ ProP+Rifle+RiflePersonality "Xyp9x"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "Magisk"
+ProP+Rifle+RiflePersonality "k0nfig"
 	VoicePitch = 73
 End
 
-ProP+Rifle+RiflePersonality "dupreeh"
+ProP+Rifle+RiflePersonality "blameF"
 	VoicePitch = 73
 End
 
@@ -1334,7 +1334,7 @@ ProP+Rifle+RiflePersonality "PKL"
 	VoicePitch = 92
 End
 
-ProP+SniperPro+SniperPersonality "hardzao"
+ProP+SniperPro+SniperPersonality "saffee"
 	VoicePitch = 71
 End
 
@@ -1346,7 +1346,7 @@ ProP+Rifle+RiflePersonality "biguzera"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "saffee"
+ProP+Rifle+RiflePersonality "hardzao"
 	VoicePitch = 95
 End
 
@@ -1668,7 +1668,7 @@ ProP+SniperPro+SniperPersonality "Dweezil"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "adM"
+ProP+Rifle+RiflePersonality "Triton"
 	VoicePitch = 99
 End
 
@@ -1676,7 +1676,7 @@ ProP+Rifle+RiflePersonality "ELUSIVE"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "adaro"
+ProP+Rifle+RiflePersonality "zox"
 	VoicePitch = 81
 End
 
@@ -1702,25 +1702,25 @@ ProP+Rifle+RiflePersonality "P4TriCK"
 	VoicePitch = 114
 End
 
-//FPX Players
+//VERTEX Players
 
-ProP+Rifle+RiflePersonality "zehN"
+ProP+Rifle+RiflePersonality "pz"
 	VoicePitch = 107
 End
 
-ProP+SniperPro+SniperPersonality "farlig"
+ProP+SniperPro+SniperPersonality "apocdud"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "STYKO"
+ProP+Rifle+RiflePersonality "BRACE"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "maden"
+ProP+Rifle+RiflePersonality "ADDICT"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "emi"
+ProP+Rifle+RiflePersonality "Roflko"
 	VoicePitch = 108
 End
 
@@ -1972,7 +1972,7 @@ ProP+Rifle+RiflePersonality "RZU"
 	VoicePitch = 109
 End
 
-ProP+SniperPro+SniperPersonality "jeorgesnorts"
+ProP+SniperPro+SniperPersonality "grape"
 	VoicePitch = 93
 End
 
@@ -2116,7 +2116,7 @@ ProP+Rifle+RiflePersonality "BOROS"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "Thomas"
+ProP+Rifle+RiflePersonality "Nertz"
 	VoicePitch = 96
 End
 
@@ -2254,7 +2254,7 @@ End
 
 //AGF Players
 
-ProP+Rifle+RiflePersonality "fr0slev"
+ProP+Rifle+RiflePersonality "Buzz"
 	VoicePitch = 87
 End
 
