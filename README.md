@@ -32,12 +32,13 @@ I edited the following plugins.
 If you are going to use this you will need to download the following:
 - **[SourceMod Dev](https://www.sourcemod.net/downloads.php?branch=dev)**
 - [RankMe Kento Edition](https://forums.alliedmods.net/showthread.php?p=2467665)
-- [eItems Semi-Private Version](https://discord.gg/FNByp8s)
+- [eItems](https://github.com/ESK0/eItems)
 - [SMLib](https://github.com/bcserv/smlib/tree/transitional_syntax)
 - [DHooks (with Detour Support)](https://forums.alliedmods.net/showpost.php?p=2588686&postcount=589)
 - [SourcePawn NavMesh](https://github.com/KitRifty/sourcepawn-navmesh)
 - [PTaH](https://ptah.zizt.ru/)
 - [SteamIDConverter](https://forums.alliedmods.net/showthread.php?t=333459)
+- [modelch](https://github.com/SAZONISCHE/modelch)
 
 # Other Files
 
