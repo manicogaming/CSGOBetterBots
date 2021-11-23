@@ -51,6 +51,7 @@ int g_iStatTrakKills[MAXPLAYERS + 1][1024];
 bool g_bKnifeHasStatTrak[MAXPLAYERS + 1][1024];
 
 char g_szModel[MAXPLAYERS+1][4][128];
+char g_szVOPrefix[MAXPLAYERS+1][4][128];
 
 ArrayList g_ArrayWeapons[128] =  { null, ... };
 ArrayList g_ArrayGloves[128] =  { null, ... };
@@ -632,8 +633,11 @@ public void OnClientPostAdminCheck(int client)
 			
 				eItems_GetAgentPlayerModelByDefIndex(g_iAgent[client][CS_TEAM_CT], g_szModel[client][CS_TEAM_CT], 128);
 				PrecacheModel(g_szModel[client][CS_TEAM_CT]);
+				eItems_GetAgentVOPrefixByDefIndex(g_iAgent[client][CS_TEAM_CT], g_szVOPrefix[client][CS_TEAM_CT], 128);
+
 				eItems_GetAgentPlayerModelByDefIndex(g_iAgent[client][CS_TEAM_T], g_szModel[client][CS_TEAM_T], 128);
 				PrecacheModel(g_szModel[client][CS_TEAM_T]);
+				eItems_GetAgentVOPrefixByDefIndex(g_iAgent[client][CS_TEAM_T], g_szVOPrefix[client][CS_TEAM_T], 128);
 			}
 			
 			g_iPatchChance[client] = Math_GetRandomInt(1, 100);
@@ -1038,7 +1042,7 @@ public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iM
 	if (GetClientTeam(client) == CS_TEAM_CT)
 	{
 		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_CT]);
-		//strcopy(vo_prefix, prefix_maxlen, "fbihrt_epic");
+		strcopy(szVoPrefix, iPrefixLength, g_szVOPrefix[client][CS_TEAM_CT]);
 			
 		if (g_iPatchChance[client] <= 40)
 		{
@@ -1143,7 +1147,7 @@ public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iM
 	else if(GetClientTeam(client) == CS_TEAM_T)
 	{
 		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_T]);
-		//strcopy(vo_prefix, prefix_maxlen, "balkan_epic");
+		strcopy(szVoPrefix, iPrefixLength, g_szVOPrefix[client][CS_TEAM_T]);
 			
 		if (g_iPatchChance[client] <= 40)
 		{

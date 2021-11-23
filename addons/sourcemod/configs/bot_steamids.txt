@@ -198,7 +198,7 @@
 	"Aerial" 			"2445180"
 	"xseveN" 			"52906775"
 	"jemi" 				"932767"
-	//Lyngby Players
+	//ECSTATIC Players
 	"birdfromsky"		"4338476" 
 	"Daffu" 			"70645401"
 	"FASHR" 			"3238867"
@@ -214,7 +214,7 @@
 	"arvid" 			"66355043"
 	"HENU" 				"105340846"
 	"jelo" 				"147699201"
-	"Jimpphat" 			"895109597"
+	"BONA" 				"201490896"
 	"SADDYX" 			"135594020"
 	//Lions Players
 	"b0RUP" 			"146876280"
@@ -714,12 +714,12 @@
 	"kaNibalistic" 		"32730121"
 	"Doru" 				"135905209"
 	"Dubee" 			"162968873"
-	//Big5 Players
-	"Lately" 			"290361460"
-	"kustoM" 			"22240693"
-	"Tiaantjie" 		"115831324"
-	"takbok" 			"3026299"
-	"FROZ3N"			"110202505"
+	//iNation Players
+	"Dragon" 			"290361460"
+	"VLDN" 				"22240693"
+	"choiv7" 			"115831324"
+	"pTKKK" 			"3026299"
+	"SkippeR"			"110202505"
 	//LEISURE Players
 	"get"				"28333977"
 	"rome"				"41470786"
@@ -798,4 +798,10 @@
 	"Smash" 			"214027585"
 	"s4" 				"125957336"
 	"amster"			"121728571"
+	//Conquer Players
+	"choco" 			"138320403"
+	"Elfern"			"139081471"
+	"myltsi" 			"842766723"
+	"Jerppa" 			"277451852"
+	"Jimpphat"			"895109597"
 }

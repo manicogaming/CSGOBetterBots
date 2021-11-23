@@ -118,6 +118,12 @@
 				"library"	"server"
 				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
 			}
+			"BotBombStatusMeme::Interpret"
+			{
+				//Is right next to BotBombStatusMeme::`vftable'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x51\x8B\x41\x04"
+			}
 		}
 		"Offsets"
 		{
@@ -160,11 +166,6 @@
 			{
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"	   "16016"
-			}
-			"CCSBot::m_noisePosition"
-			{
-				//Is a little bit above the string '  *** Noise occurred off the nav mesh - ignoring!\n'
-				"windows"	   "23004"
 			}
 			"Weapon_Switch"
 			{
@@ -327,6 +328,16 @@
 					"offset"	"942h"
 					"verify"	"\xE8\x29\x03\xF5\xFF\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
+				}
+			}
+			"BotBombStatusMeme::Interpret::AlwaysHelp"
+			{
+				"signature" "BotBombStatusMeme::Interpret"
+				"windows"
+				{
+					"offset"	"93h"
+					"verify"	"\x39\x86\x88\x3E\x00\x00\x75\x37"
+					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
 		}

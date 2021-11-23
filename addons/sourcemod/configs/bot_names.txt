@@ -198,12 +198,12 @@
 	"Aerial" 			"HAVU"
 	"xseveN" 			"HAVU"
 	"jemi" 				"HAVU"
-	//Lyngby Players
-	"birdfromsky"		"Lyngby" 
-	"Daffu" 			"Lyngby"
-	"maNkz" 			"Lyngby"
-	"FASHR" 			"Lyngby"
-	"WolfY" 			"Lyngby"
+	//ECSTATIC Players
+	"birdfromsky"		"ECSTATIC" 
+	"Daffu" 			"ECSTATIC"
+	"maNkz" 			"ECSTATIC"
+	"FASHR" 			"ECSTATIC"
+	"WolfY" 			"ECSTATIC"
 	//GODSENT Players
 	"TACO" 				"GODSENT"
 	"b4rtiN" 			"GODSENT"
@@ -213,7 +213,7 @@
 	//SJ Players
 	"arvid" 			"SJ"
 	"jelo" 				"SJ"
-	"Jimpphat" 			"SJ"
+	"BONA" 				"SJ"
 	"SADDYX" 			"SJ"
 	"HENU" 				"SJ"
 	//Lions Players
@@ -714,12 +714,12 @@
 	"dyvo" 				"DNMK"
 	"Doru" 				"DNMK"
 	"Dubee"				"DNMK"
-	//Big5 Players
-	"Lately" 			"Big5"
-	"kustoM" 			"Big5"
-	"Tiaantjie" 		"Big5"
-	"takbok" 			"Big5"
-	"FROZ3N"			"Big5"
+	//iNation Players
+	"Dragon" 			"iNation"
+	"VLDN" 				"iNation"
+	"choiv7" 			"iNation"
+	"pTKKK" 			"iNation"
+	"SkippeR"			"iNation"
 	//LEISURE Players
 	"get" 				"LEISURE"
 	"rome" 				"LEISURE"
@@ -798,4 +798,10 @@
 	"Smash" 			"ECK"
 	"s4" 				"ECK"
 	"amster"			"ECK"
+	//Conquer Players
+	"choco" 			"Conquer"
+	"Elfern"			"Conquer"
+	"myltsi" 			"Conquer"
+	"Jerppa" 			"Conquer"
+	"Jimpphat"			"Conquer"
 }

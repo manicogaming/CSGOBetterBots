@@ -1020,7 +1020,7 @@ ProP+Rifle+RiflePersonality "jemi"
 	VoicePitch = 100
 End
 
-//Lyngby Players
+//ECSTATIC Players
 
 ProP+Rifle+RiflePersonality "birdfromsky"
 	VoicePitch = 90
@@ -1074,7 +1074,7 @@ ProP+SniperPro+SniperPersonality "jelo"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "Jimpphat"
+ProP+Rifle+RiflePersonality "BONA"
 	VoicePitch = 103
 End
 
@@ -2912,25 +2912,25 @@ ProP+Rifle+RiflePersonality "Dubee"
 	VoicePitch = 108
 End
 
-//Big5 Players
+//iNation Players
 
-ProP+Rifle+RiflePersonality "Lately"
+ProP+Rifle+RiflePersonality "Dragon"
 	VoicePitch = 113
 End
 
-ProP+SniperPro+SniperPersonality "Tiaantjie"
+ProP+SniperPro+SniperPersonality "choiv7"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "kustoM"
+ProP+Rifle+RiflePersonality "VLDN"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "takbok"
+ProP+Rifle+RiflePersonality "pTKKK"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "FROZ3N"
+ProP+Rifle+RiflePersonality "SkippeR"
 	VoicePitch = 96
 End
 
@@ -3218,6 +3218,28 @@ End
 
 ProP+Rifle+RiflePersonality "amster"
 	VoicePitch = 89
+End
+
+//Conquer Players
+
+ProP+Rifle+RiflePersonality "choco"
+	VoicePitch = 75
+End
+
+ProP+SniperPro+SniperPersonality "Elfern"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "myltsi"
+	VoicePitch = 94
+End
+
+ProP+Rifle+RiflePersonality "Jerppa"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "Jimpphat"
+	VoicePitch = 79
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
