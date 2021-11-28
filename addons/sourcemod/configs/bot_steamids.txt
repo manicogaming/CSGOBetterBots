@@ -409,7 +409,7 @@
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//Wisla Players
-	"Markos"			"68256934" 
+	"mynio"				"24981058" 
 	"SZPERO" 			"19554985"
 	"Goofy" 			"300617878"
 	"phr" 				"19304486"
@@ -433,7 +433,7 @@
 	"Enzo" 				"71273322"
 	"byali" 			"18860354"
 	//ATK Players
-	"bLazE" 			"209701855"
+	"Minus" 			"287775928"
 	"MisteM" 			"175149890"
 	"motm" 				"60208330"
 	"Fadey" 			"181493840"
@@ -570,12 +570,6 @@
 	"maxujas" 			"282684656"
 	"bit" 				"9224396"
 	"rox" 				"897065446"
-	//Sinister5 Players
-	"Chappy" 			"86296457"
-	"scheeR" 			"136912625"
-	"Bam999" 			"243153539"
-	"Glitch" 			"74321321"
-	"Ruben" 			"132160849"	
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
 	"oskar" 			"171425088"

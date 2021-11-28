@@ -80,6 +80,14 @@ public void PrepareDust2Executes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/RpK Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/Vitality Long Execute/shox Role.rec");
 			}
+			case 10: //NAVI FAST B Split
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI FAST B Split/b1t Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI FAST B Split/s1mple Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI FAST B Split/Boombl4 Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI FAST B Split/electronic Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_dust2/NAVI FAST B Split/Perfecto Role.rec");
+			}
 		}
 	}
 }

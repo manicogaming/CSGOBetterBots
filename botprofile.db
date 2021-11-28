@@ -1792,7 +1792,7 @@ End
 
 //Wisla Players
 
-ProP+Rifle+RiflePersonality "Markos"
+ProP+Rifle+RiflePersonality "mynio"
 	VoicePitch = 82
 End
 
@@ -1880,7 +1880,7 @@ End
 
 //ATK Players
 
-ProP+Rifle+RiflePersonality "bLazE"
+ProP+Rifle+RiflePersonality "Minus"
 	VoicePitch = 79
 End
 
@@ -2382,28 +2382,6 @@ End
 
 ProP+Rifle+RiflePersonality "rox"
 	VoicePitch = 104
-End
-
-//Sinister5 Players
-
-ProP+Rifle+RiflePersonality "Chappy"
-	VoicePitch = 93
-End
-
-ProP+SniperPro+SniperPersonality "scheeR"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "Bam999"
-	VoicePitch = 100
-End
-
-ProP+Rifle+RiflePersonality "Glitch"
-	VoicePitch = 112
-End
-
-ProP+Rifle+RiflePersonality "Ruben"
-	VoicePitch = 94
 End
 
 //SINNERS Players

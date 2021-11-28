@@ -409,7 +409,7 @@
 	"Ax1Le" 			"Gambit"
 	"Hobbit" 			"Gambit"
 	//Wisla Players
-	"Markos"			"Wisla" 
+	"mynio"				"Wisla" 
 	"SZPERO" 			"Wisla"
 	"Goofy" 			"Wisla"
 	"phr" 				"Wisla"
@@ -433,7 +433,7 @@
 	"TOAO" 				"Izako"
 	"Enzo" 				"Izako"
 	//ATK Players
-	"bLazE" 			"ATK"
+	"Minus" 			"ATK"
 	"MisteM" 			"ATK"
 	"motm" 				"ATK"
 	"Fadey" 			"ATK"
@@ -570,12 +570,6 @@
 	"maxujas" 			"9z"
 	"bit" 				"9z"
 	"rox" 				"9z"
-	//Sinister5 Players
-	"Chappy" 			"Sinister5"
-	"scheeR" 			"Sinister5"
-	"Bam999" 			"Sinister5"
-	"Glitch" 			"Sinister5"
-	"Ruben" 			"Sinister5"	
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
 	"oskar" 			"SINNERS"

@@ -228,7 +228,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_ftw", Team_FTW);
 	RegConsoleCmd("team_tigers", Team_Tigers);
 	RegConsoleCmd("team_9z", Team_9z);
-	RegConsoleCmd("team_sinister5", Team_Sinister5);
 	RegConsoleCmd("team_sinners", Team_SINNERS);
 	RegConsoleCmd("team_impact", Team_Impact);
 	RegConsoleCmd("team_ern", Team_ERN);
@@ -2317,7 +2316,7 @@ public Action Team_Wisla(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Markos");
+		ServerCommand("bot_add_ct %s", "mynio");
 		ServerCommand("bot_add_ct %s", "SZPERO");
 		ServerCommand("bot_add_ct %s", "Goofy");
 		ServerCommand("bot_add_ct %s", "phr");
@@ -2328,7 +2327,7 @@ public Action Team_Wisla(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Markos");
+		ServerCommand("bot_add_t %s", "mynio");
 		ServerCommand("bot_add_t %s", "SZPERO");
 		ServerCommand("bot_add_t %s", "Goofy");
 		ServerCommand("bot_add_t %s", "phr");
@@ -2437,7 +2436,7 @@ public Action Team_ATK(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "bLazE");
+		ServerCommand("bot_add_ct %s", "Minus");
 		ServerCommand("bot_add_ct %s", "MisteM");
 		ServerCommand("bot_add_ct %s", "motm");
 		ServerCommand("bot_add_ct %s", "Fadey");
@@ -2448,7 +2447,7 @@ public Action Team_ATK(int client, int iArgs)
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "bLazE");
+		ServerCommand("bot_add_t %s", "Minus");
 		ServerCommand("bot_add_t %s", "MisteM");
 		ServerCommand("bot_add_t %s", "motm");
 		ServerCommand("bot_add_t %s", "Fadey");
@@ -3114,36 +3113,6 @@ public Action Team_9z(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "bit");
 		ServerCommand("bot_add_t %s", "rox");
 		ServerCommand("mp_teamlogo_2 9z");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Sinister5(int client, int iArgs)
-{
-	char arg[12];
-	GetCmdArg(1, arg, sizeof(arg));
-	
-	if (strcmp(arg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Chappy");
-		ServerCommand("bot_add_ct %s", "scheeR");
-		ServerCommand("bot_add_ct %s", "Bam999");
-		ServerCommand("bot_add_ct %s", "Glitch");
-		ServerCommand("bot_add_ct %s", "Ruben");
-		ServerCommand("mp_teamlogo_1 sini");
-	}
-	
-	if (strcmp(arg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Chappy");
-		ServerCommand("bot_add_t %s", "scheeR");
-		ServerCommand("bot_add_t %s", "Bam999");
-		ServerCommand("bot_add_t %s", "Glitch");
-		ServerCommand("bot_add_t %s", "Ruben");
-		ServerCommand("mp_teamlogo_2 sini");
 	}
 	
 	return Plugin_Handled;
@@ -4661,7 +4630,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 9);
+			g_iRndExecute = Math_GetRandomInt(1, 10);
 			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareDust2Executes();
 		}
