@@ -42,12 +42,12 @@
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
 	"mezii" 			"12874964"
-	//Alpha Players
-	"zyp" 				"190975326"
-	"hug" 				"103219669"
-	"wAGNR" 			"47175311"
-	"TOBIZ" 			"151717795"
-	"LUMSEN" 			"105569983"
+	//Dynamo Players
+	"ZEDc" 				"108732327"
+	"K1-FiDa" 			"169558739"
+	"capseN" 			"134222736"
+	"Valencio" 			"163134468"
+	"nbqq" 				"123897784"
 	//mouz Players
 	"dexter"			"101535513" 
 	"acoR" 				"42677035"
@@ -522,12 +522,12 @@
 	"Cl34v3rs" 			"98939532"
 	"ChLo" 				"75777535"	
 	"Spexy" 			"161464594"
-	//mCon Players
-	"Monu" 				"17643220"
-	"G1DO" 				"3491078"
+	//LLL Players
+	"Q-Q" 				"43171806"
+	"shield" 			"293626183"
 	"MaximN" 			"67085219"
-	"v1N" 				"158888822"
-	"kzealos" 			"85556724"
+	"Nexius" 			"210313229"
+	"Rezst" 			"85556724"
 	//KOVA Players
 	"zks" 				"368233531"
 	"spargo" 			"109596532"
@@ -798,4 +798,16 @@
 	"myltsi" 			"842766723"
 	"Jerppa" 			"277451852"
 	"Jimpphat"			"895109597"
+	//AVANGAR Players
+	"FinigaN" 			"226095351"
+	"znx"				"23528558"
+	"kade0" 			"343115451"
+	"s1natoRRR" 		"115550559"
+	"ICY"				"94843300"
+	//SWS Players
+	"RICIOLI" 			"101523272"
+	"Gafolo"			"174962930"
+	"matios" 			"3011855"
+	"chay" 				"291666024"
+	"w1"				"456548842"
 }

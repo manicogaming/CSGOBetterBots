@@ -42,12 +42,12 @@
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
 	"mezii" 			"fnatic"
-	//Alpha Players
-	"zyp" 				"Alpha"
-	"hug" 				"Alpha"
-	"wAGNR" 			"Alpha"
-	"TOBIZ" 			"Alpha"
-	"LUMSEN" 			"Alpha"
+	//Dynamo Players
+	"ZEDc" 				"Dynamo"
+	"K1-FiDa" 			"Dynamo"
+	"capseN" 			"Dynamo"
+	"Valencio" 			"Dynamo"
+	"nbqq" 				"Dynamo"
 	//mouz Players
 	"dexter"			"mouz" 
 	"acoR" 				"mouz"
@@ -522,12 +522,12 @@
 	"Cl34v3rs" 			"DIVIZON"
 	"ChLo" 				"DIVIZON"	
 	"Spexy" 			"DIVIZON"
-	//mCon Players
-	"Monu" 				"mCon"
-	"G1DO" 				"mCon"
-	"kzealos" 			"mCon"
-	"v1N" 				"mCon"
-	"MaximN" 			"mCon"
+	//LLL Players
+	"Q-Q" 				"LLL"
+	"shield" 			"LLL"
+	"Rezst" 			"LLL"
+	"Nexius" 			"LLL"
+	"MaximN" 			"LLL"
 	//KOVA Players
 	"zks" 				"KOVA"
 	"spargo" 			"KOVA"
@@ -798,4 +798,16 @@
 	"myltsi" 			"Conquer"
 	"Jerppa" 			"Conquer"
 	"Jimpphat"			"Conquer"
+	//AVANGAR Players
+	"FinigaN" 			"AVANGAR"
+	"znx"				"AVANGAR"
+	"kade0" 			"AVANGAR"
+	"s1natoRRR" 		"AVANGAR"
+	"ICY"				"AVANGAR"
+	//SWS Players
+	"RICIOLI" 			"SWS"
+	"Gafolo"			"SWS"
+	"matios" 			"SWS"
+	"chay" 				"SWS"
+	"w1"				"SWS"
 }

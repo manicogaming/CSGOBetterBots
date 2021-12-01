@@ -88,6 +88,14 @@ public void PrepareInfernoExecutes()
 				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/misutaaa Role.rec");
 				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/shox Role.rec");
 			}
+			case 11: //EG Lane Rush
+			{
+				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/Brehze Role.rec");
+				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/CeRq Role.rec");
+				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/Ethan Role.rec");
+				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/stanislaw Role.rec");
+				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/tarik Role.rec");
+			}
 		}
 	}
 }

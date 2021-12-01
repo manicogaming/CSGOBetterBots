@@ -140,7 +140,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_1win", Team_1win);
 	RegConsoleCmd("team_g2", Team_G2);
 	RegConsoleCmd("team_fnatic", Team_fnatic);
-	RegConsoleCmd("team_alpha", Team_Alpha);
+	RegConsoleCmd("team_dynamo", Team_Dynamo);
 	RegConsoleCmd("team_mouz", Team_mouz);
 	RegConsoleCmd("team_tyloo", Team_TYLOO);
 	RegConsoleCmd("team_eg", Team_EG);
@@ -220,7 +220,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_dig", Team_DIG);
 	RegConsoleCmd("team_d13", Team_D13);
 	RegConsoleCmd("team_divizon", Team_DIVIZON);
-	RegConsoleCmd("team_mcon", Team_mCon);
+	RegConsoleCmd("team_lll", Team_LLL);
 	RegConsoleCmd("team_kova", Team_KOVA);
 	RegConsoleCmd("team_agf", Team_AGF);
 	RegConsoleCmd("team_nlg", Team_NLG);
@@ -266,6 +266,8 @@ public void OnPluginStart()
 	RegConsoleCmd("team_bluejays", Team_BLUEJAYS);
 	RegConsoleCmd("team_eck", Team_ECK);
 	RegConsoleCmd("team_conquer", Team_Conquer);
+	RegConsoleCmd("team_avangar", Team_AVANGAR);
+	RegConsoleCmd("team_sws", Team_SWS);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -478,7 +480,7 @@ public Action Team_fnatic(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Alpha(int client, int iArgs)
+public Action Team_Dynamo(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -486,23 +488,23 @@ public Action Team_Alpha(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "zyp");
-		ServerCommand("bot_add_ct %s", "wAGNR");
-		ServerCommand("bot_add_ct %s", "hug");
-		ServerCommand("bot_add_ct %s", "TOBIZ");
-		ServerCommand("bot_add_ct %s", "LUMSEN");
-		ServerCommand("mp_teamlogo_1 alpha");
+		ServerCommand("bot_add_ct %s", "ZEDc");
+		ServerCommand("bot_add_ct %s", "capseN");
+		ServerCommand("bot_add_ct %s", "K1-FiDa");
+		ServerCommand("bot_add_ct %s", "Valencio");
+		ServerCommand("bot_add_ct %s", "nbqq");
+		ServerCommand("mp_teamlogo_1 dyna");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "zyp");
-		ServerCommand("bot_add_t %s", "wAGNR");
-		ServerCommand("bot_add_t %s", "hug");
-		ServerCommand("bot_add_t %s", "TOBIZ");
-		ServerCommand("bot_add_t %s", "LUMSEN");
-		ServerCommand("mp_teamlogo_2 alpha");
+		ServerCommand("bot_add_t %s", "ZEDc");
+		ServerCommand("bot_add_t %s", "capseN");
+		ServerCommand("bot_add_t %s", "K1-FiDa");
+		ServerCommand("bot_add_t %s", "Valencio");
+		ServerCommand("bot_add_t %s", "nbqq");
+		ServerCommand("mp_teamlogo_2 dyna");
 	}
 	
 	return Plugin_Handled;
@@ -2878,7 +2880,7 @@ public Action Team_DIVIZON(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_mCon(int client, int iArgs)
+public Action Team_LLL(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2886,23 +2888,23 @@ public Action Team_mCon(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Monu");
-		ServerCommand("bot_add_ct %s", "G1DO");
-		ServerCommand("bot_add_ct %s", "kzealos");
-		ServerCommand("bot_add_ct %s", "v1N");
+		ServerCommand("bot_add_ct %s", "Q-Q");
+		ServerCommand("bot_add_ct %s", "shield");
+		ServerCommand("bot_add_ct %s", "Rezst");
+		ServerCommand("bot_add_ct %s", "Nexius");
 		ServerCommand("bot_add_ct %s", "MaximN");
-		ServerCommand("mp_teamlogo_1 mcon");
+		ServerCommand("mp_teamlogo_1 lll");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Monu");
-		ServerCommand("bot_add_t %s", "G1DO");
-		ServerCommand("bot_add_t %s", "kzealos");
-		ServerCommand("bot_add_t %s", "v1N");
+		ServerCommand("bot_add_t %s", "Q-Q");
+		ServerCommand("bot_add_t %s", "shield");
+		ServerCommand("bot_add_t %s", "Rezst");
+		ServerCommand("bot_add_t %s", "Nexius");
 		ServerCommand("bot_add_t %s", "MaximN");
-		ServerCommand("mp_teamlogo_2 mcon");
+		ServerCommand("mp_teamlogo_2 lll");
 	}
 	
 	return Plugin_Handled;
@@ -4288,6 +4290,66 @@ public Action Team_Conquer(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_AVANGAR(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "FinigaN");
+		ServerCommand("bot_add_ct %s", "znx");
+		ServerCommand("bot_add_ct %s", "kade0");
+		ServerCommand("bot_add_ct %s", "s1natoRRR");
+		ServerCommand("bot_add_ct %s", "ICY");
+		ServerCommand("mp_teamlogo_1 avg");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "FinigaN");
+		ServerCommand("bot_add_t %s", "znx");
+		ServerCommand("bot_add_t %s", "kade0");
+		ServerCommand("bot_add_t %s", "s1natoRRR");
+		ServerCommand("bot_add_t %s", "ICY");
+		ServerCommand("mp_teamlogo_2 avg");
+	}
+	
+	return Plugin_Handled;
+}
+
+public Action Team_SWS(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "RICIOLI");
+		ServerCommand("bot_add_ct %s", "Gafolo");
+		ServerCommand("bot_add_ct %s", "matios");
+		ServerCommand("bot_add_ct %s", "chay");
+		ServerCommand("bot_add_ct %s", "w1");
+		ServerCommand("mp_teamlogo_1 sws");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "RICIOLI");
+		ServerCommand("bot_add_t %s", "Gafolo");
+		ServerCommand("bot_add_t %s", "matios");
+		ServerCommand("bot_add_t %s", "chay");
+		ServerCommand("bot_add_t %s", "w1");
+		ServerCommand("mp_teamlogo_2 sws");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -4636,7 +4698,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 10);
+			g_iRndExecute = Math_GetRandomInt(1, 11);
 			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareInfernoExecutes();
 		}

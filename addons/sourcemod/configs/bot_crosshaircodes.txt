@@ -42,12 +42,12 @@
 	"KRIMZ" 			"CSGO-4iEAK-okUQp-Mtdto-3JuCf-kSVGQ"
 	"Brollan" 			"CSGO-rL4Ce-Nrvv8-BYjT4-CpzJ7-3WOAK"
 	"mezii" 			"CSGO-kUKcC-rcKZH-sbXFT-fxrO8-VH5mA"
-	//Alpha Players
-	"zyp" 				"CSGO-JAvnp-AvxKV-pEKm9-5ExeM-mLh8E"
-	"hug" 				"CSGO-DxDSf-s8EOy-7D2Zk-mrZUS-5tnkP"
-	"wAGNR" 			"CSGO-3MK3v-XOrHx-Aeqtm-Qj2Py-GEbtH"
-	"TOBIZ" 			"CSGO-Df78Z-vHeGr-QuSMx-J65CY-wwXsO"
-	"LUMSEN" 			"CSGO-EoVhh-8qypM-dPKeS-fJ7K7-HDWzE"
+	//Dynamo Players
+	"ZEDc" 				"CSGO-yJpu6-cwWas-DNsad-LcmDA-twDmQ"
+	"K1-FiDa" 			"CSGO-3Yfpt-Wa4LX-LDRDJ-hXwM3-MGyXD"
+	"capseN" 			"CSGO-tCJt7-AwqEx-75qE5-mz77e-qat4N"
+	"Valencio" 			"CSGO-JaR56-2yYCH-bivNo-fF9mx-rmsKG"
+	"nbqq" 				"CSGO-5ikUf-Yehhv-qi4ch-FmorJ-6XoAL"
 	//mouz Players
 	"dexter"			"CSGO-CEDBm-UUD9o-L4EBb-J7ODQ-QGKeB" 
 	"acoR" 				"CSGO-YoOWf-Wtv2E-U6NsD-KUjHx-iKH8D"
@@ -522,12 +522,12 @@
 	"Cl34v3rs" 			"CSGO-8ppMs-ukjw6-9FRQn-fb2xm-FFhnL"
 	"ChLo" 				"CSGO-R2RvJ-9SsF6-m5Z4C-Swu3r-QQSFE"	
 	"Spexy" 			"CSGO-c6pGe-VcJGu-Hq7Wa-YCPO2-ZO88F"
-	//mCon Players
-	"Monu" 				"CSGO-vaxDH-7qxbn-rFGCr-dpoeG-TiBAA"
-	"G1DO" 				"CSGO-zYb2R-9cZsr-upLBx-f9m28-yfCcO"
-	"MaximN" 			"CSGO-zEsJq-9aazw-usa8F-EAcGV-F99zP"
-	"v1N" 				"CSGO-kLaps-qtGi5-rxuTV-u62hb-5bq3B"
-	"kzealos" 			"CSGO-wrsFL-CHT73-3Nbu2-DZO3d-7uDmQ"
+	//LLL Players
+	"Q-Q" 				"CSGO-aAQ5u-kAwNj-JoQJZ-jrqkk-8VopQ"
+	"shield" 			"CSGO-ifHDe-3R8iD-jL6do-BLy48-7xAkE"
+	"MaximN" 			"CSGO-7NtQ3-F7tbz-p9E4r-EiHLR-ey3JE"
+	"Nexius" 			"CSGO-dvJNS-q5Gff-TGkwL-aC7FJ-XB7yD"
+	"Rezst" 			"CSGO-wrsFL-CHT73-3Nbu2-DZO3d-7uDmQ"
 	//KOVA Players
 	"zks" 				"CSGO-Wr2Mo-jApDy-QGWdD-4yCLh-yW43L"
 	"spargo" 			"CSGO-RSyTi-k855k-wKPKM-EFe95-9DmDA"
@@ -798,4 +798,16 @@
 	"myltsi" 			"CSGO-FiKfv-YJxrw-kS6m2-jpjOd-dmwjN"
 	"Jerppa" 			"CSGO-3aUZR-GXi7z-a6qpi-i3cLq-qKwLA"
 	"Jimpphat"			"CSGO-fVUXf-CdrUZ-uNLjq-uMOFu-BouCQ"
+	//AVANGAR Players
+	"FinigaN" 			"CSGO-3MnZv-oBime-Vtzj4-q5KGd-8SD3J"
+	"znx"				"CSGO-3wWE8-HZmQO-6DyPy-nLorm-DzurD"
+	"kade0" 			"CSGO-nafEP-UF6mG-536cw-WZqKm-n6QmH"
+	"s1natoRRR" 		"CSGO-fEWAM-nKXUm-ONMxZ-mX5Gy-rfdZH"
+	"ICY"				"CSGO-YYh4c-Q5NYG-rBqM7-ABerF-qRkTL"
+	//SWS Players
+	"RICIOLI" 			"CSGO-jdPJ6-xQVkn-ThNRQ-Lenhw-RPNMB"
+	"Gafolo"			"CSGO-fTEc9-FrzNy-nNcs5-OCEix-o8veM"
+	"matios" 			"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
+	"chay" 				"CSGO-jTFBF-UW5i7-uz2PF-ETE6F-QvZQM"
+	"w1"				"CSGO-9Ynb2-U8ykx-47x5k-oc9BH-dwWPA"
 }
