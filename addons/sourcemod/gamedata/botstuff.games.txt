@@ -167,6 +167,11 @@
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"	   "16016"
 			}
+			"CCSBot::m_enemy"
+			{
+				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
+				"windows"	   "24068"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
@@ -259,6 +264,28 @@
 				"callconv" "fastcall"
 				"return" "float"
 				"this" "ignore"
+			}
+			"CCSBot::IsVisible(pos)"
+			{
+				"signature" "CCSBot::IsVisible"
+				"callconv" "thiscall"
+				"return" "bool"
+				"this" "entity"
+				"arguments"
+				{
+					"pos"
+					{
+						"type" "vectorptr"
+					}
+					"testFOV"
+					{
+						"type" "bool"
+					}
+					"ignore"
+					{
+						"type" "int"
+					}
+				}
 			}
 			"CCSBot::IsVisible(player)"
 			{

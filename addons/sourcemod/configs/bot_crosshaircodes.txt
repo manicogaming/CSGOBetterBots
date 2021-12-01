@@ -681,7 +681,7 @@
 	//Anonymo Players
 	"snatchie" 			"CSGO-dvUMD-iqRuB-rXtZF-ZNm73-mD5RG"
 	"Snax" 				"CSGO-qiZ9k-Ukk4v-FGUYf-3f3Jd-TXaUN"
-	"Kylar" 			"CSGO-pZRbP-aOvHV-dQuXZ-HXNTA-c2D7K"
+	"Demho" 			"CSGO-p2tzD-qvm5f-xuvL5-96mBs-pevvE"
 	"rallen" 			"CSGO-uCzjK-eGMKr-jYfMB-WkFYd-Q38CH"
 	"innocent"			"CSGO-pZRbP-aOvHV-dQuXZ-HXNTA-c2D7K"
 	//HONORIS Players

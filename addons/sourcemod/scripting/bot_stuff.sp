@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
-int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset;
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -3668,7 +3668,7 @@ public Action Team_Anonymo(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "snatchie");
 		ServerCommand("bot_add_ct %s", "Snax");
-		ServerCommand("bot_add_ct %s", "Kylar");
+		ServerCommand("bot_add_ct %s", "Demho");
 		ServerCommand("bot_add_ct %s", "rallen");
 		ServerCommand("bot_add_ct %s", "innocent");
 		ServerCommand("mp_teamlogo_1 anon");
@@ -3679,7 +3679,7 @@ public Action Team_Anonymo(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "snatchie");
 		ServerCommand("bot_add_t %s", "Snax");
-		ServerCommand("bot_add_t %s", "Kylar");
+		ServerCommand("bot_add_t %s", "Demho");
 		ServerCommand("bot_add_t %s", "rallen");
 		ServerCommand("bot_add_t %s", "innocent");
 		ServerCommand("mp_teamlogo_2 anon");
@@ -4630,7 +4630,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 10);
+			g_iRndExecute = Math_GetRandomInt(1, 11);
 			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
 			PrepareDust2Executes();
 		}
@@ -4857,16 +4857,16 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 	return MRES_Supercede;
 }
 
+public MRESReturn CCSBot_IsVisiblePos(int pThis, DHookReturn hReturn, DHookParam hParams)
+{
+	hParams.Set(2, 0);
+	
+	return MRES_ChangedHandled;
+}
+
 public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookParam hParams)
 {
 	hParams.Set(2, false);
-	int iPlayer = hParams.Get(1);
-	
-	if(g_bIsProBot[pThis] && IsValidClient(g_iTarget[pThis]) && IsPlayerAlive(g_iTarget[pThis]) && g_fTargetPos[pThis][2] != 0 && iPlayer == g_iTarget[pThis])
-	{
-		hReturn.Value = true;
-		return MRES_ChangedHandled;
-	}
 	
 	return MRES_ChangedHandled;
 }
@@ -4874,13 +4874,22 @@ public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookPa
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
-	for (int client = 1; client <= MaxClients; client++)
+	int iPart = hParams.Get(2);
+	
+	if(iPart == 2)
 	{
-		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client) && g_bIsProBot[client] && IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]) && g_fTargetPos[client][2] != 0 && iPlayer == g_iTarget[client])
-		{
-			hReturn.SetVector(g_fTargetPos[client]);
-			return MRES_Supercede;
-		}
+		int iBone = LookupBone(iPlayer, "head_0");
+		if (iBone < 0)
+			return MRES_Ignored;
+		
+		float fHead[3], fBad[3];
+		GetBonePosition(iPlayer, iBone, fHead, fBad);
+		
+		fHead[2] += 4.0;
+		
+		hReturn.SetVector(fHead);
+		
+		return MRES_Supercede;
 	}
 	
 	return MRES_Ignored;
@@ -4946,14 +4955,19 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
-	if (g_bIsProBot[client] && g_fTargetPos[client][2] != 0)
+	if (g_bIsProBot[client])
 	{
-		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
+		SelectBestTargetPos(client, g_fTargetPos[client]);
 		
-		return MRES_Ignored;
+		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+		{
+			return MRES_Ignored;
+		}
+		
+		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
 	
-	return MRES_Supercede;
+	return MRES_Ignored;
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
@@ -4985,18 +4999,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 		
 		if (g_bIsProBot[client])
-		{
-			if(g_iNewTargetTime[client] == 14)
-			{
-				g_fTargetPos[client] = SelectBestTargetPos(client, g_iTarget[client]);
-				g_iNewTargetTime[client] = 0;
-			}
+		{		
+			g_iTarget[client] = BotGetEnemy(client);
 			
-			g_iNewTargetTime[client]++;
-			
-			if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
-				BotSetEnemy(client, g_iTarget[client]);
-		
 			float fTargetDistance;
 			int iZoomLevel;
 			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
@@ -5289,6 +5294,9 @@ public void LoadSDK()
 	if ((g_iBotAttackingOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isAttacking")) == -1)
 		SetFailState("Failed to get CCSBot::m_isAttacking offset.");
 	
+	if ((g_iBotEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
+		SetFailState("Failed to get CCSBot::m_enemy offset.");
+	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
@@ -5406,6 +5414,11 @@ public void LoadDetours()
 	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
 		SetFailState("Failed to setup detour for BotSIN");
 	
+	//CCSBot::IsVisible(pos) Detour
+	DynamicDetour hBotVisiblePosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(pos)");
+	if(!hBotVisiblePosDetour.Enable(Hook_Pre, CCSBot_IsVisiblePos))
+		SetFailState("Failed to setup detour for CCSBot::IsVisible(pos)");
+	
 	//CCSBot::IsVisible(player) Detour
 	DynamicDetour hBotVisiblePlayerDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(player)");
 	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
@@ -5467,6 +5480,11 @@ public int BotBendLineOfSight(int client, const float fEye[3], const float fTarg
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
 {
 	SDKCall(g_hSetCrosshairCode, pCCSPlayerResource, client, szCode);
+}
+
+public int BotGetEnemy(int client)
+{
+	return GetEntDataEnt2(client, g_iBotEnemyOffset);
 }
 
 public bool BotIsBusy(int client)
@@ -5587,44 +5605,19 @@ public Action Timer_Breakable(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-float[] SelectBestTargetPos(int client, int &iBestEnemy)
+public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
-	float flMyPos[3], fEyes[3]; 
-	GetClientAbsOrigin(client, flMyPos);
-	GetClientEyePosition(client, fEyes);
-	
-	float flTargetPos[3];
-	float flClosestDistance = 999999999999999.0;
-
-	for (int i = 1; i <= MaxClients; i++)
+	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
 	{
-		if(i == client)
-			continue;
-		
-		if(!IsValidClient(i))
-			continue;
-		
-		if(!IsPlayerAlive(i))
-			continue;
-		
-		if (GetEntProp(i, Prop_Send, "m_bGunGameImmunity"))
-			continue;
-		
-		if(GetClientTeam(i) == GetClientTeam(client))
-			continue;
-		
-		if(!IsTargetInSightRange(client, i, 180.0))
-			continue;
-		
-		int iBone = LookupBone(i, "head_0");
-		int iSpineBone = LookupBone(i, "spine_3");
+		int iBone = LookupBone(g_iTarget[client], "head_0");
+		int iSpineBone = LookupBone(g_iTarget[client], "spine_3");
 		if (iBone < 0 || iSpineBone < 0)
-			continue;
+			return;
 		
 		bool bShootSpine;
 		float fHead[3], fBody[3], fBad[3];
-		GetBonePosition(i, iBone, fHead, fBad);
-		GetBonePosition(i, iSpineBone, fBody, fBad);
+		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
+		GetBonePosition(g_iTarget[client], iSpineBone, fBody, fBad);
 		
 		fHead[2] += 4.0;
 		
@@ -5633,123 +5626,50 @@ float[] SelectBestTargetPos(int client, int &iBestEnemy)
 			if (BotIsVisible(client, fBody, false, -1))
 			{
 				int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-				if (IsValidEntity(iActiveWeapon))
+				if (iActiveWeapon == -1) return;
+				
+				int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
+				
+				switch(iDefIndex)
 				{
-					int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-					
-					switch(iDefIndex)
+					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 					{
-						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
-						{
-							if (Math_GetRandomInt(1, 100) <= 90)
-								bShootSpine = true;
-						}
-						case 2, 3, 4, 30, 32, 36, 61, 63:
-						{
-							if (Math_GetRandomInt(1, 100) <= 30)
-								bShootSpine = true;
-						}
-						case 9, 11, 38:
-						{
+						if (Math_GetRandomInt(1, 100) <= 90)
 							bShootSpine = true;
-						}
+					}
+					case 2, 3, 4, 30, 32, 36, 61, 63:
+					{
+						if (Math_GetRandomInt(1, 100) <= 30)
+							bShootSpine = true;
+					}
+					case 9, 11, 38:
+					{
+						bShootSpine = true;
 					}
 				}
 			}
 		}
 		else
 		{
-			bool bVisibleOther = false;
-		
 			//Head wasn't visible, check other bones.
 			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
 			{
-				iBone = LookupBone(i, g_szBoneNames[b]);
+				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
 				if (iBone < 0)
-					continue;
+					return;
 				
-				GetBonePosition(i, iBone, fHead, fBad);
+				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
 				
 				if (BotIsVisible(client, fHead, false, -1))
-				{
-					bVisibleOther = true;
 					break;
-				}
 			}
-			
-			if(!bVisibleOther)
-				continue;
 		}
-
-		float flEnemyPos[3];
-		GetClientAbsOrigin(i, flEnemyPos);
-			
-		float flDistance = GetVectorDistance(flEnemyPos, flMyPos, true);
-		if(flDistance < flClosestDistance)
-		{
-			flClosestDistance = flDistance;
-			
-			if(bShootSpine)
-				flTargetPos = fBody;
-			else
-				flTargetPos = fHead;
-			
-			iBestEnemy = i;
-		}
+		
+		if(bShootSpine)
+			fTargetPos = fBody;
+		else
+			fTargetPos = fHead;
 	}
-	
-	return flTargetPos;
-}
-
-stock bool IsTargetInSightRange(int client, int iTarget, float fAngle = 90.0, float fDistance = 0.0, bool bHeightCheck = true, bool bNegativeAngle = false)
-{
-	if (fAngle > 360.0)
-		fAngle = 360.0;
-	
-	if (fAngle < 0.0)
-		return false;
-	
-	float fClientPos[3];
-	float fTargetPos[3];
-	float fAngleVector[3];
-	float fTargetVector[3];
-	float fResultAngle;
-	float fResultDistance;
-	
-	GetClientEyeAngles(client, fAngleVector);
-	fAngleVector[0] = fAngleVector[2] = 0.0;
-	GetAngleVectors(fAngleVector, fAngleVector, NULL_VECTOR, NULL_VECTOR);
-	NormalizeVector(fAngleVector, fAngleVector);
-	if (bNegativeAngle)
-		NegateVector(fAngleVector);
-	
-	GetClientAbsOrigin(client, fClientPos);
-	GetClientAbsOrigin(iTarget, fTargetPos);
-	
-	if (bHeightCheck && fDistance > 0)
-		fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-	
-	fClientPos[2] = fTargetPos[2] = 0.0;
-	MakeVectorFromPoints(fClientPos, fTargetPos, fTargetVector);
-	NormalizeVector(fTargetVector, fTargetVector);
-	
-	fResultAngle = RadToDeg(ArcCosine(GetVectorDotProduct(fTargetVector, fAngleVector)));
-	
-	if (fResultAngle <= fAngle / 2)
-	{
-		if (fDistance > 0)
-		{
-			if (!bHeightCheck)
-				fResultDistance = GetVectorDistance(fClientPos, fTargetPos);
-			
-			if (fDistance >= fResultDistance)
-				return true;
-			else return false;
-		}
-		else return true;
-	}
-	
-	return false;
 }
 
 stock void GetViewVector(float fVecAngle[3], float fOutPut[3])

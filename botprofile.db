@@ -424,6 +424,8 @@ End
 
 ProP+Rifle+RiflePersonality "NiKo"
 	VoicePitch = 100
+	LookAngleStiffnessAttacking = 5200.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //fnatic Players
@@ -544,6 +546,8 @@ End
 
 ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
+	LookAngleStiffnessAttacking = 5200.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle+RiflePersonality "B1T"
@@ -632,6 +636,8 @@ End
 
 ProP+SniperPro+SniperPersonality "ZywOo"
 	VoicePitch = 115
+	LookAngleStiffnessAttacking = 5200.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle+RiflePersonality "apEX"
@@ -2790,7 +2796,7 @@ ProP+SniperPro+SniperPersonality "Snax"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Kylar"
+ProP+Rifle+RiflePersonality "Demho"
 	VoicePitch = 102
 End
 

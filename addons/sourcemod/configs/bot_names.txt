@@ -681,7 +681,7 @@
 	//Anonymo Players
 	"snatchie" 			"Anonymo"
 	"Snax" 				"Anonymo"
-	"Kylar" 			"Anonymo"
+	"Demho" 			"Anonymo"
 	"rallen" 			"Anonymo"
 	"innocent"			"Anonymo"
 	//HONORIS Players
