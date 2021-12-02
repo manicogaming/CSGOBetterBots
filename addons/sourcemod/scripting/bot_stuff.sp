@@ -5022,9 +5022,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 		SelectBestTargetPos(client, g_fTargetPos[client]);
 		
 		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
-		{
 			return MRES_Ignored;
-		}
 		
 		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
@@ -5085,17 +5083,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if (bIsHiding && g_iUncrouchChance[client] <= 50)
 				iButtons &= ~IN_DUCK;
-			
-			float fFireWeaponTimeStamp = GetEntDataFloat(client, g_iFireWeaponOffset);
-			
-			if(GetGameTime() < fFireWeaponTimeStamp && fFireWeaponTimeStamp != 0.0 && !bIsDucking && !bIsAttacking)
-			{
-				switch(iDefIndex)
-				{
-					case 1, 7, 8, 10, 13, 14, 16, 28, 39, 60:
-						SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-				}
-			}
+				
+			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+				return Plugin_Continue;
 			
 			if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
 			{
@@ -5724,6 +5714,8 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 				
 				if (BotIsVisible(client, fHead, false, -1))
 					break;
+				else
+					fHead[2] = 0.0;
 			}
 		}
 		
