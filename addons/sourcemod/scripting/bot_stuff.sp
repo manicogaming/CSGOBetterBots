@@ -4919,20 +4919,6 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 	return MRES_Supercede;
 }
 
-public MRESReturn CCSBot_IsVisiblePos(int pThis, DHookReturn hReturn, DHookParam hParams)
-{
-	hParams.Set(2, 0);
-	
-	return MRES_ChangedHandled;
-}
-
-public MRESReturn CCSBot_IsVisiblePlayer(int pThis, DHookReturn hReturn, DHookParam hParams)
-{
-	hParams.Set(2, false);
-	
-	return MRES_ChangedHandled;
-}
-
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
 	int iPlayer = hParams.Get(1);
@@ -5465,16 +5451,6 @@ public void LoadDetours()
 	DynamicDetour hBotSINDetour = DynamicDetour.FromConf(hGameData, "BotSIN");
 	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
 		SetFailState("Failed to setup detour for BotSIN");
-	
-	//CCSBot::IsVisible(pos) Detour
-	DynamicDetour hBotVisiblePosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(pos)");
-	if(!hBotVisiblePosDetour.Enable(Hook_Pre, CCSBot_IsVisiblePos))
-		SetFailState("Failed to setup detour for CCSBot::IsVisible(pos)");
-	
-	//CCSBot::IsVisible(player) Detour
-	DynamicDetour hBotVisiblePlayerDetour = DynamicDetour.FromConf(hGameData, "CCSBot::IsVisible(player)");
-	if(!hBotVisiblePlayerDetour.Enable(Hook_Pre, CCSBot_IsVisiblePlayer))
-		SetFailState("Failed to setup detour for CCSBot::IsVisible(player)");
 	
 	//CCSBot::GetPartPosition Detour
 	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");

@@ -265,50 +265,6 @@
 				"return" "float"
 				"this" "ignore"
 			}
-			"CCSBot::IsVisible(pos)"
-			{
-				"signature" "CCSBot::IsVisible"
-				"callconv" "thiscall"
-				"return" "bool"
-				"this" "entity"
-				"arguments"
-				{
-					"pos"
-					{
-						"type" "vectorptr"
-					}
-					"testFOV"
-					{
-						"type" "bool"
-					}
-					"ignore"
-					{
-						"type" "int"
-					}
-				}
-			}
-			"CCSBot::IsVisible(player)"
-			{
-				"signature" "CCSBot::IsVisible(player)"
-				"callconv" "thiscall"
-				"return" "bool"
-				"this" "entity"
-				"arguments"
-				{
-					"player"
-					{
-						"type" "cbaseentity"
-					}
-					"testFOV"
-					{
-						"type" "bool"
-					}
-					"visParts"
-					{
-						"type" "charptr"
-					}
-				}
-			}
 			"CCSBot::GetPartPosition"
 			{
 				"signature" "CCSBot::GetPartPosition"
