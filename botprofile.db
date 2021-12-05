@@ -425,7 +425,7 @@ End
 ProP+Rifle+RiflePersonality "NiKo"
 	VoicePitch = 100
 	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 50.0
+	LookAngleDampingAttacking = 40.100
 End
 
 //fnatic Players
@@ -547,7 +547,7 @@ End
 ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
 	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 50.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle+RiflePersonality "B1T"
@@ -637,7 +637,7 @@ End
 ProP+SniperPro+SniperPersonality "ZywOo"
 	VoicePitch = 115
 	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 50.0
+	LookAngleDampingAttacking = 40.100
 End
 
 ProP+Rifle+RiflePersonality "apEX"
@@ -2462,7 +2462,7 @@ ProP+Rifle+RiflePersonality "DannyG"
 	VoicePitch = 94
 End
 
-ProP+SniperPro+SniperPersonality "jcg"
+ProP+SniperPro+SniperPersonality "nettik"
 	VoicePitch = 91
 End
 
@@ -2470,7 +2470,7 @@ ProP+Rifle+RiflePersonality "chelleos"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "Spudwrecker"
+ProP+Rifle+RiflePersonality "asap"
 	VoicePitch = 78
 End
 
@@ -3268,6 +3268,28 @@ End
 
 ProP+Rifle+RiflePersonality "w1"
 	VoicePitch = 78
+End
+
+//Leviatan Players
+
+ProP+Rifle+RiflePersonality "1962"
+	VoicePitch = 89
+End
+
+ProP+SniperPro+SniperPersonality "DILLION1"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "Reversive"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "tom1"
+	VoicePitch = 100
+End
+
+ProP+Rifle+RiflePersonality "Yokowow"
+	VoicePitch = 88
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

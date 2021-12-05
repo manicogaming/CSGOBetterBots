@@ -590,9 +590,9 @@
 	"mvN" 				"165741598"
 	//Paradox Players
 	"DannyG"			"193412411" 
-	"jcg" 				"242315956"
+	"nettik" 			"372579523"
 	"chelleos" 			"198705922"
-	"Spudwrecker" 		"47084033"
+	"asap" 				"68391216"
 	"dangeR" 			"307032635"
 	//Flames Players
 	"nicoodoz" 			"112851399"
@@ -810,4 +810,10 @@
 	"matios" 			"3011855"
 	"chay" 				"291666024"
 	"w1"				"456548842"
+	//Leviatan Players
+	"1962" 				"321501952"
+	"DILLION1"			"909656758"
+	"Reversive" 		"229334739"
+	"tom1" 				"1021035676"
+	"Yokowow"			"102784330"
 }

@@ -590,9 +590,9 @@
 	"mvN" 				"CSGO-Wixho-qVUk4-yzRei-Zy2ox-KaapG"
 	//Paradox Players
 	"DannyG"			"CSGO-XS5AW-wOq8u-FQzWO-pUujx-JTDND" 
-	"jcg" 				"CSGO-j9LqL-r4meO-9hiMu-VeujT-fxwPB"
+	"nettik" 			"CSGO-j9LqL-r4meO-9hiMu-VeujT-fxwPB"
 	"chelleos" 			"CSGO-JMOnx-cFmoU-UdWsm-MA4AH-PHPYE"
-	"Spudwrecker" 		"CSGO-WyuDy-V93EZ-BLoi8-esnWP-HiTiA"
+	"asap" 				"CSGO-9zibp-u8vPs-vJyCd-ADpFY-YcOUD"
 	"dangeR" 			"CSGO-Wf7fW-JZWn8-V9Jhh-wCfQq-d7qRP"
 	//Flames Players
 	"nicoodoz" 			"CSGO-eHROm-TtBf4-Hm3vE-cHezV-KudqA"
@@ -810,4 +810,10 @@
 	"matios" 			"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
 	"chay" 				"CSGO-jTFBF-UW5i7-uz2PF-ETE6F-QvZQM"
 	"w1"				"CSGO-9Ynb2-U8ykx-47x5k-oc9BH-dwWPA"
+	//Leviatan Players
+	"1962" 				"CSGO-8hw2y-VpNJH-tKBK2-PCbyV-YcOUD"
+	"DILLION1"			"CSGO-ix5KS-8RiN7-No2Zo-8KhV8-i4SKF"
+	"Reversive" 		"CSGO-LhjXh-enkZw-u2APs-74t9G-3GhnL"
+	"tom1" 				"CSGO-7qThe-zfRsj-pAPOP-MAjwu-kEAMK"
+	"Yokowow"			"CSGO-TZYFn-i5SRo-FuiKP-NGQmf-abMbM"
 }

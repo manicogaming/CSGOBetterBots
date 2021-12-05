@@ -268,6 +268,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_conquer", Team_Conquer);
 	RegConsoleCmd("team_avangar", Team_AVANGAR);
 	RegConsoleCmd("team_sws", Team_SWS);
+	RegConsoleCmd("team_leviatan", Team_Leviatan);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -3219,9 +3220,9 @@ public Action Team_Paradox(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "DannyG");
-		ServerCommand("bot_add_ct %s", "jcg");
+		ServerCommand("bot_add_ct %s", "nettik");
 		ServerCommand("bot_add_ct %s", "chelleos");
-		ServerCommand("bot_add_ct %s", "Spudwrecker");
+		ServerCommand("bot_add_ct %s", "asap");
 		ServerCommand("bot_add_ct %s", "dangeR");
 		ServerCommand("mp_teamlogo_1 para");
 	}
@@ -3230,9 +3231,9 @@ public Action Team_Paradox(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "DannyG");
-		ServerCommand("bot_add_t %s", "jcg");
+		ServerCommand("bot_add_t %s", "nettik");
 		ServerCommand("bot_add_t %s", "chelleos");
-		ServerCommand("bot_add_t %s", "Spudwrecker");
+		ServerCommand("bot_add_t %s", "asap");
 		ServerCommand("bot_add_t %s", "dangeR");
 		ServerCommand("mp_teamlogo_2 para");
 	}
@@ -4350,6 +4351,36 @@ public Action Team_SWS(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_Leviatan(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "1962");
+		ServerCommand("bot_add_ct %s", "DILLION1");
+		ServerCommand("bot_add_ct %s", "Reversive");
+		ServerCommand("bot_add_ct %s", "tom1");
+		ServerCommand("bot_add_ct %s", "Yokowow");
+		ServerCommand("mp_teamlogo_1 levi");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "1962");
+		ServerCommand("bot_add_t %s", "DILLION1");
+		ServerCommand("bot_add_t %s", "Reversive");
+		ServerCommand("bot_add_t %s", "tom1");
+		ServerCommand("bot_add_t %s", "Yokowow");
+		ServerCommand("mp_teamlogo_2 levi");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -4679,63 +4710,63 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_fRoundStartTimeStamp = GetGameTime();
 	bool bWarmupPeriod = !!GameRules_GetProp("m_bWarmupPeriod");
 	
-	if(bWarmupPeriod || g_bTerroristEco || g_iCurrentRound == 0 || g_iCurrentRound == 15 || HumansOnTeam(CS_TEAM_T) > 0)
+	if(bWarmupPeriod || g_bTerroristEco || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
 	
 	if(Math_GetRandomInt(1,100) <= 50)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 19);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 1) : Math_GetRandomInt(1, 19);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareMirageExecutes();
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 11);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareDust2Executes();
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 11);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			g_iRndExecute = Math_GetRandomInt(1, 16);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareInfernoExecutes();
 		}
 		else if (strcmp(g_szMap, "de_overpass") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareOverpassExecutes();
 		}
 		else if (strcmp(g_szMap, "de_train") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareTrainExecutes();
 		}
 		else if (strcmp(g_szMap, "de_nuke") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareNukeExecutes();
 		}
 		else if (strcmp(g_szMap, "de_vertigo") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 2);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareVertigoExecutes();
 		}
 		else if (strcmp(g_szMap, "de_cache") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareCacheExecutes();
 		}
 		else if (strcmp(g_szMap, "de_ancient") == 0)
 		{
 			g_iRndExecute = Math_GetRandomInt(1, 3);
-			LogMessage("BOT STUFF: %s selected execute: %i", g_szMap, g_iRndExecute);
+			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareAncientExecutes();
 		}
 	}
@@ -4800,14 +4831,6 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	
 	if(GetClientTeam(iVictim) == CS_TEAM_T)
 		g_bAbortExecute = true;
-	
-	float fVictimEyes[3], fAttackerPos[3];
-	GetClientEyePosition(iVictim, fVictimEyes);
-	GetClientAbsOrigin(iAttacker, fAttackerPos);
-	fAttackerPos[2] += 35.5;
-	
-	if(IsPointVisible(fVictimEyes, fAttackerPos) && LineGoesThroughSmoke(fVictimEyes, fAttackerPos))
-		BotSetLookAt(iVictim, "Use entity", fAttackerPos, PRIORITY_HIGH, Math_GetRandomFloat(0.5, 2.0), true, 5.0, true);
 	
 	return Plugin_Continue;
 }

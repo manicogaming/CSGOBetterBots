@@ -590,9 +590,9 @@
 	"sesL" 				"ERN"
 	//Paradox Players
 	"DannyG"			"Paradox" 
-	"jcg" 				"Paradox"
+	"nettik" 			"Paradox"
 	"chelleos" 			"Paradox"
-	"Spudwrecker" 		"Paradox"
+	"asap" 				"Paradox"
 	"dangeR" 			"Paradox"
 	//Flames Players
 	"nicoodoz" 			"Flames"
@@ -810,4 +810,10 @@
 	"matios" 			"SWS"
 	"chay" 				"SWS"
 	"w1"				"SWS"
+	//Leviatan Players
+	"1962" 				"Leviatan"
+	"DILLION1"			"Leviatan"
+	"Reversive" 		"Leviatan"
+	"tom1" 				"Leviatan"
+	"Yokowow"			"Leviatan"
 }
