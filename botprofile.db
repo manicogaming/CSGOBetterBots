@@ -1620,25 +1620,25 @@ ProP+Rifle+RiflePersonality "mik"
 	VoicePitch = 102
 End
 
-//SSB Players
+//Eternal Players
 
-ProP+Rifle+RiflePersonality "rapala"
+ProP+Rifle+RiflePersonality "XANTARES"
 	VoicePitch = 99
 End
 
-ProP+SniperPro+SniperPersonality "DreaM-"
+ProP+SniperPro+SniperPersonality "woxic"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "nixeed"
+ProP+Rifle+RiflePersonality "Calyx"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "hyped"
+ProP+Rifle+RiflePersonality "imoRR"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "MRC9"
+ProP+Rifle+RiflePersonality "xfl0ud"
 	VoicePitch = 86
 End
 
@@ -3290,6 +3290,28 @@ End
 
 ProP+Rifle+RiflePersonality "Yokowow"
 	VoicePitch = 88
+End
+
+//HR Players
+
+ProP+Rifle+RiflePersonality "Templ"
+	VoicePitch = 105
+End
+
+ProP+SniperPro+SniperPersonality "alex666"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "7oX1C"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "w0nderful"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "OWNER"
+	VoicePitch = 95
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

@@ -360,12 +360,12 @@
 	"StepA" 			"GTZ"
 	"adamS" 			"GTZ"
 	"mik" 				"GTZ"
-	//SSB Players
-	"rapala" 			"SSB"
-	"hyped" 			"SSB"
-	"nixeed" 			"SSB"
-	"DreaM-" 			"SSB"
-	"MRC9" 				"SSB"
+	//Eternal Players
+	"XANTARES" 			"Eternal"
+	"imoRR" 			"Eternal"
+	"Calyx" 			"Eternal"
+	"woxic" 			"Eternal"
+	"xfl0ud" 			"Eternal"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"mou" 				"K23"
@@ -816,4 +816,10 @@
 	"Reversive" 		"Leviatan"
 	"tom1" 				"Leviatan"
 	"Yokowow"			"Leviatan"
+	//HR Players
+	"Templ" 			"HR"
+	"alex666"			"HR"
+	"7oX1C" 			"HR"
+	"w0nderful" 		"HR"
+	"OWNER"				"HR"
 }

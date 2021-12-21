@@ -360,12 +360,12 @@
 	"slaxx" 			"118792535"
 	"Blastinho" 		"107737970"
 	"StepA" 			"208115597"
-	//SSB Players
-	"rapala" 			"239214601"
-	"hyped" 			"179338600"
-	"nixeed" 			"247022056"
-	"DreaM-" 			"245251564"
-	"MRC9" 				"58588281"
+	//Eternal Players
+	"XANTARES" 			"83853068"
+	"imoRR" 			"107082440"
+	"Calyx" 			"92280537"
+	"woxic" 			"123219778"
+	"xfl0ud" 			"217943381"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"mou" 				"52678767"
@@ -816,4 +816,10 @@
 	"Reversive" 		"229334739"
 	"tom1" 				"1021035676"
 	"Yokowow"			"102784330"
+	//HR Players
+	"Templ" 			"201614089"
+	"alex666"			"343849791"
+	"7oX1C" 			"352463921"
+	"w0nderful" 		"1102803112"
+	"OWNER"				"136667537"
 }

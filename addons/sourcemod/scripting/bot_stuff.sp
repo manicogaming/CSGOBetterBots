@@ -12,11 +12,11 @@
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35];
-bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute;
+bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStartTimeStamp;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccelAttacking[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fRoundStartTimeStamp;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -193,7 +193,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_furious", Team_Furious);
 	RegConsoleCmd("team_rhyno", Team_Rhyno);
 	RegConsoleCmd("team_gtz", Team_GTZ);
-	RegConsoleCmd("team_ssb", Team_SSB);
+	RegConsoleCmd("team_eternal", Team_Eternal);
 	RegConsoleCmd("team_k23", Team_K23);
 	RegConsoleCmd("team_goliath", Team_Goliath);
 	RegConsoleCmd("team_uol", Team_UOL);
@@ -269,6 +269,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_avangar", Team_AVANGAR);
 	RegConsoleCmd("team_sws", Team_SWS);
 	RegConsoleCmd("team_leviatan", Team_Leviatan);
+	RegConsoleCmd("team_hr", Team_HR);
 }
 
 public Action Team_NiP(int client, int iArgs)
@@ -2071,7 +2072,7 @@ public Action Team_GTZ(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_SSB(int client, int iArgs)
+public Action Team_Eternal(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2079,23 +2080,23 @@ public Action Team_SSB(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "rapala");
-		ServerCommand("bot_add_ct %s", "DreaM-");
-		ServerCommand("bot_add_ct %s", "nixeed");
-		ServerCommand("bot_add_ct %s", "hyped");
-		ServerCommand("bot_add_ct %s", "MRC9");
-		ServerCommand("mp_teamlogo_1 siss");
+		ServerCommand("bot_add_ct %s", "XANTARES");
+		ServerCommand("bot_add_ct %s", "woxic");
+		ServerCommand("bot_add_ct %s", "Calyx");
+		ServerCommand("bot_add_ct %s", "imoRR");
+		ServerCommand("bot_add_ct %s", "xfl0ud");
+		ServerCommand("mp_teamlogo_1 eter");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "rapala");
-		ServerCommand("bot_add_t %s", "DreaM-");
-		ServerCommand("bot_add_t %s", "nixeed");
-		ServerCommand("bot_add_t %s", "hyped");
-		ServerCommand("bot_add_t %s", "MRC9");
-		ServerCommand("mp_teamlogo_2 siss");
+		ServerCommand("bot_add_t %s", "XANTARES");
+		ServerCommand("bot_add_t %s", "woxic");
+		ServerCommand("bot_add_t %s", "Calyx");
+		ServerCommand("bot_add_t %s", "imoRR");
+		ServerCommand("bot_add_t %s", "xfl0ud");
+		ServerCommand("mp_teamlogo_2 eter");
 	}
 	
 	return Plugin_Handled;
@@ -4381,6 +4382,36 @@ public Action Team_Leviatan(int client, int iArgs)
 	return Plugin_Handled;
 }
 
+public Action Team_HR(int client, int iArgs)
+{
+	char szArg[12];
+	GetCmdArg(1, szArg, sizeof(szArg));
+	
+	if (strcmp(szArg, "ct") == 0)
+	{
+		ServerCommand("bot_kick ct all");
+		ServerCommand("bot_add_ct %s", "Templ");
+		ServerCommand("bot_add_ct %s", "alex666");
+		ServerCommand("bot_add_ct %s", "7oX1C");
+		ServerCommand("bot_add_ct %s", "w0nderful");
+		ServerCommand("bot_add_ct %s", "OWNER");
+		ServerCommand("mp_teamlogo_1 hr");
+	}
+	
+	if (strcmp(szArg, "t") == 0)
+	{
+		ServerCommand("bot_kick t all");
+		ServerCommand("bot_add_t %s", "Templ");
+		ServerCommand("bot_add_t %s", "alex666");
+		ServerCommand("bot_add_t %s", "7oX1C");
+		ServerCommand("bot_add_t %s", "w0nderful");
+		ServerCommand("bot_add_t %s", "OWNER");
+		ServerCommand("mp_teamlogo_2 hr");
+	}
+	
+	return Plugin_Handled;
+}
+
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
@@ -4448,8 +4479,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 			if (iActiveWeapon == -1) return Plugin_Continue;
 			
-			bool bEveryoneDead;
-			
 			float fClientLoc[3], fClientEyes[3];
 			GetClientAbsOrigin(client, fClientLoc);
 			GetClientEyePosition(client, fClientEyes);
@@ -4458,7 +4487,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 			{
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
-				bEveryoneDead = true;
+				g_bEveryoneDead = true;
 			}
 			
 			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
@@ -4669,6 +4698,7 @@ public void OnClientPostAdminCheck(int client)
 		{
 			g_fLookAngleMaxAccelAttacking[client] = Math_GetRandomFloat(3000.0, 100000.0);
 			g_fReactionTime[client] = Math_GetRandomFloat(0.10, 0.30);
+			g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -4689,6 +4719,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bFreezetimeEnd = false;
 	g_bAbortExecute = false;
 	g_bTerroristEco = false;
+	g_bEveryoneDead = false;
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -4723,13 +4754,13 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_dust2") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 11);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 1) : Math_GetRandomInt(1, 11);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareDust2Executes();
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 16);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 2) : Math_GetRandomInt(1, 16);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareInfernoExecutes();
 		}
@@ -4830,7 +4861,10 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 		return Plugin_Continue;
 	
 	if(GetClientTeam(iVictim) == CS_TEAM_T)
+	{
 		g_bAbortExecute = true;
+		BotEquipBestWeapon(iVictim, true);
+	}
 	
 	return Plugin_Continue;
 }
@@ -5061,7 +5095,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_SPEED;
 		}
 		
-		if((GetGameTime() - g_fRoundStartTimeStamp) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client))
+		if(((GetGameTime() - g_fRoundStartTimeStamp) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
 			iButtons &= ~IN_SPEED;
 		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
@@ -5178,6 +5212,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccelAttacking[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
+			StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(g_fAggression[client]), NumberType_Int32);
 		}
 		
 		CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));

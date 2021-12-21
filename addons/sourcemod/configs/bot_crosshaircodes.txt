@@ -360,12 +360,12 @@
 	"slaxx" 			"CSGO-wpoSd-ByMNB-2HoD9-xpNfe-GSnMC"
 	"Blastinho" 		"CSGO-R2LjQ-NGGsq-pQEuo-Zo3wu-i2pxA"
 	"StepA" 			"CSGO-52FnM-L8XH8-yxLMi-qiT3i-vfrVQ"
-	//SSB Players
-	"rapala" 			"CSGO-op3HG-xjtfD-42s2S-Fq93G-d9aYO"
-	"hyped" 			"CSGO-hjYS8-3O36a-M2PG8-CCPNh-7o2AC"
-	"nixeed" 			"CSGO-vfq5D-GBBwE-RRZOD-JYYom-EGnfO"
-	"DreaM-" 			"CSGO-EypHo-ra4f9-f2wb9-SSTmE-N6DRE"
-	"MRC9" 				"CSGO-fAtLL-C4Ghk-4iSvU-KKOuN-KUsFF"
+	//Eternal Players
+	"XANTARES" 			"CSGO-xbpe2-E24RJ-YXNuO-pQvt8-ppNAK"
+	"imoRR" 			"CSGO-MWfjz-mAwoA-7QLiu-mNy9j-mRFuA"
+	"Calyx" 			"CSGO-vntdC-MbMUR-ptKw4-N8UHR-YuLDR"
+	"woxic" 			"CSGO-zhjce-fxfyW-FQe8S-ywurx-6vdqA"
+	"xfl0ud" 			"CSGO-HpJOC-sDCRo-7rbKn-YuPGN-fCKLH"
 	//K23 Players
 	"neaLaN" 			"CSGO-7uAWU-89Qnw-7fyNr-B76zn-bueKP"
 	"mou" 				"CSGO-qh6ai-Sv2nG-PmE8n-HR9iz-RPXoN"
@@ -816,4 +816,10 @@
 	"Reversive" 		"CSGO-LhjXh-enkZw-u2APs-74t9G-3GhnL"
 	"tom1" 				"CSGO-7qThe-zfRsj-pAPOP-MAjwu-kEAMK"
 	"Yokowow"			"CSGO-TZYFn-i5SRo-FuiKP-NGQmf-abMbM"
+	//HR Players
+	"Templ" 			"CSGO-PX5Dp-f2ZSE-H86D8-RxxY2-LiyHL"
+	"alex666"			"CSGO-iUiBZ-ddzaN-7syET-XHwCE-hVaUN"
+	"7oX1C" 			"CSGO-WuUJk-ntTX2-MGxGY-aFXoQ-7T8SA"
+	"w0nderful" 		"CSGO-KBzrp-LKtHm-p5eBb-WoMHq-jFFFN"
+	"OWNER"				"CSGO-4cRP9-u7v5Y-OCWak-dXLK3-EyzQN"
 }
