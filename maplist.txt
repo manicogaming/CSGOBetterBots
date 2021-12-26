@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Dec 21 22:58:03 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Dec 26 23:50:32 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -297,6 +297,7 @@ de_stmarc
 de_stolen
 de_storehouse
 de_sugarcane
+de_sunburn
 de_torntown
 de_train
 de_tulip

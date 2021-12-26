@@ -36,7 +36,7 @@ Default
         VoicePitch = 100
         Skin = 0
         LookAngleMaxAccelNormal = 3000.0
-        LookAngleStiffnessNormal = 200.0
+		LookAngleStiffnessNormal = 200.0
         LookAngleDampingNormal = 25.0
         LookAngleMaxAccelAttacking = 3000.0
         LookAngleStiffnessAttacking = 300.0
@@ -424,8 +424,10 @@ End
 
 ProP+Rifle+RiflePersonality "NiKo"
 	VoicePitch = 100
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
+	LookAngleStiffnessNormal = 1150.0
+	LookAngleDampingNormal = 50.0
+	LookAngleStiffnessAttacking = 1150.0
+	LookAngleDampingAttacking = 50.0
 End
 
 //fnatic Players
@@ -546,8 +548,10 @@ End
 
 ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
+	LookAngleStiffnessNormal = 1150.0
+	LookAngleDampingNormal = 50.0
+	LookAngleStiffnessAttacking = 1150.0
+	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "B1T"
@@ -636,8 +640,10 @@ End
 
 ProP+SniperPro+SniperPersonality "ZywOo"
 	VoicePitch = 115
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 40.100
+	LookAngleStiffnessNormal = 1150.0
+	LookAngleDampingNormal = 50.0
+	LookAngleStiffnessAttacking = 1150.0
+	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "apEX"
