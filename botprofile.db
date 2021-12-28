@@ -35,12 +35,18 @@ Default
         Difficulty = NORMAL
         VoicePitch = 100
         Skin = 0
-        LookAngleMaxAccelNormal = 3000.0
-		LookAngleStiffnessNormal = 200.0
-        LookAngleDampingNormal = 25.0
-        LookAngleMaxAccelAttacking = 3000.0
-        LookAngleStiffnessAttacking = 300.0
-        LookAngleDampingAttacking = 30.0
+		//LookAngleMaxAccelNormal = 3000.0
+		//LookAngleStiffnessNormal = 200.0
+        //LookAngleDampingNormal = 25.0
+        //LookAngleMaxAccelAttacking = 3000.0
+        //LookAngleStiffnessAttacking = 300.0
+        //LookAngleDampingAttacking = 30.0
+		LookAngleMaxAccelNormal = 5500.0 // how quickly a bot will move their cross hair look at you (2000.0 default)
+		LookAngleStiffnessNormal = 1150.0 // how quickly a bot will lock onto you (100.0 default)
+		LookAngleDampingNormal = 115.0 // dampen how much will the bot scan the area while not engaged (25.0 default)
+		LookAngleMaxAccelAttacking = 5500.0 // how long a bot will keep an interest in their attacker (3000.0 default)
+		LookAngleStiffnessAttacking = 1150.0 // how soon after spotting will a bot attack (150.0 default)
+		LookAngleDampingAttacking = 50.0 // dampen how much a bot will compensate for recoil (30.0 default)
 End
 
 //----------------------------------------------------------------------------
@@ -424,10 +430,10 @@ End
 
 ProP+Rifle+RiflePersonality "NiKo"
 	VoicePitch = 100
-	LookAngleStiffnessNormal = 1150.0
-	LookAngleDampingNormal = 50.0
-	LookAngleStiffnessAttacking = 1150.0
-	LookAngleDampingAttacking = 50.0
+	//LookAngleStiffnessNormal = 1150.0
+	//LookAngleDampingNormal = 50.0
+	//LookAngleStiffnessAttacking = 1150.0
+	//LookAngleDampingAttacking = 50.0
 End
 
 //fnatic Players
@@ -548,10 +554,10 @@ End
 
 ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
-	LookAngleStiffnessNormal = 1150.0
-	LookAngleDampingNormal = 50.0
-	LookAngleStiffnessAttacking = 1150.0
-	LookAngleDampingAttacking = 50.0
+	//LookAngleStiffnessNormal = 1150.0
+	//LookAngleDampingNormal = 50.0
+	//LookAngleStiffnessAttacking = 1150.0
+	//LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "B1T"
@@ -640,10 +646,10 @@ End
 
 ProP+SniperPro+SniperPersonality "ZywOo"
 	VoicePitch = 115
-	LookAngleStiffnessNormal = 1150.0
-	LookAngleDampingNormal = 50.0
-	LookAngleStiffnessAttacking = 1150.0
-	LookAngleDampingAttacking = 50.0
+	//LookAngleStiffnessNormal = 1150.0
+	//LookAngleDampingNormal = 50.0
+	//LookAngleStiffnessAttacking = 1150.0
+	//LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "apEX"
