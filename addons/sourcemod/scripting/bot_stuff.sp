@@ -5717,7 +5717,7 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 					{
-						if (Math_GetRandomInt(1, 100) <= 90)
+						if (Math_GetRandomInt(1, 100) <= 70)
 							bShootSpine = true;
 					}
 					case 2, 3, 4, 30, 32, 36, 61, 63:

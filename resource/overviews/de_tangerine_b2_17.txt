@@ -1,0 +1,27 @@
+"de_tangerine_b2_17"
+{
+	"material"		"overviews/de_tangerine_b2_17"
+	"pos_x"		" -2667 "
+	"pos_y"		" 3690 "
+	"scale"		" 6.00 "
+
+"CTSpawn_x"	"0.78"
+	
+"CTSpawn_y"	"0.2"
+
+"TSpawn_x"	"0.35"
+
+"TSpawn_y"	"0.70"
+
+
+"bombA_x"	"0.78"
+
+"bombA_y"	"0.47"
+
+"bombB_x"	"0.43"
+
+"bombB_y"	"0.14"
+
+}
+
+//Overview: scale 6.00, pos_x -2667, pos_y 3690

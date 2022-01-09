@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Thu Dec 30 22:37:19 GMT 2021 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Jan 09 00:47:34 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -97,6 +97,7 @@ cs_1337_assault_b2
 cs_agency
 cs_apollo
 cs_assault
+cs_assault_2055
 cs_backalley
 cs_beachassault_ek
 cs_bird
@@ -226,6 +227,7 @@ de_inferno_pondsite
 de_inferno_winter
 de_inferno_winter_2019
 de_infernohr_night
+de_infernos2055
 de_installation
 de_iris
 de_island
@@ -251,6 +253,7 @@ de_maya
 de_meteora
 de_mill_ce
 de_mirage
+de_mirage_2055
 de_mocha
 de_momentum
 de_mustang
@@ -265,6 +268,7 @@ de_old_monastery
 de_ore
 de_overgrown
 de_overpass
+de_overpass_2055
 de_pharaoh
 de_pit
 de_pitstop
@@ -291,13 +295,16 @@ de_season
 de_shortdust
 de_shortnuke
 de_snowcapped_csgo
+de_soat_rc3
 de_spain
 de_sparity_v41
 de_stmarc
 de_stolen
 de_storehouse
+de_studio
 de_sugarcane
 de_sunburn
+de_tangerine_b2_17
 de_torntown
 de_train
 de_tulip

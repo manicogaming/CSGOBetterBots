@@ -1,0 +1,36 @@
+//Overview: scale 7.20, pos_x -3177, pos_y 3560
+//setpos 1430.367310 -128.437958 244.916718;setang 89.000000 94.532425 0.000000
+
+"de_soat_rc3"
+{
+	"material"	"overviews/de_soat_rc3"	// texture file
+	"pos_x"		"-3177"	// upper left world coordinate
+	"pos_y"		"3560"
+	"scale"		"7.20" 
+
+
+"verticalsections"
+	{
+		"default" // use the primary radar image
+		{
+			"AltitudeMax" "256"
+			"AltitudeMin" "-64"
+		}
+		"lower"
+		{
+			"AltitudeMax" "-65"
+			"AltitudeMin" "-10000"
+		}
+	}
+	
+	"CTSpawn_x"	"0.08"
+	"CTSpawn_y"	"0.33"
+	"TSpawn_x"	"0.93"
+	"TSpawn_y"	"0.58"
+	"bombA_x"	"0.44"
+	"bombA_y"	"0.50"
+	"bombB_x"	"0.30"
+	"bombB_y"	"0.09"
+
+}
+
