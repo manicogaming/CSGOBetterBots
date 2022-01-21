@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun Jan 09 00:47:34 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Jan 20 22:54:19 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -97,7 +97,6 @@ cs_1337_assault_b2
 cs_agency
 cs_apollo
 cs_assault
-cs_assault_2055
 cs_backalley
 cs_beachassault_ek
 cs_bird
@@ -123,6 +122,7 @@ cs_motel
 cs_museum
 cs_office
 cs_office_legacy
+cs_offtime
 cs_outpost
 cs_renovation
 cs_residence
