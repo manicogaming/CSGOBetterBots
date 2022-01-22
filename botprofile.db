@@ -370,7 +370,7 @@ ProP+SniperPro+SniperPersonality "device"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "LNZ"
+ProP+Rifle+RiflePersonality "es3tag"
 	VoicePitch = 99
 End
 
@@ -590,7 +590,7 @@ ProP+Rifle+RiflePersonality "Furlan"
 	VoicePitch = 84
 End
 
-ProP+SniperPro+SniperPersonality "mhL"
+ProP+SniperPro+SniperPersonality "Grashog"
 	VoicePitch = 106
 End
 
@@ -770,7 +770,7 @@ ProP+SniperPro+SniperPersonality "zorte"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "FL1T"
+ProP+Rifle+RiflePersonality "Norwi"
 	VoicePitch = 91
 End
 
@@ -840,7 +840,7 @@ ProP+Rifle+RiflePersonality "qikert"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "SANJI"
+ProP+Rifle+RiflePersonality "FL1T"
 	VoicePitch = 94
 End
 
@@ -1030,7 +1030,7 @@ ProP+Rifle+RiflePersonality "Pechyn"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "twistqt"
+ProP+SniperPro+SniperPersonality "desty"
 	VoicePitch = 77
 End
 
@@ -1042,7 +1042,7 @@ ProP+Rifle+RiflePersonality "blogg1s"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "luko"
+ProP+Rifle+RiflePersonality "Levi"
 	VoicePitch = 87
 End
 
@@ -1096,11 +1096,11 @@ ProP+Rifle+RiflePersonality "iDISBALANCE"
 	VoicePitch = 106
 End
 
-ProP+SniperPro+SniperPersonality "mds"
+ProP+SniperPro+SniperPersonality "BELCHONOKK"
 	VoicePitch = 111
 End
 
-ProP+Rifle+RiflePersonality "lollipop21k"
+ProP+Rifle+RiflePersonality "Chill"
 	VoicePitch = 89
 End
 
@@ -1324,7 +1324,7 @@ ProP+Rifle+RiflePersonality "clax"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "Norwi"
+ProP+Rifle+RiflePersonality "SELLTER"
 	VoicePitch = 86
 End
 
@@ -1492,7 +1492,7 @@ ProP+Rifle+RiflePersonality "neaLaN"
 	VoicePitch = 85
 End
 
-ProP+SniperPro+SniperPersonality "mou"
+ProP+SniperPro+SniperPersonality "xsepower"
 	VoicePitch = 83
 End
 
@@ -1504,7 +1504,7 @@ ProP+Rifle+RiflePersonality "fame"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "AdreN"
+ProP+Rifle+RiflePersonality "X5G7V"
 	VoicePitch = 111
 End
 
@@ -1720,7 +1720,7 @@ ProP+Rifle+RiflePersonality "MarT1n"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "DD"
+ProP+Rifle+RiflePersonality "ahang"
 	VoicePitch = 88
 End
 
@@ -1738,7 +1738,7 @@ ProP+SniperPro+SniperPersonality "z4kr"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "Kayo"
+ProP+Rifle+RiflePersonality "Starry"
 	VoicePitch = 96
 End
 
@@ -1962,7 +1962,7 @@ ProP+Rifle+RiflePersonality "Cl34v3rs"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "ChLo"
+ProP+Rifle+RiflePersonality "nANO^G"
 	VoicePitch = 108
 End
 
@@ -2054,7 +2054,7 @@ ProP+Rifle+RiflePersonality "hns"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "freddyyyw"
+ProP+Rifle+RiflePersonality "Hype"
 	VoicePitch = 91
 End
 
@@ -2116,7 +2116,7 @@ ProP+Rifle+RiflePersonality "maxujas"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "bit"
+ProP+Rifle+RiflePersonality "Luken"
 	VoicePitch = 87
 End
 
@@ -2666,7 +2666,7 @@ ProP+Rifle+RiflePersonality "djay"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Infinite"
+ProP+Rifle+RiflePersonality "Jonji"
 	VoicePitch = 99
 End
 
@@ -2870,6 +2870,182 @@ End
 
 ProP+Rifle+RiflePersonality "OWNER"
 	VoicePitch = 95
+End
+
+//MongolZ Players
+
+ProP+Rifle+RiflePersonality "ncl"
+	VoicePitch = 100
+End
+
+ProP+SniperPro+SniperPersonality "MagnumZ"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "Tsogoo"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "Machinegun"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "starDUST"
+	VoicePitch = 78
+End
+
+//ONYX Players
+
+ProP+Rifle+RiflePersonality "bodito"
+	VoicePitch = 90
+End
+
+ProP+SniperPro+SniperPersonality "Kamion"
+	VoicePitch = 92
+End
+
+ProP+Rifle+RiflePersonality "sl3nd"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "msN"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "coolio"
+	VoicePitch = 96
+End
+
+//Dice Players
+
+ProP+Rifle+RiflePersonality "XpG"
+	VoicePitch = 104
+End
+
+ProP+SniperPro+SniperPersonality "Gauthierlele"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "Alca"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "bSSSSSS"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "CamZ"
+	VoicePitch = 95
+End
+
+//Elevate Players
+
+ProP+Rifle+RiflePersonality "supLex"
+	VoicePitch = 104
+End
+
+ProP+SniperPro+SniperPersonality "naitte"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "skip"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "koala"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "paiva"
+	VoicePitch = 95
+End
+
+//GameAgents Players
+
+ProP+Rifle+RiflePersonality "Klameczka"
+	VoicePitch = 104
+End
+
+ProP+SniperPro+SniperPersonality "Bajmi"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "Flayy"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "AxEcHo"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "mlodziutk1"
+	VoicePitch = 79
+End
+
+//Entropy Players
+
+ProP+Rifle+RiflePersonality "powerYY"
+	VoicePitch = 114
+End
+
+ProP+SniperPro+SniperPersonality "stefank0k0"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "KrowNii"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "fatih-"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "AKEX"
+	VoicePitch = 80
+End
+
+//SSP Players
+
+ProP+Rifle+RiflePersonality "rapala"
+	VoicePitch = 84
+End
+
+ProP+SniperPro+SniperPersonality "LapeX"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "DreaM-"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "florento"
+	VoicePitch = 100
+End
+
+ProP+Rifle+RiflePersonality "pr1metapz"
+	VoicePitch = 86
+End
+
+//Malvinas Players
+
+ProP+Rifle+RiflePersonality "kissmyaug"
+	VoicePitch = 79
+End
+
+ProP+SniperPro+SniperPersonality "DGN"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "gAtito"
+	VoicePitch = 83
+End
+
+ProP+Rifle+RiflePersonality "TIKO"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "ramuljas"
+	VoicePitch = 78
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

@@ -19,7 +19,7 @@
 	"k0nfig" 			"19403447"
 	"blameF" 			"68193075"
 	//NiP Players
-	"LNZ" 				"144361165"
+	"es3tag" 			"1859646"
 	"Plopski" 			"175613070"
 	"device" 			"27447936"
 	"hampus" 			"126680222"
@@ -81,7 +81,7 @@
 	//AGO Players
 	"Furlan" 			"177495873"
 	"kRaSnaL" 			"336152206"
-	"mhL" 				"180124403"
+	"Grashog" 			"78941188"
 	"F1KU" 				"292168772"
 	"leman" 			"40398517"
 	//ENCE Players
@@ -129,7 +129,7 @@
 	//forZe Players
 	"KENSI" 			"440380554"	
 	"zorte" 			"99348674"
-	"FL1T" 				"35551773"
+	"Norwi" 			"194638879"
 	"shalfey" 			"247206904"
 	"Jerry" 			"65822428"
 	//Sprout Players
@@ -148,7 +148,7 @@
 	"YEKINDAR" 			"174136197"
 	"Jame" 				"75859856"
 	"qikert" 			"166970562"	
-	"SANJI" 			"357361556"
+	"FL1T" 				"35551773"
 	"buster" 			"212936195"
 	//Apeks Players
 	"AcilioN" 			"56749436"
@@ -201,8 +201,8 @@
 	//eSuba Players
 	"Pechyn" 			"93527213"
 	"blogg1s" 			"115938594"	
-	"luko" 				"90161747"	
-	"twistqt" 			"186939709"	
+	"Levi" 				"64235109"	
+	"desty" 			"86172483"	
 	"sAvana1" 			"69270002"	
 	//Nexus Players
 	"BTN" 				"21090119"
@@ -218,8 +218,8 @@
 	"reatz" 			"58300666"
 	//Nemiga Players
 	"iDISBALANCE" 		"210384169"
-	"mds" 				"114045115"
-	"lollipop21k" 		"54552870"	
+	"BELCHONOKK" 		"293404789"
+	"Chill" 			"113129796"	
 	"Jyo" 				"43255799"
 	"boX" 				"127393261"
 	//GZG Players
@@ -279,7 +279,7 @@
 	//Singularity Players
 	"seized" 			"3648428"
 	"clax" 				"168818887"
-	"Norwi" 			"194638879"
+	"SELLTER" 			"158822313"
 	"GuardiaN" 			"12065295"
 	"d1Ledez" 			"899162551"
 	//OFFSET Players
@@ -326,10 +326,10 @@
 	"xfl0ud" 			"217943381"
 	//K23 Players
 	"neaLaN" 			"93777050"
-	"mou" 				"52678767"
+	"xsepower" 			"112014226"
 	"n0rb3r7" 			"262176776"
 	"fame" 				"119848818"
-	"AdreN" 			"46200979"
+	"X5G7V" 			"237685818"
 	//Goliath Players
 	"massacRe" 			"117421285"
 	"Dweezil" 			"79904271"
@@ -388,12 +388,12 @@
 	"ChildKing"			"392390376" 
 	"lan" 				"183602582"
 	"MarT1n" 			"168791260"
-	"DD" 				"169982617"
+	"ahang" 			"1055940590"
 	"gas" 				"41822010"
 	//Lynn Players
 	"westmelon" 		"146974312"
 	"z4kr" 				"177517735"
-	"Kayo" 				"161991176"
+	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
 	"B1NGO" 			"149673357"
 	//Triumph Players
@@ -454,7 +454,7 @@
 	"farmaG" 			"32002596"
 	"Sw1ft" 			"159221739"
 	"Cl34v3rs" 			"98939532"
-	"ChLo" 				"75777535"	
+	"nANO^G" 			"147057698"	
 	"Spexy" 			"161464594"
 	//KOVA Players
 	"zks" 				"368233531"
@@ -479,7 +479,7 @@
 	"b0denmaster" 		"316269116"
 	"bq" 				"240233870"
 	"hns" 				"192826402"
-	"freddyyyw" 		"41677010"
+	"Hype" 				"155147590"
 	//FTW Players
 	"Ag1l" 				"226613145"
 	"arrozdoce" 		"13492074"
@@ -496,7 +496,7 @@
 	"dgt" 				"256625848"
 	"dav1d" 			"160225583"
 	"maxujas" 			"282684656"
-	"bit" 				"9224396"
+	"Luken" 			"852361341"
 	"rox" 				"897065446"
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
@@ -646,7 +646,7 @@
 	"ben1337" 			"131461662"
 	"PwnAlone" 			"24000649"
 	"djay" 				"3935898"
-	"Infinite" 			"149493497"
+	"Jonji" 			"114675386"
 	"cynic" 			"106932238"
 	//777 Players
 	"ruyter" 			"851805954"
@@ -702,4 +702,52 @@
 	"7oX1C" 			"352463921"
 	"w0nderful" 		"1102803112"
 	"OWNER"				"136667537"
+	//MongolZ Players
+	"ncl" 				"156030485"
+	"MagnumZ"			"187391202"
+	"Tsogoo" 			"133284824"
+	"Machinegun" 		"158481493"
+	"starDUST"			"1207713936"
+	//ONYX Players
+	"bodito" 			"114907460"
+	"Kamion"			"220609306"
+	"sl3nd" 			"137805965"
+	"msN" 				"342103580"
+	"coolio"			"119009553"
+	//Dice Players
+	"XpG" 				"30253348"
+	"Gauthierlele"		"35731666"
+	"Alca" 				"24252379"
+	"bSSSSSS" 			"245865493"
+	"CamZ"				"198983256"
+	//Elevate Players
+	"supLex" 			"177082714"
+	"naitte"			"68938238"
+	"skip" 				"54034976"
+	"koala" 			"849196548"
+	"paiva"				"923500560"
+	//GameAgents Players
+	"Klameczka" 		"229219769"
+	"Bajmi"				"240875179"
+	"Flayy" 			"452134916"
+	"AxEcHo" 			"897414124"
+	"mlodziutk1"		"236911505"
+	//Entropy Players
+	"powerYY" 			"193302990"
+	"stefank0k0"		"41682335"
+	"KrowNii" 			"225305859"
+	"fatih-" 			"468595052"
+	"AKEX"				"72366657"
+	//SSP Players
+	"rapala" 			"239214601"
+	"LapeX"				"197695849"
+	"DreaM-" 			"245251564"
+	"florento" 			"178159309"
+	"pr1metapz"			"198443782"
+	//Malvinas Players
+	"kissmyaug" 		"63958558"
+	"DGN"				"44255284"
+	"gAtito" 			"75104484"
+	"TIKO" 				"169462190"
+	"ramuljas"			"900022321"
 }

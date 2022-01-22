@@ -19,7 +19,7 @@
 	"k0nfig" 			"Astralis"
 	"blameF" 			"Astralis"
 	//NiP Players
-	"LNZ" 				"NiP"
+	"es3tag" 			"NiP"
 	"Plopski" 			"NiP"
 	"device" 			"NiP"
 	"hampus" 			"NiP"
@@ -81,7 +81,7 @@
 	//AGO Players
 	"Furlan" 			"AGO"
 	"kRaSnaL" 			"AGO"
-	"mhL" 				"AGO"
+	"Grashog" 			"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
@@ -129,7 +129,7 @@
 	//forZe Players
 	"KENSI" 			"forZe"	
 	"zorte" 			"forZe"
-	"FL1T" 				"forZe"
+	"Norwi" 			"forZe"
 	"shalfey" 			"forZe"
 	"Jerry" 			"forZe"
 	//Sprout Players
@@ -148,7 +148,7 @@
 	"YEKINDAR" 			"VP"
 	"Jame" 				"VP"
 	"qikert" 			"VP"	
-	"SANJI" 			"VP"
+	"FL1T" 				"VP"
 	"buster" 			"VP"
 	//Apeks Players
 	"AcilioN" 			"Apeks"
@@ -200,10 +200,10 @@
 	"SunPayus" 			"Riders"
 	//eSuba Players
 	"Pechyn" 			"eSuba"
-	"twistqt" 			"eSuba"
+	"desty" 			"eSuba"
 	"sAvana1" 			"eSuba"	
 	"blogg1s" 			"eSuba"
-	"luko" 				"eSuba"
+	"Levi" 				"eSuba"
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
@@ -218,8 +218,8 @@
 	"reatz" 			"PACT"
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
-	"mds" 				"Nemiga"
-	"lollipop21k" 		"Nemiga"	
+	"BELCHONOKK" 		"Nemiga"
+	"Chill" 			"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
 	//GZG Players
@@ -280,7 +280,7 @@
 	"seized" 			"Singularity"
 	"GuardiaN" 			"Singularity"
 	"clax" 				"Singularity"
-	"Norwi" 			"Singularity"
+	"SELLTER" 			"Singularity"
 	"d1Ledez" 			"Singularity"
 	//OFFSET Players
 	"slaxx" 			"OFFSET"
@@ -326,10 +326,10 @@
 	"xfl0ud" 			"Eternal"
 	//K23 Players
 	"neaLaN" 			"K23"
-	"mou" 				"K23"
+	"xsepower" 			"K23"
 	"n0rb3r7" 			"K23"
 	"fame" 				"K23"
-	"AdreN" 			"K23"
+	"X5G7V" 			"K23"
 	//Goliath Players
 	"massacRe" 			"Goliath"
 	"Dweezil" 			"Goliath"
@@ -388,12 +388,12 @@
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
 	"MarT1n" 			"Wings"
-	"DD" 				"Wings"
+	"ahang" 			"Wings"
 	"gas" 				"Wings"
 	//Lynn Players
 	"westmelon" 		"Lynn"
 	"z4kr" 				"Lynn"
-	"Kayo" 				"Lynn"
+	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
 	"B1NGO" 			"Lynn"
 	//Triumph Players
@@ -454,7 +454,7 @@
 	"farmaG" 			"DIVIZON"
 	"Sw1ft" 			"DIVIZON"
 	"Cl34v3rs" 			"DIVIZON"
-	"ChLo" 				"DIVIZON"	
+	"nANO^G" 			"DIVIZON"	
 	"Spexy" 			"DIVIZON"
 	//KOVA Players
 	"zks" 				"KOVA"
@@ -479,7 +479,7 @@
 	"b0denmaster" 		"Lilmix"
 	"bq" 				"Lilmix"
 	"hns" 				"Lilmix"
-	"freddyyyw" 		"Lilmix"
+	"Hype" 				"Lilmix"
 	//FTW Players
 	"Ag1l" 				"FTW"
 	"ewjerkz" 			"FTW"
@@ -496,7 +496,7 @@
 	"dgt" 				"9z"
 	"dav1d" 			"9z"
 	"maxujas" 			"9z"
-	"bit" 				"9z"
+	"Luken" 			"9z"
 	"rox" 				"9z"
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
@@ -646,7 +646,7 @@
 	"ben1337" 			"Party"
 	"PwnAlone" 			"Party"
 	"djay"				"Party"
-	"Infinite" 			"Party"
+	"Jonji" 			"Party"
 	"cynic"				"Party"
 	//777 Players
 	"ruyter" 			"777"
@@ -702,4 +702,52 @@
 	"7oX1C" 			"HR"
 	"w0nderful" 		"HR"
 	"OWNER"				"HR"
+	//MongolZ Players
+	"ncl" 				"MongolZ"
+	"MagnumZ"			"MongolZ"
+	"Tsogoo" 			"MongolZ"
+	"Machinegun" 		"MongolZ"
+	"starDUST"			"MongolZ"
+	//ONYX Players
+	"bodito" 			"ONYX"
+	"Kamion"			"ONYX"
+	"sl3nd" 			"ONYX"
+	"msN" 				"ONYX"
+	"coolio"			"ONYX"
+	//Dice Players
+	"XpG" 				"Dice"
+	"Gauthierlele"		"Dice"
+	"Alca" 				"Dice"
+	"bSSSSSS" 			"Dice"
+	"CamZ"				"Dice"
+	//Elevate Players
+	"supLex" 			"Elevate"
+	"naitte"			"Elevate"
+	"skip" 				"Elevate"
+	"koala" 			"Elevate"
+	"paiva"				"Elevate"
+	//GameAgents Players
+	"Klameczka" 		"GameAgents"
+	"Bajmi"				"GameAgents"
+	"Flayy" 			"GameAgents"
+	"AxEcHo" 			"GameAgents"
+	"mlodziutk1"		"GameAgents"
+	//Entropy Players
+	"powerYY" 			"Entropy"
+	"stefank0k0"		"Entropy"
+	"KrowNii" 			"Entropy"
+	"fatih-" 			"Entropy"
+	"AKEX"				"Entropy"
+	//SSP Players
+	"rapala" 			"SSP"
+	"LapeX"				"SSP"
+	"DreaM-" 			"SSP"
+	"florento" 			"SSP"
+	"pr1metapz"			"SSP"
+	//Malvinas Players
+	"kissmyaug" 		"Malvinas"
+	"DGN"				"Malvinas"
+	"gAtito" 			"Malvinas"
+	"TIKO" 				"Malvinas"
+	"ramuljas"			"Malvinas"
 }
