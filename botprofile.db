@@ -418,7 +418,7 @@ ProP+Rifle+RiflePersonality "JaCkz"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "nexa"
+ProP+Rifle+RiflePersonality "Aleksib"
 	VoicePitch = 99
 End
 
@@ -1804,7 +1804,7 @@ ProP+SniperPro+SniperPersonality "mantuu"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "Aleksib"
+ProP+Rifle+RiflePersonality "nexa"
 	VoicePitch = 97
 End
 
@@ -2042,7 +2042,7 @@ ProP+Rifle+RiflePersonality "quix"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "b0denmaster"
+ProP+SniperPro+SniperPersonality "bobeksde"
 	VoicePitch = 101
 End
 

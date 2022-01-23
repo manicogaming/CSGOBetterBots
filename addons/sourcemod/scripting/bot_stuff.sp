@@ -420,7 +420,7 @@ public Action Team_G2(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "huNter-");
 		ServerCommand("bot_add_ct %s", "m0NESY");
-		ServerCommand("bot_add_ct %s", "nexa");
+		ServerCommand("bot_add_ct %s", "Aleksib");
 		ServerCommand("bot_add_ct %s", "JaCkz");
 		ServerCommand("bot_add_ct %s", "NiKo");
 		ServerCommand("mp_teamlogo_1 g2");
@@ -431,7 +431,7 @@ public Action Team_G2(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "huNter-");
 		ServerCommand("bot_add_t %s", "m0NESY");
-		ServerCommand("bot_add_t %s", "nexa");
+		ServerCommand("bot_add_t %s", "Aleksib");
 		ServerCommand("bot_add_t %s", "JaCkz");
 		ServerCommand("bot_add_t %s", "NiKo");
 		ServerCommand("mp_teamlogo_2 g2");
@@ -2310,7 +2310,7 @@ public Action Team_OG(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "nikozan");
 		ServerCommand("bot_add_ct %s", "mantuu");
-		ServerCommand("bot_add_ct %s", "Aleksib");
+		ServerCommand("bot_add_ct %s", "nexa");
 		ServerCommand("bot_add_ct %s", "valde");
 		ServerCommand("bot_add_ct %s", "flameZ");
 		ServerCommand("mp_teamlogo_1 og");
@@ -2321,7 +2321,7 @@ public Action Team_OG(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "nikozan");
 		ServerCommand("bot_add_t %s", "mantuu");
-		ServerCommand("bot_add_t %s", "Aleksib");
+		ServerCommand("bot_add_t %s", "nexa");
 		ServerCommand("bot_add_t %s", "valde");
 		ServerCommand("bot_add_t %s", "flameZ");
 		ServerCommand("mp_teamlogo_2 og");
@@ -2639,7 +2639,7 @@ public Action Team_Lilmix(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "quix");
-		ServerCommand("bot_add_ct %s", "b0denmaster");
+		ServerCommand("bot_add_ct %s", "bobeksde");
 		ServerCommand("bot_add_ct %s", "bq");
 		ServerCommand("bot_add_ct %s", "hns");
 		ServerCommand("bot_add_ct %s", "Hype");
@@ -2650,7 +2650,7 @@ public Action Team_Lilmix(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "quix");
-		ServerCommand("bot_add_t %s", "b0denmaster");
+		ServerCommand("bot_add_t %s", "bobeksde");
 		ServerCommand("bot_add_t %s", "bq");
 		ServerCommand("bot_add_t %s", "hns");
 		ServerCommand("bot_add_t %s", "Hype");
@@ -4387,7 +4387,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_inferno") == 0 || strcmp(g_szMap, "de_inferno_night") == 0 || strcmp(g_szMap, "de_infernohr_night") == 0)
 		{
-			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 2) : Math_GetRandomInt(1, 16);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 4) : Math_GetRandomInt(1, 16);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareInfernoExecutes();
 		}

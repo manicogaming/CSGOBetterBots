@@ -26,6 +26,22 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Liquid Pistol Halls Pop/FalleN Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Liquid Pistol Halls Pop/EliGE Role.rec");
 				}
+				case 3: //G2 Pistol Long Wrap
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/AmaNEk Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/huNter- Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/JACKZ Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/nexa Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/NiKo Role.rec");
+				}
+				case 4: //BIG Pistol Aps Pop
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/tabseN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/tiziaN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/XANTARES Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/k1to Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/syrsoN Role.rec");
+				}
 			}
 		}
 		else

@@ -33,7 +33,7 @@
 	//G2 Players
 	"huNter-" 			"G2"
 	"JaCkz" 			"G2"
-	"nexa" 				"G2"	
+	"Aleksib" 			"G2"	
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
@@ -411,7 +411,7 @@
 	//OG Players
 	"nikozan" 			"OG"
 	"mantuu" 			"OG"
-	"Aleksib" 			"OG"
+	"nexa" 				"OG"
 	"valde" 			"OG"
 	"flameZ" 			"OG"
 	//BLINK Players
@@ -476,7 +476,7 @@
 	"OKOLICIOUZ" 		"NLG"
 	//Lilmix Players
 	"quix" 				"Lilmix"
-	"b0denmaster" 		"Lilmix"
+	"bobeksde" 			"Lilmix"
 	"bq" 				"Lilmix"
 	"hns" 				"Lilmix"
 	"Hype" 				"Lilmix"

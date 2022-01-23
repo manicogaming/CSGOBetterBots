@@ -33,7 +33,7 @@
 	//G2 Players
 	"huNter-" 			"CSGO-H6J7Y-7834L-mVrkC-KcyJP-XdTOG"
 	"JaCkz" 			"CSGO-2WRGv-BydTq-jCSz8-M8FUS-CCmsF"
-	"nexa" 				"CSGO-q48QT-VHpTW-xNH5b-umZNJ-QsybE"	
+	"Aleksib" 			"CSGO-VLB7A-hN7BN-79CrP-dsAzQ-F99zP"	
 	"NiKo" 				"CSGO-sr9DJ-C6ECS-nqq7a-UVFOu-Z4OtQ"
 	"m0NESY" 			"CSGO-UwxnG-3d6nU-HOFwq-mjTTF-5VJGG"
 	//fnatic Players
@@ -411,7 +411,7 @@
 	//OG Players
 	"nikozan" 			"CSGO-rw8rx-362Wz-jLndf-D2UWn-QQSFE"
 	"mantuu" 			"CSGO-iuXxN-Z4tML-FcpUT-2pfxZ-kSLoD"
-	"Aleksib" 			"CSGO-VLB7A-hN7BN-79CrP-dsAzQ-F99zP"
+	"nexa" 				"CSGO-q48QT-VHpTW-xNH5b-umZNJ-QsybE"
 	"valde" 			"CSGO-oNUii-74piF-JhTU9-na4FA-z2urD"
 	"flameZ" 			"CSGO-M4bme-YwNEt-xbyca-Hiujj-knEVF"
 	//BLINK Players
@@ -476,7 +476,7 @@
 	"OKOLICIOUZ" 		"CSGO-xpXy4-bO2Ne-d3ihc-ispqZ-wLsuL"
 	//Lilmix Players
 	"quix" 				"CSGO-4QrLH-5cejW-CDtbj-irvYH-naYwP"
-	"b0denmaster" 		"CSGO-haRYy-d4shB-LoYBp-dQpdb-LbRVP"
+	"bobeksde" 			"CSGO-jicxG-BN6yx-3HZbi-4243S-b9qmJ"
 	"bq" 				"CSGO-jvPqz-SvVWH-WAmbN-mtb2p-J6sKG"
 	"hns" 				"CSGO-QHuGx-qYDpY-dZCao-5fr3Q-NQ88F"
 	"Hype" 				"CSGO-xLKWR-n4mRL-LRHtd-3WTmE-z2urD"

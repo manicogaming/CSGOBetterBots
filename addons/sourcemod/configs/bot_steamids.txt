@@ -33,7 +33,7 @@
 	//G2 Players
 	"huNter-" 			"52606325"
 	"JaCkz" 			"11977189"
-	"nexa" 				"39559694"	
+	"Aleksib" 			"52977598"	
 	"NiKo" 				"81417650"
 	"m0NESY" 			"114497073"
 	//fnatic Players
@@ -411,7 +411,7 @@
 	//OG Players
 	"nikozan" 			"29470855"
 	"mantuu" 			"56166832"
-	"Aleksib" 			"52977598"
+	"nexa" 				"39559694"
 	"valde" 			"154664140"
 	"flameZ" 			"18569432"
 	//BLINK Players
@@ -476,7 +476,7 @@
 	"OKOLICIOUZ" 		"65483354"
 	//Lilmix Players
 	"quix" 				"18704555"
-	"b0denmaster" 		"316269116"
+	"bobeksde" 			"100650499"
 	"bq" 				"240233870"
 	"hns" 				"192826402"
 	"Hype" 				"155147590"
