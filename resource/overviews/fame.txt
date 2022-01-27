@@ -1,0 +1,7 @@
+"fame"
+{
+ "material" "overviews/fame"
+ "pos_x"  "2382"
+ "pos_y"  "6099"
+ "scale"  "5.00"
+}

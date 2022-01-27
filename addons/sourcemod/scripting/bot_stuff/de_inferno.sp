@@ -42,6 +42,14 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/k1to Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/BIG Pistol Aps Pop/syrsoN Role.rec");
 				}
+				case 5: //OG Pistol B Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/OG Pistol B Execute/Aleksib Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/OG Pistol B Execute/ISSAA Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/OG Pistol B Execute/mantuu Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/OG Pistol B Execute/niko Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/OG Pistol B Execute/valde Role.rec");
+				}
 			}
 		}
 		else
