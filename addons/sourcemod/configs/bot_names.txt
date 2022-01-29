@@ -259,7 +259,7 @@
 	"matios" 			"Sharks"
 	"zevy" 				"Sharks"
 	//One Players
-	"prt" 				"One"
+	"keiz" 				"One"
 	"Maluk3" 			"One"
 	"trk" 				"One"	
 	"xns" 				"One"
@@ -267,7 +267,7 @@
 	//ORDER Players
 	"J1rah" 			"ORDER"
 	"Vexite" 			"ORDER"
-	"Rickeh" 			"ORDER"
+	"ekul" 				"ORDER"
 	"USTILO" 			"ORDER"
 	"Valiance" 			"ORDER"
 	//SKADE Players
@@ -321,7 +321,7 @@
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
-	"Calyx" 			"Eternal"
+	"duggyversus" 		"Eternal"
 	"woxic" 			"Eternal"
 	"xfl0ud" 			"Eternal"
 	//K23 Players
@@ -379,11 +379,11 @@
 	"icem4N" 			"Unique"
 	"dukefissura" 		"Unique"	
 	//ATK Players
-	"Minus" 			"ATK"
+	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
 	"motm" 				"ATK"
 	"Fadey" 			"ATK"
-	"mango" 			"ATK"
+	"truth" 			"ATK"
 	//Wings Players
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
@@ -396,12 +396,12 @@
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
 	"B1NGO" 			"Lynn"
-	//Triumph Players
-	"RZU" 				"Triumph"
-	"xCeeD" 			"Triumph"
-	"Danejoris" 		"Triumph"
-	"viz" 				"Triumph"
-	"grape" 			"Triumph"
+	//Impact Players
+	"RZU" 				"Impact"
+	"xCeeD" 			"Impact"
+	"Danejoris" 		"Impact"
+	"viz" 				"Impact"
+	"grape" 			"Impact"
 	//FATE Players
 	"rafftu"			"FATE" 
 	"Patrick--" 		"FATE"
@@ -571,11 +571,11 @@
 	"GOYO007" 			"x6tence"
 	"roGerzz"			"x6tence"
 	//AVEZ Players
-	"LeS" 				"AVEZ"
-	"fanatyk" 			"AVEZ"
-	"gRuChA" 			"AVEZ"
-	"SaMey" 			"AVEZ"
-	"pendzel"			"AVEZ"
+	"mystic" 			"AVEZ"
+	"bastEe" 			"AVEZ"
+	"eYs" 				"AVEZ"
+	"arioszek" 			"AVEZ"
+	"hous1k"			"AVEZ"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
 	"tudsoN" 			"Anonymo"
@@ -604,7 +604,7 @@
 	"Dragon" 			"iNation"
 	"VLDN" 				"iNation"
 	"choiv7" 			"iNation"
-	"pTKKK" 			"iNation"
+	"Dav" 				"iNation"
 	"SkippeR"			"iNation"
 	//LEISURE Players
 	"get" 				"LEISURE"
@@ -613,13 +613,13 @@
 	"d1cer" 			"LEISURE"
 	"oddo"				"LEISURE"
 	//BNB Players
-	"robby" 			"BNB"
+	"MoMo" 				"BNB"
 	"Swahn" 			"BNB"
 	"Pluto" 			"BNB"
 	"Spongey" 			"BNB"
 	"Shakezullah"		"BNB"
 	//Nation Players
-	"kNgV-" 			"Nation"
+	"try" 				"Nation"
 	"coldzera" 			"Nation"
 	"leo_drk" 			"Nation"
 	"malbsMd" 			"Nation"
@@ -750,4 +750,28 @@
 	"gAtito" 			"Malvinas"
 	"TIKO" 				"Malvinas"
 	"ramuljas"			"Malvinas"
+	//Rhyno Players
+	"LucKyMaNN" 		"Rhyno"
+	"psh"				"Rhyno"
+	"hdstr" 			"Rhyno"
+	"reibi" 			"Rhyno"
+	"goodyear"			"Rhyno"
+	//BP Players
+	"fleav" 			"BP"
+	"kolor"				"BP"
+	"Aaron" 			"BP"
+	"gubi" 				"BP"
+	"1NSERT2"			"BP"
+	//mCon Players
+	"StepzZ" 			"mCon"
+	"VoxelArc"			"mCon"
+	"BickBuster"		"mCon"
+	"Maxaxe" 			"mCon"
+	"Syther"			"mCon"
+	//HEET Players
+	"Lucky" 			"HEET"
+	"afro"				"HEET"
+	"bodyy"				"HEET"
+	"Djoko" 			"HEET"
+	"Ex3rcice"			"HEET"
 }

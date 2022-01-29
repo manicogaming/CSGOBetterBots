@@ -259,7 +259,7 @@
 	"matios" 			"3011855"
 	"zevy" 				"911593093"
 	//One Players
-	"prt" 				"92304643"
+	"keiz" 				"183028724"
 	"Maluk3" 			"36056013"
 	"trk" 				"74113976"
 	"xns" 				"138141272"
@@ -267,7 +267,7 @@
 	//ORDER Players
 	"J1rah" 			"82535956"
 	"Vexite" 			"92622415"
-	"Rickeh" 			"3215921"
+	"ekul" 				"38901108"
 	"USTILO" 			"18903255"
 	"Valiance" 			"236090787"
 	//SKADE Players
@@ -321,7 +321,7 @@
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
-	"Calyx" 			"92280537"
+	"duggyversus" 		"254144820"
 	"woxic" 			"123219778"
 	"xfl0ud" 			"217943381"
 	//K23 Players
@@ -379,11 +379,11 @@
 	"icem4N" 			"355948252"
 	"dukefissura" 		"141892565"	
 	//ATK Players
-	"Minus" 			"287775928"
+	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
 	"motm" 				"60208330"
 	"Fadey" 			"181493840"
-	"mango" 			"183429246"
+	"truth" 			"79528796"
 	//Wings Players
 	"ChildKing"			"392390376" 
 	"lan" 				"183602582"
@@ -396,7 +396,7 @@
 	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
 	"B1NGO" 			"149673357"
-	//Triumph Players
+	//Impact Players
 	"RZU" 				"170869120"
 	"xCeeD" 			"180524431"
 	"Danejoris" 		"116329706"
@@ -571,11 +571,11 @@
 	"flowX" 			"228626739"
 	"Ezetapsss" 		"370300960"
 	//AVEZ Players
-	"LeS" 				"174749173"
-	"fanatyk" 			"321895076"
-	"gRuChA" 			"66926846"
-	"SaMey" 			"150540966"
-	"pendzel"			"102726701"
+	"mystic" 			"81765294"
+	"bastEe" 			"316079070"
+	"eYs" 				"255700857"
+	"arioszek" 			"318413277"
+	"hous1k"			"274093084"
 	//Anonymo Players
 	"oskarish" 			"286156964"
 	"tudsoN" 			"58354081"
@@ -604,7 +604,7 @@
 	"Dragon" 			"290361460"
 	"VLDN" 				"22240693"
 	"choiv7" 			"115831324"
-	"pTKKK" 			"3026299"
+	"Dav" 				"43887083"
 	"SkippeR"			"110202505"
 	//LEISURE Players
 	"get"				"28333977"
@@ -613,13 +613,13 @@
 	"d1cer"				"158737140"
 	"oddo"				"39664636"
 	//BNB Players
-	"robby" 			"181862350"
+	"MoMo" 				"12167472"
 	"Swahn" 			"82748583"
 	"Pluto" 			"138851421"
 	"Spongey" 			"85216555"
 	"Shakezullah"		"68248927"
 	//Nation Players
-	"kNgV-" 			"6732863"
+	"try" 				"404852560"
 	"coldzera" 			"79720871"
 	"leo_drk" 			"58291277"
 	"malbsMd" 			"120437415"
@@ -750,4 +750,28 @@
 	"gAtito" 			"75104484"
 	"TIKO" 				"169462190"
 	"ramuljas"			"900022321"
+	//Rhyno Players
+	"LucKyMaNN" 		"171613566"
+	"psh"				"27720795"
+	"hdstr" 			"180753481"
+	"reibi" 			"259379051"
+	"goodyear"			"29717154"
+	//BP Players
+	"fleav" 			"189640934"
+	"kolor"				"159382791"
+	"Aaron" 			"95940281"
+	"gubi" 				"69447420"
+	"1NSERT2"			"861600049"
+	//mCon Players
+	"StepzZ" 			"191407472"
+	"VoxelArc"			"302205415"
+	"BickBuster"		"315188168"
+	"Maxaxe" 			"102864225"
+	"Syther"			"234753085"
+	//HEET Players
+	"Lucky" 			"71624387"
+	"afro"				"75315373"
+	"bodyy"				"53029647"
+	"Djoko" 			"87611242"
+	"Ex3rcice"			"207932472"
 }
