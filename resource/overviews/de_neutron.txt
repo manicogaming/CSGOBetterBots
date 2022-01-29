@@ -1,0 +1,20 @@
+// HLTV overview description file for de_neutron.bsp
+"de_neutron"
+{
+	"material"	"overviews/de_neutron_radar"	// texture file
+	"pos_x"		"-2969"				// X coordinate
+	"pos_y"		"3358"				// Y coordinate
+	"scale"		"5.5" 				// scale used when taking the screenshot
+	"rotate"	"0"				// map was rotated by 90 degrees in image editor
+	"zoom"		"1.0"				// optimal zoom factor if map is shown in full size
+
+	"CTSpawn_x"	"0.52"
+	"CTSpawn_y"	"0.21"
+	"TSpawn_x"	"0.525"
+	"TSpawn_y"	"0.81"
+
+	"bombA_x"	"0.24"
+	"bombA_y"	"0.22"
+	"bombB_x"	"0.78"
+	"bombB_y"	"0.30"
+}

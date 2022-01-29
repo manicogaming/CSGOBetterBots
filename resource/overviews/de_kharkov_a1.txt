@@ -1,0 +1,18 @@
+"Kharkov"
+{
+"material" "overviews/de_kharkov_b9_radar"
+"pos_x" "-2320"
+"pos_y" "2335"
+"scale" "5.0"
+
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.16"
+	"CTSpawn_y"	"0.44"
+	"TSpawn_x"	"0.85"
+	"TSpawn_y"	"0.47"
+
+	"bombA_x"	"0.28"
+	"bombA_y"	"0.77"
+	"bombB_x"	"0.48"
+	"bombB_y"	"0.23"
+}
