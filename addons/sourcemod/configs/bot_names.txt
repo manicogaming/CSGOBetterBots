@@ -595,7 +595,7 @@
 	"chop" 				"RBG"
 	"jitter"			"RBG"
 	//DNMK Players
-	"Heartbreak" 		"DNMK"
+	"Niix" 				"DNMK"
 	"kaNibalistic" 		"DNMK"
 	"dyvo" 				"DNMK"
 	"Doru" 				"DNMK"
@@ -774,4 +774,10 @@
 	"bodyy"				"HEET"
 	"Djoko" 			"HEET"
 	"Ex3rcice"			"HEET"
+	//LLL Players
+	"Rezst" 			"LLL"
+	"ryu"				"LLL"
+	"Nexius"			"LLL"
+	"ReFuZR" 			"LLL"
+	"rabbit"			"LLL"
 }

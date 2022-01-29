@@ -2478,7 +2478,7 @@ End
 
 //DNMK Players
 
-ProP+Rifle+RiflePersonality "Heartbreak"
+ProP+Rifle+RiflePersonality "Niix"
 	VoicePitch = 108
 End
 
@@ -3134,6 +3134,28 @@ End
 
 ProP+Rifle+RiflePersonality "Ex3rcice"
 	VoicePitch = 87
+End
+
+//LLL Players
+
+ProP+Rifle+RiflePersonality "Rezst"
+	VoicePitch = 87
+End
+
+ProP+SniperPro+SniperPersonality "ryu"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "Nexius"
+	VoicePitch = 105
+End
+
+ProP+Rifle+RiflePersonality "ReFuZR"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "rabbit"
+	VoicePitch = 97
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

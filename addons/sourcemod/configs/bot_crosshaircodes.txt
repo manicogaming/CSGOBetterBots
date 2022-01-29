@@ -596,7 +596,7 @@
 	"jitter"			"CSGO-wJTBP-5BbTh-RnXOu-ahPa9-WsdqA"
 	//DNMK Players
 	"dyvo"				"CSGO-O6xLH-WCXqL-5hW9U-7TXNM-iUVaK"
-	"Heartbreak" 		"CSGO-mzwVo-fvGir-doi2D-PHOwC-j9VzE"
+	"Niix" 				"CSGO-DUqAe-qMSJ3-hER3X-EkExO-UoHrL"
 	"kaNibalistic" 		"CSGO-d4d5i-4KoAM-FQZ3N-4xVom-7uDmQ"
 	"Doru" 				"CSGO-ZPvfc-aUuDO-LrXEK-EjyHZ-X3nQD"
 	"Dubee" 			"CSGO-TTpyJ-LiK8f-SPtxD-hJq4n-EaVvD"
@@ -774,4 +774,10 @@
 	"bodyy"				"CSGO-Efrha-OeBWf-jrNBx-FowC8-rJ3tJ"
 	"Djoko" 			"CSGO-ZTEjQ-58DOr-T2WyL-Jz6X6-2vn6J"
 	"Ex3rcice"			"CSGO-r5Bqr-qdVia-uFhBd-DPhEZ-o2OtQ"
+	//LLL Players
+	"Rezst" 			"CSGO-aPVjq-M7h4P-yHLQt-cD3BY-pbywQ"
+	"ryu"				"CSGO-yrLcp-Sd3v6-YcvRP-VLMc2-CJUSH"
+	"Nexius"			"CSGO-RsjiD-5LRvZ-viXTe-JADfL-9tdqA"
+	"ReFuZR" 			"CSGO-2ukju-CwV3m-9eSjA-nA7kr-jZxTC"
+	"rabbit"			"CSGO-N5vUk-vUELK-aASXj-ojBzr-ojbcP"
 }

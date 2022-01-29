@@ -596,7 +596,7 @@
 	"jitter"			"875669473"
 	//DNMK Players
 	"dyvo"				"172602391"
-	"Heartbreak" 		"418837922"
+	"Niix" 				"318367596"
 	"kaNibalistic" 		"32730121"
 	"Doru" 				"135905209"
 	"Dubee" 			"162968873"
@@ -774,4 +774,10 @@
 	"bodyy"				"53029647"
 	"Djoko" 			"87611242"
 	"Ex3rcice"			"207932472"
+	//LLL Players
+	"Rezst" 			"178066513"
+	"ryu"				"208135644"
+	"Nexius"			"210313229"
+	"ReFuZR" 			"338268527"
+	"rabbit"			"313117907"
 }
