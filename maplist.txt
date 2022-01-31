@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Jan 29 02:00:16 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Jan 30 23:05:39 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -139,6 +139,7 @@ de_amalia
 de_ancient
 de_anubis
 de_aqueduct
+de_arcade_v2
 de_asia_csgo
 de_astra_v2
 de_astramania
@@ -235,6 +236,7 @@ de_jingshen
 de_junction_r2
 de_kabul_b3
 de_kaizen_rc1
+de_kharkov_a1
 de_kowloon
 de_kyrenia
 de_lake
@@ -260,6 +262,7 @@ de_mustang
 de_mutiny
 de_nadir
 de_neighbors_v8
+de_neutron
 de_nuke
 de_nuke_halloween
 de_nuke_ramps

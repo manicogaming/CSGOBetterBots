@@ -172,6 +172,11 @@
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
 				"windows"	   "24068"
 			}
+			"CCSBot::m_lookAtSpotState"
+			{
+				//A little bit above the string '%3.2f: Grenade: FINISH_THROW\n'
+				"windows"	   "23080"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
