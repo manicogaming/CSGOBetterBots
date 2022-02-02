@@ -14,7 +14,6 @@ char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
-int g_iNeedDrop[4];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStartTimeStamp;
@@ -3014,7 +3013,7 @@ public Action Team_Ambush(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "wasiNk");
 		ServerCommand("bot_add_ct %s", "DrqkoN");
-		ServerCommand("bot_add_ct %s", "drac");
+		ServerCommand("bot_add_ct %s", "SBT");
 		ServerCommand("bot_add_ct %s", "s0ne");
 		ServerCommand("bot_add_ct %s", "devoduvek");
 		ServerCommand("mp_teamlogo_1 amb");
@@ -3025,7 +3024,7 @@ public Action Team_Ambush(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "wasiNk");
 		ServerCommand("bot_add_t %s", "DrqkoN");
-		ServerCommand("bot_add_t %s", "drac");
+		ServerCommand("bot_add_t %s", "SBT");
 		ServerCommand("bot_add_t %s", "s0ne");
 		ServerCommand("bot_add_t %s", "devoduvek");
 		ServerCommand("mp_teamlogo_2 amb");
@@ -3703,9 +3702,9 @@ public Action Team_AVANGAR(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "FinigaN");
-		ServerCommand("bot_add_ct %s", "znx");
+		ServerCommand("bot_add_ct %s", "fozil");
 		ServerCommand("bot_add_ct %s", "kade0");
-		ServerCommand("bot_add_ct %s", "s1natoRRR");
+		ServerCommand("bot_add_ct %s", "enzero");
 		ServerCommand("bot_add_ct %s", "ICY");
 		ServerCommand("mp_teamlogo_1 avg");
 	}
@@ -3714,9 +3713,9 @@ public Action Team_AVANGAR(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "FinigaN");
-		ServerCommand("bot_add_t %s", "znx");
+		ServerCommand("bot_add_t %s", "fozil");
 		ServerCommand("bot_add_t %s", "kade0");
-		ServerCommand("bot_add_t %s", "s1natoRRR");
+		ServerCommand("bot_add_t %s", "enzero");
 		ServerCommand("bot_add_t %s", "ICY");
 		ServerCommand("mp_teamlogo_2 avg");
 	}
@@ -4487,7 +4486,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
 			int iTeam = GetClientTeam(i);
 			
-			if(!g_bFreezetimeEnd && bInBuyZone && g_iNeedDrop[iTeam] > 0)
+			if(!g_bFreezetimeEnd && bInBuyZone)
 			{
 				int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
 				
@@ -4495,7 +4494,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 				{
 					for (int j = 1; j <= MaxClients; j++)
 					{
-						if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam)
+						if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam && !g_bDropWeapon[j])
 						{
 							int iOtherPrimary = GetPlayerWeaponSlot(j, CS_SLOT_PRIMARY);
 							int iMoney = GetEntProp(j, Prop_Send, "m_iAccount");
@@ -4514,7 +4513,6 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 									BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
 									g_bDropWeapon[j] = true;
 									g_bHasGottenDrop[i] = true;
-									g_iNeedDrop[iTeam]--;
 									break;
 								}
 							}
@@ -4570,8 +4568,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bAbortExecute = false;
 	g_bTerroristEco = false;
 	g_bEveryoneDead = false;
-	g_iNeedDrop[CS_TEAM_CT] = 0;
-	g_iNeedDrop[CS_TEAM_T] = 0;
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -5116,8 +5112,6 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 	
 	if ((iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue)) && iPrimary == -1)
 	{
-		g_iNeedDrop[GetClientTeam(client)]++;
-		
 		if(GetClientTeam(client) == CS_TEAM_T)
 			g_bTerroristEco = true;
 	}

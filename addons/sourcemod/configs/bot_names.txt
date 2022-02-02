@@ -549,7 +549,7 @@
 	//Ambush Players
 	"wasiNk" 			"Ambush"
 	"DrqkoN" 			"Ambush"
-	"drac" 				"Ambush"
+	"SBT" 				"Ambush"
 	"s0ne" 				"Ambush"
 	"devoduvek"			"Ambush"
 	//Dragons Players
@@ -680,9 +680,9 @@
 	"Jimpphat"			"Conquer"
 	//AVANGAR Players
 	"FinigaN" 			"AVANGAR"
-	"znx"				"AVANGAR"
+	"fozil"				"AVANGAR"
 	"kade0" 			"AVANGAR"
-	"s1natoRRR" 		"AVANGAR"
+	"enzero" 			"AVANGAR"
 	"ICY"				"AVANGAR"
 	//SWS Players
 	"gbb" 				"SWS"

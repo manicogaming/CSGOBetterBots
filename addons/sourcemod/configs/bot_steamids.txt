@@ -548,7 +548,7 @@
 	"S3NSEY"			"103744637"
 	//Ambush Players
 	"s0ne" 				"98116312"
-	"drac" 				"44256702"
+	"SBT" 				"94663345"
 	"DrqkoN" 			"245929"
 	"wasiNk" 			"164618316"
 	"devoduvek" 		"116664993"
@@ -680,9 +680,9 @@
 	"Jimpphat"			"895109597"
 	//AVANGAR Players
 	"FinigaN" 			"226095351"
-	"znx"				"23528558"
+	"fozil"				"332205778"
 	"kade0" 			"343115451"
-	"s1natoRRR" 		"115550559"
+	"enzero" 			"354960733"
 	"ICY"				"94843300"
 	//SWS Players
 	"gbb" 				"1056251466"

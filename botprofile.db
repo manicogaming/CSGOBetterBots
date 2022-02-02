@@ -2310,7 +2310,7 @@ ProP+SniperPro+SniperPersonality "DrqkoN"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "drac"
+ProP+Rifle+RiflePersonality "SBT"
 	VoicePitch = 72
 End
 
@@ -2790,7 +2790,7 @@ ProP+Rifle+RiflePersonality "FinigaN"
 	VoicePitch = 83
 End
 
-ProP+SniperPro+SniperPersonality "znx"
+ProP+SniperPro+SniperPersonality "fozil"
 	VoicePitch = 97
 End
 
@@ -2798,7 +2798,7 @@ ProP+Rifle+RiflePersonality "kade0"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "s1natoRRR"
+ProP+Rifle+RiflePersonality "enzero"
 	VoicePitch = 97
 End
 

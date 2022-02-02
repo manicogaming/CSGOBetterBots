@@ -548,7 +548,7 @@
 	"S3NSEY"			"CSGO-2NdVa-TcHeq-XinWh-yrWUr-UupcG"
 	//Ambush Players
 	"s0ne" 				"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
-	"drac" 				"CSGO-u4DxJ-jECck-8Zy4y-G83Yz-VNwLA"
+	"SBT" 				"CSGO-nCYPv-dNzUW-aHCyh-MG6Sw-UupcG"
 	"DrqkoN" 			"CSGO-ENOYu-YbOaR-iLVc4-TaCWD-NkUCP"
 	"wasiNk" 			"CSGO-iHeBA-HhkWD-Q2mtO-zFJfX-t4kXM"
 	"devoduvek" 		"CSGO-WjGv4-2QiuO-kZVf7-VPLDu-zVx9H"
@@ -680,10 +680,10 @@
 	"Jimpphat"			"CSGO-fVUXf-CdrUZ-uNLjq-uMOFu-BouCQ"
 	//AVANGAR Players
 	"FinigaN" 			"CSGO-3MnZv-oBime-Vtzj4-q5KGd-8SD3J"
-	"znx"				"CSGO-3wWE8-HZmQO-6DyPy-nLorm-DzurD"
+	"fozil"				"CSGO-74XRn-JXR4L-O68Oc-uSBQK-dz8CH"
 	"kade0" 			"CSGO-nafEP-UF6mG-536cw-WZqKm-n6QmH"
-	"s1natoRRR" 		"CSGO-fEWAM-nKXUm-ONMxZ-mX5Gy-rfdZH"
-	"ICY"				"CSGO-YYh4c-Q5NYG-rBqM7-ABerF-qRkTL"
+	"enzero" 			"CSGO-fEWAM-nKXUm-ONMxZ-mX5Gy-rfdZH"
+	"ICY"				"CSGO-2UobZ-CqZG2-LhsF8-vaDLA-9TsFF"
 	//SWS Players
 	"gbb" 				"CSGO-KGYxZ-sQ697-3UyoZ-RfwXU-DHh8E"
 	"CSO"				"CSGO-2EA6W-FPAvJ-mc8Tf-8YHjE-VfdBN"
