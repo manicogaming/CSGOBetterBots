@@ -120,7 +120,7 @@
 	"FaNg" 				"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
 	"floppy" 			"CSGO-Mody6-S7mhz-uwfR4-FQ585-tXcNE"
 	"Grim" 				"CSGO-xB3Ny-oiRsf-JHjqE-9XAba-y9izO"	
-	//ViCi Players
+	//Atom Players
 	"zhokiNg" 			"CSGO-Rufjj-uBiOh-BU42c-39qGq-jFFFN"
 	"kaze" 				"CSGO-5o9Oa-cb9XR-rvPL5-h4ifU-cjRqJ"
 	"aumaN" 			"CSGO-OrsXz-OX4d2-JSJYs-xM2sc-DbapG"
@@ -400,7 +400,7 @@
 	"RZU" 				"CSGO-ZypKj-ctwMP-kdmdx-SEYwq-wembN"
 	"xCeeD" 			"CSGO-bE2pk-FTzhO-dxyjU-uvbis-cqybE"
 	"Danejoris" 		"CSGO-9mEtc-YcWjp-rz3XR-ESqSr-zYYwP"
-	"viz" 				"CSGO-UmQP9-WPjGc-qw9eT-bcnRn-bFPYE"
+	"JAM" 				"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
 	"grape" 			"CSGO-suxRx-3fuab-iKeaa-dA3td-LbRVP"
 	//FATE Players
 	"Patrick--" 		"CSGO-h5xXx-pnwvs-ohnHB-zHx8e-iDjLJ"
@@ -559,17 +559,17 @@
 	"r4ul"				"CSGO-zGpoG-95MFL-eNqjB-o5T8L-E7c7L"
 	"ponter"			"CSGO-mUC8b-V66A6-fG9d2-QF9EE-CrrBE"
 	//Supremacy Players
-	"kevz" 				"CSGO-MqG8y-aNYVj-CFQB3-pqZW8-BTX9G"
+	".Rome" 			"CSGO-YeRPQ-W8dxS-7SYJh-F5uBH-vpybE"
 	"GuepaRd" 			"CSGO-PXzjp-oxFOS-G38wD-WfN7F-nvHCF"
-	"zockie" 			"CSGO-ptBE4-VtQiU-FCHTw-pLvyu-sV8SA"
-	"LKN" 				"CSGO-ouLPJ-8GZXq-R2DN7-PBhGU-sPZfE"
+	"NiK0" 				"CSGO-SG3dU-Twu5q-SyeKs-CMDVv-JTDND"
+	"Surviv0r" 			"CSGO-7Octc-MVYMn-RxKpQ-T3m3W-X3nQD"
 	"ALONZO" 			"CSGO-hjfmG-LF5Yz-A4qax-iZ9W8-Jo74E"
-	//x6tence Players
-	"SOKER" 			"CSGO-Nd2UG-qs7sG-RtqN9-mFFba-xvSyL"
-	"GOYO007" 			"CSGO-4yVRo-jsAf7-GmQcL-F88Ti-8VopQ"
-	"roGerzz" 			"CSGO-8iLZS-qYjQz-OmHUy-sUcWr-jZxTC"
-	"flowX" 			"CSGO-z9Jut-yViV3-3ayUG-RyewF-ySnMC"
-	"Ezetapsss" 		"CSGO-krPUU-EAyRn-K5NCP-Q5kVC-z2urD"
+	//planB Players
+	"sjN" 				"CSGO-Nd2UG-qs7sG-RtqN9-mFFba-xvSyL"
+	"ceddix" 			"CSGO-qFaB6-C8BqR-SRi3k-qYiVC-Vc4NF"
+	"steveN" 			"CSGO-mhOt6-UEdZo-aGGSn-XdQsO-WiA6Q"
+	"pony-san" 			"CSGO-LCsyO-JGu8u-CN9eo-cWyr7-ZmRBD"
+	"XCR" 				"CSGO-yRWqK-3sXaP-3S9w9-cEnvC-PuD7K"
 	//AVEZ Players
 	"mystic" 			"CSGO-7aM7x-BipU3-yiMux-Bm5Un-mWJGG"
 	"bastEe" 			"CSGO-AvL3K-W8XS9-wt2JD-MDG6i-3kYbD"
@@ -780,4 +780,10 @@
 	"Nexius"			"CSGO-RsjiD-5LRvZ-viXTe-JADfL-9tdqA"
 	"ReFuZR" 			"CSGO-2ukju-CwV3m-9eSjA-nA7kr-jZxTC"
 	"rabbit"			"CSGO-N5vUk-vUELK-aASXj-ojBzr-ojbcP"
+	//LDLC Players
+	"Graviti" 			"CSGO-jzXjo-ODcow-2iPv8-AQxJN-rTGOP"
+	"Broox"				"CSGO-hCdFu-TBdEi-RdKdo-nEi7C-pKN2G"
+	"ElectuS"			"CSGO-68k6q-SyoKQ-DRUD2-OfXrS-DwxsP"
+	"Diviiii" 			"CSGO-jwHia-EObbX-qV9j8-qBzZT-ey3JE"
+	"Neityu"			"CSGO-GYmrq-VmFZM-w6Nec-jBHnB-4ZywQ"
 }

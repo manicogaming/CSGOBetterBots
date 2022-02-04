@@ -120,12 +120,12 @@
 	"FaNg" 				"coL"
 	"floppy" 			"coL"
 	"Grim" 				"coL"	
-	//ViCi Players
-	"zhokiNg" 			"ViCi"
-	"kaze" 				"ViCi"
-	"aumaN" 			"ViCi"
-	"JamYoung" 			"ViCi"	
-	"advent" 			"ViCi"
+	//Atom Players
+	"zhokiNg" 			"Atom"
+	"kaze" 				"Atom"
+	"aumaN" 			"Atom"
+	"JamYoung" 			"Atom"	
+	"advent" 			"Atom"
 	//forZe Players
 	"KENSI" 			"forZe"	
 	"zorte" 			"forZe"
@@ -400,7 +400,7 @@
 	"RZU" 				"Impact"
 	"xCeeD" 			"Impact"
 	"Danejoris" 		"Impact"
-	"viz" 				"Impact"
+	"JAM" 				"Impact"
 	"grape" 			"Impact"
 	//FATE Players
 	"rafftu"			"FATE" 
@@ -559,17 +559,17 @@
 	"detr0it" 			"Dragons"
 	"r4ul"				"Dragons"
 	//Supremacy Players
-	"kevz" 				"Supremacy"
+	".Rome" 			"Supremacy"
 	"GuepaRd" 			"Supremacy"
-	"zockie" 			"Supremacy"
-	"LKN" 				"Supremacy"
+	"NiK0" 				"Supremacy"
+	"Surviv0r" 			"Supremacy"
 	"ALONZO"			"Supremacy"
-	//x6tence Players
-	"flowX" 			"x6tence"
-	"SOKER" 			"x6tence"
-	"Ezetapsss" 		"x6tence"
-	"GOYO007" 			"x6tence"
-	"roGerzz"			"x6tence"
+	//planB Players
+	"pony-san" 			"planB"
+	"sjN" 				"planB"
+	"XCR" 				"planB"
+	"ceddix" 			"planB"
+	"steveN"			"planB"
 	//AVEZ Players
 	"mystic" 			"AVEZ"
 	"bastEe" 			"AVEZ"
@@ -780,4 +780,10 @@
 	"Nexius"			"LLL"
 	"ReFuZR" 			"LLL"
 	"rabbit"			"LLL"
+	//LDLC Players
+	"Graviti" 			"LDLC"
+	"Broox"				"LDLC"
+	"ElectuS"			"LDLC"
+	"Diviiii" 			"LDLC"
+	"Neityu"			"LDLC"
 }

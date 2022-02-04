@@ -544,10 +544,6 @@ End
 
 ProP+SniperPro+SniperPersonality "s1mple"
 	VoicePitch = 71
-	//LookAngleStiffnessNormal = 1150.0
-	//LookAngleDampingNormal = 50.0
-	//LookAngleStiffnessAttacking = 1150.0
-	//LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "B1T"
@@ -738,7 +734,7 @@ ProP+Rifle+RiflePersonality "Grim"
 	VoicePitch = 102
 End
 
-//ViCi Players
+//Atom Players
 
 ProP+Rifle+RiflePersonality "zhokiNg"
 	VoicePitch = 80
@@ -1764,7 +1760,7 @@ ProP+Rifle+RiflePersonality "xCeeD"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "viz"
+ProP+Rifle+RiflePersonality "JAM"
 	VoicePitch = 79
 End
 
@@ -2346,7 +2342,7 @@ End
 
 //Supremacy Players
 
-ProP+Rifle+RiflePersonality "kevz"
+ProP+Rifle+RiflePersonality ".Rome"
 	VoicePitch = 89
 End
 
@@ -2354,11 +2350,11 @@ ProP+SniperPro+SniperPersonality "GuepaRd"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "zockie"
+ProP+Rifle+RiflePersonality "NiK0"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "LKN"
+ProP+Rifle+RiflePersonality "Surviv0r"
 	VoicePitch = 103
 End
 
@@ -2366,25 +2362,25 @@ ProP+Rifle+RiflePersonality "ALONZO"
 	VoicePitch = 107
 End
 
-//x6tence Players
+//planB Players
 
-ProP+Rifle+RiflePersonality "flowX"
+ProP+Rifle+RiflePersonality "pony-san"
 	VoicePitch = 81
 End
 
-ProP+SniperPro+SniperPersonality "Ezetapsss"
+ProP+SniperPro+SniperPersonality "XCR"
 	VoicePitch = 78
 End
 
-ProP+Rifle+RiflePersonality "SOKER"
+ProP+Rifle+RiflePersonality "sjN"
 	VoicePitch = 85
 End
 
-ProP+Rifle+RiflePersonality "GOYO007"
+ProP+Rifle+RiflePersonality "ceddix"
 	VoicePitch = 76
 End
 
-ProP+Rifle+RiflePersonality "roGerzz"
+ProP+Rifle+RiflePersonality "steveN"
 	VoicePitch = 87
 End
 
@@ -3156,6 +3152,28 @@ End
 
 ProP+Rifle+RiflePersonality "rabbit"
 	VoicePitch = 97
+End
+
+//LDLC Players
+
+ProP+Rifle+RiflePersonality "Graviti"
+	VoicePitch = 102
+End
+
+ProP+SniperPro+SniperPersonality "Broox"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "ElectuS"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "Diviiii"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RiflePersonality "Neityu"
+	VoicePitch = 91
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

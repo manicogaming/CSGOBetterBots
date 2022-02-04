@@ -120,7 +120,7 @@
 	"FaNg" 				"312457591"
 	"floppy" 			"346253535"
 	"Grim" 				"230970467"	
-	//ViCi Players
+	//Atom Players
 	"zhokiNg" 			"99494192"
 	"kaze" 				"16127541"
 	"aumaN" 			"46223698"
@@ -400,7 +400,7 @@
 	"RZU" 				"170869120"
 	"xCeeD" 			"180524431"
 	"Danejoris" 		"116329706"
-	"viz" 				"433892634"
+	"JAM" 				"197428255"
 	"grape" 			"130164677"
 	//FATE Players
 	"Patrick--" 		"98715951"
@@ -559,17 +559,17 @@
 	"r4ul"				"66963508"
 	"ponter"			"201409161"
 	//Supremacy Players
-	"kevz" 				"67290321"
+	".Rome" 			"420618189"
 	"GuepaRd" 			"21286400"
-	"zockie" 			"107349646"
-	"LKN" 				"1020728718"
+	"NiK0" 				"453396504"
+	"Surviv0r" 			"876321657"
 	"ALONZO" 			"393298220"
-	//x6tence Players
-	"SOKER" 			"28441993"
-	"GOYO007" 			"298940585"
-	"roGerzz" 			"213606813"
-	"flowX" 			"228626739"
-	"Ezetapsss" 		"370300960"
+	//planB Players
+	"sjN" 				"126350018"
+	"ceddix" 			"356562357"
+	"steveN" 			"449069408"
+	"pony-san" 			"76320241"
+	"XCR" 				"76746850"
 	//AVEZ Players
 	"mystic" 			"81765294"
 	"bastEe" 			"316079070"
@@ -780,4 +780,10 @@
 	"Nexius"			"210313229"
 	"ReFuZR" 			"338268527"
 	"rabbit"			"313117907"
+	//LDLC Players
+	"Graviti" 			"219272777"
+	"Broox"				"314420307"
+	"ElectuS"			"206349608"
+	"Diviiii" 			"191872056"
+	"Neityu"			"1011452664"
 }
