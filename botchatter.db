@@ -1,0 +1,1391 @@
+//----------------------------------------------------------------------------
+// BotChatter.db
+// Author: Michael S. Booth, Turtle Rock Studios (www.turtlerockstudios.com)
+//
+// This database defines "Places" (phrases that describe a location in the world)
+// and "Chatter" (phrases used for everything else) the bots use to talk via their radio.
+// 
+// Phrases (ie: either Place or Chatter) can contain any number of wav filenames that
+// contain voice recordings saying something appropriate for that phrase's concept.
+// For instance, the Chatter entry for "Affirmative" contains several wav files saying
+// things that mean "yes", such as "affirmative", "yes sir", "roger that", and so on.
+//
+// Some phrases have a "Radio" line. This maps that phrase to a Standard Radio event and
+// is used when the player has restricted the bots to only using Standard Radio messages.
+// In that case, that radio message will be played instead of the normal phrase.
+//
+// The keyword "Important" flags that phrase as being "mission critical", and means it
+// will be spoken if the player has set the bots to "minimal" chatter.
+//
+// "Count" and "Place" qualifiers mean that any subsequent wav files will only be selected
+// if the bot is referring to the given Count or Place.
+//
+//
+// VOICE ACTOR NOTES:
+// Unless otherwise stated, these phrases should be spoken in a terse, matter-of-fact manner.
+// The bots will utter "batches" of phrases to communicate the situation. For example, if a bot
+// discovers many enemies near the bridge, and one of them is carrying the bomb, he will say
+// something like:
+//   "Bridge" ... "There's the bomber" ... "Need help!"  
+//
+//
+// ***NOTE: Total filename length must be less than 64!
+//
+
+BaseDir bot
+
+//
+// Places must be first in this database
+//
+
+Place BombsiteA
+	a.wav
+End
+
+Place BombsiteB
+	b.wav
+End
+
+Place BombsiteC
+	c.wav
+End
+
+Place HostageRescueZone
+	rescue_zone.wav
+	rescue_zone2.wav
+End
+
+Place VipRescueZone
+	rescue_zone.wav
+	rescue_zone2.wav
+End
+
+Place CTSpawn
+	ct_spawn.wav
+End
+
+Place TSpawn
+	t_spawn.wav
+End
+
+
+Place Bridge
+	bridge.wav
+End
+
+Place Middle
+	middle.wav
+End
+
+Place House
+	house.wav
+End
+
+Place Apartment
+	apartment.wav
+End
+
+Place Apartments
+	apartments.wav
+End
+
+Place Market
+	market.wav
+	market2.wav
+End
+
+Place Sewers
+	sewers.wav
+	sewers2.wav
+End
+
+Place Tunnel
+	tunnel.wav
+	tunnel2.wav
+End
+
+Place Ducts
+	vents.wav
+	vents2.wav
+	ventilation_system.wav
+End
+
+Place Village
+	villiage.wav
+End
+
+Place Roof
+	roof.wav
+End
+
+Place Upstairs
+	upstairs.wav
+End
+
+Place Downstairs
+	downstairs.wav
+End
+
+Place Basement
+	basement.wav
+End
+
+Place Crawlspace
+	crawlspace.wav
+End
+
+Place Kitchen
+	kitchen.wav
+	kitchen2.wav
+End
+
+Place Inside
+	inside.wav
+End
+
+Place Outside
+	outside.wav
+End
+
+Place Tower
+	tower.wav
+End
+
+Place WineCellar
+	wine_cellar.wav
+End
+
+Place Garage
+	garage.wav
+End
+
+Place Courtyard
+	courtyard.wav
+End
+
+Place Water
+	water.wav
+End
+
+Place FrontDoor
+	front_door.wav
+	front_door2.wav
+End
+
+Place BackDoor
+	back_door.wav
+End
+
+Place SideDoor
+	side_door.wav
+End
+
+Place BackWay
+	back_way.wav
+End
+
+Place FrontYard
+	front_yard.wav
+End
+
+Place BackYard
+	back_yard.wav
+End
+
+Place SideYard
+	side_yard.wav
+End
+
+Place Lobby
+	lobby.wav
+End
+
+Place Vault
+	vault.wav
+End
+
+Place Elevator
+	elevator.wav
+	elevator2.wav
+End
+
+Place DoubleDoors
+	double_doors.wav
+End
+
+Place SecurityDoors
+	security_doors.wav
+End
+
+Place LongHall
+	long_hall.wav
+End
+
+Place SideHall
+	side_hall.wav
+End
+
+Place FrontHall
+	front_hall.wav
+End
+
+Place BackHall
+	back_hall.wav
+End
+
+Place MainHall
+	main_hall.wav
+End
+
+Place FarSide
+	far_side.wav
+End
+
+Place Windows
+	windows.wav
+End
+
+Place Window
+	window.wav
+End
+
+Place Attic
+	attic.wav
+End
+
+Place StorageRoom
+	storage_room.wav
+End
+
+Place ProjectorRoom
+	projector_room.wav
+End
+
+Place MeetingRoom
+	meeting_room.wav
+End
+
+Place ConferenceRoom
+	conference_room.wav
+End
+
+Place ComputerRoom
+	computer_room.wav
+End
+
+Place BigOffice
+	big_office.wav
+End
+
+Place LittleOffice
+	little_office.wav
+End
+
+Place Dumpster
+	dumpster.wav
+End
+
+Place Airplane
+	airplane.wav
+End
+
+Place Underground
+	underground.wav
+End
+
+Place Bunker
+	bunker.wav
+End
+
+Place Mines
+	mines.wav
+	old_mines.wav
+End
+
+Place Front
+	front.wav
+End
+
+Place Back
+	back.wav
+End
+
+Place Rear
+	rear.wav
+End
+
+Place Side
+	side.wav
+End
+
+Place Ramp
+	ramp.wav
+	ramp2.wav
+End
+
+Place Underpass
+	underpass.wav
+End
+
+Place Overpass
+	overpass.wav
+End
+
+Place Stairs
+	stairs.wav
+End
+
+Place Ladder
+	ladder.wav
+End
+
+Place Gate
+	gate.wav
+End
+
+Place GateHouse
+	gatehouse.wav
+End
+
+Place LoadingDock
+	loading_dock.wav
+End
+
+Place GuardHouse
+	guardhouse.wav
+End
+
+Place Entrance
+	entrance.wav
+End
+
+Place VendingMachines
+	vending_machines.wav
+	vending_machines2.wav
+End
+
+Place Loft
+	loft.wav
+End
+
+Place Balcony
+	balcony.wav
+End
+
+Place Alley
+	alley.wav
+End
+
+Place BackAlley
+	back_alley.wav
+End
+
+Place SideAlley
+	side_alley.wav
+End
+
+Place FrontRoom
+	front_room.wav
+End
+
+Place BackRoom
+	back_room.wav
+End
+
+Place SideRoom
+	side_room.wav
+End
+
+Place Crates
+	crates.wav
+End
+
+Place Truck
+	truck.wav
+End
+
+Place Bedroom
+	bedroom.wav
+	bedroom2.wav
+End
+
+Place FamilyRoom
+	family_room.wav
+End
+
+Place Bathroom
+	bathroom.wav
+	bathroom2.wav
+End
+
+Place LivingRoom
+	living_room.wav
+End
+
+Place Den
+	den.wav
+End
+
+Place Office
+	office.wav
+End
+
+Place Atrium
+	atrium.wav
+End
+
+Place Entryway
+	entryway.wav
+End
+
+Place Foyer
+	foyer.wav
+End
+
+Place Stairwell
+	stairwell.wav
+End
+
+Place Fence
+	fence.wav
+End
+
+Place Deck
+	deck.wav
+End
+
+Place Porch
+	porch.wav
+End
+
+Place Patio
+	patio.wav
+End
+
+Place Wall
+	wall.wav
+End
+
+
+
+//-----------------------------------------------------------------------------------------
+//
+// Chatter phrases follow
+//
+
+// one or more enemies have just been sighted for the first time
+Chatter EnemySpotted
+	Radio EVENT_RADIO_ENEMY_SPOTTED
+
+	Count 1
+		one_guy.wav
+
+	Count 2
+		two_of_them.wav
+
+	Count 3
+		three.wav
+		three_of_them.wav
+
+	Count Many
+		// VOICE NOTE: The bot is scared here - there are a lot of enemies!
+		a_bunch_of_them.wav
+		theyre_all_over_the_place2.wav
+		theyre_everywhere2.wav
+		theres_too_many_of_them.wav
+		theres_too_many.wav
+		too_many2.wav
+		the_actions_hot_here.wav 
+		its_a_party.wav 
+End
+
+// the bot has recently seen an enemy die
+Chatter EnemyDown
+	Radio EVENT_RADIO_ENEMY_DOWN
+
+	enemy_down.wav 
+	enemy_down2.wav 
+End
+
+// the bot says this when asked to "report in" while he is fighting enemies
+Chatter InCombat
+	Radio EVENT_RADIO_ENEMY_SPOTTED
+
+	attacking.wav 
+	attacking_enemies.wav 
+	engaging_enemies.wav 
+	in_combat.wav 
+	in_combat2.wav 
+	returning_fire.wav 
+End
+
+// the bot has been asked to "report in" and sees nothing interesting in his area
+Chatter Clear
+	Radio EVENT_RADIO_SECTOR_CLEAR
+
+	clear.wav 
+	clear2.wav 
+	clear3.wav 
+	clear4.wav 
+	area_clear.wav 
+	all_clear_here.wav 
+	nothing_moving_over_here.wav 
+	all_quiet.wav 
+	nothing_happening_over_here.wav 
+	i_got_nothing.wav 
+	nothing.wav 
+	nothing_here.wav 
+	theres_nobody_home.wav 
+End
+
+// the bot hasn't seen anything in a long time and is asking his teammates to report in
+Chatter RequestReport
+	Radio EVENT_RADIO_REPORT_IN_TEAM
+
+	report_in_team.wav 
+	anyone_see_them.wav 
+	anyone_see_anything.wav 
+	where_are_they.wav 
+	where_could_they_be.wav 
+End
+
+// the bot has killed the enemy has was fighting
+Chatter KilledMyEnemy
+	Radio EVENT_RADIO_ENEMY_DOWN
+
+	hes_dead.wav 
+	hes_down.wav 
+	got_him.wav 
+	dropped_him.wav 
+	killed_him.wav 
+	ruined_his_day.wav 
+	wasted_him.wav 
+	took_him_out.wav 
+	took_him_out2.wav 
+	took_him_down.wav 
+	made_him_cry.wav 
+	hes_broken.wav 
+	hes_done.wav 
+End
+
+// the bot was chasing after his enemy and lost track of him
+// VOICE NOTE: Minor frustration/disappointment/exasperation here
+Chatter LostEnemy
+	he_got_away.wav 
+	he_got_away2.wav 
+	i_dont_know_where_he_went.wav 
+	i_lost_him.wav 
+End
+
+// the bot is telling his team that the last enemy has been killed
+// VOICE NOTE: Happy/smugness/satisfaction
+Chatter NoEnemiesLeft
+	that_was_it.wav
+	that_was_the_last_one.wav
+	that_was_the_last_guy.wav
+End
+
+// the bot is telling his team there is one enemy left
+// VOICE NOTE: Anticipation
+Chatter OneEnemyLeft
+	one_guy_left.wav
+	theres_one_left.wav
+End
+
+// the bot is telling his team there are two enemies left
+Chatter TwoEnemiesLeft
+	two_enemies_left.wav 
+	two_to_go.wav 
+End
+
+// the bot is telling his team there are three enemies left
+Chatter ThreeEnemiesLeft
+	three_left.wav 
+	three_to_go.wav 
+	three_to_go2.wav 
+End
+
+// the bot is in trouble and is asking for help
+// VOICE NOTE: he's trying to keep it together, but he is mortally frightened
+Chatter Help
+	Radio EVENT_RADIO_TAKING_FIRE
+
+	taking_fire_need_assistance2.wav 
+	i_could_use_some_help.wav 
+	i_could_use_some_help_over_here.wav 
+	help.wav 
+	need_help.wav 
+	need_help2.wav 
+	im_in_trouble.wav 
+End
+
+// the bot is agreeing with the last radio command
+Chatter Affirmative
+	Radio EVENT_RADIO_AFFIRMATIVE
+
+	Important
+
+	affirmative.wav 
+	roger.wav 
+	roger_that.wav 
+End
+
+// the bot has declined the last radio command
+Chatter Negative
+	Radio EVENT_RADIO_NEGATIVE
+
+	Important
+
+	ahh_negative.wav 
+	negative.wav 
+	negative2.wav 
+	no.wav
+	nnno_sir.wav
+	no_sir.wav
+End
+
+//-----------------------------------------------------------------------------------------
+//
+// Bomb defuse scenario chatter
+//
+
+// the (CT) bot has checked a bombsite and not found the bomb - he tells his teammates that site is clear
+Chatter BombsiteClear
+	Radio EVENT_RADIO_SECTOR_CLEAR
+
+	Important
+
+	clear.wav 
+	clear2.wav 
+	clear3.wav 
+	area_clear.wav 
+	nothing.wav 
+	nothing_here.wav 
+End
+
+// the (CT) bot has begun defusing the bomb
+Chatter DefusingBomb
+	Radio EVENT_RADIO_COVER_ME
+
+	Important
+
+	defusing.wav 
+	defusing_bomb.wav 
+	defusing_bomb_now.wav
+End
+
+// the (CT) bot is announcing his intention to guard the dropped bomb
+Chatter GoingToGuardLooseBomb
+	im_going_to_guard_the_bomb.wav
+	im_going_to_guard_the_bomb2.wav
+	im_going_to_keep_an_eye_on_the_bomb.wav
+	im_going_to_watch_the_bomb.wav
+End
+
+// the (CT) bot it telling his team that he is guarding the dropped bomb
+Chatter GuardingLooseBomb
+	Radio EVENT_RADIO_IN_POSITION
+
+	guarding_the_dropped_bomb.wav
+	ive_got_the_bomb.wav
+	ive_got_the_bomb_here.wav
+	the_bombs_here.wav
+	the_bombs_here_on_the_ground.wav
+End
+
+// the (Terrorist) bot is planting the bomb
+Chatter PlantingBomb
+	Radio EVENT_RADIO_COVER_ME
+
+	// for maps with no places, and also to be occasionally vague about where we're planting
+	Place ANY
+		planting_the_bomb.wav
+		planting.wav
+
+	Place BombsiteA
+		planting_at_a.wav
+
+	Place BombsiteB
+		planting_at_b.wav
+
+	Place BombsiteC
+		planting_at_c.wav
+End
+
+// the (Terrorist) bot is announcing his intention to plant the bomb at a specific bomb site
+Chatter GoingToPlantBomb
+	Radio EVENT_RADIO_FOLLOW_ME
+
+	// for maps with no places, and to be vague occasionally
+	Place ANY
+		im_gonna_go_plant.wav
+		im_gonna_go_plant_the_bomb.wav
+
+	Place BombsiteA
+		im_gonna_plant_the_bomb_at_a.wav
+		taking_the_bomb_to_a.wav
+
+	Place BombsiteB
+		going_to_plant_the_bomb_at_b.wav
+		im_gonna_plant_the_bomb_at_b.wav
+		taking_the_bomb_to_b.wav
+
+	Place BombsiteC
+		im_gonna_plant_the_bomb_at_c.wav
+		im_gonna_plant_the_bomb_at_c2.wav
+		taking_the_bomb_to_c.wav
+End
+
+// the (CT) bot has spotted the bomb carrier
+// VOICE NOTE: Intensity/determination/anger
+Chatter SpottedBomber
+	Radio EVENT_RADIO_ENEMY_SPOTTED
+
+	Important
+
+	i_see_the_bomber.wav
+	theres_the_bomber.wav
+	hes_got_the_bomb.wav
+	hes_got_the_bomb2.wav
+	hes_got_the_package.wav
+	spotted_the_delivery_boy.wav
+End
+
+// the bot has spotted a dropped bomb on the ground
+Chatter SpottedLooseBomb
+	Important
+
+	bombs_on_the_ground.wav
+	bombs_on_the_ground_here.wav
+	the_bomb_is_down.wav
+	the_bomb_is_on_the_ground.wav
+	they_dropped_the_bomb.wav
+End
+
+// the (CT) bot heard a Terrorist pick up the dropped bomb
+// VOICE NOTE: Anxiety/urgency
+Chatter TheyPickedUpTheBomb
+	Important
+
+	they_took_the_bomb.wav
+	they_took_the_bomb2.wav
+	they_got_the_bomb.wav
+	they_picked_up_the_bomb.wav
+End
+
+// the (CT) bot has found the location of the ticking bomb
+Chatter PlantedBombPlace
+	Radio EVENT_RADIO_NEED_BACKUP
+
+	Important
+
+	// for maps with no places
+	Place UNDEFINED
+		theres_the_bomb.wav
+		theres_the_bomb2.wav
+
+	Place BombsiteA
+		the_bombs_at_a.wav
+		//they_planted_at_a.wav		(can't use these, because T's respond with this as well)
+		the_bombs_ticking_at_a.wav
+
+	Place BombsiteB
+		the_bombs_at_b.wav
+		//they_planted_at_b.wav
+		the_bombs_ticking_at_b.wav
+
+	Place BombsiteC
+		the_bombs_at_c.wav
+		//they_planted_at_c.wav
+		the_bombs_ticking_at_c.wav
+End
+
+// the bot is asking his teammates where the bomb is
+Chatter WhereIsTheBomb
+	Important
+
+	wheres_the_bomb.wav
+	wheres_the_bomb2.wav
+	wheres_the_bomb3.wav
+	where_is_it.wav
+End
+
+// the (CT) bot is announcing his intention to guard a bombsite
+Chatter GoingToDefendBombsite
+	// for maps with no places, or we're just being vague
+	Place ANY
+		im_going_to_camp.wav
+
+	Place BombsiteA
+		im_going_to_guard_bombsite_a.wav
+		im_going_to_camp_a.wav
+
+	Place BombsiteB
+		im_going_to_guard_bombsite_b.wav
+		im_going_to_camp_b.wav
+
+	Place BombsiteC
+		im_going_to_guard_bombsite_c.wav
+		im_going_to_camp_c.wav
+End
+
+// the (CT) bot is announcing that he is currently guarding a bombsite
+Chatter DefendingBombsite
+	// for maps with no places
+	Place UNDEFINED
+		bombsite.wav
+		bombsite2.wav
+
+	Place BombsiteA
+		i_got_a_covered.wav
+		guarding_a.wav
+		im_camping_a.wav
+		heading_to_a.wav
+
+	Place BombsiteB
+		i_got_b_covered.wav
+		guarding_b.wav
+		im_camping_b.wav
+		heading_to_b.wav
+
+	Place BombsiteC
+		i_got_c_covered.wav
+		guarding_c.wav
+		im_camping_c.wav
+		heading_to_c.wav
+End
+
+// the (CT) bot is announcing that the bombsite is secure and ready for someone to defuse the bomb
+Chatter BombsiteSecure
+	Radio EVENT_RADIO_SECTOR_CLEAR
+
+	Important
+
+	bombsite_secure.wav
+	bombsite_secured.wav
+	bombsite_under_control.wav
+	weve_got_the_situation.wav
+End
+
+// the (CT) bot is encouraging the player to defuse the bomb
+Chatter WaitingForHumanToDefuseBomb
+	its_all_up_to_you_sir.wav
+	bombsite_secure_ready_for_you.wav
+	well_cover_you_while_you_defuse.wav
+	well_cover_you_you_defuse.wav
+End
+
+// the (CT) bot is anxiously encouraging the player to defuse the bomb
+// VOICE NOTE: Very nervous/anxious/worried
+Chatter WaitingForHumanToDefuseBombPanic
+	we_need_you_to_defuse_that_bomb_sir.wav
+	dont_worry_hell_get_it.wav
+	please_defuse_the_bomb_sir.wav
+	sir_defuse_the_bomb.wav
+	time_is_running_out.wav
+	time_is_running_out2.wav
+	uh_sir_the_bomb.wav
+End
+
+// when the bomb was defused with less than 2 seconds left
+// VOICE NOTE: Relief/happy
+Chatter BarelyDefused
+	i_wasnt_worried_for_a_minute.wav
+	that_was_a_close_one.wav
+	well_done.wav
+	whew_that_was_close.wav
+End
+
+
+//-----------------------------------------------------------------------------------------
+//
+// Hostage Rescue chatter
+//
+
+// the (Terrorist) bot is announcing his intention to guard the hostages
+Chatter GoingToGuardHostages
+	camping_hostages.wav
+	im_going_to_camp_the_hostages.wav
+	im_going_to_guard_the_hostages.wav
+	im_going_to_guard_the_hostages2.wav
+End
+
+// the (Terrorist) bot is currently guarding some hostages
+Chatter GuardingHostages
+	keeping_an_eye_on_the_hostages.wav
+	guarding_the_hostages.wav
+	guarding_hostages.wav
+	watching_the_hostages.wav
+	im_with_the_hostages.wav
+	im_with_the_hostages2.wav
+	im_at_the_hostages.wav
+End
+
+// the (Terrorist) bot is announcing his intetion to guard an escape zone
+Chatter GoingToGuardHostageEscapeZone
+	im_going_to_cover_the_escape_zone.wav
+	im_going_to_watch_the_escape_zone.wav
+	im_going_to_keep_an_eye_on_the_escape.wav
+	heading_to_the_escape_zone.wav
+	heading_to_the_rescue_zone.wav
+	im_going_to_keep_an_eye_on_the_rescue.wav
+	im_going_to_watch_the_rescue_zone.wav
+End
+
+// the (Terrorist) bot is currently guarding an escape zone
+Chatter GuardingHostageEscapeZone
+	watching_the_escape_route.wav
+	im_at_the_escape_zone.wav
+	watching_the_escape_zone.wav
+	guarding_the_escape_zone.wav
+	guarding_the_escape_zone2.wav
+End
+
+// the (Terrorist) bot is telling his friends that the CT's are taking the hostages right now
+// VOICE NOTE: Anxiety/frustration/anger
+Chatter HostagesBeingTaken
+	Radio EVENT_RADIO_NEED_BACKUP
+
+	Important
+
+	theyre_with_the_hostages.wav
+	theyre_taking_the_hostages.wav
+	theyre_rescuing_the_hostages.wav
+	hostages2.wav
+End
+
+// the (Terrorist) bot has just discovered that the hostages are gone
+// VOICE NOTE: Anxiety/frustration/anger
+Chatter HostagesTaken
+	Important
+
+	they_took_the_hostages.wav
+	theyve_got_the_hostages.wav
+	the_hostages_are_gone.wav
+End
+
+// the (CT) bot is announcing that he is talking to the hostages
+Chatter TalkingToHostages
+	talking_to_hostages.wav
+	rescuing_hostages.wav
+End
+
+// the (CT) bot is annoucing that he has the hostages and is taking them to the escape zone
+Chatter EscortingHostages
+	the_hostages_are_with_me.wav
+	taking_the_hostages_to_safety.wav
+	ive_got_the_hostages.wav
+	i_have_the_hostages.wav
+End
+
+// the (CT) bot is guarding the hostages and is encouraging the human player to come rescue them
+Chatter WaitingForHumanToRescueHostages
+	Radio EVENT_RADIO_SECTOR_CLEAR
+
+	the_hostages_are_waiting.wav
+	hostages_secure_ready_for_you.wav
+	the_hostages_are_eager.wav
+	the_hostages_are_ready.wav
+	weve_got_the_situation.wav
+End
+
+
+//-----------------------------------------------------------------------------------------
+//
+// VIP Scenario chatter
+//
+
+// the (Terrorist) bot has spotted the VIP
+// VOICE NOTE: Intensity/anger/determination
+Chatter SpottedVIP
+	Radio EVENT_RADIO_ENEMY_SPOTTED
+
+	Important
+
+	i_see_our_target.wav
+	target_spotted.wav
+	target_acquired.wav
+End
+
+// the (Terrorist) bot is announcing his intention to guard an escape zone
+Chatter GoingToGuardVIPEscapeZone
+	im_going_to_cover_the_escape_zone.wav
+	im_going_to_watch_the_escape_zone.wav
+	im_going_to_keep_an_eye_on_the_escape.wav
+	heading_to_the_escape_zone.wav
+End
+
+// the (Terrorist) bot is guarding an escape zone
+Chatter GuardingVIPEscapeZone
+	watching_the_escape_route.wav
+	im_at_the_escape_zone.wav
+	watching_the_escape_zone.wav
+	guarding_the_escape_zone.wav
+	guarding_the_escape_zone2.wav
+End
+
+
+//-----------------------------------------------------------------------------------------
+
+// the bot was saying something and died in mid-sentance
+// VOICE NOTE: death cry
+Chatter Pain
+	pain2.wav
+	pain4.wav
+	pain5.wav
+	pain8.wav
+	pain9.wav
+	pain10.wav
+End
+
+// the bot is congratulating his team for winning the round
+Chatter WonRound
+	good_job_team.wav
+	nice_work_team.wav
+	way_to_be_team.wav
+	well_done.wav
+End
+
+// the bot is celebrating because his team crushed the enemies very quickly
+// VOICE NOTE: Hoots and hollers of excitement, bragging, boasting, etc
+Chatter WonRoundQuickly
+	i_am_dangerous.wav
+	do_not_mess_with_me.wav
+	we_owned_them.wav
+	they_never_knew_what_hit_them.wav
+	thats_the_way_this_is_done.wav
+	and_thats_how_its_done.wav
+	owned.wav
+	yesss.wav
+	yesss2.wav
+	yea_baby.wav
+	whoo.wav
+	whoo2.wav
+	oh_yea.wav
+	oh_yea2.wav
+End
+
+// the bot won the round and is the last player alive
+// VOICE NOTE: Bragging, boasting, etc
+Chatter LastManStanding
+	i_am_dangerous.wav
+	do_not_mess_with_me.wav
+	this_is_my_house.wav
+	i_got_more_where_that_came_from.wav
+	i_am_on_fire.wav
+	look_out_brag.wav
+	thats_right.wav
+End
+
+// the bot emits a short, exicited noise because he did something especially good
+// VOICE NOTE: Hoots and hollers of excitement
+Chatter ThrillEmote
+	yesss.wav
+	yesss2.wav
+	yea_baby.wav
+	whoo.wav
+	whoo2.wav
+	oh_yea.wav
+	oh_yea2.wav
+End
+
+// the bot is afraid (usually because he is outnumbered by enemies)
+// VOICE NOTE: Worry/anxiety/fear
+Chatter ScaredEmote
+	whoa.wav
+	uh_oh.wav
+	oh_no.wav
+	yikes.wav
+	oh.wav
+	oh_boy.wav
+	oh_boy2.wav
+	aah.wav
+End
+
+// the bot is agreeing with a plan someone else announced
+Chatter AgreeWithPlan
+	me_too.wav
+	ill_come_with_you.wav
+	ill_go_with_you.wav
+	ill_go_too.wav
+	i_got_your_back.wav
+	i_got_your_back2.wav
+	im_with_you.wav
+	sounds_like_a_plan.wav
+	good_idea.wav
+End
+
+// the bot is telling a friend that he will "cover them" and watch their back
+Chatter CoveringFriend
+	Radio EVENT_RADIO_AFFIRMATIVE
+
+	i_got_your_back.wav
+	i_got_your_back2.wav
+	im_with_you.wav
+End
+
+// the bot is responding to someone's request for help
+// VOICE NOTE: Confident/assuring
+Chatter OnMyWay
+	Radio EVENT_RADIO_AFFIRMATIVE
+
+	on_my_way.wav
+	on_my_way2.wav
+	im_coming.wav
+	hang_on_im_coming.wav
+	be_right_there.wav
+End
+
+// the bot has decided to hide for a little while, instead of seeking out the enemy
+// VOICE NOTE: Anxiety/worry/cowardice
+Chatter WaitingHere
+	lets_wait_here.wav
+	lets_hold_up_here_for_a_minute.wav
+	im_gonna_hang_back.wav
+	im_going_to_wait_here.wav
+	im_waiting_here.wav
+End
+
+// the bot has been in combat for a long time, and can't get away
+// VOICE NOTE: Anxiety/worry/fear
+Chatter PinnedDown
+	Radio EVENT_RADIO_NEED_BACKUP
+
+	they_got_me_pinned_down_here.wav
+	im_pinned_down.wav
+End
+
+// the bot heard an enemy noise
+// VOICE NOTE: Said as an undertone/afterthought
+Chatter HeardNoise
+	i_hear_them.wav
+	hang_on_i_heard_something.wav
+	i_hear_something.wav
+	i_heard_them.wav
+	i_heard_something_over_there.wav
+End
+
+// the bot has been blinded by a Flashbang Grenade
+// VOICE NOTE: Surprise/shock/fear/anxiety
+Chatter Blinded
+	ive_been_blinded.wav
+	my_eyes.wav
+	i_cant_see.wav
+	im_blind.wav
+End
+
+// the bot is congratulating a friend on a well placed shot
+// VOICE NOTE: upbeat/supportive/impressed
+Chatter NiceShot
+	good_one.wav
+	good_one2.wav
+	nice_shot.wav
+	nice_shot2.wav
+	good_shot.wav
+	good_shot2.wav
+	nice.wav
+	nice2.wav
+	very_nice.wav
+End
+
+// the bot is congratulating a human player on a well placed shot
+// VOICE NOTE: upbeat/supportive/impressed
+Chatter NiceShotSir
+	good_one_sir.wav
+	good_one_sir2.wav
+	nice_shot_sir.wav
+	nice_one_sir.wav
+End
+
+// the bot is congratulating the "commander" in the solo game
+// VOICE NOTE: upbeat/supportive/impressed
+Chatter NiceShotCommander
+	nice_shot_commander.wav
+	nice_shot_commander2.wav
+	good_shot_commander.wav
+	good_shot_commander2.wav
+	nice_one_commander.wav
+	good_one_sir.wav
+	good_one_sir2.wav
+	nice_shot_sir.wav
+	nice_one_sir.wav
+End
+
+// when the player dies in the solo game
+// VOICE NOTE: Intense/worry/anxiety
+Chatter CommanderDown
+	Radio EVENT_RADIO_REGROUP_TEAM
+
+	the_commander_is_down_repeat.wav
+	the_commander_is_down.wav
+	weve_lost_the_commander.wav
+End
+
+// the bot has decided to follow a human player
+Chatter FollowingSir
+	Radio EVENT_RADIO_AFFIRMATIVE
+
+	lead_on_sir.wav
+	lead_the_way_sir.wav
+	lead_the_way.wav
+	ok_sir_lets_go.wav
+End
+
+// the bot has decided to follow the human player in the solo game
+Chatter FollowingCommander
+	Radio EVENT_RADIO_AFFIRMATIVE
+
+	lead_on_sir.wav
+	lead_the_way_sir.wav
+	lead_the_way.wav
+	ok_sir_lets_go.wav
+	lead_on_commander.wav
+	lead_the_way_commander.wav
+	ok_cmdr_lets_go.wav
+End
+
+// the bot is expressing its shock that a friend has killed another friend (friendly fire)
+// VOICE NOTE: Grief/sadness/worry/astonishment
+Chatter KilledFriend
+	what_happened.wav
+	noo.wav
+	oh_my_god.wav
+	oh_man.wav
+	oh_no_sad.wav
+	what_have_you_done.wav
+End
+
+// the bot is crying out because he was injured by friendly fire
+// VOICE NOTE: Pain/anger/frustration
+Chatter FriendlyFire
+	Important
+
+	cut_it_out.wav
+	what_are_you_doing.wav
+	stop_it.wav
+	ow_its_me.wav
+	ow.wav
+	ouch.wav
+	im_on_your_side.wav
+	hold_your_fire.wav
+	hey.wav
+	hey2.wav
+	ouch.wav
+	ouch.wav
+	ouch.wav
+End
+
+
+
+//---------------------------------------------------------------------------------------
+//
+// The items below are not used (yet)
+//
+
+Chatter PepTalk
+	alright_lets_do_this.wav
+	tag_them_and_bag_them.wav
+	you_heard_the_man_lets_go.wav
+End
+
+Chatter OnARollBrag
+	i_got_more_where_that_came_from.wav
+	who_wants_some_more.wav
+	i_am_on_fire.wav
+	look_out_brag.wav
+	thats_right.wav
+	whos_the_man.wav
+End
+
+Chatter TauntCamper
+	come_out_wherever_you_are.wav
+	where_are_you_hiding.wav
+	come_out_and_fight_like_a_man.wav
+	come_to_papa.wav
+End
+
+Chatter PreventEscapeBrag
+	they_wont_get_away.wav
+	they_wont_get_away2.wav
+	they_will_not_escape.wav
+End
+
+Chatter SniperWarning
+	sniper.wav
+	sniper2.wav
+	watch_it_theres_a_sniper.wav
+End
+
+Chatter SniperKilled
+	got_the_sniper.wav
+	got_the_sniper2.wav
+	sniper_down.wav
+	took_out_the_sniper.wav
+	the_sniper_is_dead.wav
+End
+
+// we saw enemies, but now they're all dead
+Chatter ClearedArea
+	area_secure.wav 
+	neutralized.wav 
+End
+
+Chatter Agree
+	ok.wav
+	ok2.wav
+	alright.wav
+	alright2.wav
+	yea_ok.wav
+End
+
+Chatter Disagree
+	no2.wav
+	i_dont_think_so.wav
+	naa.wav
+	no_thanks.wav
+End
+
+Chatter CoverMe
+	cover_me.wav 
+	cover_me2.wav 
+End
+
+Chatter FrustrationEmote
+	aw_hell.wav
+	great.wav
+	aww_man.wav
+	thats_not_good.wav
+End
+
+Chatter FollowingFriend
+	ill_come_with_you.wav
+	ill_go_with_you.wav
+	ill_go_too.wav
+	i_got_your_back.wav
+	i_got_your_back2.wav
+	im_with_you.wav
+End
+
+Chatter ReportingIn
+	reporting_in.wav 
+End
+
+Chatter BombTickingDown
+	we_gotta_find_that_bomb.wav
+	time_is_running_out.wav
+	theres_not_much_time_left.wav
+End
+
+Chatter HostageDown
+	hostage_down.wav
+End
+
+Chatter RequestHostageLocation
+	where_are_the_hostages.wav
+End
+
+Chatter MeToo
+	me_too.wav
+End
+
+
