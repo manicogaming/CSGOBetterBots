@@ -4544,6 +4544,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 									BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
 									g_bDropWeapon[j] = true;
 									g_bHasGottenDrop[i] = true;
+									break;
 								}
 							}
 						}
