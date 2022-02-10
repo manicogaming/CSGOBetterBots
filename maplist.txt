@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun Feb 06 01:24:22 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Wed Feb 09 23:26:00 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -118,6 +118,7 @@ cs_lanpartymayhem
 cs_mall_shootout
 cs_mansion
 cs_militia
+cs_militia_original
 cs_motel
 cs_museum
 cs_office
@@ -286,6 +287,7 @@ de_region
 de_republic
 de_resort
 de_riverside_rc2
+de_royal
 de_ruins
 de_rush
 de_russka_b2
@@ -310,6 +312,7 @@ de_sunburn
 de_tangerine_b2_17
 de_torntown
 de_train
+de_train_2055
 de_tulip
 de_tuscan
 de_vacant

@@ -1,0 +1,9 @@
+// HLTV overview description file for de_vertigo.bsp
+
+"cs_militia_original"
+{
+	"material"	"overviews/cs_militia_original_radar"	// texture file
+	"pos_x"		"-2061"		//-1938  upper left world coordinate
+	"pos_y"		"1888"
+	"scale"		"4.8" 
+}
