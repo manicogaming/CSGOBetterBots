@@ -323,7 +323,7 @@
 	"imoRR" 			"107082440"
 	"duggyversus" 		"254144820"
 	"woxic" 			"123219778"
-	"xfl0ud" 			"217943381"
+	"colorzz" 			"1012494727"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"xsepower" 			"112014226"
@@ -553,7 +553,7 @@
 	"wasiNk" 			"164618316"
 	"devoduvek" 		"116664993"
 	//Dragons Players
-	"brn$" 				"934652268"
+	"ped" 				"160380654"
 	"fREQ" 				"169848605"
 	"detr0it" 			"282335538"
 	"r4ul"				"66963508"
@@ -588,12 +588,12 @@
 	"reiko" 			"190436529"
 	"fr3nd" 			"177768668"
 	"mouz" 				"38464805"
-	//RBG Players
-	"Walco" 			"129639458"
-	"HexT" 				"250668735"
-	"wiz" 				"172119781"
-	"chop" 				"242973479"
-	"jitter"			"875669473"
+	//Spirit Players
+	"chopper" 			"85633136"
+	"degster" 			"839074394"
+	"magixx" 			"868554"
+	"Patsi" 			"328275073"
+	"s1ren"				"207519341"
 	//DNMK Players
 	"dyvo"				"172602391"
 	"Niix" 				"318367596"
@@ -786,4 +786,10 @@
 	"ElectuS"			"206349608"
 	"Diviiii" 			"191872056"
 	"Neityu"			"1011452664"
+	//Vireo Players
+	"Aezy" 				"100270683"
+	"cbass"				"279811778"
+	"Champ"				"10773572"
+	"Cakes" 			"217078249"
+	"drayza"			"313775221"
 }

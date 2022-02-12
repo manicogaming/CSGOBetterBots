@@ -323,7 +323,7 @@
 	"imoRR" 			"CSGO-MWfjz-mAwoA-7QLiu-mNy9j-mRFuA"
 	"duggyversus" 		"CSGO-JouLX-6R8mG-Lmxj7-c3Quy-K5nQD"
 	"woxic" 			"CSGO-zhjce-fxfyW-FQe8S-ywurx-6vdqA"
-	"xfl0ud" 			"CSGO-HpJOC-sDCRo-7rbKn-YuPGN-fCKLH"
+	"colorzz" 			"CSGO-qaCcZ-VjXXn-96LbK-CkL9L-fHCEB"
 	//K23 Players
 	"neaLaN" 			"CSGO-7uAWU-89Qnw-7fyNr-B76zn-bueKP"
 	"xsepower" 			"CSGO-ZsryS-uwaDN-CYpn6-sSzGR-YuLDR"
@@ -553,7 +553,7 @@
 	"wasiNk" 			"CSGO-iHeBA-HhkWD-Q2mtO-zFJfX-t4kXM"
 	"devoduvek" 		"CSGO-WjGv4-2QiuO-kZVf7-VPLDu-zVx9H"
 	//Dragons Players
-	"brn$" 				"CSGO-b4UoN-5SZvn-iF9dD-Erh8e-6G3tJ"
+	"ped" 				"CSGO-qyRSU-7RDDJ-VPRXv-7q2Nh-bLH8D"
 	"fREQ" 				"CSGO-ite4T-sQWea-tNc5w-2RBnM-BdmbN"
 	"detr0it" 			"CSGO-ThZ9A-BB3PL-8ZTta-uBjwu-kEAMK"
 	"r4ul"				"CSGO-zGpoG-95MFL-eNqjB-o5T8L-E7c7L"
@@ -588,12 +588,12 @@
 	"reiko" 			"CSGO-26PS6-KP4Mo-kDaLY-J4eZo-3kYbD"
 	"fr3nd" 			"CSGO-5kYpy-JjUwk-rC7uR-hXGop-BhiaB"
 	"mouz" 				"CSGO-YtEXx-GD6Mh-TKqNp-fhyER-F6XDJ"
-	//RBG Players
-	"Walco" 			"CSGO-CabCw-X5F72-NHB5u-FCk7z-63qRP"
-	"HexT" 				"CSGO-CabCw-X5F72-NHB5u-FCk7z-63qRP"
-	"wiz" 				"CSGO-AdVFx-C548A-KVjeG-BOCyZ-kSLoD"
-	"chop" 				"CSGO-PCnhG-t7BtL-EzBhK-5ebfT-SYfOQ"
-	"jitter"			"CSGO-wJTBP-5BbTh-RnXOu-ahPa9-WsdqA"
+	//Spirit Players
+	"chopper" 			"CSGO-DuPOf-ZJaUT-kVuiU-Siqt4-8bBAA"
+	"degster" 			"CSGO-3XPK5-uwisF-Qx4SC-KqGWC-z2urD"
+	"magixx" 			"CSGO-3XPK5-uwisF-Qx4SC-KqGWC-z2urD"
+	"Patsi" 			"CSGO-QaRWQ-Erpcj-e58nM-wtJ6i-A78WB"
+	"s1ren"				"CSGO-O5RLq-bfARb-XhkoE-bkSJN-rTGOP"
 	//DNMK Players
 	"dyvo"				"CSGO-O6xLH-WCXqL-5hW9U-7TXNM-iUVaK"
 	"Niix" 				"CSGO-DUqAe-qMSJ3-hER3X-EkExO-UoHrL"
@@ -786,4 +786,10 @@
 	"ElectuS"			"CSGO-68k6q-SyoKQ-DRUD2-OfXrS-DwxsP"
 	"Diviiii" 			"CSGO-jwHia-EObbX-qV9j8-qBzZT-ey3JE"
 	"Neityu"			"CSGO-GYmrq-VmFZM-w6Nec-jBHnB-4ZywQ"
+	//Vireo Players
+	"Aezy" 				"CSGO-rMKfB-KpEja-htVqo-6LSwy-K5nQD"
+	"cbass"				"CSGO-qEBsR-PZybT-rSw2y-RmZ4u-2x5qB"
+	"Champ"				"CSGO-awFFf-zfrT7-eFyfz-6eRL4-pASZQ"
+	"Cakes" 			"CSGO-aeQWm-SMoVR-Wk4SD-aAXsZ-KK8nM"
+	"drayza"			"CSGO-zEaDT-wYZ6h-CCiRC-U6bNJ-HLAfD"
 }

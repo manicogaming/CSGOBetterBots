@@ -1478,7 +1478,7 @@ ProP+Rifle+RiflePersonality "imoRR"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "xfl0ud"
+ProP+Rifle+RiflePersonality "colorzz"
 	VoicePitch = 86
 End
 
@@ -2320,7 +2320,7 @@ End
 
 //Dragons Players
 
-ProP+Rifle+RiflePersonality "brn$"
+ProP+Rifle+RiflePersonality "ped"
 	VoicePitch = 85
 End
 
@@ -2450,25 +2450,25 @@ ProP+Rifle+RiflePersonality "mouz"
 	VoicePitch = 93
 End
 
-//RBG Players
+//Spirit Players
 
-ProP+Rifle+RiflePersonality "Walco"
+ProP+Rifle+RiflePersonality "chopper"
 	VoicePitch = 104
 End
 
-ProP+SniperPro+SniperPersonality "HexT"
+ProP+SniperPro+SniperPersonality "degster"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "wiz"
+ProP+Rifle+RiflePersonality "magixx"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "chop"
+ProP+Rifle+RiflePersonality "Patsi"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "jitter"
+ProP+Rifle+RiflePersonality "s1ren"
 	VoicePitch = 111
 End
 
@@ -3174,6 +3174,28 @@ End
 
 ProP+Rifle+RiflePersonality "Neityu"
 	VoicePitch = 91
+End
+
+//Vireo Players
+
+ProP+Rifle+RiflePersonality "Aezy"
+	VoicePitch = 79
+End
+
+ProP+SniperPro+SniperPersonality "cbass"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "Champ"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "Cakes"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "drayza"
+	VoicePitch = 88
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

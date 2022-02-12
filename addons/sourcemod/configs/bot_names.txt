@@ -323,7 +323,7 @@
 	"imoRR" 			"Eternal"
 	"duggyversus" 		"Eternal"
 	"woxic" 			"Eternal"
-	"xfl0ud" 			"Eternal"
+	"colorzz" 			"Eternal"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"xsepower" 			"K23"
@@ -553,7 +553,7 @@
 	"s0ne" 				"Ambush"
 	"devoduvek"			"Ambush"
 	//Dragons Players
-	"brn$" 				"Dragons"
+	"ped" 				"Dragons"
 	"fREQ" 				"Dragons"
 	"ponter" 			"Dragons"
 	"detr0it" 			"Dragons"
@@ -588,12 +588,12 @@
 	"NEO" 				"HONORIS"
 	"reiko" 			"HONORIS"
 	"mouz"				"HONORIS"
-	//RBG Players
-	"Walco" 			"RBG"
-	"HexT" 				"RBG"
-	"wiz" 				"RBG"
-	"chop" 				"RBG"
-	"jitter"			"RBG"
+	//Spirit Players
+	"chopper" 			"Spirit"
+	"degster" 			"Spirit"
+	"magixx" 			"Spirit"
+	"Patsi" 			"Spirit"
+	"s1ren"				"Spirit"
 	//DNMK Players
 	"Niix" 				"DNMK"
 	"kaNibalistic" 		"DNMK"
@@ -786,4 +786,10 @@
 	"ElectuS"			"LDLC"
 	"Diviiii" 			"LDLC"
 	"Neityu"			"LDLC"
+	//Vireo Players
+	"Aezy" 				"Vireo"
+	"cbass"				"Vireo"
+	"Champ"				"Vireo"
+	"Cakes" 			"Vireo"
+	"drayza"			"Vireo"
 }
