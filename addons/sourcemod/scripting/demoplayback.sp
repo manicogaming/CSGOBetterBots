@@ -27,13 +27,13 @@ char g_szIsWalking[65535][64];
 int g_iCurDefIndex[65535];
 int g_iHasJumped[65535];
 int g_iHasZoomed[65535];
+int g_iHasFired[65535];
 int g_iIsReloading[65535];
 int g_iThrowStrength[65535];
 
 float g_fPosition[65535][3];
 float g_fAngles[65535][3];
 float g_fVelocity[65535][3];
-float g_fAimPunch[65535][3];
 float g_flNextCommand[MAXPLAYERS+1];
 
 Handle g_hSwitchWeaponCall = null;
@@ -237,17 +237,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		}
 		
-		if(g_iCurrentTick[client] >= 1 && (GetEntityFlags(client) & FL_ONGROUND))
-		{
-			float fLateLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]-1]);
-			float fCurrentLength = GetVectorLength(g_fAimPunch[g_iCurrentTick[client]]);
-			
-			if(fLateLength < fCurrentLength)
-			{
-				iButtons |= IN_ATTACK;
-			}
-		}
-		
 		if(eItems_GetWeaponSlotByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]]) == CS_SLOT_GRENADE)
 		{
 			if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
@@ -280,6 +269,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		if(g_iHasZoomed[g_iCurrentTick[client]] == 1)
 		{
 			iButtons |= IN_ATTACK2;
+		}
+		
+		if(g_iHasFired[g_iCurrentTick[client]] == 1 && g_iCurDefIndex[g_iCurrentTick[client]] != 43 && g_iCurDefIndex[g_iCurrentTick[client]] != 44 && g_iCurDefIndex[g_iCurrentTick[client]] != 45 && g_iCurDefIndex[g_iCurrentTick[client]] != 46 && g_iCurDefIndex[g_iCurrentTick[client]] != 47 && g_iCurDefIndex[g_iCurrentTick[client]] != 48)
+		{
+			iButtons |= IN_ATTACK;
 		}
 		
 		if(g_iIsReloading[g_iCurrentTick[client]] == 1)
@@ -373,7 +367,6 @@ void ParseTicks()
 		kv.GetVector("position", g_fPosition[StringToInt(szTick)]);
 		kv.GetVector("angles", g_fAngles[StringToInt(szTick)]);
 		kv.GetVector("velocity", g_fVelocity[StringToInt(szTick)]);
-		kv.GetVector("aimpunch", g_fAimPunch[StringToInt(szTick)]);
 		kv.GetString("cur_name", g_szWeapon[StringToInt(szTick)], 64);
 		g_iCurDefIndex[StringToInt(szTick)] = kv.GetNum("cur_itemindex");
 		kv.GetString("pinpulled", g_szPinPulled[StringToInt(szTick)], 64);
@@ -388,6 +381,7 @@ void ParseTicks()
 		kv.GetString("iswalking", g_szIsWalking[StringToInt(szTick)], 64);
 		g_iHasJumped[StringToInt(szTick)] = kv.GetNum("hasJumped");
 		g_iHasZoomed[StringToInt(szTick)] = kv.GetNum("hasZoomed");
+		g_iHasFired[StringToInt(szTick)] = kv.GetNum("hasFired");
 		g_iIsReloading[StringToInt(szTick)] = kv.GetNum("isReloading");
 	} while (kv.GotoNextKey());
 	
