@@ -200,6 +200,14 @@ public void PrepareMirageExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/ENCE Fake A Fake B/Snappi Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/ENCE Fake A Fake B/Spinx Role.rec");
 				}
+				case 21: //NIP B Arch Smokes
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP B Arch Smokes/Plopski Role.rec"); 
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP B Arch Smokes/phzy Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP B Arch Smokes/REZ Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP B Arch Smokes/hampus Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/NIP B Arch Smokes/es3tag Role.rec");
+				}
 			}
 		}
 	}

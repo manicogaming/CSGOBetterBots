@@ -161,7 +161,7 @@
 	"sico" 				"39266546"
 	"aliStair" 			"138080982"
 	"Hatz" 				"64662058"
-	"malta" 			"181905573"
+	"Liazz" 			"112055988"
 	//GamerLegion Players
 	"eraa" 				"413888723"
 	"Zero" 				"34322135"

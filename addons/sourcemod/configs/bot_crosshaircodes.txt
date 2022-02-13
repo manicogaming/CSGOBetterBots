@@ -161,7 +161,7 @@
 	"sico" 				"CSGO-MyYDG-RU94b-NHiWk-kse5i-4xpcG"
 	"aliStair" 			"CSGO-8xrvr-rzNCb-AbBAe-J8HoQ-zMpYF"
 	"Hatz" 				"CSGO-7iaHJ-UOGS5-eZjum-E5Kf2-VtjjD"
-	"malta" 			"CSGO-amxBt-8kPxa-NsiA7-cZQWK-fFu8O"
+	"Liazz" 			"CSGO-rUjw6-pkYBx-67bos-ppF9P-HLAfD"
 	//GamerLegion Players
 	"eraa" 				"CSGO-Yq3MH-2coYe-DRkwJ-9jdSG-hVaUN"
 	"Zero" 				"CSGO-GeVkz-8k5Gv-HVmVh-NwYUk-CxZQM"

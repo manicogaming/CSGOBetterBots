@@ -161,7 +161,7 @@
 	"sico" 				"RNG"
 	"aliStair" 			"RNG"
 	"Hatz" 				"RNG"
-	"malta" 			"RNG"
+	"Liazz" 			"RNG"
 	//GamerLegion Players
 	"iM" 				"GamerLegion"
 	"eraa" 				"GamerLegion"

@@ -1067,7 +1067,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sico");
 		ServerCommand("bot_add_ct %s", "aliStair");
 		ServerCommand("bot_add_ct %s", "Hatz");
-		ServerCommand("bot_add_ct %s", "malta");
+		ServerCommand("bot_add_ct %s", "Liazz");
 		ServerCommand("mp_teamlogo_1 ren");
 	}
 	
@@ -1078,7 +1078,7 @@ public Action Team_Renegades(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sico");
 		ServerCommand("bot_add_t %s", "aliStair");
 		ServerCommand("bot_add_t %s", "Hatz");
-		ServerCommand("bot_add_t %s", "malta");
+		ServerCommand("bot_add_t %s", "Liazz");
 		ServerCommand("mp_teamlogo_2 ren");
 	}
 	
@@ -4658,7 +4658,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
-			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 3) : Math_GetRandomInt(1, 19);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 3) : Math_GetRandomInt(1, 21);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareMirageExecutes();
 		}
@@ -4770,7 +4770,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	if (iVictim == iAttacker || !IsValidClient(iAttacker) || !IsPlayerAlive(iAttacker))
 		return Plugin_Continue;
 	
-	if(GetClientTeam(iVictim) == CS_TEAM_T)
+	if(GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
 	{
 		g_bAbortExecute = true;
 		BotEquipBestWeapon(iVictim, true);
