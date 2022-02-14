@@ -177,6 +177,11 @@
 				//A little bit above the string '%3.2f: Grenade: FINISH_THROW\n'
 				"windows"	   "23080"
 			}
+			"CCSBot::m_disposition"
+			{
+				//Small function with the string 'DefusingBomb'
+				"windows"	   "24052"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
