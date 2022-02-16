@@ -4595,7 +4595,10 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 		}
 	}
 	
-	return Plugin_Stop;
+	if(g_bFreezetimeEnd)
+		return Plugin_Stop;
+	else
+		return Plugin_Continue;
 }
 
 public void OnMapEnd()
@@ -4656,7 +4659,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 	}
 	
-	CreateTimer(3.0, Timer_DropWeapons);
+	CreateTimer(3.0, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)

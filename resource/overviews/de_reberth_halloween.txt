@@ -1,0 +1,8 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_reberth_halloween"
+{
+	"material" "overviews/de_reberth_halloween"
+	"pos_x" "-2327.000000"
+	"pos_y" "3237.000000"
+	"scale" "4.600000"
+}
