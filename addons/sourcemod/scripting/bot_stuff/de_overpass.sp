@@ -6,23 +6,33 @@ public void PrepareOverpassExecutes()
 	
 	if (IsValidClient(clients[0]) && IsValidClient(clients[1]) && IsValidClient(clients[2]) && IsValidClient(clients[3]) && IsValidClient(clients[4]))
 	{
-		switch (g_iRndExecute)
+		if(g_iCurrentRound == 0 || g_iCurrentRound == 15)
 		{
-			case 1: //A Execute
+			switch (g_iRndExecute)
 			{
-				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Truck Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/AWP Player.rec");
-				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Mid Site Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Van Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Long Player.rec");
+				//To be added
 			}
-			case 2: //B Execute
+		}
+		else
+		{
+			switch (g_iRndExecute)
 			{
-				BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Pit Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/B Site Smoke & Monster Flash.rec");
-				BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Balcony Smoke & Short Molotov.rec");
-				BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Bridge Smoke.rec");
-				BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Toxic Molotov & Site Flash.rec");
+				case 1: //A Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Truck Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/AWP Player.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Mid Site Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Van Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/A Execute/Long Player.rec");
+				}
+				case 2: //B Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Pit Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/B Site Smoke & Monster Flash.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Balcony Smoke & Short Molotov.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Bridge Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/B Execute/Toxic Molotov & Site Flash.rec");
+				}
 			}
 		}
 	}

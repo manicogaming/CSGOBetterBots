@@ -16,7 +16,7 @@ bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEver
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset;
-float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStartTimeStamp;
+float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -4550,42 +4550,45 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 
 public Action Timer_DropWeapons(Handle hTimer, any data)
 {
-	for (int i = 1; i <= MaxClients; i++)
+	if(GetGameTime() - g_fRoundStart > 3.0)
 	{
-		if (IsValidClient(i) && IsPlayerAlive(i))
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
-			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
-			int iTeam = GetClientTeam(i);
-			
-			if(!g_bFreezetimeEnd && bInBuyZone)
+			if (IsValidClient(i) && IsPlayerAlive(i))
 			{
-				int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+				int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
+				bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
+				int iTeam = GetClientTeam(i);
 				
-				if(!IsValidEntity(iPrimary) && iAccount < g_cvBotEcoLimit.IntValue && !g_bHasGottenDrop[i])
+				if(!g_bFreezetimeEnd && bInBuyZone)
 				{
-					for (int j = 1; j <= MaxClients; j++)
+					int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+					
+					if(!IsValidEntity(iPrimary) && iAccount < g_cvBotEcoLimit.IntValue && !g_bHasGottenDrop[i])
 					{
-						if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam && !g_bDropWeapon[j])
+						for (int j = 1; j <= MaxClients; j++)
 						{
-							int iOtherPrimary = GetPlayerWeaponSlot(j, CS_SLOT_PRIMARY);
-							int iMoney = GetEntProp(j, Prop_Send, "m_iAccount");
-							
-							if(IsValidEntity(iOtherPrimary))
+							if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam && !g_bDropWeapon[j])
 							{
-								GetEntityClassname(iOtherPrimary, g_szPreviousBuy[j], 128);
-								ReplaceString(g_szPreviousBuy[j], 128, "weapon_", "");
-								CSWeaponID pWeaponID = CS_AliasToWeaponID(g_szPreviousBuy[j]);
+								int iOtherPrimary = GetPlayerWeaponSlot(j, CS_SLOT_PRIMARY);
+								int iMoney = GetEntProp(j, Prop_Send, "m_iAccount");
 								
-								if(pWeaponID != CSWeapon_NONE && iMoney >= CS_GetWeaponPrice(j, pWeaponID))
+								if(IsValidEntity(iOtherPrimary))
 								{
-									float fEyes[3];
+									GetEntityClassname(iOtherPrimary, g_szPreviousBuy[j], 128);
+									ReplaceString(g_szPreviousBuy[j], 128, "weapon_", "");
+									CSWeaponID pWeaponID = CS_AliasToWeaponID(g_szPreviousBuy[j]);
 									
-									GetClientEyePosition(i, fEyes);
-									BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
-									g_bDropWeapon[j] = true;
-									g_bHasGottenDrop[i] = true;
-									break;
+									if(pWeaponID != CSWeapon_NONE && iMoney >= CS_GetWeaponPrice(j, pWeaponID))
+									{
+										float fEyes[3];
+										
+										GetClientEyePosition(i, fEyes);
+										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
+										g_bDropWeapon[j] = true;
+										g_bHasGottenDrop[i] = true;
+										break;
+									}
 								}
 							}
 						}
@@ -4643,6 +4646,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_bAbortExecute = false;
 	g_bTerroristEco = false;
 	g_bEveryoneDead = false;
+	g_fRoundStart = GetGameTime();
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -4659,13 +4663,13 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 	}
 	
-	CreateTimer(3.0, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(1.0, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = true;
-	g_fRoundStartTimeStamp = GetGameTime();
+	g_fFreezeTimeEnd = GetGameTime();
 	bool bWarmupPeriod = !!GameRules_GetProp("m_bWarmupPeriod");
 	
 	if(bWarmupPeriod || g_bTerroristEco || HumansOnTeam(CS_TEAM_T) > 0)
@@ -4693,7 +4697,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_overpass") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 2);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 1) : Math_GetRandomInt(1, 2);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareOverpassExecutes();
 		}
@@ -5001,7 +5005,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 }
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
-{	
+{
 	if (g_bFreezetimeEnd && IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
@@ -5022,7 +5026,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				iButtons &= ~IN_SPEED;
 		}
 		
-		if(((GetGameTime() - g_fRoundStartTimeStamp) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
+		if(((GetGameTime() - g_fFreezeTimeEnd) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
 			iButtons &= ~IN_SPEED;
 		
 		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
