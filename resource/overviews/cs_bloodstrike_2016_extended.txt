@@ -1,0 +1,7 @@
+"cs_bloodstrike_2016_extended"
+{
+"material" "overviews/cs_bloodstrike_2016_extended"
+"pos_x" "-1502"
+"pos_y" "1792"
+"scale" "3.0"
+}

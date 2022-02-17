@@ -1,0 +1,7 @@
+"cs_deathmatch_go"
+{
+"material" "overviews/cs_deathmatch_go"
+"pos_x" "-994"
+"pos_y" "1006"
+"scale" "2.20"
+}
