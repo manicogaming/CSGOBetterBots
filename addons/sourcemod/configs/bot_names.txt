@@ -769,7 +769,7 @@
 	"Maxaxe" 			"mCon"
 	"Syther"			"mCon"
 	//HEET Players
-	"Lucky" 			"HEET"
+	"Luckyy" 			"HEET"
 	"afro"				"HEET"
 	"bodyy"				"HEET"
 	"Djoko" 			"HEET"

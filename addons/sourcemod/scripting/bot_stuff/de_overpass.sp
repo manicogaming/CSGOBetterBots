@@ -10,7 +10,14 @@ public void PrepareOverpassExecutes()
 		{
 			switch (g_iRndExecute)
 			{
-				//To be added
+				case 1: //Liquid Pistol A Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/Liquid Pistol A Execute/Stewie2K Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/Liquid Pistol A Execute/nitr0 Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/Liquid Pistol A Execute/Twistzz Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/Liquid Pistol A Execute/EliGE Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/Liquid Pistol A Execute/NAF Role.rec");
+				}
 			}
 		}
 		else

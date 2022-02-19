@@ -769,7 +769,7 @@
 	"Maxaxe" 			"102864225"
 	"Syther"			"234753085"
 	//HEET Players
-	"Lucky" 			"71624387"
+	"Luckyy" 			"71624387"
 	"afro"				"75315373"
 	"bodyy"				"53029647"
 	"Djoko" 			"87611242"

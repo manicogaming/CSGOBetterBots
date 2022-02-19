@@ -319,7 +319,7 @@
 				"windows"
 				{
 					"offset"	"942h"
-					"verify"	"\xE8\x09\x01\xF5\xFF\x84\xC0"
+					"verify"	"\xE8\xD9\x00\xF5\xFF\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}

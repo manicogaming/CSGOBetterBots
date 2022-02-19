@@ -4163,7 +4163,7 @@ public Action Team_HEET(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "Lucky");
+		ServerCommand("bot_add_ct %s", "Luckyy");
 		ServerCommand("bot_add_ct %s", "afro");
 		ServerCommand("bot_add_ct %s", "bodyy");
 		ServerCommand("bot_add_ct %s", "Djoko");
@@ -4174,7 +4174,7 @@ public Action Team_HEET(int client, int iArgs)
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "Lucky");
+		ServerCommand("bot_add_t %s", "Luckyy");
 		ServerCommand("bot_add_t %s", "afro");
 		ServerCommand("bot_add_t %s", "bodyy");
 		ServerCommand("bot_add_t %s", "Djoko");

@@ -769,7 +769,7 @@
 	"Maxaxe" 			"CSGO-7ANjy-XxRae-25YoE-7Bfnp-QQSFE"
 	"Syther"			"CSGO-kriuY-5CT6F-mcBNJ-UMqVS-bR88F"
 	//HEET Players
-	"Lucky" 			"CSGO-BA4Py-8LQcR-nCx5Z-GbUOG-2e7iL"
+	"Luckyy" 			"CSGO-BA4Py-8LQcR-nCx5Z-GbUOG-2e7iL"
 	"afro"				"CSGO-3uNOf-P5Voj-ChECd-a8Fek-pL3ED"
 	"bodyy"				"CSGO-Efrha-OeBWf-jrNBx-FowC8-rJ3tJ"
 	"Djoko" 			"CSGO-ZTEjQ-58DOr-T2WyL-Jz6X6-2vn6J"
