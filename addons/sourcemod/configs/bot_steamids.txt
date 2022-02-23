@@ -692,10 +692,10 @@
 	"w1"				"456548842"
 	//Leviatan Players
 	"1962" 				"321501952"
-	"DILLION1"			"909656758"
+	"fakzwall"			"100101626"
 	"Reversive" 		"229334739"
-	"tom1" 				"1021035676"
-	"Yokowow"			"102784330"
+	"meyern" 			"235377137"
+	"pancc"				"85456730"
 	//HR Players
 	"Templ" 			"201614089"
 	"alex666"			"343849791"
@@ -792,4 +792,16 @@
 	"Champ"				"10773572"
 	"Cakes" 			"217078249"
 	"drayza"			"313775221"
+	//Imperial Players
+	"fer" 				"38921219"
+	"FalleN"			"424467"
+	"fnx"				"170178574"
+	"boltz" 			"58113672"
+	"VINI"				"36104456"
+	//Berzerk Players
+	"AbuWilly" 			"74560387"
+	"devraNN"			"204541657"
+	"ND"				"171569045"
+	"CHANKY" 			"212797751"
+	"maty"				"127604447"
 }

@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Fri Feb 18 19:59:03 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Tue Feb 22 23:11:40 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -104,6 +104,7 @@ cs_bloodstrike_2016_extended
 cs_bloodstrike_old
 cs_camouflage_csgo
 cs_cappa
+cs_climb
 cs_compound
 cs_concert
 cs_cruise
@@ -187,6 +188,7 @@ de_contra_b3
 de_corruption_csgo
 de_cotroceni
 de_cpt
+de_crete
 de_crossfire
 de_crown
 de_dahshur
@@ -222,6 +224,7 @@ de_grind
 de_guard
 de_hardrock
 de_heat_new
+de_hive
 de_icarus
 de_icehouse
 de_inferno
@@ -331,8 +334,9 @@ dm_bloodsport
 dm_lair_updated
 dust2_halloweenlastversion
 dz_blacksite
-dz_county
+dz_ember
 dz_sirocco
+dz_vineyard
 fame
 fun_pacman_v1
 fy_back_street
@@ -406,6 +410,7 @@ nyaarena
 oa_sentinel1
 pet_sematary_final
 quarrel
+workshop/2749351643/scopegg_pg_aim_v1
 sj_dustland
 workshop/467786170/tr_blank
 training1

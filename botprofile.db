@@ -2830,7 +2830,7 @@ ProP+Rifle+RiflePersonality "1962"
 	VoicePitch = 89
 End
 
-ProP+SniperPro+SniperPersonality "DILLION1"
+ProP+SniperPro+SniperPersonality "fakzwall"
 	VoicePitch = 114
 End
 
@@ -2838,11 +2838,11 @@ ProP+Rifle+RiflePersonality "Reversive"
 	VoicePitch = 108
 End
 
-ProP+Rifle+RiflePersonality "tom1"
+ProP+Rifle+RiflePersonality "meyern"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Yokowow"
+ProP+Rifle+RiflePersonality "pancc"
 	VoicePitch = 88
 End
 
@@ -3196,6 +3196,50 @@ End
 
 ProP+Rifle+RiflePersonality "drayza"
 	VoicePitch = 88
+End
+
+//Imperial Players
+
+ProP+Rifle+RiflePersonality "fer"
+	VoicePitch = 75
+End
+
+ProP+SniperPro+SniperPersonality "FalleN"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "fnx"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "boltz"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "VINI"
+	VoicePitch = 106
+End
+
+//Berzerk Players
+
+ProP+Rifle+RiflePersonality "AbuWilly"
+	VoicePitch = 108
+End
+
+ProP+SniperPro+SniperPersonality "devraNN"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "ND"
+	VoicePitch = 94
+End
+
+ProP+Rifle+RiflePersonality "CHANKY"
+	VoicePitch = 100
+End
+
+ProP+Rifle+RiflePersonality "maty"
+	VoicePitch = 90
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

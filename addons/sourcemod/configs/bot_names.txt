@@ -692,10 +692,10 @@
 	"w1"				"SWS"
 	//Leviatan Players
 	"1962" 				"Leviatan"
-	"DILLION1"			"Leviatan"
+	"fakzwall"			"Leviatan"
 	"Reversive" 		"Leviatan"
-	"tom1" 				"Leviatan"
-	"Yokowow"			"Leviatan"
+	"meyern" 			"Leviatan"
+	"pancc"				"Leviatan"
 	//HR Players
 	"Templ" 			"HR"
 	"alex666"			"HR"
@@ -792,4 +792,16 @@
 	"Champ"				"Vireo"
 	"Cakes" 			"Vireo"
 	"drayza"			"Vireo"
+	//Imperial Players
+	"fer" 				"Imperial"
+	"FalleN"			"Imperial"
+	"fnx"				"Imperial"
+	"boltz" 			"Imperial"
+	"VINI"				"Imperial"
+	//Berzerk Players
+	"AbuWilly" 			"Berzerk"
+	"devraNN"			"Berzerk"
+	"ND"				"Berzerk"
+	"CHANKY" 			"Berzerk"
+	"maty"				"Berzerk"
 }

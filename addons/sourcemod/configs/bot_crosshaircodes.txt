@@ -692,10 +692,10 @@
 	"w1"				"CSGO-yATMB-55ibp-muMip-fJQA3-5RGOP"
 	//Leviatan Players
 	"1962" 				"CSGO-8hw2y-VpNJH-tKBK2-PCbyV-YcOUD"
-	"DILLION1"			"CSGO-ix5KS-8RiN7-No2Zo-8KhV8-i4SKF"
+	"fakzwall"			"CSGO-rtUSh-tBwhW-J7SsL-QLD7Q-pboUE"
 	"Reversive" 		"CSGO-LhjXh-enkZw-u2APs-74t9G-3GhnL"
-	"tom1" 				"CSGO-7qThe-zfRsj-pAPOP-MAjwu-kEAMK"
-	"Yokowow"			"CSGO-TZYFn-i5SRo-FuiKP-NGQmf-abMbM"
+	"meyern" 			"CSGO-96eQM-EXDqv-f7hSv-pkU8n-N4SKF"
+	"pancc"				"CSGO-DtR3b-7EqRZ-RZss7-YOfsh-AioUE"
 	//HR Players
 	"Templ" 			"CSGO-PX5Dp-f2ZSE-H86D8-RxxY2-LiyHL"
 	"alex666"			"CSGO-iUiBZ-ddzaN-7syET-XHwCE-hVaUN"
@@ -792,4 +792,16 @@
 	"Champ"				"CSGO-awFFf-zfrT7-eFyfz-6eRL4-pASZQ"
 	"Cakes" 			"CSGO-aeQWm-SMoVR-Wk4SD-aAXsZ-KK8nM"
 	"drayza"			"CSGO-zEaDT-wYZ6h-CCiRC-U6bNJ-HLAfD"
+	//Imperial Players
+	"fer" 				"CSGO-Ur9zM-hGs8N-h2Xaw-8Z54O-ey3JE"
+	"FalleN"			"CSGO-FJxAC-OAamJ-oZ9bO-2W4BT-YiG4C"
+	"fnx"				"CSGO-FMkJE-7ufeQ-yu6Rd-cpd9D-yo8vO"
+	"boltz" 			"CSGO-JPxxT-HHLJy-xsb2N-8Hknx-NMOtQ"
+	"VINI"				"CSGO-BJwQO-Rm6cc-XTLdu-DyuNy-2XT4M"
+	//Berzerk Players
+	"AbuWilly" 			"CSGO-qBSBp-jVDcu-9UQhF-EPcoU-vFmDA"
+	"devraNN"			"CSGO-kQLy3-knZHs-y5tkt-wF7Ca-c8ksF"
+	"ND"				"CSGO-wzdu7-NoQES-Nk3kX-dGpFY-YcOUD"
+	"CHANKY" 			"CSGO-bcESR-XwPGd-kqp6X-rHovA-Ln2AC"
+	"maty"				"CSGO-kQLy3-knZHs-y5tkt-wF7Ca-c8ksF"
 }
