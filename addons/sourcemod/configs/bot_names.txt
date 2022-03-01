@@ -14,7 +14,7 @@
 	"ropz" 				"FaZe"
 	//Astralis Players
 	"gla1ve" 			"Astralis"
-	"Lucky" 			"Astralis"
+	"farlig" 			"Astralis"
 	"Xyp9x" 			"Astralis"
 	"k0nfig" 			"Astralis"
 	"blameF" 			"Astralis"
@@ -37,13 +37,13 @@
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
-	"smooya" 			"fnatic"
+	"regali" 			"fnatic"
 	"ALEX" 				"fnatic"
 	"KRIMZ" 			"fnatic"
 	"Brollan" 			"fnatic"
 	"mezii" 			"fnatic"
 	//Dynamo Players
-	"ZEDc" 				"Dynamo"
+	"Dytor" 			"Dynamo"
 	"K1-FiDa" 			"Dynamo"
 	"capseN" 			"Dynamo"
 	"Valencio" 			"Dynamo"
@@ -209,7 +209,7 @@
 	"XELLOW" 			"Nexus"
 	"ragga" 			"Nexus"
 	"lauNX" 			"Nexus"
-	"renne" 			"Nexus"
+	"SEMINTE" 			"Nexus"
 	//PACT Players
 	"maaryy" 			"PACT"
 	"lunAtic" 			"PACT"
@@ -248,7 +248,7 @@
 	"ALLE" 				"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
-	"bruno" 			"paiN"
+	"nython" 			"paiN"
 	"NEKIZ" 			"paiN"
 	"biguzera" 			"paiN"
 	"hardzao" 			"paiN"
@@ -321,9 +321,9 @@
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
-	"duggyversus" 		"Eternal"
+	"mini" 				"Eternal"
 	"woxic" 			"Eternal"
-	"colorzz" 			"Eternal"
+	"Calyx" 			"Eternal"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"xsepower" 			"K23"
@@ -340,7 +340,7 @@
 	"pz" 				"VERTEX"
 	"BRACE" 			"VERTEX"
 	"apocdud" 			"VERTEX"
-	"ADDICT" 			"VERTEX"
+	"malta" 			"VERTEX"
 	"Roflko" 			"VERTEX"
 	//IG Players
 	"bottle" 			"IG"
@@ -369,7 +369,7 @@
 	//aTTaX Players
 	"awzek" 			"aTTaX"
 	"mave" 				"aTTaX"
-	"cello" 			"aTTaX"
+	"xenn" 				"aTTaX"
 	"FreeZe" 			"aTTaX"
 	"skyye" 			"aTTaX"	
 	//Unique Players
@@ -463,11 +463,11 @@
 	"airax" 			"KOVA"
 	"Twixie" 			"KOVA"
 	//AGF Players
-	"Buzz" 				"AGF"
-	"kristou" 			"AGF"
-	"cajunb" 			"AGF"
-	"Cabbi" 			"AGF"
-	"Nodios" 			"AGF"
+	"FeZ" 				"AGF"
+	"Speedy" 			"AGF"
+	"wezx" 				"AGF"
+	"void" 				"AGF"
+	"Chr1zN" 			"AGF"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -524,9 +524,9 @@
 	"Zyphon" 			"Flames"
 	//EP Players
 	"The eLiVe" 		"EP"
-	"Adejis" 			"EP"
+	"Blytz" 			"EP"
 	"manguss" 			"EP"	
-	"NIO" 				"EP"
+	"myltsi" 			"EP"
 	"matys" 			"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
@@ -647,7 +647,7 @@
 	"PwnAlone" 			"Party"
 	"djay"				"Party"
 	"Jonji" 			"Party"
-	"cynic"				"Party"
+	"viz"				"Party"
 	//777 Players
 	"ruyter" 			"777"
 	"Grus"				"777"
@@ -675,7 +675,7 @@
 	//Conquer Players
 	"choco" 			"Conquer"
 	"Elfern"			"Conquer"
-	"myltsi" 			"Conquer"
+	"LYNXi" 			"Conquer"
 	"Jerppa" 			"Conquer"
 	"Jimpphat"			"Conquer"
 	//AVANGAR Players
@@ -720,12 +720,12 @@
 	"Alca" 				"Dice"
 	"bSSSSSS" 			"Dice"
 	"CamZ"				"Dice"
-	//Elevate Players
-	"supLex" 			"Elevate"
-	"naitte"			"Elevate"
-	"skip" 				"Elevate"
-	"koala" 			"Elevate"
-	"paiva"				"Elevate"
+	//Falcons Players
+	"Kyojin" 			"Falcons"
+	"Maka"				"Falcons"
+	"hAdji" 			"Falcons"
+	"Keoz" 				"Falcons"
+	"Python"			"Falcons"
 	//GameAgents Players
 	"Klameczka" 		"GameAgents"
 	"Bajmi"				"GameAgents"

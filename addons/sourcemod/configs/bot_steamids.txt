@@ -14,7 +14,7 @@
 	"ropz" 				"31006590"
 	//Astralis Players
 	"gla1ve" 			"50245293"
-	"Lucky"				"150297431"
+	"farlig"			"63982401"
 	"Xyp9x" 			"30416534"
 	"k0nfig" 			"19403447"
 	"blameF" 			"68193075"
@@ -37,13 +37,13 @@
 	"NiKo" 				"81417650"
 	"m0NESY" 			"114497073"
 	//fnatic Players
-	"smooya" 			"211423593"
+	"regali" 			"138197501"
 	"ALEX" 				"44605706"
 	"KRIMZ" 			"71385856"
 	"Brollan" 			"178562747"
 	"mezii" 			"12874964"
 	//Dynamo Players
-	"ZEDc" 				"108732327"
+	"Dytor" 			"241288610"
 	"K1-FiDa" 			"169558739"
 	"capseN" 			"134222736"
 	"Valencio" 			"163134468"
@@ -209,7 +209,7 @@
 	"XELLOW" 			"92089093"
 	"ragga" 			"109933575"
 	"lauNX" 			"1012530125"
-	"renne" 			"172130207"
+	"SEMINTE" 			"36171013"
 	//PACT Players
 	"maaryy" 			"188721128"
 	"lunAtic" 			"27202715"
@@ -248,7 +248,7 @@
 	"ALLE" 				"1194990"
 	//paiN Players
 	"PKL" 				"65313136"
-	"bruno" 			"32395775"
+	"nython" 			"170224923"
 	"NEKIZ" 			"76618432"
 	"biguzera" 			"55043156"
 	"hardzao" 			"160642472"
@@ -321,9 +321,9 @@
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
-	"duggyversus" 		"254144820"
+	"mini" 				"136223542"
 	"woxic" 			"123219778"
-	"colorzz" 			"1012494727"
+	"Calyx" 			"92280537"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"xsepower" 			"112014226"
@@ -340,7 +340,7 @@
 	"BRACE" 			"126538012"
 	"apocdud" 			"58325300"
 	"pz" 				"108241121"
-	"ADDICT" 			"107496753"
+	"malta" 			"181905573"
 	"Roflko" 			"107902647"
 	//IG Players
 	"bottle" 			"86991268"
@@ -370,7 +370,7 @@
 	"awzek" 			"238305245"
 	"mave" 				"219806941"
 	"skyye" 			"122405104"	
-	"cello" 			"18118733"	
+	"xenn" 				"167173287"	
 	"FreeZe" 			"259251039"	
 	//Unique Players
 	"sorrow" 			"169527908"
@@ -463,11 +463,11 @@
 	"airax" 			"50161047"
 	"Twixie" 			"187781829"
 	//AGF Players
-	"Buzz" 				"288688034"
-	"kristou" 			"147274330"
-	"cajunb" 			"18062315"
-	"Cabbi" 			"230664742"
-	"Nodios" 			"53001420"
+	"FeZ" 				"308491222"
+	"Speedy" 			"256100872"
+	"wezx" 				"19059470"
+	"void" 				"370246568"
+	"Chr1zN" 			"332333083"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -524,10 +524,10 @@
 	"Zyphon" 			"198111516"
 	//EP Players
 	"The eLiVe"			"111025647"
-	"Adejis"			"125256141"
+	"Blytz"				"101848953"
 	"matys"				"1086212773"
 	"manguss"			"75244785"
-	"NIO"				"170307600"
+	"myltsi"			"842766723"
 	//Lemondogs Players
 	"xelos" 			"28004721"
 	"twist" 			"19979131"
@@ -647,7 +647,7 @@
 	"PwnAlone" 			"24000649"
 	"djay" 				"3935898"
 	"Jonji" 			"114675386"
-	"cynic" 			"106932238"
+	"viz" 				"433892634"
 	//777 Players
 	"ruyter" 			"851805954"
 	"Grus"				"34633571"
@@ -675,7 +675,7 @@
 	//Conquer Players
 	"choco" 			"138320403"
 	"Elfern"			"139081471"
-	"myltsi" 			"842766723"
+	"LYNXi" 			"123308829"
 	"Jerppa" 			"277451852"
 	"Jimpphat"			"895109597"
 	//AVANGAR Players
@@ -720,12 +720,12 @@
 	"Alca" 				"24252379"
 	"bSSSSSS" 			"245865493"
 	"CamZ"				"198983256"
-	//Elevate Players
-	"supLex" 			"177082714"
-	"naitte"			"68938238"
-	"skip" 				"54034976"
-	"koala" 			"849196548"
-	"paiva"				"923500560"
+	//Falcons Players
+	"Kyojin" 			"45702241"
+	"Maka"				"85474033"
+	"hAdji" 			"20679059"
+	"Keoz" 				"138078516"
+	"Python"			"231605562"
 	//GameAgents Players
 	"Klameczka" 		"229219769"
 	"Bajmi"				"240875179"
