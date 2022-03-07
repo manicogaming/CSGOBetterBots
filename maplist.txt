@@ -1,6 +1,5 @@
-// csgosl 2.9.6 config 1 at Mon Feb 28 23:09:26 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Mar 06 23:30:59 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
-workshop/854105692/
 $10000$
 $2000$_csgo
 $2000$_japan
@@ -132,6 +131,7 @@ cs_offtime
 cs_outpost
 cs_renovation
 cs_residence
+cs_shichang_b3
 cs_siege
 cs_warmblow_beta01
 de_3rdstrike
@@ -260,6 +260,7 @@ de_manor
 de_marine
 de_marquis
 de_maya
+de_meat_b26
 de_meteora
 de_mill_ce
 de_mirage

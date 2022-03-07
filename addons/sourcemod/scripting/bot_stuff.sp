@@ -14,7 +14,7 @@ char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iNewTargetTime[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
@@ -806,8 +806,8 @@ public Action Team_FURIA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "yuurih");
-		ServerCommand("bot_add_ct %s", "drop");
 		ServerCommand("bot_add_ct %s", "saffee");
+		ServerCommand("bot_add_ct %s", "drop");
 		ServerCommand("bot_add_ct %s", "KSCERATO");
 		ServerCommand("bot_add_ct %s", "arT");
 		ServerCommand("mp_teamlogo_1 furi");
@@ -817,8 +817,8 @@ public Action Team_FURIA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "yuurih");
-		ServerCommand("bot_add_t %s", "drop");
 		ServerCommand("bot_add_t %s", "saffee");
+		ServerCommand("bot_add_t %s", "drop");
 		ServerCommand("bot_add_t %s", "KSCERATO");
 		ServerCommand("bot_add_t %s", "arT");
 		ServerCommand("mp_teamlogo_2 furi");
@@ -4645,6 +4645,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 									{
 										float fEyes[3];
 										
+										PrintToChatAll("%N is giving drop to %N", j, i);
 										GetClientEyePosition(i, fEyes);
 										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
 										g_bDropWeapon[j] = true;
@@ -4685,7 +4686,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 6000.0);
+			g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
 			g_fReactionTime[client] = Math_GetRandomFloat(0.10, 0.30);
 			g_bIsProBot[client] = true;
 		}
@@ -4718,14 +4719,13 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bDontSwitch[i] = false;
 			g_bDropWeapon[i] = false;
 			g_bHasGottenDrop[i] = false;
-			g_iNewTargetTime[i] = 0;
 			g_iTarget[i] = -1;
 			if(BotMimic_IsPlayerMimicing(i))
 				BotMimic_StopPlayerMimic(i);
 		}
 	}
 	
-	CreateTimer(1.0, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(0.5, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -5012,7 +5012,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	else if (strcmp(szDesc, "Breakable") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
 		g_bDontSwitch[client] = true;
-		CreateTimer(5.0, Timer_Breakable, GetClientUserId(client));
+		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
 		
 		return MRES_Ignored;
 	}
@@ -5027,6 +5027,13 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	}
 	else if(strcmp(szDesc, "Noise") == 0)
 	{
+		if(GetClientTeam(client) == CS_TEAM_CT)
+		{
+			BotEquipBestWeapon(client, true);
+			g_bDontSwitch[client] = true;
+			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
+		}
+	
 		float fNoisePos[3], fClientEyes[3];
 		
 		DHookGetParamVector(hParams, 2, fNoisePos);
@@ -5682,7 +5689,7 @@ public Action Timer_DelaySwitch(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-public Action Timer_Breakable(Handle hTimer, any client)
+public Action Timer_EnableSwitch(Handle hTimer, any client)
 {
 	client = GetClientOfUserId(client);
 	

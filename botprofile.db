@@ -674,11 +674,11 @@ ProP+Rifle+RiflePersonality "yuurih"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "drop"
+ProP+SniperPro+SniperPersonality "saffee"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "saffee"
+ProP+Rifle+RiflePersonality "drop"
 	VoicePitch = 96
 End
 
