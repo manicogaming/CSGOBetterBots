@@ -4409,13 +4409,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			GetClientEyePosition(client, fClientEyes);
 			g_pCurrArea[client] = NavMesh_GetNearestArea(fClientLoc);
 			
-			if(!g_bFreezetimeEnd && g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
-			{
-				CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
-				FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
-				g_bDropWeapon[client] = false;
-			}
-			
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 			{
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
@@ -5075,126 +5068,136 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
 {
-	if (g_bFreezetimeEnd && IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
+	if (IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
-		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-		if (iActiveWeapon == -1) return Plugin_Continue;
-		
-		int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		
-		float fClientLoc[3];
-		
-		GetClientAbsOrigin(client, fClientLoc);
-		
-		if(g_pCurrArea[client] != INVALID_NAV_AREA)
+		if(g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
 		{
-			if (g_pCurrArea[client].Attributes & NAV_MESH_WALK)
-				iButtons |= IN_SPEED;
-			
-			if (g_pCurrArea[client].Attributes & NAV_MESH_RUN)
-				iButtons &= ~IN_SPEED;
+			CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
+			FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
+			g_bDropWeapon[client] = false;
 		}
-		
-		if(((GetGameTime() - g_fFreezeTimeEnd) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
-			iButtons &= ~IN_SPEED;
-		
-		if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
-			SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
-		
-		if (g_bIsProBot[client])
-		{		
-			g_iTarget[client] = BotGetEnemy(client);
+	
+		if(g_bFreezetimeEnd)
+		{
+			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+			if (iActiveWeapon == -1) return Plugin_Continue;
 			
-			float fTargetDistance;
-			int iZoomLevel;
-			bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
-			bool bIsAttacking = !!GetEntData(client, g_iBotAttackingOffset);
-			bool bIsHiding = BotIsHiding(client);
-			bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
-			bool bIsReloading = IsPlayerReloading(client);
+			int iDefIndex = GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex");
 			
-			if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
-				iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
+			float fClientLoc[3];
 			
-			if (!GetEntProp(client, Prop_Send, "m_bIsScoped"))
-				g_bZoomed[client] = false;
+			GetClientAbsOrigin(client, fClientLoc);
 			
-			if(bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
-				iButtons |= IN_ATTACK2;
-			else if(!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
-				iButtons |= IN_ATTACK2;
-			
-			if (bIsHiding && g_iUncrouchChance[client] <= 50)
-				iButtons &= ~IN_DUCK;
-				
-			if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
-				return Plugin_Continue;
-			
-			SetEntData(client, g_iBotDispositionOffset, view_as<int>(OPPORTUNITY_FIRE));
-			
-			if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
+			if(g_pCurrArea[client] != INVALID_NAV_AREA)
 			{
-				if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
-					BotEquipBestWeapon(client, true);
-			
-				fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
+				if (g_pCurrArea[client].Attributes & NAV_MESH_WALK)
+					iButtons |= IN_SPEED;
 				
-				float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
-					
-				GetClientEyePosition(client, fClientEyes);
-				SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
-				GetClientEyeAngles(client, fClientAngles);
-				GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
-				ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
-				AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
-				GetViewVector(fClientAngles, fAimDir);
-				
-				float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
-				float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
-				float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-				
-				switch(iDefIndex)
-				{
-					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
-					{
-						if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
-						{
-							iButtons &= ~IN_ATTACK;
-						
-							if(!bIsReloading) 
-								iButtons |= IN_ATTACK;
-						}
-						
-						if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
-							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-					}
-					case 1:
-					{
-						if (fOnTarget > fAimTolerance && !bIsDucking && !bIsReloading)
-							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-					}
-					case 9, 40:
-					{
-						if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client] && !bIsReloading)
-						{
-							iButtons |= IN_ATTACK;
-							
-							SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-						}
-					}
-				}
-				
-				fClientLoc[2] += 35.5;
-				
-				if (!GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
-					iButtons |= IN_DUCK;
-				
-				if (!(GetEntityFlags(client) & FL_ONGROUND))
-					iButtons &= ~IN_ATTACK;
+				if (g_pCurrArea[client].Attributes & NAV_MESH_RUN)
+					iButtons &= ~IN_SPEED;
 			}
+			
+			if(((GetGameTime() - g_fFreezeTimeEnd) < GetEntDataFloat(client, g_iBotSafeTimeOffset) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
+				iButtons &= ~IN_SPEED;
+			
+			if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
+				SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
+			
+			if (g_bIsProBot[client])
+			{		
+				g_iTarget[client] = BotGetEnemy(client);
+				
+				float fTargetDistance;
+				int iZoomLevel;
+				bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
+				bool bIsAttacking = !!GetEntData(client, g_iBotAttackingOffset);
+				bool bIsHiding = BotIsHiding(client);
+				bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
+				bool bIsReloading = IsPlayerReloading(client);
+				
+				if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
+					iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
+				
+				if (!GetEntProp(client, Prop_Send, "m_bIsScoped"))
+					g_bZoomed[client] = false;
+				
+				if(bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
+					iButtons |= IN_ATTACK2;
+				else if(!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
+					iButtons |= IN_ATTACK2;
+				
+				if (bIsHiding && g_iUncrouchChance[client] <= 50)
+					iButtons &= ~IN_DUCK;
+					
+				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+					return Plugin_Continue;
+				
+				SetEntData(client, g_iBotDispositionOffset, view_as<int>(OPPORTUNITY_FIRE));
+				
+				if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
+				{
+					if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
+						BotEquipBestWeapon(client, true);
+				
+					fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
+					
+					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
+						
+					GetClientEyePosition(client, fClientEyes);
+					SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
+					GetClientEyeAngles(client, fClientAngles);
+					GetEntPropVector(client, Prop_Send, "m_aimPunchAngle", fAimPunchAngle);
+					ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
+					AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
+					GetViewVector(fClientAngles, fAimDir);
+					
+					float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
+					float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
+					float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
+					
+					switch(iDefIndex)
+					{
+						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
+						{
+							if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
+							{
+								iButtons &= ~IN_ATTACK;
+							
+								if(!bIsReloading) 
+									iButtons |= IN_ATTACK;
+							}
+							
+							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+						}
+						case 1:
+						{
+							if (fOnTarget > fAimTolerance && !bIsDucking && !bIsReloading)
+								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+						}
+						case 9, 40:
+						{
+							if (GetClientAimTarget(client, true) == g_iTarget[client] && g_bZoomed[client] && !bIsReloading)
+							{
+								iButtons |= IN_ATTACK;
+								
+								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+							}
+						}
+					}
+					
+					fClientLoc[2] += 35.5;
+					
+					if (!GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+						iButtons |= IN_DUCK;
+					
+					if (!(GetEntityFlags(client) & FL_ONGROUND))
+						iButtons &= ~IN_ATTACK;
+				}
+			}
+			
+			return Plugin_Changed;
 		}
-		
-		return Plugin_Changed;
 	}
 	
 	return Plugin_Continue;
