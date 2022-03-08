@@ -4623,7 +4623,10 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 					{
 						for (int j = 1; j <= MaxClients; j++)
 						{
-							if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam && !g_bDropWeapon[j])
+							if(g_bDropWeapon[j])
+								continue;
+								
+							if (IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam)
 							{
 								int iOtherPrimary = GetPlayerWeaponSlot(j, CS_SLOT_PRIMARY);
 								int iMoney = GetEntProp(j, Prop_Send, "m_iAccount");
@@ -4638,7 +4641,6 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 									{
 										float fEyes[3];
 										
-										PrintToChatAll("%N is giving drop to %N", j, i);
 										GetClientEyePosition(i, fEyes);
 										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
 										g_bDropWeapon[j] = true;
