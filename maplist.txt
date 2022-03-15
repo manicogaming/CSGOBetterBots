@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Mon Mar 14 22:38:07 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Tue Mar 15 15:43:40 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -263,6 +263,7 @@ de_marine
 de_marquis
 de_maya
 de_meat_b26
+de_mediterrano_go
 de_meteora
 de_mill_ce
 de_mirage
@@ -280,6 +281,7 @@ de_nuke_ramps
 de_oasis
 de_old_monastery
 de_ore
+workshop/691673955/de_outlaws_go
 de_overgrown
 de_overpass
 de_overpass_2055
