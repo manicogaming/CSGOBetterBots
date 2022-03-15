@@ -182,6 +182,11 @@
 				//Small function with the string 'DefusingBomb'
 				"windows"	   "24052"
 			}
+			"CCSBot::m_morale"
+			{
+				//Near the string 'Morale: %s'
+				"windows"	   "15440"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata

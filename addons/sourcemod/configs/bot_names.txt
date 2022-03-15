@@ -211,10 +211,10 @@
 	"lauNX" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	//PACT Players
-	"maaryy" 			"PACT"
+	"SAYN" 				"PACT"
 	"lunAtic" 			"PACT"
 	"bnox" 				"PACT"
-	"MINISE" 			"PACT"
+	"TOAO" 				"PACT"
 	"reatz" 			"PACT"
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
@@ -230,7 +230,7 @@
 	"nexar" 			"GZG"
 	//Xi'an Players
 	"QUQU" 				"Xi'an"
-	"Savage" 			"Xi'an"
+	"Savageoh" 			"Xi'an"
 	"Franke19" 			"Xi'an"
 	"18yM" 				"Xi'an"
 	"tb" 				"Xi'an"
@@ -284,7 +284,7 @@
 	"d1Ledez" 			"Singularity"
 	//OFFSET Players
 	"slaxx" 			"OFFSET"
-	"EasTor" 			"OFFSET"
+	"Lr0z1n" 			"OFFSET"
 	"snapy" 			"OFFSET"
 	"RIZZ" 				"OFFSET"
 	"shellzi" 			"OFFSET"
@@ -321,7 +321,7 @@
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
-	"mini" 				"Eternal"
+	"xfl0ud" 			"Eternal"
 	"woxic" 			"Eternal"
 	"Calyx" 			"Eternal"
 	//K23 Players
@@ -349,10 +349,10 @@
 	"Viva" 				"IG"
 	"rage" 				"IG"
 	//Finest Players
-	"mar" 				"Finest"
+	"twist" 			"Finest"
 	"anarkez" 			"Finest"
 	"kreaz" 			"Finest"
-	"robiin" 			"Finest"
+	"PlesseN" 			"Finest"
 	"shokz" 			"Finest"
 	//Gambit Players
 	"nafany" 			"Gambit"
@@ -403,7 +403,7 @@
 	"JAM" 				"Impact"
 	"grape" 			"Impact"
 	//FATE Players
-	"rafftu"			"FATE" 
+	"numb"				"FATE" 
 	"Patrick--" 		"FATE"
 	"hybrid" 			"FATE"
 	"shaiK" 			"FATE"	
@@ -530,10 +530,10 @@
 	"matys" 			"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
-	"twist" 			"Lemondogs"
+	"adamb" 			"Lemondogs"
 	"hemzk9" 			"Lemondogs"
-	"ZER" 				"Lemondogs"
-	"Svedjehed" 		"Lemondogs"	
+	"susp" 				"Lemondogs"
+	"k0lty" 			"Lemondogs"	
 	//Alpha Players
 	"zypztw" 			"Alpha"
 	"Toft" 				"Alpha"
@@ -636,12 +636,12 @@
 	"NickelBack" 		"Entropiq"
 	"Krad" 				"Entropiq"
 	"Forester"			"Entropiq"
-	//Checkmate Players
-	"bLitz" 			"Checkmate"
-	"cool4st" 			"Checkmate"
-	"hasteka" 			"Checkmate"
-	"Techno4K" 			"Checkmate"
-	"Bart4k"			"Checkmate"
+	//Strife Players
+	"J0LZ" 				"Strife"
+	"cool4st" 			"Strife"
+	"hasteka" 			"Strife"
+	"aris" 				"Strife"
+	"cxzi"				"Strife"
 	//Party Players
 	"ben1337" 			"Party"
 	"PwnAlone" 			"Party"
@@ -804,4 +804,34 @@
 	"ND"				"Berzerk"
 	"CHANKY" 			"Berzerk"
 	"maty"				"Berzerk"
+	//K1CK Players
+	"v1c7oR" 			"K1CK"
+	"AwaykeN"			"K1CK"
+	"SPELLAN"			"K1CK"
+	"rafftu" 			"K1CK"
+	"SAiKY"				"K1CK"
+	//TC Players
+	"propleh" 			"TC"
+	"tricky"			"TC"
+	"almazer"			"TC"
+	"SasukeQO" 			"TC"
+	"zLy"				"TC"
+	//LFO Players
+	"HaZR" 				"LFO"
+	"sterling"			"LFO"
+	"Liki"				"LFO"
+	"SaVage" 			"LFO"
+	"apoc"				"LFO"
+	//AG Players
+	"FIOURN" 			"AG"
+	"Monster"			"AG"
+	"waituu"			"AG"
+	"ayaya" 			"AG"
+	"AiM"				"AG"
+	//NKT Players
+	"XigN" 				"NKT"
+	"ImpressioN"		"NKT"
+	"Kntz"				"NKT"
+	"dobu" 				"NKT"
+	"cool4st"			"NKT"
 }

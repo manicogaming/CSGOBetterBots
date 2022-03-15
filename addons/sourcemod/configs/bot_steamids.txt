@@ -211,10 +211,10 @@
 	"lauNX" 			"1012530125"
 	"SEMINTE" 			"36171013"
 	//PACT Players
-	"maaryy" 			"188721128"
+	"SAYN" 				"72039306"
 	"lunAtic" 			"27202715"
 	"bnox" 				"400417045"
-	"MINISE" 			"29354726"
+	"TOAO" 				"196107432"
 	"reatz" 			"58300666"
 	//Nemiga Players
 	"iDISBALANCE" 		"210384169"
@@ -231,7 +231,7 @@
 	//Xi'an Players
 	"Franke19" 			"318958693"
 	"QUQU" 				"76617308"
-	"Savage" 			"126430853"
+	"Savageoh" 			"126430853"
 	"18yM" 				"357541030"
 	"tb" 				"40572886"
 	//Infinity Players
@@ -284,7 +284,7 @@
 	"d1Ledez" 			"899162551"
 	//OFFSET Players
 	"slaxx" 			"118792535"
-	"EasTor" 			"3460360"
+	"Lr0z1n" 			"234244633"
 	"snapy" 			"268698824"
 	"RIZZ" 				"31830670"
 	"shellzi" 			"243140003"
@@ -321,7 +321,7 @@
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
-	"mini" 				"136223542"
+	"xfl0ud" 			"217943381"
 	"woxic" 			"123219778"
 	"Calyx" 			"92280537"
 	//K23 Players
@@ -349,10 +349,10 @@
 	"Viva" 				"191787089"
 	"rage" 				"398159133"
 	//Finest Players
-	"mar" 				"158849219"
+	"twist" 			"19979131"
 	"anarkez" 			"73126768"
 	"kreaz" 			"116979891"
-	"robiin" 			"41292034"
+	"PlesseN" 			"57716849"
 	"shokz" 			"39590183"
 	//Gambit Players
 	"nafany" 			"99448400"
@@ -406,7 +406,7 @@
 	"Patrick--" 		"98715951"
 	"hybrid" 			"95772199"
 	"niki1" 			"932616892"
-	"rafftu" 			"78588859"
+	"numb" 				"98486088"
 	"shaiK" 			"223291954"
 	//OG Players
 	"nikozan" 			"29470855"
@@ -530,9 +530,9 @@
 	"myltsi"			"842766723"
 	//Lemondogs Players
 	"xelos" 			"28004721"
-	"twist" 			"19979131"
-	"ZER" 				"170532553"
-	"Svedjehed" 		"170174906"
+	"adamb" 			"890801811"
+	"susp" 				"382452440"
+	"k0lty" 			"321425701"
 	"hemzk9" 			"83597297"	
 	//Alpha Players
 	"zypztw" 			"190975326"
@@ -636,12 +636,12 @@
 	"NickelBack" 		"1882779"
 	"Krad" 				"71642904"
 	"Forester"			"67083025"
-	//Checkmate Players
-	"bLitz" 			"999558360"
-	"kabal" 			"161246388"
-	"nin9" 				"168197870"
-	"Techno4K" 			"1006074432"
-	"Bart4k"			"481096602"
+	//Strife Players
+	"J0LZ" 				"163875307"
+	"SLIGHT" 			"193314309"
+	"stamina" 			"272809432"
+	"aris" 				"72733739"
+	"cxzi"				"211453961"
 	//Party Players
 	"ben1337" 			"131461662"
 	"PwnAlone" 			"24000649"
@@ -804,4 +804,34 @@
 	"ND"				"171569045"
 	"CHANKY" 			"212797751"
 	"maty"				"127604447"
+	//K1CK Players
+	"v1c7oR" 			"46016299"
+	"AwaykeN"			"480410871"
+	"SPELLAN"			"196103646"
+	"rafftu" 			"78588859"
+	"SAiKY"				"11292213"
+	//TC Players
+	"propleh" 			"202265030"
+	"tricky"			"291038798"
+	"almazer"			"83782305"
+	"SasukeQO" 			"81113331"
+	"zLy"				"488023390"
+	//LFO Players
+	"HaZR" 				"64081874"
+	"sterling"			"100224621"
+	"Liki"				"196492302"
+	"SaVage" 			"203399460"
+	"apoc"				"45914082"
+	//AG Players
+	"FIOURN" 			"283175542"
+	"Monster"			"183445763"
+	"waituu"			"1007012036"
+	"ayaya" 			"111103848"
+	"AiM"				"905641553"
+	//NKT Players
+	"XigN" 				"49809482"
+	"ImpressioN"		"134688940"
+	"Kntz"				"80230397"
+	"dobu" 				"159891913"
+	"cool4st"			"882582488"
 }

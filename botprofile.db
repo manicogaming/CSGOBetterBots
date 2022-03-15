@@ -54,7 +54,7 @@ End
 // stats added as a separate template since it would get overwritten by difficulty template
 //
 Template SniperPersonality
-        Teamwork = 85
+        Teamwork = 100
         Aggression = 55
 End
 
@@ -1066,7 +1066,7 @@ End
 
 //PACT Players
 
-ProP+Rifle+RiflePersonality "maaryy"
+ProP+Rifle+RiflePersonality "SAYN"
 	VoicePitch = 96
 End
 
@@ -1078,7 +1078,7 @@ ProP+Rifle+RiflePersonality "bnox"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "MINISE"
+ProP+Rifle+RiflePersonality "TOAO"
 	VoicePitch = 115
 End
 
@@ -1136,7 +1136,7 @@ ProP+Rifle+RiflePersonality "QUQU"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "Savage"
+ProP+SniperPro+SniperPersonality "Savageoh"
 	VoicePitch = 73
 End
 
@@ -1334,7 +1334,7 @@ ProP+Rifle+RiflePersonality "slaxx"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "EasTor"
+ProP+SniperPro+SniperPersonality "Lr0z1n"
 	VoicePitch = 96
 End
 
@@ -1470,7 +1470,7 @@ ProP+SniperPro+SniperPersonality "woxic"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "mini"
+ProP+Rifle+RiflePersonality "xfl0ud"
 	VoicePitch = 99
 End
 
@@ -1572,7 +1572,7 @@ End
 
 //Finest Players
 
-ProP+Rifle+RiflePersonality "mar"
+ProP+Rifle+RiflePersonality "twist"
 	VoicePitch = 74
 End
 
@@ -1584,7 +1584,7 @@ ProP+Rifle+RiflePersonality "kreaz"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "robiin"
+ProP+Rifle+RiflePersonality "PlesseN"
 	VoicePitch = 87
 End
 
@@ -1770,7 +1770,7 @@ End
 
 //FATE Players
 
-ProP+Rifle+RiflePersonality "rafftu"
+ProP+Rifle+RiflePersonality "numb"
 	VoicePitch = 87
 End
 
@@ -2236,7 +2236,7 @@ ProP+Rifle+RiflePersonality "xelos"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "twist"
+ProP+SniperPro+SniperPersonality "adamb"
 	VoicePitch = 107
 End
 
@@ -2244,11 +2244,11 @@ ProP+Rifle+RiflePersonality "hemzk9"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "ZER"
+ProP+Rifle+RiflePersonality "susp"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "Svedjehed"
+ProP+Rifle+RiflePersonality "k0lty"
 	VoicePitch = 107
 End
 
@@ -2626,25 +2626,25 @@ ProP+Rifle+RiflePersonality "Forester"
 	VoicePitch = 75
 End
 
-//Checkmate Players
+//Strife Players
 
-ProP+Rifle+RiflePersonality "bLitz"
+ProP+Rifle+RiflePersonality "J0LZ"
 	VoicePitch = 115
 End
 
-ProP+SniperPro+SniperPersonality "kabal"
+ProP+SniperPro+SniperPersonality "SLIGHT"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "nin9"
+ProP+Rifle+RiflePersonality "stamina"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "Techno4K"
+ProP+Rifle+RiflePersonality "aris"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "Bart4k"
+ProP+Rifle+RiflePersonality "cxzi"
 	VoicePitch = 105
 End
 
@@ -3240,6 +3240,116 @@ End
 
 ProP+Rifle+RiflePersonality "maty"
 	VoicePitch = 90
+End
+
+//K1CK Players
+
+ProP+Rifle+RiflePersonality "v1c7oR"
+	VoicePitch = 94
+End
+
+ProP+SniperPro+SniperPersonality "AwaykeN"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "SPELLAN"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "rafftu"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "SAiKY"
+	VoicePitch = 102
+End
+
+//TC Players
+
+ProP+Rifle+RiflePersonality "propleh"
+	VoicePitch = 79
+End
+
+ProP+SniperPro+SniperPersonality "tricky"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "almazer"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "SasukeQO"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "zLy"
+	VoicePitch = 90
+End
+
+//LFO Players
+
+ProP+Rifle+RiflePersonality "HaZR"
+	VoicePitch = 78
+End
+
+ProP+SniperPro+SniperPersonality "sterling"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "Liki"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "SaVage"
+	VoicePitch = 100
+End
+
+ProP+Rifle+RiflePersonality "apoc"
+	VoicePitch = 107
+End
+
+//AG Players
+
+ProP+Rifle+RiflePersonality "FIOURN"
+	VoicePitch = 75
+End
+
+ProP+SniperPro+SniperPersonality "Monster"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "waituu"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "ayaya"
+	VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "AiM"
+	VoicePitch = 75
+End
+
+//NKT Players
+
+ProP+Rifle+RiflePersonality "XigN"
+	VoicePitch = 90
+End
+
+ProP+SniperPro+SniperPersonality "ImpressioN"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "Kntz"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "dobu"
+	VoicePitch = 104
+End
+
+ProP+Rifle+RiflePersonality "cool4st"
+	VoicePitch = 81
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

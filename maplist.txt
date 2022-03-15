@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Mar 08 23:12:34 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Mar 14 22:38:07 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -79,6 +79,7 @@ awp_lego_2_shootout
 awp_lego_2_winter
 awp_lego_4b
 awp_lego_9
+awp_lego_india2
 awp_legominiindia
 awp_metro_cso2
 awp_minecraft_pete_v1
@@ -98,7 +99,6 @@ cs_agency
 cs_apollo
 cs_assault
 cs_backalley
-cs_beachassault_ek
 cs_bird
 cs_bloodstrike_2016_extended
 cs_bloodstrike_old
@@ -121,6 +121,7 @@ cs_ivory
 cs_lanpartymayhem
 cs_mall_shootout
 cs_mansion
+cs_max_a4
 cs_militia
 cs_militia_original
 cs_motel
@@ -214,6 +215,7 @@ de_extraction
 de_facade
 de_factory
 de_fallgarden_9
+de_fastholdcompetitive
 de_favela
 de_fedra_autumn_csgo
 de_fire
