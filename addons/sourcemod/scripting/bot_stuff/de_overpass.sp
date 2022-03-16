@@ -64,6 +64,22 @@ public void PrepareOverpassExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/Vitality Short Pop/ZywOo Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/Vitality Short Pop/shox Role.rec");
 				}
+				case 6: //Heroic Fast B
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/Heroic Fast B/TeSeS Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/Heroic Fast B/cadiaN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/Heroic Fast B/b0RUP Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/Heroic Fast B/stavn Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/Heroic Fast B/niko Role.rec");
+				}
+				case 7: //C9 Monster Rush
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_overpass/C9 Monster Rush/JT Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_overpass/C9 Monster Rush/oSee Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_overpass/C9 Monster Rush/motm Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_overpass/C9 Monster Rush/Sonic Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_overpass/C9 Monster Rush/floppy Role.rec");
+				}
 			}
 		}
 	}

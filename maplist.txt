@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Mar 15 15:43:40 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Wed Mar 16 21:22:43 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -281,7 +281,7 @@ de_nuke_ramps
 de_oasis
 de_old_monastery
 de_ore
-workshop/691673955/de_outlaws_go
+de_outlaws_go
 de_overgrown
 de_overpass
 de_overpass_2055
@@ -308,10 +308,12 @@ de_rust_b3
 de_safehouse
 de_saint
 de_santorini
+de_sawmill
 de_seaside
 de_season
 de_shortdust
 de_shortnuke
+de_snowball_go
 de_snowcapped_csgo
 de_soat_rc3
 de_spain
@@ -323,6 +325,7 @@ de_studio
 de_sugarcane
 de_sunburn
 de_tangerine_b2_17
+workshop/637220936/de_tides
 de_torntown
 de_train
 de_train_2055
