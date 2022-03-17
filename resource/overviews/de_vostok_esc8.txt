@@ -1,0 +1,17 @@
+"de_vostok_esc6"
+{
+	// loading screen icons and positions
+	"CTSpawn_x"	".57"
+	"CTSpawn_y"	".87"
+	"TSpawn_x"	".13"
+	"TSpawn_y"	".10"
+//Bomb site locations
+	"bombA_x"	".84"
+	"bombA_y"	".61"
+	"bombB_x"	".17"
+	"bombB_y"	".55"
+	"material" "overviews/de_vostok_esc6"
+	"pos_x" "-2180.500000"
+	"pos_y" "915.000000"
+	"scale" "4.910000"
+}
