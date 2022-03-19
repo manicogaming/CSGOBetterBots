@@ -488,7 +488,7 @@ ProP+Rifle+RiflePersonality "frozen"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "NBK-"
+ProP+Rifle+RiflePersonality "JDC"
 	VoicePitch = 89
 End
 
@@ -1928,7 +1928,7 @@ ProP+Rifle+RiflePersonality "tamir"
 	VoicePitch = 86
 End
 
-ProP+SniperPro+SniperPersonality "xerolte"
+ProP+SniperPro+SniperPersonality "rate"
 	VoicePitch = 105
 End
 
@@ -2042,7 +2042,7 @@ ProP+SniperPro+SniperPersonality "bobeksde"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "bq"
+ProP+Rifle+RiflePersonality "FRANSSON"
 	VoicePitch = 114
 End
 
@@ -2644,7 +2644,7 @@ ProP+Rifle+RiflePersonality "aris"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "cxzi"
+ProP+Rifle+RiflePersonality "D4rtyMontana"
 	VoicePitch = 105
 End
 
@@ -2846,25 +2846,25 @@ ProP+Rifle+RiflePersonality "pancc"
 	VoicePitch = 88
 End
 
-//HR Players
+//Furious Players
 
-ProP+Rifle+RiflePersonality "Templ"
+ProP+Rifle+RiflePersonality "KAISER"
 	VoicePitch = 105
 End
 
-ProP+SniperPro+SniperPersonality "alex666"
+ProP+SniperPro+SniperPersonality "TIKO"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "7oX1C"
+ProP+Rifle+RiflePersonality "laser"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "w0nderful"
+ProP+Rifle+RiflePersonality "andrew"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "OWNER"
+ProP+Rifle+RiflePersonality "ABM"
 	VoicePitch = 95
 End
 
@@ -3022,25 +3022,25 @@ ProP+Rifle+RiflePersonality "pr1metapz"
 	VoicePitch = 86
 End
 
-//Malvinas Players
+//Renewal Players
 
-ProP+Rifle+RiflePersonality "kissmyaug"
+ProP+Rifle+RiflePersonality "xerolte"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "DGN"
+ProP+SniperPro+SniperPersonality "Ensury"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "gAtito"
+ProP+Rifle+RiflePersonality "NEUZ"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "TIKO"
+ProP+Rifle+RiflePersonality "MiQ"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "ramuljas"
+ProP+Rifle+RiflePersonality "sT0P"
 	VoicePitch = 78
 End
 

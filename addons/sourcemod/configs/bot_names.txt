@@ -53,7 +53,7 @@
 	"torzsi" 			"mouz"
 	"Bymas" 			"mouz"
 	"frozen" 			"mouz"
-	"NBK-" 				"mouz"
+	"JDC" 				"mouz"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
 	"Attacker" 			"TYLOO"
@@ -477,7 +477,7 @@
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"bobeksde" 			"Lilmix"
-	"bq" 				"Lilmix"
+	"FRANSSON" 			"Lilmix"
 	"hns" 				"Lilmix"
 	"Hype" 				"Lilmix"
 	//FTW Players
@@ -641,7 +641,7 @@
 	"cool4st" 			"Strife"
 	"hasteka" 			"Strife"
 	"aris" 				"Strife"
-	"cxzi"				"Strife"
+	"D4rtyMontana"		"Strife"
 	//Party Players
 	"ben1337" 			"Party"
 	"PwnAlone" 			"Party"
@@ -696,12 +696,12 @@
 	"Reversive" 		"Leviatan"
 	"meyern" 			"Leviatan"
 	"pancc"				"Leviatan"
-	//HR Players
-	"Templ" 			"HR"
-	"alex666"			"HR"
-	"7oX1C" 			"HR"
-	"w0nderful" 		"HR"
-	"OWNER"				"HR"
+	//Furious Players
+	"KAISER" 			"Furious"
+	"TIKO"				"Furious"
+	"laser" 			"Furious"
+	"andrew" 			"Furious"
+	"ABM"				"Furious"
 	//MongolZ Players
 	"ncl" 				"MongolZ"
 	"MagnumZ"			"MongolZ"
@@ -744,12 +744,12 @@
 	"DreaM-" 			"SSP"
 	"florento" 			"SSP"
 	"pr1metapz"			"SSP"
-	//Malvinas Players
-	"kissmyaug" 		"Malvinas"
-	"DGN"				"Malvinas"
-	"gAtito" 			"Malvinas"
-	"TIKO" 				"Malvinas"
-	"ramuljas"			"Malvinas"
+	//Renewal Players
+	"rate" 				"Renewal"
+	"Ensury"			"Renewal"
+	"NEUZ" 				"Renewal"
+	"MiQ" 				"Renewal"
+	"sT0P"				"Renewal"
 	//Rhyno Players
 	"LucKyMaNN" 		"Rhyno"
 	"psh"				"Rhyno"

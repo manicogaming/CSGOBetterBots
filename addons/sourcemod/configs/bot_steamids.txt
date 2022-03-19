@@ -53,7 +53,7 @@
 	"torzsi" 			"395473484"
 	"Bymas" 			"133120627"
 	"frozen" 			"108157034"
-	"NBK-" 				"444845"
+	"JDC" 				"118505645"
 	//TYLOO Players
 	"Summer" 			"52964519"
 	"Attacker" 			"88001036"
@@ -449,7 +449,7 @@
 	"shinobi" 			"488680911"
 	"yAmi" 				"175732643"
 	"Annihilation" 		"315821474"	
-	"xerolte" 			"368881420"	
+	"rate" 				"442056424"	
 	//DIVIZON Players
 	"farmaG" 			"32002596"
 	"Sw1ft" 			"159221739"
@@ -477,7 +477,7 @@
 	//Lilmix Players
 	"quix" 				"18704555"
 	"bobeksde" 			"100650499"
-	"bq" 				"240233870"
+	"FRANSSON" 			"66917243"
 	"hns" 				"192826402"
 	"Hype" 				"155147590"
 	//FTW Players
@@ -641,7 +641,7 @@
 	"SLIGHT" 			"193314309"
 	"stamina" 			"272809432"
 	"aris" 				"72733739"
-	"cxzi"				"211453961"
+	"D4rtyMontana"		"202142667"
 	//Party Players
 	"ben1337" 			"131461662"
 	"PwnAlone" 			"24000649"
@@ -696,12 +696,12 @@
 	"Reversive" 		"229334739"
 	"meyern" 			"235377137"
 	"pancc"				"85456730"
-	//HR Players
-	"Templ" 			"201614089"
-	"alex666"			"343849791"
-	"7oX1C" 			"352463921"
-	"w0nderful" 		"1102803112"
-	"OWNER"				"136667537"
+	//Furious Players
+	"KAISER" 			"167304921"
+	"TIKO"				"169462190"
+	"laser" 			"232086390"
+	"andrew" 			"51908773"
+	"ABM"				"121444546"
 	//MongolZ Players
 	"ncl" 				"156030485"
 	"MagnumZ"			"187391202"
@@ -744,12 +744,12 @@
 	"DreaM-" 			"245251564"
 	"florento" 			"178159309"
 	"pr1metapz"			"198443782"
-	//Malvinas Players
-	"kissmyaug" 		"63958558"
-	"DGN"				"44255284"
-	"gAtito" 			"75104484"
-	"TIKO" 				"169462190"
-	"ramuljas"			"900022321"
+	//Renewal Players
+	"xerolte" 			"368881420"
+	"Ensury"			"410784508"
+	"NEUZ" 				"114122809"
+	"MiQ" 				"914241492"
+	"sT0P"				"1106326909"
 	//Rhyno Players
 	"LucKyMaNN" 		"171613566"
 	"psh"				"27720795"
