@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Wed Mar 16 21:22:43 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Mar 21 22:51:59 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -222,6 +222,7 @@ de_fire
 de_forlorn
 de_fortress
 de_garrison
+workshop/1215927733/de_gloss_r1
 de_golden
 de_graveyard
 de_grind
@@ -325,7 +326,7 @@ de_studio
 de_sugarcane
 de_sunburn
 de_tangerine_b2_17
-workshop/637220936/de_tides
+de_tides
 de_torntown
 de_train
 de_train_2055
@@ -334,6 +335,7 @@ de_tuscan
 de_vacant
 de_vandal
 de_vertigo
+de_vostok_esc8
 de_waterfall
 de_waterland
 de_westwood
@@ -404,6 +406,7 @@ gg_simpsons_mega
 gg_southpark_mini_tower
 gg_southpark_versus
 gg_wowarena_papys_aperos
+hd_office_remade
 iv_de_stoneworld
 joey_twosided
 ka_beams_s
