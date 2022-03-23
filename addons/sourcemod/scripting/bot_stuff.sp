@@ -4942,7 +4942,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_vertigo") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 2);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 2) : Math_GetRandomInt(1, 2);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareVertigoExecutes();
 		}
@@ -5023,7 +5023,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	if (iVictim == iAttacker || !IsValidClient(iAttacker) || !IsPlayerAlive(iAttacker))
 		return Plugin_Continue;
 	
-	if(GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
+	if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
 	{
 		g_bAbortExecute = true;
 		BotEquipBestWeapon(iVictim, true);

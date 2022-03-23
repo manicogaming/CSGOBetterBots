@@ -83,11 +83,10 @@ enum struct Bookmarks {
 }
 
 // Used to fire the OnPlayerMimicBookmark effciently during playback
-enum BookmarkWhileMimicing {
-	BWM_frame, // The frame this bookmark was saved in
-	BWM_index, // The index into the FH_bookmarks array in the fileheader for the corresponding bookmark (to get the name)
-	BWM_max
-};
+enum struct BookmarkWhileMimicing {
+	int BWM_frame; // The frame this bookmark was saved in
+	int BWM_index; // The index into the FH_bookmarks array in the fileheader for the corresponding bookmark (to get the name)
+}
 
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
@@ -124,8 +123,7 @@ int g_iBotMimicRecordTickCount[MAXPLAYERS+1] = {0,...};
 int g_iBotActiveWeapon[MAXPLAYERS+1] = {-1,...};
 bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
-bool g_bDontMimic;
-int g_iBotMimicNextBookmarkTick[MAXPLAYERS+1][BWM_max];
+BookmarkWhileMimicing g_iBotMimicNextBookmarkTick[MAXPLAYERS+1];
 
 Handle g_hfwdOnStartRecording;
 Handle g_hfwdOnRecordingPauseStateChanged;
@@ -220,7 +218,6 @@ public void OnPluginStart()
 	
 	HookEvent("player_spawn", Event_OnPlayerSpawn);
 	HookEvent("player_death", Event_OnPlayerDeath);
-	HookEventEx("cs_win_panel_match", Event_OnWinPanelMatch);
 	
 	if(LibraryExists("dhooks"))
 	{
@@ -287,7 +284,6 @@ public void OnLibraryRemoved(const char[] name)
 public void OnMapStart()
 {
 	// Clear old records for old map
-	g_bDontMimic = false;
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
 	FileHeader iFileHeader;
@@ -363,7 +359,7 @@ public void OnClientDisconnect(int client)
 public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float vel[3], const float angles[3], int weapon, int subtype, int cmdnum, int tickcount, int seed, const int mouse[2])
 {
 	// Client isn't recording or recording is paused.
-	if(g_bDontMimic || g_hRecording[client] == null || g_bRecordingPaused[client])
+	if(g_hRecording[client] == null || g_bRecordingPaused[client])
 		return;
 
 	FrameInfo iFrame;
@@ -490,195 +486,178 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse, const float
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon, int &subtype, int &cmdnum, int &tickcount, int &seed, int mouse[2])
 {
-	if(IsValidClient(client) && IsFakeClient(client))
-	{
-		// Bot is mimicing something
-		if(g_hBotMimicsRecord[client] == null)
-			return Plugin_Continue;
+	// Bot is mimicing something
+	if(g_hBotMimicsRecord[client] == null)
+		return Plugin_Continue;
 
-		// Is this a valid living bot?
-		if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
-			return Plugin_Continue;
+	// Is this a valid living bot?
+	if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
+		return Plugin_Continue;
+	
+	if(g_iBotMimicTick[client] >= g_iBotMimicRecordTickCount[client])
+	{
+		g_iBotMimicTick[client] = 0;
+		g_iCurrentAdditionalTeleportIndex[client] = 0;
+		BotMimic_StopPlayerMimic(client);
+		return Plugin_Continue;
+	}
+	
+	FrameInfo iFrame;
+	g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
+	
+	buttons = iFrame.playerButtons;
+	impulse = iFrame.playerImpulse;
+	Array_Copy(iFrame.predictedVelocity, vel, 3);
+	
+	Array_Copy(iFrame.predictedAngles, angles, 2);
+	subtype = iFrame.playerSubtype;
+	seed = iFrame.playerSeed;
+	weapon = 0;
+	
+	float fActualVelocity[3];
+	Array_Copy(iFrame.actualVelocity, fActualVelocity, 3);
+	
+	// We're supposed to teleport stuff?
+	/*if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
+	{
+		AdditionalTeleport iAT;
+		ArrayList hAdditionalTeleport;
+		char sPath[PLATFORM_MAX_PATH];
+		GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
+		g_hLoadedRecordsAdditionalTeleport.GetValue(sPath, hAdditionalTeleport);
+		hAdditionalTeleport.GetArray(g_iCurrentAdditionalTeleportIndex[client], iAT, sizeof(AdditionalTeleport));
 		
-		if(g_iBotMimicTick[client] >= g_iBotMimicRecordTickCount[client])
+		float fOrigin[3], fAngles[3], fVelocity[3];
+		Array_Copy(iAT.atOrigin, fOrigin, 3);
+		Array_Copy(iAT.atAngles, fAngles, 3);
+		Array_Copy(iAT.atVelocity, fVelocity, 3);
+		
+		// The next call to Teleport is ok.
+		g_bValidTeleportCall[client] = true;
+		
+		// THATS STUPID!
+		// Only pass the arguments, if they were set..
+		if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
 		{
-			g_iBotMimicTick[client] = 0;
-			g_iCurrentAdditionalTeleportIndex[client] = 0;
-			BotMimic_StopPlayerMimic(client);
-			return Plugin_Continue;
-		}
-		
-		FrameInfo iFrame;
-		g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
-		
-		buttons = iFrame.playerButtons;
-		impulse = iFrame.playerImpulse;
-		Array_Copy(iFrame.predictedVelocity, vel, 3);
-		
-		Array_Copy(iFrame.predictedAngles, angles, 2);
-		subtype = iFrame.playerSubtype;
-		seed = iFrame.playerSeed;
-		weapon = 0;
-		
-		float fActualVelocity[3];
-		Array_Copy(iFrame.actualVelocity, fActualVelocity, 3);
-		
-		// We're supposed to teleport stuff?
-		/*if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
-		{
-			AdditionalTeleport iAT;
-			ArrayList hAdditionalTeleport;
-			char sPath[PLATFORM_MAX_PATH];
-			GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
-			g_hLoadedRecordsAdditionalTeleport.GetValue(sPath, hAdditionalTeleport);
-			hAdditionalTeleport.GetArray(g_iCurrentAdditionalTeleportIndex[client], iAT, sizeof(AdditionalTeleport));
-			
-			float fOrigin[3], fAngles[3], fVelocity[3];
-			Array_Copy(iAT.atOrigin, fOrigin, 3);
-			Array_Copy(iAT.atAngles, fAngles, 3);
-			Array_Copy(iAT.atVelocity, fVelocity, 3);
-			
-			// The next call to Teleport is ok.
-			g_bValidTeleportCall[client] = true;
-			
-			// THATS STUPID!
-			// Only pass the arguments, if they were set..
-			if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
+			if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
 			{
-				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-				{
-					if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-						TeleportEntity(client, fOrigin, fAngles, fVelocity);
-					else
-						TeleportEntity(client, fOrigin, fAngles, NULL_VECTOR);
-				}
+				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+					TeleportEntity(client, fOrigin, fAngles, fVelocity);
 				else
-				{
-					if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-						TeleportEntity(client, fOrigin, NULL_VECTOR, fVelocity);
-					else
-						TeleportEntity(client, fOrigin, NULL_VECTOR, NULL_VECTOR);
-				}
+					TeleportEntity(client, fOrigin, fAngles, NULL_VECTOR);
 			}
 			else
 			{
-				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-				{
-					if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-						TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
-					else
-						TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
-				}
+				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+					TeleportEntity(client, fOrigin, NULL_VECTOR, fVelocity);
 				else
-				{
-					if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-						TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
-				}
+					TeleportEntity(client, fOrigin, NULL_VECTOR, NULL_VECTOR);
 			}
-			
-			g_iCurrentAdditionalTeleportIndex[client]++;
-		}*/
-		
-		// This is the first tick. Teleport him to the initial position
-		if(g_iBotMimicTick[client] == 0)
-		{
-			g_bValidTeleportCall[client] = true;
-			TeleportEntity(client, g_fInitialPosition[client], g_fInitialAngles[client], fActualVelocity);
-			bool bHasC4 = false;
-			
-			if(Client_HasWeapon(client, "weapon_c4"))
-			{
-				bHasC4 = true;
-			}
-			
-			Client_RemoveAllWeapons(client);
-			
-			if(bHasC4)
-			{
-				GivePlayerItem(client, "weapon_c4");
-			}
-			
-			Call_StartForward(g_hfwdOnPlayerMimicLoops);
-			Call_PushCell(client);
-			Call_Finish();
 		}
 		else
 		{
-			g_bValidTeleportCall[client] = true;
-			
-			SDKCall(g_hSetOrigin, client, iFrame.origin);
-			TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
-		}
-		
-		if(iFrame.newWeapon != CSWeapon_NONE)
-		{
-			char sAlias[64];
-			CS_WeaponIDToAlias(iFrame.newWeapon, sAlias, sizeof(sAlias));
-			
-			Format(sAlias, sizeof(sAlias), "weapon_%s", sAlias);
-			
-			if(g_iBotMimicTick[client] > 0 && Client_HasWeapon(client, sAlias))
+			if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
 			{
-				weapon = Client_GetWeapon(client, sAlias);
-				g_iBotActiveWeapon[client] = weapon;
-				g_bBotSwitchedWeapon[client] = true;
+				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+					TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
+				else
+					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
 			}
 			else
 			{
-				weapon = GivePlayerItem(client, sAlias);
-				if(weapon != INVALID_ENT_REFERENCE)
-				{
-					g_iBotActiveWeapon[client] = weapon;
-					// Switch to that new weapon on the next frame.
-					g_bBotSwitchedWeapon[client] = true;
+				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
+					TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
+			}
+		}
+		
+		g_iCurrentAdditionalTeleportIndex[client]++;
+	}*/
+	
+	// This is the first tick. Teleport him to the initial position
+	if(g_iBotMimicTick[client] == 0)
+	{
+		g_bValidTeleportCall[client] = true;
+		TeleportEntity(client, g_fInitialPosition[client], g_fInitialAngles[client], fActualVelocity);
+		Client_RemoveAllWeapons(client);
+		
+		Call_StartForward(g_hfwdOnPlayerMimicLoops);
+		Call_PushCell(client);
+		Call_Finish();
+	}
+	else
+	{
+		g_bValidTeleportCall[client] = true;
+		
+		SDKCall(g_hSetOrigin, client, iFrame.origin);
+		TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
+	}
+	
+	if(iFrame.newWeapon != CSWeapon_NONE)
+	{
+		char sAlias[64];
+		CS_WeaponIDToAlias(iFrame.newWeapon, sAlias, sizeof(sAlias));
+		
+		Format(sAlias, sizeof(sAlias), "weapon_%s", sAlias);
+		
+		if(g_iBotMimicTick[client] > 0 && Client_HasWeapon(client, sAlias))
+		{
+			weapon = Client_GetWeapon(client, sAlias);
+			g_iBotActiveWeapon[client] = weapon;
+			g_bBotSwitchedWeapon[client] = true;
+		}
+		else
+		{
+			weapon = GivePlayerItem(client, sAlias);
+			if(weapon != INVALID_ENT_REFERENCE)
+			{
+				g_iBotActiveWeapon[client] = weapon;
+				// Switch to that new weapon on the next frame.
+				g_bBotSwitchedWeapon[client] = true;
 
-					// Grenades shouldn't be equipped.
-					if(StrContains(sAlias, "grenade") == -1 
-					&& StrContains(sAlias, "flashbang") == -1 
-					&& StrContains(sAlias, "decoy") == -1 
-					&& StrContains(sAlias, "molotov") == -1)
-					{
-						EquipPlayerWeapon(client, weapon);
-					}
+				// Grenades shouldn't be equipped.
+				if(StrContains(sAlias, "grenade") == -1 
+				&& StrContains(sAlias, "flashbang") == -1 
+				&& StrContains(sAlias, "decoy") == -1 
+				&& StrContains(sAlias, "molotov") == -1)
+				{
+					EquipPlayerWeapon(client, weapon);
 				}
 			}
 		}
-		// Switch the weapon on the next frame after it was selected.
-		else if (g_bBotSwitchedWeapon[client])
-		{
-			g_bBotSwitchedWeapon[client] = false;
-			SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", g_iBotActiveWeapon[client]);
-			Client_SetActiveWeapon(client, g_iBotActiveWeapon[client]);
-		}
-		
-		// See if there's a bookmark on this tick
-		if(g_iBotMimicTick[client] == g_iBotMimicNextBookmarkTick[client][BWM_frame])
-		{
-			// Get the file header of the current playing record.
-			char sPath[PLATFORM_MAX_PATH];
-			GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
-			FileHeader iFileHeader;
-			g_hLoadedRecords.GetArray(sPath, iFileHeader, sizeof(FileHeader));
-
-			Bookmarks iBookmark;
-			iFileHeader.FH_bookmarks.GetArray(g_iBotMimicNextBookmarkTick[client][BWM_index], iBookmark, sizeof(Bookmarks));
-			
-			// Cache the next tick in which we should fire the forward.
-			UpdateNextBookmarkTick(client);
-			
-			// Call the forward
-			Call_StartForward(g_hfwdOnPlayerMimicBookmark);
-			Call_PushCell(client);
-			Call_PushString(iBookmark.BKM_name);
-			Call_Finish();
-		}
-		
-		g_iBotMimicTick[client]++;
-		
-		return Plugin_Changed;
+	}
+	// Switch the weapon on the next frame after it was selected.
+	else if (g_bBotSwitchedWeapon[client])
+	{
+		g_bBotSwitchedWeapon[client] = false;
+		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", g_iBotActiveWeapon[client]);
+		Client_SetActiveWeapon(client, g_iBotActiveWeapon[client]);
 	}
 	
-	return Plugin_Continue;
+	// See if there's a bookmark on this tick
+	if(g_iBotMimicTick[client] == g_iBotMimicNextBookmarkTick[client].BWM_frame)
+	{
+		// Get the file header of the current playing record.
+		char sPath[PLATFORM_MAX_PATH];
+		GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, sizeof(sPath));
+		FileHeader iFileHeader;
+		g_hLoadedRecords.GetArray(sPath, iFileHeader, sizeof(FileHeader));
+
+		Bookmarks iBookmark;
+		iFileHeader.FH_bookmarks.GetArray(g_iBotMimicNextBookmarkTick[client].BWM_index, iBookmark, sizeof(Bookmarks));
+		
+		// Cache the next tick in which we should fire the forward.
+		UpdateNextBookmarkTick(client);
+		
+		// Call the forward
+		Call_StartForward(g_hfwdOnPlayerMimicBookmark);
+		Call_PushCell(client);
+		Call_PushString(iBookmark.BKM_name);
+		Call_Finish();
+	}
+	
+	g_iBotMimicTick[client]++;
+	
+	return Plugin_Changed;
 }
 
 /**
@@ -719,12 +698,6 @@ public void Event_OnPlayerDeath(Event event, const char[] name, bool dontBroadca
 			CreateTimer(1.0, Timer_DelayedRespawn, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
-
-public void Event_OnWinPanelMatch(Event eEvent, char[] szName, bool bDontBroadcast)
-{
-	g_bDontMimic = true;
-}
-
 /**
  * Timer Callbacks
  */
@@ -1343,8 +1316,8 @@ public int GoToBookmark(Handle plugin, int numParams)
 	g_iCurrentAdditionalTeleportIndex[client] = iBookmark.BKM_additionalTeleportTick;
 	
 	// Remember that we're now at this bookmark.
-	g_iBotMimicNextBookmarkTick[client][BWM_frame] = iBookmark.BKM_frame;
-	g_iBotMimicNextBookmarkTick[client][BWM_index] = iBookmarkIndex;
+	g_iBotMimicNextBookmarkTick[client].BWM_frame = iBookmark.BKM_frame;
+	g_iBotMimicNextBookmarkTick[client].BWM_index = iBookmarkIndex;
 }
 
 public int StopPlayerMimic(Handle plugin, int numParams)
@@ -1370,8 +1343,8 @@ public int StopPlayerMimic(Handle plugin, int numParams)
 	g_iCurrentAdditionalTeleportIndex[client] = 0;
 	g_iBotMimicRecordTickCount[client] = 0;
 	g_bValidTeleportCall[client] = false;
-	g_iBotMimicNextBookmarkTick[client][BWM_frame] = -1;
-	g_iBotMimicNextBookmarkTick[client][BWM_index] = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_frame = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_index = -1;
 	
 	FileHeader iFileHeader;
 	g_hLoadedRecords.GetArray(sPath, iFileHeader, sizeof(FileHeader));
@@ -1464,8 +1437,8 @@ public int ResetPlayback(Handle plugin, int numParams)
 	g_iBotMimicTick[client] = 0;
 	g_iCurrentAdditionalTeleportIndex[client] = 0;
 	g_bValidTeleportCall[client] = false;
-	g_iBotMimicNextBookmarkTick[client][BWM_frame] = -1;
-	g_iBotMimicNextBookmarkTick[client][BWM_index] = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_frame = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_index = -1;
 	UpdateNextBookmarkTick(client);
 }
 
@@ -1683,8 +1656,8 @@ void WriteRecordToDisk(const char[] sPath, FileHeader iFileHeader)
 	hFile.WriteInt8(strlen(iFileHeader.FH_recordName));
 	hFile.WriteString(iFileHeader.FH_recordName, false);
 	
-	hFile.Write(view_as<int>(iFileHeader.FH_initialPosition), 3, 4);
-	hFile.Write(view_as<int>(iFileHeader.FH_initialAngles), 2, 4);
+	hFile.Write(iFileHeader.FH_initialPosition, 3, 4);
+	hFile.Write(iFileHeader.FH_initialAngles, 2, 4);
 	
 	ArrayList hAdditionalTeleport;
 	int iATIndex;
@@ -1721,11 +1694,11 @@ void WriteRecordToDisk(const char[] sPath, FileHeader iFileHeader)
 			AdditionalTeleport iAT;
 			hAdditionalTeleport.GetArray(iATIndex, iAT, sizeof(AdditionalTeleport));
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
-				hFile.Write(view_as<int>(iAT.atOrigin), 3, 4);
+				hFile.Write(iAT.atOrigin, 3, 4);
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-				hFile.Write(view_as<int>(iAT.atAngles), 3, 4);
+				hFile.Write(iAT.atAngles, 3, 4);
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-				hFile.Write(view_as<int>(iAT.atVelocity), 3, 4);
+				hFile.Write(iAT.atVelocity, 3, 4);
 			iATIndex++;
 		}
 	}
@@ -1782,8 +1755,8 @@ BMError LoadRecordFromFile(const char[] path, const char[] sCategory, FileHeader
 	hFile.ReadString(sRecordName, iNameLength+1, iNameLength);
 	sRecordName[iNameLength] = '\0';
 	
-	hFile.Read(view_as<int>(headerInfo.FH_initialPosition), 3, 4);
-	hFile.Read(view_as<int>(headerInfo.FH_initialAngles), 2, 4);
+	hFile.Read(headerInfo.FH_initialPosition, 3, 4);
+	hFile.Read(headerInfo.FH_initialAngles, 2, 4);
 	
 	int iTickCount;
 	hFile.ReadInt32(iTickCount);
@@ -1861,11 +1834,11 @@ BMError LoadRecordFromFile(const char[] path, const char[] sCategory, FileHeader
 		{
 			AdditionalTeleport iAT;
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_ORIGIN)
-				hFile.Read(view_as<int>(iAT.atOrigin), 3, 4);
+				hFile.Read(iAT.atOrigin, 3, 4);
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
-				hFile.Read(view_as<int>(iAT.atAngles), 3, 4);
+				hFile.Read(iAT.atAngles, 3, 4);
 			if(iFrame.additionalFields & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-				hFile.Read(view_as<int>(iAT.atVelocity), 3, 4);
+				hFile.Read(iAT.atVelocity, 3, 4);
 			iAT.atFlags = iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY);
 			hAdditionalTeleport.PushArray(iAT, sizeof(AdditionalTeleport));
 		}
@@ -1933,8 +1906,8 @@ BMError PlayRecord(int client, const char[] path)
 	g_bBotSwitchedWeapon[client] = false;
 	
 	// Cache at which tick we should fire the first OnPlayerMimicBookmark forward.
-	g_iBotMimicNextBookmarkTick[client][BWM_frame] = -1;
-	g_iBotMimicNextBookmarkTick[client][BWM_index] = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_frame = -1;
+	g_iBotMimicNextBookmarkTick[client].BWM_index = -1;
 	UpdateNextBookmarkTick(client);
 	
 	Array_Copy(iFileHeader.FH_initialPosition, g_fInitialPosition[client], 3);
@@ -1958,8 +1931,8 @@ BMError PlayRecord(int client, const char[] path)
 	{
 		g_hBotMimicsRecord[client] = null;
 		g_iBotMimicRecordTickCount[client] = 0;
-		g_iBotMimicNextBookmarkTick[client][BWM_frame] = -1;
-		g_iBotMimicNextBookmarkTick[client][BWM_index] = -1;
+		g_iBotMimicNextBookmarkTick[client].BWM_frame = -1;
+		g_iBotMimicNextBookmarkTick[client].BWM_index = -1;
 	}
 	
 	return BM_NoError;
@@ -1984,7 +1957,7 @@ void UpdateNextBookmarkTick(int client)
 	if(iSize == 0)
 		return;
 	
-	int iCurrentIndex = g_iBotMimicNextBookmarkTick[client][BWM_index];
+	int iCurrentIndex = g_iBotMimicNextBookmarkTick[client].BWM_index;
 	// We just reached some bookmark regularly and want to proceed to wait for the next one sequentially.
 	// If there is no further bookmarks, restart from the first one.
 	iCurrentIndex++;
@@ -1993,8 +1966,8 @@ void UpdateNextBookmarkTick(int client)
 	
 	Bookmarks iBookmark;
 	iFileHeader.FH_bookmarks.GetArray(iCurrentIndex, iBookmark, sizeof(Bookmarks));
-	g_iBotMimicNextBookmarkTick[client][BWM_frame] = iBookmark.BKM_frame;
-	g_iBotMimicNextBookmarkTick[client][BWM_index] = iCurrentIndex;
+	g_iBotMimicNextBookmarkTick[client].BWM_frame = iBookmark.BKM_frame;
+	g_iBotMimicNextBookmarkTick[client].BWM_index = iCurrentIndex;
 }
 
 stock bool CheckCreateDirectory(const char[] sPath, int mode)
@@ -2026,9 +1999,4 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
-}
-
-stock bool IsValidClient(int client)
-{
-	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }
