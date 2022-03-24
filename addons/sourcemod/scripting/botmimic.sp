@@ -16,6 +16,7 @@
 #include <sdkhooks>
 #include <smlib>
 #include <botmimic>
+#include <eItems>
 
 #undef REQUIRE_EXTENSIONS
 #include <dhooks>
@@ -88,9 +89,23 @@ enum struct BookmarkWhileMimicing {
 	int BWM_index; // The index into the FH_bookmarks array in the fileheader for the corresponding bookmark (to get the name)
 }
 
+enum PriorityType
+{
+	PRIORITY_LOWEST = -1,
+	PRIORITY_LOW, 
+	PRIORITY_MEDIUM, 
+	PRIORITY_HIGH, 
+	PRIORITY_UNINTERRUPTABLE
+}
+
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
+
+bool g_bWasInterrupted[MAXPLAYERS+1];
+float g_fPreviousAngles[MAXPLAYERS+1][3];
+float g_fPreviousVelocity[MAXPLAYERS+1][3];
+
 // Array of frames
 ArrayList g_hRecording[MAXPLAYERS+1];
 ArrayList g_hRecordingAdditionalTeleport[MAXPLAYERS+1];
@@ -125,6 +140,8 @@ bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
 BookmarkWhileMimicing g_iBotMimicNextBookmarkTick[MAXPLAYERS+1];
 
+int g_iEnemyVisibleOffset;
+
 Handle g_hfwdOnStartRecording;
 Handle g_hfwdOnRecordingPauseStateChanged;
 Handle g_hfwdOnRecordingBookmarkSaved;
@@ -139,6 +156,7 @@ Handle g_hfwdOnPlayerMimicBookmark;
 // DHooks/SDK
 Handle g_hTeleport;
 Handle g_hSetOrigin;
+Handle g_hBotSetLookAt;
 
 ConVar g_hCVOriginSnapshotInterval;
 ConVar g_hCVRespawnOnDeath;
@@ -232,6 +250,20 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	if ((g_hBotSetLookAt = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
+	
+	if ((g_iEnemyVisibleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isEnemyVisible")) == -1)
+		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
 	
 	delete hGameConfig;
 }
@@ -488,7 +520,15 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
 	// Bot is mimicing something
 	if(g_hBotMimicsRecord[client] == null)
+	{
+		g_fPreviousAngles[client][0] = 0.0;
+		g_fPreviousAngles[client][1] = 0.0;
+		g_fPreviousAngles[client][2] = 0.0;
+		g_fPreviousVelocity[client][0] = 0.0;
+		g_fPreviousVelocity[client][1] = 0.0;
+		g_fPreviousVelocity[client][2] = 0.0;
 		return Plugin_Continue;
+	}
 
 	// Is this a valid living bot?
 	if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
@@ -501,6 +541,31 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		BotMimic_StopPlayerMimic(client);
 		return Plugin_Continue;
 	}
+	
+	int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+	int iDefIndex = IsValidEntity(iActiveWeapon) ? GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex") : 0;
+	
+	bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
+	
+	if((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_PRIMARY || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_SECONDARY) && bIsEnemyVisible && GetVectorLength(g_fPreviousVelocity[client]) < 100.0)
+	{
+		SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+		g_bWasInterrupted[client] = true;
+		return Plugin_Continue;
+	}
+	
+	if(g_bWasInterrupted[client])
+	{
+		float fLookOrigin[3];
+		
+		GetClientCrosshairOrigin(client, g_fPreviousAngles[client], fLookOrigin);
+		BotSetLookAt(client, "Use entity", fLookOrigin, PRIORITY_HIGH, 0.5, false, 0.0, false);
+		
+		if(!IsLookingAtPosition(client, fLookOrigin, 0.2))
+			return Plugin_Continue;
+	}
+	
+	SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 	
 	FrameInfo iFrame;
 	g_hBotMimicsRecord[client].GetArray(g_iBotMimicTick[client], iFrame, sizeof(FrameInfo));
@@ -516,6 +581,9 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	
 	float fActualVelocity[3];
 	Array_Copy(iFrame.actualVelocity, fActualVelocity, 3);
+	
+	Array_Copy(iFrame.predictedAngles, g_fPreviousAngles[client], 2);
+	Array_Copy(iFrame.actualVelocity, g_fPreviousVelocity[client], 3);
 	
 	// We're supposed to teleport stuff?
 	/*if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
@@ -578,7 +646,19 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	{
 		g_bValidTeleportCall[client] = true;
 		TeleportEntity(client, g_fInitialPosition[client], g_fInitialAngles[client], fActualVelocity);
+		bool bHasC4 = false;
+			
+		if(Client_HasWeapon(client, "weapon_c4"))
+		{
+			bHasC4 = true;
+		}
+		
 		Client_RemoveAllWeapons(client);
+		
+		if(bHasC4)
+		{
+			GivePlayerItem(client, "weapon_c4");
+		}
 		
 		Call_StartForward(g_hfwdOnPlayerMimicLoops);
 		Call_PushCell(client);
@@ -655,6 +735,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		Call_Finish();
 	}
 	
+	g_bWasInterrupted[client] = false;
 	g_iBotMimicTick[client]++;
 	
 	return Plugin_Changed;
@@ -1999,4 +2080,79 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
+}
+
+stock bool GetClientCrosshairOrigin(int client, float fAngles[3], float pOrigin[3], bool filter_players = true, float distance = -35.0)
+{
+	if (client == 0 || client > MaxClients || !IsClientInGame(client))
+		return false;
+
+	float vOrigin[3];
+	GetClientEyePosition(client,vOrigin);
+
+	Handle trace = TR_TraceRayFilterEx(vOrigin, fAngles, MASK_SHOT, RayType_Infinite, filter_players ? TraceEntityFilterPlayer : TraceEntityFilterNone, client);
+	bool bReturn = TR_DidHit(trace);
+
+	if (bReturn)
+	{
+		float vStart[3];
+		TR_GetEndPosition(vStart, trace);
+
+		float vBuffer[3];
+		GetAngleVectors(fAngles, vBuffer, NULL_VECTOR, NULL_VECTOR);
+
+		pOrigin[0] = vStart[0] + (vBuffer[0] * distance);
+		pOrigin[1] = vStart[1] + (vBuffer[1] * distance);
+		pOrigin[2] = vStart[2] + (vBuffer[2] * distance);
+	}
+
+	delete trace;
+	return bReturn;
+}
+
+public bool TraceEntityFilterPlayer(int entity, int contentsMask, any data)
+{
+	return entity > MaxClients || !entity;
+}
+
+public bool TraceEntityFilterNone(int entity, int contentsMask, any data)
+{
+	return entity != data;
+}
+
+public bool IsLookingAtPosition(int client, float fPos[3], float fAngleTolerance)
+{
+	float fEyePos[3], fEyeAngles[3], fTo[3], fIdealAngles[3];
+	GetClientEyePosition(client, fEyePos);
+	SubtractVectors(fPos, fEyePos, fTo);
+
+	GetVectorAngles(fTo, fIdealAngles);
+
+	GetClientEyeAngles(client, fEyeAngles);
+
+	float deltaYaw = AngleNormalize(fIdealAngles[1] - fEyeAngles[1]);
+	float deltaPitch = AngleNormalize(fIdealAngles[0] - fEyeAngles[0]);
+
+	if (FloatAbs(deltaYaw) < fAngleTolerance && FloatAbs(deltaPitch) < fAngleTolerance)
+		return true;
+
+	return false;
+}
+
+stock float AngleNormalize(float fAngle)
+{
+	fAngle -= RoundToFloor(fAngle / 360.0) * 360.0;
+	
+	if (fAngle > 180)
+		fAngle -= 360;
+	
+	if (fAngle < -180)
+		fAngle += 360;
+
+	return fAngle;
+}
+
+public void BotSetLookAt(int client, const char[] szDesc, const float fPos[3], PriorityType pri, float fDuration, bool bClearIfClose, float fAngleTolerance, bool bAttack)
+{
+	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
 }

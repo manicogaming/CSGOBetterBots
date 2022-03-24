@@ -10,12 +10,23 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xC0\x83\xEC\x34\x53\x8B\x5D\x08\x56\x8B\xF1"
 			}
+			"CCSBot::SetLookAt"
+			{
+				// Has '%3.1f SetLookAt( %s ), duration = %f\n' string
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x56\x57\x8B\x3D\x2A\x2A\x2A\x2A"
+			}
 		}
 		"Offsets"
 		{
 			"Teleport"
 			{
 				"windows"	"114"
+			}
+			"CCSBot::m_isEnemyVisible"
+			{
+				//Is in CCSBot::Update above the string 'Ouch! Retaliating!\n'
+				"windows"	   "24072"
 			}
 		}
 	}

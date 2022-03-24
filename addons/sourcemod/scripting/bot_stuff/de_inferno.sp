@@ -152,15 +152,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/misutaaa Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/shox Role.rec");
 				}
-				case 11: //EG Lane Rush
-				{
-					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/Brehze Role.rec");
-					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/CeRq Role.rec");
-					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/Ethan Role.rec");
-					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/stanislaw Role.rec");
-					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Lane Rush/tarik Role.rec");
-				}
-				case 12: //Spirit Lane Execute
+				case 11: //Spirit Lane Execute
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/Spirit Lane Execute/sdy Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/Spirit Lane Execute/mir Role.rec");
@@ -168,7 +160,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Spirit Lane Execute/iDISBALANCE Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Spirit Lane Execute/tarik Role.rec");
 				}
-				case 13: //FaZe B Pop
+				case 12: //FaZe B Pop
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/FaZe B Pop/Kjaerbye Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/FaZe B Pop/broky Role.rec");
@@ -176,7 +168,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/FaZe B Pop/NiKo Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/FaZe B Pop/coldzera Role.rec");
 				}
-				case 14: //Cloud9 A Execute
+				case 13: //Cloud9 A Execute
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 A Execute/Sonic Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 A Execute/floppy Role.rec");
@@ -184,7 +176,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 A Execute/motm Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 A Execute/oSee Role.rec");
 				}
-				case 15: //mouz A Crunch
+				case 14: //mouz A Crunch
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/mouz A Crunch/chrisJ Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/mouz A Crunch/frozen Role.rec");
@@ -192,7 +184,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/mouz A Crunch/woxic Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/mouz A Crunch/karrigan Role.rec");
 				}
-				case 16: //EG Aps Pop
+				case 15: //EG Aps Pop
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Aps Pop/stanislaw Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/EG Aps Pop/Ethan Role.rec");
