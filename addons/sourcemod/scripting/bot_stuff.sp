@@ -4574,7 +4574,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				g_bEveryoneDead = true;
 			}
 			
-			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) < 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
+			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) <= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
 				BotMimic_StopPlayerMimic(client);
 			
 			if (g_bIsProBot[client])
@@ -4902,7 +4902,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	if(bWarmupPeriod || g_bTerroristEco || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
 	
-	if(Math_GetRandomInt(1,100) <= 50)
+	if(Math_GetRandomInt(1,100) <= 55)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -5023,11 +5023,11 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	if (iVictim == iAttacker || !IsValidClient(iAttacker) || !IsPlayerAlive(iAttacker))
 		return Plugin_Continue;
 	
-	/*if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
+	if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
 	{
 		g_bAbortExecute = true;
-		BotEquipBestWeapon(iVictim, true);
-	}*/
+		CreateTimer(0.1, Timer_DelayBestWeapon, GetClientUserId(iVictim));
+	}
 	
 	return Plugin_Continue;
 }
@@ -5313,6 +5313,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
+					g_bAbortExecute = true;
+					CreateTimer(0.1, Timer_DelayBestWeapon, GetClientUserId(client));
+					
 					if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
 						BotEquipBestWeapon(client, true);
 				
@@ -5396,7 +5399,8 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
+		if(g_iCurrentRound != 0 && g_iCurrentRound != 15)
+			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
 		
 		if (g_iUSPChance[client] >= 25)
 		{
@@ -5868,6 +5872,16 @@ public Action Timer_DelaySwitch(Handle hTimer, any client)
 		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
 	}
+	
+	return Plugin_Stop;
+}
+
+public Action Timer_DelayBestWeapon(Handle hTimer, any client)
+{
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+		BotEquipBestWeapon(client, true);
 	
 	return Plugin_Stop;
 }
