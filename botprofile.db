@@ -432,7 +432,7 @@ ProP+Rifle+RiflePersonality "ALEX"
 	VoicePitch = 93
 End
 
-ProP+SniperPro+SniperPersonality "regali"
+ProP+SniperPro+SniperPersonality "poizon"
 	VoicePitch = 76
 End
 
@@ -440,7 +440,7 @@ ProP+Rifle+RiflePersonality "KRIMZ"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "Brollan"
+ProP+Rifle+RiflePersonality "Peppzor"
 	VoicePitch = 88
 End
 
@@ -664,7 +664,7 @@ ProP+Rifle+RiflePersonality "tabseN"
 	VoicePitch = 80
 End
 
-ProP+Rifle+RiflePersonality "k1to"
+ProP+Rifle+RiflePersonality "Krimbo"
 	VoicePitch = 101
 End
 
@@ -960,11 +960,11 @@ ProP+Rifle+RiflePersonality "TACO"
 	VoicePitch = 88
 End
 
-ProP+SniperPro+SniperPersonality "b4rtiN"
+ProP+SniperPro+SniperPersonality "HEN1"
 	VoicePitch = 78
 End
 
-ProP+Rifle+RiflePersonality "felps"
+ProP+Rifle+RiflePersonality "b4rtiN"
 	VoicePitch = 84
 End
 
@@ -1342,7 +1342,7 @@ ProP+Rifle+RiflePersonality "snapy"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "RIZZ"
+ProP+Rifle+RiflePersonality "shr"
 	VoicePitch = 89
 End
 
@@ -1456,7 +1456,7 @@ ProP+Rifle+RiflePersonality "Jaepe"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "shr"
+ProP+Rifle+RiflePersonality "fakes2"
 	VoicePitch = 102
 End
 
@@ -2478,7 +2478,7 @@ ProP+Rifle+RiflePersonality "Niix"
 	VoicePitch = 108
 End
 
-ProP+SniperPro+SniperPersonality "kaNibalistic"
+ProP+SniperPro+SniperPersonality "Leggy"
 	VoicePitch = 100
 End
 
@@ -3350,6 +3350,50 @@ End
 
 ProP+Rifle+RiflePersonality "cool4st"
 	VoicePitch = 81
+End
+
+//1shot Players
+
+ProP+Rifle+RiflePersonality "GreK"
+	VoicePitch = 90
+End
+
+ProP+SniperPro+SniperPersonality "FpSSS"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "Get_Jeka"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "faydett"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "synyx"
+	VoicePitch = 85
+End
+
+//Boca Players
+
+ProP+Rifle+RiflePersonality "luchov"
+	VoicePitch = 105
+End
+
+ProP+SniperPro+SniperPersonality "elemeNt"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "alexer"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "nbl"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "restik"
+	VoicePitch = 102
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

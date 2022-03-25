@@ -37,10 +37,10 @@
 	"NiKo" 				"81417650"
 	"m0NESY" 			"114497073"
 	//fnatic Players
-	"regali" 			"138197501"
+	"poizon" 			"117537138"
 	"ALEX" 				"44605706"
 	"KRIMZ" 			"71385856"
-	"Brollan" 			"178562747"
+	"Peppzor" 			"328124340"
 	"mezii" 			"12874964"
 	//Dynamo Players
 	"Dytor" 			"241288610"
@@ -101,7 +101,7 @@
 	"syrsoN" 			"19857269"
 	"faveN" 			"157930364"
 	"tabseN" 			"1225952"
-	"k1to" 				"222196859"
+	"Krimbo" 			"210365363"
 	//FURIA Players
 	"yuurih" 			"204704832"
 	"arT" 				"83503844"
@@ -183,7 +183,7 @@
 	//GODSENT Players
 	"TACO" 				"52876568"
 	"b4rtiN" 			"169818854"
-	"felps" 			"22765766"
+	"HEN1" 				"57761535"
 	"latto" 			"889754458"
 	"dumau" 			"234059589"
 	//Lions Players
@@ -286,7 +286,7 @@
 	"slaxx" 			"118792535"
 	"Lr0z1n" 			"234244633"
 	"snapy" 			"268698824"
-	"RIZZ" 				"31830670"
+	"shr" 				"66458785"
 	"shellzi" 			"243140003"
 	//NASR Players
 	"Remind" 			"121767731"
@@ -313,7 +313,7 @@
 	"XiaosaGe" 			"225577877"	
 	"Ayeon" 			"341459799"	
 	//GTZ Players
-	"shr" 				"66458785"
+	"fakes2" 			"96848867"
 	"Jaepe" 			"251441860"
 	"Linko" 			"186797108"
 	"rafaxF" 			"134941478"
@@ -597,7 +597,7 @@
 	//DNMK Players
 	"dyvo"				"172602391"
 	"Niix" 				"318367596"
-	"kaNibalistic" 		"32730121"
+	"Leggy" 			"19776816"
 	"Doru" 				"135905209"
 	"Dubee" 			"162968873"
 	//iNation Players
@@ -834,4 +834,16 @@
 	"Kntz"				"80230397"
 	"dobu" 				"159891913"
 	"cool4st"			"882582488"
+	//1shot Players
+	"GreK" 				"125115130"
+	"FpSSS"				"49076137"
+	"Get_Jeka"			"285517906"
+	"faydett" 			"210311610"
+	"synyx"				"271283304"
+	//Boca Players
+	"luchov" 			"107456470"
+	"elemeNt"			"84718029"
+	"alexer"			"126154442"
+	"nbl" 				"132456979"
+	"restik"			"75391591"
 }

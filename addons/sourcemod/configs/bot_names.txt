@@ -37,10 +37,10 @@
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
-	"regali" 			"fnatic"
+	"poizon" 			"fnatic"
 	"ALEX" 				"fnatic"
 	"KRIMZ" 			"fnatic"
-	"Brollan" 			"fnatic"
+	"Peppzor" 			"fnatic"
 	"mezii" 			"fnatic"
 	//Dynamo Players
 	"Dytor" 			"Dynamo"
@@ -101,7 +101,7 @@
 	"syrsoN" 			"BIG"
 	"faveN" 			"BIG"
 	"tabseN" 			"BIG"
-	"k1to" 				"BIG"
+	"Krimbo" 			"BIG"
 	//FURIA Players
 	"yuurih" 			"FURIA"
 	"arT" 				"FURIA"
@@ -183,7 +183,7 @@
 	//GODSENT Players
 	"TACO" 				"GODSENT"
 	"b4rtiN" 			"GODSENT"
-	"felps" 			"GODSENT"
+	"HEN1" 				"GODSENT"
 	"latto" 			"GODSENT"
 	"dumau" 			"GODSENT"
 	//Lions Players
@@ -286,7 +286,7 @@
 	"slaxx" 			"OFFSET"
 	"Lr0z1n" 			"OFFSET"
 	"snapy" 			"OFFSET"
-	"RIZZ" 				"OFFSET"
+	"shr" 				"OFFSET"
 	"shellzi" 			"OFFSET"
 	//NASR Players
 	"Remind" 			"NASR"
@@ -317,7 +317,7 @@
 	"rafaxF" 			"GTZ"
 	"StepA" 			"GTZ"
 	"Jaepe" 			"GTZ"
-	"shr" 				"GTZ"
+	"fakes2" 			"GTZ"
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
@@ -596,7 +596,7 @@
 	"s1ren"				"Spirit"
 	//DNMK Players
 	"Niix" 				"DNMK"
-	"kaNibalistic" 		"DNMK"
+	"Leggy" 			"DNMK"
 	"dyvo" 				"DNMK"
 	"Doru" 				"DNMK"
 	"Dubee"				"DNMK"
@@ -834,4 +834,16 @@
 	"Kntz"				"NKT"
 	"dobu" 				"NKT"
 	"cool4st"			"NKT"
+	//1shot Players
+	"GreK" 				"1shot"
+	"FpSSS"				"1shot"
+	"Get_Jeka"			"1shot"
+	"faydett" 			"1shot"
+	"synyx"				"1shot"
+	//Boca Players
+	"luchov" 			"Boca"
+	"elemeNt"			"Boca"
+	"alexer"			"Boca"
+	"nbl" 				"Boca"
+	"restik"			"Boca"
 }
