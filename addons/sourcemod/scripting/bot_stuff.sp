@@ -4851,9 +4851,10 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 								
 								if(IsValidEntity(iOtherPrimary))
 								{
+									int iDefIndex = GetEntProp(iOtherPrimary, Prop_Send, "m_iItemDefinitionIndex");
 									GetEntityClassname(iOtherPrimary, g_szPreviousBuy[j], 128);
 									ReplaceString(g_szPreviousBuy[j], 128, "weapon_", "");
-									CSWeaponID pWeaponID = CS_AliasToWeaponID(g_szPreviousBuy[j]);
+									CSWeaponID pWeaponID = CS_ItemDefIndexToID(iDefIndex);
 									
 									if(pWeaponID != CSWeapon_NONE && iMoney >= CS_GetWeaponPrice(j, pWeaponID))
 									{
@@ -4952,7 +4953,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	}
 	
 	g_bHalftimeSwitch = false;
-	CreateTimer(0.5, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(0.2, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -5309,7 +5310,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 {
 	if (IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
-		if(g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
+		if(!g_bFreezetimeEnd && g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
 		{
 			CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
 			FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
