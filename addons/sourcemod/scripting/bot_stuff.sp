@@ -4864,6 +4864,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, true, 5.0, false);
 										g_bDropWeapon[j] = true;
 										g_bHasGottenDrop[i] = true;
+										LogMessage("BOT STUFF: %N is giving drop to %N", j, i);
 										break;
 									}
 								}
@@ -5005,7 +5006,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_vertigo") == 0)
 		{
-			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 2) : Math_GetRandomInt(1, 2);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 6) : Math_GetRandomInt(1, 3);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareVertigoExecutes();
 		}
@@ -5315,6 +5316,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
 			FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
 			g_bDropWeapon[client] = false;
+			LogMessage("BOT STUFF: %N has dropped a weapon", client);
 		}
 	
 		if(g_bFreezetimeEnd)

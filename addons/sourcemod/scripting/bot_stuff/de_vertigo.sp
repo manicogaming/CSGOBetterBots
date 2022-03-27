@@ -26,6 +26,38 @@ public void PrepareVertigoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/CPH Flames Mid Pistol/jabbi Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/CPH Flames Mid Pistol/nicoodoz Role.rec");
 				}
+				case 3: //Gambit 4 A 1 Mid Pistol
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit 4 A 1 Mid Pistol/Hobbit Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit 4 A 1 Mid Pistol/nafany Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit 4 A 1 Mid Pistol/SH1R0 Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit 4 A 1 Mid Pistol/interz Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit 4 A 1 Mid Pistol/Ax1Le Role.rec");
+				}
+				case 4: //C9 Mid to B Pistol
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/C9 Mid to B Pistol/ALEX Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/C9 Mid to B Pistol/floppy Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/C9 Mid to B Pistol/es3tag Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/C9 Mid to B Pistol/woxic Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/C9 Mid to B Pistol/mezii Role.rec");
+				}
+				case 5: //Heroic B Pistol
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/b0RUP Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/stavn Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/niko Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/cadiaN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/TeSeS Role.rec");
+				}
+				case 6: //BIG A Pistol
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/tiziaN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/tabseN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/syrsoN Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/k1to Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/XANTARES Role.rec");
+				}
 			}
 		}
 		else
@@ -47,6 +79,14 @@ public void PrepareVertigoExecutes()
 					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/B Execute/Generator Left Smoke.rec");
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/B Execute/B Pillar Smoke.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/B Execute/Quad Molotov.rec");
+				}
+				case 3: //Astralis B Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/es3tag Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/dupreeh Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/gla1ve Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/device Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/Quad Molotov.rec");
 				}
 			}
 		}
