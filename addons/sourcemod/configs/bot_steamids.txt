@@ -267,7 +267,7 @@
 	//ORDER Players
 	"J1rah" 			"82535956"
 	"Vexite" 			"92622415"
-	"ekul" 				"38901108"
+	"tucks" 			"195797579"
 	"USTILO" 			"18903255"
 	"Valiance" 			"236090787"
 	//SKADE Players
@@ -395,7 +395,7 @@
 	"z4kr" 				"177517735"
 	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
-	"B1NGO" 			"149673357"
+	"V4D1M" 			"40409264"
 	//Impact Players
 	"RZU" 				"170869120"
 	"xCeeD" 			"180524431"
@@ -504,12 +504,6 @@
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
 	"NEOFRAG" 			"255168957"
-	//ERN Players
-	"j1NZO" 			"220770109"
-	"sehza" 			"246207065"
-	"sesL" 				"127191279"
-	"Pashorty" 			"101085277"
-	"maxe" 				"58628823"
 	//Paradox Players
 	"DannyG"			"193412411" 
 	"nettik" 			"372579523"
@@ -552,12 +546,6 @@
 	"DrqkoN" 			"245929"
 	"wasiNk" 			"164618316"
 	"devoduvek" 		"116664993"
-	//Dragons Players
-	"ped" 				"160380654"
-	"fREQ" 				"169848605"
-	"detr0it" 			"282335538"
-	"r4ul"				"66963508"
-	"ponter"			"201409161"
 	//Supremacy Players
 	".Rome" 			"420618189"
 	"GuepaRd" 			"21286400"

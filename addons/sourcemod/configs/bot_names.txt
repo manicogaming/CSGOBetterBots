@@ -267,7 +267,7 @@
 	//ORDER Players
 	"J1rah" 			"ORDER"
 	"Vexite" 			"ORDER"
-	"ekul" 				"ORDER"
+	"tucks" 			"ORDER"
 	"USTILO" 			"ORDER"
 	"Valiance" 			"ORDER"
 	//SKADE Players
@@ -395,7 +395,7 @@
 	"z4kr" 				"Lynn"
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
-	"B1NGO" 			"Lynn"
+	"V4D1M" 			"Lynn"
 	//Impact Players
 	"RZU" 				"Impact"
 	"xCeeD" 			"Impact"
@@ -504,12 +504,6 @@
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
 	"NEOFRAG" 			"SINNERS"
-	//ERN Players
-	"j1NZO" 			"ERN"
-	"sehza" 			"ERN"
-	"Pashorty" 			"ERN"	
-	"maxe" 				"ERN"
-	"sesL" 				"ERN"
 	//Paradox Players
 	"DannyG"			"Paradox" 
 	"nettik" 			"Paradox"
@@ -552,12 +546,6 @@
 	"SBT" 				"Ambush"
 	"s0ne" 				"Ambush"
 	"devoduvek"			"Ambush"
-	//Dragons Players
-	"ped" 				"Dragons"
-	"fREQ" 				"Dragons"
-	"ponter" 			"Dragons"
-	"detr0it" 			"Dragons"
-	"r4ul"				"Dragons"
 	//Supremacy Players
 	".Rome" 			"Supremacy"
 	"GuepaRd" 			"Supremacy"

@@ -139,10 +139,8 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	HookEventEx("player_spawn", OnPlayerSpawn);
-	HookEventEx("player_death", OnPlayerDeath);
 	HookEventEx("round_start", OnRoundStart);
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
-	HookEventEx("round_end", OnRoundEnd);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
 	HookEventEx("round_announce_last_round_half", OnLastRoundHalf);
@@ -236,7 +234,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_tigers", Team_Tigers);
 	RegConsoleCmd("team_9z", Team_9z);
 	RegConsoleCmd("team_sinners", Team_SINNERS);
-	RegConsoleCmd("team_ern", Team_ERN);
 	RegConsoleCmd("team_paradox", Team_Paradox);
 	RegConsoleCmd("team_flames", Team_Flames);
 	RegConsoleCmd("team_ep", Team_EP);
@@ -244,7 +241,6 @@ public void OnPluginStart()
 	RegConsoleCmd("team_alpha", Team_Alpha);
 	RegConsoleCmd("team_sangal", Team_Sangal);
 	RegConsoleCmd("team_ambush", Team_Ambush);
-	RegConsoleCmd("team_dragons", Team_Dragons);
 	RegConsoleCmd("team_supremacy", Team_Supremacy);
 	RegConsoleCmd("team_planb", Team_planB);
 	RegConsoleCmd("team_avez", Team_AVEZ);
@@ -1625,7 +1621,7 @@ public Action Team_ORDER(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "J1rah");
 		ServerCommand("bot_add_ct %s", "Vexite");
-		ServerCommand("bot_add_ct %s", "ekul");
+		ServerCommand("bot_add_ct %s", "tucks");
 		ServerCommand("bot_add_ct %s", "USTILO");
 		ServerCommand("bot_add_ct %s", "Valiance");
 		ServerCommand("mp_teamlogo_1 order");
@@ -1636,7 +1632,7 @@ public Action Team_ORDER(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "J1rah");
 		ServerCommand("bot_add_t %s", "Vexite");
-		ServerCommand("bot_add_t %s", "ekul");
+		ServerCommand("bot_add_t %s", "tucks");
 		ServerCommand("bot_add_t %s", "USTILO");
 		ServerCommand("bot_add_t %s", "Valiance");
 		ServerCommand("mp_teamlogo_2 order");
@@ -2257,7 +2253,7 @@ public Action Team_Lynn(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "z4kr");
 		ServerCommand("bot_add_ct %s", "Starry");
 		ServerCommand("bot_add_ct %s", "EXPRO");
-		ServerCommand("bot_add_ct %s", "B1NGO");
+		ServerCommand("bot_add_ct %s", "V4D1M");
 		ServerCommand("mp_teamlogo_1 lynn");
 	}
 	
@@ -2268,7 +2264,7 @@ public Action Team_Lynn(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "z4kr");
 		ServerCommand("bot_add_t %s", "Starry");
 		ServerCommand("bot_add_t %s", "EXPRO");
-		ServerCommand("bot_add_t %s", "B1NGO");
+		ServerCommand("bot_add_t %s", "V4D1M");
 		ServerCommand("mp_teamlogo_2 lynn");
 	}
 	
@@ -2815,36 +2811,6 @@ public Action Team_SINNERS(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_ERN(int client, int iArgs)
-{
-	char szArg[12];
-	GetCmdArg(1, szArg, sizeof(szArg));
-	
-	if (strcmp(szArg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "j1NZO");
-		ServerCommand("bot_add_ct %s", "sesL");
-		ServerCommand("bot_add_ct %s", "Pashorty");
-		ServerCommand("bot_add_ct %s", "maxe");
-		ServerCommand("bot_add_ct %s", "sehza");
-		ServerCommand("mp_teamlogo_1 ern");
-	}
-	
-	if (strcmp(szArg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "j1NZO");
-		ServerCommand("bot_add_t %s", "sesL");
-		ServerCommand("bot_add_t %s", "Pashorty");
-		ServerCommand("bot_add_t %s", "maxe");
-		ServerCommand("bot_add_t %s", "sehza");
-		ServerCommand("mp_teamlogo_2 ern");
-	}
-	
-	return Plugin_Handled;
-}
-
 public Action Team_Paradox(int client, int iArgs)
 {
 	char szArg[12];
@@ -3050,36 +3016,6 @@ public Action Team_Ambush(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "s0ne");
 		ServerCommand("bot_add_t %s", "devoduvek");
 		ServerCommand("mp_teamlogo_2 amb");
-	}
-	
-	return Plugin_Handled;
-}
-
-public Action Team_Dragons(int client, int iArgs)
-{
-	char szArg[12];
-	GetCmdArg(1, szArg, sizeof(szArg));
-	
-	if (strcmp(szArg, "ct") == 0)
-	{
-		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "ped");
-		ServerCommand("bot_add_ct %s", "fREQ");
-		ServerCommand("bot_add_ct %s", "ponter");
-		ServerCommand("bot_add_ct %s", "detr0it");
-		ServerCommand("bot_add_ct %s", "r4ul");
-		ServerCommand("mp_teamlogo_1 drag");
-	}
-	
-	if (strcmp(szArg, "t") == 0)
-	{
-		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "ped");
-		ServerCommand("bot_add_t %s", "fREQ");
-		ServerCommand("bot_add_t %s", "ponter");
-		ServerCommand("bot_add_t %s", "detr0it");
-		ServerCommand("bot_add_t %s", "r4ul");
-		ServerCommand("mp_teamlogo_2 drag");
 	}
 	
 	return Plugin_Handled;
@@ -4864,7 +4800,6 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, false, 5.0, false);
 										g_bDropWeapon[j] = true;
 										g_bHasGottenDrop[i] = true;
-										LogMessage("BOT STUFF: %N is giving drop to %N", j, i);
 										break;
 									}
 								}
@@ -4938,8 +4873,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bDropWeapon[i] = false;
 			g_bHasGottenDrop[i] = false;
 			g_iTarget[i] = -1;
-			if(BotMimic_IsPlayerMimicing(i))
-				BotMimic_StopPlayerMimic(i);
 				
 			if(g_bIsBombScenario || g_bIsHostageScenario)
 			{
@@ -5022,15 +4955,6 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareAncientExecutes();
 		}
-	}
-}
-
-public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
-{
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
-			BotMimic_StopPlayerMimic(i);
 	}
 }
 
@@ -5316,7 +5240,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
 			FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
 			g_bDropWeapon[client] = false;
-			LogMessage("BOT STUFF: %N has dropped a weapon", client);
 		}
 	
 		if(g_bFreezetimeEnd)
@@ -5480,14 +5403,6 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			}
 		}
 	}
-}
-
-public void OnPlayerDeath(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	
-	if (IsValidClient(client) && IsFakeClient(client) && g_bIsProBot[client] && BotMimic_IsPlayerMimicing(client))
-		BotMimic_StopPlayerMimic(client);
 }
 
 public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)

@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Thu Mar 31 22:48:08 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Apr 04 00:06:35 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -222,7 +222,7 @@ de_fire
 de_forlorn
 de_fortress
 de_garrison
-workshop/1215927733/de_gloss_r1
+de_gloss_r1
 de_golden
 de_graveyard
 de_grind
@@ -323,6 +323,7 @@ de_stmarc
 de_stolen
 de_storehouse
 de_studio
+workshop/1318698056/de_subzero
 de_sugarcane
 de_sunburn
 de_tangerine_b2_17

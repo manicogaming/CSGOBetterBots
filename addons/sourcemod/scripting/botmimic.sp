@@ -499,9 +499,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 {
 	// Bot is mimicing something
 	if(g_hBotMimicsRecord[client] == null)
-	{
 		return Plugin_Continue;
-	}
 
 	// Is this a valid living bot?
 	if(!IsPlayerAlive(client) || GetClientTeam(client) < CS_TEAM_T)
@@ -531,7 +529,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	Array_Copy(iFrame.actualVelocity, fActualVelocity, 3);
 	
 	// We're supposed to teleport stuff?
-	/*if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
+	if(iFrame.additionalFields & (ADDITIONAL_FIELD_TELEPORTED_ORIGIN|ADDITIONAL_FIELD_TELEPORTED_ANGLES|ADDITIONAL_FIELD_TELEPORTED_VELOCITY))
 	{
 		AdditionalTeleport iAT;
 		ArrayList hAdditionalTeleport;
@@ -584,7 +582,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 		
 		g_iCurrentAdditionalTeleportIndex[client]++;
-	}*/
+	}
 	
 	// This is the first tick. Teleport him to the initial position
 	if(g_iBotMimicTick[client] == 0)
@@ -691,51 +689,26 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 public void Event_OnPlayerSpawn(Event event, const char[] name, bool dontBroadcast)
 {
 	int client = GetClientOfUserId(event.GetInt("userid"));
-	if(!client)
+	if(!IsValidClient(client))
 		return;
 	
 	// Restart moving on spawn!
 	if(g_hBotMimicsRecord[client] != null)
-	{
-		g_iBotMimicTick[client] = 0;
-		g_iCurrentAdditionalTeleportIndex[client] = 0;
-	}
+		BotMimic_StopPlayerMimic(client);
 }
 
 public void Event_OnPlayerDeath(Event event, const char[] name, bool dontBroadcast)
 {
 	int client = GetClientOfUserId(event.GetInt("userid"));
-	if(!client)
+	if(!IsValidClient(client))
 		return;
 	
 	// This one has been recording currently
 	if(g_hRecording[client] != null)
-	{
 		BotMimic_StopRecording(client, true);
-	}
 	// This bot has been playing one
 	else if(g_hBotMimicsRecord[client] != null)
-	{
-		// Respawn the bot after death!
-		g_iBotMimicTick[client] = 0;
-		g_iCurrentAdditionalTeleportIndex[client] = 0;
-		if(g_hCVRespawnOnDeath.BoolValue && GetClientTeam(client) >= CS_TEAM_T)
-			CreateTimer(1.0, Timer_DelayedRespawn, GetClientUserId(client), TIMER_FLAG_NO_MAPCHANGE);
-	}
-}
-/**
- * Timer Callbacks
- */
-public Action Timer_DelayedRespawn(Handle timer, any userid)
-{
-	int client = GetClientOfUserId(userid);
-	if(!client)
-		return Plugin_Stop;
-	
-	if(g_hBotMimicsRecord[client] != null && IsClientInGame(client) && !IsPlayerAlive(client) && IsFakeClient(client) && GetClientTeam(client) >= CS_TEAM_T)
-		CS_RespawnPlayer(client);
-	
-	return Plugin_Stop;
+		BotMimic_StopPlayerMimic(client);
 }
 
 
@@ -749,9 +722,8 @@ public Action Hook_WeaponCanSwitchTo(int client, int weapon)
 		return Plugin_Continue;
 	
 	if(g_iBotActiveWeapon[client] != weapon)
-	{
 		return Plugin_Stop;
-	}
+
 	return Plugin_Continue;
 }
 
@@ -2024,4 +1996,9 @@ stock void GetFileFromFrameHandle(ArrayList frames, char[] path, int maxlen)
 		strcopy(path, maxlen, sPath);
 		break;
 	}
+}
+
+stock bool IsValidClient(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }

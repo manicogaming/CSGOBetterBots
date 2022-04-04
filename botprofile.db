@@ -1272,7 +1272,7 @@ ProP+SniperPro+SniperPersonality "Vexite"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "ekul"
+ProP+Rifle+RiflePersonality "tucks"
 	VoicePitch = 109
 End
 
@@ -1742,7 +1742,7 @@ ProP+Rifle+RiflePersonality "EXPRO"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "B1NGO"
+ProP+Rifle+RiflePersonality "V4D1M"
 	VoicePitch = 114
 End
 
@@ -2142,28 +2142,6 @@ ProP+Rifle+RiflePersonality "NEOFRAG"
 	VoicePitch = 84
 End
 
-//ERN Players
-
-ProP+Rifle+RiflePersonality "j1NZO"
-	VoicePitch = 113
-End
-
-ProP+SniperPro+SniperPersonality "sesL"
-	VoicePitch = 109
-End
-
-ProP+Rifle+RiflePersonality "Pashorty"
-	VoicePitch = 75
-End
-
-ProP+Rifle+RiflePersonality "maxe"
-	VoicePitch = 100
-End
-
-ProP+Rifle+RiflePersonality "sehza"
-	VoicePitch = 81
-End
-
 //Paradox Players
 
 ProP+Rifle+RiflePersonality "DannyG"
@@ -2316,28 +2294,6 @@ End
 
 ProP+Rifle+RiflePersonality "devoduvek"
 	VoicePitch = 95
-End
-
-//Dragons Players
-
-ProP+Rifle+RiflePersonality "ped"
-	VoicePitch = 85
-End
-
-ProP+SniperPro+SniperPersonality "fREQ"
-	VoicePitch = 99
-End
-
-ProP+Rifle+RiflePersonality "ponter"
-	VoicePitch = 100
-End
-
-ProP+Rifle+RiflePersonality "detr0it"
-	VoicePitch = 90
-End
-
-ProP+Rifle+RiflePersonality "r4ul"
-	VoicePitch = 94
 End
 
 //Supremacy Players

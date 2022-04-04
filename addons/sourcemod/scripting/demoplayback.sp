@@ -156,9 +156,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		int iKnifeSlot = GetPlayerWeaponSlot(client, CS_SLOT_KNIFE);
 	
 		if(iKnifeSlot == -1)
-		{
 			GivePlayerItem(client, "weapon_knife");
-		}
 		
 		if(strcmp(g_szWeapon_1[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_1[g_iCurrentTick[client]]) == -1)
 		{
@@ -167,9 +165,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_1[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_1[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_1[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(strcmp(g_szWeapon_2[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_2[g_iCurrentTick[client]]) == -1)
@@ -179,9 +175,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_2[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_2[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_2[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(strcmp(g_szWeapon_3[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_3[g_iCurrentTick[client]]) == -1)
@@ -191,9 +185,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_3[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_3[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_3[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(strcmp(g_szWeapon_4[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_4[g_iCurrentTick[client]]) == -1)
@@ -203,9 +195,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_4[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_4[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_4[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(strcmp(g_szWeapon_5[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_5[g_iCurrentTick[client]]) == -1)
@@ -215,9 +205,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_5[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_5[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_5[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(strcmp(g_szWeapon_6[g_iCurrentTick[client]], "NULL") != 0 && eItems_FindWeaponByClassName(client, g_szWeapon_6[g_iCurrentTick[client]]) == -1)
@@ -227,31 +215,23 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			&& StrContains(g_szWeapon_6[g_iCurrentTick[client]], "flashbang") == -1 
 			&& StrContains(g_szWeapon_6[g_iCurrentTick[client]], "decoy") == -1 
 			&& StrContains(g_szWeapon_6[g_iCurrentTick[client]], "molotov") == -1)
-			{
 				EquipPlayerWeapon(client, iNewWeapon);
-			}
 		}
 		
 		if(g_iCurrentTick[client] == 0)
-		{
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
-		}
 		
 		if(eItems_GetWeaponSlotByDefIndex(g_iCurDefIndex[g_iCurrentTick[client]]) == CS_SLOT_GRENADE)
 		{
 			if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 1)
 			{
 				if(!(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0))
-				{
 					iButtons |= IN_ATTACK;
-				}
 			}
 			else if(strcmp(g_szPinPulled[g_iCurrentTick[client]], "true") == 0 && g_iThrowStrength[g_iCurrentTick[client]] == 0)
 			{
 				if(!(g_iCurrentTick[client] <= g_iMaxTick && strcmp(g_szPinPulled[g_iCurrentTick[client]+1], "false") == 0))
-				{
 					iButtons |= IN_ATTACK2;
-				}
 			}
 		}
 		
@@ -262,24 +242,16 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons |= IN_SPEED;
 		
 		if(g_iHasJumped[g_iCurrentTick[client]] == 1)
-		{
 			iButtons |= IN_JUMP;
-		}
 		
 		if(g_iHasZoomed[g_iCurrentTick[client]] == 1)
-		{
 			iButtons |= IN_ATTACK2;
-		}
 		
 		if(g_iHasFired[g_iCurrentTick[client]] == 1 && g_iCurDefIndex[g_iCurrentTick[client]] != 43 && g_iCurDefIndex[g_iCurrentTick[client]] != 44 && g_iCurDefIndex[g_iCurrentTick[client]] != 45 && g_iCurDefIndex[g_iCurrentTick[client]] != 46 && g_iCurDefIndex[g_iCurrentTick[client]] != 47 && g_iCurDefIndex[g_iCurrentTick[client]] != 48)
-		{
 			iButtons |= IN_ATTACK;
-		}
 		
 		if(g_iIsReloading[g_iCurrentTick[client]] == 1)
-		{
 			iButtons |= IN_RELOAD;
-		}
 		
 		float fNormalizedAngles[3];
 		fNormalizedAngles[0] = AngleNormalize(g_fAngles[g_iCurrentTick[client]][0]);
