@@ -4836,8 +4836,16 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
-			g_fReactionTime[client] = Math_GetRandomFloat(0.10, 0.30);
+			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0)
+			{
+				g_fLookAngleMaxAccel[client] = 20000.0;
+				g_fReactionTime[client] = 0.0;
+			}
+			else
+			{
+				g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
+				g_fReactionTime[client] = Math_GetRandomFloat(0.10, 0.30);
+			}
 			g_bIsProBot[client] = true;
 		}
 		

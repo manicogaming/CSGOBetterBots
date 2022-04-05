@@ -423,6 +423,9 @@ ProP+Rifle+RiflePersonality "Aleksib"
 End
 
 ProP+Rifle+RiflePersonality "NiKo"
+	LookAngleMaxAccelNormal = 20000.0
+	LookAngleStiffnessNormal = 900.0
+	LookAngleDampingNormal = 50.0
 	VoicePitch = 100
 End
 
@@ -543,6 +546,9 @@ ProP+Rifle+RiflePersonality "electronic"
 End
 
 ProP+SniperPro+SniperPersonality "s1mple"
+	LookAngleMaxAccelNormal = 20000.0
+	LookAngleStiffnessNormal = 900.0
+	LookAngleDampingNormal = 50.0 
 	VoicePitch = 71
 End
 
@@ -631,6 +637,9 @@ ProP+Rifle+RiflePersonality "dupreeh"
 End
 
 ProP+SniperPro+SniperPersonality "ZywOo"
+	LookAngleMaxAccelNormal = 20000.0
+	LookAngleStiffnessNormal = 900.0
+	LookAngleDampingNormal = 50.0
 	VoicePitch = 115
 End
 

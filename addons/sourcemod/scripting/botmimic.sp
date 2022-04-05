@@ -89,15 +89,6 @@ enum struct BookmarkWhileMimicing {
 	int BWM_index; // The index into the FH_bookmarks array in the fileheader for the corresponding bookmark (to get the name)
 }
 
-enum PriorityType
-{
-	PRIORITY_LOWEST = -1,
-	PRIORITY_LOW, 
-	PRIORITY_MEDIUM, 
-	PRIORITY_HIGH, 
-	PRIORITY_UNINTERRUPTABLE
-}
-
 // Where did he start recording. The bot is teleported to this position on replay.
 float g_fInitialPosition[MAXPLAYERS+1][3];
 float g_fInitialAngles[MAXPLAYERS+1][3];
@@ -264,6 +255,7 @@ public void OnLibraryAdded(const char[] name)
 		if(hGameData == null)
 			return;
 		int iOffset = GameConfGetOffset(hGameData, "Teleport");
+		delete hGameData;
 		if(iOffset == -1)
 			return;
 		
@@ -507,8 +499,6 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	
 	if(g_iBotMimicTick[client] >= g_iBotMimicRecordTickCount[client])
 	{
-		g_iBotMimicTick[client] = 0;
-		g_iCurrentAdditionalTeleportIndex[client] = 0;
 		BotMimic_StopPlayerMimic(client);
 		return Plugin_Continue;
 	}
@@ -592,16 +582,12 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		bool bHasC4 = false;
 			
 		if(Client_HasWeapon(client, "weapon_c4"))
-		{
 			bHasC4 = true;
-		}
 		
 		Client_RemoveAllWeapons(client);
 		
 		if(bHasC4)
-		{
 			GivePlayerItem(client, "weapon_c4");
-		}
 		
 		Call_StartForward(g_hfwdOnPlayerMimicLoops);
 		Call_PushCell(client);
