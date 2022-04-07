@@ -4947,7 +4947,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_vertigo") == 0)
 		{
-			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 6) : Math_GetRandomInt(1, 3);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? Math_GetRandomInt(1, 6) : Math_GetRandomInt(1, 5);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareVertigoExecutes();
 		}
@@ -5199,7 +5199,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			g_bDontSwitch[client] = true;
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
-	
+
 		float fNoisePos[3], fClientEyes[3];
 		
 		DHookGetParamVector(hParams, 2, fNoisePos);
@@ -5207,7 +5207,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fNoisePos);
 		
 		GetClientEyePosition(client, fClientEyes);
-		if(IsPointVisible(fClientEyes, fNoisePos) && LineGoesThroughSmoke(fClientEyes, fNoisePos))
+		if(Math_GetRandomInt(1, 100) <= 35 && IsPointVisible(fClientEyes, fNoisePos) && LineGoesThroughSmoke(fClientEyes, fNoisePos))
 			DHookSetParam(hParams, 7, true);
 		
 		return MRES_ChangedHandled;

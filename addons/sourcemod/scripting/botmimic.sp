@@ -543,16 +543,25 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 			if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
 			{
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, fOrigin, fAngles, fVelocity);
+				{
+					SDKCall(g_hSetOrigin, client, fOrigin);
+					TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
+				}
 				else
-					TeleportEntity(client, fOrigin, fAngles, NULL_VECTOR);
+				{
+					SDKCall(g_hSetOrigin, client, fOrigin);
+					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
+				}
 			}
 			else
 			{
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, fOrigin, NULL_VECTOR, fVelocity);
+				{
+					SDKCall(g_hSetOrigin, client, fOrigin);
+					TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
+				}
 				else
-					TeleportEntity(client, fOrigin, NULL_VECTOR, NULL_VECTOR);
+					SDKCall(g_hSetOrigin, client, fOrigin);
 			}
 		}
 		else

@@ -86,7 +86,23 @@ public void PrepareVertigoExecutes()
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/dupreeh Role.rec");
 					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/gla1ve Role.rec");
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/device Role.rec");
-					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/Quad Molotov.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Execute/Magisk Role.rec");
+				}
+				case 4: //Gambit A Site Pop
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit A Site Pop/nafany Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit A Site Pop/HObbit Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit A Site Pop/sh1ro Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit A Site Pop/interz Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Gambit A Site Pop/Ax1Le Role.rec");
+				}
+				case 5: //Astralis B Gen Execute
+				{
+					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Gen Execute/Xyp9x Role.rec");
+					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Gen Execute/device Role.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Gen Execute/gla1ve Role.rec");
+					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Gen Execute/dupreeh Role.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Astralis B Gen Execute/Magisk Role.rec");
 				}
 			}
 		}

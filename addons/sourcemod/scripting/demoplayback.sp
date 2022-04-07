@@ -218,6 +218,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				EquipPlayerWeapon(client, iNewWeapon);
 		}
 		
+		int iC4 = GetPlayerWeaponSlot(client, CS_SLOT_C4);
+		if(IsValidEntity(iC4))
+			RemovePlayerItem(client, iC4);
+			
+		
 		if(g_iCurrentTick[client] == 0)
 			TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], g_fAngles[g_iCurrentTick[client]], g_fVelocity[g_iCurrentTick[client]]);
 		
