@@ -4907,7 +4907,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	if(bWarmupPeriod || g_bTerroristEco || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
 	
-	if(Math_GetRandomInt(1,100) <= 55)
+	if(Math_GetRandomInt(1,100) <= 60)
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -5020,10 +5020,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 		return Plugin_Continue;
 	
 	if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
-	{
 		g_bAbortExecute = true;
-		CreateTimer(0.1, Timer_DelayBestWeapon, GetClientUserId(iVictim));
-	}
 	
 	return Plugin_Continue;
 }
@@ -5310,7 +5307,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
 					g_bAbortExecute = true;
-					CreateTimer(0.1, Timer_DelayBestWeapon, GetClientUserId(client));
 					
 					if (eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
 						BotEquipBestWeapon(client, true);
@@ -5395,7 +5391,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		if(g_iCurrentRound != 0 && g_iCurrentRound != 15)
+		if(g_iCurrentRound != 0 || g_iCurrentRound != 15)
 			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
 		
 		if (g_iUSPChance[client] >= 25)
@@ -5450,6 +5446,11 @@ public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
 		}
 	}
 	return Plugin_Stop;
+}
+
+public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szCategory, char[] szPath)
+{
+	CreateTimer(0.2, Timer_DelayBestWeapon, GetClientUserId(client));
 }
 
 public void OnClientDisconnect(int client)

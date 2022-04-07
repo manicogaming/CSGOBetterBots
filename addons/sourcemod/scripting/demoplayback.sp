@@ -37,6 +37,9 @@ float g_fVelocity[65535][3];
 float g_flNextCommand[MAXPLAYERS+1];
 
 Handle g_hSwitchWeaponCall = null;
+Handle g_hSetOrigin = null;
+Handle g_hSetAngles = null;
+Handle g_hSetVelocity = null;
 
 public void OnPluginStart()
 {
@@ -44,12 +47,27 @@ public void OnPluginStart()
 
 	RegConsoleCmd("sm_startplayback", Command_StartPlayback);
 	
-	Handle hGameData = LoadGameConfigFile("sdkhooks.games");
+	Handle hGameData = LoadGameConfigFile("botmimic.games");
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Virtual, "Weapon_Switch");
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	g_hSwitchWeaponCall = EndPrepSDKCall();
+	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetLocalAngles");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hSetAngles = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalAngles signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetAbsVelocity");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hSetVelocity = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetAbsVelocity signature!");
 	delete hGameData;
 }
 
@@ -264,7 +282,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		
 		Array_Copy(fNormalizedAngles, fAngles, 2);
 		
-		TeleportEntity(client, g_fPosition[g_iCurrentTick[client]], fAngles, g_fVelocity[g_iCurrentTick[client]]);
+		SDKCall(g_hSetOrigin, client, g_fPosition[g_iCurrentTick[client]]);
+		SDKCall(g_hSetAngles, client, fAngles);
+		SDKCall(g_hSetVelocity, client, g_fVelocity[g_iCurrentTick[client]]);
 		
 		if(g_iCurDefIndex[g_iCurrentTick[client]] != 49)
 		{
