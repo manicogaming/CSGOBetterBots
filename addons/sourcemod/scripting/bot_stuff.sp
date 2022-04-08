@@ -5391,7 +5391,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		if(g_iCurrentRound != 0 || g_iCurrentRound != 15)
+		if(!(g_iCurrentRound == 0 || g_iCurrentRound == 15))
 			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
 		
 		if (g_iUSPChance[client] >= 25)
