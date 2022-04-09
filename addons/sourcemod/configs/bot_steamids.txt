@@ -276,12 +276,12 @@
 	"bubble" 			"40702377"
 	"Rainwaker" 		"177848062"	
 	"SHiPZ" 			"254948893"
-	//Singularity Players
-	"seized" 			"3648428"
-	"clax" 				"168818887"
-	"SELLTER" 			"158822313"
-	"GuardiaN" 			"12065295"
-	"d1Ledez" 			"899162551"
+	//Izako Players
+	"asran" 			"163202698"
+	"Mride" 			"76243724"
+	"rico" 				"254162921"
+	"Crityourface" 		"173316902"
+	"sh3nanigan" 		"1042506424"
 	//OFFSET Players
 	"slaxx" 			"118792535"
 	"Lr0z1n" 			"234244633"
@@ -383,7 +383,7 @@
 	"MisteM" 			"175149890"
 	"motm" 				"60208330"
 	"Fadey" 			"181493840"
-	"truth" 			"79528796"
+	"Swisher" 			"222737943"
 	//Wings Players
 	"ChildKing"			"392390376" 
 	"lan" 				"183602582"
@@ -402,12 +402,6 @@
 	"Danejoris" 		"116329706"
 	"JAM" 				"197428255"
 	"grape" 			"130164677"
-	//FATE Players
-	"Patrick--" 		"98715951"
-	"hybrid" 			"95772199"
-	"niki1" 			"932616892"
-	"numb" 				"98486088"
-	"shaiK" 			"223291954"
 	//OG Players
 	"nikozan" 			"29470855"
 	"mantuu" 			"56166832"
@@ -526,7 +520,7 @@
 	"xelos" 			"28004721"
 	"adamb" 			"890801811"
 	"susp" 				"382452440"
-	"k0lty" 			"321425701"
+	"KriLLe" 			"164669290"
 	"hemzk9" 			"83597297"	
 	//Alpha Players
 	"zypztw" 			"190975326"
@@ -552,12 +546,12 @@
 	"NiK0" 				"453396504"
 	"Surviv0r" 			"876321657"
 	"ALONZO" 			"393298220"
-	//planB Players
-	"sjN" 				"126350018"
-	"ceddix" 			"356562357"
-	"steveN" 			"449069408"
-	"pony-san" 			"76320241"
-	"XCR" 				"76746850"
+	//CatEvil Players
+	"Drea3er" 			"95546498"
+	"splashske" 		"43600"
+	"nephh" 			"257859284"
+	"Cate" 				"145059633"
+	"Gin" 				"385310876"
 	//AVEZ Players
 	"mystic" 			"81765294"
 	"bastEe" 			"316079070"
@@ -661,11 +655,11 @@
 	"s4" 				"125957336"
 	"amster"			"121728571"
 	//Conquer Players
-	"choco" 			"138320403"
-	"Elfern"			"139081471"
-	"LYNXi" 			"123308829"
-	"Jerppa" 			"277451852"
-	"Jimpphat"			"895109597"
+	"jelo" 				"147699201"
+	"Mikzuuu"			"115253003"
+	"Samppa" 			"37105524"
+	"eDi" 				"57731578"
+	"JUS6"				"27799500"
 	//AVANGAR Players
 	"FinigaN" 			"226095351"
 	"fozil"				"332205778"

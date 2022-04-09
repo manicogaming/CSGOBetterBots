@@ -276,12 +276,12 @@
 	"bubble" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
 	"SHiPZ" 			"SKADE"
-	//Singularity Players
-	"seized" 			"Singularity"
-	"GuardiaN" 			"Singularity"
-	"clax" 				"Singularity"
-	"SELLTER" 			"Singularity"
-	"d1Ledez" 			"Singularity"
+	//Izako Players
+	"asran" 			"Izako"
+	"Crityourface" 		"Izako"
+	"Mride" 			"Izako"
+	"rico" 				"Izako"
+	"sh3nanigan" 		"Izako"
 	//OFFSET Players
 	"slaxx" 			"OFFSET"
 	"Lr0z1n" 			"OFFSET"
@@ -383,7 +383,7 @@
 	"MisteM" 			"ATK"
 	"motm" 				"ATK"
 	"Fadey" 			"ATK"
-	"truth" 			"ATK"
+	"Swisher" 			"ATK"
 	//Wings Players
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
@@ -402,12 +402,6 @@
 	"Danejoris" 		"Impact"
 	"JAM" 				"Impact"
 	"grape" 			"Impact"
-	//FATE Players
-	"numb"				"FATE" 
-	"Patrick--" 		"FATE"
-	"hybrid" 			"FATE"
-	"shaiK" 			"FATE"	
-	"niki1" 			"FATE"
 	//OG Players
 	"nikozan" 			"OG"
 	"mantuu" 			"OG"
@@ -527,7 +521,7 @@
 	"adamb" 			"Lemondogs"
 	"hemzk9" 			"Lemondogs"
 	"susp" 				"Lemondogs"
-	"k0lty" 			"Lemondogs"	
+	"KriLLe" 			"Lemondogs"	
 	//Alpha Players
 	"zypztw" 			"Alpha"
 	"Toft" 				"Alpha"
@@ -552,12 +546,12 @@
 	"NiK0" 				"Supremacy"
 	"Surviv0r" 			"Supremacy"
 	"ALONZO"			"Supremacy"
-	//planB Players
-	"pony-san" 			"planB"
-	"sjN" 				"planB"
-	"XCR" 				"planB"
-	"ceddix" 			"planB"
-	"steveN"			"planB"
+	//CatEvil Players
+	"Cate" 				"CatEvil"
+	"Drea3er" 			"CatEvil"
+	"Gin" 				"CatEvil"
+	"splashske" 		"CatEvil"
+	"nephh"				"CatEvil"
 	//AVEZ Players
 	"mystic" 			"AVEZ"
 	"bastEe" 			"AVEZ"
@@ -661,11 +655,11 @@
 	"s4" 				"ECK"
 	"amster"			"ECK"
 	//Conquer Players
-	"choco" 			"Conquer"
-	"Elfern"			"Conquer"
-	"LYNXi" 			"Conquer"
-	"Jerppa" 			"Conquer"
-	"Jimpphat"			"Conquer"
+	"jelo" 				"Conquer"
+	"Mikzuuu"			"Conquer"
+	"Samppa" 			"Conquer"
+	"eDi" 				"Conquer"
+	"JUS6"				"Conquer"
 	//AVANGAR Players
 	"FinigaN" 			"AVANGAR"
 	"fozil"				"AVANGAR"

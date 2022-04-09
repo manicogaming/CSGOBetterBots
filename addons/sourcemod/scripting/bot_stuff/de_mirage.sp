@@ -136,7 +136,7 @@ public void PrepareMirageExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/SANJI Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_mirage/VP A Execute/YEKINDAR Role.rec");
 				}
-				case 13: //G2 Connector Pop			<--- I was here
+				case 13: //G2 Connector Pop
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/AmaNEk Role.rec"); 
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_mirage/G2 Connector Pop/kennyS Role.rec");
