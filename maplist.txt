@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Apr 09 17:23:41 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Apr 10 17:44:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -132,6 +132,7 @@ cs_offtime
 cs_outpost
 cs_renovation
 cs_residence
+workshop/792188755/cs_rio
 cs_shichang_b3
 cs_siege
 cs_warmblow_beta01
@@ -323,7 +324,7 @@ de_stmarc
 de_stolen
 de_storehouse
 de_studio
-workshop/1318698056/de_subzero
+de_subzero
 de_sugarcane
 de_sunburn
 de_tangerine_b2_17
