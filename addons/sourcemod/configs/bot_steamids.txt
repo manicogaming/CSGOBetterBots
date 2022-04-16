@@ -732,12 +732,12 @@
 	"NEUZ" 				"114122809"
 	"MiQ" 				"914241492"
 	"sT0P"				"1106326909"
-	//Rhyno Players
-	"LucKyMaNN" 		"171613566"
-	"psh"				"27720795"
-	"hdstr" 			"180753481"
-	"reibi" 			"259379051"
-	"goodyear"			"29717154"
+	//OneTap Players
+	"GEOHYPE" 			"116371108"
+	"MoDo"				"389955370"
+	"smekk" 			"100657287"
+	"swiiffter" 		"286059320"
+	"ADRON"				"1054417753"
 	//BP Players
 	"fleav" 			"189640934"
 	"kolor"				"159382791"

@@ -732,12 +732,12 @@
 	"NEUZ" 				"CSGO-XnErP-vnCNV-xR53i-Sxvph-u6GSQ"
 	"MiQ" 				"CSGO-ubP8J-pc5Vo-nGUOi-xBPbw-DmYbD"
 	"sT0P"				"CSGO-EoxhP-kJfGB-5PZVM-hD8YX-MDr7C"
-	//Rhyno Players
-	"LucKyMaNN" 		"CSGO-UUxDb-ACkx7-ViaaF-zHJPd-P4D7K"
-	"psh"				"CSGO-Esaji-UzaP7-HUOBp-R5kVC-z2urD"
-	"hdstr" 			"CSGO-J9zHv-wwWkV-RrJXH-MJwtW-zEUnB"
-	"reibi" 			"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
-	"goodyear"			"CSGO-3rLnT-hynaf-WLhpq-vWTPy-9s3xK"
+	//OneTap Players
+	"GEOHYPE" 			"CSGO-2jJ4o-2sZiC-jHLNR-PNQUc-AO6FP"
+	"MoDo"				"CSGO-GMyYf-KrBbo-49NNF-XBFY8-XTFuA"
+	"smekk" 			"CSGO-nuR4h-6skr3-FPEtz-JttQd-97DRE"
+	"swiiffter" 		"CSGO-DribA-X4ZYw-uCveb-LM9uu-9UivN"
+	"ADRON"				"CSGO-8VCEk-vWbjW-9yGws-8FnGU-U9z6A"
 	//BP Players
 	"fleav" 			"CSGO-BEi3Z-jwK46-UQVTL-yKrWz-7ZqhH"
 	"kolor"				"CSGO-WWYXF-EUK4o-nr3dx-K3sZf-DbapG"

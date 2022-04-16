@@ -2978,25 +2978,25 @@ ProP+Rifle+RiflePersonality "sT0P"
 	VoicePitch = 78
 End
 
-//Rhyno Players
+//OneTap Players
 
-ProP+Rifle+RiflePersonality "LucKyMaNN"
+ProP+Rifle+RiflePersonality "GEOHYPE"
 	VoicePitch = 97
 End
 
-ProP+SniperPro+SniperPersonality "psh"
+ProP+SniperPro+SniperPersonality "MoDo"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "hdstr"
+ProP+Rifle+RiflePersonality "smekk"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "reibi"
+ProP+Rifle+RiflePersonality "swiiffter"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "goodyear"
+ProP+Rifle+RiflePersonality "ADRON"
 	VoicePitch = 93
 End
 

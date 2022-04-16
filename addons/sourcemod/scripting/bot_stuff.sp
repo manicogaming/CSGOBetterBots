@@ -272,7 +272,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_entropy", Team_Entropy);
 	RegConsoleCmd("team_ssp", Team_SSP);
 	RegConsoleCmd("team_renewal", Team_Renewal);
-	RegConsoleCmd("team_rhyno", Team_Rhyno);
+	RegConsoleCmd("team_onetap", Team_OneTap);
 	RegConsoleCmd("team_bp", Team_BP);
 	RegConsoleCmd("team_mcon", Team_mCon);
 	RegConsoleCmd("team_heet", Team_HEET);
@@ -3980,7 +3980,7 @@ public Action Team_Renewal(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Rhyno(int client, int iArgs)
+public Action Team_OneTap(int client, int iArgs)
 {
 	char szArg[12];
 	GetCmdArg(1, szArg, sizeof(szArg));
@@ -3988,23 +3988,23 @@ public Action Team_Rhyno(int client, int iArgs)
 	if (strcmp(szArg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "LucKyMaNN");
-		ServerCommand("bot_add_ct %s", "psh");
-		ServerCommand("bot_add_ct %s", "hdstr");
-		ServerCommand("bot_add_ct %s", "reibi");
-		ServerCommand("bot_add_ct %s", "goodyear");
-		ServerCommand("mp_teamlogo_1 rhy");
+		ServerCommand("bot_add_ct %s", "GEOHYPE");
+		ServerCommand("bot_add_ct %s", "MoDo");
+		ServerCommand("bot_add_ct %s", "smekk");
+		ServerCommand("bot_add_ct %s", "swiiffter");
+		ServerCommand("bot_add_ct %s", "ADRON");
+		ServerCommand("mp_teamlogo_1 tap");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "LucKyMaNN");
-		ServerCommand("bot_add_t %s", "psh");
-		ServerCommand("bot_add_t %s", "hdstr");
-		ServerCommand("bot_add_t %s", "reibi");
-		ServerCommand("bot_add_t %s", "goodyear");
-		ServerCommand("mp_teamlogo_2 rhy");
+		ServerCommand("bot_add_t %s", "GEOHYPE");
+		ServerCommand("bot_add_t %s", "MoDo");
+		ServerCommand("bot_add_t %s", "smekk");
+		ServerCommand("bot_add_t %s", "swiiffter");
+		ServerCommand("bot_add_t %s", "ADRON");
+		ServerCommand("mp_teamlogo_2 tap");
 	}
 	
 	return Plugin_Handled;

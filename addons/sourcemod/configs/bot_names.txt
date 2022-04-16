@@ -732,12 +732,12 @@
 	"NEUZ" 				"Renewal"
 	"MiQ" 				"Renewal"
 	"sT0P"				"Renewal"
-	//Rhyno Players
-	"LucKyMaNN" 		"Rhyno"
-	"psh"				"Rhyno"
-	"hdstr" 			"Rhyno"
-	"reibi" 			"Rhyno"
-	"goodyear"			"Rhyno"
+	//OneTap Players
+	"GEOHYPE" 			"OneTap"
+	"MoDo"				"OneTap"
+	"smekk" 			"OneTap"
+	"swiiffter" 		"OneTap"
+	"ADRON"				"OneTap"
 	//BP Players
 	"fleav" 			"BP"
 	"kolor"				"BP"
