@@ -4509,10 +4509,10 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			}
 			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !bHasDefuser && bInBuyZone)
 			{
-				switch (Math_GetRandomInt(1,10))
+				switch (Math_GetRandomInt(1,15))
 				{
 					case 1: FakeClientCommand(i, "buy vest");
-					case 5:	FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
+					case 10: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
 				}
 			}
 		}
