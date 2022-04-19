@@ -128,7 +128,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Astralis Apps Execute/Magisk Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Astralis Apps Execute/dupreeh Role.rec");
 				}
-				case 8: //Cloud9 Lane Pop					<----- I was here
+				case 8: //Cloud9 Lane Pop
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 Lane Pop/mezii Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/Cloud9 Lane Pop/ALEX Role.rec");
@@ -144,7 +144,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Astralis B Pop/Magisk Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Astralis B Pop/dupreeh Role.rec");
 				}
-				case 10: //Vitality Apps Pop
+				case 10: //Vitality Apps Pop					<----- I was here
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/apEX Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/Vitality Apps Pop/ZywOo Role.rec");
