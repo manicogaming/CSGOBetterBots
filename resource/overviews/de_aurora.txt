@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_aurora"
+{
+	"CTSpawn_x" "-1.080000"
+	"CTSpawn_y" "0.090000"
+	"TSpawn_x" "-1.130000"
+	"TSpawn_y" "0.920000"
+	"material" "overviews/de_aurora_v36"
+	"pos_x" "1055.500000"
+	"pos_y" "-1656.000000"
+	"scale" "3.070000"
+}

@@ -1,8 +1,9 @@
-// csgosl 2.9.6 config 1 at Tue Apr 19 20:51:21 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Thu Apr 21 23:45:25 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
 $2000$_japan
+$2021$
 10th_mythic_roofcube_v1
 14th_mythic_house_v1
 2nd_mythic_town_v5
@@ -32,6 +33,7 @@ aim_cbble
 aim_container_autosniper
 aim_deagle7k_norm
 aim_deagle7k_real
+aim_deagle_lego
 aim_deagle_retrowave
 aim_depot_beta01
 aim_dust
@@ -78,9 +80,11 @@ awp_lego_2011
 awp_lego_2_shootout
 awp_lego_2_winter
 awp_lego_4b
+awp_lego_7
 awp_lego_9
 awp_lego_india2
 awp_legominiindia
+awp_map2_origins
 awp_metro_cso2
 awp_minecraft_pete_v1
 awp_newmap_beta
@@ -152,6 +156,7 @@ de_asia_csgo
 de_astra_v2
 de_astramania
 de_aurelia
+de_aurora
 de_austria
 de_aztec_classic
 de_aztec_snow
@@ -170,6 +175,7 @@ de_boston_csgo
 de_bourg
 de_breach
 de_bregov
+workshop/2599855803/de_bsas_obelisco
 de_cache
 de_calamari
 de_calavera
@@ -270,7 +276,7 @@ de_meteora
 de_mill_ce
 de_mirage
 de_mirage_2055
-workshop/131712577/de_mirage_go
+de_mirage_go
 de_mocha
 de_momentum
 de_mustang

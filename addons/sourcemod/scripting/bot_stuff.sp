@@ -5159,7 +5159,11 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	}
 	else if(strcmp(szDesc, "Noise") == 0)
 	{
-		if(GetClientTeam(client) == CS_TEAM_CT)
+		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+		
+		int iDefIndex = IsValidEntity(iActiveWeapon) ? GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex") : 0;
+		
+		if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE)
 		{
 			BotEquipBestWeapon(client, true);
 			g_bDontSwitch[client] = true;

@@ -1,0 +1,7 @@
+"awp_map2_origins"
+{
+"material" "overviews/awp_map2_origins"
+"pos_x" "-2071"
+"pos_y" "2121"
+"scale" "4.50"
+}
