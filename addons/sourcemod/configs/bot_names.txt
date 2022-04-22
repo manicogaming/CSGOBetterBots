@@ -186,12 +186,12 @@
 	"HEN1" 				"GODSENT"
 	"latto" 			"GODSENT"
 	"dumau" 			"GODSENT"
-	//Lions Players
-	"b0RUP" 			"Lions"
-	"TMB" 				"Lions"
-	"MICHU" 			"Lions"	
-	"somedieyoung" 		"Lions"
-	"jL" 				"Lions"
+	//Rhyno Players
+	"HS" 				"Rhyno"
+	"DeviNe" 			"Rhyno"
+	"SeabraEZ" 			"Rhyno"	
+	"opdust" 			"Rhyno"
+	"krazy" 			"Rhyno"
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
@@ -398,9 +398,9 @@
 	"V4D1M" 			"Lynn"
 	//Impact Players
 	"RZU" 				"Impact"
-	"xCeeD" 			"Impact"
+	"D4rtyMontana" 		"Impact"
 	"Danejoris" 		"Impact"
-	"JAM" 				"Impact"
+	"mesamiduck" 		"Impact"
 	"grape" 			"Impact"
 	//OG Players
 	"nikozan" 			"OG"
@@ -459,9 +459,9 @@
 	//AGF Players
 	"FeZ" 				"AGF"
 	"Speedy" 			"AGF"
-	"wezx" 				"AGF"
+	"Griller" 			"AGF"
 	"void" 				"AGF"
-	"Chr1zN" 			"AGF"
+	"Equip" 			"AGF"
 	//NLG Players
 	"pdy" 				"NLG"	
 	"red" 				"NLG"
@@ -712,8 +712,8 @@
 	"Klameczka" 		"GameAgents"
 	"Bajmi"				"GameAgents"
 	"Flayy" 			"GameAgents"
-	"AxEcHo" 			"GameAgents"
-	"mlodziutk1"		"GameAgents"
+	"noise" 			"GameAgents"
+	"Majster"			"GameAgents"
 	//Entropy Players
 	"powerYY" 			"Entropy"
 	"stefank0k0"		"Entropy"
@@ -769,10 +769,10 @@
 	"Diviiii" 			"LDLC"
 	"Neityu"			"LDLC"
 	//Vireo Players
-	"Aezy" 				"Vireo"
-	"cbass"				"Vireo"
+	"Fur_Daddy" 		"Vireo"
+	"emokie"			"Vireo"
 	"Champ"				"Vireo"
-	"Cakes" 			"Vireo"
+	"KRL" 				"Vireo"
 	"drayza"			"Vireo"
 	//Imperial Players
 	"fer" 				"Imperial"
@@ -827,5 +827,11 @@
 	"elemeNt"			"Boca"
 	"alexer"			"Boca"
 	"nbl" 				"Boca"
-	"restik"			"Boca"
+	"MRN1"				"Boca"
+	//ITB Players
+	"Adam9130" 			"ITB"
+	"smooya"			"ITB"
+	"dobbo"				"ITB"
+	"CYPHER" 			"ITB"
+	"Tadpole"			"ITB"
 }

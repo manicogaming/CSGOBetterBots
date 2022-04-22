@@ -186,12 +186,12 @@
 	"HEN1" 				"57761535"
 	"latto" 			"889754458"
 	"dumau" 			"234059589"
-	//Lions Players
-	"b0RUP" 			"146876280"
-	"TMB" 				"124341526"
-	"MICHU" 			"60359075"	
-	"somedieyoung" 		"80311472"
-	"jL" 				"216612575"
+	//Rhyno Players
+	"HS" 				"384577684"
+	"DeviNe" 			"840919760"
+	"SeabraEZ" 			"420752411"	
+	"opdust" 			"335473688"
+	"krazy" 			"900494332"
 	//Riders Players
 	"mopoz"				"37931638" 
 	"dav1g" 			"457082328"
@@ -398,9 +398,9 @@
 	"V4D1M" 			"40409264"
 	//Impact Players
 	"RZU" 				"170869120"
-	"xCeeD" 			"180524431"
+	"D4rtyMontana" 		"202142667"
 	"Danejoris" 		"116329706"
-	"JAM" 				"197428255"
+	"mesamiduck" 		"93936164"
 	"grape" 			"130164677"
 	//OG Players
 	"nikozan" 			"29470855"
@@ -459,9 +459,9 @@
 	//AGF Players
 	"FeZ" 				"308491222"
 	"Speedy" 			"256100872"
-	"wezx" 				"19059470"
+	"Griller" 			"10598145"
 	"void" 				"370246568"
-	"Chr1zN" 			"332333083"
+	"Equip" 			"174193046"
 	//NLG Players
 	"pdy" 				"199029474"	
 	"red" 				"204660292"
@@ -712,8 +712,8 @@
 	"Klameczka" 		"229219769"
 	"Bajmi"				"240875179"
 	"Flayy" 			"452134916"
-	"AxEcHo" 			"897414124"
-	"mlodziutk1"		"236911505"
+	"noise" 			"156994666"
+	"Majster"			"891017452"
 	//Entropy Players
 	"powerYY" 			"193302990"
 	"stefank0k0"		"41682335"
@@ -769,10 +769,10 @@
 	"Diviiii" 			"191872056"
 	"Neityu"			"1011452664"
 	//Vireo Players
-	"Aezy" 				"100270683"
-	"cbass"				"279811778"
+	"Fur_Daddy" 		"217078249"
+	"emokie"			"106150"
 	"Champ"				"10773572"
-	"Cakes" 			"217078249"
+	"KRL" 				"320146710"
 	"drayza"			"313775221"
 	//Imperial Players
 	"fer" 				"38921219"
@@ -827,5 +827,11 @@
 	"elemeNt"			"84718029"
 	"alexer"			"126154442"
 	"nbl" 				"132456979"
-	"restik"			"75391591"
+	"MRN1"				"176372852"
+	//ITB Players
+	"Adam9130" 			"80281757"
+	"smooya"			"211423593"
+	"dobbo"				"288859378"
+	"CYPHER" 			"291718826"
+	"Tadpole"			"121133939"
 }
