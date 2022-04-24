@@ -354,7 +354,7 @@
 	"kreaz" 			"116979891"
 	"PlesseN" 			"57716849"
 	"shokz" 			"39590183"
-	//Gambit Players
+	//C9 Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
 	"interz" 			"247808592"

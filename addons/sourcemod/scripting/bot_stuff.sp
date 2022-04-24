@@ -209,7 +209,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_vertex", Team_VERTEX);
 	RegConsoleCmd("team_ig", Team_IG);
 	RegConsoleCmd("team_finest", Team_Finest);
-	RegConsoleCmd("team_gambit", Team_Gambit);
+	RegConsoleCmd("team_c9", Team_C9);
 	RegConsoleCmd("team_wisla", Team_Wisla);
 	RegConsoleCmd("team_attax", Team_aTTaX);
 	RegConsoleCmd("team_Unique", Team_Unique);
@@ -2061,7 +2061,7 @@ public Action Team_Finest(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Gambit(int client, int iArgs)
+public Action Team_C9(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2074,7 +2074,7 @@ public Action Team_Gambit(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "interz");
 		ServerCommand("bot_add_ct %s", "Ax1Le");
 		ServerCommand("bot_add_ct %s", "Hobbit");
-		ServerCommand("mp_teamlogo_1 gamb");
+		ServerCommand("mp_teamlogo_1 c9");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -2085,7 +2085,7 @@ public Action Team_Gambit(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "interz");
 		ServerCommand("bot_add_t %s", "Ax1Le");
 		ServerCommand("bot_add_t %s", "Hobbit");
-		ServerCommand("mp_teamlogo_2 gamb");
+		ServerCommand("mp_teamlogo_2 c9");
 	}
 	
 	return Plugin_Handled;
@@ -4503,7 +4503,10 @@ public void OnMapStart()
 	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
-	SDKHook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
+	SDKHook(GetPlayerResourceEntity(), SDKHook_ThinkPost, OnThinkPost);
+	
+	for (int i = 1; i <= MaxClients; i++)
+		g_iPlayerColor[i] = -1;
 }
 
 public Action Timer_CheckPlayer(Handle hTimer, any data)
@@ -4820,12 +4823,19 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 
 public void OnMapEnd()
 {
-	SDKUnhook(FindEntityByClassname(MaxClients + 1, "cs_player_manager"), SDKHook_ThinkPost, OnThinkPost);
+	SDKUnhook(GetPlayerResourceEntity(), SDKHook_ThinkPost, OnThinkPost);
 }
 
 public void OnClientPostAdminCheck(int client)
 {
 	g_iProfileRank[client] = Math_GetRandomInt(1, 40);
+	
+	if(!IsFakeClient(client))
+	{
+		char szColor[64];
+		GetClientInfo(client, "cl_color", szColor, sizeof(szColor));
+		g_iPlayerColor[client] = StringToInt(szColor);
+	}
 	
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
@@ -6024,6 +6034,9 @@ stock void SetPlayerTeammateColor(int client)
 {
 	if(GetClientTeam(client) > CS_TEAM_SPECTATOR)
 	{
+		if(g_iPlayerColor[client] > -1)
+			return;
+		
 		int nAssignedColor;
 		bool bColorInUse = false;
 		for (int ii = 0; ii < 5; ii++ )
@@ -6047,7 +6060,6 @@ stock void SetPlayerTeammateColor(int client)
 			if (bColorInUse == false )
 				break;
 		}
-		
 		nAssignedColor = bColorInUse == false ? nAssignedColor : -1;
 		g_iPlayerColor[client] = nAssignedColor;
 	}

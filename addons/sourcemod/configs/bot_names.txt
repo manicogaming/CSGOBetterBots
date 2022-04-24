@@ -354,12 +354,12 @@
 	"kreaz" 			"Finest"
 	"PlesseN" 			"Finest"
 	"shokz" 			"Finest"
-	//Gambit Players
-	"nafany" 			"Gambit"
-	"sh1ro" 			"Gambit"
-	"interz" 			"Gambit"
-	"Ax1Le" 			"Gambit"
-	"Hobbit" 			"Gambit"
+	//C9 Players
+	"nafany" 			"C9"
+	"sh1ro" 			"C9"
+	"interz" 			"C9"
+	"Ax1Le" 			"C9"
+	"Hobbit" 			"C9"
 	//Wisla Players
 	"Sobol"				"Wisla" 
 	"SZPERO" 			"Wisla"

@@ -354,7 +354,7 @@
 	"kreaz" 			"CSGO-F7kaT-oNrRX-etExk-omQyB-CrrBE"
 	"PlesseN" 			"CSGO-Pzz5U-3aELQ-wycrm-ALNsf-AioUE"
 	"shokz" 			"CSGO-AKriZ-FW77z-bGvZT-RNVJN-Ms8rN"
-	//Gambit Players
+	//C9 Players
 	"nafany" 			"CSGO-ySTQ6-einHH-qx3o9-4CUqh-3QqNO"
 	"sh1ro" 			"CSGO-fBSrW-FdDK7-5PyDT-44XfM-2zpxA"
 	"interz" 			"CSGO-Yei5W-H53C3-SNpP9-cddL7-PX6uC"
