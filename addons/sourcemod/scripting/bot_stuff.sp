@@ -14,8 +14,8 @@ char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
-int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset, g_iBotMoraleOffset;
+int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset, g_iBotMoraleOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -4494,6 +4494,7 @@ public Action Team_ITB(int client, int iArgs)
 public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
+	g_iPlayerColorOffset = FindSendPropInfo("CCSPlayerResource", "m_iCompTeammateColor");
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	
@@ -5028,6 +5029,7 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
+	SetEntDataArray(iEnt, g_iPlayerColorOffset, g_iPlayerColor, MAXPLAYERS + 1);
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsValidClient(i) && IsFakeClient(i))
@@ -5382,6 +5384,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
+	
+	SetPlayerTeammateColor(client);
 
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
@@ -6014,6 +6018,39 @@ stock int HumansOnTeam(int iTeam, bool bIsAlive = false)
 	}
 
 	return iCount;
+}
+
+stock void SetPlayerTeammateColor(int client)
+{
+	if(GetClientTeam(client) > CS_TEAM_SPECTATOR)
+	{
+		int nAssignedColor;
+		bool bColorInUse = false;
+		for (int ii = 0; ii < 5; ii++ )
+		{
+			nAssignedColor = nAssignedColor % 5;
+
+			bColorInUse = false;
+			for ( int j = 1; j <= MaxClients; j++ )
+			{
+				if (IsValidClient(j) && GetClientTeam(j) == GetClientTeam(client))
+				{
+					if (nAssignedColor == g_iPlayerColor[j] && j != client)
+					{
+						bColorInUse = true;
+						nAssignedColor++;
+						break;
+					}
+				}
+			}
+
+			if (bColorInUse == false )
+				break;
+		}
+		
+		nAssignedColor = bColorInUse == false ? nAssignedColor : -1;
+		g_iPlayerColor[client] = nAssignedColor;
+	}
 }
 
 stock bool IsValidClient(int client)
