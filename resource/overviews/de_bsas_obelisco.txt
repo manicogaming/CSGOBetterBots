@@ -1,0 +1,18 @@
+"de_bsas_obelisco"
+{
+	"material"	"overviews/de_bsas_obelisco"	// texture file
+	"pos_x"		"-4590"	// upper left world coordinate
+	"pos_y"		"-909"
+	"scale"		"4.0"
+	"rotate"	"0"
+	"zoom"		"0"
+
+	// loading screen icons and positions
+	"CTSpawn_x"	"0.20"
+	"CTSpawn_y"	"0.14"
+	"TSpawn_x"	"0.652"
+	"TSpawn_y"	"0.80"
+
+	"bomb_x"	"0.385"
+	"bomb_y"	"0.235"
+}

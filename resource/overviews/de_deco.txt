@@ -1,0 +1,12 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_deco"
+{
+	"CTSpawn_x" "-4.690000"
+	"CTSpawn_y" "0.140000"
+	"TSpawn_x" "-4.360000"
+	"TSpawn_y" "0.900000"
+	"material" "overviews/de_deco"
+	"pos_x" "5712.000000"
+	"pos_y" "6668.000000"
+	"scale" "2.710000"
+}
