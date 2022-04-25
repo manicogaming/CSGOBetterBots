@@ -239,7 +239,7 @@
 	"tor1towOw" 		"CSGO-HrW8N-c9H7t-LpTwk-earYj-rCU8N"	
 	"spamzzy" 			"CSGO-zUDi4-qEhoe-KhiX7-4AkqJ-AjaAB"
 	"pacman^v^" 		"CSGO-obLR7-tax37-E93E8-aHR7G-OA26A"
-	"points" 			"CSGO-ZCtHy-jX2vt-aVkQQ-bNJPu-hOxoO"
+	"Marro" 			"CSGO-8kFsX-TOeTs-YFK5S-mR3io-o5LsE"
 	//Isurus Players
 	"DeStiNy" 			"CSGO-BTBKC-iNFJT-ZWoP5-y3xjp-v5BYN"
 	"Noktse" 			"CSGO-JNv6R-oO9CX-FRMUD-Aq3er-GB26A"
@@ -408,7 +408,7 @@
 	"nexa" 				"CSGO-q48QT-VHpTW-xNH5b-umZNJ-QsybE"
 	"valde" 			"CSGO-oNUii-74piF-JhTU9-na4FA-z2urD"
 	"flameZ" 			"CSGO-M4bme-YwNEt-xbyca-Hiujj-knEVF"
-	//BLINK Players
+	//BNE Players
 	"juanflatroo" 		"CSGO-zUzwA-89p2c-OMtSm-mwOVG-KCR7B"
 	"sinnopsyy" 		"CSGO-uicer-mBTCB-SZEO4-ZEw7W-KRSFE"
 	"gxx-" 				"CSGO-edZ3r-zwobi-FN2Tt-FCk7z-63qRP"

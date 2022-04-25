@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun Apr 24 16:40:25 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Apr 25 23:24:38 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -175,7 +175,7 @@ de_boston_csgo
 de_bourg
 de_breach
 de_bregov
-workshop/2599855803/de_bsas_obelisco
+de_bsas_obelisco
 de_cache
 de_calamari
 de_calavera
@@ -203,7 +203,9 @@ de_crossfire
 de_crown
 de_dahshur
 de_deadblock_go
+de_deco
 de_desert
+workshop/2758621609/de_dharma_b16
 de_distillery
 de_dust0_csgo
 de_dust2

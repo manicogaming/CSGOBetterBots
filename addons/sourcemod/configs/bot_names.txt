@@ -239,7 +239,7 @@
 	"tor1towOw" 		"Infinity"	
 	"spamzzy" 			"Infinity"
 	"pacman^v^" 		"Infinity"
-	"points" 			"Infinity"
+	"Marro" 			"Infinity"
 	//Isurus Players
 	"DeStiNy" 			"Isurus"
 	"Noktse" 			"Isurus"
@@ -408,12 +408,12 @@
 	"nexa" 				"OG"
 	"valde" 			"OG"
 	"flameZ" 			"OG"
-	//BLINK Players
-	"juanflatroo" 		"BLINK"
-	"SENER1" 			"BLINK"
-	"sinnopsyy" 		"BLINK"
-	"gxx-" 				"BLINK"
-	"rigoN" 			"BLINK"
+	//BNE Players
+	"juanflatroo" 		"BNE"
+	"SENER1" 			"BNE"
+	"sinnopsyy" 		"BNE"
+	"gxx-" 				"BNE"
+	"rigoN" 			"BNE"
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"

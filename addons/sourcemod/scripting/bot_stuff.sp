@@ -218,7 +218,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_lynn", Team_Lynn);
 	RegConsoleCmd("team_impact", Team_Impact);
 	RegConsoleCmd("team_og", Team_OG);
-	RegConsoleCmd("team_blink", Team_BLINK);
+	RegConsoleCmd("team_bne", Team_BNE);
 	RegConsoleCmd("team_tricked", Team_Tricked);
 	RegConsoleCmd("team_endpoint", Team_Endpoint);
 	RegConsoleCmd("team_saw", Team_sAw);
@@ -1473,7 +1473,7 @@ public Action Team_Infinity(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "pacman^v^");
 		ServerCommand("bot_add_ct %s", "spamzzy");
 		ServerCommand("bot_add_ct %s", "tor1towOw");
-		ServerCommand("bot_add_ct %s", "points");
+		ServerCommand("bot_add_ct %s", "Marro");
 		ServerCommand("mp_teamlogo_1 infi");
 	}
 	
@@ -1484,7 +1484,7 @@ public Action Team_Infinity(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "pacman^v^");
 		ServerCommand("bot_add_t %s", "spamzzy");
 		ServerCommand("bot_add_t %s", "tor1towOw");
-		ServerCommand("bot_add_t %s", "points");
+		ServerCommand("bot_add_t %s", "Marro");
 		ServerCommand("mp_teamlogo_2 infi");
 	}
 	
@@ -2331,7 +2331,7 @@ public Action Team_OG(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_BLINK(int client, int iArgs)
+public Action Team_BNE(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -2344,7 +2344,7 @@ public Action Team_BLINK(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "sinnopsyy");
 		ServerCommand("bot_add_ct %s", "gxx-");
 		ServerCommand("bot_add_ct %s", "rigoN");
-		ServerCommand("mp_teamlogo_1 blink");
+		ServerCommand("mp_teamlogo_1 bne");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -2355,7 +2355,7 @@ public Action Team_BLINK(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "sinnopsyy");
 		ServerCommand("bot_add_t %s", "gxx-");
 		ServerCommand("bot_add_t %s", "rigoN");
-		ServerCommand("mp_teamlogo_2 blink");
+		ServerCommand("mp_teamlogo_2 bne");
 	}
 	
 	return Plugin_Handled;

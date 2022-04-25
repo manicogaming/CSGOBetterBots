@@ -239,7 +239,7 @@
 	"tor1towOw" 		"112244062"	
 	"spamzzy" 			"43458302"
 	"pacman^v^" 		"486643146"
-	"points" 			"79878687"
+	"Marro" 			"171629480"
 	//Isurus Players
 	"DeStiNy" 			"89528706"
 	"Noktse" 			"54233223"
@@ -408,7 +408,7 @@
 	"nexa" 				"39559694"
 	"valde" 			"154664140"
 	"flameZ" 			"18569432"
-	//BLINK Players
+	//BNE Players
 	"juanflatroo" 		"135528227"
 	"sinnopsyy" 		"205062167"
 	"gxx-" 				"274569724"

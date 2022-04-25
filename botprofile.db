@@ -1170,7 +1170,7 @@ ProP+Rifle+RiflePersonality "tor1towOw"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "points"
+ProP+Rifle+RiflePersonality "Marro"
 	VoicePitch = 100
 End
 
@@ -1790,7 +1790,7 @@ ProP+Rifle+RiflePersonality "flameZ"
 	VoicePitch = 103
 End
 
-//BLINK Players
+//BNE Players
 
 ProP+Rifle+RiflePersonality "juanflatroo"
 	VoicePitch = 94
