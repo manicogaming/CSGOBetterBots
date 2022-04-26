@@ -222,12 +222,6 @@
 	"Chill" 			"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
-	//GZG Players
-	"guag" 				"GZG"
-	"mizzy" 			"GZG"
-	"2D" 				"GZG"
-	"rekonz" 			"GZG"	
-	"nexar" 			"GZG"
 	//Xi'an Players
 	"QUQU" 				"Xi'an"
 	"Savageoh" 			"Xi'an"
@@ -481,10 +475,10 @@
 	"story" 			"FTW"
 	"arrozdoce" 		"FTW"
 	//Tigers Players
-	"Aralio" 			"Tigers"
-	"Feki" 				"Tigers"
-	"outex" 			"Tigers"
-	"heikkoL" 			"Tigers"
+	"HenkkyG" 			"Tigers"
+	"majky" 			"Tigers"
+	"Rutk0" 			"Tigers"
+	"PR" 				"Tigers"
 	"creZe" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
@@ -522,12 +516,12 @@
 	"hemzk9" 			"Lemondogs"
 	"susp" 				"Lemondogs"
 	"KriLLe" 			"Lemondogs"	
-	//Alpha Players
-	"zypztw" 			"Alpha"
-	"Toft" 				"Alpha"
-	"vester" 			"Alpha"
-	"Tauson" 			"Alpha"
-	"mupzG"				"Alpha"
+	//Illuminar Players
+	"phr" 				"Illuminar"
+	"zaNNN" 			"Illuminar"
+	"mynio" 			"Illuminar"
+	"morelz" 			"Illuminar"
+	"mASKED"			"Illuminar"
 	//Sangal Players
 	"ScrunK" 			"Sangal"
 	"kory" 				"Sangal"
@@ -550,8 +544,8 @@
 	"Cate" 				"CatEvil"
 	"Drea3er" 			"CatEvil"
 	"Gin" 				"CatEvil"
-	"splashske" 		"CatEvil"
-	"nephh"				"CatEvil"
+	"tanxiaomei" 		"CatEvil"
+	"Roninbaby"			"CatEvil"
 	//AVEZ Players
 	"mystic" 			"AVEZ"
 	"bastEe" 			"AVEZ"
@@ -585,15 +579,15 @@
 	//iNation Players
 	"Dragon" 			"iNation"
 	"VLDN" 				"iNation"
-	"choiv7" 			"iNation"
+	"HOLMES" 			"iNation"
 	"Dav" 				"iNation"
 	"SkippeR"			"iNation"
 	//LEISURE Players
 	"get" 				"LEISURE"
-	"rome" 				"LEISURE"
-	"raveN" 			"LEISURE"
+	"MpMurdock" 		"LEISURE"
+	"neviZ" 			"LEISURE"
 	"d1cer" 			"LEISURE"
-	"oddo"				"LEISURE"
+	"gimpen"			"LEISURE"
 	//BNB Players
 	"MoMo" 				"BNB"
 	"Swahn" 			"BNB"
@@ -607,11 +601,11 @@
 	"malbsMd" 			"Nation"
 	"v$m"				"Nation"
 	//Eriness Players
-	"replay" 			"Eriness"
-	"stinx" 			"Eriness"
-	"Lueg" 				"Eriness"
-	"DOCKSTAR" 			"Eriness"
-	"Lastiik"			"Eriness"
+	"Fog" 				"Eriness"
+	"kiyomi" 			"Eriness"
+	"onetwo" 			"Eriness"
+	"N4JT" 				"Eriness"
+	"DeXXuS"			"Eriness"
 	//Entropiq Players
 	"Lack1" 			"Entropiq"
 	"El1an" 			"Entropiq"
@@ -623,7 +617,7 @@
 	"cool4st" 			"Strife"
 	"hasteka" 			"Strife"
 	"aris" 				"Strife"
-	"D4rtyMontana"		"Strife"
+	"fejtZ"				"Strife"
 	//Party Players
 	"ben1337" 			"Party"
 	"PwnAlone" 			"Party"
@@ -700,7 +694,7 @@
 	"XpG" 				"Dice"
 	"Gauthierlele"		"Dice"
 	"Alca" 				"Dice"
-	"bSSSSSS" 			"Dice"
+	"tonzah" 			"Dice"
 	"CamZ"				"Dice"
 	//Falcons Players
 	"Kyojin" 			"Falcons"
@@ -742,8 +736,8 @@
 	"fleav" 			"BP"
 	"kolor"				"BP"
 	"Aaron" 			"BP"
-	"gubi" 				"BP"
-	"1NSERT2"			"BP"
+	"juho" 				"BP"
+	"HeavyGod"			"BP"
 	//mCon Players
 	"StepzZ" 			"mCon"
 	"VoxelArc"			"mCon"

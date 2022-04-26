@@ -222,12 +222,6 @@
 	"Chill" 			"113129796"	
 	"Jyo" 				"43255799"
 	"boX" 				"127393261"
-	//GZG Players
-	"mizzy" 			"37507985"
-	"2D" 				"78483370"
-	"nexar" 			"415307294"
-	"rekonz" 			"90514122"
-	"guag" 				"90933857"
 	//Xi'an Players
 	"Franke19" 			"318958693"
 	"QUQU" 				"76617308"
@@ -481,10 +475,10 @@
 	"DDias" 			"67343840"
 	"story" 			"105182632"
 	//Tigers Players
-	"Aralio" 			"79809520"
-	"Feki" 				"119610566"
-	"outex" 			"387989655"
-	"heikkoL" 			"54468975"
+	"HenkkyG" 			"10674280"
+	"majky" 			"873352928"
+	"Rutk0" 			"292716414"
+	"PR" 				"350295751"
 	"creZe" 			"41700991"
 	//9z Players
 	"dgt" 				"256625848"
@@ -522,12 +516,12 @@
 	"susp" 				"382452440"
 	"KriLLe" 			"164669290"
 	"hemzk9" 			"83597297"	
-	//Alpha Players
-	"zypztw" 			"190975326"
-	"Toft" 				"220978378"
-	"vester" 			"175193262"
-	"Tauson" 			"356440446"
-	"mupzG"				"233287646"
+	//Illuminar Players
+	"phr" 				"19304486"
+	"zaNNN" 			"154807226"
+	"mynio" 			"24981058"
+	"morelz" 			"122208414"
+	"mASKED"			"285508264"
 	//Sangal Players
 	"ScrunK" 			"13840460"
 	"kory" 				"67382466"
@@ -548,8 +542,8 @@
 	"ALONZO" 			"393298220"
 	//CatEvil Players
 	"Drea3er" 			"95546498"
-	"splashske" 		"43600"
-	"nephh" 			"257859284"
+	"tanxiaomei" 		"299619832"
+	"Roninbaby" 		"460930168"
 	"Cate" 				"145059633"
 	"Gin" 				"385310876"
 	//AVEZ Players
@@ -585,15 +579,15 @@
 	//iNation Players
 	"Dragon" 			"290361460"
 	"VLDN" 				"22240693"
-	"choiv7" 			"115831324"
+	"HOLMES" 			"49458247"
 	"Dav" 				"43887083"
 	"SkippeR"			"110202505"
 	//LEISURE Players
 	"get"				"28333977"
-	"rome"				"41470786"
-	"raveN"				"799911956"
+	"MpMurdock"			"151271676"
+	"neviZ"				"48474294"
 	"d1cer"				"158737140"
-	"oddo"				"39664636"
+	"gimpen"			"185018310"
 	//BNB Players
 	"MoMo" 				"12167472"
 	"Swahn" 			"82748583"
@@ -607,11 +601,11 @@
 	"malbsMd" 			"120437415"
 	"v$m"				"51467095"
 	//Eriness Players
-	"replay" 			"298288602"
-	"stinx" 			"122206039"
-	"Lueg" 				"118079651"
-	"DOCKSTAR" 			"150182795"
-	"Lastiik"			"204856690"
+	"Fog" 				"228324029"
+	"kiyomi" 			"230574129"
+	"onetwo" 			"258610017"
+	"N4JT" 				"428420704"
+	"DeXXuS"			"227004563"
 	//Entropiq Players
 	"Lack1" 			"185937269"
 	"El1an" 			"250498109"
@@ -623,7 +617,7 @@
 	"SLIGHT" 			"193314309"
 	"stamina" 			"272809432"
 	"aris" 				"72733739"
-	"D4rtyMontana"		"202142667"
+	"fejtZ"				"95338913"
 	//Party Players
 	"ben1337" 			"131461662"
 	"PwnAlone" 			"24000649"
@@ -700,7 +694,7 @@
 	"XpG" 				"30253348"
 	"Gauthierlele"		"35731666"
 	"Alca" 				"24252379"
-	"bSSSSSS" 			"245865493"
+	"tonzah" 			"96205280"
 	"CamZ"				"198983256"
 	//Falcons Players
 	"Kyojin" 			"45702241"
@@ -742,8 +736,8 @@
 	"fleav" 			"189640934"
 	"kolor"				"159382791"
 	"Aaron" 			"95940281"
-	"gubi" 				"69447420"
-	"1NSERT2"			"861600049"
+	"juho" 				"138270456"
+	"HeavyGod"			"107737265"
 	//mCon Players
 	"StepzZ" 			"191407472"
 	"VoxelArc"			"302205415"
