@@ -245,7 +245,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_anonymo", Team_Anonymo);
 	RegConsoleCmd("team_honoris", Team_HONORIS);
 	RegConsoleCmd("team_spirit", Team_Spirit);
-	RegConsoleCmd("team_dmnk", Team_DNMK);
+	RegConsoleCmd("team_dnmk", Team_DNMK);
 	RegConsoleCmd("team_ination", Team_iNation);
 	RegConsoleCmd("team_leisure", Team_LEISURE);
 	RegConsoleCmd("team_bnb", Team_BNB);
@@ -5378,7 +5378,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		if(!(g_iCurrentRound == 0 || g_iCurrentRound == 15))
+		if(g_iCurrentRound != 0 || g_iCurrentRound != 15)
 			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
 		
 		if (g_iUSPChance[client] >= 25)

@@ -721,7 +721,7 @@
 	"florento" 			"SSP"
 	"pr1metapz"			"SSP"
 	//Renewal Players
-	"rate" 				"Renewal"
+	"xerolte" 			"Renewal"
 	"Ensury"			"Renewal"
 	"NEUZ" 				"Renewal"
 	"MiQ" 				"Renewal"
