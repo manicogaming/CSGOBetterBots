@@ -1896,7 +1896,7 @@ ProP+Rifle+RiflePersonality "yAmi"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "Annihilation"
+ProP+Rifle+RiflePersonality "H4wK"
 	VoicePitch = 95
 End
 
@@ -3260,7 +3260,7 @@ ProP+Rifle+RiflePersonality "dobu"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "cool4st"
+ProP+Rifle+RiflePersonality "Annihilation"
 	VoicePitch = 81
 End
 

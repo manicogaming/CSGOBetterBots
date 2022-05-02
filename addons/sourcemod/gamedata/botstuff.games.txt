@@ -137,11 +137,6 @@
 				//Is inside CCSBot::DebugDisplay near 'Nearby enemies = %d' string
 				"windows"	   "24112"
 			}
-			"CCSBot::m_task"
-			{
-				//Is inside CCSBot::DebugDisplay near 'Task: %s' string
-				"windows"	   "16020"
-			}
 			"CCSBot::m_fireWeaponTimestamp"
 			{
 				//Is inside CCSBot::FireWeaponAtEnemy which is a little bit above the string 'Switching targets to retaliate against new attacker!\n' inside another function

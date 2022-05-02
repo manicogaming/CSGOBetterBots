@@ -436,7 +436,7 @@
 	"tamir"				"103695333" 
 	"shinobi" 			"488680911"
 	"yAmi" 				"175732643"
-	"Annihilation" 		"315821474"	
+	"H4wK" 				"310815503"	
 	"rate" 				"442056424"	
 	//DIVIZON Players
 	"farmaG" 			"32002596"
@@ -809,7 +809,7 @@
 	"ImpressioN"		"134688940"
 	"Kntz"				"80230397"
 	"dobu" 				"159891913"
-	"cool4st"			"882582488"
+	"Annihilation"		"315821474"
 	//1shot Players
 	"GreK" 				"125115130"
 	"FpSSS"				"49076137"

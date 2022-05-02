@@ -436,7 +436,7 @@
 	"tamir"				"CSGO-QMiYU-wAMmM-HDP83-r4SQC-Z8QmH" 
 	"shinobi" 			"CSGO-ZtWUF-qnbj3-R9v5O-26uJN-N6OtQ"
 	"yAmi" 				"CSGO-CR2JW-pio5m-CbbLk-LyMEt-YPD3J"
-	"Annihilation" 		"CSGO-rkWYH-9TtV6-z3uVk-Ab53y-Thj5P"	
+	"H4wK" 				"CSGO-zm3VJ-qV88p-ZndoZ-8JbQi-ZbJaA"	
 	"rate" 				"CSGO-rUjw6-pkYBx-67bos-ppF9P-HLAfD"	
 	//DIVIZON Players
 	"farmaG" 			"CSGO-BBfxM-2qwXj-ZGfPB-vCWH6-uWXTB"
@@ -809,7 +809,7 @@
 	"ImpressioN"		"CSGO-TVjrt-CczeS-3amcY-MUQ5H-dwWPA"
 	"Kntz"				"CSGO-HccOa-WY7Mw-STsd5-hdAb6-S79zP"
 	"dobu" 				"CSGO-6KtPV-wicuR-WjZTy-VvGwd-wHH8D"
-	"cool4st"			"CSGO-48QHA-XEuFD-7cFEd-oF5YN-EUx9H"
+	"Annihilation"		"CSGO-rkWYH-9TtV6-z3uVk-Ab53y-Thj5P"
 	//1shot Players
 	"GreK" 				"CSGO-Q5aDH-Of78r-vKR3L-pfHOt-DLpYF"
 	"FpSSS"				"CSGO-3TPG9-pOz8T-fG9d2-QF9EE-CrrBE"

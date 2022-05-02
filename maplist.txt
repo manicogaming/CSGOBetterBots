@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Apr 30 00:34:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon May 02 22:47:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -209,7 +209,7 @@ de_dharma_b16
 de_distillery
 de_dust0_csgo
 de_dust2
-workshop/2662892831/de_dust2_2055
+de_dust2_2055
 de_dust2_fo
 de_dust2_halloween
 de_dust2_night
@@ -218,6 +218,7 @@ de_dust2_original
 de_dust2_winter_2019
 de_dust2green
 de_dust_pcg_3k
+workshop/286072922/de_dustec
 de_dynasty
 de_elysion
 de_empire
@@ -363,6 +364,7 @@ dz_ember
 dz_sirocco
 dz_vineyard
 fame
+workshop/500334237/fps_benchmark
 fun_pacman_v1
 fy_back_street
 fy_buzzkill_sh

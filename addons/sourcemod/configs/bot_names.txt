@@ -434,10 +434,10 @@
 	"HEAP" 				"DIG"
 	//D13 Players
 	"tamir"				"D13" 
-	"xerolte" 			"D13"
+	"rate" 				"D13"
 	"shinobi" 			"D13"
 	"yAmi" 				"D13"
-	"Annihilation" 		"D13"	
+	"H4wK" 				"D13"	
 	//DIVIZON Players
 	"farmaG" 			"DIVIZON"
 	"Sw1ft" 			"DIVIZON"
@@ -614,8 +614,8 @@
 	"Forester"			"Entropiq"
 	//Strife Players
 	"J0LZ" 				"Strife"
-	"cool4st" 			"Strife"
-	"hasteka" 			"Strife"
+	"SLIGHT" 			"Strife"
+	"stamina" 			"Strife"
 	"aris" 				"Strife"
 	"fejtZ"				"Strife"
 	//Party Players
@@ -809,7 +809,7 @@
 	"ImpressioN"		"NKT"
 	"Kntz"				"NKT"
 	"dobu" 				"NKT"
-	"cool4st"			"NKT"
+	"Annihilation"		"NKT"
 	//1shot Players
 	"GreK" 				"1shot"
 	"FpSSS"				"1shot"

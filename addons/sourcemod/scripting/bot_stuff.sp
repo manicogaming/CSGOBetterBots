@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
-int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iBotTaskOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset, g_iBotMoraleOffset;
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset, g_iBotMoraleOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -2462,7 +2462,7 @@ public Action Team_D13(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "rate");
 		ServerCommand("bot_add_ct %s", "shinobi");
 		ServerCommand("bot_add_ct %s", "yAmi");
-		ServerCommand("bot_add_ct %s", "Annihilation");
+		ServerCommand("bot_add_ct %s", "H4wK");
 		ServerCommand("mp_teamlogo_1 d13");
 	}
 	
@@ -2473,7 +2473,7 @@ public Action Team_D13(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "rate");
 		ServerCommand("bot_add_t %s", "shinobi");
 		ServerCommand("bot_add_t %s", "yAmi");
-		ServerCommand("bot_add_t %s", "Annihilation");
+		ServerCommand("bot_add_t %s", "H4wK");
 		ServerCommand("mp_teamlogo_2 d13");
 	}
 	
@@ -2819,9 +2819,9 @@ public Action Team_EP(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "\"The eLiVe\"");
-		ServerCommand("bot_add_ct %s", "Blytz");
-		ServerCommand("bot_add_ct %s", "manguss");
 		ServerCommand("bot_add_ct %s", "myltsi");
+		ServerCommand("bot_add_ct %s", "manguss");
+		ServerCommand("bot_add_ct %s", "Blytz");
 		ServerCommand("bot_add_ct %s", "matys");
 		ServerCommand("mp_teamlogo_1 ente");
 	}
@@ -2830,9 +2830,9 @@ public Action Team_EP(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "\"The eLiVe\"");
-		ServerCommand("bot_add_t %s", "Blytz");
-		ServerCommand("bot_add_t %s", "manguss");
 		ServerCommand("bot_add_t %s", "myltsi");
+		ServerCommand("bot_add_t %s", "manguss");
+		ServerCommand("bot_add_t %s", "Blytz");
 		ServerCommand("bot_add_t %s", "matys");
 		ServerCommand("mp_teamlogo_2 ente");
 	}
@@ -3389,7 +3389,7 @@ public Action Team_Strife(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "J0LZ");
-		ServerCommand("bot_add_ct %s", "cool4st");
+		ServerCommand("bot_add_ct %s", "Annihilation");
 		ServerCommand("bot_add_ct %s", "hasteka");
 		ServerCommand("bot_add_ct %s", "aris");
 		ServerCommand("bot_add_ct %s", "fejtZ");
@@ -3400,7 +3400,7 @@ public Action Team_Strife(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "J0LZ");
-		ServerCommand("bot_add_t %s", "cool4st");
+		ServerCommand("bot_add_t %s", "Annihilation");
 		ServerCommand("bot_add_t %s", "hasteka");
 		ServerCommand("bot_add_t %s", "aris");
 		ServerCommand("bot_add_t %s", "fejtZ");
@@ -4352,7 +4352,7 @@ public Action Team_NKT(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "ImpressioN");
 		ServerCommand("bot_add_ct %s", "Kntz");
 		ServerCommand("bot_add_ct %s", "dobu");
-		ServerCommand("bot_add_ct %s", "cool4st");
+		ServerCommand("bot_add_ct %s", "Annihilation");
 		ServerCommand("mp_teamlogo_1 nkt");
 	}
 	
@@ -4363,7 +4363,7 @@ public Action Team_NKT(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "ImpressioN");
 		ServerCommand("bot_add_t %s", "Kntz");
 		ServerCommand("bot_add_t %s", "dobu");
-		ServerCommand("bot_add_t %s", "cool4st");
+		ServerCommand("bot_add_t %s", "Annihilation");
 		ServerCommand("mp_teamlogo_2 nkt");
 	}
 	
@@ -4564,7 +4564,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						fPlantedC4Distance = GetVectorDistance(fClientLoc, fPlantedC4Location);
 						
-						if (fPlantedC4Distance > 2000.0 && !BotIsBusy(client) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
+						if (fPlantedC4Distance > 2000.0 && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
 						{
 							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
@@ -4572,7 +4572,9 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 					}
 				}
 				
-				if (g_bFreezetimeEnd && !g_bBombPlanted && !BotIsBusy(client) && !BotIsHiding(client) && !BotMimic_IsPlayerMimicing(client))
+				int iDroppedC4 = GetNearestEntity(client, "weapon_c4", false);
+				
+				if (g_bFreezetimeEnd && !g_bBombPlanted && !IsValidEntity(iDroppedC4) && !BotIsHiding(client) && !BotMimic_IsPlayerMimicing(client))
 				{
 					//Rifles
 					int iAK47 = GetNearestEntity(client, "weapon_ak47");
@@ -5270,6 +5272,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
 				bool bIsReloading = IsPlayerReloading(client);
 				
+				if(view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset)) == SELF_DEFENSE || view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset)) == IGNORE_ENEMIES)
+					SetEntData(client, g_iBotDispositionOffset, view_as<int>(ENGAGE_AND_INVESTIGATE));
+				
 				if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
 					iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
 				
@@ -5286,8 +5291,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 					return Plugin_Continue;
-				
-				SetEntData(client, g_iBotDispositionOffset, view_as<int>(OPPORTUNITY_FIRE));
 				
 				if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
@@ -5533,9 +5536,6 @@ public void LoadSDK()
 	if ((g_iBotNearbyEnemiesOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount")) == -1)
 		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
 	
-	if ((g_iBotTaskOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_task")) == -1)
-		SetFailState("Failed to get CCSBot::m_task offset.");
-	
 	if ((g_iFireWeaponOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp")) == -1)
 		SetFailState("Failed to get CCSBot::m_fireWeaponTimestamp offset.");
 	
@@ -5743,14 +5743,7 @@ public int BotGetEnemy(int client)
 	return GetEntDataEnt2(client, g_iBotEnemyOffset);
 }
 
-public bool BotIsBusy(int client)
-{
-	TaskType iBotTask = view_as<TaskType>(GetEntData(client, g_iBotTaskOffset));
-	
-	return iBotTask == PLANT_BOMB || iBotTask == RESCUE_HOSTAGES || iBotTask == COLLECT_HOSTAGES || iBotTask == GUARD_LOOSE_BOMB || iBotTask == GUARD_BOMB_ZONE || iBotTask == GUARD_HOSTAGES || iBotTask == GUARD_HOSTAGE_RESCUE_ZONE || iBotTask == ESCAPE_FROM_FLAMES;
-}
-
-public int GetNearestEntity(int client, char[] szClassname)
+stock int GetNearestEntity(int client, char[] szClassname, bool bCheckVisibility = true)
 {
 	int iNearestEntity = -1;
 	float fClientOrigin[3], fClientEyes[3], fEntityOrigin[3];
@@ -5763,12 +5756,14 @@ public int GetNearestEntity(int client, char[] szClassname)
 	
 	//Find all the entity and compare the distances
 	int iEntity = -1;
+	bool bVisible;
 	while ((iEntity = FindEntityByClassname(iEntity, szClassname)) != -1)
 	{
 		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin); // Line 2610
 		fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
+		bVisible = bCheckVisibility ? IsPointVisible(fClientEyes, fEntityOrigin) : false;
 		
-		if ((fDistance < fNearestDistance || fNearestDistance == -1.0) && IsPointVisible(fClientEyes, fEntityOrigin))
+		if ((fDistance < fNearestDistance || fNearestDistance == -1.0) && bVisible)
 		{
 			iNearestEntity = iEntity;
 			fNearestDistance = fDistance;
