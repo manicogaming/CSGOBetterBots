@@ -4488,6 +4488,9 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
 			int iTeam = GetClientTeam(i);
 			bool bHasDefuser = !!GetEntProp(i, Prop_Send, "m_bHasDefuser");
+			int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+			char szDefaultPrimary[64];
+			GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
 			
 			if (Math_GetRandomInt(1, 100) <= 5)
 			{
@@ -4495,15 +4498,10 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				FakeClientCommand(i, "-lookatweapon");
 			}
 			
-			if ((g_iCurrentRound == 0 || g_iCurrentRound == 15) && bInBuyZone)
-			{
-				switch (Math_GetRandomInt(1,6))
-				{
-					case 1,2,3: FakeClientCommand(i, "buy vest");
-					case 6:	FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
-				}
-			}
-			else if ((iAccount > g_cvBotEcoLimit.IntValue || GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY) != -1) && bInBuyZone)
+			if(!bInBuyZone)
+				continue;
+			
+			if (iAccount > g_cvBotEcoLimit.IntValue || IsValidEntity(iPrimary))
 			{
 				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
 					FakeClientCommand(i, "buy vesthelm");
@@ -4511,13 +4509,46 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				if (iTeam == CS_TEAM_CT && !bHasDefuser)
 					FakeClientCommand(i, "buy defuser");
 			}
-			else if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !bHasDefuser && bInBuyZone)
+			
+			if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !IsValidEntity(iPrimary))
 			{
-				switch (Math_GetRandomInt(1,15))
+				if(strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0)
 				{
-					case 1: FakeClientCommand(i, "buy vest");
-					case 10: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "vest");
+					int iRndPistol = Math_GetRandomInt(1, 6);
+					
+					switch (iRndPistol)
+					{
+						case 1: FakeClientCommand(i, "buy p250");
+						case 2: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "fiveseven" : "tec9");
+						case 3: FakeClientCommand(i, "buy deagle");
+					}
 				}
+				else
+				{
+					switch (Math_GetRandomInt(1,15))
+					{
+						case 1: FakeClientCommand(i, "buy vest");
+						case 10: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT && !bHasDefuser) ? "defuser" : "vest");
+					}
+				}
+				
+			}
+			
+			if (iAccount < g_cvBotEcoLimit.IntValue && !IsValidEntity(iPrimary))
+			{
+				if(GetClientTeam(i) == CS_TEAM_T)
+					g_bTerroristEco = true;
+			}
+			
+			if (g_iCurrentRound == 0 || g_iCurrentRound == 15)
+			{
+				switch (Math_GetRandomInt(1,6))
+				{
+					case 1,2,3: FakeClientCommand(i, "buy vest");
+					case 6:	FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
+				}
+				
+				g_bTerroristEco = false;
 			}
 		}
 	}
@@ -5381,9 +5412,6 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		if(g_iCurrentRound != 0 || g_iCurrentRound != 15)
-			CreateTimer(1.0, RFrame_CheckBuyZoneValue, GetClientSerial(client));
-		
 		if (g_iUSPChance[client] >= 25)
 		{
 			if (GetClientTeam(client) == CS_TEAM_CT)
@@ -5397,45 +5425,6 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			}
 		}
 	}
-}
-
-public Action RFrame_CheckBuyZoneValue(Handle hTimer, int iSerial)
-{
-	int client = GetClientFromSerial(iSerial);
-	
-	if (!IsValidClient(client) || !IsPlayerAlive(client))return Plugin_Stop;
-	int iTeam = GetClientTeam(client);
-	if (iTeam < 2)return Plugin_Stop;
-	
-	int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
-	
-	bool bInBuyZone = view_as<bool>(GetEntProp(client, Prop_Send, "m_bInBuyZone"));
-	
-	if (!bInBuyZone)return Plugin_Stop;
-	
-	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
-	
-	char szDefaultPrimary[64];
-	GetClientWeapon(client, szDefaultPrimary, sizeof(szDefaultPrimary));
-	
-	if ((iAccount < 2000 || (iAccount > 2000 && iAccount < g_cvBotEcoLimit.IntValue)) && iPrimary == -1)
-	{
-		if(GetClientTeam(client) == CS_TEAM_T)
-			g_bTerroristEco = true;
-	}
-	
-	if ((iAccount > 2000) && (iAccount < g_cvBotEcoLimit.IntValue) && iPrimary == -1 && (strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0))
-	{
-		int iRndPistol = Math_GetRandomInt(1, 3);
-		
-		switch (iRndPistol)
-		{
-			case 1: FakeClientCommand(client, "buy p250");
-			case 2: FakeClientCommand(client, "buy %s", (iTeam == CS_TEAM_CT) ? "fiveseven" : "tec9");
-			case 3: FakeClientCommand(client, "buy deagle");
-		}
-	}
-	return Plugin_Stop;
 }
 
 public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szCategory, char[] szPath)
