@@ -1,11 +1,11 @@
 "Names"
 {
 	//MIBR Players
-	"yel"				"CSGO-hTuz7-mvKpf-LYdu3-qC47b-ZHZML"
-	"chelo" 			"CSGO-eharV-ctGSB-PBhKT-dhVe5-9DmDA"
-	"shz" 				"CSGO-Cj4kX-pD5ur-YKDEU-p5BEp-kqpJN"
-	"boltz" 			"CSGO-jY2ZN-D2r2p-Oo2nA-U9Gbs-6avaL"
-	"exit" 				"CSGO-8hw2y-VpNJH-tKBK2-PCbyV-YcOUD"
+	"WOOD7"				"CSGO-Myfe7-2iZhc-VjOjc-6zyfL-Qn74E"
+	"chelo" 			"CSGO-XAAc2-2VKtk-9YDGi-e4F88-WsdqA"
+	"Tuurtle" 			"CSGO-WUSJG-Qxx5G-xvyQ4-M7D23-Jo74E"
+	"JOTA" 				"CSGO-6yoXe-TEw9O-c8Nso-iW2hM-8jyHL"
+	"exit" 				"CSGO-H5h2L-SnFTY-eafei-E6NDB-RCHnK"
 	//FaZe Players
 	"Twistzz" 			"CSGO-KTDfs-hnKmu-AzDGZ-R2tJ2-rFR7B"
 	"broky"  			"CSGO-HWMAm-4fFfS-6XeYd-3mpkP-cfq3B"

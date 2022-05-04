@@ -15,7 +15,7 @@ char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
-int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotAttackingOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotDispositionOffset, g_iBotMoraleOffset;
+int g_iRndExecute, g_iCurrentRound, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -71,42 +71,6 @@ enum PriorityType
 	PRIORITY_MEDIUM, 
 	PRIORITY_HIGH, 
 	PRIORITY_UNINTERRUPTABLE
-}
-
-enum TaskType
-{
-	SEEK_AND_DESTROY = 0,
-	PLANT_BOMB,
-	FIND_TICKING_BOMB,
-	DEFUSE_BOMB,
-	GUARD_TICKING_BOMB,
-	GUARD_BOMB_DEFUSER,
-	GUARD_LOOSE_BOMB,
-	GUARD_BOMB_ZONE,
-	GUARD_INITIAL_ENCOUNTER,
-	ESCAPE_FROM_BOMB,
-	HOLD_POSITION,
-	FOLLOW,
-	VIP_ESCAPE,
-	GUARD_VIP_ESCAPE_ZONE,
-	COLLECT_HOSTAGES,
-	RESCUE_HOSTAGES,
-	GUARD_HOSTAGES,
-	GUARD_HOSTAGE_RESCUE_ZONE,
-	MOVE_TO_LAST_KNOWN_ENEMY_POSITION,
-	MOVE_TO_SNIPER_SPOT,
-	SNIPING,
-	ESCAPE_FROM_FLAMES,
-}
-
-enum DispositionType
-{
-	ENGAGE_AND_INVESTIGATE,								///< engage enemies on sight and investigate enemy noises
-	OPPORTUNITY_FIRE,									///< engage enemies on sight, but only look towards enemy noises, dont investigate
-	SELF_DEFENSE,										///< only engage if fired on, or very close to enemy
-	IGNORE_ENEMIES,										///< ignore all enemies - useful for ducking around corners, running away, etc
-
-	NUM_DISPOSITIONS
 }
 
 enum LookAtSpotState
@@ -329,9 +293,9 @@ public Action Team_MIBR(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "chelo");
-		ServerCommand("bot_add_ct %s", "yel");
-		ServerCommand("bot_add_ct %s", "shz");
-		ServerCommand("bot_add_ct %s", "boltz");
+		ServerCommand("bot_add_ct %s", "WOOD7");
+		ServerCommand("bot_add_ct %s", "Tuurtle");
+		ServerCommand("bot_add_ct %s", "JOTA");
 		ServerCommand("bot_add_ct %s", "exit");
 		ServerCommand("mp_teamlogo_1 mibr");
 	}
@@ -340,9 +304,9 @@ public Action Team_MIBR(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "chelo");
-		ServerCommand("bot_add_t %s", "yel");
-		ServerCommand("bot_add_t %s", "shz");
-		ServerCommand("bot_add_t %s", "boltz");
+		ServerCommand("bot_add_t %s", "WOOD7");
+		ServerCommand("bot_add_t %s", "Tuurtle");
+		ServerCommand("bot_add_t %s", "JOTA");
 		ServerCommand("bot_add_t %s", "exit");
 		ServerCommand("mp_teamlogo_2 mibr");
 	}
@@ -2253,7 +2217,7 @@ public Action Team_Impact(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "Danejoris");
 		ServerCommand("bot_add_ct %s", "mesamiduck");
 		ServerCommand("bot_add_ct %s", "D4rtyMontana");
-		ServerCommand("mp_teamlogo_1 imp");
+		ServerCommand("mp_teamlogo_1 impa");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -2264,7 +2228,7 @@ public Action Team_Impact(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "Danejoris");
 		ServerCommand("bot_add_t %s", "mesamiduck");
 		ServerCommand("bot_add_t %s", "D4rtyMontana");
-		ServerCommand("mp_teamlogo_2 imp");
+		ServerCommand("mp_teamlogo_2 impa");
 	}
 	
 	return Plugin_Handled;
@@ -2519,9 +2483,9 @@ public Action Team_KOVA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "zks");
-		ServerCommand("bot_add_ct %s", "spargo");
-		ServerCommand("bot_add_ct %s", "uli");
 		ServerCommand("bot_add_ct %s", "airax");
+		ServerCommand("bot_add_ct %s", "uli");
+		ServerCommand("bot_add_ct %s", "spargo");
 		ServerCommand("bot_add_ct %s", "Twixie");
 		ServerCommand("mp_teamlogo_1 kova");
 	}
@@ -2530,9 +2494,9 @@ public Action Team_KOVA(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "zks");
-		ServerCommand("bot_add_t %s", "spargo");
-		ServerCommand("bot_add_t %s", "uli");
 		ServerCommand("bot_add_t %s", "airax");
+		ServerCommand("bot_add_t %s", "uli");
+		ServerCommand("bot_add_t %s", "spargo");
 		ServerCommand("bot_add_t %s", "Twixie");
 		ServerCommand("mp_teamlogo_2 kova");
 	}
@@ -2703,7 +2667,7 @@ public Action Team_9z(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "maxujas");
 		ServerCommand("bot_add_ct %s", "Luken");
 		ServerCommand("bot_add_ct %s", "rox");
-		ServerCommand("mp_teamlogo_1 9z");
+		ServerCommand("mp_teamlogo_1 nine");
 	}
 	
 	if (strcmp(arg, "t") == 0)
@@ -2714,7 +2678,7 @@ public Action Team_9z(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "maxujas");
 		ServerCommand("bot_add_t %s", "Luken");
 		ServerCommand("bot_add_t %s", "rox");
-		ServerCommand("mp_teamlogo_2 9z");
+		ServerCommand("mp_teamlogo_2 nine");
 	}
 	
 	return Plugin_Handled;
@@ -4173,7 +4137,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_add_ct %s", "fnx");
 		ServerCommand("bot_add_ct %s", "boltz");
 		ServerCommand("bot_add_ct %s", "VINI");
-		ServerCommand("mp_teamlogo_1 impe");
+		ServerCommand("mp_teamlogo_1 imp");
 	}
 	
 	if (strcmp(szArg, "t") == 0)
@@ -4184,7 +4148,7 @@ public Action Team_Imperial(int client, int iArgs)
 		ServerCommand("bot_add_t %s", "fnx");
 		ServerCommand("bot_add_t %s", "boltz");
 		ServerCommand("bot_add_t %s", "VINI");
-		ServerCommand("mp_teamlogo_2 impe");
+		ServerCommand("mp_teamlogo_2 imp");
 	}
 	
 	return Plugin_Handled;
@@ -5298,13 +5262,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				float fTargetDistance;
 				int iZoomLevel;
 				bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
-				bool bIsAttacking = !!GetEntData(client, g_iBotAttackingOffset);
 				bool bIsHiding = BotIsHiding(client);
 				bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
 				bool bIsReloading = IsPlayerReloading(client);
-				
-				if(view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset)) == SELF_DEFENSE || view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset)) == IGNORE_ENEMIES)
-					SetEntData(client, g_iBotDispositionOffset, view_as<int>(ENGAGE_AND_INVESTIGATE));
 				
 				if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
 					iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
@@ -5323,7 +5283,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 					return Plugin_Continue;
 				
-				if (bIsEnemyVisible && bIsAttacking && GetEntityMoveType(client) != MOVETYPE_LADDER)
+				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
 					g_bAbortExecute = true;
 					
@@ -5537,17 +5497,11 @@ public void LoadSDK()
 	if ((g_iBotSafeTimeOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_safeTime")) == -1)
 		SetFailState("Failed to get CCSBot::m_safeTime offset.");
 	
-	if ((g_iBotAttackingOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_isAttacking")) == -1)
-		SetFailState("Failed to get CCSBot::m_isAttacking offset.");
-	
 	if ((g_iBotEnemyOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_enemy")) == -1)
 		SetFailState("Failed to get CCSBot::m_enemy offset.");
 	
 	if ((g_iBotLookAtSpotStateOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lookAtSpotState")) == -1)
 		SetFailState("Failed to get CCSBot::m_lookAtSpotState offset.");
-	
-	if ((g_iBotDispositionOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_disposition")) == -1)
-		SetFailState("Failed to get CCSBot::m_disposition offset.");
 	
 	if ((g_iBotMoraleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_morale")) == -1)
 		SetFailState("Failed to get CCSBot::m_morale offset.");

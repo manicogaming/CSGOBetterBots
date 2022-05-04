@@ -1,10 +1,10 @@
 "Names"
 {
 	//MIBR Players
-	"yel"				"90069456"
+	"WOOD7"				"42876435"
 	"chelo" 			"107498100"
-	"shz" 				"178194613"
-	"boltz" 			"58113672"
+	"Tuurtle" 			"34114868"
+	"JOTA" 				"94554756"
 	"exit" 				"50230614"
 	//FaZe Players
 	"Twistzz" 			"55989477"

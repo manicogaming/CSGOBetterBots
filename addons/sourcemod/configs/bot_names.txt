@@ -1,10 +1,10 @@
 "Names"
 {
 	//MIBR Players
-	"yel"				"MIBR"
+	"WOOD7"				"MIBR"
 	"chelo" 			"MIBR"
-	"shz" 				"MIBR"
-	"boltz" 			"MIBR"
+	"Tuurtle" 			"MIBR"
+	"JOTA" 				"MIBR"
 	"exit" 				"MIBR"
 	//FaZe Players
 	"Twistzz" 			"FaZe"

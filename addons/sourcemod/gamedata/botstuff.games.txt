@@ -157,11 +157,6 @@
 				//Is inside CCSBot::DebugDisplay near the string 'SafeTime: %3.2f'
 				"windows"	   "15448"
 			}
-			"CCSBot::m_isAttacking"
-			{
-				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
-				"windows"	   "16016"
-			}
 			"CCSBot::m_enemy"
 			{
 				//Is inside CCSBot::DebugDisplay near the string 'ATTACKING: %s'
@@ -171,11 +166,6 @@
 			{
 				//A little bit above the string '%3.2f: Grenade: FINISH_THROW\n'
 				"windows"	   "23080"
-			}
-			"CCSBot::m_disposition"
-			{
-				//Small function with the string 'DefusingBomb'
-				"windows"	   "24052"
 			}
 			"CCSBot::m_morale"
 			{
@@ -319,7 +309,7 @@
 				"windows"
 				{
 					"offset"	"942h"
-					"verify"	"\xE8\xB9\xF7\xF4\xFF\x84\xC0"
+					"verify"	"\xE8\x89\xF7\xF4\xFF\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}

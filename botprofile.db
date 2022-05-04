@@ -300,15 +300,15 @@ ProP+Rifle+RiflePersonality "chelo"
 	VoicePitch = 73
 End
 
-ProP+SniperPro+SniperPersonality "yel"
+ProP+SniperPro+SniperPersonality "WOOD7"
 	VoicePitch = 80
 End
 
-ProP+Rifle+RiflePersonality "shz"
+ProP+Rifle+RiflePersonality "Tuurtle"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "boltz"
+ProP+Rifle+RiflePersonality "JOTA"
 	VoicePitch = 96
 End
 
