@@ -80,8 +80,8 @@
 	"shox" 				"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"kRaSnaL" 			"AGO"
-	"Grashog" 			"AGO"
+	"ultimate" 			"AGO"
+	"AxEcHo" 			"AGO"
 	"F1KU" 				"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
@@ -201,7 +201,7 @@
 	//eSuba Players
 	"Pechyn" 			"eSuba"
 	"desty" 			"eSuba"
-	"sAvana1" 			"eSuba"	
+	"benq1" 			"eSuba"	
 	"blogg1s" 			"eSuba"
 	"Levi" 				"eSuba"
 	//Nexus Players
@@ -250,7 +250,7 @@
 	"chay"				"Sharks" 
 	"jnt" 				"Sharks"
 	"Lucaozy" 			"Sharks"
-	"matios" 			"Sharks"
+	"n1ssim" 			"Sharks"
 	"zevy" 				"Sharks"
 	//One Players
 	"keiz" 				"One"
@@ -258,12 +258,12 @@
 	"trk" 				"One"	
 	"xns" 				"One"
 	"pesadelo" 			"One"
-	//ORDER Players
-	"J1rah" 			"ORDER"
-	"Vexite" 			"ORDER"
-	"tucks" 			"ORDER"
-	"USTILO" 			"ORDER"
-	"Valiance" 			"ORDER"
+	//Wolsung Players
+	"hyskeee" 			"Wolsung"
+	"shield" 			"Wolsung"
+	"keen" 				"Wolsung"
+	"discplex" 			"Wolsung"
+	"msn2k" 			"Wolsung"
 	//SKADE Players
 	"dream3r" 			"SKADE"
 	"dennyslaw" 		"SKADE"	
@@ -390,12 +390,12 @@
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
 	"V4D1M" 			"Lynn"
-	//Impact Players
-	"RZU" 				"Impact"
-	"D4rtyMontana" 		"Impact"
-	"Danejoris" 		"Impact"
-	"mesamiduck" 		"Impact"
-	"grape" 			"Impact"
+	//GG Players
+	"nosraC" 			"GG"
+	"JazzPimp" 			"GG"
+	"Bwills" 			"GG"
+	"jeorgesnorts" 		"GG"
+	"cynic" 			"GG"
 	//OG Players
 	"nikozan" 			"OG"
 	"mantuu" 			"OG"
@@ -509,7 +509,7 @@
 	"Blytz" 			"EP"
 	"manguss" 			"EP"	
 	"myltsi" 			"EP"
-	"matys" 			"EP"
+	"NIO" 				"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
 	"adamb" 			"Lemondogs"
@@ -828,4 +828,10 @@
 	"dobbo"				"ITB"
 	"CYPHER" 			"ITB"
 	"Tadpole"			"ITB"
+	//Sampi Players
+	"Adejis" 			"Sampi"
+	"GuardiaN"			"Sampi"
+	"matys"				"Sampi"
+	"sAvana1" 			"Sampi"
+	"T4gg3D"			"Sampi"
 }

@@ -80,8 +80,8 @@
 	"shox" 				"46654567"
 	//AGO Players
 	"Furlan" 			"177495873"
-	"kRaSnaL" 			"336152206"
-	"Grashog" 			"78941188"
+	"ultimate" 			"323723495"
+	"AxEcHo" 			"897414124"
 	"F1KU" 				"292168772"
 	"leman" 			"40398517"
 	//ENCE Players
@@ -203,7 +203,7 @@
 	"blogg1s" 			"115938594"	
 	"Levi" 				"64235109"	
 	"desty" 			"86172483"	
-	"sAvana1" 			"69270002"	
+	"benq1" 			"33750933"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -250,7 +250,7 @@
 	"chay"				"291666024" 
 	"jnt" 				"43326019"
 	"Lucaozy" 			"197122745"
-	"matios" 			"3011855"
+	"n1ssim" 			"101497868"
 	"zevy" 				"911593093"
 	//One Players
 	"keiz" 				"183028724"
@@ -258,12 +258,12 @@
 	"trk" 				"74113976"
 	"xns" 				"138141272"
 	"pesadelo" 			"295715770"
-	//ORDER Players
-	"J1rah" 			"82535956"
-	"Vexite" 			"92622415"
-	"tucks" 			"195797579"
-	"USTILO" 			"18903255"
-	"Valiance" 			"236090787"
+	//Wolsung Players
+	"hyskeee" 			"240252201"
+	"shield" 			"293626183"
+	"keen" 				"54646804"
+	"discplex" 			"252053056"
+	"msn2k" 			"6172176"
 	//SKADE Players
 	"dream3r" 			"194789935"
 	"dennyslaw" 		"300693622"	
@@ -390,12 +390,12 @@
 	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
 	"V4D1M" 			"40409264"
-	//Impact Players
-	"RZU" 				"170869120"
-	"D4rtyMontana" 		"202142667"
-	"Danejoris" 		"116329706"
-	"mesamiduck" 		"93936164"
-	"grape" 			"130164677"
+	//GG Players
+	"nosraC" 			"101522203"
+	"JazzPimp" 			"101706163"
+	"Bwills" 			"119308817"
+	"jeorgesnorts" 		"393603607"
+	"cynic" 			"106932238"
 	//OG Players
 	"nikozan" 			"29470855"
 	"mantuu" 			"56166832"
@@ -507,7 +507,7 @@
 	//EP Players
 	"The eLiVe"			"111025647"
 	"Blytz"				"101848953"
-	"matys"				"1086212773"
+	"NIO"				"170307600"
 	"manguss"			"75244785"
 	"myltsi"			"842766723"
 	//Lemondogs Players
@@ -828,4 +828,10 @@
 	"dobbo"				"288859378"
 	"CYPHER" 			"291718826"
 	"Tadpole"			"121133939"
+	//Sampi Players
+	"Adejis" 			"125256141"
+	"GuardiaN"			"12065295"
+	"matys"				"1086212773"
+	"sAvana1" 			"69270002"
+	"T4gg3D"			"296534066"
 }
