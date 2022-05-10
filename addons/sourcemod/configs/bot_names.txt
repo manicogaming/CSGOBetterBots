@@ -285,7 +285,7 @@
 	//NASR Players
 	"Remind" 			"NASR"
 	"REAL1ZE" 			"NASR"
-	"keen" 				"NASR"
+	"SandeN" 			"NASR"
 	"EiZAA" 			"NASR"
 	"bibu" 				"NASR"
 	//ECB Players

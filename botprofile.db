@@ -1338,7 +1338,7 @@ ProP+SniperPro+SniperPersonality "REAL1ZE"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "keen"
+ProP+Rifle+RiflePersonality "SandeN"
 	VoicePitch = 113
 End
 

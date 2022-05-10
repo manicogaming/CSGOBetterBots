@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun May 08 16:28:10 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Tue May 10 23:43:44 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -218,8 +218,9 @@ de_dust2_original
 de_dust2_winter_2019
 de_dust2green
 de_dust_pcg_3k
-workshop/286072922/de_dustec
+de_dustec
 de_dynasty
+workshop/2773478787/de_ecopoint
 de_elysion
 de_empire
 de_engage

@@ -1687,7 +1687,7 @@ public Action Team_NASR(int client, int iArgs)
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "Remind");
 		ServerCommand("bot_add_ct %s", "REAL1ZE");
-		ServerCommand("bot_add_ct %s", "keen");
+		ServerCommand("bot_add_ct %s", "SandeN");
 		ServerCommand("bot_add_ct %s", "EiZAA");
 		ServerCommand("bot_add_ct %s", "bibu");
 		ServerCommand("mp_teamlogo_1 nasr");
@@ -1698,7 +1698,7 @@ public Action Team_NASR(int client, int iArgs)
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "Remind");
 		ServerCommand("bot_add_t %s", "REAL1ZE");
-		ServerCommand("bot_add_t %s", "keen");
+		ServerCommand("bot_add_t %s", "SandeN");
 		ServerCommand("bot_add_t %s", "EiZAA");
 		ServerCommand("bot_add_t %s", "bibu");
 		ServerCommand("mp_teamlogo_2 nasr");
@@ -3366,8 +3366,8 @@ public Action Team_Strife(int client, int iArgs)
 	{
 		ServerCommand("bot_kick ct all");
 		ServerCommand("bot_add_ct %s", "J0LZ");
-		ServerCommand("bot_add_ct %s", "Annihilation");
-		ServerCommand("bot_add_ct %s", "hasteka");
+		ServerCommand("bot_add_ct %s", "SLIGHT");
+		ServerCommand("bot_add_ct %s", "stamina");
 		ServerCommand("bot_add_ct %s", "aris");
 		ServerCommand("bot_add_ct %s", "fejtZ");
 		ServerCommand("mp_teamlogo_1 strife");
@@ -3377,8 +3377,8 @@ public Action Team_Strife(int client, int iArgs)
 	{
 		ServerCommand("bot_kick t all");
 		ServerCommand("bot_add_t %s", "J0LZ");
-		ServerCommand("bot_add_t %s", "Annihilation");
-		ServerCommand("bot_add_t %s", "hasteka");
+		ServerCommand("bot_add_t %s", "SLIGHT");
+		ServerCommand("bot_add_t %s", "stamina");
 		ServerCommand("bot_add_t %s", "aris");
 		ServerCommand("bot_add_t %s", "fejtZ");
 		ServerCommand("mp_teamlogo_2 strife");
@@ -5766,7 +5766,7 @@ stock int GetNearestEntity(int client, char[] szClassname, bool bCheckVisibility
 	{
 		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin); // Line 2610
 		fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
-		bVisible = bCheckVisibility ? IsPointVisible(fClientEyes, fEntityOrigin) : false;
+		bVisible = bCheckVisibility ? IsPointVisible(fClientEyes, fEntityOrigin) : true;
 		
 		if ((fDistance < fNearestDistance || fNearestDistance == -1.0) && bVisible)
 		{

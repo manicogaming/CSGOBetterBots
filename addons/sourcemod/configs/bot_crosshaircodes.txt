@@ -285,7 +285,7 @@
 	//NASR Players
 	"Remind" 			"CSGO-Xu9yy-zf8cM-A83kU-jd6uu-2AA2P"
 	"REAL1ZE" 			"CSGO-WQ8oq-QJawt-Z8iyF-GNGss-sV8SA"
-	"keen" 				"CSGO-uPFao-tdYvx-bfyB8-BAzDE-pqAQL"
+	"SandeN" 			"CSGO-b2ix8-rAryY-CQpyn-8hnjU-5tnkP"
 	"EiZAA" 			"CSGO-WQ8oq-QJawt-Z8iyF-GNGss-sV8SA"
 	"bibu" 				"CSGO-vtN4c-aso5q-yfNVx-FMjZe-X3xsP"
 	//ECB Players
