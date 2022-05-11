@@ -1108,25 +1108,25 @@ ProP+Rifle+RiflePersonality "boX"
 	VoicePitch = 75
 End
 
-//Xi'an Players
+//IHC Players
 
-ProP+Rifle+RiflePersonality "QUQU"
+ProP+Rifle+RiflePersonality "Techno4K"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "Savageoh"
+ProP+SniperPro+SniperPersonality "bLitz"
 	VoicePitch = 73
 End
 
-ProP+Rifle+RiflePersonality "Franke19"
+ProP+Rifle+RiflePersonality "kabal"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "18yM"
+ProP+Rifle+RiflePersonality "nin9"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "tb"
+ProP+Rifle+RiflePersonality "sk0R"
 	VoicePitch = 87
 End
 

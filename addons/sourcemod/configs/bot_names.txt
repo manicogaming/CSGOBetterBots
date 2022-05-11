@@ -222,12 +222,12 @@
 	"Chill" 			"Nemiga"	
 	"Jyo" 				"Nemiga"
 	"boX" 				"Nemiga"
-	//Xi'an Players
-	"QUQU" 				"Xi'an"
-	"Savageoh" 			"Xi'an"
-	"Franke19" 			"Xi'an"
-	"18yM" 				"Xi'an"
-	"tb" 				"Xi'an"
+	//IHC Players
+	"Techno4K" 			"IHC"
+	"bLitz" 			"IHC"
+	"kabal" 			"IHC"
+	"nin9" 				"IHC"
+	"sk0R" 				"IHC"
 	//Infinity Players
 	"k1Nky" 			"Infinity"
 	"tor1towOw" 		"Infinity"	

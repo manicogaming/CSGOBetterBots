@@ -222,12 +222,12 @@
 	"Chill" 			"CSGO-Lye48-ZL9sX-vMUhO-6uDcM-AerVQ"	
 	"Jyo" 				"CSGO-iczvK-98F5U-ttvcU-FkNGY-KudqA"
 	"boX" 				"CSGO-3urOn-kkuvt-wNXVM-aPDMB-M4syM"
-	//DETONA Players
-	"Franke19" 			"CSGO-Twwq8-hBoqR-5qRDz-Rfq7G-HzQRO"
-	"QUQU" 				"CSGO-9OysP-sFw9b-dHiXx-VXUA2-hif4D"
-	"Savageoh" 			"CSGO-y3BCa-R9VjN-Mi7rc-oTVfM-teG4C"
-	"18yM" 				"CSGO-f99En-OaHc7-tBkRP-MFEOr-qvbJD"
-	"tb" 				"CSGO-tkUk3-TcRyR-nOy4F-hPEVi-jFFFN"
+	//IHC Players
+	"kabal" 			"CSGO-F5e36-bCjvN-fMNrS-K8Vkp-v5BYN"
+	"Techno4K" 			"CSGO-nKmu4-HAS9V-v4oYk-3n95j-u6GSQ"
+	"bLitz" 			"CSGO-z6cDY-E4nMJ-AOnBf-FNJdd-tR6ZJ"
+	"nin9" 				"CSGO-8Wibm-JPepV-3QCw9-awmRL-TJZML"
+	"sk0R" 				"CSGO-SdEYR-QPzxN-AHMWp-S8Hmt-bFPYE"
 	//Infinity Players
 	"k1Nky" 			"CSGO-mbvMQ-e5aQp-cKC8q-XA7it-8t8rN"
 	"tor1towOw" 		"CSGO-HrW8N-c9H7t-LpTwk-earYj-rCU8N"	

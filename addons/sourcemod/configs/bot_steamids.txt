@@ -222,12 +222,12 @@
 	"Chill" 			"113129796"	
 	"Jyo" 				"43255799"
 	"boX" 				"127393261"
-	//Xi'an Players
-	"Franke19" 			"318958693"
-	"QUQU" 				"76617308"
-	"Savageoh" 			"126430853"
-	"18yM" 				"357541030"
-	"tb" 				"40572886"
+	//IHC Players
+	"kabal" 			"161246388"
+	"Techno4K" 			"1006074432"
+	"bLitz" 			"999558360"
+	"nin9" 				"168197870"
+	"sk0R" 				"863160115"
 	//Infinity Players
 	"k1Nky" 			"4645867"
 	"tor1towOw" 		"112244062"	

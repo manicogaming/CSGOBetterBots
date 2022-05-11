@@ -163,7 +163,7 @@ public void OnPluginStart()
 	RegConsoleCmd("team_nexus", Team_Nexus);
 	RegConsoleCmd("team_pact", Team_PACT);
 	RegConsoleCmd("team_nemiga", Team_Nemiga);
-	RegConsoleCmd("team_xian", Team_Xian);
+	RegConsoleCmd("team_ihc", Team_IHC);
 	RegConsoleCmd("team_infinity", Team_Infinity);
 	RegConsoleCmd("team_isurus", Team_Isurus);
 	RegConsoleCmd("team_pain", Team_paiN);
@@ -1377,7 +1377,7 @@ public Action Team_Nemiga(int client, int iArgs)
 	return Plugin_Handled;
 }
 
-public Action Team_Xian(int client, int iArgs)
+public Action Team_IHC(int client, int iArgs)
 {
 	char arg[12];
 	GetCmdArg(1, arg, sizeof(arg));
@@ -1385,23 +1385,23 @@ public Action Team_Xian(int client, int iArgs)
 	if (strcmp(arg, "ct") == 0)
 	{
 		ServerCommand("bot_kick ct all");
-		ServerCommand("bot_add_ct %s", "QUQU");
-		ServerCommand("bot_add_ct %s", "Savageoh");
-		ServerCommand("bot_add_ct %s", "Franke19");
-		ServerCommand("bot_add_ct %s", "18yM");
-		ServerCommand("bot_add_ct %s", "tb");
-		ServerCommand("mp_teamlogo_1 xi");
+		ServerCommand("bot_add_ct %s", "Techno4K");
+		ServerCommand("bot_add_ct %s", "bLitz");
+		ServerCommand("bot_add_ct %s", "kabal");
+		ServerCommand("bot_add_ct %s", "nin9");
+		ServerCommand("bot_add_ct %s", "sk0R");
+		ServerCommand("mp_teamlogo_1 ihc");
 	}
 	
 	if (strcmp(arg, "t") == 0)
 	{
 		ServerCommand("bot_kick t all");
-		ServerCommand("bot_add_t %s", "QUQU");
-		ServerCommand("bot_add_t %s", "Savageoh");
-		ServerCommand("bot_add_t %s", "Franke19");
-		ServerCommand("bot_add_t %s", "18yM");
-		ServerCommand("bot_add_t %s", "tb");
-		ServerCommand("mp_teamlogo_2 xi");
+		ServerCommand("bot_add_t %s", "Techno4K");
+		ServerCommand("bot_add_t %s", "bLitz");
+		ServerCommand("bot_add_t %s", "kabal");
+		ServerCommand("bot_add_t %s", "nin9");
+		ServerCommand("bot_add_t %s", "sk0R");
+		ServerCommand("mp_teamlogo_2 ihc");
 	}
 	
 	return Plugin_Handled;
