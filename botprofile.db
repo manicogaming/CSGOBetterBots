@@ -792,7 +792,7 @@ ProP+Rifle+RiflePersonality "Spiidi"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "Marix"
+ProP+Rifle+RiflePersonality "lauNX"
 	VoicePitch = 87
 End
 
@@ -1056,7 +1056,7 @@ ProP+Rifle+RiflePersonality "ragga"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "lauNX"
+ProP+Rifle+RiflePersonality "ToH1o"
 	VoicePitch = 110
 End
 
@@ -1220,7 +1220,7 @@ End
 
 //One Players
 
-ProP+Rifle+RiflePersonality "keiz"
+ProP+Rifle+RiflePersonality "iDk"
 	VoicePitch = 111
 End
 
@@ -1374,7 +1374,7 @@ End
 
 //Bravado Players
 
-ProP+Rifle+RiflePersonality "TheM4N"
+ProP+Rifle+RiflePersonality "Doru"
 	VoicePitch = 84
 End
 
@@ -1386,11 +1386,11 @@ ProP+Rifle+RiflePersonality "Wip3ouT"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "flexeeee"
+ProP+Rifle+RiflePersonality "bLazE"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality ".exe"
+ProP+Rifle+RiflePersonality "wilj"
 	VoicePitch = 78
 End
 
@@ -1856,28 +1856,6 @@ ProP+Rifle+RiflePersonality "rmn"
 	VoicePitch = 109
 End
 
-//DIG Players
-
-ProP+Rifle+RiflePersonality "Lekr0"
-	VoicePitch = 109
-End
-
-ProP+SniperPro+SniperPersonality "hallzerk"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "f0rest"
-	VoicePitch = 110
-End
-
-ProP+Rifle+RiflePersonality "friberg"
-	VoicePitch = 86
-End
-
-ProP+Rifle+RiflePersonality "HEAP"
-	VoicePitch = 102
-End
-
 //D13 Players
 
 ProP+Rifle+RiflePersonality "tamir"
@@ -2148,7 +2126,7 @@ ProP+Rifle+RiflePersonality "The eLiVe"
 	VoicePitch = 82
 End
 
-ProP+SniperPro+SniperPersonality "myltsi"
+ProP+SniperPro+SniperPersonality "h4rn"
 	VoicePitch = 110
 End
 
@@ -2160,7 +2138,7 @@ ProP+Rifle+RiflePersonality "Blytz"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "NIO"
+ProP+Rifle+RiflePersonality "stinx"
 	VoicePitch = 92
 End
 
@@ -2398,7 +2376,7 @@ ProP+Rifle+RiflePersonality "dyvo"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "Doru"
+ProP+Rifle+RiflePersonality "kaNibalistic"
 	VoicePitch = 107
 End
 

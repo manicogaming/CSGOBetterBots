@@ -136,7 +136,7 @@
 	"Staehr" 			"44842089"
 	"slaxz" 			"104087441"
 	"Spiidi" 			"13465075"
-	"Marix" 			"216156939"
+	"lauNX" 			"1012530125"
 	"raalz" 			"35794427"
 	//Heroic Players
 	"TeSeS" 			"36412550"
@@ -208,7 +208,7 @@
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
 	"ragga" 			"109933575"
-	"lauNX" 			"1012530125"
+	"ToH1o" 			"37321649"
 	"SEMINTE" 			"36171013"
 	//PACT Players
 	"SAYN" 				"72039306"
@@ -253,7 +253,7 @@
 	"n1ssim" 			"101497868"
 	"zevy" 				"911593093"
 	//One Players
-	"keiz" 				"183028724"
+	"iDk" 				"106435802"
 	"Maluk3" 			"36056013"
 	"trk" 				"74113976"
 	"xns" 				"138141272"
@@ -295,11 +295,11 @@
 	"Matty" 			"28184063"
 	"n0tice" 			"71806151"
 	//Bravado Players
-	"flexeeee" 			"177739017"	
+	"bLazE" 			"209701855"	
 	"SloWye" 			"50695439"
-	"TheM4N" 			"84708704"
+	"Doru" 				"135905209"
 	"Wip3ouT" 			"208829044"
-	".exe" 				"302798328"
+	"wilj" 				"183429246"
 	//SH Players
 	"AE" 				"187743214"	
 	"captainMo" 		"109036162"	
@@ -426,12 +426,6 @@
 	"JUST" 				"52722111"
 	"MUTiRiS" 			"37715442"	
 	"rmn" 				"34129763"
-	//DIG Players
-	"Lekr0" 			"1093135"
-	"hallzerk" 			"100101582"
-	"f0rest" 			"93724"
-	"friberg" 			"24295201"
-	"HEAP" 				"181546146"
 	//D13 Players
 	"tamir"				"103695333" 
 	"shinobi" 			"488680911"
@@ -507,9 +501,9 @@
 	//EP Players
 	"The eLiVe"			"111025647"
 	"Blytz"				"101848953"
-	"NIO"				"170307600"
+	"stinx"				"122206039"
 	"manguss"			"75244785"
-	"myltsi"			"842766723"
+	"h4rn"				"88360844"
 	//Lemondogs Players
 	"xelos" 			"28004721"
 	"adamb" 			"890801811"
@@ -574,7 +568,7 @@
 	"dyvo"				"172602391"
 	"Niix" 				"318367596"
 	"Leggy" 			"19776816"
-	"Doru" 				"135905209"
+	"kaNibalistic" 		"32730121"
 	"Dubee" 			"162968873"
 	//iNation Players
 	"Dragon" 			"290361460"

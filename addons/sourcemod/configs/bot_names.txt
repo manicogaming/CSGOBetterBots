@@ -136,7 +136,7 @@
 	"Staehr" 			"Sprout"
 	"slaxz" 			"Sprout"
 	"Spiidi" 			"Sprout"
-	"Marix" 			"Sprout"
+	"lauNX" 			"Sprout"
 	"raalz" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
@@ -208,7 +208,7 @@
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
 	"ragga" 			"Nexus"
-	"lauNX" 			"Nexus"
+	"ToH1o" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	//PACT Players
 	"SAYN" 				"PACT"
@@ -253,7 +253,7 @@
 	"n1ssim" 			"Sharks"
 	"zevy" 				"Sharks"
 	//One Players
-	"keiz" 				"One"
+	"iDk" 				"One"
 	"Maluk3" 			"One"
 	"trk" 				"One"	
 	"xns" 				"One"
@@ -295,11 +295,11 @@
 	"Matty" 			"ECB"
 	"n0tice" 			"ECB"
 	//Bravado Players
-	"TheM4N" 			"Bravado"
+	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
 	"Wip3ouT" 			"Bravado"
-	"flexeeee" 			"Bravado"	
-	".exe" 				"Bravado"
+	"bLazE" 			"Bravado"	
+	"wilj" 				"Bravado"
 	//SH Players
 	"captainMo" 		"SH"
 	"LOVEYY" 			"SH"
@@ -426,12 +426,6 @@
 	"JUST" 				"SAW"
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
-	//DIG Players
-	"Lekr0" 			"DIG"
-	"hallzerk" 			"DIG"
-	"f0rest" 			"DIG"
-	"friberg" 			"DIG"
-	"HEAP" 				"DIG"
 	//D13 Players
 	"tamir"				"D13" 
 	"rate" 				"D13"
@@ -508,8 +502,8 @@
 	"The eLiVe" 		"EP"
 	"Blytz" 			"EP"
 	"manguss" 			"EP"	
-	"myltsi" 			"EP"
-	"NIO" 				"EP"
+	"h4rn" 				"EP"
+	"stinx" 			"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
 	"adamb" 			"Lemondogs"
@@ -574,7 +568,7 @@
 	"Niix" 				"DNMK"
 	"Leggy" 			"DNMK"
 	"dyvo" 				"DNMK"
-	"Doru" 				"DNMK"
+	"kaNibalistic" 		"DNMK"
 	"Dubee"				"DNMK"
 	//iNation Players
 	"Dragon" 			"iNation"
