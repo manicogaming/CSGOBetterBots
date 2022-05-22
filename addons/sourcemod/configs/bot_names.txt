@@ -190,7 +190,7 @@
 	"HS" 				"Rhyno"
 	"DeviNe" 			"Rhyno"
 	"SeabraEZ" 			"Rhyno"	
-	"opdust" 			"Rhyno"
+	"SYDOX" 			"Rhyno"
 	"krazy" 			"Rhyno"
 	//Riders Players
 	"mopoz"				"Riders" 
@@ -248,7 +248,7 @@
 	"hardzao" 			"paiN"
 	//Sharks Players
 	"chay"				"Sharks" 
-	"jnt" 				"Sharks"
+	"drg" 				"Sharks"
 	"Lucaozy" 			"Sharks"
 	"n1ssim" 			"Sharks"
 	"zevy" 				"Sharks"
@@ -610,7 +610,7 @@
 	"J0LZ" 				"Strife"
 	"SLIGHT" 			"Strife"
 	"stamina" 			"Strife"
-	"aris" 				"Strife"
+	"reck" 				"Strife"
 	"fejtZ"				"Strife"
 	//Party Players
 	"ben1337" 			"Party"
@@ -635,7 +635,7 @@
 	"kyxsan"			"BLUEJAYS"
 	"stYleEeZ" 			"BLUEJAYS"
 	"dan1" 				"BLUEJAYS"
-	"Cryveng"			"BLUEJAYS"
+	"CacaNito"			"BLUEJAYS"
 	//ECK Players
 	"byr9" 				"ECK"
 	"uQlutzavr"			"ECK"
@@ -661,11 +661,11 @@
 	"DANVIET" 			"SWS"
 	"w1"				"SWS"
 	//Leviatan Players
-	"1962" 				"Leviatan"
-	"fakzwall"			"Leviatan"
+	"tom1" 				"Leviatan"
+	"nacho"				"Leviatan"
 	"Reversive" 		"Leviatan"
 	"meyern" 			"Leviatan"
-	"pancc"				"Leviatan"
+	"JonY BoY"			"Leviatan"
 	//Furious Players
 	"KAISER" 			"Furious"
 	"TIKO"				"Furious"

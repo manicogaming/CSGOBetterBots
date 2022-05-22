@@ -190,7 +190,7 @@
 	"HS" 				"384577684"
 	"DeviNe" 			"840919760"
 	"SeabraEZ" 			"420752411"	
-	"opdust" 			"335473688"
+	"SYDOX" 			"2634634"
 	"krazy" 			"900494332"
 	//Riders Players
 	"mopoz"				"37931638" 
@@ -248,7 +248,7 @@
 	"hardzao" 			"160642472"
 	//Sharks Players
 	"chay"				"291666024" 
-	"jnt" 				"43326019"
+	"drg" 				"193829435"
 	"Lucaozy" 			"197122745"
 	"n1ssim" 			"101497868"
 	"zevy" 				"911593093"
@@ -610,7 +610,7 @@
 	"J0LZ" 				"163875307"
 	"SLIGHT" 			"193314309"
 	"stamina" 			"272809432"
-	"aris" 				"72733739"
+	"reck" 				"374549101"
 	"fejtZ"				"95338913"
 	//Party Players
 	"ben1337" 			"131461662"
@@ -635,7 +635,7 @@
 	"kyxsan"			"97016704"
 	"stYleEeZ" 			"83880966"
 	"dan1" 				"283022264"
-	"Cryveng"			"149961284"
+	"CacaNito"			"303390740"
 	//ECK Players
 	"byr9" 				"124733563"
 	"uQlutzavr"			"311902739"
@@ -661,11 +661,11 @@
 	"DANVIET" 			"118464022"
 	"w1"				"456548842"
 	//Leviatan Players
-	"1962" 				"321501952"
-	"fakzwall"			"100101626"
+	"tom1" 				"1021035676"
+	"nacho"				"979595590"
 	"Reversive" 		"229334739"
 	"meyern" 			"235377137"
-	"pancc"				"85456730"
+	"JonY BoY"			"77140654"
 	//Furious Players
 	"KAISER" 			"167304921"
 	"TIKO"				"169462190"

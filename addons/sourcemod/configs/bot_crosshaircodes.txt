@@ -190,7 +190,7 @@
 	"HS" 				"CSGO-SxksZ-8FWHk-LBYoA-RyOjD-cMwLA"
 	"DeviNe" 			"CSGO-uwn55-SRvGx-hQUx3-uno35-x3zkG"
 	"SeabraEZ" 			"CSGO-6S3x2-Fa9kn-R96BQ-D6e7f-tR6ZJ"	
-	"opdust" 			"CSGO-Gr5OP-4vwPc-5jNOc-AUuSZ-LVFuA"
+	"SYDOX" 			"CSGO-kDqDS-vzhAb-9qw3z-QjbPZ-xX9vO"
 	"krazy" 			"CSGO-rqmxv-47wyQ-FsfiN-RJujf-pA7yD"
 	//Riders Players
 	"mopoz"				"CSGO-t4MUb-w9coV-458tw-DkDjN-jWq3B" 
@@ -248,7 +248,7 @@
 	"hardzao" 			"CSGO-p3GnQ-ZVuP6-q2xbr-Fuo8C-hvCJC"
 	//Sharks Players
 	"chay"				"CSGO-ShixZ-sCciy-iAMSZ-O7nxh-KMk9Q" 
-	"jnt" 				"CSGO-AjaFc-2dhq6-ayFb5-hX8nU-JK5mA"
+	"drg" 				"CSGO-qpYJL-ouoCX-u5huv-vwxhm-eCbEC"
 	"Lucaozy" 			"CSGO-WZUVD-Evrbw-ChFYC-teHxB-pqAQL"
 	"n1ssim" 			"CSGO-BBfxM-2qwXj-ZGfPB-vCWH6-uWXTB"
 	"zevy" 				"CSGO-t4ym6-HLU6z-G6AaD-DGi9P-PeiaB"
@@ -610,7 +610,7 @@
 	"J0LZ" 				"CSGO-zUhVs-STsAK-8NzSX-c7eAb-2mdVG"
 	"SLIGHT" 			"CSGO-pU9MX-QY67w-RHnW6-9ydjA-pSqNO"
 	"stamina" 			"CSGO-JTH6M-n9STM-r5NBU-YUsjU-4fWjM"
-	"aris" 				"CSGO-7bkdr-kJuwh-eJjd3-TNvBD-ZVkoE"
+	"reck" 				"CSGO-8k8kR-9Jtti-M556N-cbjdX-9mUCP"
 	"fejtZ"				"CSGO-QmS5L-9RXSe-iurLG-pdsPO-6UDND"
 	//Party Players
 	"ben1337" 			"CSGO-6jQEe-EiURC-o38wL-Kw7bz-36SKF"
@@ -635,7 +635,7 @@
 	"kyxsan"			"CSGO-iCTuz-bCVQv-rBxs2-7mCM7-WsdqA"
 	"stYleEeZ" 			"CSGO-iCTuz-bCVQv-rBxs2-7mCM7-WsdqA"
 	"dan1" 				"CSGO-u5N7L-mnkyh-XkvxQ-FFhP4-hif4D"
-	"Cryveng"			"CSGO-RvRmP-5Vzo6-sUaU3-uAyOF-6AU8N"
+	"CacaNito"			"CSGO-7Lkmj-EboHP-Byirq-4OerR-xXxTC"
 	//ECK Players
 	"byr9" 				"CSGO-eS3Ec-oZZOK-UHDYy-wkYbG-E7c7L"
 	"uQlutzavr"			"CSGO-XZw8Z-CRMWH-hidmD-w2knp-BhiaB"
@@ -661,11 +661,11 @@
 	"DANVIET" 			"CSGO-V9sDt-VYyAo-OUvwE-FWUDE-pqAQL"
 	"w1"				"CSGO-yATMB-55ibp-muMip-fJQA3-5RGOP"
 	//Leviatan Players
-	"1962" 				"CSGO-8hw2y-VpNJH-tKBK2-PCbyV-YcOUD"
-	"fakzwall"			"CSGO-rtUSh-tBwhW-J7SsL-QLD7Q-pboUE"
-	"Reversive" 		"CSGO-LhjXh-enkZw-u2APs-74t9G-3GhnL"
-	"meyern" 			"CSGO-96eQM-EXDqv-f7hSv-pkU8n-N4SKF"
-	"pancc"				"CSGO-DtR3b-7EqRZ-RZss7-YOfsh-AioUE"
+	"tom1" 				"CSGO-R9jh8-rFK7G-UQm4N-n3wDU-Gjj5P"
+	"nacho"				"CSGO-3vdPt-KUzSo-WXaHM-H9N6C-Q7LsE"
+	"Reversive" 		"CSGO-z4RKQ-TPFoR-p9Ycp-8dRxS-QhEVF"
+	"meyern" 			"CSGO-tsZ7Y-mfCue-jztEA-KpdsE-PLzMM"
+	"JonY BoY"			"CSGO-7Waok-mzchH-sMYTF-Sc6HB-LvUWJ"
 	//Furious Players
 	"KAISER" 			"CSGO-T6rQ9-owC5F-nkLd3-htAA6-9DmDA"
 	"TIKO"				"CSGO-uwMac-2TxdD-CPeA2-mvvq7-6NZfE"
