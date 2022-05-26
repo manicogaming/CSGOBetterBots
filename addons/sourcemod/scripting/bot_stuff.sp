@@ -4100,13 +4100,13 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_train") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 2);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? -1 : Math_GetRandomInt(1, 2);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareTrainExecutes();
 		}
 		else if (strcmp(g_szMap, "de_nuke") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 2);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? -1 : Math_GetRandomInt(1, 2);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareNukeExecutes();
 		}
@@ -4118,13 +4118,13 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		}
 		else if (strcmp(g_szMap, "de_cache") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 3);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? -1 : Math_GetRandomInt(1, 3);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareCacheExecutes();
 		}
 		else if (strcmp(g_szMap, "de_ancient") == 0)
 		{
-			g_iRndExecute = Math_GetRandomInt(1, 3);
+			g_iRndExecute = (g_iCurrentRound == 0 || g_iCurrentRound == 15) ? -1 : Math_GetRandomInt(1, 3);
 			LogMessage("BOT STUFF: %s selected execute for Round %i: %i", g_szMap, g_iCurrentRound, g_iRndExecute);
 			PrepareAncientExecutes();
 		}
