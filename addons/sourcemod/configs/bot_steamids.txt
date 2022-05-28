@@ -82,7 +82,7 @@
 	"Furlan" 			"177495873"
 	"ultimate" 			"323723495"
 	"AxEcHo" 			"897414124"
-	"F1KU" 				"292168772"
+	"miNIr0x" 			"10298966"
 	"leman" 			"40398517"
 	//ENCE Players
 	"Snappi" 			"29157337"
@@ -203,7 +203,7 @@
 	"blogg1s" 			"115938594"	
 	"Levi" 				"64235109"	
 	"desty" 			"86172483"	
-	"benq1" 			"33750933"	
+	"zur1s" 			"140467841"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -324,12 +324,6 @@
 	"n0rb3r7" 			"262176776"
 	"fame" 				"119848818"
 	"X5G7V" 			"237685818"
-	//Goliath Players
-	"massacRe" 			"117421285"
-	"Dweezil" 			"79904271"
-	"Triton" 			"135933575"
-	"ELUSIVE" 			"16704419"
-	"zox"				"874942183"
 	//VERTEX Players
 	"BRACE" 			"126538012"
 	"apocdud" 			"58325300"
@@ -397,10 +391,10 @@
 	"jeorgesnorts" 		"393603607"
 	"cynic" 			"106932238"
 	//OG Players
-	"nikozan" 			"29470855"
+	"NEOFRAG" 			"255168957"
 	"mantuu" 			"56166832"
 	"nexa" 				"39559694"
-	"valde" 			"154664140"
+	"F1KU" 				"292168772"
 	"flameZ" 			"18569432"
 	//BNE Players
 	"juanflatroo" 		"135528227"
@@ -485,7 +479,7 @@
 	"forsyy" 			"105029167"
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
-	"NEOFRAG" 			"255168957"
+	"tomkeejs" 			"149866088"
 	//Paradox Players
 	"DannyG"			"193412411" 
 	"nettik" 			"372579523"
@@ -548,7 +542,7 @@
 	"hous1k"			"274093084"
 	//Anonymo Players
 	"oskarish" 			"286156964"
-	"tudsoN" 			"58354081"
+	"Flayy" 			"452134916"
 	"Demho" 			"146746760"
 	"Vegi" 				"90369423"
 	"innocent"			"26563533"
@@ -568,7 +562,7 @@
 	"dyvo"				"172602391"
 	"Niix" 				"318367596"
 	"Leggy" 			"19776816"
-	"kaNibalistic" 		"32730121"
+	"zox" 				"874942183"
 	"Dubee" 			"162968873"
 	//iNation Players
 	"Dragon" 			"290361460"
@@ -699,7 +693,7 @@
 	//GameAgents Players
 	"Klameczka" 		"229219769"
 	"Bajmi"				"240875179"
-	"Flayy" 			"452134916"
+	"Nodsury" 			"279354648"
 	"noise" 			"156994666"
 	"Majster"			"891017452"
 	//Entropy Players

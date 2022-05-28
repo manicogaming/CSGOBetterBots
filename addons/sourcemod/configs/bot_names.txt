@@ -82,7 +82,7 @@
 	"Furlan" 			"AGO"
 	"ultimate" 			"AGO"
 	"AxEcHo" 			"AGO"
-	"F1KU" 				"AGO"
+	"miNIr0x" 			"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"
@@ -201,7 +201,7 @@
 	//eSuba Players
 	"Pechyn" 			"eSuba"
 	"desty" 			"eSuba"
-	"benq1" 			"eSuba"	
+	"zur1s" 			"eSuba"	
 	"blogg1s" 			"eSuba"
 	"Levi" 				"eSuba"
 	//Nexus Players
@@ -324,12 +324,6 @@
 	"n0rb3r7" 			"K23"
 	"fame" 				"K23"
 	"X5G7V" 			"K23"
-	//Goliath Players
-	"massacRe" 			"Goliath"
-	"Dweezil" 			"Goliath"
-	"Triton" 			"Goliath"
-	"ELUSIVE" 			"Goliath"
-	"zox"				"Goliath"
 	//VERTEX Players
 	"pz" 				"VERTEX"
 	"BRACE" 			"VERTEX"
@@ -397,10 +391,10 @@
 	"jeorgesnorts" 		"GG"
 	"cynic" 			"GG"
 	//OG Players
-	"nikozan" 			"OG"
+	"NEOFRAG" 			"OG"
 	"mantuu" 			"OG"
 	"nexa" 				"OG"
-	"valde" 			"OG"
+	"F1KU" 				"OG"
 	"flameZ" 			"OG"
 	//BNE Players
 	"juanflatroo" 		"BNE"
@@ -485,7 +479,7 @@
 	"forsyy" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
-	"NEOFRAG" 			"SINNERS"
+	"tomkeejs" 			"SINNERS"
 	//Paradox Players
 	"DannyG"			"Paradox" 
 	"nettik" 			"Paradox"
@@ -548,7 +542,7 @@
 	"hous1k"			"AVEZ"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
-	"tudsoN" 			"Anonymo"
+	"Flayy" 			"Anonymo"
 	"Demho" 			"Anonymo"
 	"Vegi" 				"Anonymo"
 	"innocent"			"Anonymo"
@@ -568,7 +562,7 @@
 	"Niix" 				"DNMK"
 	"Leggy" 			"DNMK"
 	"dyvo" 				"DNMK"
-	"kaNibalistic" 		"DNMK"
+	"zox" 		"DNMK"
 	"Dubee"				"DNMK"
 	//iNation Players
 	"Dragon" 			"iNation"
@@ -699,7 +693,7 @@
 	//GameAgents Players
 	"Klameczka" 		"GameAgents"
 	"Bajmi"				"GameAgents"
-	"Flayy" 			"GameAgents"
+	"Nodsury" 			"GameAgents"
 	"noise" 			"GameAgents"
 	"Majster"			"GameAgents"
 	//Entropy Players

@@ -82,7 +82,7 @@
 	"Furlan" 			"CSGO-ksEXA-2tJ58-JCDkn-ymDOf-DbapG"
 	"ultimate" 			"CSGO-FNH5n-n2Dz7-zQZhy-VcyXo-XQJvM"
 	"AxEcHo" 			"CSGO-XERDP-sY4Lr-o9rcw-6xuUo-7FwzF"
-	"F1KU" 				"CSGO-CemUb-n37DY-RrHZB-YwLeJ-kj74E"
+	"miNIr0x" 			"CSGO-Xrysb-LDyDh-2F5bE-JOpNH-F9xXD"
 	"leman" 			"CSGO-r3FsK-n45sR-foJUo-nr46P-nysyM"
 	//ENCE Players
 	"Snappi" 			"CSGO-5kMw7-am3GO-MhCLW-fomBb-tOUnB"
@@ -203,7 +203,7 @@
 	"blogg1s" 			"CSGO-QJcDc-CRoKp-vM33a-2EA8P-3d2pH"	
 	"Levi" 				"CSGO-zKZ4V-pZbnH-P9oYk-3n95j-u6GSQ"	
 	"desty" 			"CSGO-KWXJr-j2nnT-zFVc6-4tO9z-S4XDJ"	
-	"benq1" 			"CSGO-22A5O-tvyO8-b24un-NiKxd-5bq3B"	
+	"zur1s" 			"CSGO-exZhE-3Jhv5-Pji5A-NPaDY-5H8nM"	
 	//Nexus Players
 	"BTN" 				"CSGO-n3a26-DGzzz-m3ENd-cKSkm-ekrqK"
 	"XELLOW" 			"CSGO-TMTrj-Bh2WY-6k9MH-zazrc-iDjLJ"
@@ -324,12 +324,6 @@
 	"n0rb3r7" 			"CSGO-MBOrU-tZVfx-bXXwJ-9jdSG-hVaUN"
 	"fame" 				"CSGO-7uAWU-89Qnw-7fyNr-B76zn-bueKP"
 	"X5G7V" 			"CSGO-CHbqp-fPTpi-nO6dh-vWCuH-DV43L"
-	//Goliath Players
-	"massacRe" 			"CSGO-UMPzq-TE7sa-nRqZz-AhVAw-tAKLH"
-	"Dweezil" 			"CSGO-mCRDx-B5X8F-rKBKT-G4nLh-r9sKG"
-	"Triton" 			"CSGO-eToHS-2tSGi-dVYUF-cn7PW-pYOAK"
-	"ELUSIVE" 			"CSGO-t3xJa-Pbac6-z8HZw-7ikpN-BGSZQ"
-	"zox"				"CSGO-eToHS-2tSGi-dVYUF-cn7PW-pYOAK"
 	//VERTEX Players
 	"BRACE" 			"CSGO-fK2tp-WDc9t-A48id-wG2xF-2bVvD"
 	"apocdud" 			"CSGO-mw7Mq-5QZfQ-Bj8m7-LHMTr-cVGOP"
@@ -397,10 +391,10 @@
 	"jeorgesnorts" 		"CSGO-wLWVw-tssoF-Adij5-E7UTq-FZQ3A"
 	"cynic" 			"CSGO-8dk2R-3zmk5-UOq47-xqL5n-EaVvD"
 	//OG Players
-	"nikozan" 			"CSGO-rw8rx-362Wz-jLndf-D2UWn-QQSFE"
+	"NEOFRAG" 			"CSGO-uKyTe-DyhXJ-Lm4z2-afuzS-F99zP"
 	"mantuu" 			"CSGO-iuXxN-Z4tML-FcpUT-2pfxZ-kSLoD"
 	"nexa" 				"CSGO-q48QT-VHpTW-xNH5b-umZNJ-QsybE"
-	"valde" 			"CSGO-oNUii-74piF-JhTU9-na4FA-z2urD"
+	"F1KU" 				"CSGO-CemUb-n37DY-RrHZB-YwLeJ-kj74E"
 	"flameZ" 			"CSGO-M4bme-YwNEt-xbyca-Hiujj-knEVF"
 	//BNE Players
 	"juanflatroo" 		"CSGO-zUzwA-89p2c-OMtSm-mwOVG-KCR7B"
@@ -485,7 +479,7 @@
 	"forsyy" 			"CSGO-t7D3j-6puVG-9yUtQ-nmish-d7eyC"
 	"SHOCK" 			"CSGO-dpRVN-ZnjAn-cNC6Y-cypJJ-XKk9Q"
 	"beastik" 			"CSGO-aaP7u-qHiBq-4pEyQ-GY25f-JdxTC"
-	"NEOFRAG" 			"CSGO-uKyTe-DyhXJ-Lm4z2-afuzS-F99zP"
+	"tomkeejs" 			"CSGO-3ncHh-Z66JP-cadPa-QytVW-sPZfE"
 	//Paradox Players
 	"DannyG"			"CSGO-XS5AW-wOq8u-FQzWO-pUujx-JTDND" 
 	"nettik" 			"CSGO-j9LqL-r4meO-9hiMu-VeujT-fxwPB"
@@ -548,7 +542,7 @@
 	"hous1k"			"CSGO-ftdrM-ovNzw-8LYHh-N5TX5-qk3cQ"
 	//Anonymo Players
 	"oskarish" 			"CSGO-d8HSA-yXriA-BEnAh-A4GMd-SHjeC"
-	"tudsoN" 			"CSGO-convj-NBJXz-YZZih-8EvRG-wEL9P"
+	"Flayy" 			"CSGO-QeWOV-C6JTR-6uXhD-axOyh-Y2syM"
 	"Demho" 			"CSGO-p2tzD-qvm5f-xuvL5-96mBs-pevvE"
 	"Vegi" 				"CSGO-ktkqz-FoUVd-yewKT-y4GCE-6mA6Q"
 	"innocent"			"CSGO-C2sRA-WCuoL-amTsS-rR7pL-QvZQM"
@@ -568,7 +562,7 @@
 	"dyvo"				"CSGO-O6xLH-WCXqL-5hW9U-7TXNM-iUVaK"
 	"Niix" 				"CSGO-DUqAe-qMSJ3-hER3X-EkExO-UoHrL"
 	"Leggy" 			"CSGO-ZPvfc-aUuDO-LrXEK-EjyHZ-X3nQD"
-	"kaNibalistic" 		"CSGO-2GCuB-N3YZz-auLPu-ur46P-nysyM"
+	"zox" 				"CSGO-eToHS-2tSGi-dVYUF-cn7PW-pYOAK"
 	"Dubee" 			"CSGO-TTpyJ-LiK8f-SPtxD-hJq4n-EaVvD"
 	//iNation Players
 	"Dragon" 			"CSGO-kNYkB-uNXCE-duUJB-5SRNh-aDtdA"
@@ -699,7 +693,7 @@
 	//GameAgents Players
 	"Klameczka" 		"CSGO-6tnC4-7EQzY-vPATz-Dima9-vKDhP"
 	"Bajmi"				"CSGO-ttixF-vDSBw-JAtXK-95RoQ-roybE"
-	"Flayy" 			"CSGO-QeWOV-C6JTR-6uXhD-axOyh-Y2syM"
+	"Nodsury" 			"CSGO-m24JT-hQne2-aAbHZ-i6ZPG-GMFZG"
 	"noise" 			"CSGO-zHB4X-RArWn-PspZZ-RmXKq-EaVvD"
 	"Majster"			"CSGO-43xvO-rm9ZS-NTzio-uaOnt-ruWPA"
 	//Entropy Players
