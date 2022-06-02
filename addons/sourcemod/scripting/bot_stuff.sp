@@ -13,7 +13,7 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
-bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1], g_bTakingFireDamage[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
@@ -4005,6 +4005,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bDontSwitch[i] = false;
 			g_bDropWeapon[i] = false;
 			g_bHasGottenDrop[i] = false;
+			g_bTakingFireDamage[i] = false;
 			g_iTarget[i] = -1;
 				
 			if(g_bIsBombScenario || g_bIsHostageScenario)
@@ -4153,6 +4154,12 @@ public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, fl
 	
 	if (iVictim == iAttacker || !IsValidClient(iAttacker) || !IsPlayerAlive(iAttacker))
 		return Plugin_Continue;
+	
+	if(iDamageType & DMG_BURN)
+	{
+		g_bTakingFireDamage[iVictim] = true;
+		CreateTimer(1.0, Timer_DelayFireDamage, GetClientUserId(iVictim));
+	}
 	
 	if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
 		g_bAbortExecute = true;
@@ -4441,7 +4448,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 					return Plugin_Continue;
 				
-				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
+				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER && !g_bTakingFireDamage[client])
 				{
 					g_bAbortExecute = true;
 					
@@ -4964,6 +4971,16 @@ public Action Timer_EnableSwitch(Handle hTimer, any client)
 	
 	if(client != 0 && IsClientInGame(client))
 		g_bDontSwitch[client] = false;	
+	
+	return Plugin_Stop;
+}
+
+public Action Timer_DelayFireDamage(Handle hTimer, any client)
+{
+	client = GetClientOfUserId(client);
+	
+	if(client != 0 && IsClientInGame(client))
+		g_bTakingFireDamage[client] = false;	
 	
 	return Plugin_Stop;
 }
