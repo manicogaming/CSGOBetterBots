@@ -10,7 +10,7 @@ public void PrepareInfernoExecutes()
 		{
 			switch (g_iRndExecute)
 			{
-				case 1: //NIP Pistol B Split					<----- I was here
+				case 1: //NIP Pistol B Split
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/NIP Pistol B Split/device Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/NIP Pistol B Split/hampus Role.rec");
@@ -26,7 +26,7 @@ public void PrepareInfernoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_inferno/Liquid Pistol Halls Pop/FalleN Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_inferno/Liquid Pistol Halls Pop/EliGE Role.rec");
 				}
-				case 3: //G2 Pistol Long Wrap
+				case 3: //G2 Pistol Long Wrap					<----- I was here
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/AmaNEk Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_inferno/G2 Pistol Long Wrap/huNter- Role.rec");

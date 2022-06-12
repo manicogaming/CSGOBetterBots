@@ -28,7 +28,7 @@
 	"glowiing" 			"213998181"
 	"flamie" 			"156257548"
 	"TRAVIS"			"402704995"
-	"fostar" 			"196096645"
+	"lollipop21k" 		"54552870"
 	"deko" 				"327280463"
 	//G2 Players
 	"huNter-" 			"52606325"
@@ -37,8 +37,8 @@
 	"NiKo" 				"81417650"
 	"m0NESY" 			"114497073"
 	//fnatic Players
-	"poizon" 			"117537138"
-	"ALEX" 				"44605706"
+	"nicoodoz" 			"112851399"
+	"roeJ" 				"30968963"
 	"KRIMZ" 			"71385856"
 	"Peppzor" 			"328124340"
 	"mezii" 			"12874964"
@@ -156,7 +156,7 @@
 	"Chawzyyy" 			"205891691"
 	"nawwk" 			"193386133"
 	"STYKO" 			"55928431"
-	//RNG Players
+	//ORDER Players
 	"INS" 				"26946895"
 	"sico" 				"39266546"
 	"aliStair" 			"138080982"
@@ -291,9 +291,9 @@
 	//ECB Players
 	"ritchiEE" 			"9173024"
 	"Stev0se" 			"180588172"
-	"Gringo" 			"202395754"
-	"Matty" 			"28184063"
-	"n0tice" 			"71806151"
+	"simix" 			"11657532"
+	"n0te" 				"354126581"
+	"Nexius" 			"210313229"
 	//Bravado Players
 	"bLazE" 			"209701855"	
 	"SloWye" 			"50695439"
@@ -311,7 +311,7 @@
 	"Jaepe" 			"251441860"
 	"Linko" 			"186797108"
 	"rafaxF" 			"134941478"
-	"StepA" 			"208115597"
+	"frezbyy" 			"65529438"
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
@@ -406,13 +406,13 @@
 	"kwezz" 			"110193409"
 	"IceBerg" 			"30735103"
 	"kiR" 				"258258243"
-	"larsen" 			"60274028"
+	"Lucky" 			"150297431"
 	"PR1mE" 			"26772868"
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"CRUC1AL" 			"158832564"
 	"MiGHTYMAX" 		"15522824"
-	"BOROS" 			"178773495"
+	"Kjaerbye" 			"59614824"
 	"Nertz" 			"92860917"
 	//SAW Players
 	"arki"				"18055753" 
@@ -486,12 +486,6 @@
 	"chelleos" 			"198705922"
 	"asap" 				"68391216"
 	"dangeR" 			"307032635"
-	//Flames Players
-	"nicoodoz" 			"112851399"
-	"roeJ" 				"30968963"
-	"HooXi" 			"38661042"
-	"Jabbi" 			"160291620"
-	"Zyphon" 			"198111516"
 	//EP Players
 	"The eLiVe"			"111025647"
 	"Blytz"				"101848953"
@@ -595,7 +589,7 @@
 	"N4JT" 				"428420704"
 	"DeXXuS"			"227004563"
 	//Entropiq Players
-	"Lack1" 			"185937269"
+	"mir" 				"40562076"
 	"El1an" 			"250498109"
 	"NickelBack" 		"1882779"
 	"Krad" 				"71642904"
@@ -606,12 +600,6 @@
 	"stamina" 			"272809432"
 	"reck" 				"374549101"
 	"fejtZ"				"95338913"
-	//Party Players
-	"ben1337" 			"131461662"
-	"PwnAlone" 			"24000649"
-	"djay" 				"3935898"
-	"Jonji" 			"114675386"
-	"viz" 				"433892634"
 	//777 Players
 	"ruyter" 			"851805954"
 	"Grus"				"34633571"
@@ -671,10 +659,10 @@
 	"MagnumZ"			"187391202"
 	"Tsogoo" 			"133284824"
 	"Machinegun" 		"158481493"
-	"starDUST"			"1207713936"
+	"Senzu"				"960454289"
 	//ONYX Players
 	"bodito" 			"114907460"
-	"Kamion"			"220609306"
+	"pr1metapz"			"198443782"
 	"sl3nd" 			"137805965"
 	"msN" 				"342103580"
 	"coolio"			"119009553"
@@ -707,7 +695,7 @@
 	"LapeX"				"197695849"
 	"DreaM-" 			"245251564"
 	"florento" 			"178159309"
-	"pr1metapz"			"198443782"
+	"sha"				"51926699"
 	//Renewal Players
 	"xerolte" 			"368881420"
 	"Ensury"			"410784508"
@@ -741,7 +729,7 @@
 	//LLL Players
 	"Rezst" 			"178066513"
 	"ryu"				"208135644"
-	"Nexius"			"210313229"
+	"Q-Q"				"210313229"
 	"ReFuZR" 			"338268527"
 	"rabbit"			"313117907"
 	//LDLC Players
@@ -762,12 +750,12 @@
 	"fnx"				"170178574"
 	"boltz" 			"58113672"
 	"VINI"				"36104456"
-	//Berzerk Players
-	"AbuWilly" 			"74560387"
-	"devraNN"			"204541657"
-	"ND"				"171569045"
-	"CHANKY" 			"212797751"
-	"maty"				"127604447"
+	//EYEBALLERS Players
+	"flusha" 			"31082355"
+	"JW"				"71288472"
+	"Sapec"				"107257797"
+	"SHiNE" 			"196824160"
+	"Svedjehed"			"170174906"
 	//K1CK Players
 	"v1c7oR" 			"46016299"
 	"AwaykeN"			"480410871"
@@ -798,12 +786,6 @@
 	"Kntz"				"80230397"
 	"dobu" 				"159891913"
 	"Annihilation"		"315821474"
-	//1shot Players
-	"GreK" 				"125115130"
-	"FpSSS"				"49076137"
-	"Get_Jeka"			"285517906"
-	"faydett" 			"210311610"
-	"synyx"				"271283304"
 	//Boca Players
 	"luchov" 			"107456470"
 	"elemeNt"			"84718029"
@@ -822,4 +804,10 @@
 	"matys"				"1086212773"
 	"sAvana1" 			"69270002"
 	"T4gg3D"			"296534066"
+	//Ungentium Players
+	"Sidney" 			"70091835"
+	"m4tthi"			"69853779"
+	"Prism"				"117411943"
+	"GruBy" 			"44752530"
+	"byali"				"18860354"
 }

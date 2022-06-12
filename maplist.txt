@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Fri Jun 03 00:13:28 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Jun 12 01:05:40 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -97,7 +97,7 @@ awp_rp94
 awp_source
 ba_winterforest_b1
 c19_tilante
-carparkm1
+workshop/1325659427/config_generator
 cs_1337_assault_b2
 cs_agency
 cs_apollo

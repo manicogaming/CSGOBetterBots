@@ -28,7 +28,7 @@
 	"glowiing" 			"1win"
 	"flamie" 			"1win"
 	"TRAVIS"			"1win"
-	"fostar" 			"1win"
+	"lollipop21k" 		"1win"
 	"deko" 				"1win"
 	//G2 Players
 	"huNter-" 			"G2"
@@ -37,8 +37,8 @@
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
-	"poizon" 			"fnatic"
-	"ALEX" 				"fnatic"
+	"nicoodoz" 			"fnatic"
+	"roeJ" 				"fnatic"
 	"KRIMZ" 			"fnatic"
 	"Peppzor" 			"fnatic"
 	"mezii" 			"fnatic"
@@ -156,12 +156,12 @@
 	"Chawzyyy" 			"Apeks"
 	"STYKO" 			"Apeks"
 	"nawwk" 			"Apeks"
-	//RNG Players
-	"INS" 				"RNG"
-	"sico" 				"RNG"
-	"aliStair" 			"RNG"
-	"Hatz" 				"RNG"
-	"Liazz" 			"RNG"
+	//ORDER Players
+	"INS" 				"ORDER"
+	"sico" 				"ORDER"
+	"aliStair" 			"ORDER"
+	"Hatz" 				"ORDER"
+	"Liazz" 			"ORDER"
 	//GamerLegion Players
 	"iM" 				"GamerLegion"
 	"eraa" 				"GamerLegion"
@@ -291,9 +291,9 @@
 	//ECB Players
 	"ritchiEE" 			"ECB"
 	"Stev0se" 			"ECB"
-	"Gringo" 			"ECB"
-	"Matty" 			"ECB"
-	"n0tice" 			"ECB"
+	"simix" 			"ECB"
+	"n0te" 			"ECB"
+	"Nexius" 			"ECB"
 	//Bravado Players
 	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
@@ -309,7 +309,7 @@
 	//GTZ Players
 	"Linko" 			"GTZ"
 	"rafaxF" 			"GTZ"
-	"StepA" 			"GTZ"
+	"frezbyy" 			"GTZ"
 	"Jaepe" 			"GTZ"
 	"fakes2" 			"GTZ"
 	//Eternal Players
@@ -405,14 +405,14 @@
 	//Tricked Players
 	"kiR" 				"Tricked"
 	"kwezz" 			"Tricked"
-	"larsen" 			"Tricked"
+	"Lucky" 			"Tricked"
 	"IceBerg" 			"Tricked"
 	"PR1mE" 			"Tricked"
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"CRUC1AL" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
-	"BOROS" 			"Endpoint"
+	"Kjaerbye" 			"Endpoint"
 	"Nertz" 			"Endpoint"
 	//SAW Players
 	"arki"				"SAW" 
@@ -486,12 +486,6 @@
 	"chelleos" 			"Paradox"
 	"asap" 				"Paradox"
 	"dangeR" 			"Paradox"
-	//Flames Players
-	"nicoodoz" 			"Flames"
-	"roeJ" 				"Flames"
-	"HooXi" 			"Flames"
-	"Jabbi" 			"Flames"
-	"Zyphon" 			"Flames"
 	//EP Players
 	"The eLiVe" 		"EP"
 	"Blytz" 			"EP"
@@ -595,7 +589,7 @@
 	"N4JT" 				"Eriness"
 	"DeXXuS"			"Eriness"
 	//Entropiq Players
-	"Lack1" 			"Entropiq"
+	"mir" 				"Entropiq"
 	"El1an" 			"Entropiq"
 	"NickelBack" 		"Entropiq"
 	"Krad" 				"Entropiq"
@@ -606,12 +600,6 @@
 	"stamina" 			"Strife"
 	"reck" 				"Strife"
 	"fejtZ"				"Strife"
-	//Party Players
-	"ben1337" 			"Party"
-	"PwnAlone" 			"Party"
-	"djay"				"Party"
-	"Jonji" 			"Party"
-	"viz"				"Party"
 	//777 Players
 	"ruyter" 			"777"
 	"Grus"				"777"
@@ -671,10 +659,10 @@
 	"MagnumZ"			"MongolZ"
 	"Tsogoo" 			"MongolZ"
 	"Machinegun" 		"MongolZ"
-	"starDUST"			"MongolZ"
+	"Senzu"				"MongolZ"
 	//ONYX Players
 	"bodito" 			"ONYX"
-	"Kamion"			"ONYX"
+	"pr1metapz"			"ONYX"
 	"sl3nd" 			"ONYX"
 	"msN" 				"ONYX"
 	"coolio"			"ONYX"
@@ -707,7 +695,7 @@
 	"LapeX"				"SSP"
 	"DreaM-" 			"SSP"
 	"florento" 			"SSP"
-	"pr1metapz"			"SSP"
+	"sha"				"SSP"
 	//Renewal Players
 	"xerolte" 			"Renewal"
 	"Ensury"			"Renewal"
@@ -741,7 +729,7 @@
 	//LLL Players
 	"Rezst" 			"LLL"
 	"ryu"				"LLL"
-	"Nexius"			"LLL"
+	"Q-Q"				"LLL"
 	"ReFuZR" 			"LLL"
 	"rabbit"			"LLL"
 	//LDLC Players
@@ -762,12 +750,12 @@
 	"fnx"				"Imperial"
 	"boltz" 			"Imperial"
 	"VINI"				"Imperial"
-	//Berzerk Players
-	"AbuWilly" 			"Berzerk"
-	"devraNN"			"Berzerk"
-	"ND"				"Berzerk"
-	"CHANKY" 			"Berzerk"
-	"maty"				"Berzerk"
+	//EYEBALLERS Players
+	"flusha" 			"EYEBALLERS"
+	"JW"				"EYEBALLERS"
+	"Sapec"				"EYEBALLERS"
+	"SHiNE" 			"EYEBALLERS"
+	"Svedjehed"			"EYEBALLERS"
 	//K1CK Players
 	"v1c7oR" 			"K1CK"
 	"AwaykeN"			"K1CK"
@@ -798,12 +786,6 @@
 	"Kntz"				"NKT"
 	"dobu" 				"NKT"
 	"Annihilation"		"NKT"
-	//1shot Players
-	"GreK" 				"1shot"
-	"FpSSS"				"1shot"
-	"Get_Jeka"			"1shot"
-	"faydett" 			"1shot"
-	"synyx"				"1shot"
 	//Boca Players
 	"luchov" 			"Boca"
 	"elemeNt"			"Boca"
@@ -822,4 +804,10 @@
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"T4gg3D"			"Sampi"
+	//Ungentium Players
+	"Sidney" 			"Ungentium"
+	"m4tthi"			"Ungentium"
+	"Prism"				"Ungentium"
+	"GruBy" 			"Ungentium"
+	"byali"				"Ungentium"
 }
