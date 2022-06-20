@@ -187,7 +187,7 @@
 	"latto" 			"GODSENT"
 	"dumau" 			"GODSENT"
 	//Rhyno Players
-	"HS" 				"Rhyno"
+	"HSNTC" 			"Rhyno"
 	"DeviNe" 			"Rhyno"
 	"SeabraEZ" 			"Rhyno"	
 	"SYDOX" 			"Rhyno"
@@ -532,7 +532,7 @@
 	"mystic" 			"AVEZ"
 	"bastEe" 			"AVEZ"
 	"eYs" 				"AVEZ"
-	"arioszek" 			"AVEZ"
+	"Monsteryry" 		"AVEZ"
 	"hous1k"			"AVEZ"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
@@ -556,7 +556,7 @@
 	"Niix" 				"DNMK"
 	"Leggy" 			"DNMK"
 	"dyvo" 				"DNMK"
-	"zox" 		"DNMK"
+	"zox" 				"DNMK"
 	"Dubee"				"DNMK"
 	//iNation Players
 	"Dragon" 			"iNation"
@@ -607,9 +607,9 @@
 	"akEz" 				"777"
 	"H4RR3"				"777"
 	//CG Players
-	"kressy" 			"CG"
-	"PANIX"				"CG"
-	"glaVed" 			"CG"
+	"maty" 				"CG"
+	"kolor"				"CG"
+	"HS" 				"CG"
 	"kRYSTAL" 			"CG"
 	"stfN"				"CG"
 	//BLUEJAYS Players
@@ -640,7 +640,7 @@
 	"gbb" 				"SWS"
 	"CSO"				"SWS"
 	"bsd" 				"SWS"
-	"DANVIET" 			"SWS"
+	"mxa" 				"SWS"
 	"w1"				"SWS"
 	//Leviatan Players
 	"tom1" 				"Leviatan"
@@ -707,10 +707,10 @@
 	"MoDo"				"OneTap"
 	"smekk" 			"OneTap"
 	"swiiffter" 		"OneTap"
-	"ADRON"				"OneTap"
+	"Ed1m"				"OneTap"
 	//BP Players
 	"fleav" 			"BP"
-	"kolor"				"BP"
+	"1NSERT2"			"BP"
 	"Aaron" 			"BP"
 	"juho" 				"BP"
 	"HeavyGod"			"BP"
@@ -768,12 +768,12 @@
 	"almazer"			"TC"
 	"SasukeQO" 			"TC"
 	"zLy"				"TC"
-	//LFO Players
-	"HaZR" 				"LFO"
-	"sterling"			"LFO"
-	"Liki"				"LFO"
-	"SaVage" 			"LFO"
-	"apoc"				"LFO"
+	//Encore Players
+	"HaZR" 				"Encore"
+	"sterling"			"Encore"
+	"Liki"				"Encore"
+	"SaVage" 			"Encore"
+	"apoc"				"Encore"
 	//AG Players
 	"FIOURN" 			"AG"
 	"Monster"			"AG"

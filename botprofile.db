@@ -978,7 +978,7 @@ End
 
 //Rhyno Players
 
-ProP+Rifle+RiflePersonality "HS"
+ProP+Rifle+RiflePersonality "HSNTC"
 	VoicePitch = 76
 End
 
@@ -2244,7 +2244,7 @@ ProP+Rifle+RiflePersonality "eYs"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "arioszek"
+ProP+Rifle+RiflePersonality "Monsteryry"
 	VoicePitch = 89
 End
 
@@ -2518,15 +2518,15 @@ End
 
 //CG Players
 
-ProP+Rifle+RiflePersonality "kressy"
+ProP+Rifle+RiflePersonality "maty"
 	VoicePitch = 83
 End
 
-ProP+SniperPro+SniperPersonality "PANIX"
+ProP+SniperPro+SniperPersonality "kolor"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "glaVed"
+ProP+Rifle+RiflePersonality "HS"
 	VoicePitch = 77
 End
 
@@ -2640,7 +2640,7 @@ ProP+Rifle+RiflePersonality "bsd"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "DANVIET"
+ProP+Rifle+RiflePersonality "mxa"
 	VoicePitch = 87
 End
 
@@ -2886,7 +2886,7 @@ ProP+Rifle+RiflePersonality "swiiffter"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "ADRON"
+ProP+Rifle+RiflePersonality "Ed1m"
 	VoicePitch = 93
 End
 
@@ -2896,7 +2896,7 @@ ProP+Rifle+RiflePersonality "fleav"
 	VoicePitch = 91
 End
 
-ProP+SniperPro+SniperPersonality "kolor"
+ProP+SniperPro+SniperPersonality "1NSERT2"
 	VoicePitch = 114
 End
 
@@ -3110,7 +3110,7 @@ ProP+Rifle+RiflePersonality "zLy"
 	VoicePitch = 90
 End
 
-//LFO Players
+//Encore Players
 
 ProP+Rifle+RiflePersonality "HaZR"
 	VoicePitch = 78

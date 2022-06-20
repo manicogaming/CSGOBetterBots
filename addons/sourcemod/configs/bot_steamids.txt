@@ -187,7 +187,7 @@
 	"latto" 			"889754458"
 	"dumau" 			"234059589"
 	//Rhyno Players
-	"HS" 				"384577684"
+	"HSNTC" 			"384577684"
 	"DeviNe" 			"840919760"
 	"SeabraEZ" 			"420752411"	
 	"SYDOX" 			"2634634"
@@ -532,7 +532,7 @@
 	"mystic" 			"81765294"
 	"bastEe" 			"316079070"
 	"eYs" 				"255700857"
-	"arioszek" 			"318413277"
+	"Monsteryry" 		"52099773"
 	"hous1k"			"274093084"
 	//Anonymo Players
 	"oskarish" 			"286156964"
@@ -607,9 +607,9 @@
 	"akEz" 				"25850155"
 	"H4RR3"				"195566724"
 	//CG Players
-	"kressy" 			"50709599"
-	"PANIX"				"241868664"
-	"glaVed" 			"244870167"
+	"maty" 				"127604447"
+	"kolor"				"159382791"
+	"HS" 				"3417033"
 	"kRYSTAL" 			"17526007"
 	"stfN"				"47322750"
 	//BLUEJAYS Players
@@ -640,7 +640,7 @@
 	"gbb" 				"1056251466"
 	"CSO"				"372054879"
 	"bsd" 				"213740099"
-	"DANVIET" 			"118464022"
+	"mxa" 				"419885624"
 	"w1"				"456548842"
 	//Leviatan Players
 	"tom1" 				"1021035676"
@@ -707,10 +707,10 @@
 	"MoDo"				"389955370"
 	"smekk" 			"100657287"
 	"swiiffter" 		"286059320"
-	"ADRON"				"1054417753"
+	"Ed1m"				"3983488"
 	//BP Players
 	"fleav" 			"189640934"
-	"kolor"				"159382791"
+	"1NSERT2"			"861600049"
 	"Aaron" 			"95940281"
 	"juho" 				"138270456"
 	"HeavyGod"			"107737265"
@@ -768,7 +768,7 @@
 	"almazer"			"83782305"
 	"SasukeQO" 			"81113331"
 	"zLy"				"488023390"
-	//LFO Players
+	//Encore Players
 	"HaZR" 				"64081874"
 	"sterling"			"100224621"
 	"Liki"				"196492302"
