@@ -172,6 +172,11 @@
 				//Near the string 'Morale: %s'
 				"windows"	   "15440"
 			}
+			"CCSBot::m_lastSawEnemyTimestamp"
+			{
+				//Near the CCSBot::Update memory patch
+				"windows"	   "24088"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
@@ -303,14 +308,24 @@
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
+			"CCSBot::Update::EquipGrenade"
+			{
+				"signature" "CCSBot::Update"
+				"windows"
+				{
+					"offset"	"936h"
+					"verify"	"\x51\x8B\xCB\xE8\x92\x74\x00\x00\x84\xC0"
+					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
+				}
+			}
 			"CCSBot::Update::ThrowGrenade"
 			{
 				"signature" "CCSBot::Update"
 				"windows"
 				{
-					"offset"	"942h"
-					"verify"	"\xE8\x89\xF7\xF4\xFF\x84\xC0"
-					"patch"		"\x90\x90\x90\x90\x90\x90\x90"
+					"offset"	"951h"
+					"verify"	"\x8B\xCB\x50\xE8\x67\x78\x00\x00"
+					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
 			"BotBombStatusMeme::Interpret::AlwaysHelp"

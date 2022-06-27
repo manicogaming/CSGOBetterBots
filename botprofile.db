@@ -550,7 +550,7 @@ ProP+Rifle+RiflePersonality "B1T"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "Boombl4"
+ProP+Rifle+RiflePersonality "sdy"
 	VoicePitch = 97
 End
 
@@ -814,7 +814,7 @@ ProP+Rifle+RiflePersonality "sjuush"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "refrezh"
+ProP+Rifle+RiflePersonality "Jabbi"
 	VoicePitch = 96
 End
 
@@ -824,7 +824,7 @@ End
 
 //VP Players
 
-ProP+Rifle+RiflePersonality "YEKINDAR"
+ProP+Rifle+RiflePersonality "n0rb3r7"
 	VoicePitch = 113
 End
 
@@ -840,7 +840,7 @@ ProP+Rifle+RiflePersonality "FL1T"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "buster"
+ProP+Rifle+RiflePersonality "fame"
 	VoicePitch = 71
 End
 
@@ -1470,11 +1470,11 @@ ProP+SniperPro+SniperPersonality "xsepower"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "n0rb3r7"
+ProP+Rifle+RiflePersonality "Raijin"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "fame"
+ProP+Rifle+RiflePersonality "clax"
 	VoicePitch = 100
 End
 
@@ -2024,7 +2024,7 @@ ProP+Rifle+RiflePersonality "maxujas"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "Luken"
+ProP+Rifle+RiflePersonality "nqz"
 	VoicePitch = 87
 End
 
@@ -2052,28 +2052,6 @@ End
 
 ProP+Rifle+RiflePersonality "tomkeejs"
 	VoicePitch = 84
-End
-
-//Paradox Players
-
-ProP+Rifle+RiflePersonality "DannyG"
-	VoicePitch = 94
-End
-
-ProP+SniperPro+SniperPersonality "nettik"
-	VoicePitch = 91
-End
-
-ProP+Rifle+RiflePersonality "chelleos"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "asap"
-	VoicePitch = 78
-End
-
-ProP+Rifle+RiflePersonality "dangeR"
-	VoicePitch = 81
 End
 
 //EP Players
@@ -2292,7 +2270,7 @@ ProP+Rifle+RiflePersonality "reiko"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "mouz"
+ProP+Rifle+RiflePersonality "Grashog"
 	VoicePitch = 93
 End
 
@@ -2302,7 +2280,7 @@ ProP+Rifle+RiflePersonality "chopper"
 	VoicePitch = 104
 End
 
-ProP+SniperPro+SniperPersonality "degster"
+ProP+SniperPro+SniperPersonality "w0nderful"
 	VoicePitch = 84
 End
 
@@ -2912,7 +2890,7 @@ ProP+Rifle+RiflePersonality "HeavyGod"
 	VoicePitch = 95
 End
 
-//mCon Players
+//LLL Players
 
 ProP+Rifle+RiflePersonality "StepzZ"
 	VoicePitch = 98
@@ -2922,7 +2900,7 @@ ProP+SniperPro+SniperPersonality "VoxelArc"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "BickBuster"
+ProP+Rifle+RiflePersonality "Swes"
 	VoicePitch = 103
 End
 
@@ -2954,28 +2932,6 @@ End
 
 ProP+Rifle+RiflePersonality "Ex3rcice"
 	VoicePitch = 87
-End
-
-//LLL Players
-
-ProP+Rifle+RiflePersonality "Rezst"
-	VoicePitch = 87
-End
-
-ProP+SniperPro+SniperPersonality "ryu"
-	VoicePitch = 108
-End
-
-ProP+Rifle+RiflePersonality "Q-Q"
-	VoicePitch = 105
-End
-
-ProP+Rifle+RiflePersonality "ReFuZR"
-	VoicePitch = 98
-End
-
-ProP+Rifle+RiflePersonality "rabbit"
-	VoicePitch = 97
 End
 
 //LDLC Players

@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Jun 21 00:09:01 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Mon Jun 27 23:09:32 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -205,7 +205,7 @@ de_dahshur
 de_deadblock_go
 de_deco
 de_desert
-de_dharma_b16
+de_dharma_faceit
 de_distillery
 de_dust0_csgo
 de_dust2
@@ -224,7 +224,6 @@ de_ecopoint
 de_elysion
 de_empire
 de_engage
-workshop/2589884171/de_expowm
 de_extraction
 de_facade
 de_factory
@@ -262,6 +261,7 @@ de_junction_r2
 de_kabul_b3
 de_kaizen_rc1
 de_kharkov_a1
+workshop/2549849074/de_kirov
 de_kowloon
 de_kyrenia
 de_lake

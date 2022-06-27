@@ -49,11 +49,11 @@
 	"Valencio" 			"Dynamo"
 	"nbqq" 				"Dynamo"
 	//mouz Players
-	"dexter"			"mouz" 
-	"torzsi" 			"mouz"
-	"Bymas" 			"mouz"
-	"frozen" 			"mouz"
-	"JDC" 				"mouz"
+	"dexter"			"Grashog" 
+	"torzsi" 			"Grashog"
+	"Bymas" 			"Grashog"
+	"frozen" 			"Grashog"
+	"JDC" 				"Grashog"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
 	"Attacker" 			"TYLOO"
@@ -70,7 +70,7 @@
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"
 	"B1T" 				"Na´Vi"
-	"Boombl4" 			"Na´Vi"
+	"sdy" 				"Na´Vi"
 	"Perfecto" 			"Na´Vi"
 	//Liquid Players
 	"oSee" 				"Liquid"
@@ -140,16 +140,16 @@
 	"raalz" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
-	"refrezh" 			"Heroic"
+	"Jabbi" 			"Heroic"
 	"sjuush" 			"Heroic"
 	"cadiaN" 			"Heroic"
 	"stavn" 			"Heroic"
 	//VP Players
-	"YEKINDAR" 			"VP"
+	"n0rb3r7" 			"VP"
 	"Jame" 				"VP"
 	"qikert" 			"VP"	
 	"FL1T" 				"VP"
-	"buster" 			"VP"
+	"fame" 				"VP"
 	//Apeks Players
 	"AcilioN" 			"Apeks"
 	"jkaem" 			"Apeks"
@@ -321,8 +321,8 @@
 	//K23 Players
 	"neaLaN" 			"K23"
 	"xsepower" 			"K23"
-	"n0rb3r7" 			"K23"
-	"fame" 				"K23"
+	"Raijin" 			"K23"
+	"clax" 				"K23"
 	"X5G7V" 			"K23"
 	//VERTEX Players
 	"pz" 				"VERTEX"
@@ -472,7 +472,7 @@
 	"dgt" 				"9z"
 	"dav1d" 			"9z"
 	"maxujas" 			"9z"
-	"Luken" 			"9z"
+	"nqz" 				"9z"
 	"rox" 				"9z"
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
@@ -480,12 +480,6 @@
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
 	"tomkeejs" 			"SINNERS"
-	//Paradox Players
-	"DannyG"			"Paradox" 
-	"nettik" 			"Paradox"
-	"chelleos" 			"Paradox"
-	"asap" 				"Paradox"
-	"dangeR" 			"Paradox"
 	//EP Players
 	"The eLiVe" 		"EP"
 	"Blytz" 			"EP"
@@ -545,10 +539,10 @@
 	"fr3nd" 			"HONORIS"
 	"NEO" 				"HONORIS"
 	"reiko" 			"HONORIS"
-	"mouz"				"HONORIS"
+	"Grashog"			"HONORIS"
 	//Spirit Players
 	"chopper" 			"Spirit"
-	"degster" 			"Spirit"
+	"w0nderful" 		"Spirit"
 	"magixx" 			"Spirit"
 	"Patsi" 			"Spirit"
 	"s1ren"				"Spirit"
@@ -714,24 +708,18 @@
 	"Aaron" 			"BP"
 	"juho" 				"BP"
 	"HeavyGod"			"BP"
-	//mCon Players
-	"StepzZ" 			"mCon"
-	"VoxelArc"			"mCon"
-	"BickBuster"		"mCon"
-	"Maxaxe" 			"mCon"
-	"Syther"			"mCon"
+	//LLL Players
+	"StepzZ" 			"LLL"
+	"VoxelArc"			"LLL"
+	"Swes"				"LLL"
+	"Maxaxe" 			"LLL"
+	"Syther"			"LLL"
 	//HEET Players
 	"Luckyy" 			"HEET"
 	"afro"				"HEET"
 	"bodyy"				"HEET"
 	"Djoko" 			"HEET"
 	"Ex3rcice"			"HEET"
-	//LLL Players
-	"Rezst" 			"LLL"
-	"ryu"				"LLL"
-	"Q-Q"				"LLL"
-	"ReFuZR" 			"LLL"
-	"rabbit"			"LLL"
 	//LDLC Players
 	"Graviti" 			"LDLC"
 	"Broox"				"LDLC"

@@ -1,14 +1,14 @@
-"de_dharma_b16"
+"de_dharma_faceit"
 {
-	"material"		"overviews/de_dharma_b16"
+	"material"		"overviews/de_dharma_faceit"
 	"pos_x"			"-4510.01"
 	"pos_y"			"4900.423"
 	"scale"			"5.946702"
 
 	"CTSpawn_x"		"0.77"
 	"CTSpawn_y"		"0.68"
-	"TSpawn_x"		"0.15"
-	"TSpawn_y"		"0.25"
+	"TSpawn_x"		"0.16"
+	"TSpawn_y"		"0.28"
 
 	"bombA_x"		"0.76"
 	"bombA_y"		"0.74"

@@ -70,7 +70,7 @@
 	"electronic" 		"83779379"	
 	"s1mple" 			"73936547"
 	"B1T" 				"286341748"
-	"Boombl4" 			"185941338"
+	"sdy" 				"80311472"
 	"Perfecto" 			"160954758"
 	//Liquid Players
 	"oSee" 				"87206806"
@@ -140,16 +140,16 @@
 	"raalz" 			"35794427"
 	//Heroic Players
 	"TeSeS" 			"36412550"
-	"refrezh" 			"104598470"
+	"Jabbi" 			"160291620"
 	"sjuush" 			"200443857"
 	"cadiaN" 			"43849788"
 	"stavn" 			"62099910"
 	//VP Players
-	"YEKINDAR" 			"174136197"
+	"n0rb3r7" 			"262176776"
 	"Jame" 				"75859856"
 	"qikert" 			"166970562"	
 	"FL1T" 				"35551773"
-	"buster" 			"212936195"
+	"fame" 				"119848818"
 	//Apeks Players
 	"AcilioN" 			"56749436"
 	"jkaem" 			"42442914"
@@ -321,8 +321,8 @@
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"xsepower" 			"112014226"
-	"n0rb3r7" 			"262176776"
-	"fame" 				"119848818"
+	"Raijin" 			"216190295"
+	"clax" 				"168818887"
 	"X5G7V" 			"237685818"
 	//VERTEX Players
 	"BRACE" 			"126538012"
@@ -472,7 +472,7 @@
 	"dgt" 				"256625848"
 	"dav1d" 			"160225583"
 	"maxujas" 			"282684656"
-	"Luken" 			"852361341"
+	"nqz" 				"390076777"
 	"rox" 				"897065446"
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
@@ -480,12 +480,6 @@
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
 	"tomkeejs" 			"149866088"
-	//Paradox Players
-	"DannyG"			"193412411" 
-	"nettik" 			"372579523"
-	"chelleos" 			"198705922"
-	"asap" 				"68391216"
-	"dangeR" 			"307032635"
 	//EP Players
 	"The eLiVe"			"111025647"
 	"Blytz"				"101848953"
@@ -545,10 +539,10 @@
 	"NEO" 				"460206"
 	"reiko" 			"190436529"
 	"fr3nd" 			"177768668"
-	"mouz" 				"38464805"
+	"Grashog" 			"78941188"
 	//Spirit Players
 	"chopper" 			"85633136"
-	"degster" 			"839074394"
+	"w0nderful" 		"1102803112"
 	"magixx" 			"868554"
 	"Patsi" 			"328275073"
 	"s1ren"				"207519341"
@@ -714,10 +708,10 @@
 	"Aaron" 			"95940281"
 	"juho" 				"138270456"
 	"HeavyGod"			"107737265"
-	//mCon Players
+	//LLL Players
 	"StepzZ" 			"191407472"
 	"VoxelArc"			"302205415"
-	"BickBuster"		"315188168"
+	"Swes"				"299205163"
 	"Maxaxe" 			"102864225"
 	"Syther"			"234753085"
 	//HEET Players
@@ -726,12 +720,6 @@
 	"bodyy"				"53029647"
 	"Djoko" 			"87611242"
 	"Ex3rcice"			"207932472"
-	//LLL Players
-	"Rezst" 			"178066513"
-	"ryu"				"208135644"
-	"Q-Q"				"210313229"
-	"ReFuZR" 			"338268527"
-	"rabbit"			"313117907"
 	//LDLC Players
 	"Graviti" 			"219272777"
 	"Broox"				"314420307"
