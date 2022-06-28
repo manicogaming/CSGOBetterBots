@@ -49,11 +49,11 @@
 	"Valencio" 			"Dynamo"
 	"nbqq" 				"Dynamo"
 	//mouz Players
-	"dexter"			"Grashog" 
-	"torzsi" 			"Grashog"
-	"Bymas" 			"Grashog"
-	"frozen" 			"Grashog"
-	"JDC" 				"Grashog"
+	"dexter"			"mouz" 
+	"torzsi" 			"mouz"
+	"Bymas" 			"mouz"
+	"frozen" 			"mouz"
+	"JDC" 				"mouz"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
 	"Attacker" 			"TYLOO"

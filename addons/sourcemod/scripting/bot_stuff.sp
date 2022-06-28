@@ -336,7 +336,7 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Grashog", false) == 0)
+	if(strcmp(szTeamArg, "mouz", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
