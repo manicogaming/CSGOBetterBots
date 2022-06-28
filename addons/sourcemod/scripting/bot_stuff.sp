@@ -4255,7 +4255,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(Math_GetRandomInt(1, 100) <= 35 && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
 			DHookSetParam(hParams, 7, true);
 			
-		if(Math_GetRandomInt(1, 100) <= 2 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(Math_GetRandomInt(1, 100) <= 1 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
@@ -4272,7 +4272,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
 		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(Math_GetRandomInt(1, 100) <= 6 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(Math_GetRandomInt(1, 100) <= 5 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
