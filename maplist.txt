@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Wed Jun 29 23:35:20 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sun Jul 03 23:40:37 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -123,6 +123,7 @@ cs_isku
 cs_italy
 cs_ivory
 cs_lanpartymayhem
+cs_light
 cs_mall_shootout
 cs_mansion
 cs_max_a4
@@ -261,7 +262,7 @@ de_junction_r2
 de_kabul_b3
 de_kaizen_rc1
 de_kharkov_a1
-workshop/2549849074/de_kirov
+de_kirov
 de_kowloon
 de_kyrenia
 de_lake
@@ -272,6 +273,7 @@ de_lodge
 de_log
 de_lumber
 de_lumen
+workshop/2729322191/de_lure
 de_luxury_r1
 de_manor
 de_marine

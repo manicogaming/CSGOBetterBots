@@ -1814,11 +1814,11 @@ End
 
 //SAW Players
 
-ProP+Rifle+RiflePersonality "arki"
+ProP+Rifle+RiflePersonality "ewjerkz"
 	VoicePitch = 112
 End
 
-ProP+SniperPro+SniperPersonality "stadodo"
+ProP+SniperPro+SniperPersonality "story"
 	VoicePitch = 83
 End
 
@@ -1856,7 +1856,7 @@ ProP+Rifle+RiflePersonality "H4wK"
 	VoicePitch = 95
 End
 
-//DIVIZON Players
+//SSP Players
 
 ProP+Rifle+RiflePersonality "farmaG"
 	VoicePitch = 81
@@ -1870,7 +1870,7 @@ ProP+Rifle+RiflePersonality "Cl34v3rs"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "nANO^G"
+ProP+Rifle+RiflePersonality "Orbit"
 	VoicePitch = 108
 End
 
@@ -1972,7 +1972,7 @@ ProP+Rifle+RiflePersonality "Ag1l"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "ewjerkz"
+ProP+SniperPro+SniperPersonality "stadodo"
 	VoicePitch = 93
 End
 
@@ -1980,7 +1980,7 @@ ProP+Rifle+RiflePersonality "DDias"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "story"
+ProP+Rifle+RiflePersonality "kst"
 	VoicePitch = 114
 End
 
@@ -2474,11 +2474,11 @@ End
 
 //777 Players
 
-ProP+Rifle+RiflePersonality "ruyter"
+ProP+Rifle+RiflePersonality "SLY"
 	VoicePitch = 88
 End
 
-ProP+SniperPro+SniperPersonality "Grus"
+ProP+SniperPro+SniperPersonality "Trax"
 	VoicePitch = 99
 End
 
@@ -2628,7 +2628,7 @@ End
 
 //Leviatan Players
 
-ProP+Rifle+RiflePersonality "tom1"
+ProP+Rifle+RiflePersonality "Luken"
 	VoicePitch = 89
 End
 
@@ -2800,28 +2800,6 @@ End
 
 ProP+Rifle+RiflePersonality "AKEX"
 	VoicePitch = 80
-End
-
-//SSP Players
-
-ProP+Rifle+RiflePersonality "rapala"
-	VoicePitch = 84
-End
-
-ProP+SniperPro+SniperPersonality "LapeX"
-	VoicePitch = 84
-End
-
-ProP+Rifle+RiflePersonality "DreaM-"
-	VoicePitch = 91
-End
-
-ProP+Rifle+RiflePersonality "florento"
-	VoicePitch = 100
-End
-
-ProP+Rifle+RiflePersonality "sha"
-	VoicePitch = 86
 End
 
 //Renewal Players

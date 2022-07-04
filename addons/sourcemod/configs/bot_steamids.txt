@@ -415,8 +415,8 @@
 	"Kjaerbye" 			"59614824"
 	"Nertz" 			"92860917"
 	//SAW Players
-	"arki"				"18055753" 
-	"stadodo" 			"87137134"
+	"ewjerkz" 			"302194534"
+	"story" 			"105182632"
 	"JUST" 				"52722111"
 	"MUTiRiS" 			"37715442"	
 	"rmn" 				"34129763"
@@ -426,11 +426,11 @@
 	"yAmi" 				"175732643"
 	"H4wK" 				"310815503"	
 	"rate" 				"442056424"	
-	//DIVIZON Players
+	//SSP Players
 	"farmaG" 			"32002596"
 	"Sw1ft" 			"159221739"
 	"Cl34v3rs" 			"98939532"
-	"nANO^G" 			"147057698"	
+	"Orbit" 			"84338398"	
 	"Spexy" 			"161464594"
 	//KOVA Players
 	"zks" 				"368233531"
@@ -459,9 +459,9 @@
 	//FTW Players
 	"Ag1l" 				"226613145"
 	"arrozdoce" 		"13492074"
-	"ewjerkz" 			"302194534"
+	"stadodo" 			"87137134"
 	"DDias" 			"67343840"
-	"story" 			"105182632"
+	"kst" 				"83276408"
 	//Tigers Players
 	"HenkkyG" 			"10674280"
 	"majky" 			"873352928"
@@ -595,8 +595,8 @@
 	"reck" 				"374549101"
 	"fejtZ"				"95338913"
 	//777 Players
-	"ruyter" 			"851805954"
-	"Grus"				"34633571"
+	"SLY" 				"1737573"
+	"Trax"				"163819505"
 	"mikki" 			"80276147"
 	"akEz" 				"25850155"
 	"H4RR3"				"195566724"
@@ -637,7 +637,7 @@
 	"mxa" 				"419885624"
 	"w1"				"456548842"
 	//Leviatan Players
-	"tom1" 				"1021035676"
+	"Luken" 			"46114258"
 	"nacho"				"979595590"
 	"Reversive" 		"229334739"
 	"meyern" 			"235377137"
@@ -684,12 +684,6 @@
 	"KrowNii" 			"225305859"
 	"fatih-" 			"468595052"
 	"AKEX"				"72366657"
-	//SSP Players
-	"rapala" 			"239214601"
-	"LapeX"				"197695849"
-	"DreaM-" 			"245251564"
-	"florento" 			"178159309"
-	"sha"				"51926699"
 	//Renewal Players
 	"xerolte" 			"368881420"
 	"Ensury"			"410784508"

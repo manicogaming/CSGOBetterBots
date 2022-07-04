@@ -1,0 +1,15 @@
+"cs_light"
+{
+	"material" "overviews/cs_light_radar"
+	"pos_x" "-2095"
+	"pos_y" "2628"
+	"scale" "4.07"
+
+	"CTSpawn_x" "0.44"
+	"CTSpawn_y" "0.83"
+	"TSpawn_x" "0.66"
+	"TSpawn_y" "0.08"
+
+	"Hostage1_x" "0.50"
+	"Hostage1_y" "0.27"
+}

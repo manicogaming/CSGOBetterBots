@@ -415,8 +415,8 @@
 	"Kjaerbye" 			"Endpoint"
 	"Nertz" 			"Endpoint"
 	//SAW Players
-	"arki"				"SAW" 
-	"stadodo" 			"SAW"
+	"ewjerkz"			"SAW" 
+	"story" 			"SAW"
 	"JUST" 				"SAW"
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
@@ -426,12 +426,12 @@
 	"shinobi" 			"D13"
 	"yAmi" 				"D13"
 	"H4wK" 				"D13"	
-	//DIVIZON Players
-	"farmaG" 			"DIVIZON"
-	"Sw1ft" 			"DIVIZON"
-	"Cl34v3rs" 			"DIVIZON"
-	"nANO^G" 			"DIVIZON"	
-	"Spexy" 			"DIVIZON"
+	//SSP Players
+	"farmaG" 			"SSP"
+	"Sw1ft" 			"SSP"
+	"Cl34v3rs" 			"SSP"
+	"Orbit" 			"SSP"	
+	"Spexy" 			"SSP"
 	//KOVA Players
 	"zks" 				"KOVA"
 	"spargo" 			"KOVA"
@@ -458,9 +458,9 @@
 	"Hype" 				"Lilmix"
 	//FTW Players
 	"Ag1l" 				"FTW"
-	"ewjerkz" 			"FTW"
+	"stadodo" 			"FTW"
 	"DDias" 			"FTW"
-	"story" 			"FTW"
+	"kst" 				"FTW"
 	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"HenkkyG" 			"Tigers"
@@ -595,8 +595,8 @@
 	"reck" 				"Strife"
 	"fejtZ"				"Strife"
 	//777 Players
-	"ruyter" 			"777"
-	"Grus"				"777"
+	"SLY" 				"777"
+	"Trax"				"777"
 	"mikki" 			"777"
 	"akEz" 				"777"
 	"H4RR3"				"777"
@@ -637,7 +637,7 @@
 	"mxa" 				"SWS"
 	"w1"				"SWS"
 	//Leviatan Players
-	"tom1" 				"Leviatan"
+	"Luken" 			"Leviatan"
 	"nacho"				"Leviatan"
 	"Reversive" 		"Leviatan"
 	"meyern" 			"Leviatan"
@@ -684,12 +684,6 @@
 	"KrowNii" 			"Entropy"
 	"fatih-" 			"Entropy"
 	"AKEX"				"Entropy"
-	//SSP Players
-	"rapala" 			"SSP"
-	"LapeX"				"SSP"
-	"DreaM-" 			"SSP"
-	"florento" 			"SSP"
-	"sha"				"SSP"
 	//Renewal Players
 	"xerolte" 			"Renewal"
 	"Ensury"			"Renewal"
