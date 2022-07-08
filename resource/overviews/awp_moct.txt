@@ -1,0 +1,13 @@
+"awp_MocT"
+{
+	"material"	"overviews/awp_MocT"
+	"pos_x"		"-2189"
+	"pos_y"		"2414"
+	"scale"		"5.20"
+	"zoom"		"2"
+
+	"CTSpawn_x"	"0.93"
+	"CTSpawn_y"	"0.47"
+	"TSpawn_x"	"0.07"
+	"TSpawn_y"	"0.47"
+}
