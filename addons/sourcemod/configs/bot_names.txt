@@ -186,12 +186,6 @@
 	"HEN1" 				"GODSENT"
 	"latto" 			"GODSENT"
 	"dumau" 			"GODSENT"
-	//Rhyno Players
-	"HSNTC" 			"Rhyno"
-	"DeviNe" 			"Rhyno"
-	"SeabraEZ" 			"Rhyno"	
-	"SYDOX" 			"Rhyno"
-	"krazy" 			"Rhyno"
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
@@ -226,7 +220,7 @@
 	"Techno4K" 			"IHC"
 	"bLitz" 			"IHC"
 	"kabal" 			"IHC"
-	"nin9" 				"IHC"
+	"Annihilation" 		"IHC"
 	"sk0R" 				"IHC"
 	//Infinity Players
 	"k1Nky" 			"Infinity"
@@ -317,7 +311,7 @@
 	"imoRR" 			"Eternal"
 	"xfl0ud" 			"Eternal"
 	"woxic" 			"Eternal"
-	"Calyx" 			"Eternal"
+	"MAJ3R" 			"Eternal"
 	//K23 Players
 	"neaLaN" 			"K23"
 	"xsepower" 			"K23"
@@ -327,9 +321,9 @@
 	//VERTEX Players
 	"pz" 				"VERTEX"
 	"BRACE" 			"VERTEX"
-	"apocdud" 			"VERTEX"
+	"Vexite" 			"VERTEX"
 	"malta" 			"VERTEX"
-	"Roflko" 			"VERTEX"
+	"Valiance" 			"VERTEX"
 	//IG Players
 	"bottle" 			"IG"
 	"DeStRoYeR" 		"IG"	
@@ -638,7 +632,7 @@
 	"w1"				"SWS"
 	//Leviatan Players
 	"Luken" 			"Leviatan"
-	"nacho"				"Leviatan"
+	"1962"				"Leviatan"
 	"Reversive" 		"Leviatan"
 	"meyern" 			"Leviatan"
 	"JonY BoY"			"Leviatan"
@@ -744,12 +738,12 @@
 	"SPELLAN"			"K1CK"
 	"rafftu" 			"K1CK"
 	"SAiKY"				"K1CK"
-	//TC Players
-	"propleh" 			"TC"
-	"tricky"			"TC"
-	"almazer"			"TC"
-	"SasukeQO" 			"TC"
-	"zLy"				"TC"
+	//mCon Players
+	"Cortex" 			"mCon"
+	"Brooklyn"			"mCon"
+	"reco"				"mCon"
+	"Jex" 				"mCon"
+	"BickBuster"		"mCon"
 	//Encore Players
 	"HaZR" 				"Encore"
 	"sterling"			"Encore"
@@ -767,7 +761,7 @@
 	"ImpressioN"		"NKT"
 	"Kntz"				"NKT"
 	"dobu" 				"NKT"
-	"Annihilation"		"NKT"
+	"xccurate"			"NKT"
 	//Boca Players
 	"luchov" 			"Boca"
 	"elemeNt"			"Boca"

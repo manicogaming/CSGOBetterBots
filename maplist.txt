@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sun Jul 03 23:40:37 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Sat Jul 09 14:24:23 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -87,6 +87,7 @@ awp_legominiindia
 awp_map2_origins
 awp_metro_cso2
 awp_minecraft_pete_v1
+awp_moct
 awp_newmap_beta
 awp_old_civ
 awp_pro
@@ -273,7 +274,7 @@ de_lodge
 de_log
 de_lumber
 de_lumen
-workshop/2729322191/de_lure
+de_lure
 de_luxury_r1
 de_manor
 de_marine
@@ -285,7 +286,10 @@ de_meteora
 de_mill_ce
 de_mirage
 de_mirage_2055
+de_mirage_cyberpunk
 de_mirage_go
+de_mirage_overwatch
+de_mirage_winter_2020
 de_mocha
 de_momentum
 de_mustang
@@ -294,6 +298,7 @@ de_nadir
 de_neighbors_v8
 de_neutron
 de_nuke
+workshop/2623963662/de_nuke_ce
 de_nuke_halloween
 de_nuke_ramps
 de_oasis

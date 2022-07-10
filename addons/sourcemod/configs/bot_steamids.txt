@@ -186,12 +186,6 @@
 	"HEN1" 				"57761535"
 	"latto" 			"889754458"
 	"dumau" 			"234059589"
-	//Rhyno Players
-	"HSNTC" 			"384577684"
-	"DeviNe" 			"840919760"
-	"SeabraEZ" 			"420752411"	
-	"SYDOX" 			"2634634"
-	"krazy" 			"900494332"
 	//Riders Players
 	"mopoz"				"37931638" 
 	"dav1g" 			"457082328"
@@ -226,7 +220,7 @@
 	"kabal" 			"161246388"
 	"Techno4K" 			"1006074432"
 	"bLitz" 			"999558360"
-	"nin9" 				"168197870"
+	"Annihilation" 		"315821474"
 	"sk0R" 				"863160115"
 	//Infinity Players
 	"k1Nky" 			"4645867"
@@ -317,7 +311,7 @@
 	"imoRR" 			"107082440"
 	"xfl0ud" 			"217943381"
 	"woxic" 			"123219778"
-	"Calyx" 			"92280537"
+	"MAJ3R" 			"7167161"
 	//K23 Players
 	"neaLaN" 			"93777050"
 	"xsepower" 			"112014226"
@@ -326,10 +320,10 @@
 	"X5G7V" 			"237685818"
 	//VERTEX Players
 	"BRACE" 			"126538012"
-	"apocdud" 			"58325300"
+	"Vexite" 			"92622415"
 	"pz" 				"108241121"
 	"malta" 			"181905573"
-	"Roflko" 			"107902647"
+	"Valiance" 			"236090787"
 	//IG Players
 	"bottle" 			"86991268"
 	"DeStRoYeR" 		"85113804"	
@@ -638,7 +632,7 @@
 	"w1"				"456548842"
 	//Leviatan Players
 	"Luken" 			"46114258"
-	"nacho"				"979595590"
+	"1962"				"321501952"
 	"Reversive" 		"229334739"
 	"meyern" 			"235377137"
 	"JonY BoY"			"77140654"
@@ -744,12 +738,12 @@
 	"SPELLAN"			"196103646"
 	"rafftu" 			"78588859"
 	"SAiKY"				"11292213"
-	//TC Players
-	"propleh" 			"202265030"
-	"tricky"			"291038798"
-	"almazer"			"83782305"
-	"SasukeQO" 			"81113331"
-	"zLy"				"488023390"
+	//mCon Players
+	"Cortex" 			"128056009"
+	"Brooklyn"			"165255704"
+	"reco"				"913707905"
+	"Jex" 				"133947256"
+	"BickBuster"		"315188168"
 	//Encore Players
 	"HaZR" 				"64081874"
 	"sterling"			"100224621"
@@ -767,7 +761,7 @@
 	"ImpressioN"		"134688940"
 	"Kntz"				"80230397"
 	"dobu" 				"159891913"
-	"Annihilation"		"315821474"
+	"xccurate"			"177428807"
 	//Boca Players
 	"luchov" 			"107456470"
 	"elemeNt"			"84718029"

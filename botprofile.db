@@ -976,28 +976,6 @@ ProP+Rifle+RiflePersonality "dumau"
 	VoicePitch = 103
 End
 
-//Rhyno Players
-
-ProP+Rifle+RiflePersonality "HSNTC"
-	VoicePitch = 76
-End
-
-ProP+SniperPro+SniperPersonality "DeviNe"
-	VoicePitch = 96
-End
-
-ProP+Rifle+RiflePersonality "SeabraEZ"
-	VoicePitch = 90
-End
-
-ProP+Rifle+RiflePersonality "SYDOX"
-	VoicePitch = 112
-End
-
-ProP+Rifle+RiflePersonality "krazy"
-	VoicePitch = 101
-End
-
 //Riders Players
 
 ProP+Rifle+RiflePersonality "mopoz"
@@ -1122,7 +1100,7 @@ ProP+Rifle+RiflePersonality "kabal"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "nin9"
+ProP+Rifle+RiflePersonality "Annihilation"
 	VoicePitch = 84
 End
 
@@ -1456,7 +1434,7 @@ ProP+Rifle+RiflePersonality "imoRR"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "Calyx"
+ProP+Rifle+RiflePersonality "MAJ3R"
 	VoicePitch = 86
 End
 
@@ -1488,7 +1466,7 @@ ProP+Rifle+RiflePersonality "pz"
 	VoicePitch = 107
 End
 
-ProP+SniperPro+SniperPersonality "apocdud"
+ProP+SniperPro+SniperPersonality "Vexite"
 	VoicePitch = 82
 End
 
@@ -1500,7 +1478,7 @@ ProP+Rifle+RiflePersonality "malta"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "Roflko"
+ProP+Rifle+RiflePersonality "Valiance"
 	VoicePitch = 108
 End
 
@@ -2644,7 +2622,7 @@ ProP+Rifle+RiflePersonality "meyern"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "nacho"
+ProP+Rifle+RiflePersonality "1962"
 	VoicePitch = 88
 End
 
@@ -3022,25 +3000,25 @@ ProP+Rifle+RiflePersonality "SAiKY"
 	VoicePitch = 102
 End
 
-//TC Players
+//mCon Players
 
-ProP+Rifle+RiflePersonality "propleh"
+ProP+Rifle+RiflePersonality "Cortex"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "tricky"
+ProP+SniperPro+SniperPersonality "Brooklyn"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "almazer"
+ProP+Rifle+RiflePersonality "reco"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "SasukeQO"
+ProP+Rifle+RiflePersonality "Jex"
 	VoicePitch = 85
 End
 
-ProP+Rifle+RiflePersonality "zLy"
+ProP+Rifle+RiflePersonality "BickBuster"
 	VoicePitch = 90
 End
 
@@ -3106,7 +3084,7 @@ ProP+Rifle+RiflePersonality "dobu"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "Annihilation"
+ProP+Rifle+RiflePersonality "xccurate"
 	VoicePitch = 81
 End
 
