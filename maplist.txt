@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Sat Jul 09 14:24:23 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.9.6 config 1 at Tue Jul 12 23:51:56 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -298,7 +298,8 @@ de_nadir
 de_neighbors_v8
 de_neutron
 de_nuke
-workshop/2623963662/de_nuke_ce
+de_nuke_ce
+de_nuke_cyberpunk
 de_nuke_halloween
 de_nuke_ramps
 de_oasis
@@ -443,6 +444,7 @@ lobby_mapveto
 mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1
+workshop/2487240600/nuketown_remake_2
 nyaarena
 oa_sentinel1
 pet_sematary_final
