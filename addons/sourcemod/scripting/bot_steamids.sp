@@ -33,6 +33,8 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errMax)
 {
 	CreateNative("GetBotAccountID", Native_GetBotAccountID);
 	CreateNative("GetBotSteamID64", Native_GetBotSteamID64);
+	
+	return APLRes_Success;
 }
 
 public int Native_GetBotAccountID(Handle plugins, int numParams)

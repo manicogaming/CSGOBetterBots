@@ -7,7 +7,7 @@
 #pragma newdecls required
 
 int g_iKills[MAXPLAYERS+1], g_iAssists[MAXPLAYERS+1], g_iDeaths[MAXPLAYERS+1];
-int g_iKASTRounds[MAXPLAYERS+1] = 0;
+int g_iKASTRounds[MAXPLAYERS+1];
 Handle hDB;
 
 public void OnPluginStart()
@@ -173,7 +173,7 @@ public Action Timer_Delay(Handle hTimer)
 	}
 
 	SQL_ExecuteTransaction(hDB, hTransaction);
-
+	return Plugin_Stop;
 }
 
 public void onSuccess(Database hDatabase, any data, int iNumQueries, Handle[] hResults, any[] bufferData)

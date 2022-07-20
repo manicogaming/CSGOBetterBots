@@ -1,4 +1,4 @@
-// csgosl 2.9.6 config 1 at Tue Jul 12 23:51:56 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Wed Jul 20 19:55:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -363,6 +363,7 @@ de_vostok_esc8
 de_waterfall
 de_waterland
 de_westwood
+workshop/638364183/de_westwood_s
 de_winter_village_go
 deagle_ultra
 deathzone
@@ -444,7 +445,7 @@ lobby_mapveto
 mcdonalds-mds-csgo
 moziz_walzor
 mx_tree_b1
-workshop/2487240600/nuketown_remake_2
+nuketown_remake_2
 nyaarena
 oa_sentinel1
 pet_sematary_final
@@ -455,3 +456,11 @@ workshop/467786170/tr_blank
 training1
 ww_skyrail
 xmas_nipperhouse
+workshop/2615264498/yprac_ancient
+workshop/1202643420/yprac_dust2
+workshop/1377592684/yprac_inferno
+workshop/1222094548/yprac_mirage
+workshop/1304331841/yprac_nuke
+workshop/1339439320/yprac_overpass
+workshop/2513901111/yprac_sphere_aim
+workshop/1713463555/yprac_vertigo

@@ -270,12 +270,12 @@
 	"Mride" 			"Izako"
 	"rico" 				"Izako"
 	"sh3nanigan" 		"Izako"
-	//OFFSET Players
-	"slaxx" 			"OFFSET"
-	"Lr0z1n" 			"OFFSET"
-	"snapy" 			"OFFSET"
-	"shr" 				"OFFSET"
-	"shellzi" 			"OFFSET"
+	//Goliath Players
+	"aw3some" 			"Goliath"
+	"March" 			"Goliath"
+	"tristanxa" 		"Goliath"
+	".exe" 				"Goliath"
+	"slash" 			"Goliath"
 	//NASR Players
 	"Remind" 			"NASR"
 	"REAL1ZE" 			"NASR"
@@ -286,7 +286,7 @@
 	"ritchiEE" 			"ECB"
 	"Stev0se" 			"ECB"
 	"simix" 			"ECB"
-	"n0te" 			"ECB"
+	"n0te" 				"ECB"
 	"Nexius" 			"ECB"
 	//Bravado Players
 	"Doru" 				"Bravado"
@@ -300,16 +300,16 @@
 	"AE" 				"SH"	
 	"XiaosaGe" 			"SH"
 	"Ayeon" 			"SH"
-	//GTZ Players
-	"Linko" 			"GTZ"
-	"rafaxF" 			"GTZ"
-	"frezbyy" 			"GTZ"
-	"Jaepe" 			"GTZ"
-	"fakes2" 			"GTZ"
+	//MASONIC Players
+	"kraghen" 			"MASONIC"
+	"J3nsyy" 			"MASONIC"
+	"Queenix" 			"MASONIC"
+	"notaN" 			"MASONIC"
+	"Cabbi" 			"MASONIC"
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
-	"xfl0ud" 			"Eternal"
+	"paz" 				"Eternal"
 	"woxic" 			"Eternal"
 	"MAJ3R" 			"Eternal"
 	//K23 Players
@@ -342,12 +342,6 @@
 	"interz" 			"C9"
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
-	//Wisla Players
-	"Sobol"				"Wisla" 
-	"SZPERO" 			"Wisla"
-	"Goofy" 			"Wisla"
-	"snatchie" 			"Wisla"
-	"jedqr" 			"Wisla"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
 	"mave" 				"aTTaX"
@@ -386,7 +380,7 @@
 	"cynic" 			"GG"
 	//OG Players
 	"NEOFRAG" 			"OG"
-	"mantuu" 			"OG"
+	"degster" 			"OG"
 	"nexa" 				"OG"
 	"F1KU" 				"OG"
 	"flameZ" 			"OG"
@@ -458,9 +452,9 @@
 	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"HenkkyG" 			"Tigers"
-	"majky" 			"Tigers"
+	"NIO" 				"Tigers"
 	"Rutk0" 			"Tigers"
-	"PR" 				"Tigers"
+	"luko" 				"Tigers"
 	"creZe" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
@@ -666,12 +660,6 @@
 	"hAdji" 			"Falcons"
 	"Keoz" 				"Falcons"
 	"Python"			"Falcons"
-	//GameAgents Players
-	"Klameczka" 		"GameAgents"
-	"Bajmi"				"GameAgents"
-	"Nodsury" 			"GameAgents"
-	"noise" 			"GameAgents"
-	"Majster"			"GameAgents"
 	//Entropy Players
 	"powerYY" 			"Entropy"
 	"stefank0k0"		"Entropy"
@@ -758,10 +746,10 @@
 	"AiM"				"AG"
 	//NKT Players
 	"XigN" 				"NKT"
-	"ImpressioN"		"NKT"
+	"erkaSt"			"NKT"
 	"Kntz"				"NKT"
 	"dobu" 				"NKT"
-	"xccurate"			"NKT"
+	"nin9"				"NKT"
 	//Boca Players
 	"luchov" 			"Boca"
 	"elemeNt"			"Boca"

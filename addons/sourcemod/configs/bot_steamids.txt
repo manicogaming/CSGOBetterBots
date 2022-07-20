@@ -270,12 +270,12 @@
 	"rico" 				"254162921"
 	"Crityourface" 		"173316902"
 	"sh3nanigan" 		"1042506424"
-	//OFFSET Players
-	"slaxx" 			"118792535"
-	"Lr0z1n" 			"234244633"
-	"snapy" 			"268698824"
-	"shr" 				"66458785"
-	"shellzi" 			"243140003"
+	//Goliath Players
+	"aw3some" 			"106956887"
+	"March" 			"91657238"
+	"tristanxa" 		"912953652"
+	".exe" 				"302798328"
+	"slash" 			"102311713"
 	//NASR Players
 	"Remind" 			"121767731"
 	"REAL1ZE" 			"86316485"
@@ -300,16 +300,16 @@
 	"LOVEYY" 			"48886373"	
 	"XiaosaGe" 			"225577877"	
 	"Ayeon" 			"341459799"	
-	//GTZ Players
-	"fakes2" 			"96848867"
-	"Jaepe" 			"251441860"
-	"Linko" 			"186797108"
-	"rafaxF" 			"134941478"
-	"frezbyy" 			"65529438"
+	//MASONIC Players
+	"Cabbi" 			"230664742"
+	"notaN" 			"70656220"
+	"kraghen" 			"86933217"
+	"J3nsyy" 			"192137384"
+	"Queenix" 			"70280269"
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
-	"xfl0ud" 			"217943381"
+	"paz" 				"68524615"
 	"woxic" 			"123219778"
 	"MAJ3R" 			"7167161"
 	//K23 Players
@@ -342,12 +342,6 @@
 	"interz" 			"247808592"
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
-	//Wisla Players
-	"Sobol"				"190359589" 
-	"SZPERO" 			"19554985"
-	"Goofy" 			"300617878"
-	"snatchie" 			"19304486"
-	"jedqr" 			"125090121"
 	//aTTaX Players
 	"awzek" 			"238305245"
 	"mave" 				"219806941"
@@ -386,7 +380,7 @@
 	"cynic" 			"106932238"
 	//OG Players
 	"NEOFRAG" 			"255168957"
-	"mantuu" 			"56166832"
+	"degster" 			"56166832"
 	"nexa" 				"39559694"
 	"F1KU" 				"292168772"
 	"flameZ" 			"18569432"
@@ -458,9 +452,9 @@
 	"kst" 				"83276408"
 	//Tigers Players
 	"HenkkyG" 			"10674280"
-	"majky" 			"873352928"
+	"NIO" 				"170307600"
 	"Rutk0" 			"292716414"
-	"PR" 				"350295751"
+	"luko" 				"90161747"
 	"creZe" 			"41700991"
 	//9z Players
 	"dgt" 				"256625848"
@@ -666,12 +660,6 @@
 	"hAdji" 			"20679059"
 	"Keoz" 				"138078516"
 	"Python"			"231605562"
-	//GameAgents Players
-	"Klameczka" 		"229219769"
-	"Bajmi"				"240875179"
-	"Nodsury" 			"279354648"
-	"noise" 			"156994666"
-	"Majster"			"891017452"
 	//Entropy Players
 	"powerYY" 			"193302990"
 	"stefank0k0"		"41682335"
@@ -758,10 +746,10 @@
 	"AiM"				"905641553"
 	//NKT Players
 	"XigN" 				"49809482"
-	"ImpressioN"		"134688940"
+	"erkaSt"			"131305548"
 	"Kntz"				"80230397"
 	"dobu" 				"159891913"
-	"xccurate"			"177428807"
+	"nin9"				"168197870"
 	//Boca Players
 	"luchov" 			"107456470"
 	"elemeNt"			"84718029"

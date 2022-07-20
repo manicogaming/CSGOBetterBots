@@ -143,7 +143,6 @@ Handle g_hTeleport;
 Handle g_hSetOrigin;
 
 ConVar g_hCVOriginSnapshotInterval;
-ConVar g_hCVRespawnOnDeath;
 
 public Plugin myinfo = 
 {
@@ -189,6 +188,8 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	g_hfwdOnPlayerStopsMimicing = CreateGlobalForward("BotMimic_OnPlayerStopsMimicing", ET_Ignore, Param_Cell, Param_String, Param_String, Param_String);
 	g_hfwdOnPlayerMimicLoops = CreateGlobalForward("BotMimic_OnPlayerMimicLoops", ET_Ignore, Param_Cell);
 	g_hfwdOnPlayerMimicBookmark = CreateGlobalForward("BotMimic_OnPlayerMimicBookmark", ET_Ignore, Param_Cell, Param_String);
+	
+	return APLRes_Success;
 }
 
 public void OnPluginStart()
@@ -203,7 +204,6 @@ public void OnPluginStart()
 	// Save the position of clients every 10000 ticks
 	// This is to avoid bots getting stuck in walls due to slightly lower jumps, if they don't touch the ground.
 	g_hCVOriginSnapshotInterval = CreateConVar("sm_botmimic_snapshotinterval", "10000", "Save the position of clients every x ticks. This is to avoid bots getting stuck in walls during a long playback and lots of jumps.", _, true, 0.0);
-	g_hCVRespawnOnDeath = CreateConVar("sm_botmimic_respawnondeath", "1", "Respawn the bot when he dies during playback?", _, true, 0.0, true, 1.0);
 	
 	AutoExecConfig();
 	
@@ -788,19 +788,19 @@ public int StartRecording(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(g_hRecording[client] != null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is already recording.");
-		return;
+		return -1;
 	}
 	
 	if(g_hBotMimicsRecord[client] != null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is currently mimicing another record.");
-		return;
+		return -1;
 	}
 	
 	g_hRecording[client] = new ArrayList(sizeof(FrameInfo));
@@ -841,6 +841,8 @@ public int StartRecording(Handle plugin, int numParams)
 	
 	if(result >= Plugin_Handled)
 		BotMimic_StopRecording(client, false);
+		
+	return 1;
 }
 
 public int PauseRecording(Handle plugin, int numParams)
@@ -849,19 +851,19 @@ public int PauseRecording(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(g_hRecording[client] == null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not recording.");
-		return;
+		return -1;
 	}
 	
 	if(g_bRecordingPaused[client])
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Recording is already paused.");
-		return;
+		return -1;
 	}
 	
 	g_bRecordingPaused[client] = true;
@@ -870,6 +872,8 @@ public int PauseRecording(Handle plugin, int numParams)
 	Call_PushCell(client);
 	Call_PushCell(true);
 	Call_Finish();
+	
+	return 1;
 }
 
 public int ResumeRecording(Handle plugin, int numParams)
@@ -878,19 +882,19 @@ public int ResumeRecording(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(g_hRecording[client] == null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not recording.");
-		return;
+		return -1;
 	}
 	
 	if(!g_bRecordingPaused[client])
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Recording is not paused.");
-		return;
+		return -1;
 	}
 	
 	// Save the new full position, angles and velocity.
@@ -902,6 +906,8 @@ public int ResumeRecording(Handle plugin, int numParams)
 	Call_PushCell(client);
 	Call_PushCell(false);
 	Call_Finish();
+	
+	return 1;
 }
 
 public int IsRecordingPaused(Handle plugin, int numParams)
@@ -928,14 +934,14 @@ public int StopRecording(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	// Not recording..
 	if(g_hRecording[client] == null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not recording.");
-		return;
+		return -1;
 	}
 	
 	bool save = GetNativeCell(2);
@@ -952,7 +958,7 @@ public int StopRecording(Handle plugin, int numParams)
 	
 	// Don't stop recording?
 	if(result >= Plugin_Handled)
-		return;
+		return -1;
 	
 	if(save)
 	{
@@ -968,24 +974,24 @@ public int StopRecording(Handle plugin, int numParams)
 			sPath[strlen(sPath)-1] = '\0';
 		
 		if(!CheckCreateDirectory(sPath, 511))
-			return;
+			return -1;
 		
 		// Check if the category folder exists?
 		BuildPath(Path_SM, sPath, sizeof(sPath), "%s%s", DEFAULT_RECORD_FOLDER, g_sRecordCategory[client]);
 		if(!CheckCreateDirectory(sPath, 511))
-			return;
+			return -1;
 		
 		// Check, if there is a folder for this map already
 		Format(sPath, sizeof(sPath), "%s/%s", g_sRecordPath[client], sMapName);
 		if(!CheckCreateDirectory(sPath, 511))
-			return;
+			return -1;
 		
 		// Check if the subdirectory exists
 		if(g_sRecordSubDir[client][0] != '\0')
 		{
 			Format(sPath, sizeof(sPath), "%s/%s", sPath, g_sRecordSubDir[client]);
 			if(!CheckCreateDirectory(sPath, 511))
-				return;
+				return -1;
 		}
 		
 		Format(sPath, sizeof(sPath), "%s/%d.rec", sPath, iEndTime);
@@ -1056,6 +1062,8 @@ public int StopRecording(Handle plugin, int numParams)
 	g_iOriginSnapshotInterval[client] = 0;
 	g_bRecordingPaused[client] = false;
 	g_bSaveFullSnapshot[client] = false;
+	
+	return 1;
 }
 
 public int SaveBookmark(Handle plugin, int numParams)
@@ -1064,14 +1072,14 @@ public int SaveBookmark(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	// Not recording..
 	if(g_hRecording[client] == null)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not recording.");
-		return;
+		return -1;
 	}
 	
 	char sBookmarkName[MAX_BOOKMARK_NAME_LENGTH];
@@ -1086,7 +1094,7 @@ public int SaveBookmark(Handle plugin, int numParams)
 		if(StrEqual(iBookmark.BKM_name, sBookmarkName, false))
 		{
 			ThrowNativeError(SP_ERROR_NATIVE, "There already is a bookmark named \"%s\".", sBookmarkName);
-			return;
+			return -1;
 		}
 	}
 	
@@ -1144,6 +1152,8 @@ public int SaveBookmark(Handle plugin, int numParams)
 	Call_PushCell(client);
 	Call_PushString(sBookmarkName);
 	Call_Finish();
+	
+	return 1;
 }
 
 public int DeleteRecord(Handle plugin, int numParams)
@@ -1244,19 +1254,21 @@ public int GetRecordPlayerMimics(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(!BotMimic_IsPlayerMimicing(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not mimicing.");
-		return;
+		return -1;
 	}
 	
 	int iLen = GetNativeCell(3);
 	char[] sPath = new char[iLen];
 	GetFileFromFrameHandle(g_hBotMimicsRecord[client], sPath, iLen);
 	SetNativeString(2, sPath, iLen);
+	
+	return 1;
 }
 
 public int GoToBookmark(Handle plugin, int numParams)
@@ -1265,13 +1277,13 @@ public int GoToBookmark(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(!BotMimic_IsPlayerMimicing(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not mimicing.");
-		return;
+		return -1;
 	}
 	
 	char sBookmarkName[MAX_BOOKMARK_NAME_LENGTH];
@@ -1301,7 +1313,7 @@ public int GoToBookmark(Handle plugin, int numParams)
 	if(!bBookmarkFound)
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "There is no bookmark named \"%s\" in this record.", sBookmarkName);
-		return;
+		return -1;
 	}
 	
 	g_iBotMimicTick[client] = iBookmark.BKM_frame;
@@ -1310,6 +1322,8 @@ public int GoToBookmark(Handle plugin, int numParams)
 	// Remember that we're now at this bookmark.
 	g_iBotMimicNextBookmarkTick[client].BWM_frame = iBookmark.BKM_frame;
 	g_iBotMimicNextBookmarkTick[client].BWM_index = iBookmarkIndex;
+	
+	return 1;
 }
 
 public int StopPlayerMimic(Handle plugin, int numParams)
@@ -1318,13 +1332,13 @@ public int StopPlayerMimic(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(!BotMimic_IsPlayerMimicing(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not mimicing.");
-		return;
+		return -1;
 	}
 	
 	char sPath[PLATFORM_MAX_PATH];
@@ -1352,6 +1366,8 @@ public int StopPlayerMimic(Handle plugin, int numParams)
 	Call_PushString(sCategory);
 	Call_PushString(sPath);
 	Call_Finish();
+	
+	return 1;
 }
 
 public int PlayRecordFromFile(Handle plugin, int numParams)
@@ -1417,13 +1433,13 @@ public int ResetPlayback(Handle plugin, int numParams)
 	if(client < 1 || client > MaxClients || !IsClientInGame(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Bad player index %d", client);
-		return;
+		return -1;
 	}
 	
 	if(!BotMimic_IsPlayerMimicing(client))
 	{
 		ThrowNativeError(SP_ERROR_NATIVE, "Player is not mimicing.");
-		return;
+		return -1;
 	}
 	
 	g_iBotMimicTick[client] = 0;
@@ -1432,6 +1448,8 @@ public int ResetPlayback(Handle plugin, int numParams)
 	g_iBotMimicNextBookmarkTick[client].BWM_frame = -1;
 	g_iBotMimicNextBookmarkTick[client].BWM_index = -1;
 	UpdateNextBookmarkTick(client);
+	
+	return 1;
 }
 
 public int GetFileHeaders(Handle plugin, int numParams)

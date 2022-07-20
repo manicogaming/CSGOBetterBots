@@ -89,6 +89,8 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errMax)
 	CreateNative("Demo_IsPlaying", Native_IsPlaying);
 	
 	RegPluginLibrary("demoplayback");
+	
+	return APLRes_Success;
 }
 
 public int Native_GetPosition(Handle plugins, int numParams)
