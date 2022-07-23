@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Wed Jul 20 19:55:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Fri Jul 22 05:11:59 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -98,7 +98,6 @@ awp_rp94
 awp_source
 ba_winterforest_b1
 c19_tilante
-workshop/1325659427/config_generator
 cs_1337_assault_b2
 cs_agency
 cs_apollo
@@ -132,6 +131,7 @@ cs_militia
 cs_militia_original
 cs_motel
 cs_museum
+cs_night_borough
 cs_office
 cs_office_legacy
 cs_offtime
@@ -375,7 +375,6 @@ dz_ember
 dz_sirocco
 dz_vineyard
 fame
-workshop/500334237/fps_benchmark
 fun_pacman_v1
 fy_back_street
 fy_buzzkill_sh
@@ -450,17 +449,9 @@ nyaarena
 oa_sentinel1
 pet_sematary_final
 quarrel
-workshop/2749351643/scopegg_pg_aim_v1
 sj_dustland
 workshop/467786170/tr_blank
 training1
 ww_skyrail
 xmas_nipperhouse
-workshop/2615264498/yprac_ancient
-workshop/1202643420/yprac_dust2
-workshop/1377592684/yprac_inferno
-workshop/1222094548/yprac_mirage
-workshop/1304331841/yprac_nuke
-workshop/1339439320/yprac_overpass
 workshop/2513901111/yprac_sphere_aim
-workshop/1713463555/yprac_vertigo

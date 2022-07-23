@@ -1,0 +1,13 @@
+"de_orion"
+{
+	"CTSpawn_x" "0.560000"
+	"CTSpawn_y" "0.880000"
+	"TSpawn_x" "0.180000"
+	"TSpawn_y" "0.080000"
+	"bombA_x"	"0.54"
+	"bombA_y"	"0.42"
+	"material" "overviews/de_orion"
+	"pos_x" "-1966.000000"
+	"pos_y" "2068.000000"
+	"scale" "3.810000"
+}
