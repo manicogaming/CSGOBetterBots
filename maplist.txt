@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Fri Jul 22 05:11:59 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Mon Jul 25 02:20:01 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -98,6 +98,7 @@ awp_rp94
 awp_source
 ba_winterforest_b1
 c19_tilante
+workshop/1325659427/config_generator
 cs_1337_assault_b2
 cs_agency
 cs_apollo
@@ -305,10 +306,14 @@ de_nuke_ramps
 de_oasis
 de_old_monastery
 de_ore
+de_orion
 de_outlaws_go
 de_overgrown
 de_overpass
 de_overpass_2055
+de_overpass_cyberpunk
+de_paradise
+workshop/2774777544/de_payday
 de_pharaoh
 de_pit
 de_pitstop
@@ -363,7 +368,6 @@ de_vostok_esc8
 de_waterfall
 de_waterland
 de_westwood
-workshop/638364183/de_westwood_s
 de_winter_village_go
 deagle_ultra
 deathzone
@@ -449,6 +453,7 @@ nyaarena
 oa_sentinel1
 pet_sematary_final
 quarrel
+school
 sj_dustland
 workshop/467786170/tr_blank
 training1

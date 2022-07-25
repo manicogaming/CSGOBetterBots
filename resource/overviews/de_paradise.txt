@@ -1,0 +1,8 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_paradise"
+{
+	"material" "overviews/de_paradise"
+	"pos_x" "-768.000000"
+	"pos_y" "3328.000000"
+	"scale" "4.250000"
+}

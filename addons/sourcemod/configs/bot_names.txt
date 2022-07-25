@@ -21,7 +21,7 @@
 	//NiP Players
 	"es3tag" 			"NiP"
 	"Plopski" 			"NiP"
-	"device" 			"NiP"
+	"Brollan" 			"NiP"
 	"hampus" 			"NiP"
 	"REZ" 				"NiP"
 	//1win Players
@@ -162,12 +162,6 @@
 	"aliStair" 			"ORDER"
 	"Hatz" 				"ORDER"
 	"Liazz" 			"ORDER"
-	//GamerLegion Players
-	"iM" 				"GamerLegion"
-	"eraa" 				"GamerLegion"
-	"Zero" 				"GamerLegion"
-	"RuStY" 			"GamerLegion"	
-	"isak" 				"GamerLegion"
 	//HAVU Players
 	"ottoNd" 			"HAVU"
 	"sLowi" 			"HAVU"
@@ -180,12 +174,6 @@
 	"maNkz" 			"ECSTATIC"
 	"FASHR" 			"ECSTATIC"
 	"WolfY" 			"ECSTATIC"
-	//GODSENT Players
-	"TACO" 				"GODSENT"
-	"b4rtiN" 			"GODSENT"
-	"HEN1" 				"GODSENT"
-	"latto" 			"GODSENT"
-	"dumau" 			"GODSENT"
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
@@ -255,7 +243,7 @@
 	//Wolsung Players
 	"hyskeee" 			"Wolsung"
 	"shield" 			"Wolsung"
-	"keen" 				"Wolsung"
+	"krii" 				"Wolsung"
 	"discplex" 			"Wolsung"
 	"msn2k" 			"Wolsung"
 	//SKADE Players
@@ -348,12 +336,6 @@
 	"xenn" 				"aTTaX"
 	"FreeZe" 			"aTTaX"
 	"skyye" 			"aTTaX"	
-	//Unique Players
-	"sorrow" 			"Unique"
-	"smiley" 			"Unique"
-	"w1nt3r" 			"Unique"
-	"icem4N" 			"Unique"
-	"dukefissura" 		"Unique"	
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
@@ -467,7 +449,7 @@
 	"forsyy" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
-	"tomkeejs" 			"SINNERS"
+	"Zero" 				"SINNERS"
 	//EP Players
 	"The eLiVe" 		"EP"
 	"Blytz" 			"EP"
@@ -561,9 +543,9 @@
 	//Nation Players
 	"try" 				"Nation"
 	"coldzera" 			"Nation"
-	"leo_drk" 			"Nation"
-	"malbsMd" 			"Nation"
-	"v$m"				"Nation"
+	"TACO" 				"Nation"
+	"latto" 			"Nation"
+	"dumau"				"Nation"
 	//Eriness Players
 	"Fog" 				"Eriness"
 	"kiyomi" 			"Eriness"
@@ -613,10 +595,10 @@
 	"eDi" 				"Conquer"
 	"JUS6"				"Conquer"
 	//AVANGAR Players
-	"FinigaN" 			"AVANGAR"
-	"fozil"				"AVANGAR"
+	"sorrow" 			"AVANGAR"
+	"w1nt3r"			"AVANGAR"
 	"kade0" 			"AVANGAR"
-	"enzero" 			"AVANGAR"
+	"icem4N" 			"AVANGAR"
 	"ICY"				"AVANGAR"
 	//SWS Players
 	"gbb" 				"SWS"
@@ -699,7 +681,7 @@
 	//LDLC Players
 	"Graviti" 			"LDLC"
 	"Broox"				"LDLC"
-	"ElectuS"			"LDLC"
+	"AMANEK"			"LDLC"
 	"Diviiii" 			"LDLC"
 	"Neityu"			"LDLC"
 	//Vireo Players
@@ -758,10 +740,10 @@
 	"MRN1"				"Boca"
 	//ITB Players
 	"Adam9130" 			"ITB"
-	"smooya"			"ITB"
+	"draken"			"ITB"
 	"dobbo"				"ITB"
 	"CYPHER" 			"ITB"
-	"Tadpole"			"ITB"
+	"RuStY"				"ITB"
 	//Sampi Players
 	"Adejis" 			"Sampi"
 	"GuardiaN"			"Sampi"

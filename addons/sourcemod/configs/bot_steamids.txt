@@ -21,7 +21,7 @@
 	//NiP Players
 	"es3tag" 			"1859646"
 	"Plopski" 			"175613070"
-	"device" 			"27447936"
+	"Brollan" 			"178562747"
 	"hampus" 			"126680222"
 	"REZ" 				"73906687"
 	//1win Players
@@ -162,12 +162,6 @@
 	"aliStair" 			"138080982"
 	"Hatz" 				"64662058"
 	"Liazz" 			"112055988"
-	//GamerLegion Players
-	"eraa" 				"413888723"
-	"Zero" 				"34322135"
-	"RuStY" 			"122394166"	
-	"isak" 				"111644637"
-	"iM" 				"89984505"
 	//HAVU Players
 	"ottoNd" 			"75069143"
 	"sLowi" 			"15932016"
@@ -180,12 +174,6 @@
 	"FASHR" 			"3238867"
 	"WolfY" 			"47524263"
 	"maNkz" 			"81805084"
-	//GODSENT Players
-	"TACO" 				"52876568"
-	"b4rtiN" 			"169818854"
-	"HEN1" 				"57761535"
-	"latto" 			"889754458"
-	"dumau" 			"234059589"
 	//Riders Players
 	"mopoz"				"37931638" 
 	"dav1g" 			"457082328"
@@ -255,7 +243,7 @@
 	//Wolsung Players
 	"hyskeee" 			"240252201"
 	"shield" 			"293626183"
-	"keen" 				"54646804"
+	"krii" 				"133953829"
 	"discplex" 			"252053056"
 	"msn2k" 			"6172176"
 	//SKADE Players
@@ -348,12 +336,6 @@
 	"skyye" 			"122405104"	
 	"xenn" 				"167173287"	
 	"FreeZe" 			"259251039"	
-	//Unique Players
-	"sorrow" 			"169527908"
-	"smiley" 			"169887982"
-	"w1nt3r" 			"57945273"
-	"icem4N" 			"355948252"
-	"dukefissura" 		"141892565"	
 	//ATK Players
 	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
@@ -467,7 +449,7 @@
 	"forsyy" 			"105029167"
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
-	"tomkeejs" 			"149866088"
+	"Zero" 				"34322135"
 	//EP Players
 	"The eLiVe"			"111025647"
 	"Blytz"				"101848953"
@@ -561,9 +543,9 @@
 	//Nation Players
 	"try" 				"404852560"
 	"coldzera" 			"79720871"
-	"leo_drk" 			"58291277"
-	"malbsMd" 			"120437415"
-	"v$m"				"51467095"
+	"TACO" 				"52876568"
+	"latto" 			"889754458"
+	"dumau"				"234059589"
 	//Eriness Players
 	"Fog" 				"228324029"
 	"kiyomi" 			"230574129"
@@ -613,10 +595,10 @@
 	"eDi" 				"57731578"
 	"JUS6"				"27799500"
 	//AVANGAR Players
-	"FinigaN" 			"226095351"
-	"fozil"				"332205778"
+	"sorrow" 			"169527908"
+	"w1nt3r"			"57945273"
 	"kade0" 			"343115451"
-	"enzero" 			"354960733"
+	"icem4N" 			"355948252"
 	"ICY"				"94843300"
 	//SWS Players
 	"gbb" 				"1056251466"
@@ -699,7 +681,7 @@
 	//LDLC Players
 	"Graviti" 			"219272777"
 	"Broox"				"314420307"
-	"ElectuS"			"206349608"
+	"AMANEK"			"108679223"
 	"Diviiii" 			"191872056"
 	"Neityu"			"1011452664"
 	//Vireo Players
@@ -758,10 +740,10 @@
 	"MRN1"				"176372852"
 	//ITB Players
 	"Adam9130" 			"80281757"
-	"smooya"			"211423593"
+	"draken"			"159123007"
 	"dobbo"				"288859378"
 	"CYPHER" 			"291718826"
-	"Tadpole"			"121133939"
+	"RuStY"				"122394166"
 	//Sampi Players
 	"Adejis" 			"125256141"
 	"GuardiaN"			"12065295"
