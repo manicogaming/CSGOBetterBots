@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Mon Jul 25 02:20:01 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Sun Jul 31 02:02:17 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -313,15 +313,17 @@ de_overpass
 de_overpass_2055
 de_overpass_cyberpunk
 de_paradise
-workshop/2774777544/de_payday
+de_payday
 de_pharaoh
 de_pit
 de_pitstop
 de_portugal_rc1
 de_pripyat
 de_prodigy
+de_prodigy_classic
 de_rails
 de_ramis
+de_rampart_final
 de_ravine
 de_reberth
 de_reberth_halloween
@@ -336,6 +338,7 @@ de_russka_b2
 de_rust_b3
 de_safehouse
 de_saint
+workshop/2728946194/de_sanjuan
 de_santorini
 de_sawmill
 de_seaside

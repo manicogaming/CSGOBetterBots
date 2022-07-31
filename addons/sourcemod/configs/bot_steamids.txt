@@ -116,7 +116,7 @@
 	"DebornY" 			"125902681"	
 	//coL Players
 	"JT" 				"61449372"
-	"junior" 			"103793230"
+	"hallzerk" 			"100101582"
 	"FaNg" 				"312457591"
 	"floppy" 			"346253535"
 	"Grim" 				"230970467"	
@@ -163,11 +163,11 @@
 	"Hatz" 				"64662058"
 	"Liazz" 			"112055988"
 	//HAVU Players
-	"ottoNd" 			"75069143"
-	"sLowi" 			"15932016"
+	"zehN" 				"16308501"
+	"spargo" 			"109596532"
 	"Aerial" 			"2445180"
 	"xseveN" 			"52906775"
-	"Sm1llee" 			"297922013"
+	"doto" 				"39318615"
 	//ECSTATIC Players
 	"birdfromsky"		"4338476" 
 	"Daffu" 			"70645401"
@@ -353,7 +353,7 @@
 	"z4kr" 				"177517735"
 	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
-	"V4D1M" 			"40409264"
+	"Nelly" 			"865089077"
 	//GG Players
 	"nosraC" 			"101522203"
 	"JazzPimp" 			"101706163"
@@ -404,7 +404,7 @@
 	"Spexy" 			"161464594"
 	//KOVA Players
 	"zks" 				"368233531"
-	"spargo" 			"109596532"
+	"peku" 				"39287363"
 	"uli" 				"52262697"
 	"airax" 			"50161047"
 	"Twixie" 			"187781829"
@@ -493,11 +493,11 @@
 	"Cate" 				"145059633"
 	"Gin" 				"385310876"
 	//AVEZ Players
-	"mystic" 			"81765294"
-	"bastEe" 			"316079070"
-	"eYs" 				"255700857"
-	"Monsteryry" 		"52099773"
-	"hous1k"			"274093084"
+	"bonjorno" 			"91963127"
+	"next1me" 			"1276923255"
+	"xenq" 				"181381079"
+	"cej0t" 			"120183772"
+	"moonwalk"			"1142165871"
 	//Anonymo Players
 	"oskarish" 			"286156964"
 	"Flayy" 			"452134916"
@@ -508,7 +508,7 @@
 	"TaZ" 				"234052"
 	"NEO" 				"460206"
 	"reiko" 			"190436529"
-	"fr3nd" 			"177768668"
+	"SaMey" 			"150540966"
 	"Grashog" 			"78941188"
 	//Spirit Players
 	"chopper" 			"85633136"
@@ -587,11 +587,11 @@
 	"uQlutzavr"			"311902739"
 	"Smash" 			"214027585"
 	"s4" 				"125957336"
-	"amster"			"121728571"
+	"Flarich"			"191627594"
 	//Conquer Players
 	"jelo" 				"147699201"
 	"Mikzuuu"			"115253003"
-	"Samppa" 			"37105524"
+	"Elfern" 			"139081471"
 	"eDi" 				"57731578"
 	"JUS6"				"27799500"
 	//AVANGAR Players

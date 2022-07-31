@@ -727,7 +727,7 @@ ProP+Rifle+RiflePersonality "JT"
 	VoicePitch = 81
 End
 
-ProP+SniperPro+SniperPersonality "junior"
+ProP+SniperPro+SniperPersonality "hallzerk"
 	VoicePitch = 93
 End
 
@@ -899,11 +899,11 @@ End
 
 //HAVU Players
 
-ProP+Rifle+RiflePersonality "ottoNd"
+ProP+Rifle+RiflePersonality "zehN"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "sLowi"
+ProP+SniperPro+SniperPersonality "spargo"
 	VoicePitch = 87
 End
 
@@ -915,7 +915,7 @@ ProP+Rifle+RiflePersonality "xseveN"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "Sm1llee"
+ProP+Rifle+RiflePersonality "doto"
 	VoicePitch = 100
 End
 
@@ -1597,7 +1597,7 @@ ProP+Rifle+RiflePersonality "EXPRO"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "V4D1M"
+ProP+Rifle+RiflePersonality "Nelly"
 	VoicePitch = 114
 End
 
@@ -1791,7 +1791,7 @@ ProP+Rifle+RiflePersonality "uli"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "spargo"
+ProP+Rifle+RiflePersonality "peku"
 	VoicePitch = 102
 End
 
@@ -2109,23 +2109,23 @@ End
 
 //AVEZ Players
 
-ProP+Rifle+RiflePersonality "mystic"
+ProP+Rifle+RiflePersonality "bonjorno"
 	VoicePitch = 80
 End
 
-ProP+SniperPro+SniperPersonality "bastEe"
+ProP+SniperPro+SniperPersonality "next1me"
 	VoicePitch = 85
 End
 
-ProP+Rifle+RiflePersonality "eYs"
+ProP+Rifle+RiflePersonality "xenq"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "Monsteryry"
+ProP+Rifle+RiflePersonality "cej0t"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "hous1k"
+ProP+Rifle+RiflePersonality "moonwalk"
 	VoicePitch = 103
 End
 
@@ -2157,7 +2157,7 @@ ProP+Rifle+RiflePersonality "TaZ"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "fr3nd"
+ProP+SniperPro+SniperPersonality "SaMey"
 	VoicePitch = 83
 End
 
@@ -2455,7 +2455,7 @@ ProP+Rifle+RiflePersonality "s4"
 	VoicePitch = 75
 End
 
-ProP+Rifle+RiflePersonality "amster"
+ProP+Rifle+RiflePersonality "Flarich"
 	VoicePitch = 89
 End
 
@@ -2469,7 +2469,7 @@ ProP+SniperPro+SniperPersonality "Mikzuuu"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "Samppa"
+ProP+Rifle+RiflePersonality "Elfern"
 	VoicePitch = 94
 End
 

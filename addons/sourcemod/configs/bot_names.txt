@@ -116,7 +116,7 @@
 	"DebornY" 			"Santos"	
 	//coL Players
 	"JT" 				"coL"
-	"junior" 			"coL"
+	"hallzerk" 			"coL"
 	"FaNg" 				"coL"
 	"floppy" 			"coL"
 	"Grim" 				"coL"	
@@ -163,11 +163,11 @@
 	"Hatz" 				"ORDER"
 	"Liazz" 			"ORDER"
 	//HAVU Players
-	"ottoNd" 			"HAVU"
-	"sLowi" 			"HAVU"
+	"zehN" 				"HAVU"
+	"spargo" 			"HAVU"
 	"Aerial" 			"HAVU"
 	"xseveN" 			"HAVU"
-	"Sm1llee" 			"HAVU"
+	"doto" 				"HAVU"
 	//ECSTATIC Players
 	"birdfromsky"		"ECSTATIC" 
 	"Daffu" 			"ECSTATIC"
@@ -353,7 +353,7 @@
 	"z4kr" 				"Lynn"
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
-	"V4D1M" 			"Lynn"
+	"Nelly" 			"Lynn"
 	//GG Players
 	"nosraC" 			"GG"
 	"JazzPimp" 			"GG"
@@ -404,7 +404,7 @@
 	"Spexy" 			"SSP"
 	//KOVA Players
 	"zks" 				"KOVA"
-	"spargo" 			"KOVA"
+	"peku" 				"KOVA"
 	"uli" 				"KOVA"
 	"airax" 			"KOVA"
 	"Twixie" 			"KOVA"
@@ -493,11 +493,11 @@
 	"tanxiaomei" 		"CatEvil"
 	"Roninbaby"			"CatEvil"
 	//AVEZ Players
-	"mystic" 			"AVEZ"
-	"bastEe" 			"AVEZ"
-	"eYs" 				"AVEZ"
-	"Monsteryry" 		"AVEZ"
-	"hous1k"			"AVEZ"
+	"bonjorno" 			"AVEZ"
+	"next1me" 			"AVEZ"
+	"xenq" 				"AVEZ"
+	"cej0t" 			"AVEZ"
+	"moonwalk"			"AVEZ"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
 	"Flayy" 			"Anonymo"
@@ -506,7 +506,7 @@
 	"innocent"			"Anonymo"
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
-	"fr3nd" 			"HONORIS"
+	"SaMey" 			"HONORIS"
 	"NEO" 				"HONORIS"
 	"reiko" 			"HONORIS"
 	"Grashog"			"HONORIS"
@@ -587,11 +587,11 @@
 	"uQlutzavr"			"ECK"
 	"Smash" 			"ECK"
 	"s4" 				"ECK"
-	"amster"			"ECK"
+	"Flarich"			"ECK"
 	//Conquer Players
 	"jelo" 				"Conquer"
 	"Mikzuuu"			"Conquer"
-	"Samppa" 			"Conquer"
+	"Elfern" 			"Conquer"
 	"eDi" 				"Conquer"
 	"JUS6"				"Conquer"
 	//AVANGAR Players
