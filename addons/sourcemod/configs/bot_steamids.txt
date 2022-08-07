@@ -40,7 +40,7 @@
 	"nicoodoz" 			"112851399"
 	"roeJ" 				"30968963"
 	"KRIMZ" 			"71385856"
-	"Peppzor" 			"328124340"
+	"FASHR" 			"3238867"
 	"mezii" 			"12874964"
 	//Dynamo Players
 	"Dytor" 			"241288610"
@@ -61,8 +61,8 @@
 	"somebody" 			"85131873"
 	"DANK1NG" 			"191648575"
 	//EG Players
-	"Stewie2K" 			"38738282"
-	"RUSH" 				"63326592"
+	"HexT" 				"250668735"
+	"neaLaN" 			"93777050"
 	"Brehze" 			"94595411"
 	"autimatic" 		"94605121"
 	"CeRq" 				"196088155"
@@ -169,10 +169,10 @@
 	"xseveN" 			"52906775"
 	"doto" 				"39318615"
 	//ECSTATIC Players
-	"birdfromsky"		"4338476" 
+	"kraghen"			"86933217" 
 	"Daffu" 			"70645401"
-	"FASHR" 			"3238867"
-	"WolfY" 			"47524263"
+	"Cabbi" 			"230664742"
+	"Queenix" 			"70280269"
 	"maNkz" 			"81805084"
 	//Riders Players
 	"mopoz"				"37931638" 
@@ -190,7 +190,7 @@
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
 	"ragga" 			"109933575"
-	"ToH1o" 			"37321649"
+	"adamS" 			"8124135"
 	"SEMINTE" 			"36171013"
 	//PACT Players
 	"SAYN" 				"72039306"
@@ -201,9 +201,9 @@
 	//Nemiga Players
 	"iDISBALANCE" 		"210384169"
 	"BELCHONOKK" 		"293404789"
-	"Chill" 			"113129796"	
+	"fostar" 			"196096645"	
 	"Jyo" 				"43255799"
-	"boX" 				"127393261"
+	"1eeR" 				"876851680"
 	//IHC Players
 	"kabal" 			"161246388"
 	"Techno4K" 			"1006074432"
@@ -217,11 +217,11 @@
 	"pacman^v^" 		"486643146"
 	"Marro" 			"171629480"
 	//Isurus Players
-	"DeStiNy" 			"89528706"
+	"meyern" 			"235377137"
 	"Noktse" 			"54233223"
-	"Gafolo" 			"174962930"	
+	"reversive" 		"229334739"	
 	"decov9jse" 		"311766666"	
-	"ALLE" 				"1194990"
+	"naz" 				"117592077"
 	//paiN Players
 	"PKL" 				"65313136"
 	"nython" 			"170224923"
@@ -288,12 +288,6 @@
 	"LOVEYY" 			"48886373"	
 	"XiaosaGe" 			"225577877"	
 	"Ayeon" 			"341459799"	
-	//MASONIC Players
-	"Cabbi" 			"230664742"
-	"notaN" 			"70656220"
-	"kraghen" 			"86933217"
-	"J3nsyy" 			"192137384"
-	"Queenix" 			"70280269"
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
@@ -301,7 +295,7 @@
 	"woxic" 			"123219778"
 	"MAJ3R" 			"7167161"
 	//K23 Players
-	"neaLaN" 			"93777050"
+	"Solaar" 			"461215329"
 	"xsepower" 			"112014226"
 	"Raijin" 			"216190295"
 	"clax" 				"168818887"
@@ -332,9 +326,9 @@
 	"Hobbit" 			"68027030"
 	//aTTaX Players
 	"awzek" 			"238305245"
-	"mave" 				"219806941"
-	"skyye" 			"122405104"	
-	"xenn" 				"167173287"	
+	"PANIX" 			"241868664"
+	"pdy" 				"199029474"	
+	"PerX" 				"208428335"	
 	"FreeZe" 			"259251039"	
 	//ATK Players
 	"b0denmaster" 		"316269116"
@@ -414,12 +408,6 @@
 	"Griller" 			"10598145"
 	"void" 				"370246568"
 	"Equip" 			"174193046"
-	//NLG Players
-	"pdy" 				"199029474"	
-	"red" 				"204660292"
-	"PerX" 				"208428335"
-	"maRky" 			"58209132"
-	"OKOLICIOUZ" 		"65483354"
 	//Lilmix Players
 	"quix" 				"18704555"
 	"bobeksde" 			"100650499"
@@ -534,12 +522,6 @@
 	"neviZ"				"48474294"
 	"d1cer"				"158737140"
 	"gimpen"			"185018310"
-	//BNB Players
-	"MoMo" 				"12167472"
-	"Swahn" 			"82748583"
-	"Pluto" 			"138851421"
-	"Spongey" 			"85216555"
-	"Shakezullah"		"68248927"
 	//Nation Players
 	"try" 				"404852560"
 	"coldzera" 			"79720871"
@@ -605,13 +587,7 @@
 	"CSO"				"372054879"
 	"bsd" 				"213740099"
 	"mxa" 				"419885624"
-	"w1"				"456548842"
-	//Leviatan Players
-	"Luken" 			"46114258"
-	"1962"				"321501952"
-	"Reversive" 		"229334739"
-	"meyern" 			"235377137"
-	"JonY BoY"			"77140654"
+	"SaNt0S"			"421550703"
 	//Furious Players
 	"KAISER" 			"167304921"
 	"TIKO"				"169462190"
@@ -643,11 +619,11 @@
 	"Keoz" 				"138078516"
 	"Python"			"231605562"
 	//Entropy Players
-	"powerYY" 			"193302990"
-	"stefank0k0"		"41682335"
-	"KrowNii" 			"225305859"
-	"fatih-" 			"468595052"
-	"AKEX"				"72366657"
+	"tahsiN" 			"74560387"
+	"devraNN"			"204541657"
+	"rapala" 			"239214601"
+	"mvN" 				"165741598"
+	"fADE"				"215964173"
 	//Renewal Players
 	"xerolte" 			"368881420"
 	"Ensury"			"410784508"
@@ -659,7 +635,7 @@
 	"MoDo"				"389955370"
 	"smekk" 			"100657287"
 	"swiiffter" 		"286059320"
-	"Ed1m"				"3983488"
+	"Ciocardau"			"200980216"
 	//BP Players
 	"fleav" 			"189640934"
 	"1NSERT2"			"861600049"
@@ -745,7 +721,7 @@
 	"CYPHER" 			"291718826"
 	"RuStY"				"122394166"
 	//Sampi Players
-	"Adejis" 			"125256141"
+	"HONES" 			"34391702"
 	"GuardiaN"			"12065295"
 	"matys"				"1086212773"
 	"sAvana1" 			"69270002"

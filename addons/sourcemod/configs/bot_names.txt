@@ -40,7 +40,7 @@
 	"nicoodoz" 			"fnatic"
 	"roeJ" 				"fnatic"
 	"KRIMZ" 			"fnatic"
-	"Peppzor" 			"fnatic"
+	"FASHR" 			"fnatic"
 	"mezii" 			"fnatic"
 	//Dynamo Players
 	"Dytor" 			"Dynamo"
@@ -61,8 +61,8 @@
 	"somebody" 			"TYLOO"
 	"DANK1NG" 			"TYLOO"
 	//EG Players
-	"Stewie2K" 			"EG"
-	"RUSH" 				"EG"
+	"HexT" 				"EG"
+	"neaLaN" 			"EG"
 	"Brehze" 			"EG"
 	"autimatic" 		"EG"
 	"CeRq" 				"EG"
@@ -169,11 +169,11 @@
 	"xseveN" 			"HAVU"
 	"doto" 				"HAVU"
 	//ECSTATIC Players
-	"birdfromsky"		"ECSTATIC" 
+	"kraghen"			"ECSTATIC" 
 	"Daffu" 			"ECSTATIC"
 	"maNkz" 			"ECSTATIC"
-	"FASHR" 			"ECSTATIC"
-	"WolfY" 			"ECSTATIC"
+	"Cabbi" 			"ECSTATIC"
+	"Queenix" 			"ECSTATIC"
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
@@ -190,7 +190,7 @@
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
 	"ragga" 			"Nexus"
-	"ToH1o" 			"Nexus"
+	"adamS" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	//PACT Players
 	"SAYN" 				"PACT"
@@ -201,9 +201,9 @@
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
-	"Chill" 			"Nemiga"	
+	"fostar" 			"Nemiga"	
 	"Jyo" 				"Nemiga"
-	"boX" 				"Nemiga"
+	"1eeR" 				"Nemiga"
 	//IHC Players
 	"Techno4K" 			"IHC"
 	"bLitz" 			"IHC"
@@ -217,11 +217,11 @@
 	"pacman^v^" 		"Infinity"
 	"Marro" 			"Infinity"
 	//Isurus Players
-	"DeStiNy" 			"Isurus"
+	"meyern" 			"Isurus"
 	"Noktse" 			"Isurus"
-	"Gafolo" 			"Isurus"	
+	"reversive" 		"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"ALLE" 				"Isurus"
+	"naz" 				"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
 	"nython" 			"paiN"
@@ -288,12 +288,6 @@
 	"AE" 				"SH"	
 	"XiaosaGe" 			"SH"
 	"Ayeon" 			"SH"
-	//MASONIC Players
-	"kraghen" 			"MASONIC"
-	"J3nsyy" 			"MASONIC"
-	"Queenix" 			"MASONIC"
-	"notaN" 			"MASONIC"
-	"Cabbi" 			"MASONIC"
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
@@ -301,7 +295,7 @@
 	"woxic" 			"Eternal"
 	"MAJ3R" 			"Eternal"
 	//K23 Players
-	"neaLaN" 			"K23"
+	"Solaar" 			"K23"
 	"xsepower" 			"K23"
 	"Raijin" 			"K23"
 	"clax" 				"K23"
@@ -332,10 +326,10 @@
 	"Hobbit" 			"C9"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
-	"mave" 				"aTTaX"
-	"xenn" 				"aTTaX"
+	"PANIX" 			"aTTaX"
+	"PerX" 				"aTTaX"
 	"FreeZe" 			"aTTaX"
-	"skyye" 			"aTTaX"	
+	"pdy" 				"aTTaX"	
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
@@ -414,12 +408,6 @@
 	"Griller" 			"AGF"
 	"void" 				"AGF"
 	"Equip" 			"AGF"
-	//NLG Players
-	"pdy" 				"NLG"	
-	"red" 				"NLG"
-	"PerX" 				"NLG"
-	"maRky" 			"NLG"
-	"OKOLICIOUZ" 		"NLG"
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"bobeksde" 			"Lilmix"
@@ -534,12 +522,6 @@
 	"neviZ" 			"LEISURE"
 	"d1cer" 			"LEISURE"
 	"gimpen"			"LEISURE"
-	//BNB Players
-	"MoMo" 				"BNB"
-	"Swahn" 			"BNB"
-	"Pluto" 			"BNB"
-	"Spongey" 			"BNB"
-	"Shakezullah"		"BNB"
 	//Nation Players
 	"try" 				"Nation"
 	"coldzera" 			"Nation"
@@ -605,13 +587,7 @@
 	"CSO"				"SWS"
 	"bsd" 				"SWS"
 	"mxa" 				"SWS"
-	"w1"				"SWS"
-	//Leviatan Players
-	"Luken" 			"Leviatan"
-	"1962"				"Leviatan"
-	"Reversive" 		"Leviatan"
-	"meyern" 			"Leviatan"
-	"JonY BoY"			"Leviatan"
+	"SaNt0S"			"SWS"
 	//Furious Players
 	"KAISER" 			"Furious"
 	"TIKO"				"Furious"
@@ -643,11 +619,11 @@
 	"Keoz" 				"Falcons"
 	"Python"			"Falcons"
 	//Entropy Players
-	"powerYY" 			"Entropy"
-	"stefank0k0"		"Entropy"
-	"KrowNii" 			"Entropy"
-	"fatih-" 			"Entropy"
-	"AKEX"				"Entropy"
+	"tahsiN" 			"Entropy"
+	"devraNN"			"Entropy"
+	"rapala" 			"Entropy"
+	"mvN" 				"Entropy"
+	"fADE"				"Entropy"
 	//Renewal Players
 	"xerolte" 			"Renewal"
 	"Ensury"			"Renewal"
@@ -659,7 +635,7 @@
 	"MoDo"				"OneTap"
 	"smekk" 			"OneTap"
 	"swiiffter" 		"OneTap"
-	"Ed1m"				"OneTap"
+	"Ciocardau"			"OneTap"
 	//BP Players
 	"fleav" 			"BP"
 	"1NSERT2"			"BP"
@@ -745,7 +721,7 @@
 	"CYPHER" 			"ITB"
 	"RuStY"				"ITB"
 	//Sampi Players
-	"Adejis" 			"Sampi"
+	"HONES" 			"Sampi"
 	"GuardiaN"			"Sampi"
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
