@@ -863,7 +863,7 @@ ProP+SniperPro+SniperPersonality "nawwk"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "Chawzyyy"
+ProP+Rifle+RiflePersonality "jL"
 	VoicePitch = 71
 End
 
@@ -2985,6 +2985,28 @@ End
 
 ProP+Rifle+RiflePersonality "byali"
 	VoicePitch = 109
+End
+
+//MASONIC Players
+
+ProP+Rifle+RiflePersonality "notaN"
+	VoicePitch = 81
+End
+
+ProP+SniperPro+SniperPersonality "J3nsyy"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "Anlelele"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "Tauson"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "Buzz"
+	VoicePitch = 99
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

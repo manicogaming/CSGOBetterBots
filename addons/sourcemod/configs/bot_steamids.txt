@@ -153,7 +153,7 @@
 	//Apeks Players
 	"AcilioN" 			"56749436"
 	"jkaem" 			"42442914"
-	"Chawzyyy" 			"205891691"
+	"jL" 				"216612575"
 	"nawwk" 			"193386133"
 	"STYKO" 			"55928431"
 	//ORDER Players
@@ -732,4 +732,10 @@
 	"Prism"				"117411943"
 	"GruBy" 			"44752530"
 	"byali"				"18860354"
+	//MASONIC Players
+	"notaN" 			"70656220"
+	"J3nsyy"			"192137384"
+	"Anlelele"			"169533761"
+	"Tauson" 			"356440446"
+	"Buzz"				"288688034"
 }
