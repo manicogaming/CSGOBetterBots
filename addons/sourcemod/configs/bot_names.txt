@@ -77,7 +77,7 @@
 	"NAF" 				"Liquid"
 	"nitr0" 			"Liquid"
 	"ELiGE" 			"Liquid"
-	"shox" 				"Liquid"
+	"YEKINDAR" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
 	"ultimate" 			"AGO"
@@ -151,7 +151,7 @@
 	"FL1T" 				"VP"
 	"fame" 				"VP"
 	//Apeks Players
-	"AcilioN" 			"Apeks"
+	"shox" 				"Apeks"
 	"jkaem" 			"Apeks"
 	"jL" 				"Apeks"
 	"STYKO" 			"Apeks"

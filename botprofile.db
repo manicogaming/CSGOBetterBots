@@ -566,7 +566,7 @@ End
 
 //Liquid Players
 
-ProP+Rifle+RiflePersonality "shox"
+ProP+Rifle+RiflePersonality "YEKINDAR"
 	VoicePitch = 101
 End
 
@@ -871,7 +871,7 @@ ProP+Rifle+RiflePersonality "STYKO"
 	VoicePitch = 80
 End
 
-ProP+Rifle+RiflePersonality "AcilioN"
+ProP+Rifle+RiflePersonality "shox"
 	VoicePitch = 71
 End
 

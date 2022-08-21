@@ -77,7 +77,7 @@
 	"NAF" 				"CSGO-zuyjA-tuoZQ-t7c4S-b8rLZ-jFXsO"
 	"nitr0" 			"CSGO-FSHX3-UKkKQ-pPtuZ-VCLNB-PweKP"
 	"ELiGE" 			"CSGO-zuyjA-tuoZQ-t7c4S-b8rLZ-jFXsO"
-	"shox" 				"CSGO-wQa9h-54byK-Ai3X8-Dhuoe-kzGnK"
+	"YEKINDAR" 			"CSGO-7ANjy-XxRae-25YoE-7Bfnp-QQSFE"
 	//AGO Players
 	"Furlan" 			"CSGO-ksEXA-2tJ58-JCDkn-ymDOf-DbapG"
 	"ultimate" 			"CSGO-FNH5n-n2Dz7-zQZhy-VcyXo-XQJvM"
