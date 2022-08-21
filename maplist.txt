@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Tue Aug 02 19:27:26 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Thu Aug 18 00:15:09 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -172,6 +172,7 @@ de_belukha
 de_berth
 de_biome
 de_blackgold
+de_blagai
 de_bombspot_bitcoin
 de_boohouse_go
 de_boston_csgo
@@ -318,6 +319,7 @@ de_pharaoh
 de_pit
 de_pitstop
 de_portugal_rc1
+de_prime
 de_pripyat
 de_prodigy
 de_prodigy_classic
@@ -338,7 +340,8 @@ de_russka_b2
 de_rust_b3
 de_safehouse
 de_saint
-workshop/2728946194/de_sanjuan
+workshop/896809104/de_sanchez
+de_sanjuan
 de_santorini
 de_sawmill
 de_seaside

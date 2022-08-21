@@ -1,8 +1,8 @@
 "Names"
 {
 	//MIBR Players
-	"WOOD7"				"MIBR"
-	"chelo" 			"MIBR"
+	"HEN1"				"MIBR"
+	"brnz4n" 			"MIBR"
 	"Tuurtle" 			"MIBR"
 	"JOTA" 				"MIBR"
 	"exit" 				"MIBR"
@@ -32,8 +32,8 @@
 	"deko" 				"1win"
 	//G2 Players
 	"huNter-" 			"G2"
-	"JaCkz" 			"G2"
-	"Aleksib" 			"G2"	
+	"jks" 				"G2"
+	"HooXi" 			"G2"	
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
@@ -86,8 +86,8 @@
 	"leman" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"
-	"hades" 			"ENCE"
-	"Spinx" 			"ENCE"
+	"SunPayus" 			"ENCE"
+	"valde" 			"ENCE"
 	"maden" 			"ENCE"
 	"dycha" 			"ENCE"
 	//Vitality Players
@@ -95,9 +95,9 @@
 	"ZywOo" 			"Vitality"
 	"apEX" 				"Vitality"
 	"Magisk" 			"Vitality"
-	"Misutaaa" 			"Vitality"
+	"Spinx" 			"Vitality"
 	//BIG Players
-	"tiziaN" 			"BIG"
+	"k1to" 				"BIG"
 	"syrsoN" 			"BIG"
 	"faveN" 			"BIG"
 	"tabseN" 			"BIG"
@@ -135,9 +135,9 @@
 	//Sprout Players
 	"Staehr" 			"Sprout"
 	"slaxz" 			"Sprout"
-	"Spiidi" 			"Sprout"
+	"Zyphon" 			"Sprout"
 	"lauNX" 			"Sprout"
-	"raalz" 			"Sprout"
+	"refrezh" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"Jabbi" 			"Heroic"
@@ -170,7 +170,7 @@
 	"doto" 				"HAVU"
 	//ECSTATIC Players
 	"kraghen"			"ECSTATIC" 
-	"Daffu" 			"ECSTATIC"
+	"brzer" 			"ECSTATIC"
 	"maNkz" 			"ECSTATIC"
 	"Cabbi" 			"ECSTATIC"
 	"Queenix" 			"ECSTATIC"
@@ -179,11 +179,11 @@
 	"dav1g" 			"Riders"
 	"DeathZz" 			"Riders"
 	"alex*" 			"Riders"
-	"SunPayus" 			"Riders"
+	"Martinez" 			"Riders"
 	//eSuba Players
 	"Pechyn" 			"eSuba"
-	"desty" 			"eSuba"
-	"zur1s" 			"eSuba"	
+	"M1key" 			"eSuba"
+	"luko" 				"eSuba"	
 	"blogg1s" 			"eSuba"
 	"Levi" 				"eSuba"
 	//Nexus Players
@@ -193,11 +193,11 @@
 	"adamS" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	//PACT Players
-	"SAYN" 				"PACT"
+	"Bielany" 			"PACT"
 	"lunAtic" 			"PACT"
 	"bnox" 				"PACT"
-	"TOAO" 				"PACT"
-	"reatz" 			"PACT"
+	"azizz" 			"PACT"
+	"fr3nd" 			"PACT"
 	//Nemiga Players
 	"iDISBALANCE" 		"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
@@ -221,24 +221,24 @@
 	"Noktse" 			"Isurus"
 	"reversive" 		"Isurus"	
 	"decov9jse" 		"Isurus"	
-	"naz" 				"Isurus"
+	"luchov" 			"Isurus"
 	//paiN Players
 	"PKL" 				"paiN"
-	"nython" 			"paiN"
-	"NEKIZ" 			"paiN"
+	"zevy" 				"paiN"
+	"skullz" 			"paiN"
 	"biguzera" 			"paiN"
 	"hardzao" 			"paiN"
 	//Sharks Players
 	"chay"				"Sharks" 
 	"drg" 				"Sharks"
-	"Lucaozy" 			"Sharks"
+	"jnt" 				"Sharks"
 	"n1ssim" 			"Sharks"
-	"zevy" 				"Sharks"
+	"guizin" 			"Sharks"
 	//One Players
 	"iDk" 				"One"
 	"Maluk3" 			"One"
 	"trk" 				"One"	
-	"xns" 				"One"
+	"malbsMd" 			"One"
 	"pesadelo" 			"One"
 	//Wolsung Players
 	"hyskeee" 			"Wolsung"
@@ -252,12 +252,12 @@
 	"bubble" 			"SKADE"
 	"Rainwaker" 		"SKADE"	
 	"SHiPZ" 			"SKADE"
-	//Izako Players
-	"asran" 			"Izako"
-	"Crityourface" 		"Izako"
-	"Mride" 			"Izako"
-	"rico" 				"Izako"
-	"sh3nanigan" 		"Izako"
+	//DIVIZON Players
+	"j1NZO" 			"DIVIZON"
+	"Yoshi" 			"DIVIZON"
+	"cello" 			"DIVIZON"
+	"ReacTioNNN" 		"DIVIZON"
+	"masta" 			"DIVIZON"
 	//Goliath Players
 	"aw3some" 			"Goliath"
 	"March" 			"Goliath"
@@ -284,10 +284,10 @@
 	"wilj" 				"Bravado"
 	//SH Players
 	"captainMo" 		"SH"
-	"LOVEYY" 			"SH"
+	"18yM" 				"SH"
 	"AE" 				"SH"	
 	"XiaosaGe" 			"SH"
-	"Ayeon" 			"SH"
+	"bottle" 			"SH"
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
@@ -307,10 +307,10 @@
 	"malta" 			"VERTEX"
 	"Valiance" 			"VERTEX"
 	//IG Players
-	"bottle" 			"IG"
+	"Ayeon" 			"IG"
 	"DeStRoYeR" 		"IG"	
 	"flying" 			"IG"
-	"Viva" 				"IG"
+	"0i" 				"IG"
 	"rage" 				"IG"
 	//Finest Players
 	"twist" 			"Finest"
@@ -348,12 +348,12 @@
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
 	"Nelly" 			"Lynn"
-	//GG Players
-	"nosraC" 			"GG"
-	"JazzPimp" 			"GG"
-	"Bwills" 			"GG"
-	"jeorgesnorts" 		"GG"
-	"cynic" 			"GG"
+	//CPH Players
+	"birdfromsky" 		"CPH"
+	"raalz" 			"CPH"
+	"b0RUP" 			"CPH"
+	"TMB" 				"CPH"
+	"regali" 			"CPH"
 	//OG Players
 	"NEOFRAG" 			"OG"
 	"degster" 			"OG"
@@ -398,10 +398,10 @@
 	"Spexy" 			"SSP"
 	//KOVA Players
 	"zks" 				"KOVA"
-	"peku" 				"KOVA"
+	"ottoNd" 			"KOVA"
 	"uli" 				"KOVA"
 	"airax" 			"KOVA"
-	"Twixie" 			"KOVA"
+	"Sm1llee" 			"KOVA"
 	//AGF Players
 	"FeZ" 				"AGF"
 	"Speedy" 			"AGF"
@@ -424,7 +424,7 @@
 	"HenkkyG" 			"Tigers"
 	"NIO" 				"Tigers"
 	"Rutk0" 			"Tigers"
-	"luko" 				"Tigers"
+	"majky" 			"Tigers"
 	"creZe" 			"Tigers"
 	//9z Players
 	"dgt" 				"9z"
@@ -443,7 +443,7 @@
 	"Blytz" 			"EP"
 	"manguss" 			"EP"	
 	"h4rn" 				"EP"
-	"stinx" 			"EP"
+	"system" 			"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
 	"adamb" 			"Lemondogs"
@@ -461,7 +461,7 @@
 	"kory" 				"Sangal"
 	"kyuubii" 			"Sangal"
 	"Soulfly" 			"Sangal"
-	"S3NSEY"			"Sangal"
+	"phzy"				"Sangal"
 	//Ambush Players
 	"wasiNk" 			"Ambush"
 	"DrqkoN" 			"Ambush"
@@ -543,9 +543,9 @@
 	//Strife Players
 	"J0LZ" 				"Strife"
 	"SLIGHT" 			"Strife"
-	"stamina" 			"Strife"
+	"D4rtyMontana" 		"Strife"
 	"reck" 				"Strife"
-	"fejtZ"				"Strife"
+	"jitter"			"Strife"
 	//777 Players
 	"SLY" 				"777"
 	"Trax"				"777"
@@ -613,10 +613,10 @@
 	"tonzah" 			"Dice"
 	"CamZ"				"Dice"
 	//Falcons Players
-	"Kyojin" 			"Falcons"
+	"NBK-" 				"Falcons"
 	"Maka"				"Falcons"
 	"hAdji" 			"Falcons"
-	"Keoz" 				"Falcons"
+	"misutaaa" 			"Falcons"
 	"Python"			"Falcons"
 	//Entropy Players
 	"tahsiN" 			"Entropy"
@@ -649,7 +649,7 @@
 	"Maxaxe" 			"LLL"
 	"Syther"			"LLL"
 	//HEET Players
-	"Luckyy" 			"HEET"
+	"JACKZ" 			"HEET"
 	"afro"				"HEET"
 	"bodyy"				"HEET"
 	"Djoko" 			"HEET"
@@ -696,12 +696,6 @@
 	"Liki"				"Encore"
 	"SaVage" 			"Encore"
 	"apoc"				"Encore"
-	//AG Players
-	"FIOURN" 			"AG"
-	"Monster"			"AG"
-	"waituu"			"AG"
-	"ayaya" 			"AG"
-	"AiM"				"AG"
 	//NKT Players
 	"XigN" 				"NKT"
 	"erkaSt"			"NKT"
@@ -709,10 +703,10 @@
 	"dobu" 				"NKT"
 	"nin9"				"NKT"
 	//Boca Players
-	"luchov" 			"Boca"
+	"Bruj" 				"Boca"
 	"elemeNt"			"Boca"
 	"alexer"			"Boca"
-	"nbl" 				"Boca"
+	"Hezz" 				"Boca"
 	"MRN1"				"Boca"
 	//ITB Players
 	"Adam9130" 			"ITB"
@@ -738,4 +732,22 @@
 	"Anlelele"			"MASONIC"
 	"Tauson" 			"MASONIC"
 	"Buzz"				"MASONIC"
+	//Paqueta Players
+	"DeStiNy" 			"Paqueta"
+	"Gafolo"			"Paqueta"
+	"venomzera"			"Paqueta"
+	"xns" 				"Paqueta"
+	"ALLE"				"Paqueta"
+	//Plano Players
+	"yel" 				"Plano"
+	"kNgV-"				"Plano"
+	"caike"				"Plano"
+	"piria" 			"Plano"
+	"NEKIZ"				"Plano"
+	//GTZ Players
+	"Linko" 			"GTZ"
+	"rafaxF"			"GTZ"
+	"snapy"				"GTZ"
+	"slaxx" 			"GTZ"
+	"NOPEEj"			"GTZ"
 }
