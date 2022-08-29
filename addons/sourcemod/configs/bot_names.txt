@@ -51,14 +51,14 @@
 	//mouz Players
 	"dexter"			"mouz" 
 	"torzsi" 			"mouz"
-	"Bymas" 			"mouz"
+	"xertioN" 			"mouz"
 	"frozen" 			"mouz"
 	"JDC" 				"mouz"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
 	"Attacker" 			"TYLOO"
 	"SLOWLY" 			"TYLOO"
-	"somebody" 			"TYLOO"
+	"BnTeT" 			"TYLOO"
 	"DANK1NG" 			"TYLOO"
 	//EG Players
 	"HexT" 				"EG"
@@ -121,9 +121,9 @@
 	"floppy" 			"coL"
 	"Grim" 				"coL"	
 	//Atom Players
-	"zhokiNg" 			"Atom"
+	"Mercury" 			"Atom"
 	"kaze" 				"Atom"
-	"aumaN" 			"Atom"
+	"Moseyuh" 			"Atom"
 	"JamYoung" 			"Atom"	
 	"advent" 			"Atom"
 	//forZe Players
@@ -295,7 +295,7 @@
 	"woxic" 			"Eternal"
 	"MAJ3R" 			"Eternal"
 	//K23 Players
-	"Solaar" 			"K23"
+	"FinigaN" 			"K23"
 	"xsepower" 			"K23"
 	"Raijin" 			"K23"
 	"clax" 				"K23"
@@ -340,7 +340,7 @@
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
 	"MarT1n" 			"Wings"
-	"ahang" 			"Wings"
+	"B1NGO" 			"Wings"
 	"gas" 				"Wings"
 	//Lynn Players
 	"westmelon" 		"Lynn"
@@ -385,11 +385,11 @@
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
 	//D13 Players
-	"tamir"				"D13" 
-	"rate" 				"D13"
-	"shinobi" 			"D13"
-	"yAmi" 				"D13"
-	"H4wK" 				"D13"	
+	"hasteka"			"D13" 
+	"IMAGINE" 			"D13"
+	"910" 				"D13"
+	"danss" 			"D13"
+	"Frip" 				"D13"	
 	//SSP Players
 	"farmaG" 			"SSP"
 	"Sw1ft" 			"SSP"
@@ -575,7 +575,7 @@
 	"Mikzuuu"			"Conquer"
 	"Elfern" 			"Conquer"
 	"eDi" 				"Conquer"
-	"JUS6"				"Conquer"
+	"LYNXi"				"Conquer"
 	//AVANGAR Players
 	"sorrow" 			"AVANGAR"
 	"w1nt3r"			"AVANGAR"
@@ -583,7 +583,7 @@
 	"icem4N" 			"AVANGAR"
 	"ICY"				"AVANGAR"
 	//SWS Players
-	"gbb" 				"SWS"
+	"stainzin" 			"SWS"
 	"CSO"				"SWS"
 	"bsd" 				"SWS"
 	"mxa" 				"SWS"
@@ -596,9 +596,9 @@
 	"ABM"				"Furious"
 	//MongolZ Players
 	"ncl" 				"MongolZ"
-	"MagnumZ"			"MongolZ"
+	"PRISM2"			"MongolZ"
 	"Tsogoo" 			"MongolZ"
-	"Machinegun" 		"MongolZ"
+	"yAmi" 				"MongolZ"
 	"Senzu"				"MongolZ"
 	//ONYX Players
 	"bodito" 			"ONYX"
@@ -609,9 +609,9 @@
 	//Dice Players
 	"XpG" 				"Dice"
 	"Gauthierlele"		"Dice"
-	"Alca" 				"Dice"
+	"DEVIL" 			"Dice"
 	"tonzah" 			"Dice"
-	"CamZ"				"Dice"
+	"maeowo"			"Dice"
 	//Falcons Players
 	"NBK-" 				"Falcons"
 	"Maka"				"Falcons"
@@ -638,10 +638,10 @@
 	"Ciocardau"			"OneTap"
 	//BP Players
 	"fleav" 			"BP"
-	"1NSERT2"			"BP"
+	"Chill"				"BP"
 	"Aaron" 			"BP"
-	"juho" 				"BP"
-	"HeavyGod"			"BP"
+	"EspiranTo" 		"BP"
+	"keen"				"BP"
 	//LLL Players
 	"StepzZ" 			"LLL"
 	"VoxelArc"			"LLL"
@@ -669,7 +669,7 @@
 	//Imperial Players
 	"fer" 				"Imperial"
 	"FalleN"			"Imperial"
-	"fnx"				"Imperial"
+	"chelo"				"Imperial"
 	"boltz" 			"Imperial"
 	"VINI"				"Imperial"
 	//EYEBALLERS Players
