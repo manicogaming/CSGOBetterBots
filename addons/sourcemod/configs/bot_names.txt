@@ -80,8 +80,8 @@
 	"YEKINDAR" 			"Liquid"
 	//AGO Players
 	"Furlan" 			"AGO"
-	"ultimate" 			"AGO"
-	"AxEcHo" 			"AGO"
+	"jedqr" 			"AGO"
+	"snatchie" 			"AGO"
 	"miNIr0x" 			"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
@@ -156,12 +156,12 @@
 	"jL" 				"Apeks"
 	"STYKO" 			"Apeks"
 	"nawwk" 			"Apeks"
-	//ORDER Players
-	"INS" 				"ORDER"
-	"sico" 				"ORDER"
-	"aliStair" 			"ORDER"
-	"Hatz" 				"ORDER"
-	"Liazz" 			"ORDER"
+	//Grayhound Players
+	"INS" 				"Grayhound"
+	"sico" 				"Grayhound"
+	"aliStair" 			"Grayhound"
+	"Vexite" 			"Grayhound"
+	"Liazz" 			"Grayhound"
 	//HAVU Players
 	"zehN" 				"HAVU"
 	"spargo" 			"HAVU"
@@ -233,7 +233,7 @@
 	"drg" 				"Sharks"
 	"jnt" 				"Sharks"
 	"n1ssim" 			"Sharks"
-	"guizin" 			"Sharks"
+	"togs" 				"Sharks"
 	//One Players
 	"iDk" 				"One"
 	"Maluk3" 			"One"
@@ -303,7 +303,7 @@
 	//VERTEX Players
 	"pz" 				"VERTEX"
 	"BRACE" 			"VERTEX"
-	"Vexite" 			"VERTEX"
+	"ADDICT" 			"VERTEX"
 	"malta" 			"VERTEX"
 	"Valiance" 			"VERTEX"
 	//IG Players
@@ -314,7 +314,7 @@
 	"rage" 				"IG"
 	//Finest Players
 	"twist" 			"Finest"
-	"anarkez" 			"Finest"
+	"hades" 			"Finest"
 	"kreaz" 			"Finest"
 	"PlesseN" 			"Finest"
 	"shokz" 			"Finest"
@@ -567,7 +567,7 @@
 	//ECK Players
 	"byr9" 				"ECK"
 	"uQlutzavr"			"ECK"
-	"Smash" 			"ECK"
+	"Kvem" 				"ECK"
 	"s4" 				"ECK"
 	"Flarich"			"ECK"
 	//Conquer Players
@@ -750,4 +750,10 @@
 	"snapy"				"GTZ"
 	"slaxx" 			"GTZ"
 	"NOPEEj"			"GTZ"
+	//Alpha Players
+	"mupzG" 			"Alpha"
+	"Twinx"				"Alpha"
+	"smF"				"Alpha"
+	"Basso" 			"Alpha"
+	"Gnøffe"			"Alpha"
 }

@@ -80,8 +80,8 @@
 	"YEKINDAR" 			"174136197"
 	//AGO Players
 	"Furlan" 			"177495873"
-	"ultimate" 			"323723495"
-	"AxEcHo" 			"897414124"
+	"jedqr" 			"125090121"
+	"snatchie" 			"111436809"
 	"miNIr0x" 			"10298966"
 	"leman" 			"40398517"
 	//ENCE Players
@@ -156,11 +156,11 @@
 	"jL" 				"216612575"
 	"nawwk" 			"193386133"
 	"STYKO" 			"55928431"
-	//ORDER Players
+	//Grayhound Players
 	"INS" 				"26946895"
 	"sico" 				"39266546"
 	"aliStair" 			"138080982"
-	"Hatz" 				"64662058"
+	"Vexite" 			"92622415"
 	"Liazz" 			"112055988"
 	//HAVU Players
 	"zehN" 				"16308501"
@@ -233,7 +233,7 @@
 	"drg" 				"193829435"
 	"jnt" 				"43326019"
 	"n1ssim" 			"101497868"
-	"guizin" 			"970564222"
+	"togs" 				"493654174"
 	//One Players
 	"iDk" 				"106435802"
 	"Maluk3" 			"36056013"
@@ -302,7 +302,7 @@
 	"X5G7V" 			"237685818"
 	//VERTEX Players
 	"BRACE" 			"126538012"
-	"Vexite" 			"92622415"
+	"ADDICT" 			"107496753"
 	"pz" 				"108241121"
 	"malta" 			"181905573"
 	"Valiance" 			"236090787"
@@ -314,7 +314,7 @@
 	"rage" 				"398159133"
 	//Finest Players
 	"twist" 			"19979131"
-	"anarkez" 			"73126768"
+	"hades" 			"90656280"
 	"kreaz" 			"116979891"
 	"PlesseN" 			"57716849"
 	"shokz" 			"39590183"
@@ -567,7 +567,7 @@
 	//ECK Players
 	"byr9" 				"124733563"
 	"uQlutzavr"			"311902739"
-	"Smash" 			"214027585"
+	"Kvem" 				"885170938"
 	"s4" 				"125957336"
 	"Flarich"			"191627594"
 	//Conquer Players
@@ -750,4 +750,10 @@
 	"snapy"				"268698824"
 	"slaxx" 			"118792535"
 	"NOPEEj"			"200528981"
+	//Alpha Players
+	"mupzG" 			"233287646"
+	"Twinx"				"114782035"
+	"smF"				"11160541"
+	"Basso" 			"152862"
+	"Gnøffe"			"33756208"
 }

@@ -592,11 +592,11 @@ ProP+Rifle+RiflePersonality "Furlan"
 	VoicePitch = 84
 End
 
-ProP+SniperPro+SniperPersonality "AxEcHo"
+ProP+SniperPro+SniperPersonality "snatchie"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "ultimate"
+ProP+Rifle+RiflePersonality "jedqr"
 	VoicePitch = 86
 End
 
@@ -875,7 +875,7 @@ ProP+Rifle+RiflePersonality "shox"
 	VoicePitch = 71
 End
 
-//ORDER Players
+//Grayhound Players
 
 ProP+Rifle+RiflePersonality "INS"
 	VoicePitch = 79
@@ -889,7 +889,7 @@ ProP+Rifle+RiflePersonality "aliStair"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "Hatz"
+ProP+Rifle+RiflePersonality "Vexite"
 	VoicePitch = 97
 End
 
@@ -1157,7 +1157,7 @@ ProP+Rifle+RiflePersonality "drg"
 	VoicePitch = 98
 End
 
-ProP+Rifle+RiflePersonality "guizin"
+ProP+Rifle+RiflePersonality "togs"
 	VoicePitch = 103
 End
 
@@ -1405,11 +1405,11 @@ End
 
 //VERTEX Players
 
-ProP+Rifle+RiflePersonality "pz"
+ProP+Rifle+RiflePersonality "ADDICT"
 	VoicePitch = 107
 End
 
-ProP+SniperPro+SniperPersonality "Vexite"
+ProP+SniperPro+SniperPersonality "pz"
 	VoicePitch = 82
 End
 
@@ -1453,7 +1453,7 @@ ProP+Rifle+RiflePersonality "twist"
 	VoicePitch = 74
 End
 
-ProP+SniperPro+SniperPersonality "anarkez"
+ProP+SniperPro+SniperPersonality "hades"
 	VoicePitch = 86
 End
 
@@ -2381,7 +2381,7 @@ ProP+SniperPro+SniperPersonality "uQlutzavr"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "Smash"
+ProP+Rifle+RiflePersonality "Kvem"
 	VoicePitch = 92
 End
 
@@ -3051,6 +3051,28 @@ End
 
 ProP+Rifle+RiflePersonality "NOPEEj"
 	VoicePitch = 108
+End
+
+//Alpha Players
+
+ProP+Rifle+RiflePersonality "mupzG"
+	VoicePitch = 109
+End
+
+ProP+SniperPro+SniperPersonality "Twinx"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "smF"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "Basso"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "Gnøffe"
+	VoicePitch = 101
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
