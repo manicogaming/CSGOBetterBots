@@ -18,10 +18,10 @@ int g_iAgentCount;
 
 int g_iMusicKit[MAXPLAYERS + 1];
 int g_iCoin[MAXPLAYERS + 1];
-int g_iCustomPlayerChance[MAXPLAYERS + 1];
+bool g_bUseCustomPlayer[MAXPLAYERS + 1];
 int g_iAgent[MAXPLAYERS + 1][4];
-int g_iPatchChance[MAXPLAYERS + 1];
-int g_iPatchComboChance[MAXPLAYERS + 1];
+bool g_bUsePatch[MAXPLAYERS + 1];
+bool g_bUsePatchCombo[MAXPLAYERS + 1];
 int g_iRndPatchCombo[MAXPLAYERS + 1];
 int g_iRndPatch[MAXPLAYERS + 1][4];
 int g_iRndSamePatch[MAXPLAYERS + 1];
@@ -30,10 +30,10 @@ int g_iStoredKnife[MAXPLAYERS + 1];
 int g_iSkinDefIndex[MAXPLAYERS + 1][1024];
 float g_fWeaponSkinWear[MAXPLAYERS + 1][1024];
 int g_iWeaponSkinSeed[MAXPLAYERS + 1][1024];
-int g_iStatTrakChance[MAXPLAYERS + 1][1024];
-int g_iSouvenirChance[MAXPLAYERS + 1][1024];
-int g_iStickerChance[MAXPLAYERS + 1][1024];
-int g_iStickerComboChance[MAXPLAYERS + 1][1024];
+bool g_bUseStatTrak[MAXPLAYERS + 1][1024];
+bool g_bUseSouvenir[MAXPLAYERS + 1][1024];
+bool g_bUseSticker[MAXPLAYERS + 1][1024];
+bool g_bUseStickerCombo[MAXPLAYERS + 1][1024];
 int g_iRndStickerCombo[MAXPLAYERS + 1][1024];
 int g_iRndSticker[MAXPLAYERS + 1][1024][4];
 int g_iRndSameSticker[MAXPLAYERS + 1][1024];
@@ -92,6 +92,8 @@ public Plugin myinfo =
 public APLRes AskPluginLoad2(Handle hMyself, bool bLate, char[] chError, int iErrMax)
 {
 	g_bLateLoaded = bLate;
+	
+	return APLRes_Success;
 }
 
 public void OnPluginStart()
@@ -302,9 +304,9 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						Protobuf stickers2 = items.AddMessage("stickers");
 						Protobuf stickers3 = items.AddMessage("stickers");
 						
-						if (g_iStickerChance[client][iDefIndex] <= 40)
+						if (g_bUseSticker[client][iDefIndex])
 						{
-							if (g_iStickerComboChance[client][iDefIndex] <= 50)
+							if (g_bUseStickerCombo[client][iDefIndex])
 							{
 								switch (g_iRndStickerCombo[client][iDefIndex])
 								{
@@ -451,9 +453,9 @@ Action OnEndOfMatchAllPlayersData(UserMsg iMsgId, Protobuf hMessage, const int[]
 						Protobuf patch2 = items.AddMessage("stickers");
 						Protobuf patch3 = items.AddMessage("stickers");
 						
-						if (g_iPatchChance[client] <= 40)
+						if (g_bUsePatch[client])
 						{
-							if (g_iPatchComboChance[client] <= 50)
+							if (g_bUsePatchCombo[client])
 							{
 								switch (g_iRndPatchCombo[client])
 								{
@@ -615,13 +617,8 @@ public void OnClientPostAdminCheck(int client)
 			static int IDHigh = 16384;
 		
 			g_iMusicKit[client] = eItems_GetMusicKitDefIndexByMusicKitNum(Math_GetRandomInt(0, eItems_GetMusicKitsCount() - 1));
-			
-			if (Math_GetRandomInt(1, 2) == 1)
-				g_iCoin[client] = eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() - 1));
-			else
-				g_iCoin[client] = eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() - 1));
-			
-			g_iCustomPlayerChance[client] = Math_GetRandomInt(1, 100);
+			g_iCoin[client] = Math_GetRandomInt(1, 2) == 1 ? eItems_GetCoinDefIndexByCoinNum(Math_GetRandomInt(0, eItems_GetCoinsCount() - 1)) : eItems_GetPinDefIndexByPinNum(Math_GetRandomInt(0, eItems_GetPinsCount() - 1));
+			g_bUseCustomPlayer[client] = IsItMyChance(65.0) ? true : false;
 			
 			int iRandomTAgent = Math_GetRandomInt(0, g_ArrayTAgents.Length - 1);
 			int iRandomCTAgent = Math_GetRandomInt(0, g_ArrayCTAgents.Length - 1);
@@ -640,13 +637,9 @@ public void OnClientPostAdminCheck(int client)
 				eItems_GetAgentVOPrefixByDefIndex(g_iAgent[client][CS_TEAM_T], g_szVOPrefix[client][CS_TEAM_T], 128);
 			}
 			
-			g_iPatchChance[client] = Math_GetRandomInt(1, 100);
-			g_iPatchComboChance[client] = Math_GetRandomInt(1, 100);
-			
-			if (g_iPatchComboChance[client] <= 50)
-				g_iRndPatchCombo[client] = Math_GetRandomInt(1, 14);
-			else
-				g_iRndPatchCombo[client] = Math_GetRandomInt(1, 2);
+			g_bUsePatch[client] = IsItMyChance(40.0) ? true : false;
+			g_bUsePatchCombo[client] = IsItMyChance(50.0) ? true : false;
+			g_iRndPatchCombo[client] = g_bUsePatchCombo[client] ? Math_GetRandomInt(1, 14) : Math_GetRandomInt(1, 2);
 			
 			g_iRndPatch[client][0] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() - 1));
 			g_iRndPatch[client][1] = eItems_GetPatchDefIndexByPatchNum(Math_GetRandomInt(0, eItems_GetPatchesCount() - 1));
@@ -681,11 +674,11 @@ public void OnClientPostAdminCheck(int client)
 				g_iItemIDLow[client][iWeaponDefIndex] = IDLow++;
 				
 				g_iWeaponSkinSeed[client][iWeaponDefIndex] = Math_GetRandomInt(1, 1000);
-				g_iStickerChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
-				g_iStickerComboChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+				g_bUseSticker[client][iWeaponDefIndex] = IsItMyChance(40.0) ? true : false;
+				g_bUseStickerCombo[client][iWeaponDefIndex] = IsItMyChance(50.0) ? true : false;
 				
-				g_iStatTrakChance[client][iWeaponDefIndex] = 100;
-				g_iSouvenirChance[client][iWeaponDefIndex] = 100;
+				g_bUseStatTrak[client][iWeaponDefIndex] = true;
+				g_bUseSouvenir[client][iWeaponDefIndex] = true;
 				
 				for (int iCrateNum = 0; iCrateNum < eItems_GetCratesCount(); iCrateNum++)
 				{
@@ -702,7 +695,7 @@ public void OnClientPostAdminCheck(int client)
 							eItems_GetCrateItemByDefIndex(iCrateDefIndex, iItem, CrateItem, sizeof(eItems_CrateItem));
 							
 							if((CrateItem.SkinDefIndex == g_iSkinDefIndex[client][iWeaponDefIndex] && CrateItem.WeaponDefIndex == iWeaponDefIndex) || eItems_IsDefIndexKnife(iWeaponDefIndex))
-								g_iStatTrakChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+								g_bUseStatTrak[client][iWeaponDefIndex] = IsItMyChance(30.0) ? true : false;
 						}
 					}
 					else if(StrContains(szCrateName, "Souvenir") != -1)
@@ -712,15 +705,12 @@ public void OnClientPostAdminCheck(int client)
 							eItems_GetCrateItemByDefIndex(iCrateDefIndex, iItem, CrateItem, sizeof(eItems_CrateItem));
 							
 							if((CrateItem.SkinDefIndex == g_iSkinDefIndex[client][iWeaponDefIndex] && CrateItem.WeaponDefIndex == iWeaponDefIndex))
-								g_iSouvenirChance[client][iWeaponDefIndex] = Math_GetRandomInt(1, 100);
+								g_bUseSouvenir[client][iWeaponDefIndex] = IsItMyChance(30.0) ? true : false;
 						}
 					}
 			    }
 				
-				if (g_iStickerComboChance[client][iWeaponDefIndex] <= 50)
-					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1, 14);
-				else
-					g_iRndStickerCombo[client][iWeaponDefIndex] = Math_GetRandomInt(1, 2);
+				g_iRndStickerCombo[client][iWeaponDefIndex] = g_bUseStickerCombo[client][iWeaponDefIndex] ? Math_GetRandomInt(1, 14) : Math_GetRandomInt(1, 2);
 				
 				g_iRndSticker[client][iWeaponDefIndex][0] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
 				g_iRndSticker[client][iWeaponDefIndex][1] = eItems_GetStickerDefIndexByStickerNum(Math_GetRandomInt(0, eItems_GetStickersCount() - 1));
@@ -732,10 +722,7 @@ public void OnClientPostAdminCheck(int client)
 				float fMinFloat = eItems_GetSkinWearRemapByDefIndex(g_iSkinDefIndex[client][iWeaponDefIndex], Min);
 				float fMaxFloat = eItems_GetSkinWearRemapByDefIndex(g_iSkinDefIndex[client][iWeaponDefIndex], Max);
 				
-				if(fMinFloat == 0.0 && fMaxFloat == 0.0)
-					g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(0.00, 1.00);
-				else
-					g_fWeaponSkinWear[client][iWeaponDefIndex] = Math_GetRandomFloat(fMinFloat, fMaxFloat);
+				g_fWeaponSkinWear[client][iWeaponDefIndex] = fMinFloat == 0.0 && fMaxFloat == 0.0 ? Math_GetRandomFloat(0.00, 1.00) : Math_GetRandomFloat(fMinFloat, fMaxFloat);
 			}
 		}
 		
@@ -1036,7 +1023,7 @@ public Action Event_PlayerDeath(Event eEvent, const char[] szName, bool bDontBro
 
 public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iModelLength, char[] szVoPrefix, int iPrefixLength)
 {	
-	if (!IsValidClient(client) || g_iCustomPlayerChance[client] > 35)
+	if (!IsValidClient(client) || g_bUseCustomPlayer[client])
 		return Plugin_Continue;
 	
 	if (GetClientTeam(client) == CS_TEAM_CT)
@@ -1044,9 +1031,9 @@ public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iM
 		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_CT]);
 		strcopy(szVoPrefix, iPrefixLength, g_szVOPrefix[client][CS_TEAM_CT]);
 			
-		if (g_iPatchChance[client] <= 40)
+		if (g_bUsePatch[client])
 		{
-			if (g_iPatchComboChance[client] <= 50)
+			if (g_bUsePatchCombo[client])
 			{
 				switch (g_iRndPatchCombo[client])
 				{
@@ -1149,9 +1136,9 @@ public Action MdlCh_PlayerSpawn(int client, bool bCustom, char[] szModel, int iM
 		strcopy(szModel, iModelLength, g_szModel[client][CS_TEAM_T]);
 		strcopy(szVoPrefix, iPrefixLength, g_szVOPrefix[client][CS_TEAM_T]);
 			
-		if (g_iPatchChance[client] <= 40)
+		if (g_bUsePatch[client])
 		{
-			if (g_iPatchComboChance[client] <= 50)
+			if (g_bUsePatchCombo[client])
 			{
 				switch (g_iRndPatchCombo[client])
 				{
@@ -1349,7 +1336,7 @@ void SetWeaponProps(int client, int iEntity)
 		
 		if (eItems_IsDefIndexKnife(iDefIndex))
 		{
-			if (g_iStatTrakChance[client][iDefIndex] <= 30)
+			if (g_bUseStatTrak[client][iDefIndex])
 			{
 				pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
 				pDynamicAttributes.SetOrAddAttributeValue(81, 0);
@@ -1359,7 +1346,7 @@ void SetWeaponProps(int client, int iEntity)
 		}
 		else
 		{
-			if (g_iStatTrakChance[client][iDefIndex] <= 30)
+			if (g_bUseStatTrak[client][iDefIndex])
 			{
 				pDynamicAttributes.SetOrAddAttributeValue(80, g_iStatTrakKills[client][iDefIndex]);
 				pDynamicAttributes.SetOrAddAttributeValue(81, 0);
@@ -1367,7 +1354,7 @@ void SetWeaponProps(int client, int iEntity)
 				SetEntProp(iEntity, Prop_Send, "m_iEntityQuality", 9);
 			}
 			
-			if (g_iSouvenirChance[client][iDefIndex] <= 30)
+			if (g_bUseSouvenir[client][iDefIndex])
 			{
 				pDynamicAttributes.RemoveAttributeByDefIndex(80);
 				pDynamicAttributes.RemoveAttributeByDefIndex(81);
@@ -1375,9 +1362,9 @@ void SetWeaponProps(int client, int iEntity)
 			}
 		}
 		
-		if (g_iStickerChance[client][iDefIndex] <= 40)
+		if (g_bUseSticker[client][iDefIndex])
 		{
-			if (g_iStickerComboChance[client][iDefIndex] <= 50)
+			if (g_bUseStickerCombo[client][iDefIndex])
 			{
 				switch (g_iRndStickerCombo[client][iDefIndex])
 				{
@@ -1548,6 +1535,14 @@ stock int FloatToInt(const char[] szValue, any ...)
 	VFormat(szFormattedString, szLen, szValue, 2);
  
 	return StringToInt(szFormattedString);
+}
+
+stock bool IsItMyChance(float fChance = 0.0)
+{
+	float flRand = Math_GetRandomFloat(0.0, 100.0);
+	if(fChance <= 0.0)
+		return false;
+	return flRand <= fChance;
 }
 
 stock bool IsMapWeapon(int iWeapon, bool bRemove = false)

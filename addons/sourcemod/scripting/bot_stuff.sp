@@ -13,8 +13,8 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
-bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iUncrouchChance[MAXPLAYERS+1], g_iUSPChance[MAXPLAYERS+1], g_iM4A1SChance[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore;
 int g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotLastEnemyTimeStampOffset, g_iBotTaskOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
@@ -3349,7 +3349,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			char szDefaultPrimary[64];
 			GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
 			
-			if (Math_GetRandomInt(1, 100) <= 5)
+			if (IsItMyChance(1.0))
 			{
 				FakeClientCommand(i, "+lookatweapon");
 				FakeClientCommand(i, "-lookatweapon");
@@ -3399,11 +3399,11 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			
 			if (g_iCurrentRound == 0 || g_iCurrentRound == 15)
 			{
-				if(Math_GetRandomInt(1,100) <= 10)
+				if(IsItMyChance(10.0))
 					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "vest");
-				else if(Math_GetRandomInt(1,100) <= 30)
+				else if(IsItMyChance(30.0))
 					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
-				else if(Math_GetRandomInt(1,100) <= 60)
+				else if(IsItMyChance(60.0))
 					FakeClientCommand(i, "buy vest");
 				
 				g_bTerroristEco = false;
@@ -3725,8 +3725,8 @@ public void OnClientPostAdminCheck(int client)
 		CS_SetClientClanTag(client, szClanTag);
 		GetCrosshairCode(szBotName, g_szCrosshairCode[client], 35);
 		
-		g_iUSPChance[client] = Math_GetRandomInt(1, 100);
-		g_iM4A1SChance[client] = Math_GetRandomInt(1, 100);
+		g_bUseUSP[client] = IsItMyChance(75.0) ? true : false;
+		g_bUseM4A1S[client] = IsItMyChance(70.0) ? true : false;
 		g_pCurrArea[client] = INVALID_NAV_AREA;
 		
 		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
@@ -3758,7 +3758,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	{
 		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
 		{	
-			g_iUncrouchChance[i] = Math_GetRandomInt(1, 100);
+			g_bUncrouch[i] = IsItMyChance(50.0) ? true : false;
 			g_bDontSwitch[i] = false;
 			g_bDropWeapon[i] = false;
 			g_bHasGottenDrop[i] = false;
@@ -3770,9 +3770,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 				if(GetClientTeam(i) == iTeam)
 					SetEntData(i, g_iBotMoraleOffset, -3);
 				if(g_bHalftimeSwitch && GetClientTeam(i) == iOppositeTeam)
-				{
 					SetEntData(i, g_iBotMoraleOffset, 1);
-				}
 			}
 		}
 	}
@@ -3805,7 +3803,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	if(bWarmupPeriod || g_bTerroristEco || HumansOnTeam(CS_TEAM_T) > 0)
 		return;
 	
-	if(Math_GetRandomInt(1,100) <= 60)
+	if(IsItMyChance(60.0))
 	{
 		if (strcmp(g_szMap, "de_mirage") == 0)
 		{
@@ -3947,7 +3945,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		
 		if (strcmp(szWeapon, "m4a1") == 0)
 		{
-			if (g_iM4A1SChance[client] <= 70 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER))
+			if (g_bUseM4A1S[client] && iAccount >= CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
@@ -3955,7 +3953,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 				return Plugin_Changed;
 			}
 			
-			if (Math_GetRandomInt(1, 100) <= 5 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
+			if (IsItMyChance(5.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_AUG));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
@@ -3965,7 +3963,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 		else if (strcmp(szWeapon, "mac10") == 0)
 		{
-			if (Math_GetRandomInt(1, 100) <= 40 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
+			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_GALILAR));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
@@ -3975,14 +3973,14 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 		else if (strcmp(szWeapon, "mp9") == 0)
 		{
-			if (Math_GetRandomInt(1, 100) <= 40 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
+			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_FAMAS));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
 				
 				return Plugin_Changed;
 			}
-			else if (Math_GetRandomInt(1, 100) <= 15 && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
+			else if (IsItMyChance(15.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_UMP45));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
@@ -3992,7 +3990,7 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 		}
 		else if (strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0)
 		{
-			if (Math_GetRandomInt(1, 100) <= 50)
+			if (IsItMyChance(50.0))
 			{
 				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_CZ75A));
 				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
@@ -4100,10 +4098,10 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fNoisePosition);
 		
 		GetClientEyePosition(client, fClientEyes);
-		if(Math_GetRandomInt(1, 100) <= 35 && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
+		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
 			DHookSetParam(hParams, 7, true);
 			
-		if(Math_GetRandomInt(1, 100) <= 1 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(1.0) && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
@@ -4120,7 +4118,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
 		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(Math_GetRandomInt(1, 100) <= 5 && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(5.0) && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4217,7 +4215,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				else if(!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
 					iButtons |= IN_ATTACK2;
 				
-				if (bIsHiding && g_iUncrouchChance[client] <= 50)
+				if (bIsHiding && g_bUncrouch[client])
 					iButtons &= ~IN_DUCK;
 					
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
@@ -4312,17 +4310,14 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 		}
 		
-		if (g_iUSPChance[client] >= 25)
+		if (g_bUseUSP[client] && GetClientTeam(client) == CS_TEAM_CT)
 		{
-			if (GetClientTeam(client) == CS_TEAM_CT)
-			{
-				char szUSP[32];
-				
-				GetClientWeapon(client, szUSP, sizeof(szUSP));
-				
-				if (strcmp(szUSP, "weapon_hkp2000") == 0)
-					CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
-			}
+			char szUSP[32];
+			
+			GetClientWeapon(client, szUSP, sizeof(szUSP));
+			
+			if (strcmp(szUSP, "weapon_hkp2000") == 0)
+				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 		}
 	}
 }
@@ -4819,12 +4814,12 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 				{
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 					{
-						if (Math_GetRandomInt(1, 100) <= 80)
+						if (IsItMyChance(80.0))
 							bShootSpine = true;
 					}
 					case 2, 3, 4, 30, 32, 36, 61, 63:
 					{
-						if (Math_GetRandomInt(1, 100) <= 30)
+						if (IsItMyChance(30.0))
 							bShootSpine = true;
 					}
 					case 9, 11, 38:
@@ -5017,6 +5012,14 @@ stock int GetNumWinsToClinch()
 	int iOvertimePlaying = GameRules_GetProp("m_nOvertimePlaying");
 	int iNumWinsToClinch = (FindConVar("mp_maxrounds").IntValue > 0 && FindConVar("mp_match_can_clinch").BoolValue) ? (FindConVar("mp_maxrounds").IntValue / 2 ) + 1 + iOvertimePlaying * (FindConVar("mp_overtime_maxrounds").IntValue / 2) : -1;
 	return iNumWinsToClinch;
+}
+
+stock bool IsItMyChance(float fChance = 0.0)
+{
+	float flRand = Math_GetRandomFloat(0.0, 100.0);
+	if( fChance <= 0.0 )
+		return false;
+	return flRand <= fChance;
 }
 
 stock bool IsValidClient(int client)

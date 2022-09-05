@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Sat Sep 03 20:04:42 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Mon Sep 05 20:27:17 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -84,7 +84,6 @@ awp_lego_7
 awp_lego_9
 awp_lego_india2
 awp_legominiindia
-awp_map2_origins
 awp_metro_cso2
 awp_minecraft_pete_v1
 awp_moct
