@@ -677,8 +677,8 @@ public void OnClientPostAdminCheck(int client)
 				g_bUseSticker[client][iWeaponDefIndex] = IsItMyChance(40.0) ? true : false;
 				g_bUseStickerCombo[client][iWeaponDefIndex] = IsItMyChance(50.0) ? true : false;
 				
-				g_bUseStatTrak[client][iWeaponDefIndex] = true;
-				g_bUseSouvenir[client][iWeaponDefIndex] = true;
+				g_bUseStatTrak[client][iWeaponDefIndex] = false;
+				g_bUseSouvenir[client][iWeaponDefIndex] = false;
 				
 				for (int iCrateNum = 0; iCrateNum < eItems_GetCratesCount(); iCrateNum++)
 				{

@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Mon Sep 05 20:27:17 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Wed Sep 07 23:47:11 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -45,6 +45,7 @@ aim_map_gamma
 aim_notsocrazyjump
 aim_poolparty_crashz
 aim_pro
+workshop/131866721/aim_redline
 aim_scopearena
 aim_scoutz
 aim_shotgun3

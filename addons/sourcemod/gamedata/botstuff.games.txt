@@ -172,11 +172,6 @@
 				//Near the string 'Morale: %s'
 				"windows"	   "15440"
 			}
-			"CCSBot::m_lastSawEnemyTimestamp"
-			{
-				//Near the CCSBot::Update memory patch
-				"windows"	   "24088"
-			}
 			"CCSBot::m_task"
 			{
 				//Right next to the string 'Task: %s'

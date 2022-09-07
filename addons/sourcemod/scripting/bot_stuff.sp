@@ -16,7 +16,7 @@ bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, 
 bool g_bIsProBot[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1];
 int g_iRndExecute, g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore;
-int g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotLastEnemyTimeStampOffset, g_iBotTaskOffset;
+int g_iProfileRankOffset, g_iPlayerColorOffset, g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -3358,13 +3358,43 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			if(!bInBuyZone)
 				continue;
 			
-			if (iAccount > g_cvBotEcoLimit.IntValue || IsValidEntity(iPrimary))
+			if (IsValidEntity(iPrimary))
 			{
 				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
 					FakeClientCommand(i, "buy vesthelm");
 				
 				if (iTeam == CS_TEAM_CT && !bHasDefuser)
 					FakeClientCommand(i, "buy defuser");
+				
+				if(g_bFreezetimeEnd)
+				{
+					int iRndNadeSet = Math_GetRandomInt(1,3);
+					
+					switch(iRndNadeSet)
+					{
+						case 1:
+						{
+							FakeClientCommand(i, "buy smokegrenade");
+							FakeClientCommand(i, "buy flashbang");
+							FakeClientCommand(i, "buy flashbang");
+							FakeClientCommand(i, "buy hegrenade");
+						}
+						case 2:
+						{
+							FakeClientCommand(i, "buy smokegrenade");
+							FakeClientCommand(i, "buy flashbang");
+							FakeClientCommand(i, "buy flashbang");
+							FakeClientCommand(i, "buy molotov");
+						}
+						case 3:
+						{
+							FakeClientCommand(i, "buy smokegrenade");
+							FakeClientCommand(i, "buy flashbang");
+							FakeClientCommand(i, "buy hegrenade");
+							FakeClientCommand(i, "buy molotov");
+						}
+					}
+				}
 			}
 			
 			if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !IsValidEntity(iPrimary))
@@ -3399,7 +3429,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			
 			if (g_iCurrentRound == 0 || g_iCurrentRound == 15)
 			{
-				if(IsItMyChance(10.0))
+				if(IsItMyChance(2.0))
 					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "vest");
 				else if(IsItMyChance(30.0))
 					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
@@ -3455,7 +3485,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 						
 						fPlantedC4Distance = GetVectorDistance(fClientLoc, fPlantedC4Location);
 						
-						if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 200.0 && GetTask(client) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
+						if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 100.0 && GetTask(client) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
 						{
 							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
@@ -3677,10 +3707,7 @@ public Action Timer_DropWeapons(Handle hTimer, any data)
 		}
 	}
 	
-	if(g_bFreezetimeEnd)
-		return Plugin_Stop;
-	else
-		return Plugin_Continue;
+	return g_bFreezetimeEnd ? Plugin_Stop : Plugin_Continue;
 }
 
 public void OnMapEnd()
@@ -4101,7 +4128,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
 			DHookSetParam(hParams, 7, true);
 			
-		if(IsItMyChance(1.0) && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
@@ -4118,7 +4145,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
 		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(IsItMyChance(5.0) && HasNotSeenEnemyForLongTime(client) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(5.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4440,9 +4467,6 @@ public void LoadSDK()
 	
 	if ((g_iBotMoraleOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_morale")) == -1)
 		SetFailState("Failed to get CCSBot::m_morale offset.");
-	
-	if ((g_iBotLastEnemyTimeStampOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_lastSawEnemyTimestamp")) == -1)
-		SetFailState("Failed to get CCSBot::m_lastSawEnemyTimestamp offset.");
 	
 	if ((g_iBotTaskOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_task")) == -1)
 		SetFailState("Failed to get CCSBot::m_task offset.");
@@ -4923,13 +4947,28 @@ stock bool IsSafe(int client)
 	return false;
 }
 
-stock bool HasNotSeenEnemyForLongTime(int client)
+stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 {
-	if(!IsFakeClient(client))
-		return false;
-		
-	float fLongTime = 30.0;
-	return (GetGameTime() - GetEntDataFloat(client, g_iBotLastEnemyTimeStampOffset) > fLongTime);
+	float fEnemyOrigin[3];
+	float fSmallestDistance = 500.0;
+	
+	for (int i=1; i <= MaxClients; i++) 
+	{
+		if(!IsValidClient(i)) 
+			continue;
+
+		if(GetClientTeam(client) == GetClientTeam(i))
+			continue;
+
+		GetClientAbsOrigin(i, fEnemyOrigin);
+
+		float fDistance = GetVectorDistance(fNoiseOrigin, fEnemyOrigin, true);
+
+		if(fDistance < fSmallestDistance || fSmallestDistance == 0.0)
+			return true;
+	}
+
+	return false;
 }
 
 stock TaskType GetTask(int client)
