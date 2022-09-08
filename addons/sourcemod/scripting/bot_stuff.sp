@@ -3366,7 +3366,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				if (iTeam == CS_TEAM_CT && !bHasDefuser)
 					FakeClientCommand(i, "buy defuser");
 				
-				if(g_bFreezetimeEnd)
+				if(g_bFreezetimeEnd && !BotMimic_IsPlayerMimicing(i))
 				{
 					int iRndNadeSet = Math_GetRandomInt(1,3);
 					
@@ -4111,14 +4111,8 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	{
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		int iDefIndex = IsValidEntity(iActiveWeapon) ? GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex") : 0;
+		int iSlot = eItems_GetWeaponSlotByDefIndex(iDefIndex);
 		float fClientEyes[3], fNoisePosition[3];
-		
-		if(eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
-		{
-			BotEquipBestWeapon(client, true);
-			g_bDontSwitch[client] = true;
-			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
-		}
 		
 		DHookGetParamVector(hParams, 2, fNoisePosition);
 		fNoisePosition[2] += 25.0;
@@ -4127,8 +4121,14 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		GetClientEyePosition(client, fClientEyes);
 		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
 			DHookSetParam(hParams, 7, true);
-			
-		if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		
+		if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+		{
+			BotEquipBestWeapon(client, true);
+			g_bDontSwitch[client] = true;
+			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
+		}
+		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
