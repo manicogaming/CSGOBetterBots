@@ -20,7 +20,7 @@
 	"blameF" 			"68193075"
 	//NiP Players
 	"es3tag" 			"1859646"
-	"Plopski" 			"175613070"
+	"Aleksib" 			"52977598"
 	"Brollan" 			"178562747"
 	"hampus" 			"126680222"
 	"REZ" 				"73906687"
@@ -82,7 +82,7 @@
 	"Furlan" 			"177495873"
 	"jedqr" 			"125090121"
 	"snatchie" 			"111436809"
-	"miNIr0x" 			"10298966"
+	"sh3nanigan" 		"1042506424"
 	"leman" 			"40398517"
 	//ENCE Players
 	"Snappi" 			"29157337"

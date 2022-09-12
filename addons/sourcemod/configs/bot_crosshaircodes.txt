@@ -20,7 +20,7 @@
 	"blameF" 			"CSGO-8Ferf-mq6ua-JYHa7-eURmk-jFFFN"
 	//NiP Players
 	"es3tag" 			"CSGO-xfN3h-wkA7f-O7aYZ-T5hye-YPVeL"
-	"Plopski" 			"CSGO-wwjTV-cT5dS-JXGAT-Kn9wZ-G5SKF"
+	"Aleksib" 			"CSGO-iuXxN-Z4tML-FcpUT-2pfxZ-kSLoD"
 	"Brollan" 			"CSGO-yx69Y-5ytAc-hc3MH-4hqUG-CrrBE"
 	"hampus" 			"CSGO-kVEFM-NftRQ-JVRk8-2Eja5-6NZfE"
 	"REZ" 				"CSGO-UOR5u-5VxWH-cA3YU-VTxWn-YxHCF"
@@ -82,7 +82,7 @@
 	"Furlan" 			"CSGO-ksEXA-2tJ58-JCDkn-ymDOf-DbapG"
 	"jedqr" 			"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
 	"snatchie" 			"CSGO-sp6we-tDZfZ-kZDfy-X6qeY-KxFdH"
-	"miNIr0x" 			"CSGO-Xrysb-LDyDh-2F5bE-JOpNH-F9xXD"
+	"sh3nanigan" 		"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
 	"leman" 			"CSGO-r3FsK-n45sR-foJUo-nr46P-nysyM"
 	//ENCE Players
 	"Snappi" 			"CSGO-5kMw7-am3GO-MhCLW-fomBb-tOUnB"

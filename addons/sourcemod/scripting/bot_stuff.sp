@@ -172,7 +172,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Brollan");
 			ServerCommand("bot_add_ct %s", "es3tag");
 			ServerCommand("bot_add_ct %s", "hampus");
-			ServerCommand("bot_add_ct %s", "Plopski");
+			ServerCommand("bot_add_ct %s", "Aleksib");
 			ServerCommand("bot_add_ct %s", "REZ");
 			ServerCommand("mp_teamlogo_1 nip");
 		}
@@ -183,7 +183,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Brollan");
 			ServerCommand("bot_add_t %s", "es3tag");
 			ServerCommand("bot_add_t %s", "hampus");
-			ServerCommand("bot_add_t %s", "Plopski");
+			ServerCommand("bot_add_t %s", "Aleksib");
 			ServerCommand("bot_add_t %s", "REZ");
 			ServerCommand("mp_teamlogo_2 nip");
 		}
@@ -497,7 +497,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Furlan");
 			ServerCommand("bot_add_ct %s", "snatchie");
 			ServerCommand("bot_add_ct %s", "jedqr");
-			ServerCommand("bot_add_ct %s", "miNIr0x");
+			ServerCommand("bot_add_ct %s", "sh3nanigan");
 			ServerCommand("bot_add_ct %s", "leman");
 			ServerCommand("mp_teamlogo_1 ago");
 		}
@@ -508,7 +508,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Furlan");
 			ServerCommand("bot_add_t %s", "snatchie");
 			ServerCommand("bot_add_t %s", "jedqr");
-			ServerCommand("bot_add_t %s", "miNIr0x");
+			ServerCommand("bot_add_t %s", "sh3nanigan");
 			ServerCommand("bot_add_t %s", "leman");
 			ServerCommand("mp_teamlogo_2 ago");
 		}
@@ -3366,7 +3366,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				if (iTeam == CS_TEAM_CT && !bHasDefuser)
 					FakeClientCommand(i, "buy defuser");
 				
-				if(g_bFreezetimeEnd && !BotMimic_IsPlayerMimicing(i))
+				if(GetGameTime() - g_fRoundStart > 6.0 && !g_bFreezetimeEnd)
 				{
 					int iRndNadeSet = Math_GetRandomInt(1,3);
 					
@@ -4128,8 +4128,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			g_bDontSwitch[client] = true;
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
-		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		else if(IsItMyChance(0.1) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
+			GetGrenadeToss(client, fNoisePosition);
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4144,8 +4145,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
+		GetGrenadeToss(client, fPos);
 		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(IsItMyChance(5.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(10.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4896,6 +4898,89 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 	return iEntity > MaxClients;
 }
 
+stock void GetGrenadeToss(int client, float fTossTarget[3])
+{
+	float fEyePosition[3], fTo[3];
+	GetClientEyePosition(client, fEyePosition);
+	SubtractVectors(fTossTarget, fEyePosition, fTo);
+	float fRange = GetVectorLength(fTo);
+
+	const float fSlope = 0.2; // 0.25f;
+	float fTossHeight = fSlope * fRange;
+
+	float fHeightInc = fTossHeight / 10.0;
+	float fTarget[3];
+	float safeSpace = fTossHeight / 2.0;
+
+	// Build a box to sweep along the ray when looking for obstacles
+	float fMins[3] = { -2.0, -2.0, -2.0 };
+	float fMaxs[3] = { 2.0, 2.0, 2.0 };
+	fMins[2] = 0.0;
+	fMaxs[2] = fHeightInc;
+
+
+	// find low and high bounds of toss window
+	float fLow = 0.0;
+	float fHigh = fTossHeight + safeSpace;
+	bool bGotLow = false;
+	float fLastH = 0.0;
+	for(float h = 0.0; h < 3.0 * fTossHeight; h += fHeightInc)
+	{
+		fTarget[0] = fTossTarget[0];
+		fTarget[1] = fTossTarget[1];
+		fTarget[2] = fTossTarget[2] + h;
+
+		// make sure toss line is clear
+		Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMins, MASK_VISIBLE_AND_NPCS | CONTENTS_GRATE, TraceEntityFilterStuff);
+		
+		if (TR_GetFraction(hTraceResult) == 1.0)
+		{
+			// line is clear
+			if (!bGotLow)
+			{
+				fLow = h;
+				bGotLow = true;
+			}
+		}
+		else
+		{
+			// line is blocked
+			if (bGotLow)
+			{
+				fHigh = fLastH;
+				break;
+			}
+		}
+
+		fLastH = h;
+		
+		delete hTraceResult;
+	}
+
+	if (bGotLow)
+	{
+		// throw grenade into toss window
+		if (fTossHeight < fLow)
+		{
+			if (fLow + safeSpace > fHigh)
+				// narrow window
+				fTossHeight = (fHigh + fLow)/2.0;
+			else
+				fTossHeight = fLow + safeSpace;
+		}
+		else if (fTossHeight > fHigh - safeSpace)
+		{
+			if (fHigh - safeSpace < fLow)
+				// narrow window
+				fTossHeight = (fHigh + fLow)/2.0;
+			else
+				fTossHeight = fHigh - safeSpace;
+		}
+		
+		fTossTarget[2] += fTossHeight;
+	}
+}
+
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
 {	
 	return SDKCall(g_hIsLineBlockedBySmoke, g_pTheBots, fFrom, fTo);
@@ -4951,7 +5036,7 @@ stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 {
 	float fEnemyOrigin[3];
 	float fSmallestDistance = 500.0;
-	
+	fNoiseOrigin[2] = 0.0;
 	for (int i=1; i <= MaxClients; i++) 
 	{
 		if(!IsValidClient(i)) 
@@ -4961,6 +5046,7 @@ stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 			continue;
 
 		GetClientAbsOrigin(i, fEnemyOrigin);
+		fEnemyOrigin[2] = 0.0;
 
 		float fDistance = GetVectorDistance(fNoiseOrigin, fEnemyOrigin, true);
 

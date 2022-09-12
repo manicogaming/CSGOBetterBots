@@ -20,7 +20,7 @@
 	"blameF" 			"Astralis"
 	//NiP Players
 	"es3tag" 			"NiP"
-	"Plopski" 			"NiP"
+	"Aleksib" 			"NiP"
 	"Brollan" 			"NiP"
 	"hampus" 			"NiP"
 	"REZ" 				"NiP"
@@ -82,7 +82,7 @@
 	"Furlan" 			"AGO"
 	"jedqr" 			"AGO"
 	"snatchie" 			"AGO"
-	"miNIr0x" 			"AGO"
+	"sh3nanigan" 		"AGO"
 	"leman" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"

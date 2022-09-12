@@ -374,7 +374,7 @@ ProP+Rifle+RiflePersonality "Brollan"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "Plopski"
+ProP+Rifle+RiflePersonality "Aleksib"
 	VoicePitch = 77
 End
 
@@ -600,7 +600,7 @@ ProP+Rifle+RiflePersonality "jedqr"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "miNIr0x"
+ProP+Rifle+RiflePersonality "sh3nanigan"
 	VoicePitch = 93
 End
 
