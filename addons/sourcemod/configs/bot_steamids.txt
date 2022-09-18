@@ -246,12 +246,12 @@
 	"krii" 				"133953829"
 	"discplex" 			"252053056"
 	"msn2k" 			"6172176"
-	//SKADE Players
-	"dream3r" 			"194789935"
-	"dennyslaw" 		"300693622"	
-	"bubble" 			"40702377"
-	"Rainwaker" 		"177848062"	
-	"SHiPZ" 			"254948893"
+	//GamerLegion Players
+	"iM" 				"89984505"
+	"acoR" 				"42677035"	
+	"isak" 				"111644637"
+	"siuhy" 			"190407632"	
+	"Keoz" 				"138078516"
 	//DIVIZON Players
 	"j1NZO" 			"220770109"
 	"cello" 			"18118733"
@@ -431,7 +431,7 @@
 	"dav1d" 			"160225583"
 	"maxujas" 			"282684656"
 	"nqz" 				"390076777"
-	"rox" 				"897065446"
+	"buda" 				"239077622"
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
 	"forsyy" 			"105029167"
@@ -610,7 +610,7 @@
 	"XpG" 				"30253348"
 	"Gauthierlele"		"35731666"
 	"DEVIL" 			"44238623"
-	"tonzah" 			"96205280"
+	"xReal" 			"82869121"
 	"maeowo"			"315914730"
 	//Falcons Players
 	"NBK-" 				"444845"
@@ -756,4 +756,16 @@
 	"smF"				"11160541"
 	"Basso" 			"152862"
 	"Gnøffe"			"33756208"
+	//Fluxo Players
+	"felps" 			"22765766"
+	"WOOD7"				"42876435"
+	"Lucaozy"			"197122745"
+	"lux" 				"113751940"
+	"v$m"				"51467095"
+	//Aravt Players
+	"ctrlmad" 			"402172443"
+	"cool4st"			"882582488"
+	"fury5k"			"866891295"
+	"Shinobi" 			"488680911"
+	"clouden"			"1019902116"
 }

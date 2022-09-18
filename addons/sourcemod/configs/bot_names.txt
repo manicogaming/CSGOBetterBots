@@ -246,12 +246,12 @@
 	"krii" 				"Wolsung"
 	"discplex" 			"Wolsung"
 	"msn2k" 			"Wolsung"
-	//SKADE Players
-	"dream3r" 			"SKADE"
-	"dennyslaw" 		"SKADE"	
-	"bubble" 			"SKADE"
-	"Rainwaker" 		"SKADE"	
-	"SHiPZ" 			"SKADE"
+	//GamerLegion Players
+	"iM" 				"GamerLegion"
+	"acoR" 				"GamerLegion"	
+	"isak" 				"GamerLegion"
+	"siuhy" 			"GamerLegion"	
+	"Keoz" 				"GamerLegion"
 	//DIVIZON Players
 	"j1NZO" 			"DIVIZON"
 	"Yoshi" 			"DIVIZON"
@@ -431,7 +431,7 @@
 	"dav1d" 			"9z"
 	"maxujas" 			"9z"
 	"nqz" 				"9z"
-	"rox" 				"9z"
+	"buda" 				"9z"
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
 	"forsyy" 			"SINNERS"
@@ -610,7 +610,7 @@
 	"XpG" 				"Dice"
 	"Gauthierlele"		"Dice"
 	"DEVIL" 			"Dice"
-	"tonzah" 			"Dice"
+	"xReal" 			"Dice"
 	"maeowo"			"Dice"
 	//Falcons Players
 	"NBK-" 				"Falcons"
@@ -756,4 +756,16 @@
 	"smF"				"Alpha"
 	"Basso" 			"Alpha"
 	"Gnøffe"			"Alpha"
+	//Fluxo Players
+	"felps" 			"Fluxo"
+	"WOOD7"				"Fluxo"
+	"Lucaozy"			"Fluxo"
+	"lux" 				"Fluxo"
+	"v$m"				"Fluxo"
+	//Aravt Players
+	"ctrlmad" 			"Aravt"
+	"cool4st"			"Aravt"
+	"fury5k"			"Aravt"
+	"Shinobi" 			"Aravt"
+	"clouden"			"Aravt"
 }
