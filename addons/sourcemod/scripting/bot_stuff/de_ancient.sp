@@ -18,9 +18,9 @@ public void PrepareAncientExecutes()
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/Temple Side Smoke.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/AWP Player.rec");
-					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/Temple Front Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[2], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/Holding A Push.rec");
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/Deep CT Smoke.rec");
-					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/A Short Smoke.rec");
+					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_ancient/A Execute/Holding Mid Early.rec");
 				}
 				case 2: //B Execute
 				{

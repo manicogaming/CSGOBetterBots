@@ -56,9 +56,9 @@
 	"JDC" 				"mouz"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
-	"Attacker" 			"TYLOO"
+	"aristo" 			"TYLOO"
 	"SLOWLY" 			"TYLOO"
-	"BnTeT" 			"TYLOO"
+	"Freeman" 			"TYLOO"
 	"DANK1NG" 			"TYLOO"
 	//EG Players
 	"HexT" 				"EG"
@@ -418,7 +418,7 @@
 	"Ag1l" 				"FTW"
 	"stadodo" 			"FTW"
 	"DDias" 			"FTW"
-	"kst" 				"FTW"
+	"suka" 				"FTW"
 	"arrozdoce" 		"FTW"
 	//Tigers Players
 	"HenkkyG" 			"Tigers"
@@ -475,9 +475,9 @@
 	"Surviv0r" 			"Supremacy"
 	"ALONZO"			"Supremacy"
 	//CatEvil Players
-	"Cate" 				"CatEvil"
-	"Drea3er" 			"CatEvil"
-	"Gin" 				"CatEvil"
+	"MrCANI" 			"CatEvil"
+	"zltan" 			"CatEvil"
+	"mutaNt" 			"CatEvil"
 	"tanxiaomei" 		"CatEvil"
 	"Roninbaby"			"CatEvil"
 	//AVEZ Players
@@ -566,10 +566,10 @@
 	"CacaNito"			"BLUEJAYS"
 	//ECK Players
 	"byr9" 				"ECK"
-	"uQlutzavr"			"ECK"
+	"SENSEi"			"ECK"
 	"Kvem" 				"ECK"
 	"s4" 				"ECK"
-	"Flarich"			"ECK"
+	"j3kie"				"ECK"
 	//Conquer Players
 	"jelo" 				"Conquer"
 	"Mikzuuu"			"Conquer"
@@ -587,7 +587,7 @@
 	"CSO"				"SWS"
 	"bsd" 				"SWS"
 	"mxa" 				"SWS"
-	"SaNt0S"			"SWS"
+	"lineko"			"SWS"
 	//Furious Players
 	"KAISER" 			"Furious"
 	"TIKO"				"Furious"
@@ -626,10 +626,10 @@
 	"fADE"				"Entropy"
 	//Renewal Players
 	"xerolte" 			"Renewal"
-	"Ensury"			"Renewal"
+	"Tugu"				"Renewal"
 	"NEUZ" 				"Renewal"
-	"MiQ" 				"Renewal"
-	"sT0P"				"Renewal"
+	"ROUX" 				"Renewal"
+	"ATTACKER04"		"Renewal"
 	//OneTap Players
 	"GEOHYPE" 			"OneTap"
 	"MoDo"				"OneTap"
@@ -703,7 +703,7 @@
 	"dobu" 				"NKT"
 	"nin9"				"NKT"
 	//Boca Players
-	"Bruj" 				"Boca"
+	"lenci" 			"Boca"
 	"elemeNt"			"Boca"
 	"alexer"			"Boca"
 	"Hezz" 				"Boca"
@@ -716,7 +716,7 @@
 	"RuStY"				"ITB"
 	//Sampi Players
 	"HONES" 			"Sampi"
-	"GuardiaN"			"Sampi"
+	"Habyzz"			"Sampi"
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"T4gg3D"			"Sampi"
@@ -768,4 +768,10 @@
 	"fury5k"			"Aravt"
 	"Shinobi" 			"Aravt"
 	"clouden"			"Aravt"
+	//DUSTY Players
+	"EddezeNNN" 		"DUSTY"
+	"TH0R"				"DUSTY"
+	"pallib0ndi"		"DUSTY"
+	"detinate" 			"DUSTY"
+	"StebbiC0C0"		"DUSTY"
 }

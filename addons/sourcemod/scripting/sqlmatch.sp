@@ -8,10 +8,20 @@
 
 int g_iKills[MAXPLAYERS+1], g_iAssists[MAXPLAYERS+1], g_iDeaths[MAXPLAYERS+1];
 int g_iKASTRounds[MAXPLAYERS+1];
+bool g_bEnablePlugin;
 Handle hDB;
+ConVar g_cvGameMode, g_cvGameType;
 
 public void OnPluginStart()
 {
+	g_cvGameMode = FindConVar("game_mode");
+	g_cvGameType = FindConVar("game_type");
+	
+	g_bEnablePlugin = g_cvGameMode.IntValue == 1 && g_cvGameType.IntValue == 0 ? true : false;
+	
+	if(!g_bEnablePlugin)
+		return;
+		
 	char szBuffer[1024];
 
 	if ((hDB = SQL_Connect("sql_matches", true, szBuffer, sizeof(szBuffer))) == null)
@@ -63,6 +73,9 @@ public void OnPluginStart()
 
 public void OnClientPostAdminCheck(int client)
 {
+	if(!g_bEnablePlugin)
+		return;
+		
 	g_iKASTRounds[client] = 0;
 }
 
@@ -81,6 +94,9 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public Action CS_OnTerminateRound(float& fDelay, CSRoundEndReason& pReason)
 {
+	if(!g_bEnablePlugin)
+		return Plugin_Continue;
+		
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i))
