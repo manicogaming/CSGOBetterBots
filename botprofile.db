@@ -366,7 +366,7 @@ ProP+Rifle+RiflePersonality "hampus"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "es3tag"
+ProP+SniperPro+SniperPersonality "REZ"
 	VoicePitch = 110
 End
 
@@ -378,7 +378,7 @@ ProP+Rifle+RiflePersonality "Aleksib"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "REZ"
+ProP+Rifle+RiflePersonality "es3tag"
 	VoicePitch = 80
 End
 

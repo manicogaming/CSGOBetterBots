@@ -170,10 +170,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "Brollan");
-			ServerCommand("bot_add_ct %s", "es3tag");
+			ServerCommand("bot_add_ct %s", "REZ");
 			ServerCommand("bot_add_ct %s", "hampus");
 			ServerCommand("bot_add_ct %s", "Aleksib");
-			ServerCommand("bot_add_ct %s", "REZ");
+			ServerCommand("bot_add_ct %s", "es3tag");
 			ServerCommand("mp_teamlogo_1 nip");
 		}
 		
@@ -181,10 +181,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "Brollan");
-			ServerCommand("bot_add_t %s", "es3tag");
+			ServerCommand("bot_add_t %s", "REZ");
 			ServerCommand("bot_add_t %s", "hampus");
 			ServerCommand("bot_add_t %s", "Aleksib");
-			ServerCommand("bot_add_t %s", "REZ");
+			ServerCommand("bot_add_t %s", "es3tag");
 			ServerCommand("mp_teamlogo_2 nip");
 		}
 	}
@@ -4205,7 +4205,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			g_bDontSwitch[client] = true;
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
-		else if(IsItMyChance(0.3) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			GetGrenadeToss(client, fNoisePosition);
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
@@ -4295,7 +4295,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if((IsSafe(client) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
-			
+				
 			if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
 				SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 			
@@ -4349,7 +4349,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
 					float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
 					float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-					
 					switch(iDefIndex)
 					{
 						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
@@ -4364,10 +4363,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							
 							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+							else if (fTargetDistance > 2000.0 && GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) <= 0.1)
+								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 						case 1:
 						{
-							if (fOnTarget > fAimTolerance && !bIsDucking && !bIsReloading)
+							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) <= 0.1 && !bIsDucking && !bIsReloading)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 						case 9, 40:
@@ -4991,7 +4992,7 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 	float safeSpace = fTossHeight / 2.0;
 
 	// Build a box to sweep along the ray when looking for obstacles
-	float fMins[3] = { -16.0, -16.0, 0 };
+	float fMins[3] = { -16.0, -16.0, 0.0 };
 	float fMaxs[3] = { 16.0,  16.0,  72.0 };
 	fMins[2] = 0.0;
 	fMaxs[2] = fHeightInc;
