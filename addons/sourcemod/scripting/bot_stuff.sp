@@ -4189,6 +4189,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		int iDefIndex = IsValidEntity(iActiveWeapon) ? GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex") : 0;
 		int iSlot = eItems_GetWeaponSlotByDefIndex(iDefIndex);
+		bool bIsWalking = !!GetEntProp(client, Prop_Send, "m_bIsWalking");
 		float fClientEyes[3], fNoisePosition[3];
 		
 		DHookGetParamVector(hParams, 2, fNoisePosition);
@@ -4196,7 +4197,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fNoisePosition);
 		
 		GetClientEyePosition(client, fClientEyes);
-		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition))
+		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
 		
 		if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)

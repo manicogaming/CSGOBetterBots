@@ -1,0 +1,15 @@
+"cs_sauna"
+{
+	"CTSpawn_x" "0.38"
+	"CTSpawn_y" "0.86"
+	"TSpawn_x" "0.78"
+	"TSpawn_y" "0.41"
+	"Hostage1_x" "0.74"
+	"Hostage1_y" "0.29"
+	"Hostage2_x" "0.86"
+	"Hostage2_y" "0.56"
+	"material" "overviews/cs_sauna"
+	"pos_x" "-2456.000000"
+	"pos_y" "1552.000000"
+	"scale" "3.160000"
+}
