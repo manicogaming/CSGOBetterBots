@@ -774,4 +774,10 @@
 	"pallib0ndi"		"DUSTY"
 	"detinate" 			"DUSTY"
 	"StebbiC0C0"		"DUSTY"
+	//Nixuh Players
+	"adM" 				"Nixuh"
+	"blackpoisoN"		"Nixuh"
+	"kanii"				"Nixuh"
+	"Triton" 			"Nixuh"
+	"Sonic"				"Nixuh"
 }

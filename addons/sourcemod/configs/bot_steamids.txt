@@ -774,4 +774,10 @@
 	"pallib0ndi"		"34650707"
 	"detinate" 			"5098392"
 	"StebbiC0C0"		"25418735"
+	//Nixuh Players
+	"adM" 				"119663636"
+	"blackpoisoN"		"5477315"
+	"kanii"				"32730121"
+	"Triton" 			"135933575"
+	"Sonic"				"14864123"
 }

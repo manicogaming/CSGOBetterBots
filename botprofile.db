@@ -3141,6 +3141,28 @@ ProP+Rifle+RiflePersonality "StebbiC0C0"
 	VoicePitch = 108
 End
 
+//Nixuh Players
+
+ProP+Rifle+RiflePersonality "adM"
+	VoicePitch = 93
+End
+
+ProP+SniperPro+SniperPersonality "blackpoisoN"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "kanii"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "Triton"
+	VoicePitch = 76
+End
+
+ProP+Rifle+RiflePersonality "Sonic"
+	VoicePitch = 76
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End

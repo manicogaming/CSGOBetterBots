@@ -277,11 +277,11 @@
 	"n0te" 				"CSGO-bS4QE-tv2oK-YwZuS-snkhQ-bR88F"
 	"Nexius" 			"CSGO-RsjiD-5LRvZ-viXTe-JADfL-9tdqA"
 	//Bravado Players
-	"bLazE" 			"CSGO-32po4-2BPXO-dpkBa-3opae-nh7iL"	
-	"SloWye" 			"CSGO-L8cny-ikC7X-nHdFt-Tbs38-ENLTK"
+	"bLazE" 			"CSGO-e86Hj-kUUkS-xYGKQ-fHbTz-sHFdH"	
+	"SloWye" 			"CSGO-fydZM-X83xa-ASLRf-VGSPu-zFAMK"
 	"Doru" 				"CSGO-AFsVz-8yef6-qqLNV-Crpkt-7cG4C"
-	"Wip3ouT" 			"CSGO-ezZf2-ULCum-CHMGv-kk48a-hjTiA"
-	"wilj" 				"CSGO-8sty7-zZhZ6-URhuf-ApGwd-wHH8D"
+	"Wip3ouT" 			"CSGO-toOYN-VDref-9KH5O-mfZHF-RunAL"
+	"wilj" 				"CSGO-6Q3Mx-VUA3n-BshX7-bVE3O-5b9eD"
 	//SH Players
 	"AE" 				"CSGO-BDDCK-jsfLh-ziyu7-CnBEY-pYOAK"	
 	"captainMo" 		"CSGO-GBUL9-ohRGT-nVoHD-suEFp-sBPEL"	
@@ -774,4 +774,10 @@
 	"pallib0ndi"		"CSGO-nVvZO-zqFFf-bftii-Hsbvp-wzUrC"
 	"detinate" 			"CSGO-npLJw-4E8TY-Nyayx-aMUfL-Qn74E"
 	"StebbiC0C0"		"CSGO-ZBqSw-thRWW-rqG2E-AtFrN-xtpJN"
+	//Nixuh Players
+	"adM" 				"CSGO-fK2tp-WDc9t-A48id-wG2xF-2bVvD"
+	"blackpoisoN"		"CSGO-CDpr5-XCeQA-QrZLb-T5zdw-LLeFO"
+	"kanii"				"CSGO-Mody6-S7mhz-uwfR4-FQ585-tXcNE"
+	"Triton" 			"CSGO-uqXEY-eTuc5-bUeVX-o9N8S-4SzfF"
+	"Sonic"				"CSGO-Aimmu-B9hZ5-AtEw3-GaLux-6vdqA"
 }

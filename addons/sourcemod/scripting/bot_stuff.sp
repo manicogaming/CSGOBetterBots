@@ -3389,6 +3389,31 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "Nixuh", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "adM");
+			ServerCommand("bot_add_ct %s", "blackpoisoN");
+			ServerCommand("bot_add_ct %s", "kanii");
+			ServerCommand("bot_add_ct %s", "Triton");
+			ServerCommand("bot_add_ct %s", "Sonic");
+			ServerCommand("mp_teamlogo_1 nix");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "adM");
+			ServerCommand("bot_add_t %s", "blackpoisoN");
+			ServerCommand("bot_add_t %s", "kanii");
+			ServerCommand("bot_add_t %s", "Triton");
+			ServerCommand("bot_add_t %s", "Sonic");
+			ServerCommand("mp_teamlogo_2 nix");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -3433,7 +3458,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			if(!bInBuyZone)
 				continue;
 			
-			if (IsValidEntity(iPrimary))
+			if (IsValidEntity(iPrimary) || (GetFriendsWithPrimary(i) > 2 && strcmp(szDefaultPrimary, "weapon_hkp2000") != 0 && strcmp(szDefaultPrimary, "weapon_usp_silencer") != 0 && strcmp(szDefaultPrimary, "weapon_glock") != 0))
 			{
 				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
 					FakeClientCommand(i, "buy vesthelm");
@@ -4206,7 +4231,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			g_bDontSwitch[client] = true;
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
-		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		else if(IsItMyChance(0.3) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			GetGrenadeToss(client, fNoisePosition);
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
@@ -4225,7 +4250,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fPos);
 		GetGrenadeToss(client, fPos);
 		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(IsItMyChance(10.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(7.5) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -5115,7 +5140,7 @@ stock bool IsSafe(int client)
 stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 {
 	float fEnemyOrigin[3];
-	float fSmallestDistance = 500.0;
+	float fSmallestDistance = 750.0;
 	fNoiseOrigin[2] = 0.0;
 	for (int i=1; i <= MaxClients; i++) 
 	{
@@ -5135,6 +5160,26 @@ stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 	}
 
 	return false;
+}
+
+stock int GetFriendsWithPrimary(int client)
+{
+	int iCount = 0;
+	int iPrimary;
+	for (int i = 1; i <= MaxClients; i++) 
+	{
+		if(!IsValidClient(i)) 
+			continue;
+
+		if(GetClientTeam(i) != GetClientTeam(client))
+			continue;
+
+		iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+		if(IsValidEntity(iPrimary))
+			iCount++;
+	}
+
+	return iCount;
 }
 
 stock TaskType GetTask(int client)

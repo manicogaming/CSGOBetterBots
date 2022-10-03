@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Thu Sep 29 23:35:09 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Sun Oct 02 23:50:05 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -140,7 +140,8 @@ cs_outpost
 cs_renovation
 cs_residence
 cs_rio
-workshop/2692437821/cs_sauna
+cs_sauna
+workshop/297497138/cs_saunala
 cs_shichang_b3
 cs_siege
 cs_warmblow_beta01
@@ -247,7 +248,6 @@ de_grind
 de_guard
 de_hardrock
 de_heat_new
-de_hive
 de_icarus
 de_icehouse
 de_inferno
