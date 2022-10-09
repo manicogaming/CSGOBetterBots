@@ -3497,7 +3497,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				}
 			}
 			
-			if (iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !IsValidEntity(iPrimary))
+			if ((iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !IsValidEntity(iPrimary)) || GetFriendsWithPrimary(i) >= 1)
 			{
 				if(strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0)
 				{
@@ -4231,7 +4231,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			g_bDontSwitch[client] = true;
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
-		else if(IsItMyChance(0.3) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			GetGrenadeToss(client, fNoisePosition);
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
@@ -4241,17 +4241,17 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0)
+	else if(strcmp(szDesc, "Last Enemy Position") == 0)
 	{
 		float fPos[3];
 		
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
-		GetGrenadeToss(client, fPos);
-		Array_Copy(fPos, g_fNadeTarget[client], 3);
-		if(IsItMyChance(7.5) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+		if(IsItMyChance(25.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
+			GetGrenadeToss(client, fPos);
+			Array_Copy(fPos, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
 		}
@@ -5145,6 +5145,9 @@ stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 	for (int i=1; i <= MaxClients; i++) 
 	{
 		if(!IsValidClient(i)) 
+			continue;	
+			
+		if(client == i)
 			continue;
 
 		if(GetClientTeam(client) == GetClientTeam(i))
@@ -5169,6 +5172,9 @@ stock int GetFriendsWithPrimary(int client)
 	for (int i = 1; i <= MaxClients; i++) 
 	{
 		if(!IsValidClient(i)) 
+			continue;	
+			
+		if(client == i)
 			continue;
 
 		if(GetClientTeam(i) != GetClientTeam(client))
