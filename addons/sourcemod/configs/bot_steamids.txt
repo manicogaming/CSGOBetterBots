@@ -293,7 +293,7 @@
 	"imoRR" 			"107082440"
 	"paz" 				"68524615"
 	"woxic" 			"123219778"
-	"MAJ3R" 			"7167161"
+	"xfl0ud" 			"217943381"
 	//K23 Players
 	"FinigaN" 			"226095351"
 	"xsepower" 			"112014226"
@@ -312,12 +312,6 @@
 	"flying" 			"441964070"
 	"0i" 				"70890484"
 	"rage" 				"398159133"
-	//Finest Players
-	"twist" 			"19979131"
-	"hades" 			"90656280"
-	"kreaz" 			"116979891"
-	"PlesseN" 			"57716849"
-	"shokz" 			"39590183"
 	//C9 Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
@@ -374,7 +368,7 @@
 	"PR1mE" 			"26772868"
 	//Endpoint Players
 	"Surreal" 			"84574729"
-	"CRUC1AL" 			"158832564"
+	"mhL" 				"180124403"
 	"MiGHTYMAX" 		"15522824"
 	"Kjaerbye" 			"59614824"
 	"Nertz" 			"92860917"
@@ -553,7 +547,7 @@
 	"akEz" 				"25850155"
 	"H4RR3"				"195566724"
 	//CG Players
-	"maty" 				"127604447"
+	"denis" 			"31185376"
 	"kolor"				"159382791"
 	"HS" 				"3417033"
 	"kRYSTAL" 			"17526007"
@@ -564,7 +558,7 @@
 	"stYleEeZ" 			"83880966"
 	"dan1" 				"283022264"
 	"CacaNito"			"303390740"
-	//ECK Players
+	//IKLA Players
 	"byr9" 				"124733563"
 	"SENSEi"			"92510011"
 	"Kvem" 				"885170938"

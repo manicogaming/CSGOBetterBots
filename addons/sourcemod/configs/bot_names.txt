@@ -293,7 +293,7 @@
 	"imoRR" 			"Eternal"
 	"paz" 				"Eternal"
 	"woxic" 			"Eternal"
-	"MAJ3R" 			"Eternal"
+	"xfl0ud" 			"Eternal"
 	//K23 Players
 	"FinigaN" 			"K23"
 	"xsepower" 			"K23"
@@ -312,12 +312,6 @@
 	"flying" 			"IG"
 	"0i" 				"IG"
 	"rage" 				"IG"
-	//Finest Players
-	"twist" 			"Finest"
-	"hades" 			"Finest"
-	"kreaz" 			"Finest"
-	"PlesseN" 			"Finest"
-	"shokz" 			"Finest"
 	//C9 Players
 	"nafany" 			"C9"
 	"sh1ro" 			"C9"
@@ -374,7 +368,7 @@
 	"PR1mE" 			"Tricked"
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
-	"CRUC1AL" 			"Endpoint"
+	"mhL" 				"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"Kjaerbye" 			"Endpoint"
 	"Nertz" 			"Endpoint"
@@ -553,7 +547,7 @@
 	"akEz" 				"777"
 	"H4RR3"				"777"
 	//CG Players
-	"maty" 				"CG"
+	"denis" 			"CG"
 	"kolor"				"CG"
 	"HS" 				"CG"
 	"kRYSTAL" 			"CG"
@@ -564,12 +558,12 @@
 	"stYleEeZ" 			"BLUEJAYS"
 	"dan1" 				"BLUEJAYS"
 	"CacaNito"			"BLUEJAYS"
-	//ECK Players
-	"byr9" 				"ECK"
-	"SENSEi"			"ECK"
-	"Kvem" 				"ECK"
-	"s4" 				"ECK"
-	"j3kie"				"ECK"
+	//IKLA Players
+	"byr9" 				"IKLA"
+	"SENSEi"			"IKLA"
+	"Kvem" 				"IKLA"
+	"s4" 				"IKLA"
+	"j3kie"				"IKLA"
 	//Conquer Players
 	"jelo" 				"Conquer"
 	"Mikzuuu"			"Conquer"

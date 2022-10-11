@@ -1377,7 +1377,7 @@ ProP+Rifle+RiflePersonality "imoRR"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "MAJ3R"
+ProP+Rifle+RiflePersonality "xfl0ud"
 	VoicePitch = 86
 End
 
@@ -1445,28 +1445,6 @@ End
 
 ProP+Rifle+RiflePersonality "rage"
 	VoicePitch = 111
-End
-
-//Finest Players
-
-ProP+Rifle+RiflePersonality "twist"
-	VoicePitch = 74
-End
-
-ProP+SniperPro+SniperPersonality "hades"
-	VoicePitch = 86
-End
-
-ProP+Rifle+RiflePersonality "kreaz"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "PlesseN"
-	VoicePitch = 87
-End
-
-ProP+Rifle+RiflePersonality "shokz"
-	VoicePitch = 94
 End
 
 //C9 Players
@@ -1673,7 +1651,7 @@ ProP+Rifle+RiflePersonality "Surreal"
 	VoicePitch = 85
 End
 
-ProP+SniperPro+SniperPersonality "CRUC1AL"
+ProP+SniperPro+SniperPersonality "mhL"
 	VoicePitch = 113
 End
 
@@ -2329,7 +2307,7 @@ End
 
 //CG Players
 
-ProP+Rifle+RiflePersonality "maty"
+ProP+Rifle+RiflePersonality "denis"
 	VoicePitch = 83
 End
 
@@ -2371,7 +2349,7 @@ ProP+Rifle+RiflePersonality "CacaNito"
 	VoicePitch = 76
 End
 
-//ECK Players
+//IKLA Players
 
 ProP+Rifle+RiflePersonality "byr9"
 	VoicePitch = 100

@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Sun Oct 09 02:34:51 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Tue Oct 11 23:43:52 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -457,7 +457,6 @@ mx_tree_b1
 nuketown_remake_2
 nyaarena
 oa_sentinel1
-pet_sematary_final
 quarrel
 school
 sj_dustland
