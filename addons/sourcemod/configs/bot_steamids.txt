@@ -234,7 +234,7 @@
 	"jnt" 				"43326019"
 	"n1ssim" 			"101497868"
 	"togs" 				"493654174"
-	//One Players
+	//LOne Players
 	"iDk" 				"106435802"
 	"Maluk3" 			"36056013"
 	"trk" 				"74113976"
@@ -256,7 +256,7 @@
 	"j1NZO" 			"220770109"
 	"cello" 			"18118733"
 	"ReacTioNNN" 		"85434976"
-	"Yoshi" 			"209702831"
+	"astra" 			"203588221"
 	"masta" 			"78122042"
 	//Goliath Players
 	"aw3some" 			"106956887"
@@ -507,9 +507,9 @@
 	//iNation Players
 	"Dragon" 			"290361460"
 	"VLDN" 				"22240693"
-	"HOLMES" 			"49458247"
-	"Dav" 				"43887083"
-	"SkippeR"			"110202505"
+	"DEPRESHN" 			"369218960"
+	"Kind0" 			"102017617"
+	"choiv7"			"247582608"
 	//LEISURE Players
 	"get"				"28333977"
 	"MpMurdock"			"151271676"
@@ -549,7 +549,7 @@
 	//CG Players
 	"denis" 			"31185376"
 	"kolor"				"159382791"
-	"HS" 				"3417033"
+	"Spiidi" 			"13465075"
 	"kRYSTAL" 			"17526007"
 	"stfN"				"47322750"
 	//BLUEJAYS Players
@@ -719,7 +719,7 @@
 	"m4tthi"			"69853779"
 	"Prism"				"117411943"
 	"GruBy" 			"44752530"
-	"byali"				"18860354"
+	"ponczek"			"150374922"
 	//MASONIC Players
 	"notaN" 			"70656220"
 	"J3nsyy"			"192137384"
@@ -774,4 +774,10 @@
 	"kanii"				"32730121"
 	"Triton" 			"135933575"
 	"Sonic"				"14864123"
+	//INTZ Players
+	"Leomonster" 		"318176128"
+	"desh"				"990101558"
+	"BobZ"				"171090863"
+	"TEKO" 				"155956715"
+	"w1"				"456548842"
 }

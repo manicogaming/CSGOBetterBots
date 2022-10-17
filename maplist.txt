@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Tue Oct 11 23:43:52 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Mon Oct 17 00:59:09 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -141,7 +141,7 @@ cs_renovation
 cs_residence
 cs_rio
 cs_sauna
-workshop/297497138/cs_saunala
+cs_saunala
 cs_shichang_b3
 cs_siege
 cs_warmblow_beta01
@@ -344,6 +344,7 @@ de_sanchez
 de_sanjuan
 de_santorini
 de_sawmill
+de_scepter
 de_seaside
 de_season
 de_shortdust
@@ -459,6 +460,7 @@ nyaarena
 oa_sentinel1
 quarrel
 school
+workshop/2275228023/shipment
 sj_dustland
 workshop/467786170/tr_blank
 training1

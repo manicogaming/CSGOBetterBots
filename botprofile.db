@@ -1161,7 +1161,7 @@ ProP+Rifle+RiflePersonality "togs"
 	VoicePitch = 103
 End
 
-//One Players
+//LOne Players
 
 ProP+Rifle+RiflePersonality "iDk"
 	VoicePitch = 111
@@ -1233,7 +1233,7 @@ ProP+Rifle+RiflePersonality "j1NZO"
 	VoicePitch = 80
 End
 
-ProP+SniperPro+SniperPersonality "Yoshi"
+ProP+SniperPro+SniperPersonality "astra"
 	VoicePitch = 93
 End
 
@@ -2157,7 +2157,7 @@ ProP+Rifle+RiflePersonality "Dragon"
 	VoicePitch = 113
 End
 
-ProP+SniperPro+SniperPersonality "HOLMES"
+ProP+SniperPro+SniperPersonality "DEPRESHN"
 	VoicePitch = 93
 End
 
@@ -2165,11 +2165,11 @@ ProP+Rifle+RiflePersonality "VLDN"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "Dav"
+ProP+Rifle+RiflePersonality "Kind0"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "SkippeR"
+ProP+Rifle+RiflePersonality "choiv7"
 	VoicePitch = 96
 End
 
@@ -2315,7 +2315,7 @@ ProP+SniperPro+SniperPersonality "kolor"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "HS"
+ProP+Rifle+RiflePersonality "Spiidi"
 	VoicePitch = 77
 End
 
@@ -2939,7 +2939,7 @@ ProP+Rifle+RiflePersonality "GruBy"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "byali"
+ProP+Rifle+RiflePersonality "ponczek"
 	VoicePitch = 109
 End
 
@@ -3139,6 +3139,28 @@ End
 
 ProP+Rifle+RiflePersonality "Sonic"
 	VoicePitch = 76
+End
+
+//INTZ Players
+
+ProP+Rifle+RiflePersonality "Leomonster"
+	VoicePitch = 78
+End
+
+ProP+SniperPro+SniperPersonality "desh"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "BobZ"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "TEKO"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "w1"
+	VoicePitch = 83
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

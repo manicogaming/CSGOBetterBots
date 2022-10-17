@@ -234,12 +234,12 @@
 	"jnt" 				"Sharks"
 	"n1ssim" 			"Sharks"
 	"togs" 				"Sharks"
-	//One Players
-	"iDk" 				"One"
-	"Maluk3" 			"One"
-	"trk" 				"One"	
-	"malbsMd" 			"One"
-	"pesadelo" 			"One"
+	//LOne Players
+	"iDk" 				"LOne"
+	"Maluk3" 			"LOne"
+	"trk" 				"LOne"	
+	"malbsMd" 			"LOne"
+	"pesadelo" 			"LOne"
 	//Wolsung Players
 	"hyskeee" 			"Wolsung"
 	"shield" 			"Wolsung"
@@ -254,7 +254,7 @@
 	"Keoz" 				"GamerLegion"
 	//DIVIZON Players
 	"j1NZO" 			"DIVIZON"
-	"Yoshi" 			"DIVIZON"
+	"astra" 			"DIVIZON"
 	"cello" 			"DIVIZON"
 	"ReacTioNNN" 		"DIVIZON"
 	"masta" 			"DIVIZON"
@@ -507,9 +507,9 @@
 	//iNation Players
 	"Dragon" 			"iNation"
 	"VLDN" 				"iNation"
-	"HOLMES" 			"iNation"
-	"Dav" 				"iNation"
-	"SkippeR"			"iNation"
+	"DEPRESHN" 			"iNation"
+	"Kind0" 			"iNation"
+	"choiv7"			"iNation"
 	//LEISURE Players
 	"get" 				"LEISURE"
 	"MpMurdock" 		"LEISURE"
@@ -549,7 +549,7 @@
 	//CG Players
 	"denis" 			"CG"
 	"kolor"				"CG"
-	"HS" 				"CG"
+	"Spiidi" 			"CG"
 	"kRYSTAL" 			"CG"
 	"stfN"				"CG"
 	//BLUEJAYS Players
@@ -719,7 +719,7 @@
 	"m4tthi"			"Ungentium"
 	"Prism"				"Ungentium"
 	"GruBy" 			"Ungentium"
-	"byali"				"Ungentium"
+	"ponczek"			"Ungentium"
 	//MASONIC Players
 	"notaN" 			"MASONIC"
 	"J3nsyy"			"MASONIC"
@@ -774,4 +774,10 @@
 	"kanii"				"Nixuh"
 	"Triton" 			"Nixuh"
 	"Sonic"				"Nixuh"
+	//INTZ Players
+	"Leomonster" 		"INTZ"
+	"desh"				"INTZ"
+	"BobZ"				"INTZ"
+	"TEKO" 				"INTZ"
+	"w1"				"INTZ"
 }

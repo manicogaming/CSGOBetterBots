@@ -234,7 +234,7 @@
 	"jnt" 				"CSGO-ZaXcy-qzerb-Lq343-H7oo6-EKjeC"
 	"n1ssim" 			"CSGO-BBfxM-2qwXj-ZGfPB-vCWH6-uWXTB"
 	"togs" 				"CSGO-7fiU6-CQCXf-YLQJ3-HxhSd-k2ZkF"
-	//One Players
+	//LOne Players
 	"iDk" 				"CSGO-jxtsi-QNaoM-tLK2v-DTE6F-QvZQM"
 	"Maluk3" 			"CSGO-U9O3d-LcEka-DmzUu-Gtd4S-roybE"
 	"latto" 			"CSGO-ALnyN-nLard-TpfBG-Q54dD-QGbJD"
@@ -256,7 +256,7 @@
 	"j1NZO" 			"CSGO-rEuzG-zTeCf-QA7CD-6CaBH-teG4C"
 	"cello" 			"CSGO-L2MWz-9TyBQ-rsVxN-cADJQ-JK5mA"
 	"ReacTioNNN" 		"CSGO-8292H-YyEjd-KFPOn-swTpL-dz8CH"
-	"Yoshi" 			"CSGO-kpXts-66o3V-aZdib-GYq9e-CPLoD"
+	"astra" 			"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
 	"masta" 			"CSGO-PJjs6-MTaFR-ymnaW-fptHq-Ed7iL"
 	//Goliath Players
 	"aw3some" 			"CSGO-umu87-7DAsb-kPtGU-7A4HR-4JDhP"
@@ -511,11 +511,11 @@
 	"zox" 				"CSGO-eToHS-2tSGi-dVYUF-cn7PW-pYOAK"
 	"Dubee" 			"CSGO-TTpyJ-LiK8f-SPtxD-hJq4n-EaVvD"
 	//iNation Players
-	"Dragon" 			"CSGO-kNYkB-uNXCE-duUJB-5SRNh-aDtdA"
-	"VLDN" 				"CSGO-RRVbP-MaP5d-LfZxQ-FFhP4-hif4D"
-	"HOLMES" 			"CSGO-WXuA6-zVVEn-XG5xi-5LNyu-8Er7C"
-	"Dav" 				"CSGO-72RAq-djqZr-29XCU-wTQLY-HqybE"
-	"SkippeR"			"CSGO-ddoQp-qYhjh-5rerd-W6NuN-KUsFF"
+	"Dragon" 			"CSGO-JtZEp-mk7h9-NBZoT-FsWYo-ekrqK"
+	"VLDN" 				"CSGO-LpE7O-MZtWG-mCSbo-vrSY5-Thj5P"
+	"DEPRESHN" 			"CSGO-qedDV-BQxRJ-7mBDU-MNMJF-ed9aC"
+	"Kind0" 			"CSGO-LpE7O-MZtWG-mCSbo-vrSY5-Thj5P"
+	"choiv7"			"CSGO-iBWmi-8Lpv9-7KSoy-rdZVr-bFPYE"
 	//LEISURE Players
 	"get"				"CSGO-cPYDv-99G3C-tCNtv-RwEp6-EKjeC"
 	"MpMurdock"			"CSGO-WVCGP-6xy72-eyxLQ-PuaL7-HDWzE"
@@ -555,7 +555,7 @@
 	//CG Players
 	"denis" 			"CSGO-Gjnrz-JNekD-j8oDN-ySJMh-EDCtG"
 	"kolor"				"CSGO-WWYXF-EUK4o-nr3dx-K3sZf-DbapG"
-	"HS" 				"CSGO-7AYoO-MLpQT-Yv3BT-ATYzr-v5BYN"
+	"Spiidi" 			"CSGO-2JZwN-LtpcB-E4uqv-4oxes-ctZQM"
 	"kRYSTAL" 			"CSGO-ZCF2w-ySHnE-ETbUd-j47Tv-fjmwG"
 	"stfN"				"CSGO-8vpJc-oJvDG-9XGw8-syQeX-tzAkE"
 	//BLUEJAYS Players
@@ -725,7 +725,7 @@
 	"m4tthi"			"CSGO-m5Coc-fOiak-OJdFi-bQAbv-63qRP"
 	"Prism"				"CSGO-jv5uq-T4Lwf-WD9Oo-fvuWS-kOQNN"
 	"GruBy" 			"CSGO-96Y9z-KHrdU-oLLbn-mLqpM-JvjjD"
-	"byali"				"CSGO-6fOev-YJJFz-W7Gov-kCxLu-YPD3J"
+	"ponczek"			"CSGO-HfVQ3-L2F3t-pRKOP-fAwsy-5OeZH"
 	//MASONIC Players
 	"notaN" 			"CSGO-xWFPZ-wMJtr-pmcMj-ZY4aj-MXkoE"
 	"J3nsyy"			"CSGO-5abM8-VZjbL-whj4A-VorsJ-qp5VH"
@@ -780,4 +780,10 @@
 	"kanii"				"CSGO-Mody6-S7mhz-uwfR4-FQ585-tXcNE"
 	"Triton" 			"CSGO-uqXEY-eTuc5-bUeVX-o9N8S-4SzfF"
 	"Sonic"				"CSGO-Aimmu-B9hZ5-AtEw3-GaLux-6vdqA"
+	//INTZ Players
+	"Leomonster" 		"CSGO-mzK42-ZNFAr-xvyfo-SFS59-x6aYO"
+	"desh"				"CSGO-oUVBf-oMUAW-F4NPy-GSwFN-XdTOG"
+	"BobZ"				"CSGO-SKecO-CZOVF-S3XwC-sUpWi-yuN6H"
+	"TEKO" 				"CSGO-baVuT-eHD2A-YSaiG-SSatN-3aQ3A"
+	"w1"				"CSGO-ZTRiB-CKvjC-2MSOO-JyCVv-vPunC"
 }
