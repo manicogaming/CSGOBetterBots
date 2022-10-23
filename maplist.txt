@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Mon Oct 17 00:59:09 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Sun Oct 23 00:50:45 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -158,6 +158,7 @@ de_anubis
 de_aqueduct
 de_arcade_v2
 de_asia_csgo
+workshop/2687174637/de_astra
 de_astra_v2
 de_astramania
 de_aurelia

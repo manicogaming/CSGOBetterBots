@@ -4234,6 +4234,22 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			GetGrenadeToss(client, fNoisePosition);
+			
+			int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
+			int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
+			float fClientPos[3], fPredictedNade[3], fNadeAngles[3];
+			MakeVectorFromPoints(fClientEyes, fNoisePosition, fNadeAngles);
+			GetVectorAngles(fNadeAngles, fNadeAngles);
+			fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
+			fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
+			fNadeAngles[2] = 0.0;
+			
+			GetClientAbsOrigin(client, fClientPos);
+			ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
+			
+			if(GetVectorDistance(fPredictedNade, fClientPos) < 200.0 && IsPointVisible(fClientPos, fPredictedNade))
+				return MRES_ChangedHandled;
+			
 			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4243,14 +4259,32 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	}
 	else if(strcmp(szDesc, "Last Enemy Position") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
 	{
-		float fPos[3];
+		float fPos[3], fClientEyes[3];
 		
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
+		
+		GetClientEyePosition(client, fClientEyes);
 		if(IsItMyChance(25.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
 			GetGrenadeToss(client, fPos);
+			
+			int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
+			int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
+			float fClientPos[3], fPredictedNade[3], fNadeAngles[3];
+			MakeVectorFromPoints(fClientEyes, fPos, fNadeAngles);
+			GetVectorAngles(fNadeAngles, fNadeAngles);
+			fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
+			fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
+			fNadeAngles[2] = 0.0;
+			
+			GetClientAbsOrigin(client, fClientPos);
+			ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
+			
+			if(GetVectorDistance(fPredictedNade, fClientPos) < 200.0 && IsPointVisible(fClientPos, fPredictedNade))
+				return MRES_ChangedHandled;
+			
 			Array_Copy(fPos, g_fNadeTarget[client], 3);
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 			RequestFrame(DelayThrow, GetClientUserId(client));
@@ -4992,6 +5026,19 @@ stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
 	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
 }
 
+stock float AngleNormalize(float fAngle)
+{
+	fAngle -= RoundToFloor(fAngle / 360.0) * 360.0;
+	
+	if (fAngle > 180)
+		fAngle -= 360;
+	
+	if (fAngle < -180)
+		fAngle += 360;
+
+	return fAngle;
+}
+
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
 	TR_TraceRayFilter(fStart, fEnd, MASK_VISIBLE_AND_NPCS, RayType_EndPoint, TraceEntityFilterStuff);
@@ -5036,7 +5083,7 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 		fTarget[2] = fTossTarget[2] + h;
 
 		// make sure toss line is clear
-		Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMins, MASK_SHOT_HULL, TraceEntityFilterStuff);
+		Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMins, MASK_VISIBLE_AND_NPCS | CONTENTS_GRATE, TraceEntityFilterStuff);
 		
 		if (TR_GetFraction(hTraceResult) == 1.0)
 		{
@@ -5084,6 +5131,103 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 		
 		fTossTarget[2] += fTossHeight;
 	}
+}
+
+stock void ShowTrajectory(int iClient, float ThrowAngle[3], int iNadeDefIndex, float factor, float disp, float fPosition[3])
+{
+	float GrenadeVelocity[3];
+	float PlayerVelocity[3];
+	float ThrowVector[3];
+	float ThrowVelocity;
+	float gStart[3];
+	float gEnd[3];
+	float fwd[3];
+	float right[3];
+	float up[3];
+	float dtime = 1.5;
+
+	ThrowAngle[0] = -10.0 + ThrowAngle[0] + FloatAbs(ThrowAngle[0]) * 10.0 / 90.0;
+
+	GetAngleVectors(ThrowAngle, fwd, right, up);
+	NormalizeVector(fwd, ThrowVector);
+
+	GetClientEyePosition(iClient, gStart);
+
+	for (int i = 0; i < 3; i++)
+		gStart[i] += ThrowVector[i] * 16.0;
+
+	gStart[2] += disp;
+
+	GetEntPropVector(iClient, Prop_Data, "m_vecAbsVelocity", PlayerVelocity);
+
+	ThrowVelocity = 750.0 * factor;
+	ScaleVector(PlayerVelocity, 1.25);
+
+	for (int i = 0; i < 3; i++)
+	{
+		GrenadeVelocity[i] = ThrowVector[i] * ThrowVelocity + PlayerVelocity[i];
+	}
+
+	float dt = 0.05;
+	for (float t = 0.0; t <= dtime; t += dt)
+	{
+		gEnd[0] = gStart[0] + GrenadeVelocity[0] * dt;
+		gEnd[1] = gStart[1] + GrenadeVelocity[1] * dt;
+
+		float gForce      = 0.4 * FindConVar("sv_gravity").FloatValue;
+		float NewVelocity = GrenadeVelocity[2] - gForce * dt;
+		float AvgVelocity = (GrenadeVelocity[2] + NewVelocity) / 2.0;
+
+		gEnd[2]            = gStart[2] + AvgVelocity * dt;
+		GrenadeVelocity[2] = NewVelocity;
+
+		float mins[3] = { -2.0, -2.0, -2.0 };
+		float maxs[3] = { 2.0, 2.0, 2.0 };
+
+		Handle gRayTrace = TR_TraceHullEx(gStart, gEnd, mins, maxs, MASK_SHOT_HULL);
+
+		if (TR_GetFraction(gRayTrace) != 1.0)
+		{
+			if (TR_GetEntityIndex(gRayTrace) == iClient && t == 0.0)
+			{
+				CloseHandle(gRayTrace);
+				gStart = gEnd;
+				continue;
+			}
+
+			TR_GetEndPosition(gEnd, gRayTrace);
+
+			float NVector[3];
+			TR_GetPlaneNormal(gRayTrace, NVector);
+
+			float Impulse = 2.0 * GetVectorDotProduct(NVector, GrenadeVelocity);
+
+			for (int i = 0; i < 3; i++)
+			{
+				GrenadeVelocity[i] -= Impulse * NVector[i];
+
+				if (FloatAbs(GrenadeVelocity[i]) < 0.1)
+					GrenadeVelocity[i] = 0.0;
+			}
+
+			float SurfaceElasticity = GetEntPropFloat(TR_GetEntityIndex(gRayTrace), Prop_Send, "m_flElasticity");
+			float elasticity        = 0.45 * SurfaceElasticity;
+			ScaleVector(GrenadeVelocity, elasticity);
+
+			float ZVector[3] = { 0.0, 0.0, 1.0 };
+			if (GetVectorDotProduct(NVector, ZVector) > 0.7)
+			{
+				if (iNadeDefIndex == 48 || iNadeDefIndex == 46)
+					dtime = 0.0;
+			}
+		}
+
+		delete gRayTrace;
+
+		gStart = gEnd;
+	}
+	
+	Array_Copy(gEnd, fPosition, 3);
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
