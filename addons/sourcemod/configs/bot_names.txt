@@ -177,7 +177,7 @@
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
-	"DeathZz" 			"Riders"
+	"sausol" 			"Riders"
 	"alex*" 			"Riders"
 	"Martinez" 			"Riders"
 	//eSuba Players
@@ -361,7 +361,7 @@
 	"gxx-" 				"BNE"
 	"rigoN" 			"BNE"
 	//Tricked Players
-	"kiR" 				"Tricked"
+	"Nodios" 			"Tricked"
 	"kwezz" 			"Tricked"
 	"Lucky" 			"Tricked"
 	"IceBerg" 			"Tricked"
@@ -588,12 +588,12 @@
 	"laser" 			"Furious"
 	"andrew" 			"Furious"
 	"ABM"				"Furious"
-	//MongolZ Players
-	"ncl" 				"MongolZ"
-	"PRISM2"			"MongolZ"
-	"Tsogoo" 			"MongolZ"
-	"yAmi" 				"MongolZ"
-	"Senzu"				"MongolZ"
+	//Meta Players
+	"CutzMeretz" 		"Meta"
+	"supLex"			"Meta"
+	"Alisson" 			"Meta"
+	"abr" 				"Meta"
+	"dok"				"Meta"
 	//ONYX Players
 	"bodito" 			"ONYX"
 	"pr1metapz"			"ONYX"
@@ -780,4 +780,22 @@
 	"BobZ"				"INTZ"
 	"TEKO" 				"INTZ"
 	"w1"				"INTZ"
+	//Arctic Players
+	"MaLLby" 			"Arctic"
+	"history"			"Arctic"
+	"ninjaZ"			"Arctic"
+	"short" 			"Arctic"
+	"ponter"			"Arctic"
+	//ODDIK Players
+	"naitte" 			"ODDIK"
+	"remix"				"ODDIK"
+	"RICIOLI"			"ODDIK"
+	"vLa" 				"ODDIK"
+	"r1see"				"ODDIK"
+	//River Players
+	"maxxkor" 			"River"
+	"gishu"				"River"
+	"awoken"			"River"
+	"gonza" 			"River"
+	"rushardo"			"River"
 }

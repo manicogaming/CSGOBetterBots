@@ -177,7 +177,7 @@
 	//Riders Players
 	"mopoz"				"CSGO-t4MUb-w9coV-458tw-DkDjN-jWq3B" 
 	"dav1g" 			"CSGO-fqqUq-odsRT-pKATA-mPJsL-uGr7C"
-	"DeathZz" 			"CSGO-huREM-fPm2W-UBHm6-kcekA-KrhrM"
+	"sausol" 			"CSGO-suBsy-RQiNb-kn5nj-FxtvK-pEUSH"
 	"alex*" 			"CSGO-PWz82-9wUo5-tV5P6-Fk8eF-ZVkoE"
 	"Martinez" 			"CSGO-ohuYZ-cHsJG-iHaF4-AcT5O-4FbtH"
 	//eSuba Players
@@ -369,7 +369,7 @@
 	//Tricked Players
 	"kwezz" 			"CSGO-YJnxa-eEqZ8-ZWJqw-9wGBb-GSnMC"
 	"IceBerg" 			"CSGO-uurZP-o4h8X-HeHww-TTuf9-C8izO"
-	"kiR" 				"CSGO-3dKru-jAtfr-r4Gib-NELc5-L4hWA"
+	"Nodios" 			"CSGO-24VF6-BkseD-eaMTH-UsDmA-RCHnK"
 	"Lucky" 			"CSGO-NqeYP-nNa4M-VBvV2-x3C8P-AzZkF"
 	"PR1mE" 			"CSGO-z324O-COXvN-iwyPj-aXx2S-NTivN"
 	//Endpoint Players
@@ -594,12 +594,12 @@
 	"laser" 			"CSGO-HuqaX-R9Fke-RGRtT-SrmDA-WtuCQ"
 	"andrew" 			"CSGO-hiqnC-bkjMY-bUb3L-FBNrc-MD3YP"
 	"ABM"				"CSGO-tBHcu-j5bPO-Eta9V-HCC6j-PU9vO"
-	//MongolZ Players
-	"ncl" 				"CSGO-rbkP4-W4DbE-4SWii-Jf98b-pwhCG"
-	"PRISM2"			"CSGO-xLKWR-n4mRL-LRHtd-3WTmE-z2urD"
-	"Tsogoo" 			"CSGO-SScFk-VnrwS-QyTOt-PirH7-eWfOQ"
-	"yAmi" 				"CSGO-j6nHO-5rQLQ-Ww2Fj-TNvBD-ZVkoE"
-	"Senzu"				"CSGO-UsmiN-dH8uC-DKvj5-z5bHQ-ByUrC"
+	//Meta Players
+	"CutzMeretz" 		"CSGO-tAmUy-usCSM-Fikh6-XSKvF-tLXoN"
+	"supLex"			"CSGO-xJa7x-DsWYh-o4KfA-oUvoR-yopJN"
+	"Alisson" 			"CSGO-oo429-bDM32-rioeR-6v4m3-Td9GJ"
+	"abr" 				"CSGO-nrq6J-zNqUM-rETGH-F5WRu-K5nQD"
+	"dok"				"CSGO-8dEWc-d8roS-q3SPc-mijeH-qRkTL"
 	//ONYX Players
 	"bodito" 			"CSGO-5Q3tu-azpWX-khfMw-pTDnp-QQSFE"
 	"pr1metapz"			"CSGO-mRuCW-m4WpZ-K24Y7-erN8T-xXxTC"
@@ -786,4 +786,22 @@
 	"BobZ"				"CSGO-SKecO-CZOVF-S3XwC-sUpWi-yuN6H"
 	"TEKO" 				"CSGO-baVuT-eHD2A-YSaiG-SSatN-3aQ3A"
 	"w1"				"CSGO-ZTRiB-CKvjC-2MSOO-JyCVv-vPunC"
+	//Arctic Players
+	"MaLLby" 			"CSGO-SxzdH-hEh3o-CsmaL-r3rQ8-4BZ2Q"
+	"history"			"CSGO-r3FsK-n45sR-foJUo-nr46P-nysyM"
+	"ninjaZ"			"CSGO-FopP2-3wVsq-RuRSc-OoKdb-LbRVP"
+	"short" 			"CSGO-P7aXx-Ok4CW-c8bnx-xFNNi-LzkXM"
+	"ponter"			"CSGO-Kqxs7-owyd2-znLKu-NNHb5-Di9aC"
+	//ODDIK Players
+	"naitte" 			"CSGO-4G2iB-RjNOH-DQ2dS-VFNKV-roybE"
+	"remix"				"CSGO-bui4e-PySkO-Paqj2-OhCSv-vPunC"
+	"RICIOLI"			"CSGO-hiqnC-bkjMY-bUb3L-FBNrc-MD3YP"
+	"vLa" 				"CSGO-JCEqC-zD9n4-4YZAB-E5VS4-o2urD"
+	"r1see"				"CSGO-ty4wQ-Va3B2-rMK8r-ROvoR-yopJN"
+	//River Players
+	"maxxkor" 			"CSGO-R2XvB-SPGLo-HKLor-6yeYP-rTGOP"
+	"gishu"				"CSGO-vyHaJ-d8SmP-tJTDM-UP6Gk-QQSFE"
+	"awoken"			"CSGO-niJsv-eJZY6-ZzsCR-OEhGY-6ByXD"
+	"gonza" 			"CSGO-f9h3A-8jxPk-MGS62-43xAz-rmEVF"
+	"rushardo"			"CSGO-PsU8L-KFL9S-YAb3W-2Tdbz-tXcNE"
 }

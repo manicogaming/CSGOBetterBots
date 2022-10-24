@@ -177,7 +177,7 @@
 	//Riders Players
 	"mopoz"				"37931638" 
 	"dav1g" 			"457082328"
-	"DeathZz" 			"58127911"
+	"sausol" 			"31327539"
 	"alex*" 			"40718819"
 	"Martinez" 			"409820733"
 	//eSuba Players
@@ -363,7 +363,7 @@
 	//Tricked Players
 	"kwezz" 			"110193409"
 	"IceBerg" 			"30735103"
-	"kiR" 				"258258243"
+	"Nodios" 			"110610542"
 	"Lucky" 			"150297431"
 	"PR1mE" 			"26772868"
 	//Endpoint Players
@@ -588,12 +588,12 @@
 	"laser" 			"232086390"
 	"andrew" 			"51908773"
 	"ABM"				"121444546"
-	//MongolZ Players
-	"ncl" 				"156030485"
-	"PRISM2"			"117263391"
-	"Tsogoo" 			"133284824"
-	"yAmi"				"175732643"
-	"Senzu"				"960454289"
+	//Meta Players
+	"CutzMeretz" 		"1281687642"
+	"supLex"			"177082714"
+	"Alisson" 			"185334169"
+	"abr"				"92920272"
+	"dok"				"143357008"
 	//ONYX Players
 	"bodito" 			"114907460"
 	"pr1metapz"			"198443782"
@@ -780,4 +780,22 @@
 	"BobZ"				"171090863"
 	"TEKO" 				"155956715"
 	"w1"				"456548842"
+	//Arctic Players
+	"MaLLby" 			"209668291"
+	"history"			"925164589"
+	"ninjaZ"			"131681379"
+	"short" 			"137901029"
+	"ponter"			"201409161"
+	//ODDIK Players
+	"naitte" 			"68938238"
+	"remix"				"33494235"
+	"RICIOLI"			"101523272"
+	"vLa" 				"209494553"
+	"r1see"				"164277541"
+	//River Players
+	"maxxkor" 			"1070706470"
+	"gishu"				"303823007"
+	"awoken"			"934151077"
+	"gonza" 			"186227007"
+	"rushardo"			"286097392"
 }

@@ -951,7 +951,7 @@ ProP+SniperPro+SniperPersonality "Martinez"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "DeathZz"
+ProP+Rifle+RiflePersonality "sausol"
 	VoicePitch = 111
 End
 
@@ -1625,7 +1625,7 @@ End
 
 //Tricked Players
 
-ProP+Rifle+RiflePersonality "kiR"
+ProP+Rifle+RiflePersonality "Nodios"
 	VoicePitch = 96
 End
 
@@ -2459,25 +2459,25 @@ ProP+Rifle+RiflePersonality "ABM"
 	VoicePitch = 95
 End
 
-//MongolZ Players
+//Meta Players
 
-ProP+Rifle+RiflePersonality "ncl"
+ProP+Rifle+RiflePersonality "CutzMeretz"
 	VoicePitch = 100
 End
 
-ProP+SniperPro+SniperPersonality "PRISM2"
+ProP+SniperPro+SniperPersonality "supLex"
 	VoicePitch = 103
 End
 
-ProP+Rifle+RiflePersonality "Tsogoo"
+ProP+Rifle+RiflePersonality "Alisson"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "yAmi"
+ProP+Rifle+RiflePersonality "abr"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "Senzu"
+ProP+Rifle+RiflePersonality "dok"
 	VoicePitch = 78
 End
 
@@ -3161,6 +3161,72 @@ End
 
 ProP+Rifle+RiflePersonality "w1"
 	VoicePitch = 83
+End
+
+//Arctic Players
+
+ProP+Rifle+RiflePersonality "MaLLby"
+	VoicePitch = 88
+End
+
+ProP+SniperPro+SniperPersonality "history"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "ninjaZ"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "short"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "ponter"
+	VoicePitch = 96
+End
+
+//ODDIK Players
+
+ProP+Rifle+RiflePersonality "naitte"
+	VoicePitch = 77
+End
+
+ProP+SniperPro+SniperPersonality "remix"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "RICIOLI"
+	VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "vLa"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "r1see"
+	VoicePitch = 106
+End
+
+//River Players
+
+ProP+Rifle+RiflePersonality "maxxkor"
+	VoicePitch = 96
+End
+
+ProP+SniperPro+SniperPersonality "gishu"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "awoken"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "gonza"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "rushardo"
+	VoicePitch = 77
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
