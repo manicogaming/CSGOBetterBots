@@ -1,0 +1,10 @@
+// HLTV overview description file for shipment.bsp
+
+"shipment"
+{
+	"material"	"overviews/shipment_radar"	// texture file
+	"pos_x"		"-2150"				// X coordinate
+	"pos_y"		"2150"				// Y coordinate
+	"scale"		"4.2" 				// scale used when taking the screenshot
+	"zoom"		"5"				// optimal zoom factor if map is shown in full size
+}

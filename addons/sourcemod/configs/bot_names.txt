@@ -14,9 +14,9 @@
 	"ropz" 				"FaZe"
 	//Astralis Players
 	"gla1ve" 			"Astralis"
-	"farlig" 			"Astralis"
+	"dev1ce" 			"Astralis"
 	"Xyp9x" 			"Astralis"
-	"k0nfig" 			"Astralis"
+	"MistR" 			"Astralis"
 	"blameF" 			"Astralis"
 	//NiP Players
 	"es3tag" 			"NiP"
@@ -370,7 +370,7 @@
 	"Surreal" 			"Endpoint"
 	"mhL" 				"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
-	"Kjaerbye" 			"Endpoint"
+	"HeavyGod" 			"Endpoint"
 	"Nertz" 			"Endpoint"
 	//SAW Players
 	"ewjerkz"			"SAW" 
@@ -482,7 +482,7 @@
 	"moonwalk"			"AVEZ"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
-	"Flayy" 			"Anonymo"
+	"MWLKY" 			"Anonymo"
 	"Demho" 			"Anonymo"
 	"Vegi" 				"Anonymo"
 	"innocent"			"Anonymo"
@@ -536,8 +536,8 @@
 	"Forester"			"Entropiq"
 	//Strife Players
 	"J0LZ" 				"Strife"
-	"SLIGHT" 			"Strife"
-	"D4rtyMontana" 		"Strife"
+	"Snakes" 			"Strife"
+	"Infinite" 			"Strife"
 	"reck" 				"Strife"
 	"jitter"			"Strife"
 	//777 Players
@@ -679,11 +679,11 @@
 	"rafftu" 			"K1CK"
 	"SAiKY"				"K1CK"
 	//mCon Players
-	"Cortex" 			"mCon"
-	"Brooklyn"			"mCon"
-	"reco"				"mCon"
-	"Jex" 				"mCon"
-	"BickBuster"		"mCon"
+	"Jins" 				"mCon"
+	"AdamJC"			"mCon"
+	"NiNo"				"mCon"
+	"ve1nzo" 			"mCon"
+	"vKEMPeN"			"mCon"
 	//Encore Players
 	"HaZR" 				"Encore"
 	"sterling"			"Encore"
@@ -798,4 +798,16 @@
 	"awoken"			"River"
 	"gonza" 			"River"
 	"rushardo"			"River"
+	//GameAgents Players
+	"kANDARO" 			"GameAgents"
+	"Vopsick"			"GameAgents"
+	"SasukeQO"			"GameAgents"
+	"Akv1lon" 			"GameAgents"
+	"ZetBest"			"GameAgents"
+	//BLINK Players
+	"gulito" 			"BLINK"
+	"BledarD"			"BLINK"
+	"vAloN"				"BLINK"
+	"Krabeni" 			"BLINK"
+	"HYPER1"			"BLINK"
 }

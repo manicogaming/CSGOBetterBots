@@ -14,9 +14,9 @@
 	"ropz" 				"31006590"
 	//Astralis Players
 	"gla1ve" 			"50245293"
-	"farlig"			"63982401"
+	"dev1ce"			"27447936"
 	"Xyp9x" 			"30416534"
-	"k0nfig" 			"19403447"
+	"MistR" 			"228081651"
 	"blameF" 			"68193075"
 	//NiP Players
 	"es3tag" 			"1859646"
@@ -370,7 +370,7 @@
 	"Surreal" 			"84574729"
 	"mhL" 				"180124403"
 	"MiGHTYMAX" 		"15522824"
-	"Kjaerbye" 			"59614824"
+	"HeavyGod" 			"107737265"
 	"Nertz" 			"92860917"
 	//SAW Players
 	"ewjerkz" 			"302194534"
@@ -482,7 +482,7 @@
 	"moonwalk"			"1142165871"
 	//Anonymo Players
 	"oskarish" 			"286156964"
-	"Flayy" 			"452134916"
+	"MWLKY" 			"206859955"
 	"Demho" 			"146746760"
 	"Vegi" 				"90369423"
 	"innocent"			"26563533"
@@ -536,8 +536,8 @@
 	"Forester"			"67083025"
 	//Strife Players
 	"J0LZ" 				"163875307"
-	"SLIGHT" 			"193314309"
-	"D4rtyMontana" 		"202142667"
+	"Snakes" 			"76881568"
+	"Infinite" 			"149493497"
 	"reck" 				"374549101"
 	"jitter"			"875669473"
 	//777 Players
@@ -679,11 +679,11 @@
 	"rafftu" 			"78588859"
 	"SAiKY"				"11292213"
 	//mCon Players
-	"Cortex" 			"128056009"
-	"Brooklyn"			"165255704"
-	"reco"				"913707905"
-	"Jex" 				"133947256"
-	"BickBuster"		"315188168"
+	"Jins" 				"132500306"
+	"AdamJC"			"231738870"
+	"NiNo"				"48383805"
+	"ve1nzo" 			"106901849"
+	"vKEMPeN"			"845862126"
 	//Encore Players
 	"HaZR" 				"64081874"
 	"sterling"			"100224621"
@@ -798,4 +798,16 @@
 	"awoken"			"934151077"
 	"gonza" 			"186227007"
 	"rushardo"			"286097392"
+	//GameAgents Players
+	"kANDARO" 			"1233790959"
+	"Vopsick"			"423035138"
+	"SasukeQO"			"81113331"
+	"Akv1lon" 			"129273730"
+	"ZetBest"			"156614406"
+	//BLINK Players
+	"gulito" 			"420615598"
+	"BledarD"			"379542971"
+	"vAloN"				"255373249"
+	"Krabeni" 			"1031012697"
+	"HYPER1"			"348889207"
 }

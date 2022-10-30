@@ -344,7 +344,7 @@ ProP+Rifle+RiflePersonality "gla1ve"
 	VoicePitch = 77
 End
 
-ProP+SniperPro+SniperPersonality "farlig"
+ProP+SniperPro+SniperPersonality "dev1ce"
 	VoicePitch = 104
 End
 
@@ -352,7 +352,7 @@ ProP+Rifle+RiflePersonality "Xyp9x"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "k0nfig"
+ProP+Rifle+RiflePersonality "MistR"
 	VoicePitch = 73
 End
 
@@ -1659,7 +1659,7 @@ ProP+Rifle+RiflePersonality "MiGHTYMAX"
 	VoicePitch = 78
 End
 
-ProP+Rifle+RiflePersonality "Kjaerbye"
+ProP+Rifle+RiflePersonality "HeavyGod"
 	VoicePitch = 104
 End
 
@@ -2069,7 +2069,7 @@ ProP+Rifle+RiflePersonality "oskarish"
 	VoicePitch = 97
 End
 
-ProP+SniperPro+SniperPersonality "Flayy"
+ProP+SniperPro+SniperPersonality "MWLKY"
 	VoicePitch = 100
 End
 
@@ -2267,11 +2267,11 @@ ProP+Rifle+RiflePersonality "J0LZ"
 	VoicePitch = 115
 End
 
-ProP+SniperPro+SniperPersonality "SLIGHT"
+ProP+SniperPro+SniperPersonality "Snakes"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "D4rtyMontana"
+ProP+Rifle+RiflePersonality "Infinite"
 	VoicePitch = 82
 End
 
@@ -2791,23 +2791,23 @@ End
 
 //mCon Players
 
-ProP+Rifle+RiflePersonality "Cortex"
+ProP+Rifle+RiflePersonality "Jins"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "Brooklyn"
+ProP+SniperPro+SniperPersonality "AdamJC"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "reco"
+ProP+Rifle+RiflePersonality "NiNo"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "Jex"
+ProP+Rifle+RiflePersonality "ve1nzo"
 	VoicePitch = 85
 End
 
-ProP+Rifle+RiflePersonality "BickBuster"
+ProP+Rifle+RiflePersonality "vKEMPeN"
 	VoicePitch = 90
 End
 
@@ -3227,6 +3227,50 @@ End
 
 ProP+Rifle+RiflePersonality "rushardo"
 	VoicePitch = 77
+End
+
+//GameAgents Players
+
+ProP+Rifle+RiflePersonality "kANDARO"
+	VoicePitch = 105
+End
+
+ProP+SniperPro+SniperPersonality "Vopsick"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "SasukeQO"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "Akv1lon"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "ZetBest"
+	VoicePitch = 86
+End
+
+//BLINK Players
+
+ProP+Rifle+RiflePersonality "gulito"
+	VoicePitch = 89
+End
+
+ProP+SniperPro+SniperPersonality "BledarD"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RiflePersonality "vAloN"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "Krabeni"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "HYPER1"
+	VoicePitch = 90
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
