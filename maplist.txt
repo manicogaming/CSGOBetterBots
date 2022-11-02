@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Sat Oct 29 20:12:34 BST 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Sun Oct 30 19:55:30 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -158,8 +158,7 @@ de_anubis
 de_aqueduct
 de_arcade_v2
 de_asia_csgo
-workshop/2687174637/de_astra
-de_astra_v2
+de_astra
 de_astramania
 de_aurelia
 de_aurora
@@ -349,6 +348,7 @@ de_seaside
 de_season
 de_shortdust
 de_shortnuke
+workshop/1371605616/de_shortwaterfall
 de_snowball_go
 de_snowcapped_csgo
 de_soat_rc3
@@ -460,7 +460,7 @@ nyaarena
 oa_sentinel1
 quarrel
 school
-workshop/2275228023/shipment
+shipment
 sj_dustland
 workshop/467786170/tr_blank
 training1
