@@ -240,12 +240,12 @@
 	"trk" 				"LOne"	
 	"malbsMd" 			"LOne"
 	"pesadelo" 			"LOne"
-	//Wolsung Players
-	"hyskeee" 			"Wolsung"
-	"shield" 			"Wolsung"
-	"krii" 				"Wolsung"
-	"discplex" 			"Wolsung"
-	"msn2k" 			"Wolsung"
+	//9INE Players
+	"Goofy" 			"9INE"
+	"SZPERO" 			"9INE"
+	"KEi" 				"9INE"
+	"Kylar" 			"9INE"
+	"mynio" 			"9INE"
 	//GamerLegion Players
 	"iM" 				"GamerLegion"
 	"acoR" 				"GamerLegion"	
@@ -445,9 +445,9 @@
 	"susp" 				"Lemondogs"
 	"KriLLe" 			"Lemondogs"	
 	//Illuminar Players
-	"phr" 				"Illuminar"
+	"szejn" 			"Illuminar"
 	"zaNNN" 			"Illuminar"
-	"mynio" 			"Illuminar"
+	"byali" 			"Illuminar"
 	"morelz" 			"Illuminar"
 	"mASKED"			"Illuminar"
 	//Sangal Players
@@ -596,9 +596,9 @@
 	"dok"				"Meta"
 	//ONYX Players
 	"bodito" 			"ONYX"
-	"pr1metapz"			"ONYX"
+	"noleN"				"ONYX"
 	"sl3nd" 			"ONYX"
-	"msN" 				"ONYX"
+	"Kamion" 			"ONYX"
 	"coolio"			"ONYX"
 	//Dice Players
 	"XpG" 				"Dice"

@@ -1183,25 +1183,25 @@ ProP+Rifle+RiflePersonality "pesadelo"
 	VoicePitch = 79
 End
 
-//Wolsung Players
+//9INE Players
 
-ProP+Rifle+RiflePersonality "hyskeee"
+ProP+Rifle+RiflePersonality "Goofy"
 	VoicePitch = 88
 End
 
-ProP+SniperPro+SniperPersonality "shield"
+ProP+SniperPro+SniperPersonality "SZPERO"
 	VoicePitch = 72
 End
 
-ProP+Rifle+RiflePersonality "krii"
+ProP+Rifle+RiflePersonality "KEi"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "discplex"
+ProP+Rifle+RiflePersonality "Kylar"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "msn2k"
+ProP+Rifle+RiflePersonality "mynio"
 	VoicePitch = 72
 End
 
@@ -1933,7 +1933,7 @@ End
 
 //Illuminar Players
 
-ProP+Rifle+RiflePersonality "phr"
+ProP+Rifle+RiflePersonality "szejn"
 	VoicePitch = 90
 End
 
@@ -1941,7 +1941,7 @@ ProP+SniperPro+SniperPersonality "zaNNN"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "mynio"
+ProP+Rifle+RiflePersonality "byali"
 	VoicePitch = 77
 End
 
@@ -2487,7 +2487,7 @@ ProP+Rifle+RiflePersonality "bodito"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "pr1metapz"
+ProP+SniperPro+SniperPersonality "noleN"
 	VoicePitch = 92
 End
 
@@ -2495,7 +2495,7 @@ ProP+Rifle+RiflePersonality "sl3nd"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "msN"
+ProP+Rifle+RiflePersonality "Kamion"
 	VoicePitch = 111
 End
 

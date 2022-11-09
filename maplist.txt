@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Sun Oct 30 19:55:30 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Mon Nov 07 21:27:51 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -348,7 +348,8 @@ de_seaside
 de_season
 de_shortdust
 de_shortnuke
-workshop/1371605616/de_shortwaterfall
+de_shortwaterfall
+workshop/476209350/de_slate
 de_snowball_go
 de_snowcapped_csgo
 de_soat_rc3
@@ -462,6 +463,7 @@ quarrel
 school
 shipment
 sj_dustland
+skyscraper113
 workshop/467786170/tr_blank
 training1
 ww_skyrail

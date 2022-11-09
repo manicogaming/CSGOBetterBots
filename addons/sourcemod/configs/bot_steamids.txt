@@ -240,12 +240,12 @@
 	"trk" 				"74113976"
 	"malbsMd" 			"120437415"
 	"pesadelo" 			"295715770"
-	//Wolsung Players
-	"hyskeee" 			"240252201"
-	"shield" 			"293626183"
-	"krii" 				"133953829"
-	"discplex" 			"252053056"
-	"msn2k" 			"6172176"
+	//9INE Players
+	"Goofy" 			"300617878"
+	"SZPERO" 			"19554985"
+	"KEi" 				"121422001"
+	"Kylar" 			"116431013"
+	"mynio" 			"24981058"
 	//GamerLegion Players
 	"iM" 				"89984505"
 	"acoR" 				"42677035"	
@@ -445,9 +445,9 @@
 	"KriLLe" 			"164669290"
 	"hemzk9" 			"83597297"	
 	//Illuminar Players
-	"phr" 				"19304486"
+	"szejn" 			"69226768"
 	"zaNNN" 			"154807226"
-	"mynio" 			"24981058"
+	"byali" 			"18860354"
 	"morelz" 			"122208414"
 	"mASKED"			"285508264"
 	//Sangal Players
@@ -596,9 +596,9 @@
 	"dok"				"143357008"
 	//ONYX Players
 	"bodito" 			"114907460"
-	"pr1metapz"			"198443782"
+	"noleN"				"860186586"
 	"sl3nd" 			"137805965"
-	"msN" 				"342103580"
+	"Kamion" 			"220609306"
 	"coolio"			"119009553"
 	//Dice Players
 	"XpG" 				"30253348"
