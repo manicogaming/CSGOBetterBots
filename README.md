@@ -30,3 +30,7 @@ If you are going to use this you will need to download the following:
 - [PTaH](https://ptah.zizt.ru/)
 - [SteamIDConverter](https://forums.alliedmods.net/showthread.php?t=333459)
 - [modelch](https://github.com/SAZONISCHE/modelch)
+
+# Todo
+- Assign colors to bots in competitive mode.
+- Give crosshair codes to bots.
