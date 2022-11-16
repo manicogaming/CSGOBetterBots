@@ -12,11 +12,23 @@ No Bot Behaviors are changed with this mod, just adding cosmetic features to bot
 
 # Features
 - Bots are given random items in their inventory (i.e Weapon Skins, Music Kits, Gloves, etc.)
-- Bots are given a random SteamID, mainly to give Bots avatars.
-- Bots are given random ping.
-- Disabling the ability for players to control bots, in order to prevent issues.
-- And more that I might have forgotten.
 
+![1](https://user-images.githubusercontent.com/45516471/202308584-ea287595-e476-47a5-a9f2-61c8e71d57cb.png)
+
+- Bots are given a random SteamID, mainly to give Bots avatars.
+
+![2](https://user-images.githubusercontent.com/45516471/202308687-928a47d5-5207-402d-b4a1-cb0fda410eed.png)
+
+- Bots are given random ping.
+
+![3](https://user-images.githubusercontent.com/45516471/202308700-1c654da0-8869-427f-87df-be6e9c29b078.png)
+
+- Disabling the ability for players to control bots, in order to prevent issues.
+
+![4 2](https://user-images.githubusercontent.com/45516471/202308741-3eb24479-b2ef-413b-8d56-b80d7d74d6a6.png)
+
+![4 1](https://user-images.githubusercontent.com/45516471/202308753-349b0e1a-b636-461a-bfd8-6a275b97445c.png)
+- And more that I might have forgotten.
 # Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
 
