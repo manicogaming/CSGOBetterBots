@@ -1,5 +1,6 @@
 # Credits
 manicogaming - Main developer of Better Bots
+
 Bezimienny! - Main developer of Flying Fox AI
 
 If I missed anybody here, please let me know so I can add you!
