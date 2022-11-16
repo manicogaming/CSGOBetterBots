@@ -1,9 +1,0 @@
-// HLTV overview description file for $2000$_csgo.bsp
-
-"$2000$_csgo"
-{
-	"material"	"overviews/$2000$_csgo"	// texture file
-	"pos_x"		"-1688"	// upper left world coordinate
-	"pos_y"		"1682"
-	"scale"		"1.80"
-}

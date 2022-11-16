@@ -1,7 +1,0 @@
-"awp_lego_2_winter"
-{
-	"material"	"overviews/awp_lego_2_winter"	// texture file
-	"pos_x"		"-1576"	// upper left world coordinate
-	"pos_y"		"1531"
-	"scale"		"3.00" 
-}

@@ -1,8 +1,0 @@
-"ar_poolstay"
-{
-	"material"	"overviews/ar_poolstay_radar"	// texture file
-	"pos_x"		"-1486"	// upper left world coordinate
-	"pos_y"		"1856"
-	"scale"		"3.0"
-	"zoom"		"0"	 
-}

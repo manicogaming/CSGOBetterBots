@@ -1,8 +1,0 @@
-// TAVR - AUTO RADAR. v 2.5.0a
-"de_astra"
-{
-	"material" "overviews/de_astra"
-	"pos_x" "-1280.000000"
-	"pos_y" "1280.000000"
-	"scale" "4.880000"
-}

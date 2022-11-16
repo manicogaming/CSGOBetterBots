@@ -1,9 +1,0 @@
-// HLTV overview description file for de_vertigo.bsp
-
-"cs_compound"
-{
-	"material"	"overviews/cs_compound_radar"	// texture file
-	"pos_x"		"-964"		//-1938  upper left world coordinate
-	"pos_y"		"4203"
-	"scale"		"7" 
-}

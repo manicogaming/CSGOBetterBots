@@ -1,8 +1,0 @@
-// TAVR - AUTO RADAR. v 2.5.0a
-"de_mustang"
-{
-	"material" "overviews/de_mustang"
-	"pos_x" "-2292.000000"
-	"pos_y" "648.000000"
-	"scale" "5.010000"
-}

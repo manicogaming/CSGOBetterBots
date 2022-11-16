@@ -1,9 +1,0 @@
-"de_region"
-{
-"material" "overviews/de_region" // texture file
-"pos_x" "-2596" // X coordinate,
-"pos_y" "3673" // Y coordinate,
-"scale" "6.0" // scale used when taking the screenshot
-"rotate" "0" // set to 1, if the map was rotated by 90 degress in image editor
-"zoom" "1.0" // optimal zoom factor if map is shown in full size
-}

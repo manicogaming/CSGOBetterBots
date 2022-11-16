@@ -1,8 +1,0 @@
-// TAVR - AUTO RADAR. v 2.5.0a
-"de_kyrenia"
-{
-	"material" "overviews/de_kyrenia"
-	"pos_x" "-1408.000000"
-	"pos_y" "3872.000000"
-	"scale" "4.310000"
-}

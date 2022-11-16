@@ -1,9 +1,0 @@
-// Overview: scale 6.50, pos_x -3334, pos_y 2972
-"de_hardrock"
-{
-	"material"	"overviews/de_hardrock"
-	"pos_x"		"-3334"	
-	"pos_y"		"2972"
-	"scale"		"6.50"
-	"zoom"		"1.5"
-}

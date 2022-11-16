@@ -1,9 +1,0 @@
-"de_boohouse_go"
-{
-	material	overviews/de_boohouse_go	// texture file
-	pos_x		-2590			// X coordinate
-	pos_y		4220				// Y coordinate
-	scale		5.0 				// scale used when taking the screenshot
-	rotate		0				// map was rotated by 90 degrees in image editor
-	zoom		0				// optimal zoom factor if map is shown in full size
-}

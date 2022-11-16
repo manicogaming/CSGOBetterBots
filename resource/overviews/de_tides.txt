@@ -1,8 +1,0 @@
-"de_tides"
-{
-	"material"		"overviews/de_tides_radar"
-	"pos_x"		"-3016"
-	"pos_y"		"3063"
-	"scale"		"6.00" 
-
-}

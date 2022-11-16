@@ -1,8 +1,0 @@
-// TAVR - AUTO RADAR. v 2.5.0a
-"de_reberth"
-{
-	"material" "overviews/de_reberth"
-	"pos_x" "-2348.500000"
-	"pos_y" "3237.000000"
-	"scale" "4.630000"
-}

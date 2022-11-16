@@ -1,9 +1,0 @@
-// HLTV overview description file for de_vandal.bsp
-
-"de_vandal"
-{
-	"material"	"overviews/de_vandal_radar"	// texture file
-	"pos_x"		"-3020"	// upper left world coordinate
-	"pos_y"		"1900"
-	"scale"		"4.7" 
-}

@@ -1,9 +1,0 @@
-"de_westwood"
-{
-	"material"	"overviews/de_westwood_radar"	// texture file
-	"pos_x"		"-1917"	// upper left world coordinate
-	"pos_y"		"3341"
-	"scale"		"5" 
-
-
-}

@@ -1,7 +1,0 @@
-"de_favela"
-{
-"material" "overviews/de_favela"
-"pos_x" "-3140"
-"pos_y" "1975"
-"scale" "5.00"
-}
