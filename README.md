@@ -8,7 +8,7 @@ If I missed anybody here, please let me know so I can add you!
 **PLUGINS ONLY COMPATIBLE WITH WINDOWS**
 
 # Disclaimer
-No Bot Behaviors are changed with this mod, just adding cosmetic features to bots. This is just a fork of the mod that removes the bot behavior modifications in order to be compatible with Flying Fox AI.
+This will not change any bot behavior, this will just add cosmetics to bots. This is a fork of the mod that removes the bot behavior modifications in order to be compatible with Flying Fox AI.
 
 # Features
 - Bots are given random items in their inventory (i.e Weapon Skins, Music Kits, Gloves, etc.)
