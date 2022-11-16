@@ -1,7 +1,7 @@
 # Credits
-manicogaming - Main developer of Better Bots
+**manicogaming** - Main developer of Better Bots
 
-Bezimienny! - Main developer of Flying Fox AI
+**Bezimienny!** - Main developer of Flying Fox AI
 
 If I missed anybody here, please let me know so I can add you!
 
@@ -18,8 +18,8 @@ No Bot Behaviors are changed with this mod, just adding cosmetic features to bot
 - And more that I might have forgotten.
 
 # Files that are not included
-bot_stuff.smx - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
-botmimic.smx and botmimic_menu.smx - Not needed as bot_stuff.smx is not included.
+**bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
+**botmimic.smx and botmimic_menu.smx** - Not needed as bot_stuff.smx is not included.
 
 # Dependencies
 If you are going to use this you will need to download the following:
