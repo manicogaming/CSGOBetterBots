@@ -17,7 +17,7 @@ No Bot Behaviors are changed with this mod, just adding cosmetic features to bot
 - Disabling the ability for players to control bots, in order to prevent issues.
 - And more that I might have forgotten.
 
-# Files that are not included
+# Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
 **botmimic.smx and botmimic_menu.smx** - Not needed as bot_stuff.smx is not included.
 
