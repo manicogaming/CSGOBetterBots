@@ -15,7 +15,7 @@ This will not change any bot behavior, this will just add cosmetics to bots. Thi
 
 ![1](https://user-images.githubusercontent.com/45516471/202308584-ea287595-e476-47a5-a9f2-61c8e71d57cb.png)
 
-- Bots are given random SteamIDs mainly to give Bots avatars.
+- Bots are given random SteamIDs, mainly to give Bots avatars.
 
 ![2](https://user-images.githubusercontent.com/45516471/202308687-928a47d5-5207-402d-b4a1-cb0fda410eed.png)
 
