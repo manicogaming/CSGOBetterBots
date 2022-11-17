@@ -8,6 +8,15 @@
 
 int g_iPlayerColor[MAXPLAYERS + 1], g_iPlayerColorOffset;
 
+public Plugin myinfo = 
+{
+	name = "BOT Colors", 
+	author = "manico, BTFighter", 
+	description = "Assigns competitive colors to bots.", 
+	version = "1.0", 
+	url = "http://steamcommunity.com/id/manico001"
+};
+
 public void OnMapStart()
 {
 	HookEventEx("player_spawn", OnPlayerSpawn);
