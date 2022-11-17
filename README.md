@@ -33,6 +33,10 @@ This will not change any bot behavior, this will just add cosmetics to bots. Thi
 
 ![5](https://user-images.githubusercontent.com/45516471/202327550-e9579bf5-f6f4-4727-b963-ba0af2ffc75b.png)
 
+- Changes teamname to a bot or to a player. (BETA)
+
+![6](https://user-images.githubusercontent.com/45516471/202577625-9d203c24-bfab-4e7a-8048-8674523ec990.png)
+
 - And more that I might have forgotten.
 # Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
