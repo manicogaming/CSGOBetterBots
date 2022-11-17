@@ -292,7 +292,7 @@
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
 	"paz" 				"Eternal"
-	"woxic" 			"Eternal"
+	"Calyx" 			"Eternal"
 	"xfl0ud" 			"Eternal"
 	//K23 Players
 	"FinigaN" 			"K23"
@@ -390,12 +390,6 @@
 	"Cl34v3rs" 			"SSP"
 	"Orbit" 			"SSP"	
 	"Spexy" 			"SSP"
-	//KOVA Players
-	"zks" 				"KOVA"
-	"ottoNd" 			"KOVA"
-	"uli" 				"KOVA"
-	"airax" 			"KOVA"
-	"Sm1llee" 			"KOVA"
 	//AGF Players
 	"FeZ" 				"AGF"
 	"Speedy" 			"AGF"
@@ -456,12 +450,12 @@
 	"kyuubii" 			"Sangal"
 	"Soulfly" 			"Sangal"
 	"phzy"				"Sangal"
-	//Ambush Players
-	"wasiNk" 			"Ambush"
-	"DrqkoN" 			"Ambush"
-	"SBT" 				"Ambush"
-	"s0ne" 				"Ambush"
-	"devoduvek"			"Ambush"
+	//GenOne Players
+	"wasiNk" 			"GenOne"
+	"NeOo" 				"GenOne"
+	"Nono2k" 			"GenOne"
+	"jeyN" 				"GenOne"
+	"SIXER"				"GenOne"
 	//Supremacy Players
 	".Rome" 			"Supremacy"
 	"GuepaRd" 			"Supremacy"

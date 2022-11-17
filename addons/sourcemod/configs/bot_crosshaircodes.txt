@@ -249,7 +249,7 @@
 	//GamerLegion Players
 	"iM" 				"CSGO-fnDnG-ewVTE-GhAq8-foWws-VVQhG"
 	"acoR" 				"CSGO-CnN5O-cbxum-ikPOe-rNQqd-m7VeL"	
-	"isak" 				"CSGO-jupB2-m3cdh-Qbx8H-MthTo-LyG8D"
+	"isak" 				"CSGO-RrSde-QOTKX-NtUML-QUP9W-LbRVP"
 	"siuhy" 			"CSGO-GS2uJ-q2E7V-W7wfE-JuTda-ZbJaA"	
 	"Keoz" 				"CSGO-6vnU4-eKkdP-URkJt-deCDq-4PkTL"
 	//DIVIZON Players
@@ -292,7 +292,7 @@
 	"XANTARES" 			"CSGO-xbpe2-E24RJ-YXNuO-pQvt8-ppNAK"
 	"imoRR" 			"CSGO-MWfjz-mAwoA-7QLiu-mNy9j-mRFuA"
 	"paz" 				"CSGO-pT2GJ-hz7CA-Oazaa-epVPi-LwAkE"
-	"woxic" 			"CSGO-zhjce-fxfyW-FQe8S-ywurx-6vdqA"
+	"Calyx" 			"CSGO-itiNO-zs3Tf-pjZAY-O3Chw-pevvE"
 	"xfl0ud" 			"CSGO-Qtp2S-FciNu-jF2vW-LoJiD-2bVvD"
 	//K23 Players
 	"FinigaN" 			"CSGO-XGWYY-BpamB-Jbok9-mNu3f-n6QmH"
@@ -396,12 +396,6 @@
 	"Cl34v3rs" 			"CSGO-8ppMs-ukjw6-9FRQn-fb2xm-FFhnL"
 	"Orbit" 			"CSGO-QjpsU-jLiYb-5jMjv-XNcRF-67sKG"	
 	"Spexy" 			"CSGO-c6pGe-VcJGu-Hq7Wa-YCPO2-ZO88F"
-	//KOVA Players
-	"zks" 				"CSGO-Wr2Mo-jApDy-QGWdD-4yCLh-yW43L"
-	"ottoNd" 			"CSGO-ftqT9-QBZvr-zxiZD-nDxrc-EprqK"
-	"uli" 				"CSGO-OozuC-Ly8uB-y4Bee-w2DAG-94GSQ"
-	"airax" 			"CSGO-NhjxP-eLSNt-zxCUw-2HmUn-RfK5O"
-	"Sm1llee" 			"CSGO-S87xG-eaJvK-7sYyM-JPfdH-SEnfO"
 	//AGF Players
 	"FeZ" 				"CSGO-zHB4X-RArWn-PspZZ-RmXKq-EaVvD"
 	"Speedy" 			"CSGO-vf3nK-wdio6-bvJpH-qKe9G-Fn74E"
@@ -462,12 +456,12 @@
 	"kyuubii" 			"CSGO-QWnEw-OGZ5w-uiJ9r-uARXo-n92YP"
 	"Soulfly" 			"CSGO-EWci2-8aOnN-YuQ6i-C8Jc2-VtjjD"
 	"phzy"				"CSGO-Wrpwd-XV54t-5C377-YJ67M-9OzfF"
-	//Ambush Players
-	"s0ne" 				"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
-	"SBT" 				"CSGO-nCYPv-dNzUW-aHCyh-MG6Sw-UupcG"
-	"DrqkoN" 			"CSGO-ENOYu-YbOaR-iLVc4-TaCWD-NkUCP"
-	"wasiNk" 			"CSGO-iHeBA-HhkWD-Q2mtO-zFJfX-t4kXM"
-	"devoduvek" 		"CSGO-WjGv4-2QiuO-kZVf7-VPLDu-zVx9H"
+	//GenOne Players
+	"jeyN" 				"CSGO-2rHDC-yrFya-Ocbmc-5etUf-ZbJaA"
+	"Nono2k" 			"CSGO-9zFkZ-vTaRk-wDeHd-OfAMN-ykEVF"
+	"NeOo" 				"CSGO-rufPx-5VKYm-ctcNC-7SFdJ-V5xDK"
+	"wasiNk" 			"CSGO-DZUZ5-eRZz9-UCqyh-e7JDt-R5c7L"
+	"SIXER" 			"CSGO-6axGK-hKpqO-BNHyY-oc74N-3d2pH"
 	//Supremacy Players
 	".Rome" 			"CSGO-YeRPQ-W8dxS-7SYJh-F5uBH-vpybE"
 	"GuepaRd" 			"CSGO-PXzjp-oxFOS-G38wD-WfN7F-nvHCF"

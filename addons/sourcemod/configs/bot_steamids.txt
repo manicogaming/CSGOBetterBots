@@ -292,7 +292,7 @@
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
 	"paz" 				"68524615"
-	"woxic" 			"123219778"
+	"Calyx" 			"92280537"
 	"xfl0ud" 			"217943381"
 	//K23 Players
 	"FinigaN" 			"226095351"
@@ -390,12 +390,6 @@
 	"Cl34v3rs" 			"98939532"
 	"Orbit" 			"84338398"	
 	"Spexy" 			"161464594"
-	//KOVA Players
-	"zks" 				"368233531"
-	"ottoNd" 			"75069143"
-	"uli" 				"52262697"
-	"airax" 			"50161047"
-	"Sm1llee" 			"297922013"
 	//AGF Players
 	"FeZ" 				"308491222"
 	"Speedy" 			"256100872"
@@ -456,12 +450,12 @@
 	"kyuubii" 			"184660636"
 	"Soulfly" 			"366802450"
 	"phzy"				"447933315"
-	//Ambush Players
-	"s0ne" 				"98116312"
-	"SBT" 				"94663345"
-	"DrqkoN" 			"245929"
+	//GenOne Players
+	"jeyN" 				"391564338"
+	"Nono2k" 			"178545372"
+	"NeOo" 				"996000485"
 	"wasiNk" 			"164618316"
-	"devoduvek" 		"116664993"
+	"SIXER" 			"3429256"
 	//Supremacy Players
 	".Rome" 			"420618189"
 	"GuepaRd" 			"21286400"

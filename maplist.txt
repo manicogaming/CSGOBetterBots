@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Mon Nov 07 21:27:51 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Wed Nov 16 19:46:36 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 $10000$
 $2000$_csgo
@@ -216,6 +216,7 @@ de_distillery
 de_dust0_csgo
 de_dust2
 de_dust2_2055
+workshop/2887812541/de_dust2_ffai
 de_dust2_fo
 de_dust2_halloween
 de_dust2_night
