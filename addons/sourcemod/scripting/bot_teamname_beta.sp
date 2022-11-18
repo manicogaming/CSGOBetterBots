@@ -117,10 +117,3 @@ Server event "player_team", Tick 24180:
         }
     }
 } 
-
-public void OnPlayerDisconnect(Handle event, const char[] name, bool dontBroadcast)
-{
-	SetConVarString(mp_teamname_1, "");
-	SetConVarString(mp_teamname_2, "");
-	return;
-}
