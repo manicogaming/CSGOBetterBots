@@ -29,6 +29,7 @@ public void OnPluginStart()
 	g_bHalftimeTeamswitch = GetConVarBool(g_hHalftimeTeamswitch);
 	HookConVarChange(g_hHalftimeTeamswitch, OnConvarChanged);
 	
+	HookEvent("player_disconnect", OnPlayerDisconnect, EventHookMode_Post);
 	HookEvent("announce_phase_end", OnAnnouncePhaseEnd);
     HookEvent("player_team", player_team);
 }
@@ -116,4 +117,10 @@ Server event "player_team", Tick 24180:
             mp_teamname_1.SetString(buffer);
         }
     }
-} 
+}
+
+public Action OnPlayerDisconnect(Handle event, const char[] name, bool dontBroadcast)
+{
+	b_wentHalftime = false;
+	return Plugin_Continue;
+}
