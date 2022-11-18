@@ -44,6 +44,10 @@ Also, all plugins here belong to their respective authors. I only complile plugi
 
 ![7](https://user-images.githubusercontent.com/45516471/202692347-eaf522a6-e926-49cc-8b72-5e88d2dd6165.jpg)
 
+- Skillgroups to players and bots.
+
+![8](https://user-images.githubusercontent.com/45516471/202808067-deb770bb-a82d-4ad5-a926-2fe06e303802.png)
+
 - And more that I might have forgotten.
 # Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
