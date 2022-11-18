@@ -37,6 +37,10 @@ This will not change any bot behavior, this will just add cosmetics to bots. Thi
 
 ![6](https://user-images.githubusercontent.com/45516471/202577625-9d203c24-bfab-4e7a-8048-8674523ec990.png)
 
+- Assigns crosshairs to bots.
+
+![7](https://user-images.githubusercontent.com/45516471/202692347-eaf522a6-e926-49cc-8b72-5e88d2dd6165.jpg)
+
 - And more that I might have forgotten.
 # Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
@@ -53,6 +57,8 @@ If you are going to use this you will need to download the following:
 - [modelch](https://github.com/SAZONISCHE/modelch)
 
 # Todo
-~~Assign colors to bots in competitive mode.~~ -Done
+~~Assign colors to bots in competitive mode.~~ - Done
 
-Give crosshairs to bots.
+~~Give crosshairs to bots.~~ - Done
+
+~~Changes teamname to a bot or to a player.~~ - BETA
