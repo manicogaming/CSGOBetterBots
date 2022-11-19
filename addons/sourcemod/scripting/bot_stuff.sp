@@ -3670,7 +3670,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				BotMimic_StopPlayerMimic(client);
 			
 			if (g_bIsProBot[client])
-			{
+			{				
 				if(g_bBombPlanted)
 				{
 					int iPlantedC4 = -1;
@@ -4334,28 +4334,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
 		}
 		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-		{
-			GetGrenadeToss(client, fNoisePosition);
-			
-			int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
-			int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
-			float fClientPos[3], fPredictedNade[3], fNadeAngles[3];
-			MakeVectorFromPoints(fClientEyes, fNoisePosition, fNadeAngles);
-			GetVectorAngles(fNadeAngles, fNadeAngles);
-			fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
-			fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
-			fNadeAngles[2] = 0.0;
-			
-			GetClientAbsOrigin(client, fClientPos);
-			ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
-			
-			if(GetVectorDistance(fPredictedNade, fClientPos) < 250.0 && IsPointVisible(fClientPos, fPredictedNade))
-				return MRES_ChangedHandled;
-			
-			Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
-			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
-			RequestFrame(DelayThrow, GetClientUserId(client));
-		}
+			ProcessGrenadeThrow(client, fNoisePosition);
 		
 		return MRES_ChangedHandled;
 	}
@@ -4368,29 +4347,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fPos);
 		
 		GetClientEyePosition(client, fClientEyes);
+		BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
 		if(IsItMyChance(25.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-		{
-			GetGrenadeToss(client, fPos);
-			
-			int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
-			int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
-			float fClientPos[3], fPredictedNade[3], fNadeAngles[3];
-			MakeVectorFromPoints(fClientEyes, fPos, fNadeAngles);
-			GetVectorAngles(fNadeAngles, fNadeAngles);
-			fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
-			fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
-			fNadeAngles[2] = 0.0;
-			
-			GetClientAbsOrigin(client, fClientPos);
-			ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
-			
-			if(GetVectorDistance(fPredictedNade, fClientPos) < 250.0 && IsPointVisible(fClientPos, fPredictedNade))
-				return MRES_ChangedHandled;
-			
-			Array_Copy(fPos, g_fNadeTarget[client], 3);
-			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
-			RequestFrame(DelayThrow, GetClientUserId(client));
-		}
+			ProcessGrenadeThrow(client, fPos);
 		
 		return MRES_ChangedHandled;
 	}
@@ -5150,6 +5109,31 @@ stock bool IsPointVisible(float fStart[3], float fEnd[3])
 public bool TraceEntityFilterStuff(int iEntity, int iMask)
 {
 	return iEntity > MaxClients;
+}
+
+public void ProcessGrenadeThrow(int client, float fTarget[3])
+{
+	GetGrenadeToss(client, fTarget);
+			
+	int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
+	int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
+	float fClientPos[3], fClientEyes[3], fPredictedNade[3], fNadeAngles[3];
+	GetClientEyePosition(client, fClientEyes);
+	MakeVectorFromPoints(fClientEyes, fTarget, fNadeAngles);
+	GetVectorAngles(fNadeAngles, fNadeAngles);
+	fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
+	fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
+	fNadeAngles[2] = 0.0;
+	
+	GetClientAbsOrigin(client, fClientPos);
+	ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
+	
+	if(GetVectorDistance(fPredictedNade, fClientPos) < 250.0 && IsPointVisible(fClientPos, fPredictedNade))
+		return;
+	
+	Array_Copy(fTarget, g_fNadeTarget[client], 3);
+	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
+	RequestFrame(DelayThrow, GetClientUserId(client));
 }
 
 stock void GetGrenadeToss(int client, float fTossTarget[3])
