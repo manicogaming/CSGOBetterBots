@@ -1,0 +1,14 @@
+"Nades"
+{
+	"de_mirage"
+	{
+		"Stairs Smoke"
+		{
+			"position"			"1148.500488 -1183.996582 -205.568939"
+			"lookat"			"-403.092773 -1589.639770 1247.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"timestamp"			"0.0"
+		}
+	}
+}

@@ -118,6 +118,9 @@ public void OnWinPanelMatch(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public Action Timer_Delay(Handle hTimer)
 {
+	if(GetPlayerTeamCount(CS_TEAM_CT) > 5 || GetPlayerTeamCount(CS_TEAM_T) > 5)
+		return Plugin_Stop;
+
 	Transaction hTransaction = SQL_CreateTransaction();
 
 	char szMap[128];
@@ -200,4 +203,20 @@ public void onSuccess(Database hDatabase, any data, int iNumQueries, Handle[] hR
 public void onError(Database hDatabase, any data, int iNumQueries, const char[] szError, int iFailIndex, any[] queryData)
 {
 	PrintToServer("onError");
+}
+
+stock int GetPlayerTeamCount(int iTeam)
+{
+	int iNumber = 0;
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && GetClientTeam(i) == iTeam)
+			iNumber++;
+	}
+	return iNumber;
+}
+
+stock bool IsValidClient(int client)
+{
+	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
 }

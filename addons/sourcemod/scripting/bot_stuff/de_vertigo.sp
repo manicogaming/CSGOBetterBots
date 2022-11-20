@@ -50,7 +50,7 @@ public void PrepareVertigoExecutes()
 					BotMimic_PlayRecordFromFile(clients[3], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/cadiaN Role.rec");
 					BotMimic_PlayRecordFromFile(clients[4], "addons/sourcemod/data/botmimic/Executes/de_vertigo/Heroic B Pistol/TeSeS Role.rec");
 				}
-				case 6: //BIG A Pistol
+				case 6: //BIG A Pistol   <---- 	I was here
 				{
 					BotMimic_PlayRecordFromFile(clients[0], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/tiziaN Role.rec");
 					BotMimic_PlayRecordFromFile(clients[1], "addons/sourcemod/data/botmimic/Executes/de_vertigo/BIG A Pistol/tabseN Role.rec");
