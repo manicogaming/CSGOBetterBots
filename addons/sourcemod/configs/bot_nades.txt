@@ -10,5 +10,21 @@
 			"jumpthrow"			"0"
 			"timestamp"			"0.0"
 		}
+		"Jungle Smoke"
+		{
+			"position"			"815.999939 -1458.737793 -108.968750"
+			"lookat"			"-1758.870117 -1688.752929 1247.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"timestamp"			"0.0"
+		}
+		"CT Smoke"
+		{
+			"position"			"1257.727417 -871.997314 -143.968750"
+			"lookat"			"1056.654296 -1015.389770 16.737144"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"timestamp"			"0.0"
+		}
 	}
 }
