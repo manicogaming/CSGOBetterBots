@@ -8,6 +8,7 @@
 			"lookat"			"-403.092773 -1589.639770 1247.968750"
 			"nadedefindex"		"45"
 			"jumpthrow"			"0"
+			"crouch"			"0"
 			"timestamp"			"0.0"
 		}
 		"Jungle Smoke"
@@ -16,6 +17,7 @@
 			"lookat"			"-1758.870117 -1688.752929 1247.968750"
 			"nadedefindex"		"45"
 			"jumpthrow"			"0"
+			"crouch"			"0"
 			"timestamp"			"0.0"
 		}
 		"CT Smoke"
@@ -24,6 +26,7 @@
 			"lookat"			"1056.654296 -1015.389770 16.737144"
 			"nadedefindex"		"45"
 			"jumpthrow"			"1"
+			"crouch"			"0"
 			"timestamp"			"0.0"
 		}
 	}
