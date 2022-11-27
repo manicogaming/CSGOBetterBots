@@ -10,6 +10,7 @@
 			"jumpthrow"			"0"
 			"crouch"			"0"
 			"timestamp"			"0.0"
+			"team"				"T"
 		}
 		"Jungle Smoke"
 		{
@@ -19,6 +20,7 @@
 			"jumpthrow"			"0"
 			"crouch"			"0"
 			"timestamp"			"0.0"
+			"team"				"T"
 		}
 		"CT Smoke"
 		{
@@ -28,6 +30,97 @@
 			"jumpthrow"			"1"
 			"crouch"			"0"
 			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Top Mid Smoke"
+		{
+			"position"			"1422.999878 70.991737 -112.902664"
+			"lookat"			"1199.581298 -2.419876 127.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Lamp Flash"
+		{
+			"position"			"876.525879 -1036.006348 -251.968750"
+			"lookat"			"614.086059 -1160.493774 0.567764"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Sandwich Molotov"
+		{
+			"position"			"831.459778 -1255.175415 -108.968750"
+			"lookat"			"633.909484 -1307.983154 28.650840"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Under Palace Molotov"
+		{
+			"position"			"16.031250 -2359.670898 -39.968750"
+			"lookat"			"115.986907 -2026.194458 -37.968750"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Top Connector Smoke"
+		{
+			"position"			"1391.968750 -1051.114746 -167.968750"
+			"lookat"			"948.990600 -1101.926635 127.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Market Window Smoke"
+		{
+			"position"			"-160.031250 887.968750 -135.328125"
+			"lookat"			"-298.037292 796.607299 127.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Market Door Smoke"
+		{
+			"position"			"-160.011642 887.968750 -135.328125"
+			"lookat"			"-355.383300 784.194946 127.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Ramp Smoke"
+		{
+			"position"			"-879.979858 -2264.000732 -171.084961"
+			"lookat"			"-676.004089 -2130.901611 -66.310218"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Under Palace Flash"
+		{
+			"position"			"150.968964 -1914.031250 -167.968750"
+			"lookat"			"106.999313 -2089.218017 -74.628486"
+			"nadedefindex"		"43"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
 		}
 	}
 }

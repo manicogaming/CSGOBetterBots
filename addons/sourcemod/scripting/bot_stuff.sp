@@ -18,7 +18,7 @@ bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPL
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1];
 int g_iRndExecute = -1, g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
-int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset;
+int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset, g_iBotNadeStateOffs;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
@@ -86,6 +86,14 @@ enum LookAtSpotState
 	NUM_LOOK_AT_SPOT_STATES
 }
 
+enum GrenadeTossState
+{
+	NOT_THROWING,				///< not yet throwing
+	START_THROW,				///< lining up throw
+	THROW_LINED_UP,				///< pause for a moment when on-line
+	FINISH_THROW				///< throwing
+}
+
 enum TaskType
 {
 	SEEK_AND_DESTROY,
@@ -111,14 +119,6 @@ enum TaskType
 	SNIPING,
 	ESCAPE_FROM_FLAMES,
 	NUM_TASKS
-}
-
-enum GrenadeTossState
-{
-	NOT_THROWING,				///< not yet throwing
-	START_THROW,				///< lining up throw
-	THROW_LINED_UP,				///< pause for a moment when on-line
-	FINISH_THROW				///< throwing
 }
 
 enum GamePhase
@@ -3682,7 +3682,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) <= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
 				BotMimic_StopPlayerMimic(client);
 				
-			if(g_bFreezetimeEnd && IsItMyChance(10.0) && g_iDoingSmokeNum[client] == -1 && !g_bBombPlanted)
+			if(g_bFreezetimeEnd && IsItMyChance(15.0) && g_iDoingSmokeNum[client] == -1 && !g_bBombPlanted)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 			
 			if (g_bIsProBot[client])
@@ -4046,7 +4046,7 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 		if(g_ArrayNades[i] == null)
 			return;
 			
-		g_ArrayNades[i].Set(4, 0.0);
+		g_ArrayNades[i].Set(5, 0.0);
 	}
 }
 
@@ -4445,6 +4445,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			//3 - Is Jumpthrow?
 			//4 - Crouch?
 			//5 - Timestamp
+			//6 - Team
 			bool bIsJumpthrow ,bCrouch;
 			if(g_iDoingSmokeNum[client] != -1 && g_ArrayNades[g_iDoingSmokeNum[client]] != null)
 			{
@@ -4462,33 +4463,37 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					g_ArrayNades[g_iDoingSmokeNum[client]].GetArray(1, fNadeLook);
 					
 					SDKCall(g_hSwitchWeaponCall, client, eItems_FindWeaponByDefIndex(client, g_ArrayNades[g_iDoingSmokeNum[client]].Get(2)), 0);
-					BotSetLookAt(client, "Use entity", fNadeLook, PRIORITY_HIGH, 6.0, false, 2.0, false);
+					BotSetLookAt(client, "Use entity", fNadeLook, PRIORITY_HIGH, 2.0, false, 3.0, false);
 					float fPlayerVelocity[3];
 					GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
 					
+					
 					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
 					{
-						CreateTimer(3.0, Timer_ThrowGrenade, GetClientUserId(client));
+						CreateTimer(1.5, Timer_ThrowGrenade, GetClientUserId(client));
 						bIsJumpthrow = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(3);	
 						bCrouch = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(4);	
-						
-						iButtons |= IN_ATTACK;
 						
 						if(bCrouch)
 							iButtons |= IN_DUCK;
 						
 						if (g_bCanThrowGrenade[client])
 						{
+							Array_Copy(fNadeLook, g_fNadeTarget[client], 3);
+							RequestFrame(DelayThrow, GetClientUserId(client));
+						}
+						
+						if(g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
+						{
 							TeleportEntity(client, fNadeSpot, NULL_VECTOR, NULL_VECTOR);
-							iButtons &= ~IN_ATTACK;
-							
 							if(bIsJumpthrow)
 								iButtons |= IN_JUMP;
 							
 							if(bCrouch)
 								iButtons |= IN_DUCK;
-							
+								
 							g_iDoingSmokeNum[client] = -1;
+							g_bCanThrowGrenade[client] = false;
 						}
 					}
 				}
@@ -4691,6 +4696,7 @@ void ParseMapNades(const char[] szMap)
 	do
 	{
 		float fPosition[3], fLookAt[3];
+		char szTeam[8];
 		
 		if (g_ArrayNades[i] == null)
 			delete g_ArrayNades[i];
@@ -4706,6 +4712,12 @@ void ParseMapNades(const char[] szMap)
 		g_ArrayNades[i].Push(kv.GetNum("jumpthrow"));
 		g_ArrayNades[i].Push(kv.GetNum("crouch"));
 		g_ArrayNades[i].Push(kv.GetFloat("timestamp"));
+		kv.GetString("team", szTeam, sizeof(szTeam));
+		if(strcmp(szTeam, "CT", false) == 0)
+			g_ArrayNades[i].Push(CS_TEAM_CT);
+		else if(strcmp(szTeam, "T", false) == 0)
+			g_ArrayNades[i].Push(CS_TEAM_T);
+	
 		i++;
 	} while (kv.GotoNextKey());
 	
@@ -4814,6 +4826,9 @@ public void LoadSDK()
 	
 	if ((g_iBotTaskOffset = GameConfGetOffset(hGameConfig, "CCSBot::m_task")) == -1)
 		SetFailState("Failed to get CCSBot::m_task offset.");
+	
+	if ((g_iBotNadeStateOffs = GameConfGetOffset(hGameConfig, "CCSBot::m_grenadeTossState")) == -1)
+		SetFailState("Failed to get CCSBot::m_grenadeTossState offset.");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -5028,10 +5043,16 @@ public int GetNearestGrenade(int client)
 			
 		if(!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_ArrayNades[i].Get(2))))
 			continue;
+		
+		if(GetClientTeam(client) != g_ArrayNades[i].Get(6))
+			continue;
 	
 		g_ArrayNades[i].GetArray(0, fNadeSpot);
 		
 		distance = GetVectorDistance(clientVecOrigin, fNadeSpot);
+		
+		if(distance > 175.0)
+			continue;
 		
 		if (distance < nearestDistance || nearestDistance == -1.0)
 		{
@@ -5185,9 +5206,7 @@ public Action Timer_ThrowGrenade(Handle hTimer, any client)
 	client = GetClientOfUserId(client);
 	
 	if(client != 0 && IsClientInGame(client))
-	{
 		g_bCanThrowGrenade[client] = true;
-	}
 	
 	return Plugin_Stop;
 }
