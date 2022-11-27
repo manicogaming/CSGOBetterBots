@@ -56,7 +56,7 @@
 	"JDC" 				"118505645"
 	//TYLOO Players
 	"Summer" 			"52964519"
-	"aristo" 			"1121089390"
+	"Attacker" 			"88001036"
 	"SLOWLY" 			"443449867"
 	"Freeman" 			"208355715"
 	"DANK1NG" 			"191648575"
@@ -170,7 +170,7 @@
 	"doto" 				"39318615"
 	//ECSTATIC Players
 	"kraghen"			"86933217" 
-	"brzer" 			"347193608"
+	"salazar" 			"141998048"
 	"Cabbi" 			"230664742"
 	"Queenix" 			"70280269"
 	"maNkz" 			"81805084"
@@ -199,10 +199,10 @@
 	"azizz" 			"43580835"
 	"fr3nd" 			"177768668"
 	//Nemiga Players
-	"iDISBALANCE" 		"210384169"
+	"xsepower" 			"112014226"
 	"BELCHONOKK" 		"293404789"
 	"fostar" 			"196096645"	
-	"Jyo" 				"43255799"
+	"keep3r" 			"31761104"
 	"1eeR" 				"876851680"
 	//IHC Players
 	"kabal" 			"161246388"
@@ -291,14 +291,14 @@
 	//Eternal Players
 	"XANTARES" 			"83853068"
 	"imoRR" 			"107082440"
-	"paz" 				"68524615"
+	"MAJ3R" 			"7167161"
 	"Calyx" 			"92280537"
 	"xfl0ud" 			"217943381"
 	//K23 Players
-	"FinigaN" 			"226095351"
-	"xsepower" 			"112014226"
+	"Jyo" 				"43255799"
+	"iDISBALANCE" 		"210384169"
 	"Raijin" 			"216190295"
-	"clax" 				"168818887"
+	"def1zer" 			"262554036"
 	"X5G7V" 			"237685818"
 	//VERTEX Players
 	"BRACE" 			"126538012"
@@ -307,7 +307,7 @@
 	"malta" 			"181905573"
 	"Valiance" 			"236090787"
 	//IG Players
-	"Ayeon" 			"341459799"
+	"Marek" 			"85470546"
 	"DeStRoYeR" 		"85113804"	
 	"flying" 			"441964070"
 	"0i" 				"70890484"
@@ -422,7 +422,7 @@
 	"buda" 				"239077622"
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
-	"forsyy" 			"105029167"
+	"oskar" 			"171425088"
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
 	"Zero" 				"34322135"
@@ -602,7 +602,7 @@
 	"maeowo"			"315914730"
 	//Falcons Players
 	"NBK-" 				"444845"
-	"Maka"				"85474033"
+	"kennyS"			"64640068"
 	"hAdji" 			"20679059"
 	"misutaaa" 			"121263183"
 	"Python"			"231605562"
@@ -801,7 +801,7 @@
 	//BLINK Players
 	"gulito" 			"420615598"
 	"BledarD"			"379542971"
-	"vAloN"				"255373249"
+	"deb0"				"851603565"
 	"Krabeni" 			"1031012697"
 	"HYPER1"			"348889207"
 }

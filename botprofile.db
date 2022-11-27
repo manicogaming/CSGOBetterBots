@@ -501,7 +501,7 @@ ProP+Rifle+RiflePersonality "Summer"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "aristo"
+ProP+SniperPro+SniperPersonality "DANK1NG"
 	VoicePitch = 77
 End
 
@@ -513,7 +513,7 @@ ProP+Rifle+RiflePersonality "Freeman"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "DANK1NG"
+ProP+Rifle+RiflePersonality "Attacker"
 	VoicePitch = 90
 End
 
@@ -937,7 +937,7 @@ ProP+Rifle+RiflePersonality "Cabbi"
 	VoicePitch = 104
 End
 
-ProP+Rifle+RiflePersonality "brzer"
+ProP+Rifle+RiflePersonality "salazar"
 	VoicePitch = 96
 End
 
@@ -1031,7 +1031,7 @@ End
 
 //Nemiga Players
 
-ProP+Rifle+RiflePersonality "iDISBALANCE"
+ProP+Rifle+RiflePersonality "xsepower"
 	VoicePitch = 106
 End
 
@@ -1043,7 +1043,7 @@ ProP+Rifle+RiflePersonality "fostar"
 	VoicePitch = 89
 End
 
-ProP+Rifle+RiflePersonality "Jyo"
+ProP+Rifle+RiflePersonality "keep3r"
 	VoicePitch = 110
 End
 
@@ -1369,7 +1369,7 @@ ProP+SniperPro+SniperPersonality "Calyx"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "paz"
+ProP+Rifle+RiflePersonality "MAJ3R"
 	VoicePitch = 99
 End
 
@@ -1383,11 +1383,11 @@ End
 
 //K23 Players
 
-ProP+Rifle+RiflePersonality "FinigaN"
+ProP+Rifle+RiflePersonality "Jyo"
 	VoicePitch = 85
 End
 
-ProP+SniperPro+SniperPersonality "xsepower"
+ProP+SniperPro+SniperPersonality "iDISBALANCE"
 	VoicePitch = 83
 End
 
@@ -1395,7 +1395,7 @@ ProP+Rifle+RiflePersonality "Raijin"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "clax"
+ProP+Rifle+RiflePersonality "def1zer"
 	VoicePitch = 100
 End
 
@@ -1427,7 +1427,7 @@ End
 
 //IG Players
 
-ProP+Rifle+RiflePersonality "Ayeon"
+ProP+Rifle+RiflePersonality "Marek"
 	VoicePitch = 85
 End
 
@@ -1849,7 +1849,7 @@ ProP+Rifle+RiflePersonality "ZEDKO"
 	VoicePitch = 104
 End
 
-ProP+SniperPro+SniperPersonality "forsyy"
+ProP+SniperPro+SniperPersonality "oskar"
 	VoicePitch = 83
 End
 
@@ -2509,7 +2509,7 @@ ProP+Rifle+RiflePersonality "NBK-"
 	VoicePitch = 104
 End
 
-ProP+SniperPro+SniperPersonality "Maka"
+ProP+SniperPro+SniperPersonality "kennyS"
 	VoicePitch = 84
 End
 
@@ -3239,7 +3239,7 @@ ProP+SniperPro+SniperPersonality "BledarD"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "vAloN"
+ProP+Rifle+RiflePersonality "deb0"
 	VoicePitch = 99
 End
 

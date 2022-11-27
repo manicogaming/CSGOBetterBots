@@ -56,7 +56,7 @@
 	"JDC" 				"mouz"
 	//TYLOO Players
 	"Summer" 			"TYLOO"
-	"aristo" 			"TYLOO"
+	"Attacker" 			"TYLOO"
 	"SLOWLY" 			"TYLOO"
 	"Freeman" 			"TYLOO"
 	"DANK1NG" 			"TYLOO"
@@ -170,7 +170,7 @@
 	"doto" 				"HAVU"
 	//ECSTATIC Players
 	"kraghen"			"ECSTATIC" 
-	"brzer" 			"ECSTATIC"
+	"salazar" 			"ECSTATIC"
 	"maNkz" 			"ECSTATIC"
 	"Cabbi" 			"ECSTATIC"
 	"Queenix" 			"ECSTATIC"
@@ -199,10 +199,10 @@
 	"azizz" 			"PACT"
 	"fr3nd" 			"PACT"
 	//Nemiga Players
-	"iDISBALANCE" 		"Nemiga"
+	"xsepower" 			"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
 	"fostar" 			"Nemiga"	
-	"Jyo" 				"Nemiga"
+	"keep3r" 			"Nemiga"
 	"1eeR" 				"Nemiga"
 	//IHC Players
 	"Techno4K" 			"IHC"
@@ -291,14 +291,14 @@
 	//Eternal Players
 	"XANTARES" 			"Eternal"
 	"imoRR" 			"Eternal"
-	"paz" 				"Eternal"
+	"MAJ3R" 			"Eternal"
 	"Calyx" 			"Eternal"
 	"xfl0ud" 			"Eternal"
 	//K23 Players
-	"FinigaN" 			"K23"
-	"xsepower" 			"K23"
+	"Jyo" 				"K23"
+	"iDISBALANCE" 		"K23"
 	"Raijin" 			"K23"
-	"clax" 				"K23"
+	"def1zer" 			"K23"
 	"X5G7V" 			"K23"
 	//VERTEX Players
 	"pz" 				"VERTEX"
@@ -307,7 +307,7 @@
 	"malta" 			"VERTEX"
 	"Valiance" 			"VERTEX"
 	//IG Players
-	"Ayeon" 			"IG"
+	"Marek" 			"IG"
 	"DeStRoYeR" 		"IG"	
 	"flying" 			"IG"
 	"0i" 				"IG"
@@ -422,7 +422,7 @@
 	"buda" 				"9z"
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
-	"forsyy" 			"SINNERS"
+	"oskar" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
 	"Zero" 				"SINNERS"
@@ -602,7 +602,7 @@
 	"maeowo"			"Dice"
 	//Falcons Players
 	"NBK-" 				"Falcons"
-	"Maka"				"Falcons"
+	"kennyS"			"Falcons"
 	"hAdji" 			"Falcons"
 	"misutaaa" 			"Falcons"
 	"Python"			"Falcons"
@@ -801,7 +801,7 @@
 	//BLINK Players
 	"gulito" 			"BLINK"
 	"BledarD"			"BLINK"
-	"vAloN"				"BLINK"
+	"deb0"				"BLINK"
 	"Krabeni" 			"BLINK"
 	"HYPER1"			"BLINK"
 }
