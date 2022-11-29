@@ -34,6 +34,7 @@ Handle g_hIsLineBlockedBySmoke;
 Handle g_hBotSetEnemy;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
+Handle g_hBotFireWeapon;
 Address g_pTheBots;
 ArrayList g_ArrayNades[128] =  { null, ... };
 CNavArea g_pCurrArea[MAXPLAYERS+1];
@@ -4258,16 +4259,6 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	return Plugin_Continue;
 }
 
-public MRESReturn CCSBot_ThrowGrenade(int client, DHookParam hParams)
-{
-	if (BotMimic_IsPlayerMimicing(client))
-		return MRES_Supercede;
-	
-	hParams.GetVector(1, g_fNadeTarget[client]);
-	
-	return MRES_Ignored;
-}
-
 public MRESReturn BotCOS(DHookReturn hReturn)
 {
 	hReturn.Value = 0;
@@ -4365,7 +4356,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Last Enemy Position") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
+	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
 	{
 		float fPos[3], fClientEyes[3];
 		
@@ -4455,18 +4446,19 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				float fDisToNade = GetVectorDistance(fClientLoc, fNadeSpot);
 
 				if(fDisToNade < 175.0)
+				{
 					BotMoveTo(client, fNadeSpot, FASTEST_ROUTE);
+					SDKCall(g_hSwitchWeaponCall, client, eItems_FindWeaponByDefIndex(client, g_ArrayNades[g_iDoingSmokeNum[client]].Get(2)), 0);
+				}
 					
 				if(fDisToNade < 25.0)
 				{					
 					float fNadeLook[3];
 					g_ArrayNades[g_iDoingSmokeNum[client]].GetArray(1, fNadeLook);
 					
-					SDKCall(g_hSwitchWeaponCall, client, eItems_FindWeaponByDefIndex(client, g_ArrayNades[g_iDoingSmokeNum[client]].Get(2)), 0);
 					BotSetLookAt(client, "Use entity", fNadeLook, PRIORITY_HIGH, 2.0, false, 3.0, false);
 					float fPlayerVelocity[3];
 					GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
-					
 					
 					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
 					{
@@ -4543,6 +4535,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					g_bAbortExecute = true;
 					
+					BotFireWeaponAtEnemy(client);
 					fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 					
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
@@ -4915,6 +4908,10 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
 	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::FireWeaponAtEnemy");
+	if ((g_hBotFireWeapon = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::FireWeaponAtEnemy signature!");
+	
 	delete hGameConfig;
 }
 
@@ -4936,11 +4933,6 @@ public void LoadDetours()
 	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
 	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
 		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
-	
-	//CCSBot::ThrowGrenade Detour
-	DynamicDetour hBotThrowGrenadeDetour = DynamicDetour.FromConf(hGameData, "CCSBot::ThrowGrenade");
-	if(!hBotThrowGrenadeDetour.Enable(Hook_Pre, CCSBot_ThrowGrenade))
-		SetFailState("Failed to setup detour for CCSBot::ThrowGrenade");
 	
 	//BotCOS Detour
 	DynamicDetour hBotCOSDetour = DynamicDetour.FromConf(hGameData, "BotCOS");
@@ -5008,6 +5000,11 @@ public bool BotBendLineOfSight(int client, const float fEye[3], const float fTar
 public void BotThrowGrenade(int client, const float fTarget[3])
 {
 	SDKCall(g_hBotThrowGrenade, client, fTarget);
+}
+
+public void BotFireWeaponAtEnemy(int client)
+{
+	SDKCall(g_hBotFireWeapon, client);
 }
 
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
