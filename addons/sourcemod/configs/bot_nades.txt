@@ -94,8 +94,8 @@
 		}
 		"Market Door Smoke"
 		{
-			"position"			"-160.011642 887.968750 -135.328125"
-			"lookat"			"-355.383300 784.194946 127.968750"
+			"position"			"-161.000580 451.100250 -69.893402"
+			"lookat"			"-545.539611 337.031250 61.881355"
 			"nadedefindex"		"45"
 			"jumpthrow"			"1"
 			"crouch"			"0"
@@ -112,15 +112,35 @@
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}
-		"Under Palace Flash"
+		"Connector Molotov"
 		{
-			"position"			"150.968964 -1914.031250 -167.968750"
-			"lookat"			"106.999313 -2089.218017 -74.628486"
-			"nadedefindex"		"43"
-			"jumpthrow"			"1"
+			"position"			"176.005325 -233.290863 -151.968750"
+			"lookat"			"-635.754455 -799.968750 68.638870"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
 			"crouch"			"0"
 			"timestamp"			"0.0"
-			"team"				"CT"
+			"team"				"T"
+		}
+		"1st Arch Smoke"
+		{
+			"position"			"-606.259827 615.972839 -78.971138"
+			"lookat"			"-651.349914 609.226928 127.968742"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"2nd Arch Smoke"
+		{
+			"position"			"-834.759705 615.085876 -79.138199"
+			"lookat"			"-868.963378 592.863952 127.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
 		}
 	}
 }

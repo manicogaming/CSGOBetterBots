@@ -31,10 +31,9 @@ Handle g_hBotSetLookAt;
 Handle g_hSetCrosshairCode;
 Handle g_hSwitchWeaponCall;
 Handle g_hIsLineBlockedBySmoke;
-Handle g_hBotSetEnemy;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
-Handle g_hBotFireWeapon;
+Handle g_hBotAttack;
 Address g_pTheBots;
 ArrayList g_ArrayNades[128] =  { null, ... };
 CNavArea g_pCurrArea[MAXPLAYERS+1];
@@ -3535,6 +3534,7 @@ public void OnMapStart()
 	g_iPlayerColorOffset = FindSendPropInfo("CCSPlayerResource", "m_iCompTeammateColor");
 	
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
+	GetMapDisplayName(g_szMap, g_szMap, sizeof(g_szMap));
 	
 	ParseMapNades(g_szMap);
 	
@@ -4345,14 +4345,17 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
 		
-		if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 		{
-			BotEquipBestWeapon(client, true);
-			g_bDontSwitch[client] = true;
-			CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
+			if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE))
+			{
+				BotEquipBestWeapon(client, true);
+				g_bDontSwitch[client] = true;
+				CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
+			}
+			else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+				ProcessGrenadeThrow(client, fNoisePosition);
 		}
-		else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-			ProcessGrenadeThrow(client, fNoisePosition);
 		
 		return MRES_ChangedHandled;
 	}
@@ -4364,10 +4367,13 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
 		
-		GetClientEyePosition(client, fClientEyes);
-		BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
-		if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-			ProcessGrenadeThrow(client, fPos);
+		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+		{
+			GetClientEyePosition(client, fClientEyes);
+			BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
+			if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+				ProcessGrenadeThrow(client, fPos);
+		}
 		
 		return MRES_ChangedHandled;
 	}
@@ -4475,7 +4481,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							RequestFrame(DelayThrow, GetClientUserId(client));
 						}
 						
-						if(g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
+						if((iButtons & IN_ATTACK) && g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
 						{
 							TeleportEntity(client, fNadeSpot, NULL_VECTOR, NULL_VECTOR);
 							if(bIsJumpthrow)
@@ -4535,7 +4541,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					g_bAbortExecute = true;
 					
-					BotFireWeaponAtEnemy(client);
+					BotAttack(client, g_iTarget[client]);
 					fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 					
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
@@ -4891,11 +4897,6 @@ public void LoadSDK()
 	if ((g_hIsLineBlockedBySmoke = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBotManager::IsLineBlockedBySmoke offset!");
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetBotEnemy");
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Plain);
-	if ((g_hBotSetEnemy = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::SetBotEnemy signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::BendLineOfSight");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
@@ -4909,8 +4910,9 @@ public void LoadSDK()
 	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::FireWeaponAtEnemy");
-	if ((g_hBotFireWeapon = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::FireWeaponAtEnemy signature!");
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	if ((g_hBotAttack = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
 	
 	delete hGameConfig;
 }
@@ -4987,11 +4989,6 @@ public void BotSetLookAt(int client, const char[] szDesc, const float fPos[3], P
 	SDKCall(g_hBotSetLookAt, client, szDesc, fPos, pri, fDuration, bClearIfClose, fAngleTolerance, bAttack);
 }
 
-public void BotSetEnemy(int client, int iEnemy)
-{
-	SDKCall(g_hBotSetEnemy, client, iEnemy);
-}
-
 public bool BotBendLineOfSight(int client, const float fEye[3], const float fTarget[3], float fBend[3], float fAngleLimit)
 {
 	return SDKCall(g_hBotBendLineOfSight, client, fEye, fTarget, fBend, fAngleLimit);
@@ -5002,9 +4999,9 @@ public void BotThrowGrenade(int client, const float fTarget[3])
 	SDKCall(g_hBotThrowGrenade, client, fTarget);
 }
 
-public void BotFireWeaponAtEnemy(int client)
+public void BotAttack(int client, int iTarget)
 {
-	SDKCall(g_hBotFireWeapon, client);
+	SDKCall(g_hBotAttack, client, iTarget);
 }
 
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
