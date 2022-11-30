@@ -125,6 +125,7 @@ public Action Timer_Delay(Handle hTimer)
 
 	char szMap[128];
 	GetCurrentMap(szMap, sizeof(szMap));
+	GetMapDisplayName(szMap, szMap, sizeof(szMap));
 
 	char szBuffer[512];
 	

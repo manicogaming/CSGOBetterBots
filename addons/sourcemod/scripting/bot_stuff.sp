@@ -4720,6 +4720,7 @@ void ParseMapNades(const char[] szMap)
 		i++;
 	} while (kv.GotoNextKey());
 	
+	delete kv;	
 	g_iMaxNades = i;
 }
 
