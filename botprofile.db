@@ -775,7 +775,7 @@ ProP+SniperPro+SniperPersonality "zorte"
 	VoicePitch = 71
 End
 
-ProP+Rifle+RiflePersonality "Norwi"
+ProP+Rifle+RiflePersonality "Krad"
 	VoicePitch = 91
 End
 
@@ -1501,7 +1501,7 @@ ProP+SniperPro+SniperPersonality "MisteM"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "motm"
+ProP+Rifle+RiflePersonality "djay"
 	VoicePitch = 79
 End
 
@@ -2217,28 +2217,6 @@ ProP+Rifle+RiflePersonality "DeXXuS"
 	VoicePitch = 113
 End
 
-//Entropiq Players
-
-ProP+Rifle+RiflePersonality "mir"
-	VoicePitch = 108
-End
-
-ProP+SniperPro+SniperPersonality "El1an"
-	VoicePitch = 112
-End
-
-ProP+Rifle+RiflePersonality "NickelBack"
-	VoicePitch = 86
-End
-
-ProP+Rifle+RiflePersonality "Krad"
-	VoicePitch = 111
-End
-
-ProP+Rifle+RiflePersonality "Forester"
-	VoicePitch = 75
-End
-
 //Strife Players
 
 ProP+Rifle+RiflePersonality "J0LZ"
@@ -2821,11 +2799,11 @@ ProP+SniperPro+SniperPersonality "erkaSt"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "Kntz"
+ProP+Rifle+RiflePersonality "Senzu"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "dobu"
+ProP+Rifle+RiflePersonality "BnTeT"
 	VoicePitch = 104
 End
 

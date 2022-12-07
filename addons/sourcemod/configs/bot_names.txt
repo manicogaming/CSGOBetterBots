@@ -129,7 +129,7 @@
 	//forZe Players
 	"KENSI" 			"forZe"	
 	"zorte" 			"forZe"
-	"Norwi" 			"forZe"
+	"Krad" 				"forZe"
 	"shalfey" 			"forZe"
 	"Jerry" 			"forZe"
 	//Sprout Players
@@ -327,7 +327,7 @@
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
-	"motm" 				"ATK"
+	"djay" 				"ATK"
 	"Fadey" 			"ATK"
 	"Swisher" 			"ATK"
 	//Wings Players
@@ -522,12 +522,6 @@
 	"onetwo" 			"Eriness"
 	"N4JT" 				"Eriness"
 	"DeXXuS"			"Eriness"
-	//Entropiq Players
-	"mir" 				"Entropiq"
-	"El1an" 			"Entropiq"
-	"NickelBack" 		"Entropiq"
-	"Krad" 				"Entropiq"
-	"Forester"			"Entropiq"
 	//Strife Players
 	"J0LZ" 				"Strife"
 	"Snakes" 			"Strife"
@@ -687,8 +681,8 @@
 	//NKT Players
 	"XigN" 				"NKT"
 	"erkaSt"			"NKT"
-	"Kntz"				"NKT"
-	"dobu" 				"NKT"
+	"Senzu"				"NKT"
+	"BnTeT" 			"NKT"
 	"nin9"				"NKT"
 	//Boca Players
 	"lenci" 			"Boca"

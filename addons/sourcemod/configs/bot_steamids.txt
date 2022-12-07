@@ -129,7 +129,7 @@
 	//forZe Players
 	"KENSI" 			"440380554"	
 	"zorte" 			"99348674"
-	"Norwi" 			"194638879"
+	"Krad" 				"71642904"
 	"shalfey" 			"247206904"
 	"Jerry" 			"65822428"
 	//Sprout Players
@@ -327,7 +327,7 @@
 	//ATK Players
 	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
-	"motm" 				"60208330"
+	"djay" 				"3935898"
 	"Fadey" 			"181493840"
 	"Swisher" 			"222737943"
 	//Wings Players
@@ -522,12 +522,6 @@
 	"onetwo" 			"258610017"
 	"N4JT" 				"428420704"
 	"DeXXuS"			"227004563"
-	//Entropiq Players
-	"mir" 				"40562076"
-	"El1an" 			"250498109"
-	"NickelBack" 		"1882779"
-	"Krad" 				"71642904"
-	"Forester"			"67083025"
 	//Strife Players
 	"J0LZ" 				"163875307"
 	"Snakes" 			"76881568"
@@ -687,8 +681,8 @@
 	//NKT Players
 	"XigN" 				"49809482"
 	"erkaSt"			"131305548"
-	"Kntz"				"80230397"
-	"dobu" 				"159891913"
+	"Senzu"				"960454289"
+	"BnTeT" 			"111817512"
 	"nin9"				"168197870"
 	//Boca Players
 	"lenci" 			"134201158"

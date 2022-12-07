@@ -1,5 +1,6 @@
-// csgosl 2.15 config 1 at Wed Nov 30 00:15:25 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Tue Dec 06 23:06:43 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
+workshop/2511365957/
 $10000$
 $2000$_csgo
 $2000$_japan
@@ -159,7 +160,7 @@ de_aqueduct
 de_arcade_v2
 de_asia_csgo
 de_astra
-de_astramania
+de_astramania_64
 de_aurelia
 de_aurora
 de_austria
@@ -336,6 +337,7 @@ de_riverside_rc2
 de_royal
 de_ruins
 de_rush
+workshop/2434936688/de_russiandust2
 de_russka_b2
 de_rust_b3
 de_safehouse
@@ -350,7 +352,7 @@ de_season
 de_shortdust
 de_shortnuke
 de_shortwaterfall
-workshop/476209350/de_slate
+de_slate
 de_snowball_go
 de_snowcapped_csgo
 de_soat_rc3
