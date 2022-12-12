@@ -127,16 +127,16 @@ bool g_bBotSwitchedWeapon[MAXPLAYERS+1];
 bool g_bValidTeleportCall[MAXPLAYERS+1];
 BookmarkWhileMimicing g_iBotMimicNextBookmarkTick[MAXPLAYERS+1];
 
-Handle g_hfwdOnStartRecording;
-Handle g_hfwdOnRecordingPauseStateChanged;
-Handle g_hfwdOnRecordingBookmarkSaved;
-Handle g_hfwdOnStopRecording;
-Handle g_hfwdOnRecordSaved;
-Handle g_hfwdOnRecordDeleted;
-Handle g_hfwdOnPlayerStartsMimicing;
-Handle g_hfwdOnPlayerStopsMimicing;
-Handle g_hfwdOnPlayerMimicLoops;
-Handle g_hfwdOnPlayerMimicBookmark;
+GlobalForward g_hfwdOnStartRecording;
+GlobalForward g_hfwdOnRecordingPauseStateChanged;
+GlobalForward g_hfwdOnRecordingBookmarkSaved;
+GlobalForward g_hfwdOnStopRecording;
+GlobalForward g_hfwdOnRecordSaved;
+GlobalForward g_hfwdOnRecordDeleted;
+GlobalForward g_hfwdOnPlayerStartsMimicing;
+GlobalForward g_hfwdOnPlayerStopsMimicing;
+GlobalForward g_hfwdOnPlayerMimicLoops;
+GlobalForward g_hfwdOnPlayerMimicBookmark;
 
 // DHooks/SDK
 Handle g_hTeleport;
@@ -178,16 +178,16 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	CreateNative("BotMimic_GetFileCategory", GetFileCategory);
 	CreateNative("BotMimic_GetRecordBookmarks", GetRecordBookmarks);
 	
-	g_hfwdOnStartRecording = CreateGlobalForward("BotMimic_OnStartRecording", ET_Hook, Param_Cell, Param_String, Param_String, Param_String, Param_String);
-	g_hfwdOnRecordingPauseStateChanged = CreateGlobalForward("BotMimic_OnRecordingPauseStateChanged", ET_Ignore, Param_Cell, Param_Cell);
-	g_hfwdOnRecordingBookmarkSaved = CreateGlobalForward("BotMimic_OnRecordingBookmarkSaved", ET_Ignore, Param_Cell, Param_String);
-	g_hfwdOnStopRecording = CreateGlobalForward("BotMimic_OnStopRecording", ET_Hook, Param_Cell, Param_String, Param_String, Param_String, Param_String, Param_CellByRef);
-	g_hfwdOnRecordSaved = CreateGlobalForward("BotMimic_OnRecordSaved", ET_Ignore, Param_Cell, Param_String, Param_String, Param_String, Param_String);
-	g_hfwdOnRecordDeleted = CreateGlobalForward("BotMimic_OnRecordDeleted", ET_Ignore, Param_String, Param_String, Param_String);
-	g_hfwdOnPlayerStartsMimicing = CreateGlobalForward("BotMimic_OnPlayerStartsMimicing", ET_Hook, Param_Cell, Param_String, Param_String, Param_String);
-	g_hfwdOnPlayerStopsMimicing = CreateGlobalForward("BotMimic_OnPlayerStopsMimicing", ET_Ignore, Param_Cell, Param_String, Param_String, Param_String);
-	g_hfwdOnPlayerMimicLoops = CreateGlobalForward("BotMimic_OnPlayerMimicLoops", ET_Ignore, Param_Cell);
-	g_hfwdOnPlayerMimicBookmark = CreateGlobalForward("BotMimic_OnPlayerMimicBookmark", ET_Ignore, Param_Cell, Param_String);
+	g_hfwdOnStartRecording = new GlobalForward("BotMimic_OnStartRecording", ET_Hook, Param_Cell, Param_String, Param_String, Param_String, Param_String);
+	g_hfwdOnRecordingPauseStateChanged = new GlobalForward("BotMimic_OnRecordingPauseStateChanged", ET_Ignore, Param_Cell, Param_Cell);
+	g_hfwdOnRecordingBookmarkSaved = new GlobalForward("BotMimic_OnRecordingBookmarkSaved", ET_Ignore, Param_Cell, Param_String);
+	g_hfwdOnStopRecording = new GlobalForward("BotMimic_OnStopRecording", ET_Hook, Param_Cell, Param_String, Param_String, Param_String, Param_String, Param_CellByRef);
+	g_hfwdOnRecordSaved = new GlobalForward("BotMimic_OnRecordSaved", ET_Ignore, Param_Cell, Param_String, Param_String, Param_String, Param_String);
+	g_hfwdOnRecordDeleted = new GlobalForward("BotMimic_OnRecordDeleted", ET_Ignore, Param_String, Param_String, Param_String);
+	g_hfwdOnPlayerStartsMimicing = new GlobalForward("BotMimic_OnPlayerStartsMimicing", ET_Hook, Param_Cell, Param_String, Param_String, Param_String);
+	g_hfwdOnPlayerStopsMimicing = new GlobalForward("BotMimic_OnPlayerStopsMimicing", ET_Ignore, Param_Cell, Param_String, Param_String, Param_String);
+	g_hfwdOnPlayerMimicLoops = new GlobalForward("BotMimic_OnPlayerMimicLoops", ET_Ignore, Param_Cell);
+	g_hfwdOnPlayerMimicBookmark = new GlobalForward("BotMimic_OnPlayerMimicBookmark", ET_Ignore, Param_Cell, Param_String);
 	
 	return APLRes_Success;
 }
@@ -226,14 +226,14 @@ public void OnPluginStart()
 		OnLibraryAdded("dhooks");
 	}
 	
-	Handle hGameConfig = LoadGameConfigFile("botmimic.games");
-	if (hGameConfig == INVALID_HANDLE)
+	GameData hGameConfig = new GameData("botmimic.games");
+	if (hGameConfig == null)
 		SetFailState("Failed to find botstuff.games game config.");
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	if ((g_hSetOrigin = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
 	
 	delete hGameConfig;
 }
@@ -251,10 +251,10 @@ public void OnLibraryAdded(const char[] name)
 	if(StrEqual(name, "dhooks") && g_hTeleport == null)
 	{
 		// Optionally setup a hook on CBaseEntity::Teleport to keep track of sudden place changes
-		Handle hGameData = LoadGameConfigFile("botmimic.games");
+		GameData hGameData = new GameData("botmimic.games");
 		if(hGameData == null)
 			return;
-		int iOffset = GameConfGetOffset(hGameData, "Teleport");
+		int iOffset = hGameData.GetOffset("Teleport");
 		delete hGameData;
 		if(iOffset == -1)
 			return;
@@ -290,7 +290,7 @@ public void OnMapStart()
 	int iSize = g_hSortedRecordList.Length;
 	char sPath[PLATFORM_MAX_PATH];
 	FileHeader iFileHeader;
-	Handle hAdditionalTeleport;
+	ArrayList hAdditionalTeleport;
 	for(int i=0;i<iSize;i++)
 	{
 		g_hSortedRecordList.GetString(i, sPath, sizeof(sPath));

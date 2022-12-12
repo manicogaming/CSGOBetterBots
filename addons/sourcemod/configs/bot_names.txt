@@ -108,12 +108,6 @@
 	"saffee" 			"FURIA"
 	"KSCERATO" 			"FURIA"
 	"drop" 				"FURIA"
-	//Santos Players
-	"jAPA" 				"Santos"
-	"begod" 			"Santos"
-	"STRIKER" 			"Santos"
-	"zdr" 				"Santos"
-	"DebornY" 			"Santos"	
 	//coL Players
 	"JT" 				"coL"
 	"hallzerk" 			"coL"
@@ -190,7 +184,7 @@
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
 	"ragga" 			"Nexus"
-	"adamS" 			"Nexus"
+	"ERSIN" 			"Nexus"
 	"SEMINTE" 			"Nexus"
 	//PACT Players
 	"Bielany" 			"PACT"
@@ -264,12 +258,6 @@
 	"tristanxa" 		"Goliath"
 	".exe" 				"Goliath"
 	"slash" 			"Goliath"
-	//NASR Players
-	"Remind" 			"NASR"
-	"REAL1ZE" 			"NASR"
-	"SandeN" 			"NASR"
-	"EiZAA" 			"NASR"
-	"bibu" 				"NASR"
 	//ECB Players
 	"ritchiEE" 			"ECB"
 	"Stev0se" 			"ECB"
@@ -306,12 +294,12 @@
 	"ADDICT" 			"VERTEX"
 	"malta" 			"VERTEX"
 	"Valiance" 			"VERTEX"
-	//IG Players
-	"Marek" 			"IG"
-	"DeStRoYeR" 		"IG"	
-	"flying" 			"IG"
-	"0i" 				"IG"
-	"rage" 				"IG"
+	//IBG Players
+	"droid" 			"IBG"
+	"dare" 				"IBG"	
+	"shane" 			"IBG"
+	"snav" 				"IBG"
+	"intra" 			"IBG"
 	//C9 Players
 	"nafany" 			"C9"
 	"sh1ro" 			"C9"
@@ -390,12 +378,6 @@
 	"Cl34v3rs" 			"SSP"
 	"Orbit" 			"SSP"	
 	"Spexy" 			"SSP"
-	//AGF Players
-	"FeZ" 				"AGF"
-	"Speedy" 			"AGF"
-	"Griller" 			"AGF"
-	"void" 				"AGF"
-	"Equip" 			"AGF"
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"bobeksde" 			"Lilmix"
@@ -456,16 +438,10 @@
 	"Nono2k" 			"GenOne"
 	"jeyN" 				"GenOne"
 	"SIXER"				"GenOne"
-	//Supremacy Players
-	".Rome" 			"Supremacy"
-	"GuepaRd" 			"Supremacy"
-	"NiK0" 				"Supremacy"
-	"Surviv0r" 			"Supremacy"
-	"ALONZO"			"Supremacy"
 	//CatEvil Players
 	"MrCANI" 			"CatEvil"
-	"zltan" 			"CatEvil"
-	"mutaNt" 			"CatEvil"
+	"Gin" 				"CatEvil"
+	"Chaos" 			"CatEvil"
 	"tanxiaomei" 		"CatEvil"
 	"Roninbaby"			"CatEvil"
 	//AVEZ Players
@@ -497,7 +473,7 @@
 	"Leggy" 			"DNMK"
 	"dyvo" 				"DNMK"
 	"zox" 				"DNMK"
-	"Dubee"				"DNMK"
+	"God's Not Dead"	"DNMK"
 	//iNation Players
 	"Dragon" 			"iNation"
 	"VLDN" 				"iNation"
@@ -516,12 +492,6 @@
 	"TACO" 				"Nation"
 	"latto" 			"Nation"
 	"dumau"				"Nation"
-	//Eriness Players
-	"Fog" 				"Eriness"
-	"kiyomi" 			"Eriness"
-	"onetwo" 			"Eriness"
-	"N4JT" 				"Eriness"
-	"DeXXuS"			"Eriness"
 	//Strife Players
 	"J0LZ" 				"Strife"
 	"Snakes" 			"Strife"
@@ -533,13 +503,7 @@
 	"Trax"				"777"
 	"mikki" 			"777"
 	"akEz" 				"777"
-	"H4RR3"				"777"
-	//CG Players
-	"denis" 			"CG"
-	"kolor"				"CG"
-	"Spiidi" 			"CG"
-	"kRYSTAL" 			"CG"
-	"stfN"				"CG"
+	"PALM1"				"777"
 	//BLUEJAYS Players
 	"aidKiT" 			"BLUEJAYS"
 	"kyxsan"			"BLUEJAYS"
@@ -564,15 +528,9 @@
 	"kade0" 			"AVANGAR"
 	"icem4N" 			"AVANGAR"
 	"ICY"				"AVANGAR"
-	//SWS Players
-	"stainzin" 			"SWS"
-	"CSO"				"SWS"
-	"bsd" 				"SWS"
-	"mxa" 				"SWS"
-	"lineko"			"SWS"
 	//Furious Players
 	"KAISER" 			"Furious"
-	"TIKO"				"Furious"
+	"peqexino"			"Furious"
 	"laser" 			"Furious"
 	"andrew" 			"Furious"
 	"ABM"				"Furious"
@@ -605,13 +563,13 @@
 	"devraNN"			"Entropy"
 	"rapala" 			"Entropy"
 	"mvN" 				"Entropy"
-	"fADE"				"Entropy"
+	"LyNeX"				"Entropy"
 	//Renewal Players
 	"xerolte" 			"Renewal"
 	"Tugu"				"Renewal"
 	"NEUZ" 				"Renewal"
 	"ROUX" 				"Renewal"
-	"ATTACKER04"		"Renewal"
+	"ariucle"			"Renewal"
 	//OneTap Players
 	"GEOHYPE" 			"OneTap"
 	"MoDo"				"OneTap"
@@ -624,12 +582,12 @@
 	"Aaron" 			"BP"
 	"EspiranTo" 		"BP"
 	"keen"				"BP"
-	//LLL Players
-	"StepzZ" 			"LLL"
-	"VoxelArc"			"LLL"
-	"Swes"				"LLL"
-	"Maxaxe" 			"LLL"
-	"Syther"			"LLL"
+	//Rooster Players
+	"asap" 				"Rooster"
+	"ADK"				"Rooster"
+	"nettik"			"Rooster"
+	"chelleos" 			"Rooster"
+	"Rackem"			"Rooster"
 	//HEET Players
 	"JACKZ" 			"HEET"
 	"afro"				"HEET"
@@ -641,7 +599,7 @@
 	"Broox"				"LDLC"
 	"AMANEK"			"LDLC"
 	"Diviiii" 			"LDLC"
-	"Neityu"			"LDLC"
+	"Snobling"			"LDLC"
 	//Vireo Players
 	"Fur_Daddy" 		"Vireo"
 	"emokie"			"Vireo"
@@ -660,12 +618,6 @@
 	"Sapec"				"EYEBALLERS"
 	"SHiNE" 			"EYEBALLERS"
 	"Svedjehed"			"EYEBALLERS"
-	//K1CK Players
-	"v1c7oR" 			"K1CK"
-	"AwaykeN"			"K1CK"
-	"SPELLAN"			"K1CK"
-	"rafftu" 			"K1CK"
-	"SAiKY"				"K1CK"
 	//mCon Players
 	"Jins" 				"mCon"
 	"AdamJC"			"mCon"
@@ -690,12 +642,6 @@
 	"alexer"			"Boca"
 	"Hezz" 				"Boca"
 	"MRN1"				"Boca"
-	//ITB Players
-	"Adam9130" 			"ITB"
-	"draken"			"ITB"
-	"dobbo"				"ITB"
-	"CYPHER" 			"ITB"
-	"RuStY"				"ITB"
 	//Sampi Players
 	"HONES" 			"Sampi"
 	"Habyzz"			"Sampi"
@@ -721,7 +667,7 @@
 	"xns" 				"Paqueta"
 	"ALLE"				"Paqueta"
 	//Plano Players
-	"yel" 				"Plano"
+	"decenty" 			"Plano"
 	"kNgV-"				"Plano"
 	"caike"				"Plano"
 	"piria" 			"Plano"

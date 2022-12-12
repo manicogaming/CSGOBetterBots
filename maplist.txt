@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Tue Dec 06 23:06:43 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Sun Dec 11 23:18:47 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -129,6 +129,7 @@ cs_light
 cs_mall_shootout
 cs_mansion
 cs_max_a4
+cs_miami
 cs_militia
 cs_militia_original
 cs_motel
@@ -337,7 +338,6 @@ de_riverside_rc2
 de_royal
 de_ruins
 de_rush
-workshop/2434936688/de_russiandust2
 de_russka_b2
 de_rust_b3
 de_safehouse
@@ -358,13 +358,16 @@ de_snowcapped_csgo
 de_soat_rc3
 de_spain
 de_sparity_v41
+de_stadium
 de_stmarc
 de_stolen
 de_storehouse
 de_studio
 de_subzero
 de_sugarcane
+de_summit
 de_sunburn
+workshop/1982602598/de_swamp
 de_tangerine_b2_17
 de_tides
 de_torntown

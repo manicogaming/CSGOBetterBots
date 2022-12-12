@@ -47,27 +47,27 @@ public void OnPluginStart()
 
 	RegConsoleCmd("sm_startplayback", Command_StartPlayback);
 	
-	Handle hGameData = LoadGameConfigFile("botmimic.games");
+	GameData hGameData = new GameData("botmimic.games");
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Virtual, "Weapon_Switch");
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hSetOrigin = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	if ((g_hSetOrigin = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetLocalAngles");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hSetAngles = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalAngles signature!");
+	if ((g_hSetAngles = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalAngles signature!");
 	
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameData, SDKConf_Signature, "CBaseEntity::SetAbsVelocity");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hSetVelocity = EndPrepSDKCall()) == INVALID_HANDLE)SetFailState("Failed to create SDKCall for CBaseEntity::SetAbsVelocity signature!");
+	if ((g_hSetVelocity = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetAbsVelocity signature!");
 	delete hGameData;
 }
 

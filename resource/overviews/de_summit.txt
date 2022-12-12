@@ -1,0 +1,8 @@
+// TAVR - AUTO RADAR. v 2.5.0a
+"de_summit"
+{
+	"material" "overviews/de_summit"
+	"pos_x" "-3925.000000"
+	"pos_y" "2368.000000"
+	"scale" "5.100000"
+}
