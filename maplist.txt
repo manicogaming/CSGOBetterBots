@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Sun Dec 11 23:18:47 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.15 config 1 at Wed Dec 14 13:12:34 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -181,6 +181,7 @@ de_bombspot_bitcoin
 de_boohouse_go
 de_boston_csgo
 de_bourg
+de_boyard
 de_breach
 de_bregov
 de_bsas_obelisco
@@ -194,6 +195,7 @@ de_castle
 de_cbble
 de_cbble_clangame
 de_cbble_small_v2
+de_chalice
 de_chateau_turzo
 de_chinatown
 de_chlore
@@ -367,7 +369,7 @@ de_subzero
 de_sugarcane
 de_summit
 de_sunburn
-workshop/1982602598/de_swamp
+de_swamp
 de_tangerine_b2_17
 de_tides
 de_torntown
