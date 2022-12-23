@@ -4099,11 +4099,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 		{
 			if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE))
-			{
 				BotEquipBestWeapon(client, true);
-				g_bDontSwitch[client] = true;
-				CreateTimer(2.0, Timer_EnableSwitch, GetClientUserId(client));
-			}
 			else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 				ProcessGrenadeThrow(client, fNoisePosition);
 		}
@@ -4296,7 +4292,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 					
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
-					bool bDoAttack;
 						
 					GetClientEyePosition(client, fClientEyes);
 					SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
@@ -4315,45 +4310,42 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
 							{
-								bDoAttack = false;
+								iButtons &= ~IN_ATTACK;
 							
 								if(!bIsReloading) 
-									bDoAttack = true;
+									iButtons |= IN_ATTACK;
 							}
 							
 							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-							else if (fTargetDistance > 2000.0 && GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) <= 0.1)
+							else if (fTargetDistance > 2000.0 && GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime())
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 						case 1:
 						{
-							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) <= 0.1 && !bIsDucking && !bIsReloading)
+							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.1 && !bIsDucking && !bIsReloading)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 						case 9, 40:
 						{
 							if (fTargetDistance < 2750.0 && !bIsReloading && g_bZoomed[client] && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
-								bDoAttack = true;
+								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
 							}
 							
-							if(GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) <= 0.1)
+							if(GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.1)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 					}
 					
 					fClientLoc[2] += 35.5;
-					
-					if (!(GetEntityFlags(client) & FL_ONGROUND))
-						bDoAttack = false;
-						
-					if(bDoAttack)
-						iButtons |= IN_ATTACK;
 						
 					if (!GetEntProp(iActiveWeapon, Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 						iButtons |= IN_DUCK;
+						
+					if(!(GetEntityFlags(client) & FL_ONGROUND))
+						iButtons &= ~IN_ATTACK;
 				}
 			}
 			
@@ -5330,10 +5322,10 @@ stock bool IsSafe(int client)
 	return false;
 }
 
-stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
+stock bool IsPositionCloseToEnemy(int client, float fOrigin[3])
 {
 	float fEnemyOrigin[3];
-	float fSmallestDistance = 250.0;
+	float fSmallestDistance = 150.0;
 	for (int i=1; i <= MaxClients; i++) 
 	{
 		if(!IsValidClient(i)) 
@@ -5347,7 +5339,7 @@ stock bool IsPositionCloseToEnemy(int client, float fNoiseOrigin[3])
 
 		GetClientAbsOrigin(i, fEnemyOrigin);
 
-		float fDistance = GetVectorDistance(fNoiseOrigin, fEnemyOrigin);
+		float fDistance = GetVectorDistance(fOrigin, fEnemyOrigin);
 
 		if(fDistance < fSmallestDistance || fSmallestDistance == 0.0)
 			return true;

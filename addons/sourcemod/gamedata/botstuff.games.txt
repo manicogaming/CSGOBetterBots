@@ -279,13 +279,6 @@
 					}
 				}
 			}
-			"CCSBot::FindMostDangerousThreat"
-			{
-				"signature" "CCSBot::FindMostDangerousThreat"
-				"callconv" "thiscall"
-				"return" "cbaseentity"
-				"this" "entity"
-			}
 		}
 		"MemPatches"
 		{

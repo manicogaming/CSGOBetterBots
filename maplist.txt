@@ -1,4 +1,4 @@
-// csgosl 2.15 config 1 at Wed Dec 14 13:12:34 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Thu Dec 22 23:20:06 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -371,6 +371,8 @@ de_summit
 de_sunburn
 de_swamp
 de_tangerine_b2_17
+de_thrill
+workshop/1825332431/de_throttle26
 de_tides
 de_torntown
 de_train

@@ -1,6 +1,6 @@
-"chalice"
+"de_chalice"
 {
-	"material"	"overviews/chalice_radar"
+	"material"	"overviews/de_chalice_radar"
 	"pos_x"		"-1501"
 	"pos_y"		"1570"
 	"scale"		"3.0"
