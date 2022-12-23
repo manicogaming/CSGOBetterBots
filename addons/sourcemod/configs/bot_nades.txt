@@ -143,4 +143,777 @@
 			"team"				"T"
 		}
 	}
+	"de_dust2"
+	{
+		"T-Spawn Hinge Smoke"
+		{
+			"position"			"439.994965 -805.218750 -7.957853"
+			"lookat"			"345.731506 -566.439331 125.895256"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}		
+		"Box A smoke"
+		{
+			"position"			"222.664124 -87.978210 9.023949"
+			"lookat"			"638.409301 364.216339 711.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}	
+		"Spawn A smoke"
+		{
+			"position"			"-191.417557 -660.007324 52.507114"
+			"lookat"			"-53.110397 -480.000061 195.599304"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Spawn Xbox smoke"
+		{
+			"position"			"-299.973511 -1149.267212 77.024117"
+			"lookat"			"-304.804351 -451.725280 292.240814"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Flash Mid from Xbox"
+		{
+			"position"			"-275.002380 1263.487671 -111.839729"
+			"lookat"			"-592.000000 1940.710327 289.555572"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke CT Spawn mid"
+		{
+			"position"			"-275.021118 1343.862915 -122.790283"
+			"lookat"			"-592.000000 1708.680541 286.294769"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke B entrance treasure"
+		{
+			"position"			"-1847.120972 1207.848755 32.132523"
+			"lookat"			"-1640.698242 1648.960205 1055.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke B upper"
+		{
+			"position"			"-2168.981201 1042.003418 40.191643"
+			"lookat"			"-1988.848266 1408.071777 253.494598"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke A cross"
+		{
+			"position"			"516.188232 984.854309 1.509747"
+			"lookat"			"524.428527 1469.362426 711.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke B Tun 1"
+		{
+			"position"			"-1122.165894 2589.282227 56.255028"
+			"lookat"			"-1296.000000 2420.447753 216.607177"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Smoke B Tun 2"
+		{
+			"position"			"-1019.651550 2546.319092 10.767586"
+			"lookat"			"-2505.349121 1421.175903 1055.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Smoke B Tun 3"
+		{
+			"position"			"-1362.044067 2755.031250 18.076168"
+			"lookat"			"-1666.952392 2266.340820 1055.968750"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun 1"
+		{
+			"position"			"-1366.031250 2565.340820 4.645229"
+			"lookat"			"-2351.457763 1252.961547 775.968750"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun 1.1"
+		{
+			"position"			"-1366.031250 2565.340820 4.645229"
+			"lookat"			"-2351.457763 1252.961547 775.968750"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}			
+		"Smoke B Tun 3"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1815.382568 2424.121826 87.385833"  
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 2 Close"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1815.382568 2424.121826 87.385833"  
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 2.1 Close"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1815.382568 2424.121826 87.385833"  
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Nade B Tun 2 Close"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1815.382568 2424.121826 87.385833"  
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Nade B Tun 2 Close"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1815.382568 2424.121826 87.385833"  
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 2"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1946.958007 1787.810913 344.604858"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 2.1"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1946.958007 1787.810913 344.604858"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Flash B Tun 1"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1946.958007 1787.810913 344.604858"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Nade B Tun 1"
+		{
+			"position"			"-1776.260254 2546.278564 31.247150"
+			"lookat"			"-1946.958007 1787.810913 344.604858"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 3"
+		{
+			"position"			"-1511.733643 2834.400635 7.431402"
+			"lookat"			"-2139.601806 1320.031250 850.462402"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Molly B Tun 3.1"
+		{
+			"position"			"-1511.733643 2834.400635 7.431402"
+			"lookat"			"-2139.601806 1320.031250 850.462402"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Flash B Tun 2"
+		{
+			"position"			"-1511.733643 2834.400635 7.431402"
+			"lookat"			"-2377.262207 1000.031250 653.929138"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}		
+		"Nade B Tun 2"
+		{
+			"position"			"-1511.733643 2834.400635 7.431402"
+			"lookat"			"-2377.262207 1000.031250 653.929138"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Smoke B Tun 3"
+		{
+			"position"			"-1511.733643 2834.400635 7.431402"
+			"lookat"			"-2286.109863 1000.031372 613.243225"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Smoke B Tun 3 similar"
+		{
+			"position"			"-1664.316772 2833.102295 20.329655"
+			"lookat"			"-2029.357421 1784.279541 345.848907"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Nade B Tun 3 similar"
+		{
+			"position"			"-1664.316772 2833.102295 20.329655"
+			"lookat"			"-2029.357421 1784.279541 345.848907"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Nade B Tun 3 similar"
+		{
+			"position"			"-1664.316772 2833.102295 20.329655"
+			"lookat"			"-2029.357421 1784.279541 345.848907"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun 3 similar"
+		{
+			"position"			"-1664.316772 2833.102295 20.329655"
+			"lookat"			"-2029.357421 1784.279541 345.848907"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun 3 similar"
+		{
+			"position"			"-1664.316772 2833.102295 20.329655"
+			"lookat"			"-2029.357421 1784.279541 345.848907"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun corner1"
+		{
+			"position"			"-2157.999756 1814.031250 3.975368"
+			"lookat"			"-1925.020996 1783.402099 115.304031"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Molly B Tun corner2"
+		{
+			"position"			"-2157.999756 1814.031250 3.975368"
+			"lookat"			"-1925.020996 1783.402099 115.304031"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Flash B Tun corner"
+		{
+			"position"			"-2157.999756 1814.031250 3.975368"
+			"lookat"			"-1925.020996 1783.402099 115.304031"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Nade B Tun corner"
+		{
+			"position"			"-2157.999756 1814.031250 3.975368"
+			"lookat"			"-1925.020996 1783.402099 115.304031"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}	
+		"Smoke Xboxspawn"
+		{
+			"position"			"-498.507019 -662.023804 126.721809"
+			"lookat"			"-471.370025 -353.311248 219.775573"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke Xboxspawn2"
+		{
+			"position"			"-347.157043 -756.543335 82.370544"
+			"lookat"			"-339.971252 -412.539764 216.377471"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke cross cat"
+		{
+			"position"			"489.673340 1599.890015 1.772972"
+			"lookat"			"197.507690 1910.513427 361.242126"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke doorpeak"
+		{
+			"position"			"-13.389333 -677.908447 12.771947"
+			"lookat"			"599.330505 248.655639 451.527740"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke cross from cat"
+		{
+			"position"			"189.996277 1334.031250 1.083763"
+			"lookat"			"905.534362 2976.000000 556.665344"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"popflash A1"
+		{
+			"position"			"492.554321 -254.932907 -2.143294"
+			"lookat"			"1046.889404 528.528137 711.968750"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"popflash A2"
+		{
+			"position"			"696.509888 -305.559357 6.472057"
+			"lookat"			"1044.437377 568.772705 711.968811"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"popflash B outside"
+		{
+			"position"			"-1273.999756 2575.968750 70.396812"
+			"lookat"			"-1052.551635 2623.799560 179.500259"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Molly B out"
+		{
+			"position"			"-1273.999756 2575.968750 70.396812"
+			"lookat"			"-1052.551635 2623.799560 179.500259"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Molly B out"
+		{
+			"position"			"-1273.999756 2575.968750 70.396812"
+			"lookat"			"-1052.551635 2623.799560 179.500259"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Smoke B out"
+		{
+			"position"			"-1273.999756 2575.968750 70.396812"
+			"lookat"			"-1052.551635 2623.799560 179.500259"
+			"nadedefindex"		"45"
+			"jumpthrow"			"1"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyA cat1"
+		{
+			"position"			"769.630310 2376.338623 -34.785320"
+			"lookat"			"247.786071 1737.051391 262.049194"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"MollyA cat2"
+		{
+			"position"			"769.630310 2376.338623 -34.785320"
+			"lookat"			"247.786071 1737.051391 262.049194"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"FlashA cat"
+		{
+			"position"			"769.630310 2376.338623 -34.785320"
+			"lookat"			"247.786071 1737.051391 262.049194"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"NadeA cat"
+		{
+			"position"			"769.630310 2376.338623 -34.785320"
+			"lookat"			"247.786071 1737.051391 262.049194"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"MollyA catclose1"
+		{
+			"position"			"1004.997559 2379.995117 27.467880"
+			"lookat"			"-39.968750 1695.677246 549.311035"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"MollyA catclose2"
+		{
+			"position"			"1004.997559 2379.995117 27.467880"
+			"lookat"			"-39.968750 1695.677246 549.311035"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"FlashA catclose2"
+		{
+			"position"			"1004.997559 2379.995117 27.467880"
+			"lookat"			"-39.968750 1695.677246 549.311035"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"FlashA catclose2"
+		{
+			"position"			"1004.997559 2379.995117 27.467880"
+			"lookat"			"-39.968750 1695.677246 549.311035"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"FlashA long"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"340.214233 -1184.001098 656.538208"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"FlashA long"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"340.214233 -1184.001098 656.538208"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyA CT"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"340.214233 -1184.001098 656.538208"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyA CT"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"1717.760131 2047.041259 54.860603"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Flash CT"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"-39.968750 2845.000244 619.951293"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Molly CTretake"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"-39.968627 2935.109863 935.641845"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Molly CTretake"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"-39.968627 2935.109863 935.641845"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Nade CTretake"
+		{
+			"position"			"1751.555054 2043.986938 0.273712"
+			"lookat"			"-39.968627 2968.998535 863.123168"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"1"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bpush smoke"
+		{
+			"position"			"-1770.470215 993.968750 38.886379"
+			"lookat"			"-2048.000000 1630.373413 212.388458"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bpush smoke2"
+		{
+			"position"			"-1880.209595 1257.056274 32.030380"
+			"lookat"			"-2048.000000 1680.233032 245.319030"
+			"nadedefindex"		"45"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bpush Flash"
+		{
+			"position"			"-1880.209595 1257.056274 32.030380"
+			"lookat"			"-2048.000000 1680.233032 245.319030"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bpush Flash2"
+		{
+			"position"			"-2168.998535 1042.005127 40.184120"
+			"lookat"			"-1982.671630 1495.000244 246.065612"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyA retake1"
+		{
+			"position"			"449.280945 2060.347168 -125.151573"
+			"lookat"			"1847.829101 3647.968750 947.410400"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"MollyA retake1.1"
+		{
+			"position"			"449.280945 2060.347168 -125.151573"
+			"lookat"			"1847.829101 3647.968750 947.410400"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"MollyB retake2"
+		{
+			"position"			"-1037.968750 2102.031250 -5.880991"
+			"lookat"			"-1506.173217 3088.000000 410.8653860"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyB retake2.1"
+		{
+			"position"			"-1037.968750 2102.031250 -5.880991"
+			"lookat"			"-1506.173217 3088.000000 410.8653860"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"FlashB retake2.1"
+		{
+			"position"			"-1037.968750 2102.031250 -5.880991"
+			"lookat"			"-1506.173217 3088.000000 410.8653860"
+			"nadedefindex"		"43"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"NadeB retake2.1"
+		{
+			"position"			"-1037.968750 2102.031250 -5.880991"
+			"lookat"			"-1506.173217 3088.000000 410.8653860"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyB retake3"
+		{
+			"position"			"-894.601379 2108.411133 -73.965149"
+			"lookat"			"-1595.852416 3020.566406 437.497528"
+			"nadedefindex"		"48"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"MollyB retake3.1"
+		{
+			"position"			"-894.601379 2108.411133 -73.965149"
+			"lookat"			"-1595.852416 3020.566406 437.497528"
+			"nadedefindex"		"46"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"NadeB retake3.1"
+		{
+			"position"			"-894.601379 2108.411133 -73.965149"
+			"lookat"			"-1595.852416 3020.566406 437.497528"
+			"nadedefindex"		"44"
+			"jumpthrow"			"0"
+			"crouch"			"0"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	}
 }
