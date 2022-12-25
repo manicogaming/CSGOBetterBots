@@ -294,24 +294,18 @@
 	"pz" 				"108241121"
 	"malta" 			"181905573"
 	"Valiance" 			"236090787"
-	//IBG Players
-	"droid" 			"73759054"
-	"dare" 				"172615886"	
-	"shane" 			"409998440"
-	"snav" 				"278377258"
-	"intra" 			"256251217"
 	//C9 Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
 	"interz" 			"247808592"
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
-	//aTTaX Players
-	"awzek" 			"238305245"
-	"PANIX" 			"241868664"
-	"pdy" 				"199029474"	
-	"PerX" 				"208428335"	
-	"FreeZe" 			"259251039"	
+	//Davenport Players
+	"Pugg" 				"215423525"
+	"CoJoMo" 			"239501561"
+	"swicher" 			"109292112"	
+	"corn" 				"127592330"	
+	"spek" 				"324800230"	
 	//ATK Players
 	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
@@ -422,7 +416,7 @@
 	"hemzk9" 			"83597297"	
 	//Illuminar Players
 	"szejn" 			"69226768"
-	"zaNNN" 			"154807226"
+	"TOAO" 				"196107432"
 	"byali" 			"18860354"
 	"morelz" 			"122208414"
 	"mASKED"			"285508264"
@@ -444,12 +438,12 @@
 	"Roninbaby" 		"460930168"
 	"MrCANI" 			"80075444"
 	"Chaos" 			"352409378"
-	//AVEZ Players
-	"bonjorno" 			"91963127"
-	"next1me" 			"1276923255"
-	"xenq" 				"181381079"
-	"cej0t" 			"120183772"
-	"moonwalk"			"1142165871"
+	//Nouns Players
+	"stamina" 			"272809432"
+	"cynic" 			"106932238"
+	"Bwills" 			"119308817"
+	"nosraC" 			"101522203"
+	"cJ"				"40562365"
 	//Anonymo Players
 	"oskarish" 			"286156964"
 	"MWLKY" 			"206859955"
@@ -497,7 +491,7 @@
 	"Snakes" 			"76881568"
 	"Infinite" 			"149493497"
 	"reck" 				"374549101"
-	"jitter"			"875669473"
+	"aris"				"72733739"
 	//777 Players
 	"SLY" 				"1737573"
 	"Trax"				"163819505"
@@ -570,12 +564,12 @@
 	"NEUZ" 				"114122809"
 	"ROUX" 				"977087142"
 	"ariucle"			"469468594"
-	//OneTap Players
-	"GEOHYPE" 			"116371108"
-	"MoDo"				"389955370"
-	"smekk" 			"100657287"
-	"swiiffter" 		"286059320"
-	"Ciocardau"			"200980216"
+	//500 Players
+	"SHiPZ" 			"254948893"
+	"dennyslaw"			"300693622"
+	"Rainwaker" 		"177848062"
+	"niki1" 			"932616892"
+	"Patrick"			"98715951"
 	//BP Players
 	"fleav" 			"189640934"
 	"Chill"				"113129796"
@@ -617,7 +611,7 @@
 	"JW"				"71288472"
 	"Sapec"				"107257797"
 	"SHiNE" 			"196824160"
-	"Svedjehed"			"170174906"
+	"Peppzor"			"328124340"
 	//mCon Players
 	"Jins" 				"132500306"
 	"AdamJC"			"231738870"

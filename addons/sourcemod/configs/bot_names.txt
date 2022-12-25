@@ -294,24 +294,18 @@
 	"ADDICT" 			"VERTEX"
 	"malta" 			"VERTEX"
 	"Valiance" 			"VERTEX"
-	//IBG Players
-	"droid" 			"IBG"
-	"dare" 				"IBG"	
-	"shane" 			"IBG"
-	"snav" 				"IBG"
-	"intra" 			"IBG"
 	//C9 Players
 	"nafany" 			"C9"
 	"sh1ro" 			"C9"
 	"interz" 			"C9"
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
-	//aTTaX Players
-	"awzek" 			"aTTaX"
-	"PANIX" 			"aTTaX"
-	"PerX" 				"aTTaX"
-	"FreeZe" 			"aTTaX"
-	"pdy" 				"aTTaX"	
+	//Davenport Players
+	"Pugg" 				"Davenport"
+	"CoJoMo" 			"Davenport"
+	"corn" 				"Davenport"
+	"spek" 				"Davenport"
+	"swicher" 			"Davenport"	
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
@@ -422,7 +416,7 @@
 	"KriLLe" 			"Lemondogs"	
 	//Illuminar Players
 	"szejn" 			"Illuminar"
-	"zaNNN" 			"Illuminar"
+	"TOAO" 				"Illuminar"
 	"byali" 			"Illuminar"
 	"morelz" 			"Illuminar"
 	"mASKED"			"Illuminar"
@@ -444,12 +438,12 @@
 	"Chaos" 			"CatEvil"
 	"tanxiaomei" 		"CatEvil"
 	"Roninbaby"			"CatEvil"
-	//AVEZ Players
-	"bonjorno" 			"AVEZ"
-	"next1me" 			"AVEZ"
-	"xenq" 				"AVEZ"
-	"cej0t" 			"AVEZ"
-	"moonwalk"			"AVEZ"
+	//Nouns Players
+	"stamina" 			"Nouns"
+	"cynic" 			"Nouns"
+	"Bwills" 			"Nouns"
+	"nosraC" 			"Nouns"
+	"cJ"				"Nouns"
 	//Anonymo Players
 	"oskarish" 			"Anonymo"
 	"MWLKY" 			"Anonymo"
@@ -497,7 +491,7 @@
 	"Snakes" 			"Strife"
 	"Infinite" 			"Strife"
 	"reck" 				"Strife"
-	"jitter"			"Strife"
+	"aris"				"Strife"
 	//777 Players
 	"SLY" 				"777"
 	"Trax"				"777"
@@ -570,12 +564,12 @@
 	"NEUZ" 				"Renewal"
 	"ROUX" 				"Renewal"
 	"ariucle"			"Renewal"
-	//OneTap Players
-	"GEOHYPE" 			"OneTap"
-	"MoDo"				"OneTap"
-	"smekk" 			"OneTap"
-	"swiiffter" 		"OneTap"
-	"Ciocardau"			"OneTap"
+	//500 Players
+	"SHiPZ" 			"500"
+	"dennyslaw"			"500"
+	"Rainwaker" 		"500"
+	"niki1" 			"500"
+	"Patrick"			"500"
 	//BP Players
 	"fleav" 			"BP"
 	"Chill"				"BP"
@@ -617,7 +611,7 @@
 	"JW"				"EYEBALLERS"
 	"Sapec"				"EYEBALLERS"
 	"SHiNE" 			"EYEBALLERS"
-	"Svedjehed"			"EYEBALLERS"
+	"Peppzor"			"EYEBALLERS"
 	//mCon Players
 	"Jins" 				"mCon"
 	"AdamJC"			"mCon"

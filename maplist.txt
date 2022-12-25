@@ -1,4 +1,4 @@
-// csgosl 2.16 config 1 at Thu Dec 22 23:20:06 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Sun Dec 25 20:06:04 GMT 2022 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -464,6 +464,7 @@ knas_bunker_css
 knas_speedcastle_css
 lobby_mapveto
 mcdonalds-mds-csgo
+workshop/2455161118/mg_bomberman
 moziz_walzor
 mx_tree_b1
 nuketown_remake_2
