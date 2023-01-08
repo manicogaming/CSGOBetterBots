@@ -186,12 +186,6 @@
 	"ragga" 			"Nexus"
 	"ERSIN" 			"Nexus"
 	"SEMINTE" 			"Nexus"
-	//PACT Players
-	"Bielany" 			"PACT"
-	"lunAtic" 			"PACT"
-	"bnox" 				"PACT"
-	"azizz" 			"PACT"
-	"fr3nd" 			"PACT"
 	//Nemiga Players
 	"xsepower" 			"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
@@ -394,7 +388,7 @@
 	"dgt" 				"9z"
 	"dav1d" 			"9z"
 	"maxujas" 			"9z"
-	"nqz" 				"9z"
+	"try" 				"9z"
 	"buda" 				"9z"
 	//SINNERS Players
 	"ZEDKO" 			"SINNERS"
@@ -453,9 +447,9 @@
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
 	"SaMey" 			"HONORIS"
-	"NEO" 				"HONORIS"
+	"lunAtic" 			"HONORIS"
 	"reiko" 			"HONORIS"
-	"Grashog"			"HONORIS"
+	"Sobol"				"HONORIS"
 	//Spirit Players
 	"chopper" 			"Spirit"
 	"w0nderful" 		"Spirit"
@@ -481,7 +475,7 @@
 	"d1cer" 			"LEISURE"
 	"gimpen"			"LEISURE"
 	//Nation Players
-	"try" 				"Nation"
+	"nqz" 				"Nation"
 	"coldzera" 			"Nation"
 	"TACO" 				"Nation"
 	"latto" 			"Nation"
@@ -534,12 +528,6 @@
 	"Alisson" 			"Meta"
 	"abr" 				"Meta"
 	"dok"				"Meta"
-	//ONYX Players
-	"bodito" 			"ONYX"
-	"noleN"				"ONYX"
-	"sl3nd" 			"ONYX"
-	"Kamion" 			"ONYX"
-	"coolio"			"ONYX"
 	//Dice Players
 	"XpG" 				"Dice"
 	"Gauthierlele"		"Dice"
@@ -649,11 +637,11 @@
 	"GruBy" 			"Ungentium"
 	"ponczek"			"Ungentium"
 	//MASONIC Players
-	"notaN" 			"MASONIC"
+	"kiR" 				"MASONIC"
 	"J3nsyy"			"MASONIC"
 	"Anlelele"			"MASONIC"
 	"Tauson" 			"MASONIC"
-	"Buzz"				"MASONIC"
+	"vester"			"MASONIC"
 	//Paqueta Players
 	"DeStiNy" 			"Paqueta"
 	"Gafolo"			"Paqueta"
@@ -667,11 +655,11 @@
 	"piria" 			"Plano"
 	"NEKIZ"				"Plano"
 	//GTZ Players
-	"Linko" 			"GTZ"
-	"rafaxF"			"GTZ"
+	"Jaepe" 			"GTZ"
+	"shr"				"GTZ"
 	"snapy"				"GTZ"
-	"slaxx" 			"GTZ"
-	"NOPEEj"			"GTZ"
+	"aragorN" 			"GTZ"
+	"Icarus"			"GTZ"
 	//Alpha Players
 	"mupzG" 			"Alpha"
 	"Twinx"				"Alpha"
@@ -684,12 +672,12 @@
 	"Lucaozy"			"Fluxo"
 	"lux" 				"Fluxo"
 	"v$m"				"Fluxo"
-	//Aravt Players
-	"ctrlmad" 			"Aravt"
-	"cool4st"			"Aravt"
-	"fury5k"			"Aravt"
-	"Shinobi" 			"Aravt"
-	"clouden"			"Aravt"
+	//Eruption Players
+	"dobu" 				"Eruption"
+	"cool4st"			"Eruption"
+	"fury5k"			"Eruption"
+	"Shinobi" 			"Eruption"
+	"yAmi"				"Eruption"
 	//DUSTY Players
 	"EddezeNNN" 		"DUSTY"
 	"TH0R"				"DUSTY"

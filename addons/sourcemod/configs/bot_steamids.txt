@@ -186,12 +186,6 @@
 	"ragga" 			"109933575"
 	"ERSIN" 			"68024588"
 	"SEMINTE" 			"36171013"
-	//PACT Players
-	"Bielany" 			"251942476"
-	"lunAtic" 			"27202715"
-	"bnox" 				"400417045"
-	"azizz" 			"43580835"
-	"fr3nd" 			"177768668"
 	//Nemiga Players
 	"xsepower" 			"112014226"
 	"BELCHONOKK" 		"293404789"
@@ -383,7 +377,7 @@
 	"arrozdoce" 		"13492074"
 	"stadodo" 			"87137134"
 	"DDias" 			"67343840"
-	"suka" 				"48566248"
+	"NOPEEj" 			"200528981"
 	//Tigers Players
 	"HenkkyG" 			"10674280"
 	"NIO" 				"170307600"
@@ -394,7 +388,7 @@
 	"dgt" 				"256625848"
 	"dav1d" 			"160225583"
 	"maxujas" 			"282684656"
-	"nqz" 				"390076777"
+	"try" 				"404852560"
 	"buda" 				"239077622"
 	//SINNERS Players
 	"ZEDKO" 			"173898955"
@@ -452,10 +446,10 @@
 	"innocent"			"26563533"
 	//HONORIS Players
 	"TaZ" 				"234052"
-	"NEO" 				"460206"
+	"lunAtic" 			"27202715"
 	"reiko" 			"190436529"
 	"SaMey" 			"150540966"
-	"Grashog" 			"78941188"
+	"Sobol" 			"190359589"
 	//Spirit Players
 	"chopper" 			"85633136"
 	"w0nderful" 		"1102803112"
@@ -481,7 +475,7 @@
 	"d1cer"				"158737140"
 	"gimpen"			"185018310"
 	//Nation Players
-	"try" 				"404852560"
+	"nqz" 				"390076777"
 	"coldzera" 			"79720871"
 	"TACO" 				"52876568"
 	"latto" 			"889754458"
@@ -534,12 +528,6 @@
 	"Alisson" 			"185334169"
 	"abr"				"92920272"
 	"dok"				"143357008"
-	//ONYX Players
-	"bodito" 			"114907460"
-	"noleN"				"860186586"
-	"sl3nd" 			"137805965"
-	"Kamion" 			"220609306"
-	"coolio"			"119009553"
 	//Dice Players
 	"XpG" 				"30253348"
 	"Gauthierlele"		"35731666"
@@ -649,11 +637,11 @@
 	"GruBy" 			"44752530"
 	"ponczek"			"150374922"
 	//MASONIC Players
-	"notaN" 			"70656220"
+	"kiR" 				"258258243"
 	"J3nsyy"			"192137384"
 	"Anlelele"			"169533761"
 	"Tauson" 			"356440446"
-	"Buzz"				"288688034"
+	"vester"			"175193262"
 	//Paqueta Players
 	"DeStiNy" 			"89528706"
 	"Gafolo"			"174962930"
@@ -667,11 +655,11 @@
 	"piria" 			"436072455"
 	"NEKIZ"				"76618432"
 	//GTZ Players
-	"Linko" 			"186797108"
-	"rafaxF"			"134941478"
+	"Jaepe" 			"251441860"
+	"shr"				"66458785"
 	"snapy"				"268698824"
-	"slaxx" 			"118792535"
-	"NOPEEj"			"200528981"
+	"aragorN" 			"844611868"
+	"Icarus"			"291309752"
 	//Alpha Players
 	"mupzG" 			"233287646"
 	"Twinx"				"114782035"
@@ -684,12 +672,12 @@
 	"Lucaozy"			"197122745"
 	"lux" 				"113751940"
 	"v$m"				"51467095"
-	//Aravt Players
-	"ctrlmad" 			"402172443"
+	//Eruption Players
+	"dobu" 				"159891913"
 	"cool4st"			"882582488"
 	"fury5k"			"866891295"
 	"Shinobi" 			"488680911"
-	"clouden"			"1019902116"
+	"yAmi"				"175732643"
 	//DUSTY Players
 	"EddezeNNN" 		"82634167"
 	"TH0R"				"97751682"

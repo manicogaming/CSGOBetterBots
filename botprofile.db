@@ -24,7 +24,7 @@ Default
         Skill = 50
         Aggression = 100
         ReactionTime = 0.3
-        AttackDelay = 0
+        AttackDelay = 0.1
         Teamwork = 100
         AimFocusInitial = 20                    // initial focus spread in degrees (from desired center)
         AimFocusDecay = 0.7                             // how much focus shrinks per second (.25 = 25% of size after 1 sec)
@@ -985,28 +985,6 @@ ProP+Rifle+RiflePersonality "SEMINTE"
 	VoicePitch = 88
 End
 
-//PACT Players
-
-ProP+Rifle+RiflePersonality "Bielany"
-	VoicePitch = 96
-End
-
-ProP+SniperPro+SniperPersonality "lunAtic"
-	VoicePitch = 79
-End
-
-ProP+Rifle+RiflePersonality "bnox"
-	VoicePitch = 71
-End
-
-ProP+Rifle+RiflePersonality "azizz"
-	VoicePitch = 115
-End
-
-ProP+Rifle+RiflePersonality "fr3nd"
-	VoicePitch = 112
-End
-
 //Nemiga Players
 
 ProP+Rifle+RiflePersonality "xsepower"
@@ -1747,7 +1725,7 @@ ProP+Rifle+RiflePersonality "maxujas"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "nqz"
+ProP+Rifle+RiflePersonality "try"
 	VoicePitch = 87
 End
 
@@ -1959,11 +1937,11 @@ ProP+Rifle+RiflePersonality "TaZ"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "SaMey"
+ProP+SniperPro+SniperPersonality "lunAtic"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "NEO"
+ProP+Rifle+RiflePersonality "SaMey"
 	VoicePitch = 89
 End
 
@@ -1971,7 +1949,7 @@ ProP+Rifle+RiflePersonality "reiko"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "Grashog"
+ProP+Rifle+RiflePersonality "Sobol"
 	VoicePitch = 93
 End
 
@@ -2069,7 +2047,7 @@ ProP+Rifle+RiflePersonality "coldzera"
 	VoicePitch = 105
 End
 
-ProP+SniperPro+SniperPersonality "try"
+ProP+SniperPro+SniperPersonality "nqz"
 	VoicePitch = 106
 End
 
@@ -2259,28 +2237,6 @@ End
 
 ProP+Rifle+RiflePersonality "dok"
 	VoicePitch = 78
-End
-
-//ONYX Players
-
-ProP+Rifle+RiflePersonality "bodito"
-	VoicePitch = 90
-End
-
-ProP+SniperPro+SniperPersonality "noleN"
-	VoicePitch = 92
-End
-
-ProP+Rifle+RiflePersonality "sl3nd"
-	VoicePitch = 95
-End
-
-ProP+Rifle+RiflePersonality "Kamion"
-	VoicePitch = 111
-End
-
-ProP+Rifle+RiflePersonality "coolio"
-	VoicePitch = 96
 End
 
 //Dice Players
@@ -2681,7 +2637,7 @@ End
 
 //MASONIC Players
 
-ProP+Rifle+RiflePersonality "notaN"
+ProP+Rifle+RiflePersonality "kiR"
 	VoicePitch = 81
 End
 
@@ -2697,7 +2653,7 @@ ProP+Rifle+RiflePersonality "Tauson"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "Buzz"
+ProP+Rifle+RiflePersonality "vester"
 	VoicePitch = 99
 End
 
@@ -2747,11 +2703,11 @@ End
 
 //GTZ Players
 
-ProP+Rifle+RiflePersonality "Linko"
+ProP+Rifle+RiflePersonality "Jaepe"
 	VoicePitch = 96
 End
 
-ProP+SniperPro+SniperPersonality "rafaxF"
+ProP+SniperPro+SniperPersonality "shr"
 	VoicePitch = 75
 End
 
@@ -2759,11 +2715,11 @@ ProP+Rifle+RiflePersonality "snapy"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "slaxx"
+ProP+Rifle+RiflePersonality "aragorN"
 	VoicePitch = 78
 End
 
-ProP+Rifle+RiflePersonality "NOPEEj"
+ProP+Rifle+RiflePersonality "Icarus"
 	VoicePitch = 108
 End
 
@@ -2811,9 +2767,9 @@ ProP+Rifle+RiflePersonality "v$m"
 	VoicePitch = 80
 End
 
-//Aravt Players
+//Eruption Players
 
-ProP+Rifle+RiflePersonality "ctrlmad"
+ProP+Rifle+RiflePersonality "dobu"
 	VoicePitch = 77
 End
 
@@ -2829,7 +2785,7 @@ ProP+Rifle+RiflePersonality "Shinobi"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "clouden"
+ProP+Rifle+RiflePersonality "yAmi"
 	VoicePitch = 112
 End
 

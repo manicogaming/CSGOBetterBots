@@ -13,13 +13,14 @@
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bTerroristEco, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
-bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bZoomed[MAXPLAYERS + 1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
+bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1], g_bCanThrowGrenade[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1];
 int g_iRndExecute = -1, g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
 int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset, g_iBotNadeStateOffs;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
+float g_fZoomedTimestamp[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -950,31 +951,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "PACT", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Bielany");
-			ServerCommand("bot_add_ct %s", "lunAtic");
-			ServerCommand("bot_add_ct %s", "bnox");
-			ServerCommand("bot_add_ct %s", "azizz");
-			ServerCommand("bot_add_ct %s", "fr3nd");
-			ServerCommand("mp_teamlogo_1 pact");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Bielany");
-			ServerCommand("bot_add_t %s", "lunAtic");
-			ServerCommand("bot_add_t %s", "bnox");
-			ServerCommand("bot_add_t %s", "azizz");
-			ServerCommand("bot_add_t %s", "fr3nd");
-			ServerCommand("mp_teamlogo_2 pact");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "Nemiga", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -1808,7 +1784,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "dgt");
 			ServerCommand("bot_add_ct %s", "dav1d");
 			ServerCommand("bot_add_ct %s", "maxujas");
-			ServerCommand("bot_add_ct %s", "nqz");
+			ServerCommand("bot_add_ct %s", "try");
 			ServerCommand("bot_add_ct %s", "buda");
 			ServerCommand("mp_teamlogo_1 nine");
 		}
@@ -1819,7 +1795,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "dgt");
 			ServerCommand("bot_add_t %s", "dav1d");
 			ServerCommand("bot_add_t %s", "maxujas");
-			ServerCommand("bot_add_t %s", "nqz");
+			ServerCommand("bot_add_t %s", "try");
 			ServerCommand("bot_add_t %s", "buda");
 			ServerCommand("mp_teamlogo_2 nine");
 		}
@@ -2058,8 +2034,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "TaZ");
 			ServerCommand("bot_add_ct %s", "SaMey");
 			ServerCommand("bot_add_ct %s", "reiko");
-			ServerCommand("bot_add_ct %s", "Grashog");
-			ServerCommand("bot_add_ct %s", "NEO");
+			ServerCommand("bot_add_ct %s", "Sobol");
+			ServerCommand("bot_add_ct %s", "lunAtic");
 			ServerCommand("mp_teamlogo_1 hono");
 		}
 		
@@ -2069,8 +2045,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "TaZ");
 			ServerCommand("bot_add_t %s", "SaMey");
 			ServerCommand("bot_add_t %s", "reiko");
-			ServerCommand("bot_add_t %s", "Grashog");
-			ServerCommand("bot_add_t %s", "NEO");
+			ServerCommand("bot_add_t %s", "Sobol");
+			ServerCommand("bot_add_t %s", "lunAtic");
 			ServerCommand("mp_teamlogo_2 hono");
 		}
 	}
@@ -2181,7 +2157,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "coldzera");
-			ServerCommand("bot_add_ct %s", "try");
+			ServerCommand("bot_add_ct %s", "nqz");
 			ServerCommand("bot_add_ct %s", "TACO");
 			ServerCommand("bot_add_ct %s", "latto");
 			ServerCommand("bot_add_ct %s", "dumau");
@@ -2192,7 +2168,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "coldzera");
-			ServerCommand("bot_add_t %s", "try");
+			ServerCommand("bot_add_t %s", "nqz");
 			ServerCommand("bot_add_t %s", "TACO");
 			ServerCommand("bot_add_t %s", "latto");
 			ServerCommand("bot_add_t %s", "dumau");
@@ -2397,31 +2373,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "abr");
 			ServerCommand("bot_add_t %s", "dok");
 			ServerCommand("mp_teamlogo_2 meta");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "ONYX", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "bodito");
-			ServerCommand("bot_add_ct %s", "noleN");
-			ServerCommand("bot_add_ct %s", "sl3nd");
-			ServerCommand("bot_add_ct %s", "Kamion");
-			ServerCommand("bot_add_ct %s", "coolio");
-			ServerCommand("mp_teamlogo_1 ony");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "bodito");
-			ServerCommand("bot_add_t %s", "noleN");
-			ServerCommand("bot_add_t %s", "sl3nd");
-			ServerCommand("bot_add_t %s", "Kamion");
-			ServerCommand("bot_add_t %s", "coolio");
-			ServerCommand("mp_teamlogo_2 ony");
 		}
 	}
 	
@@ -2880,22 +2831,22 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "notaN");
+			ServerCommand("bot_add_ct %s", "kiR");
 			ServerCommand("bot_add_ct %s", "J3nsyy");
 			ServerCommand("bot_add_ct %s", "Anlelele");
 			ServerCommand("bot_add_ct %s", "Tauson");
-			ServerCommand("bot_add_ct %s", "Buzz");
+			ServerCommand("bot_add_ct %s", "vester");
 			ServerCommand("mp_teamlogo_1 maso");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "notaN");
+			ServerCommand("bot_add_t %s", "kiR");
 			ServerCommand("bot_add_t %s", "J3nsyy");
 			ServerCommand("bot_add_t %s", "Anlelele");
 			ServerCommand("bot_add_t %s", "Tauson");
-			ServerCommand("bot_add_t %s", "Buzz");
+			ServerCommand("bot_add_t %s", "vester");
 			ServerCommand("mp_teamlogo_2 maso");
 		}
 	}
@@ -2955,22 +2906,22 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Linko");
-			ServerCommand("bot_add_ct %s", "rafaxF");
+			ServerCommand("bot_add_ct %s", "Jaepe");
+			ServerCommand("bot_add_ct %s", "shr");
 			ServerCommand("bot_add_ct %s", "snapy");
-			ServerCommand("bot_add_ct %s", "slaxx");
-			ServerCommand("bot_add_ct %s", "NOPEEj");
+			ServerCommand("bot_add_ct %s", "aragorN");
+			ServerCommand("bot_add_ct %s", "Icarus");
 			ServerCommand("mp_teamlogo_1 gtz");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Linko");
-			ServerCommand("bot_add_t %s", "rafaxF");
+			ServerCommand("bot_add_t %s", "Jaepe");
+			ServerCommand("bot_add_t %s", "shr");
 			ServerCommand("bot_add_t %s", "snapy");
-			ServerCommand("bot_add_t %s", "slaxx");
-			ServerCommand("bot_add_t %s", "NOPEEj");
+			ServerCommand("bot_add_t %s", "aragorN");
+			ServerCommand("bot_add_t %s", "Icarus");
 			ServerCommand("mp_teamlogo_2 gtz");
 		}
 	}
@@ -3025,28 +2976,28 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Aravt", false) == 0)
+	if(strcmp(szTeamArg, "Eruption", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "ctrlmad");
+			ServerCommand("bot_add_ct %s", "dobu");
 			ServerCommand("bot_add_ct %s", "cool4st");
 			ServerCommand("bot_add_ct %s", "fury5k");
 			ServerCommand("bot_add_ct %s", "Shinobi");
-			ServerCommand("bot_add_ct %s", "clouden");
-			ServerCommand("mp_teamlogo_1 ara");
+			ServerCommand("bot_add_ct %s", "yAmi");
+			ServerCommand("mp_teamlogo_1 erup");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "ctrlmad");
+			ServerCommand("bot_add_t %s", "dobu");
 			ServerCommand("bot_add_t %s", "cool4st");
 			ServerCommand("bot_add_t %s", "fury5k");
 			ServerCommand("bot_add_t %s", "Shinobi");
-			ServerCommand("bot_add_t %s", "clouden");
-			ServerCommand("mp_teamlogo_2 ara");
+			ServerCommand("bot_add_t %s", "yAmi");
+			ServerCommand("mp_teamlogo_2 erup");
 		}
 	}
 	
@@ -3687,8 +3638,8 @@ public void OnClientPostAdminCheck(int client)
 			{
 				g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
 				g_fReactionTime[client] = Math_GetRandomFloat(0.165, 0.325);
-				g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			}
+			g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -3738,6 +3689,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bCanThrowGrenade[i] = false;
 			g_iTarget[i] = -1;
 			g_iDoingSmokeNum[i] = -1;
+			g_fZoomedTimestamp[i] = 0.0;
 				
 			if(g_bIsBombScenario || g_bIsHostageScenario)
 			{
@@ -3849,7 +3801,7 @@ public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
 	
 	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-		CreateTimer(0.3, Timer_Zoomed, GetClientUserId(client));
+		g_fZoomedTimestamp[client] = GetGameTime();
 }
 
 public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
@@ -3874,10 +3826,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 		}
 		
 		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
-		{
-			g_bZoomed[client] = false;
 			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
-		}
 	}
 }
 
@@ -4203,7 +4152,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							RequestFrame(DelayThrow, GetClientUserId(client));
 						}
 						
-						if((iButtons & IN_ATTACK) && g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
+						if(g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
 						{
 							TeleportEntity(client, fNadeSpot, NULL_VECTOR, NULL_VECTOR);
 							if(bIsJumpthrow)
@@ -4241,9 +4190,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				
 				if(HasEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel"))
 					iZoomLevel = GetEntProp(iActiveWeapon, Prop_Send, "m_zoomLevel");
-				
-				if (!GetEntProp(client, Prop_Send, "m_bIsScoped"))
-					g_bZoomed[client] = false;
 				
 				if(bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
 					iButtons |= IN_ATTACK2;
@@ -4303,7 +4249,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 9, 40:
 						{
-							if (fTargetDistance < 2750.0 && !bIsReloading && g_bZoomed[client] && GetClientAimTarget(client, true) == g_iTarget[client])
+							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 2.5 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
@@ -4862,16 +4808,6 @@ bool IsPlayerReloading(int client)
 		return true;
 	
 	return GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") >= GetGameTime();
-}
-
-public Action Timer_Zoomed(Handle hTimer, any client)
-{
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-		g_bZoomed[client] = true;	
-	
-	return Plugin_Stop;
 }
 
 public Action Timer_DelaySwitch(Handle hTimer, any client)
