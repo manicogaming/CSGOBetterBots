@@ -19,7 +19,7 @@
 	"MistR" 			"228081651"
 	"blameF" 			"68193075"
 	//NiP Players
-	"es3tag" 			"1859646"
+	"headtr1ck" 		"399254202"
 	"Aleksib" 			"52977598"
 	"Brollan" 			"178562747"
 	"hampus" 			"126680222"
@@ -139,7 +139,7 @@
 	"cadiaN" 			"43849788"
 	"stavn" 			"62099910"
 	//VP Players
-	"n0rb3r7" 			"262176776"
+	"KaiR0N-" 			"196885990"
 	"Jame" 				"75859856"
 	"qikert" 			"166970562"	
 	"FL1T" 				"35551773"
@@ -174,12 +174,12 @@
 	"sausol" 			"31327539"
 	"alex*" 			"40718819"
 	"Martinez" 			"409820733"
-	//eSuba Players
-	"Pechyn" 			"93527213"
-	"blogg1s" 			"115938594"	
-	"Levi" 				"64235109"	
-	"M1key" 			"221902877"	
-	"luko" 				"90161747"	
+	//AVEZ Players
+	"Masi" 				"343459044"
+	"cinkolEK" 			"878982062"	
+	"Dimitryyyyy" 		"925346285"	
+	"pako" 				"848951104"	
+	"smooho" 			"470123951"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -230,7 +230,7 @@
 	"pesadelo" 			"295715770"
 	//9INE Players
 	"Goofy" 			"300617878"
-	"SZPERO" 			"19554985"
+	"hades" 			"90656280"
 	"KEi" 				"121422001"
 	"Kylar" 			"116431013"
 	"mynio" 			"24981058"
@@ -280,7 +280,7 @@
 	"Jyo" 				"43255799"
 	"iDISBALANCE" 		"210384169"
 	"Raijin" 			"216190295"
-	"def1zer" 			"262554036"
+	"Magnojez" 			"411757486"
 	"X5G7V" 			"237685818"
 	//VERTEX Players
 	"BRACE" 			"126538012"
@@ -296,8 +296,8 @@
 	"Hobbit" 			"68027030"
 	//Davenport Players
 	"Pugg" 				"215423525"
-	"CoJoMo" 			"239501561"
-	"swicher" 			"109292112"	
+	"Austin" 			"161243497"
+	"Danejoris" 		"116329706"	
 	"corn" 				"127592330"	
 	"spek" 				"324800230"	
 	//ATK Players
@@ -409,9 +409,9 @@
 	"KriLLe" 			"164669290"
 	"hemzk9" 			"83597297"	
 	//Illuminar Players
-	"szejn" 			"69226768"
+	"zaNNN" 			"154807226"
 	"TOAO" 				"196107432"
-	"byali" 			"18860354"
+	"bnox" 				"400417045"
 	"morelz" 			"122208414"
 	"mASKED"			"285508264"
 	//Sangal Players
@@ -439,7 +439,7 @@
 	"nosraC" 			"101522203"
 	"cJ"				"40562365"
 	//Anonymo Players
-	"oskarish" 			"286156964"
+	"SZPERO" 			"19554985"
 	"MWLKY" 			"206859955"
 	"Demho" 			"146746760"
 	"Vegi" 				"90369423"
@@ -543,8 +543,8 @@
 	//Entropy Players
 	"tahsiN" 			"74560387"
 	"devraNN"			"204541657"
-	"rapala" 			"239214601"
-	"mvN" 				"165741598"
+	"fADE" 				"215964173"
+	"DAVEN" 			"179758655"
 	"LyNeX"				"94292971"
 	//Renewal Players
 	"xerolte" 			"368881420"
@@ -662,15 +662,15 @@
 	"Icarus"			"291309752"
 	//Alpha Players
 	"mupzG" 			"233287646"
-	"Twinx"				"114782035"
+	"Ryxxo"				"66562222"
 	"smF"				"11160541"
-	"Basso" 			"152862"
-	"Gnøffe"			"33756208"
+	"alexsomfan" 		"105306272"
+	"PERCY"				"36210122"
 	//Fluxo Players
 	"felps" 			"22765766"
 	"WOOD7"				"42876435"
 	"Lucaozy"			"197122745"
-	"lux" 				"113751940"
+	"history" 			"925164589"
 	"v$m"				"51467095"
 	//Eruption Players
 	"dobu" 				"159891913"
@@ -698,7 +698,7 @@
 	"w1"				"456548842"
 	//Arctic Players
 	"MaLLby" 			"209668291"
-	"history"			"925164589"
+	"keiz"				"183028724"
 	"ninjaZ"			"131681379"
 	"short" 			"137901029"
 	"ponter"			"201409161"
@@ -726,4 +726,16 @@
 	"deb0"				"851603565"
 	"Krabeni" 			"1031012697"
 	"HYPER1"			"348889207"
+	//ONYX Players
+	"MoJo" 				"85253461"
+	"mave"				"219806941"
+	"NoRules"			"114140393"
+	"SnacKZ1" 			"1098523460"
+	"pxsl"				"349461905"
+	//GODSENT Players
+	"ztr" 				"1049202927"
+	"draken"			"159123007"
+	"Plopski"			"175613070"
+	"joel" 				"839437207"
+	"RuStY"				"122394166"
 }

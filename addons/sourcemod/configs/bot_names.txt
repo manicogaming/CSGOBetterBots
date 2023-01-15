@@ -19,7 +19,7 @@
 	"MistR" 			"Astralis"
 	"blameF" 			"Astralis"
 	//NiP Players
-	"es3tag" 			"NiP"
+	"headtr1ck" 		"NiP"
 	"Aleksib" 			"NiP"
 	"Brollan" 			"NiP"
 	"hampus" 			"NiP"
@@ -139,7 +139,7 @@
 	"cadiaN" 			"Heroic"
 	"stavn" 			"Heroic"
 	//VP Players
-	"n0rb3r7" 			"VP"
+	"KaiR0N-" 			"VP"
 	"Jame" 				"VP"
 	"qikert" 			"VP"	
 	"FL1T" 				"VP"
@@ -174,12 +174,12 @@
 	"sausol" 			"Riders"
 	"alex*" 			"Riders"
 	"Martinez" 			"Riders"
-	//eSuba Players
-	"Pechyn" 			"eSuba"
-	"M1key" 			"eSuba"
-	"luko" 				"eSuba"	
-	"blogg1s" 			"eSuba"
-	"Levi" 				"eSuba"
+	//AVEZ Players
+	"Masi" 				"AVEZ"
+	"pako" 				"AVEZ"
+	"smooho" 			"AVEZ"	
+	"cinkolEK" 			"AVEZ"
+	"Dimitryyyyy" 		"AVEZ"
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
@@ -230,7 +230,7 @@
 	"pesadelo" 			"LOne"
 	//9INE Players
 	"Goofy" 			"9INE"
-	"SZPERO" 			"9INE"
+	"hades" 			"9INE"
 	"KEi" 				"9INE"
 	"Kylar" 			"9INE"
 	"mynio" 			"9INE"
@@ -280,7 +280,7 @@
 	"Jyo" 				"K23"
 	"iDISBALANCE" 		"K23"
 	"Raijin" 			"K23"
-	"def1zer" 			"K23"
+	"Magnojez" 			"K23"
 	"X5G7V" 			"K23"
 	//VERTEX Players
 	"pz" 				"VERTEX"
@@ -296,10 +296,10 @@
 	"Hobbit" 			"C9"
 	//Davenport Players
 	"Pugg" 				"Davenport"
-	"CoJoMo" 			"Davenport"
+	"Austin" 			"Davenport"
 	"corn" 				"Davenport"
 	"spek" 				"Davenport"
-	"swicher" 			"Davenport"	
+	"Danejoris" 		"Davenport"	
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
@@ -409,9 +409,9 @@
 	"susp" 				"Lemondogs"
 	"KriLLe" 			"Lemondogs"	
 	//Illuminar Players
-	"szejn" 			"Illuminar"
+	"zaNNN" 			"Illuminar"
 	"TOAO" 				"Illuminar"
-	"byali" 			"Illuminar"
+	"bnox" 				"Illuminar"
 	"morelz" 			"Illuminar"
 	"mASKED"			"Illuminar"
 	//Sangal Players
@@ -439,7 +439,7 @@
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
 	//Anonymo Players
-	"oskarish" 			"Anonymo"
+	"SZPERO" 			"Anonymo"
 	"MWLKY" 			"Anonymo"
 	"Demho" 			"Anonymo"
 	"Vegi" 				"Anonymo"
@@ -543,8 +543,8 @@
 	//Entropy Players
 	"tahsiN" 			"Entropy"
 	"devraNN"			"Entropy"
-	"rapala" 			"Entropy"
-	"mvN" 				"Entropy"
+	"fADE" 				"Entropy"
+	"DAVEN" 			"Entropy"
 	"LyNeX"				"Entropy"
 	//Renewal Players
 	"xerolte" 			"Renewal"
@@ -662,15 +662,15 @@
 	"Icarus"			"GTZ"
 	//Alpha Players
 	"mupzG" 			"Alpha"
-	"Twinx"				"Alpha"
+	"Ryxxo"				"Alpha"
 	"smF"				"Alpha"
-	"Basso" 			"Alpha"
-	"Gnøffe"			"Alpha"
+	"alexsomfan" 		"Alpha"
+	"PERCY"				"Alpha"
 	//Fluxo Players
 	"felps" 			"Fluxo"
 	"WOOD7"				"Fluxo"
 	"Lucaozy"			"Fluxo"
-	"lux" 				"Fluxo"
+	"history" 			"Fluxo"
 	"v$m"				"Fluxo"
 	//Eruption Players
 	"dobu" 				"Eruption"
@@ -698,7 +698,7 @@
 	"w1"				"INTZ"
 	//Arctic Players
 	"MaLLby" 			"Arctic"
-	"history"			"Arctic"
+	"keiz"				"Arctic"
 	"ninjaZ"			"Arctic"
 	"short" 			"Arctic"
 	"ponter"			"Arctic"
@@ -726,4 +726,16 @@
 	"deb0"				"BLINK"
 	"Krabeni" 			"BLINK"
 	"HYPER1"			"BLINK"
+	//ONYX Players
+	"MoJo" 				"ONYX"
+	"mave"				"ONYX"
+	"NoRules"			"ONYX"
+	"SnacKZ1" 			"ONYX"
+	"pxsl"				"ONYX"
+	//GODSENT Players
+	"ztr" 				"GODSENT"
+	"draken"			"GODSENT"
+	"Plopski"			"GODSENT"
+	"joel" 				"GODSENT"
+	"RuStY"				"GODSENT"
 }
