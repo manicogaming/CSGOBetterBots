@@ -65,7 +65,7 @@
 	"neaLaN" 			"EG"
 	"Brehze" 			"EG"
 	"autimatic" 		"EG"
-	"CeRq" 				"EG"
+	"wiz" 				"EG"
 	//Na´Vi Players
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"

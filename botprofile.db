@@ -523,7 +523,7 @@ ProP+Rifle+RiflePersonality "HexT"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "CeRq"
+ProP+SniperPro+SniperPersonality "wiz"
 	VoicePitch = 99
 End
 

@@ -65,7 +65,7 @@
 	"neaLaN" 			"93777050"
 	"Brehze" 			"94595411"
 	"autimatic" 		"94605121"
-	"CeRq" 				"196088155"
+	"wiz" 				"172119781"
 	//Na´Vi Players
 	"electronic" 		"83779379"	
 	"s1mple" 			"73936547"

@@ -432,7 +432,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "HexT");
-			ServerCommand("bot_add_ct %s", "CeRq");
+			ServerCommand("bot_add_ct %s", "wiz");
 			ServerCommand("bot_add_ct %s", "Brehze");
 			ServerCommand("bot_add_ct %s", "autimatic");
 			ServerCommand("bot_add_ct %s", "neaLaN");
@@ -443,7 +443,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "HexT");
-			ServerCommand("bot_add_t %s", "CeRq");
+			ServerCommand("bot_add_t %s", "wiz");
 			ServerCommand("bot_add_t %s", "Brehze");
 			ServerCommand("bot_add_t %s", "autimatic");
 			ServerCommand("bot_add_t %s", "neaLaN");

@@ -65,7 +65,7 @@
 	"neaLaN" 			"CSGO-GfxFP-OjLqX-Rdh2D-CZpdb-SwzQN"
 	"Brehze" 			"CSGO-rDZcR-mH2PL-7BUOh-QfENh-MhNkO"
 	"autimatic" 		"CSGO-OU2yr-pTWTT-omcMj-ZY4aj-MXkoE"
-	"CeRq" 				"CSGO-WjMUz-DmiCp-hqrMO-6WBsh-Wm74E"
+	"wiz" 				"CSGO-cpDeE-XXNG2-ZoyTa-Xe7OK-PLzMM"
 	//Na´Vi Players
 	"electronic" 		"CSGO-oWcQ2-uMZnx-LphLk-Kn6zW-fcEBM"	
 	"s1mple" 			"CSGO-pdM4h-OmAQ4-mT6jT-8WQFt-o5LsE"
