@@ -128,7 +128,7 @@
 	"Jerry" 			"forZe"
 	//Sprout Players
 	"Staehr" 			"Sprout"
-	"slaxz" 			"Sprout"
+	"XELLOW" 			"Sprout"
 	"Zyphon" 			"Sprout"
 	"lauNX" 			"Sprout"
 	"refrezh" 			"Sprout"
@@ -182,10 +182,10 @@
 	"Dimitryyyyy" 		"AVEZ"
 	//Nexus Players
 	"BTN" 				"Nexus"
-	"XELLOW" 			"Nexus"
+	"MoDo" 				"Nexus"
 	"ragga" 			"Nexus"
-	"ERSIN" 			"Nexus"
-	"SEMINTE" 			"Nexus"
+	"smekk" 			"Nexus"
+	"adamS" 			"Nexus"
 	//Nemiga Players
 	"xsepower" 			"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
@@ -198,12 +198,12 @@
 	"kabal" 			"IHC"
 	"Annihilation" 		"IHC"
 	"sk0R" 				"IHC"
-	//Infinity Players
-	"k1Nky" 			"Infinity"
-	"tor1towOw" 		"Infinity"	
-	"spamzzy" 			"Infinity"
-	"pacman^v^" 		"Infinity"
-	"Marro" 			"Infinity"
+	//aTTaX Players
+	"awzek" 			"aTTaX"
+	"PerX" 				"aTTaX"	
+	"FreeZe" 			"aTTaX"
+	"slaxz-" 			"aTTaX"
+	"Spiidi" 			"aTTaX"
 	//Isurus Players
 	"meyern" 			"Isurus"
 	"Noktse" 			"Isurus"
@@ -219,8 +219,8 @@
 	//Sharks Players
 	"chay"				"Sharks" 
 	"drg" 				"Sharks"
-	"jnt" 				"Sharks"
-	"n1ssim" 			"Sharks"
+	"rdnzao" 			"Sharks"
+	"Gafolo" 			"Sharks"
 	"togs" 				"Sharks"
 	//LOne Players
 	"iDk" 				"LOne"
@@ -248,7 +248,7 @@
 	"masta" 			"DIVIZON"
 	//Goliath Players
 	"aw3some" 			"Goliath"
-	"March" 			"Goliath"
+	"uDEADSHOT" 		"Goliath"
 	"tristanxa" 		"Goliath"
 	".exe" 				"Goliath"
 	"slash" 			"Goliath"
@@ -291,7 +291,7 @@
 	//C9 Players
 	"nafany" 			"C9"
 	"sh1ro" 			"C9"
-	"interz" 			"C9"
+	"buster" 			"C9"
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
 	//Davenport Players
@@ -600,12 +600,6 @@
 	"Sapec"				"EYEBALLERS"
 	"SHiNE" 			"EYEBALLERS"
 	"Peppzor"			"EYEBALLERS"
-	//mCon Players
-	"Jins" 				"mCon"
-	"AdamJC"			"mCon"
-	"NiNo"				"mCon"
-	"ve1nzo" 			"mCon"
-	"vKEMPeN"			"mCon"
 	//Encore Players
 	"HaZR" 				"Encore"
 	"sterling"			"Encore"
@@ -620,9 +614,9 @@
 	"nin9"				"NKT"
 	//Boca Players
 	"lenci" 			"Boca"
-	"elemeNt"			"Boca"
-	"alexer"			"Boca"
-	"Hezz" 				"Boca"
+	"atarax1a"			"Boca"
+	"pavv"				"Boca"
+	"tomaszin" 			"Boca"
 	"MRN1"				"Boca"
 	//Sampi Players
 	"HONES" 			"Sampi"
@@ -644,16 +638,16 @@
 	"vester"			"MASONIC"
 	//Paqueta Players
 	"DeStiNy" 			"Paqueta"
-	"Gafolo"			"Paqueta"
+	"yel"				"Paqueta"
 	"venomzera"			"Paqueta"
-	"xns" 				"Paqueta"
+	"nython" 			"Paqueta"
 	"ALLE"				"Paqueta"
 	//Plano Players
 	"decenty" 			"Plano"
 	"kNgV-"				"Plano"
-	"caike"				"Plano"
+	"shz"				"Plano"
 	"piria" 			"Plano"
-	"NEKIZ"				"Plano"
+	"lub"				"Plano"
 	//GTZ Players
 	"Jaepe" 			"GTZ"
 	"shr"				"GTZ"

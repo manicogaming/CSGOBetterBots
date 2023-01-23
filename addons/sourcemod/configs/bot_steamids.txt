@@ -128,7 +128,7 @@
 	"Jerry" 			"65822428"
 	//Sprout Players
 	"Staehr" 			"44842089"
-	"slaxz" 			"104087441"
+	"XELLOW" 			"92089093"
 	"Zyphon" 			"198111516"
 	"lauNX" 			"1012530125"
 	"refrezh" 			"104598470"
@@ -182,10 +182,10 @@
 	"smooho" 			"470123951"	
 	//Nexus Players
 	"BTN" 				"21090119"
-	"XELLOW" 			"92089093"
+	"MoDo" 				"389955370"
 	"ragga" 			"109933575"
-	"ERSIN" 			"68024588"
-	"SEMINTE" 			"36171013"
+	"smekk" 			"100657287"
+	"adamS" 			"8124135"
 	//Nemiga Players
 	"xsepower" 			"112014226"
 	"BELCHONOKK" 		"293404789"
@@ -198,12 +198,12 @@
 	"bLitz" 			"999558360"
 	"Annihilation" 		"315821474"
 	"sk0R" 				"863160115"
-	//Infinity Players
-	"k1Nky" 			"4645867"
-	"tor1towOw" 		"112244062"	
-	"spamzzy" 			"43458302"
-	"pacman^v^" 		"486643146"
-	"Marro" 			"171629480"
+	//aTTaX Players
+	"awzek" 			"238305245"
+	"PerX" 				"208428335"	
+	"FreeZe" 			"259251039"
+	"slaxz-" 			"104087441"
+	"Spiidi" 			"13465075"
 	//Isurus Players
 	"meyern" 			"235377137"
 	"Noktse" 			"54233223"
@@ -219,8 +219,8 @@
 	//Sharks Players
 	"chay"				"291666024" 
 	"drg" 				"193829435"
-	"jnt" 				"43326019"
-	"n1ssim" 			"101497868"
+	"rdnzao" 			"347468740"
+	"Gafolo" 			"174962930"
 	"togs" 				"493654174"
 	//LOne Players
 	"iDk" 				"106435802"
@@ -248,7 +248,7 @@
 	"masta" 			"78122042"
 	//Goliath Players
 	"aw3some" 			"106956887"
-	"March" 			"91657238"
+	"uDEADSHOT" 		"235492183"
 	"tristanxa" 		"912953652"
 	".exe" 				"302798328"
 	"slash" 			"102311713"
@@ -291,7 +291,7 @@
 	//C9 Players
 	"nafany" 			"99448400"
 	"sh1ro" 			"121219047"
-	"interz" 			"247808592"
+	"buster" 			"212936195"
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//Davenport Players
@@ -600,12 +600,6 @@
 	"Sapec"				"107257797"
 	"SHiNE" 			"196824160"
 	"Peppzor"			"328124340"
-	//mCon Players
-	"Jins" 				"132500306"
-	"AdamJC"			"231738870"
-	"NiNo"				"48383805"
-	"ve1nzo" 			"106901849"
-	"vKEMPeN"			"845862126"
 	//Encore Players
 	"HaZR" 				"64081874"
 	"sterling"			"100224621"
@@ -620,9 +614,9 @@
 	"nin9"				"168197870"
 	//Boca Players
 	"lenci" 			"134201158"
-	"elemeNt"			"84718029"
-	"alexer"			"126154442"
-	"Hezz" 				"416112544"
+	"atarax1a"			"231925561"
+	"pavv"				"111877624"
+	"tomaszin" 			"462168316"
 	"MRN1"				"176372852"
 	//Sampi Players
 	"HONES" 			"34391702"
@@ -644,16 +638,16 @@
 	"vester"			"175193262"
 	//Paqueta Players
 	"DeStiNy" 			"89528706"
-	"Gafolo"			"174962930"
+	"yel"				"90069456"
 	"venomzera"			"257999525"
-	"xns" 				"138141272"
+	"nython" 			"170224923"
 	"ALLE"				"1194990"
 	//Plano Players
 	"decenty" 			"346906182"
 	"kNgV-"				"6732863"
-	"caike"				"28130755"
+	"shz"				"178194613"
 	"piria" 			"436072455"
-	"NEKIZ"				"76618432"
+	"lub"				"882284871"
 	//GTZ Players
 	"Jaepe" 			"251441860"
 	"shr"				"66458785"
