@@ -308,7 +308,7 @@ ProP+Rifle+RiflePersonality "Tuurtle"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "JOTA"
+ProP+Rifle+RiflePersonality "insani"
 	VoicePitch = 96
 End
 
@@ -362,7 +362,7 @@ End
 
 //NiP Players
 
-ProP+Rifle+RiflePersonality "hampus"
+ProP+Rifle+RiflePersonality "k0nfig"
 	VoicePitch = 110
 End
 
@@ -2197,11 +2197,11 @@ End
 
 //Furious Players
 
-ProP+Rifle+RiflePersonality "KAISER"
+ProP+Rifle+RiflePersonality "tom1jed"
 	VoicePitch = 105
 End
 
-ProP+SniperPro+SniperPersonality "peqexino"
+ProP+SniperPro+SniperPersonality "KAISER"
 	VoicePitch = 95
 End
 
@@ -2461,7 +2461,7 @@ End
 
 //Imperial Players
 
-ProP+Rifle+RiflePersonality "fer"
+ProP+Rifle+RiflePersonality "JOTA"
 	VoicePitch = 75
 End
 
@@ -2985,6 +2985,28 @@ End
 
 ProP+Rifle+RiflePersonality "RuStY"
 	VoicePitch = 81
+End
+
+//Canids Players
+
+ProP+Rifle+RiflePersonality "ckzao"
+	VoicePitch = 89
+End
+
+ProP+SniperPro+SniperPersonality "detr0ittJ"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "realziN"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "t9rnay"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "danoco"
+	VoicePitch = 82
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

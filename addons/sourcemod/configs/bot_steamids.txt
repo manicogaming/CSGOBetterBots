@@ -4,7 +4,7 @@
 	"HEN1"				"57761535"
 	"brnz4n" 			"895610852"
 	"Tuurtle" 			"34114868"
-	"JOTA" 				"94554756"
+	"insani" 			"101158002"
 	"exit" 				"50230614"
 	//FaZe Players
 	"Twistzz" 			"55989477"
@@ -22,7 +22,7 @@
 	"headtr1ck" 		"399254202"
 	"Aleksib" 			"52977598"
 	"Brollan" 			"178562747"
-	"hampus" 			"126680222"
+	"k0nfig" 			"19403447"
 	"REZ" 				"73906687"
 	//1win Players
 	"glowiing" 			"213998181"
@@ -518,7 +518,7 @@
 	"ICY"				"94843300"
 	//Furious Players
 	"KAISER" 			"167304921"
-	"peqexino"			"102949570"
+	"tom1jed"			"1021035676"
 	"laser" 			"232086390"
 	"andrew" 			"51908773"
 	"ABM"				"121444546"
@@ -589,7 +589,7 @@
 	"KRL" 				"320146710"
 	"drayza"			"313775221"
 	//Imperial Players
-	"fer" 				"38921219"
+	"JOTA" 				"94554756"
 	"FalleN"			"424467"
 	"chelo"				"107498100"
 	"boltz" 			"58113672"
@@ -732,4 +732,10 @@
 	"Plopski"			"175613070"
 	"joel" 				"839437207"
 	"RuStY"				"122394166"
+	//Canids Players
+	"ckzao" 			"56540556"
+	"detr0ittJ"			"282335538"
+	"realziN"			"44664741"
+	"t9rnay" 			"364544605"
+	"danoco"			"34622275"
 }

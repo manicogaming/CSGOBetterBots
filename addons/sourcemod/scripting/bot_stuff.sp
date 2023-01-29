@@ -183,7 +183,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "Brollan");
 			ServerCommand("bot_add_ct %s", "REZ");
-			ServerCommand("bot_add_ct %s", "hampus");
+			ServerCommand("bot_add_ct %s", "k0nfig");
 			ServerCommand("bot_add_ct %s", "Aleksib");
 			ServerCommand("bot_add_ct %s", "headtr1ck");
 			ServerCommand("mp_teamlogo_1 nip");
@@ -194,7 +194,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "Brollan");
 			ServerCommand("bot_add_t %s", "REZ");
-			ServerCommand("bot_add_t %s", "hampus");
+			ServerCommand("bot_add_t %s", "k0nfig");
 			ServerCommand("bot_add_t %s", "Aleksib");
 			ServerCommand("bot_add_t %s", "headtr1ck");
 			ServerCommand("mp_teamlogo_2 nip");
@@ -209,7 +209,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "brnz4n");
 			ServerCommand("bot_add_ct %s", "HEN1");
 			ServerCommand("bot_add_ct %s", "Tuurtle");
-			ServerCommand("bot_add_ct %s", "JOTA");
+			ServerCommand("bot_add_ct %s", "insani");
 			ServerCommand("bot_add_ct %s", "exit");
 			ServerCommand("mp_teamlogo_1 mibr");
 		}
@@ -220,7 +220,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "brnz4n");
 			ServerCommand("bot_add_t %s", "HEN1");
 			ServerCommand("bot_add_t %s", "Tuurtle");
-			ServerCommand("bot_add_t %s", "JOTA");
+			ServerCommand("bot_add_t %s", "insani");
 			ServerCommand("bot_add_t %s", "exit");
 			ServerCommand("mp_teamlogo_2 mibr");
 		}
@@ -2332,7 +2332,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "KAISER");
-			ServerCommand("bot_add_ct %s", "peqexino");
+			ServerCommand("bot_add_ct %s", "tom1jed");
 			ServerCommand("bot_add_ct %s", "laser");
 			ServerCommand("bot_add_ct %s", "andrew");
 			ServerCommand("bot_add_ct %s", "ABM");
@@ -2343,7 +2343,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "KAISER");
-			ServerCommand("bot_add_t %s", "peqexino");
+			ServerCommand("bot_add_t %s", "tom1jed");
 			ServerCommand("bot_add_t %s", "laser");
 			ServerCommand("bot_add_t %s", "andrew");
 			ServerCommand("bot_add_t %s", "ABM");
@@ -2631,7 +2631,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "fer");
+			ServerCommand("bot_add_ct %s", "JOTA");
 			ServerCommand("bot_add_ct %s", "FalleN");
 			ServerCommand("bot_add_ct %s", "chelo");
 			ServerCommand("bot_add_ct %s", "boltz");
@@ -2642,7 +2642,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "fer");
+			ServerCommand("bot_add_t %s", "JOTA");
 			ServerCommand("bot_add_t %s", "FalleN");
 			ServerCommand("bot_add_t %s", "chelo");
 			ServerCommand("bot_add_t %s", "boltz");
@@ -3223,6 +3223,31 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "joel");
 			ServerCommand("bot_add_t %s", "RuStY");
 			ServerCommand("mp_teamlogo_2 god");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "Canids", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "ckzao");
+			ServerCommand("bot_add_ct %s", "detr0ittJ");
+			ServerCommand("bot_add_ct %s", "realziN");
+			ServerCommand("bot_add_ct %s", "t9rnay");
+			ServerCommand("bot_add_ct %s", "danoco");
+			ServerCommand("mp_teamlogo_1 red");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "ckzao");
+			ServerCommand("bot_add_t %s", "detr0ittJ");
+			ServerCommand("bot_add_t %s", "realziN");
+			ServerCommand("bot_add_t %s", "t9rnay");
+			ServerCommand("bot_add_t %s", "danoco");
+			ServerCommand("mp_teamlogo_2 red");
 		}
 	}
 	

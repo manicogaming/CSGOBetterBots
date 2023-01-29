@@ -4,7 +4,7 @@
 	"HEN1"				"MIBR"
 	"brnz4n" 			"MIBR"
 	"Tuurtle" 			"MIBR"
-	"JOTA" 				"MIBR"
+	"insani" 			"MIBR"
 	"exit" 				"MIBR"
 	//FaZe Players
 	"Twistzz" 			"FaZe"
@@ -22,7 +22,7 @@
 	"headtr1ck" 		"NiP"
 	"Aleksib" 			"NiP"
 	"Brollan" 			"NiP"
-	"hampus" 			"NiP"
+	"k0nfig" 			"NiP"
 	"REZ" 				"NiP"
 	//1win Players
 	"glowiing" 			"1win"
@@ -518,7 +518,7 @@
 	"ICY"				"AVANGAR"
 	//Furious Players
 	"KAISER" 			"Furious"
-	"peqexino"			"Furious"
+	"tom1jed"			"Furious"
 	"laser" 			"Furious"
 	"andrew" 			"Furious"
 	"ABM"				"Furious"
@@ -589,7 +589,7 @@
 	"KRL" 				"Vireo"
 	"drayza"			"Vireo"
 	//Imperial Players
-	"fer" 				"Imperial"
+	"JOTA" 				"Imperial"
 	"FalleN"			"Imperial"
 	"chelo"				"Imperial"
 	"boltz" 			"Imperial"
@@ -732,4 +732,10 @@
 	"Plopski"			"GODSENT"
 	"joel" 				"GODSENT"
 	"RuStY"				"GODSENT"
+	//Canids Players
+	"ckzao" 			"Canids"
+	"detr0ittJ"			"Canids"
+	"realziN"			"Canids"
+	"t9rnay" 			"Canids"
+	"danoco"			"Canids"
 }

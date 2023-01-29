@@ -2,9 +2,9 @@
 {
 	//MIBR Players
 	"HEN1"				"CSGO-eOry8-jE4KB-AoiVd-Bbujx-JTDND"
-	"brnz4n" 			"CSGO-wQRAq-TRA8t-x6MZf-JX9ef-97DRE"
+	"brnz4n" 			"CSGO-iBWmi-8Lpv9-7KSoy-rdZVr-bFPYE"
 	"Tuurtle" 			"CSGO-WUSJG-Qxx5G-xvyQ4-M7D23-Jo74E"
-	"JOTA" 				"CSGO-6yoXe-TEw9O-c8Nso-iW2hM-8jyHL"
+	"insani" 			"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
 	"exit" 				"CSGO-H5h2L-SnFTY-eafei-E6NDB-RCHnK"
 	//FaZe Players
 	"Twistzz" 			"CSGO-KTDfs-hnKmu-AzDGZ-R2tJ2-rFR7B"
@@ -22,7 +22,7 @@
 	"headtr1ck" 		"CSGO-yHJYQ-aJ6pq-fCZnk-iLDCc-G847M"
 	"Aleksib" 			"CSGO-iuXxN-Z4tML-FcpUT-2pfxZ-kSLoD"
 	"Brollan" 			"CSGO-yx69Y-5ytAc-hc3MH-4hqUG-CrrBE"
-	"hampus" 			"CSGO-kVEFM-NftRQ-JVRk8-2Eja5-6NZfE"
+	"k0nfig" 			"CSGO-cFvXT-AiQcf-tLY53-nShUj-BNzMM"
 	"REZ" 				"CSGO-UOR5u-5VxWH-cA3YU-VTxWn-YxHCF"
 	//1win Players
 	"glowiing" 			"CSGO-sr9DJ-C6ECS-nqq7a-UVFOu-Z4OtQ"
@@ -530,7 +530,7 @@
 	"ICY"				"CSGO-2UobZ-CqZG2-LhsF8-vaDLA-9TsFF"
 	//Furious Players
 	"KAISER" 			"CSGO-T6rQ9-owC5F-nkLd3-htAA6-9DmDA"
-	"peqexino"			"CSGO-27Pep-CQmj5-RUoAq-irzWn-4MAfD"
+	"tom1jed"			"CSGO-qLcFk-5FfzU-TtAxw-TLWDh-Rf9aC"
 	"laser" 			"CSGO-HuqaX-R9Fke-RGRtT-SrmDA-WtuCQ"
 	"andrew" 			"CSGO-hiqnC-bkjMY-bUb3L-FBNrc-MD3YP"
 	"ABM"				"CSGO-tBHcu-j5bPO-Eta9V-HCC6j-PU9vO"
@@ -601,7 +601,7 @@
 	"KRL" 				"CSGO-Ptehc-sAcCC-EuHpB-MsQdP-FbMbM"
 	"drayza"			"CSGO-zEaDT-wYZ6h-CCiRC-U6bNJ-HLAfD"
 	//Imperial Players
-	"fer" 				"CSGO-Ur9zM-hGs8N-h2Xaw-8Z54O-ey3JE"
+	"JOTA" 				"CSGO-6yoXe-TEw9O-c8Nso-iW2hM-8jyHL"
 	"FalleN"			"CSGO-FJxAC-OAamJ-oZ9bO-2W4BT-YiG4C"
 	"chelo"				"CSGO-eharV-ctGSB-PBhKT-dhVe5-9DmDA"
 	"boltz" 			"CSGO-JPxxT-HHLJy-xsb2N-8Hknx-NMOtQ"
@@ -750,4 +750,10 @@
 	"Plopski"			"CSGO-5ho3D-YOTCE-RWztS-heJRK-teG4C"
 	"joel" 				"CSGO-EpHwz-vfnMq-2LcVY-w8Gkc-Q6XXC"
 	"RuStY"				"CSGO-EpHwz-vfnMq-2LcVY-w8Gkc-Q6XXC"
+	//Canids Players
+	"ckzao" 			"CSGO-zHB4X-RArWn-PspZZ-RmXKq-EaVvD"
+	"detr0ittJ"			"CSGO-N2pnb-uwRcP-TDbYR-88vfY-sSBUM"
+	"realziN"			"CSGO-hiqnC-bkjMY-bUb3L-FBNrc-MD3YP"
+	"t9rnay" 			"CSGO-b5xO3-bkf6w-zJBQh-o8SLm-3kYbD"
+	"danoco"			"CSGO-QbmhY-PR4m6-BmMof-9aePq-2AA2P"
 }
