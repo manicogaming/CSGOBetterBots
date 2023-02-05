@@ -8,7 +8,7 @@
 #include <bot_steamids>
 #include <kento_rankme/rankme>
 #include <smlib>
-//#include <modelch>
+#include <modelch>
 
 bool g_bLateLoaded;
 int g_iWeaponCount;

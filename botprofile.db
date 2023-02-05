@@ -592,7 +592,7 @@ ProP+Rifle+RiflePersonality "Furlan"
 	VoicePitch = 84
 End
 
-ProP+SniperPro+SniperPersonality "snatchie"
+ProP+SniperPro+SniperPersonality "phr"
 	VoicePitch = 106
 End
 
@@ -745,7 +745,7 @@ End
 
 //forZe Players
 
-ProP+Rifle+RiflePersonality "KENSI"
+ProP+Rifle+RiflePersonality "r3salt"
 	VoicePitch = 75
 End
 
@@ -877,11 +877,11 @@ End
 
 //HAVU Players
 
-ProP+Rifle+RiflePersonality "zehN"
+ProP+Rifle+RiflePersonality "Banjo"
 	VoicePitch = 76
 End
 
-ProP+SniperPro+SniperPersonality "spargo"
+ProP+SniperPro+SniperPersonality "ottoNd"
 	VoicePitch = 87
 End
 
@@ -1417,7 +1417,7 @@ ProP+Rifle+RiflePersonality "djay"
 	VoicePitch = 79
 End
 
-ProP+Rifle+RiflePersonality "Fadey"
+ProP+Rifle+RiflePersonality "Pluto"
 	VoicePitch = 77
 End
 
@@ -1689,25 +1689,25 @@ ProP+Rifle+RiflePersonality "arrozdoce"
 	VoicePitch = 103
 End
 
-//Tigers Players
+//ITB Players
 
-ProP+Rifle+RiflePersonality "HenkkyG"
+ProP+Rifle+RiflePersonality "Thomas"
 	VoicePitch = 77
 End
 
-ProP+SniperPro+SniperPersonality "NIO"
+ProP+SniperPro+SniperPersonality "CRUC1AL"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "Rutk0"
+ProP+Rifle+RiflePersonality "CYPHER"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "majky"
+ProP+Rifle+RiflePersonality "rallen"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "creZe"
+ProP+Rifle+RiflePersonality "volt"
 	VoicePitch = 89
 End
 
@@ -1889,7 +1889,7 @@ End
 
 //Nouns Players
 
-ProP+Rifle+RiflePersonality "stamina"
+ProP+Rifle+RiflePersonality "MarKE"
 	VoicePitch = 80
 End
 
@@ -2349,25 +2349,25 @@ ProP+Rifle+RiflePersonality "Patrick"
 	VoicePitch = 93
 End
 
-//BP Players
+//Aurora Players
 
-ProP+Rifle+RiflePersonality "fleav"
+ProP+Rifle+RiflePersonality "Lack1"
 	VoicePitch = 91
 End
 
-ProP+SniperPro+SniperPersonality "Chill"
+ProP+SniperPro+SniperPersonality "lattykk"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "Aaron"
+ProP+Rifle+RiflePersonality "Norwi"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "EspiranTo"
+ProP+Rifle+RiflePersonality "KENSI"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "keen"
+ProP+Rifle+RiflePersonality "SELLTER"
 	VoicePitch = 95
 End
 
@@ -2591,25 +2591,25 @@ ProP+Rifle+RiflePersonality "T4gg3D"
 	VoicePitch = 106
 End
 
-//Ungentium Players
+//Entropiq Players
 
-ProP+Rifle+RiflePersonality "Sidney"
+ProP+Rifle+RiflePersonality "AJTT"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "m4tthi"
+ProP+SniperPro+SniperPersonality "red"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "Prism"
+ProP+Rifle+RiflePersonality "MoriiSko"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "GruBy"
+ProP+Rifle+RiflePersonality "CYPHER"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "ponczek"
+ProP+Rifle+RiflePersonality "snatchie"
 	VoicePitch = 109
 End
 
@@ -4092,10 +4092,6 @@ End
 
 VeryHard+Rifle+RiflePersonality Vulture
         VoicePitch = 88
-End
-
-VeryHard+Rifle+RiflePersonality Banjo
-        VoicePitch = 94
 End
 
 VeryHard+Sniper+SniperPersonality Nails

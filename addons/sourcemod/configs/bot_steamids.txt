@@ -81,7 +81,7 @@
 	//AGO Players
 	"Furlan" 			"177495873"
 	"jedqr" 			"125090121"
-	"snatchie" 			"111436809"
+	"phr" 				"19304486"
 	"sh3nanigan" 		"1042506424"
 	"leman" 			"40398517"
 	//ENCE Players
@@ -121,7 +121,7 @@
 	"JamYoung" 			"404671310"	
 	"advent" 			"41786057"
 	//forZe Players
-	"KENSI" 			"440380554"	
+	"r3salt" 			"390096574"	
 	"zorte" 			"99348674"
 	"Krad" 				"71642904"
 	"shalfey" 			"247206904"
@@ -157,8 +157,8 @@
 	"Vexite" 			"92622415"
 	"Liazz" 			"112055988"
 	//HAVU Players
-	"zehN" 				"16308501"
-	"spargo" 			"109596532"
+	"Banjo" 			"316220635"
+	"ottoNd" 			"75069143"
 	"Aerial" 			"2445180"
 	"xseveN" 			"52906775"
 	"doto" 				"39318615"
@@ -304,7 +304,7 @@
 	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
 	"djay" 				"3935898"
-	"Fadey" 			"181493840"
+	"Pluto" 			"138851421"
 	"Swisher" 			"222737943"
 	//Wings Players
 	"ChildKing"			"392390376" 
@@ -378,12 +378,12 @@
 	"stadodo" 			"87137134"
 	"DDias" 			"67343840"
 	"NOPEEj" 			"200528981"
-	//Tigers Players
-	"HenkkyG" 			"10674280"
-	"NIO" 				"170307600"
-	"Rutk0" 			"292716414"
-	"majky" 			"873352928"
-	"creZe" 			"41700991"
+	//ITB Players
+	"Thomas" 			"65182402"
+	"CRUC1AL" 			"158832564"
+	"CYPHER" 			"291718826"
+	"rallen" 			"31166738"
+	"volt" 				"195488719"
 	//9z Players
 	"dgt" 				"256625848"
 	"dav1d" 			"160225583"
@@ -433,7 +433,7 @@
 	"MrCANI" 			"80075444"
 	"Chaos" 			"352409378"
 	//Nouns Players
-	"stamina" 			"272809432"
+	"MarKE" 			"2637435"
 	"cynic" 			"106932238"
 	"Bwills" 			"119308817"
 	"nosraC" 			"101522203"
@@ -558,12 +558,12 @@
 	"Rainwaker" 		"177848062"
 	"niki1" 			"932616892"
 	"Patrick"			"98715951"
-	//BP Players
-	"fleav" 			"189640934"
-	"Chill"				"113129796"
-	"Aaron" 			"95940281"
-	"EspiranTo" 		"84772046"
-	"keen"				"54646804"
+	//Aurora Players
+	"Lack1" 			"185937269"
+	"lattykk"			"253744133"
+	"Norwi" 			"194638879"
+	"KENSI" 			"440380554"
+	"SELLTER"			"158822313"
 	//Rooster Players
 	"asap" 				"68391216"
 	"ADK"				"121436427"
@@ -624,12 +624,12 @@
 	"matys"				"1086212773"
 	"sAvana1" 			"69270002"
 	"T4gg3D"			"296534066"
-	//Ungentium Players
-	"Sidney" 			"70091835"
-	"m4tthi"			"69853779"
-	"Prism"				"117411943"
-	"GruBy" 			"44752530"
-	"ponczek"			"150374922"
+	//Entropiq Players
+	"AJTT" 				"10853594"
+	"red"				"204660292"
+	"MoriiSko"			"91462071"
+	"CYPHER" 			"292716414"
+	"snatchie"			"111436809"
 	//MASONIC Players
 	"kiR" 				"258258243"
 	"J3nsyy"			"192137384"
