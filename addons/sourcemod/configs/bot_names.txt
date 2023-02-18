@@ -26,7 +26,7 @@
 	"REZ" 				"NiP"
 	//1win Players
 	"glowiing" 			"1win"
-	"flamie" 			"1win"
+	"Forester" 			"1win"
 	"TRAVIS"			"1win"
 	"lollipop21k" 		"1win"
 	"deko" 				"1win"
@@ -45,7 +45,7 @@
 	//Dynamo Players
 	"Dytor" 			"Dynamo"
 	"K1-FiDa" 			"Dynamo"
-	"capseN" 			"Dynamo"
+	"anarkez" 			"Dynamo"
 	"Valencio" 			"Dynamo"
 	"nbqq" 				"Dynamo"
 	//mouz Players
@@ -211,7 +211,7 @@
 	"decov9jse" 		"Isurus"	
 	"luchov" 			"Isurus"
 	//paiN Players
-	"PKL" 				"paiN"
+	"NEKIZ" 			"paiN"
 	"zevy" 				"paiN"
 	"skullz" 			"paiN"
 	"biguzera" 			"paiN"
@@ -242,10 +242,10 @@
 	"Keoz" 				"GamerLegion"
 	//DIVIZON Players
 	"j1NZO" 			"DIVIZON"
-	"astra" 			"DIVIZON"
-	"cello" 			"DIVIZON"
-	"ReacTioNNN" 		"DIVIZON"
-	"masta" 			"DIVIZON"
+	"sesL" 				"DIVIZON"
+	"impulsG" 			"DIVIZON"
+	"maxe" 				"DIVIZON"
+	"Pashorty" 			"DIVIZON"
 	//Goliath Players
 	"aw3some" 			"Goliath"
 	"uDEADSHOT" 		"Goliath"
@@ -364,8 +364,8 @@
 	"farmaG" 			"SSP"
 	"Sw1ft" 			"SSP"
 	"Cl34v3rs" 			"SSP"
-	"Orbit" 			"SSP"	
-	"Spexy" 			"SSP"
+	"cello" 			"SSP"	
+	"ecfN" 				"SSP"
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"bobeksde" 			"Lilmix"
@@ -397,10 +397,10 @@
 	"beastik" 			"SINNERS"
 	"Zero" 				"SINNERS"
 	//EP Players
-	"The eLiVe" 		"EP"
-	"Blytz" 			"EP"
-	"manguss" 			"EP"	
-	"h4rn" 				"EP"
+	"leckr" 			"EP"
+	"M1key" 			"EP"
+	"Pechyn" 			"EP"	
+	"zur1s" 			"EP"
 	"system" 			"EP"
 	//Lemondogs Players
 	"xelos" 			"Lemondogs"
@@ -488,7 +488,7 @@
 	"aris"				"Strife"
 	//777 Players
 	"SLY" 				"777"
-	"Trax"				"777"
+	"Jimbo"				"777"
 	"mikki" 			"777"
 	"akEz" 				"777"
 	"PALM1"				"777"
@@ -511,10 +511,10 @@
 	"eDi" 				"Conquer"
 	"LYNXi"				"Conquer"
 	//AVANGAR Players
-	"sorrow" 			"AVANGAR"
+	"TNDKingg" 			"AVANGAR"
 	"w1nt3r"			"AVANGAR"
-	"kade0" 			"AVANGAR"
-	"icem4N" 			"AVANGAR"
+	"def1zer" 			"AVANGAR"
+	"BLVCKM4GIC" 		"AVANGAR"
 	"ICY"				"AVANGAR"
 	//Furious Players
 	"KAISER" 			"Furious"
@@ -619,8 +619,8 @@
 	"tomaszin" 			"Boca"
 	"MRN1"				"Boca"
 	//Sampi Players
-	"HONES" 			"Sampi"
-	"Habyzz"			"Sampi"
+	"The eLiVe" 		"Sampi"
+	"blogg1s"			"Sampi"
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"T4gg3D"			"Sampi"
@@ -738,4 +738,10 @@
 	"realziN"			"Canids"
 	"t9rnay" 			"Canids"
 	"danoco"			"Canids"
+	//Singularity Players
+	"Qlocuu" 			"Singularity"
+	"POLO"				"Singularity"
+	"freo"				"Singularity"
+	"nestee" 			"Singularity"
+	"virtuoso"			"Singularity"
 }

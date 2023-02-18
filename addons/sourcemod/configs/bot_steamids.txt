@@ -26,7 +26,7 @@
 	"REZ" 				"73906687"
 	//1win Players
 	"glowiing" 			"213998181"
-	"flamie" 			"156257548"
+	"Forester" 			"67083025"
 	"TRAVIS"			"402704995"
 	"lollipop21k" 		"54552870"
 	"deko" 				"327280463"
@@ -45,7 +45,7 @@
 	//Dynamo Players
 	"Dytor" 			"241288610"
 	"K1-FiDa" 			"169558739"
-	"capseN" 			"134222736"
+	"anarkez" 			"73126768"
 	"Valencio" 			"163134468"
 	"nbqq" 				"123897784"
 	//mouz Players
@@ -211,7 +211,7 @@
 	"decov9jse" 		"311766666"	
 	"luchov" 			"107456470"
 	//paiN Players
-	"PKL" 				"65313136"
+	"NEKIZ" 			"76618432"
 	"zevy" 				"911593093"
 	"skullz" 			"158380916"
 	"biguzera" 			"55043156"
@@ -242,10 +242,10 @@
 	"Keoz" 				"138078516"
 	//DIVIZON Players
 	"j1NZO" 			"220770109"
-	"cello" 			"18118733"
-	"ReacTioNNN" 		"85434976"
-	"astra" 			"203588221"
-	"masta" 			"78122042"
+	"impulsG" 			"242288017"
+	"maxe" 				"58628823"
+	"sesL" 				"203588221"
+	"Pashorty" 			"101085277"
 	//Goliath Players
 	"aw3some" 			"106956887"
 	"uDEADSHOT" 		"235492183"
@@ -364,8 +364,8 @@
 	"farmaG" 			"32002596"
 	"Sw1ft" 			"159221739"
 	"Cl34v3rs" 			"98939532"
-	"Orbit" 			"84338398"	
-	"Spexy" 			"161464594"
+	"cello" 			"18118733"	
+	"ecfN" 				"21019852"
 	//Lilmix Players
 	"quix" 				"18704555"
 	"bobeksde" 			"100650499"
@@ -397,11 +397,11 @@
 	"beastik" 			"73173022"
 	"Zero" 				"34322135"
 	//EP Players
-	"The eLiVe"			"111025647"
-	"Blytz"				"101848953"
+	"leckr"				"75767821"
+	"M1key"				"221902877"
 	"system"			"72886704"
-	"manguss"			"75244785"
-	"h4rn"				"88360844"
+	"Pechyn"			"93527213"
+	"zur1s"				"140467841"
 	//Lemondogs Players
 	"xelos" 			"28004721"
 	"adamb" 			"890801811"
@@ -488,7 +488,7 @@
 	"aris"				"72733739"
 	//777 Players
 	"SLY" 				"1737573"
-	"Trax"				"163819505"
+	"Jimbo"				"192154266"
 	"mikki" 			"80276147"
 	"akEz" 				"25850155"
 	"PALM1"				"41557192"
@@ -511,10 +511,10 @@
 	"eDi" 				"57731578"
 	"LYNXi"				"123308829"
 	//AVANGAR Players
-	"sorrow" 			"169527908"
+	"TNDKingg" 			"854962155"
 	"w1nt3r"			"57945273"
-	"kade0" 			"343115451"
-	"icem4N" 			"355948252"
+	"def1zer" 			"262554036"
+	"BLVCKM4GIC" 		"380710619"
 	"ICY"				"94843300"
 	//Furious Players
 	"KAISER" 			"167304921"
@@ -619,8 +619,8 @@
 	"tomaszin" 			"462168316"
 	"MRN1"				"176372852"
 	//Sampi Players
-	"HONES" 			"34391702"
-	"Habyzz"			"432632176"
+	"The eLiVe" 		"111025647"
+	"blogg1s"			"115938594"
 	"matys"				"1086212773"
 	"sAvana1" 			"69270002"
 	"T4gg3D"			"296534066"
@@ -738,4 +738,10 @@
 	"realziN"			"44664741"
 	"t9rnay" 			"364544605"
 	"danoco"			"34622275"
+	//Singularity Players
+	"Qlocuu" 			"285659622"
+	"POLO"				"846588837"
+	"freo"				"109430629"
+	"nestee" 			"138122029"
+	"virtuoso"			"55647141"
 }

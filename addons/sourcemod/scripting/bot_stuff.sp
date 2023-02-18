@@ -282,7 +282,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "glowiing");
-			ServerCommand("bot_add_ct %s", "flamie");
+			ServerCommand("bot_add_ct %s", "Forester");
 			ServerCommand("bot_add_ct %s", "TRAVIS");
 			ServerCommand("bot_add_ct %s", "lollipop21k");
 			ServerCommand("bot_add_ct %s", "deko");
@@ -293,7 +293,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "glowiing");
-			ServerCommand("bot_add_t %s", "flamie");
+			ServerCommand("bot_add_t %s", "Forester");
 			ServerCommand("bot_add_t %s", "TRAVIS");
 			ServerCommand("bot_add_t %s", "lollipop21k");
 			ServerCommand("bot_add_t %s", "deko");
@@ -357,7 +357,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "Dytor");
-			ServerCommand("bot_add_ct %s", "capseN");
+			ServerCommand("bot_add_ct %s", "anarkez");
 			ServerCommand("bot_add_ct %s", "K1-FiDa");
 			ServerCommand("bot_add_ct %s", "Valencio");
 			ServerCommand("bot_add_ct %s", "nbqq");
@@ -368,7 +368,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "Dytor");
-			ServerCommand("bot_add_t %s", "capseN");
+			ServerCommand("bot_add_t %s", "anarkez");
 			ServerCommand("bot_add_t %s", "K1-FiDa");
 			ServerCommand("bot_add_t %s", "Valencio");
 			ServerCommand("bot_add_t %s", "nbqq");
@@ -1056,7 +1056,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "PKL");
+			ServerCommand("bot_add_ct %s", "NEKIZ");
 			ServerCommand("bot_add_ct %s", "zevy");
 			ServerCommand("bot_add_ct %s", "skullz");
 			ServerCommand("bot_add_ct %s", "biguzera");
@@ -1067,7 +1067,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "PKL");
+			ServerCommand("bot_add_t %s", "NEKIZ");
 			ServerCommand("bot_add_t %s", "zevy");
 			ServerCommand("bot_add_t %s", "skullz");
 			ServerCommand("bot_add_t %s", "biguzera");
@@ -1182,10 +1182,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "j1NZO");
-			ServerCommand("bot_add_ct %s", "astra");
-			ServerCommand("bot_add_ct %s", "cello");
-			ServerCommand("bot_add_ct %s", "ReacTioNNN");
-			ServerCommand("bot_add_ct %s", "masta");
+			ServerCommand("bot_add_ct %s", "sesL");
+			ServerCommand("bot_add_ct %s", "impulsG");
+			ServerCommand("bot_add_ct %s", "maxe");
+			ServerCommand("bot_add_ct %s", "Pashorty");
 			ServerCommand("mp_teamlogo_1 divi");
 		}
 		
@@ -1193,10 +1193,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "j1NZO");
-			ServerCommand("bot_add_t %s", "astra");
-			ServerCommand("bot_add_t %s", "cello");
-			ServerCommand("bot_add_t %s", "ReacTioNNN");
-			ServerCommand("bot_add_t %s", "masta");
+			ServerCommand("bot_add_t %s", "sesL");
+			ServerCommand("bot_add_t %s", "impulsG");
+			ServerCommand("bot_add_t %s", "maxe");
+			ServerCommand("bot_add_t %s", "Pashorty");
 			ServerCommand("mp_teamlogo_2 divi");
 		}
 	}
@@ -1684,8 +1684,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "farmaG");
 			ServerCommand("bot_add_ct %s", "Sw1ft");
 			ServerCommand("bot_add_ct %s", "Cl34v3rs");
-			ServerCommand("bot_add_ct %s", "Orbit");
-			ServerCommand("bot_add_ct %s", "Spexy");
+			ServerCommand("bot_add_ct %s", "cello");
+			ServerCommand("bot_add_ct %s", "ecfN");
 			ServerCommand("mp_teamlogo_1 ssp");
 		}
 		
@@ -1695,8 +1695,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "farmaG");
 			ServerCommand("bot_add_t %s", "Sw1ft");
 			ServerCommand("bot_add_t %s", "Cl34v3rs");
-			ServerCommand("bot_add_t %s", "Orbit");
-			ServerCommand("bot_add_t %s", "Spexy");
+			ServerCommand("bot_add_t %s", "cello");
+			ServerCommand("bot_add_t %s", "ecfN");
 			ServerCommand("mp_teamlogo_2 ssp");
 		}
 	}
@@ -1831,10 +1831,10 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "\"The eLiVe\"");
-			ServerCommand("bot_add_ct %s", "h4rn");
-			ServerCommand("bot_add_ct %s", "manguss");
-			ServerCommand("bot_add_ct %s", "Blytz");
+			ServerCommand("bot_add_ct %s", "leckr");
+			ServerCommand("bot_add_ct %s", "zur1s");
+			ServerCommand("bot_add_ct %s", "Pechyn");
+			ServerCommand("bot_add_ct %s", "M1key");
 			ServerCommand("bot_add_ct %s", "system");
 			ServerCommand("mp_teamlogo_1 ente");
 		}
@@ -1842,10 +1842,10 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "\"The eLiVe\"");
-			ServerCommand("bot_add_t %s", "h4rn");
-			ServerCommand("bot_add_t %s", "manguss");
-			ServerCommand("bot_add_t %s", "Blytz");
+			ServerCommand("bot_add_t %s", "leckr");
+			ServerCommand("bot_add_t %s", "zur1s");
+			ServerCommand("bot_add_t %s", "Pechyn");
+			ServerCommand("bot_add_t %s", "M1key");
 			ServerCommand("bot_add_t %s", "system");
 			ServerCommand("mp_teamlogo_2 ente");
 		}
@@ -2207,7 +2207,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "SLY");
-			ServerCommand("bot_add_ct %s", "Trax");
+			ServerCommand("bot_add_ct %s", "Jimbo");
 			ServerCommand("bot_add_ct %s", "mikki");
 			ServerCommand("bot_add_ct %s", "akEz");
 			ServerCommand("bot_add_ct %s", "PALM1");
@@ -2218,7 +2218,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "SLY");
-			ServerCommand("bot_add_t %s", "Trax");
+			ServerCommand("bot_add_t %s", "Jimbo");
 			ServerCommand("bot_add_t %s", "mikki");
 			ServerCommand("bot_add_t %s", "akEz");
 			ServerCommand("bot_add_t %s", "PALM1");
@@ -2306,10 +2306,10 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "sorrow");
+			ServerCommand("bot_add_ct %s", "TNDKingg");
 			ServerCommand("bot_add_ct %s", "ICY");
-			ServerCommand("bot_add_ct %s", "kade0");
-			ServerCommand("bot_add_ct %s", "icem4N");
+			ServerCommand("bot_add_ct %s", "def1zer");
+			ServerCommand("bot_add_ct %s", "BLVCKM4GIC");
 			ServerCommand("bot_add_ct %s", "w1nt3r");
 			ServerCommand("mp_teamlogo_1 avg");
 		}
@@ -2317,10 +2317,10 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "sorrow");
+			ServerCommand("bot_add_t %s", "TNDKingg");
 			ServerCommand("bot_add_t %s", "ICY");
-			ServerCommand("bot_add_t %s", "kade0");
-			ServerCommand("bot_add_t %s", "icem4N");
+			ServerCommand("bot_add_t %s", "def1zer");
+			ServerCommand("bot_add_t %s", "BLVCKM4GIC");
 			ServerCommand("bot_add_t %s", "w1nt3r");
 			ServerCommand("mp_teamlogo_2 avg");
 		}
@@ -2756,8 +2756,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "HONES");
-			ServerCommand("bot_add_ct %s", "Habyzz");
+			ServerCommand("bot_add_ct %s", "The eLiVe");
+			ServerCommand("bot_add_ct %s", "blogg1s");
 			ServerCommand("bot_add_ct %s", "matys");
 			ServerCommand("bot_add_ct %s", "sAvana1");
 			ServerCommand("bot_add_ct %s", "T4gg3D");
@@ -2767,8 +2767,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "HONES");
-			ServerCommand("bot_add_t %s", "Habyzz");
+			ServerCommand("bot_add_t %s", "The eLiVe");
+			ServerCommand("bot_add_t %s", "blogg1s");
 			ServerCommand("bot_add_t %s", "matys");
 			ServerCommand("bot_add_t %s", "sAvana1");
 			ServerCommand("bot_add_t %s", "T4gg3D");
@@ -3248,6 +3248,31 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "t9rnay");
 			ServerCommand("bot_add_t %s", "danoco");
 			ServerCommand("mp_teamlogo_2 red");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "Singularity", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "Qlocuu");
+			ServerCommand("bot_add_ct %s", "POLO");
+			ServerCommand("bot_add_ct %s", "freo");
+			ServerCommand("bot_add_ct %s", "nestee");
+			ServerCommand("bot_add_ct %s", "virtuoso");
+			ServerCommand("mp_teamlogo_1 sing");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "Qlocuu");
+			ServerCommand("bot_add_t %s", "POLO");
+			ServerCommand("bot_add_t %s", "freo");
+			ServerCommand("bot_add_t %s", "nestee");
+			ServerCommand("bot_add_t %s", "virtuoso");
+			ServerCommand("mp_teamlogo_2 sing");
 		}
 	}
 	
@@ -3872,7 +3897,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 			float fRangeToEnemy = GetVectorDistance(fClientLoc, fTargetLoc);
 			
 			if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
-				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.35, 0.60));
+				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
 		}
 		
 		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
@@ -4058,15 +4083,18 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	{
 		int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		int iDefIndex = IsValidEntity(iActiveWeapon) ? GetEntProp(iActiveWeapon, Prop_Send, "m_iItemDefinitionIndex") : 0;
+		int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
+		int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
 		int iSlot = eItems_GetWeaponSlotByDefIndex(iDefIndex);
 		bool bIsWalking = !!GetEntProp(client, Prop_Send, "m_bIsWalking");
-		float fClientEyes[3], fNoisePosition[3];
+		float fClientEyes[3], fEyeAngles[3], fNoisePosition[3];
 		
 		DHookGetParamVector(hParams, 2, fNoisePosition);
 		fNoisePosition[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fNoisePosition);
 		
 		GetClientEyePosition(client, fClientEyes);
+		GetClientEyeAngles(client, fEyeAngles);
 		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
 		
@@ -4074,26 +4102,42 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		{
 			if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE))
 				BotEquipBestWeapon(client, true);
-			else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-				ProcessGrenadeThrow(client, fNoisePosition);
+			else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && ShowTrajectory(client, iNadeDefIndex, 0.9, 0.0, fNoisePosition, fEyeAngles))
+			{
+				if(GetDirectionEndPoint(client, fEyeAngles, fNoisePosition))
+				{
+					Array_Copy(fNoisePosition, g_fNadeTarget[client], 3);
+					SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
+					RequestFrame(DelayThrow, GetClientUserId(client));
+				}
+			}
 		}
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
+	else if(strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0)
 	{
-		float fPos[3], fClientEyes[3];
+		int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
+		int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
+		float fPos[3], fEyeAngles[3];
 		
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
 		
+		GetClientEyeAngles(client, fEyeAngles);
+		
 		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 		{
-			GetClientEyePosition(client, fClientEyes);
-			BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
-			if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-				ProcessGrenadeThrow(client, fPos);
+			if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && ShowTrajectory(client, iNadeDefIndex, 0.9, 0.0, fPos, fEyeAngles))
+			{
+				if(GetDirectionEndPoint(client, fEyeAngles, fPos))
+				{
+					Array_Copy(fPos, g_fNadeTarget[client], 3);
+					SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
+					RequestFrame(DelayThrow, GetClientUserId(client));
+				}
+			}
 		}
 		
 		return MRES_ChangedHandled;
@@ -4299,14 +4343,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 9, 40:
 						{
-							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 1.0 && GetClientAimTarget(client, true) == g_iTarget[client])
+							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 0.5 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
-							}
-							
-							if(GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.1)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+							}	
 						}
 					}
 					
@@ -5027,118 +5069,11 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 	return iEntity > MaxClients;
 }
 
-public void ProcessGrenadeThrow(int client, float fTarget[3])
-{
-	GetGrenadeToss(client, fTarget);
-			
-	int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
-	int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
-	float fClientPos[3], fClientEyes[3], fPredictedNade[3], fNadeAngles[3];
-	GetClientEyePosition(client, fClientEyes);
-	MakeVectorFromPoints(fClientEyes, fTarget, fNadeAngles);
-	GetVectorAngles(fNadeAngles, fNadeAngles);
-	fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
-	fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
-	fNadeAngles[2] = 0.0;
-	
-	GetClientAbsOrigin(client, fClientPos);
-	ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
-	
-	if(GetVectorDistance(fPredictedNade, fClientPos) < 250.0 && IsPointVisible(fClientPos, fPredictedNade))
-		return;
-	
-	Array_Copy(fTarget, g_fNadeTarget[client], 3);
-	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
-	RequestFrame(DelayThrow, GetClientUserId(client));
-}
-
-stock void GetGrenadeToss(int client, float fTossTarget[3])
-{
-	float fEyePosition[3], fTo[3];
-	GetClientEyePosition(client, fEyePosition);
-	SubtractVectors(fTossTarget, fEyePosition, fTo);
-	float fRange = GetVectorLength(fTo);
-
-	const float fSlope = 0.2; // 0.25f;
-	float fTossHeight = fSlope * fRange;
-
-	float fHeightInc = fTossHeight / 10.0;
-	float fTarget[3];
-	float safeSpace = fTossHeight / 2.0;
-
-	// Build a box to sweep along the ray when looking for obstacles
-	float fMins[3] = { -2.0, -2.0, -2.0 };
-	float fMaxs[3] = { 2.0, 2.0, 2.0 };
-	fMins[2] = 0.0;
-	fMaxs[2] = fHeightInc;
-
-
-	// find low and high bounds of toss window
-	float fLow = 0.0;
-	float fHigh = fTossHeight + safeSpace;
-	bool bGotLow = false;
-	float fLastH = 0.0;
-	for(float h = 0.0; h < 3.0 * fTossHeight; h += fHeightInc)
-	{
-		fTarget[0] = fTossTarget[0];
-		fTarget[1] = fTossTarget[1];
-		fTarget[2] = fTossTarget[2] + h;
-
-		// make sure toss line is clear
-		Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMins, MASK_VISIBLE_AND_NPCS | CONTENTS_GRATE, TraceEntityFilterStuff);
-		
-		if (TR_GetFraction(hTraceResult) == 1.0)
-		{
-			// line is clear
-			if (!bGotLow)
-			{
-				fLow = h;
-				bGotLow = true;
-			}
-		}
-		else
-		{
-			// line is blocked
-			if (bGotLow)
-			{
-				fHigh = fLastH;
-				break;
-			}
-		}
-
-		fLastH = h;
-		
-		delete hTraceResult;
-	}
-
-	if (bGotLow)
-	{
-		// throw grenade into toss window
-		if (fTossHeight < fLow)
-		{
-			if (fLow + safeSpace > fHigh)
-				// narrow window
-				fTossHeight = (fHigh + fLow)/2.0;
-			else
-				fTossHeight = fLow + safeSpace;
-		}
-		else if (fTossHeight > fHigh - safeSpace)
-		{
-			if (fHigh - safeSpace < fLow)
-				// narrow window
-				fTossHeight = (fHigh + fLow)/2.0;
-			else
-				fTossHeight = fHigh - safeSpace;
-		}
-		
-		fTossTarget[2] += fTossHeight;
-	}
-}
-
-stock void ShowTrajectory(int iClient, float ThrowAngle[3], int iNadeDefIndex, float factor, float disp, float fPosition[3])
+stock bool ShowTrajectory(int iClient, int iNadeDefIndex, float factor, float disp, float fPosition[3], float fAngles[3])
 {
 	float GrenadeVelocity[3];
 	float PlayerVelocity[3];
+	float ThrowAngle[3];
 	float ThrowVector[3];
 	float ThrowVelocity;
 	float gStart[3];
@@ -5147,89 +5082,142 @@ stock void ShowTrajectory(int iClient, float ThrowAngle[3], int iNadeDefIndex, f
 	float right[3];
 	float up[3];
 	float dtime = 1.5;
+	bool bFoundAngle;
 
-	ThrowAngle[0] = -10.0 + ThrowAngle[0] + FloatAbs(ThrowAngle[0]) * 10.0 / 90.0;
-
-	GetAngleVectors(ThrowAngle, fwd, right, up);
-	NormalizeVector(fwd, ThrowVector);
-
-	GetClientEyePosition(iClient, gStart);
-
-	for (int i = 0; i < 3; i++)
-		gStart[i] += ThrowVector[i] * 16.0;
-
-	gStart[2] += disp;
-
-	GetEntPropVector(iClient, Prop_Data, "m_vecAbsVelocity", PlayerVelocity);
-
-	ThrowVelocity = 750.0 * factor;
-	ScaleVector(PlayerVelocity, 1.25);
-
-	for (int i = 0; i < 3; i++)
+	for(float x = -90.0; x <= 90.0; x += Math_GetRandomFloat(6.5, 7.5))
 	{
-		GrenadeVelocity[i] = ThrowVector[i] * ThrowVelocity + PlayerVelocity[i];
-	}
-
-	float dt = 0.05;
-	for (float t = 0.0; t <= dtime; t += dt)
-	{
-		gEnd[0] = gStart[0] + GrenadeVelocity[0] * dt;
-		gEnd[1] = gStart[1] + GrenadeVelocity[1] * dt;
-
-		float gForce      = 0.4 * FindConVar("sv_gravity").FloatValue;
-		float NewVelocity = GrenadeVelocity[2] - gForce * dt;
-		float AvgVelocity = (GrenadeVelocity[2] + NewVelocity) / 2.0;
-
-		gEnd[2]            = gStart[2] + AvgVelocity * dt;
-		GrenadeVelocity[2] = NewVelocity;
-
-		float mins[3] = { -2.0, -2.0, -2.0 };
-		float maxs[3] = { 2.0, 2.0, 2.0 };
-
-		Handle gRayTrace = TR_TraceHullEx(gStart, gEnd, mins, maxs, MASK_SHOT_HULL);
-
-		if (TR_GetFraction(gRayTrace) != 1.0)
+		for(float y = -180.0; y <= 180.0; y += Math_GetRandomFloat(6.5, 7.5))
 		{
-			if (TR_GetEntityIndex(gRayTrace) == iClient && t == 0.0)
-			{
-				delete gRayTrace;
-				gStart = gEnd;
-				continue;
-			}
+			ThrowAngle[0] = x;
+			ThrowAngle[1] = y;
+			ThrowAngle[2] = fAngles[2];
+		
+			ThrowAngle[0] = -10.0 + ThrowAngle[0] + FloatAbs(ThrowAngle[0]) * 10.0 / 90.0;
 
-			TR_GetEndPosition(gEnd, gRayTrace);
+			GetAngleVectors(ThrowAngle, fwd, right, up);
+			NormalizeVector(fwd, ThrowVector);
 
-			float NVector[3];
-			TR_GetPlaneNormal(gRayTrace, NVector);
+			GetClientEyePosition(iClient, gStart);
 
-			float Impulse = 2.0 * GetVectorDotProduct(NVector, GrenadeVelocity);
+			for (int i = 0; i < 3; i++)
+				gStart[i] += ThrowVector[i] * 16.0;
+
+			gStart[2] += disp;
+
+			GetEntPropVector(iClient, Prop_Data, "m_vecAbsVelocity", PlayerVelocity);
+
+			ThrowVelocity = 750.0 * factor;
+			ScaleVector(PlayerVelocity, 1.25);
 
 			for (int i = 0; i < 3; i++)
 			{
-				GrenadeVelocity[i] -= Impulse * NVector[i];
-
-				if (FloatAbs(GrenadeVelocity[i]) < 0.1)
-					GrenadeVelocity[i] = 0.0;
+				GrenadeVelocity[i] = ThrowVector[i] * ThrowVelocity + PlayerVelocity[i];
 			}
-
-			float SurfaceElasticity = GetEntPropFloat(TR_GetEntityIndex(gRayTrace), Prop_Send, "m_flElasticity");
-			float elasticity        = 0.45 * SurfaceElasticity;
-			ScaleVector(GrenadeVelocity, elasticity);
-
-			float ZVector[3] = { 0.0, 0.0, 1.0 };
-			if (GetVectorDotProduct(NVector, ZVector) > 0.7)
+			
+			float dt = 0.05;
+			for (float t = 0.0; t <= dtime; t += dt)
 			{
-				if (iNadeDefIndex == 48 || iNadeDefIndex == 46)
-					dtime = 0.0;
+				gEnd[0] = gStart[0] + GrenadeVelocity[0] * dt;
+				gEnd[1] = gStart[1] + GrenadeVelocity[1] * dt;
+
+				float gForce      = 0.4 * FindConVar("sv_gravity").FloatValue;
+				float NewVelocity = GrenadeVelocity[2] - gForce * 1.5;
+				float AvgVelocity = (GrenadeVelocity[2] + NewVelocity) / 2.0;
+
+				gEnd[2]            = gStart[2] + AvgVelocity * dt;
+				GrenadeVelocity[2] = NewVelocity;
+
+				float mins[3] = { -2.0, -2.0, -2.0 };
+				float maxs[3] = { 2.0, 2.0, 2.0 };
+
+				Handle gRayTrace = TR_TraceHullEx(gStart, gEnd, mins, maxs, MASK_SHOT_HULL);
+
+				if (TR_GetFraction(gRayTrace) != 1.0)
+				{
+					if (TR_GetEntityIndex(gRayTrace) == iClient && t == 0.0)
+					{
+						CloseHandle(gRayTrace);
+						gStart = gEnd;
+						continue;
+					}
+
+					TR_GetEndPosition(gEnd, gRayTrace);
+
+					float NVector[3];
+					TR_GetPlaneNormal(gRayTrace, NVector);
+
+					float Impulse = 2.0 * GetVectorDotProduct(NVector, GrenadeVelocity);
+
+					for (int i = 0; i < 3; i++)
+					{
+						GrenadeVelocity[i] -= Impulse * NVector[i];
+
+						if (FloatAbs(GrenadeVelocity[i]) < 0.1)
+							GrenadeVelocity[i] = 0.0;
+					}
+
+					float SurfaceElasticity = GetEntPropFloat(TR_GetEntityIndex(gRayTrace), Prop_Send, "m_flElasticity");
+					float elasticity        = 0.45 * SurfaceElasticity;
+					ScaleVector(GrenadeVelocity, elasticity);
+
+					float ZVector[3] = { 0.0, 0.0, 1.0 };
+					if (GetVectorDotProduct(NVector, ZVector) > 0.7)
+					{
+						if (iNadeDefIndex == 48 || iNadeDefIndex == 46)
+							dtime = 0.0;
+					}
+					
+					/*if(iNadeDefIndex == 45 && GetVectorLength(GrenadeVelocity) > 0.1)
+						dtime += 0.05;*/
+				}
+
+				delete gRayTrace;
+
+				gStart = gEnd;
+			}
+			
+			if(GetVectorDistance(fPosition, gEnd) <= 40.0)
+			{
+				bFoundAngle = true;
+				fAngles[0] = x;
+				fAngles[1] = y;
+				break;
 			}
 		}
-
-		delete gRayTrace;
-
-		gStart = gEnd;
+		
+		if(bFoundAngle)
+			break;
 	}
 	
-	Array_Copy(gEnd, fPosition, 3);
+	return bFoundAngle ? true : false;
+}
+
+bool GetDirectionEndPoint(int client, float fEyeAngles[3] ,float vEndPos[3])
+{
+	float vPos[3];
+	GetClientEyePosition(client, vPos);
+
+	Handle hTrace = TR_TraceRayFilterEx(vPos, fEyeAngles, MASK_PLAYERSOLID, RayType_Infinite, TraceRayNoPlayers, client);
+	if( hTrace != null )
+	{
+		if( TR_DidHit(hTrace) )
+		{
+			TR_GetEndPosition(vEndPos, hTrace);
+			delete hTrace;
+			return true;
+		}
+		delete hTrace;
+	}
+	return false;
+}
+
+bool TraceRayNoPlayers(int entity, int mask, any data)
+{
+	if( entity == data || (entity >= 1 && entity <= MaxClients) )
+	{
+		return false;
+	}
+	return true;
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
