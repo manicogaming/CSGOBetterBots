@@ -4098,7 +4098,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
 		
-		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE))
 				BotEquipBestWeapon(client, true);
@@ -4115,7 +4115,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0)
+	else if(strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Last Enemy Position") == 0)
 	{
 		int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
 		int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
@@ -4127,7 +4127,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		GetClientEyeAngles(client, fEyeAngles);
 		
-		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && ShowTrajectory(client, iNadeDefIndex, 0.9, 0.0, fPos, fEyeAngles))
 			{
@@ -4343,7 +4343,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 9, 40:
 						{
-							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 0.5 && GetClientAimTarget(client, true) == g_iTarget[client])
+							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 0.7 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
@@ -5084,9 +5084,9 @@ stock bool ShowTrajectory(int iClient, int iNadeDefIndex, float factor, float di
 	float dtime = 1.5;
 	bool bFoundAngle;
 
-	for(float x = -90.0; x <= 90.0; x += Math_GetRandomFloat(6.5, 7.5))
+	for(float x = -90.0; x <= 90.0; x += Math_GetRandomFloat(5.0, 6.0))
 	{
-		for(float y = -180.0; y <= 180.0; y += Math_GetRandomFloat(6.5, 7.5))
+		for(float y = -180.0; y <= 180.0; y += Math_GetRandomFloat(5.0, 6.0))
 		{
 			ThrowAngle[0] = x;
 			ThrowAngle[1] = y;
