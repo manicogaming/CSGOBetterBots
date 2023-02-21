@@ -25,10 +25,10 @@
 	"k0nfig" 			"NiP"
 	"REZ" 				"NiP"
 	//1win Players
-	"glowiing" 			"1win"
+	"Boombl4" 			"1win"
 	"Forester" 			"1win"
 	"TRAVIS"			"1win"
-	"lollipop21k" 		"1win"
+	"NickelBack" 		"1win"
 	"deko" 				"1win"
 	//G2 Players
 	"huNter-" 			"G2"
@@ -204,12 +204,12 @@
 	"FreeZe" 			"aTTaX"
 	"slaxz-" 			"aTTaX"
 	"Spiidi" 			"aTTaX"
-	//Isurus Players
-	"meyern" 			"Isurus"
-	"Noktse" 			"Isurus"
-	"reversive" 		"Isurus"	
-	"decov9jse" 		"Isurus"	
-	"luchov" 			"Isurus"
+	//NewHappy Players
+	"SPine" 			"NewHappy"
+	"TiGeR" 			"NewHappy"
+	"L1haNg" 			"NewHappy"	
+	"tutu" 				"NewHappy"	
+	"jiejie" 			"NewHappy"
 	//paiN Players
 	"NEKIZ" 			"paiN"
 	"zevy" 				"paiN"
@@ -327,7 +327,7 @@
 	//OG Players
 	"NEOFRAG" 			"OG"
 	"degster" 			"OG"
-	"nexa" 				"OG"
+	"nikozan" 			"OG"
 	"F1KU" 				"OG"
 	"flameZ" 			"OG"
 	//BNE Players
@@ -459,9 +459,9 @@
 	//DNMK Players
 	"Niix" 				"DNMK"
 	"Leggy" 			"DNMK"
-	"dyvo" 				"DNMK"
+	"rAid" 				"DNMK"
 	"zox" 				"DNMK"
-	"God's Not Dead"	"DNMK"
+	"Natural"			"DNMK"
 	//iNation Players
 	"Dragon" 			"iNation"
 	"VLDN" 				"iNation"
@@ -484,7 +484,7 @@
 	"J0LZ" 				"Strife"
 	"Snakes" 			"Strife"
 	"Infinite" 			"Strife"
-	"reck" 				"Strife"
+	"stamina" 			"Strife"
 	"aris"				"Strife"
 	//777 Players
 	"SLY" 				"777"

@@ -384,7 +384,7 @@ End
 
 //1win Players
 
-ProP+Rifle+RiflePersonality "glowiing"
+ProP+Rifle+RiflePersonality "Boombl4"
 	VoicePitch = 80
 End
 
@@ -396,7 +396,7 @@ ProP+Rifle+RiflePersonality "TRAVIS"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "lollipop21k"
+ProP+Rifle+RiflePersonality "NickelBack"
 	VoicePitch = 88
 End
 
@@ -1051,25 +1051,25 @@ ProP+Rifle+RiflePersonality "Spiidi"
 	VoicePitch = 100
 End
 
-//Isurus Players
+//NewHappy Players
 
-ProP+Rifle+RiflePersonality "meyern"
+ProP+Rifle+RiflePersonality "SPine"
 	VoicePitch = 115
 End
 
-ProP+SniperPro+SniperPersonality "Noktse"
+ProP+SniperPro+SniperPersonality "TiGeR"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "reversive"
+ProP+Rifle+RiflePersonality "L1haNg"
 	VoicePitch = 101
 End
 
-ProP+Rifle+RiflePersonality "decov9jse"
+ProP+Rifle+RiflePersonality "tutu"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "luchov"
+ProP+Rifle+RiflePersonality "jiejie"
 	VoicePitch = 109
 End
 
@@ -1501,7 +1501,7 @@ ProP+SniperPro+SniperPersonality "degster"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "nexa"
+ProP+Rifle+RiflePersonality "nikozan"
 	VoicePitch = 97
 End
 
@@ -1985,7 +1985,7 @@ ProP+SniperPro+SniperPersonality "Leggy"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "dyvo"
+ProP+Rifle+RiflePersonality "rAid"
 	VoicePitch = 97
 End
 
@@ -1993,7 +1993,7 @@ ProP+Rifle+RiflePersonality "zox"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "God's Not Dead"
+ProP+Rifle+RiflePersonality "Natural"
 	VoicePitch = 108
 End
 
@@ -2077,7 +2077,7 @@ ProP+Rifle+RiflePersonality "Infinite"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "reck"
+ProP+Rifle+RiflePersonality "stamina"
 	VoicePitch = 90
 End
 

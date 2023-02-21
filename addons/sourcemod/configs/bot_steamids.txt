@@ -25,10 +25,10 @@
 	"k0nfig" 			"19403447"
 	"REZ" 				"73906687"
 	//1win Players
-	"glowiing" 			"213998181"
+	"Boombl4" 			"185941338"
 	"Forester" 			"67083025"
 	"TRAVIS"			"402704995"
-	"lollipop21k" 		"54552870"
+	"NickelBack" 		"1882779"
 	"deko" 				"327280463"
 	//G2 Players
 	"huNter-" 			"52606325"
@@ -204,12 +204,12 @@
 	"FreeZe" 			"259251039"
 	"slaxz-" 			"104087441"
 	"Spiidi" 			"13465075"
-	//Isurus Players
-	"meyern" 			"235377137"
-	"Noktse" 			"54233223"
-	"reversive" 		"229334739"	
-	"decov9jse" 		"311766666"	
-	"luchov" 			"107456470"
+	//NewHappy Players
+	"SPine" 			"412672734"
+	"TiGeR" 			"1013261741"
+	"L1haNg" 			"1055940590"	
+	"tutu" 				"449412781"	
+	"jiejie" 			"1424137917"
 	//paiN Players
 	"NEKIZ" 			"76618432"
 	"zevy" 				"911593093"
@@ -327,7 +327,7 @@
 	//OG Players
 	"NEOFRAG" 			"255168957"
 	"degster" 			"56166832"
-	"nexa" 				"39559694"
+	"nikozan" 			"29470855"
 	"F1KU" 				"292168772"
 	"flameZ" 			"18569432"
 	//BNE Players
@@ -457,11 +457,11 @@
 	"Patsi" 			"328275073"
 	"s1ren"				"207519341"
 	//DNMK Players
-	"dyvo"				"172602391"
+	"rAid"				"302994909"
 	"Niix" 				"318367596"
 	"Leggy" 			"19776816"
 	"zox" 				"874942183"
-	"God's Not Dead" 	"187510732"
+	"Natural" 			"883629900"
 	//iNation Players
 	"Dragon" 			"290361460"
 	"VLDN" 				"22240693"
@@ -484,7 +484,7 @@
 	"J0LZ" 				"163875307"
 	"Snakes" 			"76881568"
 	"Infinite" 			"149493497"
-	"reck" 				"374549101"
+	"stamina" 			"272809432"
 	"aris"				"72733739"
 	//777 Players
 	"SLY" 				"1737573"
