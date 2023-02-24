@@ -1367,6 +1367,9 @@ End
 
 ProP+SniperPro+SniperPersonality "sh1ro"
 	VoicePitch = 93
+	LookAngleMaxAccelAttacking = 20000.0
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "buster"
@@ -1375,6 +1378,9 @@ End
 
 ProP+Rifle+RiflePersonality "Ax1Le"
 	VoicePitch = 111
+	LookAngleMaxAccelAttacking = 20000.0
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "Hobbit"

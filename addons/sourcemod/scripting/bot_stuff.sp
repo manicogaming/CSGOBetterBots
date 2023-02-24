@@ -3704,7 +3704,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
-			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0)
+			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "Ax1Le") == 0)
 			{
 				g_fLookAngleMaxAccel[client] = 20000.0;
 				g_fReactionTime[client] = 0.0;
@@ -4093,11 +4093,11 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			
 		DHookGetParamVector(hParams, 2, fNoisePosition);
 		
-		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(IsItMyChance(1.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			if(IsPositionCloseToEnemy(client, fNoisePosition) && (iSlot == CS_SLOT_KNIFE || iSlot == CS_SLOT_GRENADE))
 				BotEquipBestWeapon(client, true);
-			else if(IsItMyChance(0.5) && !IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+			else if(!IsPositionCloseToEnemy(client, fNoisePosition) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 			{
 				ProcessGrenadeThrow(client, fNoisePosition);
 				return MRES_Supercede;
@@ -4111,14 +4111,15 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	}
 	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
 	{
-		float fPos[3], fClientEyes[3];
+		float fPos[3];
 		DHookGetParamVector(hParams, 2, fPos);
 		
-		if(GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(IsItMyChance(20.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
+			float fClientEyes[3];
 			GetClientEyePosition(client, fClientEyes);
 			BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
-			if(IsItMyChance(15.0) && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
+			if(!IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 			{
 				ProcessGrenadeThrow(client, fPos);
 				return MRES_Supercede;
@@ -4331,7 +4332,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 9, 40:
 						{
-							if (fTargetDistance < 2750.0 && !bIsReloading && GetGameTime() - g_fZoomedTimestamp[client] > 0.7 && GetClientAimTarget(client, true) == g_iTarget[client])
+							if (fTargetDistance < 2750.0 && !bIsReloading && GetEntProp(client, Prop_Send, "m_bIsScoped") && GetGameTime() - g_fZoomedTimestamp[client] > 0.5 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
