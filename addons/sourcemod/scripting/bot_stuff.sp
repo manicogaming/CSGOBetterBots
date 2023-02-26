@@ -8,11 +8,10 @@
 #include <smlib>
 #include <navmesh>
 #include <dhooks>
-#include <botmimic>
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
-bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bAbortExecute, g_bEveryoneDead, g_bHalftimeSwitch;
+bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1], g_bCanThrowGrenade[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1];
@@ -3412,9 +3411,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 				g_bEveryoneDead = true;
 			}
-			
-			if (BotMimic_IsPlayerMimicing(client) && ((GetClientTeam(client) == CS_TEAM_T && GetAliveTeamCount(CS_TEAM_T) <= 3 && GetAliveTeamCount(CS_TEAM_CT) > 0) || g_bAbortExecute))
-				BotMimic_StopPlayerMimic(client);
 				
 			if(g_bFreezetimeEnd && IsItMyChance(15.0) && g_iDoingSmokeNum[client] == -1 && !g_bBombPlanted)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
@@ -3445,7 +3441,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				
 				int iDroppedC4 = GetNearestEntity(client, "weapon_c4", false);
 				
-				if (g_bFreezetimeEnd && !g_bBombPlanted && !IsValidEntity(iDroppedC4) && !BotIsHiding(client) && !BotMimic_IsPlayerMimicing(client))
+				if (g_bFreezetimeEnd && !g_bBombPlanted && !IsValidEntity(iDroppedC4) && !BotIsHiding(client))
 				{
 					//Rifles
 					int iAK47 = GetNearestEntity(client, "weapon_ak47");
@@ -3707,8 +3703,6 @@ public void OnClientPostAdminCheck(int client)
 		g_bUseM4A1S[client] = IsItMyChance(50.0) ? true : false;
 		g_bUseCZ75[client] = IsItMyChance(20.0) ? true : false;
 		g_pCurrArea[client] = INVALID_NAV_AREA;
-		
-		SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
 	}
 }
 
@@ -3728,7 +3722,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	int iOppositeTeam = g_bIsBombScenario ? CS_TEAM_T : CS_TEAM_CT;
 	
 	g_bFreezetimeEnd = false;
-	g_bAbortExecute = false;
 	g_bEveryoneDead = false;
 	g_fRoundStart = GetGameTime();
 	
@@ -3821,23 +3814,6 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
 			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
 	}
-}
-
-public Action OnTakeDamageAlive(int iVictim, int &iAttacker, int &iInflictor, float &fDamage, int &iDamageType, int &iWeapon, float fDamageForce[3], float fDamagePosition[3])
-{
-	if (float(GetClientHealth(iVictim)) - fDamage < 0.0)
-		return Plugin_Continue;
-	
-	if (!(iDamageType & DMG_SLASH) && !(iDamageType & DMG_BULLET) && !(iDamageType & DMG_BURN))
-		return Plugin_Continue;
-	
-	if (iVictim == iAttacker || !IsValidClient(iAttacker) || !IsPlayerAlive(iAttacker))
-		return Plugin_Continue;
-	
-	if(BotMimic_IsPlayerMimicing(iVictim) && GetClientTeam(iVictim) == CS_TEAM_T && GetClientTeam(iAttacker) != CS_TEAM_T)
-		g_bAbortExecute = true;
-	
-	return Plugin_Continue;
 }
 
 public void OnThinkPost(int iEnt)
@@ -4174,7 +4150,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if(g_bThrowGrenade[client] && eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 				BotThrowGrenade(client, g_fNadeTarget[client]);
 			
-			if((IsSafe(client) && !BotMimic_IsPlayerMimicing(client)) || g_bEveryoneDead)
+			if(IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
 				
 			if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
@@ -4209,9 +4185,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						BotEquipBestWeapon(client, true);
 				
 				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
-				{
-					g_bAbortExecute = true;
-					
+				{					
 					BotAttack(client, g_iTarget[client]);
 					fTargetDistance = GetVectorDistance(fClientLoc, g_fTargetPos[client]);
 					
@@ -4317,10 +4291,7 @@ public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szC
 public void OnClientDisconnect(int client)
 {
 	if (IsValidClient(client) && IsFakeClient(client))
-	{
 		g_iProfileRank[client] = 0;
-		SDKUnhook(client, SDKHook_OnTakeDamageAlive, OnTakeDamageAlive);
-	}
 }
 
 public void eItems_OnItemsSynced()
@@ -4701,9 +4672,6 @@ public int GetNearestGrenade(int client)
 	for(int i = 0; i < g_iMaxNades; i++)
 	{
 		if(g_ArrayNades[i] == null)
-			return -1;
-			
-		if(BotMimic_IsPlayerMimicing(client))
 			return -1;
 		
 		if((GetGameTime() - g_ArrayNades[i].Get(6)) < 25.0)
