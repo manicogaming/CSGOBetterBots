@@ -98,7 +98,7 @@
 	"Spinx" 			"103070679"
 	//BIG Players
 	"k1to" 				"222196859"
-	"syrsoN" 			"19857269"
+	"hyped" 			"179338600"
 	"faveN" 			"157930364"
 	"tabseN" 			"1225952"
 	"Krimbo" 			"210365363"
@@ -395,19 +395,13 @@
 	"oskar" 			"171425088"
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
-	"Zero" 				"34322135"
+	"outex" 			"387989655"
 	//EP Players
 	"leckr"				"75767821"
 	"M1key"				"221902877"
 	"system"			"72886704"
 	"Pechyn"			"93527213"
 	"zur1s"				"140467841"
-	//Lemondogs Players
-	"xelos" 			"28004721"
-	"adamb" 			"890801811"
-	"susp" 				"382452440"
-	"KriLLe" 			"164669290"
-	"hemzk9" 			"83597297"	
 	//Illuminar Players
 	"zaNNN" 			"154807226"
 	"TOAO" 				"196107432"
@@ -426,12 +420,12 @@
 	"NeOo" 				"996000485"
 	"wasiNk" 			"164618316"
 	"SIXER" 			"3429256"
-	//CatEvil Players
-	"Gin" 				"385310876"
-	"tanxiaomei" 		"299619832"
-	"Roninbaby" 		"460930168"
-	"MrCANI" 			"80075444"
-	"Chaos" 			"352409378"
+	//BESTIA Players
+	"meyern" 			"235377137"
+	"Noktse" 			"54233223"
+	"Luken" 			"46114258"
+	"deco" 				"311766666"
+	"luchov" 			"107456470"
 	//Nouns Players
 	"MarKE" 			"2637435"
 	"cynic" 			"106932238"
@@ -492,12 +486,12 @@
 	"mikki" 			"80276147"
 	"akEz" 				"25850155"
 	"PALM1"				"41557192"
-	//BLUEJAYS Players
-	"aidKiT" 			"241656151"
-	"kyxsan"			"97016704"
-	"stYleEeZ" 			"83880966"
-	"dan1" 				"283022264"
-	"CacaNito"			"303390740"
+	//BP Players
+	"sarenii" 			"114087818"
+	"fleav"				"189640934"
+	"Katalic" 			"44636266"
+	"susp" 				"382452440"
+	"stYleEeZ"			"83880966"
 	//IKLA Players
 	"byr9" 				"124733563"
 	"SENSEi"			"92510011"
@@ -649,7 +643,7 @@
 	"piria" 			"436072455"
 	"lub"				"882284871"
 	//GTZ Players
-	"Jaepe" 			"251441860"
+	"TMKj" 				"838669792"
 	"shr"				"66458785"
 	"snapy"				"268698824"
 	"aragorN" 			"844611868"
@@ -744,4 +738,10 @@
 	"freo"				"109430629"
 	"nestee" 			"138122029"
 	"virtuoso"			"55647141"
+	//Flamengo Players
+	"SHOOWTiME" 		"97938914"
+	"zqk"				"4032008"
+	"delboNi"			"49145432"
+	"n1ssim" 			"101497868"
+	"f4stzin"			"476343738"
 }

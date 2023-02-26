@@ -98,7 +98,7 @@
 	"Spinx" 			"Vitality"
 	//BIG Players
 	"k1to" 				"BIG"
-	"syrsoN" 			"BIG"
+	"hyped" 			"BIG"
 	"faveN" 			"BIG"
 	"tabseN" 			"BIG"
 	"Krimbo" 			"BIG"
@@ -395,19 +395,13 @@
 	"oskar" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
-	"Zero" 				"SINNERS"
+	"outex" 			"SINNERS"
 	//EP Players
 	"leckr" 			"EP"
 	"M1key" 			"EP"
 	"Pechyn" 			"EP"	
 	"zur1s" 			"EP"
 	"system" 			"EP"
-	//Lemondogs Players
-	"xelos" 			"Lemondogs"
-	"adamb" 			"Lemondogs"
-	"hemzk9" 			"Lemondogs"
-	"susp" 				"Lemondogs"
-	"KriLLe" 			"Lemondogs"	
 	//Illuminar Players
 	"zaNNN" 			"Illuminar"
 	"TOAO" 				"Illuminar"
@@ -426,12 +420,12 @@
 	"Nono2k" 			"GenOne"
 	"jeyN" 				"GenOne"
 	"SIXER"				"GenOne"
-	//CatEvil Players
-	"MrCANI" 			"CatEvil"
-	"Gin" 				"CatEvil"
-	"Chaos" 			"CatEvil"
-	"tanxiaomei" 		"CatEvil"
-	"Roninbaby"			"CatEvil"
+	//BESTIA Players
+	"deco" 				"BESTIA"
+	"meyern" 			"BESTIA"
+	"luchov" 			"BESTIA"
+	"Noktse" 			"BESTIA"
+	"Luken"				"BESTIA"
 	//Nouns Players
 	"MarKE" 			"Nouns"
 	"cynic" 			"Nouns"
@@ -492,12 +486,12 @@
 	"mikki" 			"777"
 	"akEz" 				"777"
 	"PALM1"				"777"
-	//BLUEJAYS Players
-	"aidKiT" 			"BLUEJAYS"
-	"kyxsan"			"BLUEJAYS"
-	"stYleEeZ" 			"BLUEJAYS"
-	"dan1" 				"BLUEJAYS"
-	"CacaNito"			"BLUEJAYS"
+	//BP Players
+	"sarenii" 			"BP"
+	"fleav"				"BP"
+	"Katalic" 			"BP"
+	"susp" 				"BP"
+	"stYleEeZ"			"BP"
 	//IKLA Players
 	"byr9" 				"IKLA"
 	"SENSEi"			"IKLA"
@@ -649,7 +643,7 @@
 	"piria" 			"Plano"
 	"lub"				"Plano"
 	//GTZ Players
-	"Jaepe" 			"GTZ"
+	"TMKj" 				"GTZ"
 	"shr"				"GTZ"
 	"snapy"				"GTZ"
 	"aragorN" 			"GTZ"
@@ -744,4 +738,10 @@
 	"freo"				"Singularity"
 	"nestee" 			"Singularity"
 	"virtuoso"			"Singularity"
+	//Flamengo Players
+	"SHOOWTiME" 		"Flamengo"
+	"zqk"				"Flamengo"
+	"delboNi"			"Flamengo"
+	"n1ssim" 			"Flamengo"
+	"f4stzin"			"Flamengo"
 }
