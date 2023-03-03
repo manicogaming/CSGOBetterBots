@@ -56,7 +56,7 @@
 			{
 				// Has 'CCSBot::Update' string
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x4C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A"
+				"windows" 	"\x55\x8B\xEC\x83\xE4\xF8\x83\xEC\x4C\x53\x8B\xD9\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\x81\x0C\x10\x00\x00"
 			}
 			"CCSBot::ThrowGrenade"
 			{
@@ -106,17 +106,17 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x8B\x0D\x2A\x2A\x2A\x2A\x56\x57\x8B\xB9\x0C\x10\x00\x00\x85\xFF\x74\x2A\x6A\x04\x6A\x00\x68\x2A\x2A\x2A\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A\xFF\x15\x2A\x2A\x2A\x2A\x8B\x0D\x2A\x2A\x2A\x2A"
 			}
-			"CCSBot::SetBotEnemy"
-			{
-				//Has string 'SetBotEnemy: %s\n'
-				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x51\x56\x57\x8B\xF9\x8B\x8F\x04\x5E\x00\x00"
-			}
 			"CCSBot::BendLineOfSight"
 			{
 				//Has string 'CCSBot::BendLineOfSight'
 				"library"	"server"
 				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
+			}
+			"CCSBot::Attack"
+			{
+				//Is below the string 'Attacking our friend's killer!\n'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\x56\x57\x8B\x7D\x08\x8B\xF1\x85\xFF\x0F\x84\x2A\x2A\x2A\x2A"
 			}
 			"BotBombStatusMeme::Interpret"
 			{
@@ -176,6 +176,11 @@
 			{
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
+			}
+			"CCSBot::m_grenadeTossState"
+			{
+				//Just above the string '%3.2f: Grenade: FINISH_THROW\n'
+				"windows"	   "23404"
 			}
 			"Weapon_Switch"
 			{
@@ -242,20 +247,6 @@
 				"return" "void"
 				"this" "entity"
 			}
-			"CCSBot::ThrowGrenade"
-			{
-				"signature" "CCSBot::ThrowGrenade"
-				"callconv" "thiscall"
-				"return" "void"
-				"this" "entity"
-				"arguments"
-				{
-					"target"
-					{
-						"type" "vectorptr"
-					}
-				}
-			}
 			"BotCOS"
 			{
 				"signature" "BotCOS"
@@ -288,13 +279,6 @@
 					}
 				}
 			}
-			"CCSBot::FindMostDangerousThreat"
-			{
-				"signature" "CCSBot::FindMostDangerousThreat"
-				"callconv" "thiscall"
-				"return" "cbaseentity"
-				"this" "entity"
-			}
 		}
 		"MemPatches"
 		{
@@ -303,7 +287,7 @@
 				"signature" "CCSBot::Update"
 				"windows"
 				{
-					"offset"	"1326h"
+					"offset"	"1379h"
 					"verify"	"\x8B\x03\x8B\xCB\xFF\x90\xCC\x08\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
@@ -313,8 +297,8 @@
 				"signature" "CCSBot::Update"
 				"windows"
 				{
-					"offset"	"936h"
-					"verify"	"\x51\x8B\xCB\xE8\x92\x74\x00\x00\x84\xC0"
+					"offset"	"989h"
+					"verify"	"\x51\x8B\xCB\xE8\x0F\x76\x00\x00\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
@@ -323,8 +307,8 @@
 				"signature" "CCSBot::Update"
 				"windows"
 				{
-					"offset"	"951h"
-					"verify"	"\x8B\xCB\x50\xE8\x67\x78\x00\x00"
+					"offset"	"9A4h"
+					"verify"	"\x8B\xCB\x50\xE8\xE4\x79\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}

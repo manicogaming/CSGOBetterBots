@@ -8,7 +8,7 @@
 #include <bot_steamids>
 #include <kento_rankme/rankme>
 #include <smlib>
-//#include <modelch>
+#include <modelch>
 
 bool g_bLateLoaded;
 int g_iWeaponCount;
@@ -922,9 +922,9 @@ public Action SDK_OnWeaponEquip(int client, int iWeapon)
 
 public Action Timer_MapWeaponEquipped(Handle timer, DataPack datapack)
 {
-	ResetPack(datapack);
-	int client = ReadPackCell(datapack);
-	int iWeapon = ReadPackCell(datapack);
+	datapack.Reset();
+	int client = datapack.ReadCell();
+	int iWeapon = datapack.ReadCell();
 	delete datapack;
 
 	if(!IsValidClient(client))
