@@ -48,6 +48,12 @@ Also, all plugins here belong to their respective authors. I only complile plugi
 
 ![8](https://user-images.githubusercontent.com/45516471/202808067-deb770bb-a82d-4ad5-a926-2fe06e303802.png)
 
+- Allows regular bots to use operators. (Special bots are not affected as they have their own skins)
+
+![9](https://user-images.githubusercontent.com/45516471/222645711-caf23dde-ca33-4ea3-96b2-9b9431f01105.png)
+
+
+
 - And more that I might have forgotten.
 # Files Not Included
 **bot_stuff.smx** - Flying Fox AI is not compatible with plugins that edit Bot behaviors, plus this plugin heavily tanks performace.
