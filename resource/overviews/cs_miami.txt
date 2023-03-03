@@ -1,0 +1,9 @@
+// HLTV overview description file for cs_miami.bsp
+
+"cs_miami"
+{
+	"material"	"overviews/cs_miami"	// texture file
+	"pos_x"		"1639"		//-1938  upper left world coordinate
+	"pos_y"		"3809"
+	"scale"		"5.0"
+}

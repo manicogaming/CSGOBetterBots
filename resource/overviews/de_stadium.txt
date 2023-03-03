@@ -1,0 +1,12 @@
+// HLTV overview description file for de_stadium.bsp
+
+"de_stadium"
+{
+	"material"	"overviews/de_stadium_radar"	// texture file
+	"pos_x"		"-3538"	// upper left world coordinate
+	"pos_y"		"2234"
+	"scale"		"4" 
+	"rotate"	"0"
+	"zoom"		"2.0"
+}
+
