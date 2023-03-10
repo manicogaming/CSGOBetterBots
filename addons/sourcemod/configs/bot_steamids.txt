@@ -79,15 +79,15 @@
 	"ELiGE" 			"106428011"
 	"YEKINDAR" 			"174136197"
 	//AGO Players
-	"Furlan" 			"177495873"
-	"jedqr" 			"125090121"
-	"phr" 				"19304486"
-	"sh3nanigan" 		"1042506424"
-	"leman" 			"40398517"
+	"tomiko" 			"258331727"
+	"Enzo" 				"71273322"
+	"asran" 			"163202698"
+	"darchevile" 		"255500180"
+	"maaryy" 			"188721128"
 	//ENCE Players
 	"Snappi" 			"29157337"
 	"SunPayus" 			"349573813"
-	"valde" 			"154664140"
+	"NertZ" 			"86532535"
 	"maden" 			"205186299"
 	"dycha" 			"81151265"
 	//Vitality Players
@@ -131,7 +131,7 @@
 	"XELLOW" 			"92089093"
 	"Zyphon" 			"198111516"
 	"lauNX" 			"1012530125"
-	"refrezh" 			"104598470"
+	"AZR" 				"24832266"
 	//Heroic Players
 	"TeSeS" 			"36412550"
 	"Jabbi" 			"160291620"
@@ -197,7 +197,7 @@
 	"Techno4K" 			"1006074432"
 	"bLitz" 			"999558360"
 	"Annihilation" 		"315821474"
-	"sk0R" 				"863160115"
+	"Bart4k" 			"481096602"
 	//aTTaX Players
 	"awzek" 			"238305245"
 	"PerX" 				"208428335"	
@@ -262,7 +262,7 @@
 	"bLazE" 			"209701855"	
 	"SloWye" 			"50695439"
 	"Doru" 				"135905209"
-	"Wip3ouT" 			"208829044"
+	"Triton" 			"135933575"
 	"wilj" 				"183429246"
 	//SH Players
 	"AE" 				"187743214"	
@@ -347,7 +347,7 @@
 	"mhL" 				"180124403"
 	"MiGHTYMAX" 		"15522824"
 	"HeavyGod" 			"107737265"
-	"Nertz" 			"92860917"
+	"Fessor" 			"311417941"
 	//SAW Players
 	"ewjerkz" 			"302194534"
 	"story" 			"105182632"
@@ -365,7 +365,7 @@
 	"Sw1ft" 			"159221739"
 	"Cl34v3rs" 			"98939532"
 	"cello" 			"18118733"	
-	"ecfN" 				"21019852"
+	"KraiS" 			"373432840"
 	//Lilmix Players
 	"quix" 				"18704555"
 	"bobeksde" 			"100650499"
@@ -432,12 +432,12 @@
 	"Bwills" 			"119308817"
 	"nosraC" 			"101522203"
 	"cJ"				"40562365"
-	//Anonymo Players
-	"SZPERO" 			"19554985"
-	"MWLKY" 			"206859955"
-	"Demho" 			"146746760"
-	"Vegi" 				"90369423"
-	"innocent"			"26563533"
+	//Begrip Players
+	"Karma" 			"1044331908"
+	"Fippe" 			"190775274"
+	"veniuz" 			"1147913379"
+	"spuffy" 			"181859094"
+	"SeBreeZe"			"954832540"
 	//HONORIS Players
 	"TaZ" 				"234052"
 	"lunAtic" 			"27202715"
@@ -471,7 +471,7 @@
 	//Nation Players
 	"nqz" 				"390076777"
 	"coldzera" 			"79720871"
-	"TACO" 				"52876568"
+	"n9xtz" 			"366272133"
 	"latto" 			"889754458"
 	"dumau"				"234059589"
 	//Strife Players
@@ -672,12 +672,6 @@
 	"pallib0ndi"		"34650707"
 	"detinate" 			"5098392"
 	"StebbiC0C0"		"25418735"
-	//Nixuh Players
-	"adM" 				"119663636"
-	"blackpoisoN"		"5477315"
-	"kanii"				"32730121"
-	"Triton" 			"135933575"
-	"Sonic"				"14864123"
 	//INTZ Players
 	"Leomonster" 		"318176128"
 	"desh"				"990101558"

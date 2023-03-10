@@ -79,15 +79,15 @@
 	"ELiGE" 			"Liquid"
 	"YEKINDAR" 			"Liquid"
 	//AGO Players
-	"Furlan" 			"AGO"
-	"jedqr" 			"AGO"
-	"phr" 				"AGO"
-	"sh3nanigan" 		"AGO"
-	"leman" 			"AGO"
+	"tomiko" 			"AGO"
+	"Enzo" 				"AGO"
+	"asran" 			"AGO"
+	"darchevile" 		"AGO"
+	"maaryy" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"
 	"SunPayus" 			"ENCE"
-	"valde" 			"ENCE"
+	"NertZ" 			"ENCE"
 	"maden" 			"ENCE"
 	"dycha" 			"ENCE"
 	//Vitality Players
@@ -131,7 +131,7 @@
 	"XELLOW" 			"Sprout"
 	"Zyphon" 			"Sprout"
 	"lauNX" 			"Sprout"
-	"refrezh" 			"Sprout"
+	"AZR" 				"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"Jabbi" 			"Heroic"
@@ -197,7 +197,7 @@
 	"bLitz" 			"IHC"
 	"kabal" 			"IHC"
 	"Annihilation" 		"IHC"
-	"sk0R" 				"IHC"
+	"Bart4k" 			"IHC"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
 	"PerX" 				"aTTaX"	
@@ -261,7 +261,7 @@
 	//Bravado Players
 	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
-	"Wip3ouT" 			"Bravado"
+	"Triton" 			"Bravado"
 	"bLazE" 			"Bravado"	
 	"wilj" 				"Bravado"
 	//SH Players
@@ -347,7 +347,7 @@
 	"mhL" 				"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"HeavyGod" 			"Endpoint"
-	"Nertz" 			"Endpoint"
+	"Fessor" 			"Endpoint"
 	//SAW Players
 	"ewjerkz"			"SAW" 
 	"story" 			"SAW"
@@ -365,7 +365,7 @@
 	"Sw1ft" 			"SSP"
 	"Cl34v3rs" 			"SSP"
 	"cello" 			"SSP"	
-	"ecfN" 				"SSP"
+	"KraiS" 			"SSP"
 	//Lilmix Players
 	"quix" 				"Lilmix"
 	"bobeksde" 			"Lilmix"
@@ -432,12 +432,12 @@
 	"Bwills" 			"Nouns"
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
-	//Anonymo Players
-	"SZPERO" 			"Anonymo"
-	"MWLKY" 			"Anonymo"
-	"Demho" 			"Anonymo"
-	"Vegi" 				"Anonymo"
-	"innocent"			"Anonymo"
+	//Begrip Players
+	"Karma" 			"Begrip"
+	"Fippe" 			"Begrip"
+	"veniuz" 			"Begrip"
+	"spuffy" 			"Begrip"
+	"SeBreeZe"			"Begrip"
 	//HONORIS Players
 	"TaZ" 				"HONORIS"
 	"SaMey" 			"HONORIS"
@@ -471,7 +471,7 @@
 	//Nation Players
 	"nqz" 				"Nation"
 	"coldzera" 			"Nation"
-	"TACO" 				"Nation"
+	"n9xtz" 			"Nation"
 	"latto" 			"Nation"
 	"dumau"				"Nation"
 	//Strife Players
@@ -672,12 +672,6 @@
 	"pallib0ndi"		"DUSTY"
 	"detinate" 			"DUSTY"
 	"StebbiC0C0"		"DUSTY"
-	//Nixuh Players
-	"adM" 				"Nixuh"
-	"blackpoisoN"		"Nixuh"
-	"kanii"				"Nixuh"
-	"Triton" 			"Nixuh"
-	"Sonic"				"Nixuh"
 	//INTZ Players
 	"Leomonster" 		"INTZ"
 	"desh"				"INTZ"
