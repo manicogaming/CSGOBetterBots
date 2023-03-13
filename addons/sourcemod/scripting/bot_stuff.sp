@@ -1496,7 +1496,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "birdfromsky");
-			ServerCommand("bot_add_ct %s", "regali");
+			ServerCommand("bot_add_ct %s", "farlig");
 			ServerCommand("bot_add_ct %s", "b0RUP");
 			ServerCommand("bot_add_ct %s", "TMB");
 			ServerCommand("bot_add_ct %s", "raalz");
@@ -1507,7 +1507,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "birdfromsky");
-			ServerCommand("bot_add_t %s", "regali");
+			ServerCommand("bot_add_t %s", "farlig");
 			ServerCommand("bot_add_t %s", "b0RUP");
 			ServerCommand("bot_add_t %s", "TMB");
 			ServerCommand("bot_add_t %s", "raalz");
@@ -3047,9 +3047,9 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "maxxkor");
 			ServerCommand("bot_add_ct %s", "gishu");
-			ServerCommand("bot_add_ct %s", "awoken");
+			ServerCommand("bot_add_ct %s", "minimal");
 			ServerCommand("bot_add_ct %s", "gonza");
-			ServerCommand("bot_add_ct %s", "rushardo");
+			ServerCommand("bot_add_ct %s", "Yokowow");
 			ServerCommand("mp_teamlogo_1 rive");
 		}
 		
@@ -3058,9 +3058,9 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "maxxkor");
 			ServerCommand("bot_add_t %s", "gishu");
-			ServerCommand("bot_add_t %s", "awoken");
+			ServerCommand("bot_add_t %s", "minimal");
 			ServerCommand("bot_add_t %s", "gonza");
-			ServerCommand("bot_add_t %s", "rushardo");
+			ServerCommand("bot_add_t %s", "Yokowow");
 			ServerCommand("mp_teamlogo_2 rive");
 		}
 	}

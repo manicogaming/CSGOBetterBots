@@ -323,7 +323,7 @@
 	"raalz" 			"CPH"
 	"b0RUP" 			"CPH"
 	"TMB" 				"CPH"
-	"regali" 			"CPH"
+	"farlig" 			"CPH"
 	//OG Players
 	"NEOFRAG" 			"OG"
 	"degster" 			"OG"
@@ -693,9 +693,9 @@
 	//River Players
 	"maxxkor" 			"River"
 	"gishu"				"River"
-	"awoken"			"River"
+	"minimal"			"River"
 	"gonza" 			"River"
-	"rushardo"			"River"
+	"Yokowow"			"River"
 	//GameAgents Players
 	"kANDARO" 			"GameAgents"
 	"Vopsick"			"GameAgents"

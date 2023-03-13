@@ -329,7 +329,7 @@
 	"raalz" 			"CSGO-LqCpm-Cbbzx-sAK5z-75jhw-K5nQD"
 	"b0RUP" 			"CSGO-GzXhG-yafSF-iKzWa-t57hb-hYXTB"
 	"TMB" 				"CSGO-akC5R-iQhYW-6Czzy-wkm46-EKjeC"
-	"regali" 			"CSGO-s3ZV5-Smen5-rJaMt-iGx8H-SBCtG"
+	"farlig" 			"CSGO-moAHZ-yauCS-d4NAw-Y7oqN-nysyM"
 	//OG Players
 	"NEOFRAG" 			"CSGO-uKyTe-DyhXJ-Lm4z2-afuzS-F99zP"
 	"degster" 			"CSGO-i6W7e-7dNbB-7u2hV-vwvQd-97DRE"
@@ -710,10 +710,10 @@
 	"r1see"				"CSGO-ty4wQ-Va3B2-rMK8r-ROvoR-yopJN"
 	//River Players
 	"maxxkor" 			"CSGO-R2XvB-SPGLo-HKLor-6yeYP-rTGOP"
-	"gishu"				"CSGO-vyHaJ-d8SmP-tJTDM-UP6Gk-QQSFE"
-	"awoken"			"CSGO-niJsv-eJZY6-ZzsCR-OEhGY-6ByXD"
-	"gonza" 			"CSGO-f9h3A-8jxPk-MGS62-43xAz-rmEVF"
-	"rushardo"			"CSGO-PsU8L-KFL9S-YAb3W-2Tdbz-tXcNE"
+	"gishu"				"CSGO-GCj5a-Kbecx-BfMNv-pTE5C-DQzfF"
+	"minimal"			"CSGO-nnePW-UrPPz-yQwoa-fBZvp-pevvE"
+	"gonza" 			"CSGO-3sNur-QwJOq-ufrmX-7QcyZ-LDyXD"
+	"Yokowow"			"CSGO-nWvrq-AQoQJ-JASue-GaRr7-6NZfE"
 	//GameAgents Players
 	"kANDARO" 			"CSGO-v4eRr-iwAQt-jK35U-aA2xF-2bVvD"
 	"Vopsick"			"CSGO-Hhh5f-kQpuU-WxEOM-YrcMO-TpNkO"

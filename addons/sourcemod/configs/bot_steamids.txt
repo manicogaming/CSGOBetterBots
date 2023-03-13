@@ -323,7 +323,7 @@
 	"raalz" 			"35794427"
 	"b0RUP" 			"146876280"
 	"TMB" 				"124341526"
-	"regali" 			"138197501"
+	"farlig" 			"63982401"
 	//OG Players
 	"NEOFRAG" 			"255168957"
 	"degster" 			"56166832"
@@ -693,9 +693,9 @@
 	//River Players
 	"maxxkor" 			"1070706470"
 	"gishu"				"303823007"
-	"awoken"			"934151077"
+	"minimal"			"81466127"
 	"gonza" 			"186227007"
-	"rushardo"			"286097392"
+	"Yokowow"			"102784330"
 	//GameAgents Players
 	"kANDARO" 			"1233790959"
 	"Vopsick"			"423035138"

@@ -1481,7 +1481,7 @@ ProP+Rifle+RiflePersonality "birdfromsky"
 	VoicePitch = 109
 End
 
-ProP+SniperPro+SniperPersonality "regali"
+ProP+SniperPro+SniperPersonality "farlig"
 	VoicePitch = 93
 End
 
@@ -2849,7 +2849,7 @@ ProP+SniperPro+SniperPersonality "gishu"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "awoken"
+ProP+Rifle+RiflePersonality "minimal"
 	VoicePitch = 112
 End
 
@@ -2857,7 +2857,7 @@ ProP+Rifle+RiflePersonality "gonza"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "rushardo"
+ProP+Rifle+RiflePersonality "Yokowow"
 	VoicePitch = 77
 End
 
