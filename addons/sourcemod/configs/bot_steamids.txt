@@ -175,11 +175,11 @@
 	"alex*" 			"40718819"
 	"Martinez" 			"409820733"
 	//AVEZ Players
-	"Masi" 				"343459044"
-	"cinkolEK" 			"878982062"	
-	"Dimitryyyyy" 		"925346285"	
-	"pako" 				"848951104"	
-	"smooho" 			"470123951"	
+	"tomi81k" 			"207963532"
+	"AxM" 				"336042689"	
+	"smile" 			"324671015"	
+	"atm" 				"257812048"	
+	"Br3Jker" 			"174044597"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"MoDo" 				"389955370"
@@ -395,7 +395,7 @@
 	"oskar" 			"171425088"
 	"SHOCK" 			"209294569"
 	"beastik" 			"73173022"
-	"outex" 			"387989655"
+	"KWERTZZ" 			"161005692"
 	//EP Players
 	"leckr"				"75767821"
 	"M1key"				"221902877"
@@ -498,12 +498,12 @@
 	"Kvem" 				"885170938"
 	"s4" 				"125957336"
 	"j3kie"				"367714476"
-	//Conquer Players
-	"jelo" 				"147699201"
-	"Mikzuuu"			"115253003"
-	"Elfern" 			"139081471"
-	"eDi" 				"57731578"
-	"LYNXi"				"123308829"
+	//Ungentium Players
+	"pawkoem" 			"225045287"
+	"Mride"				"76243724"
+	"cej0t" 			"120183772"
+	"ewrzyn" 			"235436762"
+	"sh3nanigan"		"1042506424"
 	//AVANGAR Players
 	"TNDKingg" 			"854962155"
 	"w1nt3r"			"57945273"
@@ -738,4 +738,10 @@
 	"delboNi"			"49145432"
 	"n1ssim" 			"101497868"
 	"f4stzin"			"476343738"
+	//X13 Players
+	"Feral" 			"93947984"
+	"werdnA"			"109559931"
+	"Gonzo"				"130242989"
+	"drewtheshrew" 		"356279188"
+	"Penguin"			"180056583"
 }

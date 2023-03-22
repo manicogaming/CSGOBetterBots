@@ -943,23 +943,23 @@ End
 
 //AVEZ Players
 
-ProP+Rifle+RiflePersonality "Masi"
+ProP+Rifle+RiflePersonality "tomi81k"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "pako"
+ProP+SniperPro+SniperPersonality "atm"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "smooho"
+ProP+Rifle+RiflePersonality "Br3Jker"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "cinkolEK"
+ProP+Rifle+RiflePersonality "AxM"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "Dimitryyyyy"
+ProP+Rifle+RiflePersonality "smile"
 	VoicePitch = 87
 End
 
@@ -1757,7 +1757,7 @@ ProP+Rifle+RiflePersonality "beastik"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "outex"
+ProP+Rifle+RiflePersonality "KWERTZZ"
 	VoicePitch = 84
 End
 
@@ -2135,25 +2135,25 @@ ProP+Rifle+RiflePersonality "j3kie"
 	VoicePitch = 89
 End
 
-//Conquer Players
+//Ungentium Players
 
-ProP+Rifle+RiflePersonality "jelo"
+ProP+Rifle+RiflePersonality "pawkoem"
 	VoicePitch = 75
 End
 
-ProP+SniperPro+SniperPersonality "Mikzuuu"
+ProP+SniperPro+SniperPersonality "Mride"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "Elfern"
+ProP+Rifle+RiflePersonality "cej0t"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "eDi"
+ProP+Rifle+RiflePersonality "ewrzyn"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "LYNXi"
+ProP+Rifle+RiflePersonality "sh3nanigan"
 	VoicePitch = 79
 End
 
@@ -3013,6 +3013,28 @@ End
 
 ProP+Rifle+RiflePersonality "f4stzin"
 	VoicePitch = 99
+End
+
+//X13 Players
+
+ProP+Rifle+RiflePersonality "Feral"
+	VoicePitch = 113
+End
+
+ProP+SniperPro+SniperPersonality "werdnA"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "Gonzo"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "drewtheshrew"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "Penguin"
+	VoicePitch = 77
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

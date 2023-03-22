@@ -175,11 +175,11 @@
 	"alex*" 			"Riders"
 	"Martinez" 			"Riders"
 	//AVEZ Players
-	"Masi" 				"AVEZ"
-	"pako" 				"AVEZ"
-	"smooho" 			"AVEZ"	
-	"cinkolEK" 			"AVEZ"
-	"Dimitryyyyy" 		"AVEZ"
+	"tomi81k" 			"AVEZ"
+	"atm" 				"AVEZ"
+	"Br3Jker" 			"AVEZ"	
+	"AxM" 				"AVEZ"
+	"smile" 			"AVEZ"
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"MoDo" 				"Nexus"
@@ -395,7 +395,7 @@
 	"oskar" 			"SINNERS"
 	"SHOCK" 			"SINNERS"
 	"beastik" 			"SINNERS"
-	"outex" 			"SINNERS"
+	"KWERTZZ" 			"SINNERS"
 	//EP Players
 	"leckr" 			"EP"
 	"M1key" 			"EP"
@@ -498,12 +498,12 @@
 	"Kvem" 				"IKLA"
 	"s4" 				"IKLA"
 	"j3kie"				"IKLA"
-	//Conquer Players
-	"jelo" 				"Conquer"
-	"Mikzuuu"			"Conquer"
-	"Elfern" 			"Conquer"
-	"eDi" 				"Conquer"
-	"LYNXi"				"Conquer"
+	//Ungentium Players
+	"pawkoem" 			"Ungentium"
+	"Mride"				"Ungentium"
+	"cej0t" 			"Ungentium"
+	"ewrzyn" 			"Ungentium"
+	"sh3nanigan"		"Ungentium"
 	//AVANGAR Players
 	"TNDKingg" 			"AVANGAR"
 	"w1nt3r"			"AVANGAR"
@@ -738,4 +738,10 @@
 	"delboNi"			"Flamengo"
 	"n1ssim" 			"Flamengo"
 	"f4stzin"			"Flamengo"
+	//X13 Players
+	"Feral" 			"X13"
+	"werdnA"			"X13"
+	"Gonzo"				"X13"
+	"drewtheshrew" 		"X13"
+	"Penguin"			"X13"
 }

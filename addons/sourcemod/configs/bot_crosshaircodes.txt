@@ -175,11 +175,11 @@
 	"alex*" 			"CSGO-PWz82-9wUo5-tV5P6-Fk8eF-ZVkoE"
 	"Martinez" 			"CSGO-ohuYZ-cHsJG-iHaF4-AcT5O-4FbtH"
 	//AVEZ Players
-	"Masi" 				"CSGO-LQmuK-99VMh-djJcV-2RPcf-WROpP"
-	"cinkolEK" 			"CSGO-9OysP-sFw9b-dHiXx-VXUA2-hif4D"	
-	"Dimitryyyyy" 		"CSGO-NvHRG-9qReT-rHWSz-RPHWS-CCmsF"	
-	"pako" 				"CSGO-DPPGs-hd7DU-rY2We-PfQWW-KquCQ"	
-	"smooho" 			"CSGO-LyA9Y-OU38N-F46p8-C3CUv-JTDND"	
+	"tomi81k" 			"CSGO-WozWT-MNwDq-mS7Hs-Wp9az-tXcNE"
+	"AxM" 				"CSGO-9OysP-sFw9b-dHiXx-VXUA2-hif4D"	
+	"smile" 			"CSGO-SfOro-3Z3HD-RKZfK-RowXz-MGyXD"	
+	"atm" 				"CSGO-iWRa3-DqFUz-bGwRx-mKUA2-hif4D"	
+	"Br3Jker" 			"CSGO-etq5e-GMPma-OMz7U-PueWe-joKPJ"	
 	//Nexus Players
 	"BTN" 				"CSGO-n3a26-DGzzz-m3ENd-cKSkm-ekrqK"
 	"MoDo" 				"CSGO-Jhfkc-4UpR6-DJftC-VfGek-pL3ED"
@@ -401,7 +401,7 @@
 	"oskar" 			"CSGO-QCOjJ-noJzN-QeGWX-2wmou-MhC3J"
 	"SHOCK" 			"CSGO-dpRVN-ZnjAn-cNC6Y-cypJJ-XKk9Q"
 	"beastik" 			"CSGO-aaP7u-qHiBq-4pEyQ-GY25f-JdxTC"
-	"outex" 			"CSGO-ijZ64-aSn9F-bt3jh-Armtx-hif4D"
+	"KWERTZZ" 			"CSGO-sNcw4-GrFzi-onqCc-krKNi-qat4N"
 	//EP Players
 	"leckr"				"CSGO-GQdHP-pJNaT-2aPMt-VZxPO-D5JzN"
 	"M1key"				"CSGO-O39CA-vxrjO-Qkkzx-cXGym-eeywQ"
@@ -510,12 +510,12 @@
 	"Kvem" 				"CSGO-EVpQC-uiucV-2Qmef-JdON8-VH5mA"
 	"s4" 				"CSGO-rf27t-TSmtn-LP7A9-9HQW4-jxSyL"
 	"j3kie"				"CSGO-BznEs-W6LQs-7aeR9-zjOHV-y9XXC"
-	//Conquer Players
-	"jelo" 				"CSGO-StGEK-2K22s-JoWrn-co558-MdJaA"
-	"Mikzuuu"			"CSGO-zOqo7-2K5HU-xGjuO-SJcEx-FZQ3A"
-	"Elfern" 			"CSGO-EGoce-RSfJc-ym4Nm-hqqmA-Ko74E"
-	"eDi" 				"CSGO-PvtHj-m74S2-HzEHP-xYXzW-YJeFO"
-	"LYNXi"				"CSGO-8XHvw-DO78x-sTbUD-7iXwZ-OSc3K"
+	//Ungentium Players
+	"pawkoem" 			"CSGO-Ks5WA-iP37c-Vte3b-oaeya-FWT4M"
+	"Mride"				"CSGO-PFvbV-8bSNa-QxAHy-HjQkU-B36dK"
+	"cej0t" 			"CSGO-fdTru-GHLkt-SECNM-HsE3J-s2FdH"
+	"ewrzyn" 			"CSGO-chPWz-UoHLH-KWfCt-mzJkB-r6ksF"
+	"sh3nanigan"		"CSGO-YYXf6-RyOV9-bzPk7-qLPs3-OwUrC"
 	//AVANGAR Players
 	"TNDKingg" 			"CSGO-Esaji-UzaP7-HUOBp-R5kVC-z2urD"
 	"w1nt3r"			"CSGO-ZKRZ9-5o4mS-9HjQ4-AWhwB-hVaUN"
@@ -756,4 +756,10 @@
 	"delboNi"			"CSGO-iAzFV-uko6w-mRxGS-Ev8jo-4jTiA"
 	"n1ssim" 			"CSGO-UcXBk-p9Jpo-tJiAr-J6qNc-mRFuA"
 	"f4stzin"			"CSGO-JrXTm-9AFYV-E6GRz-cLZ2R-U9z6A"
+	//X13 Players
+	"Feral" 			"CSGO-nUoxP-O6bov-O8N7a-MccsU-PnEVF"
+	"werdnA"			"CSGO-V4Wka-ui4G6-4kJSZ-doNeX-jLwLA"
+	"Gonzo"				"CSGO-2GsMx-6xd8w-CwUoA-RyOjD-cMwLA"
+	"drewtheshrew" 		"CSGO-s99Ea-YcVWP-mL6do-BLy48-7xAkE"
+	"Penguin"			"CSGO-o9rSq-AZWbA-iQUx3-uno35-x3zkG"
 }
