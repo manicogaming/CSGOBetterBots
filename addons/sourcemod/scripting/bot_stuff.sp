@@ -8,6 +8,7 @@
 #include <smlib>
 #include <navmesh>
 #include <dhooks>
+#include <botmimic>
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
@@ -17,7 +18,7 @@ bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPL
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1];
 int g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
-int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset, g_iBotNadeStateOffs;
+int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset;
 float g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fRoundStart, g_fFreezeTimeEnd;
 float g_fZoomedTimestamp[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
@@ -35,8 +36,14 @@ Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
 Handle g_hBotAttack;
 Address g_pTheBots;
-ArrayList g_ArrayNades[128] =  { null, ... };
 CNavArea g_pCurrArea[MAXPLAYERS+1];
+
+//BOT Nades Variables
+float g_fNadePos[128][3], g_fNadeLook[128][3];
+int g_iNadeDefIndex[128];
+char g_szReplay[128][128];
+float g_fNadeTimestamp[128];
+int g_iNadeTeam[128];
 
 static char g_szBoneNames[][] =  {
 	"neck_0", 
@@ -3793,11 +3800,8 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	g_iRoundsPlayed = g_iCTScore + g_iTScore;
 	
 	for(int i = 0; i < g_iMaxNades; i++)
-	{
-		if(g_ArrayNades[i] == null)
-			return;
-			
-		g_ArrayNades[i].Set(6, 0.0);
+	{			
+		g_fNadeTimestamp[i] = 0.0;
 	}
 }
 
@@ -4108,66 +4112,23 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					iButtons &= ~IN_SPEED;
 			}
 			
-			//ArrayList Indexes
-			//0 - Position
-			//1 - LookAt
-			//2 - Angles
-			//3 - Nade Def Index
-			//4 - Is Jumpthrow?
-			//5 - Crouch?
-			//6 - Timestamp
-			//7 - Team
-			bool bIsJumpthrow ,bCrouch;
-			if(g_iDoingSmokeNum[client] != -1 && g_ArrayNades[g_iDoingSmokeNum[client]] != null)
+			if(g_iDoingSmokeNum[client] != -1 && !BotMimic_IsPlayerMimicing(client))
 			{
-				float fNadeSpot[3];
-				g_ArrayNades[g_iDoingSmokeNum[client]].Set(6, GetGameTime());
-				g_ArrayNades[g_iDoingSmokeNum[client]].GetArray(0, fNadeSpot);
-				float fDisToNade = GetVectorDistance(fClientLoc, fNadeSpot);
-
-				if(fDisToNade < 175.0)
+				if(IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[g_iDoingSmokeNum[client]])))
 				{
-					BotMoveTo(client, fNadeSpot, FASTEST_ROUTE);
-					SDKCall(g_hSwitchWeaponCall, client, eItems_FindWeaponByDefIndex(client, g_ArrayNades[g_iDoingSmokeNum[client]].Get(3)), 0);
-				}
+					g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+					float fDisToNade = GetVectorDistance(fClientLoc, g_fNadePos[g_iDoingSmokeNum[client]]);
 					
-				if(fDisToNade < 25.0)
-				{					
-					float fNadeLook[3], fNadeAngles[3];
-					g_ArrayNades[g_iDoingSmokeNum[client]].GetArray(1, fNadeLook);
-					g_ArrayNades[g_iDoingSmokeNum[client]].GetArray(2, fNadeAngles);
-					
-					BotSetLookAt(client, "Use entity", fNadeLook, PRIORITY_HIGH, 2.0, false, 3.0, false);
-					float fPlayerVelocity[3];
-					GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
-					
-					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
-					{
-						CreateTimer(2.5, Timer_ThrowGrenade, GetClientUserId(client));
-						bIsJumpthrow = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(4);	
-						bCrouch = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(5);	
+					BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
 						
-						if(bCrouch)
-							iButtons |= IN_DUCK;
-						
-						if (g_bCanThrowGrenade[client])
-						{
-							Array_Copy(fNadeLook, g_fNadeTarget[client], 3);
-							RequestFrame(DelayThrow, GetClientUserId(client));
-						}
-						
-						if(g_bThrowGrenade[client] && view_as<GrenadeTossState>(GetEntData(client, g_iBotNadeStateOffs)) == FINISH_THROW)
-						{
-							TeleportEntity(client, fNadeSpot, fNadeAngles, NULL_VECTOR);
-							if(bIsJumpthrow)
-								iButtons |= IN_JUMP;
-							
-							if(bCrouch)
-								iButtons |= IN_DUCK;
-								
-							g_iDoingSmokeNum[client] = -1;
-							g_bCanThrowGrenade[client] = false;
-						}
+					if(fDisToNade < 25.0)
+					{					
+						BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
+						float fPlayerVelocity[3];
+						GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
+											
+						if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
+							BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
 					}
 				}
 			}
@@ -4310,7 +4271,7 @@ public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast
 
 public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szCategory, char[] szPath)
 {
-	CreateTimer(0.2, Timer_DelayBestWeapon, GetClientUserId(client));
+	g_iDoingSmokeNum[client] = -1;
 }
 
 public void OnClientDisconnect(int client)
@@ -4361,30 +4322,18 @@ void ParseMapNades(const char[] szMap)
 	int i = 0;
 	do
 	{
-		float fPosition[3], fLookAt[3], fAngles[3];
-		char szTeam[8];
+		char szTeam[4];
 		
-		if (g_ArrayNades[i] == null)
-			delete g_ArrayNades[i];
-		
-		g_ArrayNades[i] = new ArrayList(3);
-		g_ArrayNades[i].Clear();
-		
-		kv.GetVector("position", 	fPosition);
-		g_ArrayNades[i].PushArray(fPosition);
-		kv.GetVector("lookat", fLookAt);
-		kv.GetVector("angles", fAngles);
-		g_ArrayNades[i].PushArray(fLookAt);
-		g_ArrayNades[i].PushArray(fAngles);
-		g_ArrayNades[i].Push(kv.GetNum("nadedefindex"));
-		g_ArrayNades[i].Push(kv.GetNum("jumpthrow"));
-		g_ArrayNades[i].Push(kv.GetNum("crouch"));
-		g_ArrayNades[i].Push(kv.GetFloat("timestamp"));
+		kv.GetVector("position", 	g_fNadePos[i]);
+		kv.GetVector("lookat", g_fNadeLook[i]);
+		g_iNadeDefIndex[i] = kv.GetNum("nadedefindex");
+		kv.GetString("replay", g_szReplay[i], 128);
+		g_fNadeTimestamp[i] = kv.GetFloat("timestamp");
 		kv.GetString("team", szTeam, sizeof(szTeam));
 		if(strcmp(szTeam, "CT", false) == 0)
-			g_ArrayNades[i].Push(CS_TEAM_CT);
+			g_iNadeTeam[i] = CS_TEAM_CT;
 		else if(strcmp(szTeam, "T", false) == 0)
-			g_ArrayNades[i].Push(CS_TEAM_T);
+			g_iNadeTeam[i] = CS_TEAM_T;
 	
 		i++;
 	} while (kv.GotoNextKey());
@@ -4495,9 +4444,6 @@ public void LoadSDK()
 	
 	if ((g_iBotTaskOffset = hGameConfig.GetOffset("CCSBot::m_task")) == -1)
 		SetFailState("Failed to get CCSBot::m_task offset.");
-	
-	if ((g_iBotNadeStateOffs = hGameConfig.GetOffset("CCSBot::m_grenadeTossState")) == -1)
-		SetFailState("Failed to get CCSBot::m_grenadeTossState offset.");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -4687,7 +4633,7 @@ public int BotGetEnemy(int client)
 public int GetNearestGrenade(int client)
 {
 	int nearestEntity = -1;
-	float clientVecOrigin[3], fNadeSpot[3];
+	float clientVecOrigin[3];
 	
 	GetEntPropVector(client, Prop_Data, "m_vecOrigin", clientVecOrigin); // Line 2607
 	
@@ -4695,22 +4641,17 @@ public int GetNearestGrenade(int client)
 	float distance, nearestDistance = -1.0;
 	
 	for(int i = 0; i < g_iMaxNades; i++)
-	{
-		if(g_ArrayNades[i] == null)
-			return -1;
-		
-		if((GetGameTime() - g_ArrayNades[i].Get(6)) < 25.0)
+	{		
+		if((GetGameTime() - g_fNadeTimestamp[i]) < 25.0)
 			continue;
 			
-		if(!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_ArrayNades[i].Get(3))))
+		if(!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i])))
 			continue;
 		
-		if(GetClientTeam(client) != g_ArrayNades[i].Get(7))
+		if(GetClientTeam(client) != g_iNadeTeam[i])
 			continue;
-	
-		g_ArrayNades[i].GetArray(0, fNadeSpot);
 		
-		distance = GetVectorDistance(clientVecOrigin, fNadeSpot);
+		distance = GetVectorDistance(clientVecOrigin, g_fNadePos[i]);
 		
 		if(distance > 175.0)
 			continue;
@@ -4804,6 +4745,21 @@ bool IsPlayerReloading(int client)
 		return true;
 	
 	return GetEntPropFloat(iPlayerWeapon, Prop_Send, "m_flNextPrimaryAttack") >= GetGameTime();
+}
+
+public Action Timer_ThrowSmoke(Handle hTimer, int client)
+{
+	g_bCanThrowGrenade[client] = true;
+	
+	return Plugin_Stop;
+}
+
+public Action Timer_SmokeDelay(Handle hTimer, int client)
+{
+	g_iDoingSmokeNum[client] = -1;
+	g_bCanThrowGrenade[client] = false;
+	
+	return Plugin_Stop;
 }
 
 public Action Timer_DelaySwitch(Handle hTimer, any client)
@@ -4977,22 +4933,6 @@ public void ProcessGrenadeThrow(int client, float fTarget[3])
 {
 	GetFloorPosition(client, fTarget, fTarget);
 	GetGrenadeToss(client, fTarget);
-			
-	int iNade = GetPlayerWeaponSlot(client, CS_SLOT_GRENADE);
-	int iNadeDefIndex = IsValidEntity(iNade) ? GetEntProp(iNade, Prop_Send, "m_iItemDefinitionIndex") : 0;
-	float fClientPos[3], fClientEyes[3], fPredictedNade[3], fNadeAngles[3];
-	GetClientEyePosition(client, fClientEyes);
-	MakeVectorFromPoints(fClientEyes, fTarget, fNadeAngles);
-	GetVectorAngles(fNadeAngles, fNadeAngles);
-	fNadeAngles[0] = AngleNormalize(fNadeAngles[0]);
-	fNadeAngles[1] = AngleNormalize(fNadeAngles[1]);
-	fNadeAngles[2] = 0.0;
-	
-	GetClientAbsOrigin(client, fClientPos);
-	ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
-	
-	if(GetVectorDistance(fPredictedNade, fClientPos) < 400.0 || (iNadeDefIndex == 43 && IsPointVisible(fClientPos, fPredictedNade)))
-		return;
 	
 	Array_Copy(fTarget, g_fNadeTarget[client], 3);
 	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
@@ -5104,103 +5044,6 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 		
 		fTossTarget[2] += fTossHeight;
 	}
-}
-
-stock void ShowTrajectory(int iClient, float ThrowAngle[3], int iNadeDefIndex, float factor, float disp, float fPosition[3])
-{
-	float GrenadeVelocity[3];
-	float PlayerVelocity[3];
-	float ThrowVector[3];
-	float ThrowVelocity;
-	float gStart[3];
-	float gEnd[3];
-	float fwd[3];
-	float right[3];
-	float up[3];
-	float dtime = 1.5;
-
-	ThrowAngle[0] = -10.0 + ThrowAngle[0] + FloatAbs(ThrowAngle[0]) * 10.0 / 90.0;
-
-	GetAngleVectors(ThrowAngle, fwd, right, up);
-	NormalizeVector(fwd, ThrowVector);
-
-	GetClientEyePosition(iClient, gStart);
-
-	for (int i = 0; i < 3; i++)
-		gStart[i] += ThrowVector[i] * 16.0;
-
-	gStart[2] += disp;
-
-	GetEntPropVector(iClient, Prop_Data, "m_vecAbsVelocity", PlayerVelocity);
-
-	ThrowVelocity = 750.0 * factor;
-	ScaleVector(PlayerVelocity, 1.25);
-
-	for (int i = 0; i < 3; i++)
-	{
-		GrenadeVelocity[i] = ThrowVector[i] * ThrowVelocity + PlayerVelocity[i];
-	}
-
-	float dt = 0.05;
-	for (float t = 0.0; t <= dtime; t += dt)
-	{
-		gEnd[0] = gStart[0] + GrenadeVelocity[0] * dt;
-		gEnd[1] = gStart[1] + GrenadeVelocity[1] * dt;
-
-		float gForce      = 0.4 * FindConVar("sv_gravity").FloatValue;
-		float NewVelocity = GrenadeVelocity[2] - gForce * dt;
-		float AvgVelocity = (GrenadeVelocity[2] + NewVelocity) / 2.0;
-
-		gEnd[2]            = gStart[2] + AvgVelocity * dt;
-		GrenadeVelocity[2] = NewVelocity;
-
-		float mins[3] = { -2.0, -2.0, -2.0 };
-		float maxs[3] = { 2.0, 2.0, 2.0 };
-
-		Handle gRayTrace = TR_TraceHullEx(gStart, gEnd, mins, maxs, MASK_SHOT_HULL);
-
-		if (TR_GetFraction(gRayTrace) != 1.0)
-		{
-			if (TR_GetEntityIndex(gRayTrace) == iClient && t == 0.0)
-			{
-				delete gRayTrace;
-				gStart = gEnd;
-				continue;
-			}
-
-			TR_GetEndPosition(gEnd, gRayTrace);
-
-			float NVector[3];
-			TR_GetPlaneNormal(gRayTrace, NVector);
-
-			float Impulse = 2.0 * GetVectorDotProduct(NVector, GrenadeVelocity);
-
-			for (int i = 0; i < 3; i++)
-			{
-				GrenadeVelocity[i] -= Impulse * NVector[i];
-
-				if (FloatAbs(GrenadeVelocity[i]) < 0.1)
-					GrenadeVelocity[i] = 0.0;
-			}
-
-			float SurfaceElasticity = GetEntPropFloat(TR_GetEntityIndex(gRayTrace), Prop_Send, "m_flElasticity");
-			float elasticity        = 0.45 * SurfaceElasticity;
-			ScaleVector(GrenadeVelocity, elasticity);
-
-			float ZVector[3] = { 0.0, 0.0, 1.0 };
-			if (GetVectorDotProduct(NVector, ZVector) > 0.7)
-			{
-				if (iNadeDefIndex == 48 || iNadeDefIndex == 46)
-					dtime = 0.0;
-			}
-		}
-
-		delete gRayTrace;
-
-		gStart = gEnd;
-	}
-	
-	Array_Copy(gEnd, fPosition, 3);
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])

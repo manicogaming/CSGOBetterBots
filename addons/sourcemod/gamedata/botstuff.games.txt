@@ -177,11 +177,6 @@
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
 			}
-			"CCSBot::m_grenadeTossState"
-			{
-				//Just above the string '%3.2f: Grenade: FINISH_THROW\n'
-				"windows"	   "23404"
-			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
