@@ -1317,11 +1317,11 @@ End
 
 //K23 Players
 
-ProP+Rifle+RiflePersonality "Jyo"
+ProP+Rifle+RiflePersonality "RAiLWAY"
 	VoicePitch = 85
 End
 
-ProP+SniperPro+SniperPersonality "iDISBALANCE"
+ProP+SniperPro+SniperPersonality "El1an"
 	VoicePitch = 83
 End
 
@@ -3035,6 +3035,28 @@ End
 
 ProP+Rifle+RiflePersonality "Penguin"
 	VoicePitch = 77
+End
+
+//Zero Players
+
+ProP+Rifle+RiflePersonality "simke"
+	VoicePitch = 75
+End
+
+ProP+SniperPro+SniperPersonality "brutmonster"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "Cjoffo"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "nEMANHA"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "aVN"
+	VoicePitch = 114
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

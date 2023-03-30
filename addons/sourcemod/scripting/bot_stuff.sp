@@ -1320,8 +1320,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Jyo");
-			ServerCommand("bot_add_ct %s", "iDISBALANCE");
+			ServerCommand("bot_add_ct %s", "RAiLWAY");
+			ServerCommand("bot_add_ct %s", "El1an");
 			ServerCommand("bot_add_ct %s", "Raijin");
 			ServerCommand("bot_add_ct %s", "Magnojez");
 			ServerCommand("bot_add_ct %s", "X5G7V");
@@ -1331,8 +1331,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Jyo");
-			ServerCommand("bot_add_t %s", "iDISBALANCE");
+			ServerCommand("bot_add_t %s", "RAiLWAY");
+			ServerCommand("bot_add_t %s", "El1an");
 			ServerCommand("bot_add_t %s", "Raijin");
 			ServerCommand("bot_add_t %s", "Magnojez");
 			ServerCommand("bot_add_t %s", "X5G7V");
@@ -3265,6 +3265,31 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "Zero", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "simke");
+			ServerCommand("bot_add_ct %s", "brutmonster");
+			ServerCommand("bot_add_ct %s", "nEMANHA");
+			ServerCommand("bot_add_ct %s", "Cjoffo");
+			ServerCommand("bot_add_ct %s", "aVN");
+			ServerCommand("mp_teamlogo_1 zero");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "simke");
+			ServerCommand("bot_add_t %s", "brutmonster");
+			ServerCommand("bot_add_t %s", "nEMANHA");
+			ServerCommand("bot_add_t %s", "Cjoffo");
+			ServerCommand("bot_add_t %s", "aVN");
+			ServerCommand("mp_teamlogo_2 zero");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -4118,7 +4143,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					
 					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
 					{
-						CreateTimer(1.5, Timer_ThrowGrenade, GetClientUserId(client));
+						CreateTimer(2.5, Timer_ThrowGrenade, GetClientUserId(client));
 						bIsJumpthrow = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(4);	
 						bCrouch = !!g_ArrayNades[g_iDoingSmokeNum[client]].Get(5);	
 						
@@ -4966,7 +4991,7 @@ public void ProcessGrenadeThrow(int client, float fTarget[3])
 	GetClientAbsOrigin(client, fClientPos);
 	ShowTrajectory(client, fNadeAngles, iNadeDefIndex, 0.9, 0.0, fPredictedNade);
 	
-	if(GetVectorDistance(fPredictedNade, fClientPos) < 250.0 && IsPointVisible(fClientPos, fPredictedNade))
+	if(GetVectorDistance(fPredictedNade, fClientPos) < 400.0 || (iNadeDefIndex == 43 && IsPointVisible(fClientPos, fPredictedNade)))
 		return;
 	
 	Array_Copy(fTarget, g_fNadeTarget[client], 3);

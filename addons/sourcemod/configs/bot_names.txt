@@ -277,8 +277,8 @@
 	"Calyx" 			"Eternal"
 	"xfl0ud" 			"Eternal"
 	//K23 Players
-	"Jyo" 				"K23"
-	"iDISBALANCE" 		"K23"
+	"RAiLWAY" 			"K23"
+	"El1an" 			"K23"
 	"Raijin" 			"K23"
 	"Magnojez" 			"K23"
 	"X5G7V" 			"K23"
@@ -744,4 +744,10 @@
 	"Gonzo"				"X13"
 	"drewtheshrew" 		"X13"
 	"Penguin"			"X13"
+	//Zero Players
+	"simke" 			"Zero"
+	"brutmonster"		"Zero"
+	"nEMANHA"			"Zero"
+	"Cjoffo" 			"Zero"
+	"aVN"				"Zero"
 }

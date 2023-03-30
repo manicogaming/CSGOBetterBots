@@ -277,8 +277,8 @@
 	"Calyx" 			"92280537"
 	"xfl0ud" 			"217943381"
 	//K23 Players
-	"Jyo" 				"43255799"
-	"iDISBALANCE" 		"210384169"
+	"RAiLWAY" 			"20670810"
+	"El1an" 			"250498109"
 	"Raijin" 			"216190295"
 	"Magnojez" 			"411757486"
 	"X5G7V" 			"237685818"
@@ -744,4 +744,10 @@
 	"Gonzo"				"130242989"
 	"drewtheshrew" 		"356279188"
 	"Penguin"			"180056583"
+	//Zero Players
+	"simke" 			"375268315"
+	"brutmonster"		"298730550"
+	"nEMANHA"			"22076121"
+	"Cjoffo" 			"322852526"
+	"aVN"				"231301725"
 }

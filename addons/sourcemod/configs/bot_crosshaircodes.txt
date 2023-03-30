@@ -277,8 +277,8 @@
 	"Calyx" 			"CSGO-itiNO-zs3Tf-pjZAY-O3Chw-pevvE"
 	"xfl0ud" 			"CSGO-Qtp2S-FciNu-jF2vW-LoJiD-2bVvD"
 	//K23 Players
-	"Jyo" 				"CSGO-iczvK-98F5U-ttvcU-FkNGY-KudqA"
-	"iDISBALANCE" 		"CSGO-GH6ia-t2R2U-k935o-TRPzh-CxZQM"
+	"RAiLWAY" 			"CSGO-xUZun-SeOX3-dH4Kc-jZqrZ-DEHnK"
+	"El1an" 			"CSGO-Piz4X-PpZbj-KMyft-irO4s-HXt4N"
 	"Raijin" 			"CSGO-YFPhO-AHSdr-borCL-a2i3n-MyedJ"
 	"Magnojez" 			"CSGO-t3DAO-GfFNH-X355L-AkXC2-aVVaK"
 	"X5G7V" 			"CSGO-CHbqp-fPTpi-nO6dh-vWCuH-DV43L"
@@ -762,4 +762,10 @@
 	"Gonzo"				"CSGO-2GsMx-6xd8w-CwUoA-RyOjD-cMwLA"
 	"drewtheshrew" 		"CSGO-s99Ea-YcVWP-mL6do-BLy48-7xAkE"
 	"Penguin"			"CSGO-o9rSq-AZWbA-iQUx3-uno35-x3zkG"
+	//Zero Players
+	"simke" 			"CSGO-R7o5u-CuXxH-OOSDN-XuTwW-88JLH"
+	"brutmonster"		"CSGO-nmkjk-7C4N2-ctOKL-7L6co-Gct4N"
+	"nEMANHA"			"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
+	"Cjoffo" 			"CSGO-OAH2o-BcEL3-CO6CR-FA7ch-fPsFF"
+	"aVN"				"CSGO-7E9pv-DYKNO-z7v9N-AvGJm-uTaUN"
 }
