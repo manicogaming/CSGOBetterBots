@@ -138,6 +138,7 @@ GlobalForward g_hfwdOnPlayerMimicBookmark;
 // DHooks/SDK
 Handle g_hTeleport;
 Handle g_hSetOrigin;
+Handle g_hSetVelocity;
 Handle g_hSwitchWeaponCall;
 
 ConVar g_hCVOriginSnapshotInterval;
@@ -232,6 +233,11 @@ public void OnPluginStart()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetLocalOrigin");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hSetOrigin = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetLocalOrigin signature!");
+	
+	StartPrepSDKCall(SDKCall_Entity);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseEntity::SetAbsVelocity");
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	if ((g_hSetVelocity = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseEntity::SetAbsVelocity signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Virtual, "Weapon_Switch");
@@ -535,7 +541,8 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
 				{
 					SDKCall(g_hSetOrigin, client, fOrigin);
-					TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
+					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
+					SDKCall(g_hSetVelocity, client, fVelocity);
 				}
 				else
 				{
@@ -548,7 +555,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
 				{
 					SDKCall(g_hSetOrigin, client, fOrigin);
-					TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
+					SDKCall(g_hSetVelocity, client, fVelocity);
 				}
 				else
 					SDKCall(g_hSetOrigin, client, fOrigin);
@@ -559,14 +566,17 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 			if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_ANGLES)
 			{
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, NULL_VECTOR, fAngles, fVelocity);
+				{
+					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
+					SDKCall(g_hSetVelocity, client, fVelocity);
+				}
 				else
 					TeleportEntity(client, NULL_VECTOR, fAngles, NULL_VECTOR);
 			}
 			else
 			{
 				if(iAT.atFlags & ADDITIONAL_FIELD_TELEPORTED_VELOCITY)
-					TeleportEntity(client, NULL_VECTOR, NULL_VECTOR, fVelocity);
+					SDKCall(g_hSetVelocity, client, fVelocity);
 			}
 		}
 		
@@ -589,7 +599,8 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		g_bValidTeleportCall[client] = true;
 		
 		SDKCall(g_hSetOrigin, client, iFrame.origin);
-		TeleportEntity(client, NULL_VECTOR, angles, fActualVelocity);
+		SDKCall(g_hSetVelocity, client, fActualVelocity);
+		TeleportEntity(client, NULL_VECTOR, angles, NULL_VECTOR);
 	}
 	
 	if(iFrame.newWeapon != CSWeapon_NONE)

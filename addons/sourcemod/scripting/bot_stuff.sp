@@ -3444,7 +3444,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				g_bEveryoneDead = true;
 			}
 				
-			if(g_bFreezetimeEnd && IsItMyChance(15.0) && g_iDoingSmokeNum[client] == -1 && !g_bBombPlanted)
+			if(g_bFreezetimeEnd && IsItMyChance(15.0) && g_iDoingSmokeNum[client] == -1)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 			
 			if (g_bIsProBot[client])
@@ -4114,22 +4114,19 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if(g_iDoingSmokeNum[client] != -1 && !BotMimic_IsPlayerMimicing(client))
 			{
-				if(IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[g_iDoingSmokeNum[client]])))
-				{
-					g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
-					float fDisToNade = GetVectorDistance(fClientLoc, g_fNadePos[g_iDoingSmokeNum[client]]);
+				g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+				float fDisToNade = GetVectorDistance(fClientLoc, g_fNadePos[g_iDoingSmokeNum[client]]);
+				
+				BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
 					
-					BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
-						
-					if(fDisToNade < 25.0)
-					{					
-						BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
-						float fPlayerVelocity[3];
-						GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
-											
-						if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
-							BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
-					}
+				if(fDisToNade < 25.0)
+				{					
+					BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
+					float fPlayerVelocity[3];
+					GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
+										
+					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
+						BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
 				}
 			}
 			
@@ -4207,7 +4204,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 1:
 						{
-							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.1 && !bIsDucking && !bIsReloading)
+							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.07 && !bIsDucking && !bIsReloading)
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
 						}
 						case 9, 40:
@@ -4632,13 +4629,15 @@ public int BotGetEnemy(int client)
 
 public int GetNearestGrenade(int client)
 {
-	int nearestEntity = -1;
-	float clientVecOrigin[3];
+	if(g_bBombPlanted) return -1;
+
+	int iNearestEntity = -1;
+	float fVecOrigin[3];
 	
-	GetEntPropVector(client, Prop_Data, "m_vecOrigin", clientVecOrigin); // Line 2607
+	GetEntPropVector(client, Prop_Data, "m_vecOrigin", fVecOrigin); // Line 2607
 	
 	//Get the distance between the first entity and client
-	float distance, nearestDistance = -1.0;
+	float fDistance, fNearestDistance = -1.0;
 	
 	for(int i = 0; i < g_iMaxNades; i++)
 	{		
@@ -4651,19 +4650,19 @@ public int GetNearestGrenade(int client)
 		if(GetClientTeam(client) != g_iNadeTeam[i])
 			continue;
 		
-		distance = GetVectorDistance(clientVecOrigin, g_fNadePos[i]);
+		fDistance = GetVectorDistance(fVecOrigin, g_fNadePos[i]);
 		
-		if(distance > 175.0)
+		if(fDistance > 250.0)
 			continue;
 		
-		if (distance < nearestDistance || nearestDistance == -1.0)
+		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
 		{
-			nearestEntity = i;
-			nearestDistance = distance;
+			iNearestEntity = i;
+			fNearestDistance = fDistance;
 		}
 	}
 	
-	return nearestEntity;
+	return iNearestEntity;
 } 
 
 stock int GetNearestEntity(int client, char[] szClassname, bool bCheckVisibility = true)

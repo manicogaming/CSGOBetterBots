@@ -22,8 +22,8 @@
 		}
 		"CT Smoke"
 		{
-			"position"			"1257.727417 -871.997314 -143.968750"
-			"lookat"			"1056.654296 -1015.389770 16.737144"
+			"position"			"1086.634277 -1017.373230 -258.280609"
+			"lookat"			"678.288330 -1307.748413 91.520690"
 			"nadedefindex"		"45"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/CT Smoke.rec"
 			"timestamp"			"0.0"
@@ -126,6 +126,51 @@
 			"lookat"			"-868.963378 592.863952 127.968750"
 			"nadedefindex"		"45"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/2nd Arch Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Perfect Flash"
+		{
+			"position"			"685.265015 671.957153 -135.968750"
+			"lookat"			"220.031250 274.921630 -49.554336"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Mid Perfect Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Apps Pop Flash"
+		{
+			"position"			"-1999.995605 -246.968750 -159.138138"
+			"lookat"			"-1930.413452 22.110473 1.566329"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Apps Pop Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Palace from Market Smoke"
+		{
+			"position"			"-1711.968750 -761.020325 -167.968750"
+			"lookat"			"-1429.195190 -989.193908 127.968734"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace from Market Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Apps Molotov"
+		{
+			"position"			"-2199.968750 88.031250 -159.968750"
+			"lookat"			"-2020.344848 266.506958 -0.031250"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Apps Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Short from TopMid Smoke"
+		{
+			"position"			"360.051849 -691.992371 -162.496780"
+			"lookat"			"-102.595916 -532.211242 127.968765"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Short from TopMid Smoke.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
