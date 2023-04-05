@@ -1031,7 +1031,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "TiGeR");
 			ServerCommand("bot_add_ct %s", "L1haNg");
 			ServerCommand("bot_add_ct %s", "tutu");
-			ServerCommand("bot_add_ct %s", "jiejie");
+			ServerCommand("bot_add_ct %s", "17");
 			ServerCommand("mp_teamlogo_1 happy");
 		}
 		
@@ -1042,7 +1042,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "TiGeR");
 			ServerCommand("bot_add_t %s", "L1haNg");
 			ServerCommand("bot_add_t %s", "tutu");
-			ServerCommand("bot_add_t %s", "jiejie");
+			ServerCommand("bot_add_t %s", "17");
 			ServerCommand("mp_teamlogo_2 happy");
 		}
 	}
@@ -1397,31 +1397,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Davenport", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Pugg");
-			ServerCommand("bot_add_ct %s", "Austin");
-			ServerCommand("bot_add_ct %s", "corn");
-			ServerCommand("bot_add_ct %s", "spek");
-			ServerCommand("bot_add_ct %s", "Danejoris");
-			ServerCommand("mp_teamlogo_1 dav");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Pugg");
-			ServerCommand("bot_add_t %s", "Austin");
-			ServerCommand("bot_add_t %s", "corn");
-			ServerCommand("bot_add_t %s", "spek");
-			ServerCommand("bot_add_t %s", "Danejoris");
-			ServerCommand("mp_teamlogo_2 dav");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "ATK", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -1647,28 +1622,28 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "D13", false) == 0)
+	if(strcmp(szTeamArg, "Union", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "hasteka");
-			ServerCommand("bot_add_ct %s", "IMAGINE");
-			ServerCommand("bot_add_ct %s", "910");
-			ServerCommand("bot_add_ct %s", "danss");
-			ServerCommand("bot_add_ct %s", "Frip");
-			ServerCommand("mp_teamlogo_1 d13");
+			ServerCommand("bot_add_ct %s", "frostezor");
+			ServerCommand("bot_add_ct %s", "hoax");
+			ServerCommand("bot_add_ct %s", "koala");
+			ServerCommand("bot_add_ct %s", "happ");
+			ServerCommand("bot_add_ct %s", "rainny");
+			ServerCommand("mp_teamlogo_1 unio");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "hasteka");
-			ServerCommand("bot_add_t %s", "IMAGINE");
-			ServerCommand("bot_add_t %s", "910");
-			ServerCommand("bot_add_t %s", "danss");
-			ServerCommand("bot_add_t %s", "Frip");
-			ServerCommand("mp_teamlogo_2 d13");
+			ServerCommand("bot_add_t %s", "frostezor");
+			ServerCommand("bot_add_t %s", "hoax");
+			ServerCommand("bot_add_t %s", "koala");
+			ServerCommand("bot_add_t %s", "happ");
+			ServerCommand("bot_add_t %s", "rainny");
+			ServerCommand("mp_teamlogo_2 unio");
 		}
 	}
 	
@@ -1994,31 +1969,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "spuffy");
 			ServerCommand("bot_add_t %s", "SeBreeZe");
 			ServerCommand("mp_teamlogo_2 beg");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "HONORIS", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "TaZ");
-			ServerCommand("bot_add_ct %s", "SaMey");
-			ServerCommand("bot_add_ct %s", "reiko");
-			ServerCommand("bot_add_ct %s", "Sobol");
-			ServerCommand("bot_add_ct %s", "lunAtic");
-			ServerCommand("mp_teamlogo_1 hono");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "TaZ");
-			ServerCommand("bot_add_t %s", "SaMey");
-			ServerCommand("bot_add_t %s", "reiko");
-			ServerCommand("bot_add_t %s", "Sobol");
-			ServerCommand("bot_add_t %s", "lunAtic");
-			ServerCommand("mp_teamlogo_2 hono");
 		}
 	}
 	
@@ -2422,31 +2372,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Renewal", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "xerolte");
-			ServerCommand("bot_add_ct %s", "Tugu");
-			ServerCommand("bot_add_ct %s", "NEUZ");
-			ServerCommand("bot_add_ct %s", "ROUX");
-			ServerCommand("bot_add_ct %s", "ariucle");
-			ServerCommand("mp_teamlogo_1 rene");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "xerolte");
-			ServerCommand("bot_add_t %s", "Tugu");
-			ServerCommand("bot_add_t %s", "NEUZ");
-			ServerCommand("bot_add_t %s", "ROUX");
-			ServerCommand("bot_add_t %s", "ariucle");
-			ServerCommand("mp_teamlogo_2 rene");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "500", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -2569,31 +2494,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Diviiii");
 			ServerCommand("bot_add_t %s", "Snobling");
 			ServerCommand("mp_teamlogo_2 ldlc");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "Vireo", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Fur_Daddy");
-			ServerCommand("bot_add_ct %s", "emokie");
-			ServerCommand("bot_add_ct %s", "Champ");
-			ServerCommand("bot_add_ct %s", "KRL");
-			ServerCommand("bot_add_ct %s", "drayza");
-			ServerCommand("mp_teamlogo_1 vireo");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Fur_Daddy");
-			ServerCommand("bot_add_t %s", "emokie");
-			ServerCommand("bot_add_t %s", "Champ");
-			ServerCommand("bot_add_t %s", "KRL");
-			ServerCommand("bot_add_t %s", "drayza");
-			ServerCommand("mp_teamlogo_2 vireo");
 		}
 	}
 	
@@ -4037,7 +3937,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		float fPos[3];
 		DHookGetParamVector(hParams, 2, fPos);
 		
-		if(IsItMyChance(20.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(IsItMyChance(10.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			float fClientEyes[3];
 			GetClientEyePosition(client, fClientEyes);
@@ -4193,8 +4093,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							{
 								iButtons &= ~IN_ATTACK;
 							
-								if(!bIsReloading) 
+								if(!bIsReloading)
+								{
 									iButtons |= IN_ATTACK;
+									SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
+								}
 							}
 							
 							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
@@ -4204,12 +4107,15 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						}
 						case 1:
 						{
-							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.07 && !bIsDucking && !bIsReloading)
+							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.15 && !bIsDucking && !bIsReloading)
+							{
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
+							}
 						}
 						case 9, 40:
 						{
-							if (fTargetDistance < 2750.0 && !bIsReloading && GetEntProp(client, Prop_Send, "m_bIsScoped") && GetGameTime() - g_fZoomedTimestamp[client] > 0.5 && GetClientAimTarget(client, true) == g_iTarget[client])
+							if (fTargetDistance < 2750.0 && !bIsReloading && GetEntProp(client, Prop_Send, "m_bIsScoped") && GetGameTime() - g_fZoomedTimestamp[client] > 0.4 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
@@ -4977,8 +4883,8 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 	float safeSpace = fTossHeight / 2.0;
 
 	// Build a box to sweep along the ray when looking for obstacles
-	float fMins[3] = { -2.0, -2.0, -2.0 };
-	float fMaxs[3] = { 2.0, 2.0, 2.0 };
+	float fMins[3] = { -16.0, -16.0, 0.0 };
+	float fMaxs[3] = { 16.0, 16.0, 72.0 };
 	fMins[2] = 0.0;
 	fMaxs[2] = fHeightInc;
 

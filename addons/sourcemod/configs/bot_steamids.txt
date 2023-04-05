@@ -209,7 +209,7 @@
 	"TiGeR" 			"1013261741"
 	"L1haNg" 			"1055940590"	
 	"tutu" 				"449412781"	
-	"jiejie" 			"1424137917"
+	"17" 				"915136877"
 	//paiN Players
 	"NEKIZ" 			"76618432"
 	"zevy" 				"911593093"
@@ -294,12 +294,6 @@
 	"buster" 			"212936195"
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
-	//Davenport Players
-	"Pugg" 				"215423525"
-	"Austin" 			"161243497"
-	"Danejoris" 		"116329706"	
-	"corn" 				"127592330"	
-	"spek" 				"324800230"	
 	//ATK Players
 	"b0denmaster" 		"316269116"
 	"MisteM" 			"175149890"
@@ -354,12 +348,12 @@
 	"JUST" 				"52722111"
 	"MUTiRiS" 			"37715442"	
 	"rmn" 				"34129763"
-	//D13 Players
-	"hasteka"			"432097992" 
-	"910" 				"1243297617"
-	"danss" 			"1062481712"
-	"Frip" 				"264854544"	
-	"IMAGINE" 			"1118303725"	
+	//Union Players
+	"frostezor"			"1425367864" 
+	"koala" 			"849196548"
+	"happ" 				"874407158"
+	"rainny" 			"897314034"	
+	"hoax" 				"54567929"	
 	//SSP Players
 	"farmaG" 			"32002596"
 	"Sw1ft" 			"159221739"
@@ -438,12 +432,6 @@
 	"veniuz" 			"1147913379"
 	"spuffy" 			"181859094"
 	"SeBreeZe"			"954832540"
-	//HONORIS Players
-	"TaZ" 				"234052"
-	"lunAtic" 			"27202715"
-	"reiko" 			"190436529"
-	"SaMey" 			"150540966"
-	"Sobol" 			"190359589"
 	//Spirit Players
 	"chopper" 			"85633136"
 	"w0nderful" 		"1102803112"
@@ -540,12 +528,6 @@
 	"fADE" 				"215964173"
 	"DAVEN" 			"179758655"
 	"LyNeX"				"94292971"
-	//Renewal Players
-	"xerolte" 			"368881420"
-	"Tugu"				"1169915755"
-	"NEUZ" 				"114122809"
-	"ROUX" 				"977087142"
-	"ariucle"			"469468594"
 	//500 Players
 	"SHiPZ" 			"254948893"
 	"dennyslaw"			"300693622"
@@ -576,12 +558,6 @@
 	"AMANEK"			"108679223"
 	"Diviiii" 			"191872056"
 	"Snobling"			"45609799"
-	//Vireo Players
-	"Fur_Daddy" 		"217078249"
-	"emokie"			"106150"
-	"Champ"				"10773572"
-	"KRL" 				"320146710"
-	"drayza"			"313775221"
 	//Imperial Players
 	"JOTA" 				"94554756"
 	"FalleN"			"424467"

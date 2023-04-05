@@ -1069,7 +1069,7 @@ ProP+Rifle+RiflePersonality "tutu"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "jiejie"
+ProP+Rifle+RiflePersonality "17"
 	VoicePitch = 109
 End
 
@@ -1387,28 +1387,6 @@ ProP+Rifle+RiflePersonality "Hobbit"
 	VoicePitch = 83
 End
 
-//Davenport Players
-
-ProP+Rifle+RiflePersonality "Pugg"
-	VoicePitch = 103
-End
-
-ProP+SniperPro+SniperPersonality "Austin"
-	VoicePitch = 109
-End
-
-ProP+Rifle+RiflePersonality "corn"
-	VoicePitch = 92
-End
-
-ProP+Rifle+RiflePersonality "spek"
-	VoicePitch = 94
-End
-
-ProP+Rifle+RiflePersonality "Danejoris"
-	VoicePitch = 77
-End
-
 //ATK Players
 
 ProP+Rifle+RiflePersonality "b0denmaster"
@@ -1607,25 +1585,25 @@ ProP+Rifle+RiflePersonality "rmn"
 	VoicePitch = 109
 End
 
-//D13 Players
+//Union Players
 
-ProP+Rifle+RiflePersonality "hasteka"
+ProP+Rifle+RiflePersonality "frostezor"
 	VoicePitch = 86
 End
 
-ProP+SniperPro+SniperPersonality "IMAGINE"
+ProP+SniperPro+SniperPersonality "hoax"
 	VoicePitch = 105
 End
 
-ProP+Rifle+RiflePersonality "910"
+ProP+Rifle+RiflePersonality "koala"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "danss"
+ProP+Rifle+RiflePersonality "happ"
 	VoicePitch = 107
 End
 
-ProP+Rifle+RiflePersonality "Frip"
+ProP+Rifle+RiflePersonality "rainny"
 	VoicePitch = 95
 End
 
@@ -1913,28 +1891,6 @@ End
 
 ProP+Rifle+RiflePersonality "SeBreeZe"
 	VoicePitch = 77
-End
-
-//HONORIS Players
-
-ProP+Rifle+RiflePersonality "TaZ"
-	VoicePitch = 103
-End
-
-ProP+SniperPro+SniperPersonality "lunAtic"
-	VoicePitch = 83
-End
-
-ProP+Rifle+RiflePersonality "SaMey"
-	VoicePitch = 89
-End
-
-ProP+Rifle+RiflePersonality "reiko"
-	VoicePitch = 109
-End
-
-ProP+Rifle+RiflePersonality "Sobol"
-	VoicePitch = 93
 End
 
 //Spirit Players
@@ -2289,28 +2245,6 @@ ProP+Rifle+RiflePersonality "LyNeX"
 	VoicePitch = 80
 End
 
-//Renewal Players
-
-ProP+Rifle+RiflePersonality "xerolte"
-	VoicePitch = 79
-End
-
-ProP+SniperPro+SniperPersonality "Tugu"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "NEUZ"
-	VoicePitch = 83
-End
-
-ProP+Rifle+RiflePersonality "ROUX"
-	VoicePitch = 97
-End
-
-ProP+Rifle+RiflePersonality "ariucle"
-	VoicePitch = 78
-End
-
 //500 Players
 
 ProP+Rifle+RiflePersonality "SHiPZ"
@@ -2419,28 +2353,6 @@ End
 
 ProP+Rifle+RiflePersonality "Snobling"
 	VoicePitch = 91
-End
-
-//Vireo Players
-
-ProP+Rifle+RiflePersonality "Fur_Daddy"
-	VoicePitch = 79
-End
-
-ProP+SniperPro+SniperPersonality "emokie"
-	VoicePitch = 115
-End
-
-ProP+Rifle+RiflePersonality "Champ"
-	VoicePitch = 91
-End
-
-ProP+Rifle+RiflePersonality "KRL"
-	VoicePitch = 90
-End
-
-ProP+Rifle+RiflePersonality "drayza"
-	VoicePitch = 88
 End
 
 //Imperial Players
@@ -3093,6 +3005,10 @@ End
 
 Elite+Rifle+RiflePersonality "-FaK- My Sunset"
         VoicePitch = 100
+End
+
+Elite+Rifle+RiflePersonality "Carlis Keva"
+        VoicePitch = 84
 End
 
 Elite+Rifle+RiflePersonality [[MxD]]Azimuth

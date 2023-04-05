@@ -209,7 +209,7 @@
 	"TiGeR" 			"NewHappy"
 	"L1haNg" 			"NewHappy"	
 	"tutu" 				"NewHappy"	
-	"jiejie" 			"NewHappy"
+	"17" 				"NewHappy"
 	//paiN Players
 	"NEKIZ" 			"paiN"
 	"zevy" 				"paiN"
@@ -294,12 +294,6 @@
 	"buster" 			"C9"
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
-	//Davenport Players
-	"Pugg" 				"Davenport"
-	"Austin" 			"Davenport"
-	"corn" 				"Davenport"
-	"spek" 				"Davenport"
-	"Danejoris" 		"Davenport"	
 	//ATK Players
 	"b0denmaster" 		"ATK"
 	"MisteM" 			"ATK"
@@ -354,12 +348,12 @@
 	"JUST" 				"SAW"
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
-	//D13 Players
-	"hasteka"			"D13" 
-	"IMAGINE" 			"D13"
-	"910" 				"D13"
-	"danss" 			"D13"
-	"Frip" 				"D13"	
+	//Union Players
+	"frostezor"			"Union" 
+	"hoax" 				"Union"
+	"koala" 			"Union"
+	"happ" 				"Union"
+	"rainny" 			"Union"	
 	//SSP Players
 	"farmaG" 			"SSP"
 	"Sw1ft" 			"SSP"
@@ -438,12 +432,6 @@
 	"veniuz" 			"Begrip"
 	"spuffy" 			"Begrip"
 	"SeBreeZe"			"Begrip"
-	//HONORIS Players
-	"TaZ" 				"HONORIS"
-	"SaMey" 			"HONORIS"
-	"lunAtic" 			"HONORIS"
-	"reiko" 			"HONORIS"
-	"Sobol"				"HONORIS"
 	//Spirit Players
 	"chopper" 			"Spirit"
 	"w0nderful" 		"Spirit"
@@ -540,12 +528,6 @@
 	"fADE" 				"Entropy"
 	"DAVEN" 			"Entropy"
 	"LyNeX"				"Entropy"
-	//Renewal Players
-	"xerolte" 			"Renewal"
-	"Tugu"				"Renewal"
-	"NEUZ" 				"Renewal"
-	"ROUX" 				"Renewal"
-	"ariucle"			"Renewal"
 	//500 Players
 	"SHiPZ" 			"500"
 	"dennyslaw"			"500"
@@ -576,12 +558,6 @@
 	"AMANEK"			"LDLC"
 	"Diviiii" 			"LDLC"
 	"Snobling"			"LDLC"
-	//Vireo Players
-	"Fur_Daddy" 		"Vireo"
-	"emokie"			"Vireo"
-	"Champ"				"Vireo"
-	"KRL" 				"Vireo"
-	"drayza"			"Vireo"
 	//Imperial Players
 	"JOTA" 				"Imperial"
 	"FalleN"			"Imperial"
