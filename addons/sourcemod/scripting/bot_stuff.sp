@@ -954,8 +954,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "xsepower");
 			ServerCommand("bot_add_ct %s", "BELCHONOKK");
-			ServerCommand("bot_add_ct %s", "fostar");
-			ServerCommand("bot_add_ct %s", "keep3r");
+			ServerCommand("bot_add_ct %s", "Jyo");
+			ServerCommand("bot_add_ct %s", "synyx");
 			ServerCommand("bot_add_ct %s", "1eeR");
 			ServerCommand("mp_teamlogo_1 nem");
 		}
@@ -965,8 +965,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "xsepower");
 			ServerCommand("bot_add_t %s", "BELCHONOKK");
-			ServerCommand("bot_add_t %s", "fostar");
-			ServerCommand("bot_add_t %s", "keep3r");
+			ServerCommand("bot_add_t %s", "Jyo");
+			ServerCommand("bot_add_t %s", "synyx");
 			ServerCommand("bot_add_t %s", "1eeR");
 			ServerCommand("mp_teamlogo_2 nem");
 		}
@@ -2102,8 +2102,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "J0LZ");
-			ServerCommand("bot_add_ct %s", "Snakes");
+			ServerCommand("bot_add_ct %s", "CLASIA");
+			ServerCommand("bot_add_ct %s", "d4rty");
 			ServerCommand("bot_add_ct %s", "Infinite");
 			ServerCommand("bot_add_ct %s", "stamina");
 			ServerCommand("bot_add_ct %s", "aris");
@@ -2113,8 +2113,8 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "J0LZ");
-			ServerCommand("bot_add_t %s", "Snakes");
+			ServerCommand("bot_add_t %s", "CLASIA");
+			ServerCommand("bot_add_t %s", "d4rty");
 			ServerCommand("bot_add_t %s", "Infinite");
 			ServerCommand("bot_add_t %s", "stamina");
 			ServerCommand("bot_add_t %s", "aris");
@@ -2578,8 +2578,8 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "XigN");
-			ServerCommand("bot_add_ct %s", "nin9");
-			ServerCommand("bot_add_ct %s", "Senzu");
+			ServerCommand("bot_add_ct %s", "xerolte");
+			ServerCommand("bot_add_ct %s", "Gratisfaction");
 			ServerCommand("bot_add_ct %s", "BnTeT");
 			ServerCommand("bot_add_ct %s", "erkaSt");
 			ServerCommand("mp_teamlogo_1 nkt");
@@ -2589,8 +2589,8 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "XigN");
-			ServerCommand("bot_add_t %s", "nin9");
-			ServerCommand("bot_add_t %s", "Senzu");
+			ServerCommand("bot_add_t %s", "xerolte");
+			ServerCommand("bot_add_t %s", "Gratisfaction");
 			ServerCommand("bot_add_t %s", "BnTeT");
 			ServerCommand("bot_add_t %s", "erkaSt");
 			ServerCommand("mp_teamlogo_2 nkt");
@@ -3197,6 +3197,31 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "IRON", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "MaSvAl");
+			ServerCommand("bot_add_ct %s", "Ganginho");
+			ServerCommand("bot_add_ct %s", "sad");
+			ServerCommand("bot_add_ct %s", "nifee");
+			ServerCommand("bot_add_ct %s", "lollipop21k");
+			ServerCommand("mp_teamlogo_1 iron");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "MaSvAl");
+			ServerCommand("bot_add_t %s", "Ganginho");
+			ServerCommand("bot_add_t %s", "sad");
+			ServerCommand("bot_add_t %s", "nifee");
+			ServerCommand("bot_add_t %s", "lollipop21k");
+			ServerCommand("mp_teamlogo_2 iron");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -3214,7 +3239,6 @@ public void OnMapStart()
 	g_bIsHostageScenario = IsValidEntity(FindEntityByClassname(-1, "func_hostage_rescue")) ? true : false;
 	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
-	CreateTimer(0.1, Timer_CheckPlayerFast, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	SDKHook(GetPlayerResourceEntity(), SDKHook_ThinkPost, OnThinkPost);
 	
 	for (int i = 1; i <= MaxClients; i++)
@@ -3316,13 +3340,37 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 				else if(IsItMyChance(60.0))
 					FakeClientCommand(i, "buy vest");
 			}
+			
+			if(g_bBombPlanted)
+			{
+				int iPlantedC4 = -1;
+				iPlantedC4 = FindEntityByClassname(iPlantedC4, "planted_c4");
+				
+				if (IsValidEntity(iPlantedC4) && GetClientTeam(i) == CS_TEAM_CT)
+				{
+					float fClientLoc[3];
+					GetClientAbsOrigin(i, fClientLoc);
+					float fPlantedC4Location[3];
+					GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
+					
+					float fPlantedC4Distance;
+					
+					fPlantedC4Distance = GetVectorDistance(fClientLoc, fPlantedC4Location);
+					
+					if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 100.0 && GetTask(i) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(i, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[i])
+					{
+						SDKCall(g_hSwitchWeaponCall, i, GetPlayerWeaponSlot(i, CS_SLOT_KNIFE), 0);
+						BotMoveTo(i, fPlantedC4Location, FASTEST_ROUTE);
+					}
+				}
+			}
 		}
 	}
 	
 	return Plugin_Continue;
 }
 
-public Action Timer_CheckPlayerFast(Handle hTimer, any data)
+public void OnGameFrame()
 {
 	g_bBombPlanted = !!GameRules_GetProp("m_bBombPlanted");
 
@@ -3331,7 +3379,7 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 		if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
 		{
 			int iActiveWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-			if (iActiveWeapon == -1) return Plugin_Continue;
+			if (iActiveWeapon == -1) return;
 			
 			float fClientLoc[3], fClientEyes[3];
 			GetClientAbsOrigin(client, fClientLoc);
@@ -3344,33 +3392,11 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 				g_bEveryoneDead = true;
 			}
 				
-			if(g_bFreezetimeEnd && IsItMyChance(15.0) && g_iDoingSmokeNum[client] == -1)
+			if(g_bFreezetimeEnd && IsItMyChance(7.5) && g_iDoingSmokeNum[client] == -1)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 			
 			if (g_bIsProBot[client])
 			{				
-				if(g_bBombPlanted)
-				{
-					int iPlantedC4 = -1;
-					iPlantedC4 = FindEntityByClassname(iPlantedC4, "planted_c4");
-					
-					if (IsValidEntity(iPlantedC4) && GetClientTeam(client) == CS_TEAM_CT)
-					{
-						float fPlantedC4Location[3];
-						GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
-						
-						float fPlantedC4Distance;
-						
-						fPlantedC4Distance = GetVectorDistance(fClientLoc, fPlantedC4Location);
-						
-						if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 100.0 && GetTask(client) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(client, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[client])
-						{
-							SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
-							BotMoveTo(client, fPlantedC4Location, FASTEST_ROUTE);
-						}
-					}
-				}
-				
 				int iDroppedC4 = GetNearestEntity(client, "weapon_c4", false);
 				
 				if (g_bFreezetimeEnd && !g_bBombPlanted && !IsValidEntity(iDroppedC4) && !BotIsHiding(client))
@@ -3530,8 +3556,6 @@ public Action Timer_CheckPlayerFast(Handle hTimer, any data)
 			}
 		}
 	}
-	
-	return Plugin_Continue;
 }
 
 public Action Timer_DropWeapons(Handle hTimer, any data)
@@ -3669,8 +3693,8 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bCanThrowGrenade[i] = false;
 			g_iTarget[i] = -1;
 			g_iDoingSmokeNum[i] = -1;
-			g_fZoomedTimestamp[i] = 0.0;
-				
+			g_fZoomedTimestamp[i] = 0.0;				
+			
 			if(g_bIsBombScenario || g_bIsHostageScenario)
 			{
 				if(GetClientTeam(i) == iTeam)
@@ -3695,6 +3719,12 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
 		else if(iTeamNum == CS_TEAM_T)
 			g_iTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
+	}
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
+			BotMimic_StopPlayerMimic(i);
 	}
 	
 	g_iRoundsPlayed = g_iCTScore + g_iTScore;
@@ -3740,7 +3770,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
 		}
 		
-		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
+		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
 			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
 	}
 }
@@ -3932,21 +3962,16 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
+	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Last Enemy Position") == 0)
 	{
-		float fPos[3];
+		float fPos[3], fClientEyes[3];
+		GetClientEyePosition(client, fClientEyes);
 		DHookGetParamVector(hParams, 2, fPos);
 		
-		if(IsItMyChance(10.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(IsItMyChance(10.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER && !IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
 		{
-			float fClientEyes[3];
-			GetClientEyePosition(client, fClientEyes);
-			BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0);
-			if(!IsPositionCloseToEnemy(client, fPos) && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)))
-			{
-				ProcessGrenadeThrow(client, fPos);
-				return MRES_Supercede;
-			}
+			ProcessGrenadeThrow(client, fPos);
+			return MRES_Supercede;
 		}
 		
 		fPos[2] += 25.0;
@@ -4981,7 +5006,6 @@ stock bool IsSafe(int client)
 stock bool IsPositionCloseToEnemy(int client, float fOrigin[3])
 {
 	float fEnemyOrigin[3];
-	float fSmallestDistance = 150.0;
 	for (int i=1; i <= MaxClients; i++) 
 	{
 		if(!IsValidClient(i)) 
@@ -4997,7 +5021,7 @@ stock bool IsPositionCloseToEnemy(int client, float fOrigin[3])
 
 		float fDistance = GetVectorDistance(fOrigin, fEnemyOrigin);
 
-		if(fDistance < fSmallestDistance || fSmallestDistance == 0.0)
+		if(fDistance < 250.0)
 			return true;
 	}
 

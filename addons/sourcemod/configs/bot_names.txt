@@ -189,8 +189,8 @@
 	//Nemiga Players
 	"xsepower" 			"Nemiga"
 	"BELCHONOKK" 		"Nemiga"
-	"fostar" 			"Nemiga"	
-	"keep3r" 			"Nemiga"
+	"Jyo" 				"Nemiga"	
+	"synyx" 			"Nemiga"
 	"1eeR" 				"Nemiga"
 	//IHC Players
 	"Techno4K" 			"IHC"
@@ -463,8 +463,8 @@
 	"latto" 			"Nation"
 	"dumau"				"Nation"
 	//Strife Players
-	"J0LZ" 				"Strife"
-	"Snakes" 			"Strife"
+	"CLASIA" 			"Strife"
+	"d4rty" 			"Strife"
 	"Infinite" 			"Strife"
 	"stamina" 			"Strife"
 	"aris"				"Strife"
@@ -579,9 +579,9 @@
 	//NKT Players
 	"XigN" 				"NKT"
 	"erkaSt"			"NKT"
-	"Senzu"				"NKT"
+	"Gratisfaction"		"NKT"
 	"BnTeT" 			"NKT"
-	"nin9"				"NKT"
+	"xerolte"			"NKT"
 	//Boca Players
 	"lenci" 			"Boca"
 	"atarax1a"			"Boca"
@@ -726,4 +726,10 @@
 	"nEMANHA"			"Zero"
 	"Cjoffo" 			"Zero"
 	"aVN"				"Zero"
+	//IRON Players
+	"MaSvAl" 			"IRON"
+	"Ganginho"			"IRON"
+	"sad"				"IRON"
+	"nifee" 			"IRON"
+	"lollipop21k"		"IRON"
 }

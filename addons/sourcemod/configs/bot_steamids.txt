@@ -189,8 +189,8 @@
 	//Nemiga Players
 	"xsepower" 			"112014226"
 	"BELCHONOKK" 		"293404789"
-	"fostar" 			"196096645"	
-	"keep3r" 			"31761104"
+	"Jyo" 				"43255799"	
+	"synyx" 			"271283304"
 	"1eeR" 				"876851680"
 	//IHC Players
 	"kabal" 			"161246388"
@@ -463,8 +463,8 @@
 	"latto" 			"889754458"
 	"dumau"				"234059589"
 	//Strife Players
-	"J0LZ" 				"163875307"
-	"Snakes" 			"76881568"
+	"CLASIA" 			"415811354"
+	"d4rty" 			"202142667"
 	"Infinite" 			"149493497"
 	"stamina" 			"272809432"
 	"aris"				"72733739"
@@ -579,9 +579,9 @@
 	//NKT Players
 	"XigN" 				"49809482"
 	"erkaSt"			"131305548"
-	"Senzu"				"960454289"
+	"Gratisfaction"		"5543683"
 	"BnTeT" 			"111817512"
-	"nin9"				"168197870"
+	"xerolte"			"368881420"
 	//Boca Players
 	"lenci" 			"134201158"
 	"atarax1a"			"231925561"
@@ -726,4 +726,10 @@
 	"nEMANHA"			"22076121"
 	"Cjoffo" 			"322852526"
 	"aVN"				"231301725"
+	//IRON Players
+	"MaSvAl" 			"257144591"
+	"Ganginho"			"164513735"
+	"sad"				"224605553"
+	"nifee" 			"355768812"
+	"lollipop21k"		"54552870"
 }
