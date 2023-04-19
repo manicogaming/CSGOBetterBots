@@ -161,7 +161,7 @@
 	"ottoNd" 			"HAVU"
 	"Aerial" 			"HAVU"
 	"xseveN" 			"HAVU"
-	"doto" 				"HAVU"
+	"airax" 			"HAVU"
 	//ECSTATIC Players
 	"kraghen"			"ECSTATIC" 
 	"salazar" 			"ECSTATIC"
@@ -345,7 +345,7 @@
 	//SAW Players
 	"ewjerkz"			"SAW" 
 	"story" 			"SAW"
-	"JUST" 				"SAW"
+	"arrozdoce" 		"SAW"
 	"MUTiRiS" 			"SAW"	
 	"rmn" 				"SAW"
 	//Union Players
@@ -370,8 +370,8 @@
 	"Ag1l" 				"FTW"
 	"stadodo" 			"FTW"
 	"DDias" 			"FTW"
-	"suka" 				"FTW"
-	"arrozdoce" 		"FTW"
+	"NOPEEj" 			"FTW"
+	"snapy" 			"FTW"
 	//ITB Players
 	"Thomas" 			"ITB"
 	"CRUC1AL" 			"ITB"
@@ -407,7 +407,7 @@
 	"kory" 				"Sangal"
 	"kyuubii" 			"Sangal"
 	"Soulfly" 			"Sangal"
-	"phzy"				"Sangal"
+	"PANIX"				"Sangal"
 	//GenOne Players
 	"wasiNk" 			"GenOne"
 	"NeOo" 				"GenOne"
@@ -467,7 +467,7 @@
 	"d4rty" 			"Strife"
 	"Infinite" 			"Strife"
 	"stamina" 			"Strife"
-	"aris"				"Strife"
+	"motm"				"Strife"
 	//777 Players
 	"SLY" 				"777"
 	"Jimbo"				"777"
@@ -587,7 +587,7 @@
 	"atarax1a"			"Boca"
 	"pavv"				"Boca"
 	"tomaszin" 			"Boca"
-	"MRN1"				"Boca"
+	"BK1"				"Boca"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
 	"blogg1s"			"Sampi"
@@ -601,7 +601,7 @@
 	"CYPHER" 			"Entropiq"
 	"snatchie"			"Entropiq"
 	//MASONIC Players
-	"kiR" 				"MASONIC"
+	"sirah" 			"MASONIC"
 	"J3nsyy"			"MASONIC"
 	"Anlelele"			"MASONIC"
 	"Tauson" 			"MASONIC"
@@ -617,19 +617,19 @@
 	"kNgV-"				"Plano"
 	"shz"				"Plano"
 	"piria" 			"Plano"
-	"lub"				"Plano"
+	"Yangue"			"Plano"
 	//GTZ Players
 	"TMKj" 				"GTZ"
 	"shr"				"GTZ"
-	"snapy"				"GTZ"
+	"rafaxF"			"GTZ"
 	"aragorN" 			"GTZ"
 	"Icarus"			"GTZ"
 	//Alpha Players
-	"mupzG" 			"Alpha"
+	"kiR" 				"Alpha"
 	"Ryxxo"				"Alpha"
 	"smF"				"Alpha"
 	"alexsomfan" 		"Alpha"
-	"PERCY"				"Alpha"
+	"scott"				"Alpha"
 	//Fluxo Players
 	"felps" 			"Fluxo"
 	"WOOD7"				"Fluxo"
@@ -652,7 +652,7 @@
 	"Leomonster" 		"INTZ"
 	"desh"				"INTZ"
 	"BobZ"				"INTZ"
-	"TEKO" 				"INTZ"
+	"lub" 				"INTZ"
 	"w1"				"INTZ"
 	//Arctic Players
 	"MaLLby" 			"Arctic"
@@ -687,7 +687,7 @@
 	//ONYX Players
 	"MoJo" 				"ONYX"
 	"mave"				"ONYX"
-	"NoRules"			"ONYX"
+	"florento"			"ONYX"
 	"SnacKZ1" 			"ONYX"
 	"pxsl"				"ONYX"
 	//GODSENT Players
@@ -714,12 +714,12 @@
 	"delboNi"			"Flamengo"
 	"n1ssim" 			"Flamengo"
 	"f4stzin"			"Flamengo"
-	//X13 Players
-	"Feral" 			"X13"
-	"werdnA"			"X13"
-	"Gonzo"				"X13"
-	"drewtheshrew" 		"X13"
-	"Penguin"			"X13"
+	//BHOP Players
+	"Feral" 			"BHOP"
+	"werdnA"			"BHOP"
+	"Gonzo"				"BHOP"
+	"drewtheshrew" 		"BHOP"
+	"Penguin"			"BHOP"
 	//Zero Players
 	"simke" 			"Zero"
 	"brutmonster"		"Zero"

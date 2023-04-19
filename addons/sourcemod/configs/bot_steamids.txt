@@ -161,7 +161,7 @@
 	"ottoNd" 			"75069143"
 	"Aerial" 			"2445180"
 	"xseveN" 			"52906775"
-	"doto" 				"39318615"
+	"airax" 			"50161047"
 	//ECSTATIC Players
 	"kraghen"			"86933217" 
 	"salazar" 			"141998048"
@@ -345,7 +345,7 @@
 	//SAW Players
 	"ewjerkz" 			"302194534"
 	"story" 			"105182632"
-	"JUST" 				"52722111"
+	"arrozdoce" 		"13492074"
 	"MUTiRiS" 			"37715442"	
 	"rmn" 				"34129763"
 	//Union Players
@@ -368,7 +368,7 @@
 	"Hype" 				"155147590"
 	//FTW Players
 	"Ag1l" 				"226613145"
-	"arrozdoce" 		"13492074"
+	"snapy" 			"268698824"
 	"stadodo" 			"87137134"
 	"DDias" 			"67343840"
 	"NOPEEj" 			"200528981"
@@ -407,7 +407,7 @@
 	"kory" 				"67382466"
 	"kyuubii" 			"184660636"
 	"Soulfly" 			"366802450"
-	"phzy"				"447933315"
+	"PANIX"				"241868664"
 	//GenOne Players
 	"jeyN" 				"391564338"
 	"Nono2k" 			"178545372"
@@ -467,7 +467,7 @@
 	"d4rty" 			"202142667"
 	"Infinite" 			"149493497"
 	"stamina" 			"272809432"
-	"aris"				"72733739"
+	"motm"				"60208330"
 	//777 Players
 	"SLY" 				"1737573"
 	"Jimbo"				"192154266"
@@ -587,7 +587,7 @@
 	"atarax1a"			"231925561"
 	"pavv"				"111877624"
 	"tomaszin" 			"462168316"
-	"MRN1"				"176372852"
+	"BK1"				"221869734"
 	//Sampi Players
 	"The eLiVe" 		"111025647"
 	"blogg1s"			"115938594"
@@ -601,7 +601,7 @@
 	"CYPHER" 			"292716414"
 	"snatchie"			"111436809"
 	//MASONIC Players
-	"kiR" 				"258258243"
+	"sirah" 			"348675310"
 	"J3nsyy"			"192137384"
 	"Anlelele"			"169533761"
 	"Tauson" 			"356440446"
@@ -617,19 +617,19 @@
 	"kNgV-"				"6732863"
 	"shz"				"178194613"
 	"piria" 			"436072455"
-	"lub"				"882284871"
+	"Yangue"			"219840485"
 	//GTZ Players
 	"TMKj" 				"838669792"
 	"shr"				"66458785"
-	"snapy"				"268698824"
+	"rafaxF"			"134941478"
 	"aragorN" 			"844611868"
 	"Icarus"			"291309752"
 	//Alpha Players
-	"mupzG" 			"233287646"
+	"kiR" 				"258258243"
 	"Ryxxo"				"66562222"
 	"smF"				"11160541"
 	"alexsomfan" 		"105306272"
-	"PERCY"				"36210122"
+	"scott"				"193843870"
 	//Fluxo Players
 	"felps" 			"22765766"
 	"WOOD7"				"42876435"
@@ -652,7 +652,7 @@
 	"Leomonster" 		"318176128"
 	"desh"				"990101558"
 	"BobZ"				"171090863"
-	"TEKO" 				"155956715"
+	"lub" 				"1511605189"
 	"w1"				"456548842"
 	//Arctic Players
 	"MaLLby" 			"209668291"
@@ -687,7 +687,7 @@
 	//ONYX Players
 	"MoJo" 				"85253461"
 	"mave"				"219806941"
-	"NoRules"			"114140393"
+	"florento"			"178159309"
 	"SnacKZ1" 			"1098523460"
 	"pxsl"				"349461905"
 	//GODSENT Players
@@ -714,7 +714,7 @@
 	"delboNi"			"49145432"
 	"n1ssim" 			"101497868"
 	"f4stzin"			"476343738"
-	//X13 Players
+	//BHOP Players
 	"Feral" 			"93947984"
 	"werdnA"			"109559931"
 	"Gonzo"				"130242989"

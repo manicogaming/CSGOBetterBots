@@ -1,4 +1,4 @@
-// csgosl 2.16 config 1 at Wed Apr 12 09:21:25 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Wed Apr 19 09:22:09 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -355,7 +355,6 @@ de_shortdust
 de_shortnuke
 de_shortwaterfall
 de_slate
-de_snowball_go
 de_snowcapped_csgo
 de_soat_rc3
 de_spain
