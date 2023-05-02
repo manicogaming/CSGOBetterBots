@@ -70,7 +70,7 @@
 	"electronic" 		"83779379"	
 	"s1mple" 			"73936547"
 	"B1T" 				"286341748"
-	"sdy" 				"80311472"
+	"npl" 				"344771176"
 	"Perfecto" 			"160954758"
 	//Liquid Players
 	"oSee" 				"87206806"
@@ -192,8 +192,8 @@
 	"Jyo" 				"43255799"	
 	"synyx" 			"271283304"
 	"1eeR" 				"876851680"
-	//IHC Players
-	"kabal" 			"161246388"
+	//MongolZ Players
+	"hasteka" 			"432097992"
 	"Techno4K" 			"1006074432"
 	"bLitz" 			"999558360"
 	"Annihilation" 		"315821474"
@@ -259,7 +259,7 @@
 	"n0te" 				"354126581"
 	"Nexius" 			"210313229"
 	//Bravado Players
-	"bLazE" 			"209701855"	
+	"March" 			"91657238"	
 	"SloWye" 			"50695439"
 	"Doru" 				"135905209"
 	"Triton" 			"135933575"
@@ -275,7 +275,7 @@
 	"imoRR" 			"107082440"
 	"MAJ3R" 			"7167161"
 	"Calyx" 			"92280537"
-	"xfl0ud" 			"217943381"
+	"Wicadia" 			"852248195"
 	//K23 Players
 	"RAiLWAY" 			"20670810"
 	"El1an" 			"250498109"
@@ -408,12 +408,12 @@
 	"kyuubii" 			"184660636"
 	"Soulfly" 			"366802450"
 	"PANIX"				"241868664"
-	//GenOne Players
-	"jeyN" 				"391564338"
-	"Nono2k" 			"178545372"
-	"NeOo" 				"996000485"
-	"wasiNk" 			"164618316"
-	"SIXER" 			"3429256"
+	//Nixuh Players
+	"bLazE" 			"209701855"
+	"TheM4N" 			"84708704"
+	"FROZ3N" 			"110202505"
+	"flexeeee" 			"177739017"
+	"RustyYG" 			"288335622"
 	//BESTIA Players
 	"meyern" 			"235377137"
 	"Noktse" 			"54233223"
@@ -617,7 +617,7 @@
 	"kNgV-"				"6732863"
 	"shz"				"178194613"
 	"piria" 			"436072455"
-	"Yangue"			"219840485"
+	"SHOOWTiME" 		"97938914"
 	//GTZ Players
 	"TMKj" 				"838669792"
 	"shr"				"66458785"
@@ -708,12 +708,6 @@
 	"freo"				"109430629"
 	"nestee" 			"138122029"
 	"virtuoso"			"55647141"
-	//Flamengo Players
-	"SHOOWTiME" 		"97938914"
-	"zqk"				"4032008"
-	"delboNi"			"49145432"
-	"n1ssim" 			"101497868"
-	"f4stzin"			"476343738"
 	//BHOP Players
 	"Feral" 			"93947984"
 	"werdnA"			"109559931"
@@ -732,4 +726,16 @@
 	"sad"				"224605553"
 	"nifee" 			"355768812"
 	"lollipop21k"		"54552870"
+	//JANO Players
+	"ZOREE" 			"41867139"
+	"allu"				"1345246"
+	"sLowi"				"15932016"
+	"Sm1llee" 			"297922013"
+	"jelo"				"147699201"
+	//Ambush Players
+	"Maze" 				"252147045"
+	"NaToSaphiX"		"41330524"
+	"suNny"				"57405333"
+	"doto" 				"39318615"
+	"milky"				"236009457"
 }

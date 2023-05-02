@@ -1,4 +1,4 @@
-// csgosl 2.16 config 1 at Wed Apr 19 09:22:09 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Tue May 02 23:27:36 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -215,7 +215,7 @@ de_dahshur
 de_deadblock_go
 de_deco
 de_desert
-de_dharma_faceit
+de_dharma
 de_distillery
 de_dust0_csgo
 de_dust2

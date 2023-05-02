@@ -1,6 +1,6 @@
-"de_dharma_faceit"
+"de_dharma"
 {
-	"material"		"overviews/de_dharma_faceit"
+	"material"		"overviews/de_dharma"
 	"pos_x"			"-4510.01"
 	"pos_y"			"4900.423"
 	"scale"			"5.946702"

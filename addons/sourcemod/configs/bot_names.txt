@@ -70,7 +70,7 @@
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"
 	"B1T" 				"Na´Vi"
-	"sdy" 				"Na´Vi"
+	"npl" 				"Na´Vi"
 	"Perfecto" 			"Na´Vi"
 	//Liquid Players
 	"oSee" 				"Liquid"
@@ -192,12 +192,12 @@
 	"Jyo" 				"Nemiga"	
 	"synyx" 			"Nemiga"
 	"1eeR" 				"Nemiga"
-	//IHC Players
-	"Techno4K" 			"IHC"
-	"bLitz" 			"IHC"
-	"kabal" 			"IHC"
-	"Annihilation" 		"IHC"
-	"Bart4k" 			"IHC"
+	//MongolZ Players
+	"Techno4K" 			"MongolZ"
+	"bLitz" 			"MongolZ"
+	"hasteka" 			"MongolZ"
+	"Annihilation" 		"MongolZ"
+	"Bart4k" 			"MongolZ"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
 	"PerX" 				"aTTaX"	
@@ -262,7 +262,7 @@
 	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
 	"Triton" 			"Bravado"
-	"bLazE" 			"Bravado"	
+	"March" 			"Bravado"	
 	"wilj" 				"Bravado"
 	//SH Players
 	"captainMo" 		"SH"
@@ -275,7 +275,7 @@
 	"imoRR" 			"Eternal"
 	"MAJ3R" 			"Eternal"
 	"Calyx" 			"Eternal"
-	"xfl0ud" 			"Eternal"
+	"Wicadia" 			"Eternal"
 	//K23 Players
 	"RAiLWAY" 			"K23"
 	"El1an" 			"K23"
@@ -408,12 +408,12 @@
 	"kyuubii" 			"Sangal"
 	"Soulfly" 			"Sangal"
 	"PANIX"				"Sangal"
-	//GenOne Players
-	"wasiNk" 			"GenOne"
-	"NeOo" 				"GenOne"
-	"Nono2k" 			"GenOne"
-	"jeyN" 				"GenOne"
-	"SIXER"				"GenOne"
+	//Nixuh Players
+	"flexeeee" 			"Nixuh"
+	"FROZ3N" 			"Nixuh"
+	"TheM4N" 			"Nixuh"
+	"bLazE" 			"Nixuh"
+	"RustyYG"			"Nixuh"
 	//BESTIA Players
 	"deco" 				"BESTIA"
 	"meyern" 			"BESTIA"
@@ -617,7 +617,7 @@
 	"kNgV-"				"Plano"
 	"shz"				"Plano"
 	"piria" 			"Plano"
-	"Yangue"			"Plano"
+	"SHOOWTiME"			"Plano"
 	//GTZ Players
 	"TMKj" 				"GTZ"
 	"shr"				"GTZ"
@@ -708,12 +708,6 @@
 	"freo"				"Singularity"
 	"nestee" 			"Singularity"
 	"virtuoso"			"Singularity"
-	//Flamengo Players
-	"SHOOWTiME" 		"Flamengo"
-	"zqk"				"Flamengo"
-	"delboNi"			"Flamengo"
-	"n1ssim" 			"Flamengo"
-	"f4stzin"			"Flamengo"
 	//BHOP Players
 	"Feral" 			"BHOP"
 	"werdnA"			"BHOP"
@@ -732,4 +726,16 @@
 	"sad"				"IRON"
 	"nifee" 			"IRON"
 	"lollipop21k"		"IRON"
+	//JANO Players
+	"ZOREE" 			"JANO"
+	"allu"				"JANO"
+	"sLowi"				"JANO"
+	"Sm1llee" 			"JANO"
+	"jelo"				"JANO"
+	//Ambush Players
+	"Maze" 				"Ambush"
+	"NaToSaphiX"		"Ambush"
+	"suNny"				"Ambush"
+	"doto" 				"Ambush"
+	"milky"				"Ambush"
 }
