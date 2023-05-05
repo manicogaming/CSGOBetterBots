@@ -682,7 +682,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Krad");
 			ServerCommand("bot_add_ct %s", "shalfey");
 			ServerCommand("bot_add_ct %s", "Jerry");
-			ServerCommand("mp_teamlogo_1 forze");
+			ServerCommand("mp_teamlogo_1 forz");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
@@ -693,7 +693,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Krad");
 			ServerCommand("bot_add_t %s", "shalfey");
 			ServerCommand("bot_add_t %s", "Jerry");
-			ServerCommand("mp_teamlogo_2 forze");
+			ServerCommand("mp_teamlogo_2 forz");
 		}
 	}
 	
@@ -782,7 +782,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "jL");
 			ServerCommand("bot_add_ct %s", "STYKO");
 			ServerCommand("bot_add_ct %s", "shox");
-			ServerCommand("mp_teamlogo_1 ape");
+			ServerCommand("mp_teamlogo_1 apex");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
@@ -793,7 +793,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "jL");
 			ServerCommand("bot_add_t %s", "STYKO");
 			ServerCommand("bot_add_t %s", "shox");
-			ServerCommand("mp_teamlogo_2 ape");
+			ServerCommand("mp_teamlogo_2 apex");
 		}
 	}
 	
@@ -982,7 +982,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "hasteka");
 			ServerCommand("bot_add_ct %s", "Annihilation");
 			ServerCommand("bot_add_ct %s", "Bart4k");
-			ServerCommand("mp_teamlogo_1 mongo");
+			ServerCommand("mp_teamlogo_1 mngz");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
@@ -993,7 +993,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "hasteka");
 			ServerCommand("bot_add_t %s", "Annihilation");
 			ServerCommand("bot_add_t %s", "Bart4k");
-			ServerCommand("mp_teamlogo_2 mongo");
+			ServerCommand("mp_teamlogo_2 mngz");
 		}
 	}
 	
@@ -2807,7 +2807,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Lucaozy");
 			ServerCommand("bot_add_ct %s", "history");
 			ServerCommand("bot_add_ct %s", "v$m");
-			ServerCommand("mp_teamlogo_1 fluxo");
+			ServerCommand("mp_teamlogo_1 flux");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
@@ -2818,7 +2818,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Lucaozy");
 			ServerCommand("bot_add_t %s", "history");
 			ServerCommand("bot_add_t %s", "v$m");
-			ServerCommand("mp_teamlogo_2 fluxo");
+			ServerCommand("mp_teamlogo_2 flux");
 		}
 	}
 	
@@ -3996,7 +3996,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		GetClientEyePosition(client, fClientEyes);
 		DHookGetParamVector(hParams, 2, fPos);
 		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(10.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(25.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fPos);
 			return MRES_Supercede;
