@@ -166,7 +166,7 @@
 	"kraghen"			"ECSTATIC" 
 	"salazar" 			"ECSTATIC"
 	"maNkz" 			"ECSTATIC"
-	"Cabbi" 			"ECSTATIC"
+	"Nodios" 			"ECSTATIC"
 	"Queenix" 			"ECSTATIC"
 	//Riders Players
 	"mopoz"				"Riders" 
@@ -312,12 +312,12 @@
 	"Starry" 			"Lynn"
 	"EXPRO" 			"Lynn"
 	"Nelly" 			"Lynn"
-	//CPH Players
-	"birdfromsky" 		"CPH"
-	"raalz" 			"CPH"
-	"b0RUP" 			"CPH"
-	"TMB" 				"CPH"
-	"farlig" 			"CPH"
+	//Viperio Players
+	"Girafffe" 			"Viperio"
+	"Extinct" 			"Viperio"
+	"Tadpole" 			"Viperio"
+	"Ping" 				"Viperio"
+	"arTisT" 			"Viperio"
 	//OG Players
 	"NEOFRAG" 			"OG"
 	"degster" 			"OG"
@@ -330,12 +330,6 @@
 	"sinnopsyy" 		"BNE"
 	"gxx-" 				"BNE"
 	"rigoN" 			"BNE"
-	//Tricked Players
-	"Nodios" 			"Tricked"
-	"kwezz" 			"Tricked"
-	"Lucky" 			"Tricked"
-	"IceBerg" 			"Tricked"
-	"PR1mE" 			"Tricked"
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
 	"mhL" 				"Endpoint"
@@ -509,7 +503,7 @@
 	"supLex"			"Meta"
 	"Alisson" 			"Meta"
 	"abr" 				"Meta"
-	"dok"				"Meta"
+	"delboNi"			"Meta"
 	//Dice Players
 	"XpG" 				"Dice"
 	"Gauthierlele"		"Dice"
@@ -519,7 +513,7 @@
 	//Falcons Players
 	"NBK-" 				"Falcons"
 	"kennyS"			"Falcons"
-	"hAdji" 			"Falcons"
+	"bodyy" 			"Falcons"
 	"misutaaa" 			"Falcons"
 	"Python"			"Falcons"
 	//Entropy Players
@@ -546,17 +540,11 @@
 	"nettik"			"Rooster"
 	"chelleos" 			"Rooster"
 	"Rackem"			"Rooster"
-	//HEET Players
-	"JACKZ" 			"HEET"
-	"afro"				"HEET"
-	"bodyy"				"HEET"
-	"Djoko" 			"HEET"
-	"Ex3rcice"			"HEET"
 	//LDLC Players
 	"Graviti" 			"LDLC"
 	"Broox"				"LDLC"
 	"AMANEK"			"LDLC"
-	"Diviiii" 			"LDLC"
+	"afro" 				"LDLC"
 	"Snobling"			"LDLC"
 	//Imperial Players
 	"JOTA" 				"Imperial"
@@ -673,17 +661,17 @@
 	"gonza" 			"River"
 	"Yokowow"			"River"
 	//GameAgents Players
-	"kANDARO" 			"GameAgents"
-	"Vopsick"			"GameAgents"
-	"SasukeQO"			"GameAgents"
-	"Akv1lon" 			"GameAgents"
-	"ZetBest"			"GameAgents"
-	//BLINK Players
-	"gulito" 			"BLINK"
-	"BledarD"			"BLINK"
-	"deb0"				"BLINK"
-	"Krabeni" 			"BLINK"
-	"HYPER1"			"BLINK"
+	"ISB" 				"GameAgents"
+	"squmy"				"GameAgents"
+	"zub1"				"GameAgents"
+	"hotdark" 			"GameAgents"
+	"laules"			"GameAgents"
+	//Case Players
+	"yepz" 				"Case"
+	"RCF"				"Case"
+	"steel"				"Case"
+	"honda" 			"Case"
+	"Snowzin"			"Case"
 	//ONYX Players
 	"MoJo" 				"ONYX"
 	"mave"				"ONYX"

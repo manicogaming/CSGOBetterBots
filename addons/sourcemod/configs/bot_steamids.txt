@@ -165,7 +165,7 @@
 	//ECSTATIC Players
 	"kraghen"			"86933217" 
 	"salazar" 			"141998048"
-	"Cabbi" 			"230664742"
+	"Nodios" 			"110610542"
 	"Queenix" 			"70280269"
 	"maNkz" 			"81805084"
 	//Riders Players
@@ -312,12 +312,12 @@
 	"Starry" 			"920033815"
 	"EXPRO" 			"219759475"
 	"Nelly" 			"865089077"
-	//CPH Players
-	"birdfromsky" 		"4338476"
-	"raalz" 			"35794427"
-	"b0RUP" 			"146876280"
-	"TMB" 				"124341526"
-	"farlig" 			"63982401"
+	//Viperio Players
+	"Girafffe" 			"338231248"
+	"Extinct" 			"136442715"
+	"Tadpole" 			"121133939"
+	"Ping" 				"157414566"
+	"arTisT" 			"128640602"
 	//OG Players
 	"NEOFRAG" 			"255168957"
 	"degster" 			"56166832"
@@ -330,12 +330,6 @@
 	"gxx-" 				"274569724"
 	"rigoN" 			"212571293"
 	"SENER1" 			"192112459"
-	//Tricked Players
-	"kwezz" 			"110193409"
-	"IceBerg" 			"30735103"
-	"Nodios" 			"110610542"
-	"Lucky" 			"150297431"
-	"PR1mE" 			"26772868"
 	//Endpoint Players
 	"Surreal" 			"84574729"
 	"mhL" 				"180124403"
@@ -509,7 +503,7 @@
 	"supLex"			"177082714"
 	"Alisson" 			"185334169"
 	"abr"				"92920272"
-	"dok"				"143357008"
+	"delboNi"			"49145432"
 	//Dice Players
 	"XpG" 				"30253348"
 	"Gauthierlele"		"35731666"
@@ -519,7 +513,7 @@
 	//Falcons Players
 	"NBK-" 				"444845"
 	"kennyS"			"64640068"
-	"hAdji" 			"20679059"
+	"bodyy" 			"53029647"
 	"misutaaa" 			"121263183"
 	"Python"			"231605562"
 	//Entropy Players
@@ -546,17 +540,11 @@
 	"nettik"			"372579523"
 	"chelleos" 			"198705922"
 	"Rackem"			"251279584"
-	//HEET Players
-	"JACKZ" 			"11977189"
-	"afro"				"75315373"
-	"bodyy"				"53029647"
-	"Djoko" 			"87611242"
-	"Ex3rcice"			"207932472"
 	//LDLC Players
 	"Graviti" 			"219272777"
 	"Broox"				"314420307"
 	"AMANEK"			"108679223"
-	"Diviiii" 			"191872056"
+	"afro" 				"75315373"
 	"Snobling"			"45609799"
 	//Imperial Players
 	"JOTA" 				"94554756"
@@ -673,17 +661,17 @@
 	"gonza" 			"186227007"
 	"Yokowow"			"102784330"
 	//GameAgents Players
-	"kANDARO" 			"1233790959"
-	"Vopsick"			"423035138"
-	"SasukeQO"			"81113331"
-	"Akv1lon" 			"129273730"
-	"ZetBest"			"156614406"
-	//BLINK Players
-	"gulito" 			"420615598"
-	"BledarD"			"379542971"
-	"deb0"				"851603565"
-	"Krabeni" 			"1031012697"
-	"HYPER1"			"348889207"
+	"ISB" 				"1001789153"
+	"squmy"				"846734315"
+	"zub1"				"440612595"
+	"hotdark" 			"399639926"
+	"laules"			"392246204"
+	//Case Players
+	"yepz" 				"54532535"
+	"RCF"				"206261197"
+	"steel"				"54512474"
+	"honda" 			"1027817695"
+	"Snowzin"			"417070118"
 	//ONYX Players
 	"MoJo" 				"85253461"
 	"mave"				"219806941"
