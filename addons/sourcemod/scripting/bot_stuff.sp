@@ -3790,6 +3790,9 @@ public void OnThinkPost(int iEnt)
 
 public Action OnWeaponCanUse(int client, int iWeapon)
 {
+	if(eItems_GetWeaponSlotByWeapon(iWeapon) != CS_SLOT_PRIMARY)
+		return Plugin_Continue;
+
 	int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 	if(!IsValidEntity(iPrimary))
 		return Plugin_Continue;
