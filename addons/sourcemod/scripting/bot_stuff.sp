@@ -4459,6 +4459,7 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
+	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
 	
 	StartPrepSDKCall(SDKCall_Player);
