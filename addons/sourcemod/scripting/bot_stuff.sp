@@ -3375,7 +3375,7 @@ public void OnGameFrame()
 				g_bEveryoneDead = true;
 			}
 				
-			if(g_bFreezetimeEnd && IsItMyChance(7.5) && g_iDoingSmokeNum[client] == -1)
+			if(g_bFreezetimeEnd && IsItMyChance(2.5) && g_iDoingSmokeNum[client] == -1)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 			
 			if (g_bIsProBot[client])
@@ -3977,13 +3977,13 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Last Enemy Position") == 0)
+	else if(strcmp(szDesc, "Approach Point (Hiding)") == 0 || strcmp(szDesc, "Nearby enemy gunfire") == 0)
 	{
 		float fPos[3], fClientEyes[3];
 		GetClientEyePosition(client, fClientEyes);
 		DHookGetParamVector(hParams, 2, fPos);
 		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(25.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(10.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fPos);
 			return MRES_Supercede;
