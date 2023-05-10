@@ -1,0 +1,137 @@
+"Games"
+{
+	"csgo"
+	{
+		"Addresses"
+		{
+			"g_CPlayerVoiceListener"
+			{
+				"signature" "g_CPlayerVoiceListener"
+				"windows"
+				{
+					"read"  "3"
+				}
+				"linux"
+				{
+					"read"  "394"
+				}
+			}
+		}
+		"Signatures"
+		{
+			"CCStrike15ItemDefinition::GetLoadoutSlot"
+			{
+				"library"       "server"
+				"windows"       "\x55\x8B\xEC\x8B\x45\x08\x8D\x50\xFF"
+				"linux"         "\x55\x89\xE5\x8B\x45\x0C\x8B\x55\x08\x8D\x48\xFF"
+			}
+			"CCSPlayer::FindMatchingWeaponsForTeamLoadout"
+			{
+				"library"       "server"
+				"windows"       "\x55\x8B\xEC\x83\xEC\x08\x53\x56\x57\x89\x4D\xF8"
+				"linux"         "\x55\x89\xE5\x57\x56\x53\x83\xEC\x3C\x0F\xB6\x4D\x14"
+			}
+			"CItemGeneration::SpawnItem"
+			{
+				"library"       "server"
+				"windows"       "\x55\x8B\xEC\x51\x53\x56\x57\xE8\x2A\x2A\x2A\x2A\x8B\x5D\x08"
+				"linux"         "\x55\x89\xE5\x57\x56\x53\x83\xEC\x4C\x8B\x55\x08\x8B\x7D\x0C\x8B\x5D\x20"
+			}
+			"FX_FireBullets"
+			{
+				"library"       "server"
+				"windows"       "\x55\x8B\xEC\x83\xE4\xF8\x81\xEC\xE0\x01\x00\x00"
+				"linux"         "\x55\x89\xE5\x57\x56\x53\x81\xEC\xBC\x02\x00\x00\x8B\x5D\x10"
+			}
+			"g_CPlayerVoiceListener"
+			{
+				"library"       "server"
+				"windows"       "\x6A\x00\xB9\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x6A\x40"
+				"linux"         "\x55\x89\xE5\x83\xEC\x28\xC6\x05\x2A\x2A\x2A\x2A\x00\xC6\x05\x2A\x2A\x2A\x2A\x00\xC6\x05\x2A\x2A\x2A\x2A\x00\xC6\x05\x2A\x2A\x2A\x2A\x00\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\x00\x00\x00\x00\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x05\x2A\x2A\x2A\x2A\xFF\xFF\x7F\x7F\xC7\x44\x24\x0C\x00\x40\x00\x00"
+			}
+		}
+		"Offsets"
+		{
+			"CBaseServer::ConnectClient"
+			{
+				"windows"       "54"
+				"linux"         "55"
+			}
+			"CBaseServer::RejectConnection"
+			{
+				"windows"       "52"
+				"linux"         "53"
+			}
+			"CEconItemSchema::m_mapItems"
+			{
+				"windows"       "172"
+				"linux"         "172"
+			}
+			"CEconItemSchema::m_mapAttributesContainer"
+			{
+				"windows"       "284"
+				"linux"         "284"
+			}
+			"CCStrike15ItemDefinition::m_vbClassUsability"
+			{
+				"windows"       "616"
+				"linux"         "616"
+			}
+			"CEconItemDefinition::GetNumSupportedStickerSlots"
+			{
+				"windows"       "44"
+				"linux"         "45"
+			}
+			"CEconItemDefinition::GetInventoryImage"
+			{
+				"windows"       "5"
+				"linux"         "5"
+			}
+			"CEconItemDefinition::GetBasePlayerDisplayModel"
+			{
+				"windows"       "6"
+				"linux"         "6"
+			}
+			"CEconItemDefinition::GetWorldDisplayModel"
+			{
+				"windows"       "7"
+				"linux"         "7"
+			}
+			"CEconItemDefinition::GetWorldDroppedModel"
+			{
+				"windows"       "33"
+				"linux"         "34"
+			}
+			"CEconItemDefinition::m_pszDefinitionName"
+			{
+				"windows"       "444"
+				"linux"         "444"
+			}
+			"CGameClient::UpdateAcknowledgedFramecount"
+			{
+				"windows"       "17"
+				"linux"         "55"
+			}
+			"CGameClient::ExecuteStringCommand"
+			{
+				"windows"       "30"
+				"linux"         "25"
+			}
+			"CBaseClient::ClientPrintf"
+			{
+				"windows"       "32"
+				"linux"         "27"
+			}
+			"CPlayerInventory::SendInventoryUpdateEvent"
+			{
+				"windows"       "16"
+				"linux"         "17"
+			}
+			"CPlayerInventory::m_vecInventoryItems"
+			{
+				"windows"       "44"
+				"linux"         "44"
+			}
+		}
+	}
+}
