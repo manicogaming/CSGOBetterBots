@@ -3375,7 +3375,7 @@ public void OnGameFrame()
 				g_bEveryoneDead = true;
 			}
 				
-			if(g_bFreezetimeEnd && IsItMyChance(2.5) && g_iDoingSmokeNum[client] == -1)
+			if(g_bFreezetimeEnd && IsItMyChance(0.5) && g_iDoingSmokeNum[client] == -1)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 			
 			if (g_bIsProBot[client])
