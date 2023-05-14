@@ -1307,7 +1307,7 @@ ProP+Rifle+RiflePersonality "MAJ3R"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "imoRR"
+ProP+Rifle+RiflePersonality "woxic"
 	VoicePitch = 96
 End
 
@@ -1389,7 +1389,7 @@ End
 
 //ATK Players
 
-ProP+Rifle+RiflePersonality "b0denmaster"
+ProP+Rifle+RiflePersonality "reck"
 	VoicePitch = 79
 End
 
@@ -1397,11 +1397,11 @@ ProP+SniperPro+SniperPersonality "MisteM"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "djay"
+ProP+Rifle+RiflePersonality "WolfY"
 	VoicePitch = 79
 End
 
-ProP+Rifle+RiflePersonality "Pluto"
+ProP+Rifle+RiflePersonality "Jonji"
 	VoicePitch = 77
 End
 
@@ -2053,7 +2053,7 @@ ProP+Rifle+RiflePersonality "byr9"
 	VoicePitch = 100
 End
 
-ProP+SniperPro+SniperPersonality "SENSEi"
+ProP+SniperPro+SniperPersonality "kensizor"
 	VoicePitch = 101
 End
 
@@ -2065,7 +2065,7 @@ ProP+Rifle+RiflePersonality "s4"
 	VoicePitch = 75
 End
 
-ProP+Rifle+RiflePersonality "j3kie"
+ProP+Rifle+RiflePersonality "Topa"
 	VoicePitch = 89
 End
 

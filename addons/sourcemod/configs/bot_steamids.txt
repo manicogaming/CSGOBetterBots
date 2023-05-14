@@ -272,7 +272,7 @@
 	"bottle" 			"86991268"	
 	//Eternal Players
 	"XANTARES" 			"83853068"
-	"imoRR" 			"107082440"
+	"woxic" 			"123219778"
 	"MAJ3R" 			"7167161"
 	"Calyx" 			"92280537"
 	"Wicadia" 			"852248195"
@@ -295,10 +295,10 @@
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//ATK Players
-	"b0denmaster" 		"316269116"
+	"reck" 				"374549101"
 	"MisteM" 			"175149890"
-	"djay" 				"3935898"
-	"Pluto" 			"138851421"
+	"WolfY" 			"47524263"
+	"Jonji" 			"114675386"
 	"Swisher" 			"222737943"
 	//Wings Players
 	"ChildKing"			"392390376" 
@@ -476,10 +476,10 @@
 	"stYleEeZ"			"83880966"
 	//IKLA Players
 	"byr9" 				"124733563"
-	"SENSEi"			"92510011"
+	"kensizor"			"421907931"
 	"Kvem" 				"885170938"
 	"s4" 				"125957336"
-	"j3kie"				"367714476"
+	"Topa"				"174477155"
 	//Ungentium Players
 	"pawkoem" 			"225045287"
 	"Mride"				"76243724"

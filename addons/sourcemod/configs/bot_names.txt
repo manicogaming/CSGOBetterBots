@@ -272,7 +272,7 @@
 	"bottle" 			"SH"
 	//Eternal Players
 	"XANTARES" 			"Eternal"
-	"imoRR" 			"Eternal"
+	"woxic" 			"Eternal"
 	"MAJ3R" 			"Eternal"
 	"Calyx" 			"Eternal"
 	"Wicadia" 			"Eternal"
@@ -295,10 +295,10 @@
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
 	//ATK Players
-	"b0denmaster" 		"ATK"
+	"reck" 				"ATK"
 	"MisteM" 			"ATK"
-	"djay" 				"ATK"
-	"Pluto" 			"ATK"
+	"WolfY" 			"ATK"
+	"Jonji" 			"ATK"
 	"Swisher" 			"ATK"
 	//Wings Players
 	"ChildKing"			"Wings" 
@@ -476,10 +476,10 @@
 	"stYleEeZ"			"BP"
 	//IKLA Players
 	"byr9" 				"IKLA"
-	"SENSEi"			"IKLA"
+	"kensizor"			"IKLA"
 	"Kvem" 				"IKLA"
 	"s4" 				"IKLA"
-	"j3kie"				"IKLA"
+	"Topa"				"IKLA"
 	//Ungentium Players
 	"pawkoem" 			"Ungentium"
 	"Mride"				"Ungentium"
