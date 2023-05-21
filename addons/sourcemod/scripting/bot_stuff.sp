@@ -3927,13 +3927,13 @@ public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
 			if(IsValidEntity(iDroppedC4))
 			{
 				hReturn.Value = true;
-				return MRES_Supercede;
+				return MRES_Override;
 			}
 		}
 	}
 	
 	hReturn.Value = false;	
-	return MRES_Supercede;
+	return MRES_Override;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
