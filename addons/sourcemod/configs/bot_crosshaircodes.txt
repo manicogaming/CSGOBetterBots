@@ -535,7 +535,7 @@
 	"DAVEN" 			"CSGO-kqajA-OedX3-xfGzB-SW3yW-JQGOP"
 	"LyNeX"				"CSGO-PubDY-shjxu-bbhyt-z9raP-ykEVF"
 	//500 Players
-	"SHiPZ" 			"CSGO-ztEiM-4cesr-RkmLd-8cxtn-CPLoD"
+	"REDSTAR" 			"CSGO-qSzCs-BRruj-UEKYE-zTwVW-NoRBD"
 	"dennyslaw"			"CSGO-b5xO3-bkf6w-zJBQh-o8SLm-3kYbD"
 	"Rainwaker" 		"CSGO-Tp9sx-YZWSa-ijF7x-en8Y5-DmjPK"
 	"niki1" 			"CSGO-aXRn7-Z9Ved-BdO8E-zhyX4-bZJGG"
@@ -592,7 +592,7 @@
 	"lenci" 			"CSGO-OQscu-wCUan-RD8iJ-jCQbP-TA7yD"
 	"atarax1a"			"CSGO-HBPBj-B8UwJ-WBsaL-2Go4K-yopJN"
 	"pavv"				"CSGO-LtXwb-pwb8X-BTQoU-baHGU-U9z6A"
-	"tomaszin" 			"CSGO-X8V3K-VjWfk-updxf-4PZd9-xFPYE"
+	"nacho" 			"CSGO-Cq8dN-GButh-E6GRz-cLZ2R-U9z6A"
 	"BK1"				"CSGO-hfYuV-2RNva-QNwCA-Yk69r-LLeFO"
 	//Sampi Players
 	"The eLiVe" 		"CSGO-tRaTD-UrcGQ-BYBVo-E5Kf2-VtjjD"
@@ -674,10 +674,10 @@
 	"r1see"				"CSGO-ty4wQ-Va3B2-rMK8r-ROvoR-yopJN"
 	//River Players
 	"maxxkor" 			"CSGO-R2XvB-SPGLo-HKLor-6yeYP-rTGOP"
-	"gishu"				"CSGO-GCj5a-Kbecx-BfMNv-pTE5C-DQzfF"
+	"peqexino"			"CSGO-hCT6d-ZNSpV-ozMJM-wuvTn-FrNkO"
 	"minimal"			"CSGO-nnePW-UrPPz-yQwoa-fBZvp-pevvE"
-	"gonza" 			"CSGO-3sNur-QwJOq-ufrmX-7QcyZ-LDyXD"
-	"Yokowow"			"CSGO-nWvrq-AQoQJ-JASue-GaRr7-6NZfE"
+	"guidimon" 			"CSGO-hEzqh-jczBK-Lwq8E-dpT9j-mRFuA"
+	"abizz"				"CSGO-9c7c5-BbLca-8beFk-T7XXn-BhiaB"
 	//GameAgents Players
 	"ISB" 				"CSGO-NTMZN-PEnep-kPFRJ-MrDj9-BrrBE"
 	"squmy"				"CSGO-CDvqU-z8PAc-mC3Nw-4xy8a-AO6FP"

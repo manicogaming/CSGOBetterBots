@@ -2352,7 +2352,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "SHiPZ");
+			ServerCommand("bot_add_ct %s", "REDSTAR");
 			ServerCommand("bot_add_ct %s", "dennyslaw");
 			ServerCommand("bot_add_ct %s", "Rainwaker");
 			ServerCommand("bot_add_ct %s", "niki1");
@@ -2363,7 +2363,7 @@ public Action Command_Team(int client, int iArgs)
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "SHiPZ");
+			ServerCommand("bot_add_t %s", "REDSTAR");
 			ServerCommand("bot_add_t %s", "dennyslaw");
 			ServerCommand("bot_add_t %s", "Rainwaker");
 			ServerCommand("bot_add_t %s", "niki1");
@@ -2555,7 +2555,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "lenci");
 			ServerCommand("bot_add_ct %s", "atarax1a");
 			ServerCommand("bot_add_ct %s", "pavv");
-			ServerCommand("bot_add_ct %s", "tomaszin");
+			ServerCommand("bot_add_ct %s", "nacho");
 			ServerCommand("bot_add_ct %s", "BK1");
 			ServerCommand("mp_teamlogo_1 boca");
 		}
@@ -2566,7 +2566,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "lenci");
 			ServerCommand("bot_add_t %s", "atarax1a");
 			ServerCommand("bot_add_t %s", "pavv");
-			ServerCommand("bot_add_t %s", "tomaszin");
+			ServerCommand("bot_add_t %s", "nacho");
 			ServerCommand("bot_add_t %s", "BK1");
 			ServerCommand("mp_teamlogo_2 boca");
 		}
@@ -2903,10 +2903,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "maxxkor");
-			ServerCommand("bot_add_ct %s", "gishu");
+			ServerCommand("bot_add_ct %s", "peqexino");
 			ServerCommand("bot_add_ct %s", "minimal");
-			ServerCommand("bot_add_ct %s", "gonza");
-			ServerCommand("bot_add_ct %s", "Yokowow");
+			ServerCommand("bot_add_ct %s", "guidimon");
+			ServerCommand("bot_add_ct %s", "abizz");
 			ServerCommand("mp_teamlogo_1 rive");
 		}
 		
@@ -2914,10 +2914,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "maxxkor");
-			ServerCommand("bot_add_t %s", "gishu");
+			ServerCommand("bot_add_t %s", "peqexino");
 			ServerCommand("bot_add_t %s", "minimal");
-			ServerCommand("bot_add_t %s", "gonza");
-			ServerCommand("bot_add_t %s", "Yokowow");
+			ServerCommand("bot_add_t %s", "guidimon");
+			ServerCommand("bot_add_t %s", "abizz");
 			ServerCommand("mp_teamlogo_2 rive");
 		}
 	}
@@ -3210,8 +3210,8 @@ public void OnMapStart()
 	
 	ParseMapNades(g_szMap);
 	
-	g_bIsBombScenario = IsValidEntity(FindEntityByClassname(-1, "func_bomb_target")) ? true : false;
-	g_bIsHostageScenario = IsValidEntity(FindEntityByClassname(-1, "func_hostage_rescue")) ? true : false;
+	g_bIsBombScenario = IsValidEntity(FindEntityByClassname(-1, "func_bomb_target"));
+	g_bIsHostageScenario = IsValidEntity(FindEntityByClassname(-1, "func_hostage_rescue"));
 	
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_MoveToBomb, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
@@ -3772,7 +3772,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
 		}
 		
-		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
+		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
 			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
 	}
 }
@@ -3915,6 +3915,25 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	}
 	
 	return MRES_Ignored;
+}
+
+public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == CS_TEAM_CT && g_bIsBombScenario)
+		{
+			int iDroppedC4 = GetNearestEntity(i, "weapon_c4");
+			if(IsValidEntity(iDroppedC4))
+			{
+				hReturn.Value = true;
+				return MRES_Supercede;
+			}
+		}
+	}
+	
+	hReturn.Value = false;	
+	return MRES_Supercede;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
@@ -4158,14 +4177,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
 								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
-								g_fShootTimestamp[client] = GetGameTime();
 							}	
 						}
 					}
 					
 					float fClientLoc[3];
 					Array_Copy(g_fBotOrigin[client], fClientLoc, 3);
-					fClientLoc[2] += 35.5;
+					fClientLoc[2] += HalfHumanHeight;
 						
 					if (!GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 						iButtons |= IN_DUCK;
@@ -4513,6 +4531,11 @@ public void LoadDetours()
 	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");
 	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
 		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
+	
+	//CCSBot::CanSeeLooseBomb Detour
+	DynamicDetour hBotCanSeeLooseBomb = DynamicDetour.FromConf(hGameData, "CCSBot::CanSeeLooseBomb");
+	if(!hBotCanSeeLooseBomb.Enable(Hook_Pre, CCSBot_CanSeeLooseBomb))
+		SetFailState("Failed to setup detour for CCSBot::CanSeeLooseBomb");
 	
 	delete hGameData;
 }
@@ -4877,36 +4900,12 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 
 public void ProcessGrenadeThrow(int client, float fTarget[3])
 {
-	GetFloorPosition(client, fTarget, fTarget);
+	NavMesh_GetGroundHeight(fTarget, fTarget[2]);
 	GetGrenadeToss(client, fTarget);
 	
 	Array_Copy(fTarget, g_fNadeTarget[client], 3);
 	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 	RequestFrame(DelayThrow, GetClientUserId(client));
-}
-
-stock bool GetFloorPosition(int client, float fPos[3], float fOnGround[3])
-{ 
-	Handle hTrace = TR_TraceRayFilterEx(fPos, view_as<float>({90.0, 0.0, 0.0}), MASK_PLAYERSOLID, RayType_Infinite, TraceRayNoPlayers, client); 
-	if(TR_DidHit(hTrace))
-	{
-		float fEndPos[3];
-		TR_GetEndPosition(fEndPos, hTrace);
-		delete hTrace;
-		Array_Copy(fEndPos, fOnGround, 3);
-		return true;
-	}
-	delete hTrace;
-	return false; 
-}
-
-public bool TraceRayNoPlayers(int iEntity, int iMask, any iData)
-{
-    if(iEntity == iData || (iEntity >= 1 && iEntity <= MaxClients))
-    {
-        return false;
-    }
-    return true;
 }
 
 stock void GetGrenadeToss(int client, float fTossTarget[3])

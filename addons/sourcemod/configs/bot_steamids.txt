@@ -523,7 +523,7 @@
 	"DAVEN" 			"179758655"
 	"LyNeX"				"94292971"
 	//500 Players
-	"SHiPZ" 			"254948893"
+	"REDSTAR" 			"88455007"
 	"dennyslaw"			"300693622"
 	"Rainwaker" 		"177848062"
 	"niki1" 			"932616892"
@@ -574,7 +574,7 @@
 	"lenci" 			"134201158"
 	"atarax1a"			"231925561"
 	"pavv"				"111877624"
-	"tomaszin" 			"462168316"
+	"nacho" 			"979595590"
 	"BK1"				"221869734"
 	//Sampi Players
 	"The eLiVe" 		"111025647"
@@ -656,10 +656,10 @@
 	"r1see"				"164277541"
 	//River Players
 	"maxxkor" 			"1070706470"
-	"gishu"				"303823007"
+	"peqexino"			"102949570"
 	"minimal"			"81466127"
-	"gonza" 			"186227007"
-	"Yokowow"			"102784330"
+	"guidimon" 			"888472402"
+	"abizz"				"401347484"
 	//GameAgents Players
 	"ISB" 				"1001789153"
 	"squmy"				"846734315"

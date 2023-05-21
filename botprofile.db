@@ -2225,7 +2225,7 @@ End
 
 //500 Players
 
-ProP+Rifle+RiflePersonality "SHiPZ"
+ProP+Rifle+RiflePersonality "REDSTAR"
 	VoicePitch = 97
 End
 
@@ -2413,7 +2413,7 @@ ProP+Rifle+RiflePersonality "pavv"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "tomaszin"
+ProP+Rifle+RiflePersonality "nacho"
 	VoicePitch = 81
 End
 
@@ -2713,7 +2713,7 @@ ProP+Rifle+RiflePersonality "maxxkor"
 	VoicePitch = 96
 End
 
-ProP+SniperPro+SniperPersonality "gishu"
+ProP+SniperPro+SniperPersonality "peqexino"
 	VoicePitch = 102
 End
 
@@ -2721,11 +2721,11 @@ ProP+Rifle+RiflePersonality "minimal"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "gonza"
+ProP+Rifle+RiflePersonality "guidimon"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "Yokowow"
+ProP+Rifle+RiflePersonality "abizz"
 	VoicePitch = 77
 End
 

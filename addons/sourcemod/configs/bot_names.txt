@@ -523,7 +523,7 @@
 	"DAVEN" 			"Entropy"
 	"LyNeX"				"Entropy"
 	//500 Players
-	"SHiPZ" 			"500"
+	"REDSTAR" 			"500"
 	"dennyslaw"			"500"
 	"Rainwaker" 		"500"
 	"niki1" 			"500"
@@ -574,7 +574,7 @@
 	"lenci" 			"Boca"
 	"atarax1a"			"Boca"
 	"pavv"				"Boca"
-	"tomaszin" 			"Boca"
+	"nacho" 			"Boca"
 	"BK1"				"Boca"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
@@ -656,10 +656,10 @@
 	"r1see"				"ODDIK"
 	//River Players
 	"maxxkor" 			"River"
-	"gishu"				"River"
+	"peqexino"			"River"
 	"minimal"			"River"
-	"gonza" 			"River"
-	"Yokowow"			"River"
+	"guidimon" 			"River"
+	"abizz"				"River"
 	//GameAgents Players
 	"ISB" 				"GameAgents"
 	"squmy"				"GameAgents"

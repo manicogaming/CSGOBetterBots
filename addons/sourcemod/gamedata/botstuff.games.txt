@@ -124,6 +124,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x51\x8B\x41\x04"
 			}
+			"CCSBot::CanSeeLooseBomb"
+			{
+				//Is a little bit below the string 'Giving up hunting.\n'
+				"library"	"server"
+				"windows"	"\x51\x56\x57\x8B\xF9\x8B\x0D\x2A\x2A\x2A\x2A\x83\xB9\x64\x18\x00\x00\x01"
+			}
 		}
 		"Offsets"
 		{
@@ -273,6 +279,13 @@
 						"type" "int"
 					}
 				}
+			}
+			"CCSBot::CanSeeLooseBomb"
+			{
+				"signature" "CCSBot::CanSeeLooseBomb"
+				"callconv" "thiscall"
+				"return" "bool"
+				"this" "entity"
 			}
 		}
 		"MemPatches"
