@@ -196,8 +196,8 @@
 	"hasteka" 			"432097992"
 	"Techno4K" 			"1006074432"
 	"bLitz" 			"999558360"
-	"Annihilation" 		"315821474"
-	"Bart4k" 			"481096602"
+	"mzinho" 			"878556854"
+	"910" 				"1243297617"
 	//aTTaX Players
 	"awzek" 			"238305245"
 	"PerX" 				"208428335"	
@@ -253,11 +253,11 @@
 	".exe" 				"302798328"
 	"slash" 			"102311713"
 	//ECB Players
-	"ritchiEE" 			"9173024"
+	"Markoś" 			"68256934"
 	"Stev0se" 			"180588172"
 	"simix" 			"11657532"
 	"n0te" 				"354126581"
-	"Nexius" 			"210313229"
+	"swiiffter" 		"286059320"
 	//Bravado Players
 	"March" 			"91657238"	
 	"SloWye" 			"50695439"
@@ -462,12 +462,12 @@
 	"Infinite" 			"149493497"
 	"stamina" 			"272809432"
 	"motm"				"60208330"
-	//777 Players
-	"SLY" 				"1737573"
-	"Jimbo"				"192154266"
-	"mikki" 			"80276147"
-	"akEz" 				"25850155"
-	"PALM1"				"41557192"
+	//D13 Players
+	"tamir" 			"103695333"
+	"wonderzce"			"1342042189"
+	"sonq" 				"877184408"
+	"kyle" 				"1069182236"
+	"Ace4k"				"1349542528"
 	//TF Players
 	"Klameczka" 		"229219769"
 	"Flayy"				"452134916"
@@ -585,8 +585,8 @@
 	//Entropiq Players
 	"AJTT" 				"10853594"
 	"red"				"204660292"
-	"MoriiSko"			"91462071"
-	"CYPHER" 			"292716414"
+	"PlesseN"			"57716849"
+	"ritchiEE" 			"9173024"
 	"snatchie"			"111436809"
 	//MASONIC Players
 	"sirah" 			"348675310"

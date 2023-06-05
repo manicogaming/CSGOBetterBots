@@ -1,4 +1,4 @@
-// csgosl 2.16 config 1 at Sat May 27 20:09:05 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Mon Jun 05 19:48:32 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -368,8 +368,10 @@ de_subzero
 de_sugarcane
 de_summit
 de_sunburn
+workshop/2640189198/de_surveillance_h
 de_swamp
 de_tangerine_b2_17
+workshop/1686302847/de_terraza
 de_thrill
 workshop/1825332431/de_throttle26
 de_tides

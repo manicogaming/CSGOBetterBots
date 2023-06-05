@@ -1021,11 +1021,11 @@ ProP+Rifle+RiflePersonality "hasteka"
 	VoicePitch = 83
 End
 
-ProP+Rifle+RiflePersonality "Annihilation"
+ProP+Rifle+RiflePersonality "mzinho"
 	VoicePitch = 84
 End
 
-ProP+Rifle+RiflePersonality "Bart4k"
+ProP+Rifle+RiflePersonality "910"
 	VoicePitch = 87
 End
 
@@ -1229,7 +1229,7 @@ End
 
 //ECB Players
 
-ProP+Rifle+RiflePersonality "ritchiEE"
+ProP+Rifle+RiflePersonality "Markoś"
 	VoicePitch = 100
 End
 
@@ -1245,7 +1245,7 @@ ProP+Rifle+RiflePersonality "n0te"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "Nexius"
+ProP+Rifle+RiflePersonality "swiiffter"
 	VoicePitch = 75
 End
 
@@ -2003,25 +2003,25 @@ ProP+Rifle+RiflePersonality "motm"
 	VoicePitch = 105
 End
 
-//777 Players
+//D13 Players
 
-ProP+Rifle+RiflePersonality "SLY"
+ProP+Rifle+RiflePersonality "tamir"
 	VoicePitch = 88
 End
 
-ProP+SniperPro+SniperPersonality "PALM1"
+ProP+SniperPro+SniperPersonality "Ace4k"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "mikki"
+ProP+Rifle+RiflePersonality "sonq"
 	VoicePitch = 86
 End
 
-ProP+Rifle+RiflePersonality "akEz"
+ProP+Rifle+RiflePersonality "kyle"
 	VoicePitch = 111
 End
 
-ProP+Rifle+RiflePersonality "Jimbo"
+ProP+Rifle+RiflePersonality "wonderzce"
 	VoicePitch = 91
 End
 
@@ -2453,11 +2453,11 @@ ProP+SniperPro+SniperPersonality "red"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "MoriiSko"
+ProP+Rifle+RiflePersonality "PlesseN"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "CYPHER"
+ProP+Rifle+RiflePersonality "ritchiEE"
 	VoicePitch = 102
 End
 
@@ -4012,10 +4012,6 @@ End
 
 Expert+AutoSniper+AutoSniperPersonality "Shrek The Third"
 	VoicePitch = 95
-End
-
-Expert+Power+PowerPersonality Kyle
-	VoicePitch = 115
 End
 
 Expert+Power+PowerPersonality "joe is a fucking hoe"

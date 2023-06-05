@@ -196,8 +196,8 @@
 	"hasteka" 			"CSGO-O8R96-uwzjb-ehkBy-wsvMM-aAweM"
 	"Techno4K" 			"CSGO-nKmu4-HAS9V-v4oYk-3n95j-u6GSQ"
 	"bLitz" 			"CSGO-z6cDY-E4nMJ-AOnBf-FNJdd-tR6ZJ"
-	"Annihilation" 		"CSGO-djAni-cPVaS-uAAKm-yDDkQ-F99zP"
-	"Bart4k" 			"CSGO-QUD6W-t3Ya9-hjAUy-p6uRv-CPVGQ"
+	"mzinho" 			"CSGO-JQpnE-3wNzd-Uz3Rh-i4PXS-JK5mA"
+	"910" 				"CSGO-nKoCU-DAEdM-3fHxq-atRMn-WphrM"
 	//aTTaX Players
 	"awzek" 			"CSGO-5OdUq-TQKaj-fwdTt-5ta95-OwUrC"
 	"PerX" 				"CSGO-4ma87-mNOCb-Csp7P-aoMfF-J6BEB"	
@@ -253,11 +253,11 @@
 	".exe" 				"CSGO-vuzVs-5ciCJ-fUair-rUsKm-Q38CH"
 	"slash" 			"CSGO-vuzVs-5ciCJ-fUair-rUsKm-Q38CH"
 	//ECB Players
-	"ritchiEE" 			"CSGO-UGOdG-zfJsf-eJ53P-FrubP-TA7yD"
+	"Markoś" 			"CSGO-7c9Ev-rL4p5-ZFxYW-kamUy-dMh8E"
 	"Stev0se" 			"CSGO-oJNbO-xkpsm-OJpJU-82DY5-iKH8D"
 	"simix" 			"CSGO-CJkBn-A4daO-THMAt-zG3td-LbRVP"
 	"n0te" 				"CSGO-bS4QE-tv2oK-YwZuS-snkhQ-bR88F"
-	"Nexius" 			"CSGO-RsjiD-5LRvZ-viXTe-JADfL-9tdqA"
+	"swiiffter" 		"CSGO-ZQfuD-XiSxw-R6Hfw-PuSpB-uyXDJ"
 	//Bravado Players
 	"March" 			"CSGO-Aimmu-B9hZ5-AtEw3-GaLux-6vdqA"	
 	"SloWye" 			"CSGO-fydZM-X83xa-ASLRf-VGSPu-zFAMK"
@@ -474,12 +474,12 @@
 	"Infinite" 			"CSGO-cU2Dz-QTjFu-BpAUy-p6uRv-CPVGQ"
 	"stamina" 			"CSGO-2eVu2-XVrNy-wtinL-C5zKc-u6GSQ"
 	"motm"				"CSGO-iGWcJ-iiBCe-aFFpp-2oSWn-YxHCF"
-	//777 Players
-	"SLY" 				"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
-	"Jimbo"				"CSGO-8ZiwP-nzcEq-BnOww-kiiQm-QtdqA"
-	"mikki" 			"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
-	"akEz" 				"CSGO-KjZDW-Gqm7n-qiLoo-rC6jy-9s3xK"
-	"PALM1"				"CSGO-MvFpX-SmCKd-wHq3K-mYURu-pevvE"
+	//D13 Players
+	"tamir" 			"CSGO-rDVHo-nbpoW-iBchD-E4VUP-oZT4M"
+	"wonderzce"			"CSGO-YxbZJ-wOnCF-hESmJ-kfPFU-xZQ3A"
+	"sonq" 				"CSGO-kMhoP-4pY2F-U6Yai-AoZJR-BdmbN"
+	"kyle" 				"CSGO-D8aDm-SwvrP-uFy9B-mbFwO-5wD7K"
+	"Ace4k"				"CSGO-xZtw7-VjfaK-D3NhP-N7WL4-2sCJC"
 	//TF Players
 	"Klameczka" 		"CSGO-moAHZ-yauCS-d4NAw-Y7oqN-nysyM"
 	"Flayy"				"CSGO-OyYaX-QHhsS-dEWxQ-EZDuy-hOxoO"
@@ -603,8 +603,8 @@
 	//Entropiq Players
 	"AJTT" 				"CSGO-XfeFa-yyCEH-Q6UVt-eWbVP-4FbtH"
 	"red"				"CSGO-jwx6c-c8OyC-s5CwP-JtE28-rMchQ"
-	"MoriiSko"			"CSGO-mj9CE-mECAD-bvW7K-7XO7L-yQVGQ"
-	"CYPHER" 			"CSGO-Br848-NThsr-Nrqh9-P4pdo-BEWzE"
+	"PlesseN"			"CSGO-nrWSc-eEoEM-chk4k-wG2xF-2bVvD"
+	"ritchiEE" 			"CSGO-to2YK-miMjR-fc9kZ-N6Bc3-oVGiJ"
 	"snatchie"			"CSGO-sp6we-tDZfZ-kZDfy-X6qeY-KxFdH"
 	//MASONIC Players
 	"sirah" 			"CSGO-syK4E-2Sn2T-bGRF2-q3TZD-7ktiB"

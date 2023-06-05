@@ -196,8 +196,8 @@
 	"Techno4K" 			"MongolZ"
 	"bLitz" 			"MongolZ"
 	"hasteka" 			"MongolZ"
-	"Annihilation" 		"MongolZ"
-	"Bart4k" 			"MongolZ"
+	"mzinho" 			"MongolZ"
+	"910" 				"MongolZ"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
 	"PerX" 				"aTTaX"	
@@ -253,11 +253,11 @@
 	".exe" 				"Goliath"
 	"slash" 			"Goliath"
 	//ECB Players
-	"ritchiEE" 			"ECB"
+	"Markoś" 			"ECB"
 	"Stev0se" 			"ECB"
 	"simix" 			"ECB"
 	"n0te" 				"ECB"
-	"Nexius" 			"ECB"
+	"swiiffter" 		"ECB"
 	//Bravado Players
 	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
@@ -462,12 +462,12 @@
 	"Infinite" 			"Strife"
 	"stamina" 			"Strife"
 	"motm"				"Strife"
-	//777 Players
-	"SLY" 				"777"
-	"Jimbo"				"777"
-	"mikki" 			"777"
-	"akEz" 				"777"
-	"PALM1"				"777"
+	//D13 Players
+	"tamir" 			"D13"
+	"wonderzce"			"D13"
+	"sonq" 				"D13"
+	"kyle" 				"D13"
+	"Ace4k"				"D13"
 	//TF Players
 	"Klameczka" 		"TF"
 	"Flayy"				"TF"
@@ -585,8 +585,8 @@
 	//Entropiq Players
 	"AJTT" 				"Entropiq"
 	"red"				"Entropiq"
-	"MoriiSko"			"Entropiq"
-	"CYPHER" 			"Entropiq"
+	"PlesseN"			"Entropiq"
+	"ritchiEE" 			"Entropiq"
 	"snatchie"			"Entropiq"
 	//MASONIC Players
 	"sirah" 			"MASONIC"
