@@ -2663,25 +2663,25 @@ ProP+Rifle+RiflePersonality "w1"
 	VoicePitch = 83
 End
 
-//Arctic Players
+//TZE Players
 
-ProP+Rifle+RiflePersonality "MaLLby"
+ProP+Rifle+RiflePersonality "gRuChA"
 	VoicePitch = 88
 End
 
-ProP+SniperPro+SniperPersonality "keiz"
+ProP+SniperPro+SniperPersonality "kadziu"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "ninjaZ"
+ProP+Rifle+RiflePersonality "darko"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "short"
+ProP+Rifle+RiflePersonality "b1elany"
 	VoicePitch = 98
 End
 
-ProP+Rifle+RiflePersonality "ponter"
+ProP+Rifle+RiflePersonality "ultimate"
 	VoicePitch = 96
 End
 
@@ -3013,6 +3013,28 @@ End
 
 ProP+Rifle+RiflePersonality "s1cklxrd"
 	VoicePitch = 75
+End
+
+//9Pandas Players
+
+ProP+Rifle+RiflePersonality "seized"
+	VoicePitch = 113
+End
+
+ProP+SniperPro+SniperPersonality "iDISBALANCE"
+	VoicePitch = 91
+End
+
+ProP+Rifle+RiflePersonality "d1Ledez"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "clax"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "glowiing"
+	VoicePitch = 98
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

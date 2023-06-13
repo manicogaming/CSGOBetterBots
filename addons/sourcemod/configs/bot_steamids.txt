@@ -642,12 +642,12 @@
 	"BobZ"				"171090863"
 	"lub" 				"1511605189"
 	"w1"				"456548842"
-	//Arctic Players
-	"MaLLby" 			"209668291"
-	"keiz"				"183028724"
-	"ninjaZ"			"131681379"
-	"short" 			"137901029"
-	"ponter"			"201409161"
+	//TZE Players
+	"gRuChA" 			"66926846"
+	"kadziu"			"85551312"
+	"darko"				"31199105"
+	"b1elany" 			"251942476"
+	"ultimate"			"323723495"
 	//ODDIK Players
 	"naitte" 			"68938238"
 	"remix"				"33494235"
@@ -738,4 +738,10 @@
 	"gubi"				"69447420"
 	"Myekry" 			"432058430"
 	"s1cklxrd"			"244214944"
+	//9Pandas Players
+	"seized" 			"3648428"
+	"iDISBALANCE"		"210384169"
+	"d1Ledez"			"899162551"
+	"clax" 				"168818887"
+	"glowiing"			"213998181"
 }

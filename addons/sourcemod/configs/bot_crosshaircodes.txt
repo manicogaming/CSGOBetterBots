@@ -660,12 +660,12 @@
 	"BobZ"				"CSGO-SKecO-CZOVF-S3XwC-sUpWi-yuN6H"
 	"lub" 				"CSGO-u5N7L-mnkyh-XkvxQ-FFhP4-hif4D"
 	"w1"				"CSGO-ZTRiB-CKvjC-2MSOO-JyCVv-vPunC"
-	//Arctic Players
-	"MaLLby" 			"CSGO-SxzdH-hEh3o-CsmaL-r3rQ8-4BZ2Q"
-	"keiz"				"CSGO-he7e8-oH4iV-zA5zA-AEFOd-dmwjN"
-	"ninjaZ"			"CSGO-FopP2-3wVsq-RuRSc-OoKdb-LbRVP"
-	"short" 			"CSGO-P7aXx-Ok4CW-c8bnx-xFNNi-LzkXM"
-	"ponter"			"CSGO-Kqxs7-owyd2-znLKu-NNHb5-Di9aC"
+	//TZE Players
+	"gRuChA" 			"CSGO-TJzhH-uQQ6P-qSCMY-hEG9e-DbapG"
+	"kadziu"			"CSGO-e6p23-oyPHq-pY2Xd-qCQiY-k8aYO"
+	"darko"				"CSGO-G3peO-9vBmd-aGdWp-cB3mU-4cvvE"
+	"b1elany" 			"CSGO-bP8Tp-tSbn7-9vMhj-kzpNy-Pp3cQ"
+	"ultimate"			"CSGO-zyci5-78ShT-cfvHs-iTiCt-pLDhP"
 	//ODDIK Players
 	"naitte" 			"CSGO-4G2iB-RjNOH-DQ2dS-VFNKV-roybE"
 	"remix"				"CSGO-bui4e-PySkO-Paqj2-OhCSv-vPunC"
@@ -756,4 +756,10 @@
 	"gubi"				"CSGO-wQRAq-TRA8t-x6MZf-JX9ef-97DRE"
 	"Myekry" 			"CSGO-i6W7e-7dNbB-7u2hV-vwvQd-97DRE"
 	"s1cklxrd"			"CSGO-XoWjf-UkfXA-HG2KK-SXOhX-VnCxH"
+	//9Pandas Players
+	"seized" 			"CSGO-FrJCB-sQAfF-BccHQ-Nu3sN-HLAfD"
+	"iDISBALANCE"		"CSGO-4r4Xr-az6q2-JCHno-v8UwZ-G847M"
+	"d1Ledez"			"CSGO-yMecf-V25MB-8bRq6-JFCeH-6AU8N"
+	"clax" 				"CSGO-x7Eqp-RKRwa-3R5y9-km2mE-8MUnB"
+	"glowiing"			"CSGO-cKAX8-K52SC-xEUuJ-cfb7v-msLDR"
 }

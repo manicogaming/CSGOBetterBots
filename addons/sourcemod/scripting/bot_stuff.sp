@@ -2847,28 +2847,28 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Arctic", false) == 0)
+	if(strcmp(szTeamArg, "TZE", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "MaLLby");
-			ServerCommand("bot_add_ct %s", "keiz");
-			ServerCommand("bot_add_ct %s", "ninjaZ");
-			ServerCommand("bot_add_ct %s", "short");
-			ServerCommand("bot_add_ct %s", "ponter");
-			ServerCommand("mp_teamlogo_1 arct");
+			ServerCommand("bot_add_ct %s", "gRuChA");
+			ServerCommand("bot_add_ct %s", "kadziu");
+			ServerCommand("bot_add_ct %s", "darko");
+			ServerCommand("bot_add_ct %s", "b1elany");
+			ServerCommand("bot_add_ct %s", "ultimate");
+			ServerCommand("mp_teamlogo_1 tze");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "MaLLby");
-			ServerCommand("bot_add_t %s", "keiz");
-			ServerCommand("bot_add_t %s", "ninjaZ");
-			ServerCommand("bot_add_t %s", "short");
-			ServerCommand("bot_add_t %s", "ponter");
-			ServerCommand("mp_teamlogo_2 arct");
+			ServerCommand("bot_add_t %s", "gRuChA");
+			ServerCommand("bot_add_t %s", "kadziu");
+			ServerCommand("bot_add_t %s", "darko");
+			ServerCommand("bot_add_t %s", "b1elany");
+			ServerCommand("bot_add_t %s", "ultimate");
+			ServerCommand("mp_teamlogo_2 tze");
 		}
 	}
 	
@@ -3244,6 +3244,31 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Myekry");
 			ServerCommand("bot_add_t %s", "s1cklxrd");
 			ServerCommand("mp_teamlogo_2 bee");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "9Pandas", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "seized");
+			ServerCommand("bot_add_ct %s", "iDISBALANCE");
+			ServerCommand("bot_add_ct %s", "d1Ledez");
+			ServerCommand("bot_add_ct %s", "clax");
+			ServerCommand("bot_add_ct %s", "glowiing");
+			ServerCommand("mp_teamlogo_1 pand");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "seized");
+			ServerCommand("bot_add_t %s", "iDISBALANCE");
+			ServerCommand("bot_add_t %s", "d1Ledez");
+			ServerCommand("bot_add_t %s", "clax");
+			ServerCommand("bot_add_t %s", "glowiing");
+			ServerCommand("mp_teamlogo_2 pand");
 		}
 	}
 	
@@ -3727,7 +3752,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_iTarget[i] = -1;
 			g_iDoingSmokeNum[i] = -1;
 			g_fShootTimestamp[i] = 0.0;				
-			g_fThrowNadeTimestamp[i] = 0.0;				
+			g_fThrowNadeTimestamp[i] = 0.0;						
 			
 			if(g_bIsBombScenario || g_bIsHostageScenario)
 			{
@@ -3948,13 +3973,53 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 	return MRES_Ignored;
 }
 
+public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
+{
+	float fClientEyes[3], fBombOrigin[3];
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if(!IsValidClient(i))
+			continue;
+		
+		if(!IsFakeClient(i))
+			continue;
+			
+		if(!IsPlayerAlive(i))
+			continue;
+		
+		if(GetClientTeam(i) != CS_TEAM_CT)
+			continue;
+		
+		int iDroppedC4 = GetNearestEntity(i, "weapon_c4", false);
+		
+		if(!IsValidEntity(iDroppedC4))
+			continue;
+			
+		GetClientEyePosition(i, fClientEyes);
+		GetEntPropVector(i, Prop_Data, "m_vecOrigin", fBombOrigin);
+		if(IsPointVisible(fClientEyes, fBombOrigin))
+		{
+			hReturn.Value = true;
+			return MRES_Override;
+		}
+	}
+	
+	hReturn.Value = false;
+	return MRES_Ignored;
+}
+
+public MRESReturn BotChatterInterface_SpottedLooseBomb(DHookParam hParam)
+{
+	return MRES_Supercede;
+}
+
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
 	
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
 	
-	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0 || strcmp(szDesc, "Face outward") == 0)
+	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0)
 		return MRES_Ignored;
 	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
@@ -3962,7 +4027,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Blind") == 0)
+	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
 		return MRES_Supercede;
 	else if (strcmp(szDesc, "Breakable") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
 	{
@@ -4543,6 +4608,16 @@ public void LoadDetours()
 	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");
 	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
 		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
+	
+	//CCSBot::CanSeeLooseBomb Detour
+	DynamicDetour hBotLooseBombDetour = DynamicDetour.FromConf(hGameData, "CCSBot::CanSeeLooseBomb");
+	if(!hBotLooseBombDetour.Enable(Hook_Pre, CCSBot_CanSeeLooseBomb))
+		SetFailState("Failed to setup detour for CCSBot::CanSeeLooseBomb");
+	
+	//BotChatterInterface::SpottedLooseBomb Detour
+	DynamicDetour hBotLooseBombCrashFixDetour = DynamicDetour.FromConf(hGameData, "BotChatterInterface::SpottedLooseBomb");
+	if(!hBotLooseBombCrashFixDetour.Enable(Hook_Pre, BotChatterInterface_SpottedLooseBomb))
+		SetFailState("Failed to setup detour for BotChatterInterface::SpottedLooseBomb");
 	
 	delete hGameData;
 }

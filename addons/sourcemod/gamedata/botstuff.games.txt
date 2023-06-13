@@ -124,6 +124,18 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x51\x8B\x41\x04"
 			}
+			"CCSBot::CanSeeLooseBomb"
+			{
+				//Is below the string 'Giving up hunting.\n'
+				"library"	"server"
+				"windows"	"\x51\x56\x57\x8B\xF9\x8B\x0D\x2A\x2A\x2A\x2A\x83\xB9\x64\x18\x00\x00\x01"
+			}
+			"BotChatterInterface::SpottedLooseBomb"
+			{
+				//Has string 'SpottedLooseBomb'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xEC\x08\xA1\x2A\x2A\x2A\x2A\x53\x56\x8B\xF1\x80\xB8\x64\x1D\x00\x00\x00"
+			}
 		}
 		"Offsets"
 		{
@@ -271,6 +283,27 @@
 					"part"
 					{
 						"type" "int"
+					}
+				}
+			}
+			"CCSBot::CanSeeLooseBomb"
+			{
+				"signature" "CCSBot::CanSeeLooseBomb"
+				"callconv" "thiscall"
+				"return" "bool"
+				"this" "entity"
+			}
+			"BotChatterInterface::SpottedLooseBomb"
+			{
+				"signature" "BotChatterInterface::SpottedLooseBomb"
+				"callconv" "thiscall"
+				"return" "void"
+				"this" "ignore"
+				"arguments"
+				{
+					"bomb"
+					{
+						"type" "cbaseentity"
 					}
 				}
 			}

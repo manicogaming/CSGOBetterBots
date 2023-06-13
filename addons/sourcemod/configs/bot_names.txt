@@ -642,12 +642,12 @@
 	"BobZ"				"INTZ"
 	"lub" 				"INTZ"
 	"w1"				"INTZ"
-	//Arctic Players
-	"MaLLby" 			"Arctic"
-	"keiz"				"Arctic"
-	"ninjaZ"			"Arctic"
-	"short" 			"Arctic"
-	"ponter"			"Arctic"
+	//TZE Players
+	"gRuChA" 			"TZE"
+	"kadziu"			"TZE"
+	"darko"				"TZE"
+	"b1elany" 			"TZE"
+	"ultimate"			"TZE"
 	//ODDIK Players
 	"naitte" 			"ODDIK"
 	"remix"				"ODDIK"
@@ -738,4 +738,10 @@
 	"gubi"				"BEE"
 	"Myekry" 			"BEE"
 	"s1cklxrd"			"BEE"
+	//9Pandas Players
+	"seized" 			"9Pandas"
+	"iDISBALANCE"		"9Pandas"
+	"d1Ledez"			"9Pandas"
+	"clax" 				"9Pandas"
+	"glowiing"			"9Pandas"
 }
