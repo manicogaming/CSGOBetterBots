@@ -3976,31 +3976,32 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
 {
 	float fClientEyes[3], fBombOrigin[3];
-	for (int i = 1; i <= MaxClients; i++)
+	int iDroppedC4 = -1;
+	iDroppedC4 = FindEntityByClassname(iDroppedC4, "weapon_c4");
+	
+	if(IsValidEntity(iDroppedC4))
 	{
-		if(!IsValidClient(i))
-			continue;
-		
-		if(!IsFakeClient(i))
-			continue;
-			
-		if(!IsPlayerAlive(i))
-			continue;
-		
-		if(GetClientTeam(i) != CS_TEAM_CT)
-			continue;
-		
-		int iDroppedC4 = GetNearestEntity(i, "weapon_c4", false);
-		
-		if(!IsValidEntity(iDroppedC4))
-			continue;
-			
-		GetClientEyePosition(i, fClientEyes);
-		GetEntPropVector(i, Prop_Data, "m_vecOrigin", fBombOrigin);
-		if(IsPointVisible(fClientEyes, fBombOrigin))
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			hReturn.Value = true;
-			return MRES_Override;
+			if(!IsValidClient(i))
+				continue;
+			
+			if(!IsFakeClient(i))
+				continue;
+				
+			if(!IsPlayerAlive(i))
+				continue;
+			
+			if(GetClientTeam(i) != CS_TEAM_CT)
+				continue;
+				
+			GetClientEyePosition(i, fClientEyes);
+			GetEntPropVector(iDroppedC4, Prop_Data, "m_vecOrigin", fBombOrigin);
+			if(IsPointVisible(fClientEyes, fBombOrigin))
+			{
+				hReturn.Value = true;
+				return MRES_Override;
+			}
 		}
 	}
 	
@@ -4008,7 +4009,7 @@ public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
 	return MRES_Ignored;
 }
 
-public MRESReturn BotChatterInterface_SpottedLooseBomb(DHookParam hParam)
+public MRESReturn BotChatterInterface_SpottedLooseBomb(DHookParam hParams)
 {
 	return MRES_Supercede;
 }
