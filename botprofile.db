@@ -374,7 +374,7 @@ ProP+Rifle+RiflePersonality "Brollan"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "Aleksib"
+ProP+Rifle+RiflePersonality "hampus"
 	VoicePitch = 77
 End
 
@@ -1183,28 +1183,6 @@ ProP+Rifle+RiflePersonality "Keoz"
 	VoicePitch = 78
 End
 
-//DIVIZON Players
-
-ProP+Rifle+RiflePersonality "j1NZO"
-	VoicePitch = 80
-End
-
-ProP+SniperPro+SniperPersonality "sesL"
-	VoicePitch = 93
-End
-
-ProP+Rifle+RiflePersonality "impulsG"
-	VoicePitch = 96
-End
-
-ProP+Rifle+RiflePersonality "maxe"
-	VoicePitch = 86
-End
-
-ProP+Rifle+RiflePersonality "Pashorty"
-	VoicePitch = 78
-End
-
 //Goliath Players
 
 ProP+Rifle+RiflePersonality "aw3some"
@@ -1445,11 +1423,11 @@ ProP+Rifle+RiflePersonality "Starry"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "EXPRO"
+ProP+Rifle+RiflePersonality "Emilia"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "Nelly"
+ProP+Rifle+RiflePersonality "Jee"
 	VoicePitch = 114
 End
 
@@ -1727,7 +1705,7 @@ ProP+SniperPro+SniperPersonality "zur1s"
 	VoicePitch = 110
 End
 
-ProP+Rifle+RiflePersonality "Pechyn"
+ProP+Rifle+RiflePersonality "manguss"
 	VoicePitch = 101
 End
 
@@ -1735,7 +1713,7 @@ ProP+Rifle+RiflePersonality "M1key"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "system"
+ProP+Rifle+RiflePersonality "MoriiSko"
 	VoicePitch = 92
 End
 
@@ -2287,28 +2265,6 @@ End
 
 ProP+Rifle+RiflePersonality "TjP"
 	VoicePitch = 81
-End
-
-//LDLC Players
-
-ProP+Rifle+RiflePersonality "Graviti"
-	VoicePitch = 102
-End
-
-ProP+SniperPro+SniperPersonality "Broox"
-	VoicePitch = 91
-End
-
-ProP+Rifle+RiflePersonality "AMANEK"
-	VoicePitch = 112
-End
-
-ProP+Rifle+RiflePersonality "afro"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RiflePersonality "Snobling"
-	VoicePitch = 91
 End
 
 //Imperial Players

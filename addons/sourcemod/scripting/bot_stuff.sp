@@ -12,7 +12,7 @@
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
-bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch;
+bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch, g_bBombDetourDone;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1], g_bCanThrowGrenade[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
@@ -180,7 +180,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Brollan");
 			ServerCommand("bot_add_ct %s", "REZ");
 			ServerCommand("bot_add_ct %s", "k0nfig");
-			ServerCommand("bot_add_ct %s", "Aleksib");
+			ServerCommand("bot_add_ct %s", "hampus");
 			ServerCommand("bot_add_ct %s", "headtr1ck");
 			ServerCommand("mp_teamlogo_1 nip");
 		}
@@ -191,7 +191,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Brollan");
 			ServerCommand("bot_add_t %s", "REZ");
 			ServerCommand("bot_add_t %s", "k0nfig");
-			ServerCommand("bot_add_t %s", "Aleksib");
+			ServerCommand("bot_add_t %s", "hampus");
 			ServerCommand("bot_add_t %s", "headtr1ck");
 			ServerCommand("mp_teamlogo_2 nip");
 		}
@@ -1172,31 +1172,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "divizon", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "j1NZO");
-			ServerCommand("bot_add_ct %s", "sesL");
-			ServerCommand("bot_add_ct %s", "impulsG");
-			ServerCommand("bot_add_ct %s", "maxe");
-			ServerCommand("bot_add_ct %s", "Pashorty");
-			ServerCommand("mp_teamlogo_1 divi");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "j1NZO");
-			ServerCommand("bot_add_t %s", "sesL");
-			ServerCommand("bot_add_t %s", "impulsG");
-			ServerCommand("bot_add_t %s", "maxe");
-			ServerCommand("bot_add_t %s", "Pashorty");
-			ServerCommand("mp_teamlogo_2 divi");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "Goliath", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -1455,8 +1430,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "westmelon");
 			ServerCommand("bot_add_ct %s", "z4kr");
 			ServerCommand("bot_add_ct %s", "Starry");
-			ServerCommand("bot_add_ct %s", "EXPRO");
-			ServerCommand("bot_add_ct %s", "Nelly");
+			ServerCommand("bot_add_ct %s", "Emilia");
+			ServerCommand("bot_add_ct %s", "Jee");
 			ServerCommand("mp_teamlogo_1 lynn");
 		}
 		
@@ -1466,8 +1441,8 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "westmelon");
 			ServerCommand("bot_add_t %s", "z4kr");
 			ServerCommand("bot_add_t %s", "Starry");
-			ServerCommand("bot_add_t %s", "EXPRO");
-			ServerCommand("bot_add_t %s", "Nelly");
+			ServerCommand("bot_add_t %s", "Emilia");
+			ServerCommand("bot_add_t %s", "Jee");
 			ServerCommand("mp_teamlogo_2 lynn");
 		}
 	}
@@ -1779,9 +1754,9 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "leckr");
 			ServerCommand("bot_add_ct %s", "zur1s");
-			ServerCommand("bot_add_ct %s", "Pechyn");
+			ServerCommand("bot_add_ct %s", "manguss");
 			ServerCommand("bot_add_ct %s", "M1key");
-			ServerCommand("bot_add_ct %s", "system");
+			ServerCommand("bot_add_ct %s", "MoriiSko");
 			ServerCommand("mp_teamlogo_1 ente");
 		}
 		
@@ -1790,9 +1765,9 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "leckr");
 			ServerCommand("bot_add_t %s", "zur1s");
-			ServerCommand("bot_add_t %s", "Pechyn");
+			ServerCommand("bot_add_t %s", "manguss");
 			ServerCommand("bot_add_t %s", "M1key");
-			ServerCommand("bot_add_t %s", "system");
+			ServerCommand("bot_add_t %s", "MoriiSko");
 			ServerCommand("mp_teamlogo_2 ente");
 		}
 	}
@@ -2419,31 +2394,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "chelleos");
 			ServerCommand("bot_add_t %s", "TjP");
 			ServerCommand("mp_teamlogo_2 roos");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "LDLC", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Graviti");
-			ServerCommand("bot_add_ct %s", "Broox");
-			ServerCommand("bot_add_ct %s", "AMANEK");
-			ServerCommand("bot_add_ct %s", "afro");
-			ServerCommand("bot_add_ct %s", "Snobling");
-			ServerCommand("mp_teamlogo_1 ldlc");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Graviti");
-			ServerCommand("bot_add_t %s", "Broox");
-			ServerCommand("bot_add_t %s", "AMANEK");
-			ServerCommand("bot_add_t %s", "afro");
-			ServerCommand("bot_add_t %s", "Snobling");
-			ServerCommand("mp_teamlogo_2 ldlc");
 		}
 	}
 	
@@ -3737,6 +3687,7 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 	g_bFreezetimeEnd = false;
 	g_bEveryoneDead = false;
+	g_bBombDetourDone = false;
 	g_fRoundStart = GetGameTime();
 	
 	for (int i = 1; i <= MaxClients; i++)
@@ -3828,7 +3779,7 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
 		}
 		
-		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
+		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
 			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
 	}
 }
@@ -3974,44 +3925,36 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 }
 
 public MRESReturn CCSBot_CanSeeLooseBomb(int client, DHookReturn hReturn)
-{
-	float fClientEyes[3], fBombOrigin[3];
-	int iDroppedC4 = -1;
-	iDroppedC4 = FindEntityByClassname(iDroppedC4, "weapon_c4");
-	
-	if(IsValidEntity(iDroppedC4))
+{	
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		for (int i = 1; i <= MaxClients; i++)
+		if(!IsValidClient(i))
+			continue;
+		
+		if(!IsFakeClient(i))
+			continue;
+			
+		if(!IsPlayerAlive(i))
+			continue;
+		
+		if(GetClientTeam(i) != CS_TEAM_CT)
+			continue;
+			
+		if(IsValidEntity(GetNearestEntity(i, "weapon_c4")))
 		{
-			if(!IsValidClient(i))
-				continue;
-			
-			if(!IsFakeClient(i))
-				continue;
-				
-			if(!IsPlayerAlive(i))
-				continue;
-			
-			if(GetClientTeam(i) != CS_TEAM_CT)
-				continue;
-				
-			GetClientEyePosition(i, fClientEyes);
-			GetEntPropVector(iDroppedC4, Prop_Data, "m_vecOrigin", fBombOrigin);
-			if(IsPointVisible(fClientEyes, fBombOrigin))
-			{
-				hReturn.Value = true;
-				return MRES_Override;
-			}
+			hReturn.Value = true;
+			g_bBombDetourDone = true;
+			return MRES_Supercede;
 		}
 	}
 	
-	hReturn.Value = false;
+	g_bBombDetourDone = false;
 	return MRES_Ignored;
 }
 
 public MRESReturn BotChatterInterface_SpottedLooseBomb(DHookParam hParams)
 {
-	return MRES_Supercede;
+	return g_bBombDetourDone ? MRES_Supercede : MRES_Ignored;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
@@ -4187,6 +4130,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				bool bIsHiding = BotIsHiding(client);
 				bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
 				bool bIsReloading = IsPlayerReloading(client);
+				bool bResumeZoom = !!GetEntProp(client, Prop_Send, "m_bResumeZoom");
+				
+				if(bResumeZoom)
+					g_fShootTimestamp[client] = GetGameTime();
 				
 				if(HasEntProp(g_iActiveWeapon[client], Prop_Send, "m_zoomLevel"))
 					iZoomLevel = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_zoomLevel");

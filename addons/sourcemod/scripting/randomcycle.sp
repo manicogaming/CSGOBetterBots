@@ -33,6 +33,7 @@
 
 #pragma semicolon 1
 #include <sourcemod>
+#include <smlib>
 
 #pragma newdecls required
 
@@ -92,7 +93,7 @@ public Action Event_WinPanelMatch(Handle event, const char[] name, bool dontBroa
 	
 	do
 	{
-		int b = GetRandomInt(0, g_MapList.Length - 1);
+		int b = Math_GetRandomInt(0, g_MapList.Length - 1);
 		g_MapList.GetString(b, map, sizeof(map));
 		FindMap(map, resolvedMap, sizeof(resolvedMap));
 	} while (oldMaps && g_OldMapList.FindString(resolvedMap) != -1);

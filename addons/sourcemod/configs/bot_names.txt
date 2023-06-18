@@ -20,7 +20,7 @@
 	"blameF" 			"Astralis"
 	//NiP Players
 	"headtr1ck" 		"NiP"
-	"Aleksib" 			"NiP"
+	"hampus" 			"NiP"
 	"Brollan" 			"NiP"
 	"k0nfig" 			"NiP"
 	"REZ" 				"NiP"
@@ -240,12 +240,6 @@
 	"isak" 				"GamerLegion"
 	"siuhy" 			"GamerLegion"	
 	"Keoz" 				"GamerLegion"
-	//DIVIZON Players
-	"j1NZO" 			"DIVIZON"
-	"sesL" 				"DIVIZON"
-	"impulsG" 			"DIVIZON"
-	"maxe" 				"DIVIZON"
-	"Pashorty" 			"DIVIZON"
 	//Goliath Players
 	"aw3some" 			"Goliath"
 	"uDEADSHOT" 		"Goliath"
@@ -310,8 +304,8 @@
 	"westmelon" 		"Lynn"
 	"z4kr" 				"Lynn"
 	"Starry" 			"Lynn"
-	"EXPRO" 			"Lynn"
-	"Nelly" 			"Lynn"
+	"Emilia" 			"Lynn"
+	"Jee" 				"Lynn"
 	//Viperio Players
 	"Girafffe" 			"Viperio"
 	"Extinct" 			"Viperio"
@@ -387,9 +381,9 @@
 	//EP Players
 	"leckr" 			"EP"
 	"M1key" 			"EP"
-	"Pechyn" 			"EP"	
+	"manguss" 			"EP"	
 	"zur1s" 			"EP"
-	"system" 			"EP"
+	"MoriiSko" 			"EP"
 	//Illuminar Players
 	"zaNNN" 			"Illuminar"
 	"TOAO" 				"Illuminar"
@@ -540,12 +534,6 @@
 	"nettik"			"Rooster"
 	"chelleos" 			"Rooster"
 	"TjP"				"Rooster"
-	//LDLC Players
-	"Graviti" 			"LDLC"
-	"Broox"				"LDLC"
-	"AMANEK"			"LDLC"
-	"afro" 				"LDLC"
-	"Snobling"			"LDLC"
 	//Imperial Players
 	"JOTA" 				"Imperial"
 	"FalleN"			"Imperial"

@@ -20,7 +20,7 @@
 	"blameF" 			"68193075"
 	//NiP Players
 	"headtr1ck" 		"399254202"
-	"Aleksib" 			"52977598"
+	"hampus" 			"126680222"
 	"Brollan" 			"178562747"
 	"k0nfig" 			"19403447"
 	"REZ" 				"73906687"
@@ -240,12 +240,6 @@
 	"isak" 				"111644637"
 	"siuhy" 			"190407632"	
 	"Keoz" 				"138078516"
-	//DIVIZON Players
-	"j1NZO" 			"220770109"
-	"impulsG" 			"242288017"
-	"maxe" 				"58628823"
-	"sesL" 				"203588221"
-	"Pashorty" 			"101085277"
 	//Goliath Players
 	"aw3some" 			"106956887"
 	"uDEADSHOT" 		"235492183"
@@ -310,8 +304,8 @@
 	"westmelon" 		"146974312"
 	"z4kr" 				"177517735"
 	"Starry" 			"920033815"
-	"EXPRO" 			"219759475"
-	"Nelly" 			"865089077"
+	"Emilia" 			"856465673"
+	"Jee" 				"400141913"
 	//Viperio Players
 	"Girafffe" 			"338231248"
 	"Extinct" 			"136442715"
@@ -387,8 +381,8 @@
 	//EP Players
 	"leckr"				"75767821"
 	"M1key"				"221902877"
-	"system"			"72886704"
-	"Pechyn"			"93527213"
+	"MoriiSko"			"91462071"
+	"manguss"			"75244785"
 	"zur1s"				"140467841"
 	//Illuminar Players
 	"zaNNN" 			"154807226"
@@ -540,12 +534,6 @@
 	"nettik"			"372579523"
 	"chelleos" 			"198705922"
 	"TjP"				"203514302"
-	//LDLC Players
-	"Graviti" 			"219272777"
-	"Broox"				"314420307"
-	"AMANEK"			"108679223"
-	"afro" 				"75315373"
-	"Snobling"			"45609799"
 	//Imperial Players
 	"JOTA" 				"94554756"
 	"FalleN"			"424467"

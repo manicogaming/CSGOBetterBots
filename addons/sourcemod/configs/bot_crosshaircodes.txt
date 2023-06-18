@@ -20,7 +20,7 @@
 	"blameF" 			"CSGO-8Ferf-mq6ua-JYHa7-eURmk-jFFFN"
 	//NiP Players
 	"headtr1ck" 		"CSGO-yHJYQ-aJ6pq-fCZnk-iLDCc-G847M"
-	"Aleksib" 			"CSGO-iuXxN-Z4tML-FcpUT-2pfxZ-kSLoD"
+	"hampus" 			"CSGO-otY88-PNk6p-X7kGR-pZcrx-LiyHL"
 	"Brollan" 			"CSGO-yx69Y-5ytAc-hc3MH-4hqUG-CrrBE"
 	"k0nfig" 			"CSGO-cFvXT-AiQcf-tLY53-nShUj-BNzMM"
 	"REZ" 				"CSGO-UOR5u-5VxWH-cA3YU-VTxWn-YxHCF"
@@ -240,12 +240,6 @@
 	"isak" 				"CSGO-RrSde-QOTKX-NtUML-QUP9W-LbRVP"
 	"siuhy" 			"CSGO-GS2uJ-q2E7V-W7wfE-JuTda-ZbJaA"	
 	"Keoz" 				"CSGO-6vnU4-eKkdP-URkJt-deCDq-4PkTL"
-	//DIVIZON Players
-	"j1NZO" 			"CSGO-x5TZb-wmsS4-dTkHy-Huoo6-aN3ED"
-	"impulsG" 			"CSGO-8tdQJ-DVs56-Y8GKL-jCQbP-TA7yD"
-	"maxe" 				"CSGO-BNODD-cvo8d-mQAbn-i5dSE-5VJGG"
-	"sesL" 				"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
-	"Pashorty" 			"CSGO-qtTFy-oMJRB-oawQs-d3Mp6-ihaAB"
 	//Goliath Players
 	"aw3some" 			"CSGO-umu87-7DAsb-kPtGU-7A4HR-4JDhP"
 	"uDEADSHOT" 		"CSGO-8292H-YyEjd-KFPOn-swTpL-dz8CH"
@@ -316,8 +310,8 @@
 	"westmelon" 		"CSGO-MVO26-hCbF2-OonA2-Lozh6-UJL9P"
 	"z4kr" 				"CSGO-DkhMk-UAG6T-2AkD8-u7yRu-pevvE"
 	"Starry" 			"CSGO-QohCd-XphhR-tcNxr-Ak7Lb-RMQNN"
-	"EXPRO" 			"CSGO-BhTFG-LEPTN-h8eL8-QVoXj-7uDmQ"
-	"Nelly" 			"CSGO-6sTOS-CRDxA-9spst-8xbNJ-HLAfD"
+	"Emilia" 			"CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
+	"Jee" 				"CSGO-w9LAk-k6MXt-8tBTL-fS5yV-5EWzE"
 	//Viperio Players
 	"Girafffe" 			"CSGO-R7OHJ-kDuFz-CoSY2-38aGQ-4cvvE"
 	"Extinct" 			"CSGO-S8dqM-Cw2fM-qeR7X-JKrvi-m4urD"
@@ -393,8 +387,8 @@
 	//EP Players
 	"leckr"				"CSGO-GQdHP-pJNaT-2aPMt-VZxPO-D5JzN"
 	"M1key"				"CSGO-O39CA-vxrjO-Qkkzx-cXGym-eeywQ"
-	"system"			"CSGO-qGM7Y-OLbBW-dKrfj-S9LJ4-WXvaL"
-	"Pechyn"			"CSGO-WAxZ5-5twCy-Z4Hx5-HBU8a-WROpP"
+	"MoriiSko"			"CSGO-bfr2f-GX3Dc-OwHNC-ZbGWC-z2urD"
+	"manguss"			"CSGO-GKF62-DiSft-nm4Ky-spG5o-aK6FP"
 	"zur1s"				"CSGO-k4GZQ-BUvdv-FrOMv-6ccDp-zYYwP"
 	//Illuminar Players
 	"zaNNN" 			"CSGO-6znom-EF5Ub-prBtM-L2p4W-JK5mA"
@@ -552,12 +546,6 @@
 	"nettik"			"CSGO-D2vJL-VGer3-FPEtz-JttQd-97DRE"
 	"chelleos" 			"CSGO-TZuPe-7z5bm-6HtvP-ZySjY-sSBUM"
 	"TjP"				"CSGO-WZKEE-WYVqP-RrYDX-nKY6P-nysyM"
-	//LDLC Players
-	"Graviti" 			"CSGO-jzXjo-ODcow-2iPv8-AQxJN-rTGOP"
-	"Broox"				"CSGO-hCdFu-TBdEi-RdKdo-nEi7C-pKN2G"
-	"AMANEK"			"CSGO-QAeVv-nitWR-tZAud-WkrH7-eWfOQ"
-	"afro" 				"CSGO-G22z4-3z7sV-LMkQY-HNLGF-Jaq3B"
-	"Snobling"			"CSGO-uam9h-95aHf-Not9A-xUWVT-dJZML"
 	//Imperial Players
 	"JOTA" 				"CSGO-6yoXe-TEw9O-c8Nso-iW2hM-8jyHL"
 	"FalleN"			"CSGO-FJxAC-OAamJ-oZ9bO-2W4BT-YiG4C"
