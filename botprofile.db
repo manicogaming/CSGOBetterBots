@@ -523,11 +523,11 @@ ProP+Rifle+RiflePersonality "HexT"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "wiz"
+ProP+SniperPro+SniperPersonality "junior"
 	VoicePitch = 99
 End
 
-ProP+Rifle+RiflePersonality "Brehze"
+ProP+Rifle+RiflePersonality "Jeorge"
 	VoicePitch = 111
 End
 
@@ -535,7 +535,7 @@ ProP+Rifle+RiflePersonality "autimatic"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "neaLaN"
+ProP+Rifle+RiflePersonality "Walco"
 	VoicePitch = 98
 End
 
@@ -657,15 +657,15 @@ End
 
 //BIG Players
 
-ProP+Rifle+RiflePersonality "k1to"
+ProP+Rifle+RiflePersonality "prosus"
 	VoicePitch = 71
 End
 
-ProP+SniperPro+SniperPersonality "hyped"
+ProP+SniperPro+SniperPersonality "mantuu"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "faveN"
+ProP+Rifle+RiflePersonality "s1n"
 	VoicePitch = 112
 End
 
@@ -2399,25 +2399,25 @@ ProP+Rifle+RiflePersonality "T4gg3D"
 	VoicePitch = 106
 End
 
-//Entropiq Players
+//ESC Players
 
-ProP+Rifle+RiflePersonality "AJTT"
+ProP+Rifle+RiflePersonality "Edward"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "red"
+ProP+SniperPro+SniperPersonality "MUV"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "PlesseN"
+ProP+Rifle+RiflePersonality "bondik"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "ritchiEE"
+ProP+Rifle+RiflePersonality "Smash"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "snatchie"
+ProP+Rifle+RiflePersonality "t3ns1on"
 	VoicePitch = 109
 End
 
@@ -2817,25 +2817,25 @@ ProP+Rifle+RiflePersonality "virtuoso"
 	VoicePitch = 104
 End
 
-//BHOP Players
+//MYD Players
 
-ProP+Rifle+RiflePersonality "Feral"
+ProP+Rifle+RiflePersonality "Linko"
 	VoicePitch = 113
 End
 
-ProP+SniperPro+SniperPersonality "werdnA"
+ProP+SniperPro+SniperPersonality "Louro"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "Gonzo"
+ProP+Rifle+RiflePersonality "P3R3IIRA"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "drewtheshrew"
+ProP+Rifle+RiflePersonality "SeabraEZ"
 	VoicePitch = 115
 End
 
-ProP+Rifle+RiflePersonality "Penguin"
+ProP+Rifle+RiflePersonality "JAEPE"
 	VoicePitch = 77
 End
 

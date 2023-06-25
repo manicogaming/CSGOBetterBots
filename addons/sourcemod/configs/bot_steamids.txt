@@ -62,10 +62,10 @@
 	"emi" 				"43348704"
 	//EG Players
 	"HexT" 				"250668735"
-	"neaLaN" 			"93777050"
-	"Brehze" 			"94595411"
+	"Walco" 			"129639458"
+	"Jeorge" 			"393603607"
 	"autimatic" 		"94605121"
-	"wiz" 				"172119781"
+	"junior" 			"103793230"
 	//Na´Vi Players
 	"electronic" 		"83779379"	
 	"s1mple" 			"73936547"
@@ -97,9 +97,9 @@
 	"Magisk" 			"23690923"
 	"Spinx" 			"103070679"
 	//BIG Players
-	"k1to" 				"222196859"
-	"hyped" 			"179338600"
-	"faveN" 			"157930364"
+	"prosus" 			"218535303"
+	"mantuu" 			"56166832"
+	"s1n" 				"230197733"
 	"tabseN" 			"1225952"
 	"Krimbo" 			"210365363"
 	//FURIA Players
@@ -570,12 +570,12 @@
 	"matys"				"1086212773"
 	"sAvana1" 			"69270002"
 	"T4gg3D"			"296534066"
-	//Entropiq Players
-	"AJTT" 				"10853594"
-	"red"				"204660292"
-	"PlesseN"			"57716849"
-	"ritchiEE" 			"9173024"
-	"snatchie"			"111436809"
+	//ESC Players
+	"Edward" 			"23429534"
+	"MUV"				"390750852"
+	"bondik"			"46918643"
+	"Smash" 			"214027585"
+	"t3ns1on"			"859013518"
 	//MASONIC Players
 	"sirah" 			"348675310"
 	"J3nsyy"			"192137384"
@@ -684,12 +684,12 @@
 	"freo"				"109430629"
 	"nestee" 			"138122029"
 	"virtuoso"			"55647141"
-	//BHOP Players
-	"Feral" 			"93947984"
-	"werdnA"			"109559931"
-	"Gonzo"				"130242989"
-	"drewtheshrew" 		"356279188"
-	"Penguin"			"180056583"
+	//MYD Players
+	"Linko" 			"186797108"
+	"Louro"				"234244633"
+	"P3R3IIRA"			"364310941"
+	"SeabraEZ" 			"420752411"
+	"JAEPE"				"251441860"
 	//Zero Players
 	"simke" 			"375268315"
 	"brutmonster"		"298730550"

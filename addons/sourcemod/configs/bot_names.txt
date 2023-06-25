@@ -62,10 +62,10 @@
 	"emi" 				"TYLOO"
 	//EG Players
 	"HexT" 				"EG"
-	"neaLaN" 			"EG"
-	"Brehze" 			"EG"
+	"Walco" 			"EG"
+	"Jeorge" 			"EG"
 	"autimatic" 		"EG"
-	"wiz" 				"EG"
+	"junior" 			"EG"
 	//Na´Vi Players
 	"electronic" 		"Na´Vi"	
 	"s1mple" 			"Na´Vi"
@@ -97,9 +97,9 @@
 	"Magisk" 			"Vitality"
 	"Spinx" 			"Vitality"
 	//BIG Players
-	"k1to" 				"BIG"
-	"hyped" 			"BIG"
-	"faveN" 			"BIG"
+	"prosus" 			"BIG"
+	"mantuu" 			"BIG"
+	"s1n" 				"BIG"
 	"tabseN" 			"BIG"
 	"Krimbo" 			"BIG"
 	//FURIA Players
@@ -570,12 +570,12 @@
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"T4gg3D"			"Sampi"
-	//Entropiq Players
-	"AJTT" 				"Entropiq"
-	"red"				"Entropiq"
-	"PlesseN"			"Entropiq"
-	"ritchiEE" 			"Entropiq"
-	"snatchie"			"Entropiq"
+	//ESC Players
+	"Edward" 			"ESC"
+	"MUV"				"ESC"
+	"bondik"			"ESC"
+	"Smash" 			"ESC"
+	"t3ns1on"			"ESC"
 	//MASONIC Players
 	"sirah" 			"MASONIC"
 	"J3nsyy"			"MASONIC"
@@ -684,12 +684,12 @@
 	"freo"				"Singularity"
 	"nestee" 			"Singularity"
 	"virtuoso"			"Singularity"
-	//BHOP Players
-	"Feral" 			"BHOP"
-	"werdnA"			"BHOP"
-	"Gonzo"				"BHOP"
-	"drewtheshrew" 		"BHOP"
-	"Penguin"			"BHOP"
+	//MYD Players
+	"Linko" 			"MYD"
+	"Louro"				"MYD"
+	"P3R3IIRA"			"MYD"
+	"SeabraEZ" 			"MYD"
+	"JAEPE"				"MYD"
 	//Zero Players
 	"simke" 			"Zero"
 	"brutmonster"		"Zero"
