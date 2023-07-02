@@ -811,7 +811,7 @@ End
 
 //VP Players
 
-ProP+Rifle+RiflePersonality "KaiR0N-"
+ProP+Rifle+RiflePersonality "n0rb3r7"
 	VoicePitch = 113
 End
 
@@ -841,7 +841,7 @@ ProP+SniperPro+SniperPersonality "nawwk"
 	VoicePitch = 91
 End
 
-ProP+Rifle+RiflePersonality "jL"
+ProP+Rifle+RiflePersonality "kyxsan"
 	VoicePitch = 71
 End
 
@@ -849,7 +849,7 @@ ProP+Rifle+RiflePersonality "STYKO"
 	VoicePitch = 80
 End
 
-ProP+Rifle+RiflePersonality "shox"
+ProP+Rifle+RiflePersonality "CacaNito"
 	VoicePitch = 71
 End
 
@@ -1097,7 +1097,7 @@ End
 
 //Sharks Players
 
-ProP+Rifle+RiflePersonality "chay"
+ProP+Rifle+RiflePersonality "doczin"
 	VoicePitch = 108
 End
 
@@ -1205,25 +1205,25 @@ ProP+Rifle+RiflePersonality "slash"
 	VoicePitch = 79
 End
 
-//ECB Players
+//w7m Players
 
-ProP+Rifle+RiflePersonality "Markoś"
+ProP+Rifle+RiflePersonality "saadzin"
 	VoicePitch = 100
 End
 
-ProP+SniperPro+SniperPersonality "Stev0se"
+ProP+SniperPro+SniperPersonality "jz"
 	VoicePitch = 112
 End
 
-ProP+Rifle+RiflePersonality "simix"
+ProP+Rifle+RiflePersonality "stormzyn"
 	VoicePitch = 82
 End
 
-ProP+Rifle+RiflePersonality "n0te"
+ProP+Rifle+RiflePersonality "zdr"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "swiiffter"
+ProP+Rifle+RiflePersonality "fokiu"
 	VoicePitch = 75
 End
 
@@ -2211,7 +2211,7 @@ ProP+SniperPro+SniperPersonality "dennyslaw"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "Rainwaker"
+ProP+Rifle+RiflePersonality "KalubeR"
 	VoicePitch = 107
 End
 

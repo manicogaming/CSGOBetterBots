@@ -139,15 +139,15 @@
 	"cadiaN" 			"43849788"
 	"stavn" 			"62099910"
 	//VP Players
-	"KaiR0N-" 			"196885990"
+	"n0rb3r7" 			"262176776"
 	"Jame" 				"75859856"
 	"qikert" 			"166970562"	
 	"FL1T" 				"35551773"
 	"fame" 				"119848818"
 	//Apeks Players
-	"shox" 				"46654567"
+	"CacaNito" 			"303390740"
 	"jkaem" 			"42442914"
-	"jL" 				"216612575"
+	"kyxsan" 			"97016704"
 	"nawwk" 			"193386133"
 	"STYKO" 			"55928431"
 	//Grayhound Players
@@ -217,7 +217,7 @@
 	"biguzera" 			"55043156"
 	"hardzao" 			"160642472"
 	//Sharks Players
-	"chay"				"291666024" 
+	"doczin"			"135630812" 
 	"drg" 				"193829435"
 	"rdnzao" 			"347468740"
 	"Gafolo" 			"174962930"
@@ -246,12 +246,12 @@
 	"tristanxa" 		"912953652"
 	".exe" 				"302798328"
 	"slash" 			"102311713"
-	//ECB Players
-	"Markoś" 			"68256934"
-	"Stev0se" 			"180588172"
-	"simix" 			"11657532"
-	"n0te" 				"354126581"
-	"swiiffter" 		"286059320"
+	//w7m Players
+	"saadzin" 			"140229234"
+	"jz" 				"410528511"
+	"stormzyn" 			"921180962"
+	"zdr" 				"352842169"
+	"fokiu" 			"171704170"
 	//Bravado Players
 	"March" 			"91657238"	
 	"SloWye" 			"50695439"
@@ -519,7 +519,7 @@
 	//500 Players
 	"REDSTAR" 			"88455007"
 	"dennyslaw"			"300693622"
-	"Rainwaker" 		"177848062"
+	"KalubeR" 			"132424531"
 	"niki1" 			"932616892"
 	"Patrick"			"98715951"
 	//Aurora Players

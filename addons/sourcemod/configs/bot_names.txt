@@ -139,15 +139,15 @@
 	"cadiaN" 			"Heroic"
 	"stavn" 			"Heroic"
 	//VP Players
-	"KaiR0N-" 			"VP"
+	"n0rb3r7" 			"VP"
 	"Jame" 				"VP"
 	"qikert" 			"VP"	
 	"FL1T" 				"VP"
 	"fame" 				"VP"
 	//Apeks Players
-	"shox" 				"Apeks"
+	"CacaNito" 			"Apeks"
 	"jkaem" 			"Apeks"
-	"jL" 				"Apeks"
+	"kyxsan" 			"Apeks"
 	"STYKO" 			"Apeks"
 	"nawwk" 			"Apeks"
 	//Grayhound Players
@@ -217,7 +217,7 @@
 	"biguzera" 			"paiN"
 	"hardzao" 			"paiN"
 	//Sharks Players
-	"chay"				"Sharks" 
+	"doczin"			"Sharks" 
 	"drg" 				"Sharks"
 	"rdnzao" 			"Sharks"
 	"Gafolo" 			"Sharks"
@@ -246,12 +246,12 @@
 	"tristanxa" 		"Goliath"
 	".exe" 				"Goliath"
 	"slash" 			"Goliath"
-	//ECB Players
-	"Markoś" 			"ECB"
-	"Stev0se" 			"ECB"
-	"simix" 			"ECB"
-	"n0te" 				"ECB"
-	"swiiffter" 		"ECB"
+	//w7m Players
+	"saadzin" 			"w7m"
+	"jz" 				"w7m"
+	"stormzyn" 			"w7m"
+	"zdr" 				"w7m"
+	"fokiu" 			"w7m"
 	//Bravado Players
 	"Doru" 				"Bravado"
 	"SloWye" 			"Bravado"
@@ -519,7 +519,7 @@
 	//500 Players
 	"REDSTAR" 			"500"
 	"dennyslaw"			"500"
-	"Rainwaker" 		"500"
+	"KalubeR" 			"500"
 	"niki1" 			"500"
 	"Patrick"			"500"
 	//Aurora Players

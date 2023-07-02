@@ -139,15 +139,15 @@
 	"cadiaN" 			"CSGO-OsK33-i3cCK-C3HFj-8NFp3-HpCxH"
 	"stavn" 			"CSGO-mw7Mq-5QZfQ-Bj8m7-LHMTr-cVGOP"
 	//VP Players
-	"KaiR0N-" 			"CSGO-7XXRc-3pMVL-iQpbm-9Swnx-nQLTK"
+	"n0rb3r7" 			"CSGO-ZiAWV-twcui-kwU7c-fxPJ7-nrFKO"
 	"Jame" 				"CSGO-dCp4R-oSERG-w3uKe-8TnLR-ey3JE"
 	"qikert" 			"CSGO-95cd7-qThtk-kMM2N-4NqV4-L7JLH"	
 	"FL1T" 				"CSGO-2nKNA-syrSi-cP9sd-3WTmE-z2urD"
 	"fame" 				"CSGO-p7HHU-zxCQm-eazEe-DyFXT-4JDhP"
 	//Apeks Players
-	"shox" 				"CSGO-wQa9h-54byK-Ai3X8-Dhuoe-kzGnK"
+	"CacaNito" 			"CSGO-7Lkmj-EboHP-Byirq-4OerR-xXxTC"
 	"jkaem" 			"CSGO-hUa2v-vr8RS-r3zsZ-DfKnB-XyqRP"
-	"jL" 				"CSGO-sViD7-sKJuv-MSzXL-ThzCX-ZHZML"
+	"kyxsan" 			"CSGO-6FoyJ-uAUWD-JYjTT-i2XXV-88JLH"
 	"nawwk" 			"CSGO-6qZqy-4s2OB-peLkt-EaWxh-YxHCF"
 	"STYKO" 			"CSGO-jobwY-bEWDV-n7a2v-HSi4K-z26KQ"
 	//Grayhound Players
@@ -217,7 +217,7 @@
 	"biguzera" 			"CSGO-rCLAd-daEUK-3H66m-3f7GA-kJCEB"
 	"hardzao" 			"CSGO-p3GnQ-ZVuP6-q2xbr-Fuo8C-hvCJC"
 	//Sharks Players
-	"chay"				"CSGO-ShixZ-sCciy-iAMSZ-O7nxh-KMk9Q" 
+	"doczin"			"CSGO-9OysP-sFw9b-dHiXx-VXUA2-hif4D" 
 	"drg" 				"CSGO-qpYJL-ouoCX-u5huv-vwxhm-eCbEC"
 	"rdnzao" 			"CSGO-Y5SMT-jKhwt-fOpS5-crHjU-Rx6KQ"
 	"Gafolo" 			"CSGO-q88ew-OCT2T-2KSpt-3DjiE-OM6FP"
@@ -246,12 +246,12 @@
 	"tristanxa" 		"CSGO-fLcNJ-27FwZ-GweME-6fGDt-wembN"
 	".exe" 				"CSGO-vuzVs-5ciCJ-fUair-rUsKm-Q38CH"
 	"slash" 			"CSGO-vuzVs-5ciCJ-fUair-rUsKm-Q38CH"
-	//ECB Players
-	"Markoś" 			"CSGO-7c9Ev-rL4p5-ZFxYW-kamUy-dMh8E"
-	"Stev0se" 			"CSGO-oJNbO-xkpsm-OJpJU-82DY5-iKH8D"
-	"simix" 			"CSGO-CJkBn-A4daO-THMAt-zG3td-LbRVP"
-	"n0te" 				"CSGO-bS4QE-tv2oK-YwZuS-snkhQ-bR88F"
-	"swiiffter" 		"CSGO-ZQfuD-XiSxw-R6Hfw-PuSpB-uyXDJ"
+	//w7m Players
+	"saadzin" 			"CSGO-ALyT9-6qWbE-UxNLb-yHJaz-3947M"
+	"jz" 				"CSGO-xZPFL-wssi8-Gyj48-QyQWS-EBYXC"
+	"stormzyn" 			"CSGO-fD9nz-dhpEc-bciE7-Mrt27-jJCEB"
+	"zdr" 				"CSGO-86Aaw-Nh4Gt-fqxNH-w2KKm-ekrqK"
+	"fokiu" 			"CSGO-uQbws-bU4rr-mdNBh-sNxh7-xDwzF"
 	//Bravado Players
 	"March" 			"CSGO-Aimmu-B9hZ5-AtEw3-GaLux-6vdqA"	
 	"SloWye" 			"CSGO-fydZM-X83xa-ASLRf-VGSPu-zFAMK"
@@ -531,7 +531,7 @@
 	//500 Players
 	"REDSTAR" 			"CSGO-qSzCs-BRruj-UEKYE-zTwVW-NoRBD"
 	"dennyslaw"			"CSGO-b5xO3-bkf6w-zJBQh-o8SLm-3kYbD"
-	"Rainwaker" 		"CSGO-Tp9sx-YZWSa-ijF7x-en8Y5-DmjPK"
+	"KalubeR" 			"CSGO-qBfQn-PJQ84-dyHM2-yNXEE-wBjLJ"
 	"niki1" 			"CSGO-aXRn7-Z9Ved-BdO8E-zhyX4-bZJGG"
 	"Patrick"			"CSGO-EwK3q-zJwUL-AHOrZ-REWZP-j66dK"
 	//Aurora Players
