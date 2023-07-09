@@ -75,15 +75,9 @@
 	//Liquid Players
 	"oSee" 				"Liquid"
 	"NAF" 				"Liquid"
-	"nitr0" 			"Liquid"
-	"ELiGE" 			"Liquid"
+	"Rainwaker" 		"Liquid"
+	"Patsi" 			"Liquid"
 	"YEKINDAR" 			"Liquid"
-	//AGO Players
-	"tomiko" 			"AGO"
-	"Enzo" 				"AGO"
-	"asran" 			"AGO"
-	"darchevile" 		"AGO"
-	"maaryy" 			"AGO"
 	//ENCE Players
 	"Snappi" 			"ENCE"
 	"SunPayus" 			"ENCE"
@@ -111,7 +105,7 @@
 	//coL Players
 	"JT" 				"coL"
 	"hallzerk" 			"coL"
-	"FaNg" 				"coL"
+	"EliGE" 			"coL"
 	"floppy" 			"coL"
 	"Grim" 				"coL"	
 	//Atom Players
@@ -171,7 +165,7 @@
 	//Riders Players
 	"mopoz"				"Riders" 
 	"dav1g" 			"Riders"
-	"sausol" 			"Riders"
+	"JUST" 				"Riders"
 	"alex*" 			"Riders"
 	"Martinez" 			"Riders"
 	//AVEZ Players
@@ -326,10 +320,10 @@
 	"rigoN" 			"BNE"
 	//Endpoint Players
 	"Surreal" 			"Endpoint"
-	"mhL" 				"Endpoint"
+	"sl3nd" 			"Endpoint"
 	"MiGHTYMAX" 		"Endpoint"
 	"HeavyGod" 			"Endpoint"
-	"Fessor" 			"Endpoint"
+	"AZUWU" 			"Endpoint"
 	//SAW Players
 	"ewjerkz"			"SAW" 
 	"story" 			"SAW"
@@ -422,10 +416,10 @@
 	"SeBreeZe"			"Begrip"
 	//Spirit Players
 	"chopper" 			"Spirit"
-	"w0nderful" 		"Spirit"
+	"ArtFr0st" 			"Spirit"
 	"magixx" 			"Spirit"
-	"Patsi" 			"Spirit"
-	"s1ren"				"Spirit"
+	"donk" 				"Spirit"
+	"zont1x"			"Spirit"
 	//DNMK Players
 	"Niix" 				"DNMK"
 	"Leggy" 			"DNMK"
@@ -469,10 +463,10 @@
 	"Ex1st" 			"TF"
 	"Majster"			"TF"
 	//IKLA Players
-	"byr9" 				"IKLA"
+	"MICHU" 			"IKLA"
 	"kensizor"			"IKLA"
 	"Kvem" 				"IKLA"
-	"s4" 				"IKLA"
+	"xicoz" 			"IKLA"
 	"Topa"				"IKLA"
 	//Ungentium Players
 	"pawkoem" 			"Ungentium"
@@ -594,12 +588,6 @@
 	"shz"				"Plano"
 	"piria" 			"Plano"
 	"SHOOWTiME"			"Plano"
-	//GTZ Players
-	"TMKj" 				"GTZ"
-	"shr"				"GTZ"
-	"rafaxF"			"GTZ"
-	"aragorN" 			"GTZ"
-	"Icarus"			"GTZ"
 	//Alpha Players
 	"kiR" 				"Alpha"
 	"Ryxxo"				"Alpha"
@@ -648,12 +636,12 @@
 	"minimal"			"River"
 	"guidimon" 			"River"
 	"abizz"				"River"
-	//GameAgents Players
-	"ISB" 				"GameAgents"
-	"squmy"				"GameAgents"
-	"zub1"				"GameAgents"
-	"hotdark" 			"GameAgents"
-	"laules"			"GameAgents"
+	//Reason Players
+	"Danejoris" 		"Reason"
+	"walker"			"Reason"
+	"grape"				"Reason"
+	"BeaKie" 			"Reason"
+	"JDubs"				"Reason"
 	//Case Players
 	"yepz" 				"Case"
 	"RCF"				"Case"
@@ -684,12 +672,6 @@
 	"freo"				"Singularity"
 	"nestee" 			"Singularity"
 	"virtuoso"			"Singularity"
-	//MYD Players
-	"Linko" 			"MYD"
-	"Louro"				"MYD"
-	"P3R3IIRA"			"MYD"
-	"SeabraEZ" 			"MYD"
-	"JAEPE"				"MYD"
 	//Zero Players
 	"simke" 			"Zero"
 	"brutmonster"		"Zero"
