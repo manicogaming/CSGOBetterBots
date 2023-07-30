@@ -1,4 +1,4 @@
-// csgosl 2.16 config 1 at Mon Jun 26 09:14:05 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.16 config 1 at Sun Jul 30 20:26:52 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -88,7 +88,6 @@ awp_lego_india2
 awp_legominiindia
 awp_metro_cso2
 awp_minecraft_pete_v1
-awp_moct
 awp_newmap_beta
 awp_old_civ
 awp_pro

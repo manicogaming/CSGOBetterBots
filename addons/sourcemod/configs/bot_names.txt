@@ -13,10 +13,10 @@
 	"rain" 				"FaZe"
 	"ropz" 				"FaZe"
 	//Astralis Players
-	"gla1ve" 			"Astralis"
+	"Buzz" 				"Astralis"
 	"dev1ce" 			"Astralis"
-	"Xyp9x" 			"Astralis"
-	"MistR" 			"Astralis"
+	"Staehr" 			"Astralis"
+	"b0RUP" 			"Astralis"
 	"blameF" 			"Astralis"
 	//NiP Players
 	"headtr1ck" 		"NiP"
@@ -53,7 +53,7 @@
 	"torzsi" 			"mouz"
 	"xertioN" 			"mouz"
 	"frozen" 			"mouz"
-	"JDC" 				"mouz"
+	"Jimpphat" 			"mouz"
 	//TYLOO Players
 	"sk0R" 				"TYLOO"
 	"ROGA" 				"TYLOO"
@@ -121,11 +121,11 @@
 	"shalfey" 			"forZe"
 	"Jerry" 			"forZe"
 	//Sprout Players
-	"Staehr" 			"Sprout"
-	"XELLOW" 			"Sprout"
+	"alpha" 			"Sprout"
+	"w0nderful" 		"Sprout"
 	"Zyphon" 			"Sprout"
-	"lauNX" 			"Sprout"
-	"AZR" 				"Sprout"
+	"raalz" 			"Sprout"
+	"spooke" 			"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"Jabbi" 			"Heroic"
@@ -159,7 +159,7 @@
 	//ECSTATIC Players
 	"kraghen"			"ECSTATIC" 
 	"salazar" 			"ECSTATIC"
-	"maNkz" 			"ECSTATIC"
+	"Patti" 			"ECSTATIC"
 	"Nodios" 			"ECSTATIC"
 	"Queenix" 			"ECSTATIC"
 	//Riders Players
@@ -216,12 +216,6 @@
 	"rdnzao" 			"Sharks"
 	"Gafolo" 			"Sharks"
 	"togs" 				"Sharks"
-	//LOne Players
-	"iDk" 				"LOne"
-	"Maluk3" 			"LOne"
-	"trk" 				"LOne"	
-	"malbsMd" 			"LOne"
-	"pesadelo" 			"LOne"
 	//9INE Players
 	"Goofy" 			"9INE"
 	"hades" 			"9INE"
@@ -264,12 +258,6 @@
 	"MAJ3R" 			"Eternal"
 	"Calyx" 			"Eternal"
 	"Wicadia" 			"Eternal"
-	//K23 Players
-	"RAiLWAY" 			"K23"
-	"El1an" 			"K23"
-	"Raijin" 			"K23"
-	"Magnojez" 			"K23"
-	"X5G7V" 			"K23"
 	//VERTEX Players
 	"pz" 				"VERTEX"
 	"BRACE" 			"VERTEX"
@@ -351,9 +339,9 @@
 	//FTW Players
 	"Ag1l" 				"FTW"
 	"stadodo" 			"FTW"
-	"DDias" 			"FTW"
+	"shr" 				"FTW"
 	"NOPEEj" 			"FTW"
-	"snapy" 			"FTW"
+	"pr" 				"FTW"
 	//ITB Players
 	"Thomas" 			"ITB"
 	"CRUC1AL" 			"ITB"
@@ -378,12 +366,12 @@
 	"manguss" 			"EP"	
 	"zur1s" 			"EP"
 	"MoriiSko" 			"EP"
-	//Illuminar Players
-	"zaNNN" 			"Illuminar"
-	"TOAO" 				"Illuminar"
-	"bnox" 				"Illuminar"
-	"morelz" 			"Illuminar"
-	"mASKED"			"Illuminar"
+	//Anonymo Players
+	"reiko" 			"Anonymo"
+	"SaMey" 			"Anonymo"
+	"Sobol" 			"Anonymo"
+	"lunAtic" 			"Anonymo"
+	"mASKED"			"Anonymo"
 	//Sangal Players
 	"ScrunK" 			"Sangal"
 	"kory" 				"Sangal"
@@ -404,7 +392,7 @@
 	"tomaszin"			"BESTIA"
 	//Nouns Players
 	"MarKE" 			"Nouns"
-	"cynic" 			"Nouns"
+	"stamina" 			"Nouns"
 	"Bwills" 			"Nouns"
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
@@ -426,12 +414,6 @@
 	"rAid" 				"DNMK"
 	"zox" 				"DNMK"
 	"Natural"			"DNMK"
-	//iNation Players
-	"Dragon" 			"iNation"
-	"VLDN" 				"iNation"
-	"DEPRESHN" 			"iNation"
-	"Kind0" 			"iNation"
-	"choiv7"			"iNation"
 	//LEISURE Players
 	"get" 				"LEISURE"
 	"MpMurdock" 		"LEISURE"
@@ -444,12 +426,12 @@
 	"n9xtz" 			"Nation"
 	"latto" 			"Nation"
 	"dumau"				"Nation"
-	//Strife Players
-	"CLASIA" 			"Strife"
-	"d4rty" 			"Strife"
-	"Infinite" 			"Strife"
-	"stamina" 			"Strife"
-	"motm"				"Strife"
+	//WC Players
+	"Cryptic" 			"WC"
+	"d4rty" 			"WC"
+	"freshie" 			"WC"
+	"brett" 			"WC"
+	"SLIGHT"			"WC"
 	//D13 Players
 	"tamir" 			"D13"
 	"wonderzce"			"D13"
@@ -468,12 +450,12 @@
 	"Kvem" 				"IKLA"
 	"xicoz" 			"IKLA"
 	"Topa"				"IKLA"
-	//Ungentium Players
-	"pawkoem" 			"Ungentium"
-	"Mride"				"Ungentium"
-	"cej0t" 			"Ungentium"
-	"noise" 			"Ungentium"
-	"sh3nanigan"		"Ungentium"
+	//Entropiq Players
+	"tiziaN" 			"Entropiq"
+	"forsyy"			"Entropiq"
+	"c0llins" 			"Entropiq"
+	"Oxygen" 			"Entropiq"
+	"Marix"				"Entropiq"
 	//AVANGAR Players
 	"TNDKingg" 			"AVANGAR"
 	"w1nt3r"			"AVANGAR"
@@ -483,9 +465,9 @@
 	//Furious Players
 	"KAISER" 			"Furious"
 	"tom1jed"			"Furious"
-	"laser" 			"Furious"
-	"andrew" 			"Furious"
-	"ABM"				"Furious"
+	"alexer" 			"Furious"
+	"awoken" 			"Furious"
+	"peqexino"			"Furious"
 	//Meta Players
 	"CutzMeretz" 		"Meta"
 	"supLex"			"Meta"
@@ -500,10 +482,10 @@
 	"maeowo"			"Dice"
 	//Falcons Players
 	"NBK-" 				"Falcons"
-	"kennyS"			"Falcons"
+	"mhL"				"Falcons"
 	"bodyy" 			"Falcons"
-	"misutaaa" 			"Falcons"
-	"Python"			"Falcons"
+	"lauNX" 			"Falcons"
+	"BOROS"				"Falcons"
 	//Entropy Players
 	"tahsiN" 			"Entropy"
 	"devraNN"			"Entropy"
@@ -541,7 +523,7 @@
 	"SHiNE" 			"EYEBALLERS"
 	"Peppzor"			"EYEBALLERS"
 	//Monte Players
-	"BOROS" 			"Monte"
+	"br0" 				"Monte"
 	"Woro2k"			"Monte"
 	"DemQQ"				"Monte"
 	"kRaSnaL" 			"Monte"
@@ -560,7 +542,7 @@
 	"BK1"				"Boca"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
-	"blogg1s"			"Sampi"
+	"fino"				"Sampi"
 	"matys"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"T4gg3D"			"Sampi"
@@ -571,11 +553,11 @@
 	"Smash" 			"ESC"
 	"t3ns1on"			"ESC"
 	//MASONIC Players
-	"sirah" 			"MASONIC"
-	"J3nsyy"			"MASONIC"
-	"Anlelele"			"MASONIC"
-	"Tauson" 			"MASONIC"
-	"vester"			"MASONIC"
+	"Frøslev" 			"MASONIC"
+	"Hansi"				"MASONIC"
+	"notaN"				"MASONIC"
+	"PR1mE" 			"MASONIC"
+	"fez"				"MASONIC"
 	//Paqueta Players
 	"DeStiNy" 			"Paqueta"
 	"yel"				"Paqueta"
@@ -588,12 +570,6 @@
 	"shz"				"Plano"
 	"piria" 			"Plano"
 	"SHOOWTiME"			"Plano"
-	//Alpha Players
-	"kiR" 				"Alpha"
-	"Ryxxo"				"Alpha"
-	"smF"				"Alpha"
-	"alexsomfan" 		"Alpha"
-	"scott"				"Alpha"
 	//Fluxo Players
 	"felps" 			"Fluxo"
 	"WOOD7"				"Fluxo"
@@ -612,12 +588,6 @@
 	"pallib0ndi"		"DUSTY"
 	"detinate" 			"DUSTY"
 	"StebbiC0C0"		"DUSTY"
-	//INTZ Players
-	"Leomonster" 		"INTZ"
-	"desh"				"INTZ"
-	"BobZ"				"INTZ"
-	"lub" 				"INTZ"
-	"w1"				"INTZ"
 	//TZE Players
 	"gRuChA" 			"TZE"
 	"kadziu"			"TZE"
@@ -631,8 +601,8 @@
 	"vLa" 				"ODDIK"
 	"r1see"				"ODDIK"
 	//River Players
-	"maxxkor" 			"River"
-	"peqexino"			"River"
+	"naz" 				"River"
+	"Hezz"				"River"
 	"minimal"			"River"
 	"guidimon" 			"River"
 	"abizz"				"River"
@@ -645,27 +615,15 @@
 	//Case Players
 	"yepz" 				"Case"
 	"RCF"				"Case"
-	"steel"				"Case"
-	"honda" 			"Case"
+	"zmb"				"Case"
+	"souz4h" 			"Case"
 	"Snowzin"			"Case"
-	//ONYX Players
-	"MoJo" 				"ONYX"
-	"mave"				"ONYX"
-	"florento"			"ONYX"
-	"SnacKZ1" 			"ONYX"
-	"pxsl"				"ONYX"
 	//GODSENT Players
 	"ztr" 				"GODSENT"
 	"draken"			"GODSENT"
 	"Plopski"			"GODSENT"
 	"joel" 				"GODSENT"
 	"RuStY"				"GODSENT"
-	//Canids Players
-	"ckzao" 			"Canids"
-	"detr0ittJ"			"Canids"
-	"realziN"			"Canids"
-	"t9rnay" 			"Canids"
-	"danoco"			"Canids"
 	//Singularity Players
 	"Qlocuu" 			"Singularity"
 	"POLO"				"Singularity"
@@ -690,12 +648,6 @@
 	"sLowi"				"JANO"
 	"Sm1llee" 			"JANO"
 	"jelo"				"JANO"
-	//Ambush Players
-	"Maze" 				"Ambush"
-	"NaToSaphiX"		"Ambush"
-	"suNny"				"Ambush"
-	"doto" 				"Ambush"
-	"milky"				"Ambush"
 	//SNOGARD Players
 	"glaVed" 			"SNOGARD"
 	"LapeX"				"SNOGARD"
