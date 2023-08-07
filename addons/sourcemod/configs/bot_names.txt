@@ -108,12 +108,6 @@
 	"EliGE" 			"coL"
 	"floppy" 			"coL"
 	"Grim" 				"coL"	
-	//Atom Players
-	"Mercury" 			"Atom"
-	"kaze" 				"Atom"
-	"Moseyuh" 			"Atom"
-	"JamYoung" 			"Atom"	
-	"advent" 			"Atom"
 	//forZe Players
 	"r3salt" 			"forZe"	
 	"zorte" 			"forZe"
@@ -330,12 +324,6 @@
 	"Cl34v3rs" 			"SSP"
 	"cello" 			"SSP"	
 	"KraiS" 			"SSP"
-	//Lilmix Players
-	"quix" 				"Lilmix"
-	"bobeksde" 			"Lilmix"
-	"FRANSSON" 			"Lilmix"
-	"hns" 				"Lilmix"
-	"Hype" 				"Lilmix"
 	//FTW Players
 	"Ag1l" 				"FTW"
 	"stadodo" 			"FTW"
@@ -373,15 +361,15 @@
 	"lunAtic" 			"Anonymo"
 	"mASKED"			"Anonymo"
 	//Sangal Players
-	"ScrunK" 			"Sangal"
-	"kory" 				"Sangal"
+	"LNZ" 				"Sangal"
+	"yxngstxr" 			"Sangal"
 	"kyuubii" 			"Sangal"
 	"Soulfly" 			"Sangal"
 	"PANIX"				"Sangal"
 	//Nixuh Players
 	"flexeeee" 			"Nixuh"
 	"FROZ3N" 			"Nixuh"
-	"TheM4N" 			"Nixuh"
+	"Fadey" 			"Nixuh"
 	"bLazE" 			"Nixuh"
 	"RustyYG"			"Nixuh"
 	//BESTIA Players
@@ -486,12 +474,6 @@
 	"bodyy" 			"Falcons"
 	"lauNX" 			"Falcons"
 	"BOROS"				"Falcons"
-	//Entropy Players
-	"tahsiN" 			"Entropy"
-	"devraNN"			"Entropy"
-	"fADE" 				"Entropy"
-	"DAVEN" 			"Entropy"
-	"LyNeX"				"Entropy"
 	//500 Players
 	"REDSTAR" 			"500"
 	"dennyslaw"			"500"
@@ -620,10 +602,10 @@
 	"Snowzin"			"Case"
 	//GODSENT Players
 	"ztr" 				"GODSENT"
-	"draken"			"GODSENT"
+	"Golden"			"GODSENT"
 	"Plopski"			"GODSENT"
-	"joel" 				"GODSENT"
-	"RuStY"				"GODSENT"
+	"Hype" 				"GODSENT"
+	"bobeksde"			"GODSENT"
 	//Singularity Players
 	"Qlocuu" 			"Singularity"
 	"POLO"				"Singularity"

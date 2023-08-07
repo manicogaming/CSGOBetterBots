@@ -699,28 +699,6 @@ ProP+Rifle+RiflePersonality "Grim"
 	VoicePitch = 102
 End
 
-//Atom Players
-
-ProP+Rifle+RiflePersonality "Mercury"
-	VoicePitch = 80
-End
-
-ProP+SniperPro+SniperPersonality "kaze"
-	VoicePitch = 79
-End
-
-ProP+Rifle+RiflePersonality "Moseyuh"
-	VoicePitch = 109
-End
-
-ProP+Rifle+RiflePersonality "JamYoung"
-	VoicePitch = 76
-End
-
-ProP+Rifle+RiflePersonality "advent"
-	VoicePitch = 85
-End
-
 //forZe Players
 
 ProP+Rifle+RiflePersonality "r3salt"
@@ -1519,28 +1497,6 @@ ProP+Rifle+RiflePersonality "KraiS"
 	VoicePitch = 72
 End
 
-//Lilmix Players
-
-ProP+Rifle+RiflePersonality "quix"
-	VoicePitch = 108
-End
-
-ProP+SniperPro+SniperPersonality "bobeksde"
-	VoicePitch = 101
-End
-
-ProP+Rifle+RiflePersonality "FRANSSON"
-	VoicePitch = 114
-End
-
-ProP+Rifle+RiflePersonality "hns"
-	VoicePitch = 102
-End
-
-ProP+Rifle+RiflePersonality "Hype"
-	VoicePitch = 91
-End
-
 //FTW Players
 
 ProP+Rifle+RiflePersonality "Ag1l"
@@ -1675,11 +1631,11 @@ End
 
 //Sangal Players
 
-ProP+Rifle+RiflePersonality "ScrunK"
+ProP+Rifle+RiflePersonality "LNZ"
 	VoicePitch = 113
 End
 
-ProP+SniperPro+SniperPersonality "kory"
+ProP+SniperPro+SniperPersonality "yxngstxr"
 	VoicePitch = 88
 End
 
@@ -1705,7 +1661,7 @@ ProP+SniperPro+SniperPersonality "FROZ3N"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "TheM4N"
+ProP+Rifle+RiflePersonality "Fadey"
 	VoicePitch = 72
 End
 
@@ -2089,28 +2045,6 @@ End
 
 ProP+Rifle+RiflePersonality "BOROS"
 	VoicePitch = 95
-End
-
-//Entropy Players
-
-ProP+Rifle+RiflePersonality "tahsiN"
-	VoicePitch = 114
-End
-
-ProP+SniperPro+SniperPersonality "devraNN"
-	VoicePitch = 109
-End
-
-ProP+Rifle+RiflePersonality "fADE"
-	VoicePitch = 87
-End
-
-ProP+Rifle+RiflePersonality "DAVEN"
-	VoicePitch = 88
-End
-
-ProP+Rifle+RiflePersonality "LyNeX"
-	VoicePitch = 80
 End
 
 //500 Players
@@ -2581,7 +2515,7 @@ ProP+Rifle+RiflePersonality "ztr"
 	VoicePitch = 95
 End
 
-ProP+SniperPro+SniperPersonality "draken"
+ProP+SniperPro+SniperPersonality "Hype"
 	VoicePitch = 96
 End
 
@@ -2589,11 +2523,11 @@ ProP+Rifle+RiflePersonality "Plopski"
 	VoicePitch = 105
 End
 
-ProP+Rifle+RiflePersonality "joel"
+ProP+Rifle+RiflePersonality "Golden"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "RuStY"
+ProP+Rifle+RiflePersonality "bobeksde"
 	VoicePitch = 81
 End
 

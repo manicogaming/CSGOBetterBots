@@ -108,12 +108,6 @@
 	"EliGE" 			"106428011"
 	"floppy" 			"346253535"
 	"Grim" 				"230970467"	
-	//Atom Players
-	"Mercury" 			"148530751"
-	"kaze" 				"16127541"
-	"Moseyuh" 			"394931794"
-	"JamYoung" 			"404671310"	
-	"advent" 			"41786057"
 	//forZe Players
 	"r3salt" 			"390096574"	
 	"zorte" 			"99348674"
@@ -330,12 +324,6 @@
 	"Cl34v3rs" 			"98939532"
 	"cello" 			"18118733"	
 	"KraiS" 			"373432840"
-	//Lilmix Players
-	"quix" 				"18704555"
-	"bobeksde" 			"100650499"
-	"FRANSSON" 			"66917243"
-	"hns" 				"192826402"
-	"Hype" 				"155147590"
 	//FTW Players
 	"Ag1l" 				"226613145"
 	"pr" 				"149329940"
@@ -373,14 +361,14 @@
 	"lunAtic" 			"27202715"
 	"mASKED"			"285508264"
 	//Sangal Players
-	"ScrunK" 			"13840460"
-	"kory" 				"67382466"
+	"LNZ" 				"144361165"
+	"yxngstxr" 			"1176878177"
 	"kyuubii" 			"184660636"
 	"Soulfly" 			"366802450"
 	"PANIX"				"241868664"
 	//Nixuh Players
 	"bLazE" 			"209701855"
-	"TheM4N" 			"84708704"
+	"Fadey" 			"181493840"
 	"FROZ3N" 			"110202505"
 	"flexeeee" 			"177739017"
 	"RustyYG" 			"288335622"
@@ -492,12 +480,6 @@
 	"bodyy" 			"53029647"
 	"lauNX" 			"1012530125"
 	"BOROS"				"178773495"
-	//Entropy Players
-	"tahsiN" 			"74560387"
-	"devraNN"			"204541657"
-	"fADE" 				"215964173"
-	"DAVEN" 			"179758655"
-	"LyNeX"				"94292971"
 	//500 Players
 	"REDSTAR" 			"88455007"
 	"dennyslaw"			"300693622"
@@ -626,10 +608,10 @@
 	"Snowzin"			"417070118"
 	//GODSENT Players
 	"ztr" 				"1049202927"
-	"draken"			"159123007"
+	"Golden"			"116509497"
 	"Plopski"			"175613070"
-	"joel" 				"839437207"
-	"RuStY"				"122394166"
+	"Hype" 				"155147590"
+	"bobeksde"			"100650499"
 	//Singularity Players
 	"Qlocuu" 			"285659622"
 	"POLO"				"846588837"

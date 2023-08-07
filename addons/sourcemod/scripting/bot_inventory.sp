@@ -886,7 +886,7 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	return Plugin_Continue;
 }
 
-Action WeaponCanUsePre(int client, int iWeapon, bool & bPickup)
+Action WeaponCanUsePre(int client, int iWeapon, bool &bPickup)
 {
 	int iDefIndex = eItems_GetWeaponDefIndexByWeapon(iWeapon);
 	if (eItems_IsDefIndexKnife(iDefIndex))
