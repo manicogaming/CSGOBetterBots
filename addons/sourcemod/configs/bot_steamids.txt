@@ -1,9 +1,9 @@
 "Names"
 {
 	//MIBR Players
-	"HEN1"				"57761535"
+	"saffee"			"25299957"
 	"brnz4n" 			"895610852"
-	"Tuurtle" 			"34114868"
+	"drop" 				"427790854"
 	"insani" 			"101158002"
 	"exit" 				"50230614"
 	//FaZe Players
@@ -99,9 +99,9 @@
 	//FURIA Players
 	"yuurih" 			"204704832"
 	"arT" 				"83503844"
-	"saffee" 			"25299957"
+	"FalleN" 			"424467"
 	"KSCERATO" 			"98234764"
-	"drop" 				"427790854"
+	"chelo" 			"107498100"
 	//coL Players
 	"JT" 				"61449372"
 	"hallzerk" 			"100101582"
@@ -110,10 +110,10 @@
 	"Grim" 				"230970467"	
 	//forZe Players
 	"r3salt" 			"390096574"	
-	"zorte" 			"99348674"
-	"Krad" 				"71642904"
+	"El1an" 			"250498109"
+	"sstiNiX" 			"183590570"
 	"shalfey" 			"247206904"
-	"Jerry" 			"65822428"
+	"tN1R" 				"911747440"
 	//Sprout Players
 	"alpha" 			"885160461"
 	"w0nderful" 		"1102803112"
@@ -199,11 +199,11 @@
 	"tutu" 				"449412781"	
 	"17" 				"915136877"
 	//paiN Players
-	"NEKIZ" 			"76618432"
-	"zevy" 				"911593093"
+	"cass1n" 			"188295781"
+	"lux" 				"113751940"
 	"skullz" 			"158380916"
 	"biguzera" 			"55043156"
-	"hardzao" 			"160642472"
+	"kauez" 			"425391947"
 	//Sharks Players
 	"doczin"			"135630812" 
 	"drg" 				"193829435"
@@ -282,12 +282,12 @@
 	"Starry" 			"920033815"
 	"Emilia" 			"856465673"
 	"Jee" 				"400141913"
-	//Viperio Players
-	"Girafffe" 			"338231248"
-	"Extinct" 			"136442715"
-	"Tadpole" 			"121133939"
-	"Ping" 				"157414566"
-	"arTisT" 			"128640602"
+	//Rhyno Players
+	"Icarus" 			"291309752"
+	"TMKj" 				"838669792"
+	"DDias" 			"67343840"
+	"renatoohaxx" 		"39166438"
+	"obj" 				"42675741"
 	//OG Players
 	"NEOFRAG" 			"255168957"
 	"degster" 			"56166832"
@@ -323,7 +323,7 @@
 	"Sw1ft" 			"159221739"
 	"Cl34v3rs" 			"98939532"
 	"cello" 			"18118733"	
-	"KraiS" 			"373432840"
+	"Rand" 				"295337036"
 	//FTW Players
 	"Ag1l" 				"226613145"
 	"pr" 				"149329940"
@@ -396,12 +396,12 @@
 	"magixx" 			"868554"
 	"donk" 				"425999755"
 	"zont1x"			"1035615149"
-	//DNMK Players
-	"rAid"				"302994909"
-	"Niix" 				"318367596"
-	"Leggy" 			"19776816"
-	"zox" 				"874942183"
-	"Natural" 			"883629900"
+	//Pompa Players
+	"morelz"			"122208414"
+	"Snax" 				"21875845"
+	"h4rn" 				"88360844"
+	"SLY" 				"1737573"
+	"bnox" 				"400417045"
 	//iNation Players
 	"Dragon" 			"290361460"
 	"VLDN" 				"22240693"
@@ -440,7 +440,7 @@
 	"Majster"			"891017452"
 	//IKLA Players
 	"MICHU" 			"60359075"
-	"kensizor"			"421907931"
+	"draken"			"159123007"
 	"Kvem" 				"885170938"
 	"xicoz" 			"325344975"
 	"Topa"				"174477155"
@@ -500,12 +500,12 @@
 	"TjP"				"203514302"
 	//Imperial Players
 	"JOTA" 				"94554756"
-	"FalleN"			"424467"
-	"chelo"				"107498100"
+	"HEN1"				"57761535"
+	"felps"				"22765766"
 	"boltz" 			"58113672"
 	"VINI"				"36104456"
 	//EYEBALLERS Players
-	"flusha" 			"31082355"
+	"HEAP" 				"181546146"
 	"JW"				"71288472"
 	"Sapec"				"107257797"
 	"SHiNE" 			"196824160"
@@ -526,7 +526,7 @@
 	"lenci" 			"134201158"
 	"atarax1a"			"231925561"
 	"pavv"				"111877624"
-	"nacho" 			"979595590"
+	"relentless" 		"192529073"
 	"BK1"				"221869734"
 	//Sampi Players
 	"The eLiVe" 		"111025647"
@@ -548,10 +548,10 @@
 	"fez"				"308491222"
 	//Paqueta Players
 	"DeStiNy" 			"89528706"
-	"yel"				"90069456"
+	"short"				"137901029"
 	"venomzera"			"257999525"
 	"nython" 			"170224923"
-	"ALLE"				"1194990"
+	"hardzao"			"289037002"
 	//Plano Players
 	"decenty" 			"346906182"
 	"kNgV-"				"6732863"
@@ -559,10 +559,10 @@
 	"piria" 			"436072455"
 	"SHOOWTiME" 		"97938914"
 	//Fluxo Players
-	"felps" 			"22765766"
-	"WOOD7"				"42876435"
+	"PKL" 				"65313136"
+	"zevy"				"1462253534"
 	"Lucaozy"			"197122745"
-	"history" 			"925164589"
+	"t9rnay" 			"364544605"
 	"v$m"				"51467095"
 	//Detonate Players
 	"Pugg" 				"215423525"
@@ -581,12 +581,12 @@
 	"kadziu"			"85551312"
 	"darko"				"31199105"
 	"b1elany" 			"251942476"
-	"ultimate"			"323723495"
+	"Markoś"			"68256934"
 	//ODDIK Players
 	"naitte" 			"68938238"
-	"remix"				"33494235"
-	"RICIOLI"			"101523272"
-	"vLa" 				"209494553"
+	"WOOD7"				"42876435"
+	"matios"			"3011855"
+	"Tuurtle" 			"34114868"
 	"r1see"				"164277541"
 	//River Players
 	"naz" 				"117592077"
@@ -654,4 +654,16 @@
 	"d1Ledez"			"899162551"
 	"clax" 				"168818887"
 	"glowiing"			"213998181"
+	//Ungentium Players
+	"TOAO" 				"196107432"
+	"boll"				"847311841"
+	"asran"				"163202698"
+	"Brain" 			"164426945"
+	"Demho"				"146746760"
+	//Flyte Players
+	"mds" 				"3185218"
+	"CoJoMo"			"239501561"
+	"Gabe"				"163938450"
+	"Sandman" 			"129458130"
+	"xaler"				"132801405"
 }

@@ -1,9 +1,9 @@
 "Names"
 {
 	//MIBR Players
-	"HEN1"				"MIBR"
+	"saffee"			"MIBR"
 	"brnz4n" 			"MIBR"
-	"Tuurtle" 			"MIBR"
+	"drop" 				"MIBR"
 	"insani" 			"MIBR"
 	"exit" 				"MIBR"
 	//FaZe Players
@@ -99,9 +99,9 @@
 	//FURIA Players
 	"yuurih" 			"FURIA"
 	"arT" 				"FURIA"
-	"saffee" 			"FURIA"
+	"FalleN" 			"FURIA"
 	"KSCERATO" 			"FURIA"
-	"drop" 				"FURIA"
+	"chelo" 			"FURIA"
 	//coL Players
 	"JT" 				"coL"
 	"hallzerk" 			"coL"
@@ -110,10 +110,10 @@
 	"Grim" 				"coL"	
 	//forZe Players
 	"r3salt" 			"forZe"	
-	"zorte" 			"forZe"
-	"Krad" 				"forZe"
+	"El1an" 			"forZe"
+	"sstiNiX" 			"forZe"
 	"shalfey" 			"forZe"
-	"Jerry" 			"forZe"
+	"tN1R" 				"forZe"
 	//Sprout Players
 	"alpha" 			"Sprout"
 	"w0nderful" 		"Sprout"
@@ -199,11 +199,11 @@
 	"tutu" 				"NewHappy"	
 	"17" 				"NewHappy"
 	//paiN Players
-	"NEKIZ" 			"paiN"
-	"zevy" 				"paiN"
+	"cass1n" 			"paiN"
+	"lux" 				"paiN"
 	"skullz" 			"paiN"
 	"biguzera" 			"paiN"
-	"hardzao" 			"paiN"
+	"kauez" 			"paiN"
 	//Sharks Players
 	"doczin"			"Sharks" 
 	"drg" 				"Sharks"
@@ -282,12 +282,12 @@
 	"Starry" 			"Lynn"
 	"Emilia" 			"Lynn"
 	"Jee" 				"Lynn"
-	//Viperio Players
-	"Girafffe" 			"Viperio"
-	"Extinct" 			"Viperio"
-	"Tadpole" 			"Viperio"
-	"Ping" 				"Viperio"
-	"arTisT" 			"Viperio"
+	//Rhyno Players
+	"Icarus" 			"Rhyno"
+	"TMKj" 				"Rhyno"
+	"DDias" 			"Rhyno"
+	"renatoohaxx" 		"Rhyno"
+	"obj" 				"Rhyno"
 	//OG Players
 	"NEOFRAG" 			"OG"
 	"degster" 			"OG"
@@ -323,7 +323,7 @@
 	"Sw1ft" 			"SSP"
 	"Cl34v3rs" 			"SSP"
 	"cello" 			"SSP"	
-	"KraiS" 			"SSP"
+	"Rand" 				"SSP"
 	//FTW Players
 	"Ag1l" 				"FTW"
 	"stadodo" 			"FTW"
@@ -396,12 +396,12 @@
 	"magixx" 			"Spirit"
 	"donk" 				"Spirit"
 	"zont1x"			"Spirit"
-	//DNMK Players
-	"Niix" 				"DNMK"
-	"Leggy" 			"DNMK"
-	"rAid" 				"DNMK"
-	"zox" 				"DNMK"
-	"Natural"			"DNMK"
+	//Pompa Players
+	"Snax" 				"Pompa"
+	"h4rn" 				"Pompa"
+	"morelz" 			"Pompa"
+	"SLY" 				"Pompa"
+	"bnox"				"Pompa"
 	//LEISURE Players
 	"get" 				"LEISURE"
 	"MpMurdock" 		"LEISURE"
@@ -434,7 +434,7 @@
 	"Majster"			"TF"
 	//IKLA Players
 	"MICHU" 			"IKLA"
-	"kensizor"			"IKLA"
+	"draken"			"IKLA"
 	"Kvem" 				"IKLA"
 	"xicoz" 			"IKLA"
 	"Topa"				"IKLA"
@@ -494,12 +494,12 @@
 	"TjP"				"Rooster"
 	//Imperial Players
 	"JOTA" 				"Imperial"
-	"FalleN"			"Imperial"
-	"chelo"				"Imperial"
+	"HEN1"				"Imperial"
+	"felps"				"Imperial"
 	"boltz" 			"Imperial"
 	"VINI"				"Imperial"
 	//EYEBALLERS Players
-	"flusha" 			"EYEBALLERS"
+	"HEAP" 				"EYEBALLERS"
 	"JW"				"EYEBALLERS"
 	"Sapec"				"EYEBALLERS"
 	"SHiNE" 			"EYEBALLERS"
@@ -520,7 +520,7 @@
 	"lenci" 			"Boca"
 	"atarax1a"			"Boca"
 	"pavv"				"Boca"
-	"nacho" 			"Boca"
+	"relentless" 		"Boca"
 	"BK1"				"Boca"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
@@ -542,10 +542,10 @@
 	"fez"				"MASONIC"
 	//Paqueta Players
 	"DeStiNy" 			"Paqueta"
-	"yel"				"Paqueta"
+	"short"				"Paqueta"
 	"venomzera"			"Paqueta"
 	"nython" 			"Paqueta"
-	"ALLE"				"Paqueta"
+	"hardzao"			"Paqueta"
 	//Plano Players
 	"decenty" 			"Plano"
 	"kNgV-"				"Plano"
@@ -553,10 +553,10 @@
 	"piria" 			"Plano"
 	"SHOOWTiME"			"Plano"
 	//Fluxo Players
-	"felps" 			"Fluxo"
-	"WOOD7"				"Fluxo"
+	"PKL" 				"Fluxo"
+	"zevy"				"Fluxo"
 	"Lucaozy"			"Fluxo"
-	"history" 			"Fluxo"
+	"t9rnay" 			"Fluxo"
 	"v$m"				"Fluxo"
 	//Detonate Players
 	"Pugg" 				"Detonate"
@@ -575,12 +575,12 @@
 	"kadziu"			"TZE"
 	"darko"				"TZE"
 	"b1elany" 			"TZE"
-	"ultimate"			"TZE"
+	"Markoś"			"TZE"
 	//ODDIK Players
 	"naitte" 			"ODDIK"
-	"remix"				"ODDIK"
-	"RICIOLI"			"ODDIK"
-	"vLa" 				"ODDIK"
+	"WOOD7"				"ODDIK"
+	"matios"			"ODDIK"
+	"Tuurtle" 			"ODDIK"
 	"r1see"				"ODDIK"
 	//River Players
 	"naz" 				"River"
@@ -648,4 +648,16 @@
 	"d1Ledez"			"9Pandas"
 	"clax" 				"9Pandas"
 	"glowiing"			"9Pandas"
+	//Ungentium Players
+	"TOAO" 				"Ungentium"
+	"boll"				"Ungentium"
+	"asran"				"Ungentium"
+	"Brain" 			"Ungentium"
+	"Demho"				"Ungentium"
+	//Flyte Players
+	"mds" 				"Flyte"
+	"CoJoMo"			"Flyte"
+	"Gabe"				"Flyte"
+	"Sandman" 			"Flyte"
+	"xaler"				"Flyte"
 }
