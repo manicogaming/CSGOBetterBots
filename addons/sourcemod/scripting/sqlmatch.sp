@@ -10,14 +10,10 @@ int g_iKills[MAXPLAYERS+1], g_iAssists[MAXPLAYERS+1], g_iDeaths[MAXPLAYERS+1];
 int g_iKASTRounds[MAXPLAYERS+1];
 bool g_bEnablePlugin;
 Handle hDB;
-ConVar g_cvGameMode, g_cvGameType;
 
 public void OnPluginStart()
-{
-	g_cvGameMode = FindConVar("game_mode");
-	g_cvGameType = FindConVar("game_type");
-	
-	g_bEnablePlugin = g_cvGameMode.IntValue == 1 && g_cvGameType.IntValue == 0 ? true : false;
+{	
+	g_bEnablePlugin = FindConVar("game_mode").IntValue == 1 && FindConVar("game_type").IntValue == 0 ? true : false;
 	
 	if(!g_bEnablePlugin)
 		return;
