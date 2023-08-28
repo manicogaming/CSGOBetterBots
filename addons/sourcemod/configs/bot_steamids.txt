@@ -380,7 +380,7 @@
 	"luchov" 			"107456470"
 	//Nouns Players
 	"MarKE" 			"2637435"
-	"stamina" 			"272809432"
+	"cynic" 			"106932238"
 	"Bwills" 			"119308817"
 	"nosraC" 			"101522203"
 	"cJ"				"40562365"
@@ -470,10 +470,10 @@
 	"delboNi"			"49145432"
 	//Dice Players
 	"XpG" 				"30253348"
-	"Gauthierlele"		"35731666"
+	"MiniKlar"			"109827315"
 	"DEVIL" 			"44238623"
-	"xReal" 			"82869121"
-	"maeowo"			"315914730"
+	"Chuckyy" 			"200929147"
+	"SBT"				"94663345"
 	//Falcons Players
 	"NBK-" 				"444845"
 	"mhL"				"64640068"
@@ -666,4 +666,22 @@
 	"Gabe"				"163938450"
 	"Sandman" 			"129458130"
 	"xaler"				"132801405"
+	//DIVIZON Players
+	"Kirby" 			"10698538"
+	"aaroNNN"			"207863542"
+	"HyDrO"				"156789466"
+	"Jade" 				"19354669"
+	"HeMan"				"111010827"
+	//DUDES Players
+	"Bonga" 			"120916486"
+	"Askan"				"362940274"
+	"rapala"			"239214601"
+	"giM" 				"1258548439"
+	"SnackZ1"			"1098523460"
+	//Eruption Players
+	"fury5k" 			"866891295"
+	"MagnumZ"			"187391202"
+	"ariucle"			"469468594"
+	"ROUX" 				"977087142"
+	"NEUZ"				"114122809"
 }

@@ -1,0 +1,14 @@
+"ar_antwerp_harbor"
+{
+	"CTSpawn_x" "0.78000"
+	"CTSpawn_y" "0.220000"
+	"TSpawn_x" "0.3750000"
+	"TSpawn_y" "0.80000"
+	"material" "overviews/ar_antwerp_harbor_radar"
+	"pos_x" "-800.000000"
+	"pos_y" "640.000000"
+	"scale" "3.780000"
+
+	"bombA_x"	"0.38"
+	"bombA_y"	"0.28"
+}

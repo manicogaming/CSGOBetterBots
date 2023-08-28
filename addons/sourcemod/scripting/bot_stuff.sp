@@ -16,13 +16,13 @@ char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch, g_bIsCompetitive;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1], g_bCanThrowGrenade[MAXPLAYERS+1];
-int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
+int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iPrevTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
 int g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
 int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset;
 float g_fBotOrigin[MAXPLAYERS+1][3], g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fWeaponPos[MAXPLAYERS+1][3];
 float g_fRoundStart, g_fFreezeTimeEnd;
-float g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fShootTimestamp[MAXPLAYERS+1], g_fThrowNadeTimestamp[MAXPLAYERS+1], g_fSearchGunTimestamp[MAXPLAYERS+1];
+float g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fShootTimestamp[MAXPLAYERS+1], g_fThrowNadeTimestamp[MAXPLAYERS+1], g_fSearchGunTimestamp[MAXPLAYERS+1], g_fCrouchTimestamp[MAXPLAYERS+1];
 ConVar g_cvBotEcoLimit;
 Handle g_hBotMoveTo;
 Handle g_hLookupBone;
@@ -1757,7 +1757,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "MarKE");
-			ServerCommand("bot_add_ct %s", "stamina");
+			ServerCommand("bot_add_ct %s", "cynic");
 			ServerCommand("bot_add_ct %s", "Bwills");
 			ServerCommand("bot_add_ct %s", "nosraC");
 			ServerCommand("bot_add_ct %s", "cJ");
@@ -1768,7 +1768,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "MarKE");
-			ServerCommand("bot_add_t %s", "stamina");
+			ServerCommand("bot_add_t %s", "cynic");
 			ServerCommand("bot_add_t %s", "Bwills");
 			ServerCommand("bot_add_t %s", "nosraC");
 			ServerCommand("bot_add_t %s", "cJ");
@@ -2107,10 +2107,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "XpG");
-			ServerCommand("bot_add_ct %s", "Gauthierlele");
+			ServerCommand("bot_add_ct %s", "MiniKlar");
 			ServerCommand("bot_add_ct %s", "DEVIL");
-			ServerCommand("bot_add_ct %s", "xReal");
-			ServerCommand("bot_add_ct %s", "maeowo");
+			ServerCommand("bot_add_ct %s", "Chuckyy");
+			ServerCommand("bot_add_ct %s", "SBT");
 			ServerCommand("mp_teamlogo_1 dice");
 		}
 		
@@ -2118,10 +2118,10 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "XpG");
-			ServerCommand("bot_add_t %s", "Gauthierlele");
+			ServerCommand("bot_add_t %s", "MiniKlar");
 			ServerCommand("bot_add_t %s", "DEVIL");
-			ServerCommand("bot_add_t %s", "xReal");
-			ServerCommand("bot_add_t %s", "maeowo");
+			ServerCommand("bot_add_t %s", "Chuckyy");
+			ServerCommand("bot_add_t %s", "SBT");
 			ServerCommand("mp_teamlogo_2 dice");
 		}
 	}
@@ -2926,6 +2926,81 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "DIVIZON", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "Kirby");
+			ServerCommand("bot_add_ct %s", "aaroNNN");
+			ServerCommand("bot_add_ct %s", "HyDrO");
+			ServerCommand("bot_add_ct %s", "Jade");
+			ServerCommand("bot_add_ct %s", "HeMan");
+			ServerCommand("mp_teamlogo_1 divi");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "Kirby");
+			ServerCommand("bot_add_t %s", "aaroNNN");
+			ServerCommand("bot_add_t %s", "HyDrO");
+			ServerCommand("bot_add_t %s", "Jade");
+			ServerCommand("bot_add_t %s", "HeMan");
+			ServerCommand("mp_teamlogo_2 divi");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "DUDES", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "Bonga");
+			ServerCommand("bot_add_ct %s", "Askan");
+			ServerCommand("bot_add_ct %s", "rapala");
+			ServerCommand("bot_add_ct %s", "giM");
+			ServerCommand("bot_add_ct %s", "SnackZ1");
+			ServerCommand("mp_teamlogo_1 dude");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "Bonga");
+			ServerCommand("bot_add_t %s", "Askan");
+			ServerCommand("bot_add_t %s", "rapala");
+			ServerCommand("bot_add_t %s", "giM");
+			ServerCommand("bot_add_t %s", "SnackZ1");
+			ServerCommand("mp_teamlogo_2 dude");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "Eruption", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "fury5k");
+			ServerCommand("bot_add_ct %s", "MagnumZ");
+			ServerCommand("bot_add_ct %s", "ariucle");
+			ServerCommand("bot_add_ct %s", "ROUX");
+			ServerCommand("bot_add_ct %s", "NEUZ");
+			ServerCommand("mp_teamlogo_1 erup");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "fury5k");
+			ServerCommand("bot_add_t %s", "MagnumZ");
+			ServerCommand("bot_add_t %s", "ariucle");
+			ServerCommand("bot_add_t %s", "ROUX");
+			ServerCommand("bot_add_t %s", "NEUZ");
+			ServerCommand("mp_teamlogo_2 erup");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -3119,33 +3194,33 @@ public void OnGameFrame()
 					int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 					int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 					int iPrimaryDefIndex;
-					float fWeaponPos[3];
 
 					if (IsValidEntity(iAWP))
 					{
 						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
-
+						float fAWPLocation[3];
+						
 						if (iPrimaryDefIndex != 9)
 						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
 
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fAWPLocation) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fAWPLocation) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
+								Array_Copy(fAWPLocation, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fAWPLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false);
 							}
 						}
 						else if (iPrimary == -1)
 						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
 
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fAWPLocation) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fAWPLocation) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
+								Array_Copy(fAWPLocation, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
 							}
 						}
@@ -3153,15 +3228,16 @@ public void OnGameFrame()
 					else if (IsValidEntity(iAK47))
 					{
 						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
-
+						float fAK47Location[3];
+						
 						if ((iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9) || iPrimary == -1)
 						{
-							GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
 
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fAK47Location) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fAK47Location) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
+								Array_Copy(fAK47Location, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
 							}
 						}
@@ -3169,28 +3245,29 @@ public void OnGameFrame()
 					else if (IsValidEntity(iM4A1))
 					{
 						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fM4A1Location[3];
 
 						if (iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9 && iPrimaryDefIndex != 16 && iPrimaryDefIndex != 60)
 						{
-							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
 
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fM4A1Location) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fM4A1Location) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
+								Array_Copy(fM4A1Location, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fM4A1Location) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false);
 							}
 						}
 						else if (iPrimary == -1)
 						{
-							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
 
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fM4A1Location) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fM4A1Location) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
+								Array_Copy(fM4A1Location, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
 							}
 						}
@@ -3208,17 +3285,18 @@ public void OnGameFrame()
 					if (IsValidEntity(iDeagle))
 					{						
 						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fDeagleLocation[3];
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36 || iSecondaryDefIndex == 30 || iSecondaryDefIndex == 3 || iSecondaryDefIndex == 63)
 						{
-							GetEntPropVector(iDeagle, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iDeagle, Prop_Send, "m_vecOrigin", fDeagleLocation);
 							
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fDeagleLocation) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fDeagleLocation) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
+								Array_Copy(fDeagleLocation, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fDeagleLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false);
 							}
 						}
@@ -3226,17 +3304,18 @@ public void OnGameFrame()
 					else if (IsValidEntity(iTec9))
 					{						
 						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fTec9Location[3];
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 						{
-							GetEntPropVector(iTec9, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iTec9, Prop_Send, "m_vecOrigin", fTec9Location);
 							
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fTec9Location) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fTec9Location) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
+								Array_Copy(fTec9Location, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fTec9Location) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false);
 							}
 						}
@@ -3244,17 +3323,18 @@ public void OnGameFrame()
 					else if (IsValidEntity(iFiveSeven))
 					{
 						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fFiveSevenLocation[3];
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 						{
-							GetEntPropVector(iFiveSeven, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iFiveSeven, Prop_Send, "m_vecOrigin", fFiveSevenLocation);
 							
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fFiveSevenLocation) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fFiveSevenLocation) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
+								Array_Copy(fFiveSevenLocation, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fFiveSevenLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false);
 							}
 						}
@@ -3262,17 +3342,18 @@ public void OnGameFrame()
 					else if (IsValidEntity(iP250))
 					{
 						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fP250Location[3];
 						
 						if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61)
 						{
-							GetEntPropVector(iP250, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iP250, Prop_Send, "m_vecOrigin", fP250Location);
 							
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fP250Location) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fP250Location) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fP250Location, FASTEST_ROUTE);
+								Array_Copy(fP250Location, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fP250Location) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false);
 							}
 						}
@@ -3280,17 +3361,18 @@ public void OnGameFrame()
 					else if (IsValidEntity(iUSP))
 					{
 						iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
+						float fUSPLocation[3];
 						
 						if (iSecondaryDefIndex == 4)
 						{
-							GetEntPropVector(iUSP, Prop_Send, "m_vecOrigin", fWeaponPos);
+							GetEntPropVector(iUSP, Prop_Send, "m_vecOrigin", fUSPLocation);
 							
-							if (GetVectorLength(fWeaponPos) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fWeaponPos) < 5.0))
+							if (GetVectorLength(fUSPLocation) > 0.0 && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fUSPLocation) < 5.0))
 							{
-								BotMoveTo(client, fWeaponPos, FASTEST_ROUTE);
-								Array_Copy(fWeaponPos, g_fWeaponPos[client], 3);
+								BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
+								Array_Copy(fUSPLocation, g_fWeaponPos[client], 3);
 								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fWeaponPos) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
+								if (GetVectorDistance(g_fBotOrigin[client], fUSPLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) != -1)
 									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY), false);
 							}
 						}
@@ -3378,6 +3460,7 @@ public void OnClientPostAdminCheck(int client)
 		
 		GetClientName(client, szBotName, sizeof(szBotName));
 		g_bIsProBot[client] = false;
+		SDKHook(client, SDKHook_WeaponDrop, OnWeaponDrop);
 		
 		if(IsProBot(szBotName, szClanTag))
 		{
@@ -3435,10 +3518,12 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bThrowGrenade[i] = false;
 			g_bCanThrowGrenade[i] = false;
 			g_iTarget[i] = -1;
+			g_iPrevTarget[i] = -1;
 			g_iDoingSmokeNum[i] = -1;
 			g_fShootTimestamp[i] = 0.0;				
 			g_fThrowNadeTimestamp[i] = 0.0;				
 			g_fSearchGunTimestamp[i] = 0.0;				
+			g_fCrouchTimestamp[i] = 0.0;				
 			g_fWeaponPos[i] = { 0.0, 0.0, 0.0 };						
 			
 			if(g_bIsBombScenario || g_bIsHostageScenario)
@@ -3532,29 +3617,29 @@ public void OnThinkPost(int iEnt)
 	}
 }
 
-public Action CS_OnCSWeaponDrop(int client, int iWeapon, bool bDonated)
+public Action OnWeaponDrop(int client, int iWeapon)
 {
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
-		if(eItems_GetWeaponSlotByWeapon(iWeapon) != CS_SLOT_PRIMARY)
-			return Plugin_Continue;
+	if(!IsValidEntity(iWeapon))
+		return Plugin_Continue;
 
-		int iDroppedWeapon = GetNearestEntity(client, "weapon_*");
-		if(!IsValidEntity(iDroppedWeapon))
-			return Plugin_Continue;
-		
-		float fWeaponOrigin[3];
-		GetEntPropVector(iDroppedWeapon, Prop_Send, "m_vecOrigin", fWeaponOrigin);
-		
-		if(GetVectorDistance(g_fBotOrigin[client], fWeaponOrigin) > 75.0)
-			return Plugin_Continue;
-		
-		int iDefIndex = GetEntProp(iWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		int iDroppedDefIndex = GetEntProp(iDroppedWeapon, Prop_Send, "m_iItemDefinitionIndex");
-		
-		if(iDefIndex == 9 || (iDefIndex == 60 && (iDroppedDefIndex != 9 && iDroppedDefIndex != 7)))
-			return Plugin_Handled; 
-	}
+	if(eItems_GetWeaponSlotByWeapon(iWeapon) != CS_SLOT_PRIMARY)
+		return Plugin_Continue;
+
+	int iDroppedWeapon = GetNearestEntity(client, "weapon_*");
+	if(!IsValidEntity(iDroppedWeapon))
+		return Plugin_Continue;
+	
+	float fWeaponOrigin[3];
+	GetEntPropVector(iDroppedWeapon, Prop_Send, "m_vecOrigin", fWeaponOrigin);
+	
+	if(GetVectorDistance(g_fBotOrigin[client], fWeaponOrigin) > 75.0)
+		return Plugin_Continue;
+	
+	int iDefIndex = GetEntProp(iWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	int iDroppedDefIndex = GetEntProp(iDroppedWeapon, Prop_Send, "m_iItemDefinitionIndex");
+	
+	if(iDefIndex == 9 || (iDefIndex == 60 && (iDroppedDefIndex != 9 && iDroppedDefIndex != 7)))
+		return Plugin_Handled; 
 	
 	return Plugin_Continue;
 }
@@ -3860,7 +3945,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					iButtons &= ~IN_DUCK;
 					
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
+				{
+					g_iPrevTarget[client] = g_iTarget[client];
 					return Plugin_Continue;
+				}
 				
 				if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 						BotEquipBestWeapon(client, true);
@@ -3868,6 +3956,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{					
 					BotAttack(client, g_iTarget[client]);
+					if(g_iPrevTarget[client] == -1)
+						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.175, 0.20);
 					fTargetDistance = GetVectorDistance(g_fBotOrigin[client], g_fTargetPos[client]);
 					
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
@@ -3923,11 +4013,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					Array_Copy(g_fBotOrigin[client], fClientLoc, 3);
 					fClientLoc[2] += HalfHumanHeight;
 						
-					if (!GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
+					if (GetGameTime() >= g_fCrouchTimestamp[client] && !GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 						iButtons |= IN_DUCK;
 						
 					if(!(GetEntityFlags(client) & FL_ONGROUND))
 						iButtons &= ~IN_ATTACK;
+						
+					g_iPrevTarget[client] = g_iTarget[client];
 				}
 			}
 			
@@ -3977,7 +4069,10 @@ public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szC
 public void OnClientDisconnect(int client)
 {
 	if (IsValidClient(client) && IsFakeClient(client))
+	{
 		g_iProfileRank[client] = 0;
+		SDKUnhook(client, SDKHook_WeaponDrop, OnWeaponDrop);
+	}
 }
 
 public void eItems_OnItemsSynced()

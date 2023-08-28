@@ -380,7 +380,7 @@
 	"tomaszin"			"BESTIA"
 	//Nouns Players
 	"MarKE" 			"Nouns"
-	"stamina" 			"Nouns"
+	"cynic" 			"Nouns"
 	"Bwills" 			"Nouns"
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
@@ -464,10 +464,10 @@
 	"delboNi"			"Meta"
 	//Dice Players
 	"XpG" 				"Dice"
-	"Gauthierlele"		"Dice"
+	"MiniKlar"			"Dice"
 	"DEVIL" 			"Dice"
-	"xReal" 			"Dice"
-	"maeowo"			"Dice"
+	"Chuckyy" 			"Dice"
+	"SBT"				"Dice"
 	//Falcons Players
 	"NBK-" 				"Falcons"
 	"mhL"				"Falcons"
@@ -660,4 +660,22 @@
 	"Gabe"				"Flyte"
 	"Sandman" 			"Flyte"
 	"xaler"				"Flyte"
+	//DIVIZON Players
+	"Kirby" 			"DIVIZON"
+	"aaroNNN"			"DIVIZON"
+	"HyDrO"				"DIVIZON"
+	"Jade" 				"DIVIZON"
+	"HeMan"				"DIVIZON"
+	//DUDES Players
+	"Bonga" 			"DUDES"
+	"Askan"				"DUDES"
+	"rapala"			"DUDES"
+	"giM" 				"DUDES"
+	"SnackZ1"			"DUDES"
+	//Eruption Players
+	"fury5k" 			"Eruption"
+	"MagnumZ"			"Eruption"
+	"ariucle"			"Eruption"
+	"ROUX" 				"Eruption"
+	"NEUZ"				"Eruption"
 }

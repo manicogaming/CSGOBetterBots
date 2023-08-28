@@ -1,4 +1,4 @@
-// csgosl 2.18 config 1 at Mon Aug 21 22:13:28 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.18 config 1 at Mon Aug 28 18:19:46 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -57,6 +57,7 @@ aim_treearena
 aim_warehouse
 aim_warmup
 aim_winter_deagle_up2010
+ar_antwerp_harbor
 ar_baggage
 ar_cbq
 ar_dizzy
@@ -183,6 +184,7 @@ de_bourg
 de_boyard
 de_breach
 de_bregov
+de_brotherhood
 de_bsas_obelisco
 de_cache
 de_calamari

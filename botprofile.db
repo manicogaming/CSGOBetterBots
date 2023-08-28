@@ -1701,7 +1701,7 @@ ProP+Rifle+RiflePersonality "MarKE"
 	VoicePitch = 80
 End
 
-ProP+SniperPro+SniperPersonality "stamina"
+ProP+SniperPro+SniperPersonality "cynic"
 	VoicePitch = 85
 End
 
@@ -2009,7 +2009,7 @@ ProP+Rifle+RiflePersonality "XpG"
 	VoicePitch = 104
 End
 
-ProP+SniperPro+SniperPersonality "Gauthierlele"
+ProP+SniperPro+SniperPersonality "MiniKlar"
 	VoicePitch = 84
 End
 
@@ -2017,11 +2017,11 @@ ProP+Rifle+RiflePersonality "DEVIL"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "xReal"
+ProP+Rifle+RiflePersonality "Chuckyy"
 	VoicePitch = 109
 End
 
-ProP+Rifle+RiflePersonality "maeowo"
+ProP+Rifle+RiflePersonality "SBT"
 	VoicePitch = 95
 End
 
@@ -2727,6 +2727,72 @@ End
 
 ProP+Rifle+RiflePersonality "xaler"
 	VoicePitch = 103
+End
+
+//DIVIZON Players
+
+ProP+Rifle+RiflePersonality "Kirby"
+	VoicePitch = 96
+End
+
+ProP+SniperPro+SniperPersonality "aaroNNN"
+	VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "HyDrO"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "Jade"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "HeMan"
+	VoicePitch = 97
+End
+
+//DUDES Players
+
+ProP+Rifle+RiflePersonality "Bonga"
+	VoicePitch = 110
+End
+
+ProP+SniperPro+SniperPersonality "Askan"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "rapala"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "giM"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "SnackZ1"
+	VoicePitch = 103
+End
+
+//Eruption Players
+
+ProP+Rifle+RiflePersonality "fury5k"
+	VoicePitch = 82
+End
+
+ProP+SniperPro+SniperPersonality "MagnumZ"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "ariucle"
+	VoicePitch = 104
+End
+
+ProP+Rifle+RiflePersonality "ROUX"
+	VoicePitch = 83
+End
+
+ProP+Rifle+RiflePersonality "NEUZ"
+	VoicePitch = 113
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
