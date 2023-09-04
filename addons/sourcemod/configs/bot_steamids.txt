@@ -37,10 +37,10 @@
 	"NiKo" 				"81417650"
 	"m0NESY" 			"114497073"
 	//fnatic Players
-	"nicoodoz" 			"112851399"
+	"afro" 				"75315373"
 	"roeJ" 				"30968963"
 	"KRIMZ" 			"71385856"
-	"FASHR" 			"3238867"
+	"dexter" 			"101535513"
 	"mezii" 			"12874964"
 	//Dynamo Players
 	"Dytor" 			"241288610"
@@ -49,7 +49,7 @@
 	"Valencio" 			"163134468"
 	"nbqq" 				"123897784"
 	//mouz Players
-	"dexter"			"101535513" 
+	"siuhy"				"190407632" 
 	"torzsi" 			"395473484"
 	"xertioN" 			"232908406"
 	"frozen" 			"108157034"
@@ -67,11 +67,11 @@
 	"autimatic" 		"94605121"
 	"junior" 			"103793230"
 	//Na´Vi Players
-	"electronic" 		"83779379"	
+	"Aleksib" 			"52977598"	
 	"s1mple" 			"73936547"
 	"B1T" 				"286341748"
-	"npl" 				"344771176"
-	"Perfecto" 			"160954758"
+	"jL" 				"216612575"
+	"iM" 				"89984505"
 	//Liquid Players
 	"oSee" 				"87206806"
 	"NAF" 				"40885967"
@@ -85,7 +85,7 @@
 	"maden" 			"205186299"
 	"dycha" 			"81151265"
 	//Vitality Players
-	"dupreeh" 			"44589228"
+	"flameZ" 			"18569432"
 	"ZywOo" 			"153400465"
 	"apEX" 				"29478439"
 	"Magisk" 			"23690923"
@@ -147,7 +147,7 @@
 	//HAVU Players
 	"Banjo" 			"316220635"
 	"ottoNd" 			"75069143"
-	"Aerial" 			"2445180"
+	"uli" 				"52262697"
 	"xseveN" 			"52906775"
 	"airax" 			"50161047"
 	//ECSTATIC Players
@@ -217,10 +217,10 @@
 	"Kylar" 			"116431013"
 	"mynio" 			"24981058"
 	//GamerLegion Players
-	"iM" 				"89984505"
+	"volt" 				"195488719"
 	"acoR" 				"42677035"	
 	"isak" 				"111644637"
-	"siuhy" 			"190407632"	
+	"neaLaN" 			"93777050"	
 	"Keoz" 				"138078516"
 	//Goliath Players
 	"aw3some" 			"106956887"
@@ -259,9 +259,9 @@
 	"malta" 			"181905573"
 	"HaZR" 				"64081874"
 	//C9 Players
-	"nafany" 			"99448400"
+	"electroNic" 		"83779379"
 	"sh1ro" 			"121219047"
-	"buster" 			"212936195"
+	"Perfecto" 			"160954758"
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//ATK Players
@@ -289,11 +289,11 @@
 	"renatoohaxx" 		"39166438"
 	"obj" 				"42675741"
 	//OG Players
-	"NEOFRAG" 			"255168957"
-	"degster" 			"56166832"
-	"nikozan" 			"29470855"
+	"nexa" 				"39559694"
+	"regali" 			"138197501"
+	"k1to" 				"222196859"
 	"F1KU" 				"292168772"
-	"flameZ" 			"18569432"
+	"FASHR" 			"3238867"
 	//BNE Players
 	"juanflatroo" 		"135528227"
 	"sinnopsyy" 		"205062167"
@@ -333,9 +333,9 @@
 	//ITB Players
 	"Thomas" 			"65182402"
 	"CRUC1AL" 			"158832564"
-	"CYPHER" 			"291718826"
+	"Bymas" 			"133120627"
 	"rallen" 			"31166738"
-	"volt" 				"195488719"
+	"misutaaa" 			"121263183"
 	//9z Players
 	"dgt" 				"256625848"
 	"dav1d" 			"160225583"
@@ -684,4 +684,22 @@
 	"ariucle"			"469468594"
 	"ROUX" 				"977087142"
 	"NEUZ"				"114122809"
+	//TSM Players
+	"valde" 			"154664140"
+	"MoDo"				"389955370"
+	"JACKZ"				"11977189"
+	"CYPHER" 			"291718826"
+	"interz"			"247808592"
+	//PDucks Players
+	"tabbz" 			"313671673"
+	"Trudo"				"280211546"
+	"LAKR"				"901484733"
+	"holli" 			"285843690"
+	"f0x"				"169785011"
+	//TT Players
+	"fr0k" 				"295922861"
+	"icyvl0ne"			"921447767"
+	"wetfy"				"891313265"
+	"kanshineF" 		"1065960618"
+	"ManticorE"			"370580840"
 }

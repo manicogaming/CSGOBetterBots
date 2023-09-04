@@ -37,10 +37,10 @@
 	"NiKo" 				"G2"
 	"m0NESY" 			"G2"
 	//fnatic Players
-	"nicoodoz" 			"fnatic"
+	"afro" 				"fnatic"
 	"roeJ" 				"fnatic"
 	"KRIMZ" 			"fnatic"
-	"FASHR" 			"fnatic"
+	"dexter" 			"fnatic"
 	"mezii" 			"fnatic"
 	//Dynamo Players
 	"Dytor" 			"Dynamo"
@@ -49,7 +49,7 @@
 	"Valencio" 			"Dynamo"
 	"nbqq" 				"Dynamo"
 	//mouz Players
-	"dexter"			"mouz" 
+	"siuhy"				"mouz" 
 	"torzsi" 			"mouz"
 	"xertioN" 			"mouz"
 	"frozen" 			"mouz"
@@ -67,11 +67,11 @@
 	"autimatic" 		"EG"
 	"junior" 			"EG"
 	//Na´Vi Players
-	"electronic" 		"Na´Vi"	
+	"Aleksib" 			"Na´Vi"	
 	"s1mple" 			"Na´Vi"
 	"B1T" 				"Na´Vi"
-	"npl" 				"Na´Vi"
-	"Perfecto" 			"Na´Vi"
+	"jL" 				"Na´Vi"
+	"iM" 				"Na´Vi"
 	//Liquid Players
 	"oSee" 				"Liquid"
 	"NAF" 				"Liquid"
@@ -85,7 +85,7 @@
 	"maden" 			"ENCE"
 	"dycha" 			"ENCE"
 	//Vitality Players
-	"dupreeh" 			"Vitality"
+	"flameZ" 			"Vitality"
 	"ZywOo" 			"Vitality"
 	"apEX" 				"Vitality"
 	"Magisk" 			"Vitality"
@@ -147,7 +147,7 @@
 	//HAVU Players
 	"Banjo" 			"HAVU"
 	"ottoNd" 			"HAVU"
-	"Aerial" 			"HAVU"
+	"uli" 				"HAVU"
 	"xseveN" 			"HAVU"
 	"airax" 			"HAVU"
 	//ECSTATIC Players
@@ -217,10 +217,10 @@
 	"Kylar" 			"9INE"
 	"mynio" 			"9INE"
 	//GamerLegion Players
-	"iM" 				"GamerLegion"
+	"volt" 				"GamerLegion"
 	"acoR" 				"GamerLegion"	
 	"isak" 				"GamerLegion"
-	"siuhy" 			"GamerLegion"	
+	"neaLaN" 			"GamerLegion"	
 	"Keoz" 				"GamerLegion"
 	//Goliath Players
 	"aw3some" 			"Goliath"
@@ -259,9 +259,9 @@
 	"malta" 			"VERTEX"
 	"HaZR" 				"VERTEX"
 	//C9 Players
-	"nafany" 			"C9"
+	"electroNic" 		"C9"
 	"sh1ro" 			"C9"
-	"buster" 			"C9"
+	"Perfecto" 			"C9"
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
 	//ATK Players
@@ -289,11 +289,11 @@
 	"renatoohaxx" 		"Rhyno"
 	"obj" 				"Rhyno"
 	//OG Players
-	"NEOFRAG" 			"OG"
-	"degster" 			"OG"
-	"nikozan" 			"OG"
+	"nexa" 				"OG"
+	"regali" 			"OG"
+	"k1to" 				"OG"
 	"F1KU" 				"OG"
-	"flameZ" 			"OG"
+	"FASHR" 			"OG"
 	//BNE Players
 	"juanflatroo" 		"BNE"
 	"SENER1" 			"BNE"
@@ -333,9 +333,9 @@
 	//ITB Players
 	"Thomas" 			"ITB"
 	"CRUC1AL" 			"ITB"
-	"CYPHER" 			"ITB"
+	"Bymas" 			"ITB"
 	"rallen" 			"ITB"
-	"volt" 				"ITB"
+	"misutaaa" 			"ITB"
 	//9z Players
 	"dgt" 				"9z"
 	"dav1d" 			"9z"
@@ -678,4 +678,22 @@
 	"ariucle"			"Eruption"
 	"ROUX" 				"Eruption"
 	"NEUZ"				"Eruption"
+	//TSM Players
+	"valde" 			"TSM"
+	"MoDo"				"TSM"
+	"JACKZ"				"TSM"
+	"CYPHER" 			"TSM"
+	"interz"			"TSM"
+	//PDucks Players
+	"tabbz" 			"PDucks"
+	"Trudo"				"PDucks"
+	"LAKR"				"PDucks"
+	"holli" 			"PDucks"
+	"f0x"				"PDucks"
+	//TT Players
+	"fr0k" 				"TT"
+	"icyvl0ne"			"TT"
+	"wetfy"				"TT"
+	"kanshineF" 		"TT"
+	"ManticorE"			"TT"
 }
