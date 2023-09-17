@@ -43,7 +43,7 @@
 	"dexter" 			"fnatic"
 	"mezii" 			"fnatic"
 	//Dynamo Players
-	"Dytor" 			"Dynamo"
+	"NEOFRAG" 			"Dynamo"
 	"K1-FiDa" 			"Dynamo"
 	"anarkez" 			"Dynamo"
 	"Valencio" 			"Dynamo"
@@ -183,7 +183,7 @@
 	//MongolZ Players
 	"Techno4K" 			"MongolZ"
 	"bLitz" 			"MongolZ"
-	"hasteka" 			"MongolZ"
+	"Senzu" 			"MongolZ"
 	"mzinho" 			"MongolZ"
 	"910" 				"MongolZ"
 	//aTTaX Players
@@ -286,8 +286,8 @@
 	"Icarus" 			"Rhyno"
 	"TMKj" 				"Rhyno"
 	"DDias" 			"Rhyno"
-	"renatoohaxx" 		"Rhyno"
-	"obj" 				"Rhyno"
+	"snapy" 			"Rhyno"
+	"krazy" 			"Rhyno"
 	//OG Players
 	"nexa" 				"OG"
 	"regali" 			"OG"
@@ -350,9 +350,9 @@
 	"KWERTZZ" 			"SINNERS"
 	//EP Players
 	"leckr" 			"EP"
-	"M1key" 			"EP"
+	"system" 			"EP"
 	"manguss" 			"EP"	
-	"zur1s" 			"EP"
+	"capseN" 			"EP"
 	"MoriiSko" 			"EP"
 	//Anonymo Players
 	"reiko" 			"Anonymo"
@@ -409,11 +409,11 @@
 	"d1cer" 			"LEISURE"
 	"gimpen"			"LEISURE"
 	//Nation Players
-	"nqz" 				"Nation"
-	"coldzera" 			"Nation"
-	"n9xtz" 			"Nation"
-	"latto" 			"Nation"
-	"dumau"				"Nation"
+	"syrsoN" 			"Nation"
+	"birdfromsky" 		"Nation"
+	"JDC" 				"Nation"
+	"nikozan" 			"Nation"
+	"susp"				"Nation"
 	//WC Players
 	"Cryptic" 			"WC"
 	"d4rty" 			"WC"
@@ -567,8 +567,8 @@
 	//DUSTY Players
 	"EddezeNNN" 		"DUSTY"
 	"TH0R"				"DUSTY"
-	"pallib0ndi"		"DUSTY"
-	"detinate" 			"DUSTY"
+	"RavlE"				"DUSTY"
+	"PANDAZ" 			"DUSTY"
 	"StebbiC0C0"		"DUSTY"
 	//TZE Players
 	"gRuChA" 			"TZE"
@@ -648,12 +648,12 @@
 	"d1Ledez"			"9Pandas"
 	"clax" 				"9Pandas"
 	"glowiing"			"9Pandas"
-	//Ungentium Players
-	"TOAO" 				"Ungentium"
-	"boll"				"Ungentium"
-	"asran"				"Ungentium"
-	"Brain" 			"Ungentium"
-	"Demho"				"Ungentium"
+	//CatEvil Players
+	"tor1towOw" 		"CatEvil"
+	"BabyRage"			"CatEvil"
+	"Antuanette"		"CatEvil"
+	"alejoMk-" 			"CatEvil"
+	"SlotmaN"			"CatEvil"
 	//Flyte Players
 	"mds" 				"Flyte"
 	"CoJoMo"			"Flyte"
@@ -696,4 +696,16 @@
 	"wetfy"				"TT"
 	"kanshineF" 		"TT"
 	"ManticorE"			"TT"
+	//GTZ Players
+	"nesto" 			"GTZ"
+	"GOiS"				"GTZ"
+	"drext"				"GTZ"
+	"pakitu" 			"GTZ"
+	"frozzen"			"GTZ"
+	//GenOne Players
+	"bibu" 				"GenOne"
+	"Sterzig"			"GenOne"
+	"Graviti"			"GenOne"
+	"EIZA" 				"GenOne"
+	"DGL"				"GenOne"
 }

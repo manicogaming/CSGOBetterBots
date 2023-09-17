@@ -43,7 +43,7 @@
 	"dexter" 			"101535513"
 	"mezii" 			"12874964"
 	//Dynamo Players
-	"Dytor" 			"241288610"
+	"NEOFRAG" 			"255168957"
 	"K1-FiDa" 			"169558739"
 	"anarkez" 			"73126768"
 	"Valencio" 			"163134468"
@@ -181,7 +181,7 @@
 	"synyx" 			"271283304"
 	"1eeR" 				"876851680"
 	//MongolZ Players
-	"hasteka" 			"432097992"
+	"Senzu" 			"960454289"
 	"Techno4K" 			"1006074432"
 	"bLitz" 			"999558360"
 	"mzinho" 			"878556854"
@@ -286,8 +286,8 @@
 	"Icarus" 			"291309752"
 	"TMKj" 				"838669792"
 	"DDias" 			"67343840"
-	"renatoohaxx" 		"39166438"
-	"obj" 				"42675741"
+	"snapy" 			"268698824"
+	"krazy" 			"900494332"
 	//OG Players
 	"nexa" 				"39559694"
 	"regali" 			"138197501"
@@ -350,10 +350,10 @@
 	"KWERTZZ" 			"161005692"
 	//EP Players
 	"leckr"				"75767821"
-	"M1key"				"221902877"
+	"system"			"72886704"
 	"MoriiSko"			"91462071"
 	"manguss"			"75244785"
-	"zur1s"				"140467841"
+	"capseN"			"134222736"
 	//Anonymo Players
 	"reiko" 			"190436529"
 	"SaMey" 			"150540966"
@@ -415,11 +415,11 @@
 	"d1cer"				"158737140"
 	"gimpen"			"185018310"
 	//Nation Players
-	"nqz" 				"390076777"
-	"coldzera" 			"79720871"
-	"n9xtz" 			"366272133"
-	"latto" 			"889754458"
-	"dumau"				"234059589"
+	"syrsoN" 			"19857269"
+	"birdfromsky" 		"4338476"
+	"JDC" 				"118505645"
+	"nikozan" 			"29470855"
+	"susp"				"382452440"
 	//WC Players
 	"Cryptic" 			"68969343"
 	"d4rty" 			"202142667"
@@ -573,8 +573,8 @@
 	//DUSTY Players
 	"EddezeNNN" 		"82634167"
 	"TH0R"				"97751682"
-	"pallib0ndi"		"34650707"
-	"detinate" 			"5098392"
+	"RavlE"				"378132001"
+	"PANDAZ" 			"203029173"
 	"StebbiC0C0"		"25418735"
 	//TZE Players
 	"gRuChA" 			"66926846"
@@ -654,12 +654,12 @@
 	"d1Ledez"			"899162551"
 	"clax" 				"168818887"
 	"glowiing"			"213998181"
-	//Ungentium Players
-	"TOAO" 				"196107432"
-	"boll"				"847311841"
-	"asran"				"163202698"
-	"Brain" 			"164426945"
-	"Demho"				"146746760"
+	//CatEvil Players
+	"tor1towOw" 		"112244062"
+	"BabyRage"			"139195357"
+	"Antuanette"		"993380987"
+	"alejoMk-" 			"89823307"
+	"SlotmaN"			"901771717"
 	//Flyte Players
 	"mds" 				"3185218"
 	"CoJoMo"			"239501561"
@@ -702,4 +702,16 @@
 	"wetfy"				"891313265"
 	"kanshineF" 		"1065960618"
 	"ManticorE"			"370580840"
+	//GTZ Players
+	"nesto" 			"354155998"
+	"GOiS"				"40824370"
+	"drext"				"848961404"
+	"pakitu" 			"883426825"
+	"frozzen"			"837883417"
+	//GenOne Players
+	"bibu" 				"150573885"
+	"Sterzig"			"393180492"
+	"Graviti"			"219272777"
+	"EIZA" 				"852927919"
+	"DGL"				"278101132"
 }
