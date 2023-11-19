@@ -1,4 +1,4 @@
-// csgosl 2.18 config 1 at Wed Sep 06 19:41:47 BST 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.18 config 1 at Sun Nov 19 14:47:56 GMT 2023 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/2511365957/
 $10000$
@@ -266,7 +266,7 @@ de_infernohr_night
 de_infernos2055
 de_installation
 de_iris
-de_island
+workshop/2676105148/de_island
 de_jingshen
 de_junction_r2
 de_kabul_b3

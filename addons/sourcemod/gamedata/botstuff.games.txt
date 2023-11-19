@@ -274,27 +274,6 @@
 					}
 				}
 			}
-			"CCSBot::CanSeeLooseBomb"
-			{
-				"signature" "CCSBot::CanSeeLooseBomb"
-				"callconv" "thiscall"
-				"return" "bool"
-				"this" "entity"
-			}
-			"BotChatterInterface::SpottedLooseBomb"
-			{
-				"signature" "BotChatterInterface::SpottedLooseBomb"
-				"callconv" "thiscall"
-				"return" "void"
-				"this" "ignore"
-				"arguments"
-				{
-					"bomb"
-					{
-						"type" "cbaseentity"
-					}
-				}
-			}
 		}
 		"MemPatches"
 		{
