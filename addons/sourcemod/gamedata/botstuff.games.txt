@@ -177,6 +177,11 @@
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
 			}
+			"CCSBot::m_isStuck"
+			{
+				//Is in the same function has the string 'Getting out of NULL area...\n'
+				"windows"	   "24895"
+			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata
@@ -293,7 +298,7 @@
 				"windows"
 				{
 					"offset"	"989h"
-					"verify"	"\x51\x8B\xCB\xE8\xFF\x75\x00\x00\x84\xC0"
+					"verify"	"\x51\x8B\xCB\xE8\xEF\x75\x00\x00\x84\xC0"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
@@ -303,7 +308,7 @@
 				"windows"
 				{
 					"offset"	"9A4h"
-					"verify"	"\x8B\xCB\x50\xE8\xD4\x79\x00\x00"
+					"verify"	"\x8B\xCB\x50\xE8\xC4\x79\x00\x00"
 					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}

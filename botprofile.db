@@ -1088,7 +1088,7 @@ ProP+Rifle+RiflePersonality "Kylar"
 	VoicePitch = 87
 End
 
-ProP+Rifle+RiflePersonality "mynio"
+ProP+Rifle+RiflePersonality "jcobbb"
 	VoicePitch = 72
 End
 
@@ -2450,7 +2450,7 @@ ProP+SniperPro+SniperPersonality "Hezz"
 	VoicePitch = 102
 End
 
-ProP+Rifle+RiflePersonality "minimal"
+ProP+Rifle+RiflePersonality "ABM"
 	VoicePitch = 112
 End
 
@@ -2930,7 +2930,7 @@ ProP+Rifle+RiflePersonality "Ph1NNN"
 	VoicePitch = 90
 End
 
-ProP+SniperPro+SniperPersonality "reV3nnnn"
+ProP+SniperPro+SniperPersonality "f1redup"
 	VoicePitch = 107
 End
 
@@ -2942,7 +2942,7 @@ ProP+Rifle+RiflePersonality "Crazy_Gamer"
 	VoicePitch = 106
 End
 
-ProP+Rifle+RiflePersonality "EmbeR"
+ProP+Rifle+RiflePersonality "CycloneF"
 	VoicePitch = 107
 End
 
@@ -2966,6 +2966,50 @@ End
 
 ProP+Rifle+RiflePersonality "keen"
 	VoicePitch = 114
+End
+
+//PDucks Players
+
+ProP+Rifle+RiflePersonality "Trudo"
+	VoicePitch = 52
+End
+
+ProP+SniperPro+SniperPersonality "holli"
+	VoicePitch = 20
+End
+
+ProP+Rifle+RiflePersonality "jsr"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "MoR"
+	VoicePitch = 18
+End
+
+ProP+Rifle+RiflePersonality "PYRO"
+	VoicePitch = 81
+End
+
+//3DMAX Players
+
+ProP+Rifle+RiflePersonality "Lucky"
+	VoicePitch = 85
+End
+
+ProP+SniperPro+SniperPersonality "Maka"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "Djoko"
+	VoicePitch = 30
+End
+
+ProP+Rifle+RiflePersonality "Ex3rcice"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "hAdji"
+	VoicePitch = 91
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

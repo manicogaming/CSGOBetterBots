@@ -215,7 +215,7 @@
 	"hades" 			"90656280"
 	"KEi" 				"121422001"
 	"Kylar" 			"116431013"
-	"mynio" 			"24981058"
+	"jcobbb" 			"218471701"
 	//GamerLegion Players
 	"volt" 				"195488719"
 	"acoR" 				"42677035"	
@@ -591,7 +591,7 @@
 	//River Players
 	"naz" 				"117592077"
 	"Hezz"				"416112544"
-	"minimal"			"81466127"
+	"ABM"				"121444546"
 	"guidimon" 			"888472402"
 	"abizz"				"401347484"
 	//Reason Players
@@ -722,14 +722,26 @@
 	"zesta"				"972785636"
 	//Reign Players
 	"Ph1NNN"			"413777378"
-	"reV3nnnn"			"1143560911"
+	"f1redup"			"8697491"
 	"clouda"			"87243966"
 	"Crazy_Gamer" 		"144479114"
-	"EmbeR"				"135485246"
+	"CycloneF"			"405002832"
 	//JJH Players
 	"m1N1"				"462123965"
 	"DavCost"			"20273529"
 	"SaVage"			"203399460"
 	"ISSAA" 			"77546728"
 	"keen"				"54646804"
+	//PDucks Players
+	"Trudo"				"280211546"
+	"holli"				"285843690"
+	"jsr"				"247154035"
+	"MoR" 				"283912732"
+	"PYRO"				"338593952"
+	//3DMAX Players
+	"Lucky"				"71624387"
+	"Maka"				"85474033"
+	"Djoko"				"87611242"
+	"Ex3rcice" 			"207932472"
+	"hAdji"				"20679059"
 }

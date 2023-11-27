@@ -215,7 +215,7 @@
 	"hades" 			"9INE"
 	"KEi" 				"9INE"
 	"Kylar" 			"9INE"
-	"mynio" 			"9INE"
+	"jcobbb" 			"9INE"
 	//GamerLegion Players
 	"volt" 				"GamerLegion"
 	"acoR" 				"GamerLegion"	
@@ -585,7 +585,7 @@
 	//River Players
 	"naz" 				"River"
 	"Hezz"				"River"
-	"minimal"			"River"
+	"ABM"				"River"
 	"guidimon" 			"River"
 	"abizz"				"River"
 	//Reason Players
@@ -716,14 +716,26 @@
 	"zesta"				"ATOX"
 	//Reign Players
 	"Ph1NNN"			"Reign"
-	"reV3nnnn"			"Reign"
+	"f1redup"			"Reign"
 	"clouda"			"Reign"
 	"Crazy_Gamer" 		"Reign"
-	"EmbeR"				"Reign"
+	"CycloneF"			"Reign"
 	//JJH Players
 	"m1N1"				"JJH"
 	"DavCost"			"JJH"
 	"SaVage"			"JJH"
 	"ISSAA" 			"JJH"
 	"keen"				"JJH"
+	//PDucks Players
+	"Trudo"				"PDucks"
+	"holli"				"PDucks"
+	"jsr"				"PDucks"
+	"MoR" 				"PDucks"
+	"PYRO"				"PDucks"
+	//3DMAX Players
+	"Lucky"				"3DMAX"
+	"Maka"				"3DMAX"
+	"Djoko"				"3DMAX"
+	"Ex3rcice" 			"3DMAX"
+	"hAdji"				"3DMAX"
 }
