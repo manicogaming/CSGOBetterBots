@@ -177,11 +177,6 @@
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
 			}
-			"CCSBot::m_isStuck"
-			{
-				//Is in the same function has the string 'Getting out of NULL area...\n'
-				"windows"	   "24895"
-			}
 			"Weapon_Switch"
 			{
 				//From sdkhooks gamedata

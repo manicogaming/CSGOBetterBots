@@ -79,7 +79,7 @@
 	"Patsi" 			"Liquid"
 	"YEKINDAR" 			"Liquid"
 	//ENCE Players
-	"Snappi" 			"ENCE"
+	"gla1ve" 			"ENCE"
 	"SunPayus" 			"ENCE"
 	"NertZ" 			"ENCE"
 	"maden" 			"ENCE"
@@ -115,7 +115,7 @@
 	"shalfey" 			"forZe"
 	"tN1R" 				"forZe"
 	//Sprout Players
-	"alpha" 			"Sprout"
+	"Anlelele" 			"Sprout"
 	"cej0t" 			"Sprout"
 	"Zyphon" 			"Sprout"
 	"raalz" 			"Sprout"
@@ -190,7 +190,7 @@
 	"awzek" 			"aTTaX"
 	"PerX" 				"aTTaX"	
 	"FreeZe" 			"aTTaX"
-	"slaxz-" 			"aTTaX"
+	"PANIX" 			"aTTaX"
 	"Spiidi" 			"aTTaX"
 	//NewHappy Players
 	"SPine" 			"NewHappy"
@@ -273,8 +273,8 @@
 	//Wings Players
 	"ChildKing"			"Wings" 
 	"lan" 				"Wings"
-	"MarT1n" 			"Wings"
-	"blogg1s" 			"Wings"
+	"flying" 			"Wings"
+	"kreaz" 			"Wings"
 	"gas" 				"Wings"
 	//Lynn Players
 	"westmelon" 		"Lynn"
@@ -283,7 +283,7 @@
 	"Emilia" 			"Lynn"
 	"Jee" 				"Lynn"
 	//Rhyno Players
-	"Icarus" 			"Rhyno"
+	"renatoohaxx" 		"Rhyno"
 	"TMKj" 				"Rhyno"
 	"DDias" 			"Rhyno"
 	"snapy" 			"Rhyno"
@@ -326,8 +326,8 @@
 	"KraiS" 			"SSP"
 	//FTW Players
 	"Ag1l" 				"FTW"
-	"stadodo" 			"FTW"
-	"shr" 				"FTW"
+	"rafaxF" 			"FTW"
+	"aragornN" 			"FTW"
 	"NOPEEj" 			"FTW"
 	"pr" 				"FTW"
 	//ITB Players
@@ -363,9 +363,9 @@
 	//Sangal Players
 	"LNZ" 				"Sangal"
 	"yxngstxr" 			"Sangal"
-	"kyuubii" 			"Sangal"
-	"Soulfly" 			"Sangal"
-	"PANIX"				"Sangal"
+	"sausol" 			"Sangal"
+	"xfl0ud" 			"Sangal"
+	"Ganginho"			"Sangal"
 	//Nixuh Players
 	"flexeeee" 			"Nixuh"
 	"FROZ3N" 			"Nixuh"
@@ -385,23 +385,23 @@
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
 	//Alpha Players
-	"brzer" 			"Alpha"
-	"buNNy" 			"Alpha"
-	"Gnøffe" 			"Alpha"
-	"leakz" 			"Alpha"
-	"LUMSEN"			"Alpha"
+	"brzer" 			"Anlelele"
+	"buNNy" 			"Anlelele"
+	"Gnøffe" 			"Anlelele"
+	"leakz" 			"Anlelele"
+	"LUMSEN"			"Anlelele"
 	//Spirit Players
 	"chopper" 			"Spirit"
 	"ArtFr0st" 			"Spirit"
 	"magixx" 			"Spirit"
 	"donk" 				"Spirit"
 	"zont1x"			"Spirit"
-	//Pompa Players
-	"emi" 				"Pompa"
-	"h4rn" 				"Pompa"
-	"morelz" 			"Pompa"
-	"SLY" 				"Pompa"
-	"bnox"				"Pompa"
+	//Viperio Players
+	"zodi" 				"Viperio"
+	"mAnGo" 			"Viperio"
+	"ReegaN" 			"Viperio"
+	"MMS" 				"Viperio"
+	"pandi7o"			"Viperio"
 	//AGO Players
 	"Dementor" 			"AGO"
 	"DEPRESHN" 			"AGO"
@@ -434,9 +434,9 @@
 	"Demho"				"TF"
 	//IKLA Players
 	"MICHU" 			"IKLA"
-	"draken"			"IKLA"
+	"adeX"				"IKLA"
 	"Kvem" 				"IKLA"
-	"xicoz" 			"IKLA"
+	"Lekr0" 			"IKLA"
 	"Topa"				"IKLA"
 	//Entropiq Players
 	"tiziaN" 			"Entropiq"
@@ -446,28 +446,28 @@
 	"Marix"				"Entropiq"
 	//AVANGAR Players
 	"TNDKingg" 			"AVANGAR"
-	"w1nt3r"			"AVANGAR"
+	"Pumpkin66"			"AVANGAR"
 	"def1zer" 			"AVANGAR"
 	"BLVCKM4GIC" 		"AVANGAR"
-	"ICY"				"AVANGAR"
+	"tasman"			"AVANGAR"
 	//Permitta Players
 	"KukuBambo" 		"Permitta"
 	"tomiko"			"Permitta"
 	"maaryy" 			"Permitta"
 	"hotd0g" 			"Permitta"
 	"darchevile"		"Permitta"
-	//Meta Players
-	"CutzMeretz" 		"Meta"
-	"supLex"			"Meta"
-	"Alisson" 			"Meta"
-	"abr" 				"Meta"
-	"Leomonster"		"Meta"
-	//Dice Players
-	"Tarkky" 			"Dice"
-	"MiniKlar"			"Dice"
-	"DEVIL" 			"Dice"
-	"Chuckyy" 			"Dice"
-	"SBT"				"Dice"
+	//777 Players
+	"Viktha" 			"777"
+	"wenba"				"777"
+	"Affava" 			"777"
+	"MadeInRed" 		"777"
+	"Hagmeister"		"777"
+	//HOTU Players
+	"swiftsteel" 		"HOTU"
+	"anttzz"			"HOTU"
+	"casE" 				"HOTU"
+	"mizu" 				"HOTU"
+	"nitzie"			"HOTU"
 	//Falcons Players
 	"NBK-" 				"Falcons"
 	"mhL"				"Falcons"
@@ -512,16 +512,16 @@
 	"sdy"				"Monte"
 	//NKT Players
 	"XigN" 				"NKT"
-	"erkaSt"			"NKT"
-	"Gratisfaction"		"NKT"
+	"cool4st"			"NKT"
+	"Derek"				"NKT"
 	"BnTeT" 			"NKT"
 	"xerolte"			"NKT"
-	//Boca Players
-	"lenci" 			"Boca"
-	"atarax1a"			"Boca"
-	"pavv"				"Boca"
-	"relentless" 		"Boca"
-	"BK1"				"Boca"
+	//M80 Players
+	"Swisher" 			"M80"
+	"slaxz-"			"M80"
+	"reck"				"M80"
+	"malbsMd" 			"M80"
+	"maNkz"				"M80"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
 	"fino"				"Sampi"
@@ -582,18 +582,18 @@
 	"matios"			"ODDIK"
 	"Tuurtle" 			"ODDIK"
 	"ponter"			"ODDIK"
-	//River Players
-	"naz" 				"River"
-	"Hezz"				"River"
-	"ABM"				"River"
-	"guidimon" 			"River"
-	"abizz"				"River"
-	//Reason Players
-	"Danejoris" 		"Reason"
-	"walker"			"Reason"
-	"Mellow"			"Reason"
-	"BeaKie" 			"Reason"
-	"AJaxz"				"Reason"
+	//Sashi Players
+	"aizy" 				"Sashi"
+	"n1Xen"				"Sashi"
+	"nut nut"			"Sashi"
+	"Speedy" 			"Sashi"
+	"PR1mE"				"Sashi"
+	//Insilio Players
+	"Pipw" 				"Insilio"
+	"FpSSS"				"Insilio"
+	"Polt"				"Insilio"
+	"faydett" 			"Insilio"
+	"sugaR"				"Insilio"
 	//Case Players
 	"yepz" 				"Case"
 	"RCF"				"Case"
