@@ -148,7 +148,7 @@
 	"Banjo" 			"HAVU"
 	"ottoNd" 			"HAVU"
 	"uli" 				"HAVU"
-	"sLowi" 			"HAVU"
+	"puuha" 			"HAVU"
 	"airax" 			"HAVU"
 	//ECSTATIC Players
 	"kraghen"			"ECSTATIC" 
@@ -188,9 +188,9 @@
 	"910" 				"MongolZ"
 	//aTTaX Players
 	"awzek" 			"aTTaX"
-	"PerX" 				"aTTaX"	
+	"skyye" 			"aTTaX"	
 	"FreeZe" 			"aTTaX"
-	"PANIX" 			"aTTaX"
+	"hyped" 			"aTTaX"
 	"ArroW" 			"aTTaX"
 	//NewHappy Players
 	"SPine" 			"NewHappy"
@@ -270,12 +270,12 @@
 	"PALM1" 			"Raptors"
 	"Finui" 			"Raptors"
 	"Midgard" 			"Raptors"
-	//Wings Players
-	"ChildKing"			"Wings" 
-	"Marek" 			"Wings"
-	"flying" 			"Wings"
-	"risk" 				"Wings"
-	"gas" 				"Wings"
+	//sYnck Players
+	"Wahtzz"			"sYnck" 
+	"fejtZ" 			"sYnck"
+	"eku" 				"sYnck"
+	"Jyo" 				"sYnck"
+	"xezr" 				"sYnck"
 	//Lynn Players
 	"westmelon" 		"Lynn"
 	"z4kr" 				"Lynn"
@@ -401,7 +401,7 @@
 	"Basso" 			"CW"
 	"szejn" 			"CW"
 	"Svedjehed" 		"CW"
-	"mupzG"				"CW"
+	"Fessor"			"CW"
 	//Nation Players
 	"syrsoN" 			"Nation"
 	"birdfromsky" 		"Nation"
@@ -467,7 +467,7 @@
 	"SunPayus"			"Falcons"
 	"Snappi" 			"Falcons"
 	"maden" 			"Falcons"
-	"BOROS"				"Falcons"
+	"s1mple"			"Falcons"
 	//500 Players
 	"REDSTAR" 			"500"
 	"dennyslaw"			"500"
@@ -577,7 +577,7 @@
 	"Tuurtle" 			"ODDIK"
 	"ponter"			"ODDIK"
 	//Sashi Players
-	"Fessor" 			"Sashi"
+	"PR1mE" 			"Sashi"
 	"n1Xen"				"Sashi"
 	"nut nut"			"Sashi"
 	"b0RUP" 			"Sashi"
@@ -615,7 +615,7 @@
 	//Solid Players
 	"gbb" 				"Solid"
 	"Lcm"				"Solid"
-	"nolkz"				"Solid"
+	"bnc"				"Solid"
 	"xureba" 			"Solid"
 	"CSO"				"Solid"
 	//JANO Players
@@ -642,12 +642,12 @@
 	"d1Ledez"			"9Pandas"
 	"clax" 				"9Pandas"
 	"glowiing"			"9Pandas"
-	//CatEvil Players
-	"tor1towOw" 		"CatEvil"
-	"BabyRage"			"CatEvil"
-	"Antuanette"		"CatEvil"
-	"alejoMk-" 			"CatEvil"
-	"SlotmaN"			"CatEvil"
+	//Betera Players
+	"sad" 				"Betera"
+	"MaSvAl"			"Betera"
+	"nifee"				"Betera"
+	"lollipop21k" 		"Betera"
+	"alex666"			"Betera"
 	//Flyte Players
 	"mds" 				"Flyte"
 	"CoJoMo"			"Flyte"
@@ -674,10 +674,10 @@
 	"NEUZ"				"Eruption"
 	//TSM Players
 	"valde" 			"TSM"
-	"MoDo"				"TSM"
+	"poizon"			"TSM"
 	"Zyphon"			"TSM"
 	"joel" 				"TSM"
-	"interz"			"TSM"
+	"KWERTZZ"			"TSM"
 	//Rare Players
 	"somebody" 			"Rare"
 	"phzy"				"Rare"
@@ -711,8 +711,8 @@
 	//Reign Players
 	"Ph1NNN"			"Reign"
 	"f1redup"			"Reign"
-	"clouda"			"Reign"
-	"Crazy_Gamer" 		"Reign"
+	"Bhavi"				"Reign"
+	"R2B2" 				"Reign"
 	"CycloneF"			"Reign"
 	//JJH Players
 	"m1N1"				"JJH"
@@ -732,12 +732,12 @@
 	"Djoko"				"3DMAX"
 	"Ex3rcice" 			"3DMAX"
 	"hAdji"				"3DMAX"
-	//LOS Players
-	"leo_drk"			"LOS"
-	"history"			"LOS"
-	"short"				"LOS"
-	"t9rnay" 			"LOS"
-	"JOTA"				"LOS"
+	//Elevate Players
+	"snav"				"Elevate"
+	"dare"				"Elevate"
+	"shane"				"Elevate"
+	"Peeping" 			"Elevate"
+	"dea"				"Elevate"
 	//GenOne Players
 	"Graviti"			"GenOne"
 	"AMANEK"			"GenOne"

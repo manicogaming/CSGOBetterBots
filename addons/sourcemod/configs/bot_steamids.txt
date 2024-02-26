@@ -148,7 +148,7 @@
 	"Banjo" 			"316220635"
 	"ottoNd" 			"75069143"
 	"uli" 				"52262697"
-	"sLowi" 			"15932016"
+	"puuha" 			"288479674"
 	"airax" 			"50161047"
 	//ECSTATIC Players
 	"kraghen"			"86933217" 
@@ -188,9 +188,9 @@
 	"910" 				"1243297617"
 	//aTTaX Players
 	"awzek" 			"238305245"
-	"PerX" 				"208428335"	
+	"skyye" 			"122405104"	
 	"FreeZe" 			"259251039"
-	"PANIX" 			"241868664"
+	"hyped" 			"179338600"
 	"ArroW" 			"299461651"
 	//NewHappy Players
 	"SPine" 			"412672734"
@@ -270,12 +270,12 @@
 	"PALM1" 			"41557192"
 	"Finui" 			"1130447802"
 	"Midgard" 			"234354171"
-	//Wings Players
-	"ChildKing"			"392390376" 
-	"Marek" 			"85470546"
-	"flying" 			"441964070"
-	"risk" 				"1020199058"
-	"gas" 				"41822010"
+	//sYnck Players
+	"Wahtzz"			"205310675" 
+	"fejtZ" 			"95338913"
+	"eku" 				"89792022"
+	"Jyo" 				"43255799"
+	"xezr" 				"295661959"
 	//Lynn Players
 	"westmelon" 		"146974312"
 	"z4kr" 				"177517735"
@@ -401,7 +401,7 @@
 	"Basso"				"152862"
 	"szejn"				"69226768"
 	"Svedjehed"			"170174906"
-	"mupzG"				"233287646"
+	"Fessor"			"311417941"
 	//Nation Players
 	"syrsoN" 			"19857269"
 	"birdfromsky" 		"4338476"
@@ -467,7 +467,7 @@
 	"SunPayus"			"349573813"
 	"Snappi" 			"29157337"
 	"maden" 			"205186299"
-	"BOROS"				"178773495"
+	"s1mple"			"73936547"
 	//500 Players
 	"REDSTAR" 			"88455007"
 	"dennyslaw"			"300693622"
@@ -577,7 +577,7 @@
 	"Tuurtle" 			"34114868"
 	"ponter"			"201409161"
 	//Sashi Players
-	"Fessor" 			"311417941"
+	"PR1mE" 			"26772868"
 	"n1Xen"				"112918040"
 	"nut nut"			"195037514"
 	"b0RUP" 			"146876280"
@@ -615,7 +615,7 @@
 	//Solid Players
 	"gbb" 				"1056251466"
 	"Lcm"				"85137288"
-	"nolkz"				"840067092"
+	"bnc"				"195407613"
 	"xureba" 			"241191357"
 	"CSO"				"372054879"
 	//JANO Players
@@ -642,12 +642,12 @@
 	"d1Ledez"			"899162551"
 	"clax" 				"168818887"
 	"glowiing"			"213998181"
-	//CatEvil Players
-	"tor1towOw" 		"112244062"
-	"BabyRage"			"139195357"
-	"Antuanette"		"993380987"
-	"alejoMk-" 			"89823307"
-	"SlotmaN"			"901771717"
+	//Betera Players
+	"sad" 				"224605553"
+	"MaSvAl"			"257144591"
+	"nifee"				"355768812"
+	"lollipop21k" 		"54552870"
+	"alex666"			"343849791"
 	//Flyte Players
 	"mds" 				"3185218"
 	"CoJoMo"			"239501561"
@@ -674,10 +674,10 @@
 	"NEUZ"				"114122809"
 	//TSM Players
 	"valde" 			"154664140"
-	"MoDo"				"389955370"
+	"poizon"			"117537138"
 	"Zyphon"			"198111516"
 	"joel" 				"839437207"
-	"interz"			"247808592"
+	"KWERTZZ"			"161005692"
 	//Rare Players
 	"somebody" 			"85131873"
 	"phzy"				"447933315"
@@ -711,8 +711,8 @@
 	//Reign Players
 	"Ph1NNN"			"413777378"
 	"f1redup"			"8697491"
-	"clouda"			"87243966"
-	"Crazy_Gamer" 		"144479114"
+	"Bhavi"				"489421022"
+	"R2B2" 				"18750038"
 	"CycloneF"			"405002832"
 	//JJH Players
 	"m1N1"				"462123965"
@@ -732,12 +732,12 @@
 	"Djoko"				"87611242"
 	"Ex3rcice" 			"207932472"
 	"hAdji"				"20679059"
-	//LOS Players
-	"leo_drk"			"58291277"
-	"history"			"925164589"
-	"short"				"137901029"
-	"t9rnay" 			"364544605"
-	"JOTA"				"94554756"
+	//Elevate Players
+	"snav"				"278377258"
+	"dare"				"172615886"
+	"shane"				"409998440"
+	"Peeping" 			"492538353"
+	"dea"				"879332262"
 	//GenOne Players
 	"Graviti"			"219272777"
 	"AMANEK"			"108679223"
