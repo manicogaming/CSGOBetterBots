@@ -92,8 +92,8 @@
 	"Spinx" 			"CSGO-HsTKJ-UzdPk-qvWjm-Y2FDE-eJH8D"
 	//BIG Players
 	"prosus" 			"CSGO-ixqf7-mO5or-aN82z-FP7rR-48GSQ"
-	"mantuu" 			"CSGO-zOSBN-X4Qnn-UW3Uo-E5Kf2-VtjjD"
-	"s1n" 				"CSGO-7vy6M-8CAkT-wPno5-duoyC-5BZ2Q"
+	"syrsoN" 			"CSGO-oaENU-YOq3A-i7678-Z5jMN-xXxTC"
+	"JDC" 				"CSGO-TwvTH-VhPDJ-R7SNs-nwSA3-CnpJN"
 	"tabseN" 			"CSGO-Y49Lm-kdEjo-Y7HQa-vfOTr-8t8rN"
 	"Krimbo" 			"CSGO-UuYyL-sDunF-me8AR-8PCWi-sn5BO"
 	//FURIA Players
@@ -270,12 +270,12 @@
 	"PALM1" 			"CSGO-Cr6jq-pdFab-hUcPA-E9T8a-WROpP"
 	"Finui" 			"CSGO-eseZD-KzhSj-iMoqo-dYXFx-neTnB"
 	"Midgard" 			"CSGO-yRnoD-F8L4L-8sPwA-KJvkE-sfMwF"
-	//sYnck Players
-	"Wahtzz"			"CSGO-9Cisf-vSLr5-k6G6N-84uwm-zYYwP" 
-	"fejtZ" 			"CSGO-arqw6-dfwqL-jfJzT-osNBD-ai2pH"
-	"eku" 				"CSGO-bcWSp-LzOa6-2w63F-NNQbP-76nQD"
-	"Jyo" 				"CSGO-oQdxj-M5zac-K5HKC-DHbsT-KZvaL"
-	"xezr" 				"CSGO-K5zct-BYHfS-V6ZMW-99y6K-TA7yD"
+	//Nemiga Players
+	"1eeR"				"CSGO-9s7FA-6BDuN-RLLCu-WXx5X-EkwjN" 
+	"khaN" 				"CSGO-jQx5T-f7moo-kwd7v-om3hc-RMQNN"
+	"FL4MUS" 			"CSGO-JJhBq-uZc5N-ozDGA-s7FpN-BGSZQ"
+	"riskyb0b" 			"CSGO-J7XLZ-XtBUO-xxFRf-KyxLm-ehG4C"
+	"Xant3r" 			"CSGO-JxQsM-pbucb-qmsat-LsAA6-9DmDA"
 	//Lynn Players
 	"westmelon" 		"CSGO-MVO26-hCbF2-OonA2-Lozh6-UJL9P"
 	"z4kr" 				"CSGO-DkhMk-UAG6T-2AkD8-u7yRu-pevvE"
@@ -408,12 +408,6 @@
 	"szejn"				"CSGO-4em7N-OeKtB-XxLPB-vCWH6-uWXTB"
 	"Svedjehed"			"CSGO-OAH2o-BcEL3-CO6CR-FA7ch-fPsFF"
 	"Fessor"			"CSGO-EvvTA-D6U88-mXTHk-acm3G-bkMHA"
-	//Nation Players
-	"syrsoN" 			"CSGO-iMuyc-upHZB-n8Qbq-QSeZX-TXQ3A"
-	"birdfromsky" 		"CSGO-FvCO8-u5WK2-mMvP6-eEtPu-w46dK"
-	"JDC" 				"CSGO-dKbtZ-AYavK-9i2or-PfSDU-teRVP"
-	"VLDN" 				"CSGO-wCGQe-akBeS-oCaOf-9Kqui-sEpYF"
-	"FASHR"				"CSGO-wCGQe-akBeS-oCaOf-9Kqui-sEpYF"
 	//WC Players
 	"stanislaw" 		"CSGO-3rT2X-DeQMn-6bnNf-FFNFY-fxwPB"
 	"Sonic" 			"CSGO-6bzM2-yJ5bs-oFO2X-7qGUn-5b2UO"
@@ -432,12 +426,6 @@
 	"Bajmi" 			"CSGO-6jEFH-Napdx-dki6h-Mnd7e-LzkXM"
 	"Ex1st" 			"CSGO-L2J9q-oGXsA-SDXHs-G6Cww-K5nQD"
 	"Demho"				"CSGO-WMBbD-eDwBO-r6bQS-WCQPO-wwNQC"
-	//IKLA Players
-	"MICHU" 			"CSGO-K4Sj9-ydOuB-t7Qxn-9M9dS-xUX9G"
-	"adeX"				"CSGO-qXHDT-eDfe4-t7dMr-ftAdk-wiCxH"
-	"Kvem" 				"CSGO-EVpQC-uiucV-2Qmef-JdON8-VH5mA"
-	"Lekr0" 			"CSGO-NxymG-XeVKK-sEJGZ-VsAT5-4YiGH"
-	"Topa"				"CSGO-oiKQd-in48E-zYoYk-KnxLm-3kYbD"
 	//Entropiq Players
 	"tiziaN" 			"CSGO-9zibp-u8vPs-vJyCd-ADpFY-YcOUD"
 	"mwlky"				"CSGO-K5SaH-WqWAD-FkK92-PjTiH-pBtdA"

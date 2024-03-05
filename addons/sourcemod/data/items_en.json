@@ -548,7 +548,21 @@
         "53": 1308,
         "54": 1309,
         "55": 189,
-        "56": 581
+        "56": 581,
+        "57": 1310,
+        "58": 1311,
+        "59": 1312,
+        "60": 1313,
+        "61": 1314,
+        "62": 1315,
+        "63": 1316,
+        "64": 1317,
+        "65": 1318,
+        "66": 1319,
+        "67": 1320,
+        "68": 1321,
+        "69": 1322,
+        "70": 1323
       }
     },
     {
@@ -20296,6 +20310,188 @@
         "max": "1.000000"
       },
       "item_name": "Paranormal"
+    },
+    {
+      "def_index": 1310,
+      "name": "cu_ak47_printstream",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.800000"
+      },
+      "item_name": "Printstream"
+    },
+    {
+      "def_index": 1311,
+      "name": "cu_ak47_backlight",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Phoenix Backlight"
+    },
+    {
+      "def_index": 1312,
+      "name": "cu_ak47_hound",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Hound"
+    },
+    {
+      "def_index": 1313,
+      "name": "cu_ak47_core",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.750000"
+      },
+      "item_name": "Core"
+    },
+    {
+      "def_index": 1314,
+      "name": "cu_ak47_anubis2",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.700000"
+      },
+      "item_name": "Anubis"
+    },
+    {
+      "def_index": 1315,
+      "name": "cu_ak47_phoenix",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.900000"
+      },
+      "item_name": "Phoenix"
+    },
+    {
+      "def_index": 1316,
+      "name": "cu_ak47_bone",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Bone"
+    },
+    {
+      "def_index": 1317,
+      "name": "cu_ak47_mutant",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.750000"
+      },
+      "item_name": "Mutant"
+    },
+    {
+      "def_index": 1318,
+      "name": "gs_ak47_xenlor",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Xenlor"
+    },
+    {
+      "def_index": 1319,
+      "name": "gs_ak47_covenant",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Covenant"
+    },
+    {
+      "def_index": 1320,
+      "name": "gs_ak47_voltec",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Voltec"
+    },
+    {
+      "def_index": 1321,
+      "name": "cu_ak47_neptune",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Tokolosi Neptune"
+    },
+    {
+      "def_index": 1322,
+      "name": "cu_ak47_trapped",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.800000"
+      },
+      "item_name": "Trapped"
+    },
+    {
+      "def_index": 1323,
+      "name": "gs_ak47_brotherhood",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.700000"
+      },
+      "item_name": "The Dark Brotherhood"
     }
   ],
   "gloves": [
@@ -25645,6 +25841,62 @@
         {
           "weapon_def_index": 7,
           "paint_def_index": 1309
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1310
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1311
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1312
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1313
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1314
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1315
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1316
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1317
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1318
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1319
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1320
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1321
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1322
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1323
         }
       ]
     },

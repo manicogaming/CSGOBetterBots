@@ -92,8 +92,8 @@
 	"Spinx" 			"Vitality"
 	//BIG Players
 	"prosus" 			"BIG"
-	"mantuu" 			"BIG"
-	"s1n" 				"BIG"
+	"syrsoN" 			"BIG"
+	"JDC" 				"BIG"
 	"tabseN" 			"BIG"
 	"Krimbo" 			"BIG"
 	//FURIA Players
@@ -138,12 +138,6 @@
 	"STYKO" 			"Apeks"
 	"sense" 			"Apeks"
 	"nawwk" 			"Apeks"
-	//Grayhound Players
-	"INS" 				"Grayhound"
-	"dexter" 			"Grayhound"
-	"aliStair" 			"Grayhound"
-	"Vexite" 			"Grayhound"
-	"Liazz" 			"Grayhound"
 	//HAVU Players
 	"Banjo" 			"HAVU"
 	"ottoNd" 			"HAVU"
@@ -270,12 +264,12 @@
 	"PALM1" 			"Raptors"
 	"Finui" 			"Raptors"
 	"Midgard" 			"Raptors"
-	//sYnck Players
-	"Wahtzz"			"sYnck" 
-	"fejtZ" 			"sYnck"
-	"eku" 				"sYnck"
-	"Jyo" 				"sYnck"
-	"xezr" 				"sYnck"
+	//Nemiga Players
+	"1eeR"				"Nemiga" 
+	"khaN" 				"Nemiga"
+	"FL4MUS" 			"Nemiga"
+	"riskyb0b" 			"Nemiga"
+	"Xant3r" 			"Nemiga"
 	//Lynn Players
 	"westmelon" 		"Lynn"
 	"z4kr" 				"Lynn"
@@ -402,12 +396,6 @@
 	"szejn" 			"CW"
 	"Svedjehed" 		"CW"
 	"Fessor"			"CW"
-	//Nation Players
-	"syrsoN" 			"Nation"
-	"birdfromsky" 		"Nation"
-	"JDC" 				"Nation"
-	"VLDN" 				"Nation"
-	"FASHR"				"Nation"
 	//WC Players
 	"stanislaw" 		"WC"
 	"Sonic" 			"WC"
@@ -426,12 +414,6 @@
 	"Bajmi" 			"EP"
 	"Ex1st" 			"EP"
 	"Demho"				"EP"
-	//IKLA Players
-	"MICHU" 			"IKLA"
-	"adeX"				"IKLA"
-	"Kvem" 				"IKLA"
-	"Lekr0" 			"IKLA"
-	"Topa"				"IKLA"
 	//Entropiq Players
 	"tiziaN" 			"Entropiq"
 	"mwlky"				"Entropiq"

@@ -92,8 +92,8 @@
 	"Spinx" 			"103070679"
 	//BIG Players
 	"prosus" 			"218535303"
-	"mantuu" 			"56166832"
-	"s1n" 				"230197733"
+	"syrsoN" 			"19857269"
+	"JDC" 				"118505645"
 	"tabseN" 			"1225952"
 	"Krimbo" 			"210365363"
 	//FURIA Players
@@ -138,12 +138,6 @@
 	"STYKO" 			"55928431"
 	"nawwk" 			"193386133"
 	"sense" 			"232661813"
-	//Grayhound Players
-	"INS" 				"26946895"
-	"dexter" 			"101535513"
-	"aliStair" 			"138080982"
-	"Vexite" 			"92622415"
-	"Liazz" 			"112055988"
 	//HAVU Players
 	"Banjo" 			"316220635"
 	"ottoNd" 			"75069143"
@@ -270,12 +264,12 @@
 	"PALM1" 			"41557192"
 	"Finui" 			"1130447802"
 	"Midgard" 			"234354171"
-	//sYnck Players
-	"Wahtzz"			"205310675" 
-	"fejtZ" 			"95338913"
-	"eku" 				"89792022"
-	"Jyo" 				"43255799"
-	"xezr" 				"295661959"
+	//Nemiga Players
+	"1eeR"				"876851680" 
+	"khaN" 				"991201920"
+	"FL4MUS" 			"53993406"
+	"riskyb0b" 			"928974297"
+	"Xant3r" 			"879040137"
 	//Lynn Players
 	"westmelon" 		"146974312"
 	"z4kr" 				"177517735"
@@ -402,12 +396,6 @@
 	"szejn"				"69226768"
 	"Svedjehed"			"170174906"
 	"Fessor"			"311417941"
-	//Nation Players
-	"syrsoN" 			"19857269"
-	"birdfromsky" 		"4338476"
-	"JDC" 				"118505645"
-	"VLDN" 				"138932580"
-	"FASHR"				"3238867"
 	//WC Players
 	"stanislaw" 		"21583315"
 	"Sonic" 			"14864123"
@@ -426,12 +414,6 @@
 	"Bajmi" 			"240875179"
 	"Ex1st" 			"131553903"
 	"Demho"				"146746760"
-	//IKLA Players
-	"MICHU" 			"60359075"
-	"adeX"				"387644025"
-	"Kvem" 				"885170938"
-	"Lekr0" 			"1093135"
-	"Topa"				"174477155"
 	//Entropiq Players
 	"tiziaN" 			"37291208"
 	"mwlky"				"206859955"

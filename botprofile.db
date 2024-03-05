@@ -636,11 +636,11 @@ ProP+Rifle+RiflePersonality "prosus"
 	VoicePitch = 71
 End
 
-ProP+SniperPro+SniperPersonality "mantuu"
+ProP+SniperPro+SniperPersonality "syrsoN"
 	VoicePitch = 81
 End
 
-ProP+Rifle+RiflePersonality "s1n"
+ProP+Rifle+RiflePersonality "JDC"
 	VoicePitch = 112
 End
 
@@ -804,28 +804,6 @@ End
 
 ProP+Rifle+RiflePersonality "CacaNito"
 	VoicePitch = 71
-End
-
-//Grayhound Players
-
-ProP+Rifle+RiflePersonality "INS"
-	VoicePitch = 79
-End
-
-ProP+SniperPro+SniperPersonality "aliStair"
-	VoicePitch = 92
-End
-
-ProP+Rifle+RiflePersonality "dexter"
-	VoicePitch = 92
-End
-
-ProP+Rifle+RiflePersonality "Vexite"
-	VoicePitch = 97
-End
-
-ProP+Rifle+RiflePersonality "Liazz"
-	VoicePitch = 89
 End
 
 //HAVU Players
@@ -1293,25 +1271,25 @@ ProP+Rifle+RiflePersonality "Midgard"
 	VoicePitch = 102
 End
 
-//sYnck Players
+//Nemiga Players
 
-ProP+Rifle+RiflePersonality "Wahtzz"
+ProP+Rifle+RiflePersonality "1eeR"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "fejtZ"
+ProP+SniperPro+SniperPersonality "khaN"
 	VoicePitch = 96
 End
 
-ProP+Rifle+RiflePersonality "eku"
+ProP+Rifle+RiflePersonality "FL4MUS"
 	VoicePitch = 113
 End
 
-ProP+Rifle+RiflePersonality "Jyo"
+ProP+Rifle+RiflePersonality "riskyb0b"
 	VoicePitch = 88
 End
 
-ProP+Rifle+RiflePersonality "xezr"
+ProP+Rifle+RiflePersonality "Xant3r"
 	VoicePitch = 113
 End
 
@@ -1783,28 +1761,6 @@ ProP+Rifle+RiflePersonality "Fessor"
 	VoicePitch = 75
 End
 
-//Nation Players
-
-ProP+Rifle+RiflePersonality "birdfromsky"
-	VoicePitch = 105
-End
-
-ProP+SniperPro+SniperPersonality "syrsoN"
-	VoicePitch = 106
-End
-
-ProP+Rifle+RiflePersonality "JDC"
-	VoicePitch = 114
-End
-
-ProP+Rifle+RiflePersonality "VLDN"
-	VoicePitch = 97
-End
-
-ProP+Rifle+RiflePersonality "FASHR"
-	VoicePitch = 90
-End
-
 //Wildcard Players
 
 ProP+Rifle+RiflePersonality "stanislaw"
@@ -1869,28 +1825,6 @@ End
 
 ProP+Rifle+RiflePersonality "Demho"
 	VoicePitch = 76
-End
-
-//IKLA Players
-
-ProP+Rifle+RiflePersonality "MICHU"
-	VoicePitch = 100
-End
-
-ProP+SniperPro+SniperPersonality "adeX"
-	VoicePitch = 101
-End
-
-ProP+Rifle+RiflePersonality "Kvem"
-	VoicePitch = 92
-End
-
-ProP+Rifle+RiflePersonality "Lekr0"
-	VoicePitch = 75
-End
-
-ProP+Rifle+RiflePersonality "Topa"
-	VoicePitch = 89
 End
 
 //Entropiq Players

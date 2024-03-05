@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Feb 26 01:02:54 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon Mar 04 01:19:30 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -74,7 +74,6 @@ aim_usp-s_cme_rc5
 aim_usp_bavovna
 aim_usp_cherep
 aim_usp_gc
-aim_woodstone_csgo
 aim_z_pool_stalker_go
 aim_zotac
 ar_baggage
@@ -137,7 +136,6 @@ awp_lego_z
 awp_legominiindia
 awp_map_gc
 awp_metro_cso2
-awp_moct
 awp_natural
 awp_neon
 awp_old_civ
@@ -243,7 +241,6 @@ cs_max_cs16
 cs_max_go
 cs_militia
 cs_militia_mesa
-cs_militia_original
 cs_militia_winter
 cs_mission
 cs_mopo3
@@ -604,7 +601,6 @@ de_ruination
 de_rush
 de_russiandust2
 de_russka_b2
-de_russka_go
 de_safehouse
 de_safehouse_night
 de_saint
@@ -739,7 +735,6 @@ fy_poolparty_tropic
 fy_simpsons
 fy_simpsons_32
 fy_simpsons_day_v1
-fy_simpsons_gc
 fy_snow_build1
 fy_snow_cs16upscale
 gamerpay5

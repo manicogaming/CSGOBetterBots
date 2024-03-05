@@ -557,8 +557,8 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "prosus");
-			ServerCommand("bot_add_ct %s", "mantuu");
-			ServerCommand("bot_add_ct %s", "s1n");
+			ServerCommand("bot_add_ct %s", "syrsoN");
+			ServerCommand("bot_add_ct %s", "JDC");
 			ServerCommand("bot_add_ct %s", "tabseN");
 			ServerCommand("bot_add_ct %s", "Krimbo");
 			ServerCommand("mp_teamlogo_1 big");
@@ -568,8 +568,8 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "prosus");
-			ServerCommand("bot_add_t %s", "mantuu");
-			ServerCommand("bot_add_t %s", "s1n");
+			ServerCommand("bot_add_t %s", "syrsoN");
+			ServerCommand("bot_add_t %s", "JDC");
 			ServerCommand("bot_add_t %s", "tabseN");
 			ServerCommand("bot_add_t %s", "Krimbo");
 			ServerCommand("mp_teamlogo_2 big");
@@ -748,31 +748,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "sense");
 			ServerCommand("bot_add_t %s", "CacaNito");
 			ServerCommand("mp_teamlogo_2 apex");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "Grayhound", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "INS");
-			ServerCommand("bot_add_ct %s", "dexter");
-			ServerCommand("bot_add_ct %s", "aliStair");
-			ServerCommand("bot_add_ct %s", "Vexite");
-			ServerCommand("bot_add_ct %s", "Liazz");
-			ServerCommand("mp_teamlogo_1 gray");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "INS");
-			ServerCommand("bot_add_t %s", "dexter");
-			ServerCommand("bot_add_t %s", "aliStair");
-			ServerCommand("bot_add_t %s", "Vexite");
-			ServerCommand("bot_add_t %s", "Liazz");
-			ServerCommand("mp_teamlogo_2 gray");
 		}
 	}
 	
@@ -1301,28 +1276,28 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "sYnck", false) == 0)
+	if(strcmp(szTeamArg, "Nemiga", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
 		{
 			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "Wahtzz");
-			ServerCommand("bot_add_ct %s", "fejtZ");
-			ServerCommand("bot_add_ct %s", "eku");
-			ServerCommand("bot_add_ct %s", "Jyo");
-			ServerCommand("bot_add_ct %s", "xezr");
-			ServerCommand("mp_teamlogo_1 syn");
+			ServerCommand("bot_add_ct %s", "1eeR");
+			ServerCommand("bot_add_ct %s", "khaN");
+			ServerCommand("bot_add_ct %s", "FL4MUS");
+			ServerCommand("bot_add_ct %s", "riskyb0b");
+			ServerCommand("bot_add_ct %s", "Xant3r");
+			ServerCommand("mp_teamlogo_1 nem");
 		}
 		
 		if (strcmp(szSideArg, "t", false) == 0)
 		{
 			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "Wahtzz");
-			ServerCommand("bot_add_t %s", "fejtZ");
-			ServerCommand("bot_add_t %s", "eku");
-			ServerCommand("bot_add_t %s", "Jyo");
-			ServerCommand("bot_add_t %s", "xezr");
-			ServerCommand("mp_teamlogo_2 syn");
+			ServerCommand("bot_add_t %s", "1eeR");
+			ServerCommand("bot_add_t %s", "khaN");
+			ServerCommand("bot_add_t %s", "FL4MUS");
+			ServerCommand("bot_add_t %s", "riskyb0b");
+			ServerCommand("bot_add_t %s", "Xant3r");
+			ServerCommand("mp_teamlogo_2 nem");
 		}
 	}
 	
@@ -1851,31 +1826,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Nation", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "birdfromsky");
-			ServerCommand("bot_add_ct %s", "syrsoN");
-			ServerCommand("bot_add_ct %s", "JDC");
-			ServerCommand("bot_add_ct %s", "VLDN");
-			ServerCommand("bot_add_ct %s", "FASHR");
-			ServerCommand("mp_teamlogo_1 zzn");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "birdfromsky");
-			ServerCommand("bot_add_t %s", "syrsoN");
-			ServerCommand("bot_add_t %s", "JDC");
-			ServerCommand("bot_add_t %s", "VLDN");
-			ServerCommand("bot_add_t %s", "FASHR");
-			ServerCommand("mp_teamlogo_2 zzn");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "WC", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -1948,31 +1898,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Ex1st");
 			ServerCommand("bot_add_t %s", "Demho");
 			ServerCommand("mp_teamlogo_2 ente");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "IKLA", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "MICHU");
-			ServerCommand("bot_add_ct %s", "adeX");
-			ServerCommand("bot_add_ct %s", "Kvem");
-			ServerCommand("bot_add_ct %s", "Lekr0");
-			ServerCommand("bot_add_ct %s", "Topa");
-			ServerCommand("mp_teamlogo_1 ikla");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "MICHU");
-			ServerCommand("bot_add_t %s", "adeX");
-			ServerCommand("bot_add_t %s", "Kvem");
-			ServerCommand("bot_add_t %s", "Lekr0");
-			ServerCommand("bot_add_t %s", "Topa");
-			ServerCommand("mp_teamlogo_2 ikla");
 		}
 	}
 	
@@ -3439,7 +3364,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			char szDefaultPrimary[64];
 			GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
 			
-			if (IsItMyChance(1.0))
+			if (IsItMyChance(5.0))
 			{
 				FakeClientCommand(i, "+lookatweapon");
 				FakeClientCommand(i, "-lookatweapon");
@@ -4315,9 +4240,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			
 			if(IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
-				
-			if(GetEntPropFloat(client, Prop_Send, "m_flMaxspeed") == 1.0)
-				SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 260.0);
 			
 			if (g_bIsProBot[client])
 			{		
@@ -4390,14 +4312,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							}
 							
 							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
-								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+								AutoStop(client, fVel, fAngles);
 							else if (fTargetDistance > 2000.0 && GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime())
-								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+								AutoStop(client, fVel, fAngles);
 						}
 						case 1:
 						{
 							if (GetGameTime() - GetEntDataFloat(client, g_iFireWeaponOffset) < 0.15 && !bIsDucking && !bIsReloading)
-								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+								AutoStop(client, fVel, fAngles);
 						}
 						case 9, 40:
 						{
@@ -4405,7 +4327,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
-								SetEntPropFloat(client, Prop_Send, "m_flMaxspeed", 1.0);
+								AutoStop(client, fVel, fAngles);
 							}	
 						}
 					}
@@ -5306,6 +5228,29 @@ stock void SetPlayerTeammateColor(int client)
 		nAssignedColor = bColorInUse == false ? nAssignedColor : -1;
 		g_iPlayerColor[client] = nAssignedColor;
 	}
+}
+
+public void AutoStop(int client, float fVel[3], float fAngles[3])
+{
+	float fPlayerVelocity[3], fVelAngle[3];
+	GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
+	GetVectorAngles(fPlayerVelocity, fVelAngle);
+	float fSpeed = GetVectorLength(fPlayerVelocity);
+	
+	if(fSpeed < 1.0)
+		return;
+	
+	fVelAngle[1] = fAngles[1] - fVelAngle[1];
+	
+	float fNegatedDirection[3], fForwardDirection[3];
+	GetAngleVectors(fVelAngle, fForwardDirection, NULL_VECTOR, NULL_VECTOR);
+	
+	fNegatedDirection[0] = fForwardDirection[0] * (-fSpeed);
+	fNegatedDirection[1] = fForwardDirection[1] * (-fSpeed);
+	fNegatedDirection[2] = fForwardDirection[2] * (-fSpeed);
+	
+	fVel[0] = fNegatedDirection[0];
+	fVel[1] = fNegatedDirection[1];
 }
 
 stock bool ShouldForce()
