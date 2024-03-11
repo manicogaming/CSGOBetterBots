@@ -157,11 +157,11 @@
 	"adamS" 			"8124135"
 	"stadodo" 			"87137134"
 	//AVEZ Players
-	"Masi" 				"343459044"
-	"FOKUSSS" 			"390011747"	
-	"dan1elo" 			"913314174"	
-	"keis" 				"315009976"	
-	"dezz" 				"144939021"	
+	"AntyVirus" 		"385712827"
+	"SpavaQ" 			"1174445643"	
+	"smooho" 			"470123951"	
+	"Yamii" 			"184193962"	
+	"przemeklovel" 		"145396641"	
 	//Nexus Players
 	"BTN" 				"21090119"
 	"XELLOW" 			"92089093"
@@ -259,11 +259,11 @@
 	"Ax1Le" 			"85167576"
 	"Hobbit" 			"68027030"
 	//Raptors Players
-	"Igorek" 			"1136084039"
-	"Rutk0" 			"292716414"
-	"PALM1" 			"41557192"
-	"Finui" 			"1130447802"
-	"Midgard" 			"234354171"
+	"ifan" 				"73604344"
+	"eMy" 				"118767770"
+	"Rhys" 				"159288998"
+	"Ziimzey" 			"322658834"
+	"Yoshwa" 			"90756625"
 	//Nemiga Players
 	"1eeR"				"876851680" 
 	"khaN" 				"991201920"
@@ -319,11 +319,11 @@
 	"cello" 			"18118733"	
 	"KraiS" 			"373432840"
 	//FTW Players
-	"Ag1l" 				"226613145"
-	"pr" 				"149329940"
-	"rafaxF" 			"134941478"
-	"aragornN" 			"844611868"
-	"NOPEEj" 			"200528981"
+	"adamb" 			"890801811"
+	"susp" 				"382452440"
+	"Jackinho" 			"111823952"
+	"nilo" 				"200790839"
+	"ztr" 				"1049202927"
 	//ITB Players
 	"Thomas" 			"65182402"
 	"CRUC1AL" 			"158832564"
@@ -455,7 +455,7 @@
 	"dennyslaw"			"300693622"
 	"SHiPZ" 			"254948893"
 	"Rainwaker" 		"177848062"
-	"Patrick"			"98715951"
+	"Grashog"			"78941188"
 	//Aurora Players
 	"Lack1" 			"185937269"
 	"deko"				"327280463"
@@ -643,7 +643,7 @@
 	"wfn" 				"194589046"
 	"moz"				"194340011"
 	//DUDES Players
-	"DEBRE" 			"392572953"
+	"otto" 				"260511296"
 	"Askan"				"362940274"
 	"Straxy"			"339325287"
 	"noleN" 			"860186586"
@@ -745,11 +745,11 @@
 	"refrezh" 			"104598470"
 	"roeJ"				"30968963"
 	//NRG Players
-	"daps"				"19892353"
+	"Walco"				"129639458"
 	"oSee"				"87206806"
 	"Brehze"			"94595411"
 	"HexT" 				"250668735"
-	"FaNg"				"312457591"
+	"autimatic"			"94605121"
 	//Canids Players
 	"DeStiNy"			"89528706"
 	"nython"			"170224923"

@@ -562,7 +562,19 @@
         "67": 1320,
         "68": 1321,
         "69": 1322,
-        "70": 1323
+        "70": 1323,
+        "71": 1324,
+        "72": 1325,
+        "73": 1326,
+        "74": 1327,
+        "75": 1328,
+        "76": 1329,
+        "77": 1330,
+        "78": 1331,
+        "79": 1332,
+        "80": 1333,
+        "81": 1335,
+        "82": 1336
       }
     },
     {
@@ -4469,7 +4481,8 @@
         "31": 409,
         "32": 98,
         "33": 143,
-        "34": 735
+        "34": 735,
+        "35": 1334
       }
     },
     {
@@ -20492,6 +20505,175 @@
         "max": "0.700000"
       },
       "item_name": "The Dark Brotherhood"
+    },
+    {
+      "def_index": 1324,
+      "name": "cu_ak47_frame",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Frame"
+    },
+    {
+      "def_index": 1325,
+      "name": "cu_ak47_assassins",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Assassins"
+    },
+    {
+      "def_index": 1326,
+      "name": "cu_ak47_weedy",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.050000",
+        "max": "0.700000"
+      },
+      "item_name": "Weedy"
+    },
+    {
+      "def_index": 1327,
+      "name": "cu_ak47_azureus",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.050000",
+        "max": "0.700000"
+      },
+      "item_name": "Azureus"
+    },
+    {
+      "def_index": 1328,
+      "name": "cu_ak47_shark",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.800000"
+      },
+      "item_name": "Shark"
+    },
+    {
+      "def_index": 1329,
+      "name": "cu_ak47_misty_fade",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.020000",
+        "max": "0.870000"
+      },
+      "item_name": "Frontside Misty Fade"
+    },
+    {
+      "def_index": 1330,
+      "name": "cu_ak47_meres",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.650000"
+      },
+      "item_name": "Meres"
+    },
+    {
+      "def_index": 1331,
+      "name": "cu_ak47_pride",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.730000"
+      },
+      "item_name": "Pride"
+    },
+    {
+      "def_index": 1332,
+      "name": "cu_ak47_pride",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.550000"
+      },
+      "item_name": "Herofor"
+    },
+    {
+      "def_index": 1333,
+      "name": "cu_ak47_oxide_blaze",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.500000"
+      },
+      "item_name": "Oxide Blaze"
+    },
+    {
+      "def_index": 1334,
+      "name": "cu_m9_oxide_blaze",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.500000"
+      },
+      "item_name": "Oxide Blaze"
+    },
+    {
+      "def_index": 1335,
+      "name": "cu_ak47_sweet_revenge",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.050000",
+        "max": "0.700000"
+      },
+      "item_name": "Sweet Revenge"
+    },
+    {
+      "def_index": 1336,
+      "name": "cu_ak47_containtment",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Containment Breach"
     }
   ],
   "gloves": [
@@ -25897,6 +26079,54 @@
         {
           "weapon_def_index": 7,
           "paint_def_index": 1323
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1324
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1325
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1326
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1327
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1328
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1329
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1330
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1331
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1332
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1333
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1335
+        },
+        {
+          "weapon_def_index": 7,
+          "paint_def_index": 1336
         }
       ]
     },

@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Mar 04 01:19:30 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon Mar 11 01:16:02 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -154,7 +154,6 @@ awp_updown
 awp_zeecore
 awp_zigzag
 awp_zvk_v2_mevid
-bgt_vegas
 classic_dust2
 classic_dust2_winter
 classicaimmap

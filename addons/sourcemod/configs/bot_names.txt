@@ -157,11 +157,11 @@
 	"adamS" 			"KOI"
 	"stadodo" 			"KOI"
 	//AVEZ Players
-	"Masi" 				"AVEZ"
-	"keis" 				"AVEZ"
-	"dezz" 				"AVEZ"	
-	"FOKUSSS" 			"AVEZ"
-	"dan1elo" 			"AVEZ"
+	"AntyVirus" 		"AVEZ"
+	"Yamii" 			"AVEZ"
+	"przemeklovel" 		"AVEZ"	
+	"SpavaQ" 			"AVEZ"
+	"smooho" 			"AVEZ"
 	//Nexus Players
 	"BTN" 				"Nexus"
 	"XELLOW" 			"Nexus"
@@ -259,11 +259,11 @@
 	"Ax1Le" 			"C9"
 	"Hobbit" 			"C9"
 	//Raptors Players
-	"Igorek" 			"Raptors"
-	"Rutk0" 			"Raptors"
-	"PALM1" 			"Raptors"
-	"Finui" 			"Raptors"
-	"Midgard" 			"Raptors"
+	"ifan" 				"Raptors"
+	"eMy" 				"Raptors"
+	"Rhys" 				"Raptors"
+	"Ziimzey" 			"Raptors"
+	"Yoshwa" 			"Raptors"
 	//Nemiga Players
 	"1eeR"				"Nemiga" 
 	"khaN" 				"Nemiga"
@@ -318,12 +318,12 @@
 	"Cl34v3rs" 			"SSP"
 	"cello" 			"SSP"	
 	"KraiS" 			"SSP"
-	//FTW Players
-	"Ag1l" 				"FTW"
-	"rafaxF" 			"FTW"
-	"aragornN" 			"FTW"
-	"NOPEEj" 			"FTW"
-	"pr" 				"FTW"
+	//Metiz Players
+	"adamb" 			"Metiz"
+	"Jackinho" 			"Metiz"
+	"nilo" 				"Metiz"
+	"ztr" 				"Metiz"
+	"susp" 				"Metiz"
 	//ITB Players
 	"Thomas" 			"ITB"
 	"CRUC1AL" 			"ITB"
@@ -455,7 +455,7 @@
 	"dennyslaw"			"500"
 	"SHiPZ" 			"500"
 	"Rainwaker" 		"500"
-	"Patrick"			"500"
+	"Grashog"			"500"
 	//Aurora Players
 	"Lack1" 			"Aurora"
 	"deko"				"Aurora"
@@ -643,7 +643,7 @@
 	"wfn" 				"Coalesce"
 	"moz"				"Coalesce"
 	//DUDES Players
-	"DEBRE" 			"DUDES"
+	"otto" 				"DUDES"
 	"Askan"				"DUDES"
 	"Straxy"			"DUDES"
 	"noleN" 			"DUDES"
@@ -745,11 +745,11 @@
 	"refrezh" 			"Preasy"
 	"roeJ"				"Preasy"
 	//NRG Players
-	"daps"				"NRG"
+	"Walco"				"NRG"
 	"oSee"				"NRG"
 	"Brehze"			"NRG"
 	"HexT" 				"NRG"
-	"FaNg"				"NRG"
+	"autimatic"			"NRG"
 	//Canids Players
 	"DeStiNy"			"Canids"
 	"nython"			"Canids"

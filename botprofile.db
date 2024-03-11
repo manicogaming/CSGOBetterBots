@@ -874,23 +874,23 @@ End
 
 //AVEZ Players
 
-ProP+Rifle+RiflePersonality "Masi"
+ProP+Rifle+RiflePersonality "AntyVirus"
 	VoicePitch = 110
 End
 
-ProP+SniperPro+SniperPersonality "keis"
+ProP+SniperPro+SniperPersonality "Yamii"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "dezz"
+ProP+Rifle+RiflePersonality "przemeklovel"
 	VoicePitch = 97
 End
 
-ProP+Rifle+RiflePersonality "FOKUSSS"
+ProP+Rifle+RiflePersonality "SpavaQ"
 	VoicePitch = 92
 End
 
-ProP+Rifle+RiflePersonality "dan1elo"
+ProP+Rifle+RiflePersonality "smooho"
 	VoicePitch = 87
 End
 
@@ -1251,23 +1251,23 @@ End
 
 //Raptors Players
 
-ProP+Rifle+RiflePersonality "Igorek"
+ProP+Rifle+RiflePersonality "ifan"
 	VoicePitch = 79
 End
 
-ProP+SniperPro+SniperPersonality "Rutk0"
+ProP+SniperPro+SniperPersonality "eMy"
 	VoicePitch = 94
 End
 
-ProP+Rifle+RiflePersonality "PALM1"
+ProP+Rifle+RiflePersonality "Rhys"
 	VoicePitch = 79
 End
 
-ProP+Rifle+RiflePersonality "Finui"
+ProP+Rifle+RiflePersonality "Ziimzey"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "Midgard"
+ProP+Rifle+RiflePersonality "Yoshwa"
 	VoicePitch = 102
 End
 
@@ -1469,25 +1469,25 @@ ProP+Rifle+RiflePersonality "KraiS"
 	VoicePitch = 72
 End
 
-//FTW Players
+//Metiz Players
 
-ProP+Rifle+RiflePersonality "Ag1l"
+ProP+Rifle+RiflePersonality "adamb"
 	VoicePitch = 103
 End
 
-ProP+SniperPro+SniperPersonality "rafaxF"
+ProP+SniperPro+SniperPersonality "Jackinho"
 	VoicePitch = 93
 End
 
-ProP+Rifle+RiflePersonality "aragornN"
+ProP+Rifle+RiflePersonality "nilo"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "NOPEEj"
+ProP+Rifle+RiflePersonality "ztr"
 	VoicePitch = 114
 End
 
-ProP+Rifle+RiflePersonality "pr"
+ProP+Rifle+RiflePersonality "susp"
 	VoicePitch = 103
 End
 
@@ -1980,7 +1980,7 @@ ProP+Rifle+RiflePersonality "Rainwaker"
 	VoicePitch = 95
 End
 
-ProP+Rifle+RiflePersonality "Patrick"
+ProP+Rifle+RiflePersonality "Grashog"
 	VoicePitch = 93
 End
 
@@ -2668,7 +2668,7 @@ End
 
 //DUDES Players
 
-ProP+Rifle+RiflePersonality "DEBRE"
+ProP+Rifle+RiflePersonality "otto"
 	VoicePitch = 110
 End
 
@@ -3042,7 +3042,7 @@ End
 
 //NRG Players
 
-ProP+Rifle+RiflePersonality "daps"
+ProP+Rifle+RiflePersonality "Walco"
 	VoicePitch = 97
 End
 
@@ -3058,7 +3058,7 @@ ProP+Rifle+RiflePersonality "HexT"
 	VoicePitch = 77
 End
 
-ProP+Rifle+RiflePersonality "FaNg"
+ProP+Rifle+RiflePersonality "autimatic"
 	VoicePitch = 101
 End
 
