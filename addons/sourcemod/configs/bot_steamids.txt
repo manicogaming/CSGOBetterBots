@@ -17,7 +17,7 @@
 	"dev1ce"			"27447936"
 	"Staehr" 			"44842089"
 	"jabbi" 			"160291620"
-	"blameF" 			"68193075"
+	"br0" 				"100218065"
 	//NiP Players
 	"headtr1ck" 		"399254202"
 	"ALEX" 				"40718819"
@@ -115,11 +115,11 @@
 	"shalfey" 			"247206904"
 	"tN1R" 				"911747440"
 	//Sprout Players
-	"Anlelele" 			"169533761"
+	"reiko" 			"190436529"
 	"cej0t" 			"120183772"
-	"sL1m3" 			"311571424"
+	"Sdaim" 			"868936646"
 	"raalz" 			"35794427"
-	"spooke" 			"118917633"
+	"podi" 				"168665390"
 	//Heroic Players
 	"TeSeS" 			"36412550"
 	"nicoodoz" 			"112851399"
@@ -171,7 +171,7 @@
 	//Genk Players
 	"CrePoW" 			"236708549"
 	"yOOm" 				"310780740"
-	"ReFuZR" 			"338268527"	
+	"JuN1" 				"905374007"	
 	"Wumbo" 			"190075141"
 	"AyeZ" 				"327350696"
 	//MongolZ Players
@@ -202,7 +202,7 @@
 	"doczin"			"135630812" 
 	"drg" 				"193829435"
 	"rdnzao" 			"347468740"
-	"Gafolo" 			"174962930"
+	"supLexN1" 			"168665390"
 	"togs" 				"493654174"
 	//9INE Players
 	"tomiko" 			"258331727"
@@ -324,12 +324,12 @@
 	"Jackinho" 			"111823952"
 	"nilo" 				"200790839"
 	"ztr" 				"1049202927"
-	//ITB Players
-	"Thomas" 			"65182402"
-	"CRUC1AL" 			"158832564"
-	"Bymas" 			"133120627"
-	"rallen" 			"31166738"
-	"misutaaa" 			"121263183"
+	//UNiTY Players
+	"Levi" 				"64235109"
+	"NIO" 				"170307600"
+	"Pechyn" 			"93527213"
+	"M1key" 			"221902877"
+	"K1-FiDa" 			"169558739"
 	//9z Players
 	"dgt" 				"256625848"
 	"Martinez" 			"409820733"
@@ -481,11 +481,11 @@
 	"SHiNE" 			"196824160"
 	"Peppzor"			"328124340"
 	//Monte Players
-	"br0" 				"100218065"
+	"Gizmy" 			"383961258"
 	"Woro2k"			"1015186932"
 	"DemQQ"				"165905698"
 	"kRaSnaL" 			"336152206"
-	"sdy"				"80311472"
+	"ryu"				"208135644"
 	//NKT Players
 	"XigN" 				"49809482"
 	"cool4st"			"882582488"
@@ -504,12 +504,12 @@
 	"ZEDKO"				"173898955"
 	"sAvana1" 			"69270002"
 	"manguss"			"75244785"
-	//ESC Players
-	"j3kie" 			"367714476"
-	"guthriee"			"915055420"
-	"bondik"			"46918643"
-	"Smash" 			"214027585"
-	"t3ns1on"			"859013518"
+	//Begrip Players
+	"Reedz" 			"414805326"
+	"Karma"				"1044331908"
+	"titulus"			"1117488063"
+	"Ariant0" 			"1049056087"
+	"treckiz"			"230246847"
 	//GR Players
 	"weqt2" 			"441644470"
 	"mediocrity"		"198468393"
@@ -576,18 +576,18 @@
 	"urban0"			"876876564"
 	"RICIOLI" 			"101523272"
 	"Snowzin"			"417070118"
-	//GODSENT Players
-	"RuStY" 			"122394166"
-	"Golden"			"116509497"
-	"Plopski"			"175613070"
-	"eraa" 				"413888723"
-	"bobeksde"			"100650499"
+	//eSuba Players
+	"teCkoO" 			"37797834"
+	"HenkkyG"			"10674280"
+	"Tusi"				"208098951"
+	"naturaL" 			"47933981"
+	"creZe"				"41700991"
 	//Illuminar Players
-	"Qlocuu" 			"285659622"
-	"POLO"				"846588837"
+	"ANeraX" 			"361688905"
+	"ultimate"			"323723495"
 	"phr"				"19304486"
 	"Furlan" 			"177495873"
-	"Prism"				"117411943"
+	"keis"				"315009976"
 	//Zero Players
 	"simke" 			"375268315"
 	"brutmonster"		"298730550"
@@ -686,7 +686,7 @@
 	"intra"				"256251217"
 	//ATOX Players
 	"dobu" 				"159891913"
-	"AccuracyTG"		"369268302"
+	"ANNIHILATION"		"315821474"
 	"kabal"				"161246388"
 	"MiQ" 				"914241492"
 	"zesta"				"972785636"

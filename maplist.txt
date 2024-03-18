@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Mar 11 01:16:02 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon Mar 18 01:58:20 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -698,7 +698,6 @@ de_westwood_csgoe
 de_westwood_s
 de_whitesand
 de_winter_village_go
-de_winterdust2_gc
 de_wpoint
 de_yacht
 de_zen
@@ -744,7 +743,6 @@ ka_kirby_dome_day
 kannsein
 la_tribonera
 lego_2008_new
-lobby_mapveto
 mcdonalds-mds-csgo
 merazo_fix
 nuketown_remake_2

@@ -17,7 +17,7 @@
 	"dev1ce" 			"Astralis"
 	"Staehr" 			"Astralis"
 	"jabbi" 			"Astralis"
-	"blameF" 			"Astralis"
+	"br0" 				"Astralis"
 	//NiP Players
 	"headtr1ck" 		"NiP"
 	"ALEX" 				"NiP"
@@ -115,11 +115,11 @@
 	"shalfey" 			"forZe"
 	"tN1R" 				"forZe"
 	//Sprout Players
-	"Anlelele" 			"Sprout"
+	"reiko" 			"Sprout"
 	"cej0t" 			"Sprout"
-	"sL1m3" 			"Sprout"
+	"Sdaim" 			"Sprout"
 	"raalz" 			"Sprout"
-	"spooke" 			"Sprout"
+	"podi" 				"Sprout"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"nicoodoz" 			"Heroic"
@@ -171,7 +171,7 @@
 	//Genk Players
 	"CrePoW" 			"Genk"
 	"yOOm" 				"Genk"
-	"ReFuZR" 			"Genk"	
+	"JuN1" 				"Genk"	
 	"Wumbo" 			"Genk"
 	"AyeZ" 				"Genk"
 	//MongolZ Players
@@ -202,7 +202,7 @@
 	"doczin"			"Sharks" 
 	"drg" 				"Sharks"
 	"rdnzao" 			"Sharks"
-	"Gafolo" 			"Sharks"
+	"supLexN1" 			"Sharks"
 	"togs" 				"Sharks"
 	//9INE Players
 	"tomiko" 			"9INE"
@@ -324,12 +324,12 @@
 	"nilo" 				"Metiz"
 	"ztr" 				"Metiz"
 	"susp" 				"Metiz"
-	//ITB Players
-	"Thomas" 			"ITB"
-	"CRUC1AL" 			"ITB"
-	"Bymas" 			"ITB"
-	"rallen" 			"ITB"
-	"misutaaa" 			"ITB"
+	//UNiTY Players
+	"Levi" 				"UNiTY"
+	"NIO" 				"UNiTY"
+	"Pechyn" 			"UNiTY"
+	"M1key" 			"UNiTY"
+	"K1-FiDa" 			"UNiTY"
 	//9z Players
 	"dgt" 				"9z"
 	"Martinez" 			"9z"
@@ -373,11 +373,11 @@
 	"nosraC" 			"Nouns"
 	"cJ"				"Nouns"
 	//Alpha Players
-	"brzer" 			"Anlelele"
-	"buNNy" 			"Anlelele"
-	"Gnøffe" 			"Anlelele"
-	"leakz" 			"Anlelele"
-	"LUMSEN"			"Anlelele"
+	"brzer" 			"Alpha"
+	"buNNy" 			"Alpha"
+	"Gnøffe" 			"Alpha"
+	"leakz" 			"Alpha"
+	"LUMSEN"			"Alpha"
 	//Spirit Players
 	"chopper" 			"Spirit"
 	"sh1ro" 			"Spirit"
@@ -481,11 +481,11 @@
 	"SHiNE" 			"EYEBALLERS"
 	"Peppzor"			"EYEBALLERS"
 	//Monte Players
-	"br0" 				"Monte"
+	"Gizmy" 			"Monte"
 	"Woro2k"			"Monte"
 	"DemQQ"				"Monte"
 	"kRaSnaL" 			"Monte"
-	"sdy"				"Monte"
+	"ryu"				"Monte"
 	//NKT Players
 	"XigN" 				"NKT"
 	"cool4st"			"NKT"
@@ -504,12 +504,12 @@
 	"ZEDKO"				"Sampi"
 	"sAvana1" 			"Sampi"
 	"manguss"			"Sampi"
-	//ESC Players
-	"j3kie" 			"ESC"
-	"guthriee"			"ESC"
-	"bondik"			"ESC"
-	"Smash" 			"ESC"
-	"t3ns1on"			"ESC"
+	//Begrip Players
+	"Reedz" 			"Begrip"
+	"Karma"				"Begrip"
+	"titulus"			"Begrip"
+	"Ariant0" 			"Begrip"
+	"treckiz"			"Begrip"
 	//GR Players
 	"weqt2" 			"GR"
 	"mediocrity"		"GR"
@@ -576,18 +576,18 @@
 	"urban0"			"Case"
 	"RICIOLI" 			"Case"
 	"Snowzin"			"Case"
-	//GODSENT Players
-	"RuStY" 			"GODSENT"
-	"Golden"			"GODSENT"
-	"Plopski"			"GODSENT"
-	"eraa" 				"GODSENT"
-	"bobeksde"			"GODSENT"
+	//eSuba Players
+	"teCkoO" 			"eSuba"
+	"HenkkyG"			"eSuba"
+	"Tusi"				"eSuba"
+	"naturaL" 			"eSuba"
+	"creZe"				"eSuba"
 	//Illuminar Players
-	"Qlocuu" 			"Illuminar"
-	"POLO"				"Illuminar"
+	"ANeraX" 			"Illuminar"
+	"ultimate"			"Illuminar"
 	"phr"				"Illuminar"
 	"Furlan" 			"Illuminar"
-	"Prism"				"Illuminar"
+	"keis"				"Illuminar"
 	//Zero Players
 	"simke" 			"Zero"
 	"brutmonster"		"Zero"
@@ -686,7 +686,7 @@
 	"intra"				"FA"
 	//ATOX Players
 	"dobu" 				"ATOX"
-	"AccuracyTG"		"ATOX"
+	"ANNIHILATION"		"ATOX"
 	"kabal"				"ATOX"
 	"MiQ" 				"ATOX"
 	"zesta"				"ATOX"
