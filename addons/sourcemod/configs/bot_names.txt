@@ -22,7 +22,7 @@
 	"headtr1ck" 		"NiP"
 	"ALEX" 				"NiP"
 	"es3tag" 			"NiP"
-	"k0nfig" 			"NiP"
+	"maxster" 			"NiP"
 	"REZ" 				"NiP"
 	//MASONIC Players
 	"Froslev" 			"MASONIC"
@@ -61,7 +61,7 @@
 	"Moseyuh" 			"TYLOO"
 	"kaze" 				"TYLOO"
 	//Secret Players
-	"innocent" 			"Secret"
+	"NOPEEj" 			"Secret"
 	"Tauson" 			"Secret"
 	"Maze" 				"Secret"
 	"Kind0" 			"Secret"
@@ -114,12 +114,12 @@
 	"sstiNiX" 			"forZe"
 	"shalfey" 			"forZe"
 	"tN1R" 				"forZe"
-	//Sprout Players
-	"reiko" 			"Sprout"
-	"cej0t" 			"Sprout"
-	"Sdaim" 			"Sprout"
-	"raalz" 			"Sprout"
-	"podi" 				"Sprout"
+	//B8 Players
+	"cptkurtka023" 		"B8"
+	"r1nkle" 			"B8"
+	"OWNER" 			"B8"
+	"npl" 				"B8"
+	"esenthial" 		"B8"
 	//Heroic Players
 	"TeSeS" 			"Heroic"
 	"nicoodoz" 			"Heroic"
@@ -215,7 +215,7 @@
 	"acoR" 				"GamerLegion"	
 	"isak" 				"GamerLegion"
 	"Snax" 				"GamerLegion"	
-	"Keoz" 				"GamerLegion"
+	"aNdu" 				"GamerLegion"
 	//Strife Players
 	"J0LZ" 				"Strife"
 	"YuZ" 				"Strife"
@@ -343,7 +343,7 @@
 	"beastik" 			"SINNERS"
 	"AJTT" 				"SINNERS"
 	//Pera Players
-	"msN" 				"Pera"
+	"bibu" 				"Pera"
 	"DGL" 				"Pera"
 	"Aaron" 			"Pera"
 	"Kamion" 			"Pera"
@@ -351,7 +351,7 @@
 	//Sangal Players
 	"LNZ" 				"Sangal"
 	"yxngstxr" 			"Sangal"
-	"sausol" 			"Sangal"
+	"jottAAA" 			"Sangal"
 	"xfl0ud" 			"Sangal"
 	"Ganginho"			"Sangal"
 	//Nixuh Players
@@ -361,7 +361,7 @@
 	"bLazE" 			"Nixuh"
 	"RustyYG"			"Nixuh"
 	//BESTIA Players
-	"deco" 				"BESTIA"
+	"naz" 				"BESTIA"
 	"meyern" 			"BESTIA"
 	"luchov" 			"BESTIA"
 	"Noktse" 			"BESTIA"
@@ -400,7 +400,7 @@
 	"stanislaw" 		"WC"
 	"Sonic" 			"WC"
 	"JBa" 				"WC"
-	"Infinite" 			"WC"
+	"C4LLM3SU3" 		"WC"
 	"SLIGHT"			"WC"
 	//D13 Players
 	"tamir" 			"D13"
@@ -449,7 +449,7 @@
 	"SunPayus"			"Falcons"
 	"Snappi" 			"Falcons"
 	"maden" 			"Falcons"
-	"s1mple"			"Falcons"
+	"dupreeh"			"Falcons"
 	//500 Players
 	"REDSTAR" 			"500"
 	"dennyslaw"			"500"
@@ -478,7 +478,7 @@
 	"HEAP" 				"EYEBALLERS"
 	"JW"				"EYEBALLERS"
 	"Sapec"				"EYEBALLERS"
-	"SHiNE" 			"EYEBALLERS"
+	"Golden" 			"EYEBALLERS"
 	"Peppzor"			"EYEBALLERS"
 	//Monte Players
 	"Gizmy" 			"Monte"
@@ -497,7 +497,7 @@
 	"slaxz-"			"M80"
 	"reck"				"M80"
 	"malbsMd" 			"M80"
-	"maNkz"				"M80"
+	"s1n"				"M80"
 	//Sampi Players
 	"The eLiVe" 		"Sampi"
 	"fino"				"Sampi"
@@ -520,14 +520,14 @@
 	"latto" 			"Legacy"
 	"NEKIZ"				"Legacy"
 	"dumau"				"Legacy"
-	"coldzera" 			"Legacy"
+	"Stewie2K" 			"Legacy"
 	"b4rtiN"			"Legacy"
 	//BetBoom Players
 	"nafany" 			"BetBoom"
 	"zorte"				"BetBoom"
 	"KaiR0N-"			"BetBoom"
 	"s1ren" 			"BetBoom"
-	"danistzz"			"BetBoom"
+	"Magnojez"			"BetBoom"
 	//Fluxo Players
 	"PKL" 				"Fluxo"
 	"zevy"				"Fluxo"
@@ -648,12 +648,12 @@
 	"Straxy"			"DUDES"
 	"noleN" 			"DUDES"
 	"Distu"				"DUDES"
-	//Eruption Players
-	"fury5k" 			"Eruption"
-	"MagnumZ"			"Eruption"
-	"ariucle"			"Eruption"
-	"ROUX" 				"Eruption"
-	"NEUZ"				"Eruption"
+	//Aravt Players
+	"fury5k" 			"Aravt"
+	"MagnumZ"			"Aravt"
+	"ariucle"			"Aravt"
+	"ROUX" 				"Aravt"
+	"NEUZ"				"Aravt"
 	//TSM Players
 	"valde" 			"TSM"
 	"poizon"			"TSM"
@@ -739,11 +739,11 @@
 	"CJE" 				"Reason"
 	"Rezzed"			"Reason"
 	//Preasy Players
-	"Altekz"			"Preasy"
-	"dupreeh"			"Preasy"
-	"TMB"				"Preasy"
-	"refrezh" 			"Preasy"
-	"roeJ"				"Preasy"
+	"Equip"			"Preasy"
+	"Sekjs"			"Preasy"
+	"Griller"				"Preasy"
+	"Beccie" 			"Preasy"
+	"VireZ"				"Preasy"
 	//NRG Players
 	"Walco"				"NRG"
 	"oSee"				"NRG"
@@ -756,4 +756,28 @@
 	"venomzera"			"Canids"
 	"hardzao" 			"Canids"
 	"dav1deuS"			"Canids"
+	//Mindfreak Players
+	"tucks"				"Mindfreak"
+	"supar"				"Mindfreak"
+	"gump"				"Mindfreak"
+	"Sliimey" 			"Mindfreak"
+	"pain"				"Mindfreak"
+	//LEISURE Players
+	"RflX"				"LEISURE"
+	"Godypmu"			"LEISURE"
+	"JONAZZZ"			"LEISURE"
+	"SeeT-A" 			"LEISURE"
+	"BrowNy"			"LEISURE"
+	//Espionage Players
+	"kwezz"				"Espionage"
+	"LuckyV1"			"Espionage"
+	"IceBerg"			"Espionage"
+	"Cabbi" 			"Espionage"
+	"MistR"				"Espionage"
+	//Marcos Players
+	"L0ngBarrel"		"Marcos"
+	"BuNTz"				"Marcos"
+	"vel0city"			"Marcos"
+	"EaazyBoost" 		"Marcos"
+	"ResoLuxe"			"Marcos"
 }

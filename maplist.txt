@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Mar 18 01:58:20 GMT 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon Apr 01 01:19:55 BST 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -288,7 +288,6 @@ de_abbey
 de_abyss
 de_aerospace
 de_airstrip_classic
-de_alcazar
 de_aldebaran
 de_alexandra
 de_ali
@@ -441,7 +440,6 @@ de_forge_go
 de_forlorn
 de_frost
 de_furui
-de_garden
 de_garrison
 de_giorgi
 de_gloss_r1
@@ -640,7 +638,6 @@ de_subzero
 de_sugarcane
 de_summit
 de_sunburn
-de_surveillance_h
 de_survivor
 de_swamp
 de_swta
