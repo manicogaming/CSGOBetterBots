@@ -1,3 +1,6 @@
+**CS2 version of these plugins is currently on hold waiting to see if Source2Mod releases**
+
+
 # Edited Plugins
 
 In here there are some plugins that I personally edited to add the features of those plugins to the BOTs. I'm using these edited plugins on a Local Server because on a public server I'll get a Token ban.
