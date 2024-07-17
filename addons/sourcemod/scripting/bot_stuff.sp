@@ -15,7 +15,7 @@ char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch, g_bIsCompetitive;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
-bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1], g_bCanThrowGrenade[MAXPLAYERS+1];
+bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iPrevTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
 int g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
@@ -3942,7 +3942,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 			g_bDropWeapon[i] = false;
 			g_bHasGottenDrop[i] = false;
 			g_bThrowGrenade[i] = false;
-			g_bCanThrowGrenade[i] = false;
 			g_iTarget[i] = -1;
 			g_iPrevTarget[i] = -1;
 			g_iDoingSmokeNum[i] = -1;
@@ -4027,8 +4026,8 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
 		}
 		
-		if (strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0)
-			CreateTimer(0.1, Timer_DelaySwitch, GetClientUserId(client));
+		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
+			RequestFrame(BeginQuickSwitch, GetClientUserId(client));
 	}
 }
 
@@ -4202,7 +4201,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		g_bDontSwitch[client] = true;
 		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
 		
-		return MRES_Ignored;
+		return strcmp(szDesc, "Plant bomb on floor") == 0 ? MRES_Supercede : MRES_Ignored;
 	}
 	else if(strcmp(szDesc, "GrenadeThrowBend") == 0)
 	{
@@ -4227,7 +4226,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			
 		DHookGetParamVector(hParams, 2, fNoisePosition);
 		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(3.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePosition);
 			return MRES_Supercede;
@@ -4235,6 +4234,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		
 		if(eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE)
 			BotEquipBestWeapon(client, true);
+		
+		g_bDontSwitch[client] = true;
+		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
 		
 		fNoisePosition[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fNoisePosition);
@@ -4304,6 +4306,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if (!IsValidEntity(g_iActiveWeapon[client])) return Plugin_Continue;
 			
 			int iDefIndex = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iItemDefinitionIndex");
+			float fPlayerVelocity[3], fSpeed;
+			GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
+			fPlayerVelocity[2] = 0.0;
+			fSpeed = GetVectorLength(fPlayerVelocity);
 			
 			if(g_pCurrArea[client] != INVALID_NAV_AREA)
 			{							
@@ -4324,10 +4330,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				if(fDisToNade < 25.0)
 				{					
 					BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
-					float fPlayerVelocity[3];
-					GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
-										
-					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && GetVectorLength(fPlayerVelocity) == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
+					
+					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
 						BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
 				}
 			}
@@ -4380,7 +4384,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{					
 					BotAttack(client, g_iTarget[client]);
 					if(g_iPrevTarget[client] == -1)
-						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.175, 0.20);
+						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.23, 0.25);
 					fTargetDistance = GetVectorDistance(g_fBotOrigin[client], g_fTargetPos[client]);
 					
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
@@ -4400,21 +4404,21 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					{
 						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 						{
+							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
+								AutoStop(client, fVel, fAngles);
+							else if (fTargetDistance > 2000.0 && GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime())
+								AutoStop(client, fVel, fAngles);
+						
 							if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
 							{
 								iButtons &= ~IN_ATTACK;
 							
-								if(!bIsReloading)
+								if(!bIsReloading && (fSpeed < 50.0 || bIsDucking || iDefIndex == 17 || iDefIndex == 19 || iDefIndex == 23 || iDefIndex == 24 || iDefIndex == 25 || iDefIndex == 26 || iDefIndex == 33 || iDefIndex == 34))
 								{
 									iButtons |= IN_ATTACK;
 									SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
 								}
 							}
-							
-							if (fOnTarget > fAimTolerance && !bIsDucking && fTargetDistance < 2000.0 && iDefIndex != 17 && iDefIndex != 19 && iDefIndex != 23 && iDefIndex != 24 && iDefIndex != 25 && iDefIndex != 26 && iDefIndex != 33 && iDefIndex != 34)
-								AutoStop(client, fVel, fAngles);
-							else if (fTargetDistance > 2000.0 && GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime())
-								AutoStop(client, fVel, fAngles);
 						}
 						case 1:
 						{
@@ -4425,9 +4429,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							if (fTargetDistance < 2750.0 && !bIsReloading && GetEntProp(client, Prop_Send, "m_bIsScoped") && GetGameTime() - g_fShootTimestamp[client] > 0.4 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
+								AutoStop(client, fVel, fAngles);
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
-								AutoStop(client, fVel, fAngles);
 							}	
 						}
 					}
@@ -4435,12 +4439,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					float fClientLoc[3];
 					Array_Copy(g_fBotOrigin[client], fClientLoc, 3);
 					fClientLoc[2] += HalfHumanHeight;
-						
+					
 					if (GetGameTime() >= g_fCrouchTimestamp[client] && !GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 						iButtons |= IN_DUCK;
-						
-					if(!(GetEntityFlags(client) & FL_ONGROUND))
-						iButtons &= ~IN_ATTACK;
 						
 					g_iPrevTarget[client] = g_iTarget[client];
 				}
@@ -4953,52 +4954,38 @@ bool IsPlayerReloading(int client)
 	if(!IsValidEntity(g_iActiveWeapon[client]))
 		return false;
 	
-	//Out of ammo? or Reloading? or Finishing Weapon Switch?
-	if(GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") || GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iClip1") <= 0 || GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iIronSightMode") == 2)
+	//Out of ammo?
+	if(GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_iClip1") == 0)
 		return true;
 	
-	if(GetEntPropFloat(client, Prop_Send, "m_flNextAttack") > GetGameTime())
+	//Reloading?
+	if(GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload"))
 		return true;
 	
-	return GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") >= GetGameTime();
-}
-
-public Action Timer_ThrowSmoke(Handle hTimer, int client)
-{
-	g_bCanThrowGrenade[client] = true;
+	//Ready to fire?
+	if(GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
+		return false;
 	
-	return Plugin_Stop;
+	return true;
 }
 
-public Action Timer_SmokeDelay(Handle hTimer, int client)
-{
-	g_iDoingSmokeNum[client] = -1;
-	g_bCanThrowGrenade[client] = false;
-	
-	return Plugin_Stop;
-}
-
-public Action Timer_DelaySwitch(Handle hTimer, any client)
+public void BeginQuickSwitch(int client)
 {
 	client = GetClientOfUserId(client);
 	
 	if(client != 0 && IsClientInGame(client))
 	{
 		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
-		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
+		RequestFrame(FinishQuickSwitch, GetClientUserId(client));
 	}
-	
-	return Plugin_Stop;
 }
 
-public Action Timer_DelayBestWeapon(Handle hTimer, any client)
+public void FinishQuickSwitch(int client)
 {
 	client = GetClientOfUserId(client);
 	
 	if(client != 0 && IsClientInGame(client))
-		BotEquipBestWeapon(client, true);
-	
-	return Plugin_Stop;
+		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
 }
 
 public Action Timer_EnableSwitch(Handle hTimer, any client)
@@ -5020,16 +5007,6 @@ public Action Timer_DontForceThrow(Handle hTimer, any client)
 		g_bThrowGrenade[client] = false;
 		BotEquipBestWeapon(client, true);
 	}
-	
-	return Plugin_Stop;
-}
-
-public Action Timer_ThrowGrenade(Handle hTimer, any client)
-{
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-		g_bCanThrowGrenade[client] = true;
 	
 	return Plugin_Stop;
 }
@@ -5147,14 +5124,15 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 public void ProcessGrenadeThrow(int client, float fTarget[3])
 {
 	NavMesh_GetGroundHeight(fTarget, fTarget[2]);
-	GetGrenadeToss(client, fTarget);
+	if(!GetGrenadeToss(client, fTarget))
+		return;
 	
 	Array_Copy(fTarget, g_fNadeTarget[client], 3);
 	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 	RequestFrame(DelayThrow, GetClientUserId(client));
 }
 
-stock void GetGrenadeToss(int client, float fTossTarget[3])
+stock bool GetGrenadeToss(int client, float fTossTarget[3])
 {
 	float fEyePosition[3], fTo[3];
 	GetClientEyePosition(client, fEyePosition);
@@ -5166,7 +5144,7 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 
 	float fHeightInc = fTossHeight / 10.0;
 	float fTarget[3];
-	float safeSpace = fTossHeight / 2.0;
+	float fSafeSpace = fTossHeight / 2.0;
 
 	// Build a box to sweep along the ray when looking for obstacles
 	float fMins[3] = { -16.0, -16.0, 0.0 };
@@ -5177,7 +5155,7 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 
 	// find low and high bounds of toss window
 	float fLow = 0.0;
-	float fHigh = fTossHeight + safeSpace;
+	float fHigh = fTossHeight + fSafeSpace;
 	bool bGotLow = false;
 	float fLastH = 0.0;
 	for(float h = 0.0; h < 3.0 * fTossHeight; h += fHeightInc)
@@ -5218,23 +5196,26 @@ stock void GetGrenadeToss(int client, float fTossTarget[3])
 		// throw grenade into toss window
 		if (fTossHeight < fLow)
 		{
-			if (fLow + safeSpace > fHigh)
+			if (fLow + fSafeSpace > fHigh)
 				// narrow window
 				fTossHeight = (fHigh + fLow)/2.0;
 			else
-				fTossHeight = fLow + safeSpace;
+				fTossHeight = fLow + fSafeSpace;
 		}
-		else if (fTossHeight > fHigh - safeSpace)
+		else if (fTossHeight > fHigh - fSafeSpace)
 		{
-			if (fHigh - safeSpace < fLow)
+			if (fHigh - fSafeSpace < fLow)
 				// narrow window
 				fTossHeight = (fHigh + fLow)/2.0;
 			else
-				fTossHeight = fHigh - safeSpace;
+				fTossHeight = fHigh - fSafeSpace;
 		}
 		
 		fTossTarget[2] += fTossHeight;
+		return true;
 	}
+	
+	return false;
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])

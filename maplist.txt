@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Apr 01 01:19:55 BST 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Wed Jul 17 03:35:42 BST 2024 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -14,10 +14,10 @@ $2018$_final
 $2021$
 $3000$_fs_v2
 35hp_16togo
-35hp_gx
 35hp_kodiak_arena
 35hp_old_school
 aim_100hp
+aim_abbey
 aim_ak-colt
 aim_ak-colt_arg
 aim_ak-colt_arg_v2
@@ -47,7 +47,6 @@ aim_deagle_lego
 aim_deagle_lego_2022
 aim_deagle_ultra
 aim_furiouz_future
-aim_furiouz_remake
 aim_gamersensei_brick
 aim_gamersensei_fount
 aim_japan
@@ -58,7 +57,6 @@ aim_map_classic
 aim_map_cme_rc5
 aim_map_esl
 aim_map_new
-aim_map_remake
 aim_metro
 aim_nuke1999
 aim_ogc_map_d
@@ -66,7 +64,6 @@ aim_patio
 aim_poolparty_crashz
 aim_redline_2019
 aim_redline_cme_rc5
-aim_redline_remake
 aim_roblox
 aim_sacred_yard_v1
 aim_usp
@@ -74,6 +71,7 @@ aim_usp-s_cme_rc5
 aim_usp_bavovna
 aim_usp_cherep
 aim_usp_gc
+aim_woodstone_csgo
 aim_z_pool_stalker_go
 aim_zotac
 ar_baggage
@@ -136,6 +134,7 @@ awp_lego_z
 awp_legominiindia
 awp_map_gc
 awp_metro_cso2
+awp_moct
 awp_natural
 awp_neon
 awp_old_civ
@@ -154,6 +153,7 @@ awp_updown
 awp_zeecore
 awp_zigzag
 awp_zvk_v2_mevid
+bgt_vegas
 classic_dust2
 classic_dust2_winter
 classicaimmap
@@ -206,11 +206,7 @@ cs_extraction
 cs_frozen_csgo
 cs_gasstation_go
 cs_ghosthouse
-cs_go
 cs_grovest
-cs_havana
-cs_havana_css
-cs_havana_d
 cs_hijack
 cs_horror2
 cs_insertion2
@@ -223,6 +219,7 @@ cs_italy
 cs_italy_16togo
 cs_italy_cso2
 cs_italy_d
+cs_ivory
 cs_light
 cs_logovo
 cs_mall_shootout
@@ -237,15 +234,14 @@ cs_mansion_lime
 cs_mari
 cs_max_a4
 cs_max_cs16
-cs_max_go
 cs_militia
 cs_militia_mesa
+cs_militia_original
 cs_militia_winter
 cs_mission
 cs_mopo3
 cs_motel
 cs_museum
-cs_nevada
 cs_night_borough
 cs_noffice
 cs_office
@@ -282,12 +278,12 @@ csp_aztec
 csp_inferno
 de_20th
 de_2ndstrike_go
-de_2x2dust_classic
 de_abaddon
 de_abbey
 de_abyss
 de_aerospace
 de_airstrip_classic
+de_alcazar
 de_aldebaran
 de_alexandra
 de_ali
@@ -440,6 +436,7 @@ de_forge_go
 de_forlorn
 de_frost
 de_furui
+de_garden
 de_garrison
 de_giorgi
 de_gloss_r1
@@ -550,6 +547,7 @@ de_overgrown
 de_overpass
 de_overpass_2055
 de_overpass_cyberpunk
+de_overpassrework
 de_palais
 de_paradise
 de_payday
@@ -561,7 +559,6 @@ de_port
 de_portugal_rc1
 de_prime
 de_prince
-de_pripyat
 de_prodigy
 de_prodigy16
 de_prodigy_classic
@@ -577,8 +574,10 @@ de_rampart_final
 de_rampart_wip
 de_rats_1337_v2
 de_rats_2020
+de_rats_brb
 de_rats_csgo
 de_rats_kitchoon
+de_rats_ol_shack_r1
 de_rats_oldcs
 de_ravine
 de_reberth
@@ -598,6 +597,7 @@ de_ruination
 de_rush
 de_russiandust2
 de_russka_b2
+de_russka_go
 de_safehouse
 de_safehouse_night
 de_saint
@@ -620,6 +620,7 @@ de_shore
 de_shortdust
 de_shortnuke
 de_shortwaterfall
+de_simpsons
 de_simpsons_css_v4
 de_skyline
 de_slate
@@ -638,6 +639,7 @@ de_subzero
 de_sugarcane
 de_summit
 de_sunburn
+de_surveillance_h
 de_survivor
 de_swamp
 de_swta
@@ -664,7 +666,6 @@ de_treehouse_invasion_go
 de_tulip
 de_turbine
 de_tuscan
-de_tuscan_b2
 de_tuscan_fixes_csgo
 de_tuscan_fixes_maw2
 de_tuscany
@@ -693,8 +694,10 @@ de_westwood_cp_v3
 de_westwood_csgo_v2
 de_westwood_csgoe
 de_westwood_s
+de_wharf
 de_whitesand
 de_winter_village_go
+de_winterdust2_gc
 de_wpoint
 de_yacht
 de_zen
@@ -707,6 +710,7 @@ fy_afternoon_v1
 fy_aztec_fire_csgo
 fy_buzzkill_csgo
 fy_coldsnap_go
+fy_crazyjump
 fy_deagle5
 fy_dustworld_go
 fy_iceworld
@@ -730,13 +734,12 @@ fy_poolparty_tropic
 fy_simpsons
 fy_simpsons_32
 fy_simpsons_day_v1
+fy_simpsons_gc
 fy_snow_build1
 fy_snow_cs16upscale
 gamerpay5
-gd_cbble
 hd_office_remade
 hl_crossfire
-ka_kirby_dome_day
 kannsein
 la_tribonera
 lego_2008_new
@@ -750,7 +753,6 @@ santorini
 shipment
 shortm2023
 togethermap_kamino
-training1
 wm_cabin
 wm_cargo2
 wm_skypool_aa18
