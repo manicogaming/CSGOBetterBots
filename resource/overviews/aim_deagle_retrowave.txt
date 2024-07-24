@@ -1,7 +1,0 @@
-"aim_deagle_retrowave"
-{
- "material" "overviews/aim_deagle_retrowave"
- "pos_x"  "-636"
- "pos_y"  "1260"
- "scale"  "2.20"
-}

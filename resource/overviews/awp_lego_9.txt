@@ -1,7 +1,0 @@
-"awp_lego_9"
-{
-	"material"	"overviews/awp_lego_9"
-	"pos_x"		"-2030"
-	"pos_y"		"1547" 
-	"scale"		"3.00" 
-}

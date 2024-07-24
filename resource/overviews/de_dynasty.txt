@@ -1,7 +1,0 @@
-"de_dynasty"
-{
-	"material"	"overviews/de_dynasty_radar"
-	"pos_x"		"-2163"	
-	"pos_y"		"2597"
-	"scale"		"4.5"
-}

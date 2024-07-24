@@ -1,7 +1,0 @@
-"de_rust_b2"
-{
-	"material"		"overviews/de_rust_b2"
-	"pos_x"		"-3057"
-	"pos_y"		"3240"
-	"scale"		"3.9"
-}

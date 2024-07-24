@@ -1,7 +1,0 @@
-"de_brotherhood"
-{
-"material" "overviews/de_brotherhood_radar"
-"pos_x" "-2386"
-"pos_y" "1863"
-"scale" "4.0"
-}

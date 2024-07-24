@@ -1,8 +1,0 @@
-
-"cs_saunala"
-{
- "material" "overviews/cs_example_a4"
- "pos_x"        "-1838"     //MAP X COORDS
- "pos_y"        "691"    //MAP Y COORDS
- "scale"        "5"        //MAP SCALE
-}
