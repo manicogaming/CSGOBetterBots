@@ -10,6 +10,7 @@
 #include <dhooks>
 #include <botmimic>
 #include <PTaH>
+#include <ripext>
 
 char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
@@ -19,7 +20,7 @@ bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPL
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iPrevTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
 int g_iCurrentRound, g_iRoundsPlayed, g_iCTScore, g_iTScore, g_iMaxNades;
 int g_iProfileRankOffset, g_iPlayerColorOffset;
-int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset;
+int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset, g_iBotDispositionOffset;
 float g_fBotOrigin[MAXPLAYERS+1][3], g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3], g_fWeaponPos[MAXPLAYERS+1][3];
 float g_fRoundStart, g_fFreezeTimeEnd;
 float g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fShootTimestamp[MAXPLAYERS+1], g_fThrowNadeTimestamp[MAXPLAYERS+1], g_fSearchGunTimestamp[MAXPLAYERS+1], g_fCrouchTimestamp[MAXPLAYERS+1];
@@ -36,7 +37,6 @@ Handle g_hSwitchWeaponCall;
 Handle g_hIsLineBlockedBySmoke;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
-Handle g_hBotAttack;
 Address g_pTheBots;
 CNavArea g_pCurrArea[MAXPLAYERS+1];
 
@@ -130,6 +130,15 @@ enum TaskType
 	NUM_TASKS
 }
 
+enum DispositionType
+{
+	ENGAGE_AND_INVESTIGATE,								///< engage enemies on sight and investigate enemy noises
+	OPPORTUNITY_FIRE,									///< engage enemies on sight, but only look towards enemy noises, dont investigate
+	SELF_DEFENSE,										///< only engage if fired on, or very close to enemy
+	IGNORE_ENEMIES,										///< ignore all enemies - useful for ducking around corners, running away, etc
+	NUM_DISPOSITIONS
+}
+
 enum GamePhase
 {
 	GAMEPHASE_WARMUP_ROUND,
@@ -143,10 +152,10 @@ enum GamePhase
 
 public Plugin myinfo = 
 {
-	name = "BOT Stuff", 
+	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.0", 
+	version = "1.0.1", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -3464,7 +3473,7 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 			char szDefaultPrimary[64];
 			GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
 			
-			if (IsItMyChance(5.0))
+			if (IsItMyChance(2.0))
 			{
 				FakeClientCommand(i, "+lookatweapon");
 				FakeClientCommand(i, "-lookatweapon");
@@ -3571,7 +3580,7 @@ public Action Timer_MoveToBomb(Handle hTimer, any data)
 					
 					fPlantedC4Distance = GetVectorDistance(g_fBotOrigin[i], fPlantedC4Location);
 					
-					if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 100.0 && GetTask(i) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(i, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[i])
+					if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 30.0 && GetTask(i) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(i, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[i])
 					{
 						SDKCall(g_hSwitchWeaponCall, i, GetPlayerWeaponSlot(i, CS_SLOT_KNIFE), 0);
 						BotMoveTo(i, fPlantedC4Location, FASTEST_ROUTE);
@@ -3615,43 +3624,12 @@ public void OnGameFrame()
 					GetClientEyePosition(client, fClientEyes);
 				
 					//Rifles
-					int iAWP = GetNearestEntity(client, "weapon_awp");
 					int iAK47 = GetNearestEntity(client, "weapon_ak47");
 					int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 					int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
 					int iPrimaryDefIndex;
 
-					if (IsValidEntity(iAWP))
-					{
-						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
-						float fAWPLocation[3];
-						
-						if (iPrimaryDefIndex != 9)
-						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
-
-							if (GetVectorLength(fAWPLocation) > 0.0 && IsPointVisible(fClientEyes, fAWPLocation) && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fAWPLocation) < 5.0))
-							{
-								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
-								Array_Copy(fAWPLocation, g_fWeaponPos[client], 3);
-								g_fSearchGunTimestamp[client] = GetGameTime();
-								if (GetVectorDistance(g_fBotOrigin[client], fAWPLocation) < 50.0 && GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1)
-									CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), false);
-							}
-						}
-						else if (iPrimary == -1)
-						{
-							GetEntPropVector(iAWP, Prop_Send, "m_vecOrigin", fAWPLocation);
-
-							if (GetVectorLength(fAWPLocation) > 0.0 && IsPointVisible(fClientEyes, fAWPLocation) && (GetGameTime() - g_fSearchGunTimestamp[client] > 5.0 || GetVectorDistance(g_fWeaponPos[client], fAWPLocation) < 5.0))
-							{
-								BotMoveTo(client, fAWPLocation, FASTEST_ROUTE);
-								Array_Copy(fAWPLocation, g_fWeaponPos[client], 3);
-								g_fSearchGunTimestamp[client] = GetGameTime();
-							}
-						}
-					}
-					else if (IsValidEntity(iAK47))
+					if (IsValidEntity(iAK47))
 					{
 						iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 						float fAK47Location[3];
@@ -3882,15 +3860,14 @@ public void OnClientPostAdminCheck(int client)
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
 		char szBotName[MAX_NAME_LENGTH];
-		char szClanTag[MAX_NAME_LENGTH];
 		
 		GetClientName(client, szBotName, sizeof(szBotName));
 		g_bIsProBot[client] = false;
 		SDKHook(client, SDKHook_WeaponDrop, OnWeaponDrop);
 		
-		if(IsProBot(szBotName, szClanTag))
+		if(IsProBot(szBotName))
 		{
-			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "Ax1Le") == 0 || strcmp(szBotName, "donk") == 0)
+			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "jL") == 0 || strcmp(szBotName, "donk") == 0)
 			{
 				g_fLookAngleMaxAccel[client] = 20000.0;
 				g_fReactionTime[client] = 0.0;
@@ -3904,7 +3881,6 @@ public void OnClientPostAdminCheck(int client)
 			g_bIsProBot[client] = true;
 		}
 		
-		CS_SetClientClanTag(client, szClanTag);
 		GetCrosshairCode(szBotName, g_szCrosshairCode[client], 35);
 		
 		g_bUseUSP[client] = IsItMyChance(75.0) ? true : false;
@@ -4226,7 +4202,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 			
 		DHookGetParamVector(hParams, 2, fNoisePosition);
 		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(3.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePosition);
 			return MRES_Supercede;
@@ -4311,6 +4287,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			fPlayerVelocity[2] = 0.0;
 			fSpeed = GetVectorLength(fPlayerVelocity);
 			
+			if(GetDisposition(client) == SELF_DEFENSE)
+				SetDisposition(client, ENGAGE_AND_INVESTIGATE);
+			
 			if(g_pCurrArea[client] != INVALID_NAV_AREA)
 			{							
 				if (g_pCurrArea[client].Attributes & NAV_MESH_WALK)
@@ -4345,7 +4324,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if(IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
 			
-			if (g_bIsProBot[client])
+			if (g_bIsProBot[client] && GetDisposition(client) != IGNORE_ENEMIES)
 			{		
 				g_iTarget[client] = BotGetEnemy(client);
 				
@@ -4381,8 +4360,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						BotEquipBestWeapon(client, true);
 				
 				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
-				{					
-					BotAttack(client, g_iTarget[client]);
+				{
 					if(g_iPrevTarget[client] == -1)
 						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.23, 0.25);
 					fTargetDistance = GetVectorDistance(g_fBotOrigin[client], g_fTargetPos[client]);
@@ -4400,6 +4378,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
 					float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
 					float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
+					
+					if(g_iPrevTarget[client] == -1 && fOnTarget > fAimTolerance)
+						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.23, 0.25);
+						
 					switch(iDefIndex)
 					{
 						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
@@ -4429,7 +4411,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 						{
 							if (fTargetDistance < 2750.0 && !bIsReloading && GetEntProp(client, Prop_Send, "m_bIsScoped") && GetGameTime() - g_fShootTimestamp[client] > 0.4 && GetClientAimTarget(client, true) == g_iTarget[client])
 							{
-								AutoStop(client, fVel, fAngles);
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
 							}	
@@ -4561,10 +4542,10 @@ void ParseMapNades(const char[] szMap)
 	g_iMaxNades = i;
 }
 
-bool IsProBot(const char[] szName, char[] szClanTag)
+bool IsProBot(const char[] szName)
 {
-	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_names.txt");
+	char szPath[PLATFORM_MAX_PATH], szNameToCompare[MAX_NAME_LENGTH];
+	BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_names.json");
 	
 	if (!FileExists(szPath))
 	{
@@ -4572,30 +4553,24 @@ bool IsProBot(const char[] szName, char[] szClanTag)
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues("Names");
+	JSONObject jData = JSONObject.FromFile(szPath);
+	JSONArray jNames = view_as<JSONArray>(jData.Get("names"));
 	
-	if (!kv.ImportFromFile(szPath))
+	for(int i = 0; i < jNames.Length; i++)
 	{
-		delete kv;
-		PrintToServer("Unable to parse Key Values file %s.", szPath);
-		return false;
+		jNames.GetString(i, szNameToCompare, MAX_NAME_LENGTH);
+		if(strcmp(szName, szNameToCompare) == 0)
+		{
+			delete jData;
+			delete jNames;
+			return true;
+		}
 	}
 	
-	if(!kv.GetString(szName, szClanTag, MAX_NAME_LENGTH))
-	{
-		delete kv;
-		return false;
-	}
+	delete jData;
+	delete jNames;
 	
-	if(strcmp(szClanTag, "") == 0)
-	{
-		delete kv;
-		return false;
-	}
-	
-	delete kv;
-	
-	return true;
+	return false;
 }
 
 bool GetCrosshairCode(const char[] szName, char[] szCrosshairCode, int iSize)
@@ -4663,6 +4638,9 @@ public void LoadSDK()
 	
 	if ((g_iBotTaskOffset = hGameConfig.GetOffset("CCSBot::m_task")) == -1)
 		SetFailState("Failed to get CCSBot::m_task offset.");
+	
+	if ((g_iBotDispositionOffset = hGameConfig.GetOffset("CCSBot::m_disposition")) == -1)
+		SetFailState("Failed to get CCSBot::m_disposition offset.");
 	
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
@@ -4744,11 +4722,6 @@ public void LoadSDK()
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::ThrowGrenade");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
-	
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::Attack");
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
-	if ((g_hBotAttack = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::Attack signature!");
 	
 	delete hGameConfig;
 }
@@ -4833,11 +4806,6 @@ public bool BotBendLineOfSight(int client, const float fEye[3], const float fTar
 public void BotThrowGrenade(int client, const float fTarget[3])
 {
 	SDKCall(g_hBotThrowGrenade, client, fTarget);
-}
-
-public void BotAttack(int client, int iTarget)
-{
-	SDKCall(g_hBotAttack, client, iTarget);
 }
 
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
@@ -5274,6 +5242,22 @@ stock TaskType GetTask(int client)
 		return view_as<TaskType>(-1);
 		
 	return view_as<TaskType>(GetEntData(client, g_iBotTaskOffset));
+}
+
+stock DispositionType GetDisposition(int client)
+{
+	if(!IsFakeClient(client))
+		return view_as<DispositionType>(-1);
+		
+	return view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset));
+}
+
+stock void SetDisposition(int client, DispositionType iDisposition)
+{
+	if(!IsFakeClient(client))
+		return;
+		
+	SetEntData(client, g_iBotDispositionOffset, iDisposition);
 }
 
 stock void SetPlayerTeammateColor(int client)

@@ -574,7 +574,25 @@
         "79": 1332,
         "80": 1333,
         "81": 1335,
-        "82": 1336
+        "82": 1336,
+        "83": 1337,
+        "84": 1338,
+        "85": 1339,
+        "86": 1340,
+        "87": 1341,
+		"88": 70,
+		"89": 451,
+		"90": 231,
+		"91": 174,
+		"92": 1342,
+		"93": 1343,
+		"94": 1344,
+		"95": 1345,
+		"96": 1346,
+		"97": 1347,
+		"98": 1348,
+		"99": 1349,
+		"100": 1350
       }
     },
     {
@@ -20674,6 +20692,188 @@
         "max": "1.000000"
       },
       "item_name": "Containment Breach"
+    },
+    {
+      "def_index": 1337,
+      "name": "cu_ak47_fox",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.700000"
+      },
+      "item_name": "Fox"
+    },
+    {
+      "def_index": 1338,
+      "name": "cu_ak47_lightking",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.700000"
+      },
+      "item_name": "Light of King"
+    },
+    {
+      "def_index": 1339,
+      "name": "gs_ak47_royalplatinum",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.700000"
+      },
+      "item_name": "Royal Platinum Gold"
+    },
+    {
+      "def_index": 1340,
+      "name": "cu_ak47_lycanthrope",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.770000"
+      },
+      "item_name": "Lycanthrope"
+    },
+    {
+      "def_index": 1341,
+      "name": "cu_ak47_relic",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Relic"
+    },
+    {
+      "def_index": 1342,
+      "name": "gs_ak47_rollcage",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Roll Cage"
+    },
+    {
+      "def_index": 1343,
+      "name": "cu_ak47_gentlemen",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Gentlemen"
+    },
+    {
+      "def_index": 1344,
+      "name": "cu_ak47_rhombrero",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Rhombrero"
+    },
+    {
+      "def_index": 1345,
+      "name": "cu_ak47_odyssey",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.020000",
+        "max": "0.870000"
+      },
+      "item_name": "Odyssey"
+    },
+    {
+      "def_index": 1346,
+      "name": "cu_ak47_overdrive",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Overdrive"
+    },
+    {
+      "def_index": 1347,
+      "name": "cu_ak47_roadhog",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.750000"
+      },
+      "item_name": "Road Hog"
+    },
+    {
+      "def_index": 1348,
+      "name": "cu_ak47_darklord",
+      "rarity": {
+        "id": 2,
+        "name": "Uncommon"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Dark Lord"
+    },
+    {
+      "def_index": 1349,
+      "name": "cu_ak47_propaganda",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.050000",
+        "max": "0.700000"
+      },
+      "item_name": "Propaganda"
+    },
+    {
+      "def_index": 1350,
+      "name": "cu_ak47_legion",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.650000"
+      },
+      "item_name": "Legion"
     }
   ],
   "gloves": [
@@ -25983,150 +26183,6 @@
         {
           "weapon_def_index": 34,
           "paint_def_index": 1134
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1300
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1301
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1302
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1303
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1304
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1305
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1306
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1307
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1308
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1309
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1310
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1311
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1312
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1313
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1314
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1315
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1316
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1317
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1318
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1319
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1320
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1321
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1322
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1323
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1324
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1325
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1326
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1327
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1328
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1329
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1330
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1331
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1332
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1333
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1335
-        },
-        {
-          "weapon_def_index": 7,
-          "paint_def_index": 1336
         }
       ]
     },

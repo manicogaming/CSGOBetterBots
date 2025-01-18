@@ -127,21 +127,26 @@ public Action Timer_Delay(Handle hTimer)
 	
 	char szCTName[64];
 	char szTName[64];
+	int iTeamIndex_T = -1, iTeamIndex_CT = -1;
 
-	GetConVarString(FindConVar("mp_teamname_1"), szCTName, sizeof(szCTName));
-	GetConVarString(FindConVar("mp_teamname_2"), szTName, sizeof(szTName));
-	
+	int iIndex = -1;
+	while ((iIndex = FindEntityByClassname(iIndex, "cs_team_manager")) != -1) 
+	{
+		int iTeamNum = GetEntProp(iIndex, Prop_Send, "m_iTeamNum");
+		if (iTeamNum == CS_TEAM_T)
+			iTeamIndex_T = iIndex;
+		else if (iTeamNum == CS_TEAM_CT)
+			iTeamIndex_CT = iIndex;
+	}
 
-	Format(szBuffer, sizeof(szBuffer), "INSERT INTO sql_matches_scoretotal (team_0, team_1, team_2, team_2_name, team_3, team_3_name, map) VALUES (0, 0, 0, '%s', 0, '%s', '%s');", szCTName, szTName, szMap);
+	GetEntPropString(iTeamIndex_T, Prop_Send, "m_szClanTeamname", szTName, 64);
+	GetEntPropString(iTeamIndex_CT, Prop_Send, "m_szClanTeamname", szCTName, 64);
+
+	Format(szBuffer, sizeof(szBuffer), "INSERT INTO sql_matches_scoretotal (team_0, team_1, team_2, team_2_name, team_3, team_3_name, map) VALUES (0, 0, 0, '%s', 0, '%s', '%s');", szTName, szCTName, szMap);
 	SQL_AddQuery(hTransaction, szBuffer);
 
-	int iEnt = MaxClients+1;
-	
-	while ((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1)
-	{
-		Format(szBuffer, sizeof(szBuffer), "UPDATE sql_matches_scoretotal SET team_%i = %i WHERE match_id = LAST_INSERT_ID();", GetEntProp(iEnt, Prop_Send, "m_iTeamNum"), GetEntProp(iEnt, Prop_Send, "m_scoreTotal"));
-		SQL_AddQuery(hTransaction, szBuffer);
-	}
+	Format(szBuffer, sizeof(szBuffer), "UPDATE sql_matches_scoretotal SET team_2 = %i, team_3 = %i WHERE match_id = LAST_INSERT_ID();", CS_GetTeamScore(CS_TEAM_T), CS_GetTeamScore(CS_TEAM_CT));
+	SQL_AddQuery(hTransaction, szBuffer);
 
 	char szName[MAX_NAME_LENGTH];
 
@@ -154,6 +159,7 @@ public Action Timer_Delay(Handle hTimer)
 	int iMatchStats_3k_Total;
 	int iMatchStats_Damage_Total;
 
+	int iEnt = MaxClients+1;
 	if ((iEnt = FindEntityByClassname(-1, "cs_player_manager")) != -1)
 	{
 		for (int i = 1; i <= MaxClients; i++)

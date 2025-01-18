@@ -112,12 +112,6 @@
 				"library"	"server"
 				"windows"	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xC8\x00\x00\x00\x56\x8B\xF1"
 			}
-			"CCSBot::Attack"
-			{
-				//Is below the string 'Attacking our friend's killer!\n'
-				"library"	"server"
-				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\x56\x57\x8B\x7D\x08\x8B\xF1\x85\xFF\x0F\x84\x2A\x2A\x2A\x2A"
-			}
 			"CCSBot::Blind"
 			{
 				//Has string 'Blinded: holdTime = %3.2f, fadeTime = %3.2f, alpha = %3.2f\n'
@@ -182,6 +176,11 @@
 			{
 				//Right next to the string 'Task: %s'
 				"windows"	   "16020"
+			}
+			"CCSBot::m_disposition"
+			{
+				//Is in the line above 'Disposition: %s'
+				"windows"	   "24052"
 			}
 			"Weapon_Switch"
 			{

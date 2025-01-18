@@ -694,7 +694,7 @@ public void OnClientPostAdminCheck(int client)
 						{
 							eItems_GetCrateItemByDefIndex(iCrateDefIndex, iItem, CrateItem, sizeof(eItems_CrateItem));
 							
-							if((CrateItem.SkinDefIndex == g_iSkinDefIndex[client][iWeaponDefIndex] && CrateItem.WeaponDefIndex == iWeaponDefIndex) || eItems_IsDefIndexKnife(iWeaponDefIndex))
+							if((CrateItem.SkinDefIndex == g_iSkinDefIndex[client][iWeaponDefIndex] && CrateItem.WeaponDefIndex == iWeaponDefIndex) || eItems_IsDefIndexKnife(iWeaponDefIndex) || g_iSkinDefIndex[client][iWeaponDefIndex] >= 1300)
 								g_bUseStatTrak[client][iWeaponDefIndex] = IsItMyChance(30.0) ? true : false;
 						}
 					}
