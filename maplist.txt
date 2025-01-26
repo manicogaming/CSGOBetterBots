@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sat Jan 18 19:06:32 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sun Jan 26 22:04:58 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 ar_baggage

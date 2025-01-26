@@ -155,7 +155,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.0.1", 
+	version = "1.0.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -3865,7 +3865,7 @@ public void OnClientPostAdminCheck(int client)
 		g_bIsProBot[client] = false;
 		SDKHook(client, SDKHook_WeaponDrop, OnWeaponDrop);
 		
-		if(IsProBot(szBotName))
+		if(IsProBot(szBotName, g_szCrosshairCode[client], 35))
 		{
 			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "jL") == 0 || strcmp(szBotName, "donk") == 0)
 			{
@@ -3880,8 +3880,6 @@ public void OnClientPostAdminCheck(int client)
 			g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			g_bIsProBot[client] = true;
 		}
-		
-		GetCrosshairCode(szBotName, g_szCrosshairCode[client], 35);
 		
 		g_bUseUSP[client] = IsItMyChance(75.0) ? true : false;
 		g_bUseM4A1S[client] = IsItMyChance(50.0) ? true : false;
@@ -4542,10 +4540,10 @@ void ParseMapNades(const char[] szMap)
 	g_iMaxNades = i;
 }
 
-bool IsProBot(const char[] szName)
+bool IsProBot(const char[] szName, char[] szCrosshairCode, int iSize)
 {
-	char szPath[PLATFORM_MAX_PATH], szNameToCompare[MAX_NAME_LENGTH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_names.json");
+	char szPath[PLATFORM_MAX_PATH];
+	BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_info.json");
 	
 	if (!FileExists(szPath))
 	{
@@ -4554,50 +4552,18 @@ bool IsProBot(const char[] szName)
 	}
 	
 	JSONObject jData = JSONObject.FromFile(szPath);
-	JSONArray jNames = view_as<JSONArray>(jData.Get("names"));
-	
-	for(int i = 0; i < jNames.Length; i++)
+	if(jData.HasKey(szName))
 	{
-		jNames.GetString(i, szNameToCompare, MAX_NAME_LENGTH);
-		if(strcmp(szName, szNameToCompare) == 0)
-		{
-			delete jData;
-			delete jNames;
-			return true;
-		}
+		JSONObject jInfoObj = view_as<JSONObject>(jData.Get(szName));
+		jInfoObj.GetString("crosshair_code", szCrosshairCode, iSize);
+		delete jInfoObj;
+		delete jData;
+		return true;
 	}
 	
 	delete jData;
-	delete jNames;
 	
 	return false;
-}
-
-bool GetCrosshairCode(const char[] szName, char[] szCrosshairCode, int iSize)
-{
-	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_crosshaircodes.txt");
-	
-	if (!FileExists(szPath))
-	{
-		PrintToServer("Configuration file %s is not found.", szPath);
-		return false;
-	}
-	
-	KeyValues kv = new KeyValues("Names");
-	
-	if (!kv.ImportFromFile(szPath))
-	{
-		delete kv;
-		PrintToServer("Unable to parse Key Values file %s.", szPath);
-		return false;
-	}
-	
-	kv.GetString(szName, szCrosshairCode, iSize);
-	
-	delete kv;
-	
-	return true;
 }
 
 public void LoadSDK()

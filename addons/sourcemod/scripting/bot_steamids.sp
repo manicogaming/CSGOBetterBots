@@ -4,6 +4,7 @@
 #include <sdktools>
 #include <smlib>
 #include <SteamIDConverter>
+#include <ripext>
 
 #define PLAYER_INFO_LEN 344
 #define MAX_COMMUNITYID_LENGTH 18
@@ -28,6 +29,15 @@ enum
 
 int g_iAccountID[MAXPLAYERS+1];
 char g_szSteamID64[MAXPLAYERS+1][MAX_COMMUNITYID_LENGTH]; 
+
+public Plugin myinfo = 
+{
+	name = "BOT SteamIDs", 
+	author = "manico", 
+	description = "'Gives' BOTs SteamIDs", 
+	version = "1.0.1", 
+	url = "http://steamcommunity.com/id/manico001"
+};
 
 public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int errMax)
 {
@@ -121,7 +131,7 @@ public void OnClientSettingsChanged(int client)
 bool GetAccountID(const char[] szName, int &iAccountID)
 {
 	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_steamids.txt");
+	BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_info.json");
 	
 	if (!FileExists(szPath))
 	{
@@ -129,26 +139,19 @@ bool GetAccountID(const char[] szName, int &iAccountID)
 		return false;
 	}
 	
-	KeyValues kv = new KeyValues("Names");
-	
-	if (!kv.ImportFromFile(szPath))
+	JSONObject jData = JSONObject.FromFile(szPath);
+	if(jData.HasKey(szName))
 	{
-		delete kv;
-		PrintToServer("Unable to parse Key Values file %s.", szPath);
-		return false;
+		JSONObject jInfoObj = view_as<JSONObject>(jData.Get(szName));
+		iAccountID = jInfoObj.GetInt("steamid");
+		delete jInfoObj;
+		delete jData;
+		return true;
 	}
 	
-	iAccountID = kv.GetNum(szName);
+	delete jData;
 	
-	if(iAccountID == 0)
-	{
-		delete kv;
-		return false;
-	}
-	
-	delete kv;
-	
-	return true;
+	return false;
 }
 
 stock bool IsValidClient(int client)
