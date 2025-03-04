@@ -4134,6 +4134,10 @@ ProP+Rifle+RiflePersonality "CYPHER"
 	VoicePitch = 100
 End
 
+ProP+Rifle+RiflePersonality "mlhzin"
+	VoicePitch = 85
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End
