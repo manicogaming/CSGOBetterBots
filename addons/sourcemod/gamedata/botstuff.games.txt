@@ -124,6 +124,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x51\x8B\x41\x04"
 			}
+			"CCSBot::FindMostDangerousThreat"
+			{
+				//Has the string 'CCSBot::FindMostDangerousThreat'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x81\xEC\xEC\x00\x00\x00"
+			}
 		}
 		"Offsets"
 		{
@@ -330,6 +336,16 @@
 					"offset"	"73h"
 					"verify"	"\xF3\x0F\x10\x48\x10"
 					"patch"		"\x90\x90\x90\x90\x90"
+				}
+			}
+			"CCSBot::FindMostDangerousThreat::AlwaysNotice"
+			{
+				"signature" "CCSBot::FindMostDangerousThreat"
+				"windows"
+				{
+					"offset"	"2FBh"
+					"verify"	"\xFF\x75\xCC\x8B\xCB\x57\xE8\xDA\xF9\xFF\xFF\x84\xC0"
+					"patch"		"\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"
 				}
 			}
 		}

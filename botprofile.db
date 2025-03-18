@@ -413,6 +413,9 @@ End
 
 ProP+SniperPro+SniperPersonality "m0NESY"
 	VoicePitch = 111
+	LookAngleMaxAccelAttacking = 20000.0
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "nexa"
@@ -1859,9 +1862,6 @@ End
 
 ProP+SniperPro+SniperPersonality "sh1ro"
 	VoicePitch = 84
-	LookAngleMaxAccelAttacking = 20000.0
-	LookAngleStiffnessAttacking = 900.0
-	LookAngleDampingAttacking = 50.0
 End
 
 ProP+Rifle+RiflePersonality "magixx"
@@ -4136,6 +4136,82 @@ End
 
 ProP+Rifle+RiflePersonality "mlhzin"
 	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "reiko"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "CLASIA"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "nettik"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "ksloks"
+	VoicePitch = 75
+End
+
+ProP+Rifle+RiflePersonality "lauNX"
+	VoicePitch = 76
+End
+
+ProP+Rifle+RiflePersonality "Prism"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "hypex"
+	VoicePitch = 92
+End
+
+ProP+Rifle+RiflePersonality "hfah"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "jcobbb"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "addi"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "Timothybtw"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "hampz"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "looky"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "lindeen"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "adaro"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "ELUSIVE"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "zerOchaNce"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "Lord"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "Syned"
+	VoicePitch = 102
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"
