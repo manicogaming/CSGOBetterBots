@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	"$basetexture" 				"models\weapons\v_models\knife_cs15\knife_cs15"
+	"$bumpmap" 					"models\weapons\v_models\knife_cs15\knife_cs15_normal"
+	"$phongexponenttexture" 	"models\weapons\v_models\knife_cs15\knife_cs15_exponent"
+
+	"$phong"                   "1"
+	"$phongalbedoboost"        "12"
+	"$phongfresnelranges"      "[.7 .7 1]"
+	"$basemapalphaphongmask"   "1"
+	"$phongalbedotint"         "1"
+	"$phongdisablehalflambert" "1"
+	"$envmap"                  "env_cubemap"
+	"$basealphaenvmapmask"     "1"
+	"$envmapfresnel"           "1"
+	"$envmaptint"              "[ 0.5 0.5 0.55 ]"
+}

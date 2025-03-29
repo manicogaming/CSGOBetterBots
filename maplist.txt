@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sun Mar 16 02:25:21 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Wed Mar 26 22:25:27 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -82,8 +82,6 @@ ar_nubtown2077
 ar_poolstay
 ar_shoots
 ar_zona_b
-awp_christmas
-awp_duki_2017
 awp_dust
 awp_fg_lego_rome_beta02
 awp_gony_2018
@@ -162,17 +160,14 @@ cs_2high
 cs_agency
 cs_alaska
 cs_alley_go
-cs_altay
 cs_apollo
 cs_aquarium
-cs_arabstreets
 cs_assault
 cs_assault_1337
 cs_assault_2055
 cs_assault_hd
 cs_assault_upc
 cs_backalley
-cs_bbicotka
 cs_bloodstrike_2016_extended
 cs_bloodstrike_2017
 cs_cappa
@@ -196,7 +191,6 @@ cs_doom4
 cs_downtown
 cs_dracula_2way
 cs_east_borough
-cs_estate
 cs_estate_classic
 cs_estate_pe
 cs_extraction
@@ -277,7 +271,6 @@ csco_nuke
 csco_train
 csp_aztec
 csp_inferno
-de_20th
 de_2ndstrike_go
 de_2x2dust_classic
 de_abaddon
@@ -321,7 +314,6 @@ de_bazaar
 de_belukha
 de_berth
 de_better_nuke
-de_bikinibottom
 de_biome
 de_blackgold
 de_blagai

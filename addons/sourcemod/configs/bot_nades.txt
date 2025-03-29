@@ -56,12 +56,39 @@
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
+		"Palace Lurk Smoke"
+		{
+			"position"			"221.642959 -2342.045410 -39.968750"
+			"lookat"			"4.031265 -2193.979248 40.812431"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace Lurk Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
 		"Under Palace Molotov"
 		{
 			"position"			"567.706238 -2224.032959 -39.968750"
 			"lookat"			"6.878356 -2382.834228 110.876571"
 			"nadedefindex"		"46"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Under Palace Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Jungle Molotov"
+		{
+			"position"			"743.985595 -1719.280761 -249.582733"
+			"lookat"			"-106.971252 -1502.166625 -73.046607"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Jungle Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Palace Flash"
+		{
+			"position"			"16.008159 -2359.968750 -39.968750"
+			"lookat"			"92.696426 -2044.031250 101.265068"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace Flash.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
@@ -92,14 +119,41 @@
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
-		"Ramp Smoke"
+		"B Flash"
 		{
-			"position"			"-879.979858 -2264.000732 -171.084961"
-			"lookat"			"-676.004089 -2130.901611 -66.310218"
-			"nadedefindex"		"45"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Ramp Smoke.rec"
+			"position"			"-366.767242 648.697082 -83.583808"
+			"lookat"			"-955.968750 536.780273 80.110977"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Flash.rec"
 			"timestamp"			"0.0"
-			"team"				"CT"
+			"team"				"T"
+		}
+		"B Entry Flash"
+		{
+			"position"			"-1367.998168 815.999328 -79.968750"
+			"lookat"			"-1820.856323 654.415466 -23.280061"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car Molotov"
+		{
+			"position"			"-1471.994750 695.116760 -47.968750"
+			"lookat"			"-2222.260742 841.297729 -18.211132"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Car Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car HE"
+		{
+			"position"			"-1124.203002 604.402282 -79.968750"
+			"lookat"			"-1199.968750 612.880493 -13.939595"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Car HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
 		}
 		"Connector Molotov"
 		{
@@ -107,6 +161,24 @@
 			"lookat"			"-635.754455 -799.968750 68.638870"
 			"nadedefindex"		"46"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Connector Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"CT Molotov"
+		{
+			"position"			"-31.917243 -1418.031250 -167.968750"
+			"lookat"			"-106.971229 -1497.568481 -115.138931"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/CT Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Ninja Molotov"
+		{
+			"position"			"123.047515 -1418.031250 -175.968750"
+			"lookat"			"-282.273956 -2325.176757 127.968765"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Ninja Molotov.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
@@ -129,30 +201,111 @@
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
-		"Mid Perfect Flash"
+		"Mid Flash"
 		{
 			"position"			"685.265015 671.957153 -135.968750"
 			"lookat"			"220.031250 274.921630 -49.554336"
 			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Mid Perfect Flash.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Mid Flash.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
-		"B Apps Pop Flash"
+		"Con Flash"
+		{
+			"position"			"360.075500 -691.968750 -162.496795"
+			"lookat"			"324.031860 -696.012329 -91.092384"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Con Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Smoke Mid"
+		{
+			"position"			"360.051849 -691.992371 -162.496780"
+			"lookat"			"-102.595916 -532.211242 127.968765"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Short Smoke Mid.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Smoke"
+		{
+			"position"			"1296.000000 32.000000 -167.968750"
+			"lookat"			"1074.950683 -23.968746 23.013832"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Window Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Smoke Mid"
+		{
+			"position"			"502.566650 -665.473022 -160.013519"
+			"lookat"			"-416.338989 -651.884094 127.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Window Smoke Mid.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Molotov"
+		{
+			"position"			"-968.005310 -313.994628 -367.968750"
+			"lookat"			"-1092.514160 -563.202880 -53.031250"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Window Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window HE"
+		{
+			"position"			"-1042.542114 -319.431274 -367.968750"
+			"lookat"			"-1088.624023 -587.538330 -53.031265"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Window HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Apps Flash"
 		{
 			"position"			"-1999.995605 -246.968750 -159.138138"
 			"lookat"			"-1930.413452 22.110473 1.566329"
 			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Apps Pop Flash.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Apps Flash.rec"
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}
-		"Palace from Market Smoke"
+		"Palace Smoke CT"
 		{
 			"position"			"-1711.968750 -761.020325 -167.968750"
 			"lookat"			"-1429.195190 -989.193908 127.968734"
 			"nadedefindex"		"45"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace from Market Smoke.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Palace HE"
+		{
+			"position"			"-793.675170 -1306.031250 -167.968750"
+			"lookat"			"-536.031250 -1574.458496 -148.176696"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Palace HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Ramp HE"
+		{
+			"position"			"-529.387023 -2303.520019 -171.895126"
+			"lookat"			"195.968750 -1471.095092 -24.727554"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Ramp HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Apps HE"
+		{
+			"position"			"-2325.227783 797.053161 -123.389587"
+			"lookat"			"-1499.834716 732.763732 59.968750"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/B Apps HE.rec"
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}
@@ -165,22 +318,2018 @@
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}
-		"Short from TopMid Smoke"
+		"Ramp Smoke"
 		{
-			"position"			"360.051849 -691.992371 -162.496780"
-			"lookat"			"-102.595916 -532.211242 127.968765"
+			"position"			"-879.979858 -2264.000732 -171.084961"
+			"lookat"			"-676.004089 -2130.901611 -66.310218"
 			"nadedefindex"		"45"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Short from TopMid Smoke.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Ramp Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Flash CT"
+		{
+			"position"			"-496.029418 -1427.740844 -86.567314"
+			"lookat"			"-499.657714 -1302.305664 127.968757"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_mirage/Mid Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	}
+	"de_inferno"
+	{
+		"Apps Molotov"
+		{
+			"position"			"-1594.206176 341.633178 -65.601760"
+			"lookat"			"-1622.722167 -28.703948 121.202507"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Apps Molotov.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
+		}
+		"Banana Flash"
+		{
+			"position"			"-668.006530 589.596618 -21.980697"
+			"lookat"			"-463.551879 925.968750 167.036315"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car Molotov"
+		{
+			"position"			"-1160.729248 475.000213 -55.287048"
+			"lookat"			"-420.031250 729.762817 61.399822"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Car Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car HE"
+		{
+			"position"			"-1213.667846 413.994598 -55.968750"
+			"lookat"			"-1146.644165 579.968750 4.404023"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Car HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car Flash"
+		{
+			"position"			"68.018669 1009.840332 79.647842"
+			"lookat"			"146.413909 1660.229003 399.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Car Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Sandbags HE"
+		{
+			"position"			"270.838623 1668.153686 122.031250"
+			"lookat"			"386.447509 1842.388793 215.367553"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Sandbags HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"CT Smoke"
+		{
+			"position"			"110.815406 1569.627197 132.013885"
+			"lookat"			"277.182617 1826.085815 399.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/CT Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Coffin Smoke"
+		{
+			"position"			"324.396179 1621.949096 122.031250"
+			"lookat"			"341.718078 1818.185546 399.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Coffin Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash"
+		{
+			"position"			"479.254272 2017.968750 128.409362"
+			"lookat"			"657.398437 2141.968750 190.762542"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/B Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Dark Molotov"
+		{
+			"position"			"802.709350 2290.354980 136.781311"
+			"lookat"			"618.031250 2492.669921 278.324584"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Dark Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"FirstSecond Molotov"
+		{
+			"position"			"409.326049 2009.151367 128.031250"
+			"lookat"			"406.007568 2133.968750 322.117370"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/FirstSecond Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Triple Molotov"
+		{
+			"position"			"460.445129 1828.446899 136.123489"
+			"lookat"			"348.183837 2092.297851 232.400711"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Triple Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Smoke"
+		{
+			"position"			"726.005737 215.930221 94.477966"
+			"lookat"			"1129.858276 591.968750 445.924804"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Long Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Arch Smoke"
+		{
+			"position"			"941.983520 416.695434 88.442581"
+			"lookat"			"1458.951171 579.683593 703.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Arch Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Molotov"
+		{
+			"position"			"1125.856689 589.998168 118.956634"
+			"lookat"			"1533.968750 223.357177 366.406555"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Short Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Molotov"
+		{
+			"position"			"1163.468017 434.031250 112.817497"
+			"lookat"			"1381.789184 703.304626 131.766586"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Long Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash T"
+		{
+			"position"			"475.630004 467.002593 83.804885"
+			"lookat"			"940.968750 603.181640 402.199645"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid Flash T.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash T2"
+		{
+			"position"			"1002.507080 434.002288 93.312286"
+			"lookat"			"1184.558105 591.968750 408.007934"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid Flash T2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Apps Lurk Smoke"
+		{
+			"position"			"1588.010498 -274.003875 256.031250"
+			"lookat"			"1707.571777 -381.968750 339.240325"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Apps Lurk Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Pit Apps Molotov"
+		{
+			"position"			"1841.780273 -189.603378 256.031250"
+			"lookat"			"2108.968750 -164.811050 284.808502"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Pit Apps Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Apps Flash"
+		{
+			"position"			"1501.429687 -365.978179 256.031250"
+			"lookat"			"1540.351196 -381.968750 346.341400"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Apps Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"1314.000244 356.344268 129.031250"
+			"lookat"			"1740.935791 -124.968750 205.266387"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Pit Molotov"
+		{
+			"position"			"1481.978759 -16.803846 130.031250"
+			"lookat"			"1497.968750 -18.322017 197.474548"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Pit Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Arch Smoke Pit"
+		{
+			"position"			"2634.002197 -473.968750 88.985908"
+			"lookat"			"2456.372314 581.185913 361.182250"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Arch Smoke Pit.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Smoke Spawn"
+		{
+			"position"			"2537.715087 2120.964355 132.031250"
+			"lookat"			"2219.162597 1727.031250 331.587249"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid Smoke Spawn.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid HE"
+		{
+			"position"			"1470.891723 722.228759 138.462310"
+			"lookat"			"1034.815429 418.031250 237.546234"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid HE Deep"
+		{
+			"position"			"1768.012695 1274.146484 160.031250"
+			"lookat"			"2015.069335 1016.031250 412.840942"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid HE Deep.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Smoke"
+		{
+			"position"			"1653.575805 -108.968750 131.027938"
+			"lookat"			"1211.248291 605.968750 235.176727"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Flash"
+		{
+			"position"			"1484.088134 728.768615 138.532394"
+			"lookat"			"1310.031250 698.502624 268.321166"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Mid Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Apps Molotov CT"
+		{
+			"position"			"2174.679443 372.410858 160.031250"
+			"lookat"			"2615.968750 -302.771331 404.449005"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Apps Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana Smoke Deep"
+		{
+			"position"			"719.727050 2135.349121 136.031250"
+			"lookat"			"52.031250 1291.971313 305.920593"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Smoke Deep.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana HE1"
+		{
+			"position"			"875.998962 2240.718750 142.401779"
+			"lookat"			"-28.244750 1314.031250 336.614929"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana HE1.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana HE2"
+		{
+			"position"			"691.002685 2144.488281 136.031250"
+			"lookat"			"52.450683 1261.593383 328.240447"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana HE2.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana Molotov CT Deep"
+		{
+			"position"			"875.999755 2421.873535 144.638198"
+			"lookat"			"341.504821 1651.782592 328.985809"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Molotov CT Deep.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana Molotov CT Close"
+		{
+			"position"			"794.875610 2217.626953 136.262969"
+			"lookat"			"198.973327 1793.876831 217.347595"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Molotov CT Close.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana Molotov CT AntiRush"
+		{
+			"position"			"1575.786010 2807.951904 128.031250"
+			"lookat"			"1012.172180 2789.951416 405.010803"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Molotov CT AntiRush.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Banana Flash CT"
+		{
+			"position"			"535.998413 3100.072509 206.031250"
+			"lookat"			"564.685180 2643.161865 416.758239"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/Banana Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Defense Smoke"
+		{
+			"position"			"400.031250 3538.018554 160.031250"
+			"lookat"			"879.485168 1872.031250 422.102142"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_inferno/B Defense Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	}
+    "de_cache"
+	{
+		"Con Smoke"
+		{
+			"position"			"2967.289794 31.934537 1613.031250"
+			"lookat"			"1761.031250 17.371591 1850.952026"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_cache/Con Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Checkers Molotov"
+		{
+			"position"			"1050.511474 -912.998718 1614.031250"
+			"lookat"			"340.147705 -855.103637 1781.707153"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_cache/Checkers Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Checkers Molotov Deep"
+		{
+			"position"			"623.449401 -1040.257324 1614.031250"
+			"lookat"			"-63.019958 -454.031311 1782.970947"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_cache/Checkers Molotov Deep.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	}
+	"de_ancient"
+	{
+		"Window Smoke"
+		{
+			"position"			"-632.004211 -2064.574462 -146.968750"
+			"lookat"			"-609.444946 -1624.031250 137.887542"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Window Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Donut Smoke"
+		{
+			"position"			"-216.002014 -1970.623168 -163.748046"
+			"lookat"			"-332.741271 -1624.031250 101.092742"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Donut Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Donut CT Smoke"
+		{
+			"position"			"-965.253234 -245.997970 90.939720 -36.453319"
+			"lookat"			"-978.904968 -60.031250 292.683197"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Donut CT Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Donut Exit Smoke"
+		{
+			"position"			"-1290.206054 35.999492 104.147689"
+			"lookat"			"-1284.031250 418.805603 119.426124"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Donut Exit Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash"
+		{
+			"position"			"-735.968750 -2029.846191 -162.412155"
+			"lookat"			"-751.249267 -1526.630004 118.707168"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Mid Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash2"
+		{
+			"position"			"-1114.505126 -1677.368652 -30.473375"
+			"lookat"			"-1166.203002 -1002.031250 254.295089"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Mid Flash2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	    "Mid Cubby Molotov"
+		{
+			"position"			"-1108.005737 -884.981323 36.592948"
+			"lookat"			"-638.031250 218.287170"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Mid Cubby Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Smoke Mid"
+		{
+			"position"			"-1001.506042 -851.999023 35.622650"
+			"lookat"			"-855.177917 -638.031250 261.183929"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Window Smoke Mid.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Short Smoke"
+		{
+			"position"			"1255.988647 -1479.968750 30.020631"
+			"lookat"			"1104.791992 -1036.031250 177.690109"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Short Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Short Smoke Lane"
+		{
+			"position"			"910.498901 -859.999938 27.614864"
+			"lookat"			"850.508239 -616.031250 226.150222"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Short Smoke Lane.rec"
+			"timestamp"			"0.0"
+		}	
+		"B Long Smoke Lane"
+		{
+			"position"			"608.031250 -676.272949 103.204795"
+			"lookat"			"731.569091 -466.031250 309.552978"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Long Smoke Lane.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Long Smoke"
+		{
+			"position"			"1096.240722 -1381.158203 1.535713"
+			"lookat"			"1113.958984 -616.031250 127.736557"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Long Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash"
+		{
+			"position"			"1159.989257 -919.256469 8.031250"
+			"lookat"			"1043.927978 -616.031250 101.319503"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+	    }
+	    "B Cubby Molotov"
+		{
+			"position"			"580.031250 -736.005371 104.119979"
+			"lookat"			"590.099060 -720.031250 178.614257"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Cubby Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	    "B Cave Molotov"
+		{
+			"position"			"335.179626 -563.968750 172.031250"
+			"lookat"			"495.968750 -317.875701 232.344665"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Cave Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Cave Short Smoke"
+		{
+			"position"			"320.012176 -183.968750 162.260467"
+			"lookat"			"626.523925 235.968719 236.871276"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Cave Short Smoke.rec"
+			"timestamp"			"0.0"
+		}
+		"B Deep CT Smoke"
+		{
+			"position"			"1395.475708 516.031250 131.915878"
+			"lookat"			"1160.031250 615.191772 154.591644"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Deep CT Smoke.rec"
+			"timestamp"			"0.0"
+		}
+		"A Split Smoke"
+		{
+			"position"			"-587.786743 515.991455 161.837493"
+			"lookat"			"-301.463104 926.425048 208.500183"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Split Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Temple Smoke"
+		{
+			"position"			"-1959.497070 -1003.996765 -31.255462"
+			"lookat"			"-1888.532470 -604.031250 346.468322"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Temple Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A CT Smoke"
+		{
+			"position"			"-2143.992187 -1003.990539 -2.851898"
+			"lookat"			"-1997.947265 -740.031250 229.642181"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A CT Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A CT Smoke Main"
+		{
+			"position"			"-2045.049072 263.924133 88.031250"
+			"lookat"			"-1936.031250 355.004241 197.097564"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A CT Smoke Main.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Donut Smoke"
+		{
+			"position"			"-2016.062500 283.830200 88.031250"
+			"lookat"			"-1928.031250 521.705505 126.014709"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Donut Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	    "A Default HE"
+		{
+			"position"			"-2001.282470 444.100860 74.031250"
+			"lookat"			"-1928.031250 475.027038 156.923934"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Default HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+	   	"A Default Molotov"
+		{
+			"position"			"-1985.573486 342.586853 88.025398"
+			"lookat"			"-1930.074707 375.920288 164.027664"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"-1793.171020 -433.616485 72.046386"
+			"lookat"			"-1794.263549 -86.558105 299.302246"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+	    }
+	    "A Entry Flash"
+		{
+			"position"			"-1948.214721 216.968750 78.519309"
+			"lookat"			"-2159.968750 541.388244 175.488845"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+	    }
+	    "A Main Smoke"
+		{
+			"position"			"-1171.188598 992.998229 53.018661"
+			"lookat"			"-1989.636230 364.031311 346.216186"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Main Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Main Flash"
+		{
+			"position"			"-2124.165283 340.002868 88.031250"
+			"lookat"			"-1948.000610 9.031280 186.971572"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Main Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+	    }
+	    "A Main HE"
+		{
+			"position"			"-1996.158691 309.347351 88.031250"
+			"lookat"			"-1968.031250 252.633483 151.897598"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/A Main HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Ramp Smoke"
+		{
+			"position"			"743.984375 422.641571 129.940399"
+			"lookat"			"1315.968750 -280.773529 242.742340"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Ramp Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Ramp Flash"
+		{
+			"position"			"625.913330 400.449707 121.899253"
+			"lookat"			"629.800964 384.031250 184.771591"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Ramp Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+	    }
+	    "B Ramp HE"
+		{
+			"position"			"661.009582 118.371154 134.031250"
+			"lookat"			"751.670532 -317.968750 281.821838"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Ramp HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Lane Molotov"
+		{
+			"position"			"743.999511 713.222839 129.116088 6.993777"
+			"lookat"			"701.401062 260.073852 129.654968"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Lane Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Cave Smoke"
+		{
+			"position"			"539.989624 292.968750 160.531768"
+			"lookat"			"453.580902 -311.025329 182.547607"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/B Cave Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	    "Cave Molotov CT"
+		{
+			"position"			"573.081481 219.998321 156.031250"
+			"lookat"			"390.767395 -579.968750 255.863525"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Cave Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Elbow Smoke"
+		{
+			"position"			"-476.016174 217.811859 168.031250"
+			"lookat"			"-741.476562 -316.479217 427.608398"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Elbow Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	    "Elbow Molotov"
+		{
+			"position"			"-506.027984 787.434387 103.539154"
+			"lookat"			"-531.094909 -907.968811 269.356323"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Elbow Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	    "Elbow HE"
+		{
+			"position"			"-531.688415 730.385559 105.476875"
+			"lookat"			"-504.670776 -907.968688 281.293457"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Elbow HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Elbow HE2"
+		{
+			"position"			"-587.128295 651.221374 136.031250"
+			"lookat"			"-233.569396 -907.968811 268.951751"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Elbow HE2.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Elbow Flash"
+		{
+			"position"			"-520.523742 606.107910 162.031250"
+			"lookat"			"-521.132263 -907.968750 44.390441"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_ancient/Elbow Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+	    }
+	}
+	"de_anubis"
+	{
+	    "Con Smoke"
+		{
+			"position"			"23.999891 -1744.968750 6.031250"
+			"lookat"			"-77.040260 -1284.031250 169.527648"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Canals Mid HE"
+		{
+			"position"			"495.968750 19.031250 -151.968750"
+			"lookat"			"-98.168212 307.968750 -111.977317"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Canals Mid HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con Molotov"
+		{
+			"position"			"1163.468017 434.031250 112.817497"
+			"lookat"			"1381.789184 703.304626 131.766586"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con Flash"
+		{
+			"position"			"-166.986373 291.997344 -191.968750 "
+			"lookat"			"-476.710327 61.745651 31.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con B Backsite Molotov"
+		{
+			"position"			"-697.064392 318.643981 -55.968750"
+			"lookat"			"-1116.762451 368.634490 12.137151"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con B Backsite Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Smoke"
+		{
+			"position"			"-181.853164 -1725.996826 12.317304"
+			"lookat"			"-164.230682 -1284.031250 170.555908"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Window Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Doors Molotov"
+		{
+			"position"			"-268.091522 -110.031250 0.031250"
+			"lookat"			"-8.031250 116.961471 179.780044"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Doors Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash Right"
+		{
+			"position"			"212.000030 -704.062805 0.566564"
+			"lookat"			"159.533370 -288.031219 104.894592"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Flash Right.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash Left"
+		{
+			"position"			"-505.045074 -531.038513 64.638984"
+			"lookat"			"-478.275726 -120.031250 276.693511"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Flash Left.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash Deep"
+		{
+			"position"			"-199.968750 108.829406 0.031250"
+			"lookat"			"-41.511184 615.968750 168.424865"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Flash Deep.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid HS Molotov"
+		{
+			"position"			"365.995574 424.031250 -13.968742"
+			"lookat"			"128.031250 968.741271 -1.224838"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid HS Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid B Main Smoke"
+		{
+			"position"			"368.057586 -715.999267 -1.968750"
+			"lookat"			"323.870422 -296.031280 190.720748"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid B Main Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Camera Smoke"
+		{
+			"position"			"-195.993682 440.007843 16.031250"
+			"lookat"			"381.301727 1355.968750 83.693176"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Camera Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Camera Flash"
+		{
+			"position"			"199.535842 1096.524414 -29.678886"
+			"lookat"			"555.593322 1395.968750 45.132263"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Camera Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid A Default Molotov"
+		{
+			"position"			"667.968750 1244.019531 -87.968750"
+			"lookat"			"1123.180053 2159.459472 16.648559"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid A Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid A Pillar Molotov"
+		{
+			"position"			"542.528381 1329.933471 -49.245536"
+			"lookat"			"649.896667 1395.968750 41.666618"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid A Pillar Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Cat Smoke"
+		{
+			"position"			"1149.999267 610.000183 -191.968750"
+			"lookat"			"989.247497 951.968750 122.763107"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Cat Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Camera Smoke"
+		{
+			"position"			"1259.968750 600.031250 -115.968750"
+			"lookat"			"1008.385986 951.968750 110.387084"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Camera Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Heaven Smoke"
+		{
+			"position"			"1213.995483 489.031250 -151.968750"
+			"lookat"			"1160.109008 951.968750 -61.951187"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Heaven Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Main Flash"
+		{
+			"position"			"1483.968750 -288.737213 -23.218751"
+			"lookat"			"1503.924560 111.236694 34.691246"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Main Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Entry Flash"
+		{
+			"position"			"1489.351684 939.073181 -145.913665"
+			"lookat"			"1659.390380 1386.392333 43.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"1069.968750 566.726501 -191.968750"
+			"lookat"			"1112.501586 951.968750 -40.241744"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Default Molotov"
+		{
+			"position"			"1685.116210 1279.891479 -150.833099"
+			"lookat"			"1189.472778 2149.968750 -6.716613"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Pillar Molotov"
+		{
+			"position"			"1382.015258 800.006896 -151.968750"
+			"lookat"			"1645.002685 1287.968750 65.128585"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Pillar Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Default HE"
+		{
+			"position"			"1803.968750 1040.031250 -135.968750"
+			"lookat"			"1621.588378 1389.549926 -151.968750"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Default HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Heaven Molotov"
+		{
+			"position"			"1685.791625 1803.650024 -70.977066"
+			"lookat"			"1176.031250 1946.826538 199.678695"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Heaven Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Camera Resmoke"
+		{
+			"position"			"1287.846923 2002.139526 -191.968750"
+			"lookat"			"938.482666 1596.518066 81.233032"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Camera Resmoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Left Smoke"
+		{
+			"position"			"-1016.012756 -200.036972 0.031250"
+			"lookat"			"-1198.094604 85.968765 465.294250"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Left Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Right Smoke"
+		{
+			"position"			"-1267.971069 -311.901336 5.478907"
+			"lookat"			"-1266.524658 79.968750 257.264709"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Right Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B CT Smoke"
+		{
+			"position"			"-1297.827392 -510.143310 96.031250"
+			"lookat"			"-1224.571411 85.968811 583.498535"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B CT Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Temple Smoke"
+		{
+			"position"			"-1170.528930 -474.524566 116.031250"
+			"lookat"			"-1087.672241 85.968719 591.825805"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Temple Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash"
+		{
+			"position"			"-1326.343383 -486.664611 96.031250"
+			"lookat"			"-1496.723754 191.231933 383.949157"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Entry Flash"
+		{
+			"position"			"1483.968750 -288.737213 -23.218751"
+			"lookat"			"1503.924560 111.236694 34.691246"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Con Flash"
+		{
+			"position"			"-1168.560302 -45.789470 1.492584"
+			"lookat"			"-1117.612182 85.968750 229.139526"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Con Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Pillar Molotov"
+		{
+			"position"			"-1664.112426 -57.968750 4.201144"
+			"lookat"			"-1651.111450 392.844482 40.162094"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Pillar Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Backsite Molotov"
+		{
+			"position"			"-1288.018188 -310.099456 116.031250"
+			"lookat"			"-1280.898437 79.968750 376.869812"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Backsite Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Con Smoke"
+		{
+			"position"			"-1035.186035 599.995788 -1.968750"
+			"lookat"			"-597.196411 36.031250 -10.601318"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Con Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B CT Resmoke"
+		{
+			"position"			"-1111.758911 599.989318 -1.968750"
+			"lookat"			"-1141.084716 715.968750 64.406402"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B CT Resmoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Smoke CT Insta"
+		{
+			"position"			"-368.933746 2360.922607 24.031250"
+			"lookat"			"-346.157379 2186.846679 215.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Smoke CT Insta.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Smoke CT"
+		{
+			"position"			"190.726272 1359.624023 -28.968750"
+			"lookat"			"161.542877 680.916320 44.582725"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Flash CT"
+		{
+			"position"			"346.968750 1016.000915 -28.480691"
+			"lookat"			"282.528503 929.878723 184.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid PopFlash CT"
+		{
+			"position"			"166.004333 703.031250 -28.970375"
+			"lookat"			"329.968750 656.034973 49.182903"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid PopFlash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid HE CT"
+		{
+			"position"			"71.720062 617.987976 -10.936319"
+			"lookat"			"-204.968688 53.678405 51.249717"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid HE CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Molotov CT"
+		{
+			"position"			"227.849243 1122.657470 -31.968748"
+			"lookat"			"-207.257141 404.565002 127.340484"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Mid Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Main Smoke CT Insta"
+		{
+			"position"			"-635.621765 1940.002197 24.031250"
+			"lookat"			"-607.474853 1924.031250 121.452919"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Main Smoke CT Insta.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Main Molotov CT"
+		{
+			"position"			"667.968750 1379.999755 -87.968750"
+			"lookat"			"809.461303 1235.031250 -46.942092"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Main Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Main Smoke CT"
+		{
+			"position"			"1021.063476 2010.427368 -191.968750"
+			"lookat"			"1710.539794 1468.031250 72.394271"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/A Main Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"T Stairs HE"
+		{
+			"position"			"835.999206 1729.100952 -39.968750"
+			"lookat"			"841.948181 1235.031250 -65.197387"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/T Stairs HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Main Smoke CT Insta"
+		{
+			"position"			"-164.009536 2197.991699 24.031250"
+			"lookat"			"-230.238418 2111.967773 215.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Main Smoke CT Insta.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Main Smoke CT"
+		{
+			"position"			"-838.465576 946.990051 41.058555"
+			"lookat"			"-1113.796630 759.965148 138.205627"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Main Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Main Flash CT"
+		{
+			"position"			"-1265.968750 857.119628 0.116733"
+			"lookat"			"-1231.872436 234.031250 588.689575"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Main Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Main HE CT"
+		{
+			"position"			"-694.840270 789.610656 38.031250"
+			"lookat"			"-976.191711 646.158996 162.375167"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Main HE CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Main Molotov CT"
+		{
+			"position"			"-660.215270 526.632202 38.031250"
+			"lookat"			"-720.968750 513.918151 115.448020"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/B Main Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Con Molotov CT"
+		{
+			"position"			"-749.669433 402.993560 -55.968750"
+			"lookat"			"-511.684112 56.031250 -28.307647"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con Molotov CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Con Flash CT"
+		{
+			"position"			"-823.833251 363.999359 -52.057884"
+			"lookat"			"-512.486572 56.031250 0.289937"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_anubis/Con Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	}
+	"de_nuke"
+	{
+	    "Break Windows"
+		{
+			"position"			"-1551.204467 -1205.000122 -417.989379"
+			"lookat"			"-924.031188 -1199.700439 -196.629623"
+			"nadedefindex"		"7"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Break Windows.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Smoke1"
+		{
+			"position"			"-751.025756 -1188.499267 -413.968750"
+			"lookat"			"27.585510 -2242.927734 -207.127655"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Smoke1.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Smoke2"
+		{
+			"position"			"-1268.007568 -1162.132446 -415.990783"
+			"lookat"			"-1078.845581 -1252.939819 -140.031250"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Smoke2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Smoke3"
+		{
+			"position"			"-1173.524291 -876.000488 -416.026611"
+			"lookat"			"-165.943176 -1466.844238 207.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Smoke3.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Garage Smoke"
+		{
+			"position"			"-165.364166 -1954.802124 -415.968750"
+			"lookat"			"1503.968627 -1918.940795 1.059936"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Garage Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Main Smoke"
+		{
+			"position"			"-246.493331 -2017.606811 -415.968750"
+			"lookat"			"1441.899780 -1718.724121 207.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Main Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Cubby Molotov"
+		{
+			"position"			"95.953140 -2019.489257 -415.968750"
+			"lookat"			"192.968750 -1959.912475 -322.569427"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Cubby Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside Flash"
+		{
+			"position"			"-514.903198 -1447.063720 -415.968750"
+			"lookat"			"193.714477 -2296.655029 -323.306579"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Outside HE"
+		{
+			"position"			"-9.531051 -2073.443847 -415.968750"
+			"lookat"			"1503.968750 -1641.252075 -53.956207"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Secret Flash"
+		{
+			"position"			"1583.983520 -2342.354980 -559.968750"
+			"lookat"			"1455.567016 -1840.031250 -584.170715"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Secret Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Secret Molotov"
+		{
+			"position"			"1326.010375 -1900.226562 -639.968750"
+			"lookat"			"1235.798950 -1824.031250 -577.063354"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Secret Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Ramp Smoke1"
+		{
+			"position"			"943.995788 -1359.968750 -767.968750"
+			"lookat"			"895.536010 -1256.031250 -664.339294"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Ramp Smoke1.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Ramp Smoke2"
+		{
+			"position"			"1077.031250 -655.995910 -639.968750"
+			"lookat"			"800.031250 -58.605651 -576.595275"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Ramp Smoke2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Dark Molotov"
+		{
+			"position"			"1064.005859 -421.184753 -597.981384"
+			"lookat"			"886.031250 -436.672363 -627.040100"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Dark Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Dark Molotov2"
+		{
+			"position"			"801.940490 5.000536 -639.968750"
+			"lookat"			"813.605468 -314.329650 -639.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Dark Molotov2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Single Smoke"
+		{
+			"position"			"477.342071 5.023318 -639.968750"
+			"lookat"			"398.713226 -1263.968750 -643.156066"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Single Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+
+		"B Double Smoke"
+		{
+			"position"			"801.212463 5.025223 -639.968750"
+			"lookat"			"846.676635 -288.784576 -639.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Double Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Default Molotov"
+		{
+			"position"			"780.448181 5.120719 -639.968750"
+			"lookat"			"780.383300 -10.968750 -576.444641"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/B Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Top Hut Molotov"
+		{
+			"position"			"-470.800476 -1148.442016 -161.755859"
+			"lookat"			"254.968688 -1132.062255 -97.039459"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Top Hut Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"-327.327239 -1125.419067 -171.968750"
+			"lookat"			"254.968780 -1127.248413 -98.129753"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash2"
+		{
+			"position"			"-691.335998 -759.124877 -415.968750"
+			"lookat"			"-288.031250 -703.841186 -198.808486"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/A Flash2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Squeaky HE"
+		{
+			"position"			"-658.629638 -865.792846 -417.414764"
+			"lookat"			"-288.031219 -492.560180 -349.638214"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Squeaky HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Main Smoke"
+		{
+			"position"			"-54.159214 -1130.673217 -415.968750"
+			"lookat"			"-3.135887 -1151.968750 -350.917816"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Main Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Main Smoke2"
+		{
+			"position"			"735.081237 -329.064086 -415.968750"
+			"lookat"			"701.129211 -672.758422 -313.736663"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Main Smoke2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Heaven Molotov"
+		{
+			"position"			"326.266998 -936.031250 -391.968750"
+			"lookat"			"904.189697 -489.354553 31.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Heaven Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Heaven Smoke"
+		{
+			"position"			"798.880859 -608.824523 -399.968750"
+			"lookat"			"906.035461 -498.607177 31.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Heaven Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Hut Entry Flash"
+		{
+			"position"			"160.031250 -1119.968750 -415.968750"
+			"lookat"			"463.968750 -960.684143 -329.467895"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Hut Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Ramp Flash"
+		{
+			"position"			"90.896995 -292.009155 -415.968750"
+			"lookat"			"789.968750 889.358520 -220.518615"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Ramp Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Ramp Lurk Smoke"
+		{
+			"position"			"228.098876 -339.586090 -415.968750"
+			"lookat"			"64.228591 144.184417 -312.844482"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Ramp Lurk Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Hell Smoke"
+		{
+			"position"			"491.992950 365.870635 -422.605957"
+			"lookat"			"572.400451 320.031250 -373.189239"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Hell Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Hut Molotov"
+		{
+			"position"			"1826.240600 -464.356994 -353.978302"
+			"lookat"			"1030.558715 -497.047485 -320.958435"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Hut Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Squeaky Molotov"
+		{
+			"position"			"1857.705688 -459.564025 -353.968750"
+			"lookat"			"1412.031250 -470.336730 -297.316619"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Squeaky Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Hut Smoke"
+		{
+			"position"			"616.850097 -609.334716 -399.968750"
+			"lookat"			"364.206665 -902.852783 -391.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Hut Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Squeaky Smoke"
+		{
+			"position"			"655.063964 -1071.469970 -415.968750"
+			"lookat"			"350.566162 -1487.968750 -393.021820"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Squeaky Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Outside HE CT"
+		{
+			"position"			"1281.835571 -1310.008911 -415.969085"
+			"lookat"			"632.604858 -2097.290283 -359.292938"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside HE CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Red Molotov"
+		{
+			"position"			"1395.909667 -1231.718750 -415.979003"
+			"lookat"			"669.793884 -2175.456054 -367.569396"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Red Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Outside Flash CT"
+		{
+			"position"			"1259.492553 -1406.161499 -415.968750"
+			"lookat"			"962.089599 -1743.234008 -416.000000"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Outside Flash CT2"
+		{
+			"position"			"1436.638916 -1308.506469 -416.495605"
+			"lookat"			"699.595458 -1770.968750 -387.426757"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Flash CT2.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Outside Smoke CT"
+		{
+			"position"			"1539.328613 -870.493530 -417.762023"
+			"lookat"			"703.616394 -2176.596191 -380.615051"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Outside Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Secret Smoke"
+		{
+			"position"			"693.745788 -1552.005004 -639.968750"
+			"lookat"			"1207.968750 -1733.567382 -516.072387"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Secret Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Ramp Smoke"
+		{
+			"position"			"1174.852050 -158.626266 -415.968750"
+			"lookat"			"480.031250 786.127197 -349.491180"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Ramp Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Ramp Molotov"
+		{
+			"position"			"1102.287597 -196.288009 -415.968750"
+			"lookat"			"602.693359 950.968688 -350.381927"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Ramp Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Ramp HE"
+		{
+			"position"			"676.870178 667.785278 -479.968750"
+			"lookat"			"514.031250 408.982238 -487.624206"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_nuke/Ramp HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+    }
+	"de_vertigo"
+	{
+	    "A Short Smoke"
+		{
+			"position"			"-1418.031250 -1599.994995 11489.031250"
+			"lookat"			"-1402.031250 -1579.444824 11710.520507"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Short Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Sandbags Molotov"
+		{
+			"position"			"-879.996459 -928.749816 11628.219726"
+			"lookat"			"-220.289916 -1381.001708 12031.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Sandbags Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"HS Molotov"
+		{
+			"position"			"-501.621673 -1171.608398 11699.492187"
+			"lookat"			"-409.370727 -1024.031250 11826.551757"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/HS Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Cubby Molotov"
+		{
+			"position"			"-656.006225 -965.029479 11637.290039"
+			"lookat"			"-881.494323 -832.031250 11934.131835"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Cubby Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Ramp Entry Flash"
+		{
+			"position"			"-1081.968750 -12.031249 11488.031250"
+			"lookat"			"-991.812622 -222.730087 11684.770507"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Ramp Entry Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Ramp Flash"
+		{
+			"position"			"-859.433410 -258.257965 11488.031250"
+			"lookat"			"-769.362304 -677.551696 11743.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Ramp Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Left Smoke"
+		{
+			"position"			"-895.968750 -834.740112 11744.356445"
+			"lookat"			"-656.005859 -1016.968750 11648.031250"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Left Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Right Smoke"
+		{
+			"position"			"-536.308776 -1231.657714 11687.925781"
+			"lookat"			"-96.031250 -660.490905 11882.483398"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Right Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Con Smoke"
+		{
+			"position"			"-134.842544 -1400.935668 11776.031250"
+			"lookat"			"-345.158111 -707.547424 12031.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Con Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Flash"
+		{
+			"position"			"-1001.992553 -983.394531 11674.728515"
+			"lookat"			"-1059.701904 -1237.968750 11892.302734"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Short Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"-656.000915 -1119.953735 11648.031250"
+			"lookat"			"-137.031250 -1479.337036 12021.951171"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash2"
+		{
+			"position"			"-879.998901 -1295.996215 11648.031250"
+			"lookat"			"-256.877319 -1461.839599 12031.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Flash2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid HE"
+		{
+			"position"			"-1960.895019 -683.536499 11776.031250"
+			"lookat"			"-1928.042968 -394.950775 11903.968750"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash"
+		{
+			"position"			"-1512.749633 -535.651611 11776.031250"
+			"lookat"			"-1712.594482 35.968750 11784.893554"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash3"
+		{
+			"position"			"-1691.193115 -87.715049 11776.031250"
+			"lookat"			"-1659.743286 120.299186 12017.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Flash3.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Left Smoke"
+		{
+			"position"			"-1969.968750 -72.167251 11776.031250"
+			"lookat"			"-1747.994873 35.968750 11888.077148"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Left Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Right Smoke"
+		{
+			"position"			"-1969.998168 -150.489685 11776.031250"
+			"lookat"			"-1405.420288 278.274475 12031.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Right Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Entry Smoke"
+		{
+			"position"			"-1680.000488 19.997463 11776.031250"
+			"lookat"			"-1732.617553 35.968750 11869.626953"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Entry Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Molotov"
+		{
+			"position"			"-1947.530883 -295.968750 11799.031250"
+			"lookat"			"-1638.031250 145.482513 12011.203125"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Window Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Flash2"
+		{
+			"position"			"-1716.031250 -295.968750 11791.125976"
+			"lookat"			"-1984.725097 -120.826782 12031.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Flash2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Right Smoke"
+		{
+			"position"			"-2374.248535 -112.998092 11552.031250"
+			"lookat"			"-2258.811035 67.982833 12031.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Right Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Left Smoke"
+		{
+			"position"			"-2512.636962 -176.372817 11552.031250"
+			"lookat"			"-2490.031250 -149.830352 11705.583984"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Left Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Default Molotov"
+		{
+			"position"			"-2240.090820 -149.861602 11610.465820"
+			"lookat"			"-2175.943359 435.955108 12031.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Ninja Molotov"
+		{
+			"position"			"-2227.828613 -295.968750 11616.031250"
+			"lookat"			"-2542.827636 896.898193 12031.468750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Ninja Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Cubby HE"
+		{
+			"position"			"-2303.085205 -62.649257 11552.635742"
+			"lookat"			"-2214.178955 213.968750 11692.672851"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Cubby HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Window Molotov"
+		{
+			"position"			"-2476.248046 665.667175 11744.031250"
+			"lookat"			"-2357.802734 662.626159 11844.833007"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Window Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Stairs Flash"
+		{
+			"position"			"-2352.968750 -624.912292 11488.031250"
+			"lookat"			"-2321.845214 -513.991882 11713.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Stairs Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash"
+		{
+			"position"			"-2111.531250 -73.998321 11572.534179"
+			"lookat"			"-2466.586914 462.364776 12031.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Stairs Smoke"
+		{
+			"position"			"-2471.968750 500.000366 11744.031250"
+			"lookat"			"-2198.846435 -311.968750 11823.234375"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Stairs Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Stairs Molotov"
+		{
+			"position"			"-2010.969604 1017.104919 11745.269531"
+			"lookat"			"-2523.968750 -33.698913 12000.100585"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Stairs Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Stairs HE"
+		{
+			"position"			"-2289.069091 816.768432 11744.031250"
+			"lookat"			"-2210.865478 -311.968750 11815.201171"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Stairs HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B Stairs FlashCT"
+		{
+			"position"			"-2230.509765 536.031250 11751.440429"
+			"lookat"			"-2486.968750 70.984222 11737.960937"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/B Stairs FlashCT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Smoke"
+		{
+			"position"			"-1187.995117 359.016235 11776.031250"
+			"lookat"			"-1752.391845 139.031250 11797.682617"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Molotov"
+		{
+			"position"			"-1408.396118 919.001708 11776.031250"
+			"lookat"			"-1570.667846 414.222137 12031.968750"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Mid Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Ramp Smoke"
+		{
+			"position"			"-1038.249145 481.647094 11776.031250"
+			"lookat"			"-1020.676208 -466.968750 11828.015625"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Ramp Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Short Smoke CT"
+		{
+			"position"			"-386.703399 -513.023681 11776.031250"
+			"lookat"			"-1181.968750 -745.734008 11892.361328"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Short Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Short Molotov"
+		{
+			"position"			"-503.997772 -511.821594 11776.031250"
+			"lookat"			"-857.557617 -804.968750 11909.424804"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/Short Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Ramp HE"
+		{
+			"position"			"-587.222778 -528.031250 11799.031250"
+			"lookat"			"-869.484619 -804.968750 11903.769531"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Ramp HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"A Ramp Flash CT"
+		{
+			"position"			"-641.222534 -769.205871 11792.031250"
+			"lookat"			"-643.962280 -804.968750 11923.169921"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/A Ramp Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"AWP Wallbang"
+		{
+			"position"			"-919.019165 -13.845210 11776.031250"
+			"lookat"			"-1081.968750 -100.084007 11839.515625"
+			"nadedefindex"		"9"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_vertigo/AWP Wallbang.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
 		}
 	}
 	"de_dust2"
 	{
 		"XBOX Smoke"
 		{
-			"position"			"-299.938416 -1163.968750 77.689507"
-			"lookat"			"-299.879638 -454.031188 292.063415"
+			"position"			"-501.066040 -661.135986 127.146667"
+			"lookat"			"-475.725280 -386.031219 212.190933"
 			"nadedefindex"		"45"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/XBOX Smoke.rec"
 			"timestamp"			"0.0"
@@ -195,12 +2344,84 @@
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
+		"Long Flash2"
+		{
+			"position"			"520.613708 -363.991058 8.037277"
+			"lookat"			"763.968750 36.225646 150.711898"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Flash2.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Flash3"
+		{
+			"position"			"116.031250 -355.674957 1.655975"
+			"lookat"			"763.968750 163.958526 135.984741"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Flash3.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Car Molotov"
+		{
+			"position"			"860.031250 790.031250 4.314226"
+			"lookat"			"1609.968750 1594.806396 64.133888"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Car Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
 		"Long Corner Smoke"
 		{
 			"position"			"-191.312576 -660.031250 52.480049"
 			"lookat"			"-57.208602 -484.031250 192.934722"
 			"nadedefindex"		"45"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Corner Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Site Molotov"
+		{
+			"position"			"339.158905 1787.822143 96.031250"
+			"lookat"			"956.636230 2779.968750 440.669708"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/A Site Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Flash"
+		{
+			"position"			"489.990875 1680.392578 3.802943"
+			"lookat"			"459.353179 1765.968750 76.932510"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short CT Smoke"
+		{
+			"position"			"189.997665 1334.000488 1.083763"
+			"lookat"			"744.578979 2597.104980 447.968780"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short CT Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Entry Smoke1"
+		{
+			"position"			"489.995910 1599.721679 1.770095"
+			"lookat"			"257.031250 1842.958984 253.144226"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Entry Smoke1.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Short Entry Smoke2"
+		{
+			"position"			"267.968750 1348.001098 0.315601"
+			"lookat"			"722.026489 2758.027343 447.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Entry Smoke2.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
@@ -231,30 +2452,21 @@
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
+		"Mid2B Smoke"
+		{
+			"position"			"-275.031250 1345.369995 -122.736793"
+			"lookat"			"-299.028930 1372.968750 -32.414310"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Mid2B Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
 		"Long Cross Smoke"
 		{
 			"position"			"860.031250 790.031250 4.314227"
 			"lookat"			"1196.794677 1115.968750 276.565887"
 			"nadedefindex"		"45"
 			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Cross Smoke.rec"
-			"timestamp"			"0.0"
-			"team"				"T"
-		}
-		"Short OneWay Smoke"
-		{
-			"position"			"489.485138 1446.031250 0.553699"
-			"lookat"			"499.254364 1765.968750 97.857986"
-			"nadedefindex"		"45"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short OneWay.rec"
-			"timestamp"			"0.0"
-			"team"				"T"
-		}
-		"Short Dumpster Smoke"
-		{
-			"position"			"267.968750 1348.011841 0.314396"
-			"lookat"			"718.409301 2744.565917 447.968750"
-			"nadedefindex"		"45"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Dumpster.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
@@ -266,6 +2478,96 @@
 			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Goose Molotov.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
+		}
+		"B Lurk Smoke"
+		{
+			"position"			"-2041.968750 1610.377563 142.092697"
+			"lookat"			"-1746.718139 1064.000244 33.949684"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Lurk Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window Molotov"
+		{
+			"position"			"-1830.081665 2477.031250 30.756568"
+			"lookat"			"-1346.031250 2716.307128 271.768737"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Window Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash"
+		{
+			"position"			"-1856.528076 1124.804199 32.565811"
+			"lookat"			"-1976.571044 1581.968750 198.105041"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Rush Flash"
+		{
+			"position"			"-1837.991211 982.031250 40.591507"
+			"lookat"			"-1853.968750 1023.679016 123.351913"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Rush Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B and Car Flash"
+		{
+			"position"			"-1746.955200 1064.031250 33.957367"
+			"lookat"			"-1937.127685 1407.845214 234.221603"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B and Car Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Window HE"
+		{
+			"position"			"-1879.004882 2422.917968 18.453971"
+			"lookat"			"-1256.733154 2701.916503 274.5281982"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Window HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Mid Doors Flash"
+		{
+			"position"			"-275.031250 1345.408569 -122.420464"
+			"lookat"			"-259.244537 1372.968750 -33.767448"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Mid Doors Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+        }
+		"Short Flash Under"
+		{
+			"position"			"-556.006104 1367.832886 -111.217682"
+			"lookat"			"87.222778 1478.874023 447.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Flash Under.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Flash"
+		{
+			"position"			"253.114929 1515.999878 2.098751"
+			"lookat"			"453.968750 1847.720581 296.989044"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/A Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Defensive Flash"
+		{
+			"position"			"1247.983032 2038.036133 1.864922"
+			"lookat"			"1250.586303 2022.031250 80.453063"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Defensive Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
 		}
 		"Long Smoke"
 		{
@@ -294,57 +2596,483 @@
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}
-		"B Rush Flash"
+		"Long Molotov"
 		{
-			"position"			"-1837.991211 982.031250 40.591507"
-			"lookat"			"-1853.968750 1023.679016 123.351913"
-			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Rush Flash.rec"
+			"position"			"1312.206542 1974.142089 1.031250"
+			"lookat"			"1327.360961 324.031127 89.427345"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Molotov.rec"
 			"timestamp"			"0.0"
-			"team"				"T"
+			"team"				"CT"
 		}
-		"B and Car Flash"
+		"Long HE"
 		{
-			"position"			"-1746.955200 1064.031250 33.957367"
-			"lookat"			"-1937.127685 1407.845214 234.221603"
-			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B and Car Flash.rec"
+			"position"			"1292.971191 1801.662475 1.141014"
+			"lookat"			"1252.635742 778.534606 42.215782"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Stairs HE.rec"
 			"timestamp"			"0.0"
-			"team"				"T"
+			"team"				"CT"
 		}
-		"Mid Doors Flash"
+		"B Molotov"
 		{
-			"position"			"-275.031250 1345.408569 -122.420464"
-			"lookat"			"-259.244537 1372.968750 -33.767448"
-			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Mid Doors Flash.rec"
+			"position"			"-1326.521484 2224.286621 2.330986"
+			"lookat"			"-2041.968750 1748.396972 143.477416"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"B HE"
+		{
+			"position"			"-1786.266479 2633.636962 32.270717"
+			"lookat"			"-1949.521118 1791.482666 230.317901"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/B HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+	}
+    "de_overpass"
+	{
+		"Short Molotov T"
+		{
+			"position"			"-416.000030 -2395.642089 152.031250"
+			"lookat"			"-593.823059 -1808.701782 145.000000"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Short Molotov T.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
 		"Short Flash"
 		{
-			"position"			"-556.006104 1367.832886 -111.217682"
-			"lookat"			"87.222778 1478.874023 447.968750"
+			"position"			"-428.398345 -2008.036010 145.031250"
+			"lookat"			"-878.968750 -1651.611816 162.586227"
 			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Short Flash.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Short Flash.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
-		"A Flash"
+		"Heaven Smoke"
 		{
-			"position"			"253.114929 1515.999878 2.098751"
-			"lookat"			"453.968750 1847.720581 296.989044"
-			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/A Flash.rec"
+			"position"			"-289.269683 -1119.699340 12.678428"
+			"lookat"			"-660.673767 -678.466430 127.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Heaven Smoke.rec"
 			"timestamp"			"0.0"
 			"team"				"T"
 		}
-		"Long Defensive Flash"
+		"Heaven Smoke Short"
 		{
-			"position"			"1247.983032 2038.036133 1.864922"
-			"lookat"			"1250.586303 2022.031250 80.453063"
+			"position"			"-1200.000854 -892.000793 9.854522"
+			"lookat"			"-1341.570800 -489.880279 99.278541"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Heaven Smoke Short.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Barrels Molotov"
+		{
+			"position"			"-1559.999267 -886.135131 61.741180"
+			"lookat"			"-1353.340820 -492.865844 287.776000"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Barrels Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Flash Short"
+		{
+			"position"			"-1318.870605 -1079.968750 0.031250"
+			"lookat"			"-1307.591918 -492.853027 16.813003"
 			"nadedefindex"		"43"
-			"replay"			"addons/sourcemod/data/botmimic/default/de_dust2/Long Defensive Flash.rec"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/B Flash Short.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Site Smoke"
+		{
+			"position"			"-1567.999877 -1087.968750 0.031250"
+			"lookat"			"-1404.477783 -488.391967 352.832366"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/B Site Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"B Pit Molotov"
+		{
+			"position"			"-906.344055 -533.192932 96.031250"
+			"lookat"			"-1453.710571 577.269226 311.481719"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/B Pit Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bridge Smoke"
+		{
+			"position"			"-616.985839 -1510.031250 145.031250"
+			"lookat"			"-673.195983 -1375.754638 351.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Bridge Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Monster Flash"
+		{
+			"position"			"-522.327819 -1449.419067 140.316329"
+			"lookat"			"-512.908813 -11.329833 1.942459"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Monster Right Molotov"
+		{
+			"position"			"-628.428588 -882.005371 16.895622"
+			"lookat"			"-250.706787 313.561401 34.278686"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster Right Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con Smoke"
+		{
+			"position"			"-1678.095458 -1858.288696 96.031250"
+			"lookat"			"-1693.228759 -1742.031250 159.337936"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con Molotov"
+		{
+			"position"			"-1731.034179 -1185.959228 96.031250"
+			"lookat"			"-1920.016601 -990.153869 319.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Con Short Flash"
+		{
+			"position"			"-1740.954833 -1083.613403 96.031250"
+			"lookat"			"-1674.031250 -1076.933959 233.317596"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Short Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Anti Molly Smoke"
+		{
+			"position"			"-886.074829 -2204.968750 262.748626"
+			"lookat"			"-1703.968750 -2164.676269 438.812255"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Anti Molly Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Toilets Smoke"
+		{
+			"position"			"-711.970581 -2387.897216 154.772628"
+			"lookat"			"-925.711303 -2240.031250 334.874267"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Toilets Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Party Molotov"
+		{
+			"position"			"-1542.234863 -2447.968750 336.031250"
+			"lookat"			"-1664.852783 -2371.043457 471.968750"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Party Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Banana Flash"
+		{
+			"position"			"-1990.909179 -2334.412353 445.059265"
+			"lookat"			"-2212.692626 -1862.188720 735.968750"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Banana Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Divider Molotov"
+		{
+			"position"			"-2327.350097 -1996.068603 472.031250"
+			"lookat"			"-2525.193359 -1987.166503 544.987548"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Divider Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Flash"
+		{
+			"position"			"-3065.649414 -2422.372802 472.031250"
+			"lookat"			"-3206.382324 -2113.225830 528.621398"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Bank Smoke"
+		{
+			"position"			"-2335.999755 -848.224548 388.324859"
+			"lookat"			"-2339.172363 -616.031250 494.571624"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Bank Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Stairs Smoke"
+		{
+			"position"			"-2531.358886 -1454.156005 435.380249"
+			"lookat"			"-2396.564208 -898.608337 643.341491"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Stairs Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Truck Molotov"
+		{
+			"position"			"-2295.144531 -632.031250 385.087585"
+			"lookat"			"-2150.031250 -80.839416 451.012084"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Truck Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"A Site Flash"
+		{
+			"position"			"-2238.187011 -885.514343 386.199249"
+			"lookat"			"-2166.821044 59.634826 533.681457"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/A Site Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Bank Smoke"
+		{
+			"position"			"-3587.773925 -103.350349 511.860900"
+			"lookat"			"-3491.152343 -8.611076 641.079528"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Bank Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Stairs Smoke"
+		{
+			"position"			"-3959.999023 -267.015472 539.556274"
+			"lookat"			"-3780.560302 -153.315032 627.734619"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Stairs Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long A Site Flash"
+		{
+			"position"			"-3320.972900 -358.998748 536.031250"
+			"lookat"			"-3218.031250 -261.336364 677.436584"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long A Site Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Truck Molotov"
+		{
+			"position"			"-3551.222900 -62.633159 512.791381"
+			"lookat"			"-3165.934082 101.766632 699.922851"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Truck Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Default Molotov"
+		{
+			"position"			"-2964.896728 500.216796 474.103729"
+			"lookat"			"-2624.043212 962.143859 572.058349"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Default Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Long Corner Molotov"
+		{
+			"position"			"-3818.938476 -781.502075 510.819244"
+			"lookat"			"-3619.103271 -480.421478 497.523315"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Corner Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Stairs Molotov"
+		{
+			"position"			"-2144.644287 505.724731 480.031250"
+			"lookat"			"-2077.399658 613.968750 536.858581"
+			"nadedefindex"		"46"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Stairs Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Stairs HE"
+		{
+			"position"			"-2469.627929 633.760925 480.031250"
+			"lookat"			"-1768.031250 1101.214355 546.167724"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Stairs HE.rec"
+			"timestamp"			"0.0"
+			"team"				"T"
+		}
+		"Monster Smoke"
+		{
+			"position"			"-2116.397216 993.195861 480.031250"
+			"lookat"			"-1911.059936 753.027099 655.968750"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Pipe Molotov"
+		{
+			"position"			"-1897.266479 616.462219 104.031250"
+			"lookat"			"-2133.685546 126.877655 168.968093"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Pipe Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Short Flash CT"
+		{
+			"position"			"-3846.279541 -1221.228149 508.984741"
+			"lookat"			"-3388.031250 -1642.420410 532.706726"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Short Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Door HE"
+		{
+			"position"			"-1808.006958 -3.589405 128.031250"
+			"lookat"			"-1750.894409 -349.197662 267.437927"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Door HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Monster HE"
+		{
+			"position"			"-675.036132 -104.369270 25.553052"
+			"lookat"			"-661.376464 -155.968750 80.958068"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Monster Molotov"
+		{
+			"position"			"-1743.999145 -10.031933 128.031250"
+			"lookat"			"-281.106079 -162.142120 363.009277"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Monster Smoke B"
+		{
+			"position"			"-829.990966 208.961456 96.031250"
+			"lookat"			"-453.404693 -390.097137 35.641212"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Monster Smoke B.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Pipe Smoke"
+		{
+			"position"			"-1320.867065 -532.155944 19.378309"
+			"lookat"			"-1172.082275 -1023.098022 55.835670"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Pipe Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Short Smoke"
+		{
+			"position"			"-1254.779663 495.999603 41.778816"
+			"lookat"			"-1164.522338 240.031265 134.083557"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Short Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Con Wallbang"
+		{
+			"position"			"-1715.541992 -188.604934 128.031250"
+			"lookat"			"-1720.375244 -343.263366 189.444900"
+			"nadedefindex"		"9"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Wallbang.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"T Stairs Molotov"
+		{
+			"position"			"-2316.694091 735.270935 472.281250"
+			"lookat"			"-2462.207275 -129.748596 509.197662"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/T Stairs Molotov.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Smoke"
+		{
+			"position"			"-2353.091064 -504.008575 430.090301"
+			"lookat"			"-2887.968750 -1391.231323 529.549011"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Mid Smoke.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Mid Flash"
+		{
+			"position"			"-2166.006347 -519.999023 391.397338"
+			"lookat"			"-2310.360839 -1243.139526 432.031250"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Mid Flash.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"T Stairs HE"
+		{
+			"position"			"-2418.959228 -993.924926 413.254150"
+			"lookat"			"-2863.446533 -1340.887939 458.194366"
+			"nadedefindex"		"44"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/T Stairs HE.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Long Flash CT"
+		{
+			"position"			"-3846.279541 -1221.228149 508.984741"
+			"lookat"			"-3388.031250 -1642.420410 532.706726"
+			"nadedefindex"		"43"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Long Flash CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Con Smoke CT"
+		{
+			"position"			"-2034.426757 -1327.986572 302.988800"
+			"lookat"			"-1847.548217 -892.031250 232.096755"
+			"nadedefindex"		"45"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Smoke CT.rec"
+			"timestamp"			"0.0"
+			"team"				"CT"
+		}
+		"Con Molotov CT"
+		{
+			"position"			"-1893.662597 -1015.856506 135.937133"
+			"lookat"			"-1869.206420 -1109.063232 187.413070"
+			"nadedefindex"		"48"
+			"replay"			"addons/sourcemod/data/botmimic/default/de_overpass/Con Molotov CT.rec"
 			"timestamp"			"0.0"
 			"team"				"CT"
 		}

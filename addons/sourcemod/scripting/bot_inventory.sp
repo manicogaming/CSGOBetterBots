@@ -60,7 +60,7 @@ ArrayList g_ArrayCTAgents;
 ArrayList g_ArrayMapWeapons;
 
 int g_iKnifeDefIndex[] =  {
-	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526
+	500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528
 };
 
 Handle g_hSetRank;
@@ -85,7 +85,7 @@ public Plugin myinfo =
 	name = "BOT Inventory", 
 	author = "manico", 
 	description = "Gives BOTs items.", 
-	version = "1.0", 
+	version = "1.0.1", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
