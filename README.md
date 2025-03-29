@@ -48,4 +48,6 @@ If you are going to use this you will need to download the following:
 
 The BotProfile.db has it's values taken from [this BotProfile](https://gamebanana.com/scripts/9293) made by [Bezimienny!](https://gamebanana.com/members/1398309).
 
+All the current BOT grenade lineups and some wallbang line ups are thanks to [Rxpev](https://steamcommunity.com/id/rxpev/).
+
 This repo also has all the team logos I use with my BOTs, but the NavMeshes I have are in [this repo](https://github.com/manicogaming/NavMeshes).
