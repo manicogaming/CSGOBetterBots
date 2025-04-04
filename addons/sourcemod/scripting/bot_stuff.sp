@@ -155,7 +155,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.0.8", 
+	version = "1.0.9", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -3697,17 +3697,19 @@ public void OnClientPostAdminCheck(int client)
 		
 		if(IsProBot(szBotName, g_szCrosshairCode[client], 35))
 		{
-			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "jL") == 0 || strcmp(szBotName, "donk") == 0)
+			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "jL") == 0 || strcmp(szBotName, "donk") == 0 ||
+			strcmp(szBotName, "m0NESY") == 0)
 			{
 				g_fLookAngleMaxAccel[client] = 20000.0;
 				g_fReactionTime[client] = 0.0;
+				g_fAggression[client] = 1.0;
 			}
 			else
 			{
 				g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
 				g_fReactionTime[client] = Math_GetRandomFloat(0.165, 0.325);
+				g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			}
-			g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
 			g_bIsProBot[client] = true;
 		}
 		
@@ -4010,7 +4012,6 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		if(BotMimic_IsPlayerMimicing(client))
 		{
 			g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
-			g_iDoingSmokeNum[client] = -1;
 			BotMimic_StopPlayerMimic(client);
 		}
 		
@@ -4129,10 +4130,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
 					
 					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
-					{
 						BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
-						g_iDoingSmokeNum[client] = -1;
-					}
 				}
 			}
 			
@@ -4955,7 +4953,7 @@ public void SelectBestTargetPos(int client, float fTargetPos[3])
 					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 					{
 						float fTargetDistance = GetVectorDistance(g_fBotOrigin[client], fHead);
-						if (IsItMyChance(80.0) && fTargetDistance < 2000.0)
+						if (IsItMyChance(70.0) && fTargetDistance < 2000.0)
 							bShootSpine = true;
 					}
 					case 9, 11, 38:

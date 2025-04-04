@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Wed Mar 26 22:25:27 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Thu Apr 03 22:47:31 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -212,7 +212,6 @@ cs_italia
 cs_italy
 cs_italy_16togo
 cs_italy_cso2
-cs_italy_d
 cs_ivory
 cs_light
 cs_logovo
@@ -232,7 +231,6 @@ cs_max_go
 cs_militia
 cs_militia_mesa
 cs_militia_original
-cs_militia_winter
 cs_mission
 cs_mopo3
 cs_motel
@@ -436,7 +434,6 @@ de_gloss_r1
 de_gold_dust
 de_gold_dust2
 de_golden
-de_gracia
 de_graveyard
 de_grind
 de_gritty_1_6_final
