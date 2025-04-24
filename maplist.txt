@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Thu Apr 03 22:47:31 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sat Apr 19 00:41:45 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -451,7 +451,6 @@ de_icarus
 de_indust
 de_inetcafe
 de_inferno
-de_inferno_classic_beta3
 de_inferno_cs16_kp
 de_inferno_cso2
 de_inferno_cz
@@ -708,7 +707,6 @@ fy_dustworld_go
 fy_iceworld
 fy_iceworld2_vpp
 fy_iceworld2k_t0
-fy_iceworld_arena_two
 fy_iceworld_gc
 fy_iceworld_origins
 fy_iceworld_redux

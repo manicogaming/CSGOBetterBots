@@ -85,7 +85,7 @@ public Plugin myinfo =
 	name = "BOT Inventory", 
 	author = "manico", 
 	description = "Gives BOTs items.", 
-	version = "1.0.1", 
+	version = "1.0.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -802,7 +802,7 @@ public Action OnTakeDamageAlive(int victim, int &attacker, int &iInflictor, floa
 	
 	switch (iDefIndex)
 	{
-		case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525:
+		case 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525, 526, 527, 528:
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[0];
 		case 4:
 			g_iStatTrakKills[attacker][iDefIndex] = iWeaponsReturn[1];

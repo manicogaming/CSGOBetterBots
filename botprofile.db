@@ -4286,8 +4286,72 @@ ProP+Rifle+RiflePersonality "Crunchy"
 	VoicePitch = 98
 End
 
+ProP+Rifle+RiflePersonality "0SAMAS"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "Matheos"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "weaveR"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "demente"
+	VoicePitch = 89
+End
+
+ProP+Rifle+RiflePersonality "kumao"
+	VoicePitch = 89
+End
+
+ProP+SniperPro+SniperPersonality "noni"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "ARSPOWER"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "botirshoT"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "shoxs"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "icyvlone"
+	VoicePitch = 101
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "Dis1"
+	VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "Boye"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "bekker"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "tENZY"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "H1te"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "Vert"
+	VoicePitch = 76
 End
 
 Elite+SniperPro+SniperPersonality "dDeath of the ART"
