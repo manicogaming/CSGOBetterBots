@@ -155,7 +155,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.1.1", 
+	version = "1.1.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -3492,121 +3492,120 @@ public void OnMapStart()
 {
 	g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
 	g_iPlayerColorOffset = FindSendPropInfo("CCSPlayerResource", "m_iCompTeammateColor");
-	
+
 	GetCurrentMap(g_szMap, sizeof(g_szMap));
 	GetMapDisplayName(g_szMap, g_szMap, sizeof(g_szMap));
-	
 	ParseMapNades(g_szMap);
-	
+
 	g_bIsBombScenario = IsValidEntity(FindEntityByClassname(-1, "func_bomb_target"));
 	g_bIsHostageScenario = IsValidEntity(FindEntityByClassname(-1, "func_hostage_rescue"));
-	
+
 	CreateTimer(1.0, Timer_CheckPlayer, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 	CreateTimer(0.1, Timer_MoveToBomb, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
+
 	SDKHook(GetPlayerResourceEntity(), SDKHook_ThinkPost, OnThinkPost);
-	
-	for (int i = 1; i <= MaxClients; i++)
-		g_iPlayerColor[i] = -1;
+
+	Array_Fill(g_iPlayerColor, -1, MaxClients + 1);
 }
 
 public Action Timer_CheckPlayer(Handle hTimer, any data)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
+		if (!IsValidClient(i) || !IsFakeClient(i) || !IsPlayerAlive(i))
+			continue;
+
+		int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
+		bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
+		int iTeam = GetClientTeam(i);
+		bool bHasDefuser = !!GetEntProp(i, Prop_Send, "m_bHasDefuser");
+		int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+		bool bHasPrimary = IsValidEntity(iPrimary);
+
+		char szDefaultPrimary[64];
+		GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
+
+		bool bDefaultPistol = strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0;
+		bool bFriendHasPrimary = GetFriendsWithPrimary(i) >= 1;
+
+		if (IsItMyChance(2.0))
 		{
-			int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
-			bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
-			int iTeam = GetClientTeam(i);
-			bool bHasDefuser = !!GetEntProp(i, Prop_Send, "m_bHasDefuser");
-			int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
-			char szDefaultPrimary[64];
-			GetClientWeapon(i, szDefaultPrimary, sizeof(szDefaultPrimary));
-			
-			if (IsItMyChance(2.0))
+			FakeClientCommand(i, "+lookatweapon");
+			FakeClientCommand(i, "-lookatweapon");
+		}
+
+		if (!bInBuyZone)
+			continue;
+
+		if (bHasPrimary || (bFriendHasPrimary && !bDefaultPistol))
+		{
+			if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || !GetEntProp(i, Prop_Send, "m_bHasHelmet"))
+				FakeClientCommand(i, "buy vesthelm");
+
+			if (iTeam == CS_TEAM_CT && !bHasDefuser)
+				FakeClientCommand(i, "buy defuser");
+
+			if (GetGameTime() - g_fRoundStart > 6.0 && !g_bFreezetimeEnd)
 			{
-				FakeClientCommand(i, "+lookatweapon");
-				FakeClientCommand(i, "-lookatweapon");
-			}
-			
-			if(!bInBuyZone)
-				continue;
-			
-			if (IsValidEntity(iPrimary) || (GetFriendsWithPrimary(i) >= 1 && strcmp(szDefaultPrimary, "weapon_hkp2000") != 0 && strcmp(szDefaultPrimary, "weapon_usp_silencer") != 0 && strcmp(szDefaultPrimary, "weapon_glock") != 0))
-			{
-				if (GetEntProp(i, Prop_Data, "m_ArmorValue") < 50 || GetEntProp(i, Prop_Send, "m_bHasHelmet") == 0)
-					FakeClientCommand(i, "buy vesthelm");
-				
-				if (iTeam == CS_TEAM_CT && !bHasDefuser)
-					FakeClientCommand(i, "buy defuser");
-				
-				if(GetGameTime() - g_fRoundStart > 6.0 && !g_bFreezetimeEnd)
+				switch (Math_GetRandomInt(1, 3))
 				{
-					int iRndNadeSet = Math_GetRandomInt(1,3);
-					
-					switch(iRndNadeSet)
+					case 1:
 					{
-						case 1:
-						{
-							FakeClientCommand(i, "buy smokegrenade");
-							FakeClientCommand(i, "buy flashbang");
-							FakeClientCommand(i, "buy flashbang");
-							FakeClientCommand(i, "buy hegrenade");
-						}
-						case 2:
-						{
-							FakeClientCommand(i, "buy smokegrenade");
-							FakeClientCommand(i, "buy flashbang");
-							FakeClientCommand(i, "buy flashbang");
-							FakeClientCommand(i, "buy molotov");
-						}
-						case 3:
-						{
-							FakeClientCommand(i, "buy smokegrenade");
-							FakeClientCommand(i, "buy flashbang");
-							FakeClientCommand(i, "buy hegrenade");
-							FakeClientCommand(i, "buy molotov");
-						}
+						FakeClientCommand(i, "buy smokegrenade");
+						FakeClientCommand(i, "buy flashbang");
+						FakeClientCommand(i, "buy flashbang");
+						FakeClientCommand(i, "buy hegrenade");
+					}
+					case 2:
+					{
+						FakeClientCommand(i, "buy smokegrenade");
+						FakeClientCommand(i, "buy flashbang");
+						FakeClientCommand(i, "buy flashbang");
+						FakeClientCommand(i, "buy molotov");
+					}
+					case 3:
+					{
+						FakeClientCommand(i, "buy smokegrenade");
+						FakeClientCommand(i, "buy flashbang");
+						FakeClientCommand(i, "buy hegrenade");
+						FakeClientCommand(i, "buy molotov");
 					}
 				}
-			}
-			
-			if ((iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !IsValidEntity(iPrimary)) || GetFriendsWithPrimary(i) >= 1)
-			{
-				if(strcmp(szDefaultPrimary, "weapon_hkp2000") == 0 || strcmp(szDefaultPrimary, "weapon_usp_silencer") == 0 || strcmp(szDefaultPrimary, "weapon_glock") == 0)
-				{
-					int iRndPistol = Math_GetRandomInt(1, 5);
-					
-					switch (iRndPistol)
-					{
-						case 1: FakeClientCommand(i, "buy p250");
-						case 2: FakeClientCommand(i, "buy tec9");
-						case 3: FakeClientCommand(i, "buy deagle");
-					}
-				}
-				else
-				{
-					switch (Math_GetRandomInt(1,15))
-					{
-						case 1: FakeClientCommand(i, "buy vest");
-						case 10: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT && !bHasDefuser) ? "defuser" : "vest");
-					}
-				}
-				
-			}
-			
-			if (g_iCurrentRound == 0 || g_iCurrentRound == 12)
-			{
-				if(IsItMyChance(2.0))
-					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "vest");
-				else if(IsItMyChance(30.0))
-					FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
-				else if(IsItMyChance(60.0))
-					FakeClientCommand(i, "buy vest");
 			}
 		}
+
+		if ((iAccount < g_cvBotEcoLimit.IntValue && iAccount > 2000 && !bHasPrimary) || bFriendHasPrimary)
+		{
+			if (bDefaultPistol)
+			{
+				switch (Math_GetRandomInt(1, 5))
+				{
+					case 1: FakeClientCommand(i, "buy p250");
+					case 2: FakeClientCommand(i, "buy tec9");
+					case 3: FakeClientCommand(i, "buy deagle");
+				}
+			}
+			else
+			{
+				switch (Math_GetRandomInt(1, 15))
+				{
+					case 1: FakeClientCommand(i, "buy vest");
+					case 10: FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT && !bHasDefuser) ? "defuser" : "vest");
+				}
+			}
+		}
+
+		if (g_iCurrentRound == 0 || g_iCurrentRound == 12)
+		{
+			if (IsItMyChance(2.0))
+				FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "elite" : "vest");
+			else if (IsItMyChance(30.0))
+				FakeClientCommand(i, "buy %s", (iTeam == CS_TEAM_CT) ? "defuser" : "p250");
+			else if (IsItMyChance(60.0))
+				FakeClientCommand(i, "buy vest");
+		}
 	}
-	
+
 	return Plugin_Continue;
 }
 
@@ -3614,86 +3613,102 @@ public Action Timer_MoveToBomb(Handle hTimer, any data)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
+		if (!IsValidClient(i) || !IsFakeClient(i) || !IsPlayerAlive(i))
+			continue;
+
+		if (!g_bBombPlanted || GetClientTeam(i) != CS_TEAM_CT)
+			continue;
+
+		int iPlantedC4 = FindEntityByClassname(-1, "planted_c4");
+		if (!IsValidEntity(iPlantedC4))
+			continue;
+
+		float fBombOrigin[3];
+		GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fBombOrigin);
+
+		float fDistance = GetVectorDistance(g_fBotOrigin[i], fBombOrigin);
+		int iEnemiesNearby = GetEntData(i, g_iBotNearbyEnemiesOffset);
+		bool bIsLastCT = (GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1);
+		bool bShouldMove = (bIsLastCT && fDistance > 30.0 && GetTask(i) != ESCAPE_FROM_BOMB) ||fDistance > 2000.0;
+
+		if (bShouldMove && iEnemiesNearby == 0 && !g_bDontSwitch[i])
 		{
-			if(g_bBombPlanted)
-			{
-				int iPlantedC4 = -1;
-				iPlantedC4 = FindEntityByClassname(iPlantedC4, "planted_c4");
-				
-				if (IsValidEntity(iPlantedC4) && GetClientTeam(i) == CS_TEAM_CT)
-				{
-					float fPlantedC4Location[3];
-					GetEntPropVector(iPlantedC4, Prop_Send, "m_vecOrigin", fPlantedC4Location);
-					
-					float fPlantedC4Distance;
-					
-					fPlantedC4Distance = GetVectorDistance(g_fBotOrigin[i], fPlantedC4Location);
-					
-					if (((GetAliveTeamCount(CS_TEAM_T) == 0 && GetAliveTeamCount(CS_TEAM_CT) == 1 && fPlantedC4Distance > 30.0 && GetTask(i) != ESCAPE_FROM_BOMB) || fPlantedC4Distance > 2000.0) && GetEntData(i, g_iBotNearbyEnemiesOffset) == 0 && !g_bDontSwitch[i])
-					{
-						SDKCall(g_hSwitchWeaponCall, i, GetPlayerWeaponSlot(i, CS_SLOT_KNIFE), 0);
-						BotMoveTo(i, fPlantedC4Location, FASTEST_ROUTE);
-					}
-				}
-			}
+			SDKCall(g_hSwitchWeaponCall, i, GetPlayerWeaponSlot(i, CS_SLOT_KNIFE), 0);
+			BotMoveTo(i, fBombOrigin, FASTEST_ROUTE);
 		}
 	}
-	
+
 	return Plugin_Continue;
 }
 
 public Action Timer_DropWeapons(Handle hTimer, any data)
 {
-	if(GetGameTime() - g_fRoundStart > 3.0)
+	if (GetGameTime() - g_fRoundStart <= 3.0)
+		return Plugin_Continue;
+
+	static int iDonorClients[MAXPLAYERS + 1];
+	int iDonorCount = 0;
+
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		for (int i = 1; i <= MaxClients; i++)
+		if (!IsValidClient(i) || !IsFakeClient(i) || !IsPlayerAlive(i) || g_bDropWeapon[i])
+			continue;
+
+		int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+		if (!IsValidEntity(iPrimary))
+			continue;
+
+		int iDefIndex = GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex");
+		CSWeaponID weaponID = CS_ItemDefIndexToID(iDefIndex);
+		int iMoney = GetEntProp(i, Prop_Send, "m_iAccount");
+
+		if (weaponID == CSWeapon_NONE || iMoney < CS_GetWeaponPrice(i, weaponID))
+			continue;
+
+		GetEntityClassname(iPrimary, g_szPreviousBuy[i], 128);
+		ReplaceString(g_szPreviousBuy[i], 128, "weapon_", "");
+
+		iDonorClients[iDonorCount++] = i;
+	}
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (g_bHasGottenDrop[i] || !IsValidClient(i) || !IsPlayerAlive(i))
+			continue;
+
+		if (g_bFreezetimeEnd)
+			continue;
+
+		bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
+		if (!bInBuyZone)
+			continue;
+
+		int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
+		if (IsValidEntity(iPrimary))
+			continue;
+
+		int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
+		if (iAccount >= g_cvBotEcoLimit.IntValue)
+			continue;
+
+		int iTeam = GetClientTeam(i);
+
+		for (int d = 0; d < iDonorCount; d++)
 		{
-			if (!g_bHasGottenDrop[i] && IsValidClient(i) && IsPlayerAlive(i))
-			{
-				int iAccount = GetEntProp(i, Prop_Send, "m_iAccount");
-				bool bInBuyZone = !!GetEntProp(i, Prop_Send, "m_bInBuyZone");
-				int iTeam = GetClientTeam(i);
-				
-				if(!g_bFreezetimeEnd && bInBuyZone)
-				{
-					int iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
-					
-					if(!IsValidEntity(iPrimary) && iAccount < g_cvBotEcoLimit.IntValue)
-					{
-						for (int j = 1; j <= MaxClients; j++)
-						{
-							if (!g_bDropWeapon[j] && IsValidClient(j) && IsFakeClient(j) && IsPlayerAlive(j) && GetClientTeam(j) == iTeam)
-							{
-								int iOtherPrimary = GetPlayerWeaponSlot(j, CS_SLOT_PRIMARY);
-								int iMoney = GetEntProp(j, Prop_Send, "m_iAccount");
-								
-								if(IsValidEntity(iOtherPrimary))
-								{
-									int iDefIndex = GetEntProp(iOtherPrimary, Prop_Send, "m_iItemDefinitionIndex");
-									GetEntityClassname(iOtherPrimary, g_szPreviousBuy[j], 128);
-									ReplaceString(g_szPreviousBuy[j], 128, "weapon_", "");
-									CSWeaponID pWeaponID = CS_ItemDefIndexToID(iDefIndex);
-									
-									if(pWeaponID != CSWeapon_NONE && iMoney >= CS_GetWeaponPrice(j, pWeaponID))
-									{
-										float fEyes[3];
-										
-										GetClientEyePosition(i, fEyes);
-										BotSetLookAt(j, "Use entity", fEyes, PRIORITY_HIGH, 3.0, false, 5.0, false);
-										g_bDropWeapon[j] = true;
-										g_bHasGottenDrop[i] = true;
-										break;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+			int iDonor = iDonorClients[d];
+			if (GetClientTeam(iDonor) != iTeam)
+				continue;
+
+			float fEyes[3];
+			GetClientEyePosition(i, fEyes);
+
+			BotSetLookAt(iDonor, "Use entity", fEyes, PRIORITY_HIGH, 3.0, false, 5.0, false);
+			g_bDropWeapon[iDonor] = true;
+			g_bHasGottenDrop[i] = true;
+			break;
 		}
 	}
-	
+
 	return g_bFreezetimeEnd ? Plugin_Stop : Plugin_Continue;
 }
 
@@ -4344,6 +4359,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					g_iPrevTarget[client] = g_iTarget[client];
 					return Plugin_Continue;
+				}
+
+				if(BotMimic_IsPlayerMimicing(client))
+				{
+					g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+					BotMimic_StopPlayerMimic(client);
 				}
 				
 				if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
