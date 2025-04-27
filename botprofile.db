@@ -4326,10 +4326,6 @@ ProP+Rifle+RiflePersonality "icyvlone"
 	VoicePitch = 101
 End
 
-Elite+SniperPro+SniperPersonality "XD | ryu"
-    VoicePitch = 101
-End
-
 ProP+Rifle+RiflePersonality "Dis1"
 	VoicePitch = 101
 End
@@ -4352,6 +4348,38 @@ End
 
 ProP+Rifle+RiflePersonality "Vert"
 	VoicePitch = 76
+End
+
+ProP+Rifle+RiflePersonality "Raijin"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "controlez"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "efire"
+	VoicePitch = 106
+End
+
+ProP+SniperPro+SniperPersonality "FenomeN"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RiflePersonality "lov1kus"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "notineki"
+	VoicePitch = 83
+End
+
+ProP+Rifle+RiflePersonality "bl1x1"
+	VoicePitch = 105
+End
+
+Elite+SniperPro+SniperPersonality "XD | ryu"
+    VoicePitch = 101
 End
 
 Elite+SniperPro+SniperPersonality "dDeath of the ART"

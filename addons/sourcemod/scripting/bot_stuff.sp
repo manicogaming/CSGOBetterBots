@@ -155,7 +155,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.1.2", 
+	version = "1.1.3", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -569,7 +569,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "FalleN");
 			ServerCommand("bot_add_ct %s", "molodoy");
 			ServerCommand("bot_add_ct %s", "KSCERATO");
-			ServerCommand("bot_add_ct %s", "skullz");
+			ServerCommand("bot_add_ct %s", "YEKINDAR");
 			ServerCommand("mp_teamlogo_1 furi");
 		}
 		
@@ -580,7 +580,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "FalleN");
 			ServerCommand("bot_add_t %s", "molodoy");
 			ServerCommand("bot_add_t %s", "KSCERATO");
-			ServerCommand("bot_add_t %s", "skullz");
+			ServerCommand("bot_add_t %s", "YEKINDAR");
 			ServerCommand("mp_teamlogo_2 furi");
 		}
 	}
@@ -819,7 +819,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "Snowzin");
 			ServerCommand("bot_add_ct %s", "dav1deuS");
 			ServerCommand("bot_add_ct %s", "biguzera");
-			ServerCommand("bot_add_ct %s", "kauez");
+			ServerCommand("bot_add_ct %s", "dgt");
 			ServerCommand("mp_teamlogo_1 pain");
 		}
 		
@@ -830,7 +830,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "Snowzin");
 			ServerCommand("bot_add_t %s", "dav1deuS");
 			ServerCommand("bot_add_t %s", "biguzera");
-			ServerCommand("bot_add_t %s", "kauez");
+			ServerCommand("bot_add_t %s", "dgt");
 			ServerCommand("mp_teamlogo_2 pain");
 		}
 	}
@@ -1542,7 +1542,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "Oxygen");
 			ServerCommand("bot_add_ct %s", "CeRq");
-			ServerCommand("bot_add_ct %s", "SHiPZ");
+			ServerCommand("bot_add_ct %s", "REDSTAR");
 			ServerCommand("bot_add_ct %s", "Rainwaker");
 			ServerCommand("bot_add_ct %s", "SPELLAN");
 			ServerCommand("mp_teamlogo_1 500");
@@ -1553,7 +1553,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "Oxygen");
 			ServerCommand("bot_add_t %s", "CeRq");
-			ServerCommand("bot_add_t %s", "SHiPZ");
+			ServerCommand("bot_add_t %s", "REDSTAR");
 			ServerCommand("bot_add_t %s", "Rainwaker");
 			ServerCommand("bot_add_t %s", "SPELLAN");
 			ServerCommand("mp_teamlogo_2 500");
@@ -1567,7 +1567,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "Ryujin");
 			ServerCommand("bot_add_ct %s", "DSSj");
-			ServerCommand("bot_add_ct %s", "1NVISIBLEE");
+			ServerCommand("bot_add_ct %s", "Raijin");
 			ServerCommand("bot_add_ct %s", "Get_Jeka");
 			ServerCommand("bot_add_ct %s", "shg");
 			ServerCommand("mp_teamlogo_1 arc");
@@ -1578,7 +1578,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "Ryujin");
 			ServerCommand("bot_add_t %s", "DSSj");
-			ServerCommand("bot_add_t %s", "1NVISIBLEE");
+			ServerCommand("bot_add_t %s", "Raijin");
 			ServerCommand("bot_add_t %s", "Get_Jeka");
 			ServerCommand("bot_add_t %s", "shg");
 			ServerCommand("mp_teamlogo_2 arc");
@@ -1960,31 +1960,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "9Pandas", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "shalfey");
-			ServerCommand("bot_add_ct %s", "r3salt");
-			ServerCommand("bot_add_ct %s", "d1Ledez");
-			ServerCommand("bot_add_ct %s", "Alv");
-			ServerCommand("bot_add_ct %s", "Krad");
-			ServerCommand("mp_teamlogo_1 pand");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "shalfey");
-			ServerCommand("bot_add_t %s", "r3salt");
-			ServerCommand("bot_add_t %s", "d1Ledez");
-			ServerCommand("bot_add_t %s", "Alv");
-			ServerCommand("bot_add_t %s", "Krad");
-			ServerCommand("mp_teamlogo_2 pand");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "Flyte", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -2032,31 +2007,6 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "ChildKing");
 			ServerCommand("bot_add_t %s", "kaze");
 			ServerCommand("mp_teamlogo_2 rar");
-		}
-	}
-	
-	if(strcmp(szTeamArg, "GTZ", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "snapy");
-			ServerCommand("bot_add_ct %s", "rafaxF");
-			ServerCommand("bot_add_ct %s", "NOPEEj");
-			ServerCommand("bot_add_ct %s", "Linko");
-			ServerCommand("bot_add_ct %s", "Jayy2s");
-			ServerCommand("mp_teamlogo_1 gtz");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "snapy");
-			ServerCommand("bot_add_t %s", "rafaxF");
-			ServerCommand("bot_add_t %s", "NOPEEj");
-			ServerCommand("bot_add_t %s", "Linko");
-			ServerCommand("bot_add_t %s", "Jayy2s");
-			ServerCommand("mp_teamlogo_2 gtz");
 		}
 	}
 	
@@ -2343,7 +2293,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "coldzera");
 			ServerCommand("bot_add_ct %s", "HEN1");
 			ServerCommand("bot_add_ct %s", "venomzera");
-			ServerCommand("bot_add_ct %s", "felps");
+			ServerCommand("bot_add_ct %s", "drop");
 			ServerCommand("bot_add_ct %s", "nyezin");
 			ServerCommand("mp_teamlogo_1 cani");
 		}
@@ -2354,7 +2304,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "coldzera");
 			ServerCommand("bot_add_t %s", "HEN1");
 			ServerCommand("bot_add_t %s", "venomzera");
-			ServerCommand("bot_add_t %s", "felps");
+			ServerCommand("bot_add_t %s", "drop");
 			ServerCommand("bot_add_t %s", "nyezin");
 			ServerCommand("mp_teamlogo_2 cani");
 		}
@@ -2510,31 +2460,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "Honved", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "er9k");
-			ServerCommand("bot_add_ct %s", "vincso");
-			ServerCommand("bot_add_ct %s", "s1cklxrd");
-			ServerCommand("bot_add_ct %s", "noleN");
-			ServerCommand("bot_add_ct %s", "kewS");
-			ServerCommand("mp_teamlogo_1 hon");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "er9k");
-			ServerCommand("bot_add_t %s", "vincso");
-			ServerCommand("bot_add_t %s", "s1cklxrd");
-			ServerCommand("bot_add_t %s", "noleN");
-			ServerCommand("bot_add_t %s", "kewS");
-			ServerCommand("mp_teamlogo_2 hon");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "kONO", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -2610,31 +2535,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "LSE", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "xReal");
-			ServerCommand("bot_add_ct %s", "dan1");
-			ServerCommand("bot_add_ct %s", "AwaykeN");
-			ServerCommand("bot_add_ct %s", "xavi");
-			ServerCommand("bot_add_ct %s", "d1maje");
-			ServerCommand("mp_teamlogo_1 lse");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "xReal");
-			ServerCommand("bot_add_t %s", "dan1");
-			ServerCommand("bot_add_t %s", "AwaykeN");
-			ServerCommand("bot_add_t %s", "xavi");
-			ServerCommand("bot_add_t %s", "d1maje");
-			ServerCommand("mp_teamlogo_2 lse");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "Tricked", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -2691,7 +2591,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "draken");
-			ServerCommand("bot_add_ct %s", "Ro1f");
+			ServerCommand("bot_add_ct %s", "Svedjehed");
 			ServerCommand("bot_add_ct %s", "SHiNE");
 			ServerCommand("bot_add_ct %s", "Sapec");
 			ServerCommand("bot_add_ct %s", "MaiL09");
@@ -2702,7 +2602,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "draken");
-			ServerCommand("bot_add_t %s", "Ro1f");
+			ServerCommand("bot_add_t %s", "Svedjehed");
 			ServerCommand("bot_add_t %s", "SHiNE");
 			ServerCommand("bot_add_t %s", "Sapec");
 			ServerCommand("bot_add_t %s", "MaiL09");
@@ -2844,7 +2744,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "AW");
 			ServerCommand("bot_add_ct %s", "kAlash");
 			ServerCommand("bot_add_ct %s", "sstiNiX");
-			ServerCommand("bot_add_ct %s", "molodoy");
+			ServerCommand("bot_add_ct %s", "tommy171");
 			ServerCommand("mp_teamlogo_1 amk");
 		}
 		
@@ -2855,7 +2755,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "AW");
 			ServerCommand("bot_add_t %s", "kAlash");
 			ServerCommand("bot_add_t %s", "sstiNiX");
-			ServerCommand("bot_add_t %s", "molodoy");
+			ServerCommand("bot_add_t %s", "tommy171");
 			ServerCommand("mp_teamlogo_2 amk");
 		}
 	}
@@ -3485,6 +3385,56 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "Chinggis", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "controlez");
+			ServerCommand("bot_add_ct %s", "ROUX");
+			ServerCommand("bot_add_ct %s", "ariucle");
+			ServerCommand("bot_add_ct %s", "efire");
+			ServerCommand("bot_add_ct %s", "cool4st");
+			ServerCommand("mp_teamlogo_1 ching");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "controlez");
+			ServerCommand("bot_add_t %s", "ROUX");
+			ServerCommand("bot_add_t %s", "ariucle");
+			ServerCommand("bot_add_t %s", "efire");
+			ServerCommand("bot_add_t %s", "cool4st");
+			ServerCommand("mp_teamlogo_2 ching");
+		}
+	}
+	
+	if(strcmp(szTeamArg, "CYBERSHOKE", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "FenomeN");
+			ServerCommand("bot_add_ct %s", "lov1kus");
+			ServerCommand("bot_add_ct %s", "notineki");
+			ServerCommand("bot_add_ct %s", "bl1x1");
+			ServerCommand("bot_add_ct %s", "glowiing");
+			ServerCommand("mp_teamlogo_1 cyber");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "FenomeN");
+			ServerCommand("bot_add_t %s", "lov1kus");
+			ServerCommand("bot_add_t %s", "notineki");
+			ServerCommand("bot_add_t %s", "bl1x1");
+			ServerCommand("bot_add_t %s", "glowiing");
+			ServerCommand("mp_teamlogo_2 cyber");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -3719,55 +3669,57 @@ public void OnMapEnd()
 
 public void OnClientPostAdminCheck(int client)
 {
+	if (!IsValidClient(client))
+		return;
+
 	g_iProfileRank[client] = Math_GetRandomInt(1, 40);
-	
-	if(!IsFakeClient(client))
+
+	if (!IsFakeClient(client))
 	{
 		char szColor[64];
 		GetClientInfo(client, "cl_color", szColor, sizeof(szColor));
 		g_iPlayerColor[client] = StringToInt(szColor);
+		return;
 	}
-	
-	if (IsValidClient(client) && IsFakeClient(client))
+
+	char szBotName[MAX_NAME_LENGTH];
+	GetClientName(client, szBotName, sizeof(szBotName));
+	g_bIsProBot[client] = false;
+
+	if (IsProBot(szBotName, g_szCrosshairCode[client], 35))
 	{
-		char szBotName[MAX_NAME_LENGTH];
-		
-		GetClientName(client, szBotName, sizeof(szBotName));
-		g_bIsProBot[client] = false;
-		
-		if(IsProBot(szBotName, g_szCrosshairCode[client], 35))
+		if (IsTopBot(szBotName))
 		{
-			if(strcmp(szBotName, "s1mple") == 0 || strcmp(szBotName, "ZywOo") == 0 || strcmp(szBotName, "NiKo") == 0 || strcmp(szBotName, "sh1ro") == 0 || strcmp(szBotName, "jL") == 0 || strcmp(szBotName, "donk") == 0 ||
-			strcmp(szBotName, "m0NESY") == 0)
-			{
-				g_fLookAngleMaxAccel[client] = 20000.0;
-				g_fReactionTime[client] = 0.0;
-				g_fAggression[client] = 1.0;
-			}
-			else
-			{
-				g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
-				g_fReactionTime[client] = Math_GetRandomFloat(0.165, 0.325);
-				g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
-			}
-			g_bIsProBot[client] = true;
+			g_fLookAngleMaxAccel[client] = 20000.0;
+			g_fReactionTime[client] = 0.0;
+			g_fAggression[client] = 1.0;
 		}
-		
-		g_bUseUSP[client] = IsItMyChance(75.0) ? true : false;
-		g_bUseM4A1S[client] = IsItMyChance(50.0) ? true : false;
-		g_bUseCZ75[client] = IsItMyChance(20.0) ? true : false;
-		g_pCurrArea[client] = INVALID_NAV_AREA;
+		else
+		{
+			g_fLookAngleMaxAccel[client] = Math_GetRandomFloat(4000.0, 7000.0);
+			g_fReactionTime[client] = Math_GetRandomFloat(0.165, 0.325);
+			g_fAggression[client] = Math_GetRandomFloat(0.0, 1.0);
+		}
+
+		g_bIsProBot[client] = true;
 	}
+
+	g_bUseUSP[client] = IsItMyChance(75.0);
+	g_bUseM4A1S[client] = IsItMyChance(50.0);
+	g_bUseCZ75[client] = IsItMyChance(20.0);
+	g_pCurrArea[client] = INVALID_NAV_AREA;
 }
 
 public void OnRoundPreStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_iCurrentRound = GameRules_GetProp("m_totalRoundsPlayed");
 
-	if(ShouldForce())
-		g_cvBotEcoLimit.IntValue = 0;
-	else
-		g_cvBotEcoLimit.IntValue = 3000;
+	int iTargetValue = ShouldForce() ? 0 : 3000;
+
+	if (g_cvBotEcoLimit.IntValue != iTargetValue)
+	{
+		g_cvBotEcoLimit.IntValue = iTargetValue;
+	}
 }
 
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -3781,59 +3733,73 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 	
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
-		{	
-			g_bUncrouch[i] = IsItMyChance(50.0) ? true : false;
-			g_bDontSwitch[i] = false;
-			g_bDropWeapon[i] = false;
-			g_bHasGottenDrop[i] = false;
-			g_bThrowGrenade[i] = false;
-			g_iTarget[i] = -1;
-			g_iPrevTarget[i] = -1;
-			g_iDoingSmokeNum[i] = -1;
-			g_fShootTimestamp[i] = 0.0;				
-			g_fThrowNadeTimestamp[i] = 0.0;				
-			g_fCrouchTimestamp[i] = 0.0;									
+		if (!IsValidClient(i) || !IsFakeClient(i) || !IsPlayerAlive(i))
+			continue;
+		
+		g_bUncrouch[i] = IsItMyChance(50.0);
+		g_bDontSwitch[i] = false;
+		g_bDropWeapon[i] = false;
+		g_bHasGottenDrop[i] = false;
+		g_bThrowGrenade[i] = false;
+		g_iTarget[i] = -1;
+		g_iPrevTarget[i] = -1;
+		g_iDoingSmokeNum[i] = -1;
+		g_fShootTimestamp[i] = 0.0;
+		g_fThrowNadeTimestamp[i] = 0.0;
+		g_fCrouchTimestamp[i] = 0.0;
+		
+		if (g_bIsBombScenario || g_bIsHostageScenario)
+		{
+			int iClientTeam = GetClientTeam(i);
 			
-			if(g_bIsBombScenario || g_bIsHostageScenario)
-			{
-				if(GetClientTeam(i) == iTeam)
-					SetEntData(i, g_iBotMoraleOffset, -3);
-				if(g_bHalftimeSwitch && GetClientTeam(i) == iOppositeTeam)
-					SetEntData(i, g_iBotMoraleOffset, 1);
-			}
+			if (iClientTeam == iTeam)
+				SetEntData(i, g_iBotMoraleOffset, -3);
+			
+			else if (g_bHalftimeSwitch && iClientTeam == iOppositeTeam)
+				SetEntData(i, g_iBotMoraleOffset, 1);
 		}
 	}
 	
 	g_bHalftimeSwitch = false;
-	if(g_bIsCompetitive)
+	
+	if (g_bIsCompetitive)
 		CreateTimer(0.2, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	int iTeamNum, iEnt = -1;
-	while((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1 )
-	{
-		iTeamNum = GetEntProp(iEnt, Prop_Send, "m_iTeamNum");        
-		if(iTeamNum == CS_TEAM_CT)
-			g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
-		else if(iTeamNum == CS_TEAM_T)
-			g_iTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
-	}
-	
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
-			BotMimic_StopPlayerMimic(i);
-	}
-	
-	g_iRoundsPlayed = g_iCTScore + g_iTScore;
-	
-	for(int i = 0; i < g_iMaxNades; i++)
-	{			
-		g_fNadeTimestamp[i] = 0.0;
-	}
+    int iEnt = -1;
+    bool bCTFound = false, bTFound = false;
+    
+    while ((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1)
+    {
+        int iTeamNum = GetEntProp(iEnt, Prop_Send, "m_iTeamNum");
+
+        if (iTeamNum == CS_TEAM_CT)
+        {
+            g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
+            bCTFound = true;
+        }
+        else if (iTeamNum == CS_TEAM_T)
+        {
+            g_iTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
+            bTFound = true;
+        }
+
+        if (bCTFound && bTFound)
+            break;
+    }
+    
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
+            BotMimic_StopPlayerMimic(i);
+    }
+    
+    g_iRoundsPlayed = g_iCTScore + g_iTScore;
+    
+    for (int i = 0; i < g_iMaxNades; i++)
+        g_fNadeTimestamp[i] = 0.0;
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -3844,121 +3810,82 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 
 public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-		g_fShootTimestamp[client] = GetGameTime();
+    int client = GetClientOfUserId(eEvent.GetInt("userid"));
+    if (!IsValidClient(client) || !IsPlayerAlive(client) || !IsFakeClient(client))
+        return;
+
+    g_fShootTimestamp[client] = GetGameTime();
 }
 
 public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
-		char szWeaponName[64];
-		eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
-		
-		if(IsValidClient(g_iTarget[client]))
-		{
-			float fTargetLoc[3];
-			
-			GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
-			
-			float fRangeToEnemy = GetVectorDistance(g_fBotOrigin[client], fTargetLoc);
-			
-			if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
-				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
-		}
-		
-		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
-			RequestFrame(BeginQuickSwitch, GetClientUserId(client));
-	}
+    int client = GetClientOfUserId(eEvent.GetInt("userid"));
+    if (!IsValidClient(client) || !IsFakeClient(client) || !IsPlayerAlive(client))
+        return;
+
+    char szWeaponName[64];
+    eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
+
+    if (IsValidClient(g_iTarget[client]))
+    {
+        float fTargetLoc[3];
+        GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
+
+        float fRangeToEnemy = GetVectorDistance(g_fBotOrigin[client], fTargetLoc);
+
+        if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
+            SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
+    }
+
+    if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
+        RequestFrame(BeginQuickSwitch, GetClientUserId(client));
 }
 
 public void OnThinkPost(int iEnt)
 {
-	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
-	SetEntDataArray(iEnt, g_iPlayerColorOffset, g_iPlayerColor, MAXPLAYERS + 1);
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i))
-			SetCrosshairCode(GetEntityAddress(iEnt), i, g_szCrosshairCode[i]);
-	}
+    if (!IsValidEntity(iEnt))
+        return;
+
+    SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
+    SetEntDataArray(iEnt, g_iPlayerColorOffset, g_iPlayerColor, MAXPLAYERS + 1);
+
+    Address pEntAddr = GetEntityAddress(iEnt);
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsValidClient(i) || !IsFakeClient(i))
+            continue;
+
+        SetCrosshairCode(pEntAddr, i, g_szCrosshairCode[i]);
+    }
 }
 
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 {
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-	{
-		if (strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0
-			 || strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
-			return Plugin_Continue;
-		else if (GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0
-				 || strcmp(szWeapon, "m4a1") == 0 || strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
-				 || strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
-				 || strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
-				 || strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
-			return Plugin_Handled;
-		
-		int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
-		
-		if (strcmp(szWeapon, "m4a1") == 0)
-		{
-			if (g_bUseM4A1S[client] && iAccount >= CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER))
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
-				
-				return Plugin_Changed;
-			}
-			
-			if (IsItMyChance(5.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_AUG));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "mac10") == 0)
-		{
-			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_GALILAR));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "mp9") == 0)
-		{
-			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_FAMAS));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
-				
-				return Plugin_Changed;
-			}
-			else if (IsItMyChance(15.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_UMP45));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0)
-		{
-			if (g_bUseCZ75[client])
-			{
-				CSGO_SetMoney(client, iAccount - CS_GetWeaponPrice(client, CSWeapon_CZ75A));
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
-				
-				return Plugin_Changed;
-			}
-		}
-	}
-	return Plugin_Continue;
+    if (!(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client)))
+        return Plugin_Continue;
+
+    static const char szEquipment[][] = 
+    {
+        "molotov", "incgrenade", "decoy", "flashbang", "hegrenade",
+        "smokegrenade", "vest", "vesthelm", "defuser"
+    };
+    
+    static const char szPrimaryWeapons[][] = 
+    {
+        "galilar", "famas", "ak47", "m4a1", "ssg08", "aug", "sg556", "awp",
+        "scar20", "g3sg1", "nova", "xm1014", "mag7", "m249", "negev",
+        "mac10", "mp9", "mp7", "ump45", "p90", "bizon"
+    };
+
+    if (IsInArray(szWeapon, szEquipment, sizeof(szEquipment)))
+        return Plugin_Continue;
+
+    if (GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && IsInArray(szWeapon, szPrimaryWeapons, sizeof(szPrimaryWeapons)))
+        return Plugin_Handled;
+
+    int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
+
+    return TryReplaceBoughtWeapon(client, szWeapon, iAccount);
 }
 
 public MRESReturn BotCOS(DHookReturn hReturn)
@@ -3975,124 +3902,142 @@ public MRESReturn BotSIN(DHookReturn hReturn)
 
 public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams)
 {
-	int iPlayer = hParams.Get(1);
-	int iPart = hParams.Get(2);
-	
-	if(iPart == 2)
-	{
-		int iBone = LookupBone(iPlayer, "head_0");
-		if (iBone < 0)
-			return MRES_Ignored;
-		
-		float fHead[3], fBad[3];
-		GetBonePosition(iPlayer, iBone, fHead, fBad);
-		
-		fHead[2] += 4.0;
-		
-		hReturn.SetVector(fHead);
-		
-		return MRES_Override;
-	}
-	
-	return MRES_Ignored;
+    int iPlayer = hParams.Get(1);
+    int iPart = hParams.Get(2);
+
+    if (iPart != 2)
+        return MRES_Ignored;
+
+    int iBone = LookupBone(iPlayer, "head_0");
+    if (iBone < 0)
+        return MRES_Ignored;
+
+    float fHead[3], fBad[3];
+    GetBonePosition(iPlayer, iBone, fHead, fBad);
+
+    fHead[2] += 4.0;
+    hReturn.SetVector(fHead);
+
+    return MRES_Override;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
-	char szDesc[64];
-	
-	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
-	
-	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0)
-		return MRES_Ignored;
-	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
-	{
-		DHookSetParam(hParams, 3, PRIORITY_HIGH);
+    char szDesc[64];
+    DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
+
+    if (strcmp(szDesc, "Defuse bomb") == 0 ||
+        strcmp(szDesc, "Use entity") == 0 ||
+        strcmp(szDesc, "Open door") == 0 ||
+        strcmp(szDesc, "Hostage") == 0)
+    {
+        return MRES_Ignored;
+    }
+
+    if (strcmp(szDesc, "Avoid Flashbang") == 0)
+    {
+        DHookSetParam(hParams, 3, PRIORITY_HIGH);
+        return MRES_ChangedHandled;
+    }
+
+    if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
+    {
+        return MRES_Supercede;
+    }
+
+    if (strcmp(szDesc, "Breakable") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
+    {
+        g_bDontSwitch[client] = true;
+        CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
+        return (strcmp(szDesc, "Plant bomb on floor") == 0) ? MRES_Supercede : MRES_Ignored;
+    }
+
+    if (strcmp(szDesc, "GrenadeThrowBend") == 0)
+    {
+        float fEyePos[3];
+        GetClientEyePosition(client, fEyePos);
+        hParams.GetVector(2, g_fNadeTarget[client]);
+        BotBendLineOfSight(client, fEyePos, g_fNadeTarget[client], g_fNadeTarget[client], 135.0);
+
+        hParams.SetVector(2, g_fNadeTarget[client]);
+        hParams.Set(4, 8.0);
+        hParams.Set(6, 1.5);
+
+        return MRES_ChangedHandled;
+    }
+
+    if (strcmp(szDesc, "Noise") == 0)
+    {
+        float fNoisePos[3];
+        DHookGetParamVector(hParams, 2, fNoisePos);
+
+        float fClientEyes[3];
+        GetClientEyePosition(client, fClientEyes);
+
+        bool bIsWalking = !!GetEntProp(client, Prop_Send, "m_bIsWalking");
+
+        if (IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePos) &&
+            LineGoesThroughSmoke(fClientEyes, fNoisePos) && !bIsWalking)
+        {
+            DHookSetParam(hParams, 7, true);
+        }
 		
-		return MRES_ChangedHandled;
-	}
-	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
-		return MRES_Supercede;
-	else if (strcmp(szDesc, "Breakable") == 0 || strcmp(szDesc, "Plant bomb on floor") == 0)
-	{
-		g_bDontSwitch[client] = true;
-		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
-		
-		return strcmp(szDesc, "Plant bomb on floor") == 0 ? MRES_Supercede : MRES_Ignored;
-	}
-	else if(strcmp(szDesc, "GrenadeThrowBend") == 0)
-	{
-		float fEyePos[3];
-		GetClientEyePosition(client, fEyePos);
-		hParams.GetVector(2, g_fNadeTarget[client]);
-		BotBendLineOfSight(client, fEyePos, g_fNadeTarget[client], g_fNadeTarget[client], 135.0);
-		hParams.SetVector(2, g_fNadeTarget[client]);
-		hParams.Set(4, 8.0);
-		hParams.Set(6, 1.5);
-		
-		return MRES_ChangedHandled;
-	}
-	else if(strcmp(szDesc, "Noise") == 0)
-	{
-		bool bIsWalking = !!GetEntProp(client, Prop_Send, "m_bIsWalking");
-		float fClientEyes[3], fNoisePosition[3];
-		
-		GetClientEyePosition(client, fClientEyes);
-		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
-			DHookSetParam(hParams, 7, true);
-			
-		DHookGetParamVector(hParams, 2, fNoisePosition);
-		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
-		{
-			ProcessGrenadeThrow(client, fNoisePosition);
-			return MRES_Supercede;
-		}
-		
-		if(BotMimic_IsPlayerMimicing(client))
-		{
-			g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
-			BotMimic_StopPlayerMimic(client);
-		}
-		
-		if(eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
-			BotEquipBestWeapon(client, true);
-		
-		g_bDontSwitch[client] = true;
-		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
-		
-		fNoisePosition[2] += 25.0;
-		DHookSetParamVector(hParams, 2, fNoisePosition);
-		
-		return MRES_ChangedHandled;
-	}
-	else if(strcmp(szDesc, "Nearby enemy gunfire") == 0)
-	{
-		float fPos[3], fClientEyes[3];
-		GetClientEyePosition(client, fClientEyes);
-		DHookGetParamVector(hParams, 2, fPos);
-		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(20.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
-		{
-			ProcessGrenadeThrow(client, fPos);
-			return MRES_Supercede;
-		}
-		
-		fPos[2] += 25.0;
-		DHookSetParamVector(hParams, 2, fPos);
-		
-		return MRES_ChangedHandled;
-	}
-	else
-	{
-		float fPos[3];
-		
-		DHookGetParamVector(hParams, 2, fPos);
-		fPos[2] += 25.0;
-		DHookSetParamVector(hParams, 2, fPos);
-		
-		return MRES_ChangedHandled;
-	}
+        if (BotMimic_IsPlayerMimicing(client))
+        {
+            g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+            BotMimic_StopPlayerMimic(client);
+        }
+
+        if (ShouldBotThrowNade(client) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES &&
+            GetEntityMoveType(client) != MOVETYPE_LADDER)
+        {
+            ProcessGrenadeThrow(client, fNoisePos);
+            return MRES_Supercede;
+        }
+
+        if (eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE &&
+            GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+        {
+            BotEquipBestWeapon(client, true);
+        }
+
+        g_bDontSwitch[client] = true;
+        CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
+
+        fNoisePos[2] += 25.0;
+        DHookSetParamVector(hParams, 2, fNoisePos);
+
+        return MRES_ChangedHandled;
+    }
+
+    if (strcmp(szDesc, "Nearby enemy gunfire") == 0)
+    {
+        float fEnemyFirePos[3];
+        DHookGetParamVector(hParams, 2, fEnemyFirePos);
+
+        float fClientEyes[3];
+        GetClientEyePosition(client, fClientEyes);
+
+        if (ShouldBotThrowNade(client) && BotBendLineOfSight(client, fClientEyes, fEnemyFirePos, fEnemyFirePos, 135.0) &&
+            GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES &&
+            GetEntityMoveType(client) != MOVETYPE_LADDER)
+        {
+            ProcessGrenadeThrow(client, fEnemyFirePos);
+            return MRES_Supercede;
+        }
+
+        fEnemyFirePos[2] += 25.0;
+        DHookSetParamVector(hParams, 2, fEnemyFirePos);
+
+        return MRES_ChangedHandled;
+    }
+
+    float fDefaultPos[3];
+    DHookGetParamVector(hParams, 2, fDefaultPos);
+    fDefaultPos[2] += 25.0;
+    DHookSetParamVector(hParams, 2, fDefaultPos);
+
+    return MRES_ChangedHandled;
 }
 
 public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
@@ -5327,6 +5272,118 @@ stock int GetNumWinsToClinch()
 	int iOvertimePlaying = GameRules_GetProp("m_nOvertimePlaying");
 	int iNumWinsToClinch = (FindConVar("mp_maxrounds").IntValue > 0 && FindConVar("mp_match_can_clinch").BoolValue) ? (FindConVar("mp_maxrounds").IntValue / 2 ) + 1 + iOvertimePlaying * (FindConVar("mp_overtime_maxrounds").IntValue / 2) : -1;
 	return iNumWinsToClinch;
+}
+
+stock bool ShouldBotThrowNade(int client)
+{
+    return (GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0));
+}
+
+bool IsInArray(const char[] szWeapon, const char[][] szList, int iSize)
+{
+    for (int i = 0; i < iSize; i++)
+    {
+        if (strcmp(szWeapon, szList[i]) == 0)
+            return true;
+    }
+    return false;
+}
+
+Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
+{
+    if (strcmp(szWeapon, "m4a1") == 0)
+    {
+        if (g_bUseM4A1S[client])
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
+                return Plugin_Changed;
+            }
+        }
+
+        if (IsItMyChance(5.0))
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_AUG);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
+                return Plugin_Changed;
+            }
+        }
+    }
+    
+    if (strcmp(szWeapon, "mac10") == 0)
+    {
+        if (IsItMyChance(40.0))
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_GALILAR);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
+                return Plugin_Changed;
+            }
+        }
+    }
+    
+    if (strcmp(szWeapon, "mp9") == 0)
+    {
+        if (IsItMyChance(40.0))
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_FAMAS);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
+                return Plugin_Changed;
+            }
+        }
+        else if (IsItMyChance(15.0))
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_UMP45);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
+                return Plugin_Changed;
+            }
+        }
+    }
+    
+    if (strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0)
+    {
+        if (g_bUseCZ75[client])
+        {
+            int iPrice = CS_GetWeaponPrice(client, CSWeapon_CZ75A);
+            if (iAccount >= iPrice)
+            {
+                CSGO_SetMoney(client, iAccount - iPrice);
+                CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
+                return Plugin_Changed;
+            }
+        }
+    }
+
+    return Plugin_Continue;
+}
+
+bool IsTopBot(const char[] szBotName)
+{
+	static const char szTopBots[][] = 
+	{
+		"s1mple", "ZywOo", "NiKo", "sh1ro", "jL", "donk", "m0NESY"
+	};
+
+	for (int i = 0; i < sizeof(szTopBots); i++)
+	{
+		if (strcmp(szBotName, szTopBots[i]) == 0)
+			return true;
+	}
+	return false;
 }
 
 stock bool IsItMyChance(float fChance = 0.0)
