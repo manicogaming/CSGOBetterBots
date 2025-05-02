@@ -83,6 +83,7 @@ End
 Template SniperPro
 		WeaponPreference = awp
 		WeaponPreference = ak47
+		WeaponPreference = m4a1_silencer
 		WeaponPreference = m4a1
 		WeaponPreference = ssg08
 		WeaponPreference = mp9
@@ -95,6 +96,7 @@ End
 
 Template Rifle
         WeaponPreference = ak47
+		WeaponPreference = m4a1_silencer
 		WeaponPreference = m4a1
 		WeaponPreference = aug
 		WeaponPreference = mp9
@@ -108,6 +110,7 @@ End
 Template Punch
         WeaponPreference = sg556
         WeaponPreference = aug
+        WeaponPreference = m4a1_silencer
         WeaponPreference = m4a1
         WeaponPreference = ak47
         WeaponPreference = negev
@@ -124,6 +127,7 @@ Template Sniper
         WeaponPreference = scar20
         WeaponPreference = g3sg1
         WeaponPreference = ak47
+        WeaponPreference = m4a1_silencer
         WeaponPreference = m4a1
         WeaponPreference = sg556
         WeaponPreference = aug
@@ -140,6 +144,7 @@ Template Power
         WeaponPreference = scar20
         WeaponPreference = g3sg1
         WeaponPreference = ak47
+        WeaponPreference = m4a1_silencer
         WeaponPreference = m4a1
         WeaponPreference = xm1014
         WeaponPreference = sg556
@@ -153,6 +158,7 @@ Template AutoSniper
         WeaponPreference = scar20
         WeaponPreference = g3sg1
         WeaponPreference = awp
+        WeaponPreference = m4a1_silencer
         WeaponPreference = m4a1
         WeaponPreference = ak47
         WeaponPreference = sg556
@@ -169,6 +175,7 @@ Template Spray
         WeaponPreference = m249
         WeaponPreference = p90
         WeaponPreference = mp7
+        WeaponPreference = m4a1_silencer
         WeaponPreference = m4a1
         WeaponPreference = ak47
         WeaponPreference = aug
@@ -4376,6 +4383,34 @@ End
 
 ProP+Rifle+RiflePersonality "bl1x1"
 	VoicePitch = 105
+End
+
+ProP+Rifle+RiflePersonality "dukefissura"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "darchevile"
+	VoicePitch = 105
+End
+
+ProP+Rifle+RiflePersonality "Nami"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "chudy"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "AdrieN"
+	VoicePitch = 88
+End
+
+ProP+SniperPro+SniperPersonality "Melavi"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "ArtFr0st"
+	VoicePitch = 112
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

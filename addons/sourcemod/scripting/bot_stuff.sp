@@ -37,6 +37,7 @@ Handle g_hSwitchWeaponCall;
 Handle g_hIsLineBlockedBySmoke;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
+Handle g_hAddMoney;
 Address g_pTheBots;
 CNavArea g_pCurrArea[MAXPLAYERS+1];
 
@@ -155,7 +156,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.1.3", 
+	version = "1.1.4", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -1491,7 +1492,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick ct all");
 			ServerCommand("bot_add_ct %s", "lampada");
-			ServerCommand("bot_add_ct %s", "Re1GN");
+			ServerCommand("bot_add_ct %s", "dukefissura");
 			ServerCommand("bot_add_ct %s", "kade0");
 			ServerCommand("bot_add_ct %s", "mizu");
 			ServerCommand("bot_add_ct %s", "youka");
@@ -1502,7 +1503,7 @@ public Action Command_Team(int client, int iArgs)
 		{
 			ServerCommand("bot_kick t all");
 			ServerCommand("bot_add_t %s", "lampada");
-			ServerCommand("bot_add_t %s", "Re1GN");
+			ServerCommand("bot_add_t %s", "dukefissura");
 			ServerCommand("bot_add_t %s", "kade0");
 			ServerCommand("bot_add_t %s", "mizu");
 			ServerCommand("bot_add_t %s", "youka");
@@ -2160,31 +2161,6 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
-	if(strcmp(szTeamArg, "GenOne", false) == 0)
-	{
-		if (strcmp(szSideArg, "ct", false) == 0)
-		{
-			ServerCommand("bot_kick ct all");
-			ServerCommand("bot_add_ct %s", "devoduvek");
-			ServerCommand("bot_add_ct %s", "drac");
-			ServerCommand("bot_add_ct %s", "Kursy");
-			ServerCommand("bot_add_ct %s", "Brooxsy");
-			ServerCommand("bot_add_ct %s", "JACKZ");
-			ServerCommand("mp_teamlogo_1 gen");
-		}
-		
-		if (strcmp(szSideArg, "t", false) == 0)
-		{
-			ServerCommand("bot_kick t all");
-			ServerCommand("bot_add_t %s", "devoduvek");
-			ServerCommand("bot_add_t %s", "drac");
-			ServerCommand("bot_add_t %s", "Kursy");
-			ServerCommand("bot_add_t %s", "Brooxsy");
-			ServerCommand("bot_add_t %s", "JACKZ");
-			ServerCommand("mp_teamlogo_2 gen");
-		}
-	}
-	
 	if(strcmp(szTeamArg, "Lemondogs", false) == 0)
 	{
 		if (strcmp(szSideArg, "ct", false) == 0)
@@ -2744,7 +2720,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_ct %s", "AW");
 			ServerCommand("bot_add_ct %s", "kAlash");
 			ServerCommand("bot_add_ct %s", "sstiNiX");
-			ServerCommand("bot_add_ct %s", "tommy171");
+			ServerCommand("bot_add_ct %s", "ArtFr0st");
 			ServerCommand("mp_teamlogo_1 amk");
 		}
 		
@@ -2755,7 +2731,7 @@ public Action Command_Team(int client, int iArgs)
 			ServerCommand("bot_add_t %s", "AW");
 			ServerCommand("bot_add_t %s", "kAlash");
 			ServerCommand("bot_add_t %s", "sstiNiX");
-			ServerCommand("bot_add_t %s", "tommy171");
+			ServerCommand("bot_add_t %s", "ArtFr0st");
 			ServerCommand("mp_teamlogo_2 amk");
 		}
 	}
@@ -3435,6 +3411,31 @@ public Action Command_Team(int client, int iArgs)
 		}
 	}
 	
+	if(strcmp(szTeamArg, "Anonymo", false) == 0)
+	{
+		if (strcmp(szSideArg, "ct", false) == 0)
+		{
+			ServerCommand("bot_kick ct all");
+			ServerCommand("bot_add_ct %s", "darchevile");
+			ServerCommand("bot_add_ct %s", "Nami");
+			ServerCommand("bot_add_ct %s", "chudy");
+			ServerCommand("bot_add_ct %s", "AdrieN");
+			ServerCommand("bot_add_ct %s", "Melavi");
+			ServerCommand("mp_teamlogo_1 anon");
+		}
+		
+		if (strcmp(szSideArg, "t", false) == 0)
+		{
+			ServerCommand("bot_kick t all");
+			ServerCommand("bot_add_t %s", "darchevile");
+			ServerCommand("bot_add_t %s", "Nami");
+			ServerCommand("bot_add_t %s", "chudy");
+			ServerCommand("bot_add_t %s", "AdrieN");
+			ServerCommand("bot_add_t %s", "Melavi");
+			ServerCommand("mp_teamlogo_2 anon");
+		}
+	}
+	
 	return Plugin_Handled;
 }
 
@@ -4042,16 +4043,15 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 {
-	if (g_bIsProBot[client])
-	{
-		SelectBestTargetPos(client, g_fTargetPos[client]);
-		
-		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
-			return MRES_Ignored;
-		
-		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
-	}
-	
+	if (!g_bIsProBot[client])
+		return MRES_Ignored;
+
+	SelectBestTargetPos(client, g_fTargetPos[client]);
+
+	if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || FloatCompare(g_fTargetPos[client][2], 0.0) == 0)
+		return MRES_Ignored;
+
+	SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	return MRES_Ignored;
 }
 
@@ -4644,6 +4644,14 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
 	
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSPlayer::AddAccount");
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
+	if ((g_hAddMoney = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSPlayer::AddAccount signature!");
+	
 	delete hGameConfig;
 }
 
@@ -4729,14 +4737,19 @@ public void BotThrowGrenade(int client, const float fTarget[3])
 	SDKCall(g_hBotThrowGrenade, client, fTarget);
 }
 
+public int BotGetEnemy(int client)
+{
+	return GetEntDataEnt2(client, g_iBotEnemyOffset);
+}
+
 public void SetCrosshairCode(Address pCCSPlayerResource, int client, const char[] szCode)
 {
 	SDKCall(g_hSetCrosshairCode, pCCSPlayerResource, client, szCode);
 }
 
-public int BotGetEnemy(int client)
+public void AddMoney(int client, int iAmount, bool bTrackChange, bool bItemBought, const char[] szItemName)
 {
-	return GetEntDataEnt2(client, g_iBotEnemyOffset);
+	SDKCall(g_hAddMoney, client, iAmount, bTrackChange, bItemBought, szItemName);
 }
 
 public int GetNearestGrenade(int client)
@@ -4802,19 +4815,6 @@ stock int GetNearestEntity(int client, char[] szClassname)
 	}
 	
 	return iNearestEntity;
-}
-
-stock void CSGO_SetMoney(int client, int iAmount)
-{
-	if (iAmount < 0)
-		iAmount = 0;
-	
-	int iMax = FindConVar("mp_maxmoney").IntValue;
-	
-	if (iAmount > iMax)
-		iAmount = iMax;
-	
-	SetEntProp(client, Prop_Send, "m_iAccount", iAmount);
 }
 
 stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
@@ -5298,7 +5298,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_m4a1_silencer");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
                 return Plugin_Changed;
             }
@@ -5309,7 +5309,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_AUG);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_aug");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
                 return Plugin_Changed;
             }
@@ -5323,7 +5323,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_GALILAR);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_galilar");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
                 return Plugin_Changed;
             }
@@ -5337,7 +5337,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_FAMAS);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_famas");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
                 return Plugin_Changed;
             }
@@ -5347,7 +5347,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_UMP45);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_ump45");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
                 return Plugin_Changed;
             }
@@ -5361,7 +5361,7 @@ Action TryReplaceBoughtWeapon(int client, const char[] szWeapon, int iAccount)
             int iPrice = CS_GetWeaponPrice(client, CSWeapon_CZ75A);
             if (iAccount >= iPrice)
             {
-                CSGO_SetMoney(client, iAccount - iPrice);
+                AddMoney(client, -iPrice, true, true, "weapon_cz75a");
                 CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
                 return Plugin_Changed;
             }

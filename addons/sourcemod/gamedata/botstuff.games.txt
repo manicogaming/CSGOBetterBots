@@ -130,6 +130,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x81\xEC\xEC\x00\x00\x00"
 			}
+			"CCSPlayer::AddAccount"
+			{
+				//Has the string '%s spent %d on a %s (while being controlled by %s)\t\t(total left: %d)\n'
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x81\xEC\x4C\x01\x00\x00\x53\x56\x57\x8B\xF9\x8B\x07"
+			}
 		}
 		"Offsets"
 		{
