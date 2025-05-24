@@ -4413,6 +4413,149 @@ ProP+Rifle+RiflePersonality "ArtFr0st"
 	VoicePitch = 112
 End
 
+ProP+Rifle+RiflePersonality "cHeuuuuk"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "Tarkky"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "Chuckyy"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "SLIE9000"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "PerdY"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "Darber"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "fREQ"
+	VoicePitch = 111
+End
+
+ProP+SniperPro+SniperPersonality "s1mple"
+	VoicePitch = 109
+	LookAngleMaxAccelAttacking = 20000.0
+	LookAngleStiffnessAttacking = 900.0
+	LookAngleDampingAttacking = 50.0
+End
+
+ProP+Rifle+RiflePersonality "ckzao"
+	VoicePitch = 113
+End
+
+ProP+Rifle+RiflePersonality "aNgelo"
+	VoicePitch = 108
+End
+
+ProP+SniperPro+SniperPersonality "imoRR"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "lugseN"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "jresy"
+	VoicePitch = 89
+End
+
+ProP+Rifle+RiflePersonality "EMSTAR"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "Aapestt"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "shinobi"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "rhittacrit"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "qx"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "moonwalk"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "40n3y"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "julz"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "bedoff"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "duggy"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "HuNt3rz"
+	VoicePitch = 102
+End
+
+ProP+SniperPro+SniperPersonality "BledarD"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "ryu"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "Qlocuu"
+	VoicePitch = 98
+End
+
+ProP+SniperPro+SniperPersonality "lattykk"
+	VoicePitch = 96
+End
+
+ProP+Rifle+RiflePersonality "oz1k"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "cronuss"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "Goody"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "dako"
+	VoicePitch = 109
+End
+
+ProP+Rifle+RiflePersonality "Trash"
+	VoicePitch = 97
+End
+
+ProP+Rifle+RiflePersonality "seas"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "Attacker"
+	VoicePitch = 111
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End
