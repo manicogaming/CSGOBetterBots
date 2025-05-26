@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sun May 18 19:43:25 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon May 26 23:06:43 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -227,7 +227,6 @@ cs_mansion_lime
 cs_mari
 cs_max_a4
 cs_max_cs16
-cs_max_go
 cs_militia
 cs_militia_mesa
 cs_militia_original
@@ -590,7 +589,6 @@ de_russka_b2
 de_russka_go
 de_safehouse
 de_saint
-de_sakura
 de_sanchez
 de_sandbox
 de_sanjuan
@@ -740,7 +738,6 @@ pvp_arena_halloween
 pvp_nuke_streets_xmas
 santorini
 shipment
-shortm2023
 togethermap_kamino
 training1
 wm_cabin
