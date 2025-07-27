@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon May 26 23:06:43 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Thu Jul 24 18:21:10 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -170,6 +170,7 @@ cs_assault_upc
 cs_backalley
 cs_bloodstrike_2016_extended
 cs_bloodstrike_2017
+cs_bloodstrike_old
 cs_cappa
 cs_climb
 cs_compound
@@ -192,7 +193,6 @@ cs_downtown
 cs_dracula_2way
 cs_east_borough
 cs_estate_classic
-cs_estate_pe
 cs_extraction
 cs_frozen_csgo
 cs_gasstation_go
@@ -626,7 +626,6 @@ de_subzero
 de_sugarcane
 de_summit
 de_sunburn
-de_surveillance_h
 de_survivor
 de_swamp
 de_swta
