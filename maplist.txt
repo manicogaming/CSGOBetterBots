@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Thu Jul 24 18:21:10 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Thu Jul 31 15:39:28 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -448,7 +448,6 @@ de_homealone
 de_hotelgellert
 de_icarus
 de_indust
-de_inetcafe
 de_inferno
 de_inferno_cs16_kp
 de_inferno_cso2
@@ -510,8 +509,6 @@ de_monaco
 de_msx1
 de_museum_remake_csgo
 de_mustang
-de_mutiny
-de_mutiny_faceit
 de_nache
 de_nadir
 de_neighbors_v8
