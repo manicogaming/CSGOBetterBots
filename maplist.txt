@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Thu Jul 31 15:39:28 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sat Aug 02 03:42:35 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -256,7 +256,6 @@ cs_sauna_legacy
 cs_saunala
 cs_shichang_b3
 cs_siege
-cs_souvenir2
 cs_teatp
 cs_thunder
 cs_vila_natal
@@ -449,7 +448,6 @@ de_hotelgellert
 de_icarus
 de_indust
 de_inferno
-de_inferno_cs16_kp
 de_inferno_cso2
 de_inferno_cz
 de_inferno_night
@@ -670,8 +668,6 @@ de_waterland
 de_westwood
 de_westwood07_myring
 de_westwood2
-de_westwood_cp
-de_westwood_cp_v3
 de_westwood_csgo_v2
 de_westwood_csgoe
 de_westwood_s
@@ -685,10 +681,6 @@ de_zen_v1_2
 de_zenith
 de_zoo
 dust2_halloweenlastversion
-dz_blacksite
-dz_ember
-dz_sirocco
-dz_vineyard
 fy_afgan
 fy_afternoon_v1
 fy_aztec_fire_csgo
@@ -735,7 +727,6 @@ pvp_nuke_streets_xmas
 santorini
 shipment
 togethermap_kamino
-training1
 wm_cabin
 wm_cargo2
 wm_skypool_aa18

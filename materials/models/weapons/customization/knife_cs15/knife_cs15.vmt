@@ -1,0 +1,32 @@
+patch
+{
+	include "materials\models\weapons\customization\paints\master.vmt"
+	
+	insert 	
+	{
+		//-------------------------------------------------
+		// MUST SET THIS BLOCK PER WEAPON
+		//-------------------------------------------------
+
+		"$surfacetexture" "models\weapons\customization\knife_cs15\knife_cs15_surface"
+		"$maskstexture" "models\weapons\customization\knife_cs15\knife_cs15_masks"
+		"$aotexture" "models\weapons\customization\knife_cs15\knife_cs15_ao"
+		"$postexture" "models\weapons\customization\knife_cs15\knife_cs15_pos"
+		"$exptexture" "models\weapons\v_models\knife_cs15\knife_cs15_exponent"
+		"$WEARTEXTURETRANSFORM" "scale 1 1 translate 0 0 rotate 0"
+		"$GRUNGETEXTURETRANSFORM" "scale 1 1 translate 0 0 rotate 0"
+		
+		// SET THIS IF $PHONGALBEDOTINT IS ENABLED ON THE ORIGINAL WEAPON MATERIAL
+		"$PREVIEWPHONGALBEDOTINT" 1
+		
+		// SET THIS IF $ENVMAP IS ENABLED ON THE ORIGINAL WEAPON MATERIAL
+		"$PREVIEWENVMAP" 1
+		
+		// WEAR PROGRESSION FACTOR
+		"$WEARPROGRESS" 0.02
+		
+		"$PREVIEWWEAPONOBJSCALE" 0.403
+		// scale for knives is relative to a 2048 texture being 18 units in the world, instead of the 36 units used for guns
+		"$PREVIEWWEAPONUVSCALE" 0.505
+	}
+}
