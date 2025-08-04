@@ -118,7 +118,7 @@
 	"MongolZ"
 	{
 		"players"	"Techno4K,bLitz,Senzu,mzinho,910"
-		"logo"	"mngz"
+		"logo"	"mongo"
 	}
 	"paiN"
 	{
@@ -132,7 +132,7 @@
 	}
 	"9ine"
 	{
-		"players"	"raalz,cej0t,faveN,bobeksde,kraghen"
+		"players"	"raalz,cej0t,faveN,phzy,kraghen"
 		"logo"	"nein"
 	}
 	"GamerLegion"
@@ -297,7 +297,7 @@
 	}
 	"ODDIK"
 	{
-		"players"	"naitte,WOOD7,togs,pancc,ksloks"
+		"players"	"naitte,WOOD7,coldzera,pancc,ksloks"
 		"logo"	"odd"
 	}
 	"Sashi"
@@ -352,7 +352,7 @@
 	}
 	"Reason"
 	{
-		"players"	"suonko,PeTeRoOo,Frontsiderr,fanatyk,AntyVirus"
+		"players"	"suonko,SpavaQ,Frontsiderr,fanatyk,AntyVirus"
 		"logo"	"r"
 	}
 	"Preasy"
@@ -420,10 +420,10 @@
 		"players"	"onic,cairne,Flierax,nifee,Dawy"
 		"logo"	"tnl"
 	}
-	"Partizan"
+	"Alter"
 	{
-		"players"	"Dragon,DEPRESHN,c0llins,Kind0,VLDN"
-		"logo"	"parti"
+		"players"	"tomiko,b1lal,ImpressioN,BnTeT,kaito"
+		"logo"	"alter"
 	}
 	"Passion"
 	{
@@ -432,7 +432,7 @@
 	}
 	"Sangal"
 	{
-		"players"	"Patsi,bnox,Norwi,danistzz,clax"
+		"players"	"Patsi,r3salt,Norwi,danistzz,clax"
 		"logo"	"sang"
 	}
 	"AMKAL"
@@ -512,7 +512,7 @@
 	}
 	"BC"
 	{
-		"players"	"pr1metapz,jkaem,s1mple,nexa,CacaNito"
+		"players"	"pr1metapz,aNdu,s1mple,nexa,CacaNito"
 		"logo"	"bc"
 	}
 	"Betclic"
@@ -620,9 +620,9 @@
 		"players"	"LaiKeXu,957,zero,Hack1ng,VanceKK"
 		"logo"	"ctg"
 	}
-	"Wings"
+	"GZG"
 	{
-		"players"	"Roninbaby,lan,B1NGO,flying,gas"
-		"logo"	"wing"
+		"players"	"damyo,apocdud,pz,Drox,vision"
+		"logo"	"gzg"
 	}
 }

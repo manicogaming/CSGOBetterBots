@@ -4832,6 +4832,38 @@ ProP+Rifle+RiflePersonality "gas"
 	VoicePitch = 81
 End
 
+ProP+Rifle+RiflePersonality "b1lal"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "ImpressioN"
+	VoicePitch = 99
+End
+
+ProP+Rifle+RiflePersonality "kaito"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "damyo"
+	VoicePitch = 112
+End
+
+ProP+SniperPro+SniperPersonality "apocdud"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "pz"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "Drox"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "vision"
+	VoicePitch = 96
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End

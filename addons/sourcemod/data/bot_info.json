@@ -677,7 +677,7 @@
     },
     "tomiko": {
         "steamid": 258331727,
-        "crosshair_code": "CSGO-kwEE9-qz2Oq-dSPOS-mJDdU-9mKjC"
+        "crosshair_code": "CSGO-wE6mN-5NVnk-iuppx-9ds2S-FubJD"
     },
     "mhL": {
         "steamid": 180124403,
@@ -4450,5 +4450,37 @@
     "gas": {
         "steamid": 41822010,
         "crosshair_code": "CSGO-92Ojv-itAqj-mO5UE-6NB2L-Ycf8E"
+    },
+    "b1lal": {
+        "steamid": 1663529153,
+        "crosshair_code": "CSGO-yUBv6-y5b38-fj2sY-ZvyEc-NCmDA"
+    },
+    "ImpressioN": {
+        "steamid": 134688940,
+        "crosshair_code": "CSGO-5GCqL-nuXcv-9zhYY-aFcLx-QC7yD"
+    },
+    "kaito": {
+        "steamid": 1251455050,
+        "crosshair_code": "CSGO-iYvMA-NthOY-SjSa3-k3iUz-53nQD"
+    },
+    "damyo": {
+        "steamid": 88084583,
+        "crosshair_code": "CSGO-kNweN-Y49Xt-wFjGv-CeNoB-JG8nM"
+    },
+    "apocdud": {
+        "steamid": 58325300,
+        "crosshair_code": "CSGO-4TDvh-hBPaZ-Ccysf-ShM5M-WiA6Q"
+    },
+    "pz": {
+        "steamid": 108241121,
+        "crosshair_code": "CSGO-B9FyN-ZhUzO-uSaM4-CxH7z-ZRivN"
+    },
+    "Drox": {
+        "steamid": 106529553,
+        "crosshair_code": "CSGO-MXQrt-xQWeR-wnuzU-t4cLq-qKwLA"
+    },
+    "vision": {
+        "steamid": 308533011,
+        "crosshair_code": "CSGO-iV5Tx-5OHrp-nznZZ-iBFWD-U647M"
     }
 }

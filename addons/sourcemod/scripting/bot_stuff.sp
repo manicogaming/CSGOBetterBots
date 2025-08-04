@@ -157,7 +157,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.1.8", 
+	version = "1.1.9", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -511,39 +511,45 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	int iTeam = g_bIsBombScenario ? CS_TEAM_CT : CS_TEAM_T;
 	int iOppositeTeam = g_bIsBombScenario ? CS_TEAM_T : CS_TEAM_CT;
-	
+
 	g_bFreezetimeEnd = false;
 	g_bEveryoneDead = false;
 	g_fRoundStart = GetGameTime();
-	
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsValidClient(i) && IsFakeClient(i) && IsPlayerAlive(i))
-		{	
-			g_bUncrouch[i] = IsItMyChance(50.0) ? true : false;
-			g_bDontSwitch[i] = false;
-			g_bDropWeapon[i] = false;
-			g_bHasGottenDrop[i] = false;
-			g_bThrowGrenade[i] = false;
-			g_iTarget[i] = -1;
-			g_iPrevTarget[i] = -1;
-			g_iDoingSmokeNum[i] = -1;
-			g_fShootTimestamp[i] = 0.0;				
-			g_fThrowNadeTimestamp[i] = 0.0;				
-			g_fCrouchTimestamp[i] = 0.0;									
-			
-			if(g_bIsBombScenario || g_bIsHostageScenario)
-			{
-				if(GetClientTeam(i) == iTeam)
-					SetEntData(i, g_iBotMoraleOffset, -3);
-				if(g_bHalftimeSwitch && GetClientTeam(i) == iOppositeTeam)
-					SetEntData(i, g_iBotMoraleOffset, 1);
-			}
+		if (!IsValidClient(i) || !IsFakeClient(i) || !IsPlayerAlive(i))
+			continue;
+
+		g_bUncrouch[i] = IsItMyChance(50.0);
+		g_bDontSwitch[i] = false;
+		g_bDropWeapon[i] = false;
+		g_bHasGottenDrop[i] = false;
+		g_bThrowGrenade[i] = false;
+
+		g_iTarget[i] = -1;
+		g_iPrevTarget[i] = -1;
+		g_iDoingSmokeNum[i] = -1;
+
+		g_fShootTimestamp[i] = 0.0;
+		g_fThrowNadeTimestamp[i] = 0.0;
+		g_fCrouchTimestamp[i] = 0.0;
+
+		if (g_bIsBombScenario || g_bIsHostageScenario)
+		{
+			int iClientTeam = GetClientTeam(i);
+
+			if (iClientTeam == iTeam)
+				SetEntData(i, g_iBotMoraleOffset, -3);
+
+			if (g_bHalftimeSwitch && iClientTeam == iOppositeTeam)
+				SetEntData(i, g_iBotMoraleOffset, 1);
 		}
 	}
-	
+
 	g_bHalftimeSwitch = false;
-	if(g_bIsCompetitive)
+
+	if (g_bIsCompetitive)
 		CreateTimer(0.2, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
