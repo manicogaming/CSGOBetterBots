@@ -157,7 +157,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.1.9", 
+	version = "1.2.0", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -559,6 +559,7 @@ public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 	while ((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1)
 	{
 		int iTeamNum = GetEntProp(iEnt, Prop_Send, "m_iTeamNum");
+
 		if (iTeamNum == CS_TEAM_CT)
 			g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
 		else if (iTeamNum == CS_TEAM_T)
@@ -586,45 +587,46 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
-		g_fShootTimestamp[client] = GetGameTime();
+	if (!IsValidClient(client) || !IsFakeClient(client) || !IsPlayerAlive(client))
+		return;
+
+	g_fShootTimestamp[client] = GetGameTime();
 }
 
 public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if(IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+	if (!IsValidClient(client) || !IsFakeClient(client) || !IsPlayerAlive(client))
+		return;
+
+	char szWeaponName[64];
+	eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
+
+	if (IsValidClient(g_iTarget[client]))
 	{
-		char szWeaponName[64];
-		eEvent.GetString("weapon", szWeaponName, sizeof(szWeaponName));
-		
-		if(IsValidClient(g_iTarget[client]))
+		float fTargetLoc[3];
+		GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
+
+		float fRangeToEnemy = GetVectorDistance(g_fBotOrigin[client], fTargetLoc);
+		if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
 		{
-			float fTargetLoc[3];
-			
-			GetClientAbsOrigin(g_iTarget[client], fTargetLoc);
-			
-			float fRangeToEnemy = GetVectorDistance(g_fBotOrigin[client], fTargetLoc);
-			
-			if (strcmp(szWeaponName, "weapon_deagle") == 0 && fRangeToEnemy > 100.0)
-				SetEntDataFloat(client, g_iFireWeaponOffset, GetEntDataFloat(client, g_iFireWeaponOffset) + Math_GetRandomFloat(0.20, 0.40));
+			float currentOffset = GetEntDataFloat(client, g_iFireWeaponOffset);
+			SetEntDataFloat(client, g_iFireWeaponOffset, currentOffset + Math_GetRandomFloat(0.20, 0.40));
 		}
-		
-		if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
-			RequestFrame(BeginQuickSwitch, GetClientUserId(client));
 	}
+
+	if ((strcmp(szWeaponName, "weapon_awp") == 0 || strcmp(szWeaponName, "weapon_ssg08") == 0) && IsItMyChance(50.0))
+		RequestFrame(BeginQuickSwitch, GetClientUserId(client));
 }
 
 public void OnThinkPost(int iEnt)
 {
 	SetEntDataArray(iEnt, g_iProfileRankOffset, g_iProfileRank, MAXPLAYERS + 1);
 	SetEntDataArray(iEnt, g_iPlayerColorOffset, g_iPlayerColor, MAXPLAYERS + 1);
+
 	for (int i = 1; i <= MaxClients; i++)
-	{
 		if (IsValidClient(i) && IsFakeClient(i))
 			SetCrosshairCode(GetEntityAddress(iEnt), i, g_szCrosshairCode[i]);
-	}
 }
 
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)

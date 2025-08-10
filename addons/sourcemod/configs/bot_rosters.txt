@@ -92,7 +92,7 @@
 	}
 	"Heroic"
 	{
-		"players"	"gr1ks,LNZ,yxngstxr,nilo,tN1R"
+		"players"	"alkarenn,LNZ,yxngstxr,nilo,tN1R"
 		"logo"	"heroi"
 	}
 	"VP"
@@ -340,11 +340,6 @@
 		"players"	"Lucky,Maka,bodyy,Ex3rcice,Graviti"
 		"logo"	"3dmax"
 	}
-	"Elevate"
-	{
-		"players"	"bnc,zede,diozera,lash,ckzao"
-		"logo"	"ele"
-	}
 	"Lemondogs"
 	{
 		"players"	"xelos,hemzk9,dZ,zeak,hechtikal"
@@ -374,11 +369,6 @@
 	{
 		"players"	"tucks,kairo,zune,swerzieN,JohnSm1th"
 		"logo"	"mind"
-	}
-	"LEISURE"
-	{
-		"players"	"BischeR,40n3y,julz,face47,NZyyy"
-		"logo"	"leis"
 	}
 	"WOPA"
 	{
@@ -412,7 +402,7 @@
 	}
 	"Speeds"
 	{
-		"players"	"draken,Svedjehed,Lekr0,Sapec,Meinz"
+		"players"	"draken,Svedjehed,Lekr0,Sapec,HEAP"
 		"logo"	"speed"
 	}
 	"TNL"
@@ -437,7 +427,7 @@
 	}
 	"AMKAL"
 	{
-		"players"	"sFade8,AW,kAlash,sstiNiX,ArtFr0st"
+		"players"	"iDISBALANCE,nafany,kAlash,sstiNiX,KaiR0N-"
 		"logo"	"amk"
 	}
 	"PARIVISION"
@@ -582,7 +572,7 @@
 	}
 	"1win"
 	{
-		"players"	"lattykk,HObbit,oz1k,cronuss,Goody"
+		"players"	"lattykk,HObbit,oz1k,cronuss,interz"
 		"logo"	"1win"
 	}
 	"Iberian"
