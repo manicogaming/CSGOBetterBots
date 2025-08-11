@@ -1850,7 +1850,7 @@ ProP+SniperPro+SniperPersonality "brzer"
 	VoicePitch = 100
 End
 
-ProP+Rifle+RiflePersonality "Gnøffe"
+ProP+Rifle+RiflePersonality "GnÃ¸ffe"
 	VoicePitch = 102
 End
 
@@ -7403,7 +7403,7 @@ Fair+Spray Norm
         VoicePitch = 77
 End
 
-Fair+Power+PowerPersonality "Orión 011117"
+Fair+Power+PowerPersonality "OriÃ³n 011117"
         VoicePitch = 114
 End
 
