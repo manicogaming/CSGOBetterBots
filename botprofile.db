@@ -4872,6 +4872,46 @@ ProP+Rifle+RiflePersonality "interz"
 	VoicePitch = 91
 End
 
+ProP+SniperPro+SniperPersonality "frontales"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "birdfromsky"
+	VoicePitch = 115
+End
+
+ProP+Rifle+RiflePersonality "Keoz"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality "Omichella"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "oli"
+	VoicePitch = 92
+End
+
+ProP+Rifle+RiflePersonality "shyguy"
+	VoicePitch = 85
+End
+
+ProP+Rifle+RiflePersonality "statikS"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "olik"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "FAZERY"
+	VoicePitch = 75
+End
+
+ProP+Rifle+RiflePersonality "keb1k"
+	VoicePitch = 106
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End

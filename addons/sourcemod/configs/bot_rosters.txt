@@ -177,7 +177,7 @@
 	}
 	"OG"
 	{
-		"players"	"nicoodoz,Chr1zN,adamb,F1KU,spooke"
+		"players"	"nicoodoz,Chr1zN,adamb,arrozdoce,spooke"
 		"logo"	"og"
 	}
 	"sAw"
@@ -197,7 +197,7 @@
 	}
 	"unity"
 	{
-		"players"	"PerdY,NEOFRAG,Darber,woozzzi,K1-FiDa"
+		"players"	"MoriiSko,NEOFRAG,Darber,woozzzi,K1-FiDa"
 		"logo"	"unit"
 	}
 	"9z"
@@ -237,7 +237,7 @@
 	}
 	"HOTU"
 	{
-		"players"	"lampada,dukefissura,kade0,mizu,youka"
+		"players"	"lampada,dukefissura,kade0,mizu,frontales"
 		"logo"	"hotu"
 	}
 	"Falcons"
@@ -387,7 +387,7 @@
 	}
 	"kONO"
 	{
-		"players"	"s4ltovsk1yy,amster,cptkurtka023,Sijeyy,OWNER"
+		"players"	"Burmylov,birdfromsky,cptkurtka023,Keoz,b0RUP"
 		"logo"	"kon"
 	}
 	"Leo"
@@ -462,7 +462,7 @@
 	}
 	"BHE"
 	{
-		"players"	"KAISER,fREQ,nyezin,zock,Tuurtle"
+		"players"	"KAISER,fREQ,piriajr,zock,Tuurtle"
 		"logo"	"bhe"
 	}
 	"Galorys"
@@ -567,7 +567,7 @@
 	}
 	"SSP"
 	{
-		"players"	"farmaG,sehza,bedoff,duggy,HuNt3rz"
+		"players"	"farmaG,Cl34v3rs,oli,shyguy,statikS"
 		"logo"	"ssp"
 	}
 	"1win"
@@ -612,7 +612,12 @@
 	}
 	"GZG"
 	{
-		"players"	"damyo,apocdud,pz,Drox,vision"
+		"players"	"damyo,apocdud,pz,Omichella,vision"
 		"logo"	"gzg"
+	}
+	"Tigers"
+	{
+		"players"	"pandi7o,olik,FAZERY,keb1k,PerdY"
+		"logo"	"tig"
 	}
 }

@@ -157,13 +157,14 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.0", 
+	version = "1.2.1", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
 public void OnPluginStart()
-{	
-	g_bIsCompetitive = FindConVar("game_mode").IntValue == 1 && FindConVar("game_type").IntValue == 0 ? true : false;
+{
+	g_bIsCompetitive = FindConVar("game_mode").IntValue == 1 && FindConVar("game_type").IntValue == 0;
+	g_cvBotEcoLimit = FindConVar("bot_eco_limit");
 
 	HookEventEx("player_spawn", OnPlayerSpawn);
 	HookEventEx("round_prestart", OnRoundPreStart);
@@ -172,12 +173,10 @@ public void OnPluginStart()
 	HookEventEx("round_freeze_end", OnFreezetimeEnd);
 	HookEventEx("weapon_zoom", OnWeaponZoom);
 	HookEventEx("weapon_fire", OnWeaponFire);
-	
+
 	LoadSDK();
 	LoadDetours();
-	
-	g_cvBotEcoLimit = FindConVar("bot_eco_limit");
-	
+
 	RegConsoleCmd("team", Command_Team);
 }
 
@@ -256,7 +255,6 @@ public void OnMapStart()
 	CreateTimer(0.1, Timer_MoveToBomb, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 
 	SDKHook(GetPlayerResourceEntity(), SDKHook_ThinkPost, OnThinkPost);
-
 	Array_Fill(g_iPlayerColor, MaxClients + 1, -1);
 }
 
@@ -631,86 +629,76 @@ public void OnThinkPost(int iEnt)
 
 public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 {
-	if (IsValidClient(client) && IsFakeClient(client) && IsPlayerAlive(client))
+	if (!IsValidClient(client) || !IsFakeClient(client) || !IsPlayerAlive(client))
+		return Plugin_Continue;
+
+	if (strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 ||
+	    strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0 || strcmp(szWeapon, "smokegrenade") == 0 ||
+	    strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
+		return Plugin_Continue;
+
+	if (GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 &&
+	    (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0 ||
+	     strcmp(szWeapon, "m4a1") == 0 || strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 ||
+	     strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0 || strcmp(szWeapon, "scar20") == 0 ||
+	     strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 ||
+	     strcmp(szWeapon, "mag7") == 0 || strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 ||
+	     strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0 ||
+	     strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
+		return Plugin_Handled;
+
+	int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
+
+	if (strcmp(szWeapon, "m4a1") == 0)
 	{
-		if (strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 || strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0
-			 || strcmp(szWeapon, "smokegrenade") == 0 || strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
-			return Plugin_Continue;
-		else if (GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) != -1 && (strcmp(szWeapon, "galilar") == 0 || strcmp(szWeapon, "famas") == 0 || strcmp(szWeapon, "ak47") == 0
-				 || strcmp(szWeapon, "m4a1") == 0 || strcmp(szWeapon, "ssg08") == 0 || strcmp(szWeapon, "aug") == 0 || strcmp(szWeapon, "sg556") == 0 || strcmp(szWeapon, "awp") == 0
-				 || strcmp(szWeapon, "scar20") == 0 || strcmp(szWeapon, "g3sg1") == 0 || strcmp(szWeapon, "nova") == 0 || strcmp(szWeapon, "xm1014") == 0 || strcmp(szWeapon, "mag7") == 0
-				 || strcmp(szWeapon, "m249") == 0 || strcmp(szWeapon, "negev") == 0 || strcmp(szWeapon, "mac10") == 0 || strcmp(szWeapon, "mp9") == 0 || strcmp(szWeapon, "mp7") == 0
-				 || strcmp(szWeapon, "ump45") == 0 || strcmp(szWeapon, "p90") == 0 || strcmp(szWeapon, "bizon") == 0))
-			return Plugin_Handled;
-		
-		int iAccount = GetEntProp(client, Prop_Send, "m_iAccount");
-		
-		if (strcmp(szWeapon, "m4a1") == 0)
+		if (g_bUseM4A1S[client] && iAccount >= CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER))
 		{
-			if (g_bUseM4A1S[client] && iAccount >= CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER))
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER), true, true, "weapon_m4a1_silencer");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
-				
-				return Plugin_Changed;
-			}
-			
-			if (IsItMyChance(5.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_AUG), true, true, "weapon_aug");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
-				
-				return Plugin_Changed;
-			}
+			AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_M4A1_SILENCER), true, true, "weapon_m4a1_silencer");
+			CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_m4a1_silencer");
+			return Plugin_Changed;
 		}
-		else if (strcmp(szWeapon, "mac10") == 0)
+		if (IsItMyChance(5.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_AUG))
 		{
-			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_GALILAR), true, true, "weapon_galilar");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "mp9") == 0)
-		{
-			if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_FAMAS), true, true, "weapon_famas");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
-				
-				return Plugin_Changed;
-			}
-			else if (IsItMyChance(15.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_UMP45), true, true, "weapon_ump45");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
-				
-				return Plugin_Changed;
-			}
-		}
-		else if (strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0)
-		{
-			if (g_bUseCZ75[client])
-			{
-				AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_CZ75A), true, true, "weapon_cz75a");
-				CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
-				
-				return Plugin_Changed;
-			}
+			AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_AUG), true, true, "weapon_aug");
+			CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_aug");
+			return Plugin_Changed;
 		}
 	}
+
+	if (strcmp(szWeapon, "mac10") == 0 && IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_GALILAR))
+	{
+		AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_GALILAR), true, true, "weapon_galilar");
+		CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_galilar");
+		return Plugin_Changed;
+	}
+
+	if (strcmp(szWeapon, "mp9") == 0)
+	{
+		if (IsItMyChance(40.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_FAMAS))
+		{
+			AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_FAMAS), true, true, "weapon_famas");
+			CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_famas");
+			return Plugin_Changed;
+		}
+		if (IsItMyChance(15.0) && iAccount >= CS_GetWeaponPrice(client, CSWeapon_UMP45))
+		{
+			AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_UMP45), true, true, "weapon_ump45");
+			CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_ump45");
+			return Plugin_Changed;
+		}
+	}
+
+	if ((strcmp(szWeapon, "tec9") == 0 || strcmp(szWeapon, "fiveseven") == 0) && g_bUseCZ75[client])
+	{
+		AddMoney(client, -CS_GetWeaponPrice(client, CSWeapon_CZ75A), true, true, "weapon_cz75a");
+		CSGO_ReplaceWeapon(client, CS_SLOT_PRIMARY, "weapon_cz75a");
+		return Plugin_Changed;
+	}
+
 	return Plugin_Continue;
 }
 
-public MRESReturn BotCOS(DHookReturn hReturn)
-{
-	hReturn.Value = 0;
-	return MRES_Supercede;
-}
-
-public MRESReturn BotSIN(DHookReturn hReturn)
+public MRESReturn BotCOSandSIN(DHookReturn hReturn)
 {
 	hReturn.Value = 0;
 	return MRES_Supercede;
@@ -720,24 +708,20 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 {
 	int iPlayer = hParams.Get(1);
 	int iPart = hParams.Get(2);
-	
-	if(iPart == 2)
-	{
-		int iBone = LookupBone(iPlayer, "head_0");
-		if (iBone < 0)
-			return MRES_Ignored;
-		
-		float fHead[3], fBad[3];
-		GetBonePosition(iPlayer, iBone, fHead, fBad);
-		
-		fHead[2] += 4.0;
-		
-		hReturn.SetVector(fHead);
-		
-		return MRES_Override;
-	}
-	
-	return MRES_Ignored;
+
+	if (iPart != 2)
+		return MRES_Ignored;
+
+	int iBone = LookupBone(iPlayer, "head_0");
+	if (iBone < 0)
+		return MRES_Ignored;
+
+	float fHead[3], fBad[3];
+	GetBonePosition(iPlayer, iBone, fHead, fBad);
+	fHead[2] += 4.0;
+
+	hReturn.SetVector(fHead);
+	return MRES_Override;
 }
 
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
@@ -1455,39 +1439,27 @@ public void LoadSDK()
 
 public void LoadDetours()
 {
-	GameData hGameData = new GameData("botstuff.games");   
+	GameData hGameData = new GameData("botstuff.games");
 	if (hGameData == null)
 	{
 		SetFailState("Failed to load botstuff gamedata.");
 		return;
 	}
-	
-	//CCSBot::SetLookAt Detour
-	DynamicDetour hBotSetLookAtDetour = DynamicDetour.FromConf(hGameData, "CCSBot::SetLookAt");
-	if(!hBotSetLookAtDetour.Enable(Hook_Pre, CCSBot_SetLookAt))
-		SetFailState("Failed to setup detour for CCSBot::SetLookAt");
-	
-	//CCSBot::PickNewAimSpot Detour
-	DynamicDetour hBotPickNewAimSpotDetour = DynamicDetour.FromConf(hGameData, "CCSBot::PickNewAimSpot");
-	if(!hBotPickNewAimSpotDetour.Enable(Hook_Post, CCSBot_PickNewAimSpot))
-		SetFailState("Failed to setup detour for CCSBot::PickNewAimSpot");
-	
-	//BotCOS Detour
-	DynamicDetour hBotCOSDetour = DynamicDetour.FromConf(hGameData, "BotCOS");
-	if(!hBotCOSDetour.Enable(Hook_Pre, BotCOS))
-		SetFailState("Failed to setup detour for BotCOS");
-	
-	//BotSIN Detour
-	DynamicDetour hBotSINDetour = DynamicDetour.FromConf(hGameData, "BotSIN");
-	if(!hBotSINDetour.Enable(Hook_Pre, BotSIN))
-		SetFailState("Failed to setup detour for BotSIN");
-	
-	//CCSBot::GetPartPosition Detour
-	DynamicDetour hBotGetPartPosDetour = DynamicDetour.FromConf(hGameData, "CCSBot::GetPartPosition");
-	if(!hBotGetPartPosDetour.Enable(Hook_Pre, CCSBot_GetPartPosition))
-		SetFailState("Failed to setup detour for CCSBot::GetPartPosition");
-	
+
+	SetupDetour(hGameData, "CCSBot::SetLookAt", Hook_Pre, CCSBot_SetLookAt, "CCSBot::SetLookAt");
+	SetupDetour(hGameData, "CCSBot::PickNewAimSpot", Hook_Post, CCSBot_PickNewAimSpot, "CCSBot::PickNewAimSpot");
+	SetupDetour(hGameData, "BotCOS", Hook_Pre, BotCOSandSIN, "BotCOS");
+	SetupDetour(hGameData, "BotSIN", Hook_Pre, BotCOSandSIN, "BotSIN");
+	SetupDetour(hGameData, "CCSBot::GetPartPosition", Hook_Pre, CCSBot_GetPartPosition, "CCSBot::GetPartPosition");
+
 	delete hGameData;
+}
+
+stock void SetupDetour(GameData hGameData, const char[] szConf, HookMode hMode, DHookCallback hCallBack, const char[] szFailCallback)
+{
+	DynamicDetour hDetour = DynamicDetour.FromConf(hGameData, szConf);
+	if (!hDetour.Enable(hMode, hCallBack))
+		SetFailState("Failed to setup detour for %s", szFailCallback);
 }
 
 public int LookupBone(int iEntity, const char[] szName)
