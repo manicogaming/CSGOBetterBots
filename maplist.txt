@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sat Aug 16 16:17:18 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Wed Aug 20 16:36:44 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -149,7 +149,6 @@ awp_updown
 awp_zeecore
 awp_zigzag
 awp_zvk_v2_mevid
-bgt_vegas
 classic_dust2
 classic_dust2_winter
 classicaimmap
@@ -359,7 +358,6 @@ de_corruption_csgo
 de_cotroceni
 de_cpl_mill
 de_cpl_strike
-de_cpl_strike_cs16_kp
 de_crete
 de_crossfire
 de_crown
@@ -680,6 +678,10 @@ de_zen_v1_2
 de_zenith
 de_zoo
 dust2_halloweenlastversion
+dz_blacksite
+dz_ember
+dz_sirocco
+dz_vineyard
 fy_afgan
 fy_afternoon_v1
 fy_aztec_fire_csgo
@@ -726,6 +728,7 @@ pvp_nuke_streets_xmas
 santorini
 shipment
 togethermap_kamino
+training1
 wm_cabin
 wm_cargo2
 wm_skypool_aa18

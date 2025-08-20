@@ -157,7 +157,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.1", 
+	version = "1.2.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -182,61 +182,55 @@ public void OnPluginStart()
 
 public Action Command_Team(int client, int iArgs)
 {
-    if (iArgs < 2)
-    {
-        PrintToChat(client, "Usage: team <TeamName> <t|ct>");
-        return Plugin_Handled;
-    }
+	if (iArgs < 2)
+	{
+		PrintToChat(client, "Usage: team <TeamName> <t|ct>");
+		return Plugin_Handled;
+	}
 
-    char szTeam[32], szSide[8], szPath[PLATFORM_MAX_PATH];
-    GetCmdArg(1, szTeam, sizeof(szTeam));
-    GetCmdArg(2, szSide, sizeof(szSide));
+	char szTeam[32], szSide[8], szPath[PLATFORM_MAX_PATH];
+	GetCmdArg(1, szTeam, sizeof(szTeam));
+	GetCmdArg(2, szSide, sizeof(szSide));
 	BuildPath(Path_SM, szPath, sizeof(szPath), "configs/bot_rosters.txt");
-	
+
 	if (!FileExists(szPath))
 	{
 		PrintToServer("Configuration file %s is not found.", szPath);
 		return Plugin_Handled;
 	}
-	
+
 	KeyValues kv = new KeyValues("Teams");
-	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
 		PrintToServer("Unable to parse Key Values file %s.", szPath);
 		return Plugin_Handled;
 	}
-    
-    if(!kv.JumpToKey(szTeam))
+
+	if (!kv.JumpToKey(szTeam))
 	{
 		delete kv;
-        PrintToChat(client, "Unknown team: %s", szTeam);
-        return Plugin_Handled;
-    }
+		PrintToChat(client, "Unknown team: %s", szTeam);
+		return Plugin_Handled;
+	}
 
-    char szPlayers[256], szLogo[64];
-    kv.GetString("players", szPlayers, sizeof(szPlayers));
-    kv.GetString("logo", szLogo, sizeof(szLogo));
+	char szPlayers[256], szLogo[64];
+	kv.GetString("players", szPlayers, sizeof(szPlayers));
+	kv.GetString("logo", szLogo, sizeof(szLogo));
 
-    ServerCommand("bot_kick %s all", szSide);
+	ServerCommand("bot_kick %s all", szSide);
 
-    char szPlayerName[MAX_NAME_LENGTH];
-    int iIndex, iCount = ExplodeString(szPlayers, ",", g_szPlayerNames, sizeof(g_szPlayerNames), sizeof(szPlayerName));
+	int iCount = ExplodeString(szPlayers, ",", g_szPlayerNames, sizeof(g_szPlayerNames), sizeof(g_szPlayerNames[]));
+	for (int i = 0; i < iCount; i++)
+		ServerCommand("bot_add_%s %s", szSide, g_szPlayerNames[i]);
 
-    for (iIndex = 0; iIndex < iCount; iIndex++)
-    {
-        Format(szPlayerName, sizeof(szPlayerName), "%s", g_szPlayerNames[iIndex]);
-        ServerCommand("bot_add_%s %s", szSide, szPlayerName);
-    }
-
-    if (StrEqual(szSide, "ct", false))
-        ServerCommand("mp_teamlogo_1 %s", szLogo);
-    else if (StrEqual(szSide, "t", false))
-        ServerCommand("mp_teamlogo_2 %s", szLogo);
+	if (strcmp(szSide, "ct", false) == 0)
+		ServerCommand("mp_teamlogo_1 %s", szLogo);
+	else if (strcmp(szSide, "t", false) == 0)
+		ServerCommand("mp_teamlogo_2 %s", szLogo);
 
 	delete kv;
-    return Plugin_Handled;
+	return Plugin_Handled;
 }
 
 public void OnMapStart()
@@ -727,15 +721,13 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 {
 	char szDesc[64];
-	
 	DHookGetParamString(hParams, 1, szDesc, sizeof(szDesc));
-	
+
 	if (strcmp(szDesc, "Defuse bomb") == 0 || strcmp(szDesc, "Use entity") == 0 || strcmp(szDesc, "Open door") == 0 || strcmp(szDesc, "Hostage") == 0)
 		return MRES_Ignored;
 	else if (strcmp(szDesc, "Avoid Flashbang") == 0)
 	{
 		DHookSetParam(hParams, 3, PRIORITY_HIGH);
-		
 		return MRES_ChangedHandled;
 	}
 	else if (strcmp(szDesc, "Blind") == 0 || strcmp(szDesc, "Face outward") == 0)
@@ -744,10 +736,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 	{
 		g_bDontSwitch[client] = true;
 		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
-		
 		return strcmp(szDesc, "Plant bomb on floor") == 0 ? MRES_Supercede : MRES_Ignored;
 	}
-	else if(strcmp(szDesc, "GrenadeThrowBend") == 0)
+	else if (strcmp(szDesc, "GrenadeThrowBend") == 0)
 	{
 		float fEyePos[3];
 		GetClientEyePosition(client, fEyePos);
@@ -756,68 +747,66 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		hParams.SetVector(2, g_fNadeTarget[client]);
 		hParams.Set(4, 8.0);
 		hParams.Set(6, 1.5);
-		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Noise") == 0)
+	else if (strcmp(szDesc, "Noise") == 0)
 	{
 		bool bIsWalking = !!GetEntProp(client, Prop_Send, "m_bIsWalking");
 		float fClientEyes[3], fNoisePosition[3];
-		
 		GetClientEyePosition(client, fClientEyes);
-		if(IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
+
+		if (IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePosition) && LineGoesThroughSmoke(fClientEyes, fNoisePosition) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
-			
+
 		DHookGetParamVector(hParams, 2, fNoisePosition);
-		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+
+		if (GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(1.0)
+			&& GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePosition);
 			return MRES_Supercede;
 		}
-		
-		if(BotMimic_IsPlayerMimicing(client))
+
+		if (BotMimic_IsPlayerMimicing(client))
 		{
 			g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
 			BotMimic_StopPlayerMimic(client);
 		}
-		
-		if(eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+
+		if (eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 			BotEquipBestWeapon(client, true);
-		
+
 		g_bDontSwitch[client] = true;
 		CreateTimer(5.0, Timer_EnableSwitch, GetClientUserId(client));
-		
+
 		fNoisePosition[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fNoisePosition);
-		
 		return MRES_ChangedHandled;
 	}
-	else if(strcmp(szDesc, "Nearby enemy gunfire") == 0)
+	else if (strcmp(szDesc, "Nearby enemy gunfire") == 0)
 	{
 		float fPos[3], fClientEyes[3];
 		GetClientEyePosition(client, fClientEyes);
 		DHookGetParamVector(hParams, 2, fPos);
-		
-		if(GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(20.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+
+		if (GetGameTime() - g_fThrowNadeTimestamp[client] > 5.0 && IsValidEntity(GetPlayerWeaponSlot(client, CS_SLOT_GRENADE)) && IsItMyChance(20.0)
+			&& BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES
+			&& GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fPos);
 			return MRES_Supercede;
 		}
-		
+
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
-		
 		return MRES_ChangedHandled;
 	}
 	else
 	{
 		float fPos[3];
-		
 		DHookGetParamVector(hParams, 2, fPos);
 		fPos[2] += 25.0;
 		DHookSetParamVector(hParams, 2, fPos);
-		
 		return MRES_ChangedHandled;
 	}
 }
@@ -827,13 +816,12 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 	if (g_bIsProBot[client])
 	{
 		SelectBestTargetPos(client, g_fTargetPos[client]);
-		
+
 		if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 			return MRES_Ignored;
-		
+
 		SetEntDataVector(client, g_iBotTargetSpotOffset, g_fTargetPos[client]);
 	}
-	
 	return MRES_Ignored;
 }
 
@@ -843,80 +831,74 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 
 	if (IsValidClient(client) && IsPlayerAlive(client) && IsFakeClient(client))
 	{
-		if(!g_bFreezetimeEnd && g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
+		if (!g_bFreezetimeEnd && g_bDropWeapon[client] && view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT)
 		{
 			CS_DropWeapon(client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), true);
 			FakeClientCommand(client, "buy %s", g_szPreviousBuy[client]);
 			g_bDropWeapon[client] = false;
 		}
-		
+
 		GetClientAbsOrigin(client, g_fBotOrigin[client]);
 		g_iActiveWeapon[client] = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 		if (!IsValidEntity(g_iActiveWeapon[client])) return Plugin_Continue;
-		
-		if(g_bFreezetimeEnd)
-		{			
+
+		if (g_bFreezetimeEnd)
+		{
 			int iDefIndex = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iItemDefinitionIndex");
 			float fPlayerVelocity[3], fSpeed;
 			GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
 			fPlayerVelocity[2] = 0.0;
 			fSpeed = GetVectorLength(fPlayerVelocity);
-			
+
 			g_pCurrArea[client] = NavMesh_GetNearestArea(g_fBotOrigin[client]);
-			
+
 			if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 			{
 				SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 				g_bEveryoneDead = true;
 			}
-				
-			if(IsItMyChance(0.2) && g_iDoingSmokeNum[client] == -1)
+
+			if (IsItMyChance(0.2) && g_iDoingSmokeNum[client] == -1)
 				g_iDoingSmokeNum[client] = GetNearestGrenade(client);
-			
-			if(GetDisposition(client) == SELF_DEFENSE)
+
+			if (GetDisposition(client) == SELF_DEFENSE)
 				SetDisposition(client, ENGAGE_AND_INVESTIGATE);
-			
-			if(g_pCurrArea[client] != INVALID_NAV_AREA)
-			{							
+
+			if (g_pCurrArea[client] != INVALID_NAV_AREA)
+			{
 				if (g_pCurrArea[client].Attributes & NAV_MESH_WALK)
 					iButtons |= IN_SPEED;
-				
 				if (g_pCurrArea[client].Attributes & NAV_MESH_RUN)
 					iButtons &= ~IN_SPEED;
 			}
-			
-			if(g_iDoingSmokeNum[client] != -1 && !BotMimic_IsPlayerMimicing(client))
+
+			if (g_iDoingSmokeNum[client] != -1 && !BotMimic_IsPlayerMimicing(client))
 			{
 				g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
 				float fDisToNade = GetVectorDistance(g_fBotOrigin[client], g_fNadePos[g_iDoingSmokeNum[client]]);
-				
 				BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
-					
-				if(fDisToNade < 25.0)
-				{					
+				if (fDisToNade < 25.0)
+				{
 					BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
-					
-					if(view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
+					if (view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
 						BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
 				}
 			}
-			
-			if(g_bThrowGrenade[client] && eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
+
+			if (g_bThrowGrenade[client] && eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE)
 			{
 				BotThrowGrenade(client, g_fNadeTarget[client]);
 				g_fThrowNadeTimestamp[client] = GetGameTime();
 			}
-			
-			if(IsSafe(client) || g_bEveryoneDead)
+
+			if (IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
-				
-			if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && 
-			GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+
+			if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 			{
 				float fClientEyes[3];
 				GetClientEyePosition(client, fClientEyes);
-			
-				//Rifles
+
 				int iAK47 = GetNearestEntity(client, "weapon_ak47");
 				int iM4A1 = GetNearestEntity(client, "weapon_m4a1");
 				int iPrimary = GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY);
@@ -926,11 +908,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fAK47Location[3];
-					
 					if ((iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9) || iPrimary == -1)
 					{
 						GetEntPropVector(iAK47, Prop_Send, "m_vecOrigin", fAK47Location);
-
 						if (GetVectorLength(fAK47Location) != 0.0 && IsPointVisible(fClientEyes, fAK47Location))
 							BotMoveTo(client, fAK47Location, FASTEST_ROUTE);
 					}
@@ -939,11 +919,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					iPrimaryDefIndex = IsValidEntity(iPrimary) ? GetEntProp(iPrimary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fM4A1Location[3];
-
 					if (iPrimaryDefIndex != 7 && iPrimaryDefIndex != 9 && iPrimaryDefIndex != 16 && iPrimaryDefIndex != 60)
 					{
 						GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
-
 						if (GetVectorLength(fM4A1Location) != 0.0 && IsPointVisible(fClientEyes, fM4A1Location))
 						{
 							BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
@@ -954,13 +932,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					else if (iPrimary == -1)
 					{
 						GetEntPropVector(iM4A1, Prop_Send, "m_vecOrigin", fM4A1Location);
-
 						if (IsPointVisible(fClientEyes, fM4A1Location))
 							BotMoveTo(client, fM4A1Location, FASTEST_ROUTE);
 					}
 				}
-				
-				//Pistols
+
 				int iUSP = GetNearestEntity(client, "weapon_hkp2000");
 				int iP250 = GetNearestEntity(client, "weapon_p250");
 				int iFiveSeven = GetNearestEntity(client, "weapon_fiveseven");
@@ -968,16 +944,14 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				int iDeagle = GetNearestEntity(client, "weapon_deagle");
 				int iSecondary = GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY);
 				int iSecondaryDefIndex;
-				
+
 				if (IsValidEntity(iDeagle))
-				{						
+				{
 					iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fDeagleLocation[3];
-					
 					if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36 || iSecondaryDefIndex == 30 || iSecondaryDefIndex == 3 || iSecondaryDefIndex == 63)
 					{
 						GetEntPropVector(iDeagle, Prop_Send, "m_vecOrigin", fDeagleLocation);
-						
 						if (GetVectorLength(fDeagleLocation) != 0.0 && IsPointVisible(fClientEyes, fDeagleLocation))
 						{
 							BotMoveTo(client, fDeagleLocation, FASTEST_ROUTE);
@@ -987,14 +961,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 				}
 				else if (IsValidEntity(iTec9))
-				{						
+				{
 					iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fTec9Location[3];
-					
 					if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 					{
 						GetEntPropVector(iTec9, Prop_Send, "m_vecOrigin", fTec9Location);
-						
 						if (GetVectorLength(fTec9Location) != 0.0 && IsPointVisible(fClientEyes, fTec9Location))
 						{
 							BotMoveTo(client, fTec9Location, FASTEST_ROUTE);
@@ -1007,11 +979,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fFiveSevenLocation[3];
-					
 					if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61 || iSecondaryDefIndex == 36)
 					{
 						GetEntPropVector(iFiveSeven, Prop_Send, "m_vecOrigin", fFiveSevenLocation);
-						
 						if (GetVectorLength(fFiveSevenLocation) != 0.0 && IsPointVisible(fClientEyes, fFiveSevenLocation))
 						{
 							BotMoveTo(client, fFiveSevenLocation, FASTEST_ROUTE);
@@ -1024,11 +994,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fP250Location[3];
-					
 					if (iSecondaryDefIndex == 4 || iSecondaryDefIndex == 32 || iSecondaryDefIndex == 61)
 					{
 						GetEntPropVector(iP250, Prop_Send, "m_vecOrigin", fP250Location);
-						
 						if (GetVectorLength(fP250Location) != 0.0 && IsPointVisible(fClientEyes, fP250Location))
 						{
 							BotMoveTo(client, fP250Location, FASTEST_ROUTE);
@@ -1041,11 +1009,9 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				{
 					iSecondaryDefIndex = IsValidEntity(iSecondary) ? GetEntProp(iSecondary, Prop_Send, "m_iItemDefinitionIndex") : 0;
 					float fUSPLocation[3];
-					
 					if (iSecondaryDefIndex == 4)
 					{
 						GetEntPropVector(iUSP, Prop_Send, "m_vecOrigin", fUSPLocation);
-						
 						if (GetVectorLength(fUSPLocation) != 0.0 && IsPointVisible(fClientEyes, fUSPLocation))
 						{
 							BotMoveTo(client, fUSPLocation, FASTEST_ROUTE);
@@ -1055,11 +1021,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					}
 				}
 			}
-			
+
 			if (g_bIsProBot[client] && GetDisposition(client) != IGNORE_ENEMIES)
-			{		
+			{
 				g_iTarget[client] = BotGetEnemy(client);
-				
+
 				float fTargetDistance;
 				int iZoomLevel;
 				bool bIsEnemyVisible = !!GetEntData(client, g_iEnemyVisibleOffset);
@@ -1067,44 +1033,43 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 				bool bIsDucking = !!(GetEntityFlags(client) & FL_DUCKING);
 				bool bIsReloading = IsPlayerReloading(client);
 				bool bResumeZoom = !!GetEntProp(client, Prop_Send, "m_bResumeZoom");
-				
-				if(bResumeZoom)
+
+				if (bResumeZoom)
 					g_fShootTimestamp[client] = GetGameTime();
-				
-				if(HasEntProp(g_iActiveWeapon[client], Prop_Send, "m_zoomLevel"))
+
+				if (HasEntProp(g_iActiveWeapon[client], Prop_Send, "m_zoomLevel"))
 					iZoomLevel = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_zoomLevel");
-				
-				if(bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
+
+				if (bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 0)
 					iButtons |= IN_ATTACK2;
-				else if(!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
+				else if (!bIsHiding && (iDefIndex == 8 || iDefIndex == 39) && iZoomLevel == 1)
 					iButtons |= IN_ATTACK2;
-				
+
 				if (bIsHiding && g_bUncrouch[client])
 					iButtons &= ~IN_DUCK;
-					
+
 				if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]) || g_fTargetPos[client][2] == 0)
 				{
 					g_iPrevTarget[client] = g_iTarget[client];
 					return Plugin_Continue;
 				}
 
-				if(BotMimic_IsPlayerMimicing(client))
+				if (BotMimic_IsPlayerMimicing(client))
 				{
 					g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
 					BotMimic_StopPlayerMimic(client);
 				}
-				
+
 				if ((eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_KNIFE || eItems_GetWeaponSlotByDefIndex(iDefIndex) == CS_SLOT_GRENADE) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
-						BotEquipBestWeapon(client, true);
-				
+					BotEquipBestWeapon(client, true);
+
 				if (bIsEnemyVisible && GetEntityMoveType(client) != MOVETYPE_LADDER)
 				{
-					if(g_iPrevTarget[client] == -1)
+					if (g_iPrevTarget[client] == -1)
 						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.23, 0.25);
 					fTargetDistance = GetVectorDistance(g_fBotOrigin[client], g_fTargetPos[client]);
-					
+
 					float fClientEyes[3], fClientAngles[3], fAimPunchAngle[3], fToAimSpot[3], fAimDir[3];
-						
 					GetClientEyePosition(client, fClientEyes);
 					SubtractVectors(g_fTargetPos[client], fClientEyes, fToAimSpot);
 					GetClientEyeAngles(client, fClientAngles);
@@ -1112,15 +1077,15 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 					ScaleVector(fAimPunchAngle, (FindConVar("weapon_recoil_scale").FloatValue));
 					AddVectors(fClientAngles, fAimPunchAngle, fClientAngles);
 					GetViewVector(fClientAngles, fAimDir);
-					
+
 					float fRangeToEnemy = NormalizeVector(fToAimSpot, fToAimSpot);
 					float fOnTarget = GetVectorDotProduct(fToAimSpot, fAimDir);
 					float fAimTolerance = Cosine(ArcTangent(32.0 / fRangeToEnemy));
-					
-					if(g_iPrevTarget[client] == -1 && fOnTarget > fAimTolerance)
+
+					if (g_iPrevTarget[client] == -1 && fOnTarget > fAimTolerance)
 						g_fCrouchTimestamp[client] = GetGameTime() + Math_GetRandomFloat(0.23, 0.25);
-						
-					switch(iDefIndex)
+
+					switch (iDefIndex)
 					{
 						case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 28, 33, 34, 39, 60:
 						{
@@ -1128,12 +1093,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 								AutoStop(client, fVel, fAngles);
 							else if (fTargetDistance > 2000.0 && GetEntDataFloat(client, g_iFireWeaponOffset) == GetGameTime())
 								AutoStop(client, fVel, fAngles);
-						
 							if (fOnTarget > fAimTolerance && fTargetDistance < 2000.0)
 							{
 								iButtons &= ~IN_ATTACK;
-							
-								if(!bIsReloading && (fSpeed < 50.0 || bIsDucking || iDefIndex == 17 || iDefIndex == 19 || iDefIndex == 23 || iDefIndex == 24 || iDefIndex == 25 || iDefIndex == 26 || iDefIndex == 33 || iDefIndex == 34))
+								if (!bIsReloading && (fSpeed < 50.0 || bIsDucking || iDefIndex == 17 || iDefIndex == 19 || iDefIndex == 23 || iDefIndex == 24 || iDefIndex == 25 || iDefIndex == 26 || iDefIndex == 33 || iDefIndex == 34))
 								{
 									iButtons |= IN_ATTACK;
 									SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
@@ -1151,53 +1114,46 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 							{
 								iButtons |= IN_ATTACK;
 								SetEntDataFloat(client, g_iFireWeaponOffset, GetGameTime());
-							}	
+							}
 						}
 					}
-					
+
 					float fClientLoc[3];
 					Array_Copy(g_fBotOrigin[client], fClientLoc, 3);
 					fClientLoc[2] += HalfHumanHeight;
-					
 					if (GetGameTime() >= g_fCrouchTimestamp[client] && !GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload") && IsPointVisible(fClientLoc, g_fTargetPos[client]) && fOnTarget > fAimTolerance && fTargetDistance < 2000.0 && (iDefIndex == 7 || iDefIndex == 8 || iDefIndex == 10 || iDefIndex == 13 || iDefIndex == 14 || iDefIndex == 16 || iDefIndex == 39 || iDefIndex == 60 || iDefIndex == 28))
 						iButtons |= IN_DUCK;
-						
+
 					g_iPrevTarget[client] = g_iTarget[client];
 				}
 			}
-			
 			return Plugin_Changed;
 		}
 	}
-	
 	return Plugin_Continue;
 }
 
 public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	
 	SetPlayerTeammateColor(client);
 
 	if (IsValidClient(client) && IsFakeClient(client))
 	{
-		if(g_bIsProBot[client])
+		if (g_bIsProBot[client])
 		{
 			Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
-			
 			//All these offsets are inside BotProfileManager::Init which has strings for every botprofile parameter
 			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
 			StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(g_fAggression[client]), NumberType_Int32);
 		}
-		
+
 		if (g_bUseUSP[client] && GetClientTeam(client) == CS_TEAM_CT)
 		{
 			char szUSP[32];
-			
 			GetClientWeapon(client, szUSP, sizeof(szUSP));
-			
 			if (strcmp(szUSP, "weapon_hkp2000") == 0)
 				CSGO_ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
 		}
@@ -1240,14 +1196,14 @@ void ParseMapNades(const char[] szMap)
 		return;
 	}
 	
-	if(!kv.JumpToKey(szMap))
+	if (!kv.JumpToKey(szMap))
 	{
 		delete kv;
 		PrintToServer("No nades found for %s.", szMap);
 		return;
 	}
 	
-	if(!kv.GotoFirstSubKey())
+	if (!kv.GotoFirstSubKey())
 	{
 		delete kv;
 		PrintToServer("Nades are not configured right for %s.", szMap);
@@ -1259,21 +1215,23 @@ void ParseMapNades(const char[] szMap)
 	{
 		char szTeam[4];
 		
-		kv.GetVector("position", 	g_fNadePos[i]);
+		kv.GetVector("position", g_fNadePos[i]);
 		kv.GetVector("lookat", g_fNadeLook[i]);
 		g_iNadeDefIndex[i] = kv.GetNum("nadedefindex");
 		kv.GetString("replay", g_szReplay[i], 128);
 		g_fNadeTimestamp[i] = kv.GetFloat("timestamp");
 		kv.GetString("team", szTeam, sizeof(szTeam));
-		if(strcmp(szTeam, "CT", false) == 0)
+		
+		if (strcmp(szTeam, "CT", false) == 0)
 			g_iNadeTeam[i] = CS_TEAM_CT;
-		else if(strcmp(szTeam, "T", false) == 0)
+		else if (strcmp(szTeam, "T", false) == 0)
 			g_iNadeTeam[i] = CS_TEAM_T;
 	
 		i++;
-	} while (kv.GotoNextKey());
+	}
+	while (kv.GotoNextKey());
 	
-	delete kv;	
+	delete kv;
 	g_iMaxNades = i;
 }
 
@@ -1289,17 +1247,17 @@ bool IsProBot(const char[] szName, char[] szCrosshairCode, int iSize)
 	}
 	
 	JSONObject jData = JSONObject.FromFile(szPath);
-	if(jData.HasKey(szName))
+	if (jData.HasKey(szName))
 	{
 		JSONObject jInfoObj = view_as<JSONObject>(jData.Get(szName));
 		jInfoObj.GetString("crosshair_code", szCrosshairCode, iSize);
+		
 		delete jInfoObj;
 		delete jData;
 		return true;
 	}
 	
 	delete jData;
-	
 	return false;
 }
 
@@ -1308,80 +1266,63 @@ public void LoadSDK()
 	GameData hGameConfig = new GameData("botstuff.games");
 	if (hGameConfig == null)
 		SetFailState("Failed to find botstuff.games game config.");
-	
-	if(!(g_pTheBots = hGameConfig.GetAddress("TheBots")))
-		SetFailState("Failed to get TheBots address.");
-	
-	if ((g_iBotTargetSpotOffset = hGameConfig.GetOffset("CCSBot::m_targetSpot")) == -1)
-		SetFailState("Failed to get CCSBot::m_targetSpot offset.");
-	
-	if ((g_iBotNearbyEnemiesOffset = hGameConfig.GetOffset("CCSBot::m_nearbyEnemyCount")) == -1)
-		SetFailState("Failed to get CCSBot::m_nearbyEnemyCount offset.");
-	
-	if ((g_iFireWeaponOffset = hGameConfig.GetOffset("CCSBot::m_fireWeaponTimestamp")) == -1)
-		SetFailState("Failed to get CCSBot::m_fireWeaponTimestamp offset.");
-	
-	if ((g_iEnemyVisibleOffset = hGameConfig.GetOffset("CCSBot::m_isEnemyVisible")) == -1)
-		SetFailState("Failed to get CCSBot::m_isEnemyVisible offset.");
-	
-	if ((g_iBotProfileOffset = hGameConfig.GetOffset("CCSBot::m_pLocalProfile")) == -1)
-		SetFailState("Failed to get CCSBot::m_pLocalProfile offset.");
-	
-	if ((g_iBotSafeTimeOffset = hGameConfig.GetOffset("CCSBot::m_safeTime")) == -1)
-		SetFailState("Failed to get CCSBot::m_safeTime offset.");
-	
-	if ((g_iBotEnemyOffset = hGameConfig.GetOffset("CCSBot::m_enemy")) == -1)
-		SetFailState("Failed to get CCSBot::m_enemy offset.");
-	
-	if ((g_iBotLookAtSpotStateOffset = hGameConfig.GetOffset("CCSBot::m_lookAtSpotState")) == -1)
-		SetFailState("Failed to get CCSBot::m_lookAtSpotState offset.");
-	
-	if ((g_iBotMoraleOffset = hGameConfig.GetOffset("CCSBot::m_morale")) == -1)
-		SetFailState("Failed to get CCSBot::m_morale offset.");
-	
-	if ((g_iBotTaskOffset = hGameConfig.GetOffset("CCSBot::m_task")) == -1)
-		SetFailState("Failed to get CCSBot::m_task offset.");
-	
-	if ((g_iBotDispositionOffset = hGameConfig.GetOffset("CCSBot::m_disposition")) == -1)
-		SetFailState("Failed to get CCSBot::m_disposition offset.");
-	
+
+	g_pTheBots = SetupAddress(hGameConfig, "TheBots");
+	g_iBotTargetSpotOffset = SetupOffset(hGameConfig, "CCSBot::m_targetSpot");
+	g_iBotNearbyEnemiesOffset = SetupOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount");
+	g_iFireWeaponOffset = SetupOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp");
+	g_iEnemyVisibleOffset = SetupOffset(hGameConfig, "CCSBot::m_isEnemyVisible");
+	g_iBotProfileOffset = SetupOffset(hGameConfig, "CCSBot::m_pLocalProfile");
+	g_iBotSafeTimeOffset = SetupOffset(hGameConfig, "CCSBot::m_safeTime");
+	g_iBotEnemyOffset = SetupOffset(hGameConfig, "CCSBot::m_enemy");
+	g_iBotLookAtSpotStateOffset = SetupOffset(hGameConfig, "CCSBot::m_lookAtSpotState");
+	g_iBotMoraleOffset = SetupOffset(hGameConfig, "CCSBot::m_morale");
+	g_iBotTaskOffset = SetupOffset(hGameConfig, "CCSBot::m_task");
+	g_iBotDispositionOffset = SetupOffset(hGameConfig, "CCSBot::m_disposition");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer); // Move Position As Vector, Pointer
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain); // Move Type As Integer
-	if ((g_hBotMoveTo = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");
-	
+	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	if ((g_hBotMoveTo = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");
+
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
-	if ((g_hLookupBone = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
-	
+	if ((g_hLookupBone = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
+
 	StartPrepSDKCall(SDKCall_Entity);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
-	if ((g_hGetBonePosition = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
-	
+	if ((g_hGetBonePosition = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsVisible = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
-	
+	if ((g_hBotIsVisible = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotIsHiding = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
-	
+	if ((g_hBotIsHiding = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
-	
+	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
@@ -1391,27 +1332,31 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotSetLookAt = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
-	
+	if ((g_hBotSetLookAt = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
+
 	StartPrepSDKCall(SDKCall_Raw);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "SetCrosshairCode");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
-	if ((g_hSetCrosshairCode = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for SetCrosshairCode signature!");
-	
+	if ((g_hSetCrosshairCode = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for SetCrosshairCode signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Virtual, "Weapon_Switch");
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
-	
+	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+
 	StartPrepSDKCall(SDKCall_Raw);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hIsLineBlockedBySmoke = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CBotManager::IsLineBlockedBySmoke offset!");
-	
+	if ((g_hIsLineBlockedBySmoke = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CBotManager::IsLineBlockedBySmoke offset!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::BendLineOfSight");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
@@ -1419,21 +1364,24 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
-	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
-	
+	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::ThrowGrenade");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
-	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
-	
+	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
+
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSPlayer::AddAccount");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
-	if ((g_hAddMoney = EndPrepSDKCall()) == null)SetFailState("Failed to create SDKCall for CCSPlayer::AddAccount signature!");
-	
+	if ((g_hAddMoney = EndPrepSDKCall()) == null)
+		SetFailState("Failed to create SDKCall for CCSPlayer::AddAccount signature!");
+
 	delete hGameConfig;
 }
 
@@ -1446,20 +1394,13 @@ public void LoadDetours()
 		return;
 	}
 
-	SetupDetour(hGameData, "CCSBot::SetLookAt", Hook_Pre, CCSBot_SetLookAt, "CCSBot::SetLookAt");
-	SetupDetour(hGameData, "CCSBot::PickNewAimSpot", Hook_Post, CCSBot_PickNewAimSpot, "CCSBot::PickNewAimSpot");
-	SetupDetour(hGameData, "BotCOS", Hook_Pre, BotCOSandSIN, "BotCOS");
-	SetupDetour(hGameData, "BotSIN", Hook_Pre, BotCOSandSIN, "BotSIN");
-	SetupDetour(hGameData, "CCSBot::GetPartPosition", Hook_Pre, CCSBot_GetPartPosition, "CCSBot::GetPartPosition");
+	SetupDetour(hGameData, "CCSBot::SetLookAt", Hook_Pre, CCSBot_SetLookAt);
+	SetupDetour(hGameData, "CCSBot::PickNewAimSpot", Hook_Post, CCSBot_PickNewAimSpot);
+	SetupDetour(hGameData, "BotCOS", Hook_Pre, BotCOSandSIN);
+	SetupDetour(hGameData, "BotSIN", Hook_Pre, BotCOSandSIN);
+	SetupDetour(hGameData, "CCSBot::GetPartPosition", Hook_Pre, CCSBot_GetPartPosition);
 
 	delete hGameData;
-}
-
-stock void SetupDetour(GameData hGameData, const char[] szConf, HookMode hMode, DHookCallback hCallBack, const char[] szFailCallback)
-{
-	DynamicDetour hDetour = DynamicDetour.FromConf(hGameData, szConf);
-	if (!hDetour.Enable(hMode, hCallBack))
-		SetFailState("Failed to setup detour for %s", szFailCallback);
 }
 
 public int LookupBone(int iEntity, const char[] szName)
@@ -1527,55 +1468,76 @@ bool IsDefaultPistol(const char[] szWeapon)
 	return strcmp(szWeapon, "weapon_hkp2000") == 0 || strcmp(szWeapon, "weapon_usp_silencer") == 0 || strcmp(szWeapon, "weapon_glock") == 0;
 }
 
+stock void SetupDetour(GameData hGameData, const char[] szConf, HookMode hMode, DHookCallback hCallback)
+{
+	DynamicDetour hDetour = DynamicDetour.FromConf(hGameData, szConf);
+	if (!hDetour.Enable(hMode, hCallback))
+		SetFailState("Failed to setup detour for %s", szConf);
+}
+
+stock int SetupOffset(GameData hGameConfig, const char[] szName)
+{
+	int iOffset = hGameConfig.GetOffset(szName);
+	if (iOffset == -1)
+		SetFailState("Failed to get %s offset.", szName);
+	return iOffset;
+}
+
+stock Address SetupAddress(GameData hGameConfig, const char[] szName)
+{
+	Address pAddr = hGameConfig.GetAddress(szName);
+	if (!pAddr)
+		SetFailState("Failed to get %s address.", szName);
+	return pAddr;
+}
+
 int GetFriendsWithPrimary(int client)
 {
-	int iCount = 0;
-	int iPrimary;
-	for (int i = 1; i <= MaxClients; i++) 
+	int iCount = 0, iPrimary;
+	
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		if(!IsValidClient(i)) 
-			continue;	
-			
-		if(client == i)
+		if (!IsValidClient(i))
 			continue;
-
-		if(GetClientTeam(i) != GetClientTeam(client))
+		
+		if (client == i)
 			continue;
-
+		
+		if (GetClientTeam(i) != GetClientTeam(client))
+			continue;
+		
 		iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
-		if(IsValidEntity(iPrimary))
+		if (IsValidEntity(iPrimary))
 			iCount++;
 	}
-
+	
 	return iCount;
 }
 
 public int GetNearestGrenade(int client)
 {
-	if(g_bBombPlanted) return -1;
+	if (g_bBombPlanted)
+		return -1;
 
 	int iNearestEntity = -1;
-	float fVecOrigin[3];
+	float fVecOrigin[3], fDistance, fNearestDistance = -1.0;
 	
 	GetClientAbsOrigin(client, fVecOrigin);
 	
-	//Get the distance between the first entity and client
-	float fDistance, fNearestDistance = -1.0;
-	
-	for(int i = 0; i < g_iMaxNades; i++)
-	{		
-		if((GetGameTime() - g_fNadeTimestamp[i]) < 25.0)
-			continue;
-			
-		if(!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i])))
+	for (int i = 0; i < g_iMaxNades; i++)
+	{
+		if ((GetGameTime() - g_fNadeTimestamp[i]) < 25.0)
 			continue;
 		
-		if(GetClientTeam(client) != g_iNadeTeam[i])
+		if (!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i])))
+			continue;
+		
+		if (GetClientTeam(client) != g_iNadeTeam[i])
 			continue;
 		
 		fDistance = GetVectorDistance(fVecOrigin, g_fNadePos[i]);
 		
-		if(fDistance > 250.0)
+		if (fDistance > 250.0)
 			continue;
 		
 		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
@@ -1586,23 +1548,18 @@ public int GetNearestGrenade(int client)
 	}
 	
 	return iNearestEntity;
-} 
+}
 
 stock int GetNearestEntity(int client, char[] szClassname)
 {
-	int iNearestEntity = -1;
-	float fClientOrigin[3], fEntityOrigin[3];
+	int iNearestEntity = -1, iEntity = -1;
+	float fClientOrigin[3], fEntityOrigin[3], fDistance, fNearestDistance = -1.0;
 	
 	GetClientAbsOrigin(client, fClientOrigin);
 	
-	//Get the distance between the first entity and client
-	float fDistance, fNearestDistance = -1.0;
-	
-	//Find all the entity and compare the distances
-	int iEntity = -1;
 	while ((iEntity = FindEntityByClassname(iEntity, szClassname)) != -1)
 	{
-		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin); // Line 2610
+		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin);
 		fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
 		
 		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
@@ -1637,20 +1594,17 @@ stock int CSGO_ReplaceWeapon(int client, int iSlot, const char[] szClass)
 }
 
 bool IsPlayerReloading(int client)
-{	
-	if(!IsValidEntity(g_iActiveWeapon[client]))
+{
+	if (!IsValidEntity(g_iActiveWeapon[client]))
 		return false;
 	
-	//Out of ammo?
-	if(GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_iClip1") == 0)
+	if (GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_iClip1") == 0)
 		return true;
 	
-	//Reloading?
-	if(GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload"))
+	if (GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload"))
 		return true;
 	
-	//Ready to fire?
-	if(GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
+	if (GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
 		return false;
 	
 	return true;

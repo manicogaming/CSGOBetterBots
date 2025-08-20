@@ -603,7 +603,8 @@
 		"108": 37,
 		"109": 1357,
 		"110": 227,
-		"111": 1358
+		"111": 1358,
+		"112": 1361
       }
     },
     {
@@ -21095,7 +21096,7 @@
       "def_index": 1356,
       "name": "cu_ak47_souldevourer",
       "rarity": {
-        "id": 2,
+        "id": 1,
         "name": "Common"
       },
       "wear_remap": {
@@ -21108,7 +21109,7 @@
       "def_index": 1357,
       "name": "cu_ak47_fullthrottle",
       "rarity": {
-        "id": 2,
+        "id": 1,
         "name": "Common"
       },
       "wear_remap": {
@@ -21155,6 +21156,19 @@
         "max": "0.650000"
       },
       "item_name": "dev_texture"
+    },
+    {
+      "def_index": 1361,
+      "name": "cu_ak47_friday",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.800000"
+      },
+      "item_name": "Friday"
     }
   ],
   "gloves": [
