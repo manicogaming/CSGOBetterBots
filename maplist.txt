@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Wed Aug 20 16:36:44 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sun Aug 24 14:56:15 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -283,7 +283,6 @@ de_anubis
 de_aqueduct
 de_arco
 de_arco2022-04-05
-de_armory
 de_asia_csgo
 de_astra
 de_astra_64
@@ -553,7 +552,6 @@ de_rainfall
 de_ramis
 de_rampart_final
 de_rampart_wip
-de_rats_1337_v2
 de_rats_2020
 de_rats_brb
 de_rats_csgo
@@ -640,7 +638,6 @@ de_train_2055
 de_train_cyberpunk
 de_train_promod
 de_trainrework
-de_treehouse_invasion_go
 de_tulip
 de_turbine
 de_tuscan
