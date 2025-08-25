@@ -161,7 +161,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.4", 
+	version = "1.2.5", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -931,10 +931,6 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 
 			if (IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
-
-			int iDroppedC4 = GetNearestEntity(client, "weapon_c4");
-			if(IsValidEntity(iDroppedC4) && GetClientTeam(client) == CS_TEAM_CT)
-				SetTask(client, GUARD_LOOSE_BOMB);
 			
 			if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 			{
@@ -1951,14 +1947,6 @@ stock TaskType GetTask(int client)
 		return view_as<TaskType>(-1);
 		
 	return view_as<TaskType>(GetEntData(client, g_iBotTaskOffset));
-}
-
-stock void SetTask(int client, TaskType iTask)
-{
-	if(!IsFakeClient(client))
-		return;
-		
-	SetEntData(client, g_iBotTaskOffset, iTask);
 }
 
 stock DispositionType GetDisposition(int client)
