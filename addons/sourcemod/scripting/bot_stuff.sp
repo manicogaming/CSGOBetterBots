@@ -161,7 +161,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.3", 
+	version = "1.2.4", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -172,7 +172,7 @@ public void OnPluginStart()
 
     HookEventEx("round_prestart", OnRoundPreStart);
     HookEventEx("round_start", OnRoundStart);
-    HookEventEx("round_end", OnRoundEnd);
+	HookEventEx("round_end", OnRoundEnd);
     HookEventEx("round_freeze_end", OnFreezetimeEnd);
 
     HookEventEx("player_spawn", OnPlayerSpawn);
@@ -576,29 +576,36 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 		CreateTimer(0.2, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
 }
 
+public Action CS_OnTerminateRound(float &flDelay, CSRoundEndReason &iReason)
+{
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsValidClient(i))
+            continue;
+
+        if (IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
+            BotMimic_StopPlayerMimic(i);
+    }
+
+    Array_Fill(g_fNadeTimestamp, view_as<int>(0.0), g_iMaxNades);
+
+    return Plugin_Continue;
+}
+
 public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 {
-	int iEnt = -1;
-	while ((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1)
-	{
-		int iTeamNum = GetEntProp(iEnt, Prop_Send, "m_iTeamNum");
+    int iEnt = -1;
+    g_iRoundsPlayed = 0;
 
-		if (iTeamNum == CS_TEAM_CT)
-			g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
-		else if (iTeamNum == CS_TEAM_T)
-			g_iTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal");
-	}
+    while ((iEnt = FindEntityByClassname(iEnt, "cs_team_manager")) != -1)
+    {
+        int iTeamNum = GetEntProp(iEnt, Prop_Send, "m_iTeamNum");
 
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
-			BotMimic_StopPlayerMimic(i);
-	}
-
-	g_iRoundsPlayed = g_iCTScore + g_iTScore;
-
-	for (int i = 0; i < g_iMaxNades; i++)
-		g_fNadeTimestamp[i] = 0.0;
+        if (iTeamNum == CS_TEAM_CT)
+            g_iRoundsPlayed += (g_iCTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal"));
+        else if (iTeamNum == CS_TEAM_T)
+            g_iRoundsPlayed += (g_iTScore = GetEntProp(iEnt, Prop_Send, "m_scoreTotal"));
+    }
 }
 
 public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -610,7 +617,7 @@ public void OnFreezetimeEnd(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnWeaponZoom(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if (!IsValidClient(client) || !IsFakeClient(client) || !IsPlayerAlive(client))
+	if (!IsValidClient(client) || !IsPlayerAlive(client) || !IsFakeClient(client))
 		return;
 
 	g_fShootTimestamp[client] = GetGameTime();
@@ -925,7 +932,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			if (IsSafe(client) || g_bEveryoneDead)
 				iButtons &= ~IN_SPEED;
 
-			int iDroppedC4 = FindEntityByClassname(-1, "weapon_c4");
+			int iDroppedC4 = GetNearestEntity(client, "weapon_c4");
 			if(IsValidEntity(iDroppedC4) && GetClientTeam(client) == CS_TEAM_CT)
 				SetTask(client, GUARD_LOOSE_BOMB);
 			
