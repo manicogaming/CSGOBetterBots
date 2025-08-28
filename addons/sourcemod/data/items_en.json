@@ -604,7 +604,10 @@
 		"109": 1357,
 		"110": 227,
 		"111": 1358,
-		"112": 1361
+		"112": 1361,
+		"113": 1362,
+		"114": 1363,
+		"115": 1364
       }
     },
     {
@@ -21169,6 +21172,45 @@
         "max": "0.800000"
       },
       "item_name": "Friday"
+    },
+    {
+      "def_index": 1362,
+      "name": "cu_ak47_wyrm",
+      "rarity": {
+        "id": 5,
+        "name": "Legendary"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.900000"
+      },
+      "item_name": "Wyrm"
+    },
+    {
+      "def_index": 1363,
+      "name": "cu_ak47_complex",
+      "rarity": {
+        "id": 4,
+        "name": "Mythical"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "0.770000"
+      },
+      "item_name": "Complex"
+    },
+    {
+      "def_index": 1364,
+      "name": "cu_ak47_banshee",
+      "rarity": {
+        "id": 3,
+        "name": "Rare"
+      },
+      "wear_remap": {
+        "min": "0.000000",
+        "max": "1.000000"
+      },
+      "item_name": "Banshee"
     }
   ],
   "gloves": [
