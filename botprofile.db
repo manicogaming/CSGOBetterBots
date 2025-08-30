@@ -4912,6 +4912,90 @@ ProP+Rifle+RiflePersonality "keb1k"
 	VoicePitch = 106
 End
 
+ProP+Rifle+RiflePersonality "Dropcs"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "jared"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "djay"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "fnl"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "DREAd"
+	VoicePitch = 107
+End
+
+ProP+Rifle+RiflePersonality "Rand"
+	VoicePitch = 107
+End
+
+ProP+SniperPro+SniperPersonality "kl1m"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RiflePersonality "maxxkor"
+	VoicePitch = 106
+End
+
+ProP+Rifle+RiflePersonality "CutzMeretz"
+	VoicePitch = 75
+End
+
+ProP+Rifle+RiflePersonality "danoco"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "delboNi"
+	VoicePitch = 95
+End
+
+ProP+Rifle+RiflePersonality "DAVEN"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "SeBi"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "S3cReT"
+	VoicePitch = 82
+End
+
+ProP+Rifle+RiflePersonality "ulti"
+	VoicePitch = 77
+End
+
+ProP+Rifle+RiflePersonality "jfk"
+	VoicePitch = 79
+End
+
+ProP+Rifle+RiflePersonality "roca"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "gloRinsz"
+	VoicePitch = 112
+End
+
+ProP+Rifle+RiflePersonality "oreosss"
+	VoicePitch = 76
+End
+
+ProP+Rifle+RiflePersonality "Dante"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "S5J"
+	VoicePitch = 107
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End

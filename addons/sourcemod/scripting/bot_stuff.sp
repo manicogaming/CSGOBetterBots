@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.7", 
+	version = "1.2.8", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -1116,7 +1116,6 @@ void ParseMapNades(const char[] szMap)
 	}
 	
 	KeyValues kv = new KeyValues("Nades");
-	
 	if (!kv.ImportFromFile(szPath))
 	{
 		delete kv;
@@ -1146,15 +1145,16 @@ void ParseMapNades(const char[] szMap)
 		kv.GetVector("position", g_fNadePos[i]);
 		kv.GetVector("lookat", g_fNadeLook[i]);
 		g_iNadeDefIndex[i] = kv.GetNum("nadedefindex");
-		kv.GetString("replay", g_szReplay[i], 128);
+		kv.GetString("replay", g_szReplay[i], sizeof(g_szReplay[]));
 		g_fNadeTimestamp[i] = kv.GetFloat("timestamp");
-		kv.GetString("team", szTeam, sizeof(szTeam));
 		
+		g_iNadeTeam[i] = CS_TEAM_NONE;
+		kv.GetString("team", szTeam, sizeof(szTeam));
 		if (strcmp(szTeam, "CT", false) == 0)
 			g_iNadeTeam[i] = CS_TEAM_CT;
 		else if (strcmp(szTeam, "T", false) == 0)
 			g_iNadeTeam[i] = CS_TEAM_T;
-	
+		
 		i++;
 	}
 	while (kv.GotoNextKey());
@@ -1163,96 +1163,105 @@ void ParseMapNades(const char[] szMap)
 	g_iMaxNades = i;
 }
 
-bool IsProBot(const char[] szName, char[] szCrosshairCode, int iSize)
+bool IsProBot(const char[] szName, char[] szCrosshairCode, const int iSize)
 {
-	char szPath[PLATFORM_MAX_PATH];
-	BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_info.json");
-	
-	if (!FileExists(szPath))
-	{
-		PrintToServer("Configuration file %s is not found.", szPath);
-		return false;
-	}
-	
-	JSONObject jData = JSONObject.FromFile(szPath);
-	if (jData.HasKey(szName))
-	{
-		JSONObject jInfoObj = view_as<JSONObject>(jData.Get(szName));
-		jInfoObj.GetString("crosshair_code", szCrosshairCode, iSize);
-		
-		delete jInfoObj;
-		delete jData;
-		return true;
-	}
-	
-	delete jData;
-	return false;
+    char szPath[PLATFORM_MAX_PATH];
+    BuildPath(Path_SM, szPath, sizeof(szPath), "data/bot_info.json");
+
+    if (!FileExists(szPath))
+    {
+        PrintToServer("Configuration file %s not found.", szPath);
+        return false;
+    }
+
+    JSONObject jObjData = JSONObject.FromFile(szPath);
+    if (jObjData == null)
+    {
+        PrintToServer("Failed to parse JSON file: %s", szPath);
+        return false;
+    }
+
+    if (!jObjData.HasKey(szName))
+    {
+        delete jObjData;
+        return false;
+    }
+
+    JSONObject jObjInfo = view_as<JSONObject>(jObjData.Get(szName));
+    if (jObjInfo != null)
+    {
+        jObjInfo.GetString("crosshair_code", szCrosshairCode, iSize);
+        delete jObjInfo;
+    }
+
+    delete jObjData;
+    return true;
 }
 
 public void LoadSDK()
 {
-	GameData hGameConfig = new GameData("botstuff.games");
-	if (hGameConfig == null)
+	GameData hConf = new GameData("botstuff.games");
+	if (hConf == null)
 		SetFailState("Failed to find botstuff.games game config.");
 
-	g_pTheBots = SetupAddress(hGameConfig, "TheBots");
-	g_iBotTargetSpotOffset = SetupOffset(hGameConfig, "CCSBot::m_targetSpot");
-	g_iBotNearbyEnemiesOffset = SetupOffset(hGameConfig, "CCSBot::m_nearbyEnemyCount");
-	g_iFireWeaponOffset = SetupOffset(hGameConfig, "CCSBot::m_fireWeaponTimestamp");
-	g_iEnemyVisibleOffset = SetupOffset(hGameConfig, "CCSBot::m_isEnemyVisible");
-	g_iBotProfileOffset = SetupOffset(hGameConfig, "CCSBot::m_pLocalProfile");
-	g_iBotSafeTimeOffset = SetupOffset(hGameConfig, "CCSBot::m_safeTime");
-	g_iBotEnemyOffset = SetupOffset(hGameConfig, "CCSBot::m_enemy");
-	g_iBotLookAtSpotStateOffset = SetupOffset(hGameConfig, "CCSBot::m_lookAtSpotState");
-	g_iBotMoraleOffset = SetupOffset(hGameConfig, "CCSBot::m_morale");
-	g_iBotTaskOffset = SetupOffset(hGameConfig, "CCSBot::m_task");
-	g_iBotDispositionOffset = SetupOffset(hGameConfig, "CCSBot::m_disposition");
+	g_pTheBots = SetupAddress(hConf, "TheBots");
+	g_iBotTargetSpotOffset = SetupOffset(hConf, "CCSBot::m_targetSpot");
+	g_iBotNearbyEnemiesOffset = SetupOffset(hConf, "CCSBot::m_nearbyEnemyCount");
+	g_iFireWeaponOffset = SetupOffset(hConf, "CCSBot::m_fireWeaponTimestamp");
+	g_iEnemyVisibleOffset = SetupOffset(hConf, "CCSBot::m_isEnemyVisible");
+	g_iBotProfileOffset = SetupOffset(hConf, "CCSBot::m_pLocalProfile");
+	g_iBotSafeTimeOffset = SetupOffset(hConf, "CCSBot::m_safeTime");
+	g_iBotEnemyOffset = SetupOffset(hConf, "CCSBot::m_enemy");
+	g_iBotLookAtSpotStateOffset = SetupOffset(hConf, "CCSBot::m_lookAtSpotState");
+	g_iBotMoraleOffset = SetupOffset(hConf, "CCSBot::m_morale");
+	g_iBotTaskOffset = SetupOffset(hConf, "CCSBot::m_task");
+	g_iBotDispositionOffset = SetupOffset(hConf, "CCSBot::m_disposition");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::MoveTo");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::MoveTo");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	if ((g_hBotMoveTo = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::MoveTo signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::MoveTo");
 
 	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::LookupBone");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CBaseAnimating::LookupBone");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 	if ((g_hLookupBone = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CBaseAnimating::LookupBone signature!");
+		SetFailState("Failed to create SDKCall: CBaseAnimating::LookupBone");
 
 	StartPrepSDKCall(SDKCall_Entity);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CBaseAnimating::GetBonePosition");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_QAngle, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	if ((g_hGetBonePosition = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CBaseAnimating::GetBonePosition signature!");
+		SetFailState("Failed to create SDKCall: CBaseAnimating::GetBonePosition");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsVisible");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::IsVisible");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsVisible = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::IsVisible signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::IsVisible");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::IsAtHidingSpot");
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotIsHiding = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::IsAtHidingSpot signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::IsAtHidingSpot");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::EquipBestWeapon");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::EquipBestWeapon");
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotEquipBestWeapon = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::EquipBestWeapon signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::EquipBestWeapon");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::SetLookAt");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::SetLookAt");
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
@@ -1261,74 +1270,74 @@ public void LoadSDK()
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotSetLookAt = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::SetLookAt signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::SetLookAt");
 
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "SetCrosshairCode");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "SetCrosshairCode");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	if ((g_hSetCrosshairCode = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for SetCrosshairCode signature!");
+		SetFailState("Failed to create SDKCall: SetCrosshairCode");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Virtual, "Weapon_Switch");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Virtual, "Weapon_Switch");
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	if ((g_hSwitchWeaponCall = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for Weapon_Switch offset!");
+		SetFailState("Failed to create SDKCall: Weapon_Switch");
 
 	StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CBotManager::IsLineBlockedBySmoke");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hIsLineBlockedBySmoke = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CBotManager::IsLineBlockedBySmoke offset!");
+		SetFailState("Failed to create SDKCall: CBotManager::IsLineBlockedBySmoke");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::BendLineOfSight");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::BendLineOfSight");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_ByRef, _, VENCODE_FLAG_COPYBACK);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_SetReturnInfo(SDKType_Bool, SDKPass_Plain);
 	if ((g_hBotBendLineOfSight = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::BendLineOfSight signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::BendLineOfSight");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSBot::ThrowGrenade");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::ThrowGrenade");
 	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer);
 	if ((g_hBotThrowGrenade = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSBot::ThrowGrenade signature!");
+		SetFailState("Failed to create SDKCall: CCSBot::ThrowGrenade");
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hGameConfig, SDKConf_Signature, "CCSPlayer::AddAccount");
+	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSPlayer::AddAccount");
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
 	if ((g_hAddMoney = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall for CCSPlayer::AddAccount signature!");
+		SetFailState("Failed to create SDKCall: CCSPlayer::AddAccount");
 
-	delete hGameConfig;
+	delete hConf;
 }
 
 public void LoadDetours()
 {
-	GameData hGameData = new GameData("botstuff.games");
-	if (hGameData == null)
+	GameData hConf = new GameData("botstuff.games");
+	if (hConf == null)
 	{
-		SetFailState("Failed to load botstuff gamedata.");
+		SetFailState("Failed to load botstuff.games gamedata.");
 		return;
 	}
 
-	SetupDetour(hGameData, "CCSBot::SetLookAt", Hook_Pre, CCSBot_SetLookAt);
-	SetupDetour(hGameData, "CCSBot::PickNewAimSpot", Hook_Post, CCSBot_PickNewAimSpot);
-	SetupDetour(hGameData, "BotCOS", Hook_Pre, BotCOSandSIN);
-	SetupDetour(hGameData, "BotSIN", Hook_Pre, BotCOSandSIN);
-	SetupDetour(hGameData, "CCSBot::GetPartPosition", Hook_Pre, CCSBot_GetPartPosition);
+	SetupDetour(hConf, "CCSBot::SetLookAt", Hook_Pre, CCSBot_SetLookAt);
+	SetupDetour(hConf, "CCSBot::PickNewAimSpot", Hook_Post, CCSBot_PickNewAimSpot);
+	SetupDetour(hConf, "BotCOS", Hook_Pre, BotCOSandSIN);
+	SetupDetour(hConf, "BotSIN", Hook_Pre, BotCOSandSIN);
+	SetupDetour(hConf, "CCSBot::GetPartPosition", Hook_Pre, CCSBot_GetPartPosition);
 
-	delete hGameData;
+	delete hConf;
 }
 
 public int LookupBone(int iEntity, const char[] szName)

@@ -7,12 +7,12 @@
 	}
 	"MIBR"
 	{
-		"players"	"nicksfps,saffee,brnz4n,insani,exit"
+		"players"	"nicksfps,kl1m,brnz4n,insani,exit"
 		"logo"	"mibr"
 	}
 	"FaZe"
 	{
-		"players"	"frozen,broky,karrigan,rain,EliGE"
+		"players"	"frozen,broky,karrigan,rain,jcobbb"
 		"logo"	"faze"
 	}
 	"Astralis"
@@ -37,7 +37,7 @@
 	}
 	"Dynamo"
 	{
-		"players"	"spardaus,forsyy,Dytor,Aaron,nbqq"
+		"players"	"spardaus,forsyy,Dytor,kreaz,nbqq"
 		"logo"	"dyna"
 	}
 	"mouz"
@@ -72,7 +72,7 @@
 	}
 	"BIG"
 	{
-		"players"	"hyped,kyuubii,JDC,tabseN,Krimbo"
+		"players"	"hyped,prosus,JDC,tabseN,Krimbo"
 		"logo"	"big"
 	}
 	"FURIA"
@@ -80,10 +80,10 @@
 		"players"	"yuurih,FalleN,molodoy,KSCERATO,YEKINDAR"
 		"logo"	"furi"
 	}
-	"coL"
+	"Passion"
 	{
-		"players"	"JT,hallzerk,cxzi,nicx,Grim"
-		"logo"	"comp"
+		"players"	"JT,hallzerk,Kvem,nicx,Grim"
+		"logo"	"pass"
 	}
 	"B8"
 	{
@@ -112,7 +112,7 @@
 	}
 	"Nexus"
 	{
-		"players"	"BTN,XELLOW,Blytz,s0und,lauNX"
+		"players"	"BTN,XELLOW,Blytz,s0und,fnl"
 		"logo"	"nex"
 	}
 	"MongolZ"
@@ -127,7 +127,7 @@
 	}
 	"Sharks"
 	{
-		"players"	"doczin,gafolo,rdnzao,koala,aNgelo"
+		"players"	"doczin,gafolo,rdnzao,koala,maxxkor"
 		"logo"	"shark"
 	}
 	"9ine"
@@ -169,11 +169,6 @@
 	{
 		"players"	"westmelon,z4kr,Starry,Emilia,C4LLM3SU3"
 		"logo"	"lynn"
-	}
-	"Rhyno"
-	{
-		"players"	"Jayy2s,rafaxF,Icarus,seabraez,P3R3IIRA"
-		"logo"	"rhy"
 	}
 	"OG"
 	{
@@ -257,8 +252,8 @@
 	}
 	"Imperial"
 	{
-		"players"	"noway,try,chelo,shr,VINI"
-		"logo"	"imp"
+		"players"	"noway,try,chelo,skullz,VINI"
+		"logo"	"imper"
 	}
 	"EYEBALLERS"
 	{
@@ -317,7 +312,7 @@
 	}
 	"Flyte"
 	{
-		"players"	"Crisp,Sharpie,huncho,Panic,FxRE"
+		"players"	"Crisp,Dropcs,huncho,Panic,jared"
 		"logo"	"flyte"
 	}
 	"Rare"
@@ -414,11 +409,6 @@
 	{
 		"players"	"tomiko,b1lal,ImpressioN,BnTeT,kaito"
 		"logo"	"alter"
-	}
-	"Passion"
-	{
-		"players"	"Woro2k,jackasmo,DemQQ,Topa,Kvem"
-		"logo"	"pass"
 	}
 	"Sangal"
 	{
@@ -542,7 +532,7 @@
 	}
 	"Chinggis"
 	{
-		"players"	"controlez,ROUX,ariucle,efire,cool4st"
+		"players"	"controlez,ROUX,ariucle,yAmi,cool4st"
 		"logo"	"ching"
 	}
 	"CYBERSHOKE"
@@ -562,7 +552,7 @@
 	}
 	"Eternal"
 	{
-		"players"	"imoRR,Calyx,bnox,maaryy,mASKED"
+		"players"	"imoRR,Calyx,bnox,jresy,mASKED"
 		"logo"	"eter"
 	}
 	"SSP"
@@ -575,10 +565,10 @@
 		"players"	"lattykk,HObbit,oz1k,cronuss,interz"
 		"logo"	"1win"
 	}
-	"Iberian"
+	"Gentle"
 	{
 		"players"	"mopoz,dav1g,sausol,alexitownz,Martinez"
-		"logo"	"is"
+		"logo"	"gent"
 	}
 	"Besiktas"
 	{
@@ -592,12 +582,12 @@
 	}
 	"LAG"
 	{
-		"players"	"Sandman,mason,brett,consti,Wolffe"
+		"players"	"Sandman,mason,djay,consti,Wolffe"
 		"logo"	"lag"
 	}
 	"Keyd"
 	{
-		"players"	"vinaabEAST,ninjaZ,desh,leo_drk,flash"
+		"players"	"v$m,CutzMeretz,desh,danoco,delboNi"
 		"logo"	"keyds"
 	}
 	"Semper"
@@ -619,5 +609,20 @@
 	{
 		"players"	"pandi7o,olik,FAZERY,keb1k,PerdY"
 		"logo"	"tig"
+	}
+	"Lesiure"
+	{
+		"players"	"BischeR,NZyyy,julz,DREAd,Rand"
+		"logo"	"leis"
+	}
+	"mYinsanity"
+	{
+		"players"	"DAVEN,SeBi,S3cReT,ulti,jfk"
+		"logo"	"my"
+	}
+	"Akimbo"
+	{
+		"players"	"roca,gloRinsz,oreosss,Dante,S5J"
+		"logo"	"aki"
 	}
 }
