@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Thu Aug 28 22:42:14 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Fri Aug 29 23:26:31 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -728,5 +728,4 @@ togethermap_kamino
 training1
 wm_cabin
 wm_cargo2
-wm_skypool_aa18
 wm_truck

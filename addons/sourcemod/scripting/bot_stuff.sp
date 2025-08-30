@@ -12,7 +12,6 @@
 #include <PTaH>
 #include <ripext>
 
-char g_szMap[128];
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
 bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch, g_bIsCompetitive;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
@@ -161,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.6", 
+	version = "1.2.7", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -249,9 +248,10 @@ public void OnMapStart()
     g_iProfileRankOffset = FindSendPropInfo("CCSPlayerResource", "m_nPersonaDataPublicLevel");
     g_iPlayerColorOffset = FindSendPropInfo("CCSPlayerResource", "m_iCompTeammateColor");
 
-    GetCurrentMap(g_szMap, sizeof(g_szMap));
-    GetMapDisplayName(g_szMap, g_szMap, sizeof(g_szMap));
-    ParseMapNades(g_szMap);
+	char szMap[64];
+    GetCurrentMap(szMap, sizeof(szMap));
+    GetMapDisplayName(szMap, szMap, sizeof(szMap));
+    ParseMapNades(szMap);
 
     g_bIsBombScenario = IsValidEntity(FindEntityByClassname(-1, "func_bomb_target"));
     g_bIsHostageScenario = IsValidEntity(FindEntityByClassname(-1, "func_hostage_rescue"));
@@ -1064,45 +1064,44 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 
 public void OnPlayerSpawn(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	SetPlayerTeammateColor(client);
+    int client = GetClientOfUserId(eEvent.GetInt("userid"));
+    if (!IsValidClient(client))
+        return;
 
-	if (IsValidClient(client) && IsFakeClient(client))
-	{
-		if (g_bIsProBot[client])
-		{
-			Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
-			//All these offsets are inside BotProfileManager::Init which has strings for every botprofile parameter
-			StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
-			StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(g_fAggression[client]), NumberType_Int32);
-		}
+    SetPlayerTeammateColor(client);
 
-		if (g_bUseUSP[client] && GetClientTeam(client) == CS_TEAM_CT)
-		{
-			char szUSP[32];
-			GetClientWeapon(client, szUSP, sizeof(szUSP));
-			if (strcmp(szUSP, "weapon_hkp2000") == 0)
-				ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
-		}
-	}
+    if (!IsFakeClient(client))
+        return;
+
+    if (g_bIsProBot[client])
+    {
+        Address pLocalProfile = view_as<Address>(GetEntData(client, g_iBotProfileOffset));
+        //All these offsets are inside BotProfileManager::Init which has strings for every botprofile parameter
+        StoreToAddress(pLocalProfile + view_as<Address>(104), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
+        StoreToAddress(pLocalProfile + view_as<Address>(116), view_as<int>(g_fLookAngleMaxAccel[client]), NumberType_Int32);
+        StoreToAddress(pLocalProfile + view_as<Address>(84), view_as<int>(g_fReactionTime[client]), NumberType_Int32);
+        StoreToAddress(pLocalProfile + view_as<Address>(4), view_as<int>(g_fAggression[client]), NumberType_Int32);
+    }
+
+    if (g_bUseUSP[client] && GetClientTeam(client) == CS_TEAM_CT)
+    {
+        char szWeapon[32];
+        GetClientWeapon(client, szWeapon, sizeof(szWeapon));
+
+        if (strcmp(szWeapon, "weapon_hkp2000") == 0)
+            ReplaceWeapon(client, CS_SLOT_SECONDARY, "weapon_usp_silencer");
+    }
 }
 
 public void BotMimic_OnPlayerStopsMimicing(int client, char[] szName, char[] szCategory, char[] szPath)
 {
-	g_iDoingSmokeNum[client] = -1;
+    g_iDoingSmokeNum[client] = -1;
 }
 
 public void OnClientDisconnect(int client)
 {
-	if (IsValidClient(client) && IsFakeClient(client))
+	if (IsFakeClient(client))
 		g_iProfileRank[client] = 0;
-}
-
-public void eItems_OnItemsSynced()
-{
-	ServerCommand("changelevel %s", g_szMap);
 }
 
 void ParseMapNades(const char[] szMap)
