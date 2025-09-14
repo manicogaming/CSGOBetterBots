@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.8", 
+	version = "1.2.9", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -189,7 +189,7 @@ public Action Command_Team(int client, int iArgs)
 {
     if (iArgs < 2)
     {
-        PrintToChat(client, "Usage: team <TeamName> <t|ct>");
+        PrintToServer("Usage: team <TeamName> <t|ct>");
         return Plugin_Handled;
     }
 
@@ -1493,24 +1493,21 @@ stock Address SetupAddress(GameData hGameConfig, const char[] szName)
 
 int GetFriendsWithPrimary(int client)
 {
-	int iCount = 0, iPrimary;
-	
+	int iCount = 0;
+	int iTeam = GetClientTeam(client);
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (!IsValidClient(i))
+		if (i == client || !IsValidClient(i))
 			continue;
-		
-		if (client == i)
+
+		if (GetClientTeam(i) != iTeam)
 			continue;
-		
-		if (GetClientTeam(i) != GetClientTeam(client))
-			continue;
-		
-		iPrimary = GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY);
-		if (IsValidEntity(iPrimary))
+
+		if (IsValidEntity(GetPlayerWeaponSlot(i, CS_SLOT_PRIMARY)))
 			iCount++;
 	}
-	
+
 	return iCount;
 }
 
@@ -1519,35 +1516,35 @@ public int GetNearestGrenade(int client)
 	if (g_bBombPlanted)
 		return -1;
 
-	int iNearestEntity = -1;
-	float fVecOrigin[3], fDistance, fNearestDistance = -1.0;
-	
-	GetClientAbsOrigin(client, fVecOrigin);
-	
+	int iClosestNade = -1;
+	float fOrigin[3], fDist, fClosestDist = -1.0;
+
+	GetClientAbsOrigin(client, fOrigin);
+
 	for (int i = 0; i < g_iMaxNades; i++)
 	{
 		if ((GetGameTime() - g_fNadeTimestamp[i]) < 25.0)
 			continue;
-		
-		if (!IsValidEntity(eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i])))
-			continue;
-		
+
 		if (GetClientTeam(client) != g_iNadeTeam[i])
 			continue;
-		
-		fDistance = GetVectorDistance(fVecOrigin, g_fNadePos[i]);
-		
-		if (fDistance > 250.0)
+
+		int iEntity = eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i]);
+		if (!IsValidEntity(iEntity))
 			continue;
-		
-		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
+
+		fDist = GetVectorDistance(fOrigin, g_fNadePos[i]);
+		if (fDist > 250.0)
+			continue;
+
+		if (fDist < fClosestDist || fClosestDist == -1.0)
 		{
-			iNearestEntity = i;
-			fNearestDistance = fDistance;
+			iClosestNade = i;
+			fClosestDist = fDist;
 		}
 	}
-	
-	return iNearestEntity;
+
+	return iClosestNade;
 }
 
 stock int GetNearestEntity(int client, char[] szClassname)
@@ -1559,7 +1556,7 @@ stock int GetNearestEntity(int client, char[] szClassname)
 	
 	while ((iEntity = FindEntityByClassname(iEntity, szClassname)) != -1)
 	{
-		GetEntPropVector(iEntity, Prop_Data, "m_vecOrigin", fEntityOrigin);
+		GetEntPropVector(iEntity, Prop_Send, "m_vecOrigin", fEntityOrigin);
 		fDistance = GetVectorDistance(fClientOrigin, fEntityOrigin);
 		
 		if (fDistance < fNearestDistance || fNearestDistance == -1.0)
@@ -1607,53 +1604,54 @@ bool IsPlayerReloading(int client)
 {
 	if (!IsValidEntity(g_iActiveWeapon[client]))
 		return false;
-	
-	if (GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_iClip1") == 0)
-		return true;
-	
+
 	if (GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_bInReload"))
 		return true;
-	
-	if (GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") <= GetGameTime())
-		return false;
-	
-	return true;
+
+	if (GetEntProp(g_iActiveWeapon[client], Prop_Data, "m_iClip1") == 0)
+		return true;
+
+	if (GetEntPropFloat(g_iActiveWeapon[client], Prop_Send, "m_flNextPrimaryAttack") > GetGameTime())
+		return true;
+
+	return false;
 }
 
-public void BeginQuickSwitch(int client)
+public void BeginQuickSwitch(int iUserId)
 {
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-	{
-		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
-		RequestFrame(FinishQuickSwitch, GetClientUserId(client));
-	}
+    int client = GetClientOfUserId(iUserId);
+    if (!IsValidClient(client))
+        return;
+
+    SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
+    RequestFrame(FinishQuickSwitch, iUserId);
 }
 
-public void FinishQuickSwitch(int client)
+public void FinishQuickSwitch(int iUserId)
 {
-	client = GetClientOfUserId(client);
+	int client = GetClientOfUserId(iUserId);
 	
-	if(client != 0 && IsClientInGame(client))
-		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
+	if (!IsValidClient(client))
+		return;
+	
+	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY), 0);
 }
 
-public Action Timer_EnableSwitch(Handle hTimer, any client)
+public Action Timer_EnableSwitch(Handle hTimer, any iUserId)
 {
-	client = GetClientOfUserId(client);
+	int client = GetClientOfUserId(iUserId);
 	
-	if(client != 0 && IsClientInGame(client))
-		g_bDontSwitch[client] = false;	
+	if (IsValidClient(client))
+		g_bDontSwitch[client] = false;
 	
 	return Plugin_Stop;
 }
 
-public Action Timer_DontForceThrow(Handle hTimer, any client)
+public Action Timer_DontForceThrow(Handle hTimer, any iUserId)
 {
-	client = GetClientOfUserId(client);
+	int client = GetClientOfUserId(iUserId);
 	
-	if(client != 0 && IsClientInGame(client))
+	if (IsValidClient(client))
 	{
 		g_bThrowGrenade[client] = false;
 		BotEquipBestWeapon(client, true);
@@ -1662,118 +1660,121 @@ public Action Timer_DontForceThrow(Handle hTimer, any client)
 	return Plugin_Stop;
 }
 
-public void DelayThrow(any client)
+public void DelayThrow(int iUserId)
 {
-	client = GetClientOfUserId(client);
-	
-	if(client != 0 && IsClientInGame(client))
-	{
-		g_bThrowGrenade[client] = true;
-		CreateTimer(3.0, Timer_DontForceThrow, GetClientUserId(client));
-	}
+    int client = GetClientOfUserId(iUserId);
+    
+    if (IsValidClient(client))
+    {
+        g_bThrowGrenade[client] = true;
+        CreateTimer(3.0, Timer_DontForceThrow, iUserId);
+    }
 }
 
 public void SelectBestTargetPos(int client, float fTargetPos[3])
 {
-	if(IsValidClient(g_iTarget[client]) && IsPlayerAlive(g_iTarget[client]))
+	if (!IsValidClient(g_iTarget[client]) || !IsPlayerAlive(g_iTarget[client]))
+		return;
+
+	int iHeadBone = LookupBone(g_iTarget[client], "head_0");
+	int iSpineBone = LookupBone(g_iTarget[client], "spine_3");
+	if (iHeadBone < 0 || iSpineBone < 0)
+		return;
+
+	bool bShootSpine;
+	float fHead[3], fBody[3], fBad[3];
+	GetBonePosition(g_iTarget[client], iHeadBone, fHead, fBad);
+	GetBonePosition(g_iTarget[client], iSpineBone, fBody, fBad);
+
+	fHead[2] += 4.0;
+
+	bool bHeadVisible = BotIsVisible(client, fHead, false, -1);
+	bool bBodyVisible = bHeadVisible && BotIsVisible(client, fBody, false, -1);
+
+	if (bHeadVisible)
 	{
-		int iBone = LookupBone(g_iTarget[client], "head_0");
-		int iSpineBone = LookupBone(g_iTarget[client], "spine_3");
-		if (iBone < 0 || iSpineBone < 0)
-			return;
-		
-		bool bShootSpine;
-		float fHead[3], fBody[3], fBad[3];
-		GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
-		GetBonePosition(g_iTarget[client], iSpineBone, fBody, fBad);
-		
-		fHead[2] += 4.0;
-		
-		if (BotIsVisible(client, fHead, false, -1))
+		if (bBodyVisible)
 		{
-			if (BotIsVisible(client, fBody, false, -1))
+			if (!IsValidEntity(g_iActiveWeapon[client])) 
+				return;
+
+			int iDefIndex = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iItemDefinitionIndex");
+
+			switch (iDefIndex)
 			{
-				if (!IsValidEntity(g_iActiveWeapon[client])) return;
-				
-				int iDefIndex = GetEntProp(g_iActiveWeapon[client], Prop_Send, "m_iItemDefinitionIndex");
-				
-				switch(iDefIndex)
+				case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
 				{
-					case 7, 8, 10, 13, 14, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 33, 34, 35, 39, 60:
-					{
-						float fTargetDistance = GetVectorDistance(g_fBotOrigin[client], fHead);
-						if (IsItMyChance(70.0) && fTargetDistance < 2000.0)
-							bShootSpine = true;
-					}
-					case 9, 11, 38:
-					{
+					float fTargetDistance = GetVectorDistance(g_fBotOrigin[client], fHead);
+					if (IsItMyChance(70.0) && fTargetDistance < 2000.0)
 						bShootSpine = true;
-					}
+				}
+				case 9, 11, 38:
+				{
+					bShootSpine = true;
 				}
 			}
 		}
-		else
-		{
-			//Head wasn't visible, check other bones.
-			for (int b = 0; b <= sizeof(g_szBoneNames) - 1; b++)
-			{
-				iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
-				if (iBone < 0)
-					return;
-				
-				GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
-				
-				if (BotIsVisible(client, fHead, false, -1))
-					break;
-				else
-					fHead[2] = 0.0;
-			}
-		}
-		
-		if(bShootSpine)
-			fTargetPos = fBody;
-		else
-			fTargetPos = fHead;
 	}
+	else
+	{
+		// Head wasn't visible, check other bones.
+		for (int b = 0; b < sizeof(g_szBoneNames); b++)
+		{
+			int iBone = LookupBone(g_iTarget[client], g_szBoneNames[b]);
+			if (iBone < 0)
+				continue;
+
+			GetBonePosition(g_iTarget[client], iBone, fHead, fBad);
+
+			if (BotIsVisible(client, fHead, false, -1))
+				break;
+			else
+				fHead[2] = 0.0;
+		}
+	}
+
+	if (bShootSpine)
+		Array_Copy(fBody, fTargetPos, 3);
+	else
+		Array_Copy(fHead, fTargetPos, 3);
 }
 
-stock void GetViewVector(float fVecAngle[3], float fOutPut[3])
+stock void GetViewVector(const float fVecAngle[3], float fOutPut[3])
 {
-	fOutPut[0] = Cosine(fVecAngle[1] / (180 / FLOAT_PI));
-	fOutPut[1] = Sine(fVecAngle[1] / (180 / FLOAT_PI));
-	fOutPut[2] = -Sine(fVecAngle[0] / (180 / FLOAT_PI));
+    fOutPut[0] = Cosine(fVecAngle[1] * FLOAT_PI / 180.0);
+    fOutPut[1] = Sine(fVecAngle[1] * FLOAT_PI / 180.0);
+    fOutPut[2] = -Sine(fVecAngle[0] * FLOAT_PI / 180.0);
 }
 
 stock float AngleNormalize(float fAngle)
 {
-	fAngle -= RoundToFloor(fAngle / 360.0) * 360.0;
-	
-	if (fAngle > 180)
-		fAngle -= 360;
-	
-	if (fAngle < -180)
-		fAngle += 360;
+    fAngle -= RoundToFloor(fAngle / 360.0) * 360.0;
 
-	return fAngle;
+    if (fAngle > 180.0)
+        fAngle -= 360.0;
+    else if (fAngle < -180.0)
+        fAngle += 360.0;
+
+    return fAngle;
 }
 
 stock bool IsPointVisible(float fStart[3], float fEnd[3])
 {
-	TR_TraceRayFilter(fStart, fEnd, MASK_VISIBLE_AND_NPCS, RayType_EndPoint, TraceEntityFilterStuff);
-	return TR_GetFraction() >= 0.9;
+    TR_TraceRayFilter(fStart, fEnd, MASK_VISIBLE_AND_NPCS, RayType_EndPoint, TraceEntityFilterStuff);
+    return TR_GetFraction() >= 0.9;
 }
 
 public bool TraceEntityFilterStuff(int iEntity, int iMask)
 {
-	return iEntity > MaxClients;
-} 
+    return iEntity > MaxClients;
+}
 
 public void ProcessGrenadeThrow(int client, float fTarget[3])
 {
 	NavMesh_GetGroundHeight(fTarget, fTarget[2]);
-	if(!GetGrenadeToss(client, fTarget))
+	if (!GetGrenadeToss(client, fTarget))
 		return;
-	
+
 	Array_Copy(fTarget, g_fNadeTarget[client], 3);
 	SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_GRENADE), 0);
 	RequestFrame(DelayThrow, GetClientUserId(client));
@@ -1781,88 +1782,66 @@ public void ProcessGrenadeThrow(int client, float fTarget[3])
 
 stock bool GetGrenadeToss(int client, float fTossTarget[3])
 {
-	float fEyePosition[3], fTo[3];
-	GetClientEyePosition(client, fEyePosition);
-	SubtractVectors(fTossTarget, fEyePosition, fTo);
-	float fRange = GetVectorLength(fTo);
+    float fEyePosition[3], fTo[3];
+    GetClientEyePosition(client, fEyePosition);
+    SubtractVectors(fTossTarget, fEyePosition, fTo);
+    float fRange = GetVectorLength(fTo);
 
-	const float fSlope = 0.2; // 0.25f;
-	float fTossHeight = fSlope * fRange;
+    if (fRange < 1.0)
+        return false;
 
-	float fHeightInc = fTossHeight / 10.0;
-	float fTarget[3];
-	float fSafeSpace = fTossHeight / 2.0;
+    const float fSlope = 0.2;
+    float fTossHeight = fSlope * fRange;
 
-	// Build a box to sweep along the ray when looking for obstacles
-	float fMins[3] = { -16.0, -16.0, 0.0 };
-	float fMaxs[3] = { 16.0, 16.0, 72.0 };
-	fMins[2] = 0.0;
-	fMaxs[2] = fHeightInc;
+    float fHeightInc = fTossHeight / 10.0;
+    float fTarget[3];
+    float fSafeSpace = fTossHeight / 2.0;
 
+    float fMins[3] = { -16.0, -16.0, 0.0 };
+    float fMaxs[3] = {  16.0,  16.0, 0.0 };
+    fMaxs[2] = fHeightInc;
 
-	// find low and high bounds of toss window
-	float fLow = 0.0;
-	float fHigh = fTossHeight + fSafeSpace;
-	bool bGotLow = false;
-	float fLastH = 0.0;
-	for(float h = 0.0; h < 3.0 * fTossHeight; h += fHeightInc)
-	{
-		fTarget[0] = fTossTarget[0];
-		fTarget[1] = fTossTarget[1];
-		fTarget[2] = fTossTarget[2] + h;
+    float fLow = 0.0, fHigh = fTossHeight + fSafeSpace, fLastH = 0.0;
+    bool bGotLow = false;
 
-		// make sure toss line is clear
-		Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMins, MASK_VISIBLE_AND_NPCS | CONTENTS_GRATE, TraceEntityFilterStuff);
-		
-		if (TR_GetFraction(hTraceResult) == 1.0)
-		{
-			// line is clear
-			if (!bGotLow)
-			{
-				fLow = h;
-				bGotLow = true;
-			}
-		}
-		else
-		{
-			// line is blocked
-			if (bGotLow)
-			{
-				fHigh = fLastH;
-				break;
-			}
-		}
+    fTarget[0] = fTossTarget[0];
+    fTarget[1] = fTossTarget[1];
 
-		fLastH = h;
-		
-		delete hTraceResult;
-	}
+    for (float fH = 0.0; fH < 3.0 * fTossHeight; fH += fHeightInc)
+    {
+        fTarget[2] = fTossTarget[2] + fH;
 
-	if (bGotLow)
-	{
-		// throw grenade into toss window
-		if (fTossHeight < fLow)
-		{
-			if (fLow + fSafeSpace > fHigh)
-				// narrow window
-				fTossHeight = (fHigh + fLow)/2.0;
-			else
-				fTossHeight = fLow + fSafeSpace;
-		}
-		else if (fTossHeight > fHigh - fSafeSpace)
-		{
-			if (fHigh - fSafeSpace < fLow)
-				// narrow window
-				fTossHeight = (fHigh + fLow)/2.0;
-			else
-				fTossHeight = fHigh - fSafeSpace;
-		}
-		
-		fTossTarget[2] += fTossHeight;
-		return true;
-	}
-	
-	return false;
+        Handle hTraceResult = TR_TraceHullFilterEx(fEyePosition, fTarget, fMins, fMaxs, MASK_VISIBLE_AND_NPCS | CONTENTS_GRATE, TraceEntityFilterStuff);
+
+        if (TR_GetFraction(hTraceResult) == 1.0)
+        {
+            if (!bGotLow)
+            {
+                fLow = fH;
+                bGotLow = true;
+            }
+        }
+        else if (bGotLow)
+        {
+            fHigh = fLastH;
+            delete hTraceResult;
+            break;
+        }
+
+        fLastH = fH;
+        delete hTraceResult;
+    }
+
+    if (!bGotLow)
+        return false;
+
+    if (fTossHeight < fLow)
+        fTossHeight = (fLow + fSafeSpace > fHigh) ? (fHigh + fLow) / 2.0 : fLow + fSafeSpace;
+    else if (fTossHeight > fHigh - fSafeSpace)
+        fTossHeight = (fHigh - fSafeSpace < fLow) ? (fHigh + fLow) / 2.0 : fHigh - fSafeSpace;
+
+    fTossTarget[2] += fTossHeight;
+    return true;
 }
 
 stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])

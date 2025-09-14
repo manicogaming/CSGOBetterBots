@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sat Aug 30 16:47:57 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sun Sep 14 15:06:02 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -8,7 +8,6 @@ $2000$_lego
 $2000$_lego_sf2
 $2000$_pro_b2
 $2000$_space_csgo
-$2000$_textures
 $2011$_csgo
 $2018$_final
 $2021$
@@ -553,7 +552,6 @@ de_rampart_final
 de_rampart_wip
 de_rats_2020
 de_rats_brb
-de_rats_csgo
 de_rats_kitchoon
 de_rats_ol_shack_r1
 de_rats_oldcs
@@ -661,7 +659,6 @@ de_waterland
 de_westwood
 de_westwood07_myring
 de_westwood2
-de_westwood_csgo_v2
 de_westwood_csgoe
 de_westwood_s
 de_wharf
