@@ -13,7 +13,7 @@
 #include <ripext>
 
 char g_szCrosshairCode[MAXPLAYERS+1][35], g_szPreviousBuy[MAXPLAYERS+1][128];
-bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bEveryoneDead, g_bHalftimeSwitch, g_bIsCompetitive;
+bool g_bIsBombScenario, g_bIsHostageScenario, g_bFreezetimeEnd, g_bBombPlanted, g_bHalftimeSwitch, g_bIsCompetitive;
 bool g_bUseCZ75[MAXPLAYERS+1], g_bUseUSP[MAXPLAYERS+1], g_bUseM4A1S[MAXPLAYERS+1], g_bDontSwitch[MAXPLAYERS+1], g_bDropWeapon[MAXPLAYERS+1], g_bHasGottenDrop[MAXPLAYERS+1];
 bool g_bIsProBot[MAXPLAYERS+1], g_bThrowGrenade[MAXPLAYERS+1], g_bUncrouch[MAXPLAYERS+1];
 int g_iProfileRank[MAXPLAYERS+1], g_iPlayerColor[MAXPLAYERS+1], g_iTarget[MAXPLAYERS+1], g_iPrevTarget[MAXPLAYERS+1], g_iDoingSmokeNum[MAXPLAYERS+1], g_iActiveWeapon[MAXPLAYERS+1];
@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.2.9", 
+	version = "1.3.0", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -535,7 +535,6 @@ public void OnRoundPreStart(Event eEvent, char[] szName, bool bDontBroadcast)
 public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 {
 	g_bFreezetimeEnd = false;
-	g_bEveryoneDead = false;
 	g_fRoundStart = GetGameTime();
 	g_bHalftimeSwitch = false;
 
@@ -574,22 +573,6 @@ public void OnRoundStart(Event eEvent, char[] szName, bool bDontBroadcast)
 
 	if (g_bIsCompetitive)
 		CreateTimer(0.2, Timer_DropWeapons, _, TIMER_REPEAT | TIMER_FLAG_NO_MAPCHANGE);
-}
-
-public Action CS_OnTerminateRound(float &flDelay, CSRoundEndReason &iReason)
-{
-    for (int i = 1; i <= MaxClients; i++)
-    {
-        if (!IsValidClient(i))
-            continue;
-
-        if (IsFakeClient(i) && BotMimic_IsPlayerMimicing(i))
-            BotMimic_StopPlayerMimic(i);
-    }
-
-    Array_Fill(g_fNadeTimestamp, view_as<int>(0.0), g_iMaxNades);
-
-    return Plugin_Continue;
 }
 
 public void OnRoundEnd(Event eEvent, char[] szName, bool bDontBroadcast)
@@ -789,8 +772,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 		DHookGetParamVector(hParams, 2, fNoisePos);
 
-		if (CanThrowNade(client) && IsItMyChance(1.0)
-			&& GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (CanThrowNade(client) && IsItMyChance(1.5) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePos);
 			return MRES_Supercede;
@@ -818,9 +800,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		GetClientEyePosition(client, fClientEyes);
 		DHookGetParamVector(hParams, 2, fPos);
 
-		if (CanThrowNade(client) && IsItMyChance(20.0)
-			&& BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES
-			&& GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (CanThrowNade(client) && IsItMyChance(25.0) && BotBendLineOfSight(client, fClientEyes, fPos, fPos, 135.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fPos);
 			return MRES_Supercede;
@@ -857,7 +837,7 @@ public MRESReturn CCSBot_PickNewAimSpot(int client, DHookParam hParams)
 public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVel[3], float fAngles[3], int &iWeapon, int &iSubtype, int &iCmdNum, int &iTickCount, int &iSeed, int iMouse[2])
 {
 	g_bBombPlanted = !!GameRules_GetProp("m_bBombPlanted");
-
+	
 	if (!IsValidClient(client) || !IsPlayerAlive(client) || !IsFakeClient(client))
 		return Plugin_Continue;
 
@@ -889,7 +869,12 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 	if ((GetAliveTeamCount(CS_TEAM_T) == 0 || GetAliveTeamCount(CS_TEAM_CT) == 0) && !g_bDontSwitch[client])
 	{
 		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
-		g_bEveryoneDead = true;
+		
+		if (BotMimic_IsPlayerMimicing(client))
+            BotMimic_StopPlayerMimic(client);
+			
+		Array_Fill(g_fNadeTimestamp, view_as<int>(0.0), g_iMaxNades);
+		g_iDoingSmokeNum[client] = -1;
 	}
 
 	if (IsItMyChance(0.2) && g_iDoingSmokeNum[client] == -1)
@@ -925,7 +910,7 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		g_fThrowNadeTimestamp[client] = fNow;
 	}
 
-	if (IsSafe(client) || g_bEveryoneDead)
+	if (IsSafe(client))
 		iButtons &= ~IN_SPEED;
 
 	if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
@@ -1844,47 +1829,43 @@ stock bool GetGrenadeToss(int client, float fTossTarget[3])
     return true;
 }
 
-stock bool LineGoesThroughSmoke(float fFrom[3], float fTo[3])
+stock bool LineGoesThroughSmoke(const float fFrom[3], const float fTo[3])
 {	
-	return SDKCall(g_hIsLineBlockedBySmoke, g_pTheBots, fFrom, fTo);
-} 
+    return SDKCall(g_hIsLineBlockedBySmoke, g_pTheBots, fFrom, fTo);
+}
 
 stock int GetAliveTeamCount(int iTeam)
 {
-	int iNumber = 0;
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (IsValidClient(i) && IsPlayerAlive(i) && GetClientTeam(i) == iTeam)
-			iNumber++;
-	}
-	return iNumber;
+    int iNumber = 0;
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        if (!IsValidClient(i))
+            continue;
+
+        if (!IsPlayerAlive(i))
+            continue;
+
+        if (GetClientTeam(i) != iTeam)
+            continue;
+
+        iNumber++;
+    }
+    return iNumber;
 }
 
 stock bool IsSafe(int client)
 {
-	if(!IsFakeClient(client))
-		return false;
-	
-	if((GetGameTime() - g_fFreezeTimeEnd) < GetEntDataFloat(client, g_iBotSafeTimeOffset))
-		return true;
-	
-	return false;
+	return IsFakeClient(client) && (GetGameTime() - g_fFreezeTimeEnd) < GetEntDataFloat(client, g_iBotSafeTimeOffset);
 }
 
 stock TaskType GetTask(int client)
 {
-	if(!IsFakeClient(client))
-		return view_as<TaskType>(-1);
-		
-	return view_as<TaskType>(GetEntData(client, g_iBotTaskOffset));
+    return IsFakeClient(client) ? view_as<TaskType>(GetEntData(client, g_iBotTaskOffset)) : view_as<TaskType>(-1);
 }
 
 stock DispositionType GetDisposition(int client)
 {
-	if(!IsFakeClient(client))
-		return view_as<DispositionType>(-1);
-		
-	return view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset));
+    return IsFakeClient(client) ? view_as<DispositionType>(GetEntData(client, g_iBotDispositionOffset)) : view_as<DispositionType>(-1);
 }
 
 stock void SetDisposition(int client, DispositionType iDisposition)
@@ -1897,60 +1878,58 @@ stock void SetDisposition(int client, DispositionType iDisposition)
 
 stock void SetPlayerTeammateColor(int client)
 {
-	if(GetClientTeam(client) > CS_TEAM_SPECTATOR)
+	if (GetClientTeam(client) <= CS_TEAM_SPECTATOR)
+		return;
+
+	if (g_iPlayerColor[client] > -1)
+		return;
+
+	for (int iColor = 0; iColor < 5; iColor++)
 	{
-		if(g_iPlayerColor[client] > -1)
-			return;
-		
-		int nAssignedColor;
-		bool bColorInUse = false;
-		for (int ii = 0; ii < 5; ii++ )
+		bool bColorTaken = false;
+
+		for (int iClient = 1; iClient <= MaxClients; iClient++)
 		{
-			nAssignedColor = nAssignedColor % 5;
+			if (!IsValidClient(iClient))
+				continue;
 
-			bColorInUse = false;
-			for ( int j = 1; j <= MaxClients; j++ )
+			if (GetClientTeam(iClient) != GetClientTeam(client))
+				continue;
+
+			if (g_iPlayerColor[iClient] == iColor && iClient != client)
 			{
-				if (IsValidClient(j) && GetClientTeam(j) == GetClientTeam(client))
-				{
-					if (nAssignedColor == g_iPlayerColor[j] && j != client)
-					{
-						bColorInUse = true;
-						nAssignedColor++;
-						break;
-					}
-				}
-			}
-
-			if (bColorInUse == false )
+				bColorTaken = true;
 				break;
+			}
 		}
-		nAssignedColor = bColorInUse == false ? nAssignedColor : -1;
-		g_iPlayerColor[client] = nAssignedColor;
+
+		if (!bColorTaken)
+		{
+			g_iPlayerColor[client] = iColor;
+			return;
+		}
 	}
+
+	g_iPlayerColor[client] = -1;
 }
 
 public void AutoStop(int client, float fVel[3], float fAngles[3])
 {
-	float fPlayerVelocity[3], fVelAngle[3];
-	GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
-	GetVectorAngles(fPlayerVelocity, fVelAngle);
-	float fSpeed = GetVectorLength(fPlayerVelocity);
-	
-	if(fSpeed < 1.0)
-		return;
-	
-	fVelAngle[1] = fAngles[1] - fVelAngle[1];
-	
-	float fNegatedDirection[3], fForwardDirection[3];
-	GetAngleVectors(fVelAngle, fForwardDirection, NULL_VECTOR, NULL_VECTOR);
-	
-	fNegatedDirection[0] = fForwardDirection[0] * (-fSpeed);
-	fNegatedDirection[1] = fForwardDirection[1] * (-fSpeed);
-	fNegatedDirection[2] = fForwardDirection[2] * (-fSpeed);
-	
-	fVel[0] = fNegatedDirection[0];
-	fVel[1] = fNegatedDirection[1];
+    float fPlayerVelocity[3], fVelAngle[3];
+    GetEntPropVector(client, Prop_Data, "m_vecAbsVelocity", fPlayerVelocity);
+
+    float fSpeed = GetVectorLength(fPlayerVelocity);
+    if (fSpeed < 1.0)
+        return;
+
+    GetVectorAngles(fPlayerVelocity, fVelAngle);
+    fVelAngle[1] = fAngles[1] - fVelAngle[1];
+
+    float fDirForward[3];
+    GetAngleVectors(fVelAngle, fDirForward, NULL_VECTOR, NULL_VECTOR);
+
+    fVel[0] = -fDirForward[0] * fSpeed;
+    fVel[1] = -fDirForward[1] * fSpeed;
 }
 
 stock bool ShouldForce()
