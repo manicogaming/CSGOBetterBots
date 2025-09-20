@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.0", 
+	version = "1.3.1", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -1934,34 +1934,39 @@ public void AutoStop(int client, float fVel[3], float fAngles[3])
 
 stock bool ShouldForce()
 {
-	int iOvertimePlaying = GameRules_GetProp("m_nOvertimePlaying");
-	GamePhase pGamePhase = view_as<GamePhase>(GameRules_GetProp("m_gamePhase"));
+    int iOvertimePlaying = GameRules_GetProp("m_nOvertimePlaying");
+    GamePhase pGamePhase = view_as<GamePhase>(GameRules_GetProp("m_gamePhase"));
 
-	if (FindConVar("mp_halftime").BoolValue)
-	{
-		int iRoundsBeforeHalftime = -1;
-		if (pGamePhase == GAMEPHASE_PLAYING_FIRST_HALF)
-			iRoundsBeforeHalftime = iOvertimePlaying ? ( FindConVar("mp_maxrounds").IntValue + ( 2 * iOvertimePlaying - 1 ) * ( FindConVar("mp_overtime_maxrounds").IntValue / 2 ) ) : ( FindConVar("mp_maxrounds").IntValue / 2 );
+    ConVar cvMaxRounds = FindConVar("mp_maxrounds");
+    ConVar cvOTMaxRounds = FindConVar("mp_overtime_maxrounds");
+    ConVar cvHalftime = FindConVar("mp_halftime");
 
-		if ((iRoundsBeforeHalftime > 0) && (g_iRoundsPlayed == (iRoundsBeforeHalftime-1)))
-		{
-			g_bHalftimeSwitch = true;
-			return true;
-		}
-	}
-	
-	int iNumWinsToClinch = GetNumWinsToClinch();
-	bool bMatchPoint = false;
-	if (pGamePhase != GAMEPHASE_PLAYING_FIRST_HALF)
-		bMatchPoint = (g_iCTScore == iNumWinsToClinch-1 || g_iTScore == iNumWinsToClinch-1);
-	if(bMatchPoint)
-		return true;
-	
-	bool bLastRound = FindConVar("mp_maxrounds").IntValue > 0 ? (g_iCurrentRound == (FindConVar("mp_maxrounds").IntValue-1 + iOvertimePlaying * FindConVar("mp_overtime_maxrounds").IntValue)) : false;
-	if(bLastRound)
-		return true;
-		
-	return false;
+    if (cvHalftime.BoolValue && pGamePhase == GAMEPHASE_PLAYING_FIRST_HALF)
+    {
+        int iRoundsBeforeHalftime = iOvertimePlaying ? cvMaxRounds.IntValue + ((2 * iOvertimePlaying - 1) * (cvOTMaxRounds.IntValue / 2)) : (cvMaxRounds.IntValue / 2);
+
+        if ((iRoundsBeforeHalftime > 0) && (g_iRoundsPlayed == iRoundsBeforeHalftime - 1))
+        {
+            g_bHalftimeSwitch = true;
+            return true;
+        }
+    }
+
+    if (pGamePhase != GAMEPHASE_PLAYING_FIRST_HALF)
+    {
+        int iNumWinsToClinch = GetNumWinsToClinch();
+        if (g_iCTScore == iNumWinsToClinch - 1 || g_iTScore == iNumWinsToClinch - 1)
+            return true;
+    }
+
+    if (cvMaxRounds.IntValue > 0)
+    {
+        int iLastRound = (cvMaxRounds.IntValue - 1) + (iOvertimePlaying * cvOTMaxRounds.IntValue);
+        if (g_iCurrentRound == iLastRound)
+            return true;
+    }
+
+    return false;
 }
 
 stock int GetNumWinsToClinch()

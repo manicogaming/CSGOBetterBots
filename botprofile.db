@@ -4996,6 +4996,126 @@ ProP+Rifle+RiflePersonality "S5J"
 	VoicePitch = 107
 End
 
+ProP+Rifle+RiflePersonality "tO0RO"
+	VoicePitch = 88
+End
+
+ProP+Rifle+RiflePersonality "HaZR"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "ADDICT"
+	VoicePitch = 82
+End
+
+ProP+SniperPro+SniperPersonality "Gratisfaction"
+	VoicePitch = 83
+End
+
+ProP+Rifle+RiflePersonality "dpr"
+	VoicePitch = 114
+End
+
+ProP+Rifle+RiflePersonality ".exe"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "slash"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "burnz"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "olivR"
+	VoicePitch = 101
+End
+
+ProP+Rifle+RiflePersonality "ar1don"
+	VoicePitch = 78
+End
+
+ProP+Rifle+RiflePersonality "kzy"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "n1xara"
+	VoicePitch = 90
+End
+
+ProP+Rifle+RiflePersonality "kamikadze"
+	VoicePitch = 111
+End
+
+ProP+Rifle+RiflePersonality "chop"
+	VoicePitch = 109
+End
+
+ProP+SniperPro+SniperPersonality "WolfY"
+	VoicePitch = 81
+End
+
+ProP+Rifle+RiflePersonality "Grizz"
+	VoicePitch = 102
+End
+
+ProP+Rifle+RiflePersonality "viz"
+	VoicePitch = 105
+End
+
+ProP+SniperPro+SniperPersonality "aidKiT"
+	VoicePitch = 108
+End
+
+ProP+Rifle+RiflePersonality "raiNyyy"
+	VoicePitch = 75
+End
+
+ProP+Rifle+RiflePersonality "Botpa1"
+	VoicePitch = 110
+End
+
+ProP+SniperPro+SniperPersonality "kashl1d"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "relaxxie"
+	VoicePitch = 87
+End
+
+ProP+Rifle+RiflePersonality "xeedo"
+	VoicePitch = 86
+End
+
+ProP+Rifle+RiflePersonality "qw1nk1"
+	VoicePitch = 110
+End
+
+ProP+Rifle+RiflePersonality "X5G7V"
+	VoicePitch = 89
+End
+
+ProP+Rifle+RiflePersonality "1zz"
+	VoicePitch = 93
+End
+
+ProP+Rifle+RiflePersonality "calamity"
+	VoicePitch = 98
+End
+
+ProP+Rifle+RiflePersonality "Galy"
+	VoicePitch = 84
+End
+
+ProP+Rifle+RiflePersonality "Speedyw69"
+	VoicePitch = 103
+End
+
+ProP+Rifle+RiflePersonality "1kyle"
+	VoicePitch = 86
+End
+
 Elite+SniperPro+SniperPersonality "XD | ryu"
     VoicePitch = 101
 End

@@ -7,7 +7,7 @@
 	}
 	"MIBR"
 	{
-		"players"	"nicksfps,kl1m,brnz4n,insani,exit"
+		"players"	"Qikert,kl1m,brnz4n,insani,exit"
 		"logo"	"mibr"
 	}
 	"FaZe"
@@ -17,7 +17,7 @@
 	}
 	"Astralis"
 	{
-		"players"	"stavn,dev1ce,Staehr,jabbi,HooXi"
+		"players"	"Magisk,dev1ce,Staehr,jabbi,HooXi"
 		"logo"	"astr"
 	}
 	"MASONIC"
@@ -92,12 +92,12 @@
 	}
 	"Heroic"
 	{
-		"players"	"alkarenn,LNZ,yxngstxr,nilo,tN1R"
+		"players"	"alkarenn,LNZ,yxngstxr,nilo,xfl0ud"
 		"logo"	"heroi"
 	}
 	"VP"
 	{
-		"players"	"electroNic,Perfecto,ICY,FL1T,fame"
+		"players"	"tO0RO,Perfecto,ICY,FL1T,fame"
 		"logo"	"vp"
 	}
 	"HAVU"
@@ -107,7 +107,7 @@
 	}
 	"ECSTATIC"
 	{
-		"players"	"kristou,Anlelele,nut nut,TMB,sirah"
+		"players"	"acoR,Anlelele,nut nut,TMB,sirah"
 		"logo"	"ecs"
 	}
 	"Nexus"
@@ -137,7 +137,7 @@
 	}
 	"GamerLegion"
 	{
-		"players"	"Kursy,ztr,Tauson,PR,REZ"
+		"players"	"hypex,ztr,Tauson,PR,REZ"
 		"logo"	"gl"
 	}
 	"Bravado"
@@ -212,7 +212,7 @@
 	}
 	"Spirit"
 	{
-		"players"	"chopper,sh1ro,zweih,donk,zont1x"
+		"players"	"chopper,sh1ro,zweih,donk,tN1R"
 		"logo"	"spir"
 	}
 	"CW"
@@ -222,7 +222,7 @@
 	}
 	"WC"
 	{
-		"players"	"stanislaw,Sonic,JBa,Peeping,fr3nd"
+		"players"	"stanislaw,phzy,JBa,Peeping,F1KU"
 		"logo"	"wc"
 	}
 	"777"
@@ -317,13 +317,8 @@
 	}
 	"Rare"
 	{
-		"players"	"Trash,L1haNg,Summer,ChildKing,kaze"
+		"players"	"TiGeR,L1haNg,Summer,ChildKing,kaze"
 		"logo"	"rar"
-	}
-	"ATOX"
-	{
-		"players"	"dobu,AccuracyTG,kabal,MiQ,zesta"
-		"logo"	"ato"
 	}
 	"JJH"
 	{
@@ -352,22 +347,22 @@
 	}
 	"NRG"
 	{
-		"players"	"nitr0,nosraC,Jeorge,XotiC,br0"
+		"players"	"nitr0,Sonic,Jeorge,XotiC,br0"
 		"logo"	"nr"
 	}
 	"Canids"
 	{
-		"players"	"ponter,kauez,venomzera,drop,history"
+		"players"	"chay,kauez,venomzera,drop,history"
 		"logo"	"cani"
 	}
 	"Mindfreak"
 	{
-		"players"	"tucks,kairo,zune,swerzieN,JohnSm1th"
+		"players"	"tucks,dpr,zune,swerzieN,Drox"
 		"logo"	"mind"
 	}
 	"WOPA"
 	{
-		"players"	"GA1De,Zanto,Skejs,thamlike,Skodo"
+		"players"	"Patti,Zanto,Skejs,thamlike,Skodo"
 		"logo"	"wop"
 	}
 	"ESC"
@@ -377,7 +372,7 @@
 	}
 	"FAVBET"
 	{
-		"players"	"bondik,Smash,t3ns1on,j3kie,Marix"
+		"players"	"bondik,Smash,s4ltovsk1yy,j3kie,Marix"
 		"logo"	"fav"
 	}
 	"kONO"
@@ -387,7 +382,7 @@
 	}
 	"Leo"
 	{
-		"players"	"Malkiss,kr1vda,OneUn1que,marat2k,kL1o"
+		"players"	"Malkiss,amster,OneUn1que,marat2k,kL1o"
 		"logo"	"leo"
 	}
 	"Tricked"
@@ -407,7 +402,7 @@
 	}
 	"Alter"
 	{
-		"players"	"tomiko,b1lal,ImpressioN,BnTeT,kaito"
+		"players"	"tomiko,b1lal,Gratisfaction,BnTeT,kaito"
 		"logo"	"alter"
 	}
 	"Sangal"
@@ -417,7 +412,7 @@
 	}
 	"AMKAL"
 	{
-		"players"	"iDISBALANCE,nafany,kAlash,sstiNiX,KaiR0N-"
+		"players"	"iDISBALANCE,nafany,TRAVIS,sstiNiX,KaiR0N-"
 		"logo"	"amk"
 	}
 	"PARIVISION"
@@ -427,17 +422,12 @@
 	}
 	"QUAZAR"
 	{
-		"players"	"N4mb3r5,kaiori,gehji,whisper,Dis1"
+		"players"	"N4mb3r5,kaiori,gehji,1zz,Dis1"
 		"logo"	"qua"
-	}
-	"BLUEJAYS"
-	{
-		"players"	"freshie,junior,Cryptic,CLASIA,laxiee"
-		"logo"	"blue"
 	}
 	"InControl"
 	{
-		"players"	"Oczarka,Scorchyy,TyRa,jsfeltner,Beast"
+		"players"	"calamity,Scorchyy,TyRa,jsfeltner,Beast"
 		"logo"	"inc"
 	}
 	"Mythic"
@@ -447,12 +437,12 @@
 	}
 	"Vireo"
 	{
-		"players"	"Enfohip,Beaniehut,celery,luckyx,kiss"
+		"players"	"Galy,Speedyw69,celery,1kyle,kiss"
 		"logo"	"vire"
 	}
 	"BHE"
 	{
-		"players"	"KAISER,fREQ,piriajr,zock,Tuurtle"
+		"players"	"KAISER,fREQ,piriajr,zock,ninjaZ"
 		"logo"	"bhe"
 	}
 	"Galorys"
@@ -472,7 +462,7 @@
 	}
 	"E9"
 	{
-		"players"	"neverland,Tikkkkk,Yolo267,Pupu,Nero"
+		"players"	"neverland,Tikkkkk,skrr,Pupu,1romma"
 		"logo"	"e9"
 	}
 	"Eruption"
@@ -512,12 +502,12 @@
 	}
 	"GUN5"
 	{
-		"players"	"tex1y,SELLTER,Sdaim,fineshine,Lack1"
+		"players"	"tex1y,SELLTER,Sdaim,fineshine,gr1ks"
 		"logo"	"gun5"
 	}
 	"ALLINNERS"
 	{
-		"players"	"weaveR,demente,kumao,noni,ARSPOWER"
+		"players"	"weaveR,demente,raiNyyy,noni,Botpa1"
 		"logo"	"allin"
 	}
 	"DEPO"
@@ -537,7 +527,7 @@
 	}
 	"CYBERSHOKE"
 	{
-		"players"	"FenomeN,Forester,notineki,bl1x1,glowiing"
+		"players"	"FenomeN,lov1kus,notineki,bl1x1,glowiing"
 		"logo"	"cyber"
 	}
 	"Anonymo"
@@ -570,11 +560,6 @@
 		"players"	"mopoz,dav1g,sausol,alexitownz,Martinez"
 		"logo"	"gent"
 	}
-	"Besiktas"
-	{
-		"players"	"Ckanic,Layie,Jaex,suisha,Quality"
-		"logo"	"besi"
-	}
 	"BOSS"
 	{
 		"players"	"SLIGHT,Fruitcupx,d4rty,ben1337,Bwills"
@@ -592,7 +577,7 @@
 	}
 	"Semper"
 	{
-		"players"	"SaVage,Valiance,keen,shadiy,aliStair"
+		"players"	"SaVage,HaZR,keen,shadiy,ADDICT"
 		"logo"	"semp"
 	}
 	"CTG"
@@ -624,5 +609,40 @@
 	{
 		"players"	"roca,gloRinsz,oreosss,Dante,S5J"
 		"logo"	"aki"
+	}
+	"Kitsune"
+	{
+		"players"	".exe,slash,SloWye,Fadey,burnz"
+		"logo"	"kits"
+	}
+	"Leisure"
+	{
+		"players"	"BischeR,NZyyy,julz,DREAd,Rand"
+		"logo"	"leis"
+	}
+	"Permitta"
+	{
+		"players"	"olivR,ar1don,kzy,n1xara,kamikadze"
+		"logo"	"perm"
+	}
+	"Rebels"
+	{
+		"players"	"Icarus,snapy,NOPEEj,TMKj,stadodo"
+		"logo"	"reb"
+	}
+	"Marsborne"
+	{
+		"players"	"chop,WolfY,Grizz,viz,cxzi"
+		"logo"	"mars"
+	}
+	"Partizan"
+	{
+		"players"	"Dragon,c0llins,Kind0,VLDN,aidKiT"
+		"logo"	"parti"
+	}
+	"K27"
+	{
+		"players"	"kashl1d,relaxxie,xeedo,qw1nk1,X5G7V"
+		"logo"	"k27"
 	}
 }
