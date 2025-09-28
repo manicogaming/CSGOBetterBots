@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.1", 
+	version = "1.3.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -772,7 +772,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 		DHookGetParamVector(hParams, 2, fNoisePos);
 
-		if (CanThrowNade(client) && IsItMyChance(1.5) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (CanThrowNade(client) && IsItMyChance(2.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePos);
 			return MRES_Supercede;
@@ -1972,19 +1972,19 @@ stock bool ShouldForce()
 stock int GetNumWinsToClinch()
 {
 	int iOvertimePlaying = GameRules_GetProp("m_nOvertimePlaying");
-	int iNumWinsToClinch = (FindConVar("mp_maxrounds").IntValue > 0 && FindConVar("mp_match_can_clinch").BoolValue) ? (FindConVar("mp_maxrounds").IntValue / 2 ) + 1 + iOvertimePlaying * (FindConVar("mp_overtime_maxrounds").IntValue / 2) : -1;
-	return iNumWinsToClinch;
+	int iMaxRounds = FindConVar("mp_maxrounds").IntValue;
+	bool bCanClinch = FindConVar("mp_match_can_clinch").BoolValue;
+	int iOvertimeMaxRounds = FindConVar("mp_overtime_maxrounds").IntValue;
+	
+	return (iMaxRounds > 0 && bCanClinch) ? (iMaxRounds / 2) + 1 + iOvertimePlaying * (iOvertimeMaxRounds / 2) : -1;
 }
 
-stock bool IsItMyChance(float fChance = 0.0)
+stock bool IsItMyChance(float fChance)
 {
-	float flRand = Math_GetRandomFloat(0.0, 100.0);
-	if( fChance <= 0.0 )
-		return false;
-	return flRand <= fChance;
+    return (fChance > 0.0) && (Math_GetRandomFloat(0.0, 100.0) <= fChance);
 }
 
 stock bool IsValidClient(int client)
 {
-	return client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client);
+	return (client > 0 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && !IsClientSourceTV(client));
 }
