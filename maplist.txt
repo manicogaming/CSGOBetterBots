@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Thu Sep 25 23:50:20 BST 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Sun Nov 09 01:01:34 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -40,7 +40,6 @@ aim_crazyjump_simpsons_v2
 aim_crazyjump_updated
 aim_deagle7k
 aim_deagle7k_norm
-aim_deagle_box
 aim_deagle_cme_rc5
 aim_deagle_lego
 aim_deagle_lego_2022
@@ -179,7 +178,6 @@ cs_crackhouse_remake
 cs_crackhouse_remake_d
 cs_crackhouse_rework
 cs_cruise
-cs_crystal_lake_go
 cs_cs16_assault
 cs_deadhouse
 cs_deagle_neon

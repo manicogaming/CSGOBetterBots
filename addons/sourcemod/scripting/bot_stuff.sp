@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.2", 
+	version = "1.3.3", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -767,12 +767,12 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		float fClientEyes[3], fNoisePos[3];
 		GetClientEyePosition(client, fClientEyes);
 
-		if (IsItMyChance(35.0) && IsPointVisible(fClientEyes, fNoisePos) && LineGoesThroughSmoke(fClientEyes, fNoisePos) && !bIsWalking)
+		if (IsItMyChance(40.0) && IsPointVisible(fClientEyes, fNoisePos) && LineGoesThroughSmoke(fClientEyes, fNoisePos) && !bIsWalking)
 			DHookSetParam(hParams, 7, true);
 
 		DHookGetParamVector(hParams, 2, fNoisePos);
 
-		if (CanThrowNade(client) && IsItMyChance(2.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		if (CanThrowNade(client) && IsItMyChance(4.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePos);
 			return MRES_Supercede;
@@ -911,7 +911,11 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 	}
 
 	if (IsSafe(client))
+	{
 		iButtons &= ~IN_SPEED;
+		if(g_bIsProBot[client] && !g_bDontSwitch[client] && !BotIsHiding(client))
+			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
+	}
 
 	if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
 	{
@@ -1756,7 +1760,6 @@ public bool TraceEntityFilterStuff(int iEntity, int iMask)
 
 public void ProcessGrenadeThrow(int client, float fTarget[3])
 {
-	NavMesh_GetGroundHeight(fTarget, fTarget[2]);
 	if (!GetGrenadeToss(client, fTarget))
 		return;
 
