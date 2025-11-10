@@ -1,0 +1,46 @@
+"Phrases"
+{
+    "Prefix"
+    {
+        "en"        " [\x04CSGO\x01]"
+        "chi"       " [\x04CSGO\x01]"
+    }
+    
+    "Already_Paused"
+    {
+        "en"        "Game is already paused"
+        "chi"       "游戏已经暂停中"
+    }
+    
+    "Team_Only"
+    {
+        "en"        "Only team members can pause"
+        "chi"       "只有队伍成员可以暂停"
+    }
+    
+    "No_Pauses_Left"
+    {
+        "en"        "Your team has no pauses left"
+        "chi"       "你的队伍暂停次数已用完"
+    }
+    
+    "Invalid_Time"
+    {
+        "en"        "Pause time must be greater than 0 seconds"
+        "chi"       "暂停时间必须大于0秒"
+    }
+    
+    "Pause_No_Time"
+    {
+        "#format"   "{1:s},{2:s},{3:s}"
+        "en"        "{1} paused the match, {2} team has {3} pause(s) left"
+        "chi"       "{1} 暂停了比赛，{2}队暂停剩余次数{3}次"
+    }
+    
+    "Pause_With_Time"
+    {
+        "#format"   "{1:s},{2:d},{3:s},{4:s}"
+        "en"        "{1} paused the match ({2} sec), {3} team has {4} pause(s) left"
+        "chi"       "{1} 暂停了比赛 ({2}秒)，{3}队暂停剩余次数{4}次"
+    }
+}
