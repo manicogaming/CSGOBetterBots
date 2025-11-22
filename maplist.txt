@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Sun Nov 09 01:01:34 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Thu Nov 20 23:07:11 GMT 2025 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $2000$_classics
@@ -261,7 +261,6 @@ cs_workout
 csco_assault
 csco_nuke
 csco_train
-csp_aztec
 csp_inferno
 de_2ndstrike_go
 de_abaddon
@@ -658,7 +657,6 @@ de_westwood07_myring
 de_westwood2
 de_westwood_csgoe
 de_westwood_s
-de_wharf
 de_whitesand
 de_winter_village_go
 de_wpoint

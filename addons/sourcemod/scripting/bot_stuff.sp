@@ -160,7 +160,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.3", 
+	version = "1.3.4", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -794,7 +794,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		DHookSetParamVector(hParams, 2, fNoisePos);
 		return MRES_ChangedHandled;
 	}
-	else if (strcmp(szDesc, "Nearby enemy gunfire") == 0)
+	else if (strcmp(szDesc, "Nearby enemy gunfire") == 0 || strcmp(szDesc, "Approach Point (Hiding)") == 0)
 	{
 		float fPos[3], fClientEyes[3];
 		GetClientEyePosition(client, fClientEyes);
