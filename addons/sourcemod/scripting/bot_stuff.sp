@@ -292,6 +292,9 @@ public Action Timer_CheckPlayer(Handle hTimer, any data)
 		if (!bInBuyZone)
 			continue;
 
+		if (BotMimic_IsPlayerMimicing(i))
+            continue;
+
 		if (IsValidEntity(iPrimary) || (GetFriendsWithPrimary(i) >= 1 && !bDefaultPistol))
 		{
 			if (iArmor < 50 || !bHasHelmet)
@@ -645,6 +648,9 @@ public Action CS_OnBuyCommand(int client, const char[] szWeapon)
 	if (!IsValidClient(client) || !IsPlayerAlive(client) || !IsFakeClient(client))
 		return Plugin_Continue;
 
+	if (BotMimic_IsPlayerMimicing(client))
+		return Plugin_Continue;  
+
 	if (strcmp(szWeapon, "molotov") == 0 || strcmp(szWeapon, "incgrenade") == 0 || strcmp(szWeapon, "decoy") == 0 ||
 	    strcmp(szWeapon, "flashbang") == 0 || strcmp(szWeapon, "hegrenade") == 0 || strcmp(szWeapon, "smokegrenade") == 0 ||
 	    strcmp(szWeapon, "vest") == 0 || strcmp(szWeapon, "vesthelm") == 0 || strcmp(szWeapon, "defuser") == 0)
@@ -768,7 +774,7 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 		GetClientEyePosition(client, fClientEyes);
 
 		if (IsItMyChance(40.0) && IsPointVisible(fClientEyes, fNoisePos) && LineGoesThroughSmoke(fClientEyes, fNoisePos) && !bIsWalking)
-			DHookSetParam(hParams, 7, true);
+            DHookSetParam(hParams, 7, true);
 
 		DHookGetParamVector(hParams, 2, fNoisePos);
 
@@ -780,7 +786,8 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 		if (BotMimic_IsPlayerMimicing(client))
 		{
-			g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+			if (g_iDoingSmokeNum[client] >= 0 && g_iDoingSmokeNum[client] < g_iMaxNades)
+				g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
 			BotMimic_StopPlayerMimic(client);
 		}
 
@@ -877,8 +884,8 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		g_iDoingSmokeNum[client] = -1;
 	}
 
-	if (IsItMyChance(0.2) && g_iDoingSmokeNum[client] == -1)
-		g_iDoingSmokeNum[client] = GetNearestGrenade(client);
+	if (IsItMyChance(0.2) && g_iDoingSmokeNum[client] == -1 && !BotMimic_IsPlayerMimicing(client))
+    	g_iDoingSmokeNum[client] = GetNearestGrenade(client);
 
 	if (GetDisposition(client) == SELF_DEFENSE)
 		SetDisposition(client, ENGAGE_AND_INVESTIGATE);
@@ -891,16 +898,29 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			iButtons &= ~IN_SPEED;
 	}
 
+	if (BotMimic_IsPlayerMimicing(client))
+	{
+    	g_iDoingSmokeNum[client] = -1;
+    	return Plugin_Continue;
+	}
+
 	if (g_iDoingSmokeNum[client] != -1 && !BotMimic_IsPlayerMimicing(client))
 	{
-		g_fNadeTimestamp[g_iDoingSmokeNum[client]] = fNow;
-		float fDisToNade = GetVectorDistance(g_fBotOrigin[client], g_fNadePos[g_iDoingSmokeNum[client]]);
-		BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
-		if (fDisToNade < 25.0)
+		if (g_iDoingSmokeNum[client] >= 0 && g_iDoingSmokeNum[client] < g_iMaxNades)
 		{
-			BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
-			if (view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
-				BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
+			g_fNadeTimestamp[g_iDoingSmokeNum[client]] = fNow;
+			float fDisToNade = GetVectorDistance(g_fBotOrigin[client], g_fNadePos[g_iDoingSmokeNum[client]]);
+			BotMoveTo(client, g_fNadePos[g_iDoingSmokeNum[client]], FASTEST_ROUTE);
+			if (fDisToNade < 25.0)
+			{
+				BotSetLookAt(client, "Use entity", g_fNadeLook[g_iDoingSmokeNum[client]], PRIORITY_HIGH, 2.0, false, 3.0, false);
+				if (view_as<LookAtSpotState>(GetEntData(client, g_iBotLookAtSpotStateOffset)) == LOOK_AT_SPOT && fSpeed == 0.0 && (GetEntityFlags(client) & FL_ONGROUND))
+					BotMimic_PlayRecordFromFile(client, g_szReplay[g_iDoingSmokeNum[client]]);
+			}
+		}
+		else
+		{
+			g_iDoingSmokeNum[client] = -1;
 		}
 	}
 
@@ -917,7 +937,13 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 			SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 	}
 
-	if (g_bIsProBot[client] && !g_bBombPlanted && GetTask(client) != COLLECT_HOSTAGES && GetTask(client) != RESCUE_HOSTAGES && GetTask(client) != GUARD_LOOSE_BOMB && GetTask(client) != PLANT_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
+	if (g_bIsProBot[client] && !g_bBombPlanted && 
+	    !BotMimic_IsPlayerMimicing(client) &&  
+	    GetTask(client) != COLLECT_HOSTAGES && 
+	    GetTask(client) != RESCUE_HOSTAGES && 
+	    GetTask(client) != GUARD_LOOSE_BOMB && 
+	    GetTask(client) != PLANT_BOMB && 
+	    GetTask(client) != ESCAPE_FROM_FLAMES)
 	{
 		float fClientEyes[3];
 		GetClientEyePosition(client, fClientEyes);
@@ -1520,6 +1546,9 @@ public int GetNearestGrenade(int client)
 
 		int iEntity = eItems_FindWeaponByDefIndex(client, g_iNadeDefIndex[i]);
 		if (!IsValidEntity(iEntity))
+			continue;
+
+		if (i < 0 || i >= sizeof(g_fNadePos))
 			continue;
 
 		fDist = GetVectorDistance(fOrigin, g_fNadePos[i]);
