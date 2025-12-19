@@ -778,7 +778,9 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 		DHookGetParamVector(hParams, 2, fNoisePos);
 
-		if (CanThrowNade(client) && IsItMyChance(4.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
+		bool bIsControlledByReplay = (BotMimic_IsPlayerMimicing(client) && g_iDoingSmokeNum[client] == -1);
+
+		if (!bIsControlledByReplay && CanThrowNade(client) && IsItMyChance(4.0) && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES && GetEntityMoveType(client) != MOVETYPE_LADDER)
 		{
 			ProcessGrenadeThrow(client, fNoisePos);
 			return MRES_Supercede;
@@ -786,9 +788,16 @@ public MRESReturn CCSBot_SetLookAt(int client, DHookParam hParams)
 
 		if (BotMimic_IsPlayerMimicing(client))
 		{
-			if (g_iDoingSmokeNum[client] >= 0 && g_iDoingSmokeNum[client] < g_iMaxNades)
-				g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
-			BotMimic_StopPlayerMimic(client);
+			if (g_iDoingSmokeNum[client] != -1)
+			{
+				if (g_iDoingSmokeNum[client] >= 0 && g_iDoingSmokeNum[client] < g_iMaxNades)
+					g_fNadeTimestamp[g_iDoingSmokeNum[client]] = GetGameTime();
+				BotMimic_StopPlayerMimic(client);
+			}
+			else
+			{
+				return MRES_Supercede;
+			}
 		}
 
 		if (eItems_GetWeaponSlotByWeapon(g_iActiveWeapon[client]) == CS_SLOT_KNIFE && GetTask(client) != ESCAPE_FROM_BOMB && GetTask(client) != ESCAPE_FROM_FLAMES)
@@ -878,7 +887,10 @@ public Action OnPlayerRunCmd(int client, int &iButtons, int &iImpulse, float fVe
 		SDKCall(g_hSwitchWeaponCall, client, GetPlayerWeaponSlot(client, CS_SLOT_KNIFE), 0);
 		
 		if (BotMimic_IsPlayerMimicing(client))
-            BotMimic_StopPlayerMimic(client);
+		{
+			if (g_iDoingSmokeNum[client] != -1)
+                BotMimic_StopPlayerMimic(client);
+		}
 			
 		Array_Fill(g_fNadeTimestamp, view_as<int>(0.0), g_iMaxNades);
 		g_iDoingSmokeNum[client] = -1;
