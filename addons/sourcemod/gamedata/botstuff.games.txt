@@ -136,6 +136,12 @@
 				"library"	"server"
 				"windows"	"\x55\x8B\xEC\x83\xE4\xF8\x81\xEC\x4C\x01\x00\x00\x53\x56\x57\x8B\xF9\x8B\x07"
 			}
+			"CCSBot::OnAudibleEvent"
+			{
+				// Has 'Heard noise' string
+				"library"	"server"
+				"windows"	"\x55\x8B\xEC\x83\xE4\xF0\x83\xEC\x58\x56\x57\x8B\xF9\xF3\x0F\x11\x5C\x24\x24"
+			}
 		}
 		"Offsets"
 		{
@@ -193,6 +199,11 @@
 			{
 				//Is in the line above 'Disposition: %s'
 				"windows"	   "24052"
+			}
+			"CCSBot::m_initialEncounterArea"
+			{
+				//Is inside CCSBot::MoveToInitialEncounter below the string 'MoveToInitialEncounter: Can't find battlefront!\n'
+				"windows"	   "23420"
 			}
 			"Weapon_Switch"
 			{
@@ -286,6 +297,45 @@
 						"type" "cbaseentity"
 					}
 					"part"
+					{
+						"type" "int"
+					}
+				}
+			}
+			"CCSBot::OnAudibleEvent"
+			{
+				"signature" "CCSBot::OnAudibleEvent"
+				"callconv" "thiscall"
+				"return" "void"
+				"this" "entity"
+				"arguments"
+				{
+					"event"
+					{
+						"type" "int"
+					}
+					"player"
+					{
+						"type" "cbaseentity"
+					}
+					"range"
+					{
+						"type" "float"
+						"register" "xmm3"
+					}
+					"priority"
+					{
+						"type" "int"
+					}
+					"isHostile"
+					{
+						"type" "bool"
+					}
+					"isFootstep"
+					{
+						"type" "bool"
+					}
+					"actualOrigin"
 					{
 						"type" "int"
 					}
