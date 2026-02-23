@@ -67,7 +67,6 @@ int g_iProfileRankOffset, g_iPlayerColorOffset;
 int g_iBotTargetSpotOffset, g_iBotNearbyEnemiesOffset, g_iFireWeaponOffset, g_iEnemyVisibleOffset, g_iBotProfileOffset, g_iBotSafeTimeOffset, g_iBotEnemyOffset, g_iBotLookAtSpotStateOffset, g_iBotMoraleOffset, g_iBotTaskOffset, g_iBotDispositionOffset, g_iBotInitialEncounterAreaOffset;
 float g_fBotOrigin[MAXPLAYERS+1][3], g_fTargetPos[MAXPLAYERS+1][3], g_fNadeTarget[MAXPLAYERS+1][3];
 float g_fOriginalNoisePos[MAXPLAYERS+1][3];
-bool g_bInAudibleSDKCall;
 float g_fRoundStart, g_fFreezeTimeEnd;
 float g_fLookAngleMaxAccel[MAXPLAYERS+1], g_fReactionTime[MAXPLAYERS+1], g_fAggression[MAXPLAYERS+1], g_fShootTimestamp[MAXPLAYERS+1], g_fThrowNadeTimestamp[MAXPLAYERS+1], g_fCrouchTimestamp[MAXPLAYERS+1];
 float g_fEnemyLostTime[MAXPLAYERS+1];
@@ -232,7 +231,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.8", 
+	version = "1.3.9", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -1069,9 +1068,6 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 
 public MRESReturn CCSBot_OnAudibleEvent(int iBot, DHookParam hParams)
 {
-	if (g_bInAudibleSDKCall)
-		return MRES_Ignored;
-
 	int client = hParams.Get(2);
 	if (!IsValidClient(client) || GetClientTeam(iBot) == GetClientTeam(client))
 		return MRES_Ignored;
@@ -1771,8 +1767,8 @@ public void LoadSDK()
 
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::OnAudibleEvent");
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Pointer);
-	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
+	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
@@ -1850,9 +1846,7 @@ public void BotThrowGrenade(int client, const float fTarget[3])
 
 void BotOnAudibleEvent(int iBot, Event eEvent, int iPlayer, float fRange, PriorityType iPriority, bool bIsHostile, bool bIsFootstep = false, const float fActualOrigin[3] = NULL_VECTOR)
 {
-	g_bInAudibleSDKCall = true;
 	SDKCall(g_hOnAudibleEvent, iBot, eEvent, iPlayer, fRange, iPriority, bIsHostile, bIsFootstep, fActualOrigin);
-	g_bInAudibleSDKCall = false;
 }
 
 public int BotGetEnemy(int client)
