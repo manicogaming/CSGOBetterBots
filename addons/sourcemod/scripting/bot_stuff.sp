@@ -231,7 +231,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.6", 
+	version = "1.3.7", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -905,22 +905,25 @@ public void OnPlayerJump(Event eEvent, const char[] szName, bool bDontBroadcast)
 		if (i == client || !IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) == GetClientTeam(client))
 			continue;
 
-		BotOnAudibleEvent(i, eEvent, client, 1100.0, PRIORITY_LOW, false, true);
+		BotOnAudibleEvent(i, eEvent, client, 1100.0, PRIORITY_LOW, false);
 	}
 }
 
 public void OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if (!IsValidClient(client) || !IsPlayerAlive(client))
+	int iPlanter = GetClientOfUserId(eEvent.GetInt("userid"));
+	if (!IsValidClient(iPlanter) || !IsPlayerAlive(iPlanter))
 		return;
+		
+	float fPlanterOrigin[3];
+	GetClientAbsOrigin(iPlanter, fPlanterOrigin);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (i == client || !IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) == GetClientTeam(client))
+		if (i == iPlanter || !IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) == GetClientTeam(iPlanter))
 			continue;
 
-		BotOnAudibleEvent(i, eEvent, client, 1100.0, PRIORITY_HIGH, true);
+		BotOnAudibleEvent(i, eEvent, iPlanter, 1100.0, PRIORITY_HIGH, true, false, fPlanterOrigin);
 	}
 }
 
@@ -1758,8 +1761,8 @@ public void LoadSDK()
 
 	StartPrepSDKCall(SDKCall_Player);
 	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::OnAudibleEvent");
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Pointer);
+	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Pointer);
 	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
