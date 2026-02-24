@@ -1,4 +1,4 @@
-// csgosl 2.19 config 1 at Mon Feb 23 14:15:05 GMT 2026 (DO NOT TOUCH THIS HEADER LINE!!!)
+// csgosl 2.19 config 1 at Mon Feb 23 23:23:32 GMT 2026 (DO NOT TOUCH THIS HEADER LINE!!!)
 // DON'T EDIT, WILL BE OVERWRITTEN NEXT TIME YOU SAVE!!!
 workshop/3070212801/
 $10000$
@@ -633,7 +633,6 @@ de_prodigy
 de_prodigy16
 de_prodigy_classic
 de_prodigy_csgo
-de_prodigy_d
 de_pyramid_clangame
 de_pyramid_d_119
 de_quarry_cz

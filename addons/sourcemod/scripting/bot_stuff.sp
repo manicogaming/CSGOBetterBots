@@ -231,7 +231,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.3.9", 
+	version = "1.4.0", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -264,7 +264,6 @@ public void OnPluginStart()
 
     HookEventEx("bomb_planted", OnBombPlanted);
     HookEventEx("bomb_defused", OnBombDefused);
-    HookEventEx("player_jump", OnPlayerJump);
     HookEventEx("bomb_beginplant", OnBombBeginPlant);
     
     LoadSDK();
@@ -900,21 +899,6 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 		RequestFrame(BeginQuickSwitch, GetClientUserId(client));
 }
 
-public void OnPlayerJump(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	int client = GetClientOfUserId(eEvent.GetInt("userid"));
-	if (!IsValidClient(client) || !IsPlayerAlive(client))
-		return;
-
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (i == client || !IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) == GetClientTeam(client))
-			continue;
-
-		BotOnAudibleEvent(i, eEvent, client, 1100.0, PRIORITY_LOW, false);
-	}
-}
-
 public void OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	int iPlanter = GetClientOfUserId(eEvent.GetInt("userid"));
@@ -1068,6 +1052,9 @@ public MRESReturn CCSBot_GetPartPosition(DHookReturn hReturn, DHookParam hParams
 
 public MRESReturn CCSBot_OnAudibleEvent(int iBot, DHookParam hParams)
 {
+	if (hParams == null)
+		return MRES_Ignored;
+
 	int client = hParams.Get(2);
 	if (!IsValidClient(client) || GetClientTeam(iBot) == GetClientTeam(client))
 		return MRES_Ignored;
