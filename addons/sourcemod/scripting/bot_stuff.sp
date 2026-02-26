@@ -96,7 +96,6 @@ Handle g_hIsLineBlockedBySmoke;
 Handle g_hBotBendLineOfSight;
 Handle g_hBotThrowGrenade;
 Handle g_hAddMoney;
-Handle g_hOnAudibleEvent;
 Address g_pTheBots;
 CNavArea g_pCurrArea[MAXPLAYERS+1];
 int g_iPlayerResourceEntity = -1;
@@ -231,7 +230,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.4.0", 
+	version = "1.4.1", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -264,7 +263,6 @@ public void OnPluginStart()
 
     HookEventEx("bomb_planted", OnBombPlanted);
     HookEventEx("bomb_defused", OnBombDefused);
-    HookEventEx("bomb_beginplant", OnBombBeginPlant);
     
     LoadSDK();
     LoadDetours();
@@ -897,24 +895,6 @@ public void OnWeaponFire(Event eEvent, const char[] szName, bool bDontBroadcast)
 
 	if ((StrEqual(szWeaponName, "weapon_awp") || StrEqual(szWeaponName, "weapon_ssg08")) && IsItMyChance(50.0))
 		RequestFrame(BeginQuickSwitch, GetClientUserId(client));
-}
-
-public void OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadcast)
-{
-	int iPlanter = GetClientOfUserId(eEvent.GetInt("userid"));
-	if (!IsValidClient(iPlanter) || !IsPlayerAlive(iPlanter))
-		return;
-		
-	float fPlanterOrigin[3];
-	GetClientAbsOrigin(iPlanter, fPlanterOrigin);
-
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		if (i == iPlanter || !IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) == GetClientTeam(iPlanter))
-			continue;
-
-		BotOnAudibleEvent(i, eEvent, iPlanter, 1100.0, PRIORITY_HIGH, true, false, fPlanterOrigin);
-	}
 }
 
 public void OnThinkPost(int iEnt)
@@ -1752,18 +1732,6 @@ public void LoadSDK()
 	if ((g_hAddMoney = EndPrepSDKCall()) == null)
 		SetFailState("Failed to create SDKCall: CCSPlayer::AddAccount");
 
-	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(hConf, SDKConf_Signature, "CCSBot::OnAudibleEvent");
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_CBasePlayer, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Bool, SDKPass_Plain);
-	PrepSDKCall_AddParameter(SDKType_Vector, SDKPass_Pointer, VDECODE_FLAG_ALLOWNULL);
-	if ((g_hOnAudibleEvent = EndPrepSDKCall()) == null)
-		SetFailState("Failed to create SDKCall: CCSBot::OnAudibleEvent");
-
 	delete hConf;
 }
 
@@ -1829,11 +1797,6 @@ public bool BotBendLineOfSight(int client, const float fEye[3], const float fTar
 public void BotThrowGrenade(int client, const float fTarget[3])
 {
 	SDKCall(g_hBotThrowGrenade, client, fTarget);
-}
-
-void BotOnAudibleEvent(int iBot, Event eEvent, int iPlayer, float fRange, PriorityType iPriority, bool bIsHostile, bool bIsFootstep = false, const float fActualOrigin[3] = NULL_VECTOR)
-{
-	SDKCall(g_hOnAudibleEvent, iBot, eEvent, iPlayer, fRange, iPriority, bIsHostile, bIsFootstep, fActualOrigin);
 }
 
 public int BotGetEnemy(int client)
@@ -2299,7 +2262,7 @@ bool SolveGrenadeToss(int client, const float fTarget[3], float fLookAt[3], int 
 	float fBestDist = 999999.0;
 	float fBestPitch = 0.0;
 
-	for (float fPitch = -75.0; fPitch <= 75.0; fPitch += 2.0)
+	for (float fPitch = -75.0; fPitch <= 75.0; fPitch += 3.0)
 	{
 		float fLaunchPitch = -10.0 + fPitch + FloatAbs(fPitch) * 10.0 / 90.0;
 
