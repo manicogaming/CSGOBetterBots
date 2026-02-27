@@ -2519,7 +2519,7 @@
         "steamid": 365906515,
         "crosshair_code": "CSGO-C9Mo4-msOhr-DppiB-XehFA-sfMwF"
     },
-    "Sliimey": {
+    "sliimey": {
         "steamid": 312823977,
         "crosshair_code": "CSGO-LdXHk-hatWX-JjEa8-tuLDN-5tbJD"
     },
@@ -3821,7 +3821,7 @@
     },
     "timo": {
         "steamid": 403941754,
-        "crosshair_code": "CSGO-3THZR-P7AZy-FHciR-e4ypx-adywQ"
+        "crosshair_code": "CSGO-R8odm-NaNq9-3hSVE-3korJ-6XoAL"
     },
     "honda": {
         "steamid": 1027817695,
@@ -5294,5 +5294,13 @@
     "zavi": {
         "steamid": 231054609,
         "crosshair_code": "CSGO-MMQuh-Hs3Sj-Qv9zd-VaCmc-3QqNO"
+    },
+    "Hezz": {
+        "steamid": 416112544,
+        "crosshair_code": "CSGO-B9FyN-ZhUzO-uSaM4-CxH7z-ZRivN"
+    },
+    "dott1": {
+        "steamid": 1145460884,
+        "crosshair_code": "CSGO-NakBN-Bxqtf-VwBhQ-bY6Dc-nedBN"
     }
 }

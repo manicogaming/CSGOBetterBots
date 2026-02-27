@@ -3442,7 +3442,7 @@ ProP+Rifle+RiflePersonality "gump"
 	VoicePitch = 90
 End
 
-ProP+Rifle+RiflePersonality "Sliimey"
+ProP+Rifle+RiflePersonality "sliimey"
 	VoicePitch = 103
 End
 
@@ -5666,6 +5666,14 @@ End
 
 ProP+Rifle+RiflePersonality "zavi"
 	VoicePitch = 80
+End
+
+ProP+SniperPro+SniperPersonality "Hezz"
+	VoicePitch = 80
+End
+
+ProP+Rifle+RiflePersonality "dott1"
+	VoicePitch = 91
 End
 
 Elite+SniperPro+SniperPersonality "XD | ryu"

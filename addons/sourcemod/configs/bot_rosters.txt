@@ -17,7 +17,7 @@
 	}
 	"3DMAX"
 	{
-		"players"	"Lucky,Ex3rcice,Maka,Graviti,bodyy"
+		"players"	"Lucky,Ex3rcice,Maka,Graviti,misutaaa"
 		"logo"	"3dmax"
 	}
 	"9INE"
@@ -109,6 +109,11 @@
 	{
 		"players"	"Prism,Demho,hades,eskyy,Dr3nquu"
 		"logo"	"bae"
+	}
+	"Bounty Hunters Esports"
+	{
+		"players"	"KAISER,zock,fREQ,ponter,pepe"
+		"logo"	"bhe"
 	}
 	"Bushido Wildcats"
 	{
@@ -240,11 +245,6 @@
 		"players"	"Tauson,PR,REZ,hypex,Snax"
 		"logo"	"gl"
 	}
-	"GenOne"
-	{
-		"players"	"Chuckyy,Brooxsy,NBK-,Djoko,misutaaa"
-		"logo"	"gen"
-	}
 	"Gentle Mates"
 	{
 		"players"	"mopoz,dav1g,sausol,alex,Martinez"
@@ -270,6 +270,11 @@
 		"players"	"mizu,lampada,dukefissura,frontales,n0rb3r7"
 		"logo"	"hotu"
 	}
+	"Imperial Esports"
+	{
+		"players"	"VINI,noway,chelo,levi,decenty"
+		"logo"	"imper"
+	}
 	"InControl"
 	{
 		"players"	"TyRa,jsfeltner,Scorchyy,aelor,ayaneuu"
@@ -279,6 +284,11 @@
 	{
 		"players"	"onic,Flierax,Dawy,zeRRoFIX,cptkurtka023"
 		"logo"	"ice"
+	}
+	"Isurus"
+	{
+		"players"	"deco,atarax1a,Hezz,dott1,timo"
+		"logo"	"isur"
 	}
 	"Johnny Speeds"
 	{
@@ -377,7 +387,7 @@
 	}
 	"Mindfreak"
 	{
-		"players"	"tucks,zune,swerzieN,dpr,Texta"
+		"players"	"zune,dpr,Texta,sliimey,Crunchy"
 		"logo"	"mind"
 	}
 	"Monte"
@@ -447,18 +457,13 @@
 	}
 	"Passion UA"
 	{
-		"players"	"Kvem,JT,Grim,nicx,try"
+		"players"	"Kvem,JT,nicx,try,Senzu"
 		"logo"	"pass"
 	}
 	"Permitta Esports"
 	{
 		"players"	"olivR,ar1don,kzy,kamikadze,Byfield"
 		"logo"	"perm"
-	}
-	"Phantom Esports"
-	{
-		"players"	"DGL,Kunai,Kylar,mynio,KEi"
-		"logo"	"phan"
 	}
 	"Playing Ducks"
 	{
@@ -504,11 +509,6 @@
 	{
 		"players"	"danistzz,clax,Patsi,R4DYX,pr1metapz"
 		"logo"	"sang"
-	}
-	"Sashi Esport"
-	{
-		"players"	"Cabbi,Zyphon,Beccie,MistR,acoR"
-		"logo"	"sas"
 	}
 	"SemperFi Esports"
 	{

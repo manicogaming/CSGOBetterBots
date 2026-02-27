@@ -87,7 +87,7 @@ void ConnectDatabase()
 		" `4k` int(11) NOT NULL,",
 		" `3k` int(11) NOT NULL,",
 		" damage int(11) NOT NULL,",
-		" kastrounds int(11) NOT NULL, INDEX idx_match_id (match_id), INDEX idx_match_name (match_id, name));"
+		" kastrounds int(11) NOT NULL, INDEX idx_match_id (match_id), INDEX idx_match_name (match_id, name), INDEX idx_name (name));"
 	);
 
 	if (!SQL_FastQuery(g_hDatabase, szBuffer))

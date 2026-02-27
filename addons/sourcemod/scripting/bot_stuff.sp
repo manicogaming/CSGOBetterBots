@@ -230,7 +230,7 @@ public Plugin myinfo =
 	name = "BOT Improvement", 
 	author = "manico", 
 	description = "Improves bots and does other things.", 
-	version = "1.4.1", 
+	version = "1.4.2", 
 	url = "http://steamcommunity.com/id/manico001"
 };
 
@@ -263,6 +263,7 @@ public void OnPluginStart()
 
     HookEventEx("bomb_planted", OnBombPlanted);
     HookEventEx("bomb_defused", OnBombDefused);
+    HookEventEx("bomb_beginplant", OnBombBeginPlant);
     
     LoadSDK();
     LoadDetours();
@@ -839,6 +840,46 @@ public void OnBombPlanted(Event eEvent, const char[] szName, bool bDontBroadcast
 public void OnBombDefused(Event eEvent, const char[] szName, bool bDontBroadcast)
 {
 	g_bBombPlanted = false;
+}
+
+public void OnBombBeginPlant(Event eEvent, const char[] szName, bool bDontBroadcast)
+{
+	int iPlanter = GetClientOfUserId(eEvent.GetInt("userid"));
+	if (!IsValidClient(iPlanter) || !IsPlayerAlive(iPlanter))
+		return;
+
+	float fPlanterPos[3];
+	GetClientAbsOrigin(iPlanter, fPlanterPos);
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (!IsValidClient(i) || !IsPlayerAlive(i) || !IsFakeClient(i) || GetClientTeam(i) != CS_TEAM_CT)
+			continue;
+
+		if (!g_bIsProBot[i] || !CanThrowNade(i) || g_bThrowGrenade[i])
+			continue;
+
+		if (GetTask(i) == ESCAPE_FROM_BOMB || GetTask(i) == ESCAPE_FROM_FLAMES || GetEntityMoveType(i) == MOVETYPE_LADDER)
+			continue;
+
+		float fBotPos[3], fEyePos[3];
+		GetClientAbsOrigin(i, fBotPos);
+		GetClientEyePosition(i, fEyePos);
+
+		if (GetVectorDistance(fBotPos, fPlanterPos) > 1500.0)
+			continue;
+
+		if (IsPointVisible(fEyePos, fPlanterPos))
+			continue;
+
+		if (!IsItMyChance(30.0))
+			continue;
+
+		int iNades[] = {DEFIDX_MOLOTOV, DEFIDX_INCENDIARY, DEFIDX_HE};
+		int iNade = FindNadeByDefIndex(i, iNades, sizeof(iNades));
+		if (iNade != -1)
+			ProcessGrenadeThrow(i, fPlanterPos, iNade);
+	}
 }
 
 public void OnPlayerDeath(Event eEvent, const char[] szName, bool bDontBroadcast)
